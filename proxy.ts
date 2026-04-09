@@ -4,22 +4,14 @@ import { type NextRequest, NextResponse } from "next/server";
 
 const intlMiddleware = createMiddleware({ ...routing });
 
-// Auth enforcement for /admin/** is handled server-side in app/admin/layout.tsx.
-// This proxy only needs to:
-//   1. Pass /admin/** through WITHOUT adding a locale prefix (next-intl would break them)
-//   2. Detect WeChat UA and redirect to /zh
-//   3. Run next-intl locale routing for all other public routes
+// /admin/** is excluded from the matcher below so this proxy never runs for
+// admin routes — next-intl cannot add a locale prefix to them.
+// Auth for /admin/** is enforced server-side in app/admin/(protected)/layout.tsx.
 
 export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // ── Admin routes: bypass next-intl entirely ───────────────────────────────
-  // next-intl would rewrite /admin/login → /en/admin/login (no page exists there)
-  if (pathname.startsWith("/admin")) {
-    return NextResponse.next();
-  }
-
-  // ── WeChat detection ─────────────────────────────────────────────────────
+  // ── WeChat detection ──────────────────────────────────────────────────────
   const userAgent = request.headers.get("user-agent") ?? "";
   const isWechat =
     userAgent.includes("MicroMessenger") || userAgent.includes("WeChat");
@@ -31,13 +23,16 @@ export default function proxy(request: NextRequest) {
     return NextResponse.redirect(zhUrl);
   }
 
-  // ── All other routes: next-intl handles locale prefix + detection ─────────
+  // ── All other public routes: next-intl locale prefix + detection ──────────
   return intlMiddleware(request);
 }
 
 export const config = {
   matcher: [
-    // Match all pathnames except /api, /_next, /_vercel, and static files
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    // Match all pathnames EXCEPT:
+    //   /api, /admin  — bypassed entirely (admin auth lives in layout.tsx)
+    //   /_next, /_vercel — internals
+    //   files with extensions (images, fonts, etc.)
+    "/((?!api|admin|_next|_vercel|.*\\..*).*)",
   ],
 };
