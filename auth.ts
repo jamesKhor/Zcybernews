@@ -30,9 +30,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     strategy: "jwt",
     maxAge: 8 * 60 * 60, // 8 hours
   },
-  callbacks: {
-    authorized({ auth }) {
-      return !!auth;
-    },
-  },
+  // Do NOT add an `authorized` callback here — it would block all public routes.
+  // Route protection is handled selectively in proxy.ts for /admin/** only.
 });
