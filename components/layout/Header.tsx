@@ -5,6 +5,7 @@ import { usePathname } from "@/i18n/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Shield } from "lucide-react";
+import { SearchDialog } from "@/components/search/SearchDialog";
 
 interface Props {
   locale: string;
@@ -50,6 +51,9 @@ export function Header({ locale }: Props) {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
+          {/* Search */}
+          <SearchDialog locale={locale} />
+
           {/* Locale switcher */}
           <Link
             href={switchHref}

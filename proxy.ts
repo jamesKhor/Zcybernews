@@ -1,37 +1,43 @@
+import { auth } from "./auth";
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
-import { type NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 const intlMiddleware = createMiddleware({
   ...routing,
-  // next-intl reads Accept-Language header for locale detection automatically
 });
 
-export default function middleware(request: NextRequest) {
-  const userAgent = request.headers.get("user-agent") ?? "";
-  const pathname = request.nextUrl.pathname;
+export default auth((req) => {
+  const { pathname } = req.nextUrl;
+
+  // Protect all /admin routes except the login page itself
+  if (pathname.startsWith("/admin") && pathname !== "/admin/login") {
+    if (!req.auth) {
+      const loginUrl = new URL("/admin/login", req.url);
+      loginUrl.searchParams.set("callbackUrl", req.url);
+      return NextResponse.redirect(loginUrl);
+    }
+    return NextResponse.next();
+  }
 
   // WeChat browser detection — MicroMessenger is the WeCom/WeChat UA identifier
+  const userAgent = req.headers.get("user-agent") ?? "";
   const isWechat =
     userAgent.includes("MicroMessenger") || userAgent.includes("WeChat");
 
-  // If WeChat browser hits the root or an /en path with no explicit locale
-  // override, redirect to /zh
   if (isWechat && (pathname === "/" || pathname.startsWith("/en"))) {
-    const zhUrl = request.nextUrl.clone();
-    zhUrl.pathname = pathname === "/" ? "/zh" : pathname.replace(/^\/en/, "/zh");
+    const zhUrl = req.nextUrl.clone();
+    zhUrl.pathname =
+      pathname === "/" ? "/zh" : pathname.replace(/^\/en/, "/zh");
     return NextResponse.redirect(zhUrl);
   }
 
-  return intlMiddleware(request);
-}
+  return intlMiddleware(req);
+});
 
 export const config = {
   matcher: [
-    // Match all pathnames except for
-    // - /api routes
-    // - /_next (Next.js internals)
-    // - files with extensions (images, etc.)
+    // Match all pathnames except /api, /_next, /_vercel, and static files
     "/((?!api|_next|_vercel|.*\\..*).*)",
   ],
 };

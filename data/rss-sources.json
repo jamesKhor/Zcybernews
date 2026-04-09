@@ -1,0 +1,38 @@
+[
+  {
+    "id": "hackernews",
+    "name": "Hacker News",
+    "url": "https://news.ycombinator.com/rss",
+    "category": "tech",
+    "type": "rss",
+    "enabled": true,
+    "description": "Tech news from Hacker News community"
+  },
+  {
+    "id": "cybersecuritynews",
+    "name": "CyberSecurity News",
+    "url": "https://cybersecuritynews.com/feed/",
+    "category": "cybersecurity",
+    "type": "rss",
+    "enabled": true,
+    "description": "Latest cybersecurity news and analysis"
+  },
+  {
+    "id": "bleepingcomputer",
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/feed/",
+    "category": "cybersecurity",
+    "type": "rss",
+    "enabled": true,
+    "description": "Security news, tutorials, malware and analysis"
+  },
+  {
+    "id": "cisa-kev",
+    "name": "CISA Known Exploited Vulnerabilities",
+    "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "category": "vulnerabilities",
+    "type": "cisa-kev",
+    "enabled": true,
+    "description": "CISA KEV catalog — actively exploited vulnerabilities requiring immediate action"
+  }
+]
