@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev",
     "build": "next build && npx pagefind --site .next/server/app --output-path public/pagefind",
     "start": "next start",
     "lint": "eslint"
