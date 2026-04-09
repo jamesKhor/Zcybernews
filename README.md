@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AleCyberNews
+
+A professional cybersecurity and tech intelligence site built with Next.js 15, featuring AI-powered content generation, bilingual support (English/Chinese), and deep threat intelligence sections.
+
+## Stack
+
+- **Next.js 15** (App Router, TypeScript)
+- **Tailwind CSS v4** + shadcn/ui
+- **next-intl** — EN/ZH bilingual routing
+- **gray-matter** + **next-mdx-remote** — Git-based MDX content
+- **DeepSeek-V3** / **Kimi K2** — AI article generation
+- **Cloudflare Pages** — deployment
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
+cp .env.example .env.local
+# Fill in your API keys in .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — redirects to `/en`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `content/en/posts/` — English articles (MDX)
+- `content/zh/posts/` — Chinese articles (MDX)
+- `content/en/threat-intel/` — English TI reports
+- `content/zh/threat-intel/` — Chinese TI reports
 
-## Learn More
+## Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `.env.example` for all required variables.
