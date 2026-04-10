@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 import { NextRequest, NextResponse } from "next/server";
-import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import { generateText } from "ai";
+import { getTranslateModel, getActiveProvider } from "@/lib/ai-provider";
 
 type TranslatePublishRequest = {
   title: string;
@@ -108,19 +108,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "title, slug and content are required" }, { status: 400 });
   }
 
-  if (!process.env.DEEPSEEK_API_KEY) {
-    return NextResponse.json({ error: "DEEPSEEK_API_KEY not configured" }, { status: 500 });
+  if (getActiveProvider() === "none") {
+    return NextResponse.json(
+      { error: "No AI provider configured. Set OPENROUTER_API_KEY or DEEPSEEK_API_KEY." },
+      { status: 500 },
+    );
   }
 
-  const deepseek = createOpenAICompatible({
-    name: "deepseek",
-    baseURL: "https://api.deepseek.com/v1",
-    apiKey: process.env.DEEPSEEK_API_KEY,
-  });
+  const translateModel = getTranslateModel();
 
   // Translate title + excerpt
   const metaRes = await generateText({
-    model: deepseek("deepseek-chat"),
+    model: translateModel,
     messages: [{
       role: "user",
       content: `Translate these to Simplified Chinese. Keep threat actor names, malware names, ALL-CAPS acronyms (EDR, VPN, APT, CVE, IOC, TTP etc), product names in English. Return ONLY valid JSON: {"title": "...", "excerpt": "..."}\n\nTitle: ${title}\nExcerpt: ${excerpt}`
@@ -138,7 +137,7 @@ export async function POST(req: NextRequest) {
 
   // Translate body
   const bodyRes = await generateText({
-    model: deepseek("deepseek-chat"),
+    model: translateModel,
     messages: [{
       role: "system",
       content: `You are a professional cybersecurity translator. Translate English to Simplified Chinese.
