@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Pagefind compiled output — third-party, do not lint
+    "public/pagefind/**",
   ]),
 ]);
 

@@ -47,3 +47,6 @@ next-env.d.ts
 
 # Pipeline cache
 .pipeline-cache/
+
+# Pagefind search index (build artifact, regenerated on each build)
+/public/pagefind/
