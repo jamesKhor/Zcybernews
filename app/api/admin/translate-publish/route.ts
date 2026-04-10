@@ -130,10 +130,18 @@ Keep all Markdown formatting intact. Output ONLY the translated markdown, no exp
   const zhMdx = buildMdx(zhFrontmatter, bodyRes.text.trim());
 
   try {
-    const [enResult, zhResult] = await Promise.all([
-      commitToGitHub(`content/en/${type}/${filename}`, enMdx, `content: add "${title}" [en]`),
-      commitToGitHub(`content/zh/${type}/${filename}`, zhMdx, `content: add "${zhTitle}" [zh]`),
-    ]);
+    // Commits must be sequential — parallel commits both read the same branch
+    // HEAD, the first succeeds and moves the tip, the second gets a 409 conflict.
+    const enResult = await commitToGitHub(
+      `content/en/${type}/${filename}`,
+      enMdx,
+      `content: add "${title}" [en]`,
+    );
+    const zhResult = await commitToGitHub(
+      `content/zh/${type}/${filename}`,
+      zhMdx,
+      `content: add "${zhTitle}" [zh]`,
+    );
 
     return NextResponse.json({
       success: true,
