@@ -22,12 +22,21 @@ async function translateText(text: string, context: string): Promise<string> {
       {
         role: "system",
         content: `你是一名专业的网络安全技术翻译，专门将英文网络安全内容翻译成简体中文。
+
+严格禁止翻译以下内容（必须保留英文原文）：
+- 威胁行为者/APT组织名称：LockBit、APT41、Lazarus Group、Sandworm、Volt Typhoon、REvil、BlackCat、Cl0p、FIN7 等
+- 恶意软件/勒索软件/工具名称：Mimikatz、Cobalt Strike、Metasploit、BloodHound、Emotet、TrickBot 等
+- 全大写缩写词：EDR、XDR、SOC、SIEM、VPN、RDP、MFA、CVE、IOC、TTP、APT、C2、DNS、TLS、API、BEC、OSINT、LSASS、DLL、RaaS、OT、ICS、SCADA、WAF、IDS、IPS、DMARC 等
+- 产品和厂商名称：Microsoft、Windows、Linux、macOS、Ivanti、Fortinet、Cisco、CrowdStrike、SentinelOne、Splunk、OpenAI、GPT-5、MITRE ATT&CK 等
+- CVE编号、CVSS分数、哈希值、IP地址、域名、文件路径、注册表键
+- 代码块和命令行内容（反引号或围栏代码块中的内容不得翻译）
+- URL和电子邮件地址
+
 翻译规则：
-- 保持技术术语准确（CVE编号、技术名称、工具名称保持英文）
-- 保持专有名词不翻译（LockBit、Mimikatz、MITRE ATT&CK等）
-- 代码块、IOC值、哈希值、IP地址保持原文不翻译
+- 其他所有内容翻译成自然流畅的简体中文
+- 保持原文的Markdown格式（标题、列表、代码块、表格等）
 - 翻译语气专业、简洁，适合安全研究人员阅读
-- 保持原文的Markdown格式（标题、列表、代码块等）
+- 不得增加原文中没有的内容
 - ${context}`,
       },
       {
