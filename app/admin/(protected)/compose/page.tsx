@@ -204,7 +204,7 @@ export default function ComposePage() {
 
   const handlePublish = async () => {
     if (!content || !title || !slug) {
-      toast.error("Publish failed", { description: "Title, slug and content are required." });
+      toast.error("Publish failed", { description: "Title, slug and content are required.", duration: Infinity });
       return;
     }
     setPublishing(true);
@@ -216,7 +216,7 @@ export default function ComposePage() {
       });
       const data = (await res.json()) as PublishResult & { message?: string };
       if (!res.ok) {
-        toast.error("Publish failed", { description: data.error });
+        toast.error("Publish failed", { description: data.error, duration: Infinity });
       } else {
         toast.success("Published! Vercel is deploying.", {
           description: "View on GitHub",
@@ -228,7 +228,7 @@ export default function ComposePage() {
         setDraftSavedAt(null);
       }
     } catch (err) {
-      toast.error("Publish failed", { description: err instanceof Error ? err.message : "Network error" });
+      toast.error("Publish failed", { description: err instanceof Error ? err.message : "Network error", duration: Infinity });
     } finally {
       setPublishing(false);
     }
@@ -236,7 +236,7 @@ export default function ComposePage() {
 
   const handlePublishBoth = async () => {
     if (!content || !title || !slug) {
-      toast.error("Publish failed", { description: "Title, slug and content are required." });
+      toast.error("Publish failed", { description: "Title, slug and content are required.", duration: Infinity });
       return;
     }
     setPublishingBoth(true);
@@ -248,14 +248,14 @@ export default function ComposePage() {
       });
       const data = (await res.json()) as { success?: boolean; enGithubUrl?: string; zhGithubUrl?: string; error?: string };
       if (!res.ok || data.error) {
-        toast.error("Publish failed", { description: data.error });
+        toast.error("Publish failed", { description: data.error, duration: Infinity });
       } else {
         toast.success("Published EN + ZH!", { description: "Both versions committed to GitHub" });
         localStorage.removeItem(DRAFT_KEY);
         setDraftSavedAt(null);
       }
     } catch (err) {
-      toast.error("Publish failed", { description: err instanceof Error ? err.message : "Network error" });
+      toast.error("Publish failed", { description: err instanceof Error ? err.message : "Network error", duration: Infinity });
     } finally {
       setPublishingBoth(false);
     }
@@ -302,7 +302,15 @@ export default function ComposePage() {
 
       {genError && (
         <div className="flex items-start gap-2 rounded-md bg-red-950/40 border border-red-800 p-3 text-xs text-red-400">
-          <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />{genError}
+          <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
+          <span className="flex-1">{genError}</span>
+          <button
+            onClick={() => setGenError("")}
+            className="flex-shrink-0 ml-1 hover:text-red-200 transition-colors"
+            aria-label="Dismiss error"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
         </div>
       )}
     </div>
