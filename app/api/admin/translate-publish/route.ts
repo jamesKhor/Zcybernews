@@ -1,0 +1,148 @@
+import { auth } from "@/auth";
+import { NextRequest, NextResponse } from "next/server";
+import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+import { generateText } from "ai";
+
+type TranslatePublishRequest = {
+  title: string;
+  slug: string;
+  content: string;
+  excerpt: string;
+  category: string;
+  tags: string[];
+  type: "posts" | "threat-intel";
+  author?: string;
+};
+
+// Reuse same GitHub commit logic
+async function commitToGitHub(path: string, content: string, message: string) {
+  const token = process.env.GITHUB_TOKEN;
+  const repo = process.env.GITHUB_REPO;
+  if (!token || !repo) throw new Error("GITHUB_TOKEN or GITHUB_REPO not configured");
+
+  const encoded = Buffer.from(content, "utf-8").toString("base64");
+  const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
+
+  let sha: string | undefined;
+  const checkRes = await fetch(apiUrl, {
+    headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" },
+  });
+  if (checkRes.ok) {
+    const existing = (await checkRes.json()) as { sha: string };
+    sha = existing.sha;
+  }
+
+  const body: Record<string, unknown> = { message, content: encoded, branch: process.env.GITHUB_BRANCH ?? "main" };
+  if (sha) body.sha = sha;
+
+  const res = await fetch(apiUrl, {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) throw new Error(`GitHub API error ${res.status}: ${await res.text()}`);
+  const data = (await res.json()) as { content: { html_url: string } };
+  return { url: data.content.html_url };
+}
+
+function buildMdx(frontmatter: Record<string, unknown>, body: string): string {
+  const date = new Date().toISOString().split("T")[0];
+  const tags = Array.isArray(frontmatter.tags) && frontmatter.tags.length
+    ? `\n  - ${(frontmatter.tags as string[]).join("\n  - ")}`
+    : " []";
+  return `---
+title: "${String(frontmatter.title).replace(/"/g, '\\"')}"
+slug: "${frontmatter.slug}"
+date: "${date}"
+excerpt: "${String(frontmatter.excerpt).replace(/"/g, '\\"').slice(0, 200)}"
+category: "${frontmatter.category}"
+tags:${tags}
+language: "${frontmatter.language}"
+locale_pair: "${frontmatter.slug}"
+author: "${frontmatter.author ?? "AleCyberNews"}"
+draft: false
+---
+
+${body}`;
+}
+
+export async function POST(req: NextRequest) {
+  const session = await auth();
+  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const body = (await req.json()) as TranslatePublishRequest;
+  const { title, slug, content, excerpt, category, tags, type = "posts", author } = body;
+
+  if (!title || !slug || !content) {
+    return NextResponse.json({ error: "title, slug and content are required" }, { status: 400 });
+  }
+
+  if (!process.env.DEEPSEEK_API_KEY) {
+    return NextResponse.json({ error: "DEEPSEEK_API_KEY not configured" }, { status: 500 });
+  }
+
+  const deepseek = createOpenAICompatible({
+    name: "deepseek",
+    baseURL: "https://api.deepseek.com/v1",
+    apiKey: process.env.DEEPSEEK_API_KEY,
+  });
+
+  // Translate title + excerpt
+  const metaRes = await generateText({
+    model: deepseek("deepseek-chat"),
+    messages: [{
+      role: "user",
+      content: `Translate these to Simplified Chinese. Keep threat actor names, malware names, ALL-CAPS acronyms (EDR, VPN, APT, CVE, IOC, TTP etc), product names in English. Return ONLY valid JSON: {"title": "...", "excerpt": "..."}\n\nTitle: ${title}\nExcerpt: ${excerpt}`
+    }],
+  });
+
+  let zhTitle = title;
+  let zhExcerpt = excerpt;
+  try {
+    const clean = metaRes.text.replace(/```json|```/g, "").trim();
+    const parsed = JSON.parse(clean) as { title: string; excerpt: string };
+    zhTitle = parsed.title;
+    zhExcerpt = parsed.excerpt;
+  } catch { /* fallback to EN */ }
+
+  // Translate body
+  const bodyRes = await generateText({
+    model: deepseek("deepseek-chat"),
+    messages: [{
+      role: "system",
+      content: `You are a professional cybersecurity translator. Translate English to Simplified Chinese.
+NEVER translate: threat actor names (LockBit, APT41, Lazarus Group etc), malware names (Mimikatz, Cobalt Strike etc), ALL-CAPS acronyms (EDR, VPN, RDP, CVE, IOC, TTP, APT, C2, LSASS, DLL, RaaS, WAF, SIEM etc), product/vendor names (Microsoft, Cisco, CrowdStrike etc), CVE IDs, hashes, IPs, domains, code blocks.
+Keep all Markdown formatting intact. Output ONLY the translated markdown, no explanation.`
+    }, {
+      role: "user",
+      content: `Translate this article body to Simplified Chinese:\n\n${content}`
+    }],
+  });
+
+  const date = new Date().toISOString().split("T")[0];
+  const filename = `${date}-${slug.replace(/^[\d-]+-/, "")}.mdx`;
+
+  const enFrontmatter = { title, slug, excerpt, category, tags, language: "en", author: author ?? "AleCyberNews" };
+  const zhFrontmatter = { title: zhTitle, slug, excerpt: zhExcerpt, category, tags, language: "zh", author: author ?? "AleCyberNews" };
+
+  const enMdx = buildMdx(enFrontmatter, content);
+  const zhMdx = buildMdx(zhFrontmatter, bodyRes.text.trim());
+
+  try {
+    const [enResult, zhResult] = await Promise.all([
+      commitToGitHub(`content/en/${type}/${filename}`, enMdx, `content: add "${title}" [en]`),
+      commitToGitHub(`content/zh/${type}/${filename}`, zhMdx, `content: add "${zhTitle}" [zh]`),
+    ]);
+
+    return NextResponse.json({
+      success: true,
+      enGithubUrl: enResult.url,
+      zhGithubUrl: zhResult.url,
+      message: "Published EN + ZH. Vercel is deploying.",
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
+}

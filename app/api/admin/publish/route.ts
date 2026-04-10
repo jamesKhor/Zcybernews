@@ -23,7 +23,9 @@ date: "${date}"
 excerpt: "${req.excerpt.replace(/"/g, '\\"').slice(0, 200)}"
 category: "${req.category}"
 tags:${tags}
+language: "${req.locale ?? "en"}"
 author: "${req.author ?? "AleCyberNews"}"
+draft: false
 ---
 
 `;
@@ -113,7 +115,7 @@ export async function POST(req: NextRequest) {
       path: filePath,
       githubUrl: url,
       message:
-        "Article committed to GitHub. Cloudflare Pages will deploy shortly.",
+        "Article committed to GitHub. Vercel is deploying shortly.",
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
