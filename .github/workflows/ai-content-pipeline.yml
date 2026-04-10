@@ -1,0 +1,75 @@
+name: AI Content Pipeline
+
+on:
+  # Run twice daily: 2am UTC (morning Asia) + 2pm UTC (morning US East)
+  schedule:
+    - cron: "0 2 * * *"
+    - cron: "0 14 * * *"
+  # Manual trigger with optional article count override
+  workflow_dispatch:
+    inputs:
+      max_articles:
+        description: "Max articles to generate (default: 5)"
+        required: false
+        default: "5"
+      dry_run:
+        description: "Dry run — fetch feeds but do not generate or write"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: ai-pipeline
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate & Publish Articles
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Full history so we can push
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run AI Pipeline
+        run: |
+          ARGS="--max-articles=${{ inputs.max_articles || '5' }}"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          npx tsx scripts/pipeline/index.ts $ARGS
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+
+      - name: Commit generated content
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "alecybernews-bot"
+          git config user.email "bot@alecybernews.com"
+          git add content/ public/images/articles/ .pipeline-cache/ || true
+          git diff --staged --quiet || git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
+          git push
+
+      - name: Trigger deploy
+        if: ${{ inputs.dry_run != 'true' }}
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: build-deploy.yml
+          token: ${{ secrets.GITHUB_TOKEN }}
