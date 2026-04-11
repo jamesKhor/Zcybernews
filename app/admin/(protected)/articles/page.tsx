@@ -80,7 +80,7 @@ export default function ArticlesPage() {
     return true;
   });
 
-  async function handleDelete(article: ArticleRow, deleteAll: boolean) {
+  async function handleDelete(article: ArticleRow) {
     setDeletingSlug(article.slug);
     setConfirmDelete(null);
     try {
@@ -90,24 +90,13 @@ export default function ArticlesPage() {
         body: JSON.stringify({
           locale: "en",
           type: article.type,
-          deleteAll,
+          deleteAll: true,
         }),
       });
       const data = (await res.json()) as { success: boolean; error?: string };
       if (!res.ok) throw new Error(data.error ?? "Delete failed");
-      toast.success(
-        deleteAll
-          ? `Deleted EN + ZH versions of "${article.title}"`
-          : `Deleted EN version of "${article.title}"`,
-      );
-      // Remove from local state immediately
-      setArticles((prev) =>
-        deleteAll
-          ? prev.filter((a) => a.slug !== article.slug)
-          : prev.map((a) =>
-              a.slug === article.slug ? { ...a, hasZh: false } : a,
-            ),
-      );
+      toast.success(`Deleted "${article.title}"`);
+      setArticles((prev) => prev.filter((a) => a.slug !== article.slug));
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Delete failed", {
         duration: Infinity,
@@ -298,60 +287,28 @@ export default function ArticlesPage() {
                 <h2 className="text-sm font-semibold text-white">
                   Delete Article
                 </h2>
-                <p className="text-xs text-gray-400 mt-1">
-                  <span className="text-white font-medium">
-                    &ldquo;{confirmDelete.title}&rdquo;
-                  </span>
+                <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+                  &ldquo;{confirmDelete.title}&rdquo;
                 </p>
               </div>
             </div>
-
             <p className="text-sm text-gray-400">
-              {confirmDelete.hasZh
-                ? "This article has both EN and ZH versions. Delete which?"
-                : "This will permanently delete the article from GitHub. This cannot be undone."}
+              This will permanently remove the article from GitHub. This cannot
+              be undone.
             </p>
-
-            <div
-              className={`flex gap-2 ${confirmDelete.hasZh ? "flex-col" : "justify-end"}`}
-            >
-              {confirmDelete.hasZh ? (
-                <>
-                  <button
-                    onClick={() => handleDelete(confirmDelete, true)}
-                    className="flex-1 px-3 py-2 rounded-md bg-red-600 hover:bg-red-500 text-white text-sm font-medium transition-colors"
-                  >
-                    Delete EN + ZH (both versions)
-                  </button>
-                  <button
-                    onClick={() => handleDelete(confirmDelete, false)}
-                    className="flex-1 px-3 py-2 rounded-md bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium transition-colors"
-                  >
-                    Delete EN only
-                  </button>
-                  <button
-                    onClick={() => setConfirmDelete(null)}
-                    className="flex-1 px-3 py-2 rounded-md border border-gray-700 text-gray-400 hover:text-white text-sm transition-colors"
-                  >
-                    Cancel
-                  </button>
-                </>
-              ) : (
-                <>
-                  <button
-                    onClick={() => setConfirmDelete(null)}
-                    className="px-3 py-2 rounded-md border border-gray-700 text-gray-400 hover:text-white text-sm transition-colors"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    onClick={() => handleDelete(confirmDelete, false)}
-                    className="px-3 py-2 rounded-md bg-red-600 hover:bg-red-500 text-white text-sm font-medium transition-colors"
-                  >
-                    Delete Article
-                  </button>
-                </>
-              )}
+            <div className="flex justify-end gap-2">
+              <button
+                onClick={() => setConfirmDelete(null)}
+                className="px-3 py-2 rounded-md border border-gray-700 text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => handleDelete(confirmDelete)}
+                className="px-3 py-2 rounded-md bg-red-600 hover:bg-red-500 text-white text-sm font-medium transition-colors"
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>
