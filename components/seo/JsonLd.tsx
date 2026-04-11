@@ -1,3 +1,9 @@
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://alecybernews.com";
+const PUBLISHER_NAME = "AleCyberNews";
+const PUBLISHER_LOGO = `${SITE_URL}/images/defaults/og-default.svg`;
+
+// ─── NewsArticle ──────────────────────────────────────────────────────────────
+
 interface NewsArticleJsonLdProps {
   headline: string;
   description: string;
@@ -6,8 +12,6 @@ interface NewsArticleJsonLdProps {
   authorName: string;
   url: string;
   image?: string;
-  publisherName?: string;
-  publisherLogo?: string;
   keywords?: string[];
 }
 
@@ -19,8 +23,6 @@ export function NewsArticleJsonLd({
   authorName,
   url,
   image,
-  publisherName = "AleCyberNews",
-  publisherLogo = "/images/defaults/og-default.svg",
   keywords = [],
 }: NewsArticleJsonLdProps) {
   const jsonLd = {
@@ -30,29 +32,111 @@ export function NewsArticleJsonLd({
     description,
     datePublished,
     dateModified: dateModified ?? datePublished,
-    author: {
-      "@type": "Person",
-      name: authorName,
-    },
+    author: { "@type": "Person", name: authorName },
     publisher: {
       "@type": "Organization",
-      name: publisherName,
-      logo: {
-        "@type": "ImageObject",
-        url: publisherLogo,
-      },
+      name: PUBLISHER_NAME,
+      logo: { "@type": "ImageObject", url: PUBLISHER_LOGO },
     },
     url,
     ...(image && {
-      image: {
-        "@type": "ImageObject",
-        url: image,
-        width: 1200,
-        height: 630,
-      },
+      image: { "@type": "ImageObject", url: image, width: 1200, height: 630 },
     }),
     ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
     inLanguage: url.includes("/zh/") ? "zh-Hans" : "en",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
+// ─── Organization + WebSite (homepage) ───────────────────────────────────────
+
+export function HomeJsonLd({ locale }: { locale: string }) {
+  const isZh = locale === "zh";
+  const pageUrl = `${SITE_URL}/${locale}`;
+
+  const org = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: PUBLISHER_NAME,
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: PUBLISHER_LOGO },
+    description: isZh
+      ? "深度威胁分析、漏洞研究与安全资讯，为防御者服务。"
+      : "In-depth threat analysis, vulnerability research, and security news for defenders.",
+    sameAs: [],
+  };
+
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: PUBLISHER_NAME,
+    url: SITE_URL,
+    inLanguage: isZh ? "zh-Hans" : "en",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/${locale}/articles?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const webpage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: isZh
+      ? "AleCyberNews — 网络安全与科技情报"
+      : "AleCyberNews — Cybersecurity & Tech Intelligence",
+    url: pageUrl,
+    description: isZh
+      ? "深度威胁分析、漏洞研究与安全资讯，为防御者服务。"
+      : "In-depth threat analysis, vulnerability research, and security news for defenders.",
+    publisher: { "@type": "Organization", name: PUBLISHER_NAME },
+    inLanguage: isZh ? "zh-Hans" : "en",
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpage) }}
+      />
+    </>
+  );
+}
+
+// ─── BreadcrumbList ───────────────────────────────────────────────────────────
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.name,
+      item: item.url,
+    })),
   };
 
   return (

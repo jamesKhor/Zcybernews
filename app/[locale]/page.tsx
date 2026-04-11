@@ -5,6 +5,7 @@ import { ArticleCard } from "@/components/articles/ArticleCard";
 import { Link } from "@/i18n/navigation";
 import { format } from "date-fns";
 import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
+import { HomeJsonLd } from "@/components/seo/JsonLd";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -52,38 +53,48 @@ export default async function HomePage({ params }: Props) {
   const allPosts = getAllPosts(locale, "posts");
   const tiPosts = getAllPosts(locale, "threat-intel");
 
-  // Featured = latest article overall
-  const featured = allPosts[0] ?? tiPosts[0] ?? null;
+  // Latest: 4 most recent across all content
+  const combined = [...allPosts, ...tiPosts].sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime(),
+  );
+  const latest = combined.slice(0, 4);
+  const latestSlugs = new Set(latest.map((a) => a.frontmatter.slug));
 
-  // Group posts by category (skip featured)
+  // Group remaining posts by category
   const postsByCat: Record<string, typeof allPosts> = {};
-  for (const post of allPosts.slice(featured?.frontmatter.slug === allPosts[0]?.frontmatter.slug ? 1 : 0)) {
+  for (const post of allPosts.filter(
+    (p) => !latestSlugs.has(p.frontmatter.slug),
+  )) {
     const cat = post.frontmatter.category;
     if (!postsByCat[cat]) postsByCat[cat] = [];
     postsByCat[cat].push(post);
   }
 
-  // Threat intel as its own section
-  const tiSlice = tiPosts.slice(0, 3);
+  // Threat intel section (excluding already shown in latest)
+  const tiRemaining = tiPosts.filter(
+    (p) => !latestSlugs.has(p.frontmatter.slug),
+  );
 
   return (
     <HomeContent
       locale={locale}
-      featured={featured}
+      latest={latest}
       postsByCat={postsByCat}
-      tiPosts={tiSlice}
+      tiPosts={tiRemaining.slice(0, 3)}
     />
   );
 }
 
 function HomeContent({
   locale,
-  featured,
+  latest,
   postsByCat,
   tiPosts,
 }: {
   locale: string;
-  featured: Awaited<ReturnType<typeof getAllPosts>>[number] | null;
+  latest: Awaited<ReturnType<typeof getAllPosts>>;
   postsByCat: Record<string, Awaited<ReturnType<typeof getAllPosts>>>;
   tiPosts: Awaited<ReturnType<typeof getAllPosts>>;
 }) {
@@ -92,33 +103,46 @@ function HomeContent({
   const isZh = locale === "zh";
 
   const hasContent =
-    featured ||
+    latest.length > 0 ||
     tiPosts.length > 0 ||
     Object.values(postsByCat).some((p) => p.length > 0);
 
   return (
     <main className="flex-1">
-      {/* Breaking news ticker */}
-      <div className="border-b border-border bg-primary/5">
-        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center gap-3">
-          <span className="flex-shrink-0 text-xs font-bold font-mono bg-destructive text-destructive-foreground px-2 py-0.5 rounded uppercase tracking-wider">
-            {isZh ? "最新" : "Latest"}
-          </span>
-          <span className="text-xs text-muted-foreground truncate">
-            {featured
-              ? featured.frontmatter.title
-              : isZh
-                ? "网络安全情报平台"
-                : "Cybersecurity intelligence for defenders"}
-          </span>
+      <HomeJsonLd locale={locale} />
+      {/* Breaking ticker */}
+      {latest[0] && (
+        <div className="border-b border-border bg-primary/5">
+          <div className="max-w-7xl mx-auto px-4 py-2 flex items-center gap-3 min-w-0">
+            <span className="flex-shrink-0 text-xs font-bold font-mono bg-destructive text-destructive-foreground px-2 py-0.5 rounded uppercase tracking-wider">
+              {isZh ? "最新" : "Breaking"}
+            </span>
+            <Link
+              href={
+                `/articles/${latest[0].frontmatter.slug}` as Parameters<
+                  typeof Link
+                >[0]["href"]
+              }
+              locale={locale as "en" | "zh"}
+              className="text-xs text-muted-foreground hover:text-foreground truncate transition-colors"
+            >
+              {latest[0].frontmatter.title}
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
 
-      <div className="max-w-7xl mx-auto px-4 py-8 space-y-14">
-        {/* Featured article */}
-        {featured && (
+      <div className="max-w-7xl mx-auto px-4 py-8 space-y-12">
+        {/* Latest section */}
+        {latest.length > 0 && (
           <section>
-            <FeaturedArticle article={featured} locale={locale} />
+            <SectionHeader
+              label={isZh ? "最新报道" : "Latest"}
+              href="/articles"
+              locale={locale}
+              viewAll={t("viewAll")}
+            />
+            <LatestGrid articles={latest} locale={locale} />
           </section>
         )}
 
@@ -183,6 +207,106 @@ function HomeContent({
   );
 }
 
+// ─── Latest grid: newspaper-style 1 big + 3 compact ─────────────────────────
+
+function LatestGrid({
+  articles,
+  locale,
+}: {
+  articles: Awaited<ReturnType<typeof getAllPosts>>;
+  locale: string;
+}) {
+  const tCats = useTranslations("categories");
+  const tArt = useTranslations("article");
+  const [lead, ...rest] = articles;
+  if (!lead) return null;
+
+  const isTi = (a: (typeof articles)[number]) =>
+    a.frontmatter.category === "threat-intel";
+
+  const leadHref = `/${locale}/${isTi(lead) ? "threat-intel" : "articles"}/${lead.frontmatter.slug}`;
+  const leadImage =
+    lead.frontmatter.featured_image ??
+    CATEGORY_DEFAULT_IMAGES[lead.frontmatter.category as Category];
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
+      {/* Lead story */}
+      <a
+        href={leadHref}
+        className="lg:col-span-3 group flex flex-col rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-200 overflow-hidden"
+      >
+        <div className="relative h-52 bg-secondary overflow-hidden">
+          {leadImage ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={leadImage}
+              alt={
+                lead.frontmatter.featured_image_alt ?? lead.frontmatter.title
+              }
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-primary/10 to-transparent" />
+          )}
+        </div>
+        <div className="p-5 flex flex-col gap-2 flex-1">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded px-2 py-0.5">
+              {tCats(lead.frontmatter.category)}
+            </span>
+            <time
+              dateTime={lead.frontmatter.date}
+              className="text-xs text-muted-foreground"
+            >
+              {format(new Date(lead.frontmatter.date), "MMM d, yyyy")}
+            </time>
+          </div>
+          <h2 className="text-lg font-bold leading-snug text-foreground group-hover:text-primary transition-colors line-clamp-2">
+            {lead.frontmatter.title}
+          </h2>
+          <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
+            {lead.frontmatter.excerpt}
+          </p>
+          <span className="text-xs text-muted-foreground">
+            {tArt("readingTime", { minutes: lead.readingTime })}
+          </span>
+        </div>
+      </a>
+
+      {/* 3 compact stories */}
+      <div className="lg:col-span-2 flex flex-col gap-4">
+        {rest.slice(0, 3).map((article) => {
+          const href = `/${locale}/${isTi(article) ? "threat-intel" : "articles"}/${article.frontmatter.slug}`;
+          return (
+            <a
+              key={article.frontmatter.slug}
+              href={href}
+              className="group flex gap-3 p-4 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-200"
+            >
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs text-primary font-medium">
+                    {tCats(article.frontmatter.category)}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {format(new Date(article.frontmatter.date), "MMM d")}
+                  </span>
+                </div>
+                <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+                  {article.frontmatter.title}
+                </h3>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Section header ──────────────────────────────────────────────────────────
+
 function SectionHeader({
   label,
   href,
@@ -214,83 +338,5 @@ function SectionHeader({
         {viewAll} →
       </Link>
     </div>
-  );
-}
-
-function FeaturedArticle({
-  article,
-  locale,
-}: {
-  article: Awaited<ReturnType<typeof getAllPosts>>[number];
-  locale: string;
-}) {
-  const { frontmatter, readingTime } = article;
-  const tCats = useTranslations("categories");
-  const t = useTranslations("article");
-
-  const image =
-    frontmatter.featured_image ??
-    CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
-
-  const href = `/${locale}/articles/${frontmatter.slug}`;
-
-  return (
-    <a
-      href={href}
-      className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-200 overflow-hidden"
-    >
-      {/* Image */}
-      <div className="relative h-56 lg:h-auto bg-secondary overflow-hidden">
-        {image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={image}
-            alt={frontmatter.featured_image_alt ?? frontmatter.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-transparent">
-            <span className="font-mono text-muted-foreground text-sm">
-              {"// featured"}
-            </span>
-          </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="p-7 flex flex-col justify-center">
-        <div className="flex items-center gap-3 mb-3">
-          <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded px-2 py-0.5">
-            {tCats(frontmatter.category)}
-          </span>
-          <time
-            dateTime={frontmatter.date}
-            className="text-xs text-muted-foreground"
-          >
-            {format(new Date(frontmatter.date), "MMMM d, yyyy")}
-          </time>
-        </div>
-
-        <h2 className="text-xl lg:text-2xl font-bold leading-snug text-foreground group-hover:text-primary transition-colors mb-3 line-clamp-3">
-          {frontmatter.title}
-        </h2>
-
-        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 mb-5">
-          {frontmatter.excerpt}
-        </p>
-
-        <div className="flex items-center gap-3 text-xs text-muted-foreground">
-          <span>{t("readingTime", { minutes: readingTime })}</span>
-          {frontmatter.tags.slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className="bg-secondary rounded px-2 py-0.5 font-mono"
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </a>
   );
 }

@@ -52,7 +52,10 @@ export async function POST(req: NextRequest) {
 
   if (getActiveProvider() === "none") {
     return NextResponse.json(
-      { error: "No AI provider configured. Set OPENROUTER_API_KEY or DEEPSEEK_API_KEY." },
+      {
+        error:
+          "No AI provider configured. Set OPENROUTER_API_KEY or DEEPSEEK_API_KEY.",
+      },
       { status: 503 },
     );
   }
@@ -76,7 +79,10 @@ export async function POST(req: NextRequest) {
 
     sourceCount = validBlocks.length;
     sourceContext = validBlocks
-      .map((b, i) => `SOURCE ${i + 1}${b.label ? ` (${b.label})` : ""}:\n${b.text.trim()}`)
+      .map(
+        (b, i) =>
+          `SOURCE ${i + 1}${b.label ? ` (${b.label})` : ""}:\n${b.text.trim()}`,
+      )
       .join("\n\n---\n\n");
   } else if (body.articles && body.articles.length > 0) {
     const { articles } = body;
@@ -86,7 +92,10 @@ export async function POST(req: NextRequest) {
       ...new Set(articles.flatMap((a) => a.tags ?? []).filter(Boolean)),
     ].slice(0, 6);
     sourceContext = articles
-      .map((a, i) => `SOURCE ${i + 1}: "${a.title}" (from ${a.sourceName})\n${a.excerpt}`)
+      .map(
+        (a, i) =>
+          `SOURCE ${i + 1}: "${a.title}" (from ${a.sourceName})\n${a.excerpt}`,
+      )
       .join("\n\n---\n\n");
   } else {
     return NextResponse.json({ error: "No sources provided" }, { status: 400 });
@@ -102,44 +111,75 @@ export async function POST(req: NextRequest) {
     // Step 1: Generate article body
     const { text: articleBody } = await generateText({
       model,
-      prompt: `You are a professional cybersecurity journalist writing for AleCyberNews.
+      prompt: `You are a senior cybersecurity journalist and SEO writer for AleCyberNews, a professional threat intelligence news site.
 
-Synthesize the following ${sourceCount} source(s) into ONE original article that:
-- Combines unique insights from all sources
+Synthesize the following ${sourceCount} source(s) into ONE original, SEO-optimised article that:
+
+CONTENT RULES:
+- Combines unique insights from ALL sources into a single coherent narrative
 - Does NOT copy sentences verbatim — rewrite entirely in your own words
-- Is ${wordCount} words long
-- Uses markdown formatting (## for sections, **bold** for key terms, \`code\` for CVE IDs/tools)
-- Starts with a compelling lead paragraph (no heading)
-- Includes 2-4 section headings (##)
-- Ends with a "## Key Takeaways" section
-- Is factual, precise, and security-focused
+- Is ${wordCount} words long (strict target)
+- Is factual, technically precise, no marketing language — write like Krebs on Security
+- Attributes claims where possible ("according to researchers", "Mandiant reports", etc.)
+
+SEO RULES:
+- Use the primary keyword (the main threat/CVE/actor name) naturally in the first 100 words
+- Each ## section heading should contain a descriptive keyword phrase, not vague labels
+  ✓ "## How APT29 Used Phishing to Bypass MFA" not "## Attack Details"
+  ✓ "## Patch Now: Affected Versions and CVE Details" not "## Mitigation"
+- Use **bold** for first mention of threat actors, CVE IDs, tool names
+- Use \`code formatting\` for CVE IDs, hashes, file paths, commands
+- Include internal linking hints with [keyword] placeholders where related topics exist
+
+STRUCTURE (in this order):
+1. Lead paragraph — WHO did WHAT to WHOM, WHY it matters (no heading)
+2. ## [Descriptive section on technical details / attack chain]
+3. ## [Descriptive section on impact / affected systems / scope]
+4. ## [Descriptive section on detection / indicators of compromise]
+5. ## Key Takeaways — 3-5 bullet points summarising actions defenders should take
 ${customInstruction}
 SOURCES:
 ${sourceContext}
 
-Write the article body in markdown. Do not include a title — return only the body content.`,
+Return ONLY the article body in markdown. Do not include a title or frontmatter.`,
       maxOutputTokens: 2000,
       temperature: 0.6,
     });
 
-    // Step 2: Generate title + category + excerpt in one call (enforces valid category)
+    // Step 2: Generate SEO-optimised title + category + excerpt + tags
     const { text: metaRaw } = await generateText({
       model,
-      prompt: `Based on this cybersecurity article, return a JSON object with exactly these fields:
+      prompt: `You are an SEO specialist for a cybersecurity news site. Based on this article, return a JSON object:
+
 {
-  "title": "<concise SEO-friendly headline, max 80 characters>",
+  "title": "<SEO headline: put primary keyword near the start, 50-70 characters, no clickbait>",
   "category": "<one of the exact values below>",
-  "excerpt": "<2-sentence summary, max 200 characters>"
+  "excerpt": "<meta description: 1-2 sentences, include primary keyword, state the key fact clearly, 120-160 characters>",
+  "tags": ["<5-8 specific lowercase tags: CVE IDs, threat actor names, tools, techniques — avoid generic terms like 'cybersecurity' or 'hacking'>"]
 }
 
-VALID CATEGORY VALUES (you MUST use exactly one of these strings):
+TITLE RULES:
+- Start with the most important keyword (threat actor, CVE, product name)
+- Be specific: "APT29 Exploits Outlook Zero-Day CVE-2024-1234 in NATO Attacks" beats "Russian Hackers Target Europe"
+- 50-70 characters (Google shows ~60 chars in search results)
+
+EXCERPT RULES:
+- This is the Google meta description — it must make someone want to click
+- Include: what happened, who is affected, why it matters
+- 120-160 characters
+
+TAGS RULES:
+- Use specific terms that people actually search for
+- Include CVE IDs if present, specific malware names, threat actor aliases, affected vendor names
+
+VALID CATEGORY VALUES (use EXACTLY one):
 ${CATEGORY_DESCRIPTIONS}
 
 Return ONLY the JSON object, no markdown fences, no explanation.
 
 ARTICLE:
-${articleBody.slice(0, 800)}`,
-      maxOutputTokens: 200,
+${articleBody.slice(0, 1200)}`,
+      maxOutputTokens: 300,
       temperature: 0.2,
     });
 
@@ -147,6 +187,7 @@ ${articleBody.slice(0, 800)}`,
     let aiTitle = "";
     let aiCategory: ValidCategory = primaryCategory;
     let aiExcerpt = "";
+    let aiTags: string[] = autoTags;
 
     try {
       const cleaned = metaRaw.replace(/```json|```/g, "").trim();
@@ -154,11 +195,18 @@ ${articleBody.slice(0, 800)}`,
         title?: string;
         category?: string;
         excerpt?: string;
+        tags?: string[];
       };
       aiTitle = parsed.title?.trim() ?? "";
       // Double-clamp: AI output + our guard
       aiCategory = clampCategory(parsed.category?.trim());
       aiExcerpt = parsed.excerpt?.trim() ?? "";
+      if (Array.isArray(parsed.tags) && parsed.tags.length > 0) {
+        aiTags = parsed.tags
+          .map((t) => String(t).toLowerCase().trim())
+          .filter(Boolean)
+          .slice(0, 8);
+      }
     } catch {
       // Fallback: extract title from first non-empty line of body
       aiTitle =
@@ -192,13 +240,16 @@ ${articleBody.slice(0, 800)}`,
       suggested: {
         title: aiTitle,
         slug: `${today}-${slugBase}`,
-        category: aiCategory,   // always a valid enum value
-        tags: autoTags,
+        category: aiCategory, // always a valid enum value
+        tags: aiTags,
         excerpt: aiExcerpt,
       },
     });
   } catch (err) {
     console.error("[api/admin/synthesize]", err);
-    return NextResponse.json({ error: "AI generation failed" }, { status: 500 });
+    return NextResponse.json(
+      { error: "AI generation failed" },
+      { status: 500 },
+    );
   }
 }

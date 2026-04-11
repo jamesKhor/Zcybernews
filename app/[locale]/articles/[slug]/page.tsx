@@ -6,7 +6,7 @@ import { ArticleMeta } from "@/components/articles/ArticleMeta";
 import { IOCTable } from "@/components/threat-intel/IOCTable";
 import { MitreMatrix } from "@/components/threat-intel/MitreMatrix";
 import { ArticleCard } from "@/components/articles/ArticleCard";
-import { NewsArticleJsonLd } from "@/components/seo/JsonLd";
+import { NewsArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
 import { useTranslations } from "next-intl";
 
@@ -99,6 +99,16 @@ export default async function ArticlePage({ params }: Props) {
         url={`${siteUrl}/${locale}/articles/${slug}`}
         image={image ? `${siteUrl}${image}` : undefined}
         keywords={frontmatter.tags}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: `${siteUrl}/${locale}` },
+          { name: "Articles", url: `${siteUrl}/${locale}/articles` },
+          {
+            name: frontmatter.title,
+            url: `${siteUrl}/${locale}/articles/${slug}`,
+          },
+        ]}
       />
       <ArticlePageContent
         frontmatter={frontmatter}
