@@ -9,6 +9,7 @@ import { MitreMatrix } from "@/components/threat-intel/MitreMatrix";
 import { NewsArticleJsonLd } from "@/components/seo/JsonLd";
 import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
 import { useTranslations } from "next-intl";
+import { CVEArticleBody } from "@/components/cve/CVEArticleBody";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -174,7 +175,7 @@ function TIPageContent({
             </div>
           )}
 
-          <div className="prose">{mdxContent}</div>
+          <CVEArticleBody>{mdxContent}</CVEArticleBody>
         </article>
 
         <aside className="hidden lg:block">

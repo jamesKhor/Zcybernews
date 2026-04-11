@@ -10,6 +10,7 @@ import { NewsArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
 import { useTranslations } from "next-intl";
 import { stripMarkdown } from "@/lib/utils";
+import { CVEArticleBody } from "@/components/cve/CVEArticleBody";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -188,8 +189,8 @@ function ArticlePageContent({
             </div>
           )}
 
-          {/* MDX body */}
-          <div className="prose">{mdxContent}</div>
+          {/* MDX body — CVEArticleBody hydrates plain-text CVE mentions */}
+          <CVEArticleBody>{mdxContent}</CVEArticleBody>
 
           {/* Tags */}
           {frontmatter.tags.length > 0 && (

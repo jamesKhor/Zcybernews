@@ -4,6 +4,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import type { ReactElement } from "react";
 import { MDXCode } from "@/components/cve/CVEBadge";
+import { rehypeCVE } from "./rehype-cve";
 
 export async function compileMDX(source: string): Promise<{
   content: ReactElement;
@@ -14,7 +15,7 @@ export async function compileMDX(source: string): Promise<{
     options: {
       mdxOptions: {
         remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypeHighlight, rehypeSlug],
+        rehypePlugins: [rehypeHighlight, rehypeSlug, rehypeCVE],
       },
     },
     components: {
