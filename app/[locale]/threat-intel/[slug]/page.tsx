@@ -11,6 +11,9 @@ import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
 import { useTranslations } from "next-intl";
 import { CVEArticleBody } from "@/components/cve/CVEArticleBody";
 
+// Only serve pre-rendered slugs; unknown slugs return 404 cleanly (not 500)
+export const dynamicParams = false;
+
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }

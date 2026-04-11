@@ -48,14 +48,22 @@ const ORDERED_CATEGORIES = [
   "ai",
 ] as const;
 
+// Wrap an article with its source directory type so we can build correct URLs
+type ArticleWithSource = import("@/lib/content").Article & {
+  _sourceType: "posts" | "threat-intel";
+};
+
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
 
   const allPosts = getAllPosts(locale, "posts");
   const tiPosts = getAllPosts(locale, "threat-intel");
 
-  // Latest: 4 most recent across all content
-  const combined = [...allPosts, ...tiPosts].sort(
+  // Latest: 4 most recent across all content — tagged with their source so URLs are correct
+  const combined: ArticleWithSource[] = [
+    ...allPosts.map((a) => ({ ...a, _sourceType: "posts" as const })),
+    ...tiPosts.map((a) => ({ ...a, _sourceType: "threat-intel" as const })),
+  ].sort(
     (a, b) =>
       new Date(b.frontmatter.date).getTime() -
       new Date(a.frontmatter.date).getTime(),
@@ -95,7 +103,7 @@ function HomeContent({
   tiPosts,
 }: {
   locale: string;
-  latest: Awaited<ReturnType<typeof getAllPosts>>;
+  latest: ArticleWithSource[];
   postsByCat: Record<string, Awaited<ReturnType<typeof getAllPosts>>>;
   tiPosts: Awaited<ReturnType<typeof getAllPosts>>;
 }) {
@@ -214,7 +222,7 @@ function LatestGrid({
   articles,
   locale,
 }: {
-  articles: Awaited<ReturnType<typeof getAllPosts>>;
+  articles: ArticleWithSource[];
   locale: string;
 }) {
   const tCats = useTranslations("categories");
@@ -222,10 +230,9 @@ function LatestGrid({
   const [lead, ...rest] = articles;
   if (!lead) return null;
 
-  const isTi = (a: (typeof articles)[number]) =>
-    a.frontmatter.category === "threat-intel";
-
-  const leadHref = `/${locale}/${isTi(lead) ? "threat-intel" : "articles"}/${lead.frontmatter.slug}`;
+  // Use _sourceType (not category) so posts stored in content/posts/ always
+  // link to /articles/ even when their category is "threat-intel"
+  const leadHref = `/${locale}/${lead._sourceType === "threat-intel" ? "threat-intel" : "articles"}/${lead.frontmatter.slug}`;
   const leadImage =
     lead.frontmatter.featured_image ??
     CATEGORY_DEFAULT_IMAGES[lead.frontmatter.category as Category];
@@ -278,7 +285,7 @@ function LatestGrid({
       {/* 3 compact stories */}
       <div className="lg:col-span-2 flex flex-col gap-4">
         {rest.slice(0, 3).map((article) => {
-          const href = `/${locale}/${isTi(article) ? "threat-intel" : "articles"}/${article.frontmatter.slug}`;
+          const href = `/${locale}/${article._sourceType === "threat-intel" ? "threat-intel" : "articles"}/${article.frontmatter.slug}`;
           return (
             <a
               key={article.frontmatter.slug}
