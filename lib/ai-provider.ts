@@ -14,8 +14,9 @@ import type { LanguageModel } from "ai";
 
 // ─── OpenRouter free model IDs ────────────────────────────────────────────────
 // Best for article writing (EN cybersecurity content)
+// Note: llama-4-maverick:free was removed from OpenRouter — use gemma-3-27b which is stable
 export const OPENROUTER_WRITE_MODEL =
-  process.env.OPENROUTER_WRITE_MODEL ?? "meta-llama/llama-4-maverick:free";
+  process.env.OPENROUTER_WRITE_MODEL ?? "google/gemma-3-27b-it:free";
 
 // Best for EN → Simplified Chinese translation (Qwen native Chinese training)
 export const OPENROUTER_TRANSLATE_MODEL =
@@ -30,8 +31,10 @@ export const DEEPSEEK_TRANSLATE_MODEL = "deepseek-chat";
 export type AIProvider = "openrouter" | "deepseek" | "none";
 
 export function getActiveProvider(): AIProvider {
-  if (process.env.OPENROUTER_API_KEY) return "openrouter";
+  // DeepSeek takes priority for writing — paid key, reliable, no rate-limit surprises
+  // OpenRouter free tier models come/go and have rate limits
   if (process.env.DEEPSEEK_API_KEY) return "deepseek";
+  if (process.env.OPENROUTER_API_KEY) return "openrouter";
   return "none";
 }
 
@@ -42,6 +45,17 @@ export function getActiveProvider(): AIProvider {
  * Throws if no API key is configured.
  */
 export function getWriteModel(): LanguageModel {
+  // DeepSeek first — paid key, always available, no free-tier flakiness
+  if (process.env.DEEPSEEK_API_KEY) {
+    const deepseek = createOpenAICompatible({
+      name: "deepseek",
+      baseURL: "https://api.deepseek.com/v1",
+      apiKey: process.env.DEEPSEEK_API_KEY,
+    });
+    return deepseek(DEEPSEEK_WRITE_MODEL);
+  }
+
+  // OpenRouter free as fallback (model availability may vary)
   if (process.env.OPENROUTER_API_KEY) {
     const openrouter = createOpenAICompatible({
       name: "openrouter",
@@ -54,15 +68,6 @@ export function getWriteModel(): LanguageModel {
       },
     });
     return openrouter(OPENROUTER_WRITE_MODEL);
-  }
-
-  if (process.env.DEEPSEEK_API_KEY) {
-    const deepseek = createOpenAICompatible({
-      name: "deepseek",
-      baseURL: "https://api.deepseek.com/v1",
-      apiKey: process.env.DEEPSEEK_API_KEY,
-    });
-    return deepseek(DEEPSEEK_WRITE_MODEL);
   }
 
   throw new Error(

@@ -404,7 +404,10 @@ export default function ComposePage() {
 
   const wordCount = content ? content.split(/\s+/).filter(Boolean).length : 0;
 
-  const SettingsPanel = ({ mode }: { mode: "feed" | "paste" }) => (
+  // Shared settings JSX — inlined at each call site (NOT a nested component)
+  // Using a nested component caused React to unmount/remount on every render,
+  // which reset cursor position while typing in the custom prompt textarea.
+  const settingsPanelJSX = (mode: "feed" | "paste") => (
     <div className="px-4 py-4 border-t border-gray-800 space-y-3">
       <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">
         Settings
@@ -434,11 +437,12 @@ export default function ComposePage() {
       </div>
 
       <div className="space-y-1">
-        <Label className="text-xs text-gray-500">
+        <Label htmlFor="custom-prompt" className="text-xs text-gray-500">
           Additional instructions{" "}
           <span className="text-gray-600">(optional)</span>
         </Label>
         <Textarea
+          id="custom-prompt"
           value={customPrompt}
           onChange={(e) => setCustomPrompt(e.target.value)}
           rows={3}
@@ -561,7 +565,7 @@ export default function ComposePage() {
                   ))}
                 </div>
               </ScrollArea>
-              <SettingsPanel mode="feed" />
+              {settingsPanelJSX("feed")}
             </TabsContent>
 
             <TabsContent
@@ -624,7 +628,7 @@ export default function ComposePage() {
                   )}
                 </div>
               </ScrollArea>
-              <SettingsPanel mode="paste" />
+              {settingsPanelJSX("paste")}
             </TabsContent>
           </Tabs>
         </div>
