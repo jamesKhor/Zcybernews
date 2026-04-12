@@ -2,6 +2,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
 const PUBLISHER_NAME = "ZCyberNews";
 const PUBLISHER_LOGO = `${SITE_URL}/opengraph-image`;
 
+/** Safe JSON serialization — escapes </script> to prevent XSS breakout */
+function safeJsonLd(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
 // ─── NewsArticle ──────────────────────────────────────────────────────────────
 
 interface NewsArticleJsonLdProps {
@@ -56,7 +61,7 @@ export function NewsArticleJsonLd({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
     />
   );
 }
@@ -113,15 +118,15 @@ export function HomeJsonLd({ locale }: { locale: string }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(org) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(website) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpage) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(webpage) }}
       />
     </>
   );
@@ -149,7 +154,7 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
     />
   );
 }

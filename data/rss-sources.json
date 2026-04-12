@@ -131,7 +131,7 @@
     "url": "https://blog.talosintelligence.com/feeds/posts/default",
     "category": "cybersecurity",
     "type": "rss",
-    "enabled": true,
+    "enabled": false,
     "description": "Threat intelligence and research from Cisco Talos"
   },
   {
@@ -149,7 +149,7 @@
     "url": "https://cloud.google.com/blog/topics/threat-intelligence/rss/",
     "category": "cybersecurity",
     "type": "rss",
-    "enabled": true,
+    "enabled": false,
     "description": "World-class threat intelligence from Mandiant covering APT groups and campaign analysis"
   },
   {
@@ -176,7 +176,7 @@
     "url": "https://msrc.microsoft.com/blog/feed",
     "category": "vulnerabilities",
     "type": "rss",
-    "enabled": true,
+    "enabled": false,
     "description": "Microsoft's official security response blog — Patch Tuesday, zero-days, vulnerability disclosures"
   },
   {
@@ -185,7 +185,7 @@
     "url": "https://www.microsoft.com/en-us/security/blog/feed/",
     "category": "cybersecurity",
     "type": "rss",
-    "enabled": true,
+    "enabled": false,
     "description": "Microsoft Defender, Sentinel, threat analytics, and security best practices"
   },
   {
@@ -221,7 +221,7 @@
     "url": "https://news.sophos.com/en-us/feed/",
     "category": "cybersecurity",
     "type": "rss",
-    "enabled": true,
+    "enabled": false,
     "description": "Sophos X-Ops research on ransomware, malware campaigns, and attacker behavior"
   },
   {

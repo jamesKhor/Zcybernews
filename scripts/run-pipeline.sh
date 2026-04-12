@@ -18,6 +18,9 @@ cd "$REPO_DIR"
 
 mkdir -p "$(dirname "$LOG_FILE")"
 
+# ── Log rotation: delete logs older than 30 days ──────────────────────────
+find "$REPO_DIR/.pipeline-logs" -name "*.log" -mtime +30 -delete 2>/dev/null || true
+
 exec >> "$LOG_FILE" 2>&1
 
 # ── Load env vars (for API keys + Telegram config) ─────────────────────────
