@@ -1,0 +1,51 @@
+---
+title: >-
+  Metasploit Framework Expands with Cisco, osTicket Exploits and LDAP
+  Enhancements
+slug: 2026-04-12-metasploit-framework-cisco-osticket-ldap-updates
+date: '2026-04-12'
+excerpt: >-
+  The latest Metasploit Framework release introduces exploit modules for Cisco
+  Catalyst SD-WAN and osTicket, alongside significant improvements to LDAP/ADCS
+  data collection and Windows persistence techniques.
+category: tools
+tags:
+  - metasploit
+  - exploitation
+  - pentesting
+  - vulnerability
+language: en
+source_urls:
+  - 'https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-04-10-2026'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-12-metasploit-framework-cisco-osticket-ldap-updates
+severity: informational
+---
+## Executive Summary
+The April 10, 2026, update to the open-source Metasploit Framework introduces new offensive security capabilities, including exploit modules targeting **Cisco Catalyst SD-WAN Manager** and the **osTicket** help desk system. According to Rapid7's wrap-up post, the release also delivers substantial backend improvements for **Lightweight Directory Access Protocol (LDAP)** and **Active Directory Certificate Services (ADCS)** enumeration, and refines a technique for **Windows service-for-user persistence**. These additions provide penetration testers and red teams with expanded tools for security assessment, while underscoring the need for defenders to patch relevant systems and monitor for associated tradecraft.
+
+## Technical Analysis
+The update focuses on broadening the framework's exploitation surface and enhancing post-exploitation data gathering. Two new auxiliary modules target specific applications. The first exploits an unspecified vulnerability in the web-based management interface of **Cisco Catalyst SD-WAN Manager** appliances, a critical network infrastructure component. Successful exploitation could grant an attacker unauthorized access to the management plane of a software-defined wide area network. The second new module targets **osTicket**, a popular open-source customer support platform. The module's specific function is not detailed in the source, but such modules typically aim for remote code execution or authentication bypass to gain access to sensitive support ticket data.
+
+Beyond new exploits, significant work was invested in improving LDAP and ADCS-related modules. The enhancements automate the process of discovering and reporting related services within a target Active Directory environment. This creates a "improved data stream" that operators can query using Metasploit's `services` command, allowing for more efficient lateral movement and privilege escalation planning by mapping critical infrastructure like certificate authorities.
+
+Finally, the update includes refinements to a **Windows service-for-user** persistence module. This technique, which involves creating a service that runs in the context of a specific user, has been updated for improved reliability and stealth, though the exact technical changes are not specified in the source material.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The modules and updates in this release map to several MITRE ATT&CK techniques. The new exploit modules fall under **Exploit Public-Facing Application (T1190)**. The enhanced LDAP/ADCS enumeration supports **Active Directory Discovery (T1087.002)** and **Network Service Discovery (T1046)**. The updated Windows service-for-user module is a form of **Create or Modify System Process: Windows Service (T1543.003)** for persistence. The use of MSFVenom, which received performance improvements, is associated with **Generate or Obtain Payloads (T1588.002)**.
+
+## Threat Actor Context
+Metasploit Framework is a dual-use tool. It is primarily used by security professionals, penetration testers, and red teams for authorized security assessments and research. However, its modules and payloads are frequently adopted by a wide range of threat actors, from script kiddies to advanced persistent threats (APTs), due to its reliability, extensive documentation, and integration into broader attack chains. The addition of modules for common enterprise software like Cisco SD-WAN and osTicket increases the likelihood that these exploits will be weaponized by malicious actors following their public disclosure.
+
+## Detection & Hunting Queries
+Defenders should focus on detecting the behaviors associated with these tools, not the tools themselves. For the new exploit modules, monitor web application logs (Cisco SD-WAN Manager, osTicket) for anomalous request patterns, failed login bursts, or exploitation attempts leading to shell spawn. For the LDAP/ADCS enhancements, hunt for unusual volumes of LDAP queries from a single host, especially those enumerating certificate templates or user SPNs. Detection for the Windows service persistence should look for the creation of new services with unusual binary paths or user contexts, particularly services configured for automatic start. A sample Sigma rule hunting for service creation with a user context might include conditions for `EventID: 4697` (Service Installed) and a `ServiceAccount` field that is a user principal name rather than a local or built-in account.
+
+## Mitigations & Recommendations
+Organizations should apply vendor patches for Cisco Catalyst SD-WAN Manager and osTicket immediately upon release to mitigate the vulnerabilities targeted by the new modules. Ensure web management interfaces for network devices are not exposed to the internet. For the LDAP/ADCS reconnaissance techniques, implement strong logging and monitoring on Domain Controllers and Certificate Authorities to detect enumeration activity. Limit LDAP query permissions for standard user accounts. To counter the persistence technique, audit scheduled tasks and services regularly for anomalous entries, enforce the principle of least privilege for service accounts, and use endpoint detection and response (EDR) tools capable of detecting malicious service creation.
+
+## References
+- https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-04-10-2026
