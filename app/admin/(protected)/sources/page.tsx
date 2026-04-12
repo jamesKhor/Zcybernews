@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import { adminFetch } from "@/lib/admin-fetch";
 import {
   Rss,
   CheckCircle,
@@ -48,7 +49,7 @@ export default function SourcesPage() {
   const [togglingId, setTogglingId] = useState<string | null>(null);
 
   const fetchSources = useCallback(async () => {
-    const res = await fetch("/api/admin/sources");
+    const res = await adminFetch("/api/admin/sources");
     if (res.ok) setSources(await res.json());
     setLoading(false);
   }, []);
@@ -73,7 +74,7 @@ export default function SourcesPage() {
 
   async function handleToggle(source: RssSource) {
     setTogglingId(source.id);
-    const res = await fetch("/api/admin/sources", {
+    const res = await adminFetch("/api/admin/sources", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id: source.id, enabled: !source.enabled }),
@@ -91,7 +92,7 @@ export default function SourcesPage() {
   async function handleDelete(id: string) {
     if (!confirm("Remove this source?")) return;
     setDeletingId(id);
-    const res = await fetch(`/api/admin/sources?id=${id}`, {
+    const res = await adminFetch(`/api/admin/sources?id=${id}`, {
       method: "DELETE",
     });
     if (res.ok) {
@@ -104,7 +105,7 @@ export default function SourcesPage() {
     setTestingId(source.id);
     setTestResult(null);
     try {
-      const res = await fetch("/api/admin/sources", {
+      const res = await adminFetch("/api/admin/sources", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ action: "test", url: source.url }),
@@ -304,7 +305,7 @@ function AddSourceModal({
     setTesting(true);
     setTestOk(null);
     try {
-      const res = await fetch("/api/admin/sources", {
+      const res = await adminFetch("/api/admin/sources", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ action: "test", url: form.url }),
@@ -327,7 +328,7 @@ function AddSourceModal({
     }
     setSaving(true);
     setError("");
-    const res = await fetch("/api/admin/sources", {
+    const res = await adminFetch("/api/admin/sources", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id, ...form }),

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { adminFetch } from "@/lib/admin-fetch";
 import Link from "next/link";
 import {
   ExternalLink,
@@ -50,7 +51,7 @@ export default function ArticlesPage() {
   const fetchArticles = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/admin/articles");
+      const res = await adminFetch("/api/admin/articles");
       const data = (await res.json()) as { articles: ArticleRow[] };
       setArticles(data.articles ?? []);
     } catch {
@@ -82,7 +83,7 @@ export default function ArticlesPage() {
     setDeletingSlug(article.slug);
     setConfirmDelete(null);
     try {
-      const res = await fetch(`/api/admin/articles/${article.slug}`, {
+      const res = await adminFetch(`/api/admin/articles/${article.slug}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, use } from "react";
+import { adminFetch } from "@/lib/admin-fetch";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save, Loader2, ExternalLink, X, Plus } from "lucide-react";
@@ -121,7 +122,7 @@ export default function EditArticlePage({
     }
     setSaving(true);
     try {
-      const res = await fetch(`/api/admin/articles/${slug}`, {
+      const res = await adminFetch(`/api/admin/articles/${slug}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

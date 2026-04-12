@@ -55,6 +55,21 @@ const CYBER_KEYWORDS = [
   "gdpr",
   "privacy",
   "surveillance",
+  "nist",
+  "cryptograph",
+  "regulation",
+  "governance",
+  "spyware",
+  "worm",
+  "rootkit",
+  "keylogger",
+  "mitigation",
+  "detection",
+  "intrusion",
+  "endpoint",
+  "network security",
+  "access control",
+  "identity",
 ];
 
 function isCyberSecurityRelevant(title: string, category: string): boolean {

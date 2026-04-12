@@ -54,7 +54,7 @@ export async function adminGuard(
  */
 export function sanitizeSlug(slug: string): string | null {
   const clean = slug.toLowerCase().trim().slice(0, 200);
-  if (!SLUG_RE.test(clean) && clean.length > 2) return null;
+  if (!SLUG_RE.test(clean)) return null;
   return clean;
 }
 

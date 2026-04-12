@@ -229,6 +229,7 @@ function LatestGrid({
               priority
               sizes="(max-width: 1024px) 100vw, 60vw"
               className="object-cover group-hover:scale-105 transition-transform duration-500"
+              {...(leadImage.endsWith(".svg") ? { unoptimized: true } : {})}
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-primary/10 to-transparent" />

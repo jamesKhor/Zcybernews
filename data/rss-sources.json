@@ -86,7 +86,7 @@
     "url": "https://news.ycombinator.com/rss",
     "category": "tech",
     "type": "rss",
-    "enabled": true,
+    "enabled": false,
     "description": "Tech news from Hacker News community"
   },
   {

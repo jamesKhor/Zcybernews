@@ -175,6 +175,9 @@ function TIPageContent({
                 priority
                 sizes="(max-width: 1024px) 100vw, 720px"
                 className="object-cover"
+                {...(featuredImage.endsWith(".svg")
+                  ? { unoptimized: true }
+                  : {})}
               />
             </div>
           )}

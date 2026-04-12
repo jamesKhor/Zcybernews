@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { adminFetch } from "@/lib/admin-fetch";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -279,7 +280,7 @@ export default function ComposePage() {
               provider: modelChoice,
             };
 
-      const res = await fetch("/api/admin/synthesize", {
+      const res = await adminFetch("/api/admin/synthesize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
@@ -431,7 +432,7 @@ export default function ComposePage() {
     setPublishing(true);
 
     try {
-      const res = await fetch("/api/admin/publish", {
+      const res = await adminFetch("/api/admin/publish", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -488,7 +489,7 @@ export default function ComposePage() {
     setPublishingBoth(true);
 
     try {
-      const res = await fetch("/api/admin/translate-publish", {
+      const res = await adminFetch("/api/admin/translate-publish", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

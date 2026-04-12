@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { auth } from "@/auth";
+import { adminGuard } from "@/lib/admin-guard";
 import fs from "fs";
 import path from "path";
 import Parser from "rss-parser";
@@ -17,10 +17,9 @@ function writeSources(sources: RssSource[]) {
 }
 
 // GET — list all sources
-export async function GET() {
-  const session = await auth();
-  if (!session)
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+export async function GET(req: Request) {
+  const guard = await adminGuard(req as never, "sources-read", 30, 60_000);
+  if (guard) return guard;
 
   const sources = readSources();
   return NextResponse.json(sources);
@@ -28,9 +27,8 @@ export async function GET() {
 
 // POST — add a new source or test a feed URL
 export async function POST(req: Request) {
-  const session = await auth();
-  if (!session)
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const guard = await adminGuard(req as never, "sources-write", 10, 60_000);
+  if (guard) return guard;
 
   const body = await req.json();
 
@@ -91,9 +89,8 @@ export async function POST(req: Request) {
 
 // PUT — update a source (toggle enabled, edit fields)
 export async function PUT(req: Request) {
-  const session = await auth();
-  if (!session)
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const guard = await adminGuard(req as never, "sources-update", 10, 60_000);
+  if (guard) return guard;
 
   const body = await req.json();
   const { id, ...updates } = body;
@@ -113,9 +110,8 @@ export async function PUT(req: Request) {
 
 // DELETE — remove a source
 export async function DELETE(req: Request) {
-  const session = await auth();
-  if (!session)
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const guard = await adminGuard(req as never, "sources-delete", 10, 60_000);
+  if (guard) return guard;
 
   const { searchParams } = new URL(req.url);
   const id = searchParams.get("id");

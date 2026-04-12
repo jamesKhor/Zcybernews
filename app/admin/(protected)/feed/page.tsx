@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef } from "react";
+import { adminFetch } from "@/lib/admin-fetch";
 import { useRouter } from "next/navigation";
 import type { FeedArticle, RssSource } from "@/lib/rss/fetch";
 import {
@@ -98,7 +99,7 @@ export default function FeedReaderPage() {
       setError("");
       try {
         const params = sourceId !== "all" ? `?sources=${sourceId}` : "";
-        const res = await fetch(`/api/admin/feed${params}`);
+        const res = await adminFetch(`/api/admin/feed${params}`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = (await res.json()) as { articles: FeedArticle[] };
         articleCache.current.set(sourceId, data.articles);
@@ -226,7 +227,8 @@ export default function FeedReaderPage() {
 
             {selectedCount < 5 && selectedCount > 0 && (
               <span className="text-xs text-gray-500 ml-auto">
-                {5 - selectedCount} slot{5 - selectedCount !== 1 ? "s" : ""} left
+                {5 - selectedCount} slot{5 - selectedCount !== 1 ? "s" : ""}{" "}
+                left
               </span>
             )}
           </div>
@@ -405,7 +407,8 @@ export default function FeedReaderPage() {
                       {/* Avatar */}
                       <div
                         className={`w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold text-white shrink-0 ${
-                          categoryDotColors[article.sourceCategory] ?? "bg-gray-600"
+                          categoryDotColors[article.sourceCategory] ??
+                          "bg-gray-600"
                         }`}
                       >
                         {getInitials(article.title)}

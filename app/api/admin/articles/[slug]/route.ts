@@ -1,6 +1,6 @@
-import { auth } from "@/auth";
 import { NextRequest, NextResponse } from "next/server";
 import matter from "gray-matter";
+import { adminGuard, isValidLocale, isValidType } from "@/lib/admin-guard";
 
 const GH_HEADERS = {
   Accept: "application/vnd.github+json",
@@ -29,14 +29,20 @@ export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ slug: string }> },
 ) {
-  const session = await auth();
-  if (!session)
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const guard = await adminGuard(req, "articles-read", 30, 60_000);
+  if (guard) return guard;
 
   const { slug } = await params;
   const sp = req.nextUrl.searchParams;
   const locale = sp.get("locale") ?? "en";
   const type = sp.get("type") ?? "posts";
+
+  if (!isValidLocale(locale) || !isValidType(type)) {
+    return NextResponse.json(
+      { error: "Invalid locale or type" },
+      { status: 400 },
+    );
+  }
 
   try {
     const { token, repo } = getToken();
@@ -78,9 +84,8 @@ export async function PATCH(
   req: NextRequest,
   { params }: { params: Promise<{ slug: string }> },
 ) {
-  const session = await auth();
-  if (!session)
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const guard = await adminGuard(req, "articles-update", 10, 60_000);
+  if (guard) return guard;
 
   const { slug } = await params;
 
@@ -94,6 +99,14 @@ export async function PATCH(
     };
 
     const { locale, type, frontmatter: updatedFm, body: updatedBody } = body;
+
+    if (!isValidLocale(locale) || !isValidType(type)) {
+      return NextResponse.json(
+        { error: "Invalid locale or type" },
+        { status: 400 },
+      );
+    }
+
     const { url, branch } = buildApiUrl(repo, locale, type, slug);
 
     // Fetch current file to get SHA + original body if not provided
@@ -158,9 +171,8 @@ export async function DELETE(
   req: NextRequest,
   { params }: { params: Promise<{ slug: string }> },
 ) {
-  const session = await auth();
-  if (!session)
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const guard = await adminGuard(req, "articles-delete", 5, 60_000);
+  if (guard) return guard;
 
   const { slug } = await params;
 
@@ -173,6 +185,13 @@ export async function DELETE(
     };
 
     const { locale, type, deleteAll } = body;
+
+    if (!isValidLocale(locale) || !isValidType(type)) {
+      return NextResponse.json(
+        { error: "Invalid locale or type" },
+        { status: 400 },
+      );
+    }
     const branch = process.env.GITHUB_BRANCH ?? "main";
 
     const localesToDelete = deleteAll ? ["en", "zh"] : [locale];
