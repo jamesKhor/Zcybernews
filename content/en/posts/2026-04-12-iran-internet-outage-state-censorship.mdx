@@ -1,0 +1,63 @@
+---
+title: 'Iranian Internet Outage Exceeds 1,000 Hours Amid State-Imposed Censorship'
+slug: 2026-04-12-iran-internet-outage-state-censorship
+date: '2026-04-12'
+excerpt: >-
+  A state-directed internet blackout in Iran has surpassed 1,000 cumulative
+  hours, marking a significant escalation in digital censorship and control
+  tactics.
+category: industry
+tags:
+  - censorship
+  - iran
+  - network-disruption
+  - shutdown
+  - surveillance
+language: en
+source_urls:
+  - 'https://mastodon.social/@netblocks/116384935123261912'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-12-iran-internet-outage-state-censorship
+severity: high
+affected_sectors:
+  - telecommunications
+  - civil-society
+  - government
+  - private-sector
+affected_regions:
+  - Iran
+---
+## Executive Summary
+A state-imposed internet disruption in Iran has exceeded 1,008 cumulative hours of nationwide and regional outages, according to data from the internet monitoring organization NetBlocks. This sustained campaign represents a deliberate and severe escalation in the use of network-level controls to suppress information flow and public communication. The technical implementation points to a centralized, government-mandated operation executed through the country's primary telecommunications infrastructure.
+
+## Technical Analysis
+The outages are not the result of a technical fault or external cyber attack. NetBlocks data indicates the disruptions are implemented at the national backbone level, characteristic of a centrally coordinated command to Iran's limited number of state-controlled Internet Service Providers (ISPs). Connectivity is typically severed through Border Gateway Protocol (BGP) route withdrawals or null-routing at key internet exchange points (IXPs), effectively making entire networks unreachable from both inside and outside the country. The technique results in a near-total drop in international and, at times, domestic data traffic for affected regions or providers. The precision and duration of the blackouts confirm they are a product of administrative policy, not collateral damage from other events.
+
+## Indicators of Compromise
+None identified at this time. This event constitutes a top-down administrative action, not a compromise of systems by a third-party threat actor. Network telemetry showing sudden, complete loss of BGP routes from major Iranian ASNs (Autonomous System Numbers) would be the primary technical indicator of the shutdown event in progress.
+
+## Tactics, Techniques & Procedures
+The primary technique observed is **T1562.001: Impair Defenses: Disable or Modify Tools**, specifically the disabling of communication tools on a national scale. This falls under a broader strategy of **Defense Evasion** and **Impact** within the MITRE ATT&CK framework. The procedure involves:
+*   **Tactic:** Impact (TA0040)
+*   **Technique:** **Network Denial of Service (T1498)** – Resource hijacking and direct network manipulation to deny availability.
+*   **Procedure:** Commanding domestic telecommunications infrastructure to withdraw BGP announcements and null-route traffic, creating a widespread denial of service condition for end-users.
+
+## Threat Actor Context
+The activity is attributed to the Iranian state, acting through its telecommunications regulatory body and mandated ISPs. The objective is political and social control, specifically to limit internal coordination and dissemination of information during periods of civil unrest or political significance, and to restrict external visibility into internal events. This pattern of intentional internet blackouts has been a documented tool of the Iranian government for several years, though the current duration marks a notable intensification.
+
+## Detection & Hunting Queries
+Network defenders outside of Iran are unlikely to directly detect this activity within their own perimeter. However, security and network monitoring teams can observe the broader impact and confirm outages via the following:
+*   **BGP Monitoring:** Query global BGP looking glasses or services like BGPStream for route withdrawal events from major Iranian ASNs (e.g., ASN 58224 (Iran Telecommunication Company PJS)).
+*   **Threat Intelligence Feeds:** Monitor network connectivity feeds from organizations like NetBlocks or Kentik for reports of anomalous drops in traffic destined for Iranian IP space.
+*   **Internal Telemetry:** Alert on a complete cessation of network traffic and connection attempts to business partners or assets based in Iran, which would present as a uniform failure rather than a gradual degradation.
+
+## Mitigations & Recommendations
+For organizations and individuals within Iran, mitigation options are severely limited due to the state's control over the physical and logical network layer. Circumvention relies on tools that may themselves be blocked or illegal. General recommendations include:
+*   **Preparedness:** Assume periodic loss of international and domestic connectivity. Develop offline communication and data transfer protocols for critical business operations.
+*   **Alternative Technologies:** Explore the use of satellite-based internet services, though these are often prohibited and subject to severe legal penalties.
+*   **International Advocacy:** External organizations, including governments and NGOs, should continue to document and condemn internet shutdowns as violations of fundamental human rights and barriers to global digital economy participation.
+*   **Technical Resilience:** The global community should invest in and deploy anti-censorship and mesh networking technologies designed to withstand centralized internet blackouts.
+
+## References
+*   https://mastodon.social/@netblocks/116384935123261912
