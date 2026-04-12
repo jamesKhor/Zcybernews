@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : category;
 
   return {
-    title: `${label} — AleCyberNews`,
-    description: `Browse all ${label} articles on AleCyberNews.`,
+    title: `${label} — ZCyberNews`,
+    description: `Browse all ${label} articles on ZCyberNews.`,
     alternates: {
       canonical: `/${locale}/categories/${category}`,
       languages: {

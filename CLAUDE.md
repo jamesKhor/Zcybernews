@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# AleCyberNews — Project Guide for Claude
+# ZCyberNews — Project Guide for Claude
 
 This file gives Claude full context to continue working on this project from any session (Claude Code CLI, Claude Desktop, or claude.ai).
 
@@ -16,8 +16,8 @@ A professional cybersecurity and tech news site that:
 - Deploys to **Cloudflare Pages** on every push to `main`
 - Includes **threat intelligence sections** with IOC tables, MITRE ATT&CK matrix, and threat actor cards
 
-**GitHub repo:** https://github.com/jamesKhor/Alecybernews  
-**Local path:** `C:\Users\jmskh\projects\alecybernews`
+**GitHub repo:** https://github.com/jamesKhor/Zcybernews  
+**Local path:** `C:\Users\jmskh\projects\zcybernews`
 
 ---
 
@@ -56,7 +56,7 @@ A professional cybersecurity and tech news site that:
 ## Directory Structure
 
 ```
-alecybernews/
+zcybernews/
 ├── app/
 │   ├── [locale]/                  # en | zh
 │   │   ├── layout.tsx             # Header + Footer wrapper, NextIntlClientProvider
@@ -177,7 +177,7 @@ Every article uses these exact H2 sections (AI prompt enforces this):
 Copy `.env.example` to `.env.local` and fill in:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://alecybernews.com
+NEXT_PUBLIC_SITE_URL=https://zcybernews.com
 
 # AI — primary article generation (cheap: ~$0.27/1M tokens)
 DEEPSEEK_API_KEY=              # https://platform.deepseek.com
@@ -227,6 +227,10 @@ Next.js 16, Tailwind v4, shadcn/ui, all dependencies, `proxy.ts` locale middlewa
 - Article pages: `/[locale]/articles/[slug]` with `generateStaticParams`
 - Threat intel pages: `/[locale]/threat-intel/[slug]`
 - Pagination on listing pages
+- Category pages: `/[locale]/categories/[category]/page.tsx` ✅
+- Tag pages: `/[locale]/tags/[tag]/page.tsx` ✅
+- `app/sitemap.ts` — XML sitemap ✅
+- `app/robots.ts` ✅
 
 ### ✅ Phase 2 — Core UI Components (DONE)
 
@@ -239,179 +243,153 @@ Next.js 16, Tailwind v4, shadcn/ui, all dependencies, `proxy.ts` locale middlewa
 - SVG placeholder images for all 6 categories in `public/images/defaults/`
 - Dark cybersecurity theme in `globals.css`
 - RSS feed API (`/api/feed`) and WeChat JSON API (`/api/wechat?locale=zh`)
-- 2 sample articles: LockBit TI report (with real IOCs/TTPs), GPT-5 security analysis
+- `components/seo/JsonLd.tsx` — NewsArticle JSON-LD structured data ✅
+- `components/cve/CVEArticleBody.tsx` + `CVEBadge.tsx` + `CVEHydrate.tsx` — inline CVE cards ✅
+- `lib/rehype-cve.ts` — rehype plugin for CVE auto-linking ✅
+- `app/api/cve/[id]/route.ts` — NVD CVE data proxy ✅
+- `components/search/SearchDialog.tsx` — Cmd/Ctrl+K search modal ✅
+- `app/api/search/route.ts` — search API ✅
 
-### 🔲 Phase 3 — Search & Additional Pages (TODO)
+### ✅ Phase 3 — Search & Additional Pages (DONE)
 
-- Install and configure `pagefind` for static full-text search
-- Build `components/search/SearchDialog.tsx` (Cmd/Ctrl+K modal)
-- Add search page `app/[locale]/search/page.tsx`
-- Add category pages `app/[locale]/categories/[category]/page.tsx`
-- Add tag pages `app/[locale]/tags/[tag]/page.tsx`
-- `app/sitemap.ts` and `app/robots.ts`
+- Category pages, tag pages, sitemap, robots — all built (see Phase 1 above)
+- Search dialog (`components/search/SearchDialog.tsx`) + search API ✅
+- JSON-LD structured data on article pages ✅
+- Note: `pagefind` static search not used — server-side search API implemented instead
 
-### 🔲 Phase 4 — AI Content Pipeline (TODO)
+### ✅ Phase 4 — AI Content Pipeline (DONE)
 
-This is the most important remaining phase. Build `scripts/` directory:
+All scripts built in `scripts/` directory:
 
 ```
 scripts/
 ├── pipeline/
-│   ├── index.ts          # orchestrator: npx tsx scripts/pipeline/index.ts --max-articles=5
-│   ├── ingest-rss.ts     # fetch 10 RSS feeds, normalize, deduplicate
-│   ├── search-web.ts     # Brave/Tavily enrichment per story
-│   ├── generate-article.ts  # DeepSeek-V3 generateObject with Zod schema validation
-│   ├── translate-article.ts # Kimi K2 EN→ZH translation
-│   └── write-mdx.ts      # serialize gray-matter + write to content/
+│   ├── index.ts              # orchestrator
+│   ├── ingest-rss.ts         # fetch RSS feeds, normalize, deduplicate
+│   ├── generate-article.ts   # DeepSeek-V3 article generation
+│   ├── translate-article.ts  # Kimi K2 EN→ZH translation
+│   └── write-mdx.ts          # serialize gray-matter + write to content/
 ├── ai/
-│   ├── provider.ts       # factory: createOpenAICompatible for DeepSeek + Kimi
+│   ├── provider.ts           # DeepSeek + Kimi client factories
 │   ├── prompts/
-│   │   ├── article.ts    # full quality prompt (see below)
-│   │   ├── threat-intel.ts
+│   │   ├── article.ts
 │   │   └── translation.ts
 │   └── schemas/
-│       ├── article-schema.ts     # Zod schema matching ArticleFrontmatterSchema
-│       └── threat-intel-schema.ts
+│       └── article-schema.ts
 ├── sources/
-│   └── feeds.ts          # 10 RSS feed URLs
+│   └── feeds.ts              # RSS feed URLs
+├── translate-existing.ts     # one-off: translate existing EN articles to ZH
 └── utils/
-    ├── dedup.ts           # URL hash + fuzzy title dedup
-    ├── rate-limit.ts      # p-limit(3) + retry with backoff
-    └── cache.ts           # disk cache at .pipeline-cache/processed-urls.json
+    ├── cache.ts
+    ├── dedup.ts
+    └── rate-limit.ts
 ```
 
-**AI Provider setup** (both use OpenAI-compatible API format):
+### ✅ Phase 5 — Admin Panel & AI Compose (DONE — built beyond original plan)
 
-```typescript
-import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+Full admin panel at `/admin` with:
 
-const deepseek = createOpenAICompatible({
-  baseURL: "https://api.deepseek.com/v1",
-  apiKey: process.env.DEEPSEEK_API_KEY,
-});
-const kimi = createOpenAICompatible({
-  baseURL: "https://api.moonshot.cn/v1",
-  apiKey: process.env.KIMI_API_KEY,
-});
+- **`/admin/login`** — NextAuth v5 credential auth
+- **`/admin/`** — dashboard
+- **`/admin/feed`** — RSS feed reader, select articles to synthesize
+- **`/admin/compose`** — AI article composer:
+  - Feed mode (from RSS) + Paste mode (raw text)
+  - Model picker: DeepSeek / Kimi / Auto (free OpenRouter → paid fallback)
+  - Length selector: Short / Medium / Long (1000+ words, no upper cap)
+  - Custom prompt instructions
+  - Streaming NDJSON generation with live status panel (per-model progress)
+  - Browser notification when generation completes (works across tabs)
+  - Dynamic button label showing current step
+  - Auto-save draft to localStorage
+  - Edit/Preview toggle (markdown + rendered)
+  - One-click Publish EN or Publish EN+ZH (auto-translates via Kimi)
+- **`/admin/articles`** — article listing + edit
+- **`/admin/sources`** — RSS source management (UI built, backend pending)
+- **API routes:**
+  - `POST /api/admin/synthesize` — streaming AI article generation
+  - `POST /api/admin/translate-publish` — translate + commit EN+ZH to GitHub
+  - `POST /api/admin/publish` — commit EN only to GitHub
+  - `GET/POST /api/admin/articles` — article CRUD
+  - `GET /api/admin/feed` — RSS feed fetching for admin
 
-export const articleModel = deepseek("deepseek-chat");
-export const translationModel = kimi("moonshot-v1-32k");
-```
+### ✅ Phase 5b — AI Provider (DONE — `lib/ai-provider.ts`)
 
-**RSS Feed Sources** to include in `scripts/sources/feeds.ts`:
+- `parseEffectiveParams()` — detects MoE active-param suffix, filters tiny models
+- `isUsableWriteModel()` — ≥12B effective params + ≥32k context window
+- `getLiveFreeModels()` — live fetch from OpenRouter API, 5-min cache, hardcoded fallback
+- `runWithFallback()` — per-model timeout (90s article / 60s translate), skips on 404/429/503/timeout
+- `generateWithFallback(provider?)` — `deepseek` | `kimi` | `auto` (free first)
+- `translateWithFallback()` — Qwen-first free models → Kimi → DeepSeek
+- Both return `{ text, modelUsed, usedPaidFallback }`
 
-- https://krebsonsecurity.com/feed/
-- https://www.bleepingcomputer.com/feed/
-- https://feeds.feedburner.com/TheHackersNews
-- https://www.darkreading.com/rss.xml
-- https://www.cisa.gov/uscert/ncas/alerts.xml
-- https://isc.sans.edu/rssfeed_full.xml
-- https://blog.talosintelligence.com/feeds/posts/default
-- https://research.checkpoint.com/feed/
+### ✅ Phase 6 — GitHub Actions (DONE)
 
-**Article generation prompt** (use in `scripts/ai/prompts/article.ts`):
+Both workflow files exist in `.github/workflows/`:
 
-```
-You are a senior cybersecurity analyst and technical writer for AleCyberNews.
-Write at the level of Krebs on Security — accurate, technically precise, no marketing language.
-Use inverted pyramid structure. Attribute claims to sources. Flag uncertainty explicitly.
+- `build-deploy.yml` — deploys to Vercel on push to main
+- `ai-content-pipeline.yml` — daily scheduled article generation + commit
 
-REQUIRED SECTIONS (exact H2 headers):
-## Executive Summary
-## Technical Analysis
-## Indicators of Compromise
-## Tactics, Techniques & Procedures
-## Threat Actor Context
-## Detection & Hunting Queries
-## Mitigations & Recommendations
-## References
+**⚠️ Known issue:** Vercel Hobby free tier has a **10-second serverless timeout** which kills AI generation routes. Options:
 
-OUTPUT: JSON with { frontmatter: <ArticleFrontmatter>, body: <MDX string> }
-Extract all IOCs into frontmatter.iocs[] and TTPs into frontmatter.ttp_matrix[].
-Map TTPs to MITRE ATT&CK technique IDs where possible.
-```
+- Upgrade to Vercel Pro ($20/mo, 300s timeout) — recommended for production
+- Self-host on Malaysia VPS (evotx: 1vCPU/2GB RAM) — zero extra cost, no timeout limit
 
-### 🔲 Phase 5 — GitHub Actions (TODO)
+### 🔲 Phase 7 — Production Deployment & VPS Setup (NEXT)
 
-Create `.github/workflows/`:
+Move from Vercel free (10s timeout issue) to Malaysia VPS for production:
 
-**`build-deploy.yml`** — triggers on push to main, deploys to Cloudflare Pages:
+- [ ] Set up PM2 + Nginx on evotx VPS
+- [ ] Configure Nginx with `proxy_read_timeout 300s` for AI routes
+- [ ] Set up Let's Encrypt SSL via Certbot
+- [ ] Add GitHub Action for auto-deploy on push (SSH + pull + rebuild + PM2 restart)
+- [ ] Add all env vars to VPS (DEEPSEEK_API_KEY, KIMI_API_KEY, OPENROUTER_API_KEY, GITHUB_TOKEN etc)
+- [ ] Point zcybernews.com DNS to VPS via Cloudflare (free DDoS + CDN)
+- [ ] Smoke test: generate article, publish EN+ZH, verify on live site
 
-```yaml
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: "22", cache: "npm" }
-      - run: npm ci
-      - run: npm run build
-        env:
-          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
-      - uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy .next --project-name=alecybernews
-```
+### 🔲 Phase 8 — SEO & China Optimisation (TODO)
 
-**`ai-content-pipeline.yml`** — runs daily, generates articles, commits, triggers build:
+- [ ] Baidu site verification meta tag in ZH locale layout
+- [ ] Baidu Analytics (百度统计) script in ZH layout
+- [ ] `hreflang` tags — already partially done via `generateMetadata`, verify all pages
+- [ ] Submit sitemap to Baidu Search Console
+- [ ] Submit sitemap to Google Search Console
+- [ ] og:image — generate real preview images per article (fal.ai FLUX or static templates)
+- [ ] WeChat sharing meta tags (wx:card, wx:image) for Chinese social sharing
+- [ ] Test site accessibility from mainland China (VPN-free routing via Cloudflare)
 
-```yaml
-on:
-  schedule:
-    - cron: "0 2 * * *"
-    - cron: "0 14 * * *"
-  workflow_dispatch:
-    inputs:
-      max_articles: { default: "5" }
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: "22", cache: "npm" }
-      - run: npm ci
-      - run: npx tsx scripts/pipeline/index.ts --max-articles=${{ inputs.max_articles || '5' }}
-        env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
-          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
-      - name: Commit generated content
-        run: |
-          git config user.name "alecybernews-bot"
-          git config user.email "bot@alecybernews.com"
-          git add content/ public/images/articles/
-          git diff --staged --quiet || git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push
-```
+### 🔲 Phase 9 — Automated Pipeline Activation (TODO)
 
-### 🔲 Phase 6 — SEO & Performance (TODO)
+The scripts are built but the automated daily pipeline needs to be wired up and tested:
 
-- `generateMetadata` in every `page.tsx` with og:image, hreflang (`zh-Hans`)
-- `app/sitemap.ts` — XML sitemap from all posts
-- `app/robots.ts`
-- JSON-LD `NewsArticle` structured data on article pages
-- Baidu site verification meta tag in ZH locale layout
+- [ ] Test `scripts/pipeline/index.ts` end-to-end locally
+- [ ] Verify RSS dedup cache works correctly (`scripts/utils/cache.ts`)
+- [ ] Add GitHub Actions secrets: `DEEPSEEK_API_KEY`, `KIMI_API_KEY`, `BRAVE_SEARCH_API_KEY`
+- [ ] Enable `ai-content-pipeline.yml` schedule (currently needs secrets to work)
+- [ ] Monitor first few automated runs, check article quality
+- [ ] Add admin UI to view pipeline run history / last run status
+
+### 🔲 Phase 10 — RSS Sources Admin UI (TODO)
+
+UI shell exists at `/admin/sources` but backend is not wired:
+
+- [ ] `GET /api/admin/sources` — return current feed list
+- [ ] `POST /api/admin/sources` — add new feed URL
+- [ ] `DELETE /api/admin/sources/[id]` — remove feed
+- [ ] Persist sources (JSON file in repo or env var)
+- [ ] Test feed URL before saving (fetch + parse validation)
 
 ---
 
 ## Key Design Decisions (for context)
 
 1. **`proxy.ts` not `middleware.ts`** — Next.js 16 breaking change, already handled
-2. **DeepSeek-V3 for articles** — ~$0.27/1M tokens vs ~$15 for Claude Opus. Use `deepseek-chat` model ID
-3. **Kimi K2 for Chinese** — better ZH quality than DeepSeek. Use `moonshot-v1-32k` model ID
-4. **No `output: 'export'`** — Cloudflare Pages supports API routes natively, keeps `/api/feed` and `/api/wechat` live
-5. **Images deferred to Phase 2** — fal.ai FLUX.1-schnell at ~$0.003/image when ready
-6. **Antivirus note** — threat intel MDX files with IOC hashes may trigger AV false positives (harmless text files)
+2. **DeepSeek for articles, Kimi for translation** — DeepSeek is fastest/cheapest for EN; Kimi (Moonshot) has better Chinese quality
+3. **OpenRouter free models first** — Auto mode tries ≥12B free models before paid; DeepSeek/Kimi as paid fallback
+4. **Admin compose = primary editorial workflow** — admin selects RSS articles → AI synthesizes → review → publish EN+ZH in one click
+5. **No `output: 'export'`** — API routes must stay live (AI generation, admin, CVE lookup)
+6. **GitHub as CMS** — articles committed as MDX files, Vercel/VPS redeploys on push
+7. **Vercel 10s timeout is a real problem** — AI generation regularly exceeds this; VPS deployment is the fix
+8. **Antivirus note** — threat intel MDX files with IOC hashes may trigger AV false positives (harmless text files)
 
 ---
 
@@ -419,6 +397,6 @@ jobs:
 
 Tell Claude:
 
-> "Read CLAUDE.md and continue from Phase [3/4/5/6]"
+> "Read CLAUDE.md and continue"
 
 Claude will read this file and have full context to continue immediately.

@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { SearchDialog } from "@/components/search/SearchDialog";
 
 interface Props {
@@ -35,9 +35,13 @@ export function Header({ locale }: Props) {
           href={`/${locale}`}
           className="flex items-center gap-2 font-bold text-foreground"
         >
-          <Shield className="h-5 w-5 text-primary" />
-          <span className="text-primary">Ale</span>
-          <span>CyberNews</span>
+          <span
+            style={{ color: "#003781" }}
+            className="text-2xl font-black tracking-tight"
+          >
+            Z
+          </span>
+          <span className="font-bold tracking-tight">CyberNews</span>
         </Link>
 
         {/* Desktop nav */}

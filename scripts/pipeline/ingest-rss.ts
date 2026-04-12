@@ -7,7 +7,7 @@ import { limit, withRetry } from "../utils/rate-limit.js";
 const parser = new Parser({
   timeout: 15000,
   headers: {
-    "User-Agent": "AleCyberNews/1.0 Pipeline (+https://alecybernews.com)",
+    "User-Agent": "ZCyberNews/1.0 Pipeline (+https://zcybernews.com)",
     Accept: "application/rss+xml, application/xml, text/xml",
   },
 });
@@ -47,7 +47,7 @@ type CisaKevEntry = {
 
 async function fetchCisaKev(source: FeedSource): Promise<Story[]> {
   const res = await fetch(source.url, {
-    headers: { "User-Agent": "AleCyberNews/1.0 Pipeline" },
+    headers: { "User-Agent": "ZCyberNews/1.0 Pipeline" },
     signal: AbortSignal.timeout(15000),
   });
   if (!res.ok) throw new Error(`CISA KEV HTTP ${res.status}`);

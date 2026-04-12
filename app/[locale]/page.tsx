@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const isZh = locale === "zh";
   const title = isZh
-    ? "AleCyberNews — 网络安全与科技情报"
-    : "AleCyberNews — Cybersecurity & Tech Intelligence";
+    ? "ZCyberNews — 网络安全与科技情报"
+    : "ZCyberNews — Cybersecurity & Tech Intelligence";
   const description = isZh
     ? "深度威胁分析、漏洞研究与安全资讯，为防御者服务。"
     : "In-depth threat analysis, vulnerability research, and security news for defenders.";

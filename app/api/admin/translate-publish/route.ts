@@ -94,7 +94,7 @@ category: "${frontmatter.category}"
 tags:${tags}
 language: "${frontmatter.language}"
 locale_pair: "${frontmatter.slug}"
-author: "${frontmatter.author ?? "AleCyberNews"}"
+author: "${frontmatter.author ?? "ZCyberNews"}"
 draft: false
 ---
 
@@ -174,7 +174,7 @@ ${content}`,
     category,
     tags,
     language: "en",
-    author: author ?? "AleCyberNews",
+    author: author ?? "ZCyberNews",
   };
   const zhFrontmatter = {
     title: zhTitle,
@@ -183,7 +183,7 @@ ${content}`,
     category,
     tags,
     language: "zh",
-    author: author ?? "AleCyberNews",
+    author: author ?? "ZCyberNews",
   };
 
   const enMdx = buildMdx(enFrontmatter, content);

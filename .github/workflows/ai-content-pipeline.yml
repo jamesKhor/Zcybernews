@@ -61,8 +61,8 @@ jobs:
       - name: Commit generated content
         if: ${{ inputs.dry_run != 'true' }}
         run: |
-          git config user.name "alecybernews-bot"
-          git config user.email "bot@alecybernews.com"
+          git config user.name "zcybernews-bot"
+          git config user.email "bot@zcybernews.com"
           git add content/ public/images/articles/ .pipeline-cache/ || true
           git diff --staged --quiet || git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
           git push

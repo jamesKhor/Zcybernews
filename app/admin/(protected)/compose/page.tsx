@@ -84,7 +84,7 @@ const CATEGORIES = [
   "ai",
 ];
 
-const DRAFT_KEY = "alecybernews_compose_draft";
+const DRAFT_KEY = "zcybernews_compose_draft";
 
 function newPasteBlock(): PasteBlock {
   return { id: crypto.randomUUID(), label: "", text: "" };
@@ -393,7 +393,7 @@ export default function ComposePage() {
         typeof Notification !== "undefined" &&
         Notification.permission === "granted"
       ) {
-        const notif = new Notification("✅ Article ready — AleCyberNews", {
+        const notif = new Notification("✅ Article ready — ZCyberNews", {
           body: `"${articleTitle}" is ready to review and publish.`,
           icon: "/favicon.ico",
           tag: "article-generation", // replaces previous notif if still showing

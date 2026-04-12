@@ -28,7 +28,7 @@ export type FeedArticle = {
 const parser = new Parser({
   timeout: 10000,
   headers: {
-    "User-Agent": "AleCyberNews/1.0 RSS Reader",
+    "User-Agent": "ZCyberNews/1.0 RSS Reader",
     Accept: "application/rss+xml, application/xml, text/xml",
   },
 });
@@ -79,7 +79,7 @@ async function fetchCisaKev(source: RssSource): Promise<FeedArticle[]> {
   try {
     const res = await fetch(source.url, {
       next: { revalidate: 3600 },
-      headers: { "User-Agent": "AleCyberNews/1.0" },
+      headers: { "User-Agent": "ZCyberNews/1.0" },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = (await res.json()) as { vulnerabilities: CisaKevEntry[] };

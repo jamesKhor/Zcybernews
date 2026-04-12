@@ -1,5 +1,5 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://alecybernews.com";
-const PUBLISHER_NAME = "AleCyberNews";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
+const PUBLISHER_NAME = "ZCyberNews";
 const PUBLISHER_LOGO = `${SITE_URL}/images/defaults/og-default.svg`;
 
 // ─── NewsArticle ──────────────────────────────────────────────────────────────
@@ -92,8 +92,8 @@ export function HomeJsonLd({ locale }: { locale: string }) {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: isZh
-      ? "AleCyberNews — 网络安全与科技情报"
-      : "AleCyberNews — Cybersecurity & Tech Intelligence",
+      ? "ZCyberNews — 网络安全与科技情报"
+      : "ZCyberNews — Cybersecurity & Tech Intelligence",
     url: pageUrl,
     description: isZh
       ? "深度威胁分析、漏洞研究与安全资讯，为防御者服务。"

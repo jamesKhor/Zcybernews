@@ -87,8 +87,7 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
   const { frontmatter, content, readingTime } = article;
   const { content: mdxContent, headings } = await compileMDX(content);
   const related = getRelatedPosts(frontmatter, locale, "threat-intel", 3);
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://alecybernews.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
   const image =
     frontmatter.featured_image ??
     CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
@@ -100,7 +99,7 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
         description={frontmatter.excerpt}
         datePublished={frontmatter.date}
         dateModified={frontmatter.updated}
-        authorName={frontmatter.author ?? "AleCyberNews"}
+        authorName={frontmatter.author ?? "ZCyberNews"}
         url={`${siteUrl}/${locale}/threat-intel/${slug}`}
         image={image ? `${siteUrl}${image}` : undefined}
         keywords={frontmatter.tags}

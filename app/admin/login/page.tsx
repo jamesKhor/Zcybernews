@@ -107,7 +107,7 @@ function LoginForm() {
         </form>
 
         <p className="text-center text-xs text-gray-600 mt-4">
-          AleCyberNews admin panel — restricted access
+          ZCyberNews admin panel — restricted access
         </p>
       </div>
     </div>

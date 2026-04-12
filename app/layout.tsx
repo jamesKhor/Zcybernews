@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "AleCyberNews",
-    template: "%s | AleCyberNews",
+    default: "ZCyberNews",
+    template: "%s | ZCyberNews",
   },
   description:
     "Professional cybersecurity and tech intelligence — threat analysis, vulnerability research, and security news for defenders.",
@@ -33,12 +33,12 @@ export const metadata: Metadata = {
     "ransomware",
     "APT",
   ],
-  authors: [{ name: "AleCyberNews" }],
-  creator: "AleCyberNews",
+  authors: [{ name: "ZCyberNews" }],
+  creator: "ZCyberNews",
   openGraph: {
     type: "website",
-    siteName: "AleCyberNews",
-    title: "AleCyberNews",
+    siteName: "ZCyberNews",
+    title: "ZCyberNews",
     description:
       "Professional cybersecurity and tech intelligence — threat analysis, vulnerability research, and security news for defenders.",
     images: [
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
         url: "/images/defaults/og-default.svg",
         width: 1200,
         height: 630,
-        alt: "AleCyberNews",
+        alt: "ZCyberNews",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AleCyberNews",
+    title: "ZCyberNews",
     description:
       "Professional cybersecurity and tech intelligence — threat analysis, vulnerability research, and security news for defenders.",
     images: ["/images/defaults/og-default.svg"],

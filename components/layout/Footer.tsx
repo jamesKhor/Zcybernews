@@ -79,7 +79,7 @@ export function Footer({ locale }: Props) {
         </div>
 
         <div className="mt-8 pt-6 border-t border-border text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} AleCyberNews. {t("rights")}
+          © {new Date().getFullYear()} ZCyberNews. {t("rights")}
         </div>
       </div>
     </footer>

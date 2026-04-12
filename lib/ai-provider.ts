@@ -210,8 +210,8 @@ function makeOpenRouterClient() {
     apiKey: process.env.OPENROUTER_API_KEY!,
     headers: {
       "HTTP-Referer":
-        process.env.NEXT_PUBLIC_SITE_URL ?? "https://alecybernews.vercel.app",
-      "X-Title": "AleCyberNews",
+        process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com",
+      "X-Title": "ZCyberNews",
     },
   });
 }

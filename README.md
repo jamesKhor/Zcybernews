@@ -1,4 +1,4 @@
-# AleCyberNews
+# ZCyberNews
 
 A professional cybersecurity and tech intelligence site built with Next.js 15, featuring AI-powered content generation, bilingual support (English/Chinese), and deep threat intelligence sections.
 

@@ -154,7 +154,7 @@ export async function POST(req: NextRequest) {
         modelUsed: bodyModel,
         usedPaidFallback: bodyWasPaid,
       } = await generateWithFallback(
-        `You are a senior cybersecurity journalist and SEO writer for AleCyberNews, a professional threat intelligence news site.
+        `You are a senior cybersecurity journalist and SEO writer for ZCyberNews, a professional threat intelligence news site.
 
 Synthesize the following ${sourceCount} source(s) into ONE original, SEO-optimised article that:
 

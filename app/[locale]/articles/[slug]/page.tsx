@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: frontmatter.title,
     description: frontmatter.excerpt,
     keywords: frontmatter.tags,
-    authors: [{ name: frontmatter.author ?? "AleCyberNews" }],
+    authors: [{ name: frontmatter.author ?? "ZCyberNews" }],
     alternates: {
       canonical,
       languages: frontmatter.locale_pair
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonical,
       publishedTime: frontmatter.date,
       modifiedTime: frontmatter.updated ?? frontmatter.date,
-      authors: [frontmatter.author ?? "AleCyberNews"],
+      authors: [frontmatter.author ?? "ZCyberNews"],
       tags: frontmatter.tags,
       locale: locale === "zh" ? "zh_CN" : "en_US",
       images: image
@@ -84,8 +84,7 @@ export default async function ArticlePage({ params }: Props) {
   const { frontmatter, content, readingTime } = article;
   const { content: mdxContent, headings } = await compileMDX(content);
   const related = getRelatedPosts(frontmatter, locale, "posts", 3);
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://alecybernews.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
   const image =
     frontmatter.featured_image ??
     CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
@@ -97,7 +96,7 @@ export default async function ArticlePage({ params }: Props) {
         description={frontmatter.excerpt}
         datePublished={frontmatter.date}
         dateModified={frontmatter.updated}
-        authorName={frontmatter.author ?? "AleCyberNews"}
+        authorName={frontmatter.author ?? "ZCyberNews"}
         url={`${siteUrl}/${locale}/articles/${slug}`}
         image={image ? `${siteUrl}${image}` : undefined}
         keywords={frontmatter.tags}

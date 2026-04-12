@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * AleCyberNews AI Content Pipeline
+ * ZCyberNews AI Content Pipeline
  * Usage: npx tsx scripts/pipeline/index.ts [--max-articles=5] [--dry-run]
  *
  * Required env vars:
@@ -42,7 +42,7 @@ if (!DRY_RUN) {
 
 async function main() {
   console.log(
-    `\n🚀 AleCyberNews AI Pipeline — max=${MAX_ARTICLES}${DRY_RUN ? " [DRY RUN]" : ""}\n`,
+    `\n🚀 ZCyberNews AI Pipeline — max=${MAX_ARTICLES}${DRY_RUN ? " [DRY RUN]" : ""}\n`,
   );
 
   // 1. Ingest fresh stories from RSS

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts, getAllTags } from "@/lib/content";
 import { CategoryEnum } from "@/lib/types";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://alecybernews.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
 const LOCALES = ["en", "zh"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

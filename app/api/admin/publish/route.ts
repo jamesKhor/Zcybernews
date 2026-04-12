@@ -24,7 +24,7 @@ excerpt: "${req.excerpt.replace(/"/g, '\\"').slice(0, 200)}"
 category: "${req.category}"
 tags:${tags}
 language: "${req.locale ?? "en"}"
-author: "${req.author ?? "AleCyberNews"}"
+author: "${req.author ?? "ZCyberNews"}"
 draft: false
 ---
 
@@ -37,7 +37,10 @@ const GH_HEADERS = {
   "Content-Type": "application/json",
 };
 
-async function getFileSha(apiUrl: string, token: string): Promise<string | undefined> {
+async function getFileSha(
+  apiUrl: string,
+  token: string,
+): Promise<string | undefined> {
   const res = await fetch(apiUrl, {
     headers: { ...GH_HEADERS, Authorization: `Bearer ${token}` },
   });
@@ -122,8 +125,7 @@ export async function POST(req: NextRequest) {
       success: true,
       path: filePath,
       githubUrl: url,
-      message:
-        "Article committed to GitHub. Vercel is deploying shortly.",
+      message: "Article committed to GitHub. Vercel is deploying shortly.",
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";

@@ -8,7 +8,7 @@ export function buildArticlePrompt(stories: Story[]): string {
     )
     .join("\n\n---\n\n");
 
-  return `You are a senior cybersecurity analyst and technical writer for AleCyberNews.
+  return `You are a senior cybersecurity analyst and technical writer for ZCyberNews.
 Write at the level of Krebs on Security — accurate, technically precise, no marketing language.
 Use inverted pyramid structure. Attribute claims to sources. Flag uncertainty explicitly.
 
