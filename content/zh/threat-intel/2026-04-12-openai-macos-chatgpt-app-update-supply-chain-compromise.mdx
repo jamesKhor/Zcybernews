@@ -1,0 +1,51 @@
+---
+title: OpenAI 针对 macOS ChatGPT 应用发布紧急更新以应对供应链泄露
+slug: 2026-04-12-openai-macos-chatgpt-app-update-supply-chain-compromise
+date: '2026-04-12'
+excerpt: OpenAI 警告 macOS 用户更新 ChatGPT 桌面应用，因为第三方库存在泄露问题。没有用户数据被泄露，但应用可能会泄露对话数据。
+category: threat-intel
+tags:
+  - supply-chain
+  - openai
+  - macos
+  - javascript
+  - data-leakage
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/openai-macos-users/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-12-openai-macos-chatgpt-app-update-supply-chain-compromise
+severity: high
+---
+## 执行摘要
+OpenAI 针对其 ChatGPT 桌面应用程序的 macOS 用户发布了紧急警告，要求立即更新软件。这一行动源于一起涉及第三方 JavaScript 库 Axios 被入侵的软件供应链攻击，该攻击于 2026 年 3 月 31 日被发现。尽管 OpenAI 表示没有用户数据、API 密钥或内部系统被直接入侵，但通过被污染的库引入的漏洞可能允许桌面应用程序将对话数据泄露给外部服务器。主要风险在于尚未更新应用程序的用户，因为他们使用的是分发的易受攻击版本。
+
+## 技术分析
+核心漏洞并非源自 OpenAI 的代码，而是 Axios 库，这是一个用于发起 HTTP 请求的流行 JavaScript 包。根据 OpenAI 的披露，一个恶意行为者入侵了这个第三方依赖库。当被污染的版本被集成到 macOS 的 ChatGPT 桌面应用程序中时，它引入了一个潜在的后门。公共咨询中没有详细说明数据泄露的确切机制，但暗示被污染的代码可能截获并重定向本地应用程序中的敏感对话数据到攻击者控制的服务器。OpenAI 已确认该问题仅限于 macOS 桌面客户端，不影响 Web 界面、移动应用程序或 API 服务。该公司随后发布了一个修补版本，移除了恶意依赖。
+
+## 入侵指标
+目前没有识别出任何入侵指标。OpenAI 没有公开发布与被污染库或数据泄露端点相关的特定文件哈希值、域名或 IP 地址。明确的指标是使用未修补版本的 ChatGPT macOS 桌面应用程序。
+
+## 战术、技术与程序
+威胁行为者采用了经典的软件供应链攻击，被归类于 MITRE ATT&CK 框架中的 **T1195.002**（入侵软件供应链）。他们的技术涉及入侵一个合法且广泛使用的开源库（Axios）以插入恶意代码。然后，该代码被下游分发到所有包含该库的应用程序，这种方法被称为 **依赖混淆** 或 **拼写错误攻击**，尽管确切的攻击向量尚未指定。目标似乎是数据收集，利用父应用程序的信任更新渠道部署隐蔽的数据盗窃机制。
+
+## 威胁行为者背景
+OpenAI 的披露没有将此事件归因于特定的威胁行为者或团体。攻击的性质——针对基础开源组件，可能从高调 AI 应用程序的用户群中收集数据——表明涉及一个复杂的行为者。这可能从进行间谍活动的国家支持团体到寻求训练数据或专有信息的以财务为动机的犯罪行动。在早期阶段缺乏归因在正在进行的调查中很常见。
+
+## 检测与溯源查询
+监控其 macOS 端点的组织可以通过检查易受攻击的 ChatGPT 应用程序版本的存在来寻找入侵的证据。主要关注点应该是桌面应用程序发起的、不指向 OpenAI 官方域名（`*.openai.com`）的出站网络连接。EDR 查询应查找与 ChatGPT 应用程序相关的进程创建事件及其随后的网络活动。
+
+- **进程执行：** 查找 ChatGPT 应用程序二进制文件（例如，`ChatGPT.app/Contents/MacOS/ChatGPT`）。
+- **网络流量：** 寻找从 ChatGPT 桌面进程到与 OpenAI 基础设施不一致的域名的 HTTP/HTTPS 请求。应调查可疑流量到新注册的域名或模仿 Axios 或常见 CDN 的域名。
+- **文件完整性监控：** 在安装后对应用程序的 JavaScript 捆绑包或 node_modules 目录的意外修改发出警报。
+
+## 缓解措施与建议
+关键且立即的缓解措施是更新 ChatGPT 桌面应用程序至 macOS 的最新版本，该版本由 OpenAI 通过官方更新机制提供，或直接从 OpenAI 网站下载。用户不应延迟此操作。作为一般安全实践，组织应：
+1. **强制应用允许列表：** 限制在公司 macOS 设备上运行的应用程序，限制安装未经授权的桌面客户端。
+2. **监控供应链风险：** 实施可以检测部署软件中已知易受攻击或恶意依赖的工具。
+3. **分段和监控网络流量：** 应用出口过滤并监控用户工作站的异常数据流，特别是从非浏览器应用程序到意外外部目的地的数据流。
+4. **推广 Web 客户端使用：** 对于企业环境，考虑建议使用 ChatGPT Web 界面（未受影响）而不是桌面应用程序（在可行的情况下），因为浏览器环境提供额外的沙箱和安全控制。
+
+## 参考资料
+- https://cybersecuritynews.com/openai-macos-users/

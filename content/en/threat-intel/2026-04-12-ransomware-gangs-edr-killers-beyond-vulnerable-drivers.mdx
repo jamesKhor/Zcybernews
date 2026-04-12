@@ -1,0 +1,56 @@
+---
+title: 'Ransomware Gangs Evolve EDR Evasion, Adopt New Driver-Based Killers'
+slug: 2026-04-12-ransomware-gangs-edr-killers-beyond-vulnerable-drivers
+date: '2026-04-12'
+excerpt: >-
+  ESET Research reports ransomware operators are expanding their arsenal of
+  EDR-killing tools, moving beyond exploiting vulnerable drivers to using
+  legitimate but maliciously signed drivers for stealth.
+category: threat-intel
+tags:
+  - ransomware
+  - edr
+  - evasion
+  - drivers
+  - malware
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/ransomware-gangs-expand-use-of-edr-killers/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-12-ransomware-gangs-edr-killers-beyond-vulnerable-drivers
+severity: high
+---
+## Executive Summary
+Ransomware threat actors are systematically deploying a broader range of tools designed to disable Endpoint Detection and Response (EDR) software, a critical step preceding file encryption. According to ESET Research, this evolution now includes the use of maliciously signed but legitimate kernel-mode drivers to terminate security processes, moving beyond the earlier, more publicized reliance on exploiting known vulnerabilities in legitimate drivers. This shift represents a significant escalation in operational security, making detection more difficult and increasing the likelihood of successful ransomware deployment.
+
+## Technical Analysis
+The core technical advancement documented by ESET is the transition from exploiting vulnerable drivers (the "Bring Your Own Vulnerable Driver" or BYOVD technique) to deploying custom, malicious drivers that are digitally signed. These signed drivers abuse the high system privileges inherent to the Windows kernel to manipulate kernel data structures and terminate processes associated with EDR and antivirus agents. Unlike BYOVD, which leverages a flaw in an existing, often outdated driver from a reputable vendor, this method involves a driver written by the threat actor but fraudulently or deceptively signed, often through compromised or purchased certificates. This grants the driver the necessary trust to load into the kernel, where it can then disable security controls with minimal friction. The technique is a direct response to improved vendor and operating system defenses against the loading of known vulnerable drivers.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The primary TTP observed is the **Defense Evasion** technique of **Impair Defenses** (TA0040), specifically sub-technique **T1562.001: Disable or Modify Tools**. The execution flow typically follows a pattern: initial access (often via phishing or exploitation), establishment of a foothold, lateral movement, and then, prior to ransomware detonation, the deployment of the EDR killer. The malicious driver is loaded, often using standard Windows utilities like `PnPUtil.exe`, and once operational, it scans for and terminates processes, threads, and driver modules belonging to a predefined list of security products. This process is designed to be surgical, leaving the rest of the system operational to ensure the ransomware payload can execute unimpeded.
+
+## Threat Actor Context
+While ESET's report does not attribute this specific technique to named threat groups, the adoption of signed driver-based EDR killers is consistent with the behavior of sophisticated, financially motivated ransomware operations. These groups continuously invest in research and development to overcome security improvements. The move from BYOVD to custom signed drivers suggests a level of resourcefulness and access to either code-signing certificate theft or underground markets where such certificates can be acquired. This tactic is not the domain of a single group but is becoming a standardized tool in the broader ransomware ecosystem, indicating knowledge sharing or parallel development among affiliates and core developers.
+
+## Detection & Hunting Queries
+Detection should focus on kernel-level activity and driver loading events, particularly for new or rarely seen drivers. Hunting queries should examine:
+- System logs for the loading of drivers with unusual metadata (e.g., recent timestamps, publisher names mismatching common vendors) via events like `Sysmon Event ID 6` (Driver loaded).
+- Process termination events (`Sysmon Event ID 5`) where the parent process is a kernel-mode driver or a system utility like `svchost.exe` or `services.exe` acting anomalously.
+- Command-line logging for the use of `PnPUtil.exe` or `sc.exe` to install drivers outside of standard software deployment or update cycles.
+- Monitoring for the creation of unsigned or suspiciously signed kernel-mode drivers in the `C:\Windows\System32\drivers\` directory.
+
+## Mitigations & Recommendations
+Organizations should implement a layered defense strategy. Critical measures include:
+- **Enforcing Driver Allowlisting:** Configure policies to block the loading of drivers not explicitly signed by trusted publishers or not on an approved list. Microsoft's **Hypervisor-Protected Code Integrity (HVCI)** is a core technology for this.
+- **Vigilant Certificate Management:** Monitor for and investigate the installation of drivers signed by new or unexpected certificate authorities or publishers.
+- **Enhanced EDR Configuration:** Deploy EDR solutions with protected processes and kernel-level self-defense mechanisms that can detect and block attempts at termination.
+- **Strict Privilege Management:** Adhere to the principle of least privilege, ensuring standard user accounts cannot load kernel drivers, and rigorously control administrative access.
+- **Network Segmentation:** Limit lateral movement to contain the impact of a security tool disablement, buying time for detection and response.
+- **Threat Intelligence Integration:** Subscribe to feeds that provide indicators and behavioral patterns for emerging EDR evasion tools to update detection logic proactively.
+
+## References
+- https://cybersecuritynews.com/ransomware-gangs-expand-use-of-edr-killers/

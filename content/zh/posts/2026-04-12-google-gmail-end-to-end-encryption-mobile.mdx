@@ -1,0 +1,44 @@
+---
+title: Google 为 Gmail 移动版推出端到端加密
+slug: 2026-04-12-google-gmail-end-to-end-encryption-mobile
+date: '2026-04-12'
+excerpt: Google 在 Android 和 iOS 上为 Gmail 推出客户端端到端加密（E2EE），增强了组织的数据主权。
+category: industry
+tags:
+  - google
+  - gmail
+  - encryption
+  - mobile
+  - data-sovereignty
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/gmail-end-to-end-encryption-for-android-and-ios/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-12-google-gmail-end-to-end-encryption-mobile
+severity: informational
+---
+## 执行摘要
+Google 已正式为 Android 和 iOS 上的 Gmail 移动应用程序推出端到端加密（E2EE），使组织能够在邮件内容离开设备前在客户端对其进行加密。此次更新响应了对受监管行业数据主权和保密性日益增长的监管要求。
+
+## 技术分析
+新的 E2EE 功能使用客户端密钥对邮件内容进行加密，确保只有发件人和预期收件人能够解密信息。Google 已将此功能直接集成到 Gmail 移动应用程序中，消除了对第三方加密工具的需求。实现利用现有的 Gmail 基础设施，同时增加了一个在数据传输到 Google 服务器之前运行的额外加密层。
+
+## 入侵指标
+目前未识别出任何入侵指标。
+
+## 战术、技术与程序
+此次发布代表一种防御性措施，而不是对活跃威胁的响应。TTP 涉及使用设备生成的密钥对邮件内容进行客户端加密，只有拥有相应密钥的收件人设备才能进行解密。
+
+## 威胁行为者背景
+没有特定的威胁行为者与此功能发布相关联。更新解决了对数据隐私和监管合规性的一般性关切，而不是响应已知的威胁活动。
+
+## 检测与溯源查询
+由于此次功能发布代表 Gmail 安全姿态的增强，而不是对恶意活动的响应，因此不适用任何检测查询。
+
+## 缓解措施与建议
+组织应为处理敏感信息的用户启用 E2EE 功能，并确保适当的密钥管理实践到位。IT 管理员应查看 Google 的文档以获取实施指南，并考虑举办培训课程，以使用户熟悉新的加密工作流程。
+
+## 参考资料
+- [Google 为 Android 和 iOS 用户推出 Gmail 端到端加密](https://cybersecuritynews.com/gmail-end-to-end-encryption-for-android-and-ios/)

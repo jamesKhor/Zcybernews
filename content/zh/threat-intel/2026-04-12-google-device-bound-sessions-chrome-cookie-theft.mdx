@@ -1,0 +1,56 @@
+---
+title: Google 推出设备绑定会话以阻止 Chrome 饼干盗窃
+slug: 2026-04-12-google-device-bound-sessions-chrome-cookie-theft
+date: '2026-04-12'
+excerpt: Google 已开始在 Windows 上为 Chrome 公开推出设备绑定会话凭证，这是一个旨在防止会话饼干盗窃和劫持的根本性变化。
+category: threat-intel
+tags:
+  - chrome
+  - authentication
+  - session-hijacking
+  - google
+  - browser-security
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/device-bound-chrome-sessions-in-anti-cookie-theft-move/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-12-google-device-bound-sessions-chrome-cookie-theft
+severity: medium
+---
+## 执行摘要
+Google 已开始在 Windows 系统上为 Chrome 浏览器推出 **设备绑定会话凭证（DBSC）**，这是一个旨在中和会话 Cookie 盗窃的主要架构变更，会话 Cookie 盗窃是账户接管攻击的主要途径。这次更新由 Google 的账户安全和 Chrome 团队详细说明，将认证会话以密码方式绑定到原始硬件的 **可信平台模块（TPM）** 或硬件安全密钥上，使得在未授权设备上被盗的 Cookie 变得无效。初始部署针对 Windows 系统，计划在未来版本中支持 macOS。
+
+## 技术分析
+DBSC 的核心创新是用与用户设备上的 **可信平台模块（TPM）** 或硬件安全密钥绑定的密码密钥对替换传统的、可携带的会话 Cookie。根据 Google 的公告，当用户通过 Chrome 登录 Google 账户时，浏览器现在会生成一个永远不会离开安全硬件区域的私钥。相应的公钥会注册到 Google 的服务器上。
+后续的会话认证需要客户端使用此私钥签名一个挑战，证明拥有原始设备。这个过程被称为 **设备绑定密钥认证**，切断了会话令牌和 Cookie 文件之间的联系。因此，通过数据泄露或通过中间人攻击拦截令牌的攻击者无法在不同的机器上重放它们，因为缺少必要的私钥。该功能在浏览器级别实现，不需要更改网站代码。
+
+## 入侵指标
+目前没有识别到。
+
+## 战术、技术与程序
+DBSC 的推出直接对抗了已建立的对手 **战术、技术和程序（TTPs）** 用于会话劫持。它主要缓解的技术包括：
+*   **通过恶意软件盗窃凭证：** 信息窃取恶意软件（例如，Raccoon、RedLine）从用户配置文件中刮取 `Cookies` 数据库文件将不再获得受保护账户的功能会话令牌。
+*   **中间人（MitM）攻击：** 使用网络拦截或恶意代理来捕获传输中的会话 Cookie 的对手将捕获无法使用的令牌。
+*   **跨站脚本（XSS）和浏览器漏洞利用：** 尽管 XSS 仍可用于在活动会话中执行操作，但导出持久会话令牌以供以后使用的能力被抵消。
+防御针对的是后期利用阶段，特别是 MITRE ATT&CK 框架中的 **窃取应用程序访问令牌（T1550.001）** 技术。
+
+## 威胁行为者背景
+会话 Cookie 盗窃是一种被广泛威胁行为者利用的商品化能力，从以财务为动机的网络犯罪分子到国家支持的高级持续性威胁（APT）组织。犯罪生态系统为被盗 Cookie 拥有成熟的市场，通常与 IP 掩盖服务配对，以绕过基于密码的认证和多因素认证（MFA）进行账户接管。通过使核心资产——可携带的会话令牌——无效，DBSC 提高了这些攻击的成本和复杂性，可能破坏已建立的欺诈和情报收集工作流程。
+
+## 检测与溯源查询
+虽然 DBSC 是一种预防性控制措施，但安全团队可以监控其采用和相关异常。在端点检测或 SIEM 平台上的狩猎查询可以关注：
+*   **Chrome 版本跟踪：** 识别运行 Chrome 146 版本之前的端点，以评估传统 Cookie 盗窃的风险。
+    *   示例逻辑：`process.name: "chrome.exe" AND chrome_version < "146.*"`
+*   **认证日志分析：** 监控 Google Workspace 或身份提供商日志，查找因缺少或无效的设备绑定密钥断言而失败的认证尝试，这可能表明从未经授权的系统尝试重放令牌。
+
+## 缓解措施与建议
+组织和用户应采取以下行动以利用这一安全改进：
+1.  **强制 Chrome 更新：** 确保 Chrome 浏览器更新到 Windows 系统上的 146+ 版本，并最终更新到 macOS 系统，以自动接收 DBSC 功能。企业管理员应优先考虑这次推出。
+2.  **硬件先决条件：** 验证企业设备是否拥有并启用了 TPM 2.0 或兼容的硬件安全密钥，因为这是 DBSC 功能的技术要求。
+3.  **保持深度防御：** DBSC 不是万能药。继续执行强密码策略、防钓鱼 MFA（例如，FIDO2 安全密钥）和端点安全控制，以保护免受其他攻击向量，如通过恶意软件进行实时浏览器劫持。
+4.  **用户意识：** 告知用户，在新设备或共享设备上登录 Google 账户将需要完整的重新认证，因为会话无法通过 Cookie 文件传输。
+
+## 参考资料
+*   [https://cybersecuritynews.com/device-bound-chrome-sessions-in-anti-cookie-theft-move/](https://cybersecuritynews.com/device-bound-chrome-sessions-in-anti-cookie-theft-move/)
