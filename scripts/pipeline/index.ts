@@ -91,7 +91,7 @@ async function main() {
         const zhMeta = await translateArticle(article);
 
         // Write MDX files
-        const paths = writeArticlePair(article, zhMeta);
+        const paths = writeArticlePair(article, zhMeta, storyUrls);
         console.log(`[pipeline] ✅  Written: ${paths.en}`);
         if (paths.zh) console.log(`[pipeline] ✅  Written: ${paths.zh}`);
 
