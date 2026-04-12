@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ZCyberNews — Automated AI content pipeline
-# Runs on VPS via cron. Generates EN+ZH articles, rebuilds site, commits to GitHub.
+# Runs on VPS via cron. Generates EN articles, rebuilds site, commits to GitHub.
 #
 # Usage: bash scripts/run-pipeline.sh [--max-articles=N]
 # Default: 3 articles per run
@@ -20,6 +20,26 @@ mkdir -p "$(dirname "$LOG_FILE")"
 
 exec >> "$LOG_FILE" 2>&1
 
+# ── Load env vars (for API keys + Telegram config) ─────────────────────────
+if [ -f "$REPO_DIR/.env.local" ]; then
+  set -a
+  source "$REPO_DIR/.env.local"
+  set +a
+fi
+
+# ── Telegram notification helper ────────────────────────────────────────────
+notify() {
+  local message="$1"
+  if [ -n "${TELEGRAM_BOT_TOKEN:-}" ] && [ -n "${TELEGRAM_CHAT_ID:-}" ]; then
+    curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+      -d chat_id="${TELEGRAM_CHAT_ID}" \
+      -d parse_mode="HTML" \
+      -d text="${message}" \
+      -d disable_web_page_preview=true \
+      > /dev/null 2>&1 || true
+  fi
+}
+
 echo ""
 echo "=============================================="
 echo "  ZCyberNews Pipeline — $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
@@ -38,6 +58,9 @@ PIPELINE_EXIT=$?
 
 if [ $PIPELINE_EXIT -ne 0 ]; then
   echo "[pipeline] ❌ Pipeline exited with code $PIPELINE_EXIT"
+  notify "❌ <b>ZCyberNews Pipeline Failed</b>
+Exit code: $PIPELINE_EXIT
+Time: $(date -u '+%H:%M UTC')"
   exit $PIPELINE_EXIT
 fi
 
@@ -52,7 +75,7 @@ fi
 echo "[pipeline] $NEW_FILES new file(s) detected. Rebuilding site..."
 
 # 4. Rebuild Next.js
-HUSKY=0 npm run build
+NODE_OPTIONS="--max-old-space-size=512" HUSKY=0 npm run build
 
 # 5. Restart PM2
 pm2 restart zcybernews
@@ -62,8 +85,25 @@ echo "[deploy] ✅ PM2 restarted"
 echo "[git] Committing new articles..."
 git config user.name "zcybernews-bot"
 git config user.email "bot@zcybernews.com"
-git add content/ .pipeline-cache/ 2>/dev/null || true
+git add content/ .pipeline-cache/ data/ 2>/dev/null || true
 git diff --staged --quiet || git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
 git push origin main || echo "[git] ⚠️  Push failed — will retry on next run"
+
+# 7. Collect article titles for notification
+ARTICLE_TITLES=$(git log -1 --name-only --pretty=format: -- content/en/ 2>/dev/null | \
+  xargs -I{} basename {} .mdx 2>/dev/null | \
+  head -5 | \
+  sed 's/-/ /g; s/\b\(.\)/\u\1/g' | \
+  sed 's/^/• /' || echo "")
+
+ARTICLE_COUNT=$((NEW_FILES / 2))  # rough: EN + ZH pairs or just EN files
+[ "$ARTICLE_COUNT" -lt 1 ] && ARTICLE_COUNT=$NEW_FILES
+
+notify "✅ <b>ZCyberNews Published ${ARTICLE_COUNT} article(s)</b>
+Time: $(date -u '+%H:%M UTC')
+
+${ARTICLE_TITLES}
+
+🔗 https://zcybernews.com"
 
 echo "[pipeline] ✅ Done — $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
