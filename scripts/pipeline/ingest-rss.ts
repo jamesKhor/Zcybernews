@@ -1,6 +1,11 @@
 import Parser from "rss-parser";
 import { ENABLED_SOURCES, type FeedSource } from "../sources/feeds.js";
-import { deduplicate, type Story } from "../utils/dedup.js";
+import {
+  deduplicate,
+  loadRecentPublishedTitles,
+  titleSimilarity,
+  type Story,
+} from "../utils/dedup.js";
 import { isProcessed } from "../utils/cache.js";
 import { limit, withRetry } from "../utils/rate-limit.js";
 
@@ -101,9 +106,25 @@ export async function ingestFeeds(maxStories = 20): Promise<Story[]> {
   const deduped = deduplicate(all);
   console.log(`[ingest] After dedup: ${deduped.length} stories`);
 
-  // Filter already processed
+  // Filter already processed URLs
   const fresh = deduped.filter((s) => s.url && !isProcessed(s.url));
   console.log(`[ingest] Fresh (not yet processed): ${fresh.length} stories`);
 
-  return fresh.slice(0, maxStories);
+  // Filter stories too similar to articles published in the last 14 days.
+  // Topics older than 14 days are fair game again (new developments may exist).
+  const publishedTitles = loadRecentPublishedTitles(14);
+  const notCovered = fresh.filter((story) => {
+    const tooSimilar = publishedTitles.some(
+      (published) => titleSimilarity(story.title, published) >= 0.6,
+    );
+    if (tooSimilar) {
+      console.log(`[ingest] Skipping (already covered): "${story.title}"`);
+    }
+    return !tooSimilar;
+  });
+  console.log(
+    `[ingest] After published-article filter: ${notCovered.length} stories`,
+  );
+
+  return notCovered.slice(0, maxStories);
 }
