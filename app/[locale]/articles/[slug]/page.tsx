@@ -49,10 +49,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical,
       languages: frontmatter.locale_pair
         ? {
-            en: `/en/articles/${frontmatter.locale_pair}`,
-            "zh-Hans": `/zh/articles/${frontmatter.locale_pair}`,
+            en:
+              locale === "en"
+                ? `/en/articles/${slug}`
+                : `/en/articles/${frontmatter.locale_pair}`,
+            "zh-Hans":
+              locale === "zh"
+                ? `/zh/articles/${slug}`
+                : `/zh/articles/${frontmatter.locale_pair}`,
+            "x-default":
+              locale === "en"
+                ? `/en/articles/${slug}`
+                : `/en/articles/${frontmatter.locale_pair}`,
           }
-        : { en: `/en/articles/${slug}`, "zh-Hans": `/zh/articles/${slug}` },
+        : {
+            en: `/en/articles/${slug}`,
+            "zh-Hans": `/zh/articles/${slug}`,
+            "x-default": `/en/articles/${slug}`,
+          },
     },
     openGraph: {
       title: frontmatter.title,

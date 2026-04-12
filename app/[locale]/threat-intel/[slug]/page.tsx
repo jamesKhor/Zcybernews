@@ -50,12 +50,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical,
       languages: frontmatter.locale_pair
         ? {
-            en: `/en/threat-intel/${frontmatter.locale_pair}`,
-            "zh-Hans": `/zh/threat-intel/${frontmatter.locale_pair}`,
+            en:
+              locale === "en"
+                ? `/en/threat-intel/${slug}`
+                : `/en/threat-intel/${frontmatter.locale_pair}`,
+            "zh-Hans":
+              locale === "zh"
+                ? `/zh/threat-intel/${slug}`
+                : `/zh/threat-intel/${frontmatter.locale_pair}`,
+            "x-default":
+              locale === "en"
+                ? `/en/threat-intel/${slug}`
+                : `/en/threat-intel/${frontmatter.locale_pair}`,
           }
         : {
             en: `/en/threat-intel/${slug}`,
             "zh-Hans": `/zh/threat-intel/${slug}`,
+            "x-default": `/en/threat-intel/${slug}`,
           },
     },
     openGraph: {

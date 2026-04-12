@@ -16,18 +16,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: "daily",
         priority: 1.0,
+        alternates: {
+          languages: { en: `${BASE_URL}/en`, zh: `${BASE_URL}/zh` },
+        },
       },
       {
         url: `${BASE_URL}/${locale}/articles`,
         lastModified: new Date(),
         changeFrequency: "daily",
         priority: 0.9,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/articles`,
+            zh: `${BASE_URL}/zh/articles`,
+          },
+        },
       },
       {
         url: `${BASE_URL}/${locale}/threat-intel`,
         lastModified: new Date(),
         changeFrequency: "daily",
         priority: 0.9,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/threat-intel`,
+            zh: `${BASE_URL}/zh/threat-intel`,
+          },
+        },
       },
     );
 
@@ -38,19 +53,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.7,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/categories/${category}`,
+            zh: `${BASE_URL}/zh/categories/${category}`,
+          },
+        },
       });
     }
 
-    // Tag pages
+    // Tag pages — only include tags with 3+ articles to avoid thin content
     const postTags = getAllTags(locale, "posts");
     const tiTags = getAllTags(locale, "threat-intel");
     const allTags = [...new Set([...postTags, ...tiTags])];
     for (const tag of allTags) {
+      const postCount = getAllPosts(locale, "posts").filter((p) =>
+        p.frontmatter.tags.includes(tag),
+      ).length;
+      const tiCount = getAllPosts(locale, "threat-intel").filter((p) =>
+        p.frontmatter.tags.includes(tag),
+      ).length;
+      if (postCount + tiCount < 3) continue;
       entries.push({
         url: `${BASE_URL}/${locale}/tags/${tag}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.6,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/tags/${tag}`,
+            zh: `${BASE_URL}/zh/tags/${tag}`,
+          },
+        },
       });
     }
 
@@ -64,6 +98,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
           : new Date(post.frontmatter.date),
         changeFrequency: "monthly",
         priority: 0.8,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/articles/${post.frontmatter.locale_pair ?? post.frontmatter.slug}`,
+            zh: `${BASE_URL}/zh/articles/${post.frontmatter.locale_pair ?? post.frontmatter.slug}`,
+          },
+        },
       });
     }
 
@@ -77,6 +117,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
           : new Date(post.frontmatter.date),
         changeFrequency: "monthly",
         priority: 0.8,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/threat-intel/${post.frontmatter.locale_pair ?? post.frontmatter.slug}`,
+            zh: `${BASE_URL}/zh/threat-intel/${post.frontmatter.locale_pair ?? post.frontmatter.slug}`,
+          },
+        },
       });
     }
   }

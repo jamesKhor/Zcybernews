@@ -16,7 +16,7 @@ export function Footer({ locale }: Props) {
           <div>
             <div className="flex items-center gap-2 font-bold mb-3">
               <Shield className="h-5 w-5 text-primary" />
-              <span className="text-primary">Ale</span>
+              <span className="text-primary">Z</span>
               <span>CyberNews</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">

@@ -44,7 +44,7 @@ export const metadata: Metadata = {
       "Professional cybersecurity and tech intelligence — threat analysis, vulnerability research, and security news for defenders.",
     images: [
       {
-        url: "/images/defaults/og-default.svg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "ZCyberNews",
@@ -56,7 +56,12 @@ export const metadata: Metadata = {
     title: "ZCyberNews",
     description:
       "Professional cybersecurity and tech intelligence — threat analysis, vulnerability research, and security news for defenders.",
-    images: ["/images/defaults/og-default.svg"],
+    images: ["/opengraph-image"],
+  },
+  alternates: {
+    types: {
+      "application/rss+xml": "/api/feed",
+    },
   },
   robots: {
     index: true,
@@ -65,13 +70,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale?: string }>;
 }>) {
+  const { locale } = await params;
+  const lang = locale === "zh" ? "zh-Hans" : "en";
+
   return (
     <html
+      lang={lang}
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >

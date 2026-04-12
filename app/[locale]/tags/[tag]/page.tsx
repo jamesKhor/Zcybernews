@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         en: `/en/tags/${tag}`,
         "zh-Hans": `/zh/tags/${tag}`,
+        "x-default": `/en/tags/${tag}`,
       },
     },
     openGraph: {

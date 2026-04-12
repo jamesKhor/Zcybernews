@@ -19,9 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: {
       canonical: `/${locale}/threat-intel`,
-      languages: { en: "/en/threat-intel", "zh-Hans": "/zh/threat-intel" },
+      languages: {
+        en: "/en/threat-intel",
+        "zh-Hans": "/zh/threat-intel",
+        "x-default": "/en/threat-intel",
+      },
     },
     openGraph: { title, description, url: `/${locale}/threat-intel` },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 

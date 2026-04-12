@@ -1,6 +1,6 @@
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
 const PUBLISHER_NAME = "ZCyberNews";
-const PUBLISHER_LOGO = `${SITE_URL}/images/defaults/og-default.svg`;
+const PUBLISHER_LOGO = `${SITE_URL}/opengraph-image`;
 
 // ─── NewsArticle ──────────────────────────────────────────────────────────────
 
@@ -30,9 +30,16 @@ export function NewsArticleJsonLd({
     "@type": "NewsArticle",
     headline,
     description,
-    datePublished,
-    dateModified: dateModified ?? datePublished,
-    author: { "@type": "Person", name: authorName },
+    datePublished: datePublished.includes("T")
+      ? datePublished
+      : `${datePublished}T00:00:00Z`,
+    dateModified: (dateModified ?? datePublished).includes("T")
+      ? (dateModified ?? datePublished)
+      : `${dateModified ?? datePublished}T00:00:00Z`,
+    author:
+      authorName === "AI-generated" || authorName === "ZCyberNews"
+        ? { "@type": "Organization", name: "ZCyberNews" }
+        : { "@type": "Person", name: authorName },
     publisher: {
       "@type": "Organization",
       name: PUBLISHER_NAME,

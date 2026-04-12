@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: {
       canonical: `/${locale}`,
-      languages: { en: "/en", "zh-Hans": "/zh" },
+      languages: { en: "/en", "zh-Hans": "/zh", "x-default": "/en" },
     },
     openGraph: {
       title,
@@ -35,6 +35,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `/${locale}`,
       locale: isZh ? "zh_CN" : "en_US",
       alternateLocale: isZh ? "en_US" : "zh_CN",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }
@@ -105,6 +110,11 @@ function HomeContent({
   return (
     <main className="flex-1">
       <HomeJsonLd locale={locale} />
+      <h1 className="sr-only">
+        {isZh
+          ? "ZCyberNews — 网络安全与科技情报"
+          : "ZCyberNews — Cybersecurity & Tech Intelligence"}
+      </h1>
       {/* Breaking ticker */}
       {latest[0] && (
         <div className="border-b border-border bg-primary/5">
