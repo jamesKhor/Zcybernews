@@ -1,0 +1,52 @@
+---
+title: CPUID 网站被入侵以分发木马化系统工具
+slug: 2026-04-13-cpuid-website-compromised-trojanized-cpu-z-hwmonitor
+date: '2026-04-13'
+excerpt: >-
+  一个讲俄语的威胁行为者黑客入侵了CPUID网站，用木马化的安装程序替换了CPU-Z和HWMonitor的合法下载链接，这些安装程序分发了STX
+  RAT恶意软件。
+category: malware
+tags:
+  - supply-chain
+  - stx-rat
+  - cpuid
+  - cpu-z
+  - hwmonitor
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/cpuid-hacked-to-serve-trojanized-cpu-z-and-hwmonitor-downloads/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-cpuid-website-compromised-trojanized-cpu-z-hwmonitor
+severity: high
+threat_actor: Russian-speaking threat actor
+affected_sectors:
+  - software
+  - technology
+---
+## CPUID 网站被入侵以分发木马化系统工具
+
+## 执行摘要
+法国系统分析软件开发商 CPUID 的官方网站被入侵，用以分发其流行的 CPU-Z 和 HWMonitor 实用程序的木马化版本。一名讲俄语的威胁行为者将合法的下载链接替换为恶意安装程序，部署了被识别为 STX RAT 的远程访问木马（RAT）。该事件代表了典型的软件供应链攻击，利用对合法供应商的信任来感染寻求基本诊断工具的用户。
+
+## 技术分析
+根据 SecurityWeek 的报告，入侵目标是 cpuid.com 的下载基础设施。威胁行为者没有破坏软件的源代码或签名证书。相反，他们修改了网站的下载链接，指向托管在另一个被入侵域上的恶意安装文件。当用户下载并执行他们认为是 CPU-Z 或 HWMonitor 的合法安装程序时，恶意软件被部署。此次活动中交付的有效载荷是 STX RAT，这是一个相对较新的恶意软件家族，为攻击者提供对受感染系统的完全远程控制。目前尚不清楚用于入侵 CPUID 网站的确切初始感染向量。
+
+## 入侵指标
+目前未识别出任何入侵指标。
+
+## 战术、技术与程序
+威胁行为者采用了软件供应链攻击（T1195.002: 破坏软件供应链）。通过入侵一个受信任供应商的网站并颠覆其分销渠道，他们增加了成功感染的可能性，同时避免了怀疑。在另一个被入侵的域上托管恶意有效载荷（T1583.001: 域）是一种常见的混淆策略，以避免被网站扫描工具立即检测。最终的有效载荷 STX RAT 提供了与凭证访问、数据收集和远程命令执行一致的能力。
+
+## 威胁行为者背景
+报告根据恶意软件内的工件将活动归因于讲俄语的威胁行为者。然而，目前没有特定的威胁组织名称（例如，APT28, FIN7）与此事件公开关联。目标似乎是一般网络间谍活动和持久访问，而不是出于财务动机的勒索软件部署。选择的目标——IT 专业人员、系统构建者和超频爱好者经常访问的网站——表明了渗透技术复杂环境的意图。
+
+## 缓解措施与建议
+在大约 2024 年 6 月 26 日至 7 月 1 日之间从 cpuid.com 下载 CPU-Z 或 HWMonitor 的组织和个人应假设已受到入侵并进行取证分析。CPUID 已声明问题已解决，但用户必须验证任何已安装版本的完整性。推荐的操作包括：
+*   **验证安装：** 卸载在入侵窗口期间安装的任何 CPU-Z 或 HWMonitor 版本。只有在确认官方网站的完整性后重新安装，并验证安装程序的数字签名。
+*   **事件响应：** 扫描受影响系统以寻找 STX RAT 和其他恶意软件的迹象。假设凭证被盗，并实施监控异常网络连接和数据泄露。
+*   **一般卫生：** 维护强大的端点检测和响应（EDR）解决方案。即使来自历史上受信任的来源，也要谨慎进行软件下载，并在可能时验证哈希或签名。
+
+## 参考资料
+*   [https://www.securityweek.com/cpuid-hacked-to-serve-trojanized-cpu-z-and-hwmonitor-downloads/](https://www.securityweek.com/cpuid-hacked-to-serve-trojanized-cpu-z-and-hwmonitor-downloads/)

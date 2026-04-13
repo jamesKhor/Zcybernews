@@ -1,0 +1,49 @@
+---
+title: North Korean Lazarus Group Compromises OpenAI via Axios Supply Chain Attack
+slug: 2026-04-13-north-korean-lazarus-axios-supply-chain-openai
+date: '2026-04-13'
+excerpt: >-
+  North Korea's Lazarus Group compromised OpenAI's internal systems via a supply
+  chain attack on the Axios client library, using a stolen macOS code-signing
+  certificate to sign malware.
+category: threat-intel
+tags:
+  - supply-chain
+  - lazarus-group
+  - openai
+  - axios
+  - macos
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/openai-impacted-by-north-korea-linked-axios-supply-chain-hack/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-north-korean-lazarus-axios-supply-chain-openai
+severity: high
+threat_actor: Lazarus Group
+threat_actor_origin: North Korea
+affected_sectors:
+  - technology
+  - artificial-intelligence
+---
+## Executive Summary
+North Korea's Lazarus Group (APT38) successfully compromised internal systems at OpenAI through a sophisticated software supply chain attack. The intrusion was facilitated by a malicious package impersonating the legitimate `axios` NPM library, which was used to steal a macOS code-signing certificate. OpenAI has confirmed the incident and is taking steps to invalidate the compromised certificate and remediate affected systems.
+
+## Technical Analysis
+The attack centered on a typosquatted package, `axios-proxy.js`, uploaded to the NPM registry. This package masqueraded as the widely-used `axios` HTTP client library. When developers inadvertently installed this malicious dependency, it executed a post-install script designed to harvest sensitive data from the victim's development environment. The primary objective, according to SecurityWeek's reporting, was to steal code-signing certificates. The threat actor successfully exfiltrated at least one Apple Developer ID code-signing certificate from an OpenAI employee's macOS system. This certificate was then used to sign malware, lending it a veneer of legitimacy to bypass security checks. The exact mechanism of the initial installation of the malicious package at OpenAI remains unclear; it could have been a direct developer mistake or part of a broader, targeted social engineering campaign.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The Lazarus Group employed a multi-stage approach aligning with common APT tradecraft. The initial access vector was **Software Supply Chain Compromise (T1195.002)** via a typosquatted package in a public repository. Following installation, the package executed **User Execution: Malicious File (T1204.002)** through its post-install script. The script performed **Credential Access (T1555)** by searching for and exfiltrating code-signing certificates from the infected macOS system. The subsequent use of the stolen certificate constitutes **Subvert Trust Controls: Code Signing (T1553.002)**, a technique critical for evading application allow-listing and endpoint detection.
+
+## Threat Actor Context
+The activity is attributed with high confidence to the Lazarus Group, a cyber-espionage and financial crime collective operating under the direction of North Korea's Reconnaissance General Bureau (RGB). The group is notorious for high-profile attacks, including the 2014 Sony Pictures hack, the WannaCry ransomware campaign, and the theft of hundreds of millions in cryptocurrency. Their operations typically blend financial motives with intelligence gathering. Targeting a leading AI firm like OpenAI aligns with North Korea's strategic interest in acquiring advanced technology and could support other malicious campaigns, including social engineering and software development for future attacks.
+
+## Mitigations & Recommendations
+Organizations, particularly those in the technology and AI sectors, should implement defensive measures against similar supply chain threats. **Strict Dependency Vetting** is required: enforce policies for using only approved, vetted internal packages or explicitly pinned versions of public libraries. **Code-Signing Certificate Hygiene** must be strengthened; consider storing certificates in hardware security modules (HSMs) or secure cloud key management services, and implement robust monitoring for unusual signing events. **Endpoint Detection and Response (EDR)** tools should be configured to alert on processes spawned from post-install scripts and to validate certificate chains for signed binaries. Developers require **Security Awareness Training** focused on the risks of typosquatting and dependency confusion attacks. Finally, maintain an **Incident Response Playbook** for certificate compromise, including immediate revocation procedures with vendors like Apple.
+
+## References
+- https://www.securityweek.com/openai-impacted-by-north-korea-linked-axios-supply-chain-hack/

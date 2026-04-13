@@ -1,0 +1,51 @@
+---
+title: CPUID Website Compromised to Distribute Trojanized System Utilities
+slug: 2026-04-13-cpuid-website-compromised-trojanized-cpu-z-hwmonitor
+date: '2026-04-13'
+excerpt: >-
+  A Russian-speaking threat actor hacked the CPUID website, replacing legitimate
+  download links for CPU-Z and HWMonitor with trojanized installers delivering
+  the STX RAT malware.
+category: malware
+tags:
+  - supply-chain
+  - stx-rat
+  - cpuid
+  - cpu-z
+  - hwmonitor
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/cpuid-hacked-to-serve-trojanized-cpu-z-and-hwmonitor-downloads/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-cpuid-website-compromised-trojanized-cpu-z-hwmonitor
+severity: high
+threat_actor: Russian-speaking threat actor
+affected_sectors:
+  - software
+  - technology
+---
+## Executive Summary
+The official website of CPUID, a French developer of system profiling software, was compromised to distribute trojanized versions of its popular CPU-Z and HWMonitor utilities. A Russian-speaking threat actor replaced legitimate download links with malicious installers that deployed a remote access trojan (RAT) identified as STX RAT. The incident represents a classic software supply chain attack, leveraging the trust in a legitimate vendor to infect users seeking essential diagnostic tools.
+
+## Technical Analysis
+According to a report by SecurityWeek, the compromise targeted the download infrastructure of cpuid.com. The threat actor did not breach the software's source code or signing certificates. Instead, they modified the website's download links to point to malicious installer files hosted on a separate, compromised domain. When users downloaded and executed what they believed to be legitimate installers for CPU-Z or HWMonitor, the malware was deployed. The payload delivered in this campaign is STX RAT, a relatively new malware family that provides attackers with full remote control over infected systems. The exact initial infection vector used to compromise the CPUID website remains unclear at this time.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The threat actor employed a software supply chain attack (T1195.002: Compromise Software Supply Chain). By compromising a trusted vendor's website and subverting its distribution channel, they increased the likelihood of successful infection while evading suspicion. The technique of hosting malicious payloads on a separate, compromised domain (T1583.001: Domains) is a common obfuscation tactic to avoid immediate detection by website scanning tools. The final payload, STX RAT, provides capabilities consistent with credential access, data collection, and remote command execution.
+
+## Threat Actor Context
+The report attributes the activity to a Russian-speaking threat actor based on artifacts within the malware. However, no specific threat group name (e.g., APT28, FIN7) is publicly associated with this incident at this time. The objective appears to be general cyber-espionage and persistent access, rather than financially motivated ransomware deployment. The choice of target—a site frequented by IT professionals, system builders, and overclockers—suggests an intent to infiltrate technically sophisticated environments.
+
+## Mitigations & Recommendations
+Organizations and individuals who downloaded CPU-Z or HWMonitor from cpuid.com between approximately June 26 and July 1, 2024, should assume compromise and conduct forensic analysis. CPUID has stated the issue is resolved, but users must verify the integrity of any installed versions. Recommended actions include:
+*   **Verify Installations:** Uninstall any CPU-Z or HWMonitor versions installed during the compromise window. Reinstall only from the official website after confirming its integrity, and validate the digital signature of the installer.
+*   **Incident Response:** Scan affected systems for signs of STX RAT and other malware. Assume credential theft and implement monitoring for anomalous network connections and data exfiltration.
+*   **General Hygiene:** Maintain robust endpoint detection and response (EDR) solutions. Exercise caution with software downloads, even from historically trusted sources, and verify hashes or signatures when possible.
+
+## References
+*   https://www.securityweek.com/cpuid-hacked-to-serve-trojanized-cpu-z-and-hwmonitor-downloads/

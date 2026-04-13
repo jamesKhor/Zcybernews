@@ -1,0 +1,48 @@
+---
+title: 朝鲜Lazarus集团通过Axios供应链攻击入侵OpenAI
+slug: 2026-04-13-north-korean-lazarus-axios-supply-chain-openai
+date: '2026-04-13'
+excerpt: 朝鲜的Lazarus集团通过Axios客户端库的供应链攻击入侵了OpenAI的内部系统，使用被盗的macOS代码签名证书来签名恶意软件。
+category: threat-intel
+tags:
+  - supply-chain
+  - lazarus-group
+  - openai
+  - axios
+  - macos
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/openai-impacted-by-north-korea-linked-axios-supply-chain-hack/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-north-korean-lazarus-axios-supply-chain-openai
+severity: high
+threat_actor: Lazarus Group
+threat_actor_origin: North Korea
+affected_sectors:
+  - technology
+  - artificial-intelligence
+---
+## 北韩Lazarus集团通过Axios供应链攻击入侵OpenAI
+
+## 执行摘要
+北韩的Lazarus Group（APT38）通过复杂的软件供应链攻击成功入侵了OpenAI的内部系统。此次入侵是通过一个冒充合法`axios` NPM库的恶意软件包实现的，该软件包被用来窃取macOS代码签名证书。OpenAI已确认该事件，并正在采取措施使受影响的证书作废并修复受影响的系统。
+
+## 技术分析
+攻击集中在一个名为`axios-proxy.js`的typosquatted软件包上，该软件包被上传到了NPM注册表。这个软件包伪装成广泛使用的`axios` HTTP客户端库。当开发者无意中安装了这个恶意依赖项时，它执行了一个旨在从受害者的开发环境中收集敏感数据的安装后脚本。根据SecurityWeek的报道，主要目标是窃取代码签名证书。威胁行为者成功地从一个OpenAI员工的macOS系统中窃取了至少一个Apple Developer ID代码签名证书。然后使用这个证书来签名恶意软件，使其具有合法性的外表以绕过安全检查。恶意软件包最初在OpenAI的安装机制尚不清楚；它可能是直接开发者错误或更广泛的针对性社会工程活动的一部分。
+
+## 入侵指标
+目前没有识别出任何指标。
+
+## 战术、技术与程序
+Lazarus集团采用了与常见APT手法一致的多阶段方法。初始访问向量是**软件供应链入侵（T1195.002）**，通过公共存储库中的typosquatted软件包。安装后，软件包执行**用户执行：恶意文件（T1204.002）**通过其安装后脚本。脚本执行**凭证访问（T1555）**，通过搜索和窃取感染的macOS系统中的代码签名证书。随后使用被盗证书构成**颠覆信任控制：代码签名（T1553.002）**，这是一种对于绕过应用程序允许列表和端点检测至关重要的技术。
+
+## 威胁行为者背景
+该活动被高度确信归属于Lazarus集团，这是一个在北韩侦察总局（RGB）的指导下运作的网络间谍和金融犯罪集团。该集团以高调攻击而闻名，包括2014年索尼影业黑客攻击、WannaCry勒索软件运动和数亿加密货币的盗窃。他们的行动通常将财务动机与情报收集相结合。针对像OpenAI这样的领先AI公司符合北韩获取先进技术的战略利益，并可能支持其他恶意活动，包括社会工程和未来攻击的软件开发。
+
+## 缓解措施与建议
+组织，特别是技术和AI领域的组织，应实施防御措施以抵御类似的供应链威胁。需要执行**严格的依赖项审查**：强制执行仅使用经过批准和审查的内部软件包或明确固定版本的公共库的政策。必须加强**代码签名证书卫生**；考虑将证书存储在硬件安全模块（HSM）或安全的云密钥管理服务中，并实施强大的监控以监测不寻常的签名事件。应配置**端点检测和响应（EDR）**工具，以警报从安装后脚本生成的进程，并验证签名二进制文件的证书链。开发者需要**安全意识培训**，重点关注typosquatting和依赖混淆攻击的风险。最后，维护一个**事件响应剧本**，用于证书入侵，包括与苹果等供应商的立即撤销程序。
+
+## 参考资料
+- https://www.securityweek.com/openai-impacted-by-north-korea-linked-axios-supply-chain-hack/
