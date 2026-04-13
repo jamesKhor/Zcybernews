@@ -234,7 +234,9 @@ async function main() {
   console.log(
     JSON.stringify({
       event: "pipeline_complete",
-      timestamp: new Date().toISOString(),
+      timestamp:
+        new Date().toLocaleString("en-GB", { timeZone: "Asia/Singapore" }) +
+        " SGT",
       articles_written: succeeded,
       off_topic_rejected: skippedOffTopic,
       translation_warnings: translationWarnings,

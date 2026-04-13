@@ -8,7 +8,7 @@
 set -euo pipefail
 
 REPO_DIR="/home/zcybernews/zcybernews"
-LOG_FILE="$REPO_DIR/.pipeline-logs/pipeline-$(date -u +%Y-%m-%d).log"
+LOG_FILE="$REPO_DIR/.pipeline-logs/pipeline-$(TZ='Asia/Singapore' date +%Y-%m-%d).log"
 MAX_ARTICLES="${1:-3}"
 
 # Strip --max-articles= prefix if passed directly
@@ -54,7 +54,7 @@ notify() {
 
 echo ""
 echo "=============================================="
-echo "  ZCyberNews Pipeline — $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+echo "  ZCyberNews Pipeline — $(TZ='Asia/Singapore' date '+%Y-%m-%d %H:%M:%S SGT')"
 echo "=============================================="
 
 # 1. Pull latest code from GitHub
@@ -72,7 +72,7 @@ if [ $PIPELINE_EXIT -ne 0 ]; then
   echo "[pipeline] ❌ Pipeline exited with code $PIPELINE_EXIT"
   notify "❌ <b>ZCyberNews Pipeline Failed</b>
 Exit code: $PIPELINE_EXIT
-Time: $(date -u '+%H:%M UTC')"
+Time: $(TZ='Asia/Singapore' date '+%H:%M SGT')"
   exit $PIPELINE_EXIT
 fi
 
@@ -98,7 +98,7 @@ echo "[git] Committing new articles..."
 git config user.name "zcybernews-bot"
 git config user.email "bot@zcybernews.com"
 git add content/ .pipeline-cache/ data/ 2>/dev/null || true
-git diff --staged --quiet || git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
+git diff --staged --quiet || git commit -m "chore: ai pipeline $(TZ='Asia/Singapore' date +%Y-%m-%dT%H:%M:%S+08:00) [skip ci]"
 git push origin main || echo "[git] ⚠️  Push failed — will retry on next run"
 
 # 7. Collect article titles for notification
@@ -112,10 +112,10 @@ ARTICLE_COUNT=$((NEW_FILES / 2))  # rough: EN + ZH pairs or just EN files
 [ "$ARTICLE_COUNT" -lt 1 ] && ARTICLE_COUNT=$NEW_FILES
 
 notify "✅ <b>ZCyberNews Published ${ARTICLE_COUNT} article(s)</b>
-Time: $(date -u '+%H:%M UTC')
+Time: $(TZ='Asia/Singapore' date '+%H:%M SGT')
 
 ${ARTICLE_TITLES}
 
 🔗 https://zcybernews.com"
 
-echo "[pipeline] ✅ Done — $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+echo "[pipeline] ✅ Done — $(TZ='Asia/Singapore' date '+%Y-%m-%d %H:%M:%S SGT')"
