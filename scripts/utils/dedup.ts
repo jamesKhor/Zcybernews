@@ -33,6 +33,24 @@ export function titleSimilarity(a: string, b: string): number {
   return union === 0 ? 0 : intersection / union;
 }
 
+/**
+ * Extract CVE IDs from a string (title, excerpt, etc.)
+ */
+export function extractCVEs(text: string): string[] {
+  const matches = text.match(/CVE-\d{4}-\d{4,}/gi);
+  return matches ? [...new Set(matches.map((m) => m.toUpperCase()))] : [];
+}
+
+/**
+ * Check if two stories share any CVE IDs (strong duplicate signal).
+ */
+function sharesCVE(a: Story, b: Story): boolean {
+  const cvesA = extractCVEs(`${a.title} ${a.excerpt}`);
+  const cvesB = extractCVEs(`${b.title} ${b.excerpt}`);
+  if (cvesA.length === 0 || cvesB.length === 0) return false;
+  return cvesA.some((cve) => cvesB.includes(cve));
+}
+
 export function deduplicate(
   stories: Story[],
   similarityThreshold = 0.65,
@@ -43,7 +61,8 @@ export function deduplicate(
     const isDuplicate = seen.some(
       (s) =>
         s.url === story.url ||
-        titleSimilarity(s.title, story.title) >= similarityThreshold,
+        titleSimilarity(s.title, story.title) >= similarityThreshold ||
+        sharesCVE(s, story),
     );
     if (!isDuplicate) seen.push(story);
   }
@@ -51,16 +70,25 @@ export function deduplicate(
   return seen;
 }
 
+export type PublishedArticle = {
+  title: string;
+  cves: string[];
+};
+
 /**
- * Load recently published article titles from content/en/ directory.
+ * Load recently published article titles and CVE IDs from content/en/ directory.
  * Only returns articles published within the last `withinDays` days.
  * Used to prevent generating articles on topics recently covered.
  * Articles older than the window are allowed to be revisited.
  */
 export function loadRecentPublishedTitles(withinDays = 14): string[] {
+  return loadRecentPublished(withinDays).map((a) => a.title);
+}
+
+export function loadRecentPublished(withinDays = 14): PublishedArticle[] {
   const contentRoot = path.join(process.cwd(), "content", "en");
   const dirs = ["posts", "threat-intel"];
-  const titles: string[] = [];
+  const articles: PublishedArticle[] = [];
   const cutoff = Date.now() - withinDays * 24 * 60 * 60 * 1000;
 
   for (const dir of dirs) {
@@ -82,7 +110,9 @@ export function loadRecentPublishedTitles(withinDays = 14): string[] {
         const articleDate = new Date(dateMatch[1]).getTime();
         // Only include articles within the recency window
         if (articleDate >= cutoff) {
-          titles.push(titleMatch[1].trim());
+          const title = titleMatch[1].trim();
+          const cves = extractCVEs(content);
+          articles.push({ title, cves });
         }
       } catch {
         // skip unreadable files
@@ -90,5 +120,5 @@ export function loadRecentPublishedTitles(withinDays = 14): string[] {
     }
   }
 
-  return titles;
+  return articles;
 }

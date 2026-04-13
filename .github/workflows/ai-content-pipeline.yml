@@ -1,11 +1,7 @@
 name: AI Content Pipeline
 
 on:
-  # Run twice daily: 2am UTC (morning Asia) + 2pm UTC (morning US East)
-  schedule:
-    - cron: "0 2 * * *"
-    - cron: "0 14 * * *"
-  # Manual trigger with optional article count override
+  # Manual trigger only — no automatic schedule
   workflow_dispatch:
     inputs:
       max_articles:
@@ -70,9 +66,5 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
           git push
 
-      - name: Trigger deploy
-        if: ${{ inputs.dry_run != 'true' }}
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: build-deploy.yml
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # Deploy is triggered automatically by the push to main above
+      # No need for explicit workflow dispatch
