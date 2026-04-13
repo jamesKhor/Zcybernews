@@ -1,0 +1,53 @@
+---
+title: Storm Infostealer 通过服务器端解密劫持会话
+slug: 2026-04-13-storm-infostealer-hijacks-sessions-server-side-decryption
+date: '2026-04-13'
+excerpt: >-
+  新的 'Storm' infostealer 将加密的浏览器数据外泄以进行服务器端解密，使得会话劫持和绕过 MFA 成为可能。Varonis
+  的分析详细说明了这种技术。
+category: malware
+tags:
+  - infostealer
+  - session-hijacking
+  - mfa-bypass
+  - browser-data
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/the-silent-storm-new-infostealer-hijacks-sessions-decrypts-server-side/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-storm-infostealer-hijacks-sessions-server-side-decryption
+severity: high
+---
+## 执行摘要
+一个新近记录的信息窃取软件被称为 **"Storm"**，它通过将加密的浏览器数据外泄进行 **服务器端解密**，从而显著偏离了常见恶意软件的技术路径。安全公司 Varonis Threat Labs 详细描述了这种方法，它使攻击者能够直接劫持活跃用户会话，有效地绕过基于密码的身份验证和多因素身份验证（MFA）。主要影响是在不触发基于凭证的警报的情况下，悄无声息地破坏账户。
+
+## 技术分析
+**Storm** 信息窃取软件的核心创新是避免本地解密。根据 Varonis 研究人员的说法，典型的信息窃取软件如 RedLine 或 Raccoon 使用从本地系统提取的密钥，在受感染的主机上解密被盗浏览器数据（cookies、密码、信用卡）。然而，Storm 打包并外泄原始的、加密的浏览器数据文件——例如来自基于 Chromium 的浏览器的 `Login Data`、`Cookies` 和 `Web Data` 文件——以及必要的加密密钥，如 `Local State` 文件。
+
+这些外泄的数据被发送到由威胁行为者控制的命令和控制（C2）服务器。然后，解密过程在该攻击者控制的服务器上进行。这种服务器端方法提供了两个关键优势：它复杂化了寻找解密程序的基于主机的检测，并且，更关键的是，它授予攻击者直接访问明文会话 cookies。有了这些 cookies，攻击者可以在不需要密码或 MFA 令牌的情况下，启动对服务如 Google、Microsoft 或银行网站的认证会话，因为浏览器会话本身被克隆了。
+
+## 入侵指标
+目前没有识别出任何指标。Varonis 的源报告没有发布与 Storm 有效载荷或其基础设施相关的特定文件哈希值、域名或 IP 地址。
+
+## 战术、技术与程序
+经过分析，威胁行为者的 TTPs 遵循一个专注于数据获取以实现持久访问的模式：
+*   **初始访问：** 可能通过常见的向量实现，如网络钓鱼、恶意广告或软件破解。
+*   **执行与收集：** 恶意软件执行，识别浏览器配置文件，并从基于 Chromium 的浏览器（Chrome、Edge、Brave）收集特定文件（`Cookies`、`Login Data`、`Web Data`、`Local State`）。
+*   **外泄：** 加密的数据块被传输到行为者的 C2 服务器。
+*   **影响 - 会话劫持：** 行为者在服务器端解密数据，提取有效的会话 cookies，并使用它们对 Web 服务进行身份验证，绕过 MFA。这与 MITRE ATT&CK 框架中的技术 **T1550.002 - 使用替代认证材料：传递 Cookie** 相一致。
+
+## 威胁行为者背景
+目前尚不清楚 Storm 信息窃取软件背后的威胁行为者的起源和身份。恶意软件的设计表明，它专注于商品化的数据盗窃，可能在网络犯罪论坛上出售或直接用于金融欺诈和账户接管活动。其运营安全（OPSEC）的改进——将解密从受害者机器上移开——表明了常见信息窃取技术的演变。
+
+## 缓解措施与建议
+组织和用户应实施分层防御：
+*   **执行会话管理：** 配置 Web 应用程序以强制定期重新认证会话，并实施控制以使来自新位置或设备的会话无效。
+*   **推广硬件安全密钥：** 对于高价值账户，使用抗网络钓鱼的 MFA，如 FIDO2/WebAuthn 安全密钥，这些密钥不受会话 cookie 盗窃的影响。
+*   **端点检测与响应（EDR）：** 部署能够检测浏览器配置文件数据文件异常收集和外泄的 EDR 解决方案。
+*   **用户意识：** 培训用户识别网络钓鱼诱饵，并避免从不受信任的来源下载软件。
+*   **网络监控：** 监控可能外泄大量小的、结构化数据的未知或可疑基础设施的出站连接。
+
+## 参考资料
+*   Varonis Threat Labs. (2024, October 28). The silent “Storm”: New infostealer hijacks sessions, decrypts server-side. BleepingComputer. https://www.bleepingcomputer.com/news/security/the-silent-storm-new-infostealer-hijacks-sessions-decrypts-server-side/

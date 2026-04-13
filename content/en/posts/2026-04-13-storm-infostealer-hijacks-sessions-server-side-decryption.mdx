@@ -1,0 +1,54 @@
+---
+title: Storm Infostealer Hijacks Sessions via Server-Side Decryption
+slug: 2026-04-13-storm-infostealer-hijacks-sessions-server-side-decryption
+date: '2026-04-13'
+excerpt: >-
+  The new 'Storm' infostealer exfiltrates encrypted browser data for server-side
+  decryption, enabling session hijacking and bypassing MFA. Analysis by Varonis
+  details the technique.
+category: malware
+tags:
+  - infostealer
+  - session-hijacking
+  - mfa-bypass
+  - browser-data
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/the-silent-storm-new-infostealer-hijacks-sessions-decrypts-server-side/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-storm-infostealer-hijacks-sessions-server-side-decryption
+severity: high
+---
+## Executive Summary
+A newly documented infostealer dubbed **"Storm"** employs a significant technical deviation from common malware by exfiltrating encrypted browser data for **server-side decryption**. This method, detailed by security firm Varonis Threat Labs, enables attackers to directly hijack active user sessions, effectively bypassing password-based authentication and multi-factor authentication (MFA). The primary impact is the silent compromise of accounts without triggering credential-based alerts.
+
+## Technical Analysis
+The **Storm** infostealer's core innovation is its avoidance of local decryption. According to Varonis researchers, typical infostealers like RedLine or Raccoon perform decryption of stolen browser data (cookies, passwords, credit cards) on the infected host using keys extracted from the local system. Storm, however, packages and exfiltrates the raw, encrypted browser data files—such as the `Login Data`, `Cookies`, and `Web Data` files from Chromium-based browsers—along with necessary encryption keys like the `Local State` file.
+
+This exfiltrated data is sent to a command-and-control (C2) server controlled by the threat actor. The decryption process then occurs on this attacker-controlled server. This server-side approach provides two key advantages: it complicates host-based detection that looks for decryption routines, and, more critically, it grants the attacker direct access to the plaintext session cookies. With these cookies, an attacker can initiate authenticated sessions to services like Google, Microsoft, or banking sites without needing passwords or MFA tokens, as the browser session itself is cloned.
+
+## Indicators of Compromise
+None identified at this time. The source report from Varonis did not publish specific file hashes, domain names, or IP addresses associated with the Storm payload or its infrastructure.
+
+## Tactics, Techniques & Procedures
+The threat actor's TTPs, as analyzed, follow a pattern focused on data acquisition for persistent access:
+*   **Initial Access:** Likely achieved through common vectors such as phishing, malicious advertisements, or software cracks.
+*   **Execution & Collection:** The malware executes, identifies browser profiles, and collects specific files (`Cookies`, `Login Data`, `Web Data`, `Local State`) from Chromium-based browsers (Chrome, Edge, Brave).
+*   **Exfiltration:** The encrypted data blobs are transmitted to the actor's C2 server.
+*   **Impact - Session Hijacking:** The actor decrypts the data server-side, extracts valid session cookies, and uses them to authenticate to web services, bypassing MFA. This aligns with technique **T1550.002 - Use Alternate Authentication Material: Pass the Cookie** in the MITRE ATT&CK framework.
+
+## Threat Actor Context
+The origin and identity of the threat actor behind the Storm infostealer are currently unknown. The malware's design suggests a focus on commoditized data theft, likely for sale on cybercriminal forums or for direct use in financial fraud and account takeover campaigns. Its operational security (OPSEC) improvement—moving decryption off the victim machine—indicates an evolution in common infostealer tradecraft.
+
+## Mitigations & Recommendations
+Organizations and users should implement layered defenses:
+*   **Enforce Session Management:** Configure web applications to enforce regular session re-authentication and implement controls to invalidate sessions from new locations or devices.
+*   **Promote Hardware Security Keys:** For high-value accounts, use phishing-resistant MFA like FIDO2/WebAuthn security keys, which are not vulnerable to session cookie theft.
+*   **Endpoint Detection & Response (EDR):** Deploy EDR solutions capable of detecting the anomalous collection and exfiltration of browser profile data files.
+*   **User Awareness:** Train users to recognize phishing lures and to avoid downloading software from untrusted sources.
+*   **Network Monitoring:** Monitor for outbound connections to unknown or suspicious infrastructure that may be exfiltrating large amounts of small, structured data.
+
+## References
+*   Varonis Threat Labs. (2024, October 28). The silent “Storm”: New infostealer hijacks sessions, decrypts server-side. BleepingComputer. https://www.bleepingcomputer.com/news/security/the-silent-storm-new-infostealer-hijacks-sessions-decrypts-server-side/

@@ -1,0 +1,52 @@
+---
+title: 'FBI, Indonesian Police Dismantle W3LL Phishing-as-a-Service Platform'
+slug: 2026-04-13-fbi-indonesia-dismantle-w3ll-phishing-service
+date: '2026-04-13'
+excerpt: >-
+  U.S. and Indonesian authorities seized the W3LL phishing-as-a-service platform
+  and arrested its alleged developer, disrupting a service used in over 15,000
+  attacks against U.S. corporate Microsoft 365 accounts.
+category: threat-intel
+tags:
+  - phishing
+  - law-enforcement
+  - microsoft-365
+  - identity-theft
+  - botnet
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/fbi-takedown-of-w3ll-phishing-service-leads-to-developer-arrest/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-fbi-indonesia-dismantle-w3ll-phishing-service
+severity: high
+threat_actor: W3LL Team
+threat_actor_origin: Indonesia
+affected_sectors:
+  - multiple
+affected_regions:
+  - global
+---
+## Executive Summary
+U.S. and Indonesian law enforcement have dismantled the **W3LL phishing-as-a-service (PhaaS)** platform, seizing its infrastructure and arresting its alleged developer. The platform, active since at least 2022, was a specialized tool used to conduct over 15,000 attacks against U.S. corporate **Microsoft 365** accounts, facilitating credential theft and subsequent business email compromise (BEC) campaigns. This takedown represents the first publicly known coordinated enforcement action between the United States and Indonesia targeting a phishing kit developer.
+
+## Technical Analysis
+The W3LL platform operated as a sophisticated, subscription-based service providing a suite of tools for phishing and account takeover. According to the FBI, the service's core component was a **custom phishing kit** designed to mimic legitimate Microsoft 365 login pages. This kit was notable for its ability to bypass multi-factor authentication (MFA) through a **reverse proxy** functionality. When a victim entered credentials and an MFA code on the fraudulent page, the kit would relay these inputs in real-time to the legitimate Microsoft service, simultaneously stealing the session cookie to grant the attacker persistent access.
+
+The service was integrated with a **W3LL Panel**, a centralized dashboard that allowed subscribers to manage phishing campaigns, track stolen credentials in real-time, and access additional tools. These tools included an **email sender** for distributing phishing links, a **validator** for checking the validity of stolen credentials, and a **security tool** designed to evade detection by EDR and email security products. The platform's infrastructure was supported by a network of **bulletproof hosting** providers and domains, which were seized in the operation.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The W3LL Team employed a distinct set of tactics aligning with the PhaaS model. Their primary technique (**T1588.002 - Obtain Capabilities: Tool**) was the development and sale of the phishing kit. Subscribers used the kit to execute **Credential Harvesting (T1589.001)** via tailored Microsoft 365 phishing pages. A key technical procedure was the use of a **reverse proxy (T1534)** to facilitate **Adversary-in-the-Middle (AiTM)** attacks for **MFA bypass (T1556.002)**. Post-compromise, attackers leveraged stolen session cookies for **Initial Access (T1078.004)** and utilized the platform's tools for **Phishing (T1566)** and automated credential validation.
+
+## Threat Actor Context
+The threat actor, referred to as the **W3LL Team**, is believed to be a small group or individual based in Indonesia. The alleged developer, arrested in Semarang, Indonesia, is identified as a 32-year-old man. The group operated with a clear financial motive, offering tiered subscriptions to their platform. Their customer base, estimated by the FBI to be in the hundreds, consisted of other cybercriminals who used the service to target organizations globally, with a confirmed focus on U.S. businesses. The platform's specialization in Microsoft 365 credential theft suggests the actors possessed a deep understanding of identity and authentication protocols.
+
+## Mitigations & Recommendations
+Organizations should implement **phishing-resistant MFA**, such as FIDO2 security keys or Windows Hello for Business, which are resilient to AiTM and token theft attacks. Security teams are advised to monitor for anomalous sign-in patterns, including impossible travel logs and sign-ins from unfamiliar locations, which may indicate session cookie misuse. User training should emphasize the inability of MFA to fully protect against sophisticated phishing that captures one-time codes. Furthermore, network defenders can analyze email headers for links pointing to newly registered domains or known bulletproof hosting IP ranges associated with phishing campaigns.
+
+## References
+- https://www.bleepingcomputer.com/news/security/fbi-takedown-of-w3ll-phishing-service-leads-to-developer-arrest/

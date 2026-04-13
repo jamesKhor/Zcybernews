@@ -1,0 +1,50 @@
+---
+title: Apache Tomcat 修复 EncryptInterceptor 中的严重漏洞
+slug: 2026-04-13-apache-tomcat-patches-critical-encryptinterceptor-flaw
+date: '2026-04-13'
+excerpt: >-
+  Apache 软件基金会修补了 Tomcat 的 EncryptInterceptor
+  中的一个关键漏洞，该漏洞可能允许攻击者绕过加密并查看敏感数据。需要立即更新。
+category: vulnerabilities
+tags:
+  - apache
+  - tomcat
+  - vulnerability
+  - encryption
+  - web-server
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/apache-tomcat-vulnerabilities-encryptinterceptor/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-apache-tomcat-patches-critical-encryptinterceptor-flaw
+severity: critical
+---
+## 执行摘要
+Apache 软件基金会针对 Apache Tomcat 发布了紧急更新，以修复 `EncryptInterceptor` 组件中的一个关键安全漏洞。这个漏洞源于一个补丁错误，可能允许远程攻击者绕过预期的加密保护，并访问 Tomcat 服务器和客户端之间传输的敏感、未加密数据。这个漏洞影响特定版本的 Tomcat 10.1.x、11.0.x 和 9.0.x。管理员必须立即应用提供的补丁，以防止潜在的数据泄露。
+
+## 技术分析
+核心漏洞存在于 `EncryptInterceptor` 类中，该组件旨在为 Tomcat 服务器和客户端之间传输的数据提供加密，例如在 AJP（Apache JServ 协议）连接器中。根据 Apache 公告，最近针对该组件的安全补丁应用不正确。这个错误导致拦截器未能执行其主要功能，有效地使加密层失效。
+
+当启用并配置有缺陷的拦截器时，本应被解密的传入请求却被原样传递。相反，本应被加密的传出响应以明文发送。这种绕过行为无论底层的加密配置如何都会发生，因为拦截器的逻辑根本上是有问题的。这个漏洞取决于 `EncryptInterceptor` 在服务器配置中被显式启用；默认的 Tomcat 安装不受影响。这个问题是在特定的更新流中引入的，并已在 Tomcat 版本 10.1.24、11.0.0-M19 和 9.0.87 中得到修复。
+
+## 入侵指标
+目前没有识别出任何入侵指标。检测可能需要分析网络流量，查找在预期加密通信中出现的明文数据，或审查服务器日志，查找与 `EncryptInterceptor` 组件相关的异常。
+
+## 战术、技术与程序
+如果被利用，威胁行为者将利用这个漏洞进行 **网络嗅探**（T1040）攻击。通过拦截易受攻击的 Tomcat 服务器和客户端之间的网络流量，攻击者可以直接读取敏感信息，如会话 cookie、认证令牌或应用程序数据，这些信息被假定为已加密。这种技术要求攻击者在客户端和服务器之间的网络路径上有一个位置，例如在共享或被破坏的网络段上。
+
+## 威胁行为者背景
+目前没有将特定威胁行为者归因于这个漏洞。然而，这个缺陷的性质使其成为任何从事网络侦察和数据拦截的对手的有价值目标，包括寻求收集凭证的网络犯罪集团或进行间谍活动的国家赞助行为者。补丁的公开披露增加了对启用拦截器的未修补、面向互联网的 Tomcat 服务器的扫描和利用尝试的风险。
+
+## 缓解措施与建议
+主要和强制性的缓解措施是立即更新 Apache Tomcat 到一个固定的版本。受影响的用户应该升级到以下非易受攻击的版本之一：
+*   Apache Tomcat 10.1.x 升级到 10.1.24 或更高版本
+*   Apache Tomcat 11.0.x 升级到 11.0.0-M19 或更高版本
+*   Apache Tomcat 9.0.x 升级到 9.0.87 或更高版本
+
+管理员在优先考虑这个更新之前应该验证他们的部署是否使用了 `EncryptInterceptor`。如果拦截器没有在使用中，系统就不会受到威胁。应用补丁后，验证加密通信是否正确运行至关重要。作为一般安全实践，组织还应确保 Tomcat 实例不必要地暴露在公共互联网上，并放置在适当的网络分段和监控控制之后。
+
+## 参考资料
+*   Apache Tomcat 安全公告：[https://cybersecuritynews.com/apache-tomcat-vulnerabilities-encryptinterceptor/](https://cybersecuritynews.com/apache-tomcat-vulnerabilities-encryptinterceptor/)

@@ -1,0 +1,51 @@
+---
+title: Apache Tomcat Patches Critical Flaw in EncryptInterceptor
+slug: 2026-04-13-apache-tomcat-patches-critical-encryptinterceptor-flaw
+date: '2026-04-13'
+excerpt: >-
+  The Apache Software Foundation patched a critical vulnerability in Tomcat's
+  EncryptInterceptor that could allow attackers to bypass encryption and view
+  sensitive data. Immediate updates are required.
+category: vulnerabilities
+tags:
+  - apache
+  - tomcat
+  - vulnerability
+  - encryption
+  - web-server
+language: en
+source_urls:
+  - >-
+    https://cybersecuritynews.com/apache-tomcat-vulnerabilities-encryptinterceptor/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-apache-tomcat-patches-critical-encryptinterceptor-flaw
+severity: critical
+---
+## Executive Summary
+The Apache Software Foundation has issued urgent updates for Apache Tomcat to remediate a critical security flaw in the `EncryptInterceptor` component. This vulnerability, stemming from a patching error, could allow a remote attacker to bypass intended encryption protections and access sensitive, unencrypted data transmitted between a Tomcat server and a client. The flaw affects specific versions of Tomcat 10.1.x, 11.0.x, and 9.0.x. Administrators must apply the provided patches immediately to prevent potential data exposure.
+
+## Technical Analysis
+The core vulnerability exists within the `EncryptInterceptor` class, a component designed to provide encryption for data in transit between a Tomcat server and a client, such as in AJP (Apache JServ Protocol) connectors. According to the Apache advisory, a recent security patch intended for this component was incorrectly applied. This error resulted in the interceptor failing to perform its primary function, effectively rendering the encryption layer inert.
+
+When the flawed interceptor is enabled and configured, incoming requests that should be decrypted are instead passed through unchanged. Conversely, outgoing responses that should be encrypted are sent in plaintext. This bypass occurs regardless of the underlying cryptographic configuration, as the interceptor's logic is fundamentally broken. The vulnerability is contingent upon the `EncryptInterceptor` being explicitly enabled in a server's configuration; default Tomcat installations are not affected. The issue was introduced in specific update streams and has been corrected in Tomcat versions 10.1.24, 11.0.0-M19, and 9.0.87.
+
+## Indicators of Compromise
+None identified at this time. Detection would likely require analyzing network traffic for plaintext data where encrypted communication was expected, or reviewing server logs for anomalies related to the `EncryptInterceptor` component.
+
+## Tactics, Techniques & Procedures
+If exploited, a threat actor would leverage this flaw to perform a **Network Sniffing** (T1040) attack. By intercepting network traffic between a vulnerable Tomcat server and a client, the attacker could directly read sensitive information—such as session cookies, authentication tokens, or application data—that was presumed to be encrypted. This technique requires the attacker to have a position on the network path between the client and server, such as on a shared or compromised network segment.
+
+## Threat Actor Context
+There is no specific threat actor attribution associated with this vulnerability at this time. However, the nature of the flaw makes it a valuable target for any adversary engaged in network reconnaissance and data interception, including cybercriminal groups seeking to harvest credentials or state-sponsored actors conducting espionage. The public disclosure of the patch increases the risk of scanning and exploitation attempts against unpatched, internet-facing Tomcat servers with the interceptor enabled.
+
+## Mitigations & Recommendations
+The primary and mandatory mitigation is to update Apache Tomcat to a fixed version immediately. Affected users should upgrade to one of the following non-vulnerable releases:
+*   Apache Tomcat 10.1.x to version 10.1.24 or later
+*   Apache Tomcat 11.0.x to version 11.0.0-M19 or later
+*   Apache Tomcat 9.0.x to version 9.0.87 or later
+
+Administrators should verify that their deployment uses the `EncryptInterceptor` before prioritizing this update. If the interceptor is not in use, the system is not vulnerable. After applying the patch, it is critical to validate that encrypted communications are functioning correctly. As a general security practice, organizations should also ensure Tomcat instances are not unnecessarily exposed to the public internet and are placed behind appropriate network segmentation and monitoring controls.
+
+## References
+*   Apache Tomcat Security Advisory: https://cybersecuritynews.com/apache-tomcat-vulnerabilities-encryptinterceptor/
