@@ -1,0 +1,57 @@
+---
+title: VENOM PhaaS 平台在复杂活动中针对 C-Suite 凭证
+slug: 2026-04-13-venom-phaas-targets-executive-microsoft-logins
+date: '2026-04-13'
+excerpt: 一个名为 VENOM 的新型钓鱼即服务平台被用来通过复杂、多阶段的电子邮件活动窃取高级管理人员的 Microsoft 凭证。
+category: threat-intel
+tags:
+  - phishing
+  - credential-theft
+  - microsoft
+  - enterprise
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-venom-phishing-attacks-steal-senior-executives-microsoft-logins/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-venom-phaas-targets-executive-microsoft-logins
+severity: high
+affected_sectors:
+  - multiple
+---
+## 执行摘要
+一个名为**VENOM**的未被记录的钓鱼即服务（PhaaS）平台正在被积极使用，其目标是从高层企业高管那里窃取微软登录凭证。根据网络安全公司Proofpoint的分析，该平台使威胁行为者能够发起复杂的、多阶段的电子邮件攻击，通过利用微软Azure等可信云服务来绕过传统安全过滤器。主要目标是窃取凭证，这可能导致商业电子邮件泄露（BEC）、金融欺诈和受害者组织内部的横向移动。
+
+## 技术分析
+VENOM平台作为一种服务运作，为其客户——据信是多个不同的威胁行为者——提供创建和管理钓鱼活动的工具包。攻击链始于一封电子邮件，通常冒充DocuSign或SharePoint等可信服务，发送给高级管理人员（例如，首席财务官、首席执行官）。这些电子邮件包含一个链接，通过多个合法域名重定向，包括托管在微软Azure上的域名，以掩盖最终的恶意目的地。这种多跳重定向是核心规避技术。
+
+最终的有效载荷是一个高度逼真的钓鱼页面，模仿微软Office 365登录门户。该页面是动态生成的，并托管在由VENOM运营商控制的基础设施上。当受害者输入他们的凭证时，数据被捕获并传输给攻击者。Proofpoint的分析表明，该平台包括管理目标列表、电子邮件模板和被盗凭证的管理面板，表明这是一个成熟的商业操作。
+
+## 入侵指标
+目前没有识别出任何入侵指标。
+
+## 战术、技术与程序
+与VENOM相关的活动采用了几种与MITRE ATT&CK框架一致的独特的战术、技术和程序（TTPs）。
+- **战术：初始访问（TA0001）**
+  - **技术：钓鱼（T1566）**：主要载体是通过电子邮件发送给高价值目标的鱼叉式钓鱼链接。
+- **战术：凭证访问（TA0006）**
+  - **技术：凭证收集（T1539）**：攻击者使用中间人（AiTM）钓鱼页面来捕获微软账户凭证和会话cookie。
+- **战术：防御规避（TA0005）**
+  - **技术：流量信号（T1205）&域名前置**：通过可信云域名（例如，`azurewebsites.net`）的多次重定向有助于规避URL声誉过滤器和网络检测。
+  - **技术：HTML走私**：钓鱼页面可能使用JavaScript动态构建登录表单，进一步复杂化静态分析。
+PhaaS模型的使用本身代表了**资源开发（TA0042）**的技术，其中技能较低的行为者可以租用复杂的能力。
+
+## 威胁行为者背景
+VENOM平台运营商的具体身份或来源尚不为人所知。Proofpoint评估称，该平台被多个无关的威胁行为者使用，表明它是一个真正的可供购买或租赁的网络犯罪服务。针对各个行业的C级高管表明，这些行为者是出于财务动机，可能旨在欺诈、数据泄露或初始访问代理。目前没有证据将VENOM与国家支持的团体联系起来。
+
+## 缓解措施与建议
+组织应实施分层防御策略以应对VENOM等威胁。
+1.  **用户培训与报告**：为所有员工定期进行有针对性的钓鱼模拟和培训，特别强调高管和财务人员。鼓励快速报告可疑电子邮件。
+2.  **多因素认证（MFA）**：为所有用户账户强制执行**抗钓鱼MFA**（例如，FIDO2安全密钥，Windows Hello for Business）。标准MFA方法，如短信或推送通知，可以通过窃取会话cookie的AiTM攻击来绕过。
+3.  **电子邮件和网络过滤**：部署能够分析URL重定向链并检测品牌冒充的高级电子邮件安全解决方案。实施网络网关过滤，以阻止访问已知恶意域名和模仿可信服务的新注册域名。
+4.  **日志监控与分析**：监控认证日志以查找异常登录模式，例如在合法会话后不久从不熟悉的位置或设备登录。在微软Entra ID（Azure AD）中实施基于设备合规性、网络位置和用户风险级别的条件访问策略。
+5.  **事件响应准备**：确保事件响应计划包括怀疑凭证泄露的剧本，包括会话撤销、密码重置和取证分析的步骤。
+
+## 参考资料
+- https://www.bleepingcomputer.com/news/security/new-venom-phishing-attacks-steal-senior-executives-microsoft-logins/

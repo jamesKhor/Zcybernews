@@ -1,0 +1,46 @@
+---
+title: MITRE F3框架连接网络安全和欺诈分析
+slug: 2026-04-13-mitre-f3-framework-bridges-cybersecurity-fraud-analysis
+date: '2026-04-13'
+excerpt: MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。
+category: tools
+tags:
+  - mitre
+  - fraud
+  - framework
+  - cybercrime
+  - ttp
+language: zh
+source_urls:
+  - 'https://www.helpnetsecurity.com/2026/04/13/mitre-fight-fraud-framework-f3/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-mitre-f3-framework-bridges-cybersecurity-fraud-analysis
+severity: informational
+affected_sectors:
+  - financial-services
+---
+## 执行摘要
+MITRE 公开发布了 **MITRE Fight Fraud Framework (F3)**，这是一个旨在弥合网络安全和金融欺诈调查团队之间关键的运营和语言隔阂的结构化知识库。该框架基于现实世界的攻击数据构建，映射了网络战术和欺诈技术的交集，以应对数字使能欺诈造成的日益增长的财务损失，这一损失在2024年美国达到了166亿美元。
+
+## 技术分析
+**F3框架** 不是一个软件工具，而是一个概念矩阵和结构化分类体系。它作为现有框架如 **MITRE ATT&CK®** 的补充层。ATT&CK 目录对手行为直到妥协点（例如，凭证访问，执行），F3将叙述扩展到欺诈领域，详细描述攻击者为货币化该访问而采取的后续行动。该框架围绕核心组件组织：**战术**，代表战略欺诈目标（例如，“获取资产”，“转换资产”），和 **技术**，描述实现这些目标所使用的具体方法（例如，“合成身份伪造”，“交易洗钱”）。每种技术都映射到ATT&CK中的相应准备或启用技术，从而从最初的入侵到财务盗窃创建了一个连续的链条。
+
+## 入侵指标
+目前没有识别出任何入侵指标。MITRE F3框架是一个用于建模和理解欺诈活动的知识库，而不是特定、可观察指标的来源。
+
+## 战术、技术与程序
+F3框架系统地记录了以欺诈为中心的TTPs。例如，欺诈战术 **"Acquire Assets"** 包括技术如 **"Account Takeover"** 和 **"Synthetic Identity Fabrication."** 这些欺诈技术明确链接到先决条件的网络技术。账户接管操作将与ATT&CK技术相关联，例如 `Credential Access`（例如，`T1110 - Brute Force`）和 `Initial Access`（例如，`T1566 - Phishing`）。这种映射允许分析师追踪一个网络钓鱼活动（一个网络安全事件）如何直接使一个欺诈性电汇转账（一个欺诈事件）成为可能，使用共同的词汇表。
+
+## 威胁行为者背景
+该框架不针对特定的威胁行为者或团体。相反，它模拟了从事金融动机网络犯罪的广泛对手的行为，包括勒索软件运营商、商业电子邮件泄露（BEC）团伙和信用卡欺诈者。通过关注技术而不是行为者，F3旨在持久适用并应对不断演变的威胁。为框架提供信息的数据来自真实的攻击分析，尽管MITRE没有公开指定其构建中使用的确切来源或案例研究。
+
+## 缓解措施与建议
+组织，特别是金融部门，应采用F3框架以促进安全运营中心（SOC）和欺诈团队之间的合作。建议的行动包括：
+*   **使用F3场景**进行联合桌面演习，以训练SOC和欺诈分析师了解完整的攻击生命周期。
+*   **将F3分类体系**整合到共享的事件报告和案例管理系统中，以确保两个团队一致地描述事件。
+*   **将现有的安全控制**（例如，SIEM规则，欺诈检测算法）映射到F3矩阵中，以识别攻击货币化阶段的覆盖差距。
+*   **将F3与ATT&CK一起使用**，以发展更全面的威胁狩猎假设，这些假设不仅扩展到数据泄露，还扩展到财务损失。
+
+## 参考资料
+*   [https://www.helpnetsecurity.com/2026/04/13/mitre-fight-fraud-framework-f3/](https://www.helpnetsecurity.com/2026/04/13/mitre-fight-fraud-framework-f3/)

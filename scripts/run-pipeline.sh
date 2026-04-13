@@ -63,17 +63,17 @@ git pull origin main --ff-only || {
   echo "[deploy] ⚠️  git pull failed — working tree may be dirty. Continuing with current code."
 }
 
-# 2. Run the AI pipeline
+# 2. Run the AI pipeline (disable errexit — partial failures are expected when
+#    some articles fail schema validation; we still want to publish the rest)
 echo "[pipeline] Starting — max articles: $MAX_ARTICLES"
+set +e
 npx tsx --env-file=.env.local scripts/pipeline/index.ts --max-articles="$MAX_ARTICLES"
 PIPELINE_EXIT=$?
+set -e
 
 if [ $PIPELINE_EXIT -ne 0 ]; then
-  echo "[pipeline] ❌ Pipeline exited with code $PIPELINE_EXIT"
-  notify "❌ <b>ZCyberNews Pipeline Failed</b>
-Exit code: $PIPELINE_EXIT
-Time: $(TZ='Asia/Singapore' date '+%H:%M SGT')"
-  exit $PIPELINE_EXIT
+  echo "[pipeline] ⚠️  Pipeline exited with code $PIPELINE_EXIT (some articles may have failed)"
+  # Don't exit — continue to commit/push any articles that DID succeed
 fi
 
 # 3. Check if any new content was written
@@ -99,7 +99,8 @@ git config user.name "zcybernews-bot"
 git config user.email "bot@zcybernews.com"
 git add content/ .pipeline-cache/ data/ 2>/dev/null || true
 git diff --staged --quiet || git commit -m "chore: ai pipeline $(TZ='Asia/Singapore' date +%Y-%m-%dT%H:%M:%S+08:00) [skip ci]"
-git push origin main || echo "[git] ⚠️  Push failed — will retry on next run"
+echo "[git] Pushing to origin main..."
+git push origin main 2>&1 || echo "[git] ⚠️  Push failed — will retry on next run"
 
 # 7. Collect article titles for notification
 ARTICLE_TITLES=$(git log -1 --name-only --pretty=format: -- content/en/ 2>/dev/null | \

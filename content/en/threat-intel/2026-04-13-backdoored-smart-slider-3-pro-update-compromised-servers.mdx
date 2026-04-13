@@ -1,0 +1,50 @@
+---
+title: Backdoored Smart Slider 3 Pro Update Deployed via Compromised Plugin Servers
+slug: 2026-04-13-backdoored-smart-slider-3-pro-update-compromised-servers
+date: '2026-04-13'
+excerpt: >-
+  Unknown threat actors compromised the update infrastructure for the Smart
+  Slider 3 Pro WordPress plugin, pushing a backdoored version (3.5.1.35) to
+  users. The attack leverages a supply chain compromise to gain administrative
+  access.
+category: threat-intel
+tags:
+  - wordpress
+  - supply-chain
+  - backdoor
+  - plugin
+  - compromise
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/backdoored-smart-slider-3-pro-update.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-backdoored-smart-slider-3-pro-update-compromised-servers
+severity: high
+---
+## Executive Summary
+Unknown attackers have executed a software supply chain attack against the commercial Smart Slider 3 Pro plugin for WordPress and Joomla. By compromising the plugin developer Nextend's update distribution servers, the threat actors pushed a malicious update, version `3.5.1.35`, containing a backdoor. This backdoor grants attackers administrative access to affected WordPress sites, enabling complete compromise. The incident was first identified and reported by WordPress security firm Patchstack. The scale of the compromise and the number of sites that applied the poisoned update remain unclear at this time.
+
+## Technical Analysis
+The attack centered on the update mechanism for Smart Slider 3 Pro, a premium plugin with over 800,000 active installations across its free and paid versions. According to Patchstack's analysis, the threat actors gained control of the infrastructure responsible for serving updates to the Pro version. This allowed them to replace the legitimate `3.5.1.35` update package with a tampered version.
+
+The backdoor is implemented within the plugin's core files. When executed on a vulnerable site, it creates a new administrative user account. The specific method of account creation and the credentials used are not detailed in public reporting, but the functionality provides attackers with persistent, privileged access to the WordPress admin dashboard. From this position, they can install additional malware, exfiltrate data, or deface the site. The attack bypasses traditional security measures that focus on plugin vulnerabilities (CVEs) by subverting the trusted update channel itself.
+
+## Indicators of Compromise
+None identified at this time. Public sources have not released specific file hashes, domain names, or IP addresses associated with the malicious update payload or subsequent attacker activity. Organizations are advised to rely on behavioral detection, such as the unexpected appearance of new administrative users, and to verify the integrity of the Smart Slider 3 Pro plugin installation.
+
+## Tactics, Techniques & Procedures
+The threat actors employed a clear **Software Supply Chain Compromise** (T1195.002) by targeting the plugin vendor's update server. This technique is highly effective as it exploits the inherent trust between software and its update mechanism. The primary objective appears to be **Establish Persistence** (T1133) through the creation of privileged user accounts. The initial access vector remains unknown; it is unclear how the attackers compromised Nextend's distribution servers. Once the backdoor is installed, attackers can leverage the new admin accounts for further **Initial Access** (T1078) and execute a wide range of follow-on actions.
+
+## Threat Actor Context
+The identity, motivation, and origin of the threat actor behind this incident are currently unknown. The attack's nature—compromising a software update to implant a backdoor—is consistent with both financially motivated groups seeking access for credential theft or ransomware deployment and with state-sponsored actors establishing a foothold in a broad set of environments. The targeting of a popular WordPress plugin suggests the goal was widespread, opportunistic compromise rather than a focused campaign against a specific sector.
+
+## Mitigations & Recommendations
+Immediate action is required for all users of Smart Slider 3 Pro. First, **do not update the plugin to version `3.5.1.35`**. If this version is already installed, it must be removed and replaced. Site administrators should:
+1.  **Roll back the plugin:** Completely uninstall Smart Slider 3 Pro version `3.5.1.35`. Reinstall a known-clean version from a separate, verified backup source, if available. Monitor for an official, clean update from the vendor once the compromise is resolved.
+2.  **Audit user accounts:** Thoroughly review all user accounts, especially administrators, in the WordPress dashboard. Immediately remove any unfamiliar or suspicious admin accounts.
+3.  **Inspect for further compromise:** Assume the site may be fully compromised. Scan for other malicious files, webshells, or unexpected code injections. Review server and WordPress logs for anomalous activity around the time of the plugin update.
+4.  **Implement general hardening:** This incident underscores the risk of automatic updates for premium plugins. Where possible, implement a controlled update process with integrity verification. Maintain regular, isolated backups to facilitate recovery from such supply chain attacks.
+
+## References
+- https://thehackernews.com/2026/04/backdoored-smart-slider-3-pro-update.html
