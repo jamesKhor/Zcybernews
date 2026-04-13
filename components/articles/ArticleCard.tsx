@@ -53,10 +53,10 @@ export function ArticleCard({ article, locale, type = "posts" }: Props) {
           </div>
         )}
 
-        {/* Severity overlay badge */}
+        {/* Severity overlay badge — prominent */}
         {frontmatter.severity && (
           <span
-            className={`absolute top-3 right-3 rounded-full border px-2 py-0.5 text-xs font-bold backdrop-blur-sm ${
+            className={`absolute top-3 right-3 rounded-md border px-2.5 py-1 text-[11px] font-black uppercase tracking-wider backdrop-blur-md shadow-sm ${
               SEVERITY_COLORS[frontmatter.severity as Severity]
             }`}
           >
@@ -93,6 +93,25 @@ export function ArticleCard({ article, locale, type = "posts" }: Props) {
           {stripMarkdown(frontmatter.excerpt)}
         </p>
 
+        {/* CVE IDs */}
+        {frontmatter.cve_ids && frontmatter.cve_ids.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-3">
+            {frontmatter.cve_ids.slice(0, 3).map((cve) => (
+              <span
+                key={cve}
+                className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-destructive/10 text-destructive dark:text-red-400 border border-destructive/20"
+              >
+                {cve}
+              </span>
+            ))}
+            {frontmatter.cve_ids.length > 3 && (
+              <span className="text-[10px] text-muted-foreground">
+                +{frontmatter.cve_ids.length - 3}
+              </span>
+            )}
+          </div>
+        )}
+
         {/* Footer */}
         <div className="flex items-center justify-between mt-4 pt-3 border-t border-border">
           <span className="text-xs text-muted-foreground">
@@ -100,7 +119,7 @@ export function ArticleCard({ article, locale, type = "posts" }: Props) {
           </span>
 
           {frontmatter.threat_actor && (
-            <span className="font-mono text-xs text-destructive truncate max-w-[120px]">
+            <span className="font-mono text-xs text-destructive dark:text-red-400 truncate max-w-[140px]">
               {frontmatter.threat_actor}
             </span>
           )}

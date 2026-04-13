@@ -33,7 +33,7 @@ OUTPUT FORMAT — respond with ONLY valid JSON, no markdown fences:
 {
   "title": "SEO-friendly headline, max 80 chars",
   "slug": "lowercase-hyphenated-slug-no-date",
-  "excerpt": "1-2 sentence summary for cards and meta tags, max 200 chars",
+  "excerpt": "Specific 1-2 sentence summary stating WHO did WHAT to WHOM and the impact. Include CVE IDs, threat actor names, or affected products when available. No generic filler like 'a new threat has emerged'. Max 200 chars.",
   "category": "one of: threat-intel | vulnerabilities | malware | industry | tools | ai",
   "tags": ["tag1", "tag2"],
   "severity": "one of: critical | high | medium | low | informational | null",
