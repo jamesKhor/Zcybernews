@@ -1,0 +1,48 @@
+---
+title: Microsoft Windows 11 Security Updates Break System Recovery Feature
+slug: 2026-04-13-microsoft-windows-11-updates-break-push-button-reset
+date: '2026-04-13'
+excerpt: >-
+  Microsoft confirmed March 2026 security updates, including KB5079420, cause
+  the 'Reset this PC' feature to fail on Windows 11, preventing users from
+  performing a factory reset.
+category: vulnerabilities
+tags:
+  - microsoft
+  - windows 11
+  - update
+  - bug
+  - recovery
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/windows-11-updates-break-push-button-reset/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-microsoft-windows-11-updates-break-push-button-reset
+severity: medium
+---
+## Executive Summary
+Microsoft has confirmed that a recent set of security updates for Windows 11, specifically the hotpatch released on March 10, 2026 (KB5079420), causes the operating system's built-in recovery tool, "Reset this PC" (Push-button reset), to fail. This defect prevents users from performing a factory reset to return their systems to a clean state, a critical function for troubleshooting and device redeployment. The issue was formally acknowledged in the release notes for Microsoft's March 2026 hotpatch updates.
+
+## Technical Analysis
+The failure is linked to the cumulative security update `KB5079420`, delivered as a hotpatch on March 10, 2026. According to Microsoft's release notes, this update introduces an incompatibility that disrupts the underlying Windows Recovery Environment (WinRE) components responsible for the Push-button reset functionality. When a user initiates the "Reset this PC" process from Windows Settings, the operation fails to complete, leaving the system in an unrecoverable state without restoring the original OS image. The exact root cause within the update package has not been publicly disclosed by Microsoft. The impact is confined to devices running the latest general availability version of Windows 11 that have installed the affected update. Systems that rely on older recovery media or third-party imaging tools may not be impacted, but the native, integrated recovery path is broken.
+
+## Indicators of Compromise
+None identified at this time. This is a defect in a legitimate Microsoft update, not a malicious campaign.
+
+## Tactics, Techniques & Procedures
+This incident does not involve a threat actor. However, from a defensive perspective, the event demonstrates the potential impact of a **Tactic: Impact (TA0040)** and **Technique: T1499.001: OS Exhaustion Flood**-like scenario, albeit unintentional, where a critical system service is rendered inoperable by a software update. The procedure involves the deployment of a signed, trusted update (`KB5079420`) through official channels (Windows Update), which then modifies system files in a way that cripples a core recovery feature.
+
+## Threat Actor Context
+There is no threat actor associated with this event. The cause is an operational error in Microsoft's software development and quality assurance processes for its monthly security update cycle. The context is purely that of a widespread software regression affecting a core user feature following a routine patch deployment.
+
+## Mitigations & Recommendations
+Microsoft has not yet released a formal fix or workaround in its advisory. Until a corrective update is provided, users and system administrators are advised to take the following actions:
+*   **Delay Installation:** If `KB5079420` has not been installed, consider pausing updates on critical systems until Microsoft issues a resolution.
+*   **Alternative Recovery Methods:** Prepare alternative recovery media, such as a **Windows 11 installation USB drive** created via the Media Creation Tool. A clean install from this media can serve as a functional workaround for the broken in-place reset.
+*   **System Restore/Backup:** Ensure recent system restore points or full system image backups exist and are stored on a separate partition or drive. These can be used to roll back the system state prior to the update installation.
+*   **Monitor Official Channels:** Watch for updates on the official Microsoft Support website or through the Windows Update release health dashboard for status on a patch.
+Organizations should assess the operational risk of deploying this specific update to their fleets, weighing the security benefits of the patch against the loss of a primary recovery mechanism.
+
+## References
+*   https://cybersecuritynews.com/windows-11-updates-break-push-button-reset/

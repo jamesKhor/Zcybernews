@@ -1,0 +1,48 @@
+---
+title: 微软 Windows 11 安全更新破坏系统恢复功能
+slug: 2026-04-13-microsoft-windows-11-updates-break-push-button-reset
+date: '2026-04-13'
+excerpt: 微软确认2026年3月的安全更新，包括 KB5079420，导致 Windows 11 上的 '重置此电脑' 功能失败，阻止用户执行出厂重置。
+category: vulnerabilities
+tags:
+  - microsoft
+  - windows 11
+  - update
+  - bug
+  - recovery
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/windows-11-updates-break-push-button-reset/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-microsoft-windows-11-updates-break-push-button-reset
+severity: medium
+---
+**文章标题：Microsoft Windows 11 安全更新破坏系统恢复功能**
+
+**文章正文：**
+## 执行摘要
+Microsoft 已确认，针对 Windows 11 的最近一批安全更新，特别是 2026 年 3 月 10 日发布的热补丁（KB5079420），导致操作系统内置的恢复工具“重置此电脑”（Push-button reset）失败。这一缺陷阻止用户执行出厂重置以将系统恢复到干净状态，这是故障排除和设备重新部署的关键功能。该问题在 Microsoft 2026 年 3 月热补丁更新的发布说明中被正式承认。
+
+## 技术分析
+与累积安全更新 `KB5079420` 相关的失败，该更新于 2026 年 3 月 10 日作为热补丁发布。根据 Microsoft 的发布说明，此更新引入了不兼容性，破坏了负责 Push-button reset 功能的底层 Windows Recovery Environment（WinRE）组件。当用户从 Windows 设置启动“重置此电脑”过程时，操作无法完成，使系统处于无法恢复的状态，无法恢复原始操作系统映像。Microsoft 尚未公开披露更新包中确切的根本原因。影响仅限于运行 Windows 11 最新公开可用版本并安装了受影响更新的设备。依赖旧版恢复媒体或第三方映像工具的系统可能不会受到影响，但本地集成的恢复路径已中断。
+
+## 入侵指标
+目前未识别出任何指标。这是 Microsoft 合法更新中的一个缺陷，而不是恶意活动。
+
+## 战术、技术与程序
+此事件不涉及威胁行为者。然而，从防御的角度来看，这一事件展示了 **战术：影响（TA0040）** 和 **技术：T1499.001：操作系统耗尽洪水** 类似场景的潜在影响，虽然是无意的，其中关键系统服务被软件更新变得无法操作。程序涉及通过官方渠道（Windows 更新）部署签名、受信任的更新（`KB5079420`），然后以破坏核心恢复功能的方式修改系统文件。
+
+## 威胁行为者背景
+此事件与任何威胁行为者无关。原因是 Microsoft 软件开发和质量保证流程中的操作错误，这些流程是其月度安全更新周期的一部分。背景纯粹是广泛软件回归的背景，影响到核心用户功能，在常规补丁部署后。
+
+## 缓解措施与建议
+Microsoft 尚未在其咨询中发布正式修复或变通方法。在提供纠正更新之前，建议用户和系统管理员采取以下行动：
+*   **延迟安装：** 如果尚未安装 `KB5079420`，请考虑在 Microsoft 发布解决方案之前暂停关键系统的更新。
+*   **替代恢复方法：** 准备替代恢复媒体，例如通过 Media Creation Tool 创建的 **Windows 11 安装 USB 驱动器**。从这个媒体进行的干净安装可以作为修复原位重置的功能性变通方法。
+*   **系统还原/备份：** 确保存在最近的系统还原点或完整的系统映像备份，并存储在单独的分区或驱动器上。这些可以用来回滚更新安装之前的系统状态。
+*   **监控官方渠道：** 通过官方 Microsoft 支持网站或 Windows 更新发布健康仪表板关注补丁的状态。
+组织应评估部署此特定更新到其车队的操作风险，权衡补丁的安全利益与失去主要恢复机制的损失。
+
+## 参考资料
+*   [https://cybersecuritynews.com/windows-11-updates-break-push-button-reset/](https://cybersecuritynews.com/windows-11-updates-break-push-button-reset/)

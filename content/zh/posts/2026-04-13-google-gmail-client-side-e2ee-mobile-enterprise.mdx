@@ -1,0 +1,44 @@
+---
+title: Google 扩展客户端端到端加密到企业版 Gmail 移动应用
+slug: 2026-04-13-google-gmail-client-side-e2ee-mobile-enterprise
+date: '2026-04-13'
+excerpt: Google 已为选择的企业客户启用了 Android 和 iOS 上 Gmail 的客户端端到端加密，允许他们在移动应用内原生发送和接收加密消息。
+category: tools
+tags:
+  - encryption
+  - google
+  - email-security
+  - enterprise
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/gmail-brings-end-to-end-encryption-to-android-and-ios-for-enterprise-users/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-google-gmail-client-side-e2ee-mobile-enterprise
+severity: informational
+---
+## 执行摘要
+Google 已经将其 Gmail 的客户端端到端加密（E2EE）扩展到原生 Android 和 iOS 应用程序。根据 SecurityWeek 的报道，这项之前仅限于网络客户端的功能，现在正在向拥有特定 Google Workspace 许可证的企业用户推出，使他们能够在移动 Gmail 应用中直接编写和阅读 E2EE 邮件。
+
+## 技术分析
+这一实现是 Google 现有 Workspace 客户端加密（CSE）框架的扩展。核心的技术机制涉及在任何数据传输到 Google 服务器之前，在用户的设备上进行本地加密和解密。加密密钥由客户选择的密钥服务持有和管理，而不是由 Google 管理。这种架构确保 Google 在邮件或文件附件在传输过程中或在其基础设施上静止时无法访问电子邮件的明文内容。该功能的可用性取决于管理员在其 Workspace 域内启用 Gmail 的 CSE 并配置外部密钥管理合作伙伴。用户在移动设备上编写邮件时，必须手动启用“额外加密”设置。
+
+## 入侵指标
+目前没有识别出任何入侵指标。
+
+## 战术、技术与程序
+目前没有识别出任何战术、技术与程序。
+
+## 威胁行为者背景
+这一发展不是对特定威胁行为者或活动的直接回应。相反，它是一项主动的安全增强措施，旨在减轻包括云服务提供商的数据泄露、内部威胁和向 Google 送达的法律传票在内的广泛威胁类别。通过实施客户端 E2EE，Google 提供了一项技术控制，显著提高了任何实体（无论是恶意的还是其他）在没有直接访问用户设备或密钥管理服务的情况下访问受保护通信明文的障碍。
+
+## 缓解措施与建议
+对于寻求采用这种增强保护的组织，需要执行以下步骤：
+1.  **许可证验证：** 确认组织持有合格的 Google Workspace Enterprise Plus、Education Plus 或 Education Standard 订阅。
+2.  **密钥服务配置：** 建立并集成一个支持的外部密钥管理服务（例如 Flowcrypt、Fortanix、Thales、Virtru）来托管加密密钥。
+3.  **管理员启用：** 域管理员必须在 Google 管理控制台中启用 Gmail 的客户端加密功能。
+4.  **用户培训：** 教育最终用户了解新功能，特别是如何在移动设备上编写敏感消息时切换“额外加密”选项，因为它不是默认为所有邮件启用的。组织应进行风险评估，以确定哪些数据分类需要使用此功能，因为它可能会影响加密消息正文内的搜索等某些功能。
+
+## 参考资料
+- https://www.securityweek.com/gmail-brings-end-to-end-encryption-to-android-and-ios-for-enterprise-users/

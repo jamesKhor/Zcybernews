@@ -1,0 +1,47 @@
+---
+title: Google Expands Client-Side E2E Encryption to Gmail Mobile for Enterprise
+slug: 2026-04-13-google-gmail-client-side-e2ee-mobile-enterprise
+date: '2026-04-13'
+excerpt: >-
+  Google has enabled client-side end-to-end encryption for Gmail on Android and
+  iOS for select enterprise customers, allowing them to send and receive
+  encrypted messages natively within the mobile app.
+category: tools
+tags:
+  - encryption
+  - google
+  - email-security
+  - enterprise
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/gmail-brings-end-to-end-encryption-to-android-and-ios-for-enterprise-users/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-google-gmail-client-side-e2ee-mobile-enterprise
+severity: informational
+---
+## Executive Summary
+Google has expanded the availability of its client-side end-to-end encryption (E2EE) for Gmail to native Android and iOS applications. According to SecurityWeek, this feature, previously limited to the web client, is now rolling out to enterprise users with specific Google Workspace licenses, enabling them to compose and read E2EE emails directly within their mobile Gmail apps.
+
+## Technical Analysis
+The implementation is an extension of Google's existing client-side encryption (CSE) framework for Workspace. The core technical mechanism involves encryption and decryption occurring locally on the user's device before any data is transmitted to Google's servers. The cryptographic keys are held and managed by the customer's chosen key service, not by Google. This architecture ensures that Google cannot access the plaintext content of emails or file attachments while they are in transit or at rest on its infrastructure. The feature's availability is contingent upon administrators enabling CSE for Gmail within their Workspace domain and configuring an external key management partner. Users must then manually enable the "Additional encryption" setting for individual messages when composing them on their mobile device.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+None identified at this time.
+
+## Threat Actor Context
+This development is not a direct response to a specific threat actor or campaign. Instead, it is a proactive security enhancement aimed at mitigating a broad class of threats, including data breaches at the cloud provider, insider threats, and legal subpoenas served to Google for customer data. By implementing client-side E2EE, Google provides a technical control that significantly raises the barrier for any entity, malicious or otherwise, to access the plaintext of protected communications without direct access to the user's device or key management service.
+
+## Mitigations & Recommendations
+For organizations seeking to adopt this enhanced protection, the following steps are required:
+1.  **License Verification:** Confirm the organization holds an eligible Google Workspace Enterprise Plus, Education Plus, or Education Standard subscription.
+2.  **Key Service Configuration:** Establish and integrate with a supported external key management service (e.g., Flowcrypt, Fortanix, Thales, Virtru) to host encryption keys.
+3.  **Admin Enablement:** Domain administrators must enable the client-side encryption feature for Gmail within the Google Admin console.
+4.  **User Training:** Educate end-users on the new functionality, specifically how to toggle the "Additional encryption" option for sensitive messages, as it is not enabled by default for all emails. Organizations should conduct a risk assessment to determine which data classifications warrant the use of this feature, as it may impact certain functionality like search within encrypted message bodies.
+
+## References
+- https://www.securityweek.com/gmail-brings-end-to-end-encryption-to-android-and-ios-for-enterprise-users/
