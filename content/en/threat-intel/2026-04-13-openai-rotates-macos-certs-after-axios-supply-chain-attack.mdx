@@ -1,0 +1,52 @@
+---
+title: OpenAI Rotates macOS Certificates After Axios Supply Chain Attack
+slug: 2026-04-13-openai-rotates-macos-certs-after-axios-supply-chain-attack
+date: '2026-04-13'
+excerpt: >-
+  OpenAI is rotating its macOS code-signing certificates after a malicious Axios
+  package executed in a GitHub Actions workflow, a downstream impact of the
+  recent Node.js supply chain attack.
+category: threat-intel
+tags:
+  - supply-chain
+  - nodejs
+  - github-actions
+  - code-signing
+  - openai
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/openai-rotates-macos-certs-after-axios-attack-hit-code-signing-workflow/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-openai-rotates-macos-certs-after-axios-supply-chain-attack
+severity: medium
+affected_sectors:
+  - technology
+---
+## Executive Summary
+OpenAI has initiated a rotation of its internal macOS code-signing certificates after a recent, widespread Node.js supply chain attack involving the malicious `axios-proxy-builder` package executed within one of the company's GitHub Actions workflows. While OpenAI states there is no evidence of compromise to its systems or customer data, the incident highlights the downstream risks of open-source software supply chain attacks on enterprise development and security processes.
+
+## Technical Analysis
+According to OpenAI, the incident was a downstream consequence of the broader Node.js package manager (npm) supply chain attack first reported on July 9, 2024. In that attack, a threat actor published malicious versions of the popular `axios` HTTP client library, named `axios-proxy-builder` and `axios-proxy-fix`. The malicious packages contained obfuscated code designed to exfiltrate environment variables from infected systems.
+
+OpenAI's internal security monitoring detected that a GitHub Actions workflow, part of an automated software build process, had downloaded and executed one of these malicious packages. GitHub Actions workflows often have access to sensitive secrets, including API keys and code-signing certificates, which are stored as environment variables. The primary risk of this attack was the potential theft of these secrets. OpenAI confirmed that the specific workflow had access to internal macOS code-signing certificates used to sign software for Apple's operating system. As a precautionary measure, the company is rotating these certificates, a process that invalidates the old credentials and issues new ones to prevent misuse.
+
+## Indicators of Compromise
+None identified at this time. OpenAI has not publicly released specific file hashes or network indicators related to this internal event. The malicious npm packages (`axios-proxy-builder` and `axios-proxy-fix`) have been removed from the public registry.
+
+## Tactics, Techniques & Procedures
+The attack follows a common software supply chain TTP pattern: **T1552.002 (Unsecured Credentials: Credentials in Files)** and **T1195.002 (Supply Chain Compromise: Compromise Software Dependencies)**. The threat actor uploaded malicious packages to a public repository (npm), relying on typosquatting or name confusion to trick automated systems or developers into downloading them. Once executed, the package's payload harvested environment variables, a technique for credential access. In enterprise environments like OpenAI's, this directly threatens CI/CD pipeline secrets, including code-signing keys.
+
+## Threat Actor Context
+The specific threat actor behind the initial `axios`-related npm packages has not been publicly attributed by OpenAI or the sources cited. The attack's nature—publishing typosquatted packages to steal environment variables—is consistent with financially motivated actors seeking to harvest credentials for subsequent attacks or resale. The impact on OpenAI appears to be collateral damage from a broader, opportunistic campaign rather than a targeted attack on the AI company.
+
+## Mitigations & Recommendations
+Organizations using Node.js and automated CI/CD pipelines should take the following actions:
+*   **Audit CI/CD Workflows:** Immediately review GitHub Actions, Jenkins, or other CI/CD configurations to identify any executions of the malicious packages `axios-proxy-builder` or `axios-proxy-fix`.
+*   **Rotate Exposed Secrets:** Assume compromise and rotate all secrets, API keys, and certificates that were accessible to any workflow or system that executed the malicious code.
+*   **Harden Pipeline Security:** Implement stricter controls on dependency installation, such as using pinned versions with integrity hashes (e.g., npm's `package-lock.json`), employing private registries with curated packages, and running workflows with the minimum necessary permissions using granular secrets.
+*   **Monitor for Credential Abuse:** Increase monitoring for anomalous use of code-signing certificates or other exposed credentials, particularly on macOS platforms.
+
+## References
+*   BleepingComputer. "OpenAI rotates macOS certs after Axios attack hit code-signing workflow." https://www.bleepingcomputer.com/news/security/openai-rotates-macos-certs-after-axios-attack-hit-code-signing-workflow/

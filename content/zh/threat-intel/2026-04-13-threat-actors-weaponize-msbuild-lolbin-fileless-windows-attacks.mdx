@@ -1,0 +1,44 @@
+---
+title: 威胁行为者武器化MSBuild LOLBin进行无文件Windows攻击
+slug: 2026-04-13-threat-actors-weaponize-msbuild-lolbin-fileless-windows-attacks
+date: '2026-04-13'
+excerpt: >-
+  网络犯罪分子正在滥用合法的Microsoft Build Engine (MSBuild.exe)
+  直接在内存中执行恶意.NET代码，通过避免文件落地来逃避传统检测。
+category: threat-intel
+tags:
+  - lolbin
+  - fileless
+  - evasion
+  - windows
+  - msbuild
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/hackers-abuse-msbuild-lolbin/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-threat-actors-weaponize-msbuild-lolbin-fileless-windows-attacks
+severity: high
+---
+## 执行摘要
+威胁行为者正在积极利用对Windows核心组件Microsoft Build Engine（`MSBuild.exe`）的固有信任来进行无文件攻击。通过制作恶意的MSBuild项目文件，对手可以直接在系统内存中执行任意.NET代码，绕过应用程序允许列表，并规避依赖于检测恶意文件写入的安全工具。这种技术代表了向滥用合法、签名系统实用程序进行后开发活动的重大转变。
+
+## 技术分析
+攻击方法集中在`MSBuild.exe`上，这是一个在所有安装了.NET Framework或Visual Studio的Windows系统上都存在的Microsoft签名二进制文件。这个工具旨在编译和构建.NET项目文件，通常具有`.csproj`或`.xml`扩展名。对手制作一个包含嵌入式、混淆C#代码的恶意项目文件。当这个文件传递给`MSBuild.exe`时，该工具会编译并在内存中执行代码。至关重要的是，最终的有效载荷从未被写入磁盘作为一个独立的可执行文件（`.exe`），使其成为一种无文件或“生活在土地上”（LOL）技术。
+
+恶意项目文件充当自包含的执行环境。分析师观察到这些文件嵌入了从简单的侦察脚本到完整的后门功能的各种有效载荷。由于`MSBuild.exe`是一个由用户或脚本启动的合法、受信任的进程，其网络连接和行为可能对表面监控看起来无害，允许恶意活动与正常的开发人员或系统操作融为一体。
+
+## 入侵指标
+目前没有识别出任何指标。
+
+## 战术、技术与程序
+此活动与几个记录在案的MITRE ATT&CK技术一致。主要技术是**T1127: 可信开发实用程序**，其中对手滥用软件开发中使用的合法工具进行防御规避。具体使用`MSBuild.exe`属于子技术**T1127.001: MSBuild**。这与**T1027: 混淆文件或信息**相结合，因为项目文件中的C#代码通常被严重混淆，以阻碍分析。无文件执行方法对应于**T1055: 进程注入**和更广泛的策略**LOLBins（生活在土地上的二进制文件）**。源材料中没有指定导致执行恶意项目文件的初始访问向量。
+
+## 威胁行为者背景
+源报告没有将这种特定的贸易技术归因于一个命名的威胁行为者或高级持续性威胁（APT）组织。所描述的行为特征是网络犯罪分子和渗透测试人员广泛采用的技术，以增加操作隐蔽性。使用广泛可用的LOLBins如`MSBuild.exe`降低了不太复杂行为者的进入门槛，同时仍然对许多安全控制有效。
+
+## 缓解措施与建议
+防御这种技术需要一个侧重于行为而不是静态指标的分层方法。组织应该实施应用程序控制解决方案，如Microsoft Defender应用程序控制或类似的允许列表技术，配置为限制`MSBuild.exe`的执行到特定的、受信任的路径或用户帐户，特别是在工作站和服务器上，这些地方不预期有开发活动。增强的日志记录和进程监控至关重要；安全团队应该审计`MSBuild.exe`进程的命令行参数，寻找指向不寻常文件位置或包含混淆参数的执行。端点检测和响应（EDR）工具应该被调整以标记和调查`MSBuild.exe`生成意外子进程或发起网络连接的情况。最后，用户教育是关键，因为许多这些攻击始于网络钓鱼；用户应该被培训不要启用宏或执行可能作为恶意项目的初始触发器的不寻常文件。
+
+## 参考资料
+- https://cybersecuritynews.com/hackers-abuse-msbuild-lolbin/

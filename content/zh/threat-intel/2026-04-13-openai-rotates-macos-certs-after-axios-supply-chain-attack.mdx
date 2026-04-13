@@ -1,0 +1,51 @@
+---
+title: OpenAI 在 Axios 供应链攻击后轮换 macOS 证书
+slug: 2026-04-13-openai-rotates-macos-certs-after-axios-supply-chain-attack
+date: '2026-04-13'
+excerpt: >-
+  在最近的 Node.js 供应链攻击的下游影响中，一个恶意的 Axios 包在 GitHub Actions 工作流程中执行后，OpenAI 正在轮换其
+  macOS 代码签名证书。
+category: threat-intel
+tags:
+  - supply-chain
+  - nodejs
+  - github-actions
+  - code-signing
+  - openai
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/openai-rotates-macos-certs-after-axios-attack-hit-code-signing-workflow/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-openai-rotates-macos-certs-after-axios-supply-chain-attack
+severity: medium
+affected_sectors:
+  - technology
+---
+## 执行摘要
+OpenAI 在近期涉及恶意 `axios-proxy-builder` 包的广泛 Node.js 供应链攻击后，启动了其内部 macOS 代码签名证书的轮换。这次攻击在公司的一个 GitHub Actions 工作流程中执行。尽管 OpenAI 表示没有证据表明其系统或客户数据受到侵害，但该事件突显了开源软件供应链攻击对企业开发和安全流程的下游风险。
+
+## 技术分析
+根据 OpenAI 的说法，这次事件是 2024 年 7 月 9 日首次报告的更广泛的 Node.js 包管理器（npm）供应链攻击的下游后果。在那场攻击中，一个威胁行为者发布了流行的 `axios` HTTP 客户端库的恶意版本，名为 `axios-proxy-builder` 和 `axios-proxy-fix`。恶意包包含旨在从受感染系统渗出环境变量的混淆代码。
+
+OpenAI 的内部安全监控发现，一个 GitHub Actions 工作流程，即自动化软件构建过程的一部分，下载并执行了这些恶意包之一。GitHub Actions 工作流程通常可以访问敏感机密，包括作为环境变量存储的 API 密钥和代码签名证书。这次攻击的主要风险是这些机密可能被盗。OpenAI 确认，特定的工作流程可以访问用于为苹果操作系统签名软件的内部 macOS 代码签名证书。作为预防措施，公司正在轮换这些证书，这个过程使旧凭证作废并发放新的凭证以防止滥用。
+
+## 入侵指标
+目前没有识别出任何入侵指标。OpenAI 没有公开发布与此次内部事件相关的特定文件哈希值或网络指标。恶意的 npm 包（`axios-proxy-builder` 和 `axios-proxy-fix`）已从公共注册表中移除。
+
+## 战术、技术与程序
+这次攻击遵循了常见的软件供应链 TTP 模式：**T1552.002（不安全的凭证：文件中的凭证）** 和 **T1195.002（供应链侵害：侵害软件依赖）**。威胁行为者将恶意包上传到公共仓库（npm），依赖于拼写错误或名称混淆来诱使自动化系统或开发人员下载它们。一旦执行，包的有效载荷就收集环境变量，这是一种获取凭证的技术。在像 OpenAI 这样的企业环境中，这直接威胁到 CI/CD 管道机密，包括代码签名密钥。
+
+## 威胁行为者背景
+OpenAI 或引用的来源尚未公开归因于初始 `axios` 相关的 npm 包背后的特定威胁行为者。攻击的性质——发布拼写错误的包以窃取环境变量——与寻求窃取凭证以进行后续攻击或转售的财务动机行为者一致。对 OpenAI 的影响似乎是更广泛、机会主义活动产生的附带损害，而不是针对 AI 公司的定向攻击。
+
+## 缓解措施与建议
+使用 Node.js 和自动化 CI/CD 管道的组织应采取以下行动：
+*   **审计 CI/CD 工作流程：** 立即审查 GitHub Actions、Jenkins 或其他 CI/CD 配置，以识别任何执行恶意包 `axios-proxy-builder` 或 `axios-proxy-fix` 的情况。
+*   **轮换暴露的机密：** 假设存在侵害并轮换所有机密、API 密钥和证书，这些机密、API 密钥和证书对任何执行恶意代码的工作流程或系统都是可访问的。
+*   **加强管道安全：** 实施对依赖安装的更严格控制，例如使用带有完整性哈希的固定版本（例如，npm 的 `package-lock.json`）、使用带有策划包的私有注册表，以及使用细粒度机密以最小必要权限运行工作流程。
+*   **监控凭证滥用：** 加强监控代码签名证书或其他暴露凭证的异常使用，特别是在 macOS 平台上。
+
+## 参考资料
+*   BleepingComputer. "OpenAI rotates macOS certs after Axios attack hit code-signing workflow." https://www.bleepingcomputer.com/news/security/openai-rotates-macos-certs-after-axios-attack-hit-code-signing-workflow/
