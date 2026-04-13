@@ -87,6 +87,14 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* Google AdSense — must be in <head> for site verification */}
+        <script
+          async
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6168266894987797"
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider>
           {children}
@@ -95,13 +103,6 @@ export default async function RootLayout({
             position="top-right"
             closeButton
             duration={5000}
-          />
-          {/* Google AdSense */}
-          <Script
-            async
-            crossOrigin="anonymous"
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6168266894987797"
-            strategy="afterInteractive"
           />
           {/* Plausible Analytics — privacy-friendly, no cookies */}
           {process.env.PLAUSIBLE_DOMAIN && (
