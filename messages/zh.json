@@ -46,6 +46,16 @@
     "noResults": "未找到结果。",
     "results": "{count} 条结果"
   },
+  "newsletter": {
+    "title": "订阅更新",
+    "description": "将最新的网络安全资讯直接发送到您的邮箱。",
+    "placeholder": "your@email.com",
+    "subscribe": "订阅",
+    "success": "订阅成功！请查看您的邮箱。",
+    "alreadySubscribed": "该邮箱已经订阅。",
+    "invalid": "请输入有效的邮箱地址。",
+    "error": "出了点问题，请重试。"
+  },
   "footer": {
     "description": "面向企业防御者的专业网络安全情报平台。",
     "rights": "版权所有。",

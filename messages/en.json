@@ -46,6 +46,16 @@
     "noResults": "No results found.",
     "results": "{count} results"
   },
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Get the latest cybersecurity news delivered to your inbox.",
+    "placeholder": "your@email.com",
+    "subscribe": "Subscribe",
+    "success": "You're subscribed! Check your inbox.",
+    "alreadySubscribed": "This email is already subscribed.",
+    "invalid": "Please enter a valid email address.",
+    "error": "Something went wrong. Please try again."
+  },
   "footer": {
     "description": "Professional cybersecurity intelligence for enterprise defenders.",
     "rights": "All rights reserved.",

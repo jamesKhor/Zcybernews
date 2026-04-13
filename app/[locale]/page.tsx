@@ -9,6 +9,7 @@ import Image from "next/image";
 import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
 import { HomeJsonLd } from "@/components/seo/JsonLd";
 import { stripMarkdown } from "@/lib/utils";
+import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -186,6 +187,9 @@ function HomeContent({
             </p>
           </div>
         )}
+
+        {/* Newsletter CTA */}
+        <SubscribeForm />
       </div>
     </main>
   );

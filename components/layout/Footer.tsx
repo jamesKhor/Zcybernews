@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Shield, Rss } from "lucide-react";
+import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 
 interface Props {
   locale: string;
@@ -12,7 +13,7 @@ export function Footer({ locale }: Props) {
   return (
     <footer className="border-t border-border bg-card mt-auto">
       <div className="max-w-7xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 font-bold mb-3">
@@ -49,6 +50,9 @@ export function Footer({ locale }: Props) {
               </li>
             </ul>
           </div>
+
+          {/* Newsletter */}
+          <SubscribeForm compact />
 
           {/* Feeds */}
           <div>
