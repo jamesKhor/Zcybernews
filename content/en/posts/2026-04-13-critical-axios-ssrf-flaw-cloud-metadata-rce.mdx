@@ -1,0 +1,45 @@
+---
+title: 'Critical Axios SSRF Flaw Exposes Cloud Metadata, Enables RCE'
+slug: 2026-04-13-critical-axios-ssrf-flaw-cloud-metadata-rce
+date: '2026-04-13'
+excerpt: >-
+  A critical SSRF vulnerability in the Axios HTTP client library allows
+  attackers to exfiltrate cloud instance metadata, potentially leading to remote
+  code execution and full cloud account compromise.
+category: vulnerabilities
+tags:
+  - axios
+  - ssrf
+  - cloud-security
+  - nodejs
+  - metadata
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/axios-vulnerability-poc-released/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-13-critical-axios-ssrf-flaw-cloud-metadata-rce
+severity: critical
+---
+## Executive Summary
+A critical server-side request forgery (SSRF) vulnerability in the widely used Axios HTTP client library enables attackers to bypass security controls and make unauthorized requests to internal services, including cloud metadata endpoints. According to researcher Jason Saayman, this flaw allows the exfiltration of sensitive cloud instance metadata, which can be leveraged to steal credentials, move laterally, and achieve remote code execution, posing a severe risk to applications deployed in cloud environments like AWS, Google Cloud, and Azure.
+
+## Technical Analysis
+The vulnerability stems from improper handling of URL inputs within Axios's adapter layer. When Axios is configured to use specific adapters, such as the HTTP/HTTPS adapter in Node.js, it fails to adequately validate or restrict which network endpoints a request can target. This allows an attacker who controls the request URL parameter—for example, through a user-supplied input field—to force the application server to make HTTP requests to internal, non-routable addresses, including those belonging to the cloud platform's internal metadata service.
+
+The primary risk is access to the cloud instance metadata service (e.g., `http://169.254.169.254/` on AWS). This service contains temporary security credentials, IAM role information, and other sensitive configuration data. By exploiting this SSRF flaw, an attacker can retrieve these credentials, effectively assuming the permissions of the cloud instance's attached IAM role. The impact escalates if the role has excessive privileges, enabling actions such as spawning new compute resources, accessing storage buckets, or compromising other services within the cloud environment, ultimately leading to remote code execution on the instance.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The core technique is **Server-Side Request Forgery (T1190 - Exploit Public-Facing Application)**. An attacker would first identify an application endpoint that uses Axios to make a request based on user input. They would then submit a malicious URL pointing to a cloud metadata endpoint or other internal service. Successful exploitation follows a clear chain: initial SSRF to access the metadata service, credential theft from the metadata, and then use of those credentials for **Valid Accounts (T1078)** within the cloud environment to perform unauthorized actions, leading to **Remote Services (T1021)** and **Remote Code Execution (T1203)**.
+
+## Threat Actor Context
+The vulnerability is exploitable by any threat actor with network access to a vulnerable application endpoint. This includes opportunistic attackers scanning the internet for exposed services, as well as more targeted actors who might incorporate this flaw into broader attack chains. The simplicity of exploitation, especially with proof-of-concept code now public, lowers the barrier for entry. The primary motivation is initial access and privilege escalation within cloud environments for purposes of data theft, cryptomining, or establishing a persistent foothold.
+
+## Mitigations & Recommendations
+The most immediate mitigation is to upgrade Axios to a patched version. Developers and security teams should audit their codebases for instances where user input flows into Axios request URLs without strict validation. Implement allow-list validation for all user-supplied URLs, rejecting any requests to internal IP address ranges (e.g., `127.0.0.0/8`, `10.0.0.0/8`, `169.254.0.0/16`, `192.168.0.0/16`). For cloud deployments, restrict IAM roles and instance profiles to the minimum necessary permissions using the principle of least privilege. Additionally, where possible, configure cloud metadata services to require the `X-Forwarded-For` header or use the latest metadata service versions that mandate the use of HTTP tokens, which can block simple SSRF attempts.
+
+## References
+- https://cybersecuritynews.com/axios-vulnerability-poc-released/
