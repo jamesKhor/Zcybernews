@@ -1,0 +1,59 @@
+---
+title: PlugX USB Worm Evolves with DLL Sideloading for Cross-Continent Spread
+slug: 2026-04-14-plugx-usb-worm-dll-sideloading-spread
+date: '2026-04-14'
+excerpt: >-
+  A new PlugX USB worm variant uses DLL sideloading to propagate across Asia and
+  Africa, targeting removable drives for initial access and establishing
+  persistence.
+category: malware
+tags:
+  - plugx
+  - usb-worm
+  - dll-sideloading
+  - koadic
+  - removable-media
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/new-plugx-usb-worm-spreads/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-14-plugx-usb-worm-dll-sideloading-spread
+severity: high
+affected_regions:
+  - Asia
+  - Africa
+---
+## Executive Summary
+A newly documented variant of the PlugX remote access trojan (RAT) is propagating as a USB worm, using DLL sideloading to infect systems across multiple continents. First observed in Papua New Guinea in August 2022 and again in Ghana in January 2023, this campaign represents a significant evolution in PlugX's delivery mechanism, shifting from targeted network intrusions to opportunistic, physical media-based spread. The worm leverages legitimate, signed drivers to sideload malicious DLLs, establishing persistence and deploying secondary payloads, including the Koadic post-exploitation framework.
+
+## Technical Analysis
+The malware, identified by researchers at Sekoia, functions as a multi-stage infection chain initiated when a victim interacts with a compromised USB drive. The primary executable is a legitimate, digitally signed driver from either `Rivet Networks` (`Killer Network Service`) or `ASUSTeK Computer Inc.` (`ASUS Smart Display Control`). This trusted binary is configured to load a malicious DLL, a technique known as **DLL sideloading**, which bypasses application allow-listing and some heuristic detection.
+
+The sideloaded DLL, `version.dll`, serves as the first-stage payload. It decrypts and executes a second-stage shellcode payload from its resource section. This shellcode is responsible for establishing persistence on the infected host, typically by creating a scheduled task or a Windows service. Finally, the shellcode retrieves and executes the final PlugX RAT payload from a command-and-control (C2) server. In some observed cases, the threat actors also deployed the **Koadic** framework, a penetration testing tool repurposed for post-exploitation activities like credential dumping and lateral movement. The worm also copies itself to newly connected removable drives, creating an `autorun.inf` file and the malicious binaries to facilitate further propagation.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The threat actors employ a consistent set of techniques aligned with the MITRE ATT&CK framework:
+- **Initial Access (TA0001):** The primary vector is **Removable Media (T1091)**, with the worm copying itself to USB drives.
+- **Execution (TA0002):** Execution is achieved through **Scheduled Task (T1053.005)** and **Windows Service (T1543.003)** persistence mechanisms, and via **Native API (T1106)** calls from the shellcode.
+- **Defense Evasion (TA0005):** The campaign heavily relies on **DLL Side-Loading (T1574.002)** using signed binaries and **Obfuscated Files or Information (T1027)** via encrypted resource sections.
+- **Persistence (TA0003):** As noted, persistence is maintained through scheduled tasks and services.
+- **Command and Control (TA0011):** The final PlugX payload communicates with C2 infrastructure using likely encrypted channels.
+
+## Threat Actor Context
+The specific threat actor behind this campaign remains unattributed. PlugX is a long-standing, modular RAT with historical ties to Chinese-affiliated advanced persistent threat (APT) groups, but it has also been observed in use by other actors. Its appearance in a geographically dispersed, opportunistic worm campaign suggests either a shift in tactics by a known group or adoption by a lower-tier actor. The inclusion of the Koadic framework, an open-source tool, does not provide strong attribution clues. The targeting of Papua New Guinea and Ghana appears broad rather than focused on specific sectors, indicating a possible cybercrime or espionage-for-hire motive.
+
+## Mitigations & Recommendations
+Organizations should implement technical and procedural controls to mitigate the risk from USB-borne threats:
+- **Disable Autorun/AutoPlay:** Enforce policies via Group Policy to disable Autorun for all drives.
+- **Application Allow-listing:** Deploy solutions that restrict executable execution to approved, signed binaries only, which can disrupt the DLL sideloading chain.
+- **Enhanced Monitoring:** Monitor for process creation events where legitimate, signed network or display drivers (e.g., from Killer or ASUS) spawn unusual child processes or make network connections.
+- **User Training:** Educate staff on the risks of using unknown USB drives and mandate scanning of all removable media before use.
+- **Network Segmentation:** Restrict outbound connections from workstations to limit C2 communication, and monitor for beaconing to unknown external IPs.
+- **Endpoint Detection and Response (EDR):** Ensure EDR tools are configured to detect suspicious DLL loading patterns and shellcode execution in memory.
+
+## References
+- https://cybersecuritynews.com/new-plugx-usb-worm-spreads/
