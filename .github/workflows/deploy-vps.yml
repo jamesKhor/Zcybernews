@@ -48,16 +48,35 @@ jobs:
           echo "Changed files:"
           echo "$CHANGED"
 
-          # Content-only paths: MDX, article images, pipeline cache, subscriber data
-          NON_CONTENT=$(echo "$CHANGED" | grep -v -E '^(content/|public/images/articles/|\.pipeline-cache/|data/)' || true)
+          # Paths that DON'T require a rebuild — strip them out of the change list
+          # and if nothing remains, it's a no-rebuild change.
+          #
+          #   Directory prefixes:
+          #     content/                    → MDX articles
+          #     public/images/articles/     → article hero images
+          #     .pipeline-cache/            → RSS dedup cache
+          #     data/                       → subscribers.json, rss-sources.json
+          #     docs/                       → documentation (future)
+          #     .claude/                    → Claude Code session state (launch.json, etc.)
+          #     .github/ISSUE_TEMPLATE/     → issue templates
+          #
+          #   Root-level exact matches (docs + meta):
+          #     README.md, CLAUDE.md, AGENTS.md, CONTRIBUTING.md, CHANGELOG.md
+          #     LICENSE, .gitignore, .env.example, .editorconfig, .prettierignore
+          #     vercel.json (Vercel-only config; VPS doesn't read it)
+          NON_CONTENT=$(echo "$CHANGED" \
+            | grep -v -E '^(content/|public/images/articles/|\.pipeline-cache/|data/|docs/|\.claude/|\.github/ISSUE_TEMPLATE/)' \
+            | grep -v -E '^[^/]+\.md$' \
+            | grep -v -E '^(LICENSE|\.gitignore|\.env\.example|\.editorconfig|\.prettierignore|vercel\.json)$' \
+            || true)
 
           if [ -z "$NON_CONTENT" ]; then
             echo "needs_rebuild=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Content-only change — skipping rebuild, will revalidate instead"
+            echo "::notice::No runtime changes — skipping rebuild, will revalidate instead"
           else
             echo "needs_rebuild=true" >> "$GITHUB_OUTPUT"
             echo "::notice::Code/config change detected — full rebuild needed"
-            echo "Non-content files changed:"
+            echo "Files triggering rebuild:"
             echo "$NON_CONTENT"
           fi
 
