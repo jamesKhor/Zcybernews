@@ -1,0 +1,46 @@
+---
+title: DavMail 6.6.0 修补正则表达式缺陷，更新 Microsoft Graph 的 OAuth
+slug: 2026-04-14-davmail-6-6-0-patches-regex-flaw-oauth-update
+date: '2026-04-14'
+excerpt: >-
+  DavMail 6.6.0 解决了一个正则表达式漏洞的安全警告，并更新 OAuth 处理以与 Microsoft 的变化保持一致，影响将邮件客户端桥接到
+  Exchange/Office 365 的用户。
+category: vulnerabilities
+tags:
+  - davmail
+  - oauth
+  - microsoft
+  - email-security
+  - patch
+language: zh
+source_urls:
+  - 'https://www.helpnetsecurity.com/2026/04/14/davmail-6-6-0-released/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-14-davmail-6-6-0-patches-regex-flaw-oauth-update
+severity: medium
+---
+## 执行摘要
+DavMail 版本 6.6.0 已发布，包含了针对通过代码扫描工具识别的正则表达式（regex）漏洞的安全补丁。此次更新还修改了 OAuth 重定向处理，以符合微软最近的变更，并包括一般稳定性修复。使用 DavMail 作为标准电子邮件客户端（如 Thunderbird）和微软 Exchange 或 Office 365 服务之间的网关的组织应优先考虑此更新，以减轻潜在的安全风险并确保兼容性。
+
+## 技术分析
+DavMail 6.6.0 中的主要安全修复解决了与正则表达式（regex）漏洞相关的代码扫描警报。此 regex 漏洞的确切性质和潜在影响在公开发布说明中未详细说明。这类漏洞有时可能导致拒绝服务条件（ReDoS），如果精心制作的输入导致灾难性回溯，或者在更罕见的情况下，可能被利用进行注入攻击。补丁涉及直接替换 regex 以关闭警报。
+
+第二个重要变化是对 OAuth 重定向 URI 处理的调整。这一修改是由于微软方面的更新所必需的，特别是为了确保与 DavMail 可以利用的微软 Graph API 后端的正确互操作性。如果不应用此更新，可能会导致连接到 Office 365 或 Exchange Online 服务的用户身份验证流程中断。
+
+此次发布中的其他修复解决了 IMAP、SMTP、CalDAV 和 CardDAV 服务模块中未指定的问题，这些模块构成了软件的核心桥接功能。
+
+## 入侵指标
+目前没有识别出任何入侵指标。此次更新是预防性的，解决了代码质量警报和兼容性要求。
+
+## 战术、技术与程序
+没有特定的对手 TTPs 与此次发布相关。此次更新解决了一个潜在的漏洞和一个主动的配置变更。
+
+## 威胁行为者背景
+这是一个软件维护和安全更新。没有证据将此次发布与命名的威胁行为者的活动或正在进行的利用活动联系起来。
+
+## 缓解措施与建议
+最终的缓解措施是立即将 DavMail 安装升级到版本 6.6.0。管理员应从官方 DavMail 网站或存储库获取更新。由于 DavMail 通常位于内部客户端和云电子邮件服务之间的关键节点，因此应将其视为边界安全基础设施。应监控其日志，以查找身份验证失败或意外的服务重启。组织还应审查 DavMail 配置，确保遵循最小权限原则，仅暴露必要的服务，并使用安全的 OAuth 应用程序凭据。
+
+## 参考资料
+- https://www.helpnetsecurity.com/2026/04/14/davmail-6-6-0-released/

@@ -1,0 +1,47 @@
+---
+title: 'DavMail 6.6.0 Patches Regex Flaw, Updates OAuth for Microsoft Graph'
+slug: 2026-04-14-davmail-6-6-0-patches-regex-flaw-oauth-update
+date: '2026-04-14'
+excerpt: >-
+  DavMail 6.6.0 addresses a security alert for a regex vulnerability and updates
+  OAuth handling to align with Microsoft changes, impacting users bridging mail
+  clients to Exchange/Office 365.
+category: vulnerabilities
+tags:
+  - davmail
+  - oauth
+  - microsoft
+  - email-security
+  - patch
+language: en
+source_urls:
+  - 'https://www.helpnetsecurity.com/2026/04/14/davmail-6-6-0-released/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-14-davmail-6-6-0-patches-regex-flaw-oauth-update
+severity: medium
+---
+## Executive Summary
+DavMail version 6.6.0 has been released, containing a security patch for a regex vulnerability identified through code-scanning tools. The update also modifies OAuth redirect handling to comply with a recent Microsoft change and includes general stability fixes. Organizations using DavMail as a gateway between standard email clients (like Thunderbird) and Microsoft Exchange or Office 365 services should prioritize this update to mitigate potential security risks and ensure compatibility.
+
+## Technical Analysis
+The primary security fix in DavMail 6.6.0 resolves a code-scanning alert related to a regular expression (regex) vulnerability. The exact nature and potential impact of this regex flaw are not detailed in the public release notes. Such vulnerabilities can sometimes lead to denial-of-service conditions (ReDoS) if a crafted input causes catastrophic backtracking, or in rarer cases, may be leveraged for injection attacks. The patch involved a direct regex replacement to close the alert.
+
+A second significant change is an adjustment to OAuth redirect URI handling. This modification was necessitated by an update on Microsoft's side, specifically to ensure proper interoperability with the Microsoft Graph API backend that DavMail can utilize. Failure to apply this update could result in broken authentication flows for users connecting to Office 365 or Exchange Online services.
+
+Additional fixes in this release address unspecified issues within the IMAP, SMTP, CalDAV, and CardDAV service modules, which form the core bridging functionality of the software.
+
+## Indicators of Compromise
+None identified at this time. The update is preventative in nature, addressing a code-quality alert and a compatibility requirement.
+
+## Tactics, Techniques & Procedures
+No specific adversary TTPs are associated with this release. The update addresses a potential vulnerability and a proactive configuration change.
+
+## Threat Actor Context
+This is a software maintenance and security update. There is no evidence linking this release to the activity of a named threat actor or an ongoing exploitation campaign.
+
+## Mitigations & Recommendations
+The definitive mitigation is to upgrade DavMail installations to version 6.6.0 immediately. Administrators should obtain the update from the official DavMail website or repository. As DavMail often sits at a critical junction between internal clients and cloud email services, it should be treated as perimeter security infrastructure. Its logs should be monitored for authentication failures or unexpected service restarts. Organizations should also review the DavMail configuration to ensure it follows the principle of least privilege, only exposing necessary services and using secure OAuth application credentials.
+
+## References
+- https://www.helpnetsecurity.com/2026/04/14/davmail-6-6-0-released/
