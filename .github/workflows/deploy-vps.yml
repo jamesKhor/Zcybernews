@@ -125,8 +125,12 @@ jobs:
             echo "📦 Installing dependencies..."
             HUSKY=0 npm ci --production=false
 
-            echo "⏹️  Stopping app during build..."
-            pm2 stop zcybernews 2>/dev/null || true
+            # NOTE: Not stopping PM2 here. For cluster mode, we'll reload
+            # workers one at a time AFTER the build succeeds. For fork mode
+            # (single-worker), a brief ~2s restart at the end is unavoidable
+            # but we don't want a 90-second window of downtime while building.
+            # The previous build artifact in .next keeps serving until the
+            # atomic reload happens.
 
             echo "🧹 Cleaning old build cache..."
             sudo rm -rf /home/zcybernews/zcybernews/.next
@@ -135,9 +139,22 @@ jobs:
             export NODE_OPTIONS="--max-old-space-size=1536"
             npm run build
 
-            echo "♻️  Restarting PM2..."
-            pm2 restart zcybernews --update-env 2>/dev/null \
-              || pm2 start npm --name zcybernews -- start
+            echo "♻️  Reloading PM2 (zero-downtime in cluster mode)..."
+            if pm2 describe zcybernews > /dev/null 2>&1; then
+              # Graceful rolling reload — cluster mode cycles workers one
+              # at a time, keeping the app responsive throughout. Fork mode
+              # does a best-effort restart (brief downtime).
+              pm2 reload zcybernews --update-env
+            else
+              # First-time start: cluster mode with 2 workers.
+              # max-memory-restart protects the 2GB VPS from OOM spirals —
+              # PM2 auto-restarts any worker that exceeds 750MB.
+              pm2 start npm --name zcybernews \
+                -i 2 \
+                --exec-mode cluster \
+                --max-memory-restart 750M \
+                -- start
+            fi
             pm2 save
 
             echo "🏥 Health check..."

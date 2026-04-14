@@ -81,11 +81,25 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Translate title + excerpt
-  const metaRes = await translateWithFallback(
-    `Translate these to Simplified Chinese. Keep threat actor names, malware names, ALL-CAPS acronyms (EDR, VPN, APT, CVE, IOC, TTP etc), product names in English. Return ONLY valid JSON: {"title": "...", "excerpt": "..."}\n\nTitle: ${title}\nExcerpt: ${excerpt}`,
-    { maxOutputTokens: 300, temperature: 0.2, provider: "deepseek" },
-  );
+  // Translate title+excerpt and body IN PARALLEL — the two AI calls don't
+  // depend on each other, so running them concurrently saves the ~2-3s of
+  // the shorter meta call that used to be wasted waiting for the body.
+  const [metaRes, bodyRes] = await Promise.all([
+    translateWithFallback(
+      `Translate these to Simplified Chinese. Keep threat actor names, malware names, ALL-CAPS acronyms (EDR, VPN, APT, CVE, IOC, TTP etc), product names in English. Return ONLY valid JSON: {"title": "...", "excerpt": "..."}\n\nTitle: ${title}\nExcerpt: ${excerpt}`,
+      { maxOutputTokens: 300, temperature: 0.2, provider: "deepseek" },
+    ),
+    translateWithFallback(
+      `You are a professional cybersecurity translator. Translate English to Simplified Chinese.
+NEVER translate: threat actor names (LockBit, APT41, Lazarus Group etc), malware names (Mimikatz, Cobalt Strike etc), ALL-CAPS acronyms (EDR, VPN, RDP, CVE, IOC, TTP, APT, C2, LSASS, DLL, RaaS, WAF, SIEM etc), product/vendor names (Microsoft, Cisco, CrowdStrike etc), CVE IDs, hashes, IPs, domains, code blocks.
+Keep all Markdown formatting intact. Output ONLY the translated markdown, no explanation.
+
+Translate this article body to Simplified Chinese:
+
+${content}`,
+      { maxOutputTokens: 4000, temperature: 0.3, provider: "deepseek" },
+    ),
+  ]);
 
   let zhTitle = title;
   let zhExcerpt = excerpt;
@@ -97,18 +111,6 @@ export async function POST(req: NextRequest) {
   } catch {
     /* fallback to EN */
   }
-
-  // Translate body
-  const bodyRes = await translateWithFallback(
-    `You are a professional cybersecurity translator. Translate English to Simplified Chinese.
-NEVER translate: threat actor names (LockBit, APT41, Lazarus Group etc), malware names (Mimikatz, Cobalt Strike etc), ALL-CAPS acronyms (EDR, VPN, RDP, CVE, IOC, TTP, APT, C2, LSASS, DLL, RaaS, WAF, SIEM etc), product/vendor names (Microsoft, Cisco, CrowdStrike etc), CVE IDs, hashes, IPs, domains, code blocks.
-Keep all Markdown formatting intact. Output ONLY the translated markdown, no explanation.
-
-Translate this article body to Simplified Chinese:
-
-${content}`,
-    { maxOutputTokens: 4000, temperature: 0.3, provider: "deepseek" },
-  );
 
   const date = new Date().toISOString().split("T")[0];
   const filename = `${date}-${slug.replace(/^[\d-]+-/, "")}.mdx`;
