@@ -18,6 +18,31 @@ A professional cybersecurity and tech news site that:
 
 ---
 
+## Rendering strategy (ISR everywhere, memoized content loader)
+
+Every route in this project uses the global "default to ISR" rule from `~/.claude/CLAUDE.md`. Specific applications:
+
+| Route                                                              | Strategy                                                                                      | Why                                                              |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `app/[locale]/articles/[slug]`, `app/[locale]/threat-intel/[slug]` | `revalidate = 3600`, `dynamicParams = true`, `generateStaticParams` returns top 50 per locale | 262+ articles total, old ones render on-demand                   |
+| `app/[locale]/page.tsx` (homepage)                                 | `revalidate = 3600`                                                                           | Article feed, regenerated hourly                                 |
+| `app/[locale]/tags/[tag]`                                          | `revalidate = 3600`, `dynamicParams = true`, top 20 tags pre-rendered                         | ~200 unique tags otherwise                                       |
+| `app/[locale]/categories/[category]`                               | `revalidate = 3600`                                                                           | Only 12 pages (6 categories × 2 locales), safe to pre-render all |
+| `app/sitemap.ts`, `app/robots.ts`                                  | `dynamic = 'force-dynamic'` + `revalidate = 3600`                                             | Enumerates all articles; was timing out at build                 |
+| All `app/admin/**` and `app/api/admin/**`                          | Dynamic (Next.js default for auth'd pages)                                                    | Per-session / per-request                                        |
+| `app/api/revalidate`                                               | Dynamic route handler                                                                         | Invalidates ISR caches on demand                                 |
+
+**Content loader memoization (`lib/content.ts`)** — `getAllPosts()` uses an mtime-keyed `Map` cache shared across all routes and requests in a Node process. Cache auto-invalidates when the content directory's mtime changes (new MDX landed). Without this memo, 4 parallel routes each reparsed 262 MDX files → build time 7+ min with per-route 60s timeouts. With it, build is ~50s on the 2GB VPS. Preserve this pattern; do not bypass with direct `readFileSync` calls.
+
+**Revalidation flow for content changes**:
+
+1. Admin publish or AI pipeline commits MDX to `content/`
+2. `deploy-vps.yml` content-only path pulls + calls `POST /api/revalidate?tag=articles`
+3. Next visitor to a listing page triggers regeneration; the memo re-reads the directory (mtime changed) and re-parses
+4. Result: new article live within ~10s of commit, zero downtime
+
+---
+
 ## Zero-Downtime Publishing Architecture (CRITICAL — read before touching deploy/publish code)
 
 This site has a **hard zero-downtime requirement**. The architecture below was built specifically to avoid the 2-3 minute 502 outages that used to happen on every article publish. Do not regress this.
