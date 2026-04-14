@@ -144,12 +144,19 @@ jobs:
             echo "📦 Installing dependencies..."
             HUSKY=0 npm ci --production=false
 
-            # NOTE: Not stopping PM2 here. For cluster mode, we'll reload
-            # workers one at a time AFTER the build succeeds. For fork mode
-            # (single-worker), a brief ~2s restart at the end is unavoidable
-            # but we don't want a 90-second window of downtime while building.
-            # The previous build artifact in .next keeps serving until the
-            # atomic reload happens.
+            # IMPORTANT: Stop PM2 BEFORE rm + build.
+            # An earlier attempt left PM2 running to minimize downtime, but
+            # the old process hit ENOENT errors when mid-build file writes
+            # raced its lazy-loaded chunks — producing a corrupt .next (no
+            # prerender-manifest.json) and a crash-looping process.
+            # For truly zero-downtime code deploys, switch to blue/green.
+            # For fork-or-cluster single-server mode, stop-build-start is
+            # the only reliable sequence. Brief (~60-90s) downtime is the
+            # trade-off; code deploys are rare (content pushes are the
+            # common case and already zero-downtime via the content-only
+            # path).
+            echo "⏹️  Stopping app during build..."
+            pm2 stop zcybernews 2>/dev/null || true
 
             echo "🧹 Cleaning old build cache..."
             sudo rm -rf /home/zcybernews/zcybernews/.next
@@ -158,16 +165,19 @@ jobs:
             export NODE_OPTIONS="--max-old-space-size=1536"
             npm run build
 
-            echo "♻️  Reloading PM2 (zero-downtime in cluster mode)..."
+            echo "🔍 Verifying build completeness..."
+            test -f .next/prerender-manifest.json \
+              || (echo "❌ Build missing prerender-manifest.json — aborting"; exit 1)
+
+            echo "♻️  Starting PM2..."
             if pm2 describe zcybernews > /dev/null 2>&1; then
-              # Graceful rolling reload — cluster mode cycles workers one
-              # at a time, keeping the app responsive throughout. Fork mode
-              # does a best-effort restart (brief downtime).
-              pm2 reload zcybernews --update-env
+              # If a process entry exists, restart it (preserves --update-env
+              # and whatever mode it was started with — fork or cluster).
+              pm2 restart zcybernews --update-env
             else
-              # First-time start: cluster mode with 2 workers.
-              # max-memory-restart protects the 2GB VPS from OOM spirals —
-              # PM2 auto-restarts any worker that exceeds 750MB.
+              # First-time start: cluster mode with 2 workers. Once this
+              # lands, future 'pm2 restart' will preserve cluster mode.
+              # max-memory-restart protects the 2GB VPS from OOM spirals.
               pm2 start npm --name zcybernews \
                 -i 2 \
                 --exec-mode cluster \
