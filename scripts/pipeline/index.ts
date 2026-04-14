@@ -247,7 +247,17 @@ async function main() {
   if (failed > 0) process.exit(1);
 }
 
-main().catch((err) => {
-  console.error("[pipeline] Fatal error:", err);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // Force exit even if pending async handles (e.g., undici keep-alive
+    // sockets from failed OpenRouter retries) would otherwise keep the
+    // Node event loop alive. Without this, the pipeline process hangs
+    // after logging "pipeline_complete" because ~30+ HTTP connections
+    // to rate-limited free models remain in the connection pool.
+    // GitHub Actions doesn't progress to the next step until tsx exits.
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error("[pipeline] Fatal error:", err);
+    process.exit(1);
+  });
