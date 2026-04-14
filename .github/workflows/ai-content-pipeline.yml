@@ -83,30 +83,67 @@ jobs:
         id: titles
         if: ${{ inputs.dry_run != 'true' && steps.detect.outputs.new_files != '0' }}
         run: |
-          TITLES=$(git status --short content/en/ 2>/dev/null \
-            | awk '/\.mdx$/ {print $2}' \
-            | head -5 \
-            | xargs -I{} basename {} .mdx 2>/dev/null \
-            | sed 's/-/ /g' \
-            | sed 's/^/• /' || echo "")
+          # Extract the title: field from MDX frontmatter of each new/modified
+          # English article (not the filename). Was previously using filenames
+          # which produced garbled slug-style Telegram messages like
+          # "• 2026 04 14 fake proxifier installer github clipbanker malware".
+          set +e
+          TITLES=""
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            [ -f "$file" ] || continue
+            # Grab the first `title:` line, strip quotes, take the value
+            title=$(awk -F: '/^title:/ {sub(/^[[:space:]]*title:[[:space:]]*/,""); gsub(/^["'\'']|["'\'']$/,""); print; exit}' "$file")
+            [ -n "$title" ] && TITLES="${TITLES}• ${title}"$'\n'
+          done < <(git status --short content/en/ 2>/dev/null | awk '/\.mdx$/ {print $2}' | head -5)
+          set -e
+          # Count real titles extracted
+          COUNT=$(printf '%s' "$TITLES" | grep -c '^•' || echo 0)
           {
             echo 'titles<<EOF'
-            echo "$TITLES"
+            printf '%s' "$TITLES"
             echo 'EOF'
           } >> "$GITHUB_OUTPUT"
-          COUNT=$(echo "$TITLES" | grep -c '^•' || echo 0)
           echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "Extracted $COUNT titles:"
+          printf '%s' "$TITLES"
 
       - name: Commit generated content
         if: ${{ inputs.dry_run != 'true' && steps.detect.outputs.new_files != '0' }}
         run: |
+          set -e
           git config user.name "zcybernews-bot"
           git config user.email "bot@zcybernews.com"
           git add content/ public/images/articles/ .pipeline-cache/ data/ 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          # Rebase in case deploy-vps or human commits landed mid-run
-          git pull --rebase origin main || git reset --hard origin/main
-          git push origin main
+          if git diff --staged --quiet; then
+            echo "::notice::Nothing to commit — skipping push"
+            exit 0
+          fi
+          git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+          # Retry loop — if push is rejected (non-fast-forward because someone
+          # else committed during our ~3-5 min run), rebase our commit on top
+          # of their new tip and try again. NEVER reset --hard on failure —
+          # that silently discards the articles we just generated.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin main; then
+              if git push origin main; then
+                echo "✅ Pushed successfully on attempt $attempt"
+                exit 0
+              fi
+            else
+              # Rebase conflict — abort and retry with fresh fetch
+              git rebase --abort 2>/dev/null || true
+            fi
+            echo "::warning::Push attempt $attempt failed, retrying in $((5 * attempt))s"
+            sleep $((5 * attempt))
+          done
+
+          # All retries exhausted → real failure. DO NOT reset --hard (articles
+          # would be lost). Fail the job so failure-notify fires and the
+          # commit stays locally for inspection / manual recovery.
+          echo "::error::Failed to push articles after 3 attempts. Commit exists locally on runner (will be discarded when runner is cleaned up). Check for concurrent commits or protected-branch issues."
+          exit 1
 
       - name: Notify Telegram — success
         if: ${{ success() && inputs.dry_run != 'true' && steps.detect.outputs.new_files != '0' }}
