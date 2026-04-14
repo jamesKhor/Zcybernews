@@ -2,6 +2,12 @@ import type { MetadataRoute } from "next";
 import { getAllPosts, getAllTags } from "@/lib/content";
 import { CategoryEnum } from "@/lib/types";
 
+// Don't prerender at build time — enumerating all ~262 articles was hitting
+// Next.js's 60s per-route timeout on the 2GB VPS. Generate on first request
+// instead and cache for 1 hour; admin publish fires revalidatePath to refresh.
+export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
 const LOCALES = ["en", "zh"] as const;
 

@@ -11,13 +11,24 @@ interface Props {
   params: Promise<{ locale: string; tag: string }>;
 }
 
+// ISR: tag listings regenerate hourly. Was contributing ~400 pages to the
+// build (~200 unique tags × 2 locales); now only pre-render the 20 most
+// common tags per locale, render the rest on-demand via dynamicParams.
+export const revalidate = 3600;
+export const dynamicParams = true;
+
+const TAG_PRERENDER_LIMIT = 20;
+
 export async function generateStaticParams() {
   const locales = ["en", "zh"];
   const params: { locale: string; tag: string }[] = [];
   for (const locale of locales) {
     const postTags = getAllTags(locale, "posts");
     const tiTags = getAllTags(locale, "threat-intel");
-    const allTags = [...new Set([...postTags, ...tiTags])];
+    const allTags = [...new Set([...postTags, ...tiTags])].slice(
+      0,
+      TAG_PRERENDER_LIMIT,
+    );
     allTags.forEach((tag) => params.push({ locale, tag }));
   }
   return params;

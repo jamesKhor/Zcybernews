@@ -11,6 +11,11 @@ import { HomeJsonLd } from "@/components/seo/JsonLd";
 import { stripMarkdown } from "@/lib/utils";
 import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 
+// ISR: homepage enumerates recent articles for the feed. Was hitting the
+// build-time 60s timeout when run in parallel with sitemap/robots on the
+// 2GB VPS. Regenerate hourly; admin publish fires revalidate to refresh.
+export const revalidate = 3600;
+
 interface Props {
   params: Promise<{ locale: string }>;
 }

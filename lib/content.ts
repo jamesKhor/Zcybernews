@@ -53,6 +53,34 @@ function parseArticleFile(filePath: string): Article | null {
   }
 }
 
+// Module-level memo cache for parsed articles.
+//
+// WHY: Building the site previously took ~7 minutes because routes like
+// /sitemap.xml, /robots.txt, /page, /favicon.ico all call getAllPosts()
+// during static generation and Next.js runs them in parallel on a 1vCPU
+// VPS. Each call reparses all 262 MDX files (readFileSync + gray-matter +
+// Zod) — 4 parallel callers thrashing disk I/O and CPU hit the 60-second
+// per-route build timeout.
+//
+// With this memo, the FIRST call parses the directory; subsequent calls
+// are O(1) map lookups. The cache auto-invalidates when a new MDX file
+// lands (directory mtime changes), so ISR correctness is preserved: when
+// admin publish writes a new article to disk, the next revalidation reads
+// it fresh.
+interface CacheEntry {
+  mtimeMs: number;
+  articles: Article[];
+}
+const postsCache = new Map<string, CacheEntry>();
+
+function getDirMtime(dir: string): number {
+  try {
+    return fs.statSync(dir).mtimeMs;
+  } catch {
+    return 0;
+  }
+}
+
 export function getAllPosts(
   locale: string,
   type: ContentType = "posts",
@@ -68,20 +96,29 @@ export function getAllPosts(
 
   if (!fs.existsSync(effectiveDir)) return [];
 
+  const cacheKey = `${locale}:${type}:${effectiveDir}`;
+  const mtime = getDirMtime(effectiveDir);
+  const cached = postsCache.get(cacheKey);
+  if (cached && cached.mtimeMs === mtime) {
+    return cached.articles;
+  }
+
   const files = fs
     .readdirSync(effectiveDir)
     .filter((f) => f.endsWith(".mdx") || f.endsWith(".md"));
 
   const articles = files
     .map((file) => parseArticleFile(path.join(effectiveDir, file)))
-    .filter((a): a is Article => a !== null);
+    .filter((a): a is Article => a !== null)
+    // Sort by date descending
+    .sort(
+      (a, b) =>
+        new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime(),
+    );
 
-  // Sort by date descending
-  return articles.sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime(),
-  );
+  postsCache.set(cacheKey, { mtimeMs: mtime, articles });
+  return articles;
 }
 
 export function getPostBySlug(

@@ -25,6 +25,10 @@ const CATEGORY_ICONS: Record<string, string> = {
   ai: "🤖",
 };
 
+// ISR: only 12 pages total (6 categories × 2 locales) — pre-render all but
+// still allow regeneration so new articles in a category appear without rebuild
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const locales = ["en", "zh"];
   const categories = CategoryEnum.options;
