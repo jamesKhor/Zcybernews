@@ -1,0 +1,55 @@
+---
+title: 'Microsoft Patches 167 Flaws, Including Two Actively Exploited Zero-Days'
+slug: 2026-04-14-microsoft-april-2026-patch-tuesday-zero-days
+date: '2026-04-14'
+excerpt: >-
+  Microsoft's April 2026 Patch Tuesday addresses 167 vulnerabilities, including
+  two zero-day flaws being actively exploited in the wild. One is a critical RCE
+  in Windows DNS Server.
+category: vulnerabilities
+tags:
+  - microsoft
+  - patch-tuesday
+  - zero-day
+  - windows
+  - dns
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/microsoft/microsoft-april-2026-patch-tuesday-fixes-167-flaws-2-zero-days/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-14-microsoft-april-2026-patch-tuesday-zero-days
+severity: high
+---
+## Executive Summary
+Microsoft's April 2026 Patch Tuesday release addresses 167 security vulnerabilities across its software ecosystem, including two zero-day flaws that are under active exploitation. The most severe is a critical remote code execution (RCE) vulnerability in the Windows DNS Server. The second zero-day is an elevation of privilege (EoP) bug in the Windows Kernel. Organizations are urged to prioritize patching these two vulnerabilities immediately due to the active threat.
+
+## Technical Analysis
+The security update batch of 167 flaws includes 15 rated as Critical and 152 rated as Important. The two zero-day vulnerabilities are the primary focus due to confirmed in-the-wild exploitation.
+
+The critical RCE vulnerability resides in the Windows DNS Server. Successful exploitation could allow an unauthenticated remote attacker to execute arbitrary code with elevated privileges on a vulnerable DNS server. This would grant full control over the server, enabling further network compromise, data theft, or denial-of-service. The specific attack vector and complexity are not detailed in the public advisory, but the designation as a critical RCE in a core network service warrants immediate attention.
+
+The second zero-day is an elevation of privilege vulnerability in the Windows Kernel. Exploitation of this flaw allows an attacker who already has a foothold on a system—via user-level code execution—to escalate their privileges to the SYSTEM or kernel level. This is a common step in attack chains following initial access, used to bypass security controls, deploy persistent malware, or move laterally across a network. The exact mechanism for exploitation has not been publicly disclosed.
+
+## Indicators of Compromise
+None identified at this time. Microsoft's advisory and associated threat intelligence reports do not provide specific IOCs such as file hashes, IP addresses, or domain names related to the exploitation of these zero-days.
+
+## Tactics, Techniques & Procedures
+The Tactics, Techniques, and Procedures (TTPs) associated with the active exploitation of these zero-days have not been publicly detailed by Microsoft or third-party researchers at this time. Based on the nature of the vulnerabilities, potential TTPs could involve:
+- **Initial Access:** For the DNS Server RCE, attackers may send specially crafted network packets to a vulnerable server (T1190 - Exploit Public-Facing Application).
+- **Privilege Escalation:** For the Kernel EoP, attackers would leverage the bug after achieving initial execution on a target system (T1068 - Exploitation for Privilege Escalation).
+The lack of public details makes attribution and precise technique mapping impossible at this stage.
+
+## Threat Actor Context
+The identity and origin of the threat actors exploiting these zero-day vulnerabilities are not disclosed in the available source material. Microsoft typically does not attribute attacks in its initial Patch Tuesday bulletins. The exploitation could range from financially motivated cybercriminal groups to state-sponsored advanced persistent threat (APT) actors. Further analysis from the broader cybersecurity community is required to establish context.
+
+## Mitigations & Recommendations
+The primary and most critical mitigation is to apply the April 2026 Patch Tuesday security updates from Microsoft as soon as possible, with priority given to systems running Windows DNS Server and all Windows client and server operating systems to address the kernel flaw.
+
+For the Windows DNS Server RCE, organizations unable to patch immediately should consider implementing network segmentation to restrict access to DNS servers only from authorized internal networks and management stations. Monitoring for anomalous DNS traffic or unexpected processes spawning from the DNS service (`dns.exe`) is also advised.
+
+For the Windows Kernel EoP, defense-in-depth strategies remain crucial. This includes enforcing the principle of least privilege on user accounts, deploying endpoint detection and response (EDR) tools to detect post-exploitation behavior, and using application allowlisting to prevent unauthorized code execution that could leverage the privilege escalation bug.
+
+## References
+- https://www.bleepingcomputer.com/news/microsoft/microsoft-april-2026-patch-tuesday-fixes-167-flaws-2-zero-days/
