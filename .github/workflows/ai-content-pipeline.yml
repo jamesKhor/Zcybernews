@@ -144,6 +144,10 @@ jobs:
             if git pull --rebase --autostash origin main; then
               if git push origin main; then
                 echo "✅ Pushed successfully on attempt $attempt"
+                # NOTE: Pushes by GITHUB_TOKEN deliberately do NOT trigger
+                # other workflows (anti-loop safety). So the new commit
+                # won't fire deploy-vps.yml automatically. We dispatch it
+                # explicitly below in the next step.
                 exit 0
               fi
             else
@@ -160,8 +164,26 @@ jobs:
           echo "::error::Failed to push articles after 3 attempts. Commit exists locally on runner (will be discarded when runner is cleaned up). Check for concurrent commits or protected-branch issues."
           exit 1
 
+      - name: Trigger deploy-vps (push by GITHUB_TOKEN doesn't auto-trigger)
+        if: ${{ inputs.dry_run != 'true' && steps.titles.outputs.count != '0' && steps.titles.outputs.count != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # GitHub Actions deliberately suppresses workflow triggers when
+          # the push is made by the auto-issued GITHUB_TOKEN (anti-loop).
+          # Without this dispatch, the pipeline commit reaches main but
+          # deploy-vps.yml never fires → article exists in repo but never
+          # makes it to the VPS. Manually dispatch the deploy here.
+          gh workflow run deploy-vps.yml --ref main \
+            && echo "✅ Dispatched deploy-vps.yml" \
+            || echo "::warning::Failed to dispatch deploy-vps — articles committed but VPS won't pull until next code deploy"
+
       - name: Notify Telegram — success
-        if: ${{ success() && inputs.dry_run != 'true' && steps.detect.outputs.new_files != '0' }}
+        # Gate on titles.count (real articles published), not detect.new_files.
+        # detect.new_files counts ALL changed files including .pipeline-cache
+        # (RSS dedup state) which can change without any new article. Without
+        # this, you'd get fake "Published 0 article(s)" Telegrams.
+        if: ${{ success() && inputs.dry_run != 'true' && steps.titles.outputs.count != '0' && steps.titles.outputs.count != '' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
