@@ -158,12 +158,22 @@ jobs:
             exit 0
           fi
           TIME=$(TZ='Asia/Singapore' date '+%H:%M SGT')
-          MESSAGE="✅ <b>ZCyberNews Published ${COUNT} article(s)</b>%0ATime: ${TIME}%0A%0A${TITLES//$'\n'/%0A}%0A%0A🔗 https://zcybernews.com"
+          # Build the message with REAL newlines via $'\n' ANSI-C quoting,
+          # appended incrementally with +=. Passing literal newlines in a
+          # YAML `run: |` block breaks YAML parsing (continuation lines
+          # need block-level indent). --data-urlencode handles the single
+          # URL-encoding pass at send time. Previously I wrote literal
+          # "%0A" which got double-encoded to "%250A" and arrived at
+          # Telegram as visible "%0A" text.
+          MESSAGE="✅ <b>ZCyberNews Published ${COUNT} article(s)</b>"
+          MESSAGE+=$'\n'"Time: ${TIME}"
+          MESSAGE+=$'\n\n'"${TITLES}"
+          MESSAGE+=$'\n'"🔗 https://zcybernews.com"
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             --data-urlencode chat_id="${TELEGRAM_CHAT_ID}" \
             --data-urlencode parse_mode="HTML" \
             --data-urlencode disable_web_page_preview="true" \
-            --data-urlencode text="$(echo -e "$MESSAGE" | tr '_' ' ')" \
+            --data-urlencode text="$MESSAGE" \
             > /dev/null || true
 
       - name: Notify Telegram — no new articles
@@ -181,9 +191,11 @@ jobs:
             exit 0
           fi
           RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          FAIL_MESSAGE="❌ <b>ZCyberNews Pipeline failed</b>"
+          FAIL_MESSAGE+=$'\n\n'"Run: ${RUN_URL}"
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             --data-urlencode chat_id="${TELEGRAM_CHAT_ID}" \
             --data-urlencode parse_mode="HTML" \
             --data-urlencode disable_web_page_preview="true" \
-            --data-urlencode text="❌ <b>ZCyberNews Pipeline failed</b>%0A%0ARun: ${RUN_URL}" \
+            --data-urlencode text="$FAIL_MESSAGE" \
             > /dev/null || true
