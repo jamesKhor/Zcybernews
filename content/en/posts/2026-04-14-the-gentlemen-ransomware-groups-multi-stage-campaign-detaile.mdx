@@ -1,0 +1,55 @@
+---
+title: The Gentlemen Ransomware Group's Multi-Stage Campaign Detailed
+slug: 2026-04-14-the-gentlemen-ransomware-groups-multi-stage-campaign-detaile
+date: '2026-04-14'
+excerpt: >-
+  The Gentlemen ransomware group dismantled enterprise security controls
+  globally and breached Atlassian partner Adaptavist, stealing terabytes of
+  source code and data.
+category: malware
+tags:
+  - the gentlemen
+  - ransomware
+  - trend micro
+  - adaptavist
+  - atlassian
+  - data exfiltration
+  - endpoint bypass
+language: en
+locale_pair: 2026-04-14-the-gentlemen-ransomware-groups-multi-stage-campaign-detaile
+author: ZCyberNews
+draft: false
+---
+In August 2025, the emerging **The Gentlemen** ransomware group launched a sophisticated, multi-stage campaign that systematically dismantled enterprise security controls across a global victim base. According to a detailed investigation by Trend Micro, this previously undocumented threat actor demonstrated advanced capabilities by tailoring its tools to bypass specific endpoint protections, abusing legitimate drivers and administrative tools, and leveraging encrypted channels for data exfiltration. The group's operational impact was underscored in April 2026 when it claimed a significant breach of **Adaptavist Group LTD**, a major Atlassian partner, alleging the theft of terabytes of source code, customer data, and production secrets. This synthesis of events paints a picture of a highly adaptive and dangerous ransomware operation that prioritizes reconnaissance and customization to maximize its impact on targeted organizations.
+
+## Technical Breakdown of The Gentlemen's Attack Chain
+The group's attack methodology follows a logical, phased approach characteristic of advanced persistent threats, beginning with initial access and culminating in domain-wide ransomware deployment. While the exact initial vector remains unconfirmed, evidence points to the exploitation of internet-facing services, with one case involving a compromised **FortiGate** administrative account on a server directly exposed to the internet. Following access, the actors immediately conducted network reconnaissance using tools like **Advanced IP Scanner** and **Nmap** to map the environment and identify high-value targets, including domain controllers and security infrastructure.
+
+The **defense evasion** phase highlights the group's sophistication. Initially, they deployed a tool named `All.exe` alongside a legitimate, signed driver file, `ThrottleBlood.sys`. This combination exploited a known vulnerable driver technique to perform kernel-level manipulation and terminate security software processes. Demonstrating adaptability, the actors then conducted reconnaissance on the specific endpoint protection solutions in place and subsequently deployed a customized version of their tool, `Allpatch2.exe`, engineered to neutralize the identified security agents. They also abused legitimate utilities like **PowerRun.exe** for privilege escalation and executed commands to disable security controls, such as turning off Windows Defender real-time monitoring via `Set-MpPreference -DisableRealtimeMonitoring $true`.
+
+For **lateral movement and persistence**, **The Gentlemen** relied heavily on living-off-the-land binaries (LOLBins). They used **PsExec** to move across the network and modified critical registry settings to weaken security, including commands to enable NTLM authentication and disable Restricted Admin mode for Remote Desktop Protocol. To maintain persistent access, they installed **AnyDesk**, creating a resilient command-and-control channel. A critical escalation point was their manipulation of **Group Policy Objects (GPOs)**. The attackers were observed using the Group Policy Management Console (`gpmc.msc`) and Editor (`gpme.msc`), likely to push malicious configurations domain-wide, a technique that could ensure ransomware execution on all connected systems upon the next policy refresh.
+
+## Global Impact and the Adaptavist Data Breach
+**The Gentlemen** cast a wide net, targeting organizations in at least 17 countries with a heavy focus on the Asia-Pacific region. The manufacturing sector was the most affected, followed by construction, healthcare, and insurance. The targeting of healthcare and other essential services underscores the group's disregard for critical infrastructure and the potential for significant societal disruption. The attack on **Adaptavist**, a UK-based technology firm, exemplifies the high-stakes corporate espionage and data theft that accompanies their ransomware operations.
+
+According to the group's leak page from April 2026, the breach of **Adaptavist** was comprehensive. The actors claimed to have exfiltrated the source code for core products like **ScriptRunner** and the **Salable** licensing platform, posing a severe threat to the company's intellectual property and potentially enabling product cloning. The alleged data haul was massive, including 484,220 customer records from a HubSpot CRM instance, over 20,000 legal tickets with associated documents, and more than 3TB of data from Nexus repositories containing production secrets, Docker images, and Helm charts. The leak also cited access to Kubernetes configs, OAuth credentials, a Snowflake data warehouse, and extensive Confluence documentation. This scale of exfiltration supports the double-extortion model, where data theft provides additional leverage for ransom demands beyond simply encrypting files.
+
+The final **impact** stage involved deploying the ransomware payload via the domain's `NETLOGON` share, ensuring it executed on all domain-joined systems. The payload itself was password-protected (using an `--password` parameter with an 8-byte key), likely to evade automated sandbox analysis. Before encryption, the ransomware executed aggressive cleanup and obstruction commands: terminating a long list of services related to backups, databases, and security; deleting Volume Shadow Copies; clearing Windows event logs; and wiping forensic artifacts like Prefetch files and RDP logs.
+
+## Detection Guidance and Indicators of Compromise
+Defenders should hunt for behaviors and tooling consistent with **The Gentlemen**'s documented **TTPs**. Initial detection should focus on anomalous administrative activity, especially the use of network scanning tools from unexpected hosts or privileged accounts. The presence of files like `All.exe`, `Allpatch2.exe`, or `ThrottleBlood.sys` in user download directories is a critical indicator. Monitoring for the loading of known vulnerable drivers and subsequent attempts to terminate security processes is essential for kernel-level evasion.
+
+Command-line monitoring is crucial. Key indicators include:
+*   Mass Active Directory enumeration using `net` commands or PowerShell (`Get-ADDomain`).
+*   Registry modifications to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa` and related RDP security settings.
+*   Commands to disable Windows Defender, such as `Set-MpPreference -DisableRealtimeMonitoring $true`.
+*   Use of `PsExec` for lateral movement followed by the execution of payloads from network shares, particularly the `NETLOGON` share.
+*   The use of **WinSCP** for large, encrypted outbound transfers from unusual locations like `C:\ProgramData\data`.
+
+For persistence, look for the installation of **AnyDesk** in conjunction with other compromise indicators. In the data staging phase, suspicious WebDAV connections (`davclnt.dll`) to multiple internal shares in a short timeframe may signal data collection. Finally, the ransomware itself appends the unique file extension `.7mtzhh` and drops a ransom note named `README-GENTLEMEN.txt`. Post-encryption, the ransomware attempts to delete itself using a companion batch file (e.g., `{filename}.exe.bat`).
+
+## Key Takeaways — 3-5 bullet points summarising actions defenders should take
+*   **Hunt for Driver-Based Evasion and Custom Tools:** Proactively search for indicators of vulnerable driver abuse (`ThrottleBlood.sys`) and the presence of custom anti-AV utilities like `Allpatch2.exe`. Implement [application control] policies to block unauthorized drivers and monitor for attempts to terminate critical security processes from elevated contexts.
+*   **Harden Internet-Facing Assets and Privileged Access:** Assume breach and enforce a [Zero Trust] model. Immediately eliminate direct internet exposure for RDP and administrative interfaces like VPNs and firewalls. Enforce multi-factor authentication universally for administrative accounts and implement strict, time-based access controls for domain admin privileges to limit lateral movement.
+*   **Audit and Monitor Group Policy and Domain Activity:** Closely monitor for anomalous GPO creation or modification events, especially those pushed via `gpmc.msc`. Alert on mass Active Directory queries and bulk account enumeration attempts. Restrict permissions to domain controller shares and deploy [deception technology] on critical network shares to detect reconnaissance.
+*   **Prepare for Double Extortion with Enhanced Data Loss Prevention:** Given the group's focus on massive data exfiltration using tools like **WinSCP**, enhance outbound network monitoring for large, encrypted transfers from data staging servers. Segment networks to restrict access from production environments to internet egress points and implement robust data loss prevention controls.
