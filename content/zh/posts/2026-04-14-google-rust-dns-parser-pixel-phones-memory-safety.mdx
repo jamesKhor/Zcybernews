@@ -1,0 +1,46 @@
+---
+title: Google 在 Pixel 手机上部署 Rust DNS 解析器以挫败内存安全漏洞
+slug: 2026-04-14-google-rust-dns-parser-pixel-phones-memory-safety
+date: '2026-04-14'
+excerpt: Google 已将一个用 Rust 编写的内存安全 DNS 解析器集成到 Pixel 手机中，以消除低级网络堆栈中的整个类别的漏洞。
+category: vulnerabilities
+tags:
+  - google
+  - rust
+  - memory safety
+  - android
+  - dns
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/google-adds-rust-dns-parser-to-pixel-phones-for-better-security/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-14-google-rust-dns-parser-pixel-phones-memory-safety
+severity: informational
+---
+## 执行摘要
+Google已开始在其Pixel智能手机上部署一个新的DNS（域名系统）客户端解析器，该解析器使用内存安全的Rust编程语言编写。这一架构变更首次由SecurityWeek报道，是一项旨在消除Android网络堆栈中一个关键的低级组件内存损坏漏洞类别的主动工程努力。此举直接应对了C/C++等内存不安全语言在系统代码中长期存在的安全风险。
+
+## 技术分析
+新的DNS解析器替换了Android `netd`（网络守护进程）子系统中历史上用C语言编写的组件。根据SecurityWeek的说法，这个守护进程处理特权网络操作，是攻击者寻求破坏设备网络堆栈的高价值目标。内存安全漏洞——如缓冲区溢出、使用后释放错误以及越界读写——一直是用C和C++编写的软件中关键安全漏洞的持续来源。通过用Rust重写这些功能，Google旨在利用该语言的编译时保证，从一开始就防止这些错误类别被引入代码库。
+
+部署是Google和更广泛的行业在更广泛的多年计划中采用内存安全语言编写新的系统级代码的一部分。技术实施涉及将基于Rust的解析器集成到复杂的Android构建和部署流程中，用于Pixel设备。最初接收此更新的Android或Pixel固件的具体版本在源材料中未披露。
+
+## 入侵指标
+目前未识别出任何入侵指标。
+
+## 战术、技术与程序
+本节没有描述活跃的利用活动。报告详细说明了一项防御性工程措施。因此，不适用任何攻击者的TTP。
+
+## 威胁行为者背景
+此分析不涉及特定的威胁行为者或活动。该行动是Google针对一个普遍化的威胁景观采取的预防性安全加固措施，攻击者经常利用系统守护进程中的内存损坏漏洞来实现权限提升和初始访问。
+
+## 缓解措施与建议
+对于Pixel手机用户，缓解措施通过Google的系统更新流程自动应用。用户应确保其设备更新到最新的安全补丁级别。对于其他Android OEM和更广泛的软件行业，Google的行动作为一个具体的案例研究和建议：
+*   **优先考虑内存安全语言：** 积极采用Rust、Go或其他内存安全语言进行新的系统级项目，特别是在面向网络和特权服务方面。
+*   **逐步迁移：** 对于遗留代码库，考虑逐步用内存安全重写替换高风险组件的策略，如`netd` DNS解析器所示。
+*   **深度防御：** 虽然内存安全消除了一个主要的错误类别，但它必须是包括沙箱、漏洞缓解（ASLR、CFI）和最小权限原则在内的分层安全策略的一部分。
+
+## 参考资料
+*   [https://www.securityweek.com/google-adds-rust-dns-parser-to-pixel-phones-for-better-security/](https://www.securityweek.com/google-adds-rust-dns-parser-to-pixel-phones-for-better-security/)
