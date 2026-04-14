@@ -55,7 +55,6 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}
         run: |
           MAX_ARTICLES=$(echo "$MAX_ARTICLES" | grep -oE '^[0-9]+$' || echo 3)
