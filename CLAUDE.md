@@ -13,8 +13,75 @@ A professional cybersecurity and tech news site that:
 - Serves **English and Simplified Chinese** articles with bilingual routing
 - Uses **Git + MDX files** as the CMS (no database, no GUI CMS)
 - Runs an **AI-powered pipeline** that ingests RSS feeds, generates articles with DeepSeek-V3, translates to Chinese with Kimi K2, and commits them automatically via GitHub Actions
-- Deploys to **Cloudflare Pages** on every push to `main`
+- Deploys to **Malaysia VPS (Evoxt)** on every push to `main` via GitHub Actions (`.github/workflows/deploy-vps.yml`)
 - Includes **threat intelligence sections** with IOC tables, MITRE ATT&CK matrix, and threat actor cards
+
+---
+
+## Zero-Downtime Publishing Architecture (CRITICAL — read before touching deploy/publish code)
+
+This site has a **hard zero-downtime requirement**. The architecture below was built specifically to avoid the 2-3 minute 502 outages that used to happen on every article publish. Do not regress this.
+
+### The three runtime paths
+
+**1. Content-only pushes (~10s, zero downtime)** — the happy path, happens dozens of times per day
+
+- Admin publishes via `/admin/compose` OR hourly AI pipeline on GitHub Actions commits to `main`
+- `deploy-vps.yml` classify job detects only `content/**`, `public/images/articles/**`, `.pipeline-cache/**`, or `data/**` changed
+- Routes to `content-only` job: SSH → `git pull` → `curl /api/revalidate?tag=articles` → done
+- PM2 is NOT touched. No rebuild. ISR picks up new MDX files from disk on next regeneration cycle.
+
+**2. Code pushes (~3 min, zero downtime with cluster mode)** — rare, happens a few times per week
+
+- Any change outside `content/**` (lib, app, workflows, package.json, etc.)
+- Routes to `full-deploy` job: SSH → `npm ci` → `npm run build` → `pm2 reload` (cluster mode cycles workers one at a time)
+- Old build keeps serving traffic throughout the build. New workers start with new code, old workers drain and exit.
+
+**3. Emergency rebuild** — workflow_dispatch with `force_full_rebuild: true`
+
+- Use when ISR cache has gone sideways or VPS disk state is corrupted
+
+### Implementation details
+
+| Layer                         | Mechanism                                                                                                                                                              | File                                                                                 |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Article pages                 | ISR with `revalidate = 3600`, `dynamicParams = true`, `generateStaticParams` returns only 50 most recent per locale                                                    | `app/[locale]/articles/[slug]/page.tsx`, `app/[locale]/threat-intel/[slug]/page.tsx` |
+| Admin publish (single locale) | Zod-validates frontmatter before commit, then fires `revalidatePath`                                                                                                   | `app/api/admin/publish/route.ts`                                                     |
+| Admin publish (EN+ZH)         | **Single atomic commit** via Git Data API (createBlob × 2, createTree, createCommit, updateRef). Title+excerpt and body translations run in PARALLEL via `Promise.all` | `app/api/admin/translate-publish/route.ts`                                           |
+| Revalidation endpoint         | Secret-guarded, accepts `?path=` and `?tag=`                                                                                                                           | `app/api/revalidate/route.ts`                                                        |
+| GitHub commit helpers         | Atomic multi-file commit + single-file fallback                                                                                                                        | `lib/github-commit.ts`                                                               |
+| Revalidate client             | In-process fetch to `localhost:3000/api/revalidate` with secret                                                                                                        | `lib/revalidate-client.ts`                                                           |
+| Deploy workflow               | classify + content-only + full-deploy jobs                                                                                                                             | `.github/workflows/deploy-vps.yml`                                                   |
+| PM2 config                    | Cluster mode `-i 2 --exec-mode cluster --max-memory-restart 750M`                                                                                                      | initialized via `deploy-vps.yml` on first-time start                                 |
+
+### Required env vars
+
+- **`REVALIDATE_SECRET`** (VPS `.env.local` + GitHub Secrets) — guards `/api/revalidate`. Generate with `openssl rand -base64 32`.
+- **`GITHUB_TOKEN`** (VPS `.env.local`) — fine-grained PAT with `contents: write` for the admin publish Git Data API calls.
+- **`GITHUB_REPO`**, **`GITHUB_BRANCH`** — commit target.
+
+### How to preserve zero-downtime when modifying this
+
+- **Never** add `pm2 stop` or `pm2 restart` to the full-deploy job. Use `pm2 reload`. The old build stays up until new workers are ready.
+- **Never** trigger a full rebuild from a content-only push. If you add a new "content" path, update the `NON_CONTENT` grep regex in the classify job.
+- **Never** make a publish API commit to GitHub more than once per operation. That would cause two push events → two deploys → potential race conditions.
+- **Always** Zod-validate frontmatter before committing. Since we use ISR, malformed MDX now 500s at request time instead of failing the build — validation at the write boundary is the safety net.
+- **When adding new admin-triggered mutations**, call `triggerRevalidate({ path, tag })` after the commit so the change appears in seconds.
+
+### Migrating existing VPS from fork mode to cluster mode (one-time)
+
+If the VPS is still running PM2 in fork mode, the first `pm2 reload` after deploy will do a best-effort restart (~2s gap), not true zero-downtime. To migrate:
+
+```bash
+pm2 delete zcybernews
+pm2 start npm --name zcybernews -i 2 --exec-mode cluster --max-memory-restart 750M -- start
+pm2 save
+pm2 describe zcybernews | grep -E "(exec mode|instances)"   # should show cluster / 2
+```
+
+On 2GB VPS, 2 workers is tight (~200-400MB each). If OOM, fall back to 1 cluster worker (still graceful reload, just not simultaneous): `-i 1 --max-memory-restart 1000M`.
+
+---
 
 **GitHub repo:** https://github.com/jamesKhor/Zcybernews  
 **Local path:** `C:\Users\jmskh\projects\zcybernews`
