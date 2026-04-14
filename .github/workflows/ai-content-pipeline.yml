@@ -114,16 +114,20 @@ jobs:
           set -e
           git config user.name "zcybernews-bot"
           git config user.email "bot@zcybernews.com"
-          # Add each path INDIVIDUALLY. `git add` aborts with exit 128 on the
-          # first missing pathspec and stages NOTHING from the other paths —
-          # even existing ones. So a batch 'git add content/ public/images/
-          # articles/ .pipeline-cache/ data/' would fail silently (with
-          # '|| true') when public/images/articles or .pipeline-cache doesn't
-          # exist on the runner, leaving content/ unstaged. Previously this
-          # caused "Nothing to commit" when a new article HAD been written.
-          for p in content public/images/articles .pipeline-cache data; do
+          # Stage each path INDIVIDUALLY with per-path error tolerance:
+          # - `git add` aborts with exit 128 on the first missing pathspec
+          #   and stages NOTHING. A batched 'git add content/ missing/' would
+          #   leave content/ unstaged even though it exists.
+          # - .pipeline-cache/ is gitignored; `git add .pipeline-cache` then
+          #   returns non-zero with "paths are ignored" — killing the step
+          #   under `set -e`.
+          # The || true swallows per-path failures; the important 'content/'
+          # add will succeed independent of what the other paths do. The
+          # subsequent `git diff --staged --quiet` will catch the case where
+          # NO path staged anything.
+          for p in content public/images/articles data; do
             if [ -e "$p" ]; then
-              git add "$p"
+              git add "$p" 2>/dev/null || true
             fi
           done
           if git diff --staged --quiet; then
