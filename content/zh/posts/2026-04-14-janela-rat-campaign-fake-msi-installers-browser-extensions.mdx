@@ -1,0 +1,48 @@
+---
+title: Janela RAT 活动针对拉丁美洲金融业使用假 MSI 安装程序
+slug: 2026-04-14-janela-rat-campaign-fake-msi-installers-browser-extensions
+date: '2026-04-14'
+excerpt: 一个新的活动部署了 Janela RAT，使用假 MSI 安装程序和恶意浏览器扩展来针对拉丁美洲的金融和加密货币实体进行数据盗窃。
+category: malware
+tags:
+  - janela-rat
+  - latin-america
+  - financial-sector
+  - browser-extension
+  - msi-installer
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/new-janela-rat-campaign-uses-fake-msi-installers/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-14-janela-rat-campaign-fake-msi-installers-browser-extensions
+severity: high
+affected_sectors:
+  - financial-services
+  - cryptocurrency
+affected_regions:
+  - Latin America
+---
+## 执行摘要
+一个新记录的恶意软件活动正在积极部署一个名为Janela的远程访问木马（RAT），针对拉丁美洲的金融机构和加密货币平台。该操作的主要感染向量是假冒MSI安装程序文件和恶意浏览器扩展，它们协同工作以建立持久性并从受感染的系统中窃取敏感的财务数据。目前尚不清楚背后的特定威胁行为者群体和影响的全部范围。
+
+## 技术分析
+该活动最初的有效载荷通过恶意MSI（Microsoft Installer）包传递。执行时，此安装程序部署了基于.NET的远程访问工具Janela RAT，为攻击者提供了对受感染主机的广泛控制。根据来源报告，Janela RAT促进了一系列恶意活动，包括文件系统操作、进程管理和凭证收集。
+
+同时，攻击者部署了一个恶意浏览器扩展。这个组件似乎旨在直接从受害者的网络浏览会话中拦截和窃取数据，这对于针对在线银行和加密货币交换门户特别有效。扩展安装的确切机制——无论是通过MSI包、社交工程还是浏览器漏洞利用——在可用的源材料中没有详细说明。RAT和扩展之间的技术互动表明了一种复杂的、多阶段的数据盗窃方法。
+
+## 入侵指标
+目前没有识别出任何入侵指标。
+
+## 战术、技术与程序
+攻击者采用了多方面的感染链。初始访问是通过诱使受害者执行假冒MSI安装程序文件（T1204.002: 用户执行）实现的。这个安装程序用于部署Janela RAT有效载荷，建立命令和控制（C2）通道（T1573: 加密通道）。持久性可能通过安装的RAT和潜在的浏览器扩展来维持（T1547.001: 注册表运行键/启动文件夹）。主要目标，数据盗窃，是通过RAT的能力和专门的浏览器扩展来执行的，后者监控并从财务网络会话中窃取信息（T1555: 从密码存储中获取凭证和T1539: 窃取Web会话Cookie）。
+
+## 威胁行为者背景
+来源报告没有将此活动归因于已知的威胁行为者群体或高级持续性威胁（APT）。目标地理上集中在拉丁美洲，行业上集中在金融和加密货币实体，表明这是一次以财务为动机的操作。使用定制的RAT和定制的浏览器扩展表明了在窃取财务资产方面的中等技术水平投资和专业化。
+
+## 缓解措施与建议
+特别是在拉丁美洲运营的金融机构，应提高警惕。技术控制应包括阻止从不可信来源或互联网区域执行MSI安装程序包。执行严格的浏览器扩展白名单策略，并定期审计已安装的扩展，可以减轻二次有效载荷的影响。标准防御实践仍然至关重要：使用端点检测和响应（EDR）工具，保持更新的防病毒签名，并进行定期的用户意识培训，以识别传递恶意安装程序的社交工程诱饵。网络监控异常出站连接可能有助于识别与Janela RAT相关的C2流量。
+
+## 参考资料
+- https://cybersecuritynews.com/new-janela-rat-campaign-uses-fake-msi-installers/

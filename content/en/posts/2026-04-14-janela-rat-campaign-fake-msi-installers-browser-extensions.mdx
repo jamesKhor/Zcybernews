@@ -1,0 +1,51 @@
+---
+title: Janela RAT Campaign Targets Latin American Finance with Fake MSI Installers
+slug: 2026-04-14-janela-rat-campaign-fake-msi-installers-browser-extensions
+date: '2026-04-14'
+excerpt: >-
+  A new campaign deploying the Janela RAT uses fake MSI installers and malicious
+  browser extensions to target financial and cryptocurrency entities in Latin
+  America for data theft.
+category: malware
+tags:
+  - janela-rat
+  - latin-america
+  - financial-sector
+  - browser-extension
+  - msi-installer
+language: en
+source_urls:
+  - >-
+    https://cybersecuritynews.com/new-janela-rat-campaign-uses-fake-msi-installers/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-14-janela-rat-campaign-fake-msi-installers-browser-extensions
+severity: high
+affected_sectors:
+  - financial-services
+  - cryptocurrency
+affected_regions:
+  - Latin America
+---
+## Executive Summary
+A newly documented malware campaign is actively deploying a Remote Access Trojan (RAT) known as Janela against financial institutions and cryptocurrency platforms in Latin America. The operation's primary infection vectors are fake MSI installer files and malicious browser extensions, which work in tandem to establish persistence and exfiltrate sensitive financial data from compromised systems. The specific threat actor group behind the campaign and the full scope of the impact remain unclear at this time.
+
+## Technical Analysis
+The campaign's initial payload is delivered via a malicious MSI (Microsoft Installer) package. When executed, this installer deploys the Janela RAT, a .NET-based remote access tool that provides attackers with extensive control over the infected host. According to the source report, Janela RAT facilitates a range of malicious activities, including file system manipulation, process management, and credential harvesting.
+
+Concurrently, the attackers deploy a malicious browser extension. This component appears designed to intercept and steal data directly from the victim's web browsing sessions, which is particularly effective for targeting online banking and cryptocurrency exchange portals. The exact mechanism of extension installation—whether through the MSI package, social engineering, or browser vulnerability exploitation—is not detailed in the available source material. The technical interplay between the RAT and the extension suggests a sophisticated, multi-stage approach to data theft.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The attackers employ a multi-faceted infection chain. The initial access is achieved by luring victims into executing a fake MSI installer file (T1204.002: User Execution). This installer serves to deploy the Janela RAT payload, establishing a command and control (C2) channel (T1573: Encrypted Channel). Persistence is likely maintained through the installed RAT and potentially the browser extension (T1547.001: Registry Run Keys / Startup Folder). The primary objective, data theft, is executed through the RAT's capabilities and the specialized browser extension, which monitors and exfiltrates information from financial web sessions (T1555: Credentials from Password Stores and T1539: Steal Web Session Cookie).
+
+## Threat Actor Context
+The source report does not attribute this campaign to a known threat actor group or advanced persistent threat (APT). The targeting is geographically focused on Latin America and sector-focused on financial and cryptocurrency entities, suggesting a financially motivated operation. The use of a custom RAT and a tailored browser extension indicates a moderate level of technical investment and specialization in stealing financial assets.
+
+## Mitigations & Recommendations
+Organizations, particularly in the financial sector operating in Latin America, should implement heightened vigilance. Technical controls should include blocking the execution of MSI installer packages from untrusted sources or internet zones. Enforcing strict policies on browser extension whitelisting and regularly auditing installed extensions can mitigate the secondary payload. Standard defensive practices remain critical: employing endpoint detection and response (EDR) tools, maintaining updated antivirus signatures, and conducting regular user awareness training to recognize social engineering lures that deliver malicious installers. Network monitoring for anomalous outbound connections may help identify C2 traffic associated with the Janela RAT.
+
+## References
+- https://cybersecuritynews.com/new-janela-rat-campaign-uses-fake-msi-installers/
