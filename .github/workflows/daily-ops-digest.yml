@@ -1,0 +1,97 @@
+name: Daily Ops Digest
+
+# 00:00 UTC = 08:00 SGT (UTC+8) — operator sees the overnight pipeline health
+# with their morning coffee. Cron is UTC.
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Build digest but don't send Telegram"
+        required: false
+        type: boolean
+        default: false
+      window_hours:
+        description: "Aggregation window in hours"
+        required: false
+        default: "24"
+
+# Run at most one digest at a time. `cancel-in-progress: false` so a manual
+# dispatch doesn't kill the scheduled 8am run mid-flight.
+concurrency:
+  group: daily-ops-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    name: Build & Send Digest
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      # contents: read → get MDX frontmatter for article counting
+      # actions: read  → `gh run list` / `gh run view --log` on workflows
+      contents: read
+      actions: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Only need current tree for filesystem article counting. No
+          # history needed — we're reading MDX frontmatter, not git log.
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        # We only need `gray-matter` + `tsx` from the install, but a full
+        # `npm ci` is still the simplest path and caches well. ~15s.
+        run: npm ci
+        env:
+          HUSKY: 0
+
+      - name: Run digest
+        id: digest
+        env:
+          # gh CLI picks this up automatically. `actions: read` is the only
+          # scope the script actually exercises.
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WINDOW: ${{ inputs.window_hours || '24' }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          ARGS="--window-hours=${WINDOW}"
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          npx tsx scripts/daily-ops-digest.ts $ARGS
+
+      - name: Notify Telegram — digest itself failed
+        # If the digest script crashed, THAT is its own incident. Send a
+        # minimal failure alert so the operator notices that their morning
+        # health report is broken (absence of digest → broken digest).
+        if: ${{ failure() }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            exit 0
+          fi
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          MSG="⚠️ <b>Daily ops digest FAILED to generate</b>"
+          MSG+=$'\n\n'"The 8am SGT health report couldn't be built. Pipeline may or may not be healthy — check manually."
+          MSG+=$'\n\n'"Run: ${RUN_URL}"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode parse_mode="HTML" \
+            --data-urlencode disable_web_page_preview="true" \
+            --data-urlencode text="$MSG" \
+            > /dev/null || true
