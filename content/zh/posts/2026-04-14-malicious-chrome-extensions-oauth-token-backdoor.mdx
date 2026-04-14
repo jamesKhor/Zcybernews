@@ -1,0 +1,52 @@
+---
+title: 恶意Chrome扩展劫持OAuth令牌，部署后门
+slug: 2026-04-14-malicious-chrome-extensions-oauth-token-backdoor
+date: '2026-04-14'
+excerpt: 官方Chrome网上应用店中有超过100个恶意扩展正在窃取Google OAuth2令牌，部署后门，并进行广告欺诈，影响数百万用户。
+category: malware
+tags:
+  - chrome-extensions
+  - oauth2
+  - supply-chain
+  - ad-fraud
+  - google
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/over-100-chrome-extensions-in-web-store-target-users-accounts-and-data/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-14-malicious-chrome-extensions-oauth-token-backdoor
+severity: high
+---
+## 执行摘要
+涉及官方Google Chrome Web Store中100多个恶意扩展的活动一直在积极窃取用户认证令牌、部署后门和进行广告欺诈。这些扩展已被下载数百万次，特别针对Google OAuth2 Bearer令牌，使攻击者能够在不需要密码的情况下持续访问用户账户和数据。这代表了对核心浏览器生态系统的重大供应链攻击。
+
+## 技术分析
+恶意扩展通过向用户访问的每个网页注入JavaScript来工作。它们的主要目标是拦截HTTP请求和响应，以识别和窃取Google OAuth2 Bearer令牌。这些令牌由Google服务（如Gmail、Drive和YouTube）在用户登录后用于认证。通过窃取一个有效的令牌，攻击者可以冒充用户的会话，绕过多因素认证，甚至在密码更改后也能保持访问。
+
+根据BleepingComputer报告的分析，这些扩展还包含从命令和控制（C2）服务器接收并执行任意命令的功能，实际上在受害者的浏览器上充当后门。此外，这些扩展通过强制打开新的标签和窗口来加载广告，参与广告欺诈，为操作者产生非法收入。恶意代码通常被混淆，并且可能分阶段交付，以逃避Chrome Web Store的自动扫描器的初始检测。
+
+## 入侵指标
+目前没有识别出任何入侵指标。源材料中没有提供特定的扩展ID和相关的哈希值。组织和用户应仔细审查安装的扩展，以查找意外的权限、高资源使用量或未知的发布者。
+
+## 战术、技术与程序
+威胁行为者采用多种技术来分发和隐藏他们的活动。他们将扩展上传到官方Chrome Web Store，利用其信任度接触广泛的用户基础（T1554.005：破坏软件供应链）。扩展使用混淆的JavaScript来隐藏它们的真实目的（T1027：混淆的文件或信息）。观察到的核心技术包括：
+*   **凭证访问（T1552）：**窃取Web会话cookie，特别是OAuth2 Bearer令牌。
+*   **命令和控制（T1105）：**入口工具传输 - 从C2服务器下载并执行额外的恶意代码。
+*   **影响（T1491）：**通过强制浏览器导航进行破坏和广告欺诈，以产生广告收入。
+*   **持久性（T1176）：**浏览器扩展 - 通过在浏览器内安装的组件保持访问。
+
+## 威胁行为者背景
+在可用报告中没有识别出此次活动背后的特定威胁行为者或团体。货币化方法 - 主要是广告欺诈和凭证盗窃以获取账户访问权限 - 表明这是一个以财务为动机的操作，而不是国家赞助的。涉及100多个扩展的活动规模表明，这是一个协调一致和持续的努力，以利用浏览器扩展生态系统。
+
+## 缓解措施与建议
+用户和管理员应立即采取行动，审查和保护他们的浏览器环境。
+1.  **审计安装的扩展：**定期审查所有安装的浏览器扩展。移除任何不必要的、不熟悉的或来自未经验证的发布者的扩展。特别注意请求广泛权限的扩展，如“读取和更改您访问的网站的所有数据”。
+2.  **限制安装来源：**执行政策，将浏览器扩展安装限制为仅官方管理的企业商店或严格策划的允许列表。
+3.  **监控异常：**警惕浏览器性能问题、意外的新标签/窗口或无法解释的网络流量，这可能表明恶意扩展。
+4.  **撤销可疑会话：**怀疑被入侵的用户应通过账户安全设置审查并撤销他们的Google（和其他关键）账户的活跃会话。
+5.  **利用企业控制：**组织应使用企业浏览器管理解决方案（如Chrome浏览器云管理）来集中阻止、允许和监控扩展使用。
+
+## 参考资料
+*   [https://www.bleepingcomputer.com/news/security/over-100-chrome-extensions-in-web-store-target-users-accounts-and-data/](https://www.bleepingcomputer.com/news/security/over-100-chrome-extensions-in-web-store-target-users-accounts-and-data/)

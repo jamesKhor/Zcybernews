@@ -1,0 +1,55 @@
+---
+title: 'Malicious Chrome Extensions Hijack OAuth Tokens, Deploy Backdoors'
+slug: 2026-04-14-malicious-chrome-extensions-oauth-token-backdoor
+date: '2026-04-14'
+excerpt: >-
+  Over 100 malicious extensions in the official Chrome Web Store are stealing
+  Google OAuth2 tokens, deploying backdoors, and committing ad fraud, impacting
+  millions of users.
+category: malware
+tags:
+  - chrome-extensions
+  - oauth2
+  - supply-chain
+  - ad-fraud
+  - google
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/over-100-chrome-extensions-in-web-store-target-users-accounts-and-data/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-14-malicious-chrome-extensions-oauth-token-backdoor
+severity: high
+---
+## Executive Summary
+A campaign involving more than 100 malicious extensions in the official Google Chrome Web Store has been actively stealing user authentication tokens, deploying backdoors, and conducting ad fraud. The extensions, which have been downloaded millions of times, specifically target Google OAuth2 Bearer tokens, granting attackers persistent access to user accounts and data without needing passwords. This represents a significant supply-chain attack against a core browser ecosystem.
+
+## Technical Analysis
+The malicious extensions function by injecting JavaScript into every webpage a user visits. Their primary objective is to intercept HTTP requests and responses to identify and exfiltrate Google OAuth2 Bearer tokens. These tokens are used by Google services (like Gmail, Drive, and YouTube) for authentication after a user logs in. By stealing a valid token, an attacker can impersonate the user's session, bypassing multi-factor authentication and maintaining access even after a password change.
+
+According to analysis reported by BleepingComputer, the extensions also contain functionality to execute arbitrary commands received from a command-and-control (C2) server, effectively acting as a backdoor on the victim's browser. Furthermore, the extensions engage in ad fraud by forcibly opening new tabs and windows to load advertisements, generating illicit revenue for the operators. The malicious code is often obfuscated and may be delivered in stages to evade initial detection by the Chrome Web Store's automated scanners.
+
+## Indicators of Compromise
+None identified at this time. Specific extension IDs and associated hashes were not provided in the source material. Organizations and users should scrutinize installed extensions for unexpected permissions, high resource usage, or unknown publishers.
+
+## Tactics, Techniques & Procedures
+The threat actors employ several techniques to distribute and conceal their activity. They upload extensions to the official Chrome Web Store, leveraging its trust to reach a wide user base (T1554.005: Compromise Software Supply Chain). The extensions use obfuscated JavaScript to hide their true purpose (T1027: Obfuscated Files or Information). The core techniques observed include:
+*   **Credential Access (T1552):** Stealing web session cookies, specifically OAuth2 Bearer tokens.
+*   **Command and Control (T1105):** Ingress Tool Transfer – downloading and executing additional malicious code from C2 servers.
+*   **Impact (T1491):** Defacement and ad fraud through forced browser navigation to generate ad revenue.
+*   **Persistence (T1176):** Browser Extensions – maintaining access via a component installed within the browser itself.
+
+## Threat Actor Context
+The specific threat actor or group behind this campaign is not identified in the available reporting. The monetization methods—primarily ad fraud and credential theft for account access—suggest a financially motivated operation rather than a state-sponsored one. The scale of the campaign, involving over 100 extensions, indicates a coordinated and persistent effort to exploit the browser extension ecosystem.
+
+## Mitigations & Recommendations
+Users and administrators should take immediate action to review and secure their browser environments.
+1.  **Audit Installed Extensions:** Regularly review all installed browser extensions. Remove any that are unnecessary, unfamiliar, or from unverified publishers. Pay particular attention to extensions requesting broad permissions like "Read and change all your data on the websites you visit."
+2.  **Restrict Installation Sources:** Enforce policies that restrict browser extension installation to only officially managed enterprise stores or a tightly curated allow list.
+3.  **Monitor for Anomalies:** Be alert to browser performance issues, unexpected new tabs/windows, or unexplained network traffic, which could indicate a malicious extension.
+4.  **Revoke Suspicious Sessions:** Users who suspect compromise should review and revoke active sessions for their Google (and other critical) accounts via account security settings.
+5.  **Leverage Enterprise Controls:** Organizations should utilize enterprise browser management solutions (like Chrome Browser Cloud Management) to centrally block, allow, and monitor extension usage.
+
+## References
+*   https://www.bleepingcomputer.com/news/security/over-100-chrome-extensions-in-web-store-target-users-accounts-and-data/
