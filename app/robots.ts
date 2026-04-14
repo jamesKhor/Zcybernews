@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 
-// Skip build-time prerendering. Cheap to generate on first request + cache.
-export const dynamic = "force-dynamic";
+// robots.txt contents are static — fully static-optimized, no data loading.
+// (Previously had force-dynamic but that was an over-correction; robots.ts
+// doesn't enumerate content, so pre-rendering is trivial.)
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
 

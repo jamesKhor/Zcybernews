@@ -28,6 +28,10 @@ jobs:
 
     permissions:
       contents: write
+      # actions: write is REQUIRED for `gh workflow run` to dispatch
+      # deploy-vps.yml after we push a commit. Without it, the dispatch
+      # call silently 403s — pipeline commits land but never deploy.
+      actions: write
 
     steps:
       - name: Checkout
@@ -46,6 +50,19 @@ jobs:
         run: npm ci
         env:
           HUSKY: 0
+
+      # Persist RSS dedup cache across pipeline runs. Without this, every
+      # ephemeral runner starts with empty .pipeline-cache/ → re-processes
+      # all RSS items → re-generates articles already published (we've
+      # seen "Agentic AI Memory Attacks" published twice with slightly
+      # different slugs). actions/cache stores the folder between runs.
+      - name: Restore pipeline cache
+        uses: actions/cache@v4
+        with:
+          path: .pipeline-cache
+          key: pipeline-cache-${{ github.run_id }}
+          restore-keys: |
+            pipeline-cache-
 
       - name: Run AI Pipeline
         id: pipeline
@@ -174,9 +191,21 @@ jobs:
           # Without this dispatch, the pipeline commit reaches main but
           # deploy-vps.yml never fires → article exists in repo but never
           # makes it to the VPS. Manually dispatch the deploy here.
-          gh workflow run deploy-vps.yml --ref main \
-            && echo "✅ Dispatched deploy-vps.yml" \
-            || echo "::warning::Failed to dispatch deploy-vps — articles committed but VPS won't pull until next code deploy"
+          #
+          # NOTE: this requires `actions: write` permission on the job
+          # (see top of file). Without it, `gh workflow run` 403s.
+          #
+          # Explicitly check exit code — earlier version used
+          #   gh ... || echo "::warning::Failed..."
+          # which swallowed the error, making the step pass even on 403.
+          # Now a dispatch failure makes this step fail loudly and the
+          # Telegram failure-notify fires so the issue surfaces fast.
+          if gh workflow run deploy-vps.yml --ref main; then
+            echo "✅ Dispatched deploy-vps.yml"
+          else
+            echo "::error::Failed to dispatch deploy-vps. Articles committed to main but VPS won't pull until this is fixed. Check that 'actions: write' permission is set on this workflow."
+            exit 1
+          fi
 
       - name: Notify Telegram — success
         # Gate on titles.count (real articles published), not detect.new_files.

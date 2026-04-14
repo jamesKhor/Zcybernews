@@ -2,10 +2,19 @@ import type { MetadataRoute } from "next";
 import { getAllPosts, getAllTags } from "@/lib/content";
 import { CategoryEnum } from "@/lib/types";
 
-// Don't prerender at build time — enumerating all ~262 articles was hitting
-// Next.js's 60s per-route timeout on the 2GB VPS. Generate on first request
-// instead and cache for 1 hour; admin publish fires revalidatePath to refresh.
-export const dynamic = "force-dynamic";
+// ISR: generate on first request, cache for 1 hour, regenerate on demand.
+//
+// WHY NOT `dynamic = 'force-dynamic'`: Google Search Console was reporting
+// "Couldn't fetch" because force-dynamic means every Googlebot request
+// re-enumerates all 262 articles + tags + categories. The memo cache in
+// lib/content.ts makes this ~600ms once warm, but a cold hit (e.g. after
+// a PM2 restart) paid the full parse cost (~2-3s) which exceeds some of
+// Googlebot's stricter timeouts on large sitemap files.
+//
+// ISR gives us the best of both: the first request after deploy pays the
+// cost, but it's written to .next/ISR cache. Subsequent requests serve
+// from cache. Admin publish / pipeline pushes fire revalidatePath to
+// refresh within seconds.
 export const revalidate = 3600;
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
