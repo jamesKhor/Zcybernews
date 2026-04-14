@@ -16,6 +16,7 @@
  */
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
 
 export type Story = {
   id: string;
@@ -180,14 +181,78 @@ export function loadRecentPublishedTitles(
   return loadRecentPublished(withinDays).map((a) => a.title);
 }
 
+// ─── Memo cache ─────────────────────────────────────────────────────────────
+//
+// The hourly pipeline runs 3 article generations concurrently (p-limit=3).
+// Each generation calls findDuplicateOnDisk → loadAllPublished, which
+// without caching does ~280 readFileSync calls per generation = ~840 disk
+// reads per pipeline run.
+//
+// With this memo, the FIRST call within a process parses every MDX once;
+// subsequent calls return the cached array. Cache key is the combined mtime
+// of the two content directories — when a new article is written (which
+// updates the directory mtime), the cache invalidates automatically on the
+// next call.
+//
+// This is the same mtime-keyed pattern lib/content.ts uses for Next.js ISR.
+// Rule: never bypass loadAllPublished/loadRecentPublished by reading MDX
+// directly; the memo is the single source of truth.
+type CacheEntry = { mtime: number; articles: PublishedArticle[] };
+const ALL_PUBLISHED_CACHE = new Map<string, CacheEntry>();
+
+function dirMtimes(): { mtime: number; key: string } {
+  const contentRoot = path.join(process.cwd(), "content", "en");
+  const dirs = ["posts", "threat-intel"];
+  let combined = 0;
+  for (const d of dirs) {
+    const p = path.join(contentRoot, d);
+    if (!fs.existsSync(p)) continue;
+    combined = Math.max(combined, fs.statSync(p).mtimeMs);
+  }
+  return { mtime: combined, key: contentRoot };
+}
+
 export function loadRecentPublished(
   withinDays: number | null = PUBLISHED_LOOKBACK_DAYS,
 ): PublishedArticle[] {
+  // Always read the full set from cache, then filter by date in memory.
+  // This way we cache once per process even when callers ask for different
+  // time windows.
+  const all = loadAllPublishedCached();
+  if (withinDays === null) return all;
+  const cutoff = Date.now() - withinDays * 24 * 60 * 60 * 1000;
+  return all.filter((a) => new Date(a.date).getTime() >= cutoff);
+}
+
+/**
+ * Load ALL published articles regardless of date. Used by the shift-right
+ * post-generation duplicate check — we never want to ship a duplicate of
+ * something already on disk, even if it was published months ago.
+ *
+ * NOTE: only scans content/en/. Cross-locale assumption: ZH articles are
+ * always derived 1:1 from EN via translate-publish, so dedup against the
+ * EN corpus is sufficient. If/when the pipeline ever generates ZH-native
+ * articles directly, this needs to also scan content/zh/.
+ */
+export function loadAllPublished(): PublishedArticle[] {
+  return loadAllPublishedCached();
+}
+
+function loadAllPublishedCached(): PublishedArticle[] {
+  const { mtime, key } = dirMtimes();
+  const cached = ALL_PUBLISHED_CACHE.get(key);
+  if (cached && cached.mtime === mtime) {
+    return cached.articles;
+  }
+  const articles = readAllPublishedFromDisk();
+  ALL_PUBLISHED_CACHE.set(key, { mtime, articles });
+  return articles;
+}
+
+function readAllPublishedFromDisk(): PublishedArticle[] {
   const contentRoot = path.join(process.cwd(), "content", "en");
   const dirs = ["posts", "threat-intel"];
   const articles: PublishedArticle[] = [];
-  const cutoff =
-    withinDays === null ? 0 : Date.now() - withinDays * 24 * 60 * 60 * 1000;
 
   for (const dir of dirs) {
     const dirPath = path.join(contentRoot, dir);
@@ -196,25 +261,34 @@ export function loadRecentPublished(
     const files = fs.readdirSync(dirPath).filter((f) => f.endsWith(".mdx"));
     for (const file of files) {
       try {
-        const content = fs.readFileSync(path.join(dirPath, file), "utf-8");
-        const titleMatch = content.match(/^title:\s*["']?(.+?)["']?\s*$/m);
-        if (!titleMatch?.[1]) continue;
-        const dateMatch = content.match(
-          /^date:\s*["']?(\d{4}-\d{2}-\d{2})["']?\s*$/m,
-        );
-        if (!dateMatch?.[1]) continue;
-        const slugMatch = content.match(/^slug:\s*["']?(.+?)["']?\s*$/m);
-        const articleDate = new Date(dateMatch[1]).getTime();
-        if (articleDate >= cutoff) {
-          articles.push({
-            title: titleMatch[1].trim(),
-            slug: (slugMatch?.[1] ?? "").trim(),
-            cves: extractCVEs(content),
-            date: dateMatch[1],
-          });
-        }
+        const raw = fs.readFileSync(path.join(dirPath, file), "utf-8");
+        // Use gray-matter for proper YAML parsing — the previous regex
+        // approach broke on titles containing colons, escaped quotes, and
+        // multi-line YAML block scalars (>-). gray-matter is already a
+        // dependency and properly handles these.
+        const parsed = matter(raw);
+        const fm = parsed.data as Record<string, unknown>;
+
+        const title = typeof fm.title === "string" ? fm.title.trim() : "";
+        const slug = typeof fm.slug === "string" ? fm.slug.trim() : "";
+        const dateRaw = fm.date;
+        const date =
+          dateRaw instanceof Date
+            ? dateRaw.toISOString().split("T")[0]
+            : typeof dateRaw === "string"
+              ? dateRaw.trim()
+              : "";
+
+        if (!title || !date) continue;
+
+        articles.push({
+          title,
+          slug,
+          cves: extractCVEs(`${title} ${parsed.content}`),
+          date,
+        });
       } catch {
-        // skip unreadable files
+        // skip unreadable / unparseable files
       }
     }
   }
@@ -223,12 +297,67 @@ export function loadRecentPublished(
 }
 
 /**
- * Load ALL published articles regardless of date. Used by the shift-right
- * post-generation duplicate check — we never want to ship a duplicate of
- * something already on disk, even if it was published months ago.
+ * Test-only: clear the memo cache. Useful when tests mutate content/ on
+ * disk and expect the next call to see the change. Production code never
+ * needs to call this — the mtime check handles invalidation automatically.
  */
-export function loadAllPublished(): PublishedArticle[] {
-  return loadRecentPublished(null);
+export function _clearPublishedCache(): void {
+  ALL_PUBLISHED_CACHE.clear();
+}
+
+// ─── In-flight registry: prevents concurrent generations from clashing ─────
+//
+// The pipeline runs up to 3 article generations in parallel via p-limit(3).
+// findDuplicateOnDisk only checks files ALREADY ON DISK — so two parallel
+// generations that produce articles about the same news story (e.g. two
+// different RSS sources reporting it differently, splitting across batches)
+// would BOTH pass shift-right and BOTH write — producing a duplicate that
+// neither layer caught.
+//
+// This in-memory Set tracks normalized titles + slugs being written by any
+// in-flight pipeline task. claimSlugAndTitle() returns false if either is
+// already claimed; the calling code then treats it as a duplicate. Cleared
+// at process start (each pipeline run is a fresh Node process).
+const IN_FLIGHT = new Set<string>();
+
+function inFlightKey(s: string): string {
+  return normalizeTitle(s);
+}
+
+/**
+ * Atomically claim a (title, slug) pair as in-flight. Returns true if claim
+ * succeeded (caller may proceed to write). Returns false + the conflicting
+ * key if another in-flight task already claimed an equivalent title/slug.
+ * The caller should treat false as a duplicate detection.
+ *
+ * Always pair with releaseInFlight() in a finally block — leaking claims
+ * would block subsequent runs in the same process.
+ */
+export function claimInFlight(args: {
+  title: string;
+  slug: string;
+}): { claimed: true } | { claimed: false; conflictWith: string } {
+  const titleKey = "t:" + inFlightKey(args.title);
+  const slugKey = "s:" + inFlightKey(args.slug);
+  if (IN_FLIGHT.has(titleKey)) {
+    return { claimed: false, conflictWith: titleKey };
+  }
+  if (IN_FLIGHT.has(slugKey)) {
+    return { claimed: false, conflictWith: slugKey };
+  }
+  IN_FLIGHT.add(titleKey);
+  IN_FLIGHT.add(slugKey);
+  return { claimed: true };
+}
+
+export function releaseInFlight(args: { title: string; slug: string }): void {
+  IN_FLIGHT.delete("t:" + inFlightKey(args.title));
+  IN_FLIGHT.delete("s:" + inFlightKey(args.slug));
+}
+
+/** Test-only: clear the in-flight registry between test cases. */
+export function _clearInFlight(): void {
+  IN_FLIGHT.clear();
 }
 
 // ─── SHIFT-RIGHT: post-generation duplicate detection ───────────────────────
@@ -251,6 +380,14 @@ export type DuplicateMatch = {
  *   2. Also checks slug exactness (catches the case where AI generates
  *      the same slug as an existing article — e.g. via cache miss)
  */
+// How recent must a slug-prefix match be to count as a duplicate?
+// Recurring monthly stories like "Microsoft Patches Critical Vulnerabilities"
+// or "CISA Adds Five Flaws to KEV Catalog" share their first 4 meaningful
+// words by design. If we treated those as duplicates indefinitely, we'd
+// never publish a follow-up story. Restrict slug-prefix to the same
+// 30-day window we use for the RSS-side filter.
+const SLUG_PREFIX_LOOKBACK_DAYS = 30;
+
 export function findDuplicateOnDisk(args: {
   title: string;
   slug: string;
@@ -265,6 +402,8 @@ export function findDuplicateOnDisk(args: {
   } = args;
   const cves = body ? extractCVEs(`${title} ${body}`) : extractCVEs(title);
   const published = loadAllPublished();
+  const slugPrefixCutoff =
+    Date.now() - SLUG_PREFIX_LOOKBACK_DAYS * 24 * 60 * 60 * 1000;
 
   for (const pub of published) {
     // Strip the date prefix from both for fair slug comparison
@@ -289,7 +428,11 @@ export function findDuplicateOnDisk(args: {
       };
     }
 
-    if (shareSlugPrefix(title, pub.title)) {
+    // Slug-prefix only counts if the pre-existing article is recent.
+    // Without the time window, monthly recurring stories
+    // ("Microsoft Patches X", "CISA KEV Adds Y") would block forever.
+    const pubDate = new Date(pub.date).getTime();
+    if (pubDate >= slugPrefixCutoff && shareSlugPrefix(title, pub.title)) {
       return {
         matchType: "slug-prefix",
         matchedTitle: pub.title,

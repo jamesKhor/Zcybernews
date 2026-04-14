@@ -3,7 +3,12 @@ import path from "path";
 import matter from "gray-matter";
 import type { GeneratedArticle } from "../ai/schemas/article-schema.js";
 import type { TranslatedMeta } from "./translate-article.js";
-import { findDuplicateOnDisk, type DuplicateMatch } from "../utils/dedup.js";
+import {
+  findDuplicateOnDisk,
+  claimInFlight,
+  releaseInFlight,
+  type DuplicateMatch,
+} from "../utils/dedup.js";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -179,34 +184,64 @@ export function writeArticlePair(
   const type: "posts" | "threat-intel" =
     article.category === "threat-intel" ? "threat-intel" : "posts";
 
-  // ── SHIFT-RIGHT: duplicate detection BEFORE writing ─────────────────────
-  // Check the GENERATED title + slug + body against everything on disk.
-  // If we find a match, abort cleanly instead of writing a duplicate.
-  const duplicate = findDuplicateOnDisk({
-    title: article.title,
-    slug: datedSlug,
-    body: article.body,
-  });
-  if (duplicate) {
-    throw new DuplicateArticleError(article.title, datedSlug, duplicate);
-  }
-
-  // English
-  const enFm = buildFrontmatter(article, "en", date, datedSlug, sourceUrls, {
-    locale_pair: zhMeta ? datedSlug : undefined,
-  });
-  const enPath = writeMdx("en", type, datedSlug, enFm, article.body);
-
-  // Chinese (if translation succeeded)
-  let zhPath: string | null = null;
-  if (zhMeta) {
-    const zhFm = buildFrontmatter(article, "zh", date, datedSlug, sourceUrls, {
-      title: zhMeta.title,
-      excerpt: zhMeta.excerpt,
-      locale_pair: datedSlug,
+  // ── SHIFT-RIGHT step 1: in-flight registry check ────────────────────────
+  // The pipeline runs 3 article generations concurrently. findDuplicateOnDisk
+  // alone only catches duplicates against files ALREADY ON DISK; it can't
+  // catch the case where two parallel generations are about to write
+  // duplicates of EACH OTHER (neither has written yet, so neither sees the
+  // other on disk). The in-flight registry covers that gap.
+  const claim = claimInFlight({ title: article.title, slug: datedSlug });
+  if (!claim.claimed) {
+    throw new DuplicateArticleError(article.title, datedSlug, {
+      matchType: "exact-slug",
+      matchedTitle: article.title,
+      matchedSlug: datedSlug,
+      matchedDate: date,
     });
-    zhPath = writeMdx("zh", type, datedSlug, zhFm, zhMeta.body);
   }
 
-  return { en: enPath, zh: zhPath };
+  try {
+    // ── SHIFT-RIGHT step 2: disk check ────────────────────────────────────
+    // Check the GENERATED title + slug + body against everything on disk.
+    // If we find a match, abort cleanly instead of writing a duplicate.
+    const duplicate = findDuplicateOnDisk({
+      title: article.title,
+      slug: datedSlug,
+      body: article.body,
+    });
+    if (duplicate) {
+      throw new DuplicateArticleError(article.title, datedSlug, duplicate);
+    }
+
+    // English
+    const enFm = buildFrontmatter(article, "en", date, datedSlug, sourceUrls, {
+      locale_pair: zhMeta ? datedSlug : undefined,
+    });
+    const enPath = writeMdx("en", type, datedSlug, enFm, article.body);
+
+    // Chinese (if translation succeeded)
+    let zhPath: string | null = null;
+    if (zhMeta) {
+      const zhFm = buildFrontmatter(
+        article,
+        "zh",
+        date,
+        datedSlug,
+        sourceUrls,
+        {
+          title: zhMeta.title,
+          excerpt: zhMeta.excerpt,
+          locale_pair: datedSlug,
+        },
+      );
+      zhPath = writeMdx("zh", type, datedSlug, zhFm, zhMeta.body);
+    }
+
+    return { en: enPath, zh: zhPath };
+  } finally {
+    // Always release the claim, success or failure. Otherwise a thrown
+    // duplicate-error would block any future writes with the same title
+    // for the lifetime of the process.
+    releaseInFlight({ title: article.title, slug: datedSlug });
+  }
 }

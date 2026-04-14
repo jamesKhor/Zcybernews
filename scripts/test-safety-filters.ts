@@ -24,6 +24,10 @@ import {
   deduplicate,
   findDuplicateOnDisk,
   loadAllPublished,
+  claimInFlight,
+  releaseInFlight,
+  _clearInFlight,
+  _clearPublishedCache,
   SIMILARITY_THRESHOLD,
   type Story,
 } from "./utils/dedup.js";
@@ -272,6 +276,105 @@ suite("Agentic AI Memory Attacks (the original incident)", () => {
     "Today's incident reproducer → would be blocked by shift-right",
     generated !== null,
     generated ? `match type: ${generated.matchType}` : "no match found",
+  );
+});
+
+// ─── Suite 8: in-flight registry (concurrent generation race) ──────────────
+suite("In-flight registry (concurrency)", () => {
+  _clearInFlight();
+  const claim1 = claimInFlight({
+    title: "Critical Apache RCE Discovered",
+    slug: "2026-04-14-critical-apache-rce-discovered",
+  });
+  test("First claim succeeds", claim1.claimed === true);
+
+  // Second concurrent task tries the SAME title — should fail
+  const claim2 = claimInFlight({
+    title: "Critical Apache RCE Discovered",
+    slug: "2026-04-14-different-slug-same-title",
+  });
+  test(
+    "Same-title second claim is rejected",
+    claim2.claimed === false,
+    JSON.stringify(claim2),
+  );
+
+  // Different title and slug — should succeed (no collision)
+  const claim3 = claimInFlight({
+    title: "Microsoft Patches Three Vulnerabilities",
+    slug: "2026-04-14-microsoft-patches-three-vulnerabilities",
+  });
+  test(
+    "Genuinely-different concurrent claim succeeds",
+    claim3.claimed === true,
+  );
+
+  releaseInFlight({
+    title: "Critical Apache RCE Discovered",
+    slug: "2026-04-14-critical-apache-rce-discovered",
+  });
+
+  // After release, same title can be claimed again
+  const claim4 = claimInFlight({
+    title: "Critical Apache RCE Discovered",
+    slug: "2026-04-14-critical-apache-rce-discovered",
+  });
+  test("After release, same title claimable again", claim4.claimed === true);
+
+  _clearInFlight();
+});
+
+// ─── Suite 9: gray-matter handles tricky frontmatter ───────────────────────
+suite("Frontmatter parser (gray-matter, not regex)", () => {
+  // Verify the loader returns sensible results for every published article.
+  // If gray-matter handles a tricky title like "Apple's Patch: A Breakdown"
+  // correctly, the title contains the colon AND the apostrophe.
+  const all = loadAllPublished();
+  let hasTrickyTitle = false;
+  for (const a of all) {
+    if (
+      a.title.includes(":") ||
+      a.title.includes("'") ||
+      a.title.includes('"')
+    ) {
+      hasTrickyTitle = true;
+      // If gray-matter parsed wrong, the title might be truncated at the colon
+      // or contain literal quote characters. Verify it's at least 5 chars.
+      test(
+        `Tricky title parsed correctly: "${a.title}" (length ${a.title.length})`,
+        a.title.length >= 5 && !a.title.startsWith('"'),
+      );
+      break; // one example is enough
+    }
+  }
+  if (!hasTrickyTitle) {
+    test(
+      "(skipped: no tricky title in current corpus)",
+      true,
+      "no titles with ':, ', or \" found",
+    );
+  }
+});
+
+// ─── Suite 10: memo cache invalidation ─────────────────────────────────────
+suite("Memo cache (perf)", () => {
+  _clearPublishedCache();
+  const t0 = Date.now();
+  const first = loadAllPublished();
+  const t1 = Date.now();
+  const second = loadAllPublished();
+  const t2 = Date.now();
+
+  test("First call returns articles", first.length > 0, `got ${first.length}`);
+  test(
+    "Second call returns same articles (cache hit)",
+    second.length === first.length,
+  );
+  // Cache hit should be MUCH faster than fresh read
+  test(
+    "Cache hit is faster than first read",
+    t2 - t1 <= t1 - t0,
+    `first=${t1 - t0}ms, second=${t2 - t1}ms`,
   );
 });
 
