@@ -11,7 +11,7 @@
 import { ingestFeeds } from "./ingest-rss.js";
 import { generateArticle } from "./generate-article.js";
 import { translateArticle } from "./translate-article.js";
-import { writeArticlePair } from "./write-mdx.js";
+import { writeArticlePair, DuplicateArticleError } from "./write-mdx.js";
 import { markProcessedBatch } from "../utils/cache.js";
 import { limit } from "../utils/rate-limit.js";
 
@@ -148,6 +148,7 @@ async function main() {
 
   // 3. Generate + translate + write — p-limit(3) concurrency
   let skippedOffTopic = 0;
+  let skippedDuplicate = 0;
   let translationWarnings = 0;
 
   const results = await Promise.allSettled(
@@ -193,8 +194,37 @@ async function main() {
           }
         }
 
-        // Write MDX files
-        const paths = writeArticlePair(article, zhMeta, storyUrls);
+        // Write MDX files (with shift-right duplicate check)
+        let paths: { en: string; zh: string | null };
+        try {
+          paths = writeArticlePair(article, zhMeta, storyUrls);
+        } catch (err) {
+          if (err instanceof DuplicateArticleError) {
+            // SHIFT-RIGHT TRIPPED: article passed RSS-side dedup but the
+            // generated output matches an existing article on disk. Skip
+            // write, mark sources as processed (so we don't retry next
+            // run), and emit a structured log so we can monitor frequency.
+            console.warn(
+              `[pipeline] 🛡️  DUPLICATE BLOCKED: "${article.title}" — ${err.message}`,
+            );
+            console.log(
+              JSON.stringify({
+                event: "article_blocked_duplicate",
+                attempted_slug: err.attemptedSlug,
+                attempted_title: err.attemptedTitle,
+                matched_slug: err.duplicate.matchedSlug,
+                matched_title: err.duplicate.matchedTitle,
+                match_type: err.duplicate.matchType,
+                similarity: err.duplicate.similarity,
+              }),
+            );
+            skippedDuplicate++;
+            markProcessedBatch(storyUrls);
+            return null;
+          }
+          throw err;
+        }
+
         const duration = ((Date.now() - startTime) / 1000).toFixed(1);
 
         // Structured log line
@@ -224,10 +254,11 @@ async function main() {
   const succeeded = results.filter(
     (r) => r.status === "fulfilled" && r.value,
   ).length;
-  const failed = results.length - succeeded - skippedOffTopic;
+  const failed =
+    results.length - succeeded - skippedOffTopic - skippedDuplicate;
 
   console.log(
-    `\n📊 Pipeline complete: ${succeeded} written, ${skippedOffTopic} off-topic rejected, ${translationWarnings} translation warnings, ${failed} failed\n`,
+    `\n📊 Pipeline complete: ${succeeded} written, ${skippedDuplicate} duplicates blocked, ${skippedOffTopic} off-topic rejected, ${translationWarnings} translation warnings, ${failed} failed\n`,
   );
 
   // Write run summary as JSON
@@ -238,6 +269,7 @@ async function main() {
         new Date().toLocaleString("en-GB", { timeZone: "Asia/Singapore" }) +
         " SGT",
       articles_written: succeeded,
+      duplicates_blocked: skippedDuplicate,
       off_topic_rejected: skippedOffTopic,
       translation_warnings: translationWarnings,
       failed,

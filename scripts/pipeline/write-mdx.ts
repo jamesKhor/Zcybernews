@@ -3,8 +3,36 @@ import path from "path";
 import matter from "gray-matter";
 import type { GeneratedArticle } from "../ai/schemas/article-schema.js";
 import type { TranslatedMeta } from "./translate-article.js";
+import { findDuplicateOnDisk, type DuplicateMatch } from "../utils/dedup.js";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
+
+/** Thrown by writeArticlePair when a duplicate is detected on disk. */
+export class DuplicateArticleError extends Error {
+  public readonly duplicate: DuplicateMatch;
+  public readonly attemptedTitle: string;
+  public readonly attemptedSlug: string;
+
+  constructor(
+    attemptedTitle: string,
+    attemptedSlug: string,
+    duplicate: DuplicateMatch,
+  ) {
+    const sim =
+      duplicate.similarity !== undefined
+        ? ` (similarity ${duplicate.similarity.toFixed(2)})`
+        : "";
+    super(
+      `Duplicate detected by ${duplicate.matchType}${sim}: ` +
+        `attempted "${attemptedTitle}" matches existing "${duplicate.matchedTitle}" ` +
+        `(${duplicate.matchedSlug}, ${duplicate.matchedDate})`,
+    );
+    this.name = "DuplicateArticleError";
+    this.duplicate = duplicate;
+    this.attemptedTitle = attemptedTitle;
+    this.attemptedSlug = attemptedSlug;
+  }
+}
 
 /** Detect CJK characters (Chinese/Japanese/Korean) in text */
 const CJK_RE = /[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]/;
@@ -123,7 +151,23 @@ function writeMdx(
   return filePath;
 }
 
-/** Write both EN and ZH MDX files for a generated article. */
+/**
+ * Write both EN and ZH MDX files for a generated article.
+ *
+ * SHIFT-RIGHT SAFETY: Before writing, calls findDuplicateOnDisk() to check
+ * the freshly-generated EN article against ALL published articles. If a
+ * duplicate is found (by exact slug, title similarity ≥ threshold, slug
+ * prefix overlap, or shared CVE), throws DuplicateArticleError. The pipeline
+ * orchestrator catches this and skips the write — no file written, no commit
+ * needed, no Telegram for the skipped article. The stale .pipeline-cache
+ * still records the source URL as processed so the next run doesn't re-fetch
+ * it.
+ *
+ * This is the LAST line of defense after the shift-left filters in
+ * ingest-rss.ts. Even if a duplicate slips past the RSS-side dedup (e.g.,
+ * because the AI rewrote the title in a way that scored below the
+ * similarity threshold), this catches it.
+ */
 export function writeArticlePair(
   article: GeneratedArticle,
   zhMeta: TranslatedMeta | null,
@@ -134,6 +178,18 @@ export function writeArticlePair(
   const datedSlug = `${date}-${article.slug}`;
   const type: "posts" | "threat-intel" =
     article.category === "threat-intel" ? "threat-intel" : "posts";
+
+  // ── SHIFT-RIGHT: duplicate detection BEFORE writing ─────────────────────
+  // Check the GENERATED title + slug + body against everything on disk.
+  // If we find a match, abort cleanly instead of writing a duplicate.
+  const duplicate = findDuplicateOnDisk({
+    title: article.title,
+    slug: datedSlug,
+    body: article.body,
+  });
+  if (duplicate) {
+    throw new DuplicateArticleError(article.title, datedSlug, duplicate);
+  }
 
   // English
   const enFm = buildFrontmatter(article, "en", date, datedSlug, sourceUrls, {

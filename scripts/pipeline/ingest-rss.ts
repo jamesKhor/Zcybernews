@@ -4,7 +4,10 @@ import {
   deduplicate,
   loadRecentPublished,
   titleSimilarity,
+  shareSlugPrefix,
   extractCVEs,
+  SIMILARITY_THRESHOLD,
+  PUBLISHED_LOOKBACK_DAYS,
   type Story,
 } from "../utils/dedup.js";
 import { isProcessed } from "../utils/cache.js";
@@ -111,26 +114,41 @@ export async function ingestFeeds(maxStories = 20): Promise<Story[]> {
   const fresh = deduped.filter((s) => s.url && !isProcessed(s.url));
   console.log(`[ingest] Fresh (not yet processed): ${fresh.length} stories`);
 
-  // Filter stories too similar to articles published in the last 14 days.
-  // Checks both title similarity AND CVE ID overlap.
-  // Topics older than 14 days are fair game again (new developments may exist).
-  const published = loadRecentPublished(14);
+  // Filter stories too similar to articles published in the last N days.
+  // Checks title similarity, slug-prefix overlap (catches paraphrased
+  // headlines), and shared CVE IDs.
+  const published = loadRecentPublished(PUBLISHED_LOOKBACK_DAYS);
   const notCovered = fresh.filter((story) => {
     const storyCVEs = extractCVEs(`${story.title} ${story.excerpt}`);
+    let reason: string | null = null;
     const tooSimilar = published.some((pub) => {
-      if (titleSimilarity(story.title, pub.title) >= 0.6) return true;
+      const sim = titleSimilarity(story.title, pub.title);
+      if (sim >= SIMILARITY_THRESHOLD) {
+        reason = `title-similarity ${sim.toFixed(2)} vs "${pub.title}"`;
+        return true;
+      }
+      if (shareSlugPrefix(story.title, pub.title)) {
+        reason = `slug-prefix vs "${pub.title}"`;
+        return true;
+      }
       if (storyCVEs.length > 0 && pub.cves.length > 0) {
-        return storyCVEs.some((cve) => pub.cves.includes(cve));
+        const sharedCVE = storyCVEs.find((cve) => pub.cves.includes(cve));
+        if (sharedCVE) {
+          reason = `shared CVE ${sharedCVE} with "${pub.title}"`;
+          return true;
+        }
       }
       return false;
     });
     if (tooSimilar) {
-      console.log(`[ingest] Skipping (already covered): "${story.title}"`);
+      console.log(
+        `[ingest] Skipping (already covered): "${story.title}" — ${reason}`,
+      );
     }
     return !tooSimilar;
   });
   console.log(
-    `[ingest] After published-article filter: ${notCovered.length} stories`,
+    `[ingest] After published-article filter (window=${PUBLISHED_LOOKBACK_DAYS}d, threshold=${SIMILARITY_THRESHOLD}): ${notCovered.length} stories`,
   );
 
   return notCovered.slice(0, maxStories);
