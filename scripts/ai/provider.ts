@@ -17,6 +17,19 @@ const MIN_EFFECTIVE_PARAMS_B = 12;
 const MIN_CONTEXT_LENGTH = 32_000;
 const FREE_MODEL_TIMEOUT_MS = 90_000; // 90s per free model attempt
 
+// Set to true to attempt OpenRouter free models before paid fallback.
+// Currently DISABLED because:
+//   - Free models hit per-day rate limits fast (OpenRouter gives ~10
+//     req/day per model on the free tier), so every request falls through
+//     all 14 models and wastes 5-10 minutes before reaching the paid API.
+//   - Free models are unreliable (Provider errors, timeouts).
+//   - DeepSeek is cheap enough (~$0.27 / 1M tokens) to use directly.
+// Set this to true AND ensure OPENROUTER_API_KEY is set to re-enable.
+// Controlled at runtime by env var PIPELINE_USE_FREE_MODELS=true
+const USE_FREE_MODELS =
+  process.env.PIPELINE_USE_FREE_MODELS === "true" &&
+  !!process.env.OPENROUTER_API_KEY;
+
 // ─── Helpers ────────────────────────────────────────────────────────────────
 function fmtTokens(usage?: LanguageModelUsage): string {
   if (!usage) return "tokens: ?";
@@ -239,8 +252,8 @@ export async function generateArticleText(
 ): Promise<PipelineResult> {
   const { maxOutputTokens = 3000, temperature = 0.55 } = opts;
 
-  // 1. Try free models
-  if (process.env.OPENROUTER_API_KEY) {
+  // 1. Try free models — ONLY if opted in via PIPELINE_USE_FREE_MODELS=true
+  if (USE_FREE_MODELS) {
     const { write } = await getFreeModels();
     console.log(
       `[generate] 🔍 Trying ${write.length} free models for article generation…`,
@@ -263,7 +276,7 @@ export async function generateArticleText(
     );
   }
 
-  // 2. DeepSeek paid fallback
+  // 2. DeepSeek paid (primary path when free models disabled)
   if (process.env.DEEPSEEK_API_KEY) {
     const label = `deepseek/${DEEPSEEK_MODEL}`;
     console.log(`[generate] 💰 Paid fallback: ${label}`);
@@ -303,8 +316,8 @@ export async function translateText(
 ): Promise<PipelineResult> {
   const { maxOutputTokens = 4000, temperature = 0.3 } = opts;
 
-  // 1. Try free models (Qwen prioritized for better Chinese)
-  if (process.env.OPENROUTER_API_KEY) {
+  // 1. Try free models — ONLY if opted in via PIPELINE_USE_FREE_MODELS=true
+  if (USE_FREE_MODELS) {
     const { translate } = await getFreeModels();
     console.log(
       `[translate] 🔍 Trying ${translate.length} free models for translation…`,

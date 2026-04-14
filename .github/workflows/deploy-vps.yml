@@ -74,6 +74,13 @@ jobs:
           #     .vscode/                    → editor settings (future)
           #     .idea/                      → JetBrains editor settings (future)
           #
+          #   Scripts (run on GitHub Actions OR as separate PM2 processes —
+          #   none of them are loaded by the zcybernews Next.js process):
+          #     scripts/                    → pipeline, AI provider, telegram bot
+          #     NOTE: scripts/telegram/bot.mjs is a separate PM2 process
+          #     (tg-claude); changes there need manual 'pm2 restart tg-claude'
+          #     on the VPS. Not handled by this workflow.
+          #
           #   Root-level meta (not runtime):
           #     Any root *.md (README, CLAUDE, AGENTS, CHANGELOG...)
           #     LICENSE, .gitignore, .env.example, .editorconfig,
@@ -81,7 +88,7 @@ jobs:
           NON_CONTENT=$(echo "$CHANGED" \
             | grep -v -E '^(content/|public/images/articles/|\.pipeline-cache/|data/)' \
             | grep -v -E '^\.github/(workflows|actions|ISSUE_TEMPLATE)/' \
-            | grep -v -E '^(docs|\.claude|\.vscode|\.idea)/' \
+            | grep -v -E '^(docs|\.claude|\.vscode|\.idea|scripts)/' \
             | grep -v -E '^[^/]+\.md$' \
             | grep -v -E '^(LICENSE|\.gitignore|\.env\.example|\.editorconfig|\.prettierignore|vercel\.json)$' \
             | grep -v -E '^\.github/[^/]+\.(yml|yaml)$' \
