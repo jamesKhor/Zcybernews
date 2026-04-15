@@ -1,0 +1,63 @@
+---
+title: Legitify 开源工具扫描 GitHub、GitLab 寻找安全配置错误
+slug: >-
+  2026-04-15-legitify-open-source-tool-scans-github-gitlab-for-security-misconfigurations
+date: '2026-04-15'
+excerpt: >-
+  Legit Security 发布 Legitify，这是一个开源扫描器，用于识别 GitHub 和 GitLab 组织、仓库以及 CI/CD
+  运行器中的安全配置错误，以对抗软件供应链风险。
+category: tools
+tags:
+  - open-source
+  - scanner
+  - supply-chain
+  - devsecops
+language: zh
+source_urls:
+  - >-
+    https://www.helpnetsecurity.com/2026/04/15/legitify-open-source-scanner-security-misconfigurations-github-gitlab/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-legitify-open-source-tool-scans-github-gitlab-for-security-misconfigurations
+severity: informational
+---
+## 执行摘要
+Legit Security 推出了 Legitify，这是一个开源命令行工具，旨在扫描 GitHub 和 GitLab 环境中经常被软件供应链攻击利用的安全配置错误。该工具审计组织、仓库、成员和 CI/CD 运行器组的设置，提供可能导致未经授权访问、代码泄露或凭证盗窃的政策违规的合并报告。根据供应商的说法，组织通常缺乏对这些配置风险的全面可见性，这些风险仍然是一个普遍的初始攻击向量。
+
+## 技术分析
+Legitify 通过利用 GitHub 和 GitLab 的官方 API 来执行对组织安全姿态的只读评估。它不需要管理员权限，但需要足够的权限来读取相关的组织和仓库设置。该工具检查多个政策类别的违规行为，包括但不限于：
+
+*   **组织安全：**检查启用的双因素身份验证要求，审查外部协作者，并限制仓库创建。
+*   **仓库安全：**审计分支保护规则、漏洞警报启用以及像私有漏洞报告和自动安全修复这样的安全功能的状态。
+*   **成员权限：**识别拥有过多权限的组织成员，例如管理员权限或修改仓库设置的能力。
+*   **运行器组安全：**扫描 GitHub Actions 或 GitLab CI/CD 运行器组中的不安全配置，例如运行器可以被公共仓库访问。
+
+扫描器以多种格式输出结果，包括人类可读的表格、JSON 和 SARIF，以便集成到 CI/CD 管道或安全仪表板中。它被设计为按需运行或作为持续合规工作流程的一部分进行计划。具体检查的政策源自安全最佳实践和框架，如 MITRE ATT&CK for Enterprise 和 CIS Benchmarks for GitHub 和 GitLab，尽管最初的公告中没有详细说明确切的映射。
+
+## 入侵指标
+目前没有识别出任何入侵指标。Legitify 是一个主动扫描工具，不检测活跃的入侵。
+
+## 战术、技术与程序
+虽然 Legitify 本身不是威胁，但它旨在识别与多个对手战术、技术和程序（TTPs）一致的配置。它检测的配置错误可以促进：
+
+*   **初始访问 (TA0001)：** 如果用户权限过于宽松，可以利用像 **有效账户 (T1078)** 这样的技术。攻击者还可以通过针对配置错误的 CI/CD 管道来利用 **破坏软件依赖关系和开发工具 (T1195.001)**。
+*   **持久性 (TA0003)：** 通过 **账户操纵 (T1098)** 维护访问权限，例如通过将被破坏的用户添加为关键仓库的外部协作者。
+*   **权限提升 (TA0004)：** 攻击者可以利用配置错误的运行器组或仓库设置，在开发环境中获得更高级别的权限。
+*   **影响 (TA0040)：** 如果攻击者通过 CI/CD 系统获得对源代码的写访问权限或对计算资源的控制，可以执行像 **数据破坏 (T1485)** 或 **资源劫持 (T1496)** 这样的技术。
+
+## 威胁行为者背景
+没有特定的威胁行为者与 Legitify 的发布相关联。然而，该工具解决了一个威胁格局，在这个格局中，从财务动机的网络犯罪分子到国家支持的高级持续威胁（APT）组织，都在积极针对开发平台。这些行为者扫描并利用 GitHub 和 GitLab 中的薄弱安全设置，以窃取源代码、将恶意软件注入软件构建，或劫持基础设施进行加密货币挖矿或其他恶意目的。2023 年对 PHP Git 服务器的攻击和许多利用暴露的 GitHub 令牌的活动突显了这些配置错误的现实风险。
+
+## 缓解措施与建议
+建议使用 GitHub 或 GitLab 的组织实施定期配置审计。Legitify 提供了一种方法。更广泛的建议包括：
+
+1.  **实施最小权限原则：** 定期审查组织成员、外部协作者和安装的应用程序。只为用户或服务帐户的角色授予必要的权限。
+2.  **加强仓库设置：** 在所有生产关键仓库上强制执行分支保护规则，要求拉取请求审查，并禁用强制推送。启用漏洞扫描和依赖图功能。
+3.  **保护 CI/CD 基础设施：** 隔离并保护自托管运行器。确保运行器组不会被公共仓库访问，除非明确需要并受到保护。
+4.  **启用强制性安全功能：** 要求所有组织成员进行双因素身份验证，并为易受攻击的依赖项启用安全警报。
+5.  **将扫描集成到工作流程中：** 定期运行像 Legitify 这样的工具（例如，每天或每周），并将它们的输出集成到安全监控和票务系统中，以确保跟踪和修复配置错误。
+
+## 参考资料
+*   Help Net Security: [Legitify: Open-source scanner for security misconfigurations on GitHub and GitLab](https://www.helpnetsecurity.com/2026/04/15/legitify-open-source-scanner-security-misconfigurations-github-gitlab/)
+*   Legitify GitHub Repository: [https://github.com/Legit-Labs/legitify](https://github.com/Legit-Labs/legitify) （根据标准供应商实践假设；源中没有明确链接，但这是主要的项目位置。）

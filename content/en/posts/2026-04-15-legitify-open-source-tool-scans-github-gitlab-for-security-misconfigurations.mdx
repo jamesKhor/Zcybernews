@@ -1,0 +1,64 @@
+---
+title: 'Legitify Open-Source Tool Scans GitHub, GitLab for Security Misconfigurations'
+slug: >-
+  2026-04-15-legitify-open-source-tool-scans-github-gitlab-for-security-misconfigurations
+date: '2026-04-15'
+excerpt: >-
+  Legit Security releases Legitify, an open-source scanner that identifies
+  security misconfigurations in GitHub and GitLab organizations, repositories,
+  and CI/CD runners to combat software supply chain risks.
+category: tools
+tags:
+  - open-source
+  - scanner
+  - supply-chain
+  - devsecops
+language: en
+source_urls:
+  - >-
+    https://www.helpnetsecurity.com/2026/04/15/legitify-open-source-scanner-security-misconfigurations-github-gitlab/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-legitify-open-source-tool-scans-github-gitlab-for-security-misconfigurations
+severity: informational
+---
+## Executive Summary
+Legit Security has released Legitify, an open-source command-line tool designed to scan GitHub and GitLab environments for security misconfigurations that are frequently exploited in software supply chain attacks. The tool audits settings across organizations, repositories, members, and CI/CD runner groups, providing a consolidated report of policy violations that could lead to unauthorized access, code compromise, or credential theft. According to the vendor, organizations often lack comprehensive visibility into these configuration risks, which remain a prevalent initial attack vector.
+
+## Technical Analysis
+Legitify operates by leveraging the official APIs of GitHub and GitLab to perform a read-only assessment of an organization's security posture. It does not require administrative privileges but needs sufficient permissions to read the relevant organizational and repository settings. The tool checks for violations across several policy categories, including but not limited to:
+
+*   **Organization Security:** Checks for enabled two-factor authentication requirements, review of outside collaborators, and restriction of repository creation.
+*   **Repository Security:** Audits branch protection rules, vulnerability alert enablement, and the status of security features like private vulnerability reporting and automated security fixes.
+*   **Member Permissions:** Identifies organization members with excessive privileges, such as admin rights or the ability to modify repository settings.
+*   **Runner Group Security:** Scans for insecure configurations in GitHub Actions or GitLab CI/CD runner groups, such as runners being accessible to public repositories.
+
+The scanner outputs results in multiple formats, including human-readable tables, JSON, and SARIF for integration into CI/CD pipelines or security dashboards. It is designed to be run ad-hoc or scheduled as part of a continuous compliance workflow. The specific policies checked are derived from security best practices and frameworks like the MITRE ATT&CK for Enterprise and the CIS Benchmarks for GitHub and GitLab, though the exact mapping is not detailed in the initial announcement.
+
+## Indicators of Compromise
+None identified at this time. Legitify is a proactive scanning tool and does not detect active intrusions.
+
+## Tactics, Techniques & Procedures
+While Legitify itself is not a threat, it is designed to identify configurations that align with several adversary Tactics, Techniques, and Procedures (TTPs). Misconfigurations it detects can facilitate:
+
+*   **Initial Access (TA0001):** Techniques like **Valid Accounts (T1078)** can be exploited if user permissions are overly permissive. Attackers may also leverage **Compromise Software Dependencies and Development Tools (T1195.001)** by targeting misconfigured CI/CD pipelines.
+*   **Persistence (TA0003):** Maintaining access via **Account Manipulation (T1098)**, such as by adding a compromised user as an outside collaborator to a critical repository.
+*   **Privilege Escalation (TA0004):** Attackers can exploit misconfigured runner groups or repository settings to gain higher-level privileges within the development environment.
+*   **Impact (TA0040):** Techniques like **Data Destruction (T1485)** or **Resource Hijacking (T1496)** can be executed if attackers gain write access to source code or control over compute resources via CI/CD systems.
+
+## Threat Actor Context
+No specific threat actor is associated with the release of Legitify. However, the tool addresses a threat landscape where a wide range of actors—from financially motivated cybercriminals to state-sponsored advanced persistent threat (APT) groups—actively target development platforms. These actors scan for and exploit weak security settings in GitHub and GitLab to steal source code, inject malware into software builds, or hijack infrastructure for cryptocurrency mining or other malicious purposes. The 2023 attack on the PHP Git server and numerous campaigns exploiting exposed GitHub tokens underscore the real-world risk of these misconfigurations.
+
+## Mitigations & Recommendations
+Organizations using GitHub or GitLab are advised to implement regular configuration audits. Legitify provides one method for this. Broader recommendations include:
+
+1.  **Implement Least Privilege:** Regularly review organization members, outside collaborators, and installed applications. Grant only the permissions necessary for a user or service account's role.
+2.  **Harden Repository Settings:** Enforce branch protection rules on all production-critical repositories, require pull request reviews, and disable force pushes. Enable vulnerability scanning and dependency graph features.
+3.  **Secure CI/CD Infrastructure:** Isolate and protect self-hosted runners. Ensure runner groups are not accessible by public repositories unless explicitly required and secured.
+4.  **Enable Mandatory Security Features:** Require two-factor authentication for all organization members and enable security alerts for vulnerable dependencies.
+5.  **Integrate Scanning into Workflows:** Run tools like Legitify periodically (e.g., daily or weekly) and integrate their output into security monitoring and ticketing systems to ensure misconfigurations are tracked and remediated.
+
+## References
+*   Help Net Security: [Legitify: Open-source scanner for security misconfigurations on GitHub and GitLab](https://www.helpnetsecurity.com/2026/04/15/legitify-open-source-scanner-security-misconfigurations-github-gitlab/)
+*   Legitify GitHub Repository: [https://github.com/Legit-Labs/legitify](https://github.com/Legit-Labs/legitify) (Assumed based on standard vendor practice; not explicitly linked in source but is the primary project location.)
