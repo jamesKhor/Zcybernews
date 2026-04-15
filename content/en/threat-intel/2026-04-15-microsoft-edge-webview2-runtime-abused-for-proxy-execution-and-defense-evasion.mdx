@@ -1,0 +1,59 @@
+---
+title: Microsoft Edge WebView2 Runtime Abused for Proxy Execution and Defense Evasion
+slug: >-
+  2026-04-15-microsoft-edge-webview2-runtime-abused-for-proxy-execution-and-defense-evasion
+date: '2026-04-15'
+excerpt: >-
+  Offensive security researchers detail how the trusted Microsoft Edge WebView2
+  Runtime is being weaponized for proxy execution, allowing attackers to load
+  malicious code under a legitimate, signed Microsoft process to evade
+  detection.
+category: threat-intel
+tags:
+  - microsoft
+  - webview2
+  - proxy-execution
+  - defense-evasion
+  - lolbin
+language: en
+source_urls:
+  - 'https://www.blackhillsinfosec.com/proxy-execution-via-webview2/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-microsoft-edge-webview2-runtime-abused-for-proxy-execution-and-defense-evasion
+severity: high
+---
+## Executive Summary
+The Microsoft Edge WebView2 Runtime, a ubiquitous and trusted component pre-installed on most Windows systems, is being actively weaponized for proxy execution and defense evasion. According to research from Black Hills Information Security (BHIS), attackers are exploiting the runtime's architecture to load and execute malicious code under the guise of the legitimate, digitally signed `msedgewebview2.exe` process. This technique bypasses application allowlisting, evades endpoint detection and response (EDR) sensors that trust Microsoft-signed binaries, and provides a stealthy mechanism for post-exploitation activity. The research highlights a systemic weakness in how trusted software dependencies can be repurposed by adversaries.
+
+## Technical Analysis
+The core of the technique lies in the WebView2 Runtime's design as a shared component for embedding web content in native applications. The runtime's installer places the `msedgewebview2.exe` executable and supporting libraries in a predictable, user-writable directory (`%LOCALAPPDATA%\Microsoft\EdgeWebView\Application`). Crucially, while the main executable is signed by Microsoft, the runtime loads additional DLLs, including the `WebView2Loader.dll`, from this same directory at execution time.
+
+Researchers demonstrated that an attacker with write access to this directory—a privilege often obtained after initial compromise—can perform a DLL search-order hijacking attack. By replacing the legitimate `WebView2Loader.dll` with a malicious one, any application that subsequently launches a WebView2 control will execute the attacker's code within the signed Microsoft process context. BHIS also documented an alternative method using the runtime's `--remote-debugging-port` command-line argument. This flag opens a Chrome DevTools Protocol endpoint, allowing an attacker to remotely control the browser instance, execute JavaScript, and potentially achieve native code execution through exposed debugging interfaces, all under the cover of a trusted process.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The primary TTPs associated with this abuse are drawn from the MITRE ATT&CK framework:
+- **T1574.002: Hijack Execution Flow: DLL Side-Loading** – The replacement of `WebView2Loader.dll` is a classic DLL side-loading attack, leveraging the trusted, signed host process (`msedgewebview2.exe`).
+- **T1218: System Binary Proxy Execution** – The `msedgewebview2.exe` binary is used as a proxy to execute malicious code, falling under the living-off-the-land binary (LOLBin) category.
+- **T1553.002: Subvert Trust Controls: Code Signing** – The attack abuses the inherent trust placed in Microsoft's code signature to bypass security policies and detection logic.
+- **T1059.007: Command and Scripting Interpreter: JavaScript** – When using the remote debugging method, JavaScript execution within the WebView2 context is a key capability.
+
+## Threat Actor Context
+While the BHIS research is presented from an offensive security and red team perspective, the techniques are not theoretical. The widespread, trusted nature of the WebView2 Runtime and the low privileges required to abuse it make it an attractive tool for a broad spectrum of threat actors, from ransomware affiliates to state-sponsored advanced persistent threat (APT) groups. Its utility is in the defense evasion phase, providing a stealthy loader or command-and-control channel that blends in with normal, expected software activity on a Windows endpoint. There is no evidence linking this specific technique to a single named threat group at this time.
+
+## Mitigations & Recommendations
+Mitigation is challenging due to the runtime's legitimate purpose and Microsoft-signed status. Blocking the binary outright would break numerous applications. Therefore, a layered defensive approach is required:
+1.  **Application Control / Allowlisting:** Implement robust policies that go beyond publisher certificate rules. Consider path-based restrictions or hash-based allowlisting for critical binaries, though this may have operational overhead.
+2.  **File Integrity Monitoring (FIM):** Deploy FIM on the WebView2 installation directory (`%LOCALAPPDATA%\Microsoft\EdgeWebView\`) to alert on unauthorized changes to `WebView2Loader.dll` or other core components.
+3.  **Process Command-Line Auditing:** Monitor process creation events for `msedgewebview2.exe` instances launched with the `--remote-debugging-port` argument in non-developer environments, as this is highly suspicious.
+4.  **EDR/NDR Tuning:** Ensure security tools are configured to scrutinize child processes and network connections originating from `msedgewebview2.exe`, even though it is signed. Behavioral detection for anomalous module loads or network traffic from this process is crucial.
+5.  **Privilege Minimization:** Adhere to the principle of least privilege to reduce the likelihood of an attacker gaining the necessary write access to the user's AppData directory in the first place.
+
+Organizations should treat the WebView2 Runtime as a potential LOLBin and incorporate its abuse into threat-hunting playbooks and detection engineering efforts.
+
+## References
+- Black Hills Information Security, "Signed, Trusted, and Abused: Proxy Execution via WebView2", https://www.blackhillsinfosec.com/proxy-execution-via-webview2/

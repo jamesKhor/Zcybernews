@@ -1,0 +1,57 @@
+---
+title: Microsoft Edge WebView2 运行时被滥用于代理执行和防御规避
+slug: >-
+  2026-04-15-microsoft-edge-webview2-runtime-abused-for-proxy-execution-and-defense-evasion
+date: '2026-04-15'
+excerpt: >-
+  攻击安全研究人员详细说明了受信任的 Microsoft Edge WebView2 运行时是如何被武器化的，用于代理执行，允许攻击者在合法、签名的
+  Microsoft 进程下加载恶意代码以规避检测。
+category: threat-intel
+tags:
+  - microsoft
+  - webview2
+  - proxy-execution
+  - defense-evasion
+  - lolbin
+language: zh
+source_urls:
+  - 'https://www.blackhillsinfosec.com/proxy-execution-via-webview2/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-microsoft-edge-webview2-runtime-abused-for-proxy-execution-and-defense-evasion
+severity: high
+---
+## 执行摘要
+大多数 Windows 系统预装的普遍且可信组件 Microsoft Edge WebView2 运行时，正被积极用于代理执行和防御规避。根据 Black Hills Information Security (BHIS) 的研究，攻击者正在利用运行时的架构，在合法的数字签名 `msedgewebview2.exe` 进程的幌子下加载和执行恶意代码。这种技术绕过了应用程序允许列表，规避了信任 Microsoft 签名二进制文件的端点检测和响应 (EDR) 传感器，并为后开发活动提供了一种隐蔽的机制。研究突出了可信软件依赖项如何被对手重新利用的系统性弱点。
+
+## 技术分析
+该技术的核心在于 WebView2 运行时的设计，作为一个共享组件，用于在原生应用程序中嵌入 Web 内容。运行时的安装程序将 `msedgewebview2.exe` 可执行文件和支持库放置在一个可预测的、用户可写的目录（`%LOCALAPPDATA%\Microsoft\EdgeWebView\Application`）。至关重要的是，虽然主可执行文件由 Microsoft 签名，但运行时在执行时还会从同一目录加载额外的 DLL，包括 `WebView2Loader.dll`。
+
+研究人员演示了，拥有对该目录写入权限的攻击者——通常在初始入侵后获得的权限——可以执行 DLL 搜索顺序劫持攻击。通过用恶意的 `WebView2Loader.dll` 替换合法的，任何随后启动 WebView2 控件的应用程序都将在签名的 Microsoft 进程上下文中执行攻击者的代码。BHIS 还记录了使用运行时的 `--remote-debugging-port` 命令行参数的替代方法。这个标志打开了一个 Chrome DevTools 协议端点，允许攻击者远程控制浏览器实例，执行 JavaScript，并可能通过暴露的调试接口实现本地代码执行，所有这些都在受信任的进程掩护下。
+
+## 入侵指标
+目前没有识别出任何指标。
+
+## 战术、技术与程序
+与这种滥用相关的主要 TTP 来自 MITRE ATT&CK 框架：
+- **T1574.002: 劫持执行流：DLL 侧加载** – 替换 `WebView2Loader.dll` 是一个典型的 DLL 侧加载攻击，利用了可信的、签名的宿主进程（`msedgewebview2.exe`）。
+- **T1218: 系统二进制代理执行** – `msedgewebview2.exe` 二进制文件被用作代理执行恶意代码，属于生活在陆地上的二进制文件 (LOLBin) 类别。
+- **T1553.002: 颠覆信任控制：代码签名** – 攻击滥用了对 Microsoft 代码签名的固有信任，绕过安全策略和检测逻辑。
+- **T1059.007: 命令和脚本解释器：JavaScript** – 使用远程调试方法时，WebView2 上下文中的 JavaScript 执行是一个关键能力。
+
+## 威胁行为者背景
+虽然 BHIS 的研究从攻击性安全和红队的角度提出，但这些技术并非理论上的。WebView2 运行时的广泛、可信特性以及滥用它所需的低权限使其成为从勒索软件附属机构到国家赞助的高级持续性威胁 (APT) 集团等各种威胁行为者的一个有吸引力的工具。其在防御规避阶段的效用在于，提供了一个隐蔽的加载器或指挥和控制通道，与 Windows 端点上正常、预期的软件活动融为一体。目前没有证据将这种特定技术与一个特定的命名威胁集团联系起来。
+
+## 缓解措施与建议
+由于运行时的合法用途和 Microsoft 签名状态，缓解措施具有挑战性。直接阻止二进制文件将破坏许多应用程序。因此，需要采取分层的防御方法：
+1.  **应用程序控制/允许列表**：实施超越发布者证书规则的强大策略。考虑基于路径的限制或对关键二进制文件的基于哈希的允许列表，尽管这可能带来操作开销。
+2.  **文件完整性监控 (FIM)**：在 WebView2 安装目录（`%LOCALAPPDATA%\Microsoft\EdgeWebView\`）上部署 FIM，以警告对 `WebView2Loader.dll` 或其他核心组件的未经授权的更改。
+3.  **进程命令行审计**：监控 `msedgewebview2.exe` 实例的进程创建事件，这些实例在非开发环境中使用 `--remote-debugging-port` 参数启动，因为这是非常可疑的。
+4.  **EDR/NDR 调整**：确保安全工具配置为仔细审查从 `msedgewebview2.exe` 起源的子进程和网络连接，即使它是签名的。从该进程的行为检测异常模块加载或网络流量至关重要。
+5.  **权限最小化**：坚持最小权限原则，以减少攻击者获得必要的写入访问用户 AppData 目录的可能性。
+
+组织应将 WebView2 运行时视为潜在的 LOLBin，并将滥用行为纳入威胁狩猎剧本和检测工程工作。
+
+## 参考资料
+- Black Hills Information Security, "Signed, Trusted, and Abused: Proxy Execution via WebView2", https://www.blackhillsinfosec.com/proxy-execution-via-webview2/
