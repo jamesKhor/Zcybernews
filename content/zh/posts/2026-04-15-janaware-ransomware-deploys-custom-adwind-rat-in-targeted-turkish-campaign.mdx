@@ -1,0 +1,66 @@
+---
+title: JanaWare 勒索软件在针对土耳其的目标活动中部署定制的 Adwind RAT
+slug: >-
+  2026-04-15-janaware-ransomware-deploys-custom-adwind-rat-in-targeted-turkish-campaign
+date: '2026-04-15'
+excerpt: >-
+  一个新的勒索软件家族被称为 JanaWare，正在针对土耳其的用户，部署一个定制版本的跨平台 Adwind RAT
+  用于初始访问和数据泄露，然后在文件加密之前。
+category: malware
+tags:
+  - ransomware
+  - rat
+  - turkey
+  - adwind
+  - janaware
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/new-janaware-ransomware-targets-turkish-users/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-janaware-ransomware-deploys-custom-adwind-rat-in-targeted-turkish-campaign
+severity: high
+affected_regions:
+  - Turkey
+---
+## 执行摘要
+一个新的勒索软件行动，被称为JanaWare，正在针对土耳其用户进行定向攻击。该行动的主要特点是使用一个重度定制的跨平台Adwind远程访问木马（RAT）作为前导载荷。这个RAT有助于初始入侵、凭证盗窃和数据外泄，然后部署勒索软件载荷以加密文件。威胁行为者已经为土耳其语受众量身定制了攻击链，包括诱骗文件和勒索信，表明这是一个专注的地区行动。
+
+## 技术分析
+根据CyberSecurity News的分析，攻击链始于一个恶意的Java归档（JAR）文件，这是定制Adwind RAT的传输机制。Adwind，也被称为AlienSpy和jRAT，是一个用Java编写的已知RAT，允许它在任何具有Java运行时环境（JRE）的系统上运行，包括Windows、macOS和Linux。
+
+在JanaWare行动中使用的版本已经修改了新的命令和控制（C2）基础设施和针对攻击者目标的能力。一旦执行，RAT建立持久性，收集系统信息和凭证，并为攻击者提供对受害者机器的远程访问。这种访问被用来窃取数据，并且关键的是，部署次要的JanaWare勒索软件载荷。
+
+勒索软件组件本身是用.NET编写的，并在加密文件上附加了`.janaware`扩展名。它在受害者的桌面上留下一个标题为`JANAWARE-README.txt`的勒索信。该信件用土耳其语写成，指示受害者通过提供的Telegram频道联系攻击者支付赎金并接收解密工具。特定的目标和使用的语言表明操作者故意关注土耳其受害者，尽管Adwind组件的技术能力意味着初始向量理论上可能影响更广泛的受众。
+
+## 入侵指标
+目前没有识别出。源报告没有发布与JanaWare C2基础设施或载荷相关的特定文件哈希值、域名或IP地址。
+
+## 战术、技术与程序
+攻击者采用多阶段感染链，混合现成和定制的恶意软件。
+
+*   **初始访问：** 源中没有明确详细说明初始向量，但使用JAR文件表明可能通过带有恶意附件的网络钓鱼电子邮件或从被破坏或恶意网站下载进行传输。
+*   **执行与持久性：** 主要载荷是定制的Adwind RAT JAR文件，通过受害者的JRE执行。Adwind以其通过注册表运行键或启动文件夹快捷方式建立持久性而闻名。
+*   **防御规避：** 使用基于Java的RAT提供了固有的跨平台兼容性，并可能绕过专注于Windows本地可执行文件的安全工具。定制已知RAT也有助于规避基于签名的检测。
+*   **收集与外泄：** Adwind RAT执行广泛的数据收集，包括按键、剪贴板数据、浏览器和FTP客户端的凭证以及文件系统枚举。这些数据在外泄到攻击者的C2服务器之前被外泄，然后部署勒索软件。
+*   **影响：** 最后阶段涉及部署基于.NET的JanaWare勒索软件以加密文件进行财务勒索。之前的数据盗窃还可能实现双重勒索策略，即威胁受害者发布被盗数据。
+
+## 威胁行为者背景
+目前尚不清楚JanaWare行动背后的威胁行为者的身份和来源。该行动表现出财务动机的网络犯罪集团的特征，而不是国家赞助的活动。通过语言、诱骗内容和勒索信故意关注土耳其用户，可能表明是一个地区行为者或一个在特定、防御较少的人群中测试精炼工具包的集团，然后扩大行动。重用和修改Adwind RAT，这是一个在网络犯罪地下有悠久历史的工县，指向具有中等技术技能的行为者，利用现有代码加速开发。
+
+## 缓解措施与建议
+组织和用户，特别是那些与土耳其或土耳其语操作有关的，应考虑以下行动：
+
+*   **应用程序控制：** 限制或密切监控JAR文件的执行，特别是那些来自不受信任的来源。考虑在不需要JRE的端点上禁用JRE。
+
+*   **电子邮件和网络过滤：** 部署强大的过滤以阻止网络钓鱼电子邮件，并防止从可疑网站下载可执行的Java归档。
+
+*   **端点检测：** 实施能够检测与RAT活动相关的行为模式的安全解决方案，例如可疑的JRE生成网络连接、从内存中转储凭证和大量文件系统枚举。
+
+*   **备份与恢复：** 维护频繁的、不可变的和离线的备份关键数据。经过测试的恢复计划是对抗勒索软件加密的最有效防御，无论初始感染向量如何。
+
+*   **用户意识：** 教育用户了解从未知发件人打开电子邮件附件和从非官方来源下载软件的风险，特别是当出现运行Java应用程序的提示时。
+
+## 参考资料
+*   CyberSecurity News: [New JanaWare Ransomware Targets Turkish Users Through Customized Adwind RAT](https://cybersecuritynews.com/new-janaware-ransomware-targets-turkish-users/)

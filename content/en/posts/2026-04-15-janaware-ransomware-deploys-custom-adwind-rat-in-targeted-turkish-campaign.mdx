@@ -1,0 +1,67 @@
+---
+title: JanaWare Ransomware Deploys Custom Adwind RAT in Targeted Turkish Campaign
+slug: >-
+  2026-04-15-janaware-ransomware-deploys-custom-adwind-rat-in-targeted-turkish-campaign
+date: '2026-04-15'
+excerpt: >-
+  A new ransomware family dubbed JanaWare is targeting users in Turkey,
+  deploying a customized version of the cross-platform Adwind RAT for initial
+  access and data exfiltration prior to file encryption.
+category: malware
+tags:
+  - ransomware
+  - rat
+  - turkey
+  - adwind
+  - janaware
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/new-janaware-ransomware-targets-turkish-users/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-janaware-ransomware-deploys-custom-adwind-rat-in-targeted-turkish-campaign
+severity: high
+affected_regions:
+  - Turkey
+---
+## Executive Summary
+A new ransomware operation, dubbed JanaWare, is conducting targeted attacks against users in Turkey. The campaign's primary distinguishing feature is its use of a heavily customized version of the cross-platform Adwind remote access trojan (RAT) as a precursor payload. This RAT facilitates initial compromise, credential theft, and data exfiltration before the ransomware payload is deployed to encrypt files. The threat actors have tailored the attack chain, including decoy documents and ransom notes, specifically for a Turkish-speaking audience, indicating a focused regional operation.
+
+## Technical Analysis
+According to analysis from CyberSecurity News, the attack chain begins with a malicious Java Archive (JAR) file, which is the delivery mechanism for the customized Adwind RAT. Adwind, also known as AlienSpy and jRAT, is a known commodity RAT written in Java, allowing it to run on any system with a Java Runtime Environment (JRE), including Windows, macOS, and Linux.
+
+The version used in the JanaWare campaign has been modified with new command-and-control (C2) infrastructure and capabilities tailored to the attackers' objectives. Once executed, the RAT establishes persistence, harvests system information and credentials, and provides the attackers with remote access to the victim's machine. This access is leveraged to steal data and, crucially, to deploy the secondary JanaWare ransomware payload.
+
+The ransomware component itself is written in .NET and appends the `.janaware` extension to encrypted files. It leaves a ransom note titled `JANAWARE-README.txt` on the victim's desktop. The note, written in Turkish, instructs victims to contact the attackers via a provided Telegram channel to pay the ransom and receive a decryption tool. The specific targeting and language used suggest the operators are intentionally focusing on Turkish victims, though the technical capability of the Adwind component means the initial vector could theoretically affect a broader audience.
+
+## Indicators of Compromise
+None identified at this time. The source report did not publish specific file hashes, domain names, or IP addresses associated with the JanaWare C2 infrastructure or payloads.
+
+## Tactics, Techniques & Procedures
+The attackers employ a multi-stage infection chain blending off-the-shelf and custom malware.
+
+*   **Initial Access:** The initial vector is not explicitly detailed in the source, but the use of a JAR file suggests potential delivery via phishing emails with malicious attachments or downloads from compromised or malicious websites.
+*   **Execution & Persistence:** The primary payload is a customized Adwind RAT JAR file, executed via the victim's JRE. Adwind is known for establishing persistence through registry run keys or startup folder shortcuts.
+*   **Defense Evasion:** Using a Java-based RAT provides inherent cross-platform compatibility and may bypass security tools focused on Windows-native executable files. The customization of a known RAT also helps evade signature-based detection.
+*   **Collection & Exfiltration:** The Adwind RAT performs extensive data harvesting, including keystrokes, clipboard data, credentials from browsers and FTP clients, and file system enumeration. This data is exfiltrated to the attacker's C2 server prior to ransomware deployment.
+*   **Impact:** The final stage involves deploying the .NET-based JanaWare ransomware to encrypt files for financial extortion. The prior data theft also enables potential double-extortion tactics, where victims are threatened with the publication of stolen data.
+
+## Threat Actor Context
+The origin and identity of the threat actors behind the JanaWare campaign are currently unknown. The operation exhibits characteristics of a financially motivated cybercrime group rather than state-sponsored activity. The deliberate focus on Turkish users—through language, decoy content, and ransom notes—could indicate a regional actor or a group testing a refined toolkit on a specific, less-defended demographic before scaling operations. The reuse and modification of the Adwind RAT, a tool with a long history in the cybercrime underground, points to actors with moderate technical skill, leveraging existing code to accelerate development.
+
+## Mitigations & Recommendations
+Organizations and users, particularly those with ties to Turkey or Turkish-language operations, should consider the following actions:
+
+*   **Application Control:** Restrict or closely monitor the execution of JAR files, especially those from untrusted sources. Consider disabling JRE on endpoints where it is not a business requirement.
+
+*   **Email & Web Filtering:** Deploy robust filtering to block phishing emails and prevent downloads of executable Java archives from suspicious websites.
+
+*   **Endpoint Detection:** Implement security solutions capable of detecting the behavioral patterns associated with RAT activity, such as suspicious JRE spawning network connections, credential dumping from memory, and mass file system enumeration.
+
+*   **Backup & Recovery:** Maintain frequent, immutable, and offline backups of critical data. A tested recovery plan is the most effective defense against ransomware encryption, regardless of the initial infection vector.
+
+*   **User Awareness:** Educate users on the risks of opening email attachments from unknown senders and downloading software from unofficial sources, particularly when prompts to run Java applications appear.
+
+## References
+*   CyberSecurity News: [New JanaWare Ransomware Targets Turkish Users Through Customized Adwind RAT](https://cybersecuritynews.com/new-janaware-ransomware-targets-turkish-users/)

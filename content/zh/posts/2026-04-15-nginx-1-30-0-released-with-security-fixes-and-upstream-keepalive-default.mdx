@@ -1,0 +1,52 @@
+---
+title: Nginx 1.30.0 发布，包含安全修复和默认上游 Keepalive
+slug: >-
+  2026-04-15-nginx-1-30-0-released-with-security-fixes-and-upstream-keepalive-default
+date: '2026-04-15'
+excerpt: >-
+  Nginx 项目发布了版本 1.30.0，整合了 1.29.x 主线分支的特性，并引入了安全修复，包括针对潜在 HTTP/2 DoS
+  漏洞的补丁。更新还默认启用了与上游服务器的 keepalive 连接。
+category: vulnerabilities
+tags:
+  - nginx
+  - web-server
+  - http2
+  - patch-management
+language: zh
+source_urls:
+  - 'https://www.helpnetsecurity.com/2026/04/15/nginx-1-30-0-released/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-nginx-1-30-0-released-with-security-fixes-and-upstream-keepalive-default
+severity: medium
+---
+## 执行摘要
+Nginx 项目发布了 1.30.0 版本，这是一个稳定的版本，整合了之前的 1.29.x 主线开发分支的特性和修复。根据发布说明，更新包括与安全相关的修复，最显著的是针对 HTTP/2 模块中潜在的拒绝服务（DoS）漏洞。一个重大的操作变化是新的默认行为启用了与上游后端服务器的 keepalive 连接，这可以提高性能，但可能需要对现有部署的配置进行审查。
+
+## 技术分析
+1.30.0 版本的发布代表了 1.29.x 主线系列的功能冻结和稳定化。最突出的安全修复解决了 HTTP/2 模块中的一个问题，恶意客户端可能会导致内存过度消耗，从而导致潜在的 DoS 条件。Nginx 发布说明将此描述为“修复 HTTP/2 模块中的过度内存消耗”，这是一种影响其他 HTTP/2 实现的漏洞类别。源材料中没有提供针对这一特定问题的 CVE 标识符。
+
+从配置和性能的角度来看，将默认启用到上游服务器的 `keepalive` 连接的变化是最有影响力的。在 1.30.0 版本之前，默认情况下，Nginx 代理到后端上游服务器的连接在每个请求后都会关闭。新的默认行为维护了一组持久连接，这减少了重复 TCP/TLS 握手的延迟和 CPU 开销。这与现代最佳实践保持了 Nginx 的上游行为一致，但可能会暴露出上游服务器在处理持久连接方面存在的问题。管理员可以通过在上游块配置中显式设置 `keepalive 0;` 来恢复旧行为。
+
+其他变化包括支持 `$request_elapsed` 变量以跟踪总请求处理时间，增强 `limit_req` 模块以更好地处理突发流量，以及更新各种核心模块，如 `ssl`、`stream` 和邮件代理。
+
+## 入侵指标
+目前没有识别出任何指标。这是一个软件更新公告，不是关于活跃利用的报告。
+
+## 战术、技术与程序
+不适用。该发布是 Nginx 开发团队主动进行的安全和维护更新。
+
+## 威胁行为者背景
+在可用的源材料中，没有详细说明针对修补漏洞的具体威胁行为者活动。然而，历史上 HTTP/2 实现的缺陷一直是寻求通过资源耗尽攻击造成服务中断的攻击者的目标。
+
+## 缓解措施与建议
+建议使用 Nginx 的系统管理员和 DevOps 团队查看 1.30.0 版本的发布说明，并计划对主线分支部署进行升级。主要行动包括：
+
+1. **升级到 Nginx 1.30.0** 以应用 HTTP/2 安全修复和其他稳定性补丁。使用旧的稳定分支（1.24.x）的组织应监控回传的安全更新。
+2. **测试上游 keepalive 兼容性**。在生产环境中部署 1.30.0 之前，验证上游应用服务器正确处理持久连接。监控与连接重用或请求走私相关的错误。
+3. **审计配置**。默认上游 keepalive 的变化可能会影响依赖于之前短连接行为的配置。现有配置中的显式 `keepalive` 指令将覆盖新的默认值。
+4. **监控性能**。虽然 keepalive 变化通常是有益的，但在升级后监控上游服务器连接池和资源使用情况。
+
+## 参考资料
+- [Help Net Security: What changed in nginx 1.30.0 and what it means for your upstream config](https://www.helpnetsecurity.com/2026/04/15/nginx-1-30-0-released/)

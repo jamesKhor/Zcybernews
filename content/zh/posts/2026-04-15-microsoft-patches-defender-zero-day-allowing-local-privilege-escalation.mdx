@@ -1,0 +1,56 @@
+---
+title: 微软修补了允许本地权限提升的Defender零日漏洞
+slug: >-
+  2026-04-15-microsoft-patches-defender-zero-day-allowing-local-privilege-escalation
+date: '2026-04-15'
+excerpt: >-
+  微软修补了CVE-2026-33825，这是微软Defender Antimalware
+  Platform中的一个'重要'零日漏洞，允许本地攻击者将权限提升至SYSTEM。该漏洞于2026年4月14日公开披露。
+category: vulnerabilities
+tags:
+  - microsoft
+  - defender
+  - zero-day
+  - privilege-escalation
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/microsoft-defender-0-day-vulnerability/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-microsoft-patches-defender-zero-day-allowing-local-privilege-escalation
+severity: high
+cve_ids:
+  - CVE-2026-33825
+---
+## 执行摘要
+微软修补了其Microsoft Defender Antimalware Platform中的一个零日漏洞CVE-2026-33825，该漏洞可能允许本地认证攻击者将权限提升到SYSTEM级别。微软将这个漏洞评为“重要”，并于2026年4月14日公开披露，并在2026年4月的Patch Tuesday更新中进行了修复。成功利用此漏洞需要攻击者已经在目标系统上拥有立足点，但将授予他们最高级别的访问权限，使他们能够完全控制系统。
+
+## 技术分析
+该漏洞存在于Microsoft Defender Antimalware Platform中，这是Windows安全套件的核心组件。根据微软的公告，CVE-2026-33825是一个权限提升漏洞。在最初的公开披露中，并没有详细说明漏洞的具体技术细节，例如确切的易受攻击组件或函数。公司的标准做法是等到大多数用户应用了更新后才公开这些细节，以防止广泛武器化。
+
+攻击向量是本地的，这意味着攻击者必须首先具备在目标机器上以标准用户权限执行代码的能力。一旦实现了这种初始访问，他们可以利用这个漏洞绕过安全边界，并以NT AUTHORITY\SYSTEM权限执行任意代码。这种级别的访问权限允许对操作系统进行不受限制的控制，允许安装持久性恶意软件、禁用安全软件和窃取存储在系统进程中的敏感凭证。
+
+## 入侵指标
+目前没有识别出任何入侵指标。这个漏洞是一个权限提升错误，不是远程代码执行或初始访问向量。检测将依赖于识别本地登录或会话后异常行为，例如以SYSTEM权限运行的意外进程或对Defender组件或受保护目录的不寻常修改。
+
+## 战术、技术与程序
+根据漏洞的性质，可能的利用链与已建立的对手行为一致：
+*   **初始访问 (TA0001)：** 攻击者首先需要通过其他方式获得本地用户访问权限，例如凭证盗窃、利用不同的漏洞或社交工程。
+*   **权限提升 (TA0004)：** 然后攻击者执行CVE-2026-33825的漏洞利用，从标准用户提升到SYSTEM。
+*   **防御规避 (TA0005)：** 滥用主要防病毒产品本身的漏洞是一种高影响力的防御规避技术，可能允许攻击者禁用或操纵Defender以避免后续检测。
+
+## 威胁行为者背景
+目前没有特定的威胁行为者被公开与CVE-2026-33825的发现或积极利用联系起来。这个漏洞是由第三方研究人员披露的，尽管他们的身份在可用的来源中没有得到确认。鉴于其在妥协后活动中的实用性，这样的漏洞对于从寻求最大化控制和禁用备份的勒索软件操作者到进行间谍活动的高级持续性威胁（APT）组织来说都是有价值的。
+
+## 缓解措施与建议
+主要的缓解措施是应用微软2026年4月Patch Tuesday的最新安全更新。组织应优先更新所有运行Microsoft Defender的端点。
+
+*   **立即修补：** 在所有受影响的Windows系统上部署CVE-2026-33825的安全更新。Microsoft Defender更新通常通过标准的Windows Update机制提供，包括Microsoft Update、Windows Server Update Services (WSUS)和Microsoft Endpoint Configuration Manager。
+*   **最小权限原则：** 强制执行严格的用户帐户控制，并遵循最小权限原则，以限制可能被用作此攻击跳板的本地用户帐户池。
+*   **监控异常活动：** 加强对权限提升事件和不寻常进程行为的监控，特别是与或来自`MsMpEng.exe`（Microsoft Defender Antimalware Service）进程的交互。
+*   **深度防御：** 维护强大的端点检测和响应（EDR）解决方案，即使主要防病毒软件受到威胁，也能检测与后期利用活动相关的异常行为。
+
+## 参考资料
+*   [Microsoft Defender 0-Day Vulnerability Enables Privilege Escalation Attack](https://cybersecuritynews.com/microsoft-defender-0-day-vulnerability/)
+*   [Microsoft Security Update Guide - CVE-2026-33825](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33825)（注：这是一个基于标准微软实践构建的链接；官方公告没有在来源中提供，但这是预期的位置。）
