@@ -1,0 +1,61 @@
+---
+title: 微软、Salesforce 修补关键 AI 代理数据泄露漏洞
+slug: >-
+  2026-04-15-microsoft-salesforce-patch-critical-ai-agent-data-leak-vulnerabilities
+date: '2026-04-15'
+excerpt: >-
+  微软和 Salesforce 修补了他们 AI 代理平台——Copilot Studio 和 Agentforce
+  中的关键提示注入漏洞，这些漏洞可能允许外部攻击者窃取敏感的内部数据。
+category: vulnerabilities
+tags:
+  - ai-security
+  - prompt-injection
+  - data-leak
+  - microsoft
+  - salesforce
+language: zh
+source_urls:
+  - >-
+    https://www.darkreading.com/cloud-security/microsoft-salesforce-patch-ai-agent-data-leak-flaws
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-microsoft-salesforce-patch-critical-ai-agent-data-leak-vulnerabilities
+severity: critical
+affected_sectors:
+  - multiple
+affected_regions:
+  - global
+---
+## 执行摘要
+Microsoft 和 Salesforce 已经修补了他们各自的 AI 代理平台 Copilot Studio 和 Agentforce 中的关键提示注入漏洞，这些漏洞可能允许未经身份验证的外部攻击者窃取敏感的内部数据。这些漏洞由安全公司 HiddenLayer 发现并报告，代表了一类新型风险，即设计用于自动化业务工作流程的 AI 代理可以被操纵以绕过其预期功能并访问专有信息。两家供应商都已部署了修复程序，但这些事件突显了快速部署的代理 AI 系统的不成熟安全姿态。
+
+## 技术分析
+这些漏洞源于 AI 代理的基本架构，这些代理被授权访问内部系统和数据以执行任务。根据 HiddenLayer 的研究，这些漏洞是经典的提示注入场景，但由于代理的高权限，后果严重。
+
+在 **Microsoft Copilot Studio** 案例中，攻击者可以制作一个恶意网站。如果拥有 Copilot Studio 代理的用户访问该网站，跨站脚本（XSS）有效载荷将触发代理执行未经授权的命令。具体来说，研究人员展示了代理可以被迫读取并泄露它有权访问的内部文件的内容，例如包含敏感数据的 `finance.txt` 文档。攻击链不需要用户与恶意页面交互，只需初始访问即可。
+
+**Salesforce Agentforce** 漏洞同样严重，但利用了不同的向量。攻击者可以将恶意指令嵌入外部数据源中，例如网站或文档，Agentforce AI 被配置为处理这些数据。当代理摄取这些被污染的数据时，隐藏的指令可以覆盖代理的原始系统提示，迫使其执行搜索并输出连接的 Salesforce 数据库中的机密客户数据等操作。
+
+在这两种情况下，核心失败是 AI 的推理过程和它处理的外部数据之间缺乏适当的隔离和验证。代理未能区分合法用户指令和嵌入在其操作上下文中的恶意命令。
+
+## 入侵指标
+目前没有识别出任何入侵指标。在发现广泛利用的证据之前，漏洞已经被修补。组织应该审查他们的 AI 代理平台的审计日志，以寻找不寻常的数据访问模式或来自代理会话的意外文件读取操作。
+
+## 战术、技术与程序
+观察到的主要技术是 **提示注入（T1599.001）**，这是网络边界桥接的一个子技术。攻击者的目标是 **数据泄露（TA0010）**，特别是利用被破坏的 AI 代理作为中介，访问并泄露从其他受保护的内部系统中的数据。Microsoft 漏洞的初始访问向量涉及通过恶意网站进行的 **路过式妥协（T1189）**，而 Salesforce 漏洞可以通过 **摄取被污染的训练数据或输入** 触发。
+
+## 威胁行为者背景
+没有证据表明这些特定的漏洞在披露和修补之前在野外被利用。运营 AI 安全平台的 HiddenLayer 在例行研究中发现了这些漏洞。然而，攻击路径的简单性表明，积极探测 AI 系统的威胁行为者可能会识别出类似的漏洞。通过受信任的 AI 代理访问内部企业数据的价值，使得这成为针对以间谍活动为重点的高级持续性威胁（APT）团体和以财务为动机的行为者都具有吸引力的目标。
+
+## 缓解措施与建议
+部署 AI 代理的组织必须实施超出标准软件实践的安全措施。HiddenLayer 和供应商的回应建议采取以下行动：
+
+1.  **立即修补**：确保所有 Microsoft Copilot Studio 和 Salesforce Agentforce 实例都更新到包含修复程序的最新版本。
+2.  **最小权限原则**：严格审计并限制授予 AI 代理的数据源和系统权限。代理应该只访问其定义任务所需的绝对最小数据。
+3.  **输入清理和验证**：在 AI 代理处理之前，对所有外部数据—网页、上传的文档、用户查询—实施强大的验证。这包括检测和中和潜在的提示注入字符串。
+4.  **输出过滤和监控**：积极监控和过滤代理输出，以寻找敏感数据（PII、凭证、内部 IP）的模式。为异常数据访问或大量数据导出建立警报。
+5.  **对抗性测试**：使 AI 代理工作流程定期接受针对提示注入和数据泄露场景的红队演习。假设代理的指令可以并且将会被颠覆。
+
+## 参考资料
+- Dark Reading: [Microsoft, Salesforce Patch AI Agent Data Leak Flaws](https://www.darkreading.com/cloud-security/microsoft-salesforce-patch-ai-agent-data-leak-flaws)

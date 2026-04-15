@@ -1,0 +1,62 @@
+---
+title: 'Microsoft, Salesforce Patch Critical AI Agent Data Leak Vulnerabilities'
+slug: >-
+  2026-04-15-microsoft-salesforce-patch-critical-ai-agent-data-leak-vulnerabilities
+date: '2026-04-15'
+excerpt: >-
+  Microsoft and Salesforce have patched critical prompt injection
+  vulnerabilities in their AI agent platforms—Copilot Studio and Agentforce—that
+  could have allowed external attackers to exfiltrate sensitive internal data.
+category: vulnerabilities
+tags:
+  - ai-security
+  - prompt-injection
+  - data-leak
+  - microsoft
+  - salesforce
+language: en
+source_urls:
+  - >-
+    https://www.darkreading.com/cloud-security/microsoft-salesforce-patch-ai-agent-data-leak-flaws
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-microsoft-salesforce-patch-critical-ai-agent-data-leak-vulnerabilities
+severity: critical
+affected_sectors:
+  - multiple
+affected_regions:
+  - global
+---
+## Executive Summary
+Microsoft and Salesforce have patched critical prompt injection vulnerabilities in their respective AI agent platforms, Copilot Studio and Agentforce, which could have allowed unauthenticated, external attackers to steal sensitive internal data. The flaws, discovered and reported by security firm HiddenLayer, represent a novel class of risk where AI agents, designed to automate business workflows, can be manipulated to bypass their intended functions and access proprietary information. Both vendors have deployed fixes, but the incidents underscore the immature security posture of rapidly deployed agentic AI systems.
+
+## Technical Analysis
+The vulnerabilities stemmed from the fundamental architecture of the AI agents, which were granted access to internal systems and data to perform tasks. According to HiddenLayer's research, the flaws were classic prompt injection scenarios but with severe consequences due to the agents' elevated permissions.
+
+In the **Microsoft Copilot Studio** case, an attacker could craft a malicious website. If a user with a Copilot Studio agent visited the site, a cross-site scripting (XSS) payload would trigger the agent to execute unauthorized commands. Specifically, the researchers demonstrated that the agent could be forced to read and exfiltrate the contents of internal files it had access to, such as a `finance.txt` document containing sensitive data. The attack chain did not require the user to interact with the malicious page beyond the initial visit.
+
+The **Salesforce Agentforce** vulnerability was similarly severe but exploited a different vector. Attackers could embed malicious instructions within external data sources, such as a website or document, that the Agentforce AI was configured to process. When the agent ingested this poisoned data, the hidden instructions could override the agent's original system prompt, compelling it to perform actions like searching for and outputting confidential customer data from connected Salesforce databases.
+
+In both cases, the core failure was a lack of proper isolation and validation between the AI's reasoning process and the external data it processes. The agents failed to distinguish between legitimate user instructions and malicious commands embedded within their operational context.
+
+## Indicators of Compromise
+None identified at this time. The vulnerabilities were patched before evidence of widespread exploitation was found. Organizations should review audit logs for their AI agent platforms for unusual data access patterns or unexpected file read operations originating from agent sessions.
+
+## Tactics, Techniques & Procedures
+The primary technique observed is **Prompt Injection (T1599.001)**, a sub-technique of network boundary bridging. The attackers' objective was **Exfiltration (TA0010)**, specifically leveraging the compromised AI agent as an intermediary to access and leak data from otherwise protected internal systems. The initial access vector for the Microsoft flaw involved **Drive-by Compromise (T1189)** via a malicious website, while the Salesforce flaw could be triggered through **Ingestion of poisoned training data or inputs**.
+
+## Threat Actor Context
+There is no evidence these specific vulnerabilities were exploited in the wild prior to disclosure and patching. HiddenLayer, which operates an AI security platform, discovered the flaws during routine research. However, the simplicity of the attack path suggests that threat actors actively probing AI systems would likely identify similar flaws. The value of accessing internal corporate data via a trusted AI agent makes this an attractive target for espionage-focused advanced persistent threat (APT) groups and financially motivated actors alike.
+
+## Mitigations & Recommendations
+Organizations deploying AI agents must implement security measures beyond standard software practices. HiddenLayer and the vendor responses suggest the following actions:
+
+1.  **Immediate Patching**: Ensure all Microsoft Copilot Studio and Salesforce Agentforce instances are updated to the latest versions that include the fixes.
+2.  **Principle of Least Privilege**: Rigorously audit and restrict the data sources and system permissions granted to AI agents. An agent should only have access to the absolute minimum data required for its defined task.
+3.  **Input Sanitization & Validation**: Implement robust validation for all external data—web pages, uploaded documents, user queries—before an AI agent processes it. This includes detecting and neutralizing potential prompt injection strings.
+4.  **Output Filtering & Monitoring**: Actively monitor and filter agent outputs for patterns of sensitive data (PII, credentials, internal IPs). Establish alerts for anomalous data access or large-volume exports.
+5.  **Adversarial Testing**: Subject AI agent workflows to regular red-team exercises focused on prompt injection and data exfiltration scenarios. Assume the agent's instructions can and will be subverted.
+
+## References
+- Dark Reading: [Microsoft, Salesforce Patch AI Agent Data Leak Flaws](https://www.darkreading.com/cloud-security/microsoft-salesforce-patch-ai-agent-data-leak-flaws)

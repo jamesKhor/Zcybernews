@@ -1,0 +1,65 @@
+---
+title: Mirax Android RAT Evolves with Proxy Network and Data Theft Capabilities
+slug: >-
+  2026-04-15-mirax-android-rat-evolves-with-proxy-network-and-data-theft-capabilities
+date: '2026-04-15'
+excerpt: >-
+  The Mirax Android RAT is being offered as a Malware-as-a-Service to
+  Russian-speaking affiliates, ensnaring devices in Europe into a residential
+  proxy network while stealing credentials and sensitive data.
+category: malware
+tags:
+  - android
+  - mobile-threat
+  - proxy-botnet
+  - information-stealer
+  - maas
+language: en
+source_urls:
+  - 'https://www.securityweek.com/mirax-rat-targeting-android-users-in-europe/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-mirax-android-rat-evolves-with-proxy-network-and-data-theft-capabilities
+severity: high
+threat_actor_origin: Russian-speaking
+affected_sectors:
+  - individuals
+affected_regions:
+  - Europe
+---
+## Executive Summary
+The Mirax Android remote access trojan (RAT) has evolved into a sophisticated Malware-as-a-Service (MaaS) operation, primarily targeting users in Europe. According to analysis by SecurityWeek, the malware's core functionality now includes enslaving infected devices into a residential proxy network and harvesting a wide array of sensitive data, including credentials from banking and social media applications. The operation appears to be tightly controlled, offered to a limited pool of Russian-speaking affiliates who distribute the malware through social engineering and malicious websites.
+
+## Technical Analysis
+Mirax is a feature-rich Android RAT distributed as a malicious APK file. Once installed, it requests extensive permissions, including accessibility services, to bypass security controls and maintain persistence. The malware establishes a connection to a command-and-control (C2) server, awaiting instructions from the operator.
+
+A primary function of the current campaign is to covertly enroll the compromised Android device into a residential proxy network. The infected phone's internet connection is then sold to other cybercriminals for activities requiring non-data center IP addresses, such as credential stuffing, ad fraud, or further malicious scanning. This monetization method provides a steady revenue stream for the operators while consuming the victim's data and potentially implicating them in criminal activity.
+
+Beyond the proxy module, Mirax acts as a potent information stealer. It can log keystrokes, capture screenshots, record audio via the microphone, and harvest files and contact lists. The malware is specifically configured to target credentials from a predefined list of applications, which includes popular European banking apps, cryptocurrency wallets, social media platforms like Instagram and Facebook, and messaging services such as WhatsApp and Telegram. The stolen data is exfiltrated to the C2 server.
+
+## Indicators of Compromise
+None identified at this time. The report from SecurityWeek did not publish specific hashes, domains, or IP addresses associated with the active campaign. Organizations and individuals should rely on behavioral detection for the described capabilities.
+
+## Tactics, Techniques & Procedures
+The threat actors employ a multi-faceted approach to distribution and execution, consistent with MaaS models.
+*   **Initial Access (TA0001):** The malware is likely distributed through phishing messages, fake advertisements, or compromised websites tricking users into downloading and installing the malicious APK. The use of social engineering to bypass Android's security warnings is a key technique.
+*   **Execution (TA0002):** Execution is achieved via user interaction to install the APK. The malware then abuses Android's Accessibility Service (T1626) to grant itself further permissions and disable security features automatically.
+*   **Persistence (TA0003):** Mirax uses the accessibility service privilege to prevent its own removal and maintain a persistent foothold on the device.
+*   **Collection (TA0009) & Exfiltration (TA0010):** The RAT employs keylogging (T1056.001), screen capture (T1113), and audio capture (T1123) to collect sensitive data. It exfiltrates this data over standard HTTP/HTTPS channels to operator-controlled servers.
+*   **Resource Hijacking (TA0036):** The proxy network module constitutes resource hijacking, turning the victim's device into a network proxy (T1090.002) for other malicious actors.
+
+## Threat Actor Context
+The operation is characterized as a MaaS, meaning the core developers maintain and update the Mirax RAT codebase and infrastructure, leasing access to it. SecurityWeek reports that this service is offered to a "small number of affiliates, mainly Russian speakers." This suggests a closed or vetted affiliate program, potentially to maintain operational security and quality control, rather than an open-source or widely available crimeware kit. The targeting of European users indicates the affiliates' target demographics or testing grounds, though the MaaS model means the malware could be directed elsewhere by different customers. There is no clear attribution to a known advanced persistent threat (APT) group; the activity aligns with financially motivated cybercrime.
+
+## Mitigations & Recommendations
+Android users and enterprise mobility administrators should take the following steps to defend against threats like Mirax:
+*   **Source Applications Carefully:** Only install apps from the official Google Play Store. While not infallible, it provides a significant security baseline compared to third-party websites or direct APK downloads.
+*   **Scrutinize Permissions:** Be extremely wary of any application, especially one downloaded outside official channels, that requests Accessibility Service permissions. This permission is a major red flag for malware.
+*   **Keep Devices Updated:** Ensure Android devices are running the latest available OS version and security patch to mitigate potential exploitation vectors used for privilege escalation.
+*   **Use Reputable Security Software:** Consider installing a reputable mobile security solution that can detect malicious behavior and known RATs.
+*   **User Awareness:** Educate users on the risks of downloading software from links in unsolicited messages or advertisements. Encourage them to report any unusual device behavior, such as rapid battery drain, increased data usage, or unexplained background activity, which could indicate enrollment in a proxy network.
+*   **Network Monitoring:** For enterprises, network monitoring for unexpected outbound proxy traffic (e.g., connections to known proxy network services or anomalous ports) from mobile devices may help identify infections.
+
+## References
+*   SecurityWeek. "Mirax RAT Targeting Android Users in Europe." https://www.securityweek.com/mirax-rat-targeting-android-users-in-europe/
