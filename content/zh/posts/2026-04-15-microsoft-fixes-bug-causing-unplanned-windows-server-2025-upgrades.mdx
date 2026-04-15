@@ -1,0 +1,42 @@
+---
+title: 微软修复导致计划外Windows Server 2025升级的错误
+slug: 2026-04-15-microsoft-fixes-bug-causing-unplanned-windows-server-2025-upgrades
+date: '2026-04-15'
+excerpt: >-
+  微软解决了一个已知问题，该问题导致Windows Server 2019和2022系统自动且意外地升级到Windows Server
+  2025，这个问题与有缺陷的更新通道配置有关。
+category: vulnerabilities
+tags:
+  - microsoft
+  - windows-server
+  - patch
+  - configuration
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-bug-behind-windows-server-2025-automatic-upgrades/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-15-microsoft-fixes-bug-causing-unplanned-windows-server-2025-upgrades
+severity: medium
+---
+## 执行摘要
+微软已经解决了一个配置错误，该错误导致Windows Server 2019和2022系统自动且意外地升级到Windows Server 2025。这个问题，微软在2026年3月底记录为已知问题，源于一个有缺陷的更新通道配置，错误地识别了符合条件的设备。通过Windows Update服务提供的修复阻止了进一步的意外升级，但不会自动回滚已经更新的系统。
+
+## 技术分析
+问题的根源在于Windows Update for Business部署服务（WUfB DS）如何为Windows Server配置更新通道。根据微软的文档，一个配置错误导致运行Windows Server 2019或2022并注册到WUfB DS的设备被错误地标记为符合Windows Server 2025功能更新的条件。这触发了一个自动升级过程，超出了预期的行政控制。这个问题不是一个传统意义上的安全漏洞，而是一个重大的操作缺陷，可能导致企业环境中的计划外停机、兼容性问题和许可合规性问题。修复涉及纠正微软服务后端的基础通道配置逻辑，然后通过标准的Windows Update机制传播到客户端系统。接收到修正更新的系统将不再看到Windows Server 2025作为适用的升级提供。
+
+## 入侵指标
+目前没有识别出任何入侵指标。这是一个服务配置问题，不是恶意活动。
+
+## 战术、技术与程序
+这一事件突出了一个在威胁建模中经常被忽视的TTP：滥用合法的更新机制。虽然没有涉及威胁行为者，但这种情况展示了如何对受信任的软件分发通道（T1554.002：破坏软件供应链）的妥协或配置错误可能导致广泛的、未经授权的系统变更。在恶意的背景下，类似的战术可以用来在合法更新的伪装下推送恶意软件或破坏基础设施。
+
+## 威胁行为者背景
+没有与此事件相关的威胁行为者。原因是微软内部服务配置错误。
+
+## 缓解措施与建议
+管理员应验证他们的Windows Server 2019和2022系统是否已收到最新的Windows Update服务堆栈更新。微软表示修复正在自动分发，但管理员可以手动检查更新。对于已经意外升级到Windows Server 2025的系统，微软的建议是在升级后的10天内使用标准回滚程序（如果可能），或者执行预期服务器版本的干净安装。建议组织检查他们的Windows Update for Business部署服务配置，并确保功能更新部署是明确目标化和受控的。监控意外的系统升级应该是操作安全基线的一部分。
+
+## 参考资料
+- https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-bug-behind-windows-server-2025-automatic-upgrades/

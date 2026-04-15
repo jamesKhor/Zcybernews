@@ -1,0 +1,62 @@
+---
+title: FISA 第702条款重新授权辩论在隐私和安全中加剧
+slug: >-
+  2026-04-15-fisa-section-702-reauthorization-debate-intensifies-amid-privacy-and-security-cl
+date: '2026-04-15'
+excerpt: 美国国会正在辩论FISA第702条的重新授权，这是一种允许无需搜查令即可收集外国通信的监控权力，但也涵盖了美国数据，将国家安全主张与隐私问题对立起来。
+category: industry
+tags:
+  - surveillance
+  - policy
+  - privacy
+  - intelligence
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/trump-urges-extending-foreign-surveillance-program-as-some-lawmakers-push-for-us-privacy-protections/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-15-fisa-section-702-reauthorization-debate-intensifies-amid-privacy-and-security-cl
+severity: informational
+affected_sectors:
+  - government
+  - telecommunications
+  - technology
+affected_regions:
+  - United States
+---
+## 执行摘要
+美国核心外国情报监控权力的即将到期引发了一场激烈的政治和法律辩论，辩论的焦点在于国家安全与宪法隐私保护之间的平衡。《外国情报监控法》（FISA）第702条，允许在没有搜查令的情况下监控位于国外的非美国人士，除非国会采取行动，否则将在2026年4月到期。包括前总统唐纳德·特朗普和情报机构领导人在内的支持者认为，该计划对于反恐和国防至关重要。反对者包括民权团体和两党立法者联盟，他们认为这促进了对美国人通信的违宪“后门”搜索，并需要重大改革，包括搜查令要求。
+
+## 技术分析
+第702条不是一个无差别收集所有通信的大规模收集计划。相反，它授权国家安全局（NSA）迫使美国本土的电子通信服务提供商——包括电信运营商和主要科技公司——协助针对特定外国情报目的的通信获取。这些技术指令，被称为认证，由外国情报监控法院（FISC）批准。
+
+主要的网络安全和隐私争议在于随后的查询或“搜索”合法收集的702数据库。包括联邦调查局（FBI）在内的情报和执法机构被允许使用与美国人士相关的标识符——如电子邮件地址或电话号码——来搜索这个数据库。这一做法没有搜查令，批评者将其标记为违反第四修正案的“后门搜索”漏洞。这些美国人士查询的规模，尤其是FBI的查询，一直是争议和监督失败的焦点，尽管内部进行了改革。
+
+## 入侵指标
+目前未识别出任何入侵指标。
+
+## 战术、技术与程序
+第702条的操作使用涉及特定的情报收集战术、技术与程序（TTP）：
+*   **技术：** 法律强制服务提供商。情报机构向美国通信服务提供商发出指令，以促进对批准的外国情报目标的通信获取。
+*   **程序：** 上游和PRISM收集。通过“上游”拦截电信基础设施和直接从服务提供商处的“PRISM”收集进行收集。
+*   **数据利用：** 收集后，收集到的通信被存储在数据库中，如NSA的XKEYSCORE和FBI的FISA数据库。然后分析师使用选择器进行查询，其中可能包括美国人士的选择器，以找到相关的情报。
+
+## 威胁行为者背景
+辩论本质上是关于用于对抗国家和跨国威胁行为者的权力。情报官员一致证明，第702条收集对于追踪至关重要：
+*   外国恐怖组织及其行动人员。
+*   进行网络间谍活动的高级持续性威胁（APT）团体。
+*   大规模杀伤性武器的扩散网络。
+*   敌对的外国情报服务。
+重新授权的理由是基于失去这个工具将对这些对手造成重大情报缺口的前提。
+
+## 缓解措施与建议
+立法辩论集中在提议的缓解措施上，以减少该计划对美国人士隐私的影响：
+1.  **搜查令要求：** 最重要的提议改革将要求机构在查询第702条数据库以获取有关美国人士的信息之前，从FISC获得搜查令。情报界反对这一点，认为这将造成操作延迟和资源负担，从而削弱计划的有效性。
+2.  **严格的查询审计和监督：** 加强内部合规机制，增加向国会报告查询事件的频率和深度，特别是FBI在国内刑事调查中与国家安全无关的查询事件。
+3.  **限制FBI访问：** 提议包括限制FBI仅在反间谍和反恐调查中进行美国人士查询的能力，禁止其用于标准刑事案件。
+4.  **服务提供商的透明度：** 一些提议寻求允许公司更透明地了解他们接收的指令数量和范围，尽管这通常受到国家安全问题的制约。
+
+## 参考资料
+*   SecurityWeek: [Trump Urges Extending Foreign Surveillance Program as Some Lawmakers Push for US Privacy Protections](https://www.securityweek.com/trump-urges-extending-foreign-surveillance-program-as-some-lawmakers-push-for-us-privacy-protections/)

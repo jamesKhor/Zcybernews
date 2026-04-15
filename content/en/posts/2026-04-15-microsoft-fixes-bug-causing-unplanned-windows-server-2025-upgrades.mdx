@@ -1,0 +1,43 @@
+---
+title: Microsoft Fixes Bug Causing Unplanned Windows Server 2025 Upgrades
+slug: 2026-04-15-microsoft-fixes-bug-causing-unplanned-windows-server-2025-upgrades
+date: '2026-04-15'
+excerpt: >-
+  Microsoft resolves a known issue causing Windows Server 2019 and 2022 systems
+  to automatically and unexpectedly upgrade to Windows Server 2025, a problem
+  linked to a flawed update channel configuration.
+category: vulnerabilities
+tags:
+  - microsoft
+  - windows-server
+  - patch
+  - configuration
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-bug-behind-windows-server-2025-automatic-upgrades/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-15-microsoft-fixes-bug-causing-unplanned-windows-server-2025-upgrades
+severity: medium
+---
+## Executive Summary
+Microsoft has resolved a configuration bug that caused Windows Server 2019 and 2022 systems to automatically and unexpectedly upgrade to Windows Server 2025. The issue, which Microsoft documented as a known problem in late March 2026, stemmed from a flawed update channel configuration that incorrectly identified eligible devices. The fix, delivered via the Windows Update service, prevents further unplanned upgrades but does not automatically roll back systems that have already been updated.
+
+## Technical Analysis
+The problem was rooted in how the Windows Update for Business deployment service (WUfB DS) configured update channels for Windows Server. According to Microsoft's documentation, a misconfiguration caused devices running Windows Server 2019 or 2022 that were enrolled in WUfB DS to be incorrectly flagged as eligible for the Windows Server 2025 feature update. This triggered an automatic upgrade process outside of intended administrative controls. The issue was not a security vulnerability in the traditional sense but a significant operational flaw that could lead to unscheduled downtime, compatibility problems, and licensing compliance issues in enterprise environments. The fix involved correcting the underlying channel configuration logic on Microsoft's servicing backend, which was then propagated to client systems through the standard Windows Update mechanism. Systems that received the corrective update will no longer see Windows Server 2025 offered as an applicable upgrade.
+
+## Indicators of Compromise
+None identified at this time. This was a service configuration issue, not a malicious campaign.
+
+## Tactics, Techniques & Procedures
+This incident highlights a TTP often overlooked in threat modeling: abuse of legitimate update mechanisms. While no threat actor was involved, the scenario demonstrates how a compromise or misconfiguration of a trusted software distribution channel (T1554.002: Compromise Software Supply Chain) could lead to widespread, unauthorized system changes. In a malicious context, similar tactics could be used to push malware or destabilize infrastructure under the guise of a legitimate update.
+
+## Threat Actor Context
+No threat actor is associated with this event. The cause was an internal Microsoft service configuration error.
+
+## Mitigations & Recommendations
+Administrators should verify that their Windows Server 2019 and 2022 systems have received the latest Windows Update servicing stack updates. Microsoft states the fix is being distributed automatically, but administrators can manually check for updates. For systems that have already upgraded to Windows Server 2025 unintentionally, Microsoft's guidance is to use the standard rollback procedure within 10 days of the upgrade, if possible, or to perform a clean installation of the intended server version. Organizations are advised to review their Windows Update for Business deployment service configurations and ensure feature update deployments are explicitly targeted and controlled. Monitoring for unexpected system upgrades should be part of operational security baselines.
+
+## References
+- https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-bug-behind-windows-server-2025-automatic-upgrades/
