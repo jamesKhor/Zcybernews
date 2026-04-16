@@ -1,0 +1,66 @@
+---
+title: JanaWare 勒索软件活动六年来针对土耳其家庭和中小企业
+slug: >-
+  2026-04-16-janaware-ransomware-campaign-targets-turkish-homes-and-smbs-for-six-years
+date: '2026-04-16'
+excerpt: >-
+  一个名为 'JanaWare' 的勒索软件活动自至少2018年以来一直在针对土耳其家庭和中小型企业，部署了 Adwind RAT
+  的定制变种，在加密之前窃取凭证。
+category: malware
+tags:
+  - ransomware
+  - turkey
+  - adwind
+  - smb
+  - credential-theft
+language: zh
+source_urls:
+  - >-
+    https://www.darkreading.com/cyberattacks-data-breaches/6-year-ransomware-campaign-turkish-homes-smbs
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-16-janaware-ransomware-campaign-targets-turkish-homes-and-smbs-for-six-years
+severity: high
+affected_sectors:
+  - residential
+  - small-business
+  - medium-business
+affected_regions:
+  - Turkey
+---
+## 执行摘要
+研究人员识别出一场持续的勒索软件活动，称为“JanaWare”，至少六年来一直在针对土耳其的家庭用户和中小型企业（SMB）。这项仍在进行的操作使用多阶段攻击链，首先部署跨平台Adwind远程访问木马（RAT）的定制变种来窃取凭证和系统信息，然后执行文件加密。根据网络安全公司SEKOIA的分析，该活动之所以能够持续存在，是因为它专注于较低调的目标，并且能够以最小的公众审查或干扰进行操作。
+
+## 技术分析
+攻击始于一个恶意的Java归档（JAR）文件，通常命名为`Update.jar`或`Java-Update.jar`，作为初始的投放器。这个JAR文件包含了定制的Adwind RAT有效载荷，研究人员根据内部标识符将其命名为“JanaWare”。RAT是Adwind（也称为AlienSpy或jRAT）的一个重修改版本，Adwind是一个以其跨平台能力而闻名的商品恶意软件家族，用Java编写。
+
+执行后，JanaWare RAT进行广泛的侦察，收集系统信息、来自网络浏览器和电子邮件客户端的凭证以及屏幕截图。它建立了命令与控制（C2）通道来外泄这些数据。勒索软件有效载荷作为次级阶段交付，由C2服务器的命令触发。加密器是用.NET编写的，针对广泛的文件扩展名，并在加密文件上添加了`.locked`扩展名。会投放一个名为`#_README_#.txt`的勒索信，指示受害者通过电子邮件或Telegram联系攻击者。
+
+SEKOIA的报告指出，勒索软件组件并不特别复杂，但对于其预期目标是有效的。RAT的双重用途，用于凭证盗窃和勒索软件部署，表明了通过勒索获得即时经济利益以及为潜在的未来攻击或出售收集有价值数据的关注。
+
+## 入侵指标
+目前没有识别出任何入侵指标。
+
+## 战术、技术与程序
+该活动采用了一套一致的战术、技术和程序（TTP）：
+*   **初始访问：**可能通过钓鱼邮件或驱动下载恶意JAR文件。
+*   **执行：**执行基于Java的投放器（`Update.jar`）以部署Adwind RAT变种。
+*   **持久性：**RAT在受感染的系统上建立持久性。
+*   **发现与收集：**RAT执行系统侦察并收集凭证、屏幕截图和其他敏感数据。
+*   **命令与控制：**使用HTTP进行C2通信，使用硬编码的IP地址和域名。
+*   **影响：**部署次级基于.NET的勒索软件二进制文件以加密文件进行勒索。
+
+## 威胁行为者背景
+JanaWare活动背后的威胁行为者的身份和来源未知。SEKOIA的分析没有将活动归因于已知的高级持续性威胁（APT）组织。六年来持续针对土耳其实体表明，这是一个出于财务动机的行为者或团体，对这个区域受害者群体有持续的兴趣。使用修改后的商品RAT表明，操作资源足以进行恶意软件开发，但并不一定是国家赞助行动的标志。该活动低调，针对家庭和SMB而不是大型企业，可能是一个有意的策略，以避免吸引主要网络安全公司或执法部门的重大防御关注。
+
+## 缓解措施与建议
+SEKOIA为组织和个人推荐了几项防御措施，特别是那些在土耳其的：
+*   对电子邮件附件要格外小心，特别是那些提示执行JAR文件以进行所谓的更新的附件。
+*   实施应用程序允许列表，以防止未经授权的软件执行，包括来自不受信任来源的Java应用程序。
+*   保持关键数据的定期离线备份，以便在不支付赎金的情况下恢复。
+*   使用强大的端点检测和响应（EDR）解决方案，能够识别与Adwind RAT变种及其后勒索软件部署相关的行为。
+*   监控网络流量，查找连接到未知IP地址和域名，这是此活动中C2活动的标志性特征。
+
+## 参考资料
+*   SEKOIA对JanaWare活动的分析：[https://www.darkreading.com/cyberattacks-data-breaches/6-year-ransomware-campaign-turkish-homes-smbs](https://www.darkreading.com/cyberattacks-data-breaches/6-year-ransomware-campaign-turkish-homes-smbs)

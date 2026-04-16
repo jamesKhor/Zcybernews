@@ -1,0 +1,67 @@
+---
+title: JanaWare Ransomware Campaign Targets Turkish Homes and SMBs for Six Years
+slug: >-
+  2026-04-16-janaware-ransomware-campaign-targets-turkish-homes-and-smbs-for-six-years
+date: '2026-04-16'
+excerpt: >-
+  A ransomware campaign dubbed 'JanaWare' has been targeting Turkish homes and
+  small-to-medium businesses since at least 2018, deploying a custom variant of
+  the Adwind RAT to steal credentials before encryption.
+category: malware
+tags:
+  - ransomware
+  - turkey
+  - adwind
+  - smb
+  - credential-theft
+language: en
+source_urls:
+  - >-
+    https://www.darkreading.com/cyberattacks-data-breaches/6-year-ransomware-campaign-turkish-homes-smbs
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-16-janaware-ransomware-campaign-targets-turkish-homes-and-smbs-for-six-years
+severity: high
+affected_sectors:
+  - residential
+  - small-business
+  - medium-business
+affected_regions:
+  - Turkey
+---
+## Executive Summary
+A persistent ransomware campaign, identified by researchers as 'JanaWare,' has been targeting Turkish residential users and small-to-medium businesses (SMBs) for at least six years. The operation, which remains active, uses a multi-stage attack chain that first deploys a custom variant of the cross-platform Adwind remote access trojan (RAT) to steal credentials and system information before executing file encryption. According to analysis by cybersecurity firm SEKOIA, the campaign's longevity and focus on lower-profile targets have allowed it to operate with minimal public scrutiny or disruption.
+
+## Technical Analysis
+The attack begins with a malicious Java Archive (JAR) file, typically named `Update.jar` or `Java-Update.jar`, which serves as the initial dropper. This JAR file contains the custom Adwind RAT payload, which researchers have named 'JanaWare' based on internal identifiers. The RAT is a heavily modified version of Adwind (also known as AlienSpy or jRAT), a commodity malware family known for its cross-platform capabilities written in Java.
+
+Upon execution, the JanaWare RAT performs extensive reconnaissance, collecting system information, credentials from web browsers and email clients, and screenshots. It establishes a command-and-control (C2) channel to exfiltrate this data. The ransomware payload is delivered as a secondary stage, triggered by a command from the C2 server. The encryptor, written in .NET, targets a wide array of file extensions and appends a `.locked` extension to encrypted files. A ransom note named `#_README_#.txt` is dropped, instructing victims to contact the attackers via email or Telegram.
+
+SEKOIA's report notes the ransomware component is not particularly sophisticated but is effective for its intended targets. The dual-use of the RAT for credential theft and ransomware deployment suggests a focus on both immediate financial gain through extortion and the harvesting of valuable data for potential future attacks or sale.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The campaign employs a consistent set of tactics, techniques, and procedures (TTPs):
+*   **Initial Access:** Likely via phishing emails or drive-by downloads delivering the malicious JAR file.
+*   **Execution:** Execution of the Java-based dropper (`Update.jar`) to deploy the Adwind RAT variant.
+*   **Persistence:** The RAT establishes persistence on the infected system.
+*   **Discovery & Collection:** The RAT performs system reconnaissance and collects credentials, screenshots, and other sensitive data.
+*   **Command and Control:** Uses HTTP for C2 communication with hardcoded IP addresses and domains.
+*   **Impact:** Deploys a secondary .NET-based ransomware binary to encrypt files for extortion.
+
+## Threat Actor Context
+The identity and origin of the threat actor behind the JanaWare campaign are unknown. SEKOIA's analysis did not attribute the activity to a known advanced persistent threat (APT) group. The consistent targeting of Turkish entities over a six-year period suggests a financially motivated actor or group with a sustained interest in this regional victim pool. The use of a modified commodity RAT indicates operational resources sufficient for malware development but not necessarily the hallmarks of a state-sponsored operation. The campaign's low profile, targeting homes and SMBs rather than large enterprises, may be a deliberate strategy to avoid attracting significant defensive attention from major cybersecurity firms or law enforcement.
+
+## Mitigations & Recommendations
+SEKOIA recommends several defensive measures for organizations and individuals, particularly those in Turkey:
+*   Exercise extreme caution with email attachments, especially those prompting the execution of JAR files for supposed updates.
+*   Implement application allowlisting to prevent the execution of unauthorized software, including Java applications from untrusted sources.
+*   Maintain regular, offline backups of critical data to enable recovery without paying a ransom.
+*   Use robust endpoint detection and response (EDR) solutions capable of identifying the behaviors associated with Adwind RAT variants and subsequent ransomware deployment.
+*   Monitor network traffic for connections to unknown IP addresses and domains, a hallmark of the C2 activity in this campaign.
+
+## References
+*   SEKOIA Analysis of the JanaWare Campaign: [https://www.darkreading.com/cyberattacks-data-breaches/6-year-ransomware-campaign-turkish-homes-smbs](https://www.darkreading.com/cyberattacks-data-breaches/6-year-ransomware-campaign-turkish-homes-smbs)
