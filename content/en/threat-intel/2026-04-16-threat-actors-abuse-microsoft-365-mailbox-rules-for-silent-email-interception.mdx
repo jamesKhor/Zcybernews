@@ -1,0 +1,63 @@
+---
+title: Threat Actors Abuse Microsoft 365 Mailbox Rules for Silent Email Interception
+slug: >-
+  2026-04-16-threat-actors-abuse-microsoft-365-mailbox-rules-for-silent-email-interception
+date: '2026-04-16'
+excerpt: >-
+  Attackers are exploiting hidden mailbox rules in compromised Microsoft 365
+  accounts to intercept sensitive emails, redirect financial communications, and
+  suppress security alerts without triggering user notifications.
+category: threat-intel
+tags:
+  - microsoft-365
+  - email-security
+  - business-email-compromise
+  - persistence
+language: en
+source_urls:
+  - >-
+    https://cybersecuritynews.com/hackers-create-hidden-mailbox-rules-in-microsoft-365/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-16-threat-actors-abuse-microsoft-365-mailbox-rules-for-silent-email-interception
+severity: high
+affected_sectors:
+  - multiple
+affected_regions:
+  - global
+---
+## Executive Summary
+Threat actors are exploiting a standard feature in Microsoft 365—client-side mailbox rules—to establish persistent, stealthy access to compromised business email accounts. According to a report from CyberSecurity News, attackers use these hidden rules to intercept sensitive emails, redirect financial transactions, and suppress security notifications, effectively creating a silent wiretap within an organization's communication flow. This technique allows adversaries to maintain long-term access for espionage or fraud without triggering typical signs of account takeover, as the rules operate entirely within the cloud service's expected functionality.
+
+## Technical Analysis
+The attack leverages the mailbox rules feature, accessible via protocols like Exchange Web Services (EWS) or Microsoft Graph API, which is designed for legitimate email automation. After compromising a user's credentials—typically through phishing, credential stuffing, or token theft—attackers programmatically create rules that execute on the Microsoft 365 server. These rules are configured to be hidden from the user's view in clients like Outlook Web App (OWA) or Microsoft Outlook, a capability inherent to the rule creation process. Common malicious rule actions include: automatically forwarding specific emails (e.g., containing keywords like "invoice," "payment," or "wire transfer") to an attacker-controlled external address; moving such emails to obscure folders like "RSS Feeds" or "Junk Email" to hide them from the victim's inbox; and deleting security alerts or notification emails from Microsoft or internal IT teams to prevent detection. The rules are stored and executed server-side, meaning they remain active regardless of the device or client used to access the mailbox, providing persistent access even if the user changes a password post-compromise, unless the rules are explicitly purged.
+
+## Indicators of Compromise
+None identified at this time. The report does not provide specific hashes, domains, or IP addresses associated with this activity. Detection relies on behavioral and log analysis.
+
+## Tactics, Techniques & Procedures
+Based on the described activity, the following TTPs align with the MITRE ATT&CK framework:
+- **Tactic: Persistence (TA0003)**
+  - **Technique T1137.003: Office Application Startup – Outlook Rules (Cloud):** Adversaries create malicious inbox rules in a compromised Microsoft 365 mailbox to maintain access and execute actions on emails.
+- **Tactic: Collection (TA0009)**
+  - **Technique T1114.003: Email Collection – Email Forwarding Rule:** Attackers configure rules to automatically forward emails containing sensitive keywords to external accounts.
+- **Tactic: Defense Evasion (TA0005)**
+  - **Technique T1070.004: Indicator Removal on Host – File Deletion:** Malicious rules are used to delete security notification emails from the inbox.
+  - **Technique T1564.004: Hide Artifacts – Hidden Files and Directories:** Rules are created to be hidden from the user's view in default email client interfaces.
+- **Initial Access (TA0001)** is likely achieved through **Technique T1589.001: Phishing for Information** or **Technique T1110: Brute Force** to obtain valid credentials.
+
+## Threat Actor Context
+The report does not attribute this technique to a specific named threat actor or group. The tradecraft described is consistent with financially motivated actors engaged in Business Email Compromise (BEC) and cyber-espionage groups seeking long-term intelligence gathering. The low technical barrier to implementing this technique—using publicly documented APIs—suggests it is accessible to a wide range of adversaries, from opportunistic criminals to more advanced persistent threats (APTs).
+
+## Mitigations & Recommendations
+Organizations should implement a multi-layered defense to detect and prevent mailbox rule abuse:
+1.  **Enable and Monitor Unified Audit Logs:** Ensure Microsoft 365 auditing is turned on. Regularly search logs for `New-InboxRule` and `Set-InboxRule` PowerShell cmdlet events or corresponding Graph API activities, especially those originating from unfamiliar IP addresses or geolocations.
+2.  **Implement Conditional Access Policies:** Use Azure AD Conditional Access to restrict logins to compliant devices and trusted locations. Implement risk-based policies to challenge suspicious sign-ins.
+3.  **Conduct Regular Rule Audits:** Administrators should periodically audit mailbox rules across the tenant using PowerShell commands like `Get-InboxRule` to identify hidden rules, rules with external forwarding, or rules with suspicious keywords in their conditions.
+4.  **Restrict Mail Forwarding:** Consider implementing transport rules in Exchange Online to block automatic forwarding of emails to external domains, or to flag such events for review.
+5.  **User Training and MFA:** Train users to identify phishing attempts aimed at credential theft. Enforce multi-factor authentication (MFA) universally to significantly reduce the risk of initial account compromise.
+6.  **Utilize Microsoft Defender for Office 365:** Configure policies to detect and alert on unusual inbox rule creation and external email forwarding activities.
+
+## References
+- CyberSecurity News: [Hackers Create Hidden Mailbox Rules in Microsoft 365 to Intercept Sensitive Business Emails](https://cybersecuritynews.com/hackers-create-hidden-mailbox-rules-in-microsoft-365/)

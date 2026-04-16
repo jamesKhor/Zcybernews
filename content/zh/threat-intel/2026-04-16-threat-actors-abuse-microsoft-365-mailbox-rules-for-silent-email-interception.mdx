@@ -1,0 +1,60 @@
+---
+title: 威胁行为者滥用Microsoft 365邮箱规则进行无声电子邮件拦截
+slug: >-
+  2026-04-16-threat-actors-abuse-microsoft-365-mailbox-rules-for-silent-email-interception
+date: '2026-04-16'
+excerpt: 攻击者正在利用被入侵的Microsoft 365账户中隐藏的邮箱规则来拦截敏感电子邮件，重定向财务通信，并在不触发用户通知的情况下抑制安全警报。
+category: threat-intel
+tags:
+  - microsoft-365
+  - email-security
+  - business-email-compromise
+  - persistence
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/hackers-create-hidden-mailbox-rules-in-microsoft-365/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-16-threat-actors-abuse-microsoft-365-mailbox-rules-for-silent-email-interception
+severity: high
+affected_sectors:
+  - multiple
+affected_regions:
+  - global
+---
+## 执行摘要
+威胁行为者正在利用Microsoft 365中的标准功能——客户端邮箱规则——来建立对被入侵商业电子邮件账户的持久、隐蔽访问。根据CyberSecurity News的一份报告，攻击者使用这些隐藏规则来拦截敏感电子邮件、重定向金融交易，并抑制安全通知，有效地在组织通信流程中创建了一个无声的窃听器。这种技术允许对手在不触发典型账户接管迹象的情况下，为间谍活动或欺诈保持长期访问，因为这些规则完全在云服务的预期功能内运行。
+
+## 技术分析
+攻击利用了邮箱规则功能，可以通过Exchange Web Services (EWS)或Microsoft Graph API等协议访问，该功能旨在用于合法的电子邮件自动化。在通过钓鱼、凭证填充或令牌盗窃等手段破坏了用户的凭证之后，攻击者会程序性地创建在Microsoft 365服务器上执行的规则。这些规则被配置为在Outlook Web App (OWA)或Microsoft Outlook等客户端中对用户隐藏，这是规则创建过程固有的能力。常见的恶意规则操作包括：自动将包含“发票”、“付款”或“电汇转账”等关键词的特定电子邮件转发到攻击者控制的外部地址；将此类电子邮件移动到“RSS Feeds”或“Junk Email”等不显眼的文件夹中，以隐藏它们，使其不出现在受害者的收件箱中；以及删除来自Microsoft或内部IT团队的安全警告或通知电子邮件，以防止检测。这些规则存储在服务器端并执行，这意味着无论使用何种设备或客户端访问邮箱，它们都保持活跃，即使用户在被入侵后更改密码，除非明确清除这些规则。
+
+## 入侵指标
+目前没有识别出任何入侵指标。报告没有提供与此活动相关的特定哈希值、域名或IP地址。检测依赖于行为和日志分析。
+
+## 战术、技术与程序
+根据描述的活动，以下TTPs与MITRE ATT&CK框架一致：
+- **战术：持久性 (TA0003)**
+  - **技术 T1137.003: Office应用程序启动 – Outlook规则 (云)：** 威胁行为者在被入侵的Microsoft 365邮箱中创建恶意收件箱规则，以保持访问并执行电子邮件操作。
+- **战术：收集 (TA0009)**
+  - **技术 T1114.003: 电子邮件收集 – 电子邮件转发规则：** 攻击者配置规则以自动将包含敏感关键词的电子邮件转发到外部账户。
+- **战术：防御绕过 (TA0005)**
+  - **技术 T1070.004: 宿主上的指标移除 – 文件删除：** 恶意规则被用来从收件箱中删除安全通知电子邮件。
+  - **技术 T1564.004: 隐藏工件 – 隐藏文件和目录：** 规则被创建为在默认电子邮件客户端界面中对用户隐藏。
+- **初始访问 (TA0001)** 很可能是通过**技术 T1589.001: 钓鱼信息**或**技术 T1110: 暴力破解**来获取有效凭证。
+
+## 威胁行为者背景
+报告没有将这种技术归因于特定的命名威胁行为者或团体。所描述的手法与从事商业电子邮件泄露（BEC）和寻求长期情报收集的网络间谍团体的财务动机行为者一致。实施这种技术的低技术门槛——使用公开记录的API——表明它对从机会主义犯罪分子到更高级的持续威胁（APTs）的各种对手都是可访问的。
+
+## 缓解措施与建议
+组织应实施多层次防御，以检测和防止邮箱规则滥用：
+1.  **启用并监控统一审核日志：** 确保Microsoft 365审核已开启。定期在日志中搜索`New-InboxRule`和`Set-InboxRule` PowerShell cmdlet事件或相应的Graph API活动，特别是那些来自不熟悉的IP地址或地理位置的活动。
+2.  **实施条件访问策略：** 使用Azure AD条件访问限制登录到合规设备和受信任位置。实施基于风险的政策以挑战可疑的登录。
+3.  **定期进行规则审计：** 管理员应定期使用PowerShell命令如`Get-InboxRule`对租户范围内的邮箱规则进行审计，以识别隐藏规则、具有外部转发的规则或在其条件中包含可疑关键词的规则。
+4.  **限制邮件转发：** 考虑在Exchange Online中实施传输规则，以阻止自动将电子邮件转发到外部域名，或标记此类事件以供审核。
+5.  **用户培训和MFA：** 培训用户识别针对凭证盗窃的钓鱼企图。普遍实施多因素认证（MFA），以显著降低初始账户被入侵的风险。
+6.  **利用Microsoft Defender for Office 365：** 配置策略以检测并警告不寻常的收件箱规则创建和外部电子邮件转发活动。
+
+## 参考资料
+- CyberSecurity News: [Hackers Create Hidden Mailbox Rules in Microsoft 365 to Intercept Sensitive Business Emails](https://cybersecuritynews.com/hackers-create-hidden-mailbox-rules-in-microsoft-365/)
