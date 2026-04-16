@@ -1,0 +1,56 @@
+---
+title: ClickFix Phishing Campaign Masquerades as Claude AI Installer
+slug: 2026-04-16-clickfix-phishing-campaign-masquerades-as-claude-ai-installer
+date: '2026-04-16'
+excerpt: >-
+  A phishing campaign uses fake Claude AI installer lures and 'ClickFix' social
+  engineering to trick users into granting remote access, enabling credential
+  theft and financial fraud.
+category: threat-intel
+tags:
+  - phishing
+  - social-engineering
+  - remote-access
+  - ai
+language: en
+source_urls:
+  - >-
+    https://www.rapid7.com/blog/post/ve-clickfix-phishing-campaign-fake-claude-installer
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-16-clickfix-phishing-campaign-masquerades-as-claude-ai-installer
+severity: high
+---
+## Executive Summary
+A phishing campaign is using fake installers for Anthropic's Claude AI chatbot as a lure to deploy a sophisticated social engineering technique known as 'ClickFix,' according to analysis by Rapid7. The attackers impersonate technical support to convince victims to download legitimate remote desktop software, granting them direct access to the victim's machine. Once access is established, the threat actors pivot to steal credentials, session cookies, and banking information, often leading to direct financial theft from the victim's accounts.
+
+## Technical Analysis
+The campaign begins with phishing emails containing a link to a malicious website designed to mimic an official Claude AI download page. The site prompts the user to download a file, typically named `Claude_Setup.msi` or similar. Analysis by Rapid7 indicates this MSI installer does not contain Claude software but is instead a conduit for the social engineering attack. Upon execution, the installer displays a fake error message stating the installation failed due to a 'corrupted system file' or similar issue. The message includes a phone number for 'technical support,' which connects the victim directly to the attackers.
+
+The core of the attack is the 'ClickFix' technique, a term used by security researchers to describe a hands-on-keyboard social engineering method where attackers guide victims through steps to compromise their own systems. In this case, the fake support agent instructs the victim to download a legitimate remote administration tool (RAT) such as AnyDesk, RustDesk, or Splashtop. The attacker then uses the provided credentials from the victim to establish a remote desktop session. With direct access, the threat actor can disable security software, browse file systems, and install additional malware. Rapid7's analysis notes a focus on stealing web browser data—including passwords, autofill information, and session cookies—and accessing online banking and cryptocurrency exchange accounts to initiate fraudulent transfers.
+
+## Indicators of Compromise
+None identified at this time. Rapid7's blog post did not provide specific hashes, domains, or IP addresses associated with this campaign. Organizations are advised to treat unsolicited technical support contacts and installer downloads from unofficial sources as high-risk indicators.
+
+## Tactics, Techniques & Procedures
+The threat actors employ a multi-stage TTP set blending social engineering with abuse of legitimate tools:
+1. **Initial Access (T1566.002)**: Phishing via malicious websites masquerading as official software download portals.
+2. **Execution (T1204.002)**: User execution of a malicious MSI file, often prompted by a fabricated error.
+3. **Social Engineering (T1656)**: Direct voice communication where attackers impersonate technical support to build trust and issue instructions.
+4. **Remote Services (T1219)**: Abuse of legitimate remote access software (AnyDesk, RustDesk) for command and control.
+5. **Credential Access (T1555)**: Manual theft of credentials and cookies from web browsers after gaining remote access.
+6. **Financial Theft (T1657)**: Direct navigation to banking sites within the victim's authenticated session to initiate fraudulent transactions.
+
+## Threat Actor Context
+The specific threat actor behind this campaign is not identified by Rapid7. The use of the 'ClickFix' methodology and financial motivation aligns with known cybercriminal groups, often based in Eastern Europe or Asia, that specialize in tech support scams and hands-on-keyboard fraud. The choice of Claude AI as a lure indicates an attempt to capitalize on current interest in generative AI tools to increase the phishing email's credibility and click-through rate.
+
+## Mitigations & Recommendations
+Rapid7 and general security best practices recommend the following mitigations:
+- **User Training**: Educate employees and users to be skeptical of unsolicited technical support contacts, especially those initiated via pop-up errors or phishing emails. Emphasize that legitimate software vendors will not contact users proactively in this manner.
+- **Download Sources**: Enforce policies that software must only be downloaded from official vendor websites or approved corporate repositories. Block downloads of remote desktop software from non-corporate sources where possible.
+- **Endpoint Controls**: Implement application allowlisting to prevent the execution of unauthorized software, including remote administration tools not explicitly permitted. Use endpoint detection and response (EDR) tools to monitor for suspicious remote desktop sessions and process activity.
+- **Privilege Management**: Ensure standard user accounts do not have administrative privileges, which can limit the damage an attacker can do during a remote session.
+- **Financial Controls**: For high-risk individuals, consider implementing transaction verification delays or multi-person approval for significant financial transfers from corporate accounts.
+
+## References
+- Rapid7 Blog: [ClickFix Phishing Campaign Masquerading as a Claude Installer](https://www.rapid7.com/blog/post/ve-clickfix-phishing-campaign-fake-claude-installer)
