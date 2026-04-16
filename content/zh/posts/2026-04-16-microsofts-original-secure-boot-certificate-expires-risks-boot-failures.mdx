@@ -1,0 +1,55 @@
+---
+title: 微软的原始安全启动证书到期，可能导致启动失败
+slug: >-
+  2026-04-16-microsofts-original-secure-boot-certificate-expires-risks-boot-failures
+date: '2026-04-16'
+excerpt: >-
+  微软的原始安全启动证书，用于为Windows 8至Windows 11签署引导程序，即将到期，可能会导致无法安装新的微软公司UEFI CA
+  2023证书的系统出现启动失败。
+category: vulnerabilities
+tags:
+  - secure-boot
+  - windows
+  - uefi
+  - firmware
+language: zh
+source_urls:
+  - >-
+    https://www.darkreading.com/endpoint-security/microsoftoriginal-windows-secure-boot-certificates-expire
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-16-microsofts-original-secure-boot-certificate-expires-risks-boot-failures
+severity: medium
+---
+## 执行摘要
+微软原始的Secure Boot证书，“Microsoft Corporation UEFI CA 2011”，将于2026年4月16日到期，这标志着Windows启动安全生态系统的一个关键转折点。这次到期并不代表传统意义上的漏洞，但构成了重大的操作风险：无法过渡到更新的“Microsoft Corporation UEFI CA 2023”证书的系统可能会遇到启动失败或被迫禁用Secure Boot，削弱了对抗rootkits和bootkits的基础防御。微软将证书更新描述为Windows生态系统中最大的协调安全维护工作之一，需要设备制造商、固件供应商和长期系统的管理员采取行动。
+
+## 技术分析
+Secure Boot是一项UEFI安全功能，确保设备仅使用原始设备制造商（OEM）信任的软件启动。它通过验证系统UEFI固件数据库中存储的证书的加密签名来工作。到期的“Microsoft Corporation UEFI CA 2011”证书是用于签名Windows 8、8.1、10、11及相应Windows Server版本的引导程序（如`bootmgfw.efi`和`winload.efi`）的根权威。
+
+核心问题在于证书生命周期管理。当2011 CA到期时，严格验证证书有效期的UEFI固件将拒绝由其制作的签名，即使签名的二进制文件本身是合法的。微软已经发布了继任者，“Microsoft Corporation UEFI CA 2023”证书，并且最近版本的Windows的启动组件已经用旧的和新的证书双重签名。然而，系统必须在其UEFI的“db”（授权签名）数据库中有新的2023 CA，才能成功验证新的签名链。
+
+对于大多数现代消费PC和服务器，如果固件通过Windows Update或制造商工具自动更新，这种过渡应该是无缝的。主要风险在于旧硬件、定制或嵌入式系统以及固件更新手动管理或不再支持的设备。如果这些系统缺少2023 CA，它们在到期后将面临两个不良结果：在启用Secure Boot的情况下无法启动，或者管理员完全禁用Secure Boot以恢复功能，从而移除了关键的预操作系统安全层。
+
+## 入侵指标
+目前没有识别出任何入侵指标。这是计划中的证书到期，不是活跃的利用活动。
+
+## 战术、技术与程序
+不适用。这种情况是由合法的PKI到期引起的拒绝服务条件，不是威胁行为者采用的战术。
+
+## 威胁行为者背景
+虽然没有威胁行为者直接涉及证书到期，但该事件创造了潜在的机会。对手可以利用围绕启动失败的混乱来社交工程用户禁用Secure Boot。此外，被迫在禁用Secure Boot的情况下运行的系统变得容易受到已知TTPs的攻击，如**Boot or Logon Autostart Execution (T1547)**和**Pre-OS Boot (T1542)**，攻击者可以安装操作系统无法检测到的持久性bootkits或rootkits。
+
+## 缓解措施与建议
+微软和行业分析师推荐以下行动以防止中断：
+
+1.  **部署固件更新：**确保所有管理的端点都安装了其设备制造商（Dell、HP、Lenovo等）的最新UEFI固件。这些更新通常包括`db`变量中的新2023 CA。
+2.  **验证证书存在：**管理员可以使用PowerShell检查新证书的存在。命令`Confirm-SecureBootUEFI`返回`True`表示Secure Boot处于活动状态，但并不确认新的CA。更详细的检查可能需要UEFI实用工具或直接检查固件设置。
+3.  **为旧系统制定计划：**对于嵌入式、工业或旧系统，如果固件更新不可用，组织必须制定基于风险的应急计划。这可能涉及测试并接受禁用Secure Boot的需要，同时增强运行时和行为检测控制，以补偿失去的启动完整性保证。
+4.  **监控启动问题：**在到期日期之后，帮助台和IT团队应了解与Secure Boot相关的启动失败的根本原因，并适当指导用户，警告不要在不了解安全权衡的情况下永久禁用该功能。
+
+微软已经声明，它不会用过期的证书重新签名旧的启动组件，强调了生态系统迁移到新的信任锚点的必要性。
+
+## 参考资料
+- [Microsoft's Original Windows Secure Boot Certificate Is Expiring - Dark Reading](https://www.darkreading.com/endpoint-security/microsoftoriginal-windows-secure-boot-certificates-expire)
