@@ -1,0 +1,42 @@
+---
+title: Microsoft 365 Web Services 在 Google Chrome 147 用户中断
+slug: 2026-04-16-microsoft-365-web-services-break-for-users-on-google-chrome-147
+date: '2026-04-16'
+excerpt: >-
+  Google Chrome 版本 147 和 Microsoft 365
+  网络服务之间的一个关键兼容性问题正在阻止用户认证和应用程序加载，扰乱了未知数量的组织的访问。
+category: vulnerabilities
+tags:
+  - microsoft-365
+  - google-chrome
+  - authentication
+  - compatibility
+  - web-services
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/microsoft-365-chrome-147-issue/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-16-microsoft-365-web-services-break-for-users-on-google-chrome-147
+severity: high
+---
+## 执行摘要
+Google Chrome 版本 147 和 Microsoft 365 网络服务之间存在一个关键的兼容性问题，这阻止了用户认证和应用程序加载，扰乱了未知数量的组织的访问。微软确认它正在积极调查这个普遍问题，该问题最初报告于 2026 年 4 月 16 日，使得像 Outlook 和 SharePoint 这样的核心生产力应用程序无法通过受影响的浏览器访问。目前尚未确定根本原因，两家供应商都尚未提供任何变通方法或补丁时间表。
+
+## 技术分析
+当用户在 Google Chrome 版本 147 上尝试访问 Microsoft 365 网络门户时，包括 Outlook 网络版和 SharePoint 起始页面，就会出现故障。根据微软的初步声明，这个问题阻止了服务正确加载，有效地阻止了认证和随后的应用程序交互。故障的确切技术机制尚未公开。目前尚不清楚故障是否源于 Chrome 对网络标准的处理变化，像 OAuth 或 SAML 这样的认证协议，还是与微软客户端 JavaScript 框架的特定交互。这个问题似乎仅限于 Chrome 版本 147；其他浏览器和 Chrome 的早期版本没有报告受到影响，这表明可能是最近 Chrome 更新的回归或意外后果。微软没有表明这个问题是否与其最近的服务更新有关，还是仅仅是客户端浏览器的变化。
+
+## 入侵指标
+目前没有识别出任何入侵指标。这是一个兼容性和可用性问题，不是安全漏洞或恶意软件活动。
+
+## 战术、技术与程序
+不适用。此事件是由软件兼容性缺陷引起的服务中断，不是恶意行为者的活动。
+
+## 威胁行为者背景
+没有证据表明威胁行为者参与了此事件。这次中断归因于两个合法软件平台之间的技术兼容性失败。
+
+## 缓解措施与建议
+遇到访问问题的组织和用户应立即切换到其他浏览器，如 Microsoft Edge、Firefox 或 Safari，以重新获得对 Microsoft 365 服务的访问。在企业管理体系框架内（如果可行）回滚到 Google Chrome 的早期稳定版本也可能恢复功能，尽管如果旧版本包含未修补的漏洞，这将带来自己的安全影响。系统管理员应监控微软和谷歌的官方渠道，以获取根本原因分析和补丁咨询。在部署修复程序之前，应建议用户不要尝试涉及禁用核心浏览器安全设置的变通方法，因为这可能会引入实际的安全风险。
+
+## 参考资料
+- https://cybersecuritynews.com/microsoft-365-chrome-147-issue/

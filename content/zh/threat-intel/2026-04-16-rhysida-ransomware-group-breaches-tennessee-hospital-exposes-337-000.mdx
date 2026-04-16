@@ -1,0 +1,62 @@
+---
+title: 'Rhysida 勒索软件集团入侵田纳西州医院，暴露 337,000 人信息'
+slug: >-
+  2026-04-16-rhysida-ransomware-group-breaches-tennessee-hospital-exposes-337-000
+date: '2026-04-16'
+excerpt: >-
+  Cookeville Regional Medical Center 确认 2025 年 Rhysida 集团的勒索软件攻击导致 337,000 人的数据在
+  500GB 文件被盗后被泄露。
+category: threat-intel
+tags:
+  - ransomware
+  - healthcare
+  - data-breach
+  - rhysida
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/data-breach-at-tennessee-hospital-affects-337000/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-16-rhysida-ransomware-group-breaches-tennessee-hospital-exposes-337-000
+severity: high
+threat_actor: Rhysida
+affected_sectors:
+  - healthcare
+affected_regions:
+  - United States
+---
+## 执行摘要
+2025年末，Rhysida勒索软件集团声称对田纳西州库克维尔地区医疗中心（CRMC）进行了勒索软件攻击，导致337,000人的敏感数据被确认泄露。根据医院向缅因州司法部长办公室提交的违规通知以及SecurityWeek的报道，威胁行为者在加密前窃取了大约500GB的文件。虽然医院从备份中恢复了系统，但被盗数据的全部内容和传播对患者和员工构成了重大风险。
+
+## 技术分析
+CRMC在2025年11月30日检测到的攻击涉及Rhysida勒索软件集团未经授权访问医院网络。该集团的主要策略是在文件加密前进行数据盗窃，这是一种在现代勒索软件操作中常见的双重勒索方法。攻击者成功地窃取了大约500GB的数据。此次违规中使用的特定初始访问向量尚未由医院或Rhysida集团公开披露。检测后，CRMC将受影响的系统下线，启动了与第三方数字取证专家的调查，并从备份中恢复了运营，避免了支付赎金。2026年4月提交的数据泄露通知确认了事件的范围。
+
+## 入侵指标
+目前尚未识别。公共违规通知和源报告没有提供与此事件相关的特定文件哈希值、恶意域名或IP地址。
+
+## 战术、技术与程序
+根据Rhysida集团已知的作案手法和此次攻击的细节，以下战术、技术与程序（TTPs）可能适用：
+*   **初始访问：** 特定向量尚未确认，但通常涉及网络钓鱼、利用面向公众的应用程序或泄露的凭证。
+*   **数据泄露（TA0010）：** 在加密前窃取大约500GB的数据（T1560）。
+*   **影响（TA0040）：** 部署勒索软件进行数据加密（T1486）并威胁发布被盗数据（T1657）。
+*   **财务动机：** 该操作遵循双重勒索模型，要求支付解密密钥和承诺不发布被盗数据的费用。
+
+## 威胁行为者背景
+Rhysida勒索软件即服务（RaaS）操作于2023年中期出现，并对医疗保健和教育部门特别活跃。该集团以其激进的双重勒索策略而闻名，并维护一个专门的泄露站点以向受害者施压。2023年11月，美国卫生和公众服务部（HHS）发布了关于Rhysida针对医疗保健部门的警告。FBI、CISA和MS-ISAC随后在2023年12月发布了一份联合咨询报告，详细说明了该集团的TTPs。Rhysida行为者以前曾利用Cobalt Strike和PowerShell脚本等工具进行妥协后活动。对CRMC的攻击与该集团对关键基础设施的持续关注一致。
+
+## 缓解措施与建议
+组织，特别是在医疗保健领域，应审查并实施有关Rhysida的先前咨询指导。关键缓解措施包括：
+*   在所有账户上强制执行强多因素认证（MFA），特别是对于远程访问和行政界面。
+*   实施并严格测试离线、不可变的备份。
+*   及时应用所有软件和操作系统的补丁，优先考虑已知的漏洞。
+*   分割网络以限制勒索软件从初始入口点的传播。
+*   部署强大的端点检测和响应（EDR）工具，并确保日志被聚合和监控异常活动。
+*   进行定期的安全意识培训，重点关注网络钓鱼和社会工程学。
+*   制定、维护和练习全面的事件响应计划。
+
+## 参考资料
+*   SecurityWeek：[Tennessee Hospital Data Breach Affects 337,000](https://www.securityweek.com/data-breach-at-tennessee-hospital-affects-337000/)
+*   美国HHS卫生部门网络安全协调中心（HC3）：[Alert – Rhysida Ransomware](https://www.hhs.gov/sites/default/files/rhysida-ransomware-alert.pdf)
+*   FBI、CISA、MS-ISAC联合网络安全咨询：[#StopRansomware: Rhysida Ransomware](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a)

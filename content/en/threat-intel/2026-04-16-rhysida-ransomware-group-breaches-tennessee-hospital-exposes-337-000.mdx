@@ -1,0 +1,63 @@
+---
+title: 'Rhysida Ransomware Group Breaches Tennessee Hospital, Exposes 337,000'
+slug: >-
+  2026-04-16-rhysida-ransomware-group-breaches-tennessee-hospital-exposes-337-000
+date: '2026-04-16'
+excerpt: >-
+  Cookeville Regional Medical Center confirms a 2025 ransomware attack by the
+  Rhysida group compromised the data of 337,000 individuals after the theft of
+  500GB of files.
+category: threat-intel
+tags:
+  - ransomware
+  - healthcare
+  - data-breach
+  - rhysida
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/data-breach-at-tennessee-hospital-affects-337000/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-16-rhysida-ransomware-group-breaches-tennessee-hospital-exposes-337-000
+severity: high
+threat_actor: Rhysida
+affected_sectors:
+  - healthcare
+affected_regions:
+  - United States
+---
+## Executive Summary
+A ransomware attack against Cookeville Regional Medical Center (CRMC) in Tennessee, claimed by the Rhysida group in late 2025, has resulted in the confirmed exposure of sensitive data belonging to 337,000 individuals. The threat actors exfiltrated approximately 500GB of files prior to encryption, according to a breach notification filed by the hospital with the Maine Attorney General's office and reported by SecurityWeek. While the hospital restored systems from backups, the stolen data's full contents and dissemination remain a significant risk to patients and staff.
+
+## Technical Analysis
+The attack, which CRMC detected on November 30, 2025, involved the Rhysida ransomware group gaining unauthorized access to the hospital's network. The group's primary tactic was data theft prior to file encryption, a double-extortion method common among modern ransomware operations. The attackers successfully exfiltrated roughly 500GB of data. The specific initial access vector used in this breach has not been publicly disclosed by the hospital or in the Rhysida group's claim. Following the detection, CRMC took affected systems offline, initiated an investigation with third-party digital forensics experts, and restored operations from backups, avoiding payment of a ransom. The data exposure notification, filed in April 2026, confirms the scope of the incident.
+
+## Indicators of Compromise
+None identified at this time. The public breach notification and source reporting do not provide specific file hashes, malicious domains, or IP addresses associated with this incident.
+
+## Tactics, Techniques & Procedures
+Based on the Rhysida group's known modus operandi and the details of this attack, the following TTPs are likely applicable:
+*   **Initial Access:** The specific vector is unconfirmed but often involves phishing, exploitation of public-facing applications, or compromised credentials.
+*   **Exfiltration (TA0010):** Theft of approximately 500GB of data prior to encryption (T1560).
+*   **Impact (TA0040):** Deployment of ransomware for data encryption (T1486) coupled with a threat to publish stolen data (T1657).
+*   **Financial Motive:** The operation follows a double-extortion model, demanding payment for both a decryption key and a promise not to publish stolen data.
+
+## Threat Actor Context
+The Rhysida ransomware-as-a-service (RaaS) operation emerged in mid-2023 and has been particularly active against the healthcare and education sectors. The group is known for its aggressive double-extortion tactics and maintains a dedicated leak site to pressure victims. In November 2023, the U.S. Department of Health and Human Services (HHS) issued a warning about Rhysida targeting the healthcare sector. The FBI, CISA, and MS-ISAC subsequently released a joint advisory in December 2023 detailing the group's TTPs. Rhysida actors have previously leveraged tools like Cobalt Strike and PowerShell scripts for post-compromise activity. The attack on CRMC is consistent with the group's continued focus on critical infrastructure.
+
+## Mitigations & Recommendations
+Organizations, especially in healthcare, should review and implement guidance from previous advisories on Rhysida. Key mitigations include:
+*   Enforcing strong, multi-factor authentication (MFA) on all accounts, particularly for remote access and administrative interfaces.
+*   Implementing and rigorously testing offline, immutable backups.
+*   Applying timely patches to all software and operating systems, prioritizing known exploited vulnerabilities.
+*   Segmenting networks to limit the spread of ransomware from initial entry points.
+*   Deploying robust endpoint detection and response (EDR) tools and ensuring logs are aggregated and monitored for anomalous activity.
+*   Conducting regular security awareness training focused on phishing and social engineering.
+*   Developing, maintaining, and exercising a comprehensive incident response plan.
+
+## References
+*   SecurityWeek: [Data Breach at Tennessee Hospital Affects 337,000](https://www.securityweek.com/data-breach-at-tennessee-hospital-affects-337000/)
+*   U.S. HHS Health Sector Cybersecurity Coordination Center (HC3): [Alert – Rhysida Ransomware](https://www.hhs.gov/sites/default/files/rhysida-ransomware-alert.pdf)
+*   FBI, CISA, MS-ISAC Joint Cybersecurity Advisory: [#StopRansomware: Rhysida Ransomware](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a)

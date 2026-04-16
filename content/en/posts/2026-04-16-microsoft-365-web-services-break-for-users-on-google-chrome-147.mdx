@@ -1,0 +1,43 @@
+---
+title: Microsoft 365 Web Services Break for Users on Google Chrome 147
+slug: 2026-04-16-microsoft-365-web-services-break-for-users-on-google-chrome-147
+date: '2026-04-16'
+excerpt: >-
+  A critical compatibility issue between Google Chrome version 147 and Microsoft
+  365 web services is preventing user authentication and application loading,
+  disrupting access for an unknown number of organizations.
+category: vulnerabilities
+tags:
+  - microsoft-365
+  - google-chrome
+  - authentication
+  - compatibility
+  - web-services
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/microsoft-365-chrome-147-issue/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-16-microsoft-365-web-services-break-for-users-on-google-chrome-147
+severity: high
+---
+## Executive Summary
+A critical compatibility issue between Google Chrome version 147 and Microsoft 365 web services is preventing user authentication and application loading, disrupting access for an unknown number of organizations. Microsoft confirmed it is actively investigating the widespread problem, first reported on April 16, 2026, which renders core productivity applications like Outlook and SharePoint inaccessible through the affected browser. The root cause remains undetermined, and no workaround or patch timeline has been provided by either vendor at this time.
+
+## Technical Analysis
+The failure manifests when users on Google Chrome version 147 attempt to access Microsoft 365 web portals, including Outlook on the web and the SharePoint start page. According to Microsoft's initial statement, the issue prevents the services from loading correctly, effectively blocking authentication and subsequent application interaction. The precise technical mechanism of the failure is not yet public. It is unclear whether the break stems from a change in Chrome's handling of web standards, authentication protocols like OAuth or SAML, or a specific interaction with Microsoft's client-side JavaScript frameworks. The problem appears to be isolated to Chrome version 147; other browsers and previous versions of Chrome are not reported to be affected, suggesting a regression or unintended consequence of a recent Chrome update. Microsoft has not indicated whether the issue is related to a recent service update on its end or solely a client-side browser change.
+
+## Indicators of Compromise
+None identified at this time. This is a compatibility and availability issue, not a security breach or malware campaign.
+
+## Tactics, Techniques & Procedures
+Not applicable. This incident is a service disruption caused by a software compatibility defect, not a malicious actor's campaign.
+
+## Threat Actor Context
+There is no evidence of threat actor involvement in this incident. The disruption is attributed to a technical compatibility failure between two legitimate software platforms.
+
+## Mitigations & Recommendations
+Organizations and users experiencing access issues should immediately switch to an alternative browser, such as Microsoft Edge, Firefox, or Safari, to regain access to Microsoft 365 services. Rolling back to a previous, stable version of Google Chrome (if feasible within enterprise management frameworks) may also restore functionality, though this carries its own security implications if the older version contains unpatched vulnerabilities. System administrators should monitor official channels from both Microsoft and Google for root cause analysis and patch advisories. Until a fix is deployed, users should be advised against attempting workarounds that involve disabling core browser security settings, as this could introduce tangible security risks.
+
+## References
+- https://cybersecuritynews.com/microsoft-365-chrome-147-issue/
