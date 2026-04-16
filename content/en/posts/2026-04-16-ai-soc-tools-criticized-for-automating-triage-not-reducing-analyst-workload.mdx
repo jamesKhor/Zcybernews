@@ -1,0 +1,52 @@
+---
+title: 'AI SOC Tools Criticized for Automating Triage, Not Reducing Analyst Workload'
+slug: >-
+  2026-04-16-ai-soc-tools-criticized-for-automating-triage-not-reducing-analyst-workload
+date: '2026-04-16'
+excerpt: >-
+  A new analysis argues most AI-powered security operations center tools merely
+  accelerate alert triage without reducing the underlying workload for analysts,
+  failing to deliver on promises of true automation.
+category: industry
+tags:
+  - ai
+  - soc
+  - automation
+  - threat-detection
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/most-ai-socs-are-just-faster-triage-thats-not-enough/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-16-ai-soc-tools-criticized-for-automating-triage-not-reducing-analyst-workload
+severity: informational
+---
+## Executive Summary
+Most artificial intelligence tools marketed for security operations centers (SOCs) are failing to deliver meaningful automation, instead functioning primarily as faster alert triage systems that do not reduce the fundamental workload for human analysts. According to an analysis by automation firm Tines, the industry's focus on using large language models (LLMs) to summarize and prioritize alerts creates a "faster horses" problem, accelerating existing inefficient processes rather than re-engineering them for autonomous action. Real efficiency gains, the report contends, require end-to-end workflow automation that connects detection to remediation across disparate security tools.
+
+## Technical Analysis
+The core technical critique centers on the architectural implementation of AI in SOC platforms. As detailed in the Tines analysis, many vendors are integrating LLMs as a layer atop existing security information and event management (SIEM) systems and extended detection and response (XDR) platforms. These implementations typically use the AI to parse and summarize incoming alerts, providing context to analysts more quickly. However, this approach leaves the human operator as the essential component required to investigate the summarized alert and execute any necessary response actions across various consoles and interfaces.
+
+This creates a bottleneck, as the speed of the overall security response remains limited by human cognition and manual task-switching. The analysis contrasts this with what it terms "agentic" or workflow automation, where the system itself is granted permissions to execute predefined actions across integrated platforms—such as isolating a host in a CrowdStrike console, blocking an IP in a firewall, and revoking a user's session in Okta—based on high-confidence detection logic, without requiring a human to click through each interface. The limitation of current AI SOC tools, therefore, is not in understanding the alert but in lacking the integrated, permissioned connectors to act on that understanding autonomously.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+This analysis does not describe the TTPs of a specific threat actor, but rather critiques defensive security operations methodologies. The relevant procedural critique is the continued reliance on **T1057: Process Discovery**-style manual investigation by humans for every alert, even when that alert has been pre-analyzed and summarized by an AI. The proposed alternative involves automating entire **TA0040: Impact** mitigation playbooks, such as containment and eradication steps, which would represent a shift toward more autonomous security operations.
+
+## Threat Actor Context
+This report does not attribute activity to a specific threat actor or group. The context is the broader defensive industry's struggle to keep pace with offensive automation. The argument implies that defenders who fail to move beyond AI-assisted triage to automated response will remain at a structural disadvantage against adversaries who increasingly automate their own attack chains for speed and scale.
+
+## Mitigations & Recommendations
+The analysis from Tines suggests organizations should evaluate SOC tools based on their ability to reduce mean time to respond (MTTR) through automated actions, not just mean time to acknowledge (MTTA). Key recommendations include:
+
+*   **Audit Automation Scope:** Scrutinize vendor claims of "AI automation" to determine if the technology merely summarizes data or can execute sanctioned response actions across your key security and IT systems.
+*   **Prioritize Integration Depth:** Select tools based on the breadth and depth of their pre-built, permissioned integrations with existing security stack components (e.g., EDR, IAM, email security, cloud consoles).
+*   **Build Actionable Playbooks:** Develop and codify high-confidence detection-to-response workflows that can be safely automated, starting with common and unambiguous attack patterns.
+*   **Measure Workload Reduction:** Shift SOC metrics from alert volume and triage speed to analyst workload reduction and the percentage of closed incidents that required no manual intervention.
+
+## References
+*   [Most "AI SOCs" Are Just Faster Triage. That's Not Enough.](https://www.bleepingcomputer.com/news/security/most-ai-socs-are-just-faster-triage-thats-not-enough/)

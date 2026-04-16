@@ -1,0 +1,56 @@
+---
+title: ATHR Vishing 平台使用 AI 代理自动化语音钓鱼
+slug: 2026-04-16-athr-vishing-platform-automates-voice-phishing-with-ai-agents
+date: '2026-04-16'
+excerpt: ATHR 网络犯罪平台使用 AI 生成的语音代理自动化语音钓鱼（vishing）攻击，以冒充受信任的实体并收集凭证，降低了大规模社会工程学活动的技术门槛。
+category: threat-intel
+tags:
+  - vishing
+  - ai-security
+  - social-engineering
+  - cybercrime-as-a-service
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-athr-vishing-platform-uses-ai-voice-agents-for-automated-attacks/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-16-athr-vishing-platform-automates-voice-phishing-with-ai-agents
+severity: high
+---
+## ATHR Vishing Platform Automates Voice Phishing with AI Agents
+
+## 执行摘要
+根据网络安全公司Sekoia的研究，一个名为ATHR的新网络犯罪即服务（CaaS）平台通过部署AI生成的语音代理来冒充受信任实体，自动化语音网络钓鱼（vishing）攻击。该平台自2026年3月以来至少在Telegram上做广告，允许技术能力有限的操作者发起每天可扩展到数千个电话的凭证收集活动，将自动化AI交互与针对高价值目标的人工呼叫相结合。
+
+## 技术分析
+ATHR平台作为一个集中的Web面板运作，客户被称为“操作者”，可以购买积分来启动vishing活动。根据Sekoia的分析，该服务提供两种主要的操作模式：完全自动化的“AI代理”模式和针对更复杂、互动性更强的社会工程学的“人工代理”模式。
+
+在AI代理模式下，平台使用文本到语音（TTS）引擎生成进行初始呼叫的合成语音。AI代理被预设脚本编程，通常冒充来自像Microsoft这样的受信任公司的IT支持或安全人员。如果目标参与，AI尝试引导他们访问一个网络钓鱼网站以输入他们的凭证。平台的后端可以动态生成这些网络钓鱼页面，通常使用模仿合法服务的域名，如`microsoft-online.us`。Sekoia指出，AI的对话流程是僵硬的，可以被怀疑的接收者检测到，但其主要优势是规模和操作速度。
+
+人工代理模式作为一个传统的vishing呼叫中心界面运作。操作者使用ATHR面板管理目标列表，当电话接通时，平台为人工呼叫者提供一个仪表板，显示目标的信息和建议的脚本。这种混合方法表明，ATHR背后的威胁行为者正试图优化效率，使用自动化处理大量目标，人工干预处理高成功率目标。
+
+## 入侵指标
+目前没有识别出任何入侵指标。Sekoia的报告没有发布与ATHR平台相关的具体域名、IP地址或文件哈希值。研究基于监控广告和分析平台的运营机制，如其创建者所述。
+
+## 战术、技术与程序
+该平台的TTPs与网络杀伤链中的社会工程学和凭证访问阶段一致。
+- **T1589.001: 收集受害者身份信息（电子邮件地址）**：操作者需要提供自己的目标列表，这些列表可能来自之前的数据库泄露或从初始访问经纪人处购买。
+- **T1588.002: 获取能力（网络钓鱼即服务）**：ATHR作为一项服务进行市场推广，降低了vishing活动的技术门槛。
+- **T1598.003: 网络钓鱼获取信息（语音网络钓鱼）**：核心技术，使用AI合成和人工语音建立信任。
+- **T1585.001: 建立账户（域名）**：据报道，平台协助创建有说服力的网络钓鱼域名，尽管具体机制未详细说明。
+- **T1078: 有效账户**：最终目标是收集凭证以获得对公司或个人账户的未经授权的访问。
+
+## 威胁行为者背景
+ATHR平台的开发人员和主要操作者仍然身份不明。该服务正在Telegram上的俄语网络犯罪频道中做广告，这可能表明操作者的起源或主要市场，但这不是确凿证据。该平台代表了网络钓鱼即服务生态系统的成熟，超越了电子邮件和短信，自动化更复杂的基于语音的攻击。它的出现遵循了网络犯罪分子将生成性AI工具纳入以增强社会工程学和规避传统基于文本的检测系统的更广泛趋势。
+
+## 缓解措施与建议
+组织应加强防御vishing的能力，vishing通常可以绕过技术电子邮件过滤器。
+- **用户意识培训**：进行包括识别vishing策略的定期培训。强调合法的IT或安全人员永远不会打电话要求密码或要求立即采取行动以“保护”账户。
+- **实施验证程序**：为任何未经请求的IT或安全联系建立一个清晰的、非带外的验证流程（例如，使用已知的内部工单号码或通过官方发布的号码回拨）。
+- **监控凭证泄露**：使用服务监控在泄露或在暗网论坛上发布的公司凭证，因为这些列表助长了随后的vishing活动。
+- **多因素认证（MFA）**：普遍实施MFA，特别是在特权和可从外部访问的账户上。尽管一些vishing攻击可能试图收集MFA代码，但存在第二个不可网络钓鱼的因素（如FIDO2安全密钥）显著降低了风险。
+- **电话安全政策**：在可行的情况下考虑技术控制，例如阻止不需要的国际电话或实施来电者ID验证解决方案，尽管这些可以被决心的攻击者绕过。
+
+## 参考资料
+- Sekoia关于ATHR平台的研究：[https://www.bleepingcomputer.com/news/security/new-athr-vishing-platform-uses-ai-voice-agents-for-automated-attacks/](https://www.bleepingcomputer.com/news/security/new-athr-vishing-platform-uses-ai-voice-agents-for-automated-attacks/)
