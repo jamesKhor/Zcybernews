@@ -1,0 +1,62 @@
+---
+title: Scammers Revive iCloud Storage Full Scam to Steal Payment Details
+slug: 2026-04-16-scammers-revive-icloud-storage-full-scam-to-steal-payment-details
+date: '2026-04-16'
+excerpt: >-
+  A phishing campaign impersonates Apple to pressure users with fake 'iCloud
+  storage full' alerts, aiming to steal credit card information and Apple ID
+  credentials.
+category: threat-intel
+tags:
+  - phishing
+  - social-engineering
+  - apple
+  - scam
+language: en
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/news/2026/04/icloud-storage-is-full-scam-is-back-and-now-it-wants-your-payment-details
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-16-scammers-revive-icloud-storage-full-scam-to-steal-payment-details
+severity: medium
+affected_sectors:
+  - individuals
+affected_regions:
+  - global
+---
+## Executive Summary
+A resurgent phishing campaign is impersonating Apple to trick users with fraudulent "iCloud storage full" alerts. The scam, documented by Malwarebytes researchers, uses high-pressure tactics to rush victims into entering credit card details and Apple ID credentials on convincing but fake Apple websites. This marks an evolution from previous versions of the scam, which primarily sought Apple ID passwords, to a more financially motivated attack targeting payment information directly.
+
+## Technical Analysis
+The attack begins with a phishing email or text message designed to appear from Apple, warning the recipient that their iCloud storage is full. The message states that the user must "upgrade now" or risk losing access to photos and other data. The message contains a link that directs the victim to a fraudulent website mimicking Apple's official iCloud management interface.
+
+According to Malwarebytes, the fake site is a sophisticated clone of the legitimate Apple storage upgrade page. It prompts the user to sign in with their Apple ID and password. After the credentials are harvested, the site advances to a second page requesting credit card information—including card number, expiration date, CVV, and billing address—under the guise of processing a storage plan payment. The entire flow is engineered to create a sense of urgency and legitimacy, bypassing casual scrutiny.
+
+The technical infrastructure supporting the scam is typical of phishing operations. The domain names used for the fake pages are often newly registered and bear slight misspellings or use different top-level domains (e.g., `.com` vs `.net`) to appear authentic. The sites likely use SSL certificates to display the padlock icon, further deceiving users into believing the connection is secure and legitimate.
+
+## Indicators of Compromise
+None identified at this time. The campaign utilizes ephemeral domains and infrastructure, making static IOCs of limited lasting value. Users should treat any unsolicited message regarding iCloud storage with extreme skepticism.
+
+## Tactics, Techniques & Procedures
+The threat actors employ several key techniques:
+*   **T1589.001: Gather Victim Identity Information: Apple ID Credentials**: The initial login page is designed to harvest Apple usernames and passwords.
+*   **T1589.002: Gather Victim Identity Information: Payment Details**: A secondary form captures full credit card information.
+*   **T1598.003: Phishing for Information: Spearphishing Link**: The campaign uses emails and SMS messages containing links to the fraudulent site.
+*   **T1608.001: Stage Capabilities: Upload Malware**: While the current scam focuses on data theft, such infrastructure could be repurposed to deliver malware.
+*   **Social Engineering**: The primary attack vector relies on creating urgency ("upgrade or lose data") to short-circuit the victim's critical thinking and bypass security awareness.
+
+## Threat Actor Context
+The specific threat actor behind this campaign is not identified. The scam is consistent with the operations of financially motivated cybercriminal groups that run large-scale, opportunistic phishing campaigns. The reuse and refinement of the "iCloud storage full" theme indicates this is a proven, effective template that continues to yield returns. There is no evidence linking this activity to a state-sponsored actor.
+
+## Mitigations & Recommendations
+Users and organizations should implement the following mitigations:
+*   **Never click links in unsolicited messages**: Manually navigate to the official Apple website (apple.com) or open the iCloud Settings app directly on your device to check storage status.
+*   **Enable multi-factor authentication (MFA) on Apple IDs**: While this will not prevent credential phishing, it significantly reduces the risk of account takeover if credentials are stolen.
+*   **Verify website URLs carefully**: Check for subtle misspellings or incorrect domains in the address bar before entering any information.
+*   **Use a password manager**: Password managers will not auto-fill credentials on fraudulent sites that do not match the saved domain, providing a technical warning.
+*   **Report phishing attempts**: Forward suspicious emails purporting to be from Apple to `reportphishing@apple.com`.
+*   **Security awareness training**: Regular training should emphasize the hallmarks of phishing, including urgency, unsolicited contact, and requests for sensitive information.
+
+## References
+*   Malwarebytes Labs: [“iCloud storage is full” scam is back, and now it wants your payment details](https://www.malwarebytes.com/blog/news/2026/04/icloud-storage-is-full-scam-is-back-and-now-it-wants-your-payment-details)
