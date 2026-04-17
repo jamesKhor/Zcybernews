@@ -193,15 +193,18 @@ export async function POST(req: NextRequest) {
       // ── Research mode: search + fetch sources inside the stream ─────────
       // Paste + articles modes already populated sourceContext above. For
       // research mode we search Brave + fetch article text here so we can
-      // stream "searching…" / "fetching…" progress to the UI.
+      // stream granular progress events to the UI (better operator UX
+      // than a silent 15s wait).
       if (deferredResearchKeywords) {
+        // Step 1 — announce search intent
         send({
           type: "status",
           step: "searching",
-          message: `Searching Brave for "${deferredResearchKeywords}"…`,
+          message: `🔍 Searching Brave for "${deferredResearchKeywords}"…`,
         });
 
         let searchResults;
+        const searchStart = Date.now();
         try {
           searchResults = await searchBrave(deferredResearchKeywords, {
             count: 8,
@@ -222,6 +225,8 @@ export async function POST(req: NextRequest) {
           return;
         }
 
+        const searchMs = Date.now() - searchStart;
+
         if (searchResults.length < 2) {
           send({
             type: "error",
@@ -231,16 +236,57 @@ export async function POST(req: NextRequest) {
           return;
         }
 
+        // Step 2 — report what we got back, list the domains
+        const resultHosts = searchResults.slice(0, 8).map((r) => {
+          try {
+            return new URL(r.url).hostname.replace(/^www\./, "");
+          } catch {
+            return r.url;
+          }
+        });
+        send({
+          type: "status",
+          step: "search-complete",
+          message: `✓ Found ${searchResults.length} results (${searchMs}ms) — ${resultHosts.slice(0, 5).join(", ")}${resultHosts.length > 5 ? ", …" : ""}`,
+        });
+
+        // Step 3 — announce fetching phase
         // Cap at 5 fetches to keep total latency <15s and respect site load
         const toFetch = searchResults.slice(0, 5);
         send({
           type: "status",
           step: "fetching",
-          message: `Found ${searchResults.length} results. Fetching ${toFetch.length} sources…`,
+          message: `📥 Fetching ${toFetch.length} top sources in parallel…`,
         });
 
+        // Step 4 — per-article completion events
+        // Use a settled Promise pattern so we can report each fetch outcome
+        // as it resolves instead of waiting for the whole batch.
         const fetched = await Promise.all(
-          toFetch.map((r) => fetchArticle(r.url, 10_000)),
+          toFetch.map(async (r, idx) => {
+            const host = (() => {
+              try {
+                return new URL(r.url).hostname.replace(/^www\./, "");
+              } catch {
+                return r.url;
+              }
+            })();
+            const result = await fetchArticle(r.url, 10_000);
+            if (result.error) {
+              send({
+                type: "status",
+                step: "fetch-item",
+                message: `  ✗ ${host} — ${result.error}`,
+              });
+            } else {
+              send({
+                type: "status",
+                step: "fetch-item",
+                message: `  ✓ ${host} — ${Math.round(result.text.length / 1000)}k chars`,
+              });
+            }
+            return { ...result, idx };
+          }),
         );
         const usable = fetched.filter((f) => !f.error && f.text.length >= 300);
 
@@ -258,7 +304,7 @@ export async function POST(req: NextRequest) {
           return;
         }
 
-        // Assemble grounded source context — LLM sees ONLY real extracted text
+        // Step 5 — assemble context, announce the handoff to the LLM
         sourceCount = usable.length;
         sourceUrls = usable.map((f) => f.url);
         sourceContext = usable
@@ -275,15 +321,23 @@ export async function POST(req: NextRequest) {
 
         send({
           type: "status",
-          step: "fetched",
-          message: `Got ${usable.length} sources (${Math.round(sourceContext.length / 1000)}k chars). Writing article…`,
+          step: "analyzing",
+          message: `🧠 Analyzing ${usable.length} sources (${Math.round(sourceContext.length / 1000)}k chars) — checking for duplicates, extracting facts…`,
         });
       }
 
+      // Step 6 — hand off to the LLM. This is the longest phase (~30s).
+      // Tell the operator who we're calling and what we're asking for.
+      const providerLabel =
+        provider === "auto"
+          ? "free model → DeepSeek fallback"
+          : provider === "deepseek"
+            ? "DeepSeek (paid)"
+            : "Kimi (paid)";
       send({
         type: "status",
         step: "writing",
-        message: "Starting article generation…",
+        message: `✍️ Calling ${providerLabel} — writing ${wc.label}-word article (this takes ~20-40s)…`,
       });
 
       // Step 1: Generate article body — tries free models first, DeepSeek as last resort
@@ -334,10 +388,17 @@ Return ONLY the article body in markdown. Do not include a title or frontmatter.
         },
       );
 
+      const bodyWordCount = articleBody.trim().split(/\s+/).length;
+      send({
+        type: "status",
+        step: "body-done",
+        message: `✓ Article written — ${bodyWordCount} words (${bodyModel.split("/").pop()}${bodyWasPaid ? " — paid" : " — free"})`,
+        model: bodyModel,
+      });
       send({
         type: "status",
         step: "metadata",
-        message: `Article written (${bodyModel.split("/").pop()}) — generating SEO metadata…`,
+        message: `🏷️ Generating SEO metadata — title, slug, excerpt, tags…`,
         model: bodyModel,
       });
 
@@ -439,6 +500,14 @@ ${articleBody.slice(0, 1200)}`,
       const today = new Date().toISOString().split("T")[0];
       const usedPaidFallback = bodyWasPaid || metaWasPaid;
       const modelsUsed = [...new Set([bodyModel, metaModel])];
+
+      // One last status event BEFORE "done" so the log shows finality
+      send({
+        type: "status",
+        step: "finalizing",
+        message: `✓ Metadata ready — "${aiTitle.slice(0, 60)}${aiTitle.length > 60 ? "…" : ""}" · ${aiCategory} · ${aiTags.length} tags`,
+        model: metaModel,
+      });
 
       send({
         type: "done",

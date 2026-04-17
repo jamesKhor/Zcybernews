@@ -388,9 +388,21 @@ export default function ComposePage() {
                   model: event.model,
                 },
               ]);
-              // Update button label to reflect current step
-              if (event.step === "metadata") {
-                setGenButtonLabel("Generating metadata…");
+              // Update button label to reflect current step — maps the
+              // backend's granular step names to short operator-friendly labels.
+              const stepToLabel: Record<string, string> = {
+                searching: "Searching Brave…",
+                "search-complete": "Searching Brave…",
+                fetching: "Fetching sources…",
+                "fetch-item": "Fetching sources…",
+                analyzing: "Analyzing sources…",
+                writing: "Writing article…",
+                "body-done": "Writing article…",
+                metadata: "Generating metadata…",
+                finalizing: "Finalizing…",
+              };
+              if (event.step && stepToLabel[event.step]) {
+                setGenButtonLabel(stepToLabel[event.step]);
               } else if (
                 event.message?.startsWith("Trying") ||
                 event.message?.startsWith("Found")
@@ -708,16 +720,20 @@ export default function ComposePage() {
         </div>
       )}
 
-      {/* Live generation status panel */}
+      {/* Live generation status panel — shows granular backend progress
+          events so the operator sees what's actually happening during the
+          long (15-45s) research+write flow instead of a silent spinner. */}
       {(generating || genStatusLog.length > 0) && !genError && (
-        <div className="rounded-md bg-gray-900 border border-gray-700 p-3 space-y-1.5">
+        <div className="rounded-md bg-gray-900 border border-gray-700 p-3 space-y-1.5 max-h-[260px] overflow-y-auto">
           {genStatusLog.length === 0 && generating && (
             <div className="flex items-center gap-2 text-xs text-gray-400">
               <Loader2 className="w-3 h-3 animate-spin text-emerald-400 flex-shrink-0" />
               <span>Starting…</span>
             </div>
           )}
-          {genStatusLog.slice(-6).map((s, i, arr) => {
+          {/* Show last 12 events — research mode emits more granular events
+              (per-source fetch results) so 6 was too restrictive. */}
+          {genStatusLog.slice(-12).map((s, i, arr) => {
             const isLast = i === arr.length - 1;
             const isDone = s.done;
             return (
@@ -729,8 +745,10 @@ export default function ComposePage() {
                 ) : (
                   <Circle className="w-3 h-3 text-gray-600 flex-shrink-0 mt-0.5" />
                 )}
+                {/* break-words not truncate — preserves the full message so
+                    the operator can actually read "Found 8 results — bleepingcomputer.com, krebs…" */}
                 <span
-                  className={`flex-1 truncate ${isDone ? "text-emerald-400" : isLast && generating ? "text-gray-200" : "text-gray-500"}`}
+                  className={`flex-1 break-words leading-relaxed ${isDone ? "text-emerald-400" : isLast && generating ? "text-gray-200" : "text-gray-500"}`}
                 >
                   {s.message}
                 </span>
