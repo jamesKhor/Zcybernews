@@ -116,6 +116,11 @@ type DraftData = {
   content: string;
   articleType: "posts" | "threat-intel";
   savedAt: number;
+  /** Research-mode provenance — preserve across reloads so publish still
+   * writes frontmatter.source_urls correctly even if operator closed the
+   * browser between generation and publish. */
+  researchKeywords?: string;
+  researchSourceUrls?: string[];
 };
 
 export default function ComposePage() {
@@ -183,6 +188,13 @@ export default function ComposePage() {
           setExcerpt(d.excerpt ?? "");
           setContent(d.content ?? "");
           setDraftSavedAt(d.savedAt ?? null);
+          // Restore research provenance — critical for publishing to
+          // populate frontmatter.source_urls when user returns after a
+          // browser close.
+          if (d.researchKeywords) setResearchKeywords(d.researchKeywords);
+          if (Array.isArray(d.researchSourceUrls)) {
+            setResearchSourceUrls(d.researchSourceUrls);
+          }
         }
       } catch {}
     }
@@ -200,10 +212,25 @@ export default function ComposePage() {
       content,
       articleType,
       savedAt: Date.now(),
+      // Preserve research provenance — publish relies on these to
+      // populate frontmatter.source_urls even after a reload.
+      researchKeywords: researchKeywords || undefined,
+      researchSourceUrls:
+        researchSourceUrls.length > 0 ? researchSourceUrls : undefined,
     };
     localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
     setDraftSavedAt(Date.now());
-  }, [title, slug, category, tags, excerpt, content, articleType]);
+  }, [
+    title,
+    slug,
+    category,
+    tags,
+    excerpt,
+    content,
+    articleType,
+    researchKeywords,
+    researchSourceUrls,
+  ]);
 
   useEffect(() => {
     const timer = setTimeout(saveDraft, 2000);
@@ -221,6 +248,10 @@ export default function ComposePage() {
     setDraftSavedAt(null);
     setGenError("");
     setSlugManuallyEdited(false);
+    // Also reset research provenance — a cleared draft should not carry
+    // source URLs from a previous generation into the next publish.
+    setResearchKeywords("");
+    setResearchSourceUrls([]);
   };
 
   const removeSource = (id: string) =>
