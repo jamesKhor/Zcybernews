@@ -59,6 +59,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
           },
         },
       },
+      {
+        // /salary — destination page for XHS career-content funnel.
+        // High priority + weekly changefreq: dataset refreshes quarterly
+        // but we want crawlers to recheck often during the launch window.
+        url: `${BASE_URL}/${locale}/salary`,
+        lastModified: new Date("2026-04-17"),
+        changeFrequency: "weekly",
+        priority: 0.95,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/salary`,
+            "zh-Hans": `${BASE_URL}/zh/salary`,
+          },
+        },
+      },
     );
 
     // Category pages

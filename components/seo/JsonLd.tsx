@@ -159,3 +159,65 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
     />
   );
 }
+
+// ─── Dataset (used by /salary page) ───────────────────────────────────────
+// schema.org/Dataset signals to Google that the page is a structured data
+// resource — eligible for the Dataset Search rich result + reinforces the
+// site's authority for "cybersecurity salary [region]" queries.
+
+interface DatasetJsonLdProps {
+  name: string;
+  description: string;
+  url: string;
+  /** ISO date string */
+  dateModified: string;
+  keywords?: string[];
+  /** Plain-text list of source attributions (e.g. ["NodeFlair", "JobStreet"]) */
+  sources?: string[];
+  /** "en" or "zh-Hans" */
+  inLanguage?: string;
+  /** "year" | "quarter" | "month" — defaults to "quarter" */
+  refreshInterval?: "year" | "quarter" | "month";
+}
+
+export function DatasetJsonLd({
+  name,
+  description,
+  url,
+  dateModified,
+  keywords = [],
+  sources = [],
+  inLanguage = "en",
+  refreshInterval = "quarter",
+}: DatasetJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name,
+    description,
+    url,
+    creator: { "@type": "Organization", name: PUBLISHER_NAME, url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: PUBLISHER_NAME,
+      url: SITE_URL,
+      logo: { "@type": "ImageObject", url: PUBLISHER_LOGO },
+    },
+    dateModified,
+    inLanguage,
+    isAccessibleForFree: true,
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
+    ...(sources.length > 0 && {
+      isBasedOn: sources.map((s) => ({ "@type": "CreativeWork", name: s })),
+    }),
+    temporalCoverage: `2026/${refreshInterval === "year" ? "P1Y" : refreshInterval === "month" ? "P1M" : "P3M"}`,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
+    />
+  );
+}

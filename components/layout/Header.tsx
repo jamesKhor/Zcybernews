@@ -25,6 +25,7 @@ export function Header({ locale }: Props) {
     { href: `/${locale}`, label: t("home") },
     { href: `/${locale}/articles`, label: t("articles") },
     { href: `/${locale}/threat-intel`, label: t("threatIntel") },
+    { href: `/${locale}/salary`, label: t("salaries") },
     { href: `/${locale}/categories`, label: t("categories") },
   ];
 
