@@ -43,11 +43,18 @@ export default function proxy(request: NextRequest) {
 
   // ── 1) www → apex (permanent) ─────────────────────────────────────────────
   // Match only www subdomain; leave localhost / preview domains alone.
+  //
+  // Port-stripping rationale: behind Nginx reverse proxy, request.nextUrl
+  // has `port: "3000"` (the internal Node origin port). When we mutate
+  // apexUrl.host = "zcybernews.com" but leave the port, NextResponse.redirect
+  // produces `Location: https://zcybernews.com:3000/` which is unreachable
+  // from the public internet (Cloudflare + Nginx only expose :443).
+  // Building the URL from scratch avoids inheriting the origin port.
   if (host.startsWith("www.")) {
-    const apexUrl = request.nextUrl.clone();
-    apexUrl.host = CANONICAL_HOST;
-    apexUrl.protocol = "https:";
-    // NextResponse.redirect supports 308 as of Next 14+
+    const apexUrl = new URL(
+      `${pathname}${search}`,
+      `https://${CANONICAL_HOST}`,
+    );
     return NextResponse.redirect(apexUrl, 308);
   }
 
