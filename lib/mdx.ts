@@ -7,12 +7,43 @@ import type { ReactElement } from "react";
 import { MDXCode } from "@/components/cve/CVEBadge";
 import { rehypeCVE } from "./rehype-cve";
 
-export async function compileMDX(source: string): Promise<{
+export type CompileMDXOptions = {
+  /**
+   * When true, strip the `## References` section (and all content below it)
+   * from the source before compiling. Use for public article pages — the
+   * reference list is for internal admin review only, not for end-readers.
+   *
+   * Matches English ("References", "Sources") and Chinese common variants
+   * ("参考文献", "参考资料", "来源"). Case-insensitive. Greedy from the
+   * heading to end of file.
+   */
+  stripReferences?: boolean;
+};
+
+const REFERENCES_HEADING_RE =
+  /\n##\s+(References|Sources|参考文献|参考资料|来源)[\s\S]*$/i;
+
+/**
+ * Strip the References section from MDX source. Exported for unit testing
+ * and for the admin panel's "what the public sees" preview.
+ */
+export function stripReferencesSection(source: string): string {
+  return source.replace(REFERENCES_HEADING_RE, "\n");
+}
+
+export async function compileMDX(
+  source: string,
+  options: CompileMDXOptions = {},
+): Promise<{
   content: ReactElement;
   headings: { id: string; text: string; level: number }[];
 }> {
+  const processedSource = options.stripReferences
+    ? stripReferencesSection(source)
+    : source;
+
   const { content } = await nextMdxCompile({
-    source,
+    source: processedSource,
     options: {
       mdxOptions: {
         remarkPlugins: [remarkGfm],
@@ -25,8 +56,9 @@ export async function compileMDX(source: string): Promise<{
     },
   });
 
-  // Extract headings for Table of Contents
-  const headings = extractHeadings(source);
+  // Extract headings for Table of Contents from the processed source
+  // (so the TOC doesn't list a References heading that's been stripped)
+  const headings = extractHeadings(processedSource);
 
   return { content, headings };
 }

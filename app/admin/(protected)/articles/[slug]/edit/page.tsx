@@ -4,7 +4,15 @@ import { useState, useEffect, useCallback, use } from "react";
 import { adminFetch } from "@/lib/admin-fetch";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Save, Loader2, ExternalLink, X, Plus } from "lucide-react";
+import {
+  ArrowLeft,
+  Save,
+  Loader2,
+  ExternalLink,
+  X,
+  Plus,
+  Link2,
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -338,6 +346,42 @@ export default function EditArticlePage({
                 </SelectContent>
               </Select>
             </div>
+
+            {/* Sources (read-only; for admin review only — NOT shown to public readers) */}
+            {Array.isArray(data.frontmatter.source_urls) &&
+              (data.frontmatter.source_urls as string[]).length > 0 && (
+                <div className="space-y-1.5">
+                  <Label className="text-gray-300 text-sm flex items-center gap-1.5">
+                    <Link2 className="size-3.5" />
+                    Sources (internal — not shown to readers)
+                  </Label>
+                  <div className="flex flex-wrap gap-1.5">
+                    {(data.frontmatter.source_urls as string[]).map(
+                      (url, i) => {
+                        let host = url;
+                        try {
+                          host = new URL(url).hostname.replace(/^www\./, "");
+                        } catch {
+                          /* keep raw url */
+                        }
+                        return (
+                          <a
+                            key={`${url}-${i}`}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 px-2 py-1 text-xs rounded border border-gray-700 bg-gray-900 text-gray-300 hover:bg-gray-800 hover:border-gray-600 transition-colors"
+                            title={url}
+                          >
+                            <ExternalLink className="size-3" />
+                            {host}
+                          </a>
+                        );
+                      },
+                    )}
+                  </div>
+                </div>
+              )}
 
             {/* Tags */}
             <div className="space-y-1.5">

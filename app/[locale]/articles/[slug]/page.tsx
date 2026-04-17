@@ -115,7 +115,12 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   const { frontmatter, content, readingTime } = article;
-  const { content: mdxContent, headings } = await compileMDX(content);
+  // stripReferences: ## References list is for internal admin review only,
+  // not for end-readers. The source_urls frontmatter field still exists
+  // on disk for admin traceability.
+  const { content: mdxContent, headings } = await compileMDX(content, {
+    stripReferences: true,
+  });
   const related = getRelatedPosts(frontmatter, locale, "posts", 3);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
   const image =
