@@ -1,0 +1,58 @@
+---
+title: Man Sentenced to Prison for Selling Hacked DraftKings Accounts
+slug: 2026-04-17-man-sentenced-to-prison-for-selling-hacked-draftkings-accounts
+date: '2026-04-17'
+excerpt: >-
+  Kamerin Stokes was sentenced to 30 months in prison for selling access to tens
+  of thousands of compromised DraftKings accounts, causing over $600,000 in
+  losses.
+category: threat-intel
+tags:
+  - credential-stuffing
+  - fraud
+  - sentencing
+  - online-gaming
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/man-gets-30-months-for-selling-thousands-of-hacked-draftkings-accounts/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-17-man-sentenced-to-prison-for-selling-hacked-draftkings-accounts
+severity: medium
+affected_sectors:
+  - online-gaming
+  - entertainment
+affected_regions:
+  - United States
+---
+## Executive Summary
+A 23-year-old Tennessee man, Kamerin Stokes, has been sentenced to 30 months in federal prison for operating a scheme to sell access to tens of thousands of compromised DraftKings sports betting and fantasy sports accounts. According to court documents, the fraud caused over $600,000 in losses to victims and the company. Stokes pleaded guilty to charges of conspiracy to commit computer intrusion and wire fraud, highlighting the tangible legal consequences for credential-stuffing and account takeover attacks against online platforms.
+
+## Technical Analysis
+The scheme relied on credential stuffing, a common attack where usernames and passwords stolen from other data breaches are automatically tested against other online services. Stokes and his co-conspirators did not exploit a specific software vulnerability in DraftKings' systems; instead, they leveraged the widespread user practice of password reuse. After gaining access to accounts, the attackers would either drain the victims' cash balances or use linked payment methods to place fraudulent bets. The U.S. Department of Justice noted that Stokes used automated tools and proxy networks to hide his location while conducting these attacks, a standard technique to evade IP-based blocking. The scale of the operation—involving tens of thousands of accounts—indicates a systematic, automated process rather than manual intrusion.
+
+## Indicators of Compromise
+None identified at this time. The attack was based on stolen credentials from external breaches, not a specific malware campaign or infrastructure unique to this actor.
+
+## Tactics, Techniques & Procedures
+The threat actor's TTPs align with common credential-stuffing and account fraud operations:
+- **Credential Stuffing (T1110.004):** Used lists of credentials from prior breaches to gain unauthorized access to DraftKings accounts.
+- **Automated Execution (T1200):** Employed scripts or bots to test large volumes of credentials at scale.
+- **Proxy and VPN Use (T1090.002):** Utilized proxy networks to obfuscate the true source IP addresses of the attacks, complicating detection and attribution.
+- **Financial Fraud (T1497):** Once account access was achieved, the actor either withdrew cash balances or used stored payment methods to place bets, converting account access into monetary gain.
+- **Online Marketplace Sales (T1588.002):** Advertised and sold access to the compromised accounts on underground forums and messaging platforms, monetizing the stolen access.
+
+## Threat Actor Context
+Kamerin Stokes, a 23-year-old from Memphis, Tennessee, operated under the alias "Swipes.'' The investigation, led by the FBI and IRS Criminal Investigation, revealed he worked with at least one other individual. The sentencing documents state that Stokes was part of a conspiracy that began no later than November 2022 and continued until his arrest. This case is part of a broader trend where low-sophistication but high-volume attacks against consumer-facing platforms, particularly in the lucrative online gaming and betting sector, are pursued by individual actors or small groups seeking quick financial profit rather than state-aligned espionage.
+
+## Mitigations & Recommendations
+Organizations, especially those in the gaming, finance, and e-commerce sectors, should implement the following measures to defend against similar credential-stuffing attacks:
+- **Enforce Multi-Factor Authentication (MFA):** Mandate MFA for all user accounts, particularly for actions involving withdrawals or changes to payment methods. This is the most effective barrier against credential-stuffing.
+- **Monitor for Credential Stuffing:** Deploy systems that can detect and block rapid, automated login attempts from multiple IP addresses or unusual geolocations.
+- **Integrate Breached Password Databases:** Use services that check user passwords against known breach corpuses during sign-up and password changes to prevent the reuse of compromised credentials.
+- **Educate Users:** Promote the use of password managers and unique passwords for every online account to mitigate the risk posed by credential reuse.
+- **Monitor for Account Takeover:** Implement behavioral analytics to flag anomalous account activity, such as sudden changes to contact information, withdrawal requests, or betting patterns from a previously inactive account.
+
+## References
+- https://www.bleepingcomputer.com/news/security/man-gets-30-months-for-selling-thousands-of-hacked-draftkings-accounts/

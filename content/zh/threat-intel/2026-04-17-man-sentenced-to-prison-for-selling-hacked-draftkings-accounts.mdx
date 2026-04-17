@@ -1,0 +1,55 @@
+---
+title: 男子因出售被黑DraftKings账户被判入狱
+slug: 2026-04-17-man-sentenced-to-prison-for-selling-hacked-draftkings-accounts
+date: '2026-04-17'
+excerpt: 'Kamerin Stokes 因出售访问数万个被泄露的DraftKings账户而被判处30个月监禁，造成超过600,000美元的损失。'
+category: threat-intel
+tags:
+  - credential-stuffing
+  - fraud
+  - sentencing
+  - online-gaming
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/man-gets-30-months-for-selling-thousands-of-hacked-draftkings-accounts/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-17-man-sentenced-to-prison-for-selling-hacked-draftkings-accounts
+severity: medium
+affected_sectors:
+  - online-gaming
+  - entertainment
+affected_regions:
+  - United States
+---
+## 执行摘要
+一名23岁的田纳西州男子，Kamerin Stokes，因运营一个出售数万个被黑的DraftKings体育博彩和梦幻体育账户访问权限的计划，被判处30个月联邦监狱监禁。根据法庭文件，这起欺诈行为给受害者和公司造成了超过600,000美元的损失。Stokes对合谋进行计算机入侵和电汇欺诈的指控表示认罪，突显了针对在线平台的凭证填充和账户接管攻击的实际法律后果。
+
+## 技术分析
+该计划依赖于凭证填充，这是一种常见的攻击方式，其中从其他数据泄露中窃取的用户名和密码被自动测试以针对其他在线服务。Stokes及其同谋并没有利用DraftKings系统中的特定软件漏洞；相反，他们利用了用户普遍存在的密码重用行为。攻击者在获得账户访问权限后，要么耗尽受害者的现金余额，要么使用关联的支付方式进行欺诈性投注。美国司法部指出，Stokes在进行这些攻击时使用了自动化工具和代理网络来隐藏他的位置，这是一种标准的技术，以逃避基于IP的封锁。涉及数万个账户的行动规模表明，这是一个系统化的自动化过程，而不是手动入侵。
+
+## 入侵指标
+目前没有识别出任何指标。这次攻击是基于从外部泄露中窃取的凭证，而不是针对这个行为者特定的恶意软件活动或基础设施。
+
+## 战术、技术与程序
+威胁行为者的战术、技术与程序与常见的凭证填充和账户欺诈操作一致：
+- **凭证填充 (T1110.004)：** 使用从先前泄露中获得的凭证列表，未经授权访问DraftKings账户。
+- **自动化执行 (T1200)：** 雇佣脚本或机器人来大规模测试大量凭证。
+- **代理和VPN使用 (T1090.002)：** 使用代理网络来混淆攻击的真实源IP地址，使检测和归属复杂化。
+- **金融欺诈 (T1497)：** 一旦获得账户访问权限，行为者要么提取现金余额，要么使用存储的支付方式下注，将账户访问权限转化为金钱收益。
+- **在线市场销售 (T1588.002)：** 在地下论坛和消息平台上宣传和销售被黑账户的访问权限，将被盗访问权限货币化。
+
+## 威胁行为者背景
+来自田纳西州孟菲斯的23岁Kamerin Stokes，以“Swipes”为别名运营。由FBI和IRS刑事调查领导的调查揭示，他至少与另一个人合作。判决文件指出，Stokes是一个不迟于2022年11月开始并持续到他被捕的阴谋的一部分。这个案例是一个更广泛趋势的一部分，其中低复杂性但高容量的攻击针对面向消费者的平台，特别是在利润丰厚的在线游戏和博彩领域，由寻求快速财务利润的个人或小团体进行，而不是与国家对齐的间谍活动。
+
+## 缓解措施与建议
+组织，特别是那些在游戏、金融和电子商务领域的组织，应实施以下措施以防御类似的凭证填充攻击：
+- **强制多因素认证 (MFA)：** 对所有用户账户强制执行MFA，特别是涉及提款或更改支付方式的操作。这是抵御凭证填充最有效的屏障。
+- **监控凭证填充：** 部署能够检测和阻止来自多个IP地址或不寻常地理位置的快速、自动化登录尝试的系统。
+- **整合泄露密码数据库：** 使用在注册和更改密码期间检查用户密码是否与已知泄露语料库匹配的服务，以防止重用泄露的凭证。
+- **教育用户：** 推广使用密码管理器和为每个在线账户使用唯一密码，以减轻凭证重用带来的风险。
+- **监控账户接管：** 实施行为分析以标记异常账户活动，如突然更改联系信息、提款请求或以前不活跃账户的下注模式。
+
+## 参考资料
+- https://www.bleepingcomputer.com/news/security/man-gets-30-months-for-selling-thousands-of-hacked-draftkings-accounts/
