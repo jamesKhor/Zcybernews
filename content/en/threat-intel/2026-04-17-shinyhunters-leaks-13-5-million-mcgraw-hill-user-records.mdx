@@ -1,0 +1,45 @@
+---
+title: ShinyHunters Leaks 13.5 Million McGraw Hill User Records
+slug: 2026-04-17-shinyhunters-leaks-13-5-million-mcgraw-hill-user-records
+date: '2026-04-17'
+excerpt: >-
+  The ShinyHunters extortion group leaked data from 13.5 million McGraw Hill
+  user accounts, stolen via a breach of the company's Salesforce environment.
+  The data includes names, emails, and institutional affiliations.
+category: threat-intel
+tags:
+  - data-breach
+  - extortion
+  - education
+  - shinyhunters
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/data-breach-at-edtech-giant-mcgraw-hill-affects-135-million-accounts/
+author: ZCyberNews
+draft: false
+severity: high
+threat_actor: ShinyHunters
+affected_sectors:
+  - education
+---
+## Executive Summary
+The ShinyHunters extortion group has publicly leaked a database containing approximately 13.5 million user records stolen from educational publisher McGraw Hill. According to the threat actor's claims and analysis of the leaked data, the breach originated from a compromised Salesforce environment used by McGraw Hill. The leaked information includes user names, email addresses, institutional affiliations, and other account details, posing significant credential stuffing and phishing risks to the global education sector.
+
+## Technical Analysis
+The breach was not the result of a vulnerability in a McGraw Hill application, but rather a compromise of the company's instance of Salesforce, a third-party customer relationship management (CRM) platform. ShinyHunters claimed to have accessed the Salesforce environment in early April 2026. The specific attack vector used to gain initial access to the Salesforce instance remains unclear. The threat actor subsequently exfiltrated a user database and listed the entire dataset for sale on a cybercrime forum on April 16, 2026, before leaking it publicly after failing to secure a buyer. The leaked data, reviewed by BleepingComputer, contains records for users of platforms like ALEKS, Connect, and McGraw Hill Plus. Each record includes fields such as name, email address, school or institutional name, and account creation date. The data does not appear to contain passwords or highly sensitive financial information, though the exact scope of all exfiltrated data is not fully confirmed.
+
+## Indicators of Compromise
+None identified at this time. The breach involved data exfiltration from a cloud service, not malware deployment on endpoints.
+
+## Tactics, Techniques & Procedures
+Based on ShinyHunters' claims and the nature of the incident, the likely TTPs align with the group's known behavior. The initial access was likely achieved through credential phishing, exploitation of a misconfigured or unpatched Salesforce instance, or the compromise of a privileged user account (T1586.001, T1190). The subsequent data exfiltration from the cloud-based CRM platform (T1537) is consistent with the group's focus on mass data theft from corporate environments. The final stage involved extortion, where the group attempted to sell the data before resorting to public leakage (T1657) to damage McGraw Hill's reputation and incentivize future payments from other victims.
+
+## Threat Actor Context
+ShinyHunters is a well-known and prolific threat group specializing in large-scale data theft and extortion. The group has been linked to numerous high-profile breaches over the past several years, targeting a wide range of industries including technology, retail, and finance. Their operational pattern typically involves breaching an organization, stealing sensitive data, and then attempting to ransom the data back to the victim or sell it on cybercrime forums. The McGraw Hill breach follows this established model. The group's origins and specific affiliations are not definitively known to public researchers.
+
+## Mitigations & Recommendations
+Organizations, particularly those in the education technology sector, should treat this leak as a source of credential stuffing attacks. Affected users should be notified and advised to change their passwords on McGraw Hill platforms and any other services where they have reused the same credentials. They should also be vigilant for targeted phishing emails leveraging the stolen personal and institutional data. For companies using third-party SaaS platforms like Salesforce, this incident underscores the critical need for robust security configurations, including enforcing multi-factor authentication (MFA) for all administrative and user accounts, implementing strict access controls based on the principle of least privilege, and continuously monitoring for anomalous access patterns and data exports. Regular security assessments of cloud configurations are essential.
+
+## References
+- https://www.bleepingcomputer.com/news/security/data-breach-at-edtech-giant-mcgraw-hill-affects-135-million-accounts/
