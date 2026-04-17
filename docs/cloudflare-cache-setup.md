@@ -20,11 +20,25 @@ This alone should lift cache hit rate from 7.6% → 40-50% because Cloudflare wi
 
 Cloudflare defaults to "respect origin cache headers" for HTML. That's ✅ now that origins emit proper values. But Cloudflare also has **Cache Rules** — a UI feature for edge-side cache overrides that can push hit rate to **60-75%**.
 
-### Step 1 — Verify "Respect Origin Cache-Control" is ON
+### Step 1 — Verify caching is not being actively bypassed
+
+Cloudflare's UI evolved in 2024 — "Respect Strong ETags" was removed as a
+toggle (it's now default-on behavior). What still matters:
 
 1. Cloudflare dashboard → `zcybernews.com` → **Caching** → **Configuration**
-2. Confirm: "Respect Strong ETags" = **On**, "Always Online" = **On**
-3. Verify `.env` `Cache Level` = **Standard** (not "Bypass" or "No query string")
+2. Confirm each setting:
+   - **Caching Level** = `Standard`
+     (not "Bypass" or "No query string" — both cripple cache hits)
+   - **Browser Cache TTL** = `Respect Existing Headers`
+     (so Cloudflare honors the browser-side `max-age` we emit)
+   - **Development Mode** = `OFF`
+     (this is a 3-hour timer that bypasses ALL cache — sometimes
+     accidentally left on after debugging)
+   - **Always Online™** = `On` (if visible; optional but nice — serves
+     a cached copy when origin is down)
+
+If "Respect Strong ETags" isn't visible, that's expected — it's on by
+default now and no longer surfaced in the UI.
 
 ### Step 2 — Create a Cache Rule for HTML pages (the big win)
 
