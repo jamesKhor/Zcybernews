@@ -59,7 +59,21 @@
     "statRecords": "Records",
     "statMarkets": "Markets",
     "statCertPairs": "Cert pairs",
-    "statUpdated": "Updated"
+    "statUpdated": "Updated",
+    "heroCeilingEyebrow": "Salary Ceiling",
+    "heroEntryEyebrow": "Highest Entry",
+    "heroSpreadEyebrow": "Geographic Spread",
+    "heroCeilingDesc": "Top of market for the senior tier across the dataset.",
+    "heroEntryDesc": "Best entry-level base salary for a 0-2 year analyst.",
+    "heroSpreadDesc": "How much the senior median changes across markets.",
+    "heroCeilingDelta": "Top earner record",
+    "heroEntryDelta": "Entry-level record",
+    "heroSpreadDelta": "Senior median range",
+    "mapTitle": "APAC Salary Heat Map",
+    "mapStandfirst": "Senior-band median (USD equivalent) across six APAC markets. Bigger dot = higher senior pay. Click a city to filter the cards below.",
+    "mapLegendLow": "Lower",
+    "mapLegendHigh": "Higher",
+    "mapClickHint": "Click a city to filter"
   },
   "home": {
     "heroTitle": "Cybersecurity & Tech Intelligence",

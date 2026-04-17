@@ -33,6 +33,8 @@ import {
 import { SalaryCard } from "./SalaryCard";
 import { SalaryFilterBar } from "./SalaryFilterBar";
 import { CertROITable } from "./CertROITable";
+import { APACSalaryMap } from "./APACSalaryMap";
+import { HeroStats } from "./HeroStats";
 import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import { BreadcrumbJsonLd, DatasetJsonLd } from "@/components/seo/JsonLd";
@@ -283,6 +285,37 @@ export default async function SalaryPage({ params, searchParams }: PageProps) {
             </a>
           </p>
         </header>
+
+        {/* Hero "zoom-in" big-number stats — visible above the fold */}
+        <HeroStats
+          records={salaryData}
+          locale={locale}
+          labels={{
+            eyebrowCeiling: t("heroCeilingEyebrow"),
+            eyebrowEntry: t("heroEntryEyebrow"),
+            eyebrowSpread: t("heroSpreadEyebrow"),
+            descCeiling: t("heroCeilingDesc"),
+            descEntry: t("heroEntryDesc"),
+            descSpread: t("heroSpreadDesc"),
+            deltaCeiling: t("heroCeilingDelta"),
+            deltaEntry: t("heroEntryDelta"),
+            deltaSpread: t("heroSpreadDelta"),
+          }}
+        />
+
+        {/* APAC map — clickable city dots that drill into ?market filter */}
+        <APACSalaryMap
+          records={salaryData}
+          locale={locale}
+          currentMarket={market}
+          labels={{
+            title: t("mapTitle"),
+            standfirst: t("mapStandfirst"),
+            legendLow: t("mapLegendLow"),
+            legendHigh: t("mapLegendHigh"),
+            clickHint: t("mapClickHint"),
+          }}
+        />
 
         {/* Filter bar (sticky) */}
         <SalaryFilterBar

@@ -59,7 +59,21 @@
     "statRecords": "数据条目",
     "statMarkets": "覆盖地区",
     "statCertPairs": "证书对比",
-    "statUpdated": "更新日期"
+    "statUpdated": "更新日期",
+    "heroCeilingEyebrow": "薪资天花板",
+    "heroEntryEyebrow": "最高起薪",
+    "heroSpreadEyebrow": "地区差距",
+    "heroCeilingDesc": "数据集中所有市场资深岗位的顶薪记录。",
+    "heroEntryDesc": "0-2 年新人最高的入门级底薪。",
+    "heroSpreadDesc": "资深岗位中位数在不同市场之间的差距倍数。",
+    "heroCeilingDelta": "顶薪样本",
+    "heroEntryDelta": "入门级样本",
+    "heroSpreadDelta": "资深中位数范围",
+    "mapTitle": "亚太薪资热力图",
+    "mapStandfirst": "六个亚太市场资深岗位中位数（美元等值）。圆圈越大，资深岗位薪资越高。点击城市可筛选下方卡片。",
+    "mapLegendLow": "较低",
+    "mapLegendHigh": "较高",
+    "mapClickHint": "点击城市筛选"
   },
   "home": {
     "heroTitle": "网络安全与科技情报",
