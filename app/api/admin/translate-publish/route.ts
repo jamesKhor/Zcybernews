@@ -112,13 +112,19 @@ ${content}`,
     /* fallback to EN */
   }
 
+  // Consistency with AI pipeline: frontmatter.slug AND filename both
+  // include the date prefix. Fixes the "Article not found" edit bug where
+  // the list endpoint returned frontmatter.slug but the real file path
+  // had a different prefix. See write-mdx.ts for pipeline equivalent.
   const date = new Date().toISOString().split("T")[0];
-  const filename = `${date}-${slug.replace(/^[\d-]+-/, "")}.mdx`;
+  const bareSlug = slug.replace(/^[\d-]+-/, "");
+  const datedSlug = `${date}-${bareSlug}`;
+  const filename = `${datedSlug}.mdx`;
 
   const { mdx: enMdx, parsedFrontmatter: enFm } = buildMdx(
     {
       title,
-      slug,
+      slug: datedSlug,
       excerpt,
       category,
       tags,
@@ -130,7 +136,7 @@ ${content}`,
   const { mdx: zhMdx, parsedFrontmatter: zhFm } = buildMdx(
     {
       title: zhTitle,
-      slug,
+      slug: datedSlug,
       excerpt: zhExcerpt,
       category,
       tags,
@@ -171,10 +177,12 @@ ${content}`,
 
     // Fire-and-forget revalidation for both locales so live site surfaces
     // the new article within seconds without waiting for a rebuild.
+    // Use datedSlug so the path matches the actual route (content loader
+    // routes by filename, not by bare slug).
     const pathPrefix = type === "threat-intel" ? "threat-intel" : "articles";
     await Promise.allSettled([
-      triggerRevalidate({ path: `/en/${pathPrefix}/${slug}` }),
-      triggerRevalidate({ path: `/zh/${pathPrefix}/${slug}` }),
+      triggerRevalidate({ path: `/en/${pathPrefix}/${datedSlug}` }),
+      triggerRevalidate({ path: `/zh/${pathPrefix}/${datedSlug}` }),
       triggerRevalidate({ tag: "articles" }),
     ]);
 

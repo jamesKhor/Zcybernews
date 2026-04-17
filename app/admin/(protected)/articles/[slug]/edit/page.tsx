@@ -26,6 +26,17 @@ const CATEGORIES = [
   "ai",
 ] as const;
 
+// Severity is optional per the frontmatter schema — "none" maps to null
+// so the field is omitted from frontmatter on save.
+const SEVERITIES = [
+  { value: "none", label: "None" },
+  { value: "critical", label: "Critical" },
+  { value: "high", label: "High" },
+  { value: "medium", label: "Medium" },
+  { value: "low", label: "Low" },
+  { value: "informational", label: "Informational" },
+] as const;
+
 type ArticleData = {
   sha: string;
   html_url: string;
@@ -68,6 +79,7 @@ export default function EditArticlePage({
   const [tags, setTags] = useState<string[]>([]);
   const [tagInput, setTagInput] = useState("");
   const [draft, setDraft] = useState(false);
+  const [severity, setSeverity] = useState<string>("none");
   const [body, setBody] = useState("");
   const [activeTab, setActiveTab] = useState<"meta" | "content">("meta");
 
@@ -88,6 +100,13 @@ export default function EditArticlePage({
       setCategory(article.frontmatter.category ?? "threat-intel");
       setTags(article.frontmatter.tags ?? []);
       setDraft(article.frontmatter.draft ?? false);
+      // Severity is optional — treat missing/null as "none"
+      const rawSeverity = article.frontmatter.severity;
+      setSeverity(
+        typeof rawSeverity === "string" && rawSeverity.length > 0
+          ? rawSeverity
+          : "none",
+      );
       setBody(article.body ?? "");
     } catch (err) {
       toast.error(
@@ -128,7 +147,16 @@ export default function EditArticlePage({
         body: JSON.stringify({
           locale,
           type,
-          frontmatter: { title, excerpt, category, tags, draft },
+          frontmatter: {
+            title,
+            excerpt,
+            category,
+            tags,
+            draft,
+            // "none" → omit severity from frontmatter (null not serialized
+            // by gray-matter's stringify if undefined)
+            ...(severity !== "none" && { severity }),
+          },
           body,
         }),
       });
@@ -284,6 +312,27 @@ export default function EditArticlePage({
                       className="text-gray-300 hover:text-white"
                     >
                       {c}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Severity */}
+            <div className="space-y-1.5">
+              <Label className="text-gray-300 text-sm">Severity</Label>
+              <Select value={severity} onValueChange={setSeverity}>
+                <SelectTrigger className="bg-gray-900 border-gray-700 text-white w-56">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent className="bg-gray-900 border-gray-700">
+                  {SEVERITIES.map((s) => (
+                    <SelectItem
+                      key={s.value}
+                      value={s.value}
+                      className="text-gray-300 hover:text-white"
+                    >
+                      {s.label}
                     </SelectItem>
                   ))}
                 </SelectContent>

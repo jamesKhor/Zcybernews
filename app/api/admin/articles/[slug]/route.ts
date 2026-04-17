@@ -29,6 +29,48 @@ function buildApiUrl(repo: string, locale: string, type: string, slug: string) {
   };
 }
 
+/**
+ * Resolve a slug to an actual filename. Returns the real slug (filename
+ * without .mdx) that exists on GitHub. Handles the legacy mismatch where
+ * admin-composed articles stored frontmatter.slug without the date prefix
+ * but the filename DOES have a date prefix.
+ *
+ * Lookup order:
+ *   1. Direct: content/{locale}/{type}/{slug}.mdx — works if slug matches filename
+ *   2. Fallback: scan directory for a file ending in `-{slug}.mdx`
+ *      (matches pattern: `YYYY-MM-DD-{slug}.mdx`)
+ *
+ * Returns null if nothing matches.
+ */
+async function resolveFilenameSlug(
+  token: string,
+  repo: string,
+  locale: string,
+  type: string,
+  slug: string,
+): Promise<string | null> {
+  // Direct hit first (cheap)
+  const directUrl = `https://api.github.com/repos/${repo}/contents/content/${locale}/${type}/${slug}.mdx`;
+  const directRes = await fetch(directUrl, {
+    headers: { ...GH_HEADERS, Authorization: `Bearer ${token}` },
+  });
+  if (directRes.ok) return slug;
+
+  // Fallback: list the directory, look for `-{slug}.mdx`
+  const dirUrl = `https://api.github.com/repos/${repo}/contents/content/${locale}/${type}`;
+  const dirRes = await fetch(dirUrl, {
+    headers: { ...GH_HEADERS, Authorization: `Bearer ${token}` },
+  });
+  if (!dirRes.ok) return null;
+
+  const entries = (await dirRes.json()) as Array<{ name: string }>;
+  if (!Array.isArray(entries)) return null;
+
+  const target = `-${slug}.mdx`;
+  const match = entries.find((e) => e.name.endsWith(target));
+  return match ? match.name.replace(/\.mdx$/, "") : null;
+}
+
 // ─── GET: fetch raw file from GitHub for editing ─────────────────────────────
 export async function GET(
   req: NextRequest,
@@ -56,7 +98,23 @@ export async function GET(
 
   try {
     const { token, repo } = getToken();
-    const { url } = buildApiUrl(repo, locale, type, slug);
+    // Resolve the real filename slug — tolerates admin-composed articles
+    // whose frontmatter.slug was stored without date prefix.
+    const resolvedSlug = await resolveFilenameSlug(
+      token,
+      repo,
+      locale,
+      type,
+      slug,
+    );
+    if (!resolvedSlug) {
+      return NextResponse.json(
+        { error: `Article not found on GitHub` },
+        { status: 404 },
+      );
+    }
+
+    const { url } = buildApiUrl(repo, locale, type, resolvedSlug);
 
     const res = await fetch(url, {
       headers: { ...GH_HEADERS, Authorization: `Bearer ${token}` },
@@ -82,6 +140,8 @@ export async function GET(
       html_url: data.html_url,
       frontmatter,
       body: body.trim(),
+      // Return resolved slug so the edit UI can save back to the right file
+      resolvedSlug,
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
@@ -121,7 +181,21 @@ export async function PATCH(
       );
     }
 
-    const { url, branch } = buildApiUrl(repo, locale, type, slug);
+    // Resolve real filename (tolerates legacy admin-composed articles)
+    const resolvedSlug = await resolveFilenameSlug(
+      token,
+      repo,
+      locale,
+      type,
+      slug,
+    );
+    if (!resolvedSlug) {
+      return NextResponse.json(
+        { error: "Article not found on GitHub" },
+        { status: 404 },
+      );
+    }
+    const { url, branch } = buildApiUrl(repo, locale, type, resolvedSlug);
 
     // Fetch current file to get SHA + original body if not provided
     const getRes = await fetch(url, {
@@ -216,7 +290,19 @@ export async function DELETE(
     const results: { locale: string; status: string }[] = [];
 
     for (const loc of localesToDelete) {
-      const { url } = buildApiUrl(repo, loc, type, slug);
+      // Resolve real filename per locale (legacy articles may differ)
+      const resolvedSlug = await resolveFilenameSlug(
+        token,
+        repo,
+        loc,
+        type,
+        slug,
+      );
+      if (!resolvedSlug) {
+        results.push({ locale: loc, status: "not_found" });
+        continue;
+      }
+      const { url } = buildApiUrl(repo, loc, type, resolvedSlug);
 
       // Get SHA first
       const getRes = await fetch(url, {

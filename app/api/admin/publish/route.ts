@@ -59,7 +59,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Content too large" }, { status: 400 });
   }
 
-  const { mdx, frontmatter } = buildMdx(body);
+  // Consistency with AI pipeline: the frontmatter slug AND the filename
+  // both include the date prefix. This prevents the "Article not found"
+  // bug where the list endpoint returns frontmatter.slug but the real
+  // file path has a different prefix. See write-mdx.ts for the pipeline
+  // equivalent — both must match.
+  const date = new Date().toISOString().split("T")[0];
+  const bareSlug = slug.replace(/^\d{4}-\d{2}-\d{2}-/, "");
+  const datedSlug = `${date}-${bareSlug}`;
+
+  // Build MDX with the DATED slug so the frontmatter.slug field matches
+  // the filename on disk. This is the canonical form going forward.
+  const { mdx, frontmatter } = buildMdx({ ...body, slug: datedSlug });
 
   // Validate before commit — blocks bad frontmatter from reaching the repo
   const parsed = ArticleFrontmatterSchema.safeParse(frontmatter);
@@ -70,8 +81,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const date = new Date().toISOString().split("T")[0];
-  const filename = `${date}-${slug.replace(/^\d{4}-\d{2}-\d{2}-/, "")}.mdx`;
+  const filename = `${datedSlug}.mdx`;
   const filePath = `content/${locale}/${type}/${filename}`;
   const commitMessage = `content: add "${title}" [${locale}]`;
 
@@ -83,9 +93,11 @@ export async function POST(req: NextRequest) {
     );
 
     // Revalidate — make the new article visible without waiting for rebuild
+    // Use datedSlug so it matches the actual route/filename (page URL is
+    // /articles/{datedSlug} since content loader reads filename).
     const pathPrefix = type === "threat-intel" ? "threat-intel" : "articles";
     await Promise.allSettled([
-      triggerRevalidate({ path: `/${locale}/${pathPrefix}/${slug}` }),
+      triggerRevalidate({ path: `/${locale}/${pathPrefix}/${datedSlug}` }),
       triggerRevalidate({ tag: "articles" }),
     ]);
 
