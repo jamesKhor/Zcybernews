@@ -221,3 +221,121 @@ export function DatasetJsonLd({
     />
   );
 }
+
+// ── FAQPage ─────────────────────────────────────────────────────────
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQPageJsonLdProps {
+  questions: FAQItem[];
+  inLanguage?: string;
+}
+
+/**
+ * schema.org/FAQPage — each Q&A appears as an individual answered
+ * question. Google shows FAQ rich results (accordion SERPs) when this
+ * is present AND the Q&A content is visible on the page.
+ *
+ * IMPORTANT: Google's FAQ rich-result policy requires the same text to
+ * be rendered in the page body. Do NOT pass answers here that aren't
+ * also shown to the user. The consuming page renders them in a visible
+ * accordion below the data sheet.
+ */
+export function FAQPageJsonLd({
+  questions,
+  inLanguage = "en",
+}: FAQPageJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage,
+    mainEntity: questions.map((q) => ({
+      "@type": "Question",
+      name: q.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: q.answer,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
+    />
+  );
+}
+
+// ── WebPage ─────────────────────────────────────────────────────────
+
+interface WebPageJsonLdProps {
+  name: string;
+  description: string;
+  url: string;
+  dateModified: string;
+  inLanguage?: string;
+  breadcrumbItems?: BreadcrumbItem[];
+}
+
+/**
+ * schema.org/WebPage — gives a generic page-level entity that Google
+ * can attach to the site's main navigation graph. Complements Dataset
+ * (data-scoped entity) + FAQPage (Q&A entity) so one page emits three
+ * coordinated entities for the Knowledge Graph.
+ */
+export function WebPageJsonLd({
+  name,
+  description,
+  url,
+  dateModified,
+  inLanguage = "en",
+  breadcrumbItems,
+}: WebPageJsonLdProps) {
+  const jsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    name,
+    description,
+    url,
+    inLanguage,
+    isPartOf: {
+      "@type": "WebSite",
+      name: PUBLISHER_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: PUBLISHER_NAME,
+      url: SITE_URL,
+      logo: { "@type": "ImageObject", url: PUBLISHER_LOGO },
+    },
+    dateModified,
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/og-default.png`,
+    },
+  };
+  if (breadcrumbItems && breadcrumbItems.length > 0) {
+    jsonLd.breadcrumb = {
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems.map((item, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    };
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
+    />
+  );
+}

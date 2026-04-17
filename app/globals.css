@@ -92,10 +92,46 @@
   border-color: hsl(var(--border));
 }
 
+/* ─── Font stacks ─────────────────────────────────────────────────
+   Next/Font loads Geist/Geist Mono with subset=["latin"] only, so
+   the font files have zero CJK glyphs. Without an explicit fallback
+   the browser picks whatever system CJK font it likes first — which
+   on macOS/iOS is PingFang SC, on Windows is Microsoft YaHei, on
+   Android is Noto Sans CJK — each with subtly different metrics.
+   The result is "Latin = Geist, Chinese = mismatched fallback" in
+   the same heading or table row, which reads as broken.
+
+   Fix: declare a deliberate CJK fallback chain in BOTH the sans and
+   mono family stacks. The browser still uses Geist for Latin glyphs;
+   CJK glyphs fall through to the first installed font in the chain.
+   The CJK fonts we chose (PingFang SC → Hiragino → Microsoft YaHei
+   → Noto Sans SC) are all geometric sans-serif families that pair
+   well with Geist's proportions.
+
+   We also alias --font-mono to the same CJK chain so tabular numbers
+   inside labels like "YoE" or market tags never fall to a serif. */
+:root {
+  --font-sans-stack:
+    var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", Roboto,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei",
+    "Noto Sans SC", sans-serif;
+  --font-mono-stack:
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Consolas,
+    "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans SC",
+    monospace;
+}
+
 body {
   background: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-sans-stack);
+}
+
+/* Ensure Tailwind's `.font-mono` uses the CJK-safe mono stack so that
+   mixed-script numbers like "HKD 200 万" render with consistent metrics
+   instead of falling to a serif fallback for the CJK character. */
+.font-mono {
+  font-family: var(--font-mono-stack) !important;
 }
 
 /* Prose / MDX article styles */

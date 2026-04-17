@@ -103,16 +103,21 @@ export function SalaryCard({ record, locale, labels }: Props) {
   return (
     <article className="border border-border/60 bg-card/40 rounded-md p-5 sm:p-6 hover:border-border hover:bg-card/60 transition-colors">
       {/* Header — role + market + currency.
-          NYT data-sheet discipline: no decorative divider, just whitespace.
-          Eyebrow strip carries market + currency + flag in tabular voice. */}
+          Pixel Street discipline: eyebrow is a "graphic element" — weight
+          bumped to semibold so a tiny label lands confidently. Market
+          name is sans (not mono) so CJK renders in a clean Heiti instead
+          of dropping to a serif fallback; currency stays mono because
+          it IS tabular data. */}
       <header className="mb-5">
-        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground/90 mb-2">
+        <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.15em] font-semibold text-muted-foreground/90 mb-2">
           <span aria-hidden>{marketMeta?.flag ?? "🌐"}</span>
           <span>{locale === "zh" ? marketMeta?.zh : marketMeta?.en}</span>
           <span className="text-border" aria-hidden>
             ·
           </span>
-          <span className="tabular-nums">{record.currency}</span>
+          <span className="tabular-nums font-mono font-medium">
+            {record.currency}
+          </span>
         </div>
         <h3 className="text-base sm:text-lg font-semibold text-foreground leading-snug tracking-tight">
           {record.role}
@@ -143,7 +148,7 @@ export function SalaryCard({ record, locale, labels }: Props) {
               {/* Top line: label + YoE chip */}
               <div className="flex items-baseline justify-between gap-2">
                 <dt className="flex items-baseline gap-2 min-w-0">
-                  <span className="text-[11px] uppercase tracking-[0.12em] font-medium text-foreground/85">
+                  <span className="text-[11px] uppercase tracking-[0.12em] font-semibold text-foreground/85">
                     {b.label}
                   </span>
                   <span className="text-[10px] font-mono text-muted-foreground/80 tabular-nums shrink-0">
@@ -193,10 +198,10 @@ export function SalaryCard({ record, locale, labels }: Props) {
       {record.top_tier_salary && (
         <div className="mb-5 grid grid-cols-1 gap-1.5 pt-3 border-t border-border/40">
           <div className="flex items-baseline justify-between gap-2">
-            <p className="text-[11px] uppercase tracking-[0.12em] font-medium text-amber-400/90">
+            <p className="text-[11px] uppercase tracking-[0.12em] font-bold text-amber-400/95">
               {labels.topEarners}
             </p>
-            <p className="text-[10px] font-mono text-muted-foreground/60 italic shrink-0">
+            <p className="text-[10px] uppercase tracking-[0.1em] text-muted-foreground/60 shrink-0 font-medium">
               {labels.topEarnersNote}
             </p>
           </div>
@@ -214,7 +219,7 @@ export function SalaryCard({ record, locale, labels }: Props) {
       {/* Top hiring chips — labelled data row */}
       {record.top_hiring.length > 0 && (
         <div className="mb-4 grid grid-cols-1 gap-1.5">
-          <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80 font-medium">
+          <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80 font-semibold">
             {labels.topHiring}
           </p>
           <div className="flex flex-wrap gap-x-1.5 gap-y-1">
@@ -233,7 +238,7 @@ export function SalaryCard({ record, locale, labels }: Props) {
       {/* Required certs chips — anchored to cert ROI table */}
       {record.required_certs.length > 0 && (
         <div className="mb-4 grid grid-cols-1 gap-1.5">
-          <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80 font-medium">
+          <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80 font-semibold">
             {labels.requiredCerts}
           </p>
           <div className="flex flex-wrap gap-x-1.5 gap-y-1">

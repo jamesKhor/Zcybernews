@@ -76,6 +76,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     );
 
+    // /salary?market=<key> — one canonical filter URL per market per
+    // locale. Google treats each as a distinct indexable result because
+    // generateMetadata emits a unique title/description/canonical for
+    // each. Priority slightly lower than the bare /salary (0.85 vs 0.95)
+    // but above most other section pages; changefreq matches the parent.
+    const SALARY_MARKET_KEYS = [
+      "sg",
+      "my",
+      "cn-t1",
+      "cn-t2",
+      "au",
+      "hk",
+    ] as const;
+    for (const mk of SALARY_MARKET_KEYS) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/salary?market=${mk}`,
+        lastModified: new Date("2026-04-17"),
+        changeFrequency: "weekly",
+        priority: 0.85,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/salary?market=${mk}`,
+            "zh-Hans": `${BASE_URL}/zh/salary?market=${mk}`,
+          },
+        },
+      });
+    }
+
     // Category pages
     for (const category of CategoryEnum.options) {
       entries.push({

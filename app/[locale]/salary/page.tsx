@@ -35,9 +35,16 @@ import { SalaryFilterBar } from "./SalaryFilterBar";
 import { CertROITable } from "./CertROITable";
 import { APACSalaryMap } from "./APACSalaryMap";
 import { HeroStats } from "./HeroStats";
+import { CinematicHero } from "./CinematicHero";
 import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
-import { BreadcrumbJsonLd, DatasetJsonLd } from "@/components/seo/JsonLd";
+import {
+  BreadcrumbJsonLd,
+  DatasetJsonLd,
+  FAQPageJsonLd,
+  WebPageJsonLd,
+} from "@/components/seo/JsonLd";
+import { SalaryFAQ } from "./SalaryFAQ";
 
 // ISR — daily refresh. Salary data doesn't change hourly.
 export const revalidate = 86400;
@@ -67,14 +74,70 @@ interface PageProps {
   searchParams: Promise<{ market?: string; role?: string }>;
 }
 
+// Known market filter keys — kept in sync with MARKETS in lib/salary.ts.
+// Used by generateMetadata to validate ?market= values against the same
+// whitelist the page filter uses. Unknown markets → bare /salary metadata
+// (don't emit indexable metadata for junk query strings).
+const KNOWN_MARKET_KEYS = ["sg", "my", "cn-t1", "cn-t2", "au", "hk"] as const;
+const KNOWN_ROLE_KEYS = [
+  "soc",
+  "pentest",
+  "cloud",
+  "grc",
+  "architect",
+  "ciso",
+  "engineer",
+] as const;
+
+/**
+ * Per-filter metadata.
+ *
+ * SEO rationale: each unique `?market=hk` or `?role=soc` URL gets:
+ *  - Unique <title> → Google treats as distinct indexable result
+ *  - Unique meta description → higher SERP click-through
+ *  - Self-referencing canonical → no duplicate-content penalty
+ *  - Correct hreflang to the same filter in the other locale
+ *  - Robots: index (we WANT these in the index) but only for whitelisted keys
+ *
+ * The bare `/salary` URL is still the primary entry and remains the
+ * default (x-default) canonical target.
+ */
 export async function generateMetadata({
   params,
+  searchParams,
 }: PageProps): Promise<Metadata> {
   const { locale } = await params;
+  const sp = await searchParams;
   const t = await getTranslations({ locale, namespace: "salary" });
-  const canonical = `/${locale}/salary`;
-  const title = t("title");
-  const description = t("standfirst");
+
+  // Validate filter params — only known keys produce canonical filter URLs
+  const marketKey = KNOWN_MARKET_KEYS.includes(
+    sp.market as (typeof KNOWN_MARKET_KEYS)[number],
+  )
+    ? (sp.market as (typeof KNOWN_MARKET_KEYS)[number])
+    : undefined;
+  const roleKey = KNOWN_ROLE_KEYS.includes(
+    sp.role as (typeof KNOWN_ROLE_KEYS)[number],
+  )
+    ? (sp.role as (typeof KNOWN_ROLE_KEYS)[number])
+    : undefined;
+
+  // Build the canonical path — include filter params in stable order so
+  // crawlers see one canonical per logical view.
+  const qs = new URLSearchParams();
+  if (marketKey) qs.set("market", marketKey);
+  if (roleKey) qs.set("role", roleKey);
+  const queryString = qs.toString();
+  const suffix = queryString ? `?${queryString}` : "";
+  const canonical = `/${locale}/salary${suffix}`;
+
+  // Compose title/description from per-market i18n keys when present,
+  // falling back to the base page title.
+  const marketTitle = marketKey ? t(`metaMarket_${marketKey}_title`) : null;
+  const marketDesc = marketKey ? t(`metaMarket_${marketKey}_desc`) : null;
+  const title = marketTitle ?? t("title");
+  const description = marketDesc ?? t("standfirst");
+
   return {
     title,
     description,
@@ -92,9 +155,9 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        en: "/en/salary",
-        "zh-Hans": "/zh/salary",
-        "x-default": "/en/salary",
+        en: `/en/salary${suffix}`,
+        "zh-Hans": `/zh/salary${suffix}`,
+        "x-default": `/en/salary${suffix}`,
       },
     },
     openGraph: {
@@ -217,8 +280,56 @@ export default async function SalaryPage({ params, searchParams }: PageProps) {
         sources={PRIMARY_SOURCES.map((s) => s.name)}
         inLanguage={locale === "zh" ? "zh-Hans" : "en"}
       />
+      {/* WebPage — gives Google a page-level entity to attach to its
+          site navigation graph. Complements Dataset (data scope) and
+          FAQPage (Q&A scope) so the page emits three coordinated
+          schema.org entities. */}
+      <WebPageJsonLd
+        name={t("title")}
+        description={t("standfirst")}
+        url={`${SITE_URL}/${locale}/salary`}
+        dateModified={LAST_UPDATED}
+        inLanguage={locale === "zh" ? "zh-Hans" : "en"}
+        breadcrumbItems={[
+          { name: t("breadcrumbHome"), url: `${SITE_URL}/${locale}` },
+          {
+            name: t("breadcrumbSalary"),
+            url: `${SITE_URL}/${locale}/salary`,
+          },
+        ]}
+      />
+      {/* FAQPage — each answer text MUST match what we render in the
+          visible <SalaryFAQ> accordion below. Google invalidates FAQ
+          rich results if the JSON-LD text is not on the page. */}
+      <FAQPageJsonLd
+        inLanguage={locale === "zh" ? "zh-Hans" : "en"}
+        questions={[
+          { question: t("faq_q1"), answer: t("faq_a1") },
+          { question: t("faq_q2"), answer: t("faq_a2") },
+          { question: t("faq_q3"), answer: t("faq_a3") },
+          { question: t("faq_q4"), answer: t("faq_a4") },
+          { question: t("faq_q5"), answer: t("faq_a5") },
+          { question: t("faq_q6"), answer: t("faq_a6") },
+        ]}
+      />
 
       <main className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+        {/* Cinematic hero — TX3-style, full-viewport landing moment.
+            aria-hidden wordmark so screen readers/crawlers use the real
+            h1 below for indexing. Visual-only decoration up top, SEO
+            semantics preserved in the editorial header. */}
+        <CinematicHero
+          locale={locale}
+          labels={{
+            w1: t("heroW1"),
+            w2: t("heroW2"),
+            w3: t("heroW3"),
+            w4: t("heroW4"),
+            body: t("heroBody"),
+            cta: t("heroCta"),
+          }}
+        />
+
         <Breadcrumbs
           items={[
             { label: t("breadcrumbHome"), href: `/${locale}` },
@@ -226,9 +337,15 @@ export default async function SalaryPage({ params, searchParams }: PageProps) {
           ]}
         />
 
-        {/* Editorial header */}
-        <header className="mt-6 mb-8 sm:mb-12 max-w-3xl">
-          <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] font-mono text-primary mb-3">
+        {/* Editorial header — the SEO <h1>. Tightened since the visual
+            impact now lives in the cinematic hero above; this block
+            exists for search engines + readers who want the real
+            standfirst before the data. */}
+        <header
+          id="dataset"
+          className="mt-6 mb-8 sm:mb-12 max-w-3xl scroll-mt-8"
+        >
+          <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-3">
             ZCyberNews · {t("eyebrow")}
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-foreground mb-4">
@@ -382,6 +499,20 @@ export default async function SalaryPage({ params, searchParams }: PageProps) {
             {t("lastUpdated")}: {LAST_UPDATED}
           </p>
         </section>
+
+        {/* FAQ — visible accordion. Text MUST match FAQPageJsonLd above
+            or Google invalidates the rich result. Native <details>, no JS. */}
+        <SalaryFAQ
+          title={t("faqTitle")}
+          qa={[
+            { q: t("faq_q1"), a: t("faq_a1") },
+            { q: t("faq_q2"), a: t("faq_a2") },
+            { q: t("faq_q3"), a: t("faq_a3") },
+            { q: t("faq_q4"), a: t("faq_a4") },
+            { q: t("faq_q5"), a: t("faq_a5") },
+            { q: t("faq_q6"), a: t("faq_a6") },
+          ]}
+        />
 
         {/* Newsletter signup — opt-in, no gate, no tricks */}
         <section className="my-12 sm:my-16 border border-border/60 rounded-lg p-5 sm:p-8 bg-muted/20">

@@ -18,9 +18,35 @@ import {
   parseSalaryRange,
   toUsd,
   formatUsdShort,
+  currencySymbol,
   MARKETS,
   type SalaryRecord,
 } from "@/lib/salary";
+
+// ── Hero number formatter ──────────────────────────────────────────
+// The operator's alignment rule: "nothing will be like 'hey why is that
+// site say that but your site say this.'" XHS cards quote source
+// currency (HKD 2M, SGD 120k). Our HeroStats must lead with source
+// currency so readers see the same primary number on both surfaces.
+// USD becomes a secondary conversion, not the headline.
+
+/** Compact format for display: 2,500,000 → "2.5M", 85,000 → "85k". */
+function formatCompactNumber(n: number): string {
+  if (n >= 1_000_000) {
+    const m = n / 1_000_000;
+    // 2.0M → 2M, but 2.5M stays 2.5M (drop trailing .0)
+    return m % 1 === 0 ? `${m.toFixed(0)}M` : `${m.toFixed(1)}M`;
+  }
+  if (n >= 1_000) {
+    return `${Math.round(n / 1_000)}k`;
+  }
+  return `${n}`;
+}
+
+/** "2,500,000" with commas stripped → "HK$2.5M" for the hero display. */
+function formatSourceCompact(amount: number, currency: string): string {
+  return `${currencySymbol(currency)}${formatCompactNumber(amount)}`;
+}
 
 interface Props {
   records: SalaryRecord[];
@@ -50,7 +76,12 @@ interface Peak {
 function findCeiling(records: SalaryRecord[], locale: "en" | "zh"): Peak {
   // Highest top_tier_salary high-end (parsed) wins.
   // Fall back to highest senior_salary high-end if no top_tier present.
-  let best: { usd: number; raw: string; record: SalaryRecord } | null = null;
+  let best: {
+    usd: number;
+    high: number;
+    raw: string;
+    record: SalaryRecord;
+  } | null = null;
 
   for (const r of records) {
     const tier = r.top_tier_salary;
@@ -59,7 +90,7 @@ function findCeiling(records: SalaryRecord[], locale: "en" | "zh"): Peak {
       if (range) {
         const usd = toUsd(range.high, r.currency);
         if (!best || usd > best.usd) {
-          best = { usd, raw: tier, record: r };
+          best = { usd, high: range.high, raw: tier, record: r };
         }
       }
     }
@@ -70,7 +101,7 @@ function findCeiling(records: SalaryRecord[], locale: "en" | "zh"): Peak {
       if (!range) continue;
       const usd = toUsd(range.high, r.currency);
       if (!best || usd > best.usd) {
-        best = { usd, raw: r.senior_salary, record: r };
+        best = { usd, high: range.high, raw: r.senior_salary, record: r };
       }
     }
   }
@@ -81,9 +112,11 @@ function findCeiling(records: SalaryRecord[], locale: "en" | "zh"): Peak {
     (m) => m.key === classifyMarket(best!.record.market),
   );
   return {
-    display: formatUsdShort(best.usd),
+    // HERO: source currency (HK$2.5M) — matches XHS card copy exactly
+    display: formatSourceCompact(best.high, best.record.currency),
     context: `${meta?.flag ?? ""} ${locale === "zh" ? meta?.zh : meta?.en} · ${best.record.role.split("（")[0].trim().slice(0, 38)}`,
-    delta: best.raw,
+    // DELTA: USD conversion + the raw source phrase with its qualifiers
+    delta: `≈ ${formatUsdShort(best.usd)} · ${best.raw}`,
   };
 }
 
@@ -116,7 +149,12 @@ function findFloor(records: SalaryRecord[], locale: "en" | "zh"): Peak {
       role.includes("分析师")
     );
   };
-  let best: { usd: number; raw: string; record: SalaryRecord } | null = null;
+  let best: {
+    usd: number;
+    low: number;
+    raw: string;
+    record: SalaryRecord;
+  } | null = null;
   for (const r of records) {
     if (classifyMarket(r.market) === "cross") continue;
     if (!isJuniorTrack(r)) continue;
@@ -124,7 +162,7 @@ function findFloor(records: SalaryRecord[], locale: "en" | "zh"): Peak {
     if (!range) continue;
     const usd = toUsd(range.low, r.currency);
     if (!best || usd > best.usd) {
-      best = { usd, raw: r.entry_salary, record: r };
+      best = { usd, low: range.low, raw: r.entry_salary, record: r };
     }
   }
   if (!best) return { display: "—", context: "", delta: "" };
@@ -132,9 +170,11 @@ function findFloor(records: SalaryRecord[], locale: "en" | "zh"): Peak {
     (m) => m.key === classifyMarket(best!.record.market),
   );
   return {
-    display: formatUsdShort(best.usd),
+    // HERO: source currency (HK$52k) — matches XHS card copy exactly
+    display: formatSourceCompact(best.low, best.record.currency),
     context: `${meta?.flag ?? ""} ${locale === "zh" ? meta?.zh : meta?.en} · ${best.record.role.split("（")[0].trim().slice(0, 38)}`,
-    delta: best.raw,
+    // DELTA: USD conversion + the raw source phrase with its qualifiers
+    delta: `≈ ${formatUsdShort(best.usd)} · ${best.raw}`,
   };
 }
 
@@ -209,27 +249,38 @@ export function HeroStats({ records, locale, labels }: Props) {
           key={i}
           className="border border-border/60 rounded-md bg-card/40 p-5 sm:p-6 flex flex-col"
         >
+          {/* Eyebrow — "graphic element / stylized caption" per the Pixel
+              Street framework. Bumped to font-semibold so the short label
+              doesn't feel light. tracking-[0.2em] gives it confident
+              spacing without overrunning the narrow card. */}
           <p
-            className={`text-[10px] uppercase tracking-[0.18em] font-mono ${slot.accent} mb-2`}
+            className={`text-[11px] uppercase tracking-[0.2em] font-semibold ${slot.accent} mb-3`}
           >
             {slot.eyebrow}
           </p>
-          {/* THE big number — 'zoom-in' treatment */}
-          <p className="text-4xl sm:text-5xl md:text-[3.25rem] font-bold font-mono tabular-nums leading-none tracking-tight text-foreground mb-3">
+          {/* THE big number — "title / bandit" role: this is the page's
+              logotype moment. Bumped from font-bold (700) → font-black
+              (900) + tracking-tighter so it reads as a crafted trademark,
+              not a system numeral. Leading stays at 1 so stacked digits
+              don't orphan. */}
+          <p className="text-4xl sm:text-5xl md:text-[3.25rem] font-black font-mono tabular-nums leading-none tracking-tighter text-foreground mb-3">
             {slot.peak.display}
           </p>
-          <p className="text-xs text-muted-foreground leading-snug mb-3">
+          {/* Context line — "body / nanny" role: feed info readably.
+              Bumped from text-xs → text-sm so it remains legible on
+              phone without needing to pinch-zoom. */}
+          <p className="text-sm text-muted-foreground leading-snug mb-3">
             {slot.peak.context}
           </p>
-          <div className="mt-auto pt-2 border-t border-border/40">
-            <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80 font-mono mb-0.5">
+          <div className="mt-auto pt-3 border-t border-border/40">
+            <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80 font-semibold mb-1">
               {slot.deltaLabel}
             </p>
-            <p className="text-[11px] font-mono tabular-nums text-foreground/85 leading-snug">
+            <p className="text-xs font-mono tabular-nums text-foreground/85 leading-snug">
               {slot.peak.delta}
             </p>
           </div>
-          <p className="mt-3 text-[10px] text-muted-foreground/60 leading-snug">
+          <p className="mt-3 text-[11px] text-muted-foreground/60 leading-snug">
             {slot.desc}
           </p>
         </article>
