@@ -15,6 +15,10 @@ type PublishRequest = {
   locale: "en" | "zh";
   type: "posts" | "threat-intel";
   author?: string;
+  /** Real URLs from research mode — stored in frontmatter.source_urls.
+   * Hidden from public readers by the compileMDX stripReferences flag
+   * but still visible in admin panel for traceability. */
+  sourceUrls?: string[];
 };
 
 function buildMdx(req: PublishRequest): { mdx: string; frontmatter: unknown } {
@@ -30,6 +34,12 @@ function buildMdx(req: PublishRequest): { mdx: string; frontmatter: unknown } {
     author: req.author ?? "ZCyberNews",
     draft: false,
   };
+  // Optional — include source_urls only when provided (research mode)
+  if (Array.isArray(req.sourceUrls) && req.sourceUrls.length > 0) {
+    fm.source_urls = req.sourceUrls.filter(
+      (u): u is string => typeof u === "string" && u.length > 0,
+    );
+  }
   return { mdx: matter.stringify(req.content, fm), frontmatter: fm };
 }
 

@@ -15,6 +15,10 @@ type TranslatePublishRequest = {
   tags: string[];
   type: "posts" | "threat-intel";
   author?: string;
+  /** Real URLs from research mode — written to frontmatter.source_urls
+   * on both EN and ZH files. Admin-only visibility (stripped from
+   * public rendering by compileMDX stripReferences). */
+  sourceUrls?: string[];
 };
 
 function buildMdx(
@@ -34,6 +38,14 @@ function buildMdx(
     author: frontmatter.author ?? "ZCyberNews",
     draft: false,
   };
+  // Research-mode source URLs — optional; written to frontmatter so admin
+  // panel can display them for traceability. Public side strips References.
+  if (
+    Array.isArray(frontmatter.source_urls) &&
+    frontmatter.source_urls.length > 0
+  ) {
+    fm.source_urls = frontmatter.source_urls;
+  }
   // gray-matter handles YAML escaping; also gives us back a parsed version
   // we can validate with Zod.
   const mdx = matter.stringify(body, fm);
@@ -54,6 +66,7 @@ export async function POST(req: NextRequest) {
     tags,
     type = "posts",
     author,
+    sourceUrls,
   } = body;
 
   if (!title || !slug || !content) {
@@ -121,6 +134,12 @@ ${content}`,
   const datedSlug = `${date}-${bareSlug}`;
   const filename = `${datedSlug}.mdx`;
 
+  const cleanedSourceUrls = Array.isArray(sourceUrls)
+    ? sourceUrls.filter(
+        (u): u is string => typeof u === "string" && u.length > 0,
+      )
+    : undefined;
+
   const { mdx: enMdx, parsedFrontmatter: enFm } = buildMdx(
     {
       title,
@@ -130,6 +149,7 @@ ${content}`,
       tags,
       language: "en",
       author: author ?? "ZCyberNews",
+      source_urls: cleanedSourceUrls,
     },
     content,
   );
@@ -142,6 +162,7 @@ ${content}`,
       tags,
       language: "zh",
       author: author ?? "ZCyberNews",
+      source_urls: cleanedSourceUrls,
     },
     bodyRes.text.trim(),
   );

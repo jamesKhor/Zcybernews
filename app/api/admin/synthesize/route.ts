@@ -2,24 +2,44 @@ import { NextRequest } from "next/server";
 import type { FeedArticle } from "@/lib/rss/fetch";
 import { generateWithFallback, getActiveProvider } from "@/lib/ai-provider";
 import { adminGuard } from "@/lib/admin-guard";
+import { searchBrave, BraveSearchError } from "@/lib/brave-search";
+import { fetchArticle } from "@/lib/article-fetcher";
 
 type PastedText = { label?: string; text: string };
 
+type SharedOptions = {
+  targetLength?: "short" | "medium" | "long";
+  customPrompt?: string;
+  provider?: "auto" | "deepseek" | "kimi";
+};
+
+/**
+ * Three mutually-exclusive input modes:
+ * - `articles`: editor selected from RSS feed (existing)
+ * - `pastedTexts`: editor pasted source text blocks (existing)
+ * - `researchKeywords`: editor typed a trending-story keyword string;
+ *    server searches Brave + fetches real articles (NEW)
+ *
+ * The researchKeywords mode is grounded in REAL sources — the LLM
+ * never sees a query, only the extracted article text from Brave
+ * search results. Requires minimum 2 usable sources or errors.
+ */
 type SynthesizeRequest =
-  | {
+  | ({
       articles: FeedArticle[];
       pastedTexts?: never;
-      targetLength?: "short" | "medium" | "long";
-      customPrompt?: string;
-      provider?: "auto" | "deepseek" | "kimi";
-    }
-  | {
+      researchKeywords?: never;
+    } & SharedOptions)
+  | ({
       articles?: never;
       pastedTexts: PastedText[];
-      targetLength?: "short" | "medium" | "long";
-      customPrompt?: string;
-      provider?: "auto" | "deepseek" | "kimi";
-    };
+      researchKeywords?: never;
+    } & SharedOptions)
+  | ({
+      articles?: never;
+      pastedTexts?: never;
+      researchKeywords: string;
+    } & SharedOptions);
 
 // Valid categories — must match ArticleFrontmatterSchema exactly
 const VALID_CATEGORIES = [
@@ -77,10 +97,17 @@ export async function POST(req: NextRequest) {
   const wc = WORD_COUNT_GUIDANCE[targetLength];
 
   // Build source context
-  let sourceContext: string;
+  // For paste + articles modes this is synchronous. For research mode we
+  // defer to the streaming context so the user sees "searching…" / "fetching…"
+  // progress (those steps take 5-15s combined).
+  let sourceContext: string = "";
   let primaryCategory: ValidCategory = "threat-intel";
   let autoTags: string[] = [];
-  let sourceCount: number;
+  let sourceCount = 0;
+  // sourceUrls is only populated for research mode — becomes part of the
+  // `done` payload so the compose UI can pre-fill source_urls frontmatter.
+  let sourceUrls: string[] = [];
+  let deferredResearchKeywords: string | null = null;
 
   if (body.pastedTexts && body.pastedTexts.length > 0) {
     const validBlocks = body.pastedTexts.filter((b) => b.text.trim());
@@ -110,6 +137,32 @@ export async function POST(req: NextRequest) {
           `SOURCE ${i + 1}: "${a.title}" (from ${a.sourceName})\n${a.excerpt}`,
       )
       .join("\n\n---\n\n");
+  } else if (body.researchKeywords && body.researchKeywords.trim()) {
+    // Validate keyword shape: 1-100 chars, reasonable word count. No LLM
+    // validation here — just format sanity. The actual anti-hallucination
+    // guard is "require ≥2 successfully fetched sources" inside the stream.
+    const kw = body.researchKeywords.trim();
+    if (kw.length > 100) {
+      return new Response(
+        JSON.stringify({
+          type: "error",
+          message: "Keywords too long (max 100 characters)",
+        }),
+        { status: 400, headers: { "Content-Type": "application/json" } },
+      );
+    }
+    const wordCount = kw.split(/\s+/).filter(Boolean).length;
+    if (wordCount > 8) {
+      return new Response(
+        JSON.stringify({
+          type: "error",
+          message:
+            "Too many keywords (max 8). Focus on ONE story — e.g. 'Shiny Hunters Adaptivist breach'.",
+        }),
+        { status: 400, headers: { "Content-Type": "application/json" } },
+      );
+    }
+    deferredResearchKeywords = kw;
   } else {
     return new Response(
       JSON.stringify({ type: "error", message: "No sources provided" }),
@@ -137,6 +190,96 @@ export async function POST(req: NextRequest) {
   // Run generation async; stream events back as they happen
   (async () => {
     try {
+      // ── Research mode: search + fetch sources inside the stream ─────────
+      // Paste + articles modes already populated sourceContext above. For
+      // research mode we search Brave + fetch article text here so we can
+      // stream "searching…" / "fetching…" progress to the UI.
+      if (deferredResearchKeywords) {
+        send({
+          type: "status",
+          step: "searching",
+          message: `Searching Brave for "${deferredResearchKeywords}"…`,
+        });
+
+        let searchResults;
+        try {
+          searchResults = await searchBrave(deferredResearchKeywords, {
+            count: 8,
+            freshness: "pm", // past month — trending cyber stories
+          });
+        } catch (err) {
+          const msg =
+            err instanceof BraveSearchError
+              ? err.message
+              : err instanceof Error
+                ? err.message
+                : "Search failed";
+          send({
+            type: "error",
+            message: `Search error: ${msg}. ${err instanceof BraveSearchError && !process.env.BRAVE_SEARCH_API_KEY ? "Set BRAVE_SEARCH_API_KEY in .env.local." : ""}`,
+          });
+          writer.close();
+          return;
+        }
+
+        if (searchResults.length < 2) {
+          send({
+            type: "error",
+            message: `Only ${searchResults.length} search result(s) found. Try different or broader keywords.`,
+          });
+          writer.close();
+          return;
+        }
+
+        // Cap at 5 fetches to keep total latency <15s and respect site load
+        const toFetch = searchResults.slice(0, 5);
+        send({
+          type: "status",
+          step: "fetching",
+          message: `Found ${searchResults.length} results. Fetching ${toFetch.length} sources…`,
+        });
+
+        const fetched = await Promise.all(
+          toFetch.map((r) => fetchArticle(r.url, 10_000)),
+        );
+        const usable = fetched.filter((f) => !f.error && f.text.length >= 300);
+
+        if (usable.length < 2) {
+          const errSummary = fetched
+            .filter((f) => f.error)
+            .map((f) => `${new URL(f.url).hostname}: ${f.error}`)
+            .slice(0, 3)
+            .join("; ");
+          send({
+            type: "error",
+            message: `Only ${usable.length} source(s) had extractable content (need ≥2). ${errSummary ? "Failures: " + errSummary : ""}`,
+          });
+          writer.close();
+          return;
+        }
+
+        // Assemble grounded source context — LLM sees ONLY real extracted text
+        sourceCount = usable.length;
+        sourceUrls = usable.map((f) => f.url);
+        sourceContext = usable
+          .map((f, i) => {
+            let host = f.url;
+            try {
+              host = new URL(f.url).hostname.replace(/^www\./, "");
+            } catch {
+              /* keep url */
+            }
+            return `SOURCE ${i + 1}: "${f.title}" (from ${host})\nURL: ${f.url}\n${f.text}`;
+          })
+          .join("\n\n---\n\n");
+
+        send({
+          type: "status",
+          step: "fetched",
+          message: `Got ${usable.length} sources (${Math.round(sourceContext.length / 1000)}k chars). Writing article…`,
+        });
+      }
+
       send({
         type: "status",
         step: "writing",
@@ -306,6 +449,10 @@ ${articleBody.slice(0, 1200)}`,
           category: aiCategory,
           tags: aiTags,
           excerpt: aiExcerpt,
+          // Only populated for research mode — real URLs the LLM was
+          // grounded on. Compose UI should pass these to publish so the
+          // frontmatter.source_urls field is accurate.
+          sourceUrls,
         },
         usedPaidFallback,
         modelsUsed,

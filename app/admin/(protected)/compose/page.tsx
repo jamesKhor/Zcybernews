@@ -43,6 +43,7 @@ import {
   Languages,
   CheckCircle2,
   Circle,
+  Search,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -60,6 +61,8 @@ type SuggestedMeta = {
   category: string;
   tags: string[];
   excerpt: string;
+  /** Only present when research mode is used — real source URLs */
+  sourceUrls?: string[];
 };
 
 type PublishResult = {
@@ -123,6 +126,12 @@ export default function ComposePage() {
   const [pasteBlocks, setPasteBlocks] = useState<PasteBlock[]>([
     newPasteBlock(),
   ]);
+
+  // Research mode state — operator types 2-3 keywords about a trending
+  // story; server searches Brave + fetches real sources (no hallucination).
+  const [researchKeywords, setResearchKeywords] = useState("");
+  // URLs returned by research mode; used as frontmatter.source_urls on publish.
+  const [researchSourceUrls, setResearchSourceUrls] = useState<string[]>([]);
 
   // Shared generation state
   const [generating, setGenerating] = useState(false);
@@ -235,7 +244,7 @@ export default function ComposePage() {
     );
   };
 
-  const handleGenerate = async (mode: "feed" | "paste") => {
+  const handleGenerate = async (mode: "feed" | "paste" | "research") => {
     if (mode === "feed" && sourceArticles.length === 0) {
       setGenError("Add at least one source article from the Feed Reader.");
       return;
@@ -244,10 +253,19 @@ export default function ComposePage() {
       setGenError("Paste at least one article text.");
       return;
     }
+    if (mode === "research" && !researchKeywords.trim()) {
+      setGenError(
+        "Type 2-3 keywords about a trending story (e.g. 'Shiny Hunters breach').",
+      );
+      return;
+    }
 
     setGenerating(true);
     setGenError("");
     setGenStatusLog([]);
+    // Reset research URLs at the start of each generation (only repopulated
+    // if this run is a research mode that succeeds)
+    setResearchSourceUrls([]);
     setGenButtonLabel("Starting…");
 
     // Request browser notification permission upfront so we can alert
@@ -260,25 +278,29 @@ export default function ComposePage() {
     }
 
     try {
+      const sharedOpts = {
+        targetLength,
+        customPrompt: customPrompt.trim() || undefined,
+        provider: modelChoice,
+      };
       const requestBody =
         mode === "feed"
-          ? {
-              articles: sourceArticles,
-              targetLength,
-              customPrompt: customPrompt.trim() || undefined,
-              provider: modelChoice,
-            }
-          : {
-              pastedTexts: pasteBlocks
-                .filter((b) => b.text.trim())
-                .map((b) => ({
-                  label: b.label.trim() || "Source",
-                  text: b.text.trim(),
-                })),
-              targetLength,
-              customPrompt: customPrompt.trim() || undefined,
-              provider: modelChoice,
-            };
+          ? { articles: sourceArticles, ...sharedOpts }
+          : mode === "paste"
+            ? {
+                pastedTexts: pasteBlocks
+                  .filter((b) => b.text.trim())
+                  .map((b) => ({
+                    label: b.label.trim() || "Source",
+                    text: b.text.trim(),
+                  })),
+                ...sharedOpts,
+              }
+            : {
+                // Research mode: just keywords; server searches + fetches
+                researchKeywords: researchKeywords.trim(),
+                ...sharedOpts,
+              };
 
       const res = await adminFetch("/api/admin/synthesize", {
         method: "POST",
@@ -381,6 +403,13 @@ export default function ComposePage() {
         );
         setTags(finalData.suggested.tags.join(", "));
         setExcerpt(finalData.suggested.excerpt);
+        // Research mode returns the real source URLs — stash for publish
+        if (
+          finalData.suggested.sourceUrls &&
+          finalData.suggested.sourceUrls.length > 0
+        ) {
+          setResearchSourceUrls(finalData.suggested.sourceUrls);
+        }
       }
 
       const articleTitle = finalData.suggested?.title ?? "Article";
@@ -447,6 +476,11 @@ export default function ComposePage() {
             .filter(Boolean),
           locale: "en",
           type: articleType,
+          // Populate from research mode if available — writes to
+          // frontmatter.source_urls for admin traceability
+          ...(researchSourceUrls.length > 0 && {
+            sourceUrls: researchSourceUrls,
+          }),
         }),
       });
       const data = (await res.json()) as PublishResult & { message?: string };
@@ -503,6 +537,9 @@ export default function ComposePage() {
             .map((t) => t.trim())
             .filter(Boolean),
           type: articleType,
+          ...(researchSourceUrls.length > 0 && {
+            sourceUrls: researchSourceUrls,
+          }),
         }),
       });
       const data = (await res.json()) as {
@@ -546,7 +583,7 @@ export default function ComposePage() {
   // Shared settings JSX — inlined at each call site (NOT a nested component)
   // Using a nested component caused React to unmount/remount on every render,
   // which reset cursor position while typing in the custom prompt textarea.
-  const settingsPanelJSX = (mode: "feed" | "paste") => (
+  const settingsPanelJSX = (mode: "feed" | "paste" | "research") => (
     <div className="px-4 py-4 border-t border-gray-800 space-y-3">
       <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">
         Settings
@@ -703,6 +740,13 @@ export default function ComposePage() {
                 <ClipboardPaste className="w-3.5 h-3.5" />
                 Paste
               </TabsTrigger>
+              <TabsTrigger
+                value="research"
+                className="flex-1 text-xs gap-1.5 data-[state=active]:bg-gray-800 data-[state=active]:text-white text-gray-400"
+              >
+                <Search className="w-3.5 h-3.5" />
+                Research
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent
@@ -831,6 +875,86 @@ export default function ComposePage() {
                 </div>
               </ScrollArea>
               {settingsPanelJSX("paste")}
+            </TabsContent>
+
+            {/* Research mode — type keywords, server searches Brave + fetches real sources */}
+            <TabsContent
+              value="research"
+              className="flex flex-col flex-1 mt-0 min-h-0"
+            >
+              <div className="px-4 py-3 border-b border-gray-800 shrink-0">
+                <p className="text-xs text-gray-500">
+                  Type 2-3 keywords about a trending story. We search Brave and
+                  write from REAL sources — no hallucination.
+                </p>
+              </div>
+              <ScrollArea className="flex-1">
+                <div className="px-3 py-3 space-y-3">
+                  <div className="rounded-md bg-gray-800 border border-gray-700 p-3 space-y-2">
+                    <Label className="text-xs font-medium text-gray-400">
+                      Keywords
+                    </Label>
+                    <Input
+                      type="text"
+                      value={researchKeywords}
+                      onChange={(e) => setResearchKeywords(e.target.value)}
+                      placeholder="e.g. Shiny Hunters Adaptivist breach"
+                      maxLength={100}
+                      className="w-full bg-gray-900 border-gray-700 text-sm text-white placeholder-gray-600 focus-visible:ring-emerald-500"
+                    />
+                    <p className="text-[10px] text-gray-500 leading-relaxed">
+                      Focus on ONE story. Use specific names (threat actor,
+                      victim, CVE). Max 8 words / 100 chars. We fetch ≥2 real
+                      sources or abort — never invented content.
+                    </p>
+                  </div>
+
+                  {/* Show source URLs after generation (read-only reference) */}
+                  {researchSourceUrls.length > 0 && (
+                    <div className="rounded-md bg-gray-800/50 border border-emerald-900/50 p-3 space-y-1.5">
+                      <div className="flex items-center gap-1.5 text-xs text-emerald-500 font-medium">
+                        <CheckCircle2 className="w-3 h-3" />
+                        Grounded on {researchSourceUrls.length} real sources
+                      </div>
+                      <div className="space-y-1">
+                        {researchSourceUrls.map((u) => {
+                          let host = u;
+                          try {
+                            host = new URL(u).hostname.replace(/^www\./, "");
+                          } catch {
+                            /* keep */
+                          }
+                          return (
+                            <a
+                              key={u}
+                              href={u}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1 text-[11px] text-gray-400 hover:text-emerald-400 transition-colors"
+                              title={u}
+                            >
+                              <ExternalLink className="w-2.5 h-2.5 flex-shrink-0" />
+                              <span className="truncate">{host}</span>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Tips card */}
+                  <div className="rounded-md border border-dashed border-gray-700 p-3 text-[11px] text-gray-500 space-y-1.5 leading-relaxed">
+                    <p className="font-medium text-gray-400">Good examples:</p>
+                    <p>• Shiny Hunters Adaptivist breach</p>
+                    <p>• BlueHammer zero-day Windows</p>
+                    <p>• Claude Mythos security issues</p>
+                    <p className="font-medium text-gray-400 pt-1">Avoid:</p>
+                    <p>• Single generic words (&quot;ransomware&quot;)</p>
+                    <p>• Unrelated topics mashed together</p>
+                  </div>
+                </div>
+              </ScrollArea>
+              {settingsPanelJSX("research")}
             </TabsContent>
           </Tabs>
         </div>
