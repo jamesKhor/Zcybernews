@@ -30,7 +30,6 @@ interface Props {
     yearsExperience: string;
     topHiring: string;
     requiredCerts: string;
-    shockingFact: string;
     source: string;
     monthly: string;
     topEarners: string;
@@ -102,22 +101,29 @@ export function SalaryCard({ record, locale, labels }: Props) {
   }
 
   return (
-    <article className="border border-border/60 bg-card rounded-lg p-5 sm:p-6 hover:border-border transition-colors">
-      {/* Header — role + market + currency */}
-      <header className="mb-5 pb-4 border-b border-border/50">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-muted-foreground mb-2">
-          <span>{marketMeta?.flag ?? "🌐"}</span>
+    <article className="border border-border/60 bg-card/40 rounded-md p-5 sm:p-6 hover:border-border hover:bg-card/60 transition-colors">
+      {/* Header — role + market + currency.
+          NYT data-sheet discipline: no decorative divider, just whitespace.
+          Eyebrow strip carries market + currency + flag in tabular voice. */}
+      <header className="mb-5">
+        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground/90 mb-2">
+          <span aria-hidden>{marketMeta?.flag ?? "🌐"}</span>
           <span>{locale === "zh" ? marketMeta?.zh : marketMeta?.en}</span>
-          <span className="text-border">·</span>
-          <span>{record.currency}</span>
+          <span className="text-border" aria-hidden>
+            ·
+          </span>
+          <span className="tabular-nums">{record.currency}</span>
         </div>
-        <h3 className="text-lg sm:text-xl font-semibold text-foreground leading-tight">
+        <h3 className="text-base sm:text-lg font-semibold text-foreground leading-snug tracking-tight">
           {record.role}
         </h3>
       </header>
 
-      {/* Three salary bands as horizontal bars */}
-      <dl className="space-y-4 mb-5">
+      {/* Three salary bands as horizontal bars.
+          NYT data-table treatment: label + YoE on left line, big tabular
+          numerals on right. Bar sits below with low/high tick anchors so
+          the visual range is read as data, not decoration. */}
+      <dl className="space-y-5 mb-5">
         {bands.map((b) => {
           const widthPct = b.range
             ? Math.max(8, Math.min(100, (b.range.high / scaleMax) * 100))
@@ -133,37 +139,46 @@ export function SalaryCard({ record, locale, labels }: Props) {
             : 0;
 
           return (
-            <div key={b.key}>
-              <div className="flex items-baseline justify-between gap-2 mb-1.5 text-sm">
-                <dt className="flex items-baseline gap-2">
-                  <span className="font-medium text-foreground">{b.label}</span>
-                  <span className="text-xs font-mono text-muted-foreground">
-                    {b.yoe} {labels.yearsExperience}
+            <div key={b.key} className="grid grid-cols-1 gap-1.5">
+              {/* Top line: label + YoE chip */}
+              <div className="flex items-baseline justify-between gap-2">
+                <dt className="flex items-baseline gap-2 min-w-0">
+                  <span className="text-[11px] uppercase tracking-[0.12em] font-medium text-foreground/85">
+                    {b.label}
+                  </span>
+                  <span className="text-[10px] font-mono text-muted-foreground/80 tabular-nums shrink-0">
+                    {b.yoe}{" "}
+                    <span className="opacity-60">{labels.yearsExperience}</span>
                   </span>
                 </dt>
-                <dd className="font-mono text-foreground tabular-nums">
-                  {symbol} {b.raw}
-                  <span className="ml-2 text-xs text-muted-foreground">
-                    ≈ {formatUsdShort(usdMid)}
-                  </span>
+                <dd className="text-[11px] font-mono text-muted-foreground/70 tabular-nums shrink-0">
+                  ≈ {formatUsdShort(usdMid)}
                 </dd>
               </div>
-              {/* The bar — pure CSS, no JS dep */}
-              <div className="relative h-2.5 rounded-full bg-muted/50 overflow-hidden">
+              {/* Big number — the data hero */}
+              <p className="text-[15px] sm:text-base font-semibold font-mono text-foreground tabular-nums leading-tight">
+                <span className="text-muted-foreground/70 mr-1 font-normal">
+                  {symbol}
+                </span>
+                {b.raw}
+              </p>
+              {/* Bar — pure CSS, no JS dep, with subtle tick anchors */}
+              <div className="relative h-1.5 rounded-full bg-muted/40 overflow-hidden">
                 {b.range && (
                   <div
-                    className={`absolute top-0 bottom-0 ${b.accent} border-r-2 rounded-r-full`}
+                    className={`absolute top-0 bottom-0 ${b.accent} rounded-full`}
                     style={{
                       left: `${lowPct}%`,
-                      width: `${widthPct - lowPct}%`,
+                      width: `${Math.max(2, widthPct - lowPct)}%`,
                     }}
                     aria-label={`${b.label}: ${b.raw} ${record.currency}`}
                   />
                 )}
               </div>
               {b.monthly && (
-                <p className="mt-1 text-[11px] font-mono text-muted-foreground/70">
-                  {labels.monthly}: {b.monthly}
+                <p className="text-[10px] font-mono text-muted-foreground/60 tabular-nums">
+                  {labels.monthly}:{" "}
+                  <span className="text-muted-foreground/85">{b.monthly}</span>
                 </p>
               )}
             </div>
@@ -171,43 +186,42 @@ export function SalaryCard({ record, locale, labels }: Props) {
         })}
       </dl>
 
-      {/* Top-of-market callout — outliers, principals, regional CISOs.
-          Editorially separate from senior-band median data.
-          Sized small but visually distinct so it doesn't displace the
-          primary three-band chart, but still catches a scrolling reader's
-          eye on mobile (the XHS-tap audience). */}
+      {/* Top-of-market row — outliers, principals, regional CISOs.
+          NYT discipline: rendered as just another data row, not a coloured
+          panel. The "non-median" caveat is in the eyebrow so editorial
+          integrity is preserved without visual marketing. */}
       {record.top_tier_salary && (
-        <div className="mb-5 -mt-1 rounded-md border border-amber-500/30 bg-amber-500/5 px-3 py-2.5">
-          <div className="flex items-baseline justify-between gap-2 mb-1">
-            <p className="text-[10px] uppercase tracking-wider font-mono text-amber-400/90">
+        <div className="mb-5 grid grid-cols-1 gap-1.5 pt-3 border-t border-border/40">
+          <div className="flex items-baseline justify-between gap-2">
+            <p className="text-[11px] uppercase tracking-[0.12em] font-medium text-amber-400/90">
               {labels.topEarners}
             </p>
-            <p className="text-[10px] font-mono text-amber-400/60 italic">
+            <p className="text-[10px] font-mono text-muted-foreground/60 italic shrink-0">
               {labels.topEarnersNote}
             </p>
           </div>
-          <p className="text-sm font-mono font-semibold text-foreground/95 leading-snug">
+          <p className="text-[15px] sm:text-base font-semibold font-mono text-foreground/95 tabular-nums leading-tight">
             {record.top_tier_salary}
           </p>
           {record.top_tier_note && (
-            <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
+            <p className="text-xs text-muted-foreground/80 leading-relaxed">
               {record.top_tier_note}
             </p>
           )}
         </div>
       )}
 
-      {/* Top hiring chips */}
+      {/* Top hiring chips — labelled data row */}
       {record.top_hiring.length > 0 && (
-        <div className="mb-4">
-          <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1.5">
+        <div className="mb-4 grid grid-cols-1 gap-1.5">
+          <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80 font-medium">
             {labels.topHiring}
           </p>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-x-1.5 gap-y-1">
             {record.top_hiring.slice(0, 6).map((co) => (
               <span
                 key={co}
-                className="inline-block text-xs px-2 py-0.5 rounded border border-border/60 bg-background/40 text-foreground/80"
+                className="inline-block text-[11px] leading-snug px-2 py-0.5 rounded-sm border border-border/50 bg-background/30 text-foreground/80"
               >
                 {co}
               </span>
@@ -216,18 +230,18 @@ export function SalaryCard({ record, locale, labels }: Props) {
         </div>
       )}
 
-      {/* Required certs chips */}
+      {/* Required certs chips — anchored to cert ROI table */}
       {record.required_certs.length > 0 && (
-        <div className="mb-4">
-          <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1.5">
+        <div className="mb-4 grid grid-cols-1 gap-1.5">
+          <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80 font-medium">
             {labels.requiredCerts}
           </p>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-x-1.5 gap-y-1">
             {record.required_certs.map((c) => (
               <a
                 key={c}
                 href="#cert-roi"
-                className="inline-block text-xs px-2 py-0.5 rounded border border-primary/30 bg-primary/5 text-primary hover:bg-primary/10 transition-colors font-mono"
+                className="inline-block text-[11px] leading-snug px-2 py-0.5 rounded-sm border border-primary/30 bg-primary/[0.04] text-primary hover:bg-primary/10 transition-colors font-mono"
               >
                 {c}
               </a>
@@ -236,29 +250,16 @@ export function SalaryCard({ record, locale, labels }: Props) {
         </div>
       )}
 
-      {/* Shocking fact pull-quote — FT/NYT style sidebar */}
-      {record.shocking_fact && (
-        <blockquote
-          lang="zh"
-          className="my-4 pl-3 border-l-2 border-primary/60 text-sm italic text-foreground/85 leading-relaxed"
-        >
-          <p className="text-[10px] not-italic uppercase tracking-wider text-primary/80 mb-1 font-sans">
-            {labels.shockingFact}
-          </p>
-          {record.shocking_fact}
-        </blockquote>
-      )}
-
-      {/* Source attribution */}
+      {/* Source attribution — footnote-style */}
       {sourceHost && sourceUrl && (
         <footer className="pt-3 border-t border-border/40">
           <a
             href={sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
+            className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.1em] text-muted-foreground/80 hover:text-primary transition-colors font-mono"
           >
-            <ExternalLink className="size-3" />
+            <ExternalLink className="size-2.5" />
             {labels.source}: {sourceHost}
           </a>
         </footer>

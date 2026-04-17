@@ -563,5 +563,200 @@
     "category": "hongkong_salaries",
     "top_tier_salary": "HKD 1,800,000–2,500,000+ (regional CISO / 银行安全主管 / Big4 ex-partner)",
     "top_tier_note": "网络业内人脉直接核实：HK 在职 CISO 年薪约 HKD 2M。Big4/MNC 区域 CISO 可冲到 HKD 2.5–4M。"
+  },
+  {
+    "slug": "hk-full-career-ladder",
+    "role": "完整职业梯子：分析师 → 经理 → 总监 → CISO（香港金融行业，7个级别）",
+    "market": "Hong Kong",
+    "currency": "HKD",
+    "entry_salary": "264,000–420,000（Junior Analyst，0-2年）",
+    "mid_salary": "480,000–660,000（Consultant / Senior Analyst，3-5年；avg HKD 552k per SalaryExpert）",
+    "senior_salary": "660,000–1,020,000（Senior Engineer / Senior Consultant，6-9年；avg HKD 818k per Robert Half）",
+    "yoe_entry": "0-2",
+    "yoe_mid": "3-5",
+    "yoe_senior": "6-9",
+    "top_hiring": [
+      "汇丰银行（HSBC）— 全球CISO亚太区，顶薪",
+      "渣打银行（Standard Chartered）— CISO汇报全球CRO",
+      "香港交易所（HKEX）— 交易所级别，Director年包HKD 1.8M+",
+      "Big 4（PwC/Deloitte HK）— Consultant → Manager晋升快",
+      "香港金融管理局（HKMA）— 监管机构，稳定性高"
+    ],
+    "required_certs": [
+      "CISSP（全级别认可）",
+      "CISM（Manager+必备）",
+      "CISA（审计方向）",
+      "MBA（Director+加分）"
+    ],
+    "hook": "香港网安职业7级梯：从月薪2.2万到CISO底薪200万，要走多少年？",
+    "shocking_fact": "香港金融机构CISO底薪HKD 200万/年，不含花红——花红通常是底薪20-50%，总包可达HKD 250万-350万+；同级别资深TI顾问月薪HKD 8.5万（年薪超100万，不含花红）；香港税率仅15%，税后到手远超表面数字",
+    "source_url": "PayScale HK 2025 / SalaryExpert 2026 / Robert Half HK Salary Guide 2026 / Randstad HK 2025 / 行业验证",
+    "category": "hongkong_salaries"
+  },
+  {
+    "slug": "hk-ti-consultant-ceiling",
+    "role": "威胁情报顾问 / Threat Intelligence Consultant（香港外资行）",
+    "market": "Hong Kong",
+    "currency": "HKD",
+    "entry_salary": "360,000–480,000（初级TI Analyst，0-3年）",
+    "mid_salary": "600,000–840,000（TI Analyst / Consultant，3-6年）",
+    "senior_salary": "900,000–1,200,000（Senior TI Consultant，6-9年）",
+    "yoe_entry": "0-3",
+    "yoe_mid": "3-6",
+    "yoe_senior": "6-9",
+    "top_hiring": [
+      "外资投行CTI团队（Goldman Sachs / JPMorgan / HSBC）— 最高薪",
+      "CrowdStrike / Mandiant HK — 技术威胁情报",
+      "Big 4 Cyber Threat Advisory（PwC/Deloitte）— 商业分析方向",
+      "香港警方网络安全及科技罪案调查科（CSTCB）— 政府方向"
+    ],
+    "required_certs": [
+      "GCTI（威胁情报专业认证）",
+      "OSCP（技术可信度）",
+      "CISSP（晋升管理层必备）"
+    ],
+    "hook": "香港TI顾问月薪8.5万港元（不含花红）：威胁情报是网安最被低估的百万年薪赛道",
+    "shocking_fact": "资深香港TI顾问（外资行）月薪HKD 85,000不含花红，年薪超HKD 100万——这是经行业人士验证的真实数字，不是猎头噱头；该赛道在大陆极少被讨论，但在香港外资行是稀缺岗，比同级别SOC工程师高出40-60%",
+    "source_url": "行业人士薪资数据（已验证）/ Robert Half HK 2026",
+    "category": "hongkong_salaries"
+  },
+  {
+    "slug": "sg-full-career-ladder",
+    "role": "完整职业梯子：分析师 → 经理 → 总监 → CISO（新加坡，7个级别）",
+    "market": "Singapore",
+    "currency": "SGD",
+    "entry_salary": "42,000–60,000（Junior Analyst / SOC Tier-1，0-2年）",
+    "mid_salary": "72,000–108,000（Security Engineer / Consultant，3-5年）",
+    "senior_salary": "108,000–160,000（Senior Engineer / Senior Consultant，6-9年）",
+    "yoe_entry": "0-2",
+    "yoe_mid": "3-5",
+    "yoe_senior": "6-9",
+    "top_hiring": [
+      "DBS / UOB / OCBC — 本地银行CISO年包SGD 400-600k+（含股权）",
+      "GovTech Singapore — 政府CISO，SGD 300k+，稳定性强",
+      "Grab / Sea Group — 科技独角兽，CISO年包+股权可超SGD 500k",
+      "Ensign InfoSecurity — 乙方Director SGD 200-280k",
+      "CSA（网络安全局）— 政府Director，SGD 180-250k"
+    ],
+    "required_certs": [
+      "CISSP（全级别高认可）",
+      "CISM（经理层必备）",
+      "AWS/Azure Security（云架构方向）"
+    ],
+    "hook": "新加坡网安职业7级梯：从月薪3,500到CISO月薪22,200，每一步要多久？",
+    "shocking_fact": "NodeFlair 2026数据：新加坡CISO月薪中位数S$16,000（年薪约SGD 192k）；大型银行CISO总包含花红+股权可达SGD 500,000-600,000——是新加坡软件VP的1.2-1.5倍",
+    "source_url": "https://nodeflair.com/salaries / https://itel.com.sg/cybersecurity-salary-in-singapore-market-breakdown-for-2025/ / salary.sg",
+    "category": "singapore_salaries"
+  },
+  {
+    "slug": "au-full-career-ladder",
+    "role": "完整职业梯子：分析师 → 经理 → 总监 → CISO（澳大利亚，7个级别）",
+    "market": "Australia (Sydney / Melbourne / Canberra)",
+    "currency": "AUD",
+    "entry_salary": "75,000–100,000（Junior Analyst，0-2年）",
+    "mid_salary": "110,000–145,000（Security Engineer / Consultant，3-5年）",
+    "senior_salary": "150,000–200,000（Senior Engineer / Senior Consultant，6-9年）",
+    "yoe_entry": "0-2",
+    "yoe_mid": "3-5",
+    "yoe_senior": "6-9",
+    "top_hiring": [
+      "Commonwealth Bank / ANZ / Westpac — 大行CISO年包AUD 500k+",
+      "ASD（澳洲信号局）— 政府CISO，AUD 350-400k+NV2许可",
+      "BHP / Rio Tinto — 资源大公司，CISO AUD 450k+",
+      "CyberCX / Sekuro — 乙方Director AUD 250-350k",
+      "Canberra市场 — 政府清查岗加薪30-40%（AUD 165k vs悉尼AUD 119k for analyst）"
+    ],
+    "required_certs": [
+      "CISSP",
+      "CISM",
+      "NV1/NV2（政府岗必须，加薪AUD 20-40k）",
+      "CISA（审计方向）"
+    ],
+    "hook": "澳洲网安职业7级梯：从年薪7.5万到CISO60万澳元，每一步多久？",
+    "shocking_fact": "Robert Half澳洲2026薪资指南：悉尼CISO底薪AUD 250,000起，ASX100公司CISO含花红总包可达AUD 600,000；澳洲网安薪资2025年同比增长21%——是全球增速最快的市场之一",
+    "source_url": "https://www.roberthalf.com/au/en/job-details/ciso/sydney / https://terratern.com/blog/cyber-security-salary-australia / https://www.e2cyber.com.au/salary-rate-guide",
+    "category": "australia_salaries"
+  },
+  {
+    "slug": "cn-full-career-ladder",
+    "role": "完整职业梯子：安全工程师 → 经理 → 总监 → CISO（中国大厂/金融行业，7个级别）",
+    "market": "China T1 (北京/上海/深圳/杭州)",
+    "currency": "CNY",
+    "entry_salary": "150,000–280,000（初级安全工程师，0-3年；全国均值24万，T1城市偏高端）",
+    "mid_salary": "300,000–550,000（中级工程师/安全顾问，4-7年；Morgan McKinley CN avg ¥520k）",
+    "senior_salary": "550,000–1,000,000（高级工程师/高级顾问，8-12年；金融行业专家¥800k+）",
+    "yoe_entry": "0-3",
+    "yoe_mid": "4-7",
+    "yoe_senior": "8-12",
+    "top_hiring": [
+      "腾讯安全 — VP级别年包含期权超¥500万，竞争极激烈",
+      "阿里云/蚂蚁集团安全 — 首席安全官年包¥300万+",
+      "字节跳动安全 — 增长快，期权兑现周期短",
+      "国有大行（工农中建）— CISO年包¥150-300万，稳定可预期",
+      "奇安信/深信服 — 乙方安全总监¥120-200万"
+    ],
+    "required_certs": [
+      "CISP-PTE（技术天花板）",
+      "CISSP（管理层必备）",
+      "CISP（国内基础合规）",
+      "顶会论文（大厂晋升P7+核心要素）"
+    ],
+    "hook": "中国大厂CISO薪资真相：从年薪20万到千万级别，差距在哪里？",
+    "shocking_fact": "2025年中国网安人才平均年薪24.09万（全国含T2城市）——但北京/上海大厂安全工程师均值已达¥52万，金融行业专家¥80万+，互联网大厂CISO含期权可达¥500万-1000万；同一行业，T1 vs 全国均值差距超2倍",
+    "source_url": "https://www.morganmckinley.com.cn/zh-hans/salary-guide + CSDN 2025网安薪酬趋势 + 脉脉数据",
+    "category": "china_salaries"
+  },
+  {
+    "slug": "my-full-career-ladder",
+    "role": "完整职业梯子：安全分析师 → 经理 → 总监 → CISO（马来西亚，7个级别）",
+    "market": "Malaysia (Kuala Lumpur)",
+    "currency": "MYR",
+    "entry_salary": "48,000–72,000（Junior Analyst，0-2年）",
+    "mid_salary": "84,000–120,000（Security Engineer / Consultant，3-5年；金融行业MYR 120k-180k）",
+    "senior_salary": "130,000–200,000（Senior Engineer / Senior Consultant，6-9年）",
+    "yoe_entry": "0-2",
+    "yoe_mid": "3-5",
+    "yoe_senior": "6-9",
+    "top_hiring": [
+      "Maybank / CIMB — 本地大行，CISO总包MYR 500-700k",
+      "Petronas — 油气国企，CISO MYR 600k+",
+      "TM（Telekom Malaysia）— 电信国企，稳定",
+      "CyberSecurity Malaysia（政府机构）— 政府Director MYR 200-350k",
+      "马来西亚证券委员会 — 金融监管，GRC方向最高薪"
+    ],
+    "required_certs": [
+      "CISSP（全级别高认可）",
+      "CISM（经理层必备）",
+      "ISO27001 LA（GRC方向基础）",
+      "CISA（审计方向）"
+    ],
+    "hook": "马来西亚网安职业7级梯：从月薪4,000到CISO年薪60万令吉，每一步多久？",
+    "shocking_fact": "SalaryExpert 2025数据：马来西亚网安总监平均年薪MYR 217,762；Maybank/CIMB级别CISO年薪可达MYR 700,000；按购买力换算，马来西亚CISO在KL的生活水平等同于新加坡CISO的85%，但工作压力和竞争强度低得多",
+    "source_url": "https://www.payscale.com/research/MY/Job=Security_Manager/Salary / https://www.salaryexpert.com/salary/job/director-cyber-security/malaysia / https://my.jobstreet.com",
+    "category": "malaysia_salaries"
+  },
+  {
+    "slug": "cross-market-ciso-comparison",
+    "role": "5市场职业天花板对比：谁做到顶赚最多？（HK / SG / AU / CN / MY）",
+    "market": "Cross-market (HK vs SG vs AU vs CN vs MY)",
+    "currency": "USD",
+    "entry_salary": "0-2年：HK USD 34k / SG USD 40k / AU USD 58k / CN T1 USD 29k / MY USD 11k",
+    "mid_salary": "3-5年：HK USD 77k / SG USD 80k / AU USD 106k / CN T1 USD 58k / MY USD 21k",
+    "senior_salary": "6-9年：HK USD 105k / SG USD 120k / AU USD 148k / CN T1 USD 97k / MY USD 36k",
+    "yoe_entry": "0-2",
+    "yoe_mid": "3-5",
+    "yoe_senior": "6-9",
+    "top_hiring": [
+      "数据来源：PayScale / SalaryExpert / NodeFlair / Robert Half / Morgan McKinley / SEEK / 行业核实"
+    ],
+    "required_certs": [
+      "CISSP（全市场CISO标配）",
+      "CISM（管理路线）",
+      "CISA（合规/审计路线）"
+    ],
+    "hook": "5个市场做到CISO，谁税后最赚钱？HK底薪200万vs澳洲总包460万澳元",
+    "shocking_fact": "税率才是关键：HK 15% / SG最高22%（实际更低） / AU最高45% / CN 45% / MY 26%；香港CISO底薪HKD 200万税后到手约HKD 170万，澳洲CISO AUD 500万税后约AUD 275万——税后差距比税前数字小得多；香港仍以绝对到手金额领先亚太区",
+    "source_url": "NodeFlair 2026 / Robert Half HK+AU 2026 / SalaryExpert 2025 / Morgan McKinley CN 2025 / 行业核实数据",
+    "category": "cross_market"
   }
 ]

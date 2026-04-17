@@ -55,7 +55,11 @@
     "breadcrumbHome": "Home",
     "breadcrumbSalary": "Salaries",
     "topEarners": "Top Earners",
-    "topEarnersNote": "outliers, not median"
+    "topEarnersNote": "outliers, not median",
+    "statRecords": "Records",
+    "statMarkets": "Markets",
+    "statCertPairs": "Cert pairs",
+    "statUpdated": "Updated"
   },
   "home": {
     "heroTitle": "Cybersecurity & Tech Intelligence",

@@ -24,6 +24,7 @@ import {
   SalaryRecordSchema,
   CertRecordSchema,
   filterSalaries,
+  classifyMarket,
   type MarketKey,
   type RoleKey,
   type SalaryRecord,
@@ -136,6 +137,12 @@ export default async function SalaryPage({ params, searchParams }: PageProps) {
   const role = (sp.role ?? "all") as RoleKey | "all";
   const filtered = filterSalaries(salaryData, { market, role });
 
+  // At-a-glance stats — counted from the FULL dataset (not the filtered
+  // view) so the hero summary always reflects the dataset's true breadth.
+  const marketsCovered = new Set(
+    salaryData.map((r) => classifyMarket(r.market)),
+  ).size;
+
   // ── Translation labels passed to components (keep them simple props) ──
   const cardLabels = {
     entryLevel: t("entryLevel"),
@@ -144,7 +151,6 @@ export default async function SalaryPage({ params, searchParams }: PageProps) {
     yearsExperience: t("yearsExperience"),
     topHiring: t("topHiring"),
     requiredCerts: t("requiredCerts"),
-    shockingFact: t("shockingFact"),
     source: t("source"),
     monthly: t("monthly"),
     topEarners: t("topEarners"),
@@ -229,12 +235,51 @@ export default async function SalaryPage({ params, searchParams }: PageProps) {
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
             {t("standfirst")}
           </p>
-          <p className="mt-4 text-xs font-mono text-muted-foreground">
+
+          {/* At-a-glance stats strip — NYT-style dataset metadata.
+              Count markets/roles/records server-side so the numbers stay
+              in sync with the data and crawlers see them in initial HTML. */}
+          <dl className="mt-6 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm">
+            <div className="flex items-baseline gap-1.5">
+              <dt className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80">
+                {t("statRecords")}
+              </dt>
+              <dd className="font-mono font-semibold tabular-nums text-foreground">
+                {salaryData.length}
+              </dd>
+            </div>
+            <div className="flex items-baseline gap-1.5">
+              <dt className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80">
+                {t("statMarkets")}
+              </dt>
+              <dd className="font-mono font-semibold tabular-nums text-foreground">
+                {marketsCovered}
+              </dd>
+            </div>
+            <div className="flex items-baseline gap-1.5">
+              <dt className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80">
+                {t("statCertPairs")}
+              </dt>
+              <dd className="font-mono font-semibold tabular-nums text-foreground">
+                {certData.length}
+              </dd>
+            </div>
+            <div className="flex items-baseline gap-1.5">
+              <dt className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground/80">
+                {t("statUpdated")}
+              </dt>
+              <dd className="font-mono font-semibold tabular-nums text-foreground">
+                {LAST_UPDATED}
+              </dd>
+            </div>
+          </dl>
+
+          <p className="mt-5 text-[11px] font-mono text-muted-foreground">
             <a
               href="#methodology"
-              className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+              className="hover:text-primary transition-colors underline-offset-4 hover:underline uppercase tracking-[0.12em]"
             >
-              {t("methodologyLink")} {LAST_UPDATED}
+              {t("methodologyLink")}
             </a>
           </p>
         </header>
