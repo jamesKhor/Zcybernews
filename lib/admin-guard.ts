@@ -48,9 +48,21 @@ export async function adminGuard(
 
 /**
  * Sanitize a slug — alphanumeric and hyphens only.
+ *
+ * Normalizes leading/trailing hyphens before validation so that legacy
+ * articles with slugs like "foo-bar-" (produced by an 80-char truncation
+ * bug in earlier pipeline runs) can still be edited via the admin route.
+ * The regex itself remains strict — after the trim step, a slug with
+ * mid-string problems (double hyphens mid-slug, non-alphanum) still
+ * fails. Pattern: fix the URL at the edge, keep storage strict.
  */
 export function sanitizeSlug(slug: string): string | null {
-  const clean = slug.toLowerCase().trim().slice(0, 200);
+  const clean = slug
+    .toLowerCase()
+    .trim()
+    .slice(0, 200)
+    // Strip leading/trailing hyphens that slipped in via filename drift
+    .replace(/^-+|-+$/g, "");
   if (!SLUG_RE.test(clean)) return null;
   return clean;
 }
