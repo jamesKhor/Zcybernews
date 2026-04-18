@@ -164,15 +164,35 @@
     "Noto Sans CJK SC", system-ui, sans-serif;
 }
 
-/* Mobile horizontal-overflow guard (2026-04-18).
-   Belt-and-braces: prevent ANY descendant from triggering page-level
-   horizontal scroll on phones. Use `clip` (not `hidden`) so position:
-   fixed/sticky descendants still work against the viewport. Applied at
-   html AND body so the rule survives any component that temporarily
-   sets overflow on body (drawers, dialogs, etc.). */
+/* Mobile horizontal-overflow guard (2026-04-18, reinforced 2026-04-18 PM).
+   Two layers:
+     1. overflow-x: clip — if a descendant overshoots, clip it silently
+        (don't create a horizontal scrollbar). Uses `clip` not `hidden`
+        so position: fixed/sticky descendants still work against viewport.
+     2. max-width: 100vw — HARD cap: prevents the root element from
+        being wider than the visible viewport. Without this, mobile
+        browsers react to over-wide content by zooming OUT to fit
+        (user sees tiny text and has to pinch-in to read). The cap
+        forces content to stay within viewport, so overflow gets
+        clipped (rule 1) instead of triggering viewport zoom.
+   Both rules applied at html AND body for resilience against any
+   component that temporarily overrides overflow on body (drawers,
+   modals, etc.). */
 html,
 body {
   overflow-x: clip;
+  max-width: 100vw;
+}
+
+/* Resize-lag mitigation (2026-04-18 PM).
+   Tells the browser that descendants of these sections cannot affect
+   ancestor layout — so when viewport size changes, the browser can
+   skip style/layout/paint recalc for the sections' children unless
+   the section itself changes size. Massively cuts main-thread work
+   during window-resize drags on content-dense pages like /salary
+   (70 articles + 37 headings + vw-sized cinematic hero). */
+.layout-isolate {
+  contain: layout paint;
 }
 
 body {

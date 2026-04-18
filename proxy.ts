@@ -83,7 +83,74 @@ export default function proxy(request: NextRequest) {
   }
 
   // ── All other public routes: next-intl locale prefix + detection ──────────
-  return intlMiddleware(request);
+  const response = intlMiddleware(request);
+  return stampRscCacheHeaders(request, response);
+}
+
+// ── RSC cache-poisoning guard (2026-04-18, SEV1 fix) ──────────────────────
+// Next.js App Router serves two kinds of responses per route:
+//   1. Initial HTML (browser navigation) — Content-Type: text/html
+//   2. RSC payload (client-side nav / prefetch) — Content-Type: text/x-component
+// Both responses by default carry the same Cache-Control (our ISR routes
+// emit `public, s-maxage=3600`). Cloudflare's default cache key is URL-
+// only — it ignores the origin's `Vary: rsc` header. Result: one RSC
+// prefetch can poison the edge cache so every subsequent HTML request
+// for that URL receives the RSC payload (users see a raw JSON blob).
+//
+// Fix: force RSC requests to bypass ALL public/shared caches via
+// `Cache-Control: private, no-store`. Browser-side, Next.js's own
+// client router can still use the response for navigation. Edge-side,
+// no CDN will cache a `private` response, so the poisoning path is
+// closed regardless of CF Cache Rule config.
+//
+// Defense-in-depth: we ALSO document a CF Cache Rule that bypasses
+// cache when the RSC header is present (docs/cf-rsc-bypass-rule.md).
+// Either layer on its own prevents the bug; both together is belt +
+// braces.
+const RSC_HEADERS = [
+  "rsc",
+  "next-router-prefetch",
+  "next-router-state-tree",
+  "next-router-segment-prefetch",
+];
+
+function isRscRequest(req: NextRequest): boolean {
+  for (const h of RSC_HEADERS) {
+    const v = req.headers.get(h);
+    if (v && v !== "0") return true;
+  }
+  return false;
+}
+
+function stampRscCacheHeaders(
+  req: NextRequest,
+  res: NextResponse | Response,
+): NextResponse | Response {
+  if (!isRscRequest(req)) return res;
+  // Only mutate NextResponse / Response with mutable headers. Some
+  // middleware return types are effectively immutable — fall back to
+  // cloning a NextResponse in that case.
+  try {
+    res.headers.set("Cache-Control", "private, no-store");
+    // Stamp Vary so any well-behaved cache that DOES look at it will
+    // also recognize RSC as varying on these headers.
+    res.headers.set(
+      "Vary",
+      [
+        res.headers.get("Vary") ?? "",
+        "RSC",
+        "Next-Router-Prefetch",
+        "Next-Router-State-Tree",
+      ]
+        .filter(Boolean)
+        .join(", "),
+    );
+  } catch {
+    // If the response is immutable, best-effort: do nothing. The CF
+    // Cache Rule documented in docs/cf-rsc-bypass-rule.md is the
+    // safety net.
+  }
+  return res;
 }
 
 export const config = {

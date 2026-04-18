@@ -101,7 +101,7 @@ export function SalaryCard({ record, locale, labels }: Props) {
   }
 
   return (
-    <article className="border border-border/60 bg-card/40 rounded-md p-5 sm:p-6 hover:border-border hover:bg-card/60 transition-colors">
+    <article className="border border-border/60 bg-card/40 rounded-md p-5 sm:p-6 hover:border-border hover:bg-card/60 transition-colors layout-isolate">
       {/* Header — role + market + currency.
           Pixel Street discipline: eyebrow is a "graphic element" — weight
           bumped to semibold so a tiny label lands confidently. Market

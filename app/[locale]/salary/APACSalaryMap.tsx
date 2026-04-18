@@ -215,8 +215,10 @@ export function APACSalaryMap({
         </div>
       </header>
 
-      {/* Map — viewBox keeps it responsive; max-h keeps phones sane */}
-      <div className="relative w-full overflow-hidden rounded-sm bg-background/40">
+      {/* Map — viewBox keeps it responsive; max-h keeps phones sane.
+          layout-isolate prevents the SVG from triggering style recalc
+          cascades during viewport resize. */}
+      <div className="relative w-full overflow-hidden rounded-sm bg-background/40 layout-isolate">
         <svg
           viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
           xmlns="http://www.w3.org/2000/svg"

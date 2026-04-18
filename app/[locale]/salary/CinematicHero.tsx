@@ -51,7 +51,11 @@ export function CinematicHero({ labels }: Props) {
   return (
     <section
       aria-label="Salary data lede"
-      className="relative isolate -mx-4 sm:-mx-6 mb-12 sm:mb-16 overflow-hidden bg-black"
+      // layout-isolate (from globals.css) adds `contain: layout paint`
+      // so descendants can't invalidate ancestor layout on resize —
+      // critical for 60fps drag-resize since this hero otherwise re-
+      // cascades every vw-sized child on every pixel of mouse movement.
+      className="relative isolate -mx-4 sm:-mx-6 mb-12 sm:mb-16 overflow-hidden bg-black layout-isolate"
     >
       {/* ── Backdrop layer stack ────────────────────────────────────
           1) Radial "burn" glow — the rocket/flame element, bottom-right
@@ -133,7 +137,7 @@ export function CinematicHero({ labels }: Props) {
               // 0.86 — CJK glyphs need more height to avoid clipping their
               // top/bottom strokes.
               className={`font-display font-black leading-[0.9] sm:leading-[0.86] tracking-tight uppercase
-                text-[14vw] sm:text-[16vw] md:text-[14vw] lg:text-[13rem] xl:text-[15rem]
+                text-[clamp(2.5rem,14vw,5.5rem)] sm:text-[clamp(4rem,16vw,10rem)] md:text-[clamp(5rem,14vw,12rem)] lg:text-[13rem] xl:text-[15rem]
                 ${line.align}
                 ${line.strong ? "text-white" : "text-white/[0.14]"}
                 ${i > 0 ? "-mt-[0.06em] sm:-mt-[0.08em]" : ""}`}

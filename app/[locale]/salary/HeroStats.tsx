@@ -220,7 +220,10 @@ export function HeroStats({ records, locale, labels }: Props) {
   return (
     <section
       aria-label="Headline data points"
-      className="my-6 sm:my-8 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4"
+      // layout-isolate — 3-column stat grid with tabular-nums doesn't
+      // affect outer layout; contain lets the browser skip recalc on
+      // resize events that don't cross a breakpoint.
+      className="my-6 sm:my-8 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 layout-isolate"
     >
       {[
         {
