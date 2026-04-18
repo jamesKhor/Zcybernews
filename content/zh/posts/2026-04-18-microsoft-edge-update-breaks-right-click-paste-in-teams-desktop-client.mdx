@@ -1,0 +1,48 @@
+---
+title: Microsoft Edge 更新破坏了 Teams 桌面客户端中的右键粘贴功能
+slug: >-
+  2026-04-18-microsoft-edge-update-breaks-right-click-paste-in-teams-desktop-client
+date: '2026-04-18'
+excerpt: >-
+  最近的 Microsoft Edge 浏览器更新引入了一个错误，破坏了 Microsoft Teams
+  桌面客户端中聊天内的右键粘贴功能，影响了用户的工作流程。
+category: vulnerabilities
+tags:
+  - microsoft
+  - teams
+  - edge
+  - bug
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/microsoft/microsoft-teams-right-click-paste-broken-by-edge-update-bug/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-18-microsoft-edge-update-breaks-right-click-paste-in-teams-desktop-client
+severity: low
+affected_sectors:
+  - cross-sector
+affected_regions:
+  - global
+---
+## 执行摘要
+最近对Microsoft Edge浏览器的更新引入了一个错误，导致Microsoft Teams桌面客户端中的右键粘贴功能失效。根据微软的说法，这个问题是由WebView2运行时组件的更新引起的，Teams使用这个组件来渲染其用户界面。这个错误阻止了用户通过Teams聊天中的右键上下文菜单粘贴剪贴板内容，迫使用户依赖键盘快捷键或功能区界面。
+
+## 技术分析
+这个错误源于对Microsoft Edge WebView2运行时（版本126.0.2592.113或更高版本）的更新，这是嵌入在Microsoft Teams桌面应用程序中用于渲染基于Web内容的核心组件。微软在向管理员的通知中确认了这个问题，指出Teams聊天中的右键粘贴操作“可能无法按预期工作”。通过键盘快捷键（Ctrl+V或Cmd+V）和Teams消息功能区中的粘贴按钮的主要粘贴功能仍然不受影响。这表明上下文菜单与WebView2控件的剪贴板API交互中存在特定的失败。受影响的Teams客户端是基于Electron框架构建的桌面版本，它利用WebView2。Teams网络客户端和移动应用程序不受影响。
+
+## 入侵指标
+目前没有识别出任何入侵指标。这是一个功能性错误，不是安全漏洞或恶意软件活动。
+
+## 战术、技术与程序
+不适用。这是一个由合法更新引入的软件回归错误。
+
+## 威胁行为者背景
+没有涉及威胁行为者。这种中断是由微软提供的组件更新中的软件缺陷引起的。
+
+## 缓解措施与建议
+微软尚未发布WebView2运行时的修复版本。作为一种变通方法，用户可以使用键盘快捷键（Windows上的Ctrl+V，macOS上的Cmd+V）或使用位于Teams消息组合工具栏中的粘贴按钮。管理员不能独立阻止特定的WebView2更新，因为它通过Microsoft Edge更新渠道分发。回滚Edge浏览器版本可能不会恢复WebView2运行时。微软唯一明确的缓解措施是等待未来更新WebView2组件以解决回归问题。
+
+## 参考资料
+- [Microsoft Teams right-click paste broken by Edge update bug](https://www.bleepingcomputer.com/news/microsoft/microsoft-teams-right-click-paste-broken-by-edge-update-bug/)
