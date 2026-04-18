@@ -1,0 +1,59 @@
+---
+title: Lumma Stealer Campaign Deploys Sectop RAT via Malicious PDFs
+slug: 2026-04-18-lumma-stealer-campaign-deploys-sectop-rat-via-malicious-pdfs
+date: '2026-04-18'
+excerpt: >-
+  A new campaign delivers the Lumma information stealer, which subsequently
+  installs the Sectop RAT (ArechClient2) to establish persistent remote access
+  on compromised Windows systems, using malicious PDF files as the initial
+  infection vector.
+category: malware
+tags:
+  - lumma-stealer
+  - sectop-rat
+  - arechclient2
+  - pdf-exploit
+  - information-stealer
+language: en
+source_urls:
+  - 'https://isc.sans.edu/diary/rss/32904'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-18-lumma-stealer-campaign-deploys-sectop-rat-via-malicious-pdfs
+severity: high
+---
+## Executive Summary
+A newly documented malware campaign uses malicious PDF documents to deploy the Lumma (LummaC2) information stealer, which then acts as a loader for the Sectop remote access trojan (RAT), also known as ArechClient2. According to an analysis published by the SANS Internet Storm Center on April 17, 2026, the dual-stage attack aims to first steal credentials, cryptocurrency wallets, and browser data before establishing a persistent, stealthy backdoor for full system control. The infection chain leverages PowerShell and batch scripts to evade detection and maintain persistence on compromised Windows hosts.
+
+## Technical Analysis
+The attack begins with a victim opening a malicious PDF file. The exact method of PDF exploitation is not detailed in the source analysis, but it is noted that the PDF executes a PowerShell command. This command is responsible for downloading and executing the next stage of the attack from a remote server.
+
+The downloaded payload is a batch script (`update.bat`) that performs several anti-analysis and evasion checks. It attempts to identify the presence of virtualization or analysis tools by checking for specific process names, including `vbox`, `procmon`, `vmsrvc`, `vmusrvc`, and `xenservice`. If none of these are detected, the script proceeds to download and execute the Lumma Stealer binary.
+
+Lumma Stealer, a malware-as-a-service (MaaS) offering known for targeting cryptocurrency and sensitive data, performs its information-stealing functions. Crucially, in this campaign, it also downloads and executes an additional component: the Sectop RAT. The RAT is fetched from a separate command-and-control (C2) server and is executed using `RegSvcs.exe`, a legitimate Microsoft .NET Services Installation Utility, likely as a form of living-off-the-land binary (LOLBin) technique to blend in with normal system activity. The Sectop RAT establishes a connection back to its operator, providing remote desktop control, file system access, and the ability to execute arbitrary commands.
+
+## Indicators of Compromise
+None identified at this time.
+
+## Tactics, Techniques & Procedures
+The attackers employ a multi-layered approach consistent with established cybercriminal tradecraft:
+*   **Initial Access (TA0001):** Likely via phishing or malicious websites distributing the weaponized PDF file.
+*   **Execution (TA0002):** Uses a PDF to execute a PowerShell command (T1059.001), which triggers the download of a batch script.
+*   **Defense Evasion (TA0005):** The batch script includes checks for analysis environments (T1497.001). The malware uses `RegSvcs.exe` for side-loading the final RAT payload (T1218.009).
+*   **Persistence (TA0003):** The mechanism for Sectop RAT persistence is not explicitly detailed in the source, but RATs commonly achieve persistence via registry run keys or scheduled tasks.
+*   **Command and Control (TA0011):** The malware communicates with distinct C2 servers for the Lumma Stealer and Sectop RAT components.
+*   **Collection (TA0009):** Lumma Stealer is designed to harvest credentials, cookies, cryptocurrency wallets, and other sensitive data from the infected host.
+
+## Threat Actor Context
+The source analysis does not attribute this campaign to a specific named threat actor or group. The use of commodity malware like Lumma Stealer, combined with the Sectop RAT (a known tool available in underground markets), points to financially motivated cybercriminals. The tactics are opportunistic, aiming to compromise a wide range of systems to steal valuable information and sell access. The choice of a PDF as an initial vector suggests the campaign may be distributed via spam or phishing emails.
+
+## Mitigations & Recommendations
+Organizations and users can mitigate the risk from this and similar campaigns by implementing the following measures:
+*   **User Training:** Educate users on the dangers of opening unsolicited email attachments, especially PDF files, and to verify the sender's legitimacy.
+*   **Application Hardening:** Consider restricting or monitoring the execution of PowerShell and batch scripts, particularly from user directories or temporary locations. Implement application allowlisting where feasible.
+*   **Endpoint Protection:** Ensure endpoint detection and response (EDR) solutions are deployed and configured to detect LOLBin abuse, suspicious process chains (e.g., PDF → PowerShell → `RegSvcs.exe`), and known signatures for Lumma Stealer and Sectop RAT.
+*   **Network Monitoring:** Monitor outbound network traffic for connections to known malicious IPs or domains associated with information stealers and RATs.
+*   **Principle of Least Privilege:** Limit user account privileges to reduce the impact of a successful execution of downloaded scripts.
+
+## References
+*   SANS Internet Storm Center Diary Entry: [Lumma Stealer infection with Sectop RAT (ArechClient2), (Fri, Apr 17th)](https://isc.sans.edu/diary/rss/32904)
