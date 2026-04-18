@@ -1,0 +1,54 @@
+---
+title: 趋势科技Apex One控制台易受未认证RCE攻击
+slug: 2026-04-18-trend-micro-apex-one-console-vulnerable-to-unauthenticated-rce
+date: '2026-04-18'
+excerpt: CVE-2025-54987，趋势科技Apex One中一个关键的9.8 CVSS漏洞，允许未经认证的攻击者通过管理控制台的目录遍历执行任意代码。
+category: vulnerabilities
+tags:
+  - trend-micro
+  - rce
+  - directory-traversal
+  - enterprise-security
+language: zh
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-270/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-18-trend-micro-apex-one-console-vulnerable-to-unauthenticated-rce
+severity: critical
+cvss_score: 9.8
+cve_ids:
+  - CVE-2025-54987
+---
+## 执行摘要
+趋势科技Apex One安全管理控制台中存在一个关键漏洞，允许未经身份验证的远程攻击者在受影响的系统上执行任意代码。该漏洞被跟踪为CVE-2025-54987，并由Zero Day Initiative (ZDI)分配了一个CVSS v3.1基础得分9.8，漏洞源于对用户提供的路径遍历序列缺乏适当的验证。成功利用漏洞可以让攻击者获得Apex One服务器上的SYSTEM级权限，从而完全破坏企业端点安全管理平台。
+
+## 技术分析
+该漏洞记录在ZDI咨询ZDI-26-270中，是Apex One控制台Web界面中的一个目录遍历缺陷。根据ZDI，具体的缺陷存在于处理控制台的HTTP请求中。软件没有正确地中和路径名中使用的特殊元素，允许攻击者构造使用目录遍历序列（例如`../`）的请求，将任意文件写入预期限制目录之外的位置。
+
+这种不当的路径验证可以被利用来实现远程代码执行。虽然公共咨询中没有详细说明确切的机制——这是一种常见的做法，以防止在补丁广泛应用之前立即武器化——ZDI确认利用漏洞不需要身份验证。咨询指出，漏洞源于“在文件操作中使用用户提供的路径之前缺乏适当的验证”。利用漏洞导致在托管Apex One控制台的Windows服务器上的SYSTEM帐户上下文中执行代码。
+
+## 入侵指标
+目前尚未识别出任何入侵指标。检测应集中于异常的文件写入尝试或包含目录遍历序列（`../`, `..\`）的Web请求，特别是来自未经身份验证的来源，针对Apex One管理控制台的Web界面。
+
+## 战术、技术与程序
+主要采用的技术是**利用权限提升（T1068）**。攻击者首先需要发现暴露的Apex One控制台，可能通过互联网扫描服务的默认端口或通过内部侦察。随后的攻击链将涉及：
+1.  **初始访问（T1190）**：在没有凭证的情况下通过网络利用漏洞。
+2.  **权限提升（T1068）**：利用缺陷执行具有SYSTEM权限的代码。
+3.  **持久性（T1505）**：能够写入任意文件，可能被用来在服务器上安装Webshell或其他后门，以实现持续访问。
+
+## 威胁行为者背景
+目前没有公开证据将CVE-2025-54987的活跃利用与已知的威胁行为者联系起来。然而，漏洞的关键性质——结合未经身份验证的访问、远程代码执行和高权限结果——使其成为目标高级持续威胁（APT）团体和广泛的网络犯罪行动迅速采用的首选。漏洞提供了一个直接的向量来破坏企业端点检测和响应（EDR）平台的管理服务器，这可能被用来禁用安全代理、部署勒索软件或进行间谍活动。
+
+## 缓解措施与建议
+趋势科技已发布此漏洞的补丁。所有使用趋势科技Apex One的组织的主要和立即行动是紧急应用趋势科技的最新安全更新。
+
+额外的防御措施包括：
+*   **网络分段**：确保Apex One管理控制台不直接从互联网访问。将对控制台Web界面的访问限制在授权的行政网络。
+*   **入侵检测**：监控网络流量中的利用模式，例如包含针对已知Apex One控制台URI的目标路径遍历字符串的HTTP请求。
+*   **最小权限原则**：托管Apex One控制台的服务器应加强并配置最少必要的网络和系统权限，尽管这并不能缓解核心漏洞。
+组织应参考趋势科技的官方安全公告，了解具体的补丁安装说明和版本详情。
+
+## 参考资料
+*   Zero Day Initiative (ZDI) Advisory ZDI-26-270: [TrendAI Apex One Console Directory Traversal Remote Code Execution Vulnerability](http://www.zerodayinitiative.com/advisories/ZDI-26-270/)
+*   MITRE, CVE-2025-54987: [https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-54987](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-54987)

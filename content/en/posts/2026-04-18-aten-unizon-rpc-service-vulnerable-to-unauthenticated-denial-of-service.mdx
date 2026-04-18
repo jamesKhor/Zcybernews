@@ -1,0 +1,48 @@
+---
+title: ATEN Unizon RPC Service Vulnerable to Unauthenticated Denial-of-Service
+slug: >-
+  2026-04-18-aten-unizon-rpc-service-vulnerable-to-unauthenticated-denial-of-service
+date: '2026-04-18'
+excerpt: >-
+  CVE-2026-5057, with a CVSS score of 7.5, exposes ATEN Unizon to
+  unauthenticated denial-of-service attacks via its RPC service, allowing remote
+  attackers to crash the device management platform.
+category: vulnerabilities
+tags:
+  - aten
+  - unizon
+  - dos
+  - rpc
+  - iot
+language: en
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-272/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-18-aten-unizon-rpc-service-vulnerable-to-unauthenticated-denial-of-service
+severity: high
+cvss_score: 7.5
+cve_ids:
+  - CVE-2026-5057
+---
+## Executive Summary
+A critical vulnerability in ATEN's Unizon device management platform allows unauthenticated remote attackers to trigger a denial-of-service (DoS) condition. Tracked as CVE-2026-5057 with a CVSS v3.1 base score of 7.5, the flaw resides in the platform's RPC service. According to the Zero Day Initiative (ZDI), which disclosed the advisory, exploitation does not require authentication, enabling an attacker to remotely crash the service and disrupt management of connected ATEN hardware.
+
+## Technical Analysis
+The vulnerability is located within the `RpcProvider` component of ATEN Unizon. The specific flaw results from a lack of authentication mechanisms for a particular RPC function. A remote, unauthenticated attacker can send a specially crafted network packet to the vulnerable RPC endpoint. This malformed request triggers an improper handling condition within the service, leading to a crash and a sustained denial-of-service state. The ZDI advisory notes that the attack is network-based and does not require any user interaction or prior access to the target system. The impact is the complete unavailability of the Unizon management interface, preventing administrators from monitoring or controlling connected ATEN power distribution units (PDUs), KVM switches, and other managed devices.
+
+## Indicators of Compromise
+None identified at this time. The primary indicator would be the unexpected and persistent unavailability of the ATEN Unizon web interface and management services following network traffic to its RPC port (port number not specified in the source).
+
+## Tactics, Techniques & Procedures
+The core technique is **Endpoint Denial of Service (T1499)**. The procedure is straightforward: an attacker scans for internet-facing instances of ATEN Unizon and sends a single malformed packet to the vulnerable RPC endpoint to cause a service crash. The lack of required authentication (T1133) significantly lowers the barrier to entry for this attack.
+
+## Threat Actor Context
+There is no evidence in the provided source of active exploitation in the wild. The vulnerability was responsibly disclosed by a researcher through the Zero Day Initiative program. However, the public disclosure of technical details in the ZDI advisory increases the likelihood of copycat or opportunistic attacks, particularly given the low complexity of the exploit.
+
+## Mitigations & Recommendations
+ATEN has released a fix for this vulnerability. The primary and immediate mitigation is to apply the latest security updates provided by ATEN for the Unizon platform. Organizations should also implement network segmentation controls to ensure the Unizon management interface is not directly accessible from the public internet. Restricting access to the necessary RPC and administrative ports to trusted management networks only is a critical defensive step. Continuous monitoring for unexpected service restarts or crashes of the Unizon application is also advised.
+
+## References
+- [ZDI-26-272: ATEN Unizon RpcProvider Missing Authentication Denial-of-Service Vulnerability](http://www.zerodayinitiative.com/advisories/ZDI-26-272/)

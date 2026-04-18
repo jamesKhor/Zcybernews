@@ -1,0 +1,57 @@
+---
+title: Trend Micro Apex One Console Vulnerable to Unauthenticated RCE
+slug: 2026-04-18-trend-micro-apex-one-console-vulnerable-to-unauthenticated-rce
+date: '2026-04-18'
+excerpt: >-
+  CVE-2025-54987, a critical 9.8 CVSS flaw in Trend Micro Apex One, allows
+  unauthenticated attackers to execute arbitrary code via directory traversal in
+  the management console.
+category: vulnerabilities
+tags:
+  - trend-micro
+  - rce
+  - directory-traversal
+  - enterprise-security
+language: en
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-270/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-18-trend-micro-apex-one-console-vulnerable-to-unauthenticated-rce
+severity: critical
+cvss_score: 9.8
+cve_ids:
+  - CVE-2025-54987
+---
+## Executive Summary
+A critical vulnerability in the Trend Micro Apex One security management console allows unauthenticated remote attackers to execute arbitrary code on affected systems. Tracked as CVE-2025-54987 and assigned a CVSS v3.1 base score of 9.8 by the Zero Day Initiative (ZDI), the flaw stems from a lack of proper validation of user-supplied path traversal sequences. Successful exploitation grants an attacker SYSTEM-level privileges on the Apex One server, enabling complete compromise of the enterprise endpoint security management platform.
+
+## Technical Analysis
+The vulnerability, documented in ZDI advisory ZDI-26-270, is a directory traversal flaw within the Apex One console's web interface. According to ZDI, the specific flaw exists within the handling of HTTP requests to the console. The software does not properly neutralize special elements used in a pathname, allowing an attacker to construct requests using directory traversal sequences (e.g., `../`) to write arbitrary files to locations outside of the intended restricted directory.
+
+This improper path validation can be leveraged to achieve remote code execution. While the exact mechanism is not detailed in the public advisory—a common practice to prevent immediate weaponization before patches are widely applied—ZDI confirms that authentication is not required to exploit the vulnerability. The advisory states that the vulnerability results from the "lack of proper validation of a user-supplied path prior to using it in file operations." Exploitation leads to the execution of code in the context of the SYSTEM account on the Windows server hosting the Apex One console.
+
+## Indicators of Compromise
+None identified at this time. Detection should focus on anomalous file write attempts or web requests containing directory traversal sequences (`../`, `..\`) directed at the Apex One management console's web interface, particularly from unauthenticated sources.
+
+## Tactics, Techniques & Procedures
+The primary technique employed is **Exploitation for Privilege Escalation (T1068)**. An attacker would first need to discover the exposed Apex One console, likely via internet scanning for the service's default ports or through internal reconnaissance. The subsequent attack chain would involve:
+1.  **Initial Access (T1190)**: Exploiting the vulnerability over the network without credentials.
+2.  **Privilege Escalation (T1068)**: Leveraging the flaw to execute code with SYSTEM privileges.
+3.  **Persistence (T1505)**: The ability to write arbitrary files could be used to install webshells or other backdoors on the server for continued access.
+
+## Threat Actor Context
+There is no public evidence linking active exploitation of CVE-2025-54987 to a known threat actor at this time. However, the critical nature of the flaw—combining unauthenticated access, remote code execution, and high-privilege outcomes—makes it a prime candidate for rapid adoption by both targeted advanced persistent threat (APT) groups and broad-based cybercriminal operations. The vulnerability provides a direct vector to compromise the management server of an enterprise endpoint detection and response (EDR) platform, which could be used to disable security agents, deploy ransomware, or conduct espionage.
+
+## Mitigations & Recommendations
+Trend Micro has released a patch for this vulnerability. The primary and immediate action for all organizations using Trend Micro Apex One is to apply the latest security updates from Trend Micro as a matter of urgency.
+
+Additional defensive measures include:
+*   **Network Segmentation**: Ensure the Apex One management console is not directly accessible from the internet. Restrict access to the console's web interface to authorized administrative networks only.
+*   **Intrusion Detection**: Monitor network traffic for exploit patterns, such as HTTP requests containing path traversal strings targeting known Apex One console URIs.
+*   **Principle of Least Privilege**: The server hosting the Apex One console should be hardened and configured with minimal necessary network and system permissions, though this does not mitigate the core vulnerability.
+Organizations should reference Trend Micro's official security bulletin for specific patching instructions and version details.
+
+## References
+*   Zero Day Initiative (ZDI) Advisory ZDI-26-270: [TrendAI Apex One Console Directory Traversal Remote Code Execution Vulnerability](http://www.zerodayinitiative.com/advisories/ZDI-26-270/)
+*   MITRE, CVE-2025-54987: [https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-54987](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-54987)

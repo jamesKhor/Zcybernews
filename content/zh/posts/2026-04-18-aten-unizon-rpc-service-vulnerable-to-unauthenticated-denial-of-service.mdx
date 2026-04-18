@@ -1,0 +1,47 @@
+---
+title: ATEN Unizon RPC 服务易受未认证拒绝服务攻击
+slug: >-
+  2026-04-18-aten-unizon-rpc-service-vulnerable-to-unauthenticated-denial-of-service
+date: '2026-04-18'
+excerpt: >-
+  CVE-2026-5057，CVSS 评分为 7.5，暴露 ATEN Unizon 于未认证的拒绝服务攻击，通过其 RPC
+  服务，允许远程攻击者使设备管理平台崩溃。
+category: vulnerabilities
+tags:
+  - aten
+  - unizon
+  - dos
+  - rpc
+  - iot
+language: zh
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-272/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-18-aten-unizon-rpc-service-vulnerable-to-unauthenticated-denial-of-service
+severity: high
+cvss_score: 7.5
+cve_ids:
+  - CVE-2026-5057
+---
+## 执行摘要
+ATEN的Unizon设备管理平台存在一个关键漏洞，允许未经身份验证的远程攻击者触发拒绝服务（DoS）条件。这个漏洞被跟踪为CVE-2026-5057，CVSS v3.1基础得分为7.5，存在于平台的RPC服务中。根据披露咨询的Zero Day Initiative（ZDI），利用不需要认证，使攻击者能够远程崩溃服务并中断连接的ATEN硬件的管理。
+
+## 技术分析
+漏洞位于ATEN Unizon的`RpcProvider`组件内。具体的缺陷是由于特定RPC函数缺乏认证机制。远程未经身份验证的攻击者可以向易受攻击的RPC端点发送一个特别制作的网络数据包。这个畸形的请求触发服务内部的不当处理条件，导致崩溃和持续的拒绝服务状态。ZDI咨询指出，攻击是基于网络的，不需要任何用户交互或对目标系统的先前访问。影响是Unizon管理界面的完全不可用，阻止管理员监控或控制连接的ATEN电源分配单元（PDUs）、KVM开关和其他管理设备。
+
+## 入侵指标
+目前没有识别出任何指标。主要指标将是ATEN Unizon网络流量到其RPC端口（源中未指定端口号）后，ATEN Unizon Web界面和管理服务意外且持续的不可用。
+
+## 战术、技术与程序
+核心技术是**终端拒绝服务（T1499）**。程序很简单：攻击者扫描面向互联网的ATEN Unizon实例，并发送一个畸形的数据包到易受攻击的RPC端点，以引起服务崩溃。不需要认证（T1133）显著降低了这种攻击的进入门槛。
+
+## 威胁行为者背景
+提供的源中没有活跃利用的证据。漏洞是由研究人员通过Zero Day Initiative计划负责任地披露的。然而，ZDI咨询中技术细节的公开披露增加了模仿或机会主义攻击的可能性，特别是考虑到漏洞利用的低复杂性。
+
+## 缓解措施与建议
+ATEN已经发布了这个漏洞的修复。主要和立即的缓解措施是应用ATEN为Unizon平台提供的最新安全更新。组织还应实施网络分段控制，以确保Unizon管理界面不直接从公共互联网访问。将对必要的RPC和管理端口的访问限制在受信任的管理网络中是一个关键的防御步骤。还建议持续监控Unizon应用程序的意外服务重启或崩溃。
+
+## 参考资料
+- [ZDI-26-272: ATEN Unizon RpcProvider Missing Authentication Denial-of-Service Vulnerability](http://www.zerodayinitiative.com/advisories/ZDI-26-272/)
