@@ -24,6 +24,12 @@
 # upstream Debugger needs to investigate a failure, grep the output.
 set -u
 BASE_URL="${BASE_URL:-https://zcybernews.com}"
+# Browser User-Agent — Cloudflare's Bot Fight / WAF returns 403 on the
+# default `curl/8.x` UA when the request originates from a GitHub Actions
+# runner IP block. Using a real browser UA avoids the false-alarm deploy
+# failures that happened on 2026-04-18 when CF blocked 9/10 smoke checks
+# even though the site was serving 200 to real users.
+UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 FAILURES=0
 TOTAL=0
 
@@ -31,7 +37,7 @@ check() {
   local label="$1" url="$2" expect_status="$3" expect_ct_pattern="$4"
   TOTAL=$((TOTAL + 1))
   local response
-  response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nCT=%{content_type}\nSIZE=%{size_download}" -L --max-time 10 "${url}" 2>&1 || echo "HTTP=000")
+  response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nCT=%{content_type}\nSIZE=%{size_download}" -L --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "HTTP=000")
   local status ct size
   status=$(echo "${response}" | grep "^HTTP=" | cut -d= -f2)
   ct=$(echo "${response}" | grep "^CT=" | cut -d= -f2-)
