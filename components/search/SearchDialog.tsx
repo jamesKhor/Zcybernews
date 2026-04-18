@@ -16,10 +16,35 @@ type SearchResult = {
 
 interface Props {
   locale: string;
+  /**
+   * Optional controlled-open state. When provided, the parent controls
+   * whether the dialog is open. Cmd+K and Esc still work but defer to
+   * the parent's onOpenChange. When omitted, the dialog is fully
+   * self-controlled (preserves original behavior for Header usage).
+   * Phase 2 (2026-04-18) addition.
+   */
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
-export function SearchDialog({ locale }: Props) {
-  const [open, setOpen] = useState(false);
+export function SearchDialog({
+  locale,
+  open: controlledOpen,
+  onOpenChange,
+}: Props) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  // If parent passes `open`, this is a controlled component. Otherwise
+  // use internal state. Pattern matches shadcn/ui's controlled/uncontrolled dialogs.
+  const open = controlledOpen ?? internalOpen;
+  // useCallback stabilizes the setOpen reference so handleOpen/handleClose
+  // below (also useCallback) don't get stale closures on re-render.
+  const setOpen = useCallback(
+    (value: boolean) => {
+      if (onOpenChange) onOpenChange(value);
+      if (controlledOpen === undefined) setInternalOpen(value);
+    },
+    [onOpenChange, controlledOpen],
+  );
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
@@ -30,14 +55,14 @@ export function SearchDialog({ locale }: Props) {
   const handleOpen = useCallback(() => {
     setOpen(true);
     setTimeout(() => inputRef.current?.focus(), 50);
-  }, []);
+  }, [setOpen]);
 
   const handleClose = useCallback(() => {
     setOpen(false);
     setQuery("");
     setResults([]);
     setActiveIndex(-1);
-  }, []);
+  }, [setOpen]);
 
   // Keyboard shortcut: Cmd+K / Ctrl+K
   useEffect(() => {

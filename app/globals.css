@@ -29,6 +29,18 @@
     --severity-medium: 45 93% 40%;
     --severity-low: 142 71% 35%;
     --severity-info: 210 100% 35%;
+    /* Category colors — added Phase 2 (2026-04-18).
+       Used on section-header accent bars, category chips, and card
+       left-borders when a severity isn't available. Each category has
+       a distinct hue to create visual rhythm as the reader scrolls
+       through sections. Muted saturation so they don't overwhelm the
+       editorial typography. */
+    --cat-threat-intel: 0 74% 50%;
+    --cat-vulnerabilities: 25 85% 45%;
+    --cat-malware: 280 65% 50%;
+    --cat-industry: 210 70% 40%;
+    --cat-tools: 160 60% 35%;
+    --cat-ai: 190 75% 45%;
   }
 
   /* ─── Dark mode — true OLED black ─── */
@@ -58,6 +70,14 @@
     --severity-medium: 45 93% 47%;
     --severity-low: 142 71% 45%;
     --severity-info: 199 89% 48%;
+    /* Category colors — dark-mode variants (slightly brighter/more
+       saturated than light variants to hold contrast on black bg) */
+    --cat-threat-intel: 0 80% 62%;
+    --cat-vulnerabilities: 25 90% 58%;
+    --cat-malware: 280 70% 65%;
+    --cat-industry: 210 75% 60%;
+    --cat-tools: 160 65% 50%;
+    --cat-ai: 190 80% 55%;
   }
 }
 

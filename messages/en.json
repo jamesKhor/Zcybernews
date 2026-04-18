@@ -133,7 +133,19 @@
     "heroSubtitle": "In-depth threat analysis, vulnerability research, and security news for defenders.",
     "latestArticles": "Latest Articles",
     "latestThreatIntel": "Latest Threat Intel",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "greetingPrompt": "What's breaking in cyber today?",
+    "greetingAriaLabel": "Site greeting and search",
+    "searchAriaLabel": "Open search dialog",
+    "searchPlaceholder": "Search articles...",
+    "heroAriaLabel": "Featured stories",
+    "moreFromToday": "More from today",
+    "moreFromTodayAriaLabel": "More stories from today",
+    "seeAll": "See all",
+    "read": "Read",
+    "seeMoreUpdates": "See more updates",
+    "categoryAll": "All",
+    "categoryNavAriaLabel": "Browse by category"
   },
   "article": {
     "readingTime": "{minutes} min read",

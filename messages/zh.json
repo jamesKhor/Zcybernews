@@ -133,7 +133,19 @@
     "heroSubtitle": "深度威胁分析、漏洞研究与安全资讯，为防御者服务。",
     "latestArticles": "最新文章",
     "latestThreatIntel": "最新威胁情报",
-    "viewAll": "查看全部"
+    "viewAll": "查看全部",
+    "greetingPrompt": "今日网安速报",
+    "greetingAriaLabel": "站点问候与搜索",
+    "searchAriaLabel": "打开搜索",
+    "searchPlaceholder": "搜索文章...",
+    "heroAriaLabel": "焦点报道",
+    "moreFromToday": "今日更多",
+    "moreFromTodayAriaLabel": "今日其他报道",
+    "seeAll": "查看全部",
+    "read": "阅读",
+    "seeMoreUpdates": "更多更新",
+    "categoryAll": "全部",
+    "categoryNavAriaLabel": "按类别浏览"
   },
   "article": {
     "readingTime": "{minutes} 分钟阅读",
