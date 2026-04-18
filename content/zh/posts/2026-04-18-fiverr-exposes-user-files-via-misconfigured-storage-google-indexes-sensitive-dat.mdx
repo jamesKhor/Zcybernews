@@ -1,0 +1,58 @@
+---
+title: Fiverr 通过配置错误的存储暴露用户文件，Google 索引敏感信息
+slug: >-
+  2026-04-18-fiverr-exposes-user-files-via-misconfigured-storage-google-indexes-sensitive-dat
+date: '2026-04-18'
+excerpt: >-
+  据安全研究人员称，自由职业平台 Fiverr 通过配置错误的云存储桶暴露了敏感用户文件，包括税务文件和个人身份信息（PII），并且这些数据被 Google
+  搜索索引。
+category: vulnerabilities
+tags:
+  - data-leak
+  - cloud-security
+  - privacy
+  - misconfiguration
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/fiverr-allegedly-leaks-user-information-to-google/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-18-fiverr-exposes-user-files-via-misconfigured-storage-google-indexes-sensitive-dat
+severity: high
+affected_sectors:
+  - freelance-services
+  - e-commerce
+affected_regions:
+  - global
+---
+## 执行摘要
+自由职业服务市场Fiverr由于云存储系统的配置错误，暴露了包括已完成的税务表格和其他个人身份信息（PII）在内的敏感用户文件。根据安全研究人员在Hacker News上的披露，这些暴露的数据可以公开访问，并被Google搜索索引。此事件突出了不当云存储权限所带来的持续风险以及搜索引擎索引对数据隐私的下游影响。
+
+## 技术分析
+数据暴露源于Fiverr文件托管基础设施的不安全配置。研究人员发现，用户作为服务交付一部分上传的文件存储在具有过度宽松访问控制的云存储桶中。这种配置允许任何拥有直接URL的人在未经认证的情况下访问文件。至关重要的是，这些URL随后被Google的网络爬虫发现并索引，使得敏感数据可以通过简单的搜索查询发现。在公开披露中，暴露的确切范围和持续时间尚未完全详细说明。已确认暴露的数据类型包括通常包含高度敏感PII的已完成税务表格，例如社会安全号码、地址和财务信息。研究人员的发现通过Hacker News帖子分享，这是此事件的主要来源；在撰写本文时，Fiverr尚未发表公开声明。
+
+## 入侵指标
+目前没有识别出任何指标。暴露是由于配置错误，而不是基于恶意软件的入侵。组织和个人应监控与可能已暴露的个人信息相关的可疑活动。
+
+## 战术、技术与程序
+涉及的主要技术是**T1530 - 来自云存储对象的数据**，这是收集的子技术。配置错误属于**T1552 - 未加密的凭证**（特别是云对象权限）以及可能的**T1083 - 文件和目录发现**，如果攻击者系统地搜索暴露的资源。Google的索引代表了无意的**T1593 - 搜索开放技术数据库**，其中公共搜索引擎成为侦察工具。
+
+## 威胁行为者背景
+没有证据表明有特定的威胁行为者在安全研究人员发现之前利用了这种配置错误。然而，数据的公开索引显著降低了机会主义攻击者、骗子和身份盗贼的入门门槛。暴露的数据可以大规模收集并整合到现有的网络钓鱼、欺诈或社交工程活动中。访问所需的身份验证缺失意味着数据对任何互联网用户开放，不仅仅是复杂的对手。
+
+## 缓解措施与建议
+对于Fiverr和类似平台：
+1.  **立即访问审查：** 对所有云存储桶（例如AWS S3、Google Cloud Storage、Azure Blobs）进行审计，确保应用最少权限原则。所有桶默认应为私有，并通过签名URL或IAM策略明确授予访问权限，以便于合法用户访问。
+2.  **取消索引请求：** 使用Google搜索控制台URL移除工具，向Google和其他主要搜索引擎提交包含敏感数据的索引URL的移除请求。
+3.  **事件响应：** 识别所有可能暴露的文件，评估涉及的PII类型，并确定受影响的用户基础，以履行任何法律或监管通知义务。
+4.  **安全开发培训：** 为开发和DevOps团队实施安全云配置培训，强调包含用户数据的对象上公共读取权限的危险。
+
+对于Fiverr用户：
+1.  **警惕性：** 留意Fiverr关于此事件的官方沟通。
+2.  **监控账户：** 监控与可能在平台上的个人信息相关的可疑活动，例如意外的税务申报或信用申请。
+3.  **考虑信用监控：** 如果您认为高度敏感的数据（如社会安全号码）已暴露，请考虑向主要机构放置欺诈警报或信用冻结。
+
+## 参考资料
+- Hacker News披露（由CyberSecurity News报道）：[https://cybersecuritynews.com/fiverr-allegedly-leaks-user-information-to-google/](https://cybersecuritynews.com/fiverr-allegedly-leaks-user-information-to-google/)
