@@ -1,0 +1,47 @@
+---
+title: Apple Scrambles to Fix iOS Bug Locking Users Out of iPhones
+slug: 2026-04-18-apple-scrambles-to-fix-ios-bug-locking-users-out-of-iphones
+date: '2026-04-18'
+excerpt: >-
+  Apple is developing a fix for an iOS 26 bug that permanently locks users out
+  of their iPhones by removing a specific Czech keyboard character required for
+  their passcode. The flaw has persisted for months, rendering devices
+  inaccessible.
+category: vulnerabilities
+tags:
+  - apple
+  - ios
+  - authentication-bypass
+  - mobile-security
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/apple-works-on-fix-for-iphone-passcode-bug/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-18-apple-scrambles-to-fix-ios-bug-locking-users-out-of-iphones
+severity: high
+affected_sectors:
+  - consumer
+affected_regions:
+  - global
+---
+## Executive Summary
+Apple is actively developing a software patch for a critical iOS 26 bug that has permanently locked an unknown number of users out of their iPhones, according to a report from *The Register*. The flaw, which has persisted for months, stems from a keyboard interface error that inadvertently removes a specific special character—a Czech accented character—from the passcode entry screen. Users who incorporated this character into their device passcode find themselves unable to type it, rendering their phones completely inaccessible and forcing a factory reset that results in total data loss.
+
+## Technical Analysis
+The bug is a user interface and input validation failure within iOS 26's keyboard subsystem. According to the report, the system's software keyboard fails to present a specific Czech special character on the passcode entry screen, despite the character being available during the initial passcode creation process. This creates an irreconcilable mismatch: the system expects a character it will not allow the user to input. The exact technical root cause is not detailed in the source material, but it appears to be a locale or keyboard layout handling bug that manifests under specific conditions, likely when a user has configured a passcode using a keyboard layout that is later not fully available or is incorrectly parsed during the unlock sequence. The impact is severe and non-recoverable without Apple's intervention, as the only documented workaround is a full device wipe via recovery mode, which erases all user data. A CVE ID has not yet been assigned to this vulnerability.
+
+## Indicators of Compromise
+None identified at this time. This is a software defect, not an exploit deployed by a threat actor.
+
+## Tactics, Techniques & Procedures
+As this is a software bug and not an active exploitation campaign, there are no malicious TTPs to analyze. The sequence is purely accidental: a user sets a passcode containing the affected character, and a subsequent iOS update or bug triggers the character's removal from the unlock interface, resulting in a denial-of-service condition against the device owner.
+
+## Threat Actor Context
+There is no evidence that this bug is being exploited by malicious actors. It is a reliability and access control flaw inherent to Apple's iOS software. However, if the specifics of the triggering condition were to be reverse-engineered and weaponized, a threat actor could potentially craft a scenario to lock a target out of their device, though this would be a highly targeted and complex attack with limited utility compared to other mobile threats.
+
+## Mitigations & Recommendations
+Until Apple releases a fix, the primary mitigation is preventative. Users should avoid using special characters, particularly those from non-primary keyboard layouts, in their iPhone passcodes. If a user suspects they may be affected, they should not restart their device, as the bug appears upon the passcode screen being invoked after a reboot. Apple has not provided an official timeline for the patch, but the report indicates engineers are working on a solution. Once an update is released, users should apply it immediately. For devices already locked, the only recourse is to erase the device via recovery mode (restoring via a computer), which will delete all data not backed up to iCloud or a computer.
+
+## References
+- *The Register* report, as summarized by CyberSecurity News: [Apple Works on Fix for iPhone Passcode Bug Linked to Missing Czech Keyboard Character](https://cybersecuritynews.com/apple-works-on-fix-for-iphone-passcode-bug/)

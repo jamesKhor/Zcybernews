@@ -1,0 +1,45 @@
+---
+title: 苹果紧急修复iOS漏洞导致用户无法解锁iPhone
+slug: 2026-04-18-apple-scrambles-to-fix-ios-bug-locking-users-out-of-iphones
+date: '2026-04-18'
+excerpt: >-
+  苹果正在开发一个修复iOS
+  26的漏洞，该漏洞通过移除一个特定的捷克键盘字符，永久锁定用户无法访问他们的iPhone，这个字符是他们的密码所必需的。这个缺陷已经存在了几个月，使得设备无法访问。
+category: vulnerabilities
+tags:
+  - apple
+  - ios
+  - authentication-bypass
+  - mobile-security
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/apple-works-on-fix-for-iphone-passcode-bug/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-18-apple-scrambles-to-fix-ios-bug-locking-users-out-of-iphones
+severity: high
+affected_sectors:
+  - consumer
+affected_regions:
+  - global
+---
+## 执行摘要
+据*The Register*的报道，苹果公司正在积极开发一个软件补丁，以修复一个关键的iOS 26错误，该错误导致未知数量的用户永久性地被锁定在他们的iPhone之外。这个错误已经持续了数月，源自于键盘界面错误，无意中从密码输入屏幕上移除了一个特定的特殊字符——一个捷克语的带音字符。将这个字符纳入设备密码的用户发现自己无法输入它，使得他们的手机完全无法访问，并迫使进行工厂重置，导致全部数据丢失。
+
+## 技术分析
+这个错误是iOS 26键盘子系统中用户界面和输入验证失败的问题。根据报告，尽管在初始密码创建过程中可用，系统软件键盘未能在密码输入屏幕上显示一个特定的捷克特殊字符。这造成了一个无法调和的不匹配：系统期望一个它不允许用户输入的字符。源材料中没有详细说明确切的技术根本原因，但看起来是一个在特定条件下表现出来的区域设置或键盘布局处理错误，很可能是当用户使用后来不完全可用或在解锁序列中错误解析的键盘布局配置密码时。没有苹果的干预，影响是严重且无法恢复的，因为唯一记录的解决方法是通过恢复模式进行全面设备擦除，这会擦除所有用户数据。这个漏洞尚未分配CVE ID。
+
+## 入侵指标
+目前没有识别出任何入侵指标。这是一个软件缺陷，不是由威胁行为者部署的利用。
+
+## 战术、技术与程序
+由于这是一个软件错误，而不是一个活跃的利用活动，没有恶意的TTPs需要分析。这个序列是纯粹的偶然：用户设置了一个包含受影响字符的密码，随后的iOS更新或错误触发了该字符从解锁界面中移除，导致对设备所有者的拒绝服务条件。
+
+## 威胁行为者背景
+没有证据表明这个错误正被恶意行为者利用。它是苹果iOS软件固有的可靠性和访问控制缺陷。然而，如果触发条件的具体细节被逆向工程并武器化，威胁行为者可能会潜在地制造一种情况，将目标锁定在他们的设备之外，尽管这将是一个高度针对性和复杂的攻击，与其他移动威胁相比，其效用有限。
+
+## 缓解措施与建议
+在苹果发布修复之前，主要的缓解措施是预防性的。用户应避免在iPhone密码中使用特殊字符，特别是那些来自非主要键盘布局的字符。如果用户怀疑他们可能受到影响，他们不应该重启他们的设备，因为错误出现在重启后密码屏幕被调用时。苹果尚未提供补丁的官方时间表，但报告表明工程师正在寻找解决方案。一旦更新发布，用户应立即应用。对于已经被锁定的设备，唯一的补救措施是通过恢复模式擦除设备（通过计算机恢复），这将删除所有未备份到iCloud或计算机的数据。
+
+## 参考资料
+- *The Register*的报告，由CyberSecurity News总结：[Apple Works on Fix for iPhone Passcode Bug Linked to Missing Czech Keyboard Character](https://cybersecuritynews.com/apple-works-on-fix-for-iphone-passcode-bug/)
