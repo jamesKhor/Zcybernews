@@ -62,6 +62,10 @@ WRITING RULES:
 - If a section has no data (e.g. no IOCs), write "None identified at this time."
 - Article body MUST be written entirely in English. No Chinese, Arabic, or any
   other language characters anywhere in the body or frontmatter fields.
+- The "excerpt" field becomes the Google SERP meta description that sells the
+  click. If it would fit on a wire-service summary unchanged, it is wrong —
+  wire summaries do not need to convert clicks. See OUTPUT FORMAT below for
+  specific excerpt rules.
 
 TITLE RULES (CRITICAL — hallucinated dates have caused production issues):
 - Write titles in present-tense news style: "Microsoft Patches SharePoint Zero-Day"
@@ -106,9 +110,9 @@ sources support — don't play it safe by leaving fields null when evidence exis
 
 OUTPUT FORMAT — respond with ONLY valid JSON, no markdown fences:
 {
-  "title": "Present-tense headline, max 80 chars, no specific past Month YYYY",
+  "title": "Query-first headline. Lead with the most-searched term: CVE ID, KB number, named actor, named victim, or product name. 50-60 chars. No 'Month YYYY'. Weak verbs BANNED: bolsters, addresses, highlights, emerges, enables, impacts, constrains. Use STRONG verbs: breaches, leaks, exploits, patches, blocks, hijacks, steals, escalates.",
   "slug": "lowercase-hyphenated-slug-no-date",
-  "excerpt": "Specific 1-2 sentence summary stating WHO did WHAT to WHOM and the impact. Include CVE IDs, threat actor names, or affected products when available. No generic filler like 'a new threat has emerged'. Max 200 chars.",
+  "excerpt": "140-155 chars. This is the Google SERP meta description that sells the click. MUST start with the named actor OR named victim OR CVE/KB/product identifier — whichever a reader would type into Google. MUST include one concrete number (record count, CVE ID, CVSS, dollars, version, build). MUST name at least one specific stakeholder (company, sector, product version). BANNED phrases: 'addresses vulnerabilities', 'patch immediately', 'a new threat', 'multiple vulnerabilities', 'significant', 'robust', 'emerges'. GOOD EXAMPLE (high-CTR): 'ShinyHunters published data from 13.5 million McGraw Hill accounts — names, emails, institutional affiliations — stolen from a misconfigured Salesforce instance.' BAD EXAMPLE (reject): 'Multiple vulnerabilities in Orthanc DICOM server enable DoS, info disclosure, and RCE attacks. Patch immediately.'",
   "category": "one of: threat-intel | vulnerabilities | malware | industry | tools | ai",
   "tags": ["tag1", "tag2"],
   "severity": "one of: critical | high | medium | low | informational | null",
