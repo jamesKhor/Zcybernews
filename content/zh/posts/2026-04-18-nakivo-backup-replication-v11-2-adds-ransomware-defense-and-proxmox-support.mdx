@@ -1,0 +1,51 @@
+---
+title: NAKIVO Backup & Replication v11.2 增加勒索软件防御和Proxmox支持
+slug: >-
+  2026-04-18-nakivo-backup-replication-v11-2-adds-ransomware-defense-and-proxmox-support
+date: '2026-04-18'
+excerpt: >-
+  NAKIVO Inc.发布了其Backup & Replication平台的11.2版本，引入了勒索软件防御模块，支持Proxmox VE
+  9.0，并为VMware vSphere 9环境增强了性能。
+category: tools
+tags:
+  - backup
+  - ransomware
+  - vmware
+  - proxmox
+  - data-protection
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/nakivo-v112-ransomware-defense-faster-replication-vsphere-9-and-proxmox-ve-90-support/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-18-nakivo-backup-replication-v11-2-adds-ransomware-defense-and-proxmox-support
+severity: informational
+---
+## 执行摘要
+NAKIVO Inc. 发布了其 Backup & Replication 平台的 11.2 版本，引入了一个新的勒索软件防御模块，旨在检测和响应针对备份数据的攻击。该更新于 2026 年 4 月 18 日宣布，还扩展了对 Proxmox VE 9.0 的虚拟化支持，增强了 VMware vSphere 9 的性能，并增加了更快复制和备份副本作业的功能。
+
+## 技术分析
+v11.2 的核心增加是勒索软件防御模块。根据 NAKIVO 的公告，该功能通过在受保护的 Windows 和 Linux 机器上部署一个轻量级代理来工作。该代理持续监控主机的文件系统，寻找表明勒索软件加密活动的 I/O 模式，例如快速文件重命名和熵变。在检测到潜在攻击时，该模块可以自动触发受影响机器的即时备份，以捕获一个干净的恢复点，并向管理员发送警报。公司声明该代理旨在最小化资源消耗，尽管其检测效率的独立第三方测试尚不可用。
+
+除了勒索软件防御外，更新还专注于扩展平台支持和性能。现在为 Proxmox Virtual Environment 9.0 提供了完全兼容性，允许备份、复制和恢复 Proxmox VMs 和容器。对于 VMware 环境，该版本引入了 vSphere 9 的 "Direct SAN Access" 模式，NAKIVO 声称可以通过绕过网络直接从存储读取数据，将备份和复制速度提高多达 2 倍。软件还增加了一个 "Backup Copy Immediate" 功能，使管理员能够在备份作业完成后立即创建备份作业的异地副本，而不是等待计划任务。
+
+## 入侵指标
+目前没有识别出任何入侵指标。这是一个产品更新公告，不是关于活跃利用的报告。
+
+## 战术、技术与程序
+目前没有识别出任何战术、技术与程序。
+
+## 威胁行为者背景
+产品增强是针对广泛、持续的勒索软件威胁的防御措施。这些行为者越来越多地遵循双重勒索模型，加密数据并将其外泄以获得优势。常见的 TTP 涉及针对备份库进行攻击、破坏或删除，以阻碍恢复，使弹性和受监控的备份系统成为防御的关键层。新模块旨在反击 T1486（数据加密以影响）和 T1490（抑制系统恢复）等技术。
+
+## 缓解措施与建议
+使用或评估 NAKIVO Backup & Replication 的组织应将新 v11.2 功能作为分层防御深度策略的一部分进行审查。关键考虑因素包括：
+*   **评估勒索软件防御模块：** 在非生产环境中测试检测和响应代理，以验证其性能影响和警报逻辑，然后再进行广泛部署。
+*   **实施 3-2-1-1-0 规则：** 使用新的即时备份副本功能，帮助至少维护三份数据副本，分别存储在两种不同的媒体上，其中一份副本在异地，一份副本不可变或空气隔离，零错误。
+*   **保护备份基础设施：** 确保 NAKIVO 备份服务器、其管理界面和存储库得到加固，与生产网络隔离，并需要多因素认证。勒索软件防御代理不能取代这些基础安全控制的需求。
+*   **更新集成计划：** 对于使用 Proxmox VE 9.0 的组织，此更新消除了之前的兼容性差距，并允许正式实施备份策略。
+
+## 参考资料
+*   [NAKIVO v11.2: Ransomware Defense, Faster Replication, vSphere 9, and Proxmox VE 9.0 Support](https://www.bleepingcomputer.com/news/security/nakivo-v112-ransomware-defense-faster-replication-vsphere-9-and-proxmox-ve-90-support/)

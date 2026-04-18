@@ -1,0 +1,52 @@
+---
+title: NAKIVO Backup & Replication v11.2 Adds Ransomware Defense and Proxmox Support
+slug: >-
+  2026-04-18-nakivo-backup-replication-v11-2-adds-ransomware-defense-and-proxmox-support
+date: '2026-04-18'
+excerpt: >-
+  NAKIVO Inc. has released version 11.2 of its Backup & Replication platform,
+  introducing a ransomware defense module, support for Proxmox VE 9.0, and
+  performance enhancements for VMware vSphere 9 environments.
+category: tools
+tags:
+  - backup
+  - ransomware
+  - vmware
+  - proxmox
+  - data-protection
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/nakivo-v112-ransomware-defense-faster-replication-vsphere-9-and-proxmox-ve-90-support/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-18-nakivo-backup-replication-v11-2-adds-ransomware-defense-and-proxmox-support
+severity: informational
+---
+## Executive Summary
+NAKIVO Inc. has released version 11.2 of its Backup & Replication platform, introducing a new ransomware defense module designed to detect and respond to attacks targeting backup data. The update, announced on April 18, 2026, also expands hypervisor support to include Proxmox VE 9.0, enhances performance for VMware vSphere 9, and adds functionality for faster replication and backup copy jobs.
+
+## Technical Analysis
+The core addition in v11.2 is the Ransomware Defense module. According to NAKIVO's announcement, the feature works by deploying a lightweight agent on protected Windows and Linux machines. This agent continuously monitors the host's filesystem for I/O patterns indicative of ransomware encryption activity, such as rapid file renaming and entropy changes. Upon detecting a potential attack, the module can automatically trigger an immediate backup of the affected machine to capture a clean recovery point and send alerts to administrators. The company states the agent is designed for minimal resource consumption, though independent third-party testing of its detection efficacy is not yet available.
+
+Beyond ransomware defense, the update focuses on expanded platform support and performance. Full compatibility is now provided for Proxmox Virtual Environment 9.0, allowing for backup, replication, and recovery of Proxmox VMs and containers. For VMware environments, the release introduces a "Direct SAN Access" mode for vSphere 9, which NAKIVO claims can improve backup and replication speeds by up to 2x by bypassing the network and reading data directly from storage. The software also adds a "Backup Copy Immediate" feature, enabling administrators to create an offsite copy of a backup job immediately upon its completion, rather than waiting for a scheduled task.
+
+## Indicators of Compromise
+None identified at this time. This is a product update announcement, not a report on active exploitation.
+
+## Tactics, Techniques & Procedures
+None identified at this time.
+
+## Threat Actor Context
+The product enhancement is a defensive measure against the broad, ongoing threat of ransomware groups. These actors increasingly follow the double-extortion model, encrypting data and exfiltrating it for leverage. A common TTP involves targeting and corrupting or deleting backup repositories to hinder recovery, making resilient and monitored backup systems a critical layer of defense. The new module aims to counter techniques like T1486 (Data Encrypted for Impact) and T1490 (Inhibit System Recovery).
+
+## Mitigations & Recommendations
+Organizations using or evaluating NAKIVO Backup & Replication should review the new v11.2 capabilities as part of a layered defense-in-depth strategy. Key considerations include:
+*   **Evaluate the Ransomware Defense Module:** Test the detection and response agent in a non-production environment to validate its performance impact and alerting logic before widespread deployment.
+*   **Implement the 3-2-1-1-0 Rule:** Use the new immediate backup copy feature to help maintain at least three copies of data, on two different media, with one copy offsite, one copy immutable or air-gapped, and zero errors.
+*   **Secure the Backup Infrastructure:** Ensure the NAKIVO backup server, its management interface, and storage repositories are hardened, segmented from production networks, and require multi-factor authentication. The ransomware defense agent does not replace the need for these foundational security controls.
+*   **Update Integration Plans:** For organizations using Proxmox VE 9.0, this update removes a previous compatibility gap and allows for formal backup strategy implementation.
+
+## References
+*   [NAKIVO v11.2: Ransomware Defense, Faster Replication, vSphere 9, and Proxmox VE 9.0 Support](https://www.bleepingcomputer.com/news/security/nakivo-v112-ransomware-defense-faster-replication-vsphere-9-and-proxmox-ve-90-support/)
