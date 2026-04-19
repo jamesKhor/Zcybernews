@@ -1,0 +1,47 @@
+---
+title: Anthropic 限制 Claude Mythos 预览版因 AI 网络攻击能力
+slug: >-
+  2026-04-19-anthropic-restricts-claude-mythos-preview-over-ai-cyberattack-capabilities
+date: '2026-04-19'
+excerpt: >-
+  Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project
+  Glasswing 项目以发现并修补漏洞。
+category: ai
+tags:
+  - ai-security
+  - vulnerability-research
+  - generative-ai
+  - anthropic
+language: zh
+source_urls:
+  - >-
+    https://www.schneier.com/blog/archives/2026/04/on-anthropics-mythos-preview-and-project-glasswing.html
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-19-anthropic-restricts-claude-mythos-preview-over-ai-cyberattack-capabilities
+severity: high
+affected_sectors:
+  - software development
+  - cybersecurity
+---
+## 执行摘要
+Anthropic 限制了公众对其新的 Claude Mythos Preview AI 模型的访问，明确引用了该模型在自动化漏洞发现和构建漏洞链方面的先进能力。针对潜在的安全风险，公司同时启动了 Project Glasswing 项目，这是一个利用该模型寻找并修补公共和专有软件中的漏洞的倡议。
+
+## 技术分析
+根据安全专家 Bruce Schneier 的说法，Anthropic 的决定是基于内部评估，认为 Claude Mythos Preview 具有显著的“网络攻击能力”。源材料中没有详细说明使这些能力成为可能的具体技术机制。然而，核心关注点是该模型在自动化任务方面的熟练程度，这些任务是攻击安全的核心：识别软件漏洞并将它们链接在一起形成功能性的漏洞链。这代表了 AI 增强型攻击行动潜力的大幅升级，从脚本辅助扫描转变为基于推理的自动化攻击开发。Project Glasswing 被定位为一种防御性对策，旨在利用相同的模型进行主动漏洞修复，以防止恶意行为者开发出类似的工具。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+源材料中未识别出任何战术、技术与程序。
+
+## 威胁行为者背景
+源材料没有将这种能力的开发者或潜在使用者归因于任何已知的威胁行为者。讨论的主要行为者是 Anthropic 本身，它正在采取行动以控制风险。关注的焦点是前瞻性的，集中在任何恶意行为者——从国家支持的 APTs 到网络犯罪分子——最终获得或开发类似的 AI 驱动的攻击工具的潜力上，从而降低了复杂攻击的进入门槛。
+
+## 缓解措施与建议
+Anthropic 的主要缓解措施是对 Claude Mythos Preview 模型的访问限制。对于更广泛的网络安全社区来说，Project Glasswing 代表了一种提议的缓解路径：使用先进的 AI 进行防御，以大规模加强软件。组织应监控此类 AI 驱动的防御研究的输出，以获取补丁和威胁情报。这一发展强调了软件供应商迫切需要采用安全的生命周期开发，并为防御者加速补丁部署周期，因为漏洞发现和武器化之间的时间框架可能会显著压缩。
+
+## 参考资料
+- Schneier on Security: [On Anthropic’s Mythos Preview and Project Glasswing](https://www.schneier.com/blog/archives/2026/04/on-anthropics-mythos-preview-and-project-glasswing.html)
