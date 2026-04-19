@@ -8,6 +8,53 @@ import { withRetry } from "../utils/rate-limit.js";
 import type { Story } from "../utils/dedup.js";
 
 /**
+ * Classify "source richness" → target article length.
+ *
+ * Rationale: letting the prompt statically demand 1500+ words produces
+ * hallucinated filler when the source is a two-line CVE note. Letting
+ * it demand 600 words wastes depth when sources have pages of detail.
+ * Adapt target to what the source actually supports.
+ *
+ * Signal: total chars of RSS title + excerpt across the batch.
+ *   < 800 chars  → thin source  → medium article (800-1200)
+ *   < 2500 chars → normal       → long (1500-2200)
+ *   ≥ 2500 chars → rich source  → extended (2000-3000)
+ *
+ * Multi-source batches get more headroom because combined material
+ * justifies more detail. Bands chosen from analysis of our 326-article
+ * corpus: median source excerpt = ~1400 chars.
+ */
+function classifySourceRichness(stories: Story[]): {
+  label: "medium" | "long" | "extended";
+  targetRange: string;
+  maxOutputTokens: number;
+} {
+  const totalSourceChars = stories.reduce(
+    (sum, s) => sum + (s.title?.length ?? 0) + (s.excerpt?.length ?? 0),
+    0,
+  );
+  if (totalSourceChars < 800) {
+    return {
+      label: "medium",
+      targetRange: "800-1200 words",
+      maxOutputTokens: 2500,
+    };
+  }
+  if (totalSourceChars < 2500) {
+    return {
+      label: "long",
+      targetRange: "1500-2200 words",
+      maxOutputTokens: 3500,
+    };
+  }
+  return {
+    label: "extended",
+    targetRange: "2000-3000 words",
+    maxOutputTokens: 4500,
+  };
+}
+
+/**
  * Generate a single article from 1-5 source stories.
  *
  * Returns:
@@ -19,11 +66,17 @@ export async function generateArticle(
   stories: Story[],
   recentTitles: string[] = [],
 ): Promise<GeneratedArticle | "reject" | null> {
-  const prompt = buildArticlePrompt(stories, recentTitles);
+  const richness = classifySourceRichness(stories);
+  console.log(
+    `[generate] Source richness: ${richness.label} → target ${richness.targetRange} (maxTokens=${richness.maxOutputTokens})`,
+  );
+  const prompt = buildArticlePrompt(stories, recentTitles, {
+    targetRange: richness.targetRange,
+  });
 
   const { text, modelUsed, paid } = await withRetry(() =>
     generateArticleText(prompt, {
-      maxOutputTokens: 3000,
+      maxOutputTokens: richness.maxOutputTokens,
       temperature: 0.55,
     }),
   );

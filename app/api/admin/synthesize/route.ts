@@ -66,14 +66,25 @@ function clampCategory(cat?: string): ValidCategory {
     : "threat-intel";
 }
 
-// Word count guidance — long has no upper cap
+// Word count guidance — length targets paired with anti-filler discipline.
+// Updated 2026-04-19 after corpus analysis showed LLM delivers floor of
+// stated range, not middle. Each preset now explicitly frames the range
+// AND tells the model not to pad when source is thin.
+const ANTI_FILLER_CLAUSE =
+  "DO NOT pad to hit the upper bound if source material does not support it. A tight shorter article beats a bloated one with filler, speculation, or marketing-style closers. If a section has no source support, write 'None identified in source material' — never invent generic best-practices.";
+
 const WORD_COUNT_GUIDANCE = {
-  short: { label: "400–600", instruction: "400–600 words" },
-  medium: { label: "700–900", instruction: "700–900 words" },
+  short: {
+    label: "400–600",
+    instruction: `400–600 words. Concise and dense. ${ANTI_FILLER_CLAUSE}`,
+  },
+  medium: {
+    label: "900–1300",
+    instruction: `900–1300 words — the honest default. ${ANTI_FILLER_CLAUSE}`,
+  },
   long: {
-    label: "1000+",
-    instruction:
-      "at least 1000 words — be thorough, cover all technical details, do not truncate",
+    label: "1800–2800",
+    instruction: `1800–2800 words — exhaustive deep dive covering every technical detail the sources provide. Rich IOC/TTP analysis, full threat actor context, detailed mitigation recommendations tied to the specific threat. ${ANTI_FILLER_CLAUSE}`,
   },
 };
 

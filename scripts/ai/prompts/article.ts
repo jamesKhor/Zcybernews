@@ -1,9 +1,22 @@
 import type { Story } from "../../utils/dedup.js";
 
+export interface BuildArticlePromptOptions {
+  /**
+   * Target word range injected into WRITING RULES. Adaptive per
+   * source richness (see scripts/pipeline/generate-article.ts →
+   * classifySourceRichness). Examples: "800-1200 words", "1500-2200
+   * words", "2000-3000 words". Defaults to 1500-2200 which matches
+   * the majority-case "long" tier.
+   */
+  targetRange?: string;
+}
+
 export function buildArticlePrompt(
   stories: Story[],
   recentTitles: string[] = [],
+  options: BuildArticlePromptOptions = {},
 ): string {
+  const targetRange = options.targetRange ?? "1500-2200 words";
   const sourceContext = stories
     .map(
       (s, i) =>
@@ -55,7 +68,29 @@ REQUIRED SECTIONS (exact H2 headers in this order):
 
 WRITING RULES:
 - Do NOT copy sentences verbatim — rewrite entirely in your own words
-- 800-1200 words total
+- Target length: ${targetRange} total. This target is calibrated to the
+  amount of source material provided below. DO NOT pad to hit the
+  upper bound if the source material does not genuinely support that
+  depth — a tight 1200-word article is better than a bloated 2000-word
+  one with filler.
+- ANTI-FILLER RULES (CRITICAL — quality gate):
+  * Every paragraph must add a NEW fact, analysis, or technical detail
+    attributable to the source material. No restating the same point
+    in different words.
+  * If a required section (IOCs, TTPs, Mitigations) has no support in
+    sources, write exactly "None identified in source material." Do
+    NOT invent generic best-practices to fill it.
+  * Do NOT speculate. Do NOT add phrases like "could potentially",
+    "might theoretically", "in some cases", "it is believed that"
+    unless the source uses exactly that hedging for a specific claim.
+  * Do NOT add marketing-style closers: "organizations must stay
+    vigilant", "cybersecurity is a shared responsibility", "as threats
+    evolve". These are filler. End the article with the References
+    section, not a wrap-up paragraph.
+  * If total source material is thin and you cannot meet the lower
+    bound of the target range without padding, it is ACCEPTABLE to
+    write a shorter honest article. The target is a ceiling discipline,
+    not a floor obligation.
 - Use markdown (## headings, **bold** for key terms, \`code\` for CVE IDs/hashes/commands)
 - Start Executive Summary with the most important finding
 - References section: list all source URLs as markdown links
