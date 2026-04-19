@@ -1,0 +1,63 @@
+---
+title: TeamPCP 供应链攻击助长薪资欺诈和勒索软件
+slug: 2026-04-19-teampcp-supply-chain-attack-fuels-payroll-fraud-and-ransomware
+date: '2026-04-19'
+excerpt: TeamPCP 威胁行为者破坏了受信任的软件工具，从100多个组织窃取凭证，使薪资欺诈、物流盗窃和勒索软件敲诈达到150万美元。
+category: threat-intel
+tags:
+  - supply-chain
+  - credential-theft
+  - ransomware
+  - business-email-compromise
+language: zh
+source_urls:
+  - >-
+    https://www.recordedfuture.com/blog/your-supply-chain-breach-is-someone-else-payday
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-19-teampcp-supply-chain-attack-fuels-payroll-fraud-and-ransomware
+severity: high
+threat_actor: TeamPCP
+threat_actor_origin: Nigeria
+affected_sectors:
+  - logistics
+  - manufacturing
+  - technology
+  - professional services
+affected_regions:
+  - North America
+  - Europe
+---
+## 执行摘要
+一个以财务为动机的威胁行为者，被追踪为TeamPCP，执行了一个多阶段的供应链攻击，破坏了可信的软件工具，从100多个受害者组织中窃取凭证。根据Recorded Future的Insikt Group的研究，这些被盗的凭证随后被用来促进工资转移欺诈、物流盗窃和勒索软件敲诈，导致确认的损失超过150万美元。该行动展示了初始访问经纪人（IAB）战术与亲手键盘欺诈和敲诈的复杂融合。
+
+## 技术分析
+攻击链始于合法软件供应商和工具的破坏，尽管具体的初始向量尚未披露。然后TeamPCP分发了这些工具的木马化版本，这些版本用有效的数字证书签名以逃避检测。当受害者安装软件时，执行了一个恶意负载，从包括浏览器、电子邮件客户端、FTP客户端和加密货币钱包在内的广泛应用程序中窃取凭证。
+
+被盗的凭证，特别是用于企业电子邮件和商业管理平台的凭证，被聚合并出售或直接由行为者使用。Recorded Future分析师识别出TeamPCP行为者积极登录受害者电子邮件账户，监控商业交易，识别像首席财务官这样的高价值目标，并识别即将到来的工资运行。在几个案例中，这种访问被出售给专门从事勒索软件部署的其他网络犯罪团伙。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+Insikt Group报告将TeamPCP的活动映射到MITRE ATT&CK框架。关键技术包括：
+*   **供应链破坏（T1195.002）：**破坏软件分发渠道，木马化合法工具。
+*   **代码签名（T1553.002）：**使用有效证书签名恶意负载。
+*   **操作系统凭证转储（T1003）：**部署凭证收集器，从受感染系统中收集存储的认证数据。
+*   **电子邮件收集（T1114）：**使用被盗凭证访问和监控受害者电子邮件账户以获取情报。
+*   **商业电子邮件破坏（T1657）：**使用收集的情报将ACH付款和工资存款重定向到攻击者控制的账户。
+*   **数据加密以产生影响（T1486）：**与勒索软件关联者合作，在建立初始访问后部署文件加密恶意软件。
+
+## 威胁行为者背景
+Recorded Future评估TeamPCP是一个以财务为动机的威胁组织，总部设在尼日利亚。该组织采用双重商业模式运作：作为初始访问经纪人（IAB），向其他犯罪分子出售经过验证的企业访问权限，并亲自进行财务欺诈。他们的行动特点是大量窃取凭证，然后进行细致的手动调查受害者环境，以最大化财务收益。该组织至少自2022年以来一直活跃。
+
+## 缓解措施与建议
+Insikt Group报告强调防御初始供应链破坏和凭证收集阶段。关键缓解措施包括：
+*   实施应用程序允许列表，防止未经授权的软件执行，包括木马化的合法工具。
+*   在所有业务关键系统上强制执行强大的多因素认证（MFA），特别是电子邮件和财务平台，尽可能使用防钓鱼方法。
+*   监控异常网络认证事件和来自开发人员或IT工作站的可疑外向连接，这可能表明凭证收集活动。
+*   建立和测试验证和验证财务交易请求的程序，特别是更改付款详情或目的地的变更。
+*   对第三方软件供应商进行安全评估，并通过哈希比较在可行的情况下验证软件下载的完整性。
+
+## 参考资料
+*   Recorded Future Insikt Group, "Your Supply Chain Breach Is Someone Else's Payday" - https://www.recordedfuture.com/blog/your-supply-chain-breach-is-someone-else-payday
