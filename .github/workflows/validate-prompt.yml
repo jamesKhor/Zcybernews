@@ -1,0 +1,39 @@
+name: Validate adaptive prompt
+
+# Manual-trigger validation — runs scripts/validate-adaptive-prompt.ts against
+# real RSS stories with the real DEEPSEEK_API_KEY. Does NOT write articles.
+# Use whenever the pipeline prompt or length logic changes to confirm:
+#   - source-richness tier classification is firing correctly
+#   - articles land inside the stated target range
+#   - fact-check passes (no hallucinated CVEs / IOCs)
+#   - anti-filler banned phrases are absent from body
+#
+# Triggered manually via GitHub UI: Actions → "Validate adaptive prompt"
+# → Run workflow → pick count.
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many articles to generate (3-8 recommended)"
+        required: false
+        default: "4"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci
+      - name: Run validation
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+        run: npx tsx scripts/validate-adaptive-prompt.ts --count=${{ github.event.inputs.count }}
