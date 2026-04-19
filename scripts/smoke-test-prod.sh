@@ -36,12 +36,23 @@ TOTAL=0
 check() {
   local label="$1" url="$2" expect_status="$3" expect_ct_pattern="$4"
   TOTAL=$((TOTAL + 1))
-  local response
-  response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nCT=%{content_type}\nSIZE=%{size_download}" -L --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "HTTP=000")
-  local status ct size
-  status=$(echo "${response}" | grep "^HTTP=" | cut -d= -f2)
-  ct=$(echo "${response}" | grep "^CT=" | cut -d= -f2-)
-  size=$(echo "${response}" | grep "^SIZE=" | cut -d= -f2)
+  local response status ct size
+  # Retry once with a 3s backoff — CF's Bot Fight occasionally 403s
+  # the first request from a GitHub Actions runner IP regardless of
+  # User-Agent. A fresh connection after a brief pause almost always
+  # clears. If BOTH attempts 403, it's a real block worth flagging.
+  for attempt in 1 2; do
+    response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nCT=%{content_type}\nSIZE=%{size_download}" -L --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "HTTP=000")
+    status=$(echo "${response}" | grep "^HTTP=" | cut -d= -f2)
+    ct=$(echo "${response}" | grep "^CT=" | cut -d= -f2-)
+    size=$(echo "${response}" | grep "^SIZE=" | cut -d= -f2)
+    # Retry only on CF-flavoured transient codes; 2xx/3xx/4xx≠403/5xx
+    # are real responses we can act on.
+    if [ "${status}" != "403" ] && [ "${status}" != "000" ]; then
+      break
+    fi
+    if [ "${attempt}" = "1" ]; then sleep 3; fi
+  done
 
   if [ "${status}" != "${expect_status}" ]; then
     echo "✗ ${label}  status=${status} expected=${expect_status}  url=${url}"
