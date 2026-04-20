@@ -1,0 +1,50 @@
+---
+title: Scattered Spider成员对SIM交换、加密货币盗窃认罪
+slug: 2026-04-20-scattered-spider-member-pleads-guilty-to-sim-swapping-crypto-theft
+date: '2026-04-20'
+excerpt: >-
+  Tyler Buchanan，英国Scattered
+  Spider网络犯罪集团的成员，对共谋实施电汇欺诈和计算机黑客攻击的指控表示认罪，承认通过SIM交换攻击从受害者那里窃取了超过800,000美元的加密货币。
+category: threat-intel
+tags:
+  - scattered-spider
+  - sim-swapping
+  - cryptocurrency-theft
+  - wire-fraud
+  - law-enforcement
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/british-scattered-spider-hacker-pleads-guilty-in-the-us/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-scattered-spider-member-pleads-guilty-to-sim-swapping-crypto-theft
+severity: high
+threat_actor: Scattered Spider
+threat_actor_origin: United Kingdom
+affected_sectors:
+  - telecommunications
+  - cryptocurrency
+affected_regions:
+  - United States
+---
+## 执行摘要
+臭名昭著的Scattered Spider网络犯罪集团的一名成员在美国法院对一系列SIM卡交换攻击和加密货币盗窃的指控表示认罪。来自英国的22岁Tyler Buchanan承认了一项共谋实施电汇欺诈的指控和一项计算机黑客行为的指控，根据在美国哥伦比亚特区地方法院提交的认罪协议。Buchanan的活动在2020年至2023年间进行，针对电信员工，并导致多名受害者损失超过800,000美元的加密货币。
+
+## 技术分析
+Buchanan的犯罪活动核心涉及SIM卡交换，这是一种攻击者欺诈性地说服移动运营商将受害者的电话号码转移到攻击者控制的设备上的技术。根据法庭文件，Buchanan和他的同谋首先获取了目标的个人信息，包括出生日期和社会安全号码。然后他们使用这些数据在联系电信公司员工时冒充受害者。Buchanan特别承认针对一家美国电信公司的员工，使用他们的凭证未经授权访问公司内部工具。然后利用这些访问权限执行未经授权的SIM卡交换，控制受害者的电话号码。控制电话号码后，该团伙可以绕过基于短信的双因素认证（2FA）访问受害者的在线账户，主要针对加密货币钱包和交易所窃取资金。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+认罪揭示了一个与财务动机的SIM卡交换活动一致的清晰的TTP链。初始阶段涉及收集目标的个人身份信息（PII），尽管认罪协议中没有详细说明收集的具体方法。Buchanan随后进行社会工程学，直接联系电信员工，冒充客户以获得对运营商系统的初步访问权限。一旦进入，他滥用合法员工工具和权限来执行SIM卡移植请求。成功交换后，该团伙利用受损的电话号码拦截认证码，允许他们入侵电子邮件和加密货币账户。最后阶段涉及通过混合服务洗钱被盗的加密货币，并将资金转移到他们控制的钱包中。
+
+## 威胁行为者背景
+Tyler Buchanan被确定为Scattered Spider的成员，这是一个网络犯罪集团，也被称为UNC3944、Oktapus和0ktapus。该团伙以其针对电信和技术支援人员的激进社会工程学活动而闻名，以促进账户接管和数据盗窃。Scattered Spider与重大违规行为有关，包括2022年对Uber的攻击和2023年对MGM Resorts的攻击。Buchanan的认罪为该团伙成员的身份和直接参与特定犯罪行为提供了罕见的公开确认。认罪协议指出Buchanan通过加密消息平台与其他Scattered Spider成员通信，包括Telegram，以协调攻击和共享受损凭证。
+
+## 缓解措施与建议
+该案例突显了基于短信的2FA对SIM卡交换攻击的关键脆弱性。组织，特别是电信提供商和金融机构，必须实施更强大的认证保护措施。对于高价值账户，电信运营商应执行面对面验证或使用另一渠道的带外确认，在授权SIM卡转移之前。公司应放弃使用短信进行2FA，采用抗钓鱼方法，如FIDO2安全密钥或不受SIM卡移植影响的认证应用。需要对能够访问客户账户管理系统的员工进行持续的安全意识培训，重点关注社会工程学检测。建议个人联系他们的移动运营商设置一个独特的移植PIN或账户特定密码，这是任何SIM卡变更请求所必需的。
+
+## 参考资料
+- https://www.securityweek.com/british-scattered-spider-hacker-pleads-guilty-in-the-us/

@@ -1,0 +1,52 @@
+---
+title: 'Scattered Spider Member Pleads Guilty to SIM Swapping, Crypto Theft'
+slug: 2026-04-20-scattered-spider-member-pleads-guilty-to-sim-swapping-crypto-theft
+date: '2026-04-20'
+excerpt: >-
+  Tyler Buchanan, a UK member of the Scattered Spider cybercrime group, pleaded
+  guilty to charges of conspiracy to commit wire fraud and computer hacking,
+  admitting to SIM-swapping attacks that stole over $800,000 in cryptocurrency
+  from victims.
+category: threat-intel
+tags:
+  - scattered-spider
+  - sim-swapping
+  - cryptocurrency-theft
+  - wire-fraud
+  - law-enforcement
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/british-scattered-spider-hacker-pleads-guilty-in-the-us/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-scattered-spider-member-pleads-guilty-to-sim-swapping-crypto-theft
+severity: high
+threat_actor: Scattered Spider
+threat_actor_origin: United Kingdom
+affected_sectors:
+  - telecommunications
+  - cryptocurrency
+affected_regions:
+  - United States
+---
+## Executive Summary
+A member of the prolific Scattered Spider cybercrime group has pleaded guilty in a U.S. court to charges stemming from a series of SIM-swapping attacks and cryptocurrency thefts. Tyler Buchanan, a 22-year-old from the United Kingdom, admitted to one count of conspiracy to commit wire fraud and one count of computer hacking, according to a plea agreement filed in the U.S. District Court for the District of Columbia. Buchanan's activities, conducted between 2020 and 2023, targeted telecommunications employees and resulted in the theft of over $800,000 in cryptocurrency from multiple victims.
+
+## Technical Analysis
+The core of Buchanan's criminal activity involved SIM-swapping, a technique where an attacker fraudulently convinces a mobile carrier to transfer a victim's phone number to a device under the attacker's control. According to court documents, Buchanan and his co-conspirators first obtained personal information about their targets, including dates of birth and Social Security numbers. They then used this data to impersonate the victims when contacting telecommunications company employees. Buchanan specifically admitted to targeting employees at a U.S. telecommunications company, using their credentials to gain unauthorized access to internal company tools. This access was then leveraged to perform the unauthorized SIM swaps, seizing control of victims' phone numbers. With control of the phone number, the group could bypass SMS-based two-factor authentication (2FA) to access the victims' online accounts, primarily targeting cryptocurrency wallets and exchanges to steal funds.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The guilty plea outlines a clear TTP chain consistent with financially motivated SIM-swapping campaigns. The initial phase involved gathering personal identifiable information (PII) on targets, though the specific methods of collection were not detailed in the plea agreement. Buchanan then engaged in social engineering, directly contacting telecom employees while impersonating customers to gain initial access to carrier systems. Once inside, he abused legitimate employee tools and privileges to execute the SIM porting requests. Following a successful swap, the group exploited the compromised phone number to intercept authentication codes, allowing them to breach email and cryptocurrency accounts. The final stage involved laundering the stolen cryptocurrency through mixing services and transferring funds to wallets under their control.
+
+## Threat Actor Context
+Tyler Buchanan is identified as a member of Scattered Spider, a cybercriminal collective also tracked as UNC3944, Oktapus, and 0ktapus. The group is known for its aggressive social engineering campaigns targeting telecommunications and technology support staff to facilitate account takeovers and data theft. Scattered Spider has been linked to major breaches, including the 2022 attack on Uber and the 2023 attack on MGM Resorts. Buchanan's guilty plea provides a rare public confirmation of a group member's identity and direct involvement in specific criminal acts. The plea agreement states Buchanan communicated with other Scattered Spider members via encrypted messaging platforms, including Telegram, to coordinate attacks and share compromised credentials.
+
+## Mitigations & Recommendations
+The case underscores the critical vulnerability of SMS-based 2FA to SIM-swapping attacks. Organizations, especially telecommunications providers and financial institutions, must implement stronger authentication safeguards. For high-value accounts, telecom carriers should enforce in-person verification or use out-of-band confirmation through a separate channel before authorizing a SIM transfer. Companies should move away from SMS for 2FA, adopting phishing-resistant methods like FIDO2 security keys or authenticator apps that are not vulnerable to SIM porting. Employees with access to customer account management systems require continuous security awareness training focused on social engineering detection. Individuals are advised to contact their mobile carrier to set a unique port-out PIN or account-specific password that is required for any SIM change request.
+
+## References
+- https://www.securityweek.com/british-scattered-spider-hacker-pleads-guilty-in-the-us/
