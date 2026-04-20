@@ -1,0 +1,53 @@
+---
+title: 朝鲜特工使用AI和假身份通过远程面试渗透公司
+slug: >-
+  2026-04-20-north-korean-operatives-use-ai-and-fake-identities-to-infiltrate-companies-via-j
+date: '2026-04-20'
+excerpt: 根据Flare研究，朝鲜特工正在使用AI工具和伪造文件通过远程工作面试。这种策略旨在将威胁行为者长期安置在目标公司内，进行间谍活动和网络访问。
+category: threat-intel
+tags:
+  - apt
+  - social-engineering
+  - ai
+  - recruitment-security
+  - north-korea
+language: zh
+source_urls:
+  - >-
+    https://www.helpnetsecurity.com/2026/04/20/north-korean-job-interview-infiltration-video/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-north-korean-operatives-use-ai-and-fake-identities-to-infiltrate-companies-via-j
+severity: high
+threat_actor: North Korean operatives
+threat_actor_origin: North Korea
+---
+## 执行摘要
+朝鲜威胁行为者正在进行一项持久的活动，通过使用人工智能生成的内容、深度伪造视频技术和伪造的身份文件来通过远程工作面试，渗透公司。根据Flare的研究，目标是在目标组织内安置行动人员，以获得长期的网络访问权限，用于间谍活动和数据盗窃。这种策略利用了远程招聘流程的常态化和验证数字身份的困难。
+
+## 技术分析
+主要技术涉及行动人员假扮虚构的身份，通常是来自美国或加拿大等国家的真人，申请远程职位。Flare高级网络犯罪研究员Adrian Cheek在为Help Net Security提供的视频分析中详细说明了绕过标准招聘检查的方法。威胁行为者利用AI工具生成令人信服的假支持文件，并可能创建或操纵视频内容进行面试。虽然没有指明具体的AI软件，但研究表明使用了能够在视频通话中通过随意检查的技术，创建合成媒体。行动人员的目标不是履行工作职责，而是在企业网络内建立立足点。
+
+## 入侵指标
+在源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+该活动采用了与社会工程和身份欺骗相一致的技术。根据Flare的分析，TTPs包括：
+*   **虚构身份创建：** 假扮非制裁国家的真人身份，以显得合法。
+*   **文件伪造：** 使用AI工具生成假护照、驾照和其他验证文件。
+*   **视频通话欺骗：** 在现场面试中可能使用深度伪造或其他视频操纵技术来维持假身份。
+*   **利用远程招聘：** 针对完全远程面试和入职流程的公司，这些公司缺乏强大的面对面身份验证步骤。
+
+## 威胁行为者背景
+该活动被归因于代表朝鲜利益工作的行动人员。虽然在提供的来源中没有明确指明特定的高级持续性威胁（APT）小组，如Lazarus Group（APT38），但朝鲜国家赞助的网络行动有着进行财务动机和间谍活动以绕过国际制裁和收集情报的悠久历史。这种工作面试渗透策略代表了他们社会工程努力的演变，从鱼叉式网络钓鱼直接将一名人类特工置于目标组织内。
+
+## 缓解措施与建议
+Flare研究员Adrian Cheek为进行远程面试的招聘经理和安全团队推荐了特定的技术对策。这些措施旨在检测合成媒体并验证候选人的物理存在：
+*   要求候选人在视频通话中执行简单的、自发的物理动作，如转动头部或在摄像头前移动物体。这有助于揭示预录或循环播放的视频流。
+*   仔细检查可能表明操纵的视频伪影、照明不一致和音频同步问题。
+*   实施增强型尽职调查以验证身份，超越文件提交，包括与可信第三方进行验证检查或更严格的背景筛查流程，特别是对于那些能够访问敏感系统的职位。
+*   将安全团队整合到技术职位的招聘流程中，以评估与候选人背景和访问要求相关的潜在风险。
+
+## 参考资料
+*   Help Net Security: [如何在工作面试中识别朝鲜假身份](https://www.helpnetsecurity.com/2026/04/20/north-korean-job-interview-infiltration-video/)

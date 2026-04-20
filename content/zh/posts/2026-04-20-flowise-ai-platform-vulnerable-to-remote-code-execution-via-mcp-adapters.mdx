@@ -1,0 +1,53 @@
+---
+title: Flowise AI 平台通过MCP适配器易受远程代码执行攻击
+slug: >-
+  2026-04-20-flowise-ai-platform-vulnerable-to-remote-code-execution-via-mcp-adapters
+date: '2026-04-20'
+excerpt: >-
+  Flowise
+  AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。
+category: vulnerabilities
+tags:
+  - ai
+  - rce
+  - supply-chain
+  - flowise
+  - anthropic
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/flowise-vulnerability/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-flowise-ai-platform-vulnerable-to-remote-code-execution-via-mcp-adapters
+severity: critical
+---
+## 执行摘要
+Flowise低代码AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架存在一个关键的架构漏洞，允许未经身份验证的远程代码执行（RCE）。根据OX Security的研究人员表示，这个漏洞不是一个传统的软件错误，而是MCP服务器集成方式的设计弱点，使攻击者能够在主机系统上执行任意命令。这个漏洞源于对MCP服务器的固有信任，这些服务器通常从外部、未经验证的存储库加载。
+
+## 技术分析
+OX Security详细说明了漏洞存在于MCP适配器的实现中。由Anthropic开发的模型上下文协议是AI代理与外部数据源和工具通信的标准。在像Flowise这样的易受攻击实现中，平台允许用户通过配置文件（例如`servers.json`）加载MCP服务器。然后这些服务器以与主应用程序相同的权限执行。
+
+核心问题是MCP规范赋予服务器高级功能，包括文件系统和命令执行访问权限，以正常工作。当像Flowise这样的应用程序加载一个不受信任的MCP服务器时——例如，从公共npm注册表或GitHub拉取的一个——它隐含地信任来自该服务器的所有指令。攻击者可以制作一个恶意的MCP服务器，当加载时，为在底层主机上执行操作系统命令提供直接通道。这绕过了父应用程序可能尝试的任何沙箱或隔离，因为MCP服务器以完整的进程权限运行。
+
+OX Security的分析表明，这个问题是系统性的，影响任何集成MCP服务器而没有严格验证和沙箱化的AI框架或工具。如果加载MCP服务器的接口暴露在外，这个漏洞就可以在没有身份验证的情况下被利用，这在开发和低代码环境中是一个常见的配置。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+根据技术描述，主要技术是**信任关系（T1199）**和**远程服务利用（T1210）**。攻击者需要向易受攻击的实例提供一个恶意的MCP服务器，很可能是通过诱骗用户或管理员加载它，或者利用暴露的配置端点。随后的执行将构成**命令和脚本解释器（T1059）**。
+
+## 威胁行为者背景
+源材料没有将这个漏洞归因于任何特定的活跃威胁行为者或活动。这个缺陷代表了一种强大的攻击向量，可能被任何针对暴露的AI开发平台进行初始访问、数据盗窃或网络内横向移动的恶意实体利用。
+
+## 缓解措施与建议
+OX Security建议Flowise和类似集成MCP平台的用户立即采取行动。主要的缓解措施是将MCP服务器视为与不受信任的代码执行同等严重。具体来说：
+*   将MCP服务器的加载限制在仅从受信任来源的严格控制允许列表中。
+*   在强大的沙箱环境中隔离MCP服务器的执行，例如专用容器或具有最小权限的虚拟机。
+*   确保添加或配置MCP服务器的接口不暴露给不受信任的网络或用户。
+*   在部署任何MCP服务器之前进行安全审查，因为它们实际上具有与主机应用程序相同的访问级别。
+在平台供应商提供带有强制沙箱的修补版本之前，管理员应该假设加载任何外部MCP服务器都存在高风险的系统被破坏。
+
+## 参考资料
+*   OX Security通过CyberSecurity News：[Flowise中的严重漏洞允许通过MCP适配器远程命令执行](https://cybersecuritynews.com/flowise-vulnerability/)

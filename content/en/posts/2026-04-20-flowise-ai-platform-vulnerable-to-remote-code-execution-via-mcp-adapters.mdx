@@ -1,0 +1,55 @@
+---
+title: Flowise AI Platform Vulnerable to Remote Code Execution via MCP Adapters
+slug: >-
+  2026-04-20-flowise-ai-platform-vulnerable-to-remote-code-execution-via-mcp-adapters
+date: '2026-04-20'
+excerpt: >-
+  A critical vulnerability in the Flowise AI platform and other frameworks using
+  Anthropic's Model Context Protocol (MCP) enables remote code execution. OX
+  Security researchers warn the flaw could impact millions of users by allowing
+  attackers to run arbitrary commands on servers.
+category: vulnerabilities
+tags:
+  - ai
+  - rce
+  - supply-chain
+  - flowise
+  - anthropic
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/flowise-vulnerability/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-flowise-ai-platform-vulnerable-to-remote-code-execution-via-mcp-adapters
+severity: critical
+---
+## Executive Summary
+A critical architectural vulnerability in the Flowise low-code AI platform and other frameworks utilizing Anthropic's Model Context Protocol (MCP) allows unauthenticated remote code execution (RCE). According to researchers from OX Security, the flaw is not a traditional software bug but a design weakness in how MCP servers are integrated, enabling attackers to execute arbitrary commands on the host system. The vulnerability stems from the inherent trust placed in MCP servers, which are often loaded from external, unverified repositories.
+
+## Technical Analysis
+The vulnerability, as detailed by OX Security, resides in the implementation of MCP adapters. The Model Context Protocol, developed by Anthropic, is a standard for AI agents to communicate with external data sources and tools. In vulnerable implementations like Flowise, the platform allows users to load MCP servers via a configuration file (e.g., `servers.json`). These servers are then executed with the same privileges as the main application.
+
+The core issue is that the MCP specification grants servers high-level capabilities, including file system and command execution access, to function. When an application like Flowise loads an untrusted MCP server—for example, one pulled from a public npm registry or GitHub—it implicitly trusts all instructions from that server. An attacker can craft a malicious MCP server that, when loaded, provides a direct channel for executing operating system commands on the underlying host. This bypasses any sandboxing or isolation the parent application might attempt, as the MCP server runs with full process privileges.
+
+OX Security's analysis indicates the problem is systemic, affecting any AI framework or tool that integrates MCP servers without rigorous validation and sandboxing. The vulnerability is exploitable without authentication if the interface for loading MCP servers is exposed, which is a common configuration in development and low-code environments.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+Based on the technical description, the primary technique is **Trusted Relationship (T1199)** and **Exploitation of Remote Services (T1210)**. An attacker would need to supply a malicious MCP server to a vulnerable instance, likely by tricking a user or administrator into loading it, or by exploiting an exposed configuration endpoint. The subsequent execution would constitute **Command and Scripting Interpreter (T1059)**.
+
+## Threat Actor Context
+The source material does not attribute this vulnerability to any specific active threat actor or campaign. The flaw represents a potent attack vector that could be exploited by any malicious entity targeting exposed AI development platforms for initial access, data theft, or lateral movement within a network.
+
+## Mitigations & Recommendations
+OX Security recommends immediate action for users of Flowise and similar MCP-integrated platforms. The primary mitigation is to treat MCP servers with the same severity as untrusted code execution. Specifically:
+*   Restrict the loading of MCP servers to a tightly controlled allow-list from trusted sources only.
+*   Isolate the execution of MCP servers in strong sandboxing environments, such as dedicated containers or virtual machines with minimal permissions.
+*   Ensure the interface for adding or configuring MCP servers is not exposed to untrusted networks or users.
+*   Conduct security reviews of any MCP servers before deployment, as they effectively have the same access level as the host application.
+Until platform vendors provide patched versions with enforced sandboxing, administrators should assume that loading any external MCP server carries a high risk of system compromise.
+
+## References
+*   OX Security via CyberSecurity News: [Critical Vulnerability In Flowise Allows Remote Command Execution Via MCP Adapters](https://cybersecuritynews.com/flowise-vulnerability/)
