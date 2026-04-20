@@ -1,0 +1,47 @@
+---
+title: Qualys Report Finds Enterprises Struggle with Third-Party Software Patching
+slug: >-
+  2026-04-20-qualys-report-finds-enterprises-struggle-with-third-party-software-patching
+date: '2026-04-20'
+excerpt: >-
+  Qualys data shows enterprises deployed over 8 million Chrome patches in 12
+  months, but Visual C++ and .NET updates are delayed by 30+ days, leaving
+  critical third-party software exposures.
+category: industry
+tags:
+  - patch-management
+  - vulnerability-management
+  - enterprise-security
+  - benchmark
+language: en
+source_urls:
+  - >-
+    https://blog.qualys.com/qualys-insights/2026/04/20/enterprise-patch-remediation-benchmark-2026
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-qualys-report-finds-enterprises-struggle-with-third-party-software-patching
+severity: medium
+---
+## Executive Summary
+Enterprises are deploying millions of patches annually but continue to face significant exposure windows due to slow remediation of third-party software, according to a 2026 benchmark report from Qualys Threat Research. The data, aggregated from global enterprise environments, indicates that while high-profile applications like Google Chrome see massive patch volumes, foundational components like Microsoft Visual C++ Redistributables and .NET frameworks experience remediation delays exceeding 30 days on average, creating persistent attack surfaces.
+
+## Technical Analysis
+The Qualys report, published April 20, 2026, analyzes patch deployment telemetry from enterprise customers over a 12-month period. A key finding is the sheer volume of patches processed: organizations deployed over 8 million patches for Google Chrome alone. This high velocity for a ubiquitous, frequently updated application contrasts sharply with the patching cadence for other critical software.
+
+Microsoft Visual C++ Redistributables and .NET frameworks were identified as among the most delayed software families for remediation. The analysis did not provide a specific average time to remediate (MTTR) for all software categories but highlighted that these specific components routinely exceed 30 days to patch across the surveyed environments. The report attributes this lag to the complexity of enterprise environments where these redistributables are deeply embedded as dependencies for numerous business applications, making testing and deployment cycles protracted.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+None identified in source material.
+
+## Threat Actor Context
+The source material is a benchmark report on enterprise remediation performance and does not attribute findings to the activity of a specific threat actor or campaign. However, the documented patching delays for widely deployed software like Visual C++ and .NET frameworks objectively expand the window of opportunity for attackers to exploit known vulnerabilities in these components.
+
+## Mitigations & Recommendations
+The Qualys report implicitly underscores the necessity of improving patch management processes for third-party and foundational software. Organizations should prioritize integrating these often-overlooked components into their vulnerability management and patch deployment workflows. Establishing specific service-level agreements (SLAs) for remediating vulnerabilities in software like Visual C++ Redistributables, based on their criticality and exploitability, is a recommended step to reduce the observed 30+ day exposure windows.
+
+## References
+- Qualys Threat Research Unit. (2026, April 20). *Enterprise Remediation Benchmark: How Does Your Organization Compare?* Qualys Blog. https://blog.qualys.com/qualys-insights/2026/04/20/enterprise-patch-remediation-benchmark-2026

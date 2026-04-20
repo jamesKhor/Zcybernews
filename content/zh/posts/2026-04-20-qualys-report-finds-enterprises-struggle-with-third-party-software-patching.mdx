@@ -1,0 +1,44 @@
+---
+title: Qualys报告发现企业在第三方软件补丁管理上存在困难
+slug: >-
+  2026-04-20-qualys-report-finds-enterprises-struggle-with-third-party-software-patching
+date: '2026-04-20'
+excerpt: Qualys数据显示企业在12个月内部署了超过800万Chrome补丁，但Visual C++和.NET更新延迟超过30天，导致关键的第三方软件暴露。
+category: industry
+tags:
+  - patch-management
+  - vulnerability-management
+  - enterprise-security
+  - benchmark
+language: zh
+source_urls:
+  - >-
+    https://blog.qualys.com/qualys-insights/2026/04/20/enterprise-patch-remediation-benchmark-2026
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-qualys-report-finds-enterprises-struggle-with-third-party-software-patching
+severity: medium
+---
+## 执行摘要
+根据Qualys Threat Research 2026年的基准报告，企业每年部署数百万补丁，但由于第三方软件修复缓慢，仍然面临显著的暴露窗口。全球企业环境的数据聚合显示，尽管像Google Chrome这样的高知名度应用程序看到了大量的补丁量，但像Microsoft Visual C++ Redistributables和.NET框架这样的基础组件平均修复延迟超过30天，创造了持续的攻击面。
+
+## 技术分析
+Qualys报告于2026年4月20日发布，分析了企业客户在12个月期间的补丁部署遥测数据。一个关键发现是处理的补丁数量巨大：组织仅对Google Chrome就部署了超过800万补丁。这种对于普遍存在且频繁更新的应用程序的高速度与其它关键软件的补丁节奏形成了鲜明对比。
+
+Microsoft Visual C++ Redistributables和.NET框架被确定为修复延迟最多的软件家族之一。分析没有提供所有软件类别的具体平均修复时间（MTTR），但强调这些特定组件在调查环境中通常超过30天才能打补丁。报告将这种滞后归因于企业环境中的复杂性，这些可再发行组件作为众多业务应用程序的依赖项深深嵌入，使得测试和部署周期延长。
+
+## 入侵指标
+源材料中未识别出。
+
+## 战术、技术与程序
+源材料中未识别出。
+
+## 威胁行为者背景
+源材料是关于企业修复性能的基准报告，并未将发现归因于特定威胁行为者或活动。然而，为像Visual C++和.NET框架这样广泛部署的软件记录的补丁延迟，客观上扩大了攻击者利用这些组件中已知漏洞的机会窗口。
+
+## 缓解措施与建议
+Qualys报告隐含地强调了改进第三方和基础软件补丁管理流程的必要性。组织应优先将这些经常被忽视的组件整合到他们的漏洞管理和补丁部署工作流程中。建议建立针对像Visual C++ Redistributables这样的软件修复漏洞的具体服务级别协议（SLA），基于它们的关键性和可利用性，以减少观察到的30多天的暴露窗口。
+
+## 参考资料
+- Qualys Threat Research Unit. (2026, April 20). *Enterprise Remediation Benchmark: How Does Your Organization Compare?* Qualys Blog. https://blog.qualys.com/qualys-insights/2026/04/20/enterprise-patch-remediation-benchmark-2026
