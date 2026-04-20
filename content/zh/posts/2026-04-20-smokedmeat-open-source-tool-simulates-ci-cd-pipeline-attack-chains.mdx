@@ -1,0 +1,45 @@
+---
+title: SmokedMeat 开源工具模拟 CI/CD 流水线攻击链
+slug: 2026-04-20-smokedmeat-open-source-tool-simulates-ci-cd-pipeline-attack-chains
+date: '2026-04-20'
+excerpt: >-
+  Boost Security 的 SmokedMeat 框架从单一 CI/CD
+  流水线缺陷执行实时攻击演示，向工程团队展示攻击者如何移动以破坏代码、机密和基础设施。
+category: tools
+tags:
+  - ci-cd
+  - devsecops
+  - attack-simulation
+  - open-source
+  - supply-chain
+language: zh
+source_urls:
+  - >-
+    https://www.helpnetsecurity.com/2026/04/20/smokedmeat-ci-cd-pipeline-attacks/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-smokedmeat-open-source-tool-simulates-ci-cd-pipeline-attack-chains
+severity: informational
+---
+## 执行摘要
+Boost Security 发布了 SmokedMeat，这是一个开源攻击模拟框架，旨在展示持续集成和持续交付（CI/CD）管道中漏洞的具体影响。该工具利用一个已识别的管道缺陷，对组织的自有基础设施执行实时攻击链，向工程和安全团队展示对手将采取的确切步骤，以升级访问权限、窃取机密信息和破坏软件供应链。
+
+## 技术分析
+根据 Boost Security 的说法，SmokedMeat 通过在标记漏洞后连接到团队的 CI/CD 环境来运行。它不利用理论上的弱点，而是从那个特定的入口点开始执行受控的实时演示。该框架旨在映射攻击者通过管道的旅程，说明后续行动，如访问敏感的环境变量、修改构建脚本、将恶意代码注入工件，以及转向连接的系统，如云存储或容器注册表。
+
+工具的价值，正如其开发者所描述的，在于超越静态漏洞列表和通用严重性评分（CVSS）。它通过展示组织开发工作流程独特配置中违规的具体结果，提供上下文化的、环境特定的风险视图。这旨在弥合安全团队（他们优先考虑缺陷）和工程团队（他们需要理解操作后果以证明补救工作）之间的沟通差距。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+源材料中未识别出任何战术、技术与程序。
+
+## 威胁行为者背景
+源材料没有将 SmokedMeat 的模拟攻击链归因于特定的、已知的威胁行为者或活动。该工具旨在模拟任何攻击者可能采用的通用对抗行为，这些行为者可能通过受妥协的凭证、易受攻击的管道配置或恶意拉取请求获得 CI/CD 管道的初步立足点。
+
+## 缓解措施与建议
+SmokedMeat 工具所暗示的主要缓解措施是提高可见性和上下文风险评估。Boost Security 将该框架定位为组织主动测试其 CI/CD 安全态势的手段。从其使用中产生的建议将针对每个独特环境中展示的漏洞和攻击路径。例如，实施 CI/CD 管道的通用最佳实践——如为运行器强制执行最少权限访问、安全地管理机密、签名提交和工件，以及实施严格的代码审查——是此类模拟工具将测试的基础控制。
+
+## 参考资料
+- [SmokedMeat: Open-source tool shows what attackers do inside CI/CD pipelines](https://www.helpnetsecurity.com/2026/04/20/smokedmeat-ci-cd-pipeline-attacks/)
