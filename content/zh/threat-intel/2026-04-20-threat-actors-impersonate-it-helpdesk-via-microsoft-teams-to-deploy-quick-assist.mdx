@@ -1,0 +1,46 @@
+---
+title: 威胁行为者通过Microsoft Teams冒充IT帮助台部署Quick Assist
+slug: >-
+  2026-04-20-threat-actors-impersonate-it-helpdesk-via-microsoft-teams-to-deploy-quick-assist
+date: '2026-04-20'
+excerpt: >-
+  威胁行为者正在使用Microsoft Teams冒充IT帮助台工作人员，诱骗员工安装微软自家的Quick
+  Assist工具，以授予攻击者对企业系统的完全远程控制权。
+category: threat-intel
+tags:
+  - social-engineering
+  - microsoft
+  - remote-access
+  - initial-access
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/attackers-abuse-microsoft-teams-and-quick-assist/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-threat-actors-impersonate-it-helpdesk-via-microsoft-teams-to-deploy-quick-assist
+severity: high
+---
+## 执行摘要
+威胁行为者正在进行一种新的社会工程学活动，滥用对Microsoft Teams的固有信任来冒充公司IT帮助台工作人员。根据CyberSecurity News的一份报告，攻击者通过Teams聊天启动联系，然后通过社会工程学手段诱使员工下载并运行微软的合法Quick Assist工具，授予攻击者远程控制权。这种技术利用受信任的、预安装的商业应用程序来绕过用户的怀疑和安全控制，以获取初始访问权限。
+
+## 技术分析
+攻击链始于威胁行为者从一个被破坏或伪造的Microsoft Teams账户向员工发送消息，冒充组织IT支持团队的成员。消息通常敦促用户立即采取行动解决所谓的紧急技术问题。为了建立可信度，攻击者可能会提及内部员工姓名或部门，尽管报告中没有详细说明这种侦察的具体来源。
+
+攻击的核心涉及指导受害者访问一个合法的Microsoft资源：Quick Assist应用程序。Quick Assist是一个内置的Windows远程支持工具，允许助手在获得用户许可的情况下查看或控制另一用户的桌面。攻击者指示受害者打开Windows开始菜单，搜索“Quick Assist”，并启动它。然后告诉受害者共享提供的6位安全代码，该代码将他们的会话连接到攻击者的会话。一旦通过Quick Assist连接，攻击者就获得了对受害者桌面的完全远程控制，使他们能够部署额外的有效载荷，进行侦察，并在网络内横向移动。滥用受信任的、白名单中的Microsoft工具使攻击能够绕过可能标记未经授权的远程访问应用程序的安全软件的检测。
+
+## 入侵指标
+来源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+该活动采用了MITRE ATT&CK框架中概述的几种技术。对于初始访问，主要技术是**钓鱼（T1566）**，特别是通过受信任的服务进行的变体（**钓鱼：通过服务进行的鱼叉式钓鱼T1566.002**）。攻击者使用**伪装（T1036）**来冒充IT帮助台人员，利用受信任的通信渠道Microsoft Teams。为了建立远程控制，他们滥用合法的系统工具Quick Assist，这与**远程服务（T1021）**相符，如果该工具被用来绕过用户帐户控制（UAC），可能还与**滥用提升控制机制（T1548）**相符。使用预安装的、受信任的应用程序进行执行也属于**受信任的开发人员实用工具代理执行（T1218）**。
+
+## 威胁行为者背景
+来源材料没有将此次活动归因于特定的已知威胁行为者或团体。这些战术与寻求在公司网络中建立立足点以出售访问权限给勒索软件关联者或其他下游攻击者的财务动机团体和初始访问经纪人一致。简单性和依赖于社会工程学而不是技术利用表明，行为者是适应性强的，并将人为层面作为主要的脆弱点。
+
+## 缓解措施与建议
+组织应该实施针对这一特定向量的用户体验培训，指导员工验证任何请求远程访问的人的身份，特别是通过聊天平台。IT部门应该考虑建立和执行一个清晰的协议，即远程支持永远不会通过未经请求的聊天消息启动。技术控制可能包括审查和可能限制非IT人员的Quick Assist使用通过组策略，或者实施应用程序允许列表策略，仍然允许IT工具，但阻止未经授权的远程访问软件。还建议监控Quick Assist执行的不寻常情况，特别是来自非帮助台IP地址或与其他可疑活动结合的情况。
+
+## 参考资料
+- 攻击者滥用Microsoft Teams和Quick Assist进行新的帮助台冒充攻击链，CyberSecurity News: https://cybersecuritynews.com/attackers-abuse-microsoft-teams-and-quick-assist/
