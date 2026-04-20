@@ -1,0 +1,55 @@
+---
+title: Datto 警告传统备份无法在攻击期间维持业务运营
+slug: >-
+  2026-04-20-datto-warns-traditional-backups-fail-to-maintain-business-operations-during-rans
+date: '2026-04-20'
+excerpt: >-
+  Datto 的 2026 年报告揭示了即使有备份，43% 的企业在遭受攻击后仍面临超过 24
+  小时的停机时间，突显了数据备份与真正的业务连续性和灾难恢复（BCDR）之间的关键差距。
+category: industry
+tags:
+  - ransomware
+  - business-continuity
+  - backup
+  - disaster-recovery
+  - datto
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/the-backup-myth-that-is-putting-businesses-at-risk/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-datto-warns-traditional-backups-fail-to-maintain-business-operations-during-rans
+severity: high
+affected_sectors:
+  - multiple
+affected_regions:
+  - global
+---
+## 执行摘要
+Kaseya 旗下公司 Datto 的一份新报告挑战了人们的基本假设，即可靠的数据备份足以应对勒索软件恢复。分析显示，即使在验证了备份完整性的情况下，仍有相当一部分企业在遭受攻击后经历了长时间的、严重的运营中断，暴露了数据保护和业务连续性之间的关键差距。这些发现强调了需要集成的业务连续性和灾难恢复（BCDR）解决方案，这些解决方案可以迅速恢复整个系统和应用程序。
+
+## 技术分析
+Datto 详细说明的核心问题是传统备份和恢复流程中固有的操作延迟。即使确认了备份的完整性，获取替换硬件、从裸机重建系统、重新安装操作系统和应用程序，以及最终恢复数据所需的时间可能会延长到几天或几周。这个恢复窗口代表了业务的完全停止。相比之下，Datto 的 BCDR 方法利用虚拟化来维护整个服务器的可启动、准备运行的备份——操作系统、应用程序和数据——作为虚拟机。在灾难情况下，这些备份可以在本地或云托管的 hypervisor 上在几分钟内启动，同时维护业务运营，直到主要系统被修复。报告将这种定位不是作为一个渐进的改进，而是从数据恢复到服务连续性的一个范畴性转变。
+
+## 入侵指标
+源材料中未识别出任何指标。
+
+## 战术、技术与程序
+源材料中未识别出任何战术、技术与程序。
+
+## 威胁行为者背景
+报告没有将其发现归因于特定的威胁行为者或活动。分析基于勒索软件和其他破坏性网络事件的普遍影响，这些事件已经成为各种规模组织持续和普遍的威胁。所描述的操作后果——导致收入损失、声誉损害和合规失败的延长停机时间——与使用的特定勒索软件变体或入侵向量无关。
+
+## 缓解措施与建议
+Datto 的报告主张从独立的备份解决方案转向集成的 BCDR 平台。关键建议包括：
+*   **采用 BCDR 解决方案：** 实施提供即时虚拟化备份映像的解决方案，以消除以天为单位的恢复时间目标（RTOs），并将它们减少到几分钟或几小时。
+*   **定期测试恢复：** 进行频繁的、全面的恢复演练，模拟整个基础设施的损失，超越简单的数据恢复验证，测试将业务服务重新上线的实际过程。
+*   **整合网络安全和连续性规划：** 打破 IT 安全团队（专注于预防和检测）和 IT 运营团队（专注于备份和恢复）之间的壁垒。确保连续性计划与不断演变的威胁格局保持同步更新。
+*   **评估基于云的虚拟化：** 利用云基础设施作为故障转移环境，托管虚拟化备份实例，提供一个与受妥协的本地硬件独立的异地恢复位置。
+
+报告暗示，缓解措施必须超越防止数据加密，确保在预防失败时业务运营的生存。
+
+## 参考资料
+*   [The backup myth that is putting businesses at risk](https://www.bleepingcomputer.com/news/security/the-backup-myth-that-is-putting-businesses-at-risk/)

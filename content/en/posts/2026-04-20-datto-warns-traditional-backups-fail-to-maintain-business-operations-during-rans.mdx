@@ -1,0 +1,56 @@
+---
+title: Datto Warns Traditional Backups Fail to Maintain Business Operations During
+slug: >-
+  2026-04-20-datto-warns-traditional-backups-fail-to-maintain-business-operations-during-rans
+date: '2026-04-20'
+excerpt: >-
+  Datto's 2026 report reveals 43% of businesses with backups still face over 24
+  hours of downtime after an attack, highlighting the critical gap between data
+  backup and true business continuity and disaster recovery (BCDR).
+category: industry
+tags:
+  - ransomware
+  - business-continuity
+  - backup
+  - disaster-recovery
+  - datto
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/the-backup-myth-that-is-putting-businesses-at-risk/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-datto-warns-traditional-backups-fail-to-maintain-business-operations-during-rans
+severity: high
+affected_sectors:
+  - multiple
+affected_regions:
+  - global
+---
+## Executive Summary
+A new report from Datto, a Kaseya company, challenges the foundational assumption that reliable data backups are sufficient for ransomware recovery. The analysis indicates that a significant percentage of businesses with verified backups still experience prolonged, crippling operational downtime following an attack, exposing a critical gap between data protection and business continuity. The findings underscore the necessity of integrated Business Continuity and Disaster Recovery (BCDR) solutions that can rapidly restore entire systems and applications.
+
+## Technical Analysis
+The core issue, as detailed by Datto, is the operational latency inherent in traditional backup-and-restore processes. Even when backup integrity is confirmed, the time required to procure replacement hardware, rebuild systems from bare metal, reinstall operating systems and applications, and finally restore data can extend into days or weeks. This restoration window represents total business stoppage. Datto's BCDR approach, by contrast, leverages virtualization to maintain bootable, ready-to-run backups of entire servers—operating system, applications, and data—as virtual machines. In a disaster scenario, these backups can be spun up on local or cloud-hosted hypervisors within minutes, maintaining business operations while primary systems are repaired. The report positions this not as an incremental improvement but as a categorical shift from data recovery to service continuity.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+None identified in source material.
+
+## Threat Actor Context
+The report does not attribute its findings to a specific threat actor or campaign. The analysis is based on the generalized impact of ransomware and other disruptive cyber incidents, which have become a persistent and ubiquitous threat to organizations of all sizes. The operational consequences described—extended downtime leading to revenue loss, reputational damage, and compliance failures—are agnostic to the particular ransomware variant or intrusion vector used.
+
+## Mitigations & Recommendations
+Datto's report advocates for a strategic shift from standalone backup solutions to integrated BCDR platforms. Key recommendations include:
+*   **Adopt BCDR Solutions:** Implement solutions that provide instant virtualization of backup images to eliminate recovery time objectives (RTOs) of days and reduce them to minutes or hours.
+*   **Test Recovery Regularly:** Conduct frequent, full-scale recovery drills that simulate a complete infrastructure loss, moving beyond simple data restoration verification to test the actual process of bringing business services back online.
+*   **Integrate Cybersecurity and Continuity Planning:** Break down silos between IT security teams (focused on prevention and detection) and IT operations teams (focused on backup and recovery). Ensure continuity plans are updated in lockstep with the evolving threat landscape.
+*   **Evaluate Cloud-Based Virtualization:** Leverage cloud infrastructure as a failover environment to host virtualized backup instances, providing an off-site recovery location that is independent of compromised on-premises hardware.
+
+The report implicitly argues that mitigation must extend beyond preventing data encryption to ensuring the survival of business operations when prevention fails.
+
+## References
+*   [The backup myth that is putting businesses at risk](https://www.bleepingcomputer.com/news/security/the-backup-myth-that-is-putting-businesses-at-risk/)
