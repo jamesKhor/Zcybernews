@@ -1,0 +1,50 @@
+---
+title: Lazarus Group 窃取 KelpDAO 跨链桥攻击中的 2.9 亿美元
+slug: >-
+  2026-04-20-lazarus-group-steals-290-million-in-kelpdao-cross-chain-bridge-attack
+date: '2026-04-20'
+excerpt: >-
+  朝鲜的 Lazarus Group 利用智能合约漏洞从 KelpDAO 跨链桥窃取了 2.9 亿美元，标志着 2026 年最大的 DeFi
+  抢劫案之一，并突显了跨链基础设施中持续存在的风险。
+category: threat-intel
+tags:
+  - lazarus
+  - defi
+  - cryptocurrency
+  - blockchain
+  - cross-chain
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/kelpdao-suffers-290-million-heist-tied-to-lazarus-hackers/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-lazarus-group-steals-290-million-in-kelpdao-cross-chain-bridge-attack
+severity: critical
+threat_actor: Lazarus Group
+threat_actor_origin: North Korea
+affected_sectors:
+  - cryptocurrency
+  - decentralized finance (DeFi)
+---
+## 执行摘要
+朝鲜国营黑客组织Lazarus Group于2026年4月19日从KelpDAO去中心化金融（DeFi）项目中盗取了大约2.9亿美元。攻击者利用了该项目跨链桥智能合约中的一个漏洞，从以太坊Layer-2网络Scroll中抽走了资金。这起盗窃案是记录在案的最大的DeFi漏洞之一，突显了高级威胁行为者对跨链基础设施的持续攻击。
+
+## 技术分析
+攻击目标是KelpDAO的“Kelp-Restaked ETH”（rsETH）代币，这是一种在Scroll网络上部署的流动再质押代币。根据区块链安全公司Cyvers的说法，该漏洞是通过项目桥接合约中的“假存款”漏洞执行的。这个缺陷允许攻击者在没有在源链上存入相应抵押品的情况下在Scroll上铸造rsETH代币。然后，恶意行为者在Scroll网络上的多个去中心化交易所（DEXs）中将非法铸造的rsETH兑换成其他加密货币，包括ETH和USDC。随后，资金被桥接到以太坊主网。当Cyvers的AI系统识别出一个新创建的钱包地址发起的异常、大额交易时，检测到了这次攻击。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+主要采用的技术是利用跨链桥智能合约中的逻辑缺陷，在没有适当抵押的情况下铸造资产（T1548.001: 滥用提升控制机制）。然后攻击者利用去中心化交易所进行资产交换（T1486: 数据加密以影响）和跨链桥进行资金移动和混淆（T1573: 加密通道）。这种针对桥接漏洞进行大规模资产盗窃的模式是朝鲜网络犯罪行动的一个确立标志。
+
+## 威胁行为者背景
+包括Cyvers和ZachXBT在内的多个区块链情报公司高度确信地将此次攻击归因于Lazarus Group，这是一个由朝鲜侦察总局运营的网络犯罪集团。该集团也被称为APT38，以策划高价值的加密货币盗窃以资助该政权的武器计划而臭名昭著。在2023年，该集团负责窃取了估计10亿美元的加密资产。他们的操作剧本始终涉及对区块链协议的深入研究，利用智能合约漏洞，并通过混合器和跨链交换对被盗资金进行复杂的洗钱。
+
+## 缓解措施与建议
+KelpDAO已暂停所有智能合约并启动了恢复流程。该项目正在调查根本原因，并已敦促用户撤销与其合约相关的代币授权。对于DeFi项目，尤其是那些运营跨链基础设施的项目，此次事件要求在主网部署前进行严格的、专业的智能合约审计，并持续监控异常交易模式。DeFi协议的用户应保持谨慎，限制代币授权到必要金额，并使用实时警报服务以应对大规模协议漏洞。
+
+## 参考资料
+- https://www.bleepingcomputer.com/news/security/kelpdao-suffers-290-million-heist-tied-to-lazarus-hackers/

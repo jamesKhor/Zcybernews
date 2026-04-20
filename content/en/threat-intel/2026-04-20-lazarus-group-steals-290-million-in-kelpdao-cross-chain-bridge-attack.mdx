@@ -1,0 +1,52 @@
+---
+title: Lazarus Group Steals $290 Million in KelpDAO Cross-Chain Bridge Attack
+slug: >-
+  2026-04-20-lazarus-group-steals-290-million-in-kelpdao-cross-chain-bridge-attack
+date: '2026-04-20'
+excerpt: >-
+  North Korea's Lazarus Group exploited a smart contract flaw to steal $290
+  million from the KelpDAO cross-chain bridge, marking one of the largest DeFi
+  heists of 2026 and highlighting persistent risks in cross-chain
+  infrastructure.
+category: threat-intel
+tags:
+  - lazarus
+  - defi
+  - cryptocurrency
+  - blockchain
+  - cross-chain
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/kelpdao-suffers-290-million-heist-tied-to-lazarus-hackers/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-lazarus-group-steals-290-million-in-kelpdao-cross-chain-bridge-attack
+severity: critical
+threat_actor: Lazarus Group
+threat_actor_origin: North Korea
+affected_sectors:
+  - cryptocurrency
+  - decentralized finance (DeFi)
+---
+## Executive Summary
+North Korean state-sponsored hackers from the Lazarus Group stole approximately $290 million from the KelpDAO decentralized finance (DeFi) project on April 19, 2026. The attackers exploited a vulnerability in the project's cross-chain bridge smart contract, draining funds from the Ethereum Layer-2 network Scroll. This heist ranks among the largest DeFi exploits recorded and underscores the persistent targeting of cross-chain infrastructure by advanced threat actors.
+
+## Technical Analysis
+The attack targeted KelpDAO's "Kelp-Restaked ETH" (rsETH) token, a liquid restaking token deployed on the Scroll network. According to blockchain security firm Cyvers, the exploit was executed through a "fake deposit" vulnerability in the project's bridge contract. The flaw allowed the attacker to mint rsETH tokens on Scroll without depositing the corresponding collateral on the source chain. The malicious actor then swapped the fraudulently minted rsETH for other cryptocurrencies, including ETH and USDC, across multiple decentralized exchanges (DEXs) on the Scroll network. The funds were subsequently bridged to the Ethereum mainnet. The attack was detected when Cyvers' AI system identified anomalous, large-volume transactions originating from a newly created wallet address.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary technique employed was the exploitation of a logic flaw in a cross-chain bridge's smart contract to mint assets without proper collateralization (T1548.001: Abuse Elevation Control Mechanism). The attacker then utilized decentralized exchanges for asset swapping (T1486: Data Encrypted for Impact) and cross-chain bridges for fund movement and obfuscation (T1573: Encrypted Channel). This pattern of targeting bridge vulnerabilities for large-scale asset theft is a well-established hallmark of North Korean cybercriminal operations.
+
+## Threat Actor Context
+Multiple blockchain intelligence firms, including Cyvers and ZachXBT, attributed the attack with high confidence to the Lazarus Group, a cybercrime syndicate operated by North Korea's Reconnaissance General Bureau. The group, also tracked as APT38, is notorious for orchestrating high-value cryptocurrency thefts to fund the regime's weapons programs. In 2023, the group was responsible for stealing an estimated $1 billion in crypto assets. Their operational playbook consistently involves in-depth research of blockchain protocols, exploitation of smart contract vulnerabilities, and sophisticated laundering of stolen funds through mixers and cross-chain swaps.
+
+## Mitigations & Recommendations
+KelpDAO has paused all smart contracts and initiated a recovery process. The project is investigating the root cause and has urged users to revoke token approvals related to its contracts. For DeFi projects, especially those operating cross-chain infrastructure, the incident mandates rigorous, professional smart contract audits before mainnet deployment and continuous monitoring for anomalous transaction patterns. Users of DeFi protocols should exercise caution, limit token approvals to necessary amounts, and utilize real-time alerting services for large-scale protocol exploits.
+
+## References
+- https://www.bleepingcomputer.com/news/security/kelpdao-suffers-290-million-heist-tied-to-lazarus-hackers/
