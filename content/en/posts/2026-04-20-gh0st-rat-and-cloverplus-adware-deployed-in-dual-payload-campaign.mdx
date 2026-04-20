@@ -1,0 +1,45 @@
+---
+title: Gh0st RAT and CloverPlus Adware Deployed in Dual-Payload Campaign
+slug: 2026-04-20-gh0st-rat-and-cloverplus-adware-deployed-in-dual-payload-campaign
+date: '2026-04-20'
+excerpt: >-
+  A new malware campaign deploys both Gh0st RAT and CloverPlus adware via a
+  single obfuscated loader, giving attackers persistent remote control and a
+  revenue stream from a single infection.
+category: malware
+tags:
+  - gh0st-rat
+  - adware
+  - malware-campaign
+  - remote-access-trojan
+language: en
+source_urls:
+  - >-
+    https://cybersecuritynews.com/gh0st-rat-and-cloverplus-adware-delivered-together/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-gh0st-rat-and-cloverplus-adware-deployed-in-dual-payload-campaign
+severity: high
+---
+## Executive Summary
+A newly identified malware campaign is delivering two distinct payloads—the Gh0st Remote Access Trojan (RAT) and CloverPlus adware—simultaneously via a single obfuscated loader. This dual-payload strategy provides attackers with both persistent, covert system control and a monetization channel from a single infection event. The campaign's technical sophistication lies in its bundling of a high-severity surveillance tool with financially motivated adware, complicating detection and remediation for defenders.
+
+## Technical Analysis
+According to analysis reported by CyberSecurity News, the campaign employs a unified, obfuscated loader to deploy both threats onto a victim's machine. The loader's primary function is to retrieve and execute the two separate payloads. Gh0st RAT is a well-documented malware family known for providing attackers with full remote control over infected systems, including keylogging, screen capture, and file exfiltration. CloverPlus is an adware program designed to generate revenue by forcing unwanted advertisements, redirecting web traffic, and potentially collecting browsing data.
+
+The technical significance of this campaign is the operational merger of two typically separate threat models: cyber-espionage and financially motivated adware. By deploying both, the threat actors ensure that even if one component is detected and removed, the other may persist, maintaining a foothold on the system. The source material does not specify the initial infection vector or the loader's specific obfuscation techniques.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The available source material describes the core TTP of using a single obfuscated loader to deliver dual payloads (T1027 - Obfuscated Files or Information, T1204.002 - User Execution: Malicious File). The campaign leverages the Gh0st RAT for command and control (T1219 - Remote Access Software) and likely persistence mechanisms (T1547 - Boot or Logon Autostart Execution). The CloverPlus adware component suggests techniques related to browser manipulation and fraudulent advertising (T1114 - Email Collection, T1608 - Stage Capabilities). Specific delivery mechanisms, C2 infrastructure, and persistence methods for this campaign are not detailed in the provided source.
+
+## Threat Actor Context
+The source material does not attribute this campaign to a known threat actor group. The combination of a RAT typically associated with espionage and targeted attacks with broad-spectrum adware suggests a possible convergence of actors or a single group diversifying its objectives. The motivation appears hybrid: establishing long-term access for data theft or further intrusion while simultaneously generating immediate revenue through ad fraud.
+
+## Mitigations & Recommendations
+Organizations should employ layered defenses capable of detecting fileless and obfuscated malware. Endpoint Detection and Response (EDR) solutions should be configured to monitor for behaviors associated with remote access tools and unauthorized process injection. Network monitoring for anomalous outbound connections, which could indicate C2 communication for Gh0st RAT, is also advised. Given the adware component, user education on avoiding suspicious downloads and enforcing application allow-listing can reduce the initial infection risk. Standard security hygiene, including regular patching and principle of least privilege, remains critical.
+
+## References
+- https://cybersecuritynews.com/gh0st-rat-and-cloverplus-adware-delivered-together/
