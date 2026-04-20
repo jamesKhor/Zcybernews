@@ -1,0 +1,46 @@
+---
+title: FakeWallet Crypto Stealer Infects iOS Devices via Apple App Store
+slug: 2026-04-20-fakewallet-crypto-stealer-infects-ios-devices-via-apple-app-store
+date: '2026-04-20'
+excerpt: >-
+  Kaspersky discovered 22 malicious iOS apps on the official App Store
+  impersonating crypto wallets like MetaMask and Coinbase, stealing seed phrases
+  and private keys from over 1,000 victims.
+category: malware
+tags:
+  - ios
+  - cryptocurrency
+  - phishing
+  - app-store
+  - malware
+language: en
+source_urls:
+  - 'https://securelist.com/fakewallet-cryptostealer-ios-app-store/119482/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-fakewallet-crypto-stealer-infects-ios-devices-via-apple-app-store
+severity: high
+threat_actor: FakeWallet
+affected_sectors:
+  - cryptocurrency
+---
+## Executive Summary
+Kaspersky researchers have identified a cluster of at least 22 malicious cryptocurrency wallet applications on Apple's official App Store. Dubbed FakeWallet, these apps impersonate legitimate services like MetaMask, Coinbase Wallet, and Trust Wallet to steal victims' seed phrases and private keys. According to Kaspersky's March 2026 report, the campaign has already compromised over a thousand users, siphoning cryptocurrency assets directly from their wallets.
+
+## Technical Analysis
+The malicious apps, which were available for download from the App Store, are near-perfect visual clones of legitimate cryptocurrency wallet applications. Kaspersky's analysis found that the apps functioned as expected for basic wallet creation and balance viewing, building user trust. The core malicious logic activates when a user attempts to import an existing wallet using a 12-word seed phrase (mnemonic) or a private key. The apps transmit this sensitive credential data to a command-and-control (C2) server controlled by the threat actor, located at `api.facewallet[.]icu`. Once the seed phrase is exfiltrated, the attacker gains full control over the victim's cryptocurrency wallet and can drain all associated funds. The apps also implemented a secondary data exfiltration channel by prompting users to enter their seed phrase under the guise of a "wallet synchronization" or "security verification" process.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The threat actor employs a multi-stage social engineering and technical deception strategy. First, they create convincing visual replicas of trusted wallet brands to bypass both user scrutiny and, initially, Apple's App Review process. The apps are listed under developer names distinct from the brands they impersonate, such as "MetaProtocol Limited" or "MetaProvider LTD." The primary technique (T1589.001 - Gather Victim Identity Information: Credentials) involves harvesting seed phrases and private keys through the app's normal import function. A secondary technique involves phishing within the app (T1598.003 - Phishing for Information: Spearphishing Service), using fake prompts to re-enter credentials for "security" purposes. The C2 infrastructure (`api.facewallet[.]icu`) is used for data exfiltration (TA0010 - Exfiltration).
+
+## Threat Actor Context
+The actor behind this campaign, tracked by Kaspersky as FakeWallet, operates with a clear financial motivation focused on cryptocurrency theft. Their operational security includes using generic developer account names and likely employing automated or semi-automated processes to submit apps to the App Store. The scale of the operation—over 20 live apps—suggests a systematic attempt to exploit the trust associated with Apple's curated marketplace. There is no evidence in the source material linking this activity to a known advanced persistent threat (APT) group; it is consistent with financially motivated cybercriminal activity.
+
+## Mitigations & Recommendations
+Kaspersky recommends users only download wallet applications by verifying the official developer name listed on the App Store page, which for legitimate apps will match the brand (e.g., "Coinbase" or "MetaMask Platforms Inc."). Users should never enter a seed phrase or private key into an application that prompted for it after the initial wallet creation or import process. For organizations and individuals managing significant crypto assets, the use of hardware wallets for cold storage is strongly advised, as they are immune to this type of malware. Apple has removed the identified apps, but users should manually check their devices for any suspicious wallet apps and delete them immediately.
+
+## References
+- https://securelist.com/fakewallet-cryptostealer-ios-app-store/119482/

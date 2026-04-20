@@ -1,0 +1,45 @@
+---
+title: Notion 公共页面泄露编辑者电子邮件地址和个人资料照片
+slug: 2026-04-20-notion-public-pages-leak-editor-email-addresses-and-profile-photos
+date: '2026-04-20'
+excerpt: Notion 公共页面暴露了所有编辑者的电子邮件地址和个人资料照片，这个漏洞影响了数百万协作平台用户。研究人员警告说，数据泄露是无声且持续进行的。
+category: vulnerabilities
+tags:
+  - notion
+  - data-leak
+  - privacy
+  - pii
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/notion-pages-exposes-editors-data/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-notion-public-pages-leak-editor-email-addresses-and-profile-photos
+severity: medium
+affected_sectors:
+  - technology
+  - education
+  - business services
+---
+## 执行摘要
+安全研究人员指出，Notion生产力平台上创建的公共页面正在泄露所有编辑过它们的用户的个人身份识别信息（PII）。暴露的数据包括编辑者的全名、电子邮件地址和个人资料照片。这一缺陷是平台共享公共页面设计固有的，不需要漏洞利用，对使用Notion进行公共文档、维基或作品集的团队和个人构成了持续的隐私风险。
+
+## 技术分析
+数据暴露发生在Notion的公共页面功能中。当用户创建页面并将其设置为“公共”时，平台会生成一个可共享的链接。分析这些页面的安全研究人员发现，客户端应用程序获取的底层页面数据包括拥有页面权限的所有用户列表，特别是那些具有“编辑”访问权限的用户。这个用户列表包含了未混淆的PII字段。
+
+这种泄露不是传统软件漏洞或配置错误可以修补的结果，而是Notion处理公共访问的设计选择。用户数据嵌入在页面的JSON结构中，当公共页面被访问时，由Web客户端加载。虽然这些信息在渲染的页面视图中没有显示，但通过查看页面源代码或监控网络流量可以轻易访问。隐私影响很大，因为编辑公司内部文件后来公开分享的用户可能在不知情的情况下暴露了他们的工作电子邮件和身份。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+源材料中未识别出任何战术、技术与程序。
+
+## 威胁行为者背景
+目前没有证据表明有特定的威胁行为者利用这一机制。然而，暴露的数据为恶意行为者的信息收集（侦察）提供了明确的机会。攻击者可以系统地抓取公共Notion页面，构建目标组织员工的档案，收集电子邮件地址用于网络钓鱼活动，或映射内部团队结构。数据泄露还可能通过确认个人与特定项目或公司的关联，促进社交工程攻击。
+
+## 缓解措施与建议
+Notion尚未宣布针对这一设计问题的跨平台修复。因此，缓解责任落在页面所有者和工作空间管理员身上。主要建议是审计所有已共享的公共页面。对于任何打算公开的页面，管理员应该移除所有不应该披露其信息的编辑者，并用组织拥有的单一通用“面向公众”账户替换它们。或者，组织应该考虑在发布之前将内容导出到真正的静态格式（如PDF或独立的HTML文件），而不是使用Notion的原生公共链接功能。用户应该假设任何添加到Notion页面的数据，如果曾经公开，可能会被永久暴露。
+
+## 参考资料
+- https://cybersecuritynews.com/notion-pages-exposes-editors-data/

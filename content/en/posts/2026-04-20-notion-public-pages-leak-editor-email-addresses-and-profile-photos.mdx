@@ -1,0 +1,48 @@
+---
+title: Notion Public Pages Leak Editor Email Addresses and Profile Photos
+slug: 2026-04-20-notion-public-pages-leak-editor-email-addresses-and-profile-photos
+date: '2026-04-20'
+excerpt: >-
+  Notion public pages expose the email addresses and profile photos of all
+  editors, a flaw affecting millions of users of the collaboration platform.
+  Researchers warn the data leak is silent and ongoing.
+category: vulnerabilities
+tags:
+  - notion
+  - data-leak
+  - privacy
+  - pii
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/notion-pages-exposes-editors-data/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-notion-public-pages-leak-editor-email-addresses-and-profile-photos
+severity: medium
+affected_sectors:
+  - technology
+  - education
+  - business services
+---
+## Executive Summary
+Public pages created on the Notion productivity platform are leaking the personally identifiable information (PII) of every user who has edited them, according to security researchers. The exposed data includes the editor's full name, email address, and profile photo. This flaw is inherent to the platform's design for sharing public pages and does not require a vulnerability exploit, posing a persistent privacy risk for teams and individuals using Notion for public documentation, wikis, or portfolios.
+
+## Technical Analysis
+The data exposure occurs through Notion's public page feature. When a user creates a page and sets it to "Public," the platform generates a shareable link. Security researchers analyzing these pages found that the underlying page data, fetched by the client-side application, includes a complete list of all users who have permissions on the page, specifically those with "editor" access. This user list contains non-obfuscated PII fields.
+
+The leak is not the result of a traditional software vulnerability or misconfiguration that can be patched, but rather a design choice in how Notion handles public access. The user data is embedded within the page's JSON structure, which is loaded by the web client when the public page is accessed. While this information is not displayed in the rendered page view, it is trivially accessible by viewing the page source or monitoring network traffic. The privacy impact is significant because users who edit an internal company document later shared publicly may have their work email and identity exposed without their knowledge.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+None identified in source material.
+
+## Threat Actor Context
+There is no evidence of a specific threat actor exploiting this mechanism at this time. However, the exposed data presents a clear opportunity for information gathering (reconnaissance) by malicious actors. Attackers could systematically scrape public Notion pages to build profiles of employees at target organizations, harvest email addresses for phishing campaigns, or map internal team structures. The data leak could also facilitate social engineering attacks by confirming an individual's association with specific projects or companies.
+
+## Mitigations & Recommendations
+Notion has not announced a platform-level fix for this design issue. Therefore, mitigation responsibility falls on page owners and workspace administrators. The primary recommendation is to audit all pages that have been shared publicly. For any page intended to be public, administrators should remove all editors who should not have their information disclosed and replace them with a single, generic "public-facing" account owned by the organization. Alternatively, organizations should consider exporting the content to a truly static format (like a PDF or standalone HTML file) before publishing, rather than using Notion's native public link feature. Users should operate under the assumption that any data added to a Notion page that is ever made public could be permanently exposed.
+
+## References
+- https://cybersecuritynews.com/notion-pages-exposes-editors-data/

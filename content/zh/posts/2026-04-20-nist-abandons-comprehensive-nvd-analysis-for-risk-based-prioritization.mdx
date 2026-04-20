@@ -1,0 +1,45 @@
+---
+title: NIST放弃全面NVD分析，转向基于风险的优先级排序
+slug: >-
+  2026-04-20-nist-abandons-comprehensive-nvd-analysis-for-risk-based-prioritization
+date: '2026-04-20'
+excerpt: 'NIST将不再分析所有263,000+年度CVE提交，转向基于风险的模型来优先处理高影响漏洞，因为自2020年以来提交量激增了263%。'
+category: industry
+tags:
+  - nist
+  - nvd
+  - cve
+  - vulnerability-management
+  - risk-assessment
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/nvd-model-cve-submissions/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-nist-abandons-comprehensive-nvd-analysis-for-risk-based-prioritization
+severity: informational
+---
+## 执行摘要
+国家标准与技术研究院（NIST）已正式放弃对提交给国家漏洞数据库（NVD）的每个通用漏洞和暴露（CVE）条目进行全面分析的做法。根据2026年4月15日的公告，该机构正在转向针对性的、基于风险的优先级模型，以应对自2020年以来CVE提交量激增263%，现在每年超过263,000个。这一根本变化旨在确保安全团队能够及时获得有关高影响威胁的可操作情报，但可能会使得分较低的漏洞没有NIST传统的丰富数据。
+
+## 技术分析
+运营转变代表了NVD角色的根本变化。历史上，NIST分析师通过元数据丰富了CVE计划发布的CVE记录，例如通用弱点枚举（CWE）分类、通用平台枚举（CPE）适用性声明和通用漏洞评分系统（CVSS）严重性分数。在新的模型下，这种丰富将被选择性地应用。NIST表示，新流程将“确保安全团队及时获得有关高影响威胁的可操作情报”，这意味着被认为风险较低的漏洞可能会被添加到数据库中，而没有这种补充分析。最初的公告中没有详细说明优先级排序的确切标准。这一变化是对提交量超出机构分析能力的直接回应。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+源材料中未识别出任何战术、技术与程序。
+
+## 威胁行为者背景
+这是美国联邦机构的政策和运营变化，而不是恶意威胁行为者的行为。这一变化将影响所有组织，包括威胁行为者，如何看待公共漏洞格局，可能会根据NVD提供的可见性和评分，改变开发漏洞利用的优先级。
+
+## 缓解措施与建议
+严重依赖NVD丰富数据进行低严重性CVE的安全团队和漏洞管理平台必须调整他们的流程。组织应该：
+*   增加对其他漏洞情报来源的依赖，如供应商通告、CVE计划的基本记录和商业威胁反馈。
+*   审查并可能调整内部漏洞优先级框架，以确保它们不仅仅依赖于NVD提供的CVSS分数或CPE数据，这些数据可能对越来越多的CVE子集缺失。
+*   优先实施网络安全和基础设施安全局（CISA）的已知被利用漏洞（KEV）目录，预计这将保持为关键缺陷的精选列表，作为强制性补丁指导的主要来源。
+
+## 参考资料
+*   [NIST Shifts to Risk-Based NVD Model as CVE Submissions Surge 263% Since 2020](https://cybersecuritynews.com/nvd-model-cve-submissions/)

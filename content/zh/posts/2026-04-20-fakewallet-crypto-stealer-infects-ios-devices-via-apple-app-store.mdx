@@ -1,0 +1,45 @@
+---
+title: FakeWallet Crypto Stealer 通过 Apple App Store 感染 iOS 设备
+slug: 2026-04-20-fakewallet-crypto-stealer-infects-ios-devices-via-apple-app-store
+date: '2026-04-20'
+excerpt: >-
+  Kaspersky 发现了 22 个恶意的 iOS 应用程序在官方 App Store 上冒充 MetaMask 和 Coinbase 等加密钱包，从超过
+  1,000 名受害者那里窃取种子短语和私钥。
+category: malware
+tags:
+  - ios
+  - cryptocurrency
+  - phishing
+  - app-store
+  - malware
+language: zh
+source_urls:
+  - 'https://securelist.com/fakewallet-cryptostealer-ios-app-store/119482/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-fakewallet-crypto-stealer-infects-ios-devices-via-apple-app-store
+severity: high
+threat_actor: FakeWallet
+affected_sectors:
+  - cryptocurrency
+---
+## 执行摘要
+卡巴斯基研究人员在苹果官方应用商店发现了至少22个恶意加密货币钱包应用程序的集群。这些应用程序被称为FakeWallet，它们冒充MetaMask、Coinbase Wallet和Trust Wallet等合法服务，以窃取受害者的助记词和私钥。根据卡巴斯基2026年3月的报告，该活动已经破坏了超过一千名用户，直接从他们的钱包中吸取加密货币资产。
+
+## 技术分析
+这些恶意应用程序可以从应用商店下载，它们几乎是合法加密货币钱包应用程序的视觉克隆。卡巴斯基的分析发现，这些应用程序在基本钱包创建和余额查看方面按预期工作，建立了用户信任。当用户尝试使用12个单词的助记词（助记符）或私钥导入现有钱包时，核心恶意逻辑被激活。这些应用程序将这些敏感凭证数据传输到由威胁行为者控制的命令和控制（C2）服务器，位于`api.facewallet[.]icu`。一旦助记词被窃取，攻击者就完全控制了受害者的加密货币钱包，并可以耗尽所有相关资金。这些应用程序还通过提示用户在“钱包同步”或“安全验证”过程的幌子下输入他们的助记词，实现了次要数据窃取通道。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+威胁行为者采用多阶段社会工程和技术欺骗策略。首先，他们创建可信的视觉复制品，以绕过用户审查，最初也绕过了苹果的应用审查流程。这些应用程序在开发者名称下列出，与它们冒充的品牌不同，例如“MetaProtocol Limited”或“MetaProvider LTD”。主要技术（T1589.001 - 收集受害者身份信息：凭证）涉及通过应用程序的正常导入功能收集助记词和私钥。次要技术涉及应用程序内的网络钓鱼（T1598.003 - 网络钓鱼信息：鱼叉式网络钓鱼服务），使用假提示重新输入“安全”目的的凭证。C2基础设施（`api.facewallet[.]icu`）用于数据窃取（TA0010 - 数据窃取）。
+
+## 威胁行为者背景
+Kaspersky追踪的这场活动背后的行为者被称为FakeWallet，其操作具有明确的财务动机，专注于加密货币盗窃。他们的操作安全包括使用通用的开发者账户名称，并可能使用自动化或半自动化流程将应用程序提交到应用商店。超过20个活跃应用程序的规模表明，这是一个系统性的尝试，利用与苹果策划市场相关的信赖。源材料中没有证据将此活动与已知的高级持续性威胁（APT）小组联系起来；它与财务动机的网络犯罪活动一致。
+
+## 缓解措施与建议
+卡巴斯基建议用户仅通过验证应用商店页面上列出的官方开发者名称来下载钱包应用程序，对于合法应用程序，将与品牌匹配（例如，“Coinbase”或“MetaMask Platforms Inc.”）。用户不应在初始钱包创建或导入过程后提示输入的应用程序中输入助记词或私钥。对于管理大量加密资产的组织和个人，强烈建议使用硬件钱包进行冷存储，因为它们对这种类型的恶意软件免疫。苹果已经移除了识别出的应用程序，但用户应手动检查他们的设备上是否有任何可疑的钱包应用程序，并立即删除它们。
+
+## 参考资料
+- https://securelist.com/fakewallet-cryptostealer-ios-app-store/119482/
