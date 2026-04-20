@@ -1,0 +1,52 @@
+---
+title: UNC1069 Targets Crypto Professionals with Fake Zoom and Teams Meetings
+slug: >-
+  2026-04-20-unc1069-targets-crypto-professionals-with-fake-zoom-and-teams-meetings
+date: '2026-04-20'
+excerpt: >-
+  North Korean threat actor UNC1069 lures Web3 professionals with fake Zoom and
+  Microsoft Teams meetings to deploy malware that steals cryptocurrency,
+  according to new research.
+category: threat-intel
+tags:
+  - apt
+  - north-korea
+  - social-engineering
+  - cryptocurrency
+  - malware
+language: en
+source_urls:
+  - >-
+    https://cybersecuritynews.com/north-korea-linked-unc1069-uses-fake-zoom-and-teams-meetings/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-unc1069-targets-crypto-professionals-with-fake-zoom-and-teams-meetings
+severity: high
+threat_actor: UNC1069
+threat_actor_origin: North Korea
+affected_sectors:
+  - cryptocurrency
+  - web3
+  - venture capital
+---
+## Executive Summary
+A North Korean state-aligned threat actor, tracked as UNC1069, is conducting a targeted social engineering campaign against professionals in the cryptocurrency and Web3 sectors. The group impersonates venture capital firms, building rapport with targets before luring them into fake Zoom and Microsoft Teams meetings. The ultimate goal is to deliver malware capable of stealing digital assets and credentials.
+
+## Technical Analysis
+According to research cited by CyberSecurity News, UNC1069's operation relies on a multi-stage trust-building process. The threat actors first establish contact, posing as representatives of legitimate venture capital firms interested in investment partnerships. After initial communication via email or professional networking platforms, they escalate to scheduling video conference calls. The invitation links for these meetings are malicious, directing the target not to a legitimate conferencing service but to a compromised or attacker-controlled infrastructure designed to deliver a malicious payload. The specific malware families deployed in this campaign were not detailed in the available source material. The technical mechanism of the initial compromise—whether through exploitation of a client-side vulnerability in conferencing software, a malicious file download, or a phishing page—remains unspecified.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The campaign employs a consistent set of TTPs aligned with social engineering and credential access objectives. The primary technique is **Impersonation (T1584.006)**, where UNC1069 masquerades as venture capital entities. This facilitates **Phishing for Information (T1598)** and **Phishing (T1566)** to initiate contact. A key procedural detail is the use of scheduled video calls on platforms like Zoom and Microsoft Teams as the final lure, a method that exploits professional norms to lower target suspicion. The objective appears to be **Unsecured Credentials (T1552)** and theft of cryptocurrency assets, indicating post-compromise activities focused on financial gain.
+
+## Threat Actor Context
+UNC1069 is a threat actor assessed to operate on behalf of North Korean interests. This attribution aligns with a long-standing pattern of North Korean cyber operations, particularly those conducted by groups like Lazarus and Kimsuky, which heavily target the cryptocurrency industry to generate revenue for the regime. The focus on Web3 and crypto professionals is a direct reflection of state-level financial priorities. The operational security demonstrated in the campaign, including the time invested in building a credible persona, suggests a resourceful and patient adversary focused on high-value targets rather than broad, opportunistic attacks.
+
+## Mitigations & Recommendations
+Organizations and individuals in the cryptocurrency sector should treat unsolicited partnership offers with heightened skepticism. Verify the identity of individuals and firms through independent, official channels before engaging in substantive discussions or sharing information. Scrutinize all meeting links: hover over URLs to check the destination domain before clicking, and prefer to generate meetings from your own account rather than joining via a link provided by a new contact. Ensure all endpoint security software is updated and consider using isolated environments or virtual machines for high-risk business interactions. There is no indication in the source that patching specific software vulnerabilities is a mitigation for this particular social engineering campaign.
+
+## References
+- https://cybersecuritynews.com/north-korea-linked-unc1069-uses-fake-zoom-and-teams-meetings/

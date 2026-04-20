@@ -1,0 +1,53 @@
+---
+title: UNC1069 针对加密专业人士使用假 Zoom 和 Teams 会议
+slug: >-
+  2026-04-20-unc1069-targets-crypto-professionals-with-fake-zoom-and-teams-meetings
+date: '2026-04-20'
+excerpt: >-
+  根据最新研究，朝鲜威胁行为者 UNC1069 利用假 Zoom 和 Microsoft Teams 会议吸引 Web3
+  专业人士，部署窃取加密货币的恶意软件。
+category: threat-intel
+tags:
+  - apt
+  - north-korea
+  - social-engineering
+  - cryptocurrency
+  - malware
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/north-korea-linked-unc1069-uses-fake-zoom-and-teams-meetings/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-unc1069-targets-crypto-professionals-with-fake-zoom-and-teams-meetings
+severity: high
+threat_actor: UNC1069
+threat_actor_origin: North Korea
+affected_sectors:
+  - cryptocurrency
+  - web3
+  - venture capital
+---
+## UNC1069 Targets Crypto Professionals with Fake Zoom and Teams Meetings
+
+## 执行摘要
+一个与朝鲜国家对齐的威胁行为者，被追踪为UNC1069，正在对加密货币和Web3行业的专业人士进行针对性的社会工程学活动。该组织冒充风险投资公司，与目标建立信任关系，然后将他们引入假冒的Zoom和Microsoft Teams会议。最终目标是交付能够窃取数字资产和凭证的恶意软件。
+
+## 技术分析
+根据CyberSecurity News引用的研究，UNC1069的行动依赖于多阶段的信任建立过程。威胁行为者首先建立联系，冒充对投资合作感兴趣的合法风险投资公司的代表。通过电子邮件或专业网络平台进行初步沟通后，他们升级到安排视频会议通话。这些会议的邀请链接是恶意的，将目标导向的不是合法的会议服务，而是被破坏或攻击者控制的基础设施，旨在交付恶意有效载荷。在可用的源材料中没有详细说明在此次活动中部署的具体恶意软件家族。最初的妥协的技术机制——无论是通过利用会议软件的客户端漏洞、恶意文件下载还是钓鱼页面——仍未指定。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+该活动采用了一套与社会工程学和凭证访问目标一致的一致的战术、技术与程序（TTPs）。主要技术是**冒充（T1584.006）**，其中UNC1069伪装成风险投资实体。这促进了**钓鱼信息（T1598）**和**钓鱼（T1566）**以启动联系。一个关键的程序细节是使用像Zoom和Microsoft Teams这样的平台上预定的视频通话作为最后的诱饵，这种方法利用了专业规范来降低目标的怀疑。目标似乎是**不安全的凭证（T1552）**和窃取加密货币资产，表明在妥协后的活动中专注于财务收益。
+
+## 威胁行为者背景
+UNC1069是一个被评估为代表朝鲜利益运作的威胁行为者。这种归因与朝鲜网络行动的长期模式一致，特别是像Lazarus和Kimsuky这样的团体进行的行动，这些团体严重针对加密货币行业，为政权创造收入。对Web3和加密专业人士的关注直接反映了国家层面的财务优先事项。活动中展示的操作安全，包括投入时间建立可信的人物，表明了一个富有资源和耐心的对手，专注于高价值目标而不是广泛的、机会主义的攻击。
+
+## 缓解措施与建议
+加密货币行业的组织和个人应该对未经请求的合作伙伴提供高度怀疑。在进行实质性讨论或共享信息之前，通过独立的官方渠道验证个人和公司的身份。仔细审查所有会议链接：将鼠标悬停在URL上以检查目标域名，然后再点击，并优先从您自己的账户生成会议，而不是通过新联系人提供的链接加入。确保所有端点安全软件都已更新，并考虑使用隔离环境或虚拟机进行高风险的业务互动。源材料中没有迹象表明修补特定软件漏洞是针对这种特定社会工程学活动的缓解措施。
+
+## 参考资料
+- https://cybersecuritynews.com/north-korea-linked-unc1069-uses-fake-zoom-and-teams-meetings/
