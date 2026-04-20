@@ -1,0 +1,9 @@
+{
+  "tag": "endpoint-security",
+  "locale": "en",
+  "intro": "This archive collects five reports from April 15–18, 2026, focused on endpoint security. The coverage details activity involving CVE-2026-5490, a high-severity vulnerability with a CVSS score of 8.8, and CVE-2026-5492, rated 6.5. The reported incidents primarily affected organizations in the education, government, healthcare, and utilities sectors. The severity of the documented events includes two high, one medium, and two informational alerts, reflecting a range of endpoint security challenges during this period.",
+  "sources_hash": "96a1d76fb66c0c79",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:14:02.808Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

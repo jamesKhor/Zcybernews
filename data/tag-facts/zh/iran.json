@@ -1,0 +1,28 @@
+{
+  "tag": "iran",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-13"
+  },
+  "top_actors": ["CyberAv3ngers"],
+  "top_cves": [],
+  "top_sectors": [
+    "water",
+    "civil-society",
+    "energy",
+    "government",
+    "industrial"
+  ],
+  "top_regions": ["United states", "Iran"],
+  "severity_mix": {
+    "high": 4
+  },
+  "recent_excerpts": [
+    "一个犯罪团伙利用配置不当的云存储传播并销毁数据，向伊朗实体部署了具有自我传播能力的CanisterWiper恶意软件。",
+    "伊朗的国家指导的互联网封锁已经超过了1000小时，标志着数字审查和控制手段的显著升级。",
+    "FBI disrupts a Russian GRU-backed router hijacking campaign while Iranian threat actors continue exploiting PLCs across US infrastructure."
+  ],
+  "sources_hash": "3770e052131c1dad"
+}

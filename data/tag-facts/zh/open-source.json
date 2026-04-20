@@ -1,0 +1,23 @@
+{
+  "tag": "open-source",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["software-development", "technology"],
+  "top_regions": [],
+  "severity_mix": {
+    "informational": 3,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "Boost Security 的 SmokedMeat 框架从单一 CI/CD 流水线缺陷执行实时攻击演示，向工程团队展示攻击者如何移动以破坏代码、机密和基础设施。",
+    "Legit Security 发布 Legitify，这是一个开源扫描器，用于识别 GitHub 和 GitLab 组织、仓库以及 CI/CD 运行器中的安全配置错误，以对抗软件供应链风险。",
+    "Objective Development发布了其macOS防火墙的免费Linux版本，为桌面隐私提供了长期缺失的进程级网络连接可见性。"
+  ],
+  "sources_hash": "c5a34a2a476224ff"
+}

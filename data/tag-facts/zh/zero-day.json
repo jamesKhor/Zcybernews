@@ -1,0 +1,49 @@
+{
+  "tag": "zero-day",
+  "locale": "zh",
+  "count": 23,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Chaotic Eclipse", "Interlock"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-34621",
+      "cvss": 8.6
+    },
+    {
+      "id": "CVE-2026-32183",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2026-32201",
+      "cvss": 6.5
+    },
+    {
+      "id": "CVE-2024-20662"
+    },
+    {
+      "id": "CVE-2024-21412"
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "cryptocurrency",
+    "enterprise",
+    "government",
+    "healthcare"
+  ],
+  "top_regions": ["Global", "Kyrgyzstan"],
+  "severity_mix": {
+    "high": 11,
+    "critical": 11,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "一个漏洞（CVE-2026-32183）存在于微软Windows截图工具中，允许远程攻击者通过恶意文件或网页执行任意代码，仅需要用户交互即可触发漏洞。",
+    "针对CVE-2026-39808的PoC漏洞利用代码已经发布，这是一个Fortinet FortiSandbox中的关键命令注入漏洞。该漏洞允许未经身份验证的攻击者以root身份执行任意操作系统命令。",
+    "一名安全研究人员发布了针对Microsoft Defender中两个新的零日漏洞的概念验证漏洞利用代码，分别被称为RedSun和UnDefend。结合之前披露的漏洞，现在已确认这三个漏洞都在野外被积极利用。"
+  ],
+  "sources_hash": "5ea0843da4e42d00"
+}

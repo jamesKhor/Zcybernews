@@ -1,0 +1,28 @@
+{
+  "tag": "ot",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "critical-infrastructure",
+    "energy",
+    "industrial",
+    "building automation",
+    "engineering"
+  ],
+  "top_regions": ["Global", "North-america", "United states"],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "一种名为 ZionSiphon 的新型恶意软件家族旨在通过操纵工业控制系统破坏水处理和海水淡化厂。恶意软件针对特定的 OT 硬件和软件以干扰关键过程。",
+    "2025年第四季度，由单一恶意软件驱动的全球电子邮件传播蠕虫浪潮，针对工业控制系统（ICS），标志着运营技术（OT）威胁的重大转变。",
+    "卡巴斯基数据显示，在2025年第四季度，33.3%的工业控制系统计算机上被阻止的恶意软件，互联网威胁和可移动媒体是主要的感染途径。面临USB传播威胁的系统比例增长到4.1%。"
+  ],
+  "sources_hash": "8821bc6063620412"
+}

@@ -1,0 +1,10 @@
+{
+  "tag": "microsoft-365",
+  "locale": "zh",
+  "intro": "2026年4月16日至19日期间，全球企业、金融和科技行业遭遇了一波针对Microsoft 365环境的高危威胁集中攻击。所有五起记录在案的事件均被评估为高危级别，涉及不同的威胁行为者。该活动被归因于Tycoon 2FA和W3LL，他们发起的攻击活动影响了多个行业。此次攻击集群凸显出威胁行为者对核心企业生产力套件的重点关注，对运营于这些关键行业的组织具有广泛影响。",
+  "sources_hash": "7c6f6bce5a9dc463",
+  "source_intro_hash": "88a7e17f25907b0b",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:21:34.646Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

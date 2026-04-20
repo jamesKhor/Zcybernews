@@ -1,0 +1,22 @@
+{
+  "tag": "nvd",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["all"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "informational": 5
+  },
+  "recent_excerpts": [
+    "NIST will no longer analyze all 263,000+ annual CVE submissions, shifting to a risk-based model to prioritize high-impact flaws as submissions surge 263% since 2020.",
+    "NIST will no longer fully analyze all CVEs submitted to the National Vulnerability Database, citing a 263% increase in submissions that has overwhelmed its enrichment process, leaving security teams w",
+    "The U.S. National Institute of Standards and Technology has significantly reduced its enrichment of CVE data in the National Vulnerability Database, forcing security teams to manually process thousand"
+  ],
+  "sources_hash": "21c750e1b15a749f"
+}

@@ -1,0 +1,38 @@
+{
+  "tag": "botnet",
+  "locale": "en",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-18"
+  },
+  "top_actors": ["W3LL"],
+  "top_cves": [
+    {
+      "id": "CVE-2024-3721",
+      "cvss": 6.3
+    },
+    {
+      "id": "CVE-2023-33538"
+    }
+  ],
+  "top_sectors": [
+    "corporate",
+    "finance",
+    "multiple",
+    "residential",
+    "technology"
+  ],
+  "top_regions": ["Czech republic", "Global"],
+  "severity_mix": {
+    "medium": 2,
+    "high": 4,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "A new Mirai botnet variant, 'Nexcorium,' is exploiting a command injection flaw (CVE-2024-3721) in TBK DVRs and end-of-life TP-Link routers to conscript devices into a distributed denial-of-service (D",
+    "Cisco Talos researchers identify the PowMix botnet, active since December 2025, targeting Czech workers with randomized C2 beaconing to evade detection and deploy additional payloads.",
+    "A global law enforcement operation involving 21 countries has seized 53 internet domains used to sell DDoS-for-hire services, disrupting a key enabler of cybercrime and online harassment."
+  ],
+  "sources_hash": "98b9cd04f821673d"
+}

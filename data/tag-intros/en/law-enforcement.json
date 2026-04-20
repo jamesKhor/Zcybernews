@@ -1,0 +1,9 @@
+{
+  "tag": "law-enforcement",
+  "locale": "en",
+  "intro": "This archive contains 13 articles from April 12 to April 19, 2026, detailing law enforcement and cybercrime activity. The reports are dominated by high-severity incidents, with ten classified as high and three as medium. The threat actors W3LL and W3LL Team were prominently featured. Their operations impacted a range of sectors including government, corporate, cryptocurrency, education, and entertainment. Geographically, the affected regions centered on the United States, North America, Canada, and Europe, with specific activity noted in Florida.",
+  "sources_hash": "a55ce48d5b49862e",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:08:42.631Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

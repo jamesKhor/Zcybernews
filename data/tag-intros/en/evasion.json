@@ -1,0 +1,9 @@
+{
+  "tag": "evasion",
+  "locale": "en",
+  "intro": "Between April 12 and April 17, 2026, ZCyberNews published five reports detailing high-severity evasion techniques. The threat actor Payouts King was active during this period, targeting multiple sectors. The primary region affected was the Czech republic. All five documented incidents were assessed as high severity, highlighting a concentrated wave of sophisticated threats focused on circumventing security measures in a specific geographic area.",
+  "sources_hash": "54873e3036fd81a3",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:18:02.518Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,24 @@
+{
+  "tag": "cybercrime",
+  "locale": "en",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Triad Nexus", "W3LL Team"],
+  "top_cves": [],
+  "top_sectors": ["financial-services", "multiple"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "informational": 1,
+    "high": 5,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "MITRE released the Fight Fraud Framework (F3), a unified knowledge base mapping the intersection of cyber attack tactics and financial fraud, aiming to close the operational gap between security and f",
+    "A study of 194 cybercrime forum threads reveals threat actors are actively exploring AI for malware obfuscation, hyper-realistic phishing, and automated vulnerability discovery, with 40% of discussion",
+    "The disruption of the Tycoon 2FA phishing-as-a-service platform has led to a surge in copycat attacks, as threat actors reuse its tools and techniques in other kits, increasing the overall volume of m"
+  ],
+  "sources_hash": "c6acd147d1e9733c"
+}

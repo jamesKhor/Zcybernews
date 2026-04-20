@@ -1,0 +1,10 @@
+{
+  "tag": "evasion",
+  "locale": "zh",
+  "intro": "2026年4月12日至4月17日期间，ZCyberNews发布了五份详细描述高危规避技术的报告。在此期间，威胁行为者Payouts King异常活跃，针对多个行业发起攻击。主要受影响地区为捷克共和国。所有五起记录在案的事件均被评估为高危级别，凸显出一波集中在特定地理区域、旨在规避安全措施的复杂威胁浪潮。",
+  "sources_hash": "54873e3036fd81a3",
+  "source_intro_hash": "a91a382bcbbfead3",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:20:43.409Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

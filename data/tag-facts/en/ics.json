@@ -1,0 +1,30 @@
+{
+  "tag": "ics",
+  "locale": "en",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "critical-infrastructure",
+    "energy",
+    "manufacturing",
+    "industrial",
+    "utilities"
+  ],
+  "top_regions": ["Global", "United states", "North-america"],
+  "severity_mix": {
+    "high": 6,
+    "critical": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "A new malware family named ZionSiphon is designed to sabotage water treatment and desalination plants by manipulating industrial control systems.",
+    "Siemens, Schneider Electric, and six other major industrial control system vendors released security advisories addressing dozens of vulnerabilities, including critical flaws in Siemens SIMATIC and Sc",
+    "Operational Technology asset owners face regulatory pressure to attest to post-quantum cryptographic readiness but lack the necessary discovery and inventory tools, leading to superficial compliance."
+  ],
+  "sources_hash": "3caf4ee64c64fb38"
+}

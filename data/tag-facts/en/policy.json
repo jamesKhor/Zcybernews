@@ -1,0 +1,28 @@
+{
+  "tag": "policy",
+  "locale": "en",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "public-sector",
+    "technology",
+    "telecommunications"
+  ],
+  "top_regions": ["United states", "Global"],
+  "severity_mix": {
+    "informational": 5,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n",
+    "NIST has fundamentally changed its CVE enrichment process, prioritizing only high-impact vulnerabilities for detailed analysis due to an overwhelming surge in submissions, straining downstream vulnera",
+    "U.S. lawmakers held a classified briefing on AI, voicing deep fears about its potential for societal destruction, national security threats, and the rapid pace of development outpacing regulation."
+  ],
+  "sources_hash": "6af0f7be04ba3073"
+}

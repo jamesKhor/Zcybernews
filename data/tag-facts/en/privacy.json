@@ -1,0 +1,30 @@
+{
+  "tag": "privacy",
+  "locale": "en",
+  "count": 15,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "education",
+    "government",
+    "telecommunications",
+    "Advertising"
+  ],
+  "top_regions": ["Global", "United states"],
+  "severity_mix": {
+    "informational": 5,
+    "medium": 7,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n",
+    "Notion public pages expose the email addresses and profile photos of all editors, a flaw affecting millions of users of the collaboration platform.",
+    "Freelance platform Fiverr exposed sensitive user files, including tax documents and PII, via a misconfigured cloud storage bucket, with data indexed by Google search, according to security researchers"
+  ],
+  "sources_hash": "a988cf46cb5017d0"
+}

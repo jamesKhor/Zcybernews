@@ -1,0 +1,30 @@
+{
+  "tag": "regulation",
+  "locale": "en",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "critical-infrastructure",
+    "Advertising",
+    "critical_infrastructure",
+    "education"
+  ],
+  "top_regions": ["United states", "European union", "Global", "Asia"],
+  "severity_mix": {
+    "medium": 2,
+    "informational": 5,
+    "high": 1
+  },
+  "recent_excerpts": [
+    "Proposed bans on social media for children under 16 may inadvertently push them toward riskier, less-regulated platforms and necessitate invasive age-verification systems that create new data privacy",
+    "New U.S. Coast Guard cybersecurity rules under the Maritime Transportation Security Act mandate third-party audits, OT-specific security plans, and dedicated personnel, providing a regulatory model fo",
+    "U.S. lawmakers held a classified briefing on AI, voicing deep fears about its potential for societal destruction, national security threats, and the rapid pace of development outpacing regulation."
+  ],
+  "sources_hash": "94addfe44f5207b4"
+}

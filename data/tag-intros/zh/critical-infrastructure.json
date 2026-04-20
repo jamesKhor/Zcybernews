@@ -1,0 +1,10 @@
+{
+  "tag": "critical-infrastructure",
+  "locale": "zh",
+  "intro": "本档案收录了2026年4月12日至17日期间的十份报告，详细记录了针对关键基础设施的攻击活动。在这些事件中，威胁行为者CyberAv3ngers被显著观察到。报告显示攻击主要集中在美国境内，重点关注关键基础设施、能源、制造、公用事业和水务领域。所记录威胁的严重程度不一，期间活动包含四次高级别、两次严重级别、一次中等级别以及三次信息性警报。",
+  "sources_hash": "c95351dd94a14574",
+  "source_intro_hash": "c8d2c12cc626034e",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:20:01.468Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

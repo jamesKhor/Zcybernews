@@ -1,0 +1,10 @@
+{
+  "tag": "threat-intelligence",
+  "locale": "zh",
+  "intro": "本档案收录了 8 篇带有「threat-intelligence」标签的文章，发布时间从2026年4月13日至2026年4月19日。其中包含3 篇高危、4 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "f100b2a57d7d1468",
+  "source_intro_hash": "770397ce91cb84e0",
+  "model": "template:sparse",
+  "generated_at": "2026-04-20T11:22:34.283Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

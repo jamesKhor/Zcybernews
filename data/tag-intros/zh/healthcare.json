@@ -1,0 +1,10 @@
+{
+  "tag": "healthcare",
+  "locale": "zh",
+  "intro": "2026年4月12日至16日期间，ZCyberNews记录了五起高严重性安全事件。在这些攻击中，威胁行为者Rhysida和UAC-0247被显著观测到。医疗保健行业是最常受攻击的目标，其次是政府、研究和技术机构。从地理分布看，事件主要影响荷兰、乌克兰和美国的相关组织。这一系列事件凸显了在此期间，关键基础设施领域经历了一段集中的重大网络威胁高发期。",
+  "sources_hash": "a9029f440f5d0996",
+  "source_intro_hash": "0303fbb6d856a359",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:20:55.247Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,30 @@
+{
+  "tag": "ot-security",
+  "locale": "en",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "critical-infrastructure",
+    "manufacturing",
+    "energy",
+    "industrial",
+    "utilities"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "informational": 4,
+    "critical": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Axonius has updated its Asset Cloud platform with AI-powered remediation for exposures, added IoT/OT asset management, and introduced an asset trust standard to quantify security posture.",
+    "Security researchers propose extending two-factor authentication (2FA) principles to physical access control systems for critical infrastructure, creating a hybrid defense against credential-based att",
+    "Siemens, Schneider Electric, and six other major industrial control system vendors released security advisories addressing dozens of vulnerabilities, including critical flaws in Siemens SIMATIC and Sc"
+  ],
+  "sources_hash": "25e5305d5c6be205"
+}

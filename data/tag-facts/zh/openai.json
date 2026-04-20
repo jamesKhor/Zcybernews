@@ -1,0 +1,24 @@
+{
+  "tag": "openai",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-16"
+  },
+  "top_actors": ["Lazarus Group"],
+  "top_cves": [],
+  "top_sectors": ["technology", "artificial-intelligence", "cybersecurity"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "informational": 2,
+    "medium": 3,
+    "high": 2
+  },
+  "recent_excerpts": [
+    "OpenAI 正在扩大其 GPT-5.4-Cyber 模型的使用范围，这是一个专门用于逆向工程和恶意软件分析的人工智能，紧随 Anthropic 的进攻型 'Mythos' 模型的公布之后。此举旨在降低合法安全研究的障碍。",
+    "OpenAI 正在扩展其信任访问网络（TAC）项目，为经过审查的安全研究人员和团队提供优先访问 GPT-5.4-Cyber 模型的权限，用于逆向工程和漏洞发现。",
+    "OpenAI 已从 ChatGPT 中移除了未记录的“学习模式”，该功能禁用了网络搜索和文件上传，突显了对静默功能变更和自动化工作流程潜在安全影响的担忧。"
+  ],
+  "sources_hash": "c2f40609cb615bad"
+}

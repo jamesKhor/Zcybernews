@@ -1,0 +1,10 @@
+{
+  "tag": "email-security",
+  "locale": "zh",
+  "intro": "本档案收录了 10 篇带有「email-security」标签的文章，发布时间从2026年4月12日至2026年4月19日。其中包含5 篇高危、3 篇中危、2 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "ad056007f6e53f35",
+  "source_intro_hash": "be2c7471ed7a5120",
+  "model": "template:sparse",
+  "generated_at": "2026-04-20T11:20:23.240Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

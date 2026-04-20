@@ -1,0 +1,23 @@
+{
+  "tag": "macos",
+  "locale": "en",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-10",
+    "latest": "2026-04-17"
+  },
+  "top_actors": ["ClickFix", "Lazarus Group", "Sapphire Sleet"],
+  "top_cves": [],
+  "top_sectors": ["cryptocurrency", "technology", "artificial-intelligence"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 5,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "A malicious Ledger Live app distributed via Apple's official App Store for macOS stole approximately $9.5 million from 50 victims by harvesting recovery phrases.",
+    "A new ClickFix-style campaign targets macOS users with fake Apple instructions to run malicious commands.",
+    "A ClickFix social engineering campaign bypasses macOS security warnings by using Script Editor to execute malicious commands, marking a significant evolution in Mac-targeting malware."
+  ],
+  "sources_hash": "92757ff18fb09818"
+}

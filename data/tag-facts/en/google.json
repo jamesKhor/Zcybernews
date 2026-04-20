@@ -1,0 +1,23 @@
+{
+  "tag": "google",
+  "locale": "en",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["creators", "media", "technology", "telecommunications"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "informational": 5,
+    "high": 2
+  },
+  "recent_excerpts": [
+    "Google's Android 17 Beta 4 release introduces support for post-quantum hybrid key agreement in TLS and imposes new memory limits on apps, marking significant security enhancements ahead of the OS's fi",
+    "Google announced new Android 17 privacy policies restricting contact and location data access, while its 2025 ad safety report details the blocking of 8.3 billion policy-violating ads and 24.9 million",
+    "Google has integrated a memory-safe DNS parser written in Rust into Pixel phones to eliminate an entire class of vulnerabilities in the low-level networking stack."
+  ],
+  "sources_hash": "ba3d9efeac93ab3c"
+}

@@ -1,0 +1,9 @@
+{
+  "tag": "android",
+  "locale": "en",
+  "intro": "The Mirax threat actor was a primary focus of coverage, alongside the critical vulnerability CVE-2023-4863. Our eight articles from April 12–19, 2026, detailed a range of incidents with two critical and three high-severity reports. The targeting spanned the cryptocurrency, technology, and telecommunications sectors, as well as individuals. Geographically, impacts were noted globally, with specific attention on Europe, Latin America, and Spain. This period's reporting captured a significant level of high-severity activity centered on these specific threats and affected regions.",
+  "sources_hash": "2a1469be1518bdd3",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:09:58.929Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

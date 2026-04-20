@@ -1,0 +1,23 @@
+{
+  "tag": "open-source",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["software-development", "technology"],
+  "top_regions": [],
+  "severity_mix": {
+    "informational": 3,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "Boost Security's SmokedMeat framework executes live attack demonstrations from a single CI/CD pipeline flaw, showing engineering teams exactly how attackers move to compromise code, secrets, and infra",
+    "Legit Security releases Legitify, an open-source scanner that identifies security misconfigurations in GitHub and GitLab organizations, repositories, and CI/CD runners to combat software supply chain",
+    "Objective Development releases a free Linux version of its macOS firewall, providing long-absent per-process network connection visibility for desktop privacy."
+  ],
+  "sources_hash": "c5a34a2a476224ff"
+}

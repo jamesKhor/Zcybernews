@@ -1,0 +1,35 @@
+{
+  "tag": "cloud-security",
+  "locale": "en",
+  "count": 12,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["APT41"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33413",
+      "cvss": 8.8
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "government",
+    "healthcare",
+    "cloud services",
+    "cloud-services"
+  ],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 8,
+    "critical": 2,
+    "informational": 2
+  },
+  "recent_excerpts": [
+    "The Cloud Security Alliance warns that Anthropic's Claude Mythos model will trigger an 'AI vulnerability storm,' forcing CISOs to manage a 10x surge in code flaws and novel exploit techniques within 1",
+    "Freelance platform Fiverr exposed sensitive user files, including tax documents and PII, via a misconfigured cloud storage bucket, with data indexed by Google search, according to security researchers",
+    "A 2024 analysis reveals 68% of cloud breaches stem from compromised, orphaned non-human identities like service accounts and API keys, not phishing or weak passwords, highlighting a critical gap in au"
+  ],
+  "sources_hash": "a9b1dc6a69acb8ab"
+}

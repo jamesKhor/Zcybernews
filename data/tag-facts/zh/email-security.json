@@ -1,0 +1,30 @@
+{
+  "tag": "email-security",
+  "locale": "zh",
+  "count": 10,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-19"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "hospitality",
+    "sports",
+    "any-email-sender",
+    "automotive"
+  ],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "informational": 2,
+    "medium": 3,
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Bitdefender 已将持续的电子邮件威胁保护集成到其 GravityZone 平台中，结合终端检测和响应（EDR）与电子邮件安全，以对抗网络钓鱼、BEC 和勒索软件。",
+    "DavMail 6.6.0 解决了一个正则表达式漏洞的安全警告，并更新 OAuth 处理以与 Microsoft 的变化保持一致，影响将邮件客户端桥接到 Exchange/Office 365 的用户。",
+    "Google 已为选择的企业客户启用了 Android 和 iOS 上 Gmail 的客户端端到端加密，允许他们在移动应用内原生发送和接收加密消息。"
+  ],
+  "sources_hash": "ad056007f6e53f35"
+}

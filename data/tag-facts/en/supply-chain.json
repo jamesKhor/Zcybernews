@@ -1,0 +1,42 @@
+{
+  "tag": "supply-chain",
+  "locale": "en",
+  "count": 50,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["Lazarus Group", "TeamPCP"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-39987",
+      "cvss": 9.3
+    },
+    {
+      "id": "CVE-2026-40176"
+    },
+    {
+      "id": "CVE-2026-40177"
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "logistics",
+    "manufacturing",
+    "cryptocurrency",
+    "financial-services"
+  ],
+  "top_regions": ["Global", "Europe", "Asia", "North america"],
+  "severity_mix": {
+    "critical": 6,
+    "informational": 4,
+    "high": 30,
+    "medium": 9
+  },
+  "recent_excerpts": [
+    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution.",
+    "Boost Security's SmokedMeat framework executes live attack demonstrations from a single CI/CD pipeline flaw, showing engineering teams exactly how attackers move to compromise code, secrets, and infra",
+    "Socket identified 108 malicious Chrome extensions that infected 20,000 users, stealing Google and Telegram session cookies and injecting ads via a shared command-and-control server."
+  ],
+  "sources_hash": "d0d3c6abbeb20824"
+}

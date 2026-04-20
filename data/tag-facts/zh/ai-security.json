@@ -1,0 +1,31 @@
+{
+  "tag": "ai-security",
+  "locale": "zh",
+  "count": 37,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["OpenClaw"],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "cybersecurity",
+    "healthcare",
+    "ai-development",
+    "cloud services"
+  ],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 17,
+    "medium": 6,
+    "critical": 4,
+    "informational": 10
+  },
+  "recent_excerpts": [
+    "Qualys警告称，像Claude Mythos这样的AI代理可以将漏洞发现时间从几个月缩短到几小时，压缩补丁窗口，并以大量新的CVEs压倒安全团队。",
+    "Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project Glasswing 项目以发现并修补漏洞。",
+    "云安全联盟警告称Anthropic的Claude Mythos模型将引发一场'AI漏洞风暴'，迫使CISOs在18个月内管理代码缺陷和新颖利用技术的10倍激增。"
+  ],
+  "sources_hash": "6a518bf501ebd797"
+}

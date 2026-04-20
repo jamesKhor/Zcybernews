@@ -1,0 +1,32 @@
+{
+  "tag": "enterprise-security",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-18"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-27681",
+      "cvss": 9.9
+    },
+    {
+      "id": "CVE-2025-54987",
+      "cvss": 9.8
+    }
+  ],
+  "top_sectors": ["enterprise", "government", "technology"],
+  "top_regions": [],
+  "severity_mix": {
+    "critical": 4,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "CVE-2025-54987, a critical 9.8 CVSS flaw in Trend Micro Apex One, allows unauthenticated attackers to execute arbitrary code via directory traversal in the management console.",
+    "SAP has patched a critical SQL injection vulnerability (CVE-2026-27681, CVSS 9.9) in its Business Planning and Consolidation and Business Warehouse applications, allowing attackers to execute arbitrar",
+    "SAP released 19 security notes, including a patch for a critical vulnerability in the ABAP platform that could allow attackers to compromise enterprise systems."
+  ],
+  "sources_hash": "597fa6ffde42856e"
+}

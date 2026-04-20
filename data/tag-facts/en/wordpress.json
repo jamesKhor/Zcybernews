@@ -1,0 +1,27 @@
+{
+  "tag": "wordpress",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-1492"
+    }
+  ],
+  "top_sectors": [],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "critical": 2,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "A malicious buyer used the Flippa marketplace to acquire a plugin developer, injecting a backdoor into over 30 WordPress plugins with hundreds of thousands of installations to deploy hidden SEO spam.",
+    "The EssentialPlugin suite, comprising over 30 popular WordPress plugins, has been compromised to inject a backdoor granting attackers administrative access to thousands of websites.",
+    "A critical flaw (CVE-2026-1492) in the User Registration & Membership WordPress plugin allows unauthenticated attackers to bypass login and gain full administrator access, impacting thousands of sites"
+  ],
+  "sources_hash": "aa0bd7dd803246b2"
+}

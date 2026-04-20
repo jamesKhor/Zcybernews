@@ -1,0 +1,9 @@
+{
+  "tag": "cybercrime",
+  "locale": "en",
+  "intro": "The financial-services sector and multiple others faced a concentrated wave of cybercrime activity from April 13 to 19, 2026. This archive of seven reports details a week dominated by high-severity incidents, with five such alerts alongside one medium and one informational notice. The threat landscape was characterized by global operations, with the distinct actors Triad Nexus and W3LL Team identified as prominent threats during this period. The collected analysis provides a focused view of their methodologies and the broader criminal targeting across key industries.",
+  "sources_hash": "c6acd147d1e9733c",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:11:50.538Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

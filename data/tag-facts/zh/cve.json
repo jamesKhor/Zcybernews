@@ -1,0 +1,23 @@
+{
+  "tag": "cve",
+  "locale": "zh",
+  "count": 9,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["all", "critical-infrastructure", "technology"],
+  "top_regions": ["European union", "Global"],
+  "severity_mix": {
+    "informational": 8,
+    "high": 1
+  },
+  "recent_excerpts": [
+    "根据SANS互联网风暴中心的分析，EPSS v3模型将防御者优先处理每年发布的28,000多个CVE的误报率降低了40%。",
+    "NIST将不再分析所有263,000+年度CVE提交，转向基于风险的模型来优先处理高影响漏洞，因为自2020年以来提交量激增了263%。",
+    "NIST 已经根本改变了其 CVE 丰富过程，仅优先考虑高影响漏洞进行详细分析，因为提交数量的激增，给下游漏洞管理带来了压力。"
+  ],
+  "sources_hash": "373b207a5dba4b28"
+}

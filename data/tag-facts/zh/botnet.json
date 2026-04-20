@@ -1,0 +1,38 @@
+{
+  "tag": "botnet",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-18"
+  },
+  "top_actors": ["W3LL"],
+  "top_cves": [
+    {
+      "id": "CVE-2024-3721",
+      "cvss": 6.3
+    },
+    {
+      "id": "CVE-2023-33538"
+    }
+  ],
+  "top_sectors": [
+    "corporate",
+    "finance",
+    "multiple",
+    "residential",
+    "technology"
+  ],
+  "top_regions": ["Czech republic", "Global"],
+  "severity_mix": {
+    "medium": 2,
+    "high": 4,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "一种新的 Mirai 僵尸网络变种 'Nexcorium'，正在利用 TBK DVR 和生命周期结束的 TP-Link 路由器中的命令注入漏洞（CVE-2024-3721）来征召设备加入分布式拒绝服务（DDoS）攻击群。",
+    "思科Talos研究人员识别出自2025年12月以来活跃的PowMix僵尸网络，针对捷克工作人员使用随机化C2信标以规避检测并部署额外的有效载荷。",
+    "涉及21个国家的全球执法行动查封了53个用于出售DDoS-for-Hire服务的互联网域名，破坏了网络犯罪和在线骚扰的关键推动因素。"
+  ],
+  "sources_hash": "98b9cd04f821673d"
+}

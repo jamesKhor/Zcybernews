@@ -1,0 +1,9 @@
+{
+  "tag": "openai",
+  "locale": "en",
+  "intro": "This archive collects seven reports from April 12–16, 2026, covering activity linked to the Lazarus Group. The severity of these incidents ranged from informational to high, with a focus on the global technology, artificial-intelligence, and cybersecurity sectors. The featured analyses detail the methods and impacts of these operations, providing a concentrated view of threats targeting foundational AI and security infrastructure during this period.",
+  "sources_hash": "c2f40609cb615bad",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:18:55.165Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

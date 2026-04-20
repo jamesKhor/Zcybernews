@@ -1,0 +1,22 @@
+{
+  "tag": "microsoft-365",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Tycoon 2FA", "W3LL"],
+  "top_cves": [],
+  "top_sectors": ["multiple", "corporate", "finance", "technology"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Google Chrome 版本 147 和 Microsoft 365 网络服务之间的一个关键兼容性问题正在阻止用户认证和应用程序加载，扰乱了未知数量的组织的访问。",
+    "Proofpoint研究人员详细说明了威胁行为者如何利用Microsoft 365邮箱规则来外泄数据并保持持续性，绕过传统的电子邮件安全控制，并针对全球组织。",
+    "Tycoon 2FA 钓鱼团伙已经放弃了其标志性工具包，转而采用设备代码钓鱼来绕过多因素认证，并入侵 Microsoft 365 和 Gmail 账户。"
+  ],
+  "sources_hash": "7c6f6bce5a9dc463"
+}

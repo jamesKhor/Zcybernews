@@ -1,0 +1,36 @@
+{
+  "tag": "fraud",
+  "locale": "zh",
+  "count": 11,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-18"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "financial-services",
+    "cryptocurrency",
+    "entertainment",
+    "retail",
+    "e-commerce"
+  ],
+  "top_regions": [
+    "United states",
+    "Global",
+    "Canada",
+    "Europe",
+    "North america"
+  ],
+  "severity_mix": {
+    "informational": 2,
+    "medium": 4,
+    "high": 4
+  },
+  "recent_excerpts": [
+    "MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。",
+    "金融行业监管局建立了一个新的情报中心，以集中分析针对经纪商和资本市场的网络威胁和欺诈行为。",
+    "Recorded Future 详细说明了威胁行为者如何利用企业身份验证的漏洞，从兑现被盗支票转变为策划AI驱动的购物诈骗，冒充合法企业以窃取商品。"
+  ],
+  "sources_hash": "359497e91fd9725f"
+}

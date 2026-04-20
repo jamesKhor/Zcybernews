@@ -1,0 +1,24 @@
+{
+  "tag": "threat-detection",
+  "locale": "en",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["OpenClaw"],
+  "top_cves": [],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "informational": 6,
+    "high": 1,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout.",
+    "A new analysis argues most AI-powered security operations center tools merely accelerate alert triage without reducing the underlying workload for analysts, failing to deliver on promises of true auto",
+    "SentinelOne outlines its AI-native security platform, leveraging on-device models and a global data lake to autonomously detect and respond to threats at machine speed."
+  ],
+  "sources_hash": "5a2e80a8adc297dc"
+}

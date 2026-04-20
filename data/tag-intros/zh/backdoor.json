@@ -1,0 +1,10 @@
+{
+  "tag": "backdoor",
+  "locale": "zh",
+  "intro": "2026年4月13日至4月17日期间，ZCyberNews发布了六篇文章，详细介绍了高危与严重级别的后门威胁。相关活动主要涉及威胁行为者APT41，其攻击目标为云服务与技术行业，并产生了全球性影响。报道涵盖了一起严重级别和五起高危级别事件，揭示了在此期间针对关键数字基础设施的一波集中而复杂的后门部署浪潮。",
+  "sources_hash": "bd4a93a75f4f6764",
+  "source_intro_hash": "0f1b0af4ca32f912",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:19:29.161Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

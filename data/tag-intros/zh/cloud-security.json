@@ -1,0 +1,10 @@
+{
+  "tag": "cloud-security",
+  "locale": "zh",
+  "intro": "本档案收录了2026年4月13日至4月20日期间的12篇文章，涵盖云安全事件与分析。报告详细记录了影响全球范围的2起严重、8起高危及2起信息级事件。在此期间，威胁行为体APT41活动尤为突出，其利用的漏洞包括CVSS评分为8.8的CVE-2026-33413。科技、政府、医疗和云服务行业是这些攻击活动的主要目标，其中云服务提供商受到了对手的重点关注。",
+  "sources_hash": "a9b1dc6a69acb8ab",
+  "source_intro_hash": "7fcc07ab214442b0",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:19:50.706Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

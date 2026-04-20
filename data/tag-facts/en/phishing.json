@@ -1,0 +1,39 @@
+{
+  "tag": "phishing",
+  "locale": "en",
+  "count": 35,
+  "date_range": {
+    "first": "2026-04-08",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["FakeWallet", "Storm-2755", "Tycoon 2FA"],
+  "top_cves": [
+    {
+      "id": "CVE-2023-22515"
+    },
+    {
+      "id": "CVE-2023-34048"
+    },
+    {
+      "id": "CVE-2023-46805"
+    },
+    {
+      "id": "CVE-2023-4966"
+    },
+    {
+      "id": "CVE-2024-21893"
+    }
+  ],
+  "top_sectors": ["hospitality", "finance", "multiple", "technology", "travel"],
+  "top_regions": ["Global", "Canada", "Latin america", "Mexico", "Ukraine"],
+  "severity_mix": {
+    "high": 29,
+    "medium": 6
+  },
+  "recent_excerpts": [
+    "Kaspersky discovered 22 malicious iOS apps on the official App Store impersonating crypto wallets like MetaMask and Coinbase, stealing seed phrases and private keys from over 1,000 victims.",
+    "A malicious Ledger Live app distributed via Apple's official App Store for macOS stole approximately $9.5 million from 50 victims by harvesting recovery phrases.",
+    "Windows now blocks untrusted .rdp files to stop Storm-1977 credential phishing. What the OS change covers, what admins must still configure, and how to hunt victims."
+  ],
+  "sources_hash": "d06b30c727bca1d5"
+}

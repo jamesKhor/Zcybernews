@@ -1,0 +1,9 @@
+{
+  "tag": "rat",
+  "locale": "en",
+  "intro": "This archive contains 8 articles from April 13 to 19, 2026, detailing high-severity remote access trojan (RAT) activity. The threat actors Mirax and REF6598 were prominently observed during this period. Their campaigns primarily targeted the cryptocurrency and financial-services sectors, with notable impact across Europe, Latin America, Spain, and Turkey. All eight reported incidents were classified as high severity, underscoring the significant risk posed by these distinct threat groups to critical economic infrastructure in those regions.",
+  "sources_hash": "2d50f07ead97ae0c",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:10:25.065Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

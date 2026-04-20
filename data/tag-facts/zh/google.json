@@ -1,0 +1,23 @@
+{
+  "tag": "google",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["creators", "media", "technology", "telecommunications"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "informational": 5,
+    "high": 2
+  },
+  "recent_excerpts": [
+    "Google 的 Android 17 Beta 4 版本引入了对 TLS 中后量子混合密钥协商的支持，并对应用程序施加了新的内存限制，这标志着在操作系统最终稳定版本发布之前的重要安全增强。",
+    "Google 宣布新的 Android 17 隐私政策限制了接触和位置数据访问，而其2025年广告安全报告详细说明了拦截83亿违反政策的广告和2490万广告商账户的暂停。",
+    "Google 已将一个用 Rust 编写的内存安全 DNS 解析器集成到 Pixel 手机中，以消除低级网络堆栈中的整个类别的漏洞。"
+  ],
+  "sources_hash": "ba3d9efeac93ab3c"
+}

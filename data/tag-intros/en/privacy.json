@@ -1,0 +1,9 @@
+{
+  "tag": "privacy",
+  "locale": "en",
+  "intro": "This tag archive covers 15 privacy-related incidents reported between April 12 and April 20, 2026, with the technology sector being the most frequently impacted. The events also notably affected education, government, telecommunications, and advertising. Geographically, the reports had a global scope with a specific focus on the United States. The severity of these incidents was mixed, comprising five informational reports, seven rated as medium severity, and three classified as high severity.",
+  "sources_hash": "a988cf46cb5017d0",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:08:27.535Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

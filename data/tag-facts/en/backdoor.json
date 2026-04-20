@@ -1,0 +1,23 @@
+{
+  "tag": "backdoor",
+  "locale": "en",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-17"
+  },
+  "top_actors": ["APT41"],
+  "top_cves": [],
+  "top_sectors": ["cloud-services", "technology"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "critical": 1,
+    "high": 5
+  },
+  "recent_excerpts": [
+    "A malicious buyer used the Flippa marketplace to acquire a plugin developer, injecting a backdoor into over 30 WordPress plugins with hundreds of thousands of installations to deploy hidden SEO spam.",
+    "The EssentialPlugin suite, comprising over 30 popular WordPress plugins, has been compromised to inject a backdoor granting attackers administrative access to thousands of websites.",
+    "Threat actors deploy VIPERTUNNEL, a Python backdoor, using a fake DLL and multi-stage obfuscated loader to establish stealthy SOCKS5 proxy tunnels for persistent network access."
+  ],
+  "sources_hash": "bd4a93a75f4f6764"
+}

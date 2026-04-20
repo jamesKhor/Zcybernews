@@ -1,0 +1,9 @@
+{
+  "tag": "ai",
+  "locale": "en",
+  "intro": "Between April 8 and April 20, 2026, ZCyberNews published 22 articles tagged with AI. The threat actor Pushpaganda was the most frequently covered. The reporting detailed a range of incidents, with nine informational alerts, nine high-severity reports, three medium-severity items, and one critical bulletin. These events primarily impacted the critical_infrastructure, finance, government, manufacturing, and technology sectors. Geographically, the affected regions included the United states, Asia, Australia, Canada, and Japan.",
+  "sources_hash": "209304035c4b62c9",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:16:26.130Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

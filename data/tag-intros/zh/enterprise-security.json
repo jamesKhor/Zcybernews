@@ -1,0 +1,10 @@
+{
+  "tag": "enterprise-security",
+  "locale": "zh",
+  "intro": "本档案收录了2026年4月13日至18日期间企业安全威胁的最新报道。五篇文章详述了四项关键漏洞和一份信息通报。其中最严重的漏洞包括CVSS评分为9.9的CVE-2026-27681以及评分为9.8的CVE-2025-54987。这些漏洞主要针对企业、政府和技术领域，反映出该时期攻击力量点集中于关键基础设施和公司网络。",
+  "sources_hash": "597fa6ffde42856e",
+  "source_intro_hash": "364cfd3928687154",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:20:33.529Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

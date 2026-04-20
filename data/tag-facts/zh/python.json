@@ -1,0 +1,28 @@
+{
+  "tag": "python",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-16"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-39987",
+      "cvss": 9.3
+    }
+  ],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "high": 2,
+    "critical": 3
+  },
+  "recent_excerpts": [
+    "威胁行为者正在利用 Marimo 反应式 Python 笔记本框架中的一个关键漏洞来部署 NKAbuse 恶意软件的新变种，使用 Hugging Face Spaces 作为跨平台后门的分发点。",
+    "Marimo 笔记本框架中存在一个严重的未经身份验证的远程代码执行漏洞，在公开披露后九小时内被攻击者武器化，突显了快速漏洞开发。",
+    "Marimo Python笔记本中的关键预认证远程代码执行漏洞（CVE-2026-39987）在公开披露后10小时内被野外利用，对数据科学环境构成严重风险。"
+  ],
+  "sources_hash": "72c8abcc72834ebe"
+}

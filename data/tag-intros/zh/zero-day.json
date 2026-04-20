@@ -1,0 +1,10 @@
+{
+  "tag": "zero-day",
+  "locale": "zh",
+  "intro": "2026年4月12日至19日期间，技术行业成为一波集中零日漏洞利用攻击的主要目标，相关活动记录达24篇。威胁行为者Chaotic Eclipse和Interlock被观察到利用包括CVE-2026-34621（CVSS 8.6）、CVE-2026-32183（CVSS 7.5）和CVE-2026-32201（CVSS 6.5）在内的漏洞，以及较旧的CVE-2024-20662和CVE-2024-21412。攻击范围涵盖加密货币、企业、政府和医疗保健领域，波及全球并特别聚焦吉尔吉斯斯坦。这些事件的严重性十分突出，在已记录的案例中，12起被评为危急，11起为高危。",
+  "sources_hash": "6b11de26c2495774",
+  "source_intro_hash": "bb17ce5cd4d6ac94",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:22:59.445Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

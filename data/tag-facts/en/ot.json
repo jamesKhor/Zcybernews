@@ -1,0 +1,28 @@
+{
+  "tag": "ot",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "critical-infrastructure",
+    "energy",
+    "industrial",
+    "building automation",
+    "engineering"
+  ],
+  "top_regions": ["Global", "North-america", "United states"],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "A new malware family named ZionSiphon is designed to sabotage water treatment and desalination plants by manipulating industrial control systems.",
+    "A global wave of email-borne worms, driven by a single piece of malware, targeted industrial control systems (ICS) in Q4 2025, marking a significant shift in OT threats.",
+    "Kaspersky data shows malware blocked on 33.3% of industrial control system computers in Q4 2025, with internet threats and removable media as top infection vectors."
+  ],
+  "sources_hash": "8821bc6063620412"
+}

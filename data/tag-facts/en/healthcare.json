@@ -1,0 +1,28 @@
+{
+  "tag": "healthcare",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-16"
+  },
+  "top_actors": ["Rhysida", "UAC-0247"],
+  "top_cves": [],
+  "top_sectors": [
+    "healthcare",
+    "Healthcare",
+    "Government",
+    "research",
+    "technology"
+  ],
+  "top_regions": ["Netherlands", "Ukraine", "United states"],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Cookeville Regional Medical Center confirms a 2025 ransomware attack by the Rhysida group compromised the data of 337,000 individuals after the theft of 500GB of files.",
+    "The UAC-0247 threat actor is actively targeting Ukrainian municipal healthcare and government bodies, deploying malware to steal browser data, WhatsApp sessions, and credentials while moving laterally",
+    "Dutch healthcare IT provider ChipSoft was hit by a ransomware attack, forcing it to take patient and provider portals offline, disrupting critical medical administration across the Netherlands."
+  ],
+  "sources_hash": "a9029f440f5d0996"
+}

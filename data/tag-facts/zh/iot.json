@@ -1,0 +1,50 @@
+{
+  "tag": "iot",
+  "locale": "zh",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-04-18"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-22898",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-4682",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-5057",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2024-3721",
+      "cvss": 6.3
+    },
+    {
+      "id": "CVE-2023-33538"
+    }
+  ],
+  "top_sectors": [
+    "individuals",
+    "logistics",
+    "residential",
+    "telecommunications",
+    "transportation"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "high": 3,
+    "medium": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "CVE-2026-5057，CVSS 评分为 7.5，暴露 ATEN Unizon 于未认证的拒绝服务攻击，通过其 RPC 服务，允许远程攻击者使设备管理平台崩溃。",
+    "HP DeskJet 2855e 打印机中存在一个基于栈的缓冲区溢出漏洞（CVE-2026-4682），允许网络邻近的攻击者在无需认证的情况下执行任意代码，CVSS 评分为 8.8。",
+    "一种新的 Mirai 僵尸网络变种 'Nexcorium'，正在利用 TBK DVR 和生命周期结束的 TP-Link 路由器中的命令注入漏洞（CVE-2024-3721）来征召设备加入分布式拒绝服务（DDoS）攻击群。"
+  ],
+  "sources_hash": "3f090677246c36c3"
+}

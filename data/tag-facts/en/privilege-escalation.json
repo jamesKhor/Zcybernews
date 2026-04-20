@@ -1,0 +1,51 @@
+{
+  "tag": "privilege-escalation",
+  "locale": "en",
+  "count": 15,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Chaotic Eclipse"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-5490",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-25203",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-33104",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-34054",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-5424",
+      "cvss": 7.8
+    }
+  ],
+  "top_sectors": [
+    "education",
+    "digital signage",
+    "enterprise",
+    "government",
+    "healthcare"
+  ],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 12,
+    "critical": 2,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "CVE-2026-25203, a CVSS 7.8 local privilege escalation flaw in Samsung MagicINFO 9 Server, allows authenticated attackers to gain SYSTEM privileges by exploiting incorrect default permissions on a serv",
+    "CVE-2026-5424, a flaw in Avast Premium Security's self-protection driver, allows local attackers to escalate to SYSTEM privileges.",
+    "A critical SQL injection vulnerability (CVE-2026-5490) in DriveLock endpoint security software allows authenticated attackers to escalate privileges and bypass the product's own security controls, acc"
+  ],
+  "sources_hash": "7e416acc2c367f1e"
+}

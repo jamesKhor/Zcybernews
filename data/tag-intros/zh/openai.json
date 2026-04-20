@@ -1,0 +1,10 @@
+{
+  "tag": "openai",
+  "locale": "zh",
+  "intro": "本档案收录了2026年4月12日至16日期间的七份报告，内容涉及与Lazarus Group相关的活动。这些事件的严重程度从信息性到高级不等，重点关注全球技术、人工智能及网络安全领域。报告中的分析详细阐述了这些行动的手法与影响，集中呈现了在此期间针对基础人工智能与安全基础设施所面临的威胁。",
+  "sources_hash": "c2f40609cb615bad",
+  "source_intro_hash": "13f4f7cade0b835e",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:21:46.901Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

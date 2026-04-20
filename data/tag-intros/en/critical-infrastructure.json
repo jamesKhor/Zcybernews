@@ -1,0 +1,9 @@
+{
+  "tag": "critical-infrastructure",
+  "locale": "en",
+  "intro": "This archive collects ten reports from April 12–17, 2026, detailing activity targeting critical infrastructure. The threat actor CyberAv3ngers was prominently observed in these incidents. The reporting indicates a concentration of attacks within the United states, focusing on the critical-infrastructure, energy, manufacturing, utilities, and water sectors. The severity of the documented threats varied, with a mix of four high, two critical, one medium, and three informational alerts characterizing the period's activity.",
+  "sources_hash": "c95351dd94a14574",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:09:12.746Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

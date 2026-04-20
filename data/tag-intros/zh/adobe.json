@@ -1,0 +1,10 @@
+{
+  "tag": "adobe",
+  "locale": "zh",
+  "intro": "我们于2026年4月12日至15日发布的七篇文章详细阐述了一系列Adobe漏洞，其中包括四个严重级别和三个高危级别问题。报道重点提及了具体缺陷，例如CVSS评分为8.6的CVE-2026-34621，以及CVE-2024-20662、CVE-2024-21412和CVE-2024-34102。这些报告记录了受影响软件的技术细节和修补指南，为此期间所需的安全更新提供了集中概述。",
+  "sources_hash": "43169494e2ecc4a2",
+  "source_intro_hash": "680f4d61ddbc92ba",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:19:13.779Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

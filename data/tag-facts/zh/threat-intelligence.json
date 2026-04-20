@@ -1,0 +1,23 @@
+{
+  "tag": "threat-intelligence",
+  "locale": "zh",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-19"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["critical-infrastructure", "technology"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 3,
+    "informational": 4
+  },
+  "recent_excerpts": [
+    "Qualys警告称，像Claude Mythos这样的AI代理可以将漏洞发现时间从几个月缩短到几小时，压缩补丁窗口，并以大量新的CVEs压倒安全团队。",
+    "Recorded Future 的 Insikt Group 概述了四种基本的集成工作流程，将威胁情报从一个孤立的信息源转变为安全运营的自动化组成部分，从而实现从被动防御到主动防御的转变。",
+    "Anthropic 已将其 Claude Mythos Preview AI 限制在约 50 家关键基础设施供应商中，理由是其先进的能力可以自主地发现和利用软件漏洞，引发了关于双重用途风险和进攻性网络能力的担忧。"
+  ],
+  "sources_hash": "f100b2a57d7d1468"
+}

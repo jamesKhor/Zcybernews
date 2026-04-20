@@ -1,0 +1,33 @@
+{
+  "tag": "android",
+  "locale": "en",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Mirax"],
+  "top_cves": [
+    {
+      "id": "CVE-2023-4863"
+    }
+  ],
+  "top_sectors": [
+    "cryptocurrency",
+    "individuals",
+    "technology",
+    "telecommunications"
+  ],
+  "top_regions": ["Europe", "Global", "Latin america", "Spain"],
+  "severity_mix": {
+    "high": 3,
+    "informational": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "Mirax Android RAT reached over 220,000 users via Meta ads, turning infected devices into SOCKS5 proxies for threat actors to route malicious traffic and steal data from Spanish-speaking victims.",
+    "Google's Android 17 Beta 4 release introduces support for post-quantum hybrid key agreement in TLS and imposes new memory limits on apps, marking significant security enhancements ahead of the OS's fi",
+    "Google announced new Android 17 privacy policies restricting contact and location data access, while its 2025 ad safety report details the blocking of 8.3 billion policy-violating ads and 24.9 million"
+  ],
+  "sources_hash": "2a1469be1518bdd3"
+}

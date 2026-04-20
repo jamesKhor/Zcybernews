@@ -317,3 +317,21 @@ Every phase is independently revertible. No schema migrations, no DB changes.
 ## 11. Status log
 
 - **2026-04-20** — Tracker drafted, P1 queued. Awaiting Raymond pickup.
+- **2026-04-20** — P1 shipped & deployed (commit `8345681` on main). Smoke data: EN 634 tags → 563 thin → 71 indexable; ZH 631 tags → 562 thin → 69 indexable. Total LLM workload ~140 intros, budget < $0.50.
+- **2026-04-20** — P2/P3/P4 scripts written by Raymond (this session). Files:
+  - `scripts/ai/prompts/tag-intro.ts` (Prompt Eng v1 — `TAG_INTRO_PROMPT_VERSION = "v1.0.0-2026-04-20"`)
+  - `scripts/tag-intros/types.ts`
+  - `scripts/tag-intros/aggregate-facts.ts` — `--limit N`, `--locale en|zh`
+  - `scripts/tag-intros/fact-check.ts` — CVE + actor + word-count + banned-phrase guard
+  - `scripts/tag-intros/generate-intros.ts` — Kimi provider, idempotent via `sources_hash`, retry ×2, `_rejected.json` log
+  - `scripts/tag-intros/translate-intros.ts` — Kimi provider, verbatim-preservation guard for CVE+actor, retry ×2
+  - `scripts/smoke-tag-facts.ts` — Tests A (shape + content consistency + hash stability + thin-tag leak), B (rejects hallucinated CVE), C (rejects banned phrase + word-count out-of-range + passes happy path)
+- **Operator gate (next)** — run the harness to validate on real content before bulk:
+  1. `npx tsx scripts/tag-intros/aggregate-facts.ts` — generates all ~140 fact sheets (no API calls, safe)
+  2. `npx tsx scripts/smoke-tag-facts.ts` — must print `✅ ALL SMOKE TESTS PASSED`
+  3. `npx tsx scripts/tag-intros/generate-intros.ts --limit 3` — 3 real Kimi calls (~$0.01)
+  4. Human review of the 3 EN intros in `data/tag-intros/en/*.json`
+  5. `npx tsx scripts/tag-intros/translate-intros.ts --limit 3` — 3 Kimi translate calls
+  6. Human review of the 3 ZH intros
+  7. On approval → bulk run (drop `--limit`), commit via existing content-only deploy path
+- **P5 handoff requirements** (blocker for render): `lib/tag-intros.ts` memo reader (mtime-keyed like `lib/content.ts`); `components/tags/TagIntro.tsx` (Ken design); tag page wired to render above grid; content-only deploy path already handles commits to `data/tag-intros/**` but needs the `NON_CONTENT` grep in `.github/workflows/deploy-vps.yml` updated to include `data/tag-intros/` + `data/tag-facts/` as content paths (verify before first bulk commit).

@@ -1,0 +1,24 @@
+{
+  "tag": "windows-server",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["education", "enterprise", "government"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 2,
+    "medium": 2,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。",
+    "微软确认2026年4月KB5082063安全更新导致部分Windows Server 2025设备启动进入BitLocker恢复，需要恢复密钥才能重新获得访问权限。",
+    "微软解决了一个已知问题，该问题导致Windows Server 2019和2022系统自动且意外地升级到Windows Server 2025，这个问题与有缺陷的更新通道配置有关。"
+  ],
+  "sources_hash": "ac477477de94b2f3"
+}

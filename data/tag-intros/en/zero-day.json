@@ -1,0 +1,9 @@
+{
+  "tag": "zero-day",
+  "locale": "en",
+  "intro": "The technology sector was a primary target in a concentrated wave of zero-day exploitation from April 12-19, 2026, with 24 articles detailing the activity. The threat actors Chaotic Eclipse and Interlock were observed leveraging vulnerabilities including CVE-2026-34621 (CVSS 8.6), CVE-2026-32183 (CVSS 7.5), and CVE-2026-32201 (CVSS 6.5), alongside older CVEs like CVE-2024-20662 and CVE-2024-21412. Attacks spanned the cryptocurrency, enterprise, government, and healthcare sectors, with a global footprint and notable focus on Kyrgyzstan. The severity of these incidents was pronounced, with 12 rated critical and 11 high among the documented cases.",
+  "sources_hash": "6b11de26c2495774",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T10:59:17.780Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

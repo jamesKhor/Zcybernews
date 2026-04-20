@@ -1,0 +1,9 @@
+{
+  "tag": "windows-server",
+  "locale": "en",
+  "intro": "Between April 13 and April 20, 2026, ZCyberNews published five articles detailing vulnerabilities and threats targeting Windows Server environments. The reporting covered a mix of security issues, including one critical, two high, and two medium severity events. These incidents demonstrated a global impact, with the education, enterprise, and government sectors being the most frequently affected. The coverage reflects the ongoing focus required to secure foundational enterprise infrastructure against a diverse range of security challenges during this period.",
+  "sources_hash": "ac477477de94b2f3",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:15:31.745Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

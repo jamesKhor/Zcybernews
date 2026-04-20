@@ -1,0 +1,22 @@
+{
+  "tag": "evasion",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-17"
+  },
+  "top_actors": ["Payouts King"],
+  "top_cves": [],
+  "top_sectors": ["multiple"],
+  "top_regions": ["Czech republic"],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Payouts King 勒索软件团伙正在部署开源 QEMU 模拟器，在被入侵的主机上创建隐藏的虚拟机，建立持久的反向 SSH 后门，以规避传统的端点检测。",
+    "思科Talos研究人员识别出自2025年12月以来活跃的PowMix僵尸网络，针对捷克工作人员使用随机化C2信标以规避检测并部署额外的有效载荷。",
+    "新发现的基于 Rust 的远程访问木马（RAT）工具包 SpankRAT，滥用 Windows Explorer 进程来绕过基于声誉的安全措施，并维持对被入侵系统的持续、低检测访问。"
+  ],
+  "sources_hash": "54873e3036fd81a3"
+}

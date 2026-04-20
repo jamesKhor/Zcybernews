@@ -1,0 +1,9 @@
+{
+  "tag": "healthcare",
+  "locale": "en",
+  "intro": "Between April 12 and 16, 2026, ZCyberNews documented five high-severity incidents. The threat actors Rhysida and UAC-0247 were prominently observed in these attacks. The healthcare sector was the most frequently targeted, followed by Government, research, and technology entities. Geographically, the incidents primarily affected organizations in the Netherlands, Ukraine, and the United States. This cluster of activity underscores a concentrated period of significant cyber threat focus on critical infrastructure sectors during this timeframe.",
+  "sources_hash": "a9029f440f5d0996",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T10:59:31.251Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "ai-security",
+  "locale": "en",
+  "count": 37,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["OpenClaw"],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "cybersecurity",
+    "healthcare",
+    "ai-development",
+    "cloud services"
+  ],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 17,
+    "medium": 6,
+    "critical": 4,
+    "informational": 10
+  },
+  "recent_excerpts": [
+    "Qualys warns that AI agents like Claude Mythos can cut vulnerability discovery time from months to hours, compressing the patch window and overwhelming security teams with a surge of new CVEs.",
+    "Anthropic restricts access to its Claude Mythos Preview AI model, citing its ability to automate vulnerability discovery and exploit chain creation, and launches Project Glasswing to find and patch fl",
+    "The Cloud Security Alliance warns that Anthropic's Claude Mythos model will trigger an 'AI vulnerability storm,' forcing CISOs to manage a 10x surge in code flaws and novel exploit techniques within 1"
+  ],
+  "sources_hash": "6a518bf501ebd797"
+}

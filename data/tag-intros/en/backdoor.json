@@ -1,0 +1,9 @@
+{
+  "tag": "backdoor",
+  "locale": "en",
+  "intro": "Between April 13 and April 17, 2026, ZCyberNews published six articles detailing high and critical severity backdoor threats. The activity primarily involved the threat actor APT41, which targeted the cloud-services and technology sectors with a global impact. The reporting covered one critical and five high-severity incidents, illustrating a concentrated wave of sophisticated backdoor deployments aimed at critical digital infrastructure during this period.",
+  "sources_hash": "bd4a93a75f4f6764",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:17:41.728Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

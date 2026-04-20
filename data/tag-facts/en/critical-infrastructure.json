@@ -1,0 +1,31 @@
+{
+  "tag": "critical-infrastructure",
+  "locale": "en",
+  "count": 10,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-17"
+  },
+  "top_actors": ["CyberAv3ngers"],
+  "top_cves": [],
+  "top_sectors": [
+    "critical-infrastructure",
+    "energy",
+    "manufacturing",
+    "utilities",
+    "water"
+  ],
+  "top_regions": ["United states"],
+  "severity_mix": {
+    "informational": 3,
+    "high": 4,
+    "critical": 2,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "New U.S. Coast Guard cybersecurity rules under the Maritime Transportation Security Act mandate third-party audits, OT-specific security plans, and dedicated personnel, providing a regulatory model fo",
+    "Security researchers propose extending two-factor authentication (2FA) principles to physical access control systems for critical infrastructure, creating a hybrid defense against credential-based att",
+    "Senior U.S. government officials argue that effective national cyber defense is impossible without faster, deeper collaboration with private industry, citing shared infrastructure and threat intellige"
+  ],
+  "sources_hash": "c95351dd94a14574"
+}

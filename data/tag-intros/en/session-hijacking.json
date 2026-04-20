@@ -1,0 +1,9 @@
+{
+  "tag": "session-hijacking",
+  "locale": "en",
+  "intro": "Our five articles from April 11 to 19, 2026, detail recent session hijacking activity. The threat actor Storm-2755 was identified in these incidents, which primarily targeted organizations in Canada. The finance, human resources, and payroll sectors were the most affected. The reported severity of these events was predominantly high, with three classified as high and one as medium. This coverage provides analysis of the techniques and impacts associated with these credential-focused attacks.",
+  "sources_hash": "4befe4e37e201a57",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:18:07.442Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

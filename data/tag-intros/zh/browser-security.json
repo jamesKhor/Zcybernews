@@ -1,0 +1,10 @@
+{
+  "tag": "browser-security",
+  "locale": "zh",
+  "intro": "本档案收录了2026年4月11日至19日期间七份关于浏览器安全的报告，重点关注针对澳大利亚、加拿大、新西兰、英国和美国用户的活动。在此期间，威胁行为者Pushpaganda被显著观测到。报告详述了一系列事件，所涵盖威胁的严重程度包括两起高级别、两起中级别、一起严重级别以及一起信息性警报。",
+  "sources_hash": "e58f73891b471f01",
+  "source_intro_hash": "3c386245e9e54042",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:19:40.087Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

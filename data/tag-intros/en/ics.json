@@ -1,0 +1,9 @@
+{
+  "tag": "ics",
+  "locale": "en",
+  "intro": "This archive collects eight reports from April 12–17, 2026, detailing Industrial Control Systems (ICS) security incidents. The coverage is dominated by high-severity events, with six high, one critical, and one medium alert. The reported threats primarily targeted critical infrastructure, with the energy, manufacturing, industrial, and utilities sectors most affected. Geographically, the incidents had a global footprint with notable focus on the United States and North America. The articles document specific vulnerabilities and threat actor activities impacting these essential operational environments.",
+  "sources_hash": "3caf4ee64c64fb38",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:10:05.378Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

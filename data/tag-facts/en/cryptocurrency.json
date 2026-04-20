@@ -1,0 +1,33 @@
+{
+  "tag": "cryptocurrency",
+  "locale": "en",
+  "count": 11,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["FakeWallet", "Omnistealer"],
+  "top_cves": [
+    {
+      "id": "CVE-2023-4863"
+    }
+  ],
+  "top_sectors": ["cryptocurrency", "financial-services", "telecommunications"],
+  "top_regions": [
+    "Canada",
+    "Europe",
+    "Kyrgyzstan",
+    "North america",
+    "United kingdom"
+  ],
+  "severity_mix": {
+    "high": 9,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "Kaspersky discovered 22 malicious iOS apps on the official App Store impersonating crypto wallets like MetaMask and Coinbase, stealing seed phrases and private keys from over 1,000 victims.",
+    "Omnistealer malware, detailed by Malwarebytes, steals credentials from 1Password, Bitwarden, NordPass, and Exodus crypto wallets, using the Solana blockchain for stealthy command-and-control communica",
+    "A malicious Ledger Live app distributed via Apple's official App Store for macOS stole approximately $9.5 million from 50 victims by harvesting recovery phrases."
+  ],
+  "sources_hash": "28c574f77d4861cb"
+}

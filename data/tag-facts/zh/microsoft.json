@@ -1,0 +1,53 @@
+{
+  "tag": "microsoft",
+  "locale": "zh",
+  "count": 33,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["Storm-2755"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33104",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-34054",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-26179",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2026-32183",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2026-32201",
+      "cvss": 6.5
+    }
+  ],
+  "top_sectors": [
+    "multiple",
+    "cross-sector",
+    "education",
+    "enterprise",
+    "federal government"
+  ],
+  "top_regions": ["Global", "Canada", "Japan"],
+  "severity_mix": {
+    "high": 16,
+    "critical": 5,
+    "low": 1,
+    "medium": 9,
+    "informational": 2
+  },
+  "recent_excerpts": [
+    "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。",
+    "CISA 命令联邦机构在 2026 年 4 月 28 日之前修补 CVE-2009-0238，这是一个 17 岁的 Microsoft Office Excel 远程代码执行漏洞，由于正在被积极利用。",
+    "最近的 Microsoft Edge 浏览器更新引入了一个错误，破坏了 Microsoft Teams 桌面客户端中聊天内的右键粘贴功能，影响了用户的工作流程。"
+  ],
+  "sources_hash": "b3d10231e897c7bf"
+}

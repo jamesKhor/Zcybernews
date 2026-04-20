@@ -1,0 +1,10 @@
+{
+  "tag": "endpoint-security",
+  "locale": "zh",
+  "intro": "本档案收录了2026年4月15日至18日期间的五份报告，聚焦于终端安全。报告内容详述了涉及CVE-2026-5490（CVSS评分8.8的高危漏洞）与CVE-2026-5492（评分6.5）的相关活动。已通报的事件主要影响教育、政府、医疗和公用事业领域的组织。记录事件的严重程度包括两起高危、一起中危以及两起信息类告警，反映了该阶段终端安全面临的多层次挑战。",
+  "sources_hash": "96a1d76fb66c0c79",
+  "source_intro_hash": "7744ce5007de4fff",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:20:29.011Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

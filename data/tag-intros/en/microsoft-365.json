@@ -1,0 +1,9 @@
+{
+  "tag": "microsoft-365",
+  "locale": "en",
+  "intro": "The corporate, finance, and technology sectors globally faced a concentrated wave of high-severity threats targeting Microsoft 365 environments between April 16 and 19, 2026. All five documented incidents were assessed as high severity, involving distinct threat actors. The activity was attributed to Tycoon 2FA and W3LL, who conducted campaigns affecting multiple sectors. This cluster of attacks underscores a significant focus on a core enterprise productivity suite, with widespread implications for organizations operating across these critical industries.",
+  "sources_hash": "7c6f6bce5a9dc463",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:14:56.177Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,22 @@
+{
+  "tag": "microsoft-365",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Tycoon 2FA", "W3LL"],
+  "top_cves": [],
+  "top_sectors": ["multiple", "corporate", "finance", "technology"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "A critical compatibility issue between Google Chrome version 147 and Microsoft 365 web services is preventing user authentication and application loading, disrupting access for an unknown number of or",
+    "Proofpoint researchers detail how threat actors exploit Microsoft 365 mailbox rules to exfiltrate data and maintain persistence, bypassing traditional email security controls and targeting organizatio",
+    "The Tycoon 2FA phishing group has abandoned its namesake toolkit, adopting device code phishing to bypass multi-factor authentication and compromise Microsoft 365 and Gmail accounts."
+  ],
+  "sources_hash": "7c6f6bce5a9dc463"
+}

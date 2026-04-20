@@ -1,0 +1,9 @@
+{
+  "tag": "botnet",
+  "locale": "en",
+  "intro": "Between April 14 and 2026, and April 18, 2026, ZCyberNews published seven articles tracking botnet activity. The threat actor W3LL was prominently observed, exploiting vulnerabilities including CVE-2024-3721 and CVE-2023-33538. These campaigns targeted a wide range of sectors, from corporate and finance to technology and residential users, with a global footprint noted and specific impact in the Czech Republic. The reported incidents varied in severity, comprising two medium, four high, and one critical alert, illustrating the persistent and varied risk posed by these coordinated networks.",
+  "sources_hash": "98b9cd04f821673d",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:11:22.690Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,30 @@
+{
+  "tag": "ot-security",
+  "locale": "zh",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "critical-infrastructure",
+    "manufacturing",
+    "energy",
+    "industrial",
+    "utilities"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "informational": 4,
+    "critical": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Axonius 更新了其 Asset Cloud 平台，增加了 AI 驱动的暴露修复，添加了 IoT/OT 资产管理，并引入了资产信任标准以量化安全姿态。",
+    "安全研究人员提议将双因素认证（2FA）原则扩展到关键基础设施的物理访问控制系统，创建一种混合防御机制，以抵御针对操作技术的基于凭证的攻击。",
+    "西门子、施耐德电气和其他六家主要工业控制系统供应商发布了安全通告，解决了数十个漏洞，包括西门子SIMATIC和施耐德电气EcoStruxure产品中的关键缺陷。"
+  ],
+  "sources_hash": "25e5305d5c6be205"
+}

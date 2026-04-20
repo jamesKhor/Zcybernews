@@ -1,0 +1,28 @@
+{
+  "tag": "iran",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-13"
+  },
+  "top_actors": ["CyberAv3ngers"],
+  "top_cves": [],
+  "top_sectors": [
+    "water",
+    "civil-society",
+    "energy",
+    "government",
+    "industrial"
+  ],
+  "top_regions": ["United states", "Iran"],
+  "severity_mix": {
+    "high": 4
+  },
+  "recent_excerpts": [
+    "A criminal group deployed the self-propagating CanisterWiper malware against Iranian entities, exploiting misconfigured cloud storage to spread and destroy data.",
+    "A state-directed internet blackout in Iran has surpassed 1,000 cumulative hours, marking a significant escalation in digital censorship and control tactics.",
+    "The FBI disrupted a Russian GRU-backed router hijacking campaign while Iranian threat actors continue exploiting PLCs across US infrastructure."
+  ],
+  "sources_hash": "3770e052131c1dad"
+}

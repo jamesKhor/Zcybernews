@@ -1,0 +1,33 @@
+{
+  "tag": "endpoint-security",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-04-18"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-5490",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-5492",
+      "cvss": 6.5
+    }
+  ],
+  "top_sectors": ["education", "government", "healthcare", "utilities"],
+  "top_regions": [],
+  "severity_mix": {
+    "medium": 1,
+    "high": 2,
+    "informational": 2
+  },
+  "recent_excerpts": [
+    "DriveLock 终端安全软件中的目录遍历漏洞（CVE-2026-5492）允许经过身份验证的攻击者读取任意文件，可能会暴露敏感的系统信息和配置数据。",
+    "根据零日计划，DriveLock 终端安全软件中的关键SQL注入漏洞（CVE-2026-5490）允许经过身份验证的攻击者提升权限并绕过产品自身的安全控制。",
+    "SentinelOne 概述了其 AI原生安全平台，利用设备上的模型和全球数据湖，以机器速度自动检测和响应威胁。"
+  ],
+  "sources_hash": "96a1d76fb66c0c79"
+}

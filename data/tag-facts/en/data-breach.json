@@ -1,0 +1,35 @@
+{
+  "tag": "data-breach",
+  "locale": "en",
+  "count": 19,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["ShinyHunters", "Rhysida"],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "hospitality",
+    "technology",
+    "travel",
+    "education"
+  ],
+  "top_regions": [
+    "Europe",
+    "North america",
+    "United states",
+    "Global",
+    "Mexico"
+  ],
+  "severity_mix": {
+    "high": 15,
+    "medium": 3
+  },
+  "recent_excerpts": [
+    "TheGentlemen ransomware group claims a total infrastructure breach of Atlassian partner Adaptavist, stealing source code and customer data from clients like NASA and Visa.",
+    "Vercel confirms a breach exposing limited customer credentials after attackers compromised an employee's account via a third-party AI tool, Context.ai.",
+    "The Los Angeles Police Department reports a breach of 7.7 terabytes and 337,000 files from a city attorney's digital storage system, exposing sensitive law enforcement data."
+  ],
+  "sources_hash": "45540147918ca647"
+}

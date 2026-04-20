@@ -1,0 +1,27 @@
+{
+  "tag": "defender",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33825"
+    }
+  ],
+  "top_sectors": ["multiple"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "Threat actors are actively exploiting three recently leaked Windows Defender privilege escalation vulnerabilities, using public proof-of-concept code to gain SYSTEM privileges on enterprise systems.",
+    "A security researcher has published proof-of-concept exploits for two new zero-day flaws in Microsoft Defender, dubbed RedSun and UnDefend.",
+    "Threat actors are actively exploiting three zero-day vulnerabilities in Microsoft Defender, codenamed BlueHammer, RedSun, and UnDefend, to gain SYSTEM privileges."
+  ],
+  "sources_hash": "a74cb1d5d94ae979"
+}

@@ -1,0 +1,28 @@
+{
+  "tag": "policy",
+  "locale": "zh",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "public-sector",
+    "technology",
+    "telecommunications"
+  ],
+  "top_regions": ["United states", "Global"],
+  "severity_mix": {
+    "informational": 5,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。",
+    "NIST 已经根本改变了其 CVE 丰富过程，仅优先考虑高影响漏洞进行详细分析，因为提交数量的激增，给下游漏洞管理带来了压力。",
+    "美国立法者就人工智能举行了一次保密简报会，表达了对其可能造成社会破坏、国家安全威胁以及发展速度超过监管的深刻担忧。"
+  ],
+  "sources_hash": "6af0f7be04ba3073"
+}

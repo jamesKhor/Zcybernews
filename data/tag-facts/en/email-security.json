@@ -1,0 +1,30 @@
+{
+  "tag": "email-security",
+  "locale": "en",
+  "count": 10,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-19"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "hospitality",
+    "sports",
+    "any-email-sender",
+    "automotive"
+  ],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "informational": 2,
+    "medium": 3,
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Bitdefender has integrated continuous email threat protection into its GravityZone platform, combining endpoint detection and response (EDR) with email security to combat phishing, BEC, and ransomware",
+    "DavMail 6.6.0 addresses a security alert for a regex vulnerability and updates OAuth handling to align with Microsoft changes, impacting users bridging mail clients to Exchange/Office 365.",
+    "Google has enabled client-side end-to-end encryption for Gmail on Android and iOS for select enterprise customers, allowing them to send and receive encrypted messages natively within the mobile app."
+  ],
+  "sources_hash": "ad056007f6e53f35"
+}

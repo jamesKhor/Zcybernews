@@ -1,0 +1,35 @@
+{
+  "tag": "law-enforcement",
+  "locale": "en",
+  "count": 13,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["W3LL", "W3LL Team"],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "corporate",
+    "cryptocurrency",
+    "education",
+    "entertainment"
+  ],
+  "top_regions": [
+    "United states",
+    "North america",
+    "Canada",
+    "Europe",
+    "Florida"
+  ],
+  "severity_mix": {
+    "high": 10,
+    "medium": 3
+  },
+  "recent_excerpts": [
+    "Florida law enforcement is investigating how a student used ChatGPT to craft a threat of a campus shooting, part of a broader pattern where AI chatbots fail to block dangerous content.",
+    "The Los Angeles Police Department reports a breach of 7.7 terabytes and 337,000 files from a city attorney's digital storage system, exposing sensitive law enforcement data.",
+    "Kamerin Stokes, a participant in the 2022 DraftKings credential stuffing attack, has been sentenced to time served and three years of supervised release for continuing to sell stolen accounts after pl"
+  ],
+  "sources_hash": "a55ce48d5b49862e"
+}

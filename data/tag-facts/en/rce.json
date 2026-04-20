@@ -1,0 +1,44 @@
+{
+  "tag": "rce",
+  "locale": "en",
+  "count": 18,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2025-54987",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2025-0520",
+      "cvss": 9.4
+    },
+    {
+      "id": "CVE-2026-39987",
+      "cvss": 9.3
+    },
+    {
+      "id": "CVE-2026-22898",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-4682",
+      "cvss": 8.8
+    }
+  ],
+  "top_sectors": ["academia", "healthcare", "industrial", "research"],
+  "top_regions": [],
+  "severity_mix": {
+    "critical": 12,
+    "high": 6
+  },
+  "recent_excerpts": [
+    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution.",
+    "Syncthing versions before 1.28.0 contain a critical vulnerability, CVE-2026-XXXXX, enabling remote code execution on the Syncthing relay server infrastructure.",
+    "A critical vulnerability (CVE-2026-32861) in NI LabVIEW allows remote attackers to execute arbitrary code by tricking a user into opening a malicious LVCLASS file, with a CVSS score of 7.8."
+  ],
+  "sources_hash": "98001604288a88bb"
+}

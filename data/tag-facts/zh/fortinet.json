@@ -1,0 +1,27 @@
+{
+  "tag": "fortinet",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-18"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-39808"
+    }
+  ],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "critical": 4,
+    "high": 1
+  },
+  "recent_excerpts": [
+    "针对CVE-2026-39808的PoC漏洞利用代码已经发布，这是一个Fortinet FortiSandbox中的关键命令注入漏洞。该漏洞允许未经身份验证的攻击者以root身份执行任意操作系统命令。",
+    "Fortinet 发布了 11 个漏洞的补丁，包括 FortiSandbox 和 FortiAnalyzer/FortiManager 中的两个严重漏洞，需要网络管理员立即关注。",
+    "CISA 将其已知被利用漏洞目录中添加了六个 Fortinet、Microsoft 和 Adobe 软件中的漏洞，警告存在活跃的野外攻击，需要紧急修补。"
+  ],
+  "sources_hash": "1f6cbd18513aacd0"
+}

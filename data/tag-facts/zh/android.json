@@ -1,0 +1,33 @@
+{
+  "tag": "android",
+  "locale": "zh",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Mirax"],
+  "top_cves": [
+    {
+      "id": "CVE-2023-4863"
+    }
+  ],
+  "top_sectors": [
+    "cryptocurrency",
+    "individuals",
+    "technology",
+    "telecommunications"
+  ],
+  "top_regions": ["Europe", "Global", "Latin america", "Spain"],
+  "severity_mix": {
+    "high": 3,
+    "informational": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "Mirax Android RAT 通过 Meta 广告感染了超过 220,000 用户，将受感染的设备变成 SOCKS5 代理，供威胁行为者路由恶意流量并从讲西班牙语的受害者那里窃取数据。",
+    "Google 的 Android 17 Beta 4 版本引入了对 TLS 中后量子混合密钥协商的支持，并对应用程序施加了新的内存限制，这标志着在操作系统最终稳定版本发布之前的重要安全增强。",
+    "Google 宣布新的 Android 17 隐私政策限制了接触和位置数据访问，而其2025年广告安全报告详细说明了拦截83亿违反政策的广告和2490万广告商账户的暂停。"
+  ],
+  "sources_hash": "2a1469be1518bdd3"
+}

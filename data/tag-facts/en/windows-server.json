@@ -1,0 +1,24 @@
+{
+  "tag": "windows-server",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["education", "enterprise", "government"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 2,
+    "medium": 2,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Microsoft released out-of-band updates for Windows Server 2019 and 2022 after April 2026 security patches caused boot failures and domain controller authentication issues, forcing some administrators",
+    "Microsoft confirms the April 2026 KB5082063 security update is causing some Windows Server 2025 devices to boot into BitLocker recovery, requiring a recovery key to regain access.",
+    "Microsoft resolves a known issue causing Windows Server 2019 and 2022 systems to automatically and unexpectedly upgrade to Windows Server 2025, a problem linked to a flawed update channel configuratio"
+  ],
+  "sources_hash": "ac477477de94b2f3"
+}

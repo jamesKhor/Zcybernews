@@ -1,0 +1,10 @@
+{
+  "tag": "cybercrime",
+  "locale": "zh",
+  "intro": "2026年4月13日至19日期间，金融服务行业及多个其他领域遭遇了一波集中的网络犯罪活动。本档案收录的七份报告详述了这以高严重性事件为主的一周，其中包含五起高危警报，以及一起中危警报和一起信息通告。此期间的威胁态势呈现全球化运作特征，其中Triad Nexus和W3LL Team被确认为突出的威胁行为者。所汇总的分析报告聚焦揭示了其攻击手法，以及针对关键行业的更广泛犯罪活动。",
+  "sources_hash": "c6acd147d1e9733c",
+  "source_intro_hash": "965b4d821a67faa3",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:20:12.398Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

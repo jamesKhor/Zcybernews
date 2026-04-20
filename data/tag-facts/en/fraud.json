@@ -1,0 +1,36 @@
+{
+  "tag": "fraud",
+  "locale": "en",
+  "count": 11,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-18"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "financial-services",
+    "cryptocurrency",
+    "entertainment",
+    "retail",
+    "e-commerce"
+  ],
+  "top_regions": [
+    "United states",
+    "Global",
+    "Canada",
+    "Europe",
+    "North america"
+  ],
+  "severity_mix": {
+    "informational": 2,
+    "medium": 4,
+    "high": 4
+  },
+  "recent_excerpts": [
+    "MITRE released the Fight Fraud Framework (F3), a unified knowledge base mapping the intersection of cyber attack tactics and financial fraud, aiming to close the operational gap between security and f",
+    "The Financial Industry Regulatory Authority has established a new intelligence hub to centralize analysis of cyber threats and fraud targeting broker-dealers and capital markets.",
+    "Recorded Future details how threat actors exploit corporate identity verification gaps, pivoting from cashing stolen checks to orchestrating AI-powered shopping scams that impersonate legitimate busin"
+  ],
+  "sources_hash": "359497e91fd9725f"
+}

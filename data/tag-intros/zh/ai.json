@@ -1,0 +1,10 @@
+{
+  "tag": "ai",
+  "locale": "zh",
+  "intro": "2026年4月8日至4月20日期间，ZCyberNews发布了22篇标注为AI主题的文章。其中威胁行为者Pushpaganda的报道频率最高。相关报道详述了一系列事件，包括九条信息类警报、九份高危报告、三份中危报告以及一份关键安全公告。这些事件主要影响了关键基础设施、金融、政府、制造和科技行业。从地理分布看，受影响地区包括美国、亚洲、澳大利亚、加拿大和日本。",
+  "sources_hash": "209304035c4b62c9",
+  "source_intro_hash": "b2745a1c8c7da883",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:19:18.936Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

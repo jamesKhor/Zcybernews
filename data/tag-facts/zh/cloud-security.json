@@ -1,0 +1,35 @@
+{
+  "tag": "cloud-security",
+  "locale": "zh",
+  "count": 12,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["APT41"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33413",
+      "cvss": 8.8
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "government",
+    "healthcare",
+    "cloud services",
+    "cloud-services"
+  ],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 8,
+    "critical": 2,
+    "informational": 2
+  },
+  "recent_excerpts": [
+    "云安全联盟警告称Anthropic的Claude Mythos模型将引发一场'AI漏洞风暴'，迫使CISOs在18个月内管理代码缺陷和新颖利用技术的10倍激增。",
+    "据安全研究人员称，自由职业平台 Fiverr 通过配置错误的云存储桶暴露了敏感用户文件，包括税务文件和个人身份信息（PII），并且这些数据被 Google 搜索索引。",
+    "2024年的分析显示，68%的云安全漏洞源于被泄露或被遗弃的非人类身份，如服务账户和API密钥，而不是钓鱼或弱密码，突显了自动化凭证生命周期管理中的关键缺口。"
+  ],
+  "sources_hash": "a9b1dc6a69acb8ab"
+}

@@ -1,0 +1,10 @@
+{
+  "tag": "cryptocurrency",
+  "locale": "zh",
+  "intro": "2026年4月中旬，加密货币行业遭遇了一波集中攻击，共报告了11起高危及严重安全事件。这些攻击活动主要针对北美、欧洲、加拿大、英国和吉尔吉斯斯坦的组织，同时也波及金融服务和电信领域。活跃的威胁行为者包括FakeWallet和Omnistealer，它们利用了包括高危漏洞CVE-2023-4863在内的多个安全缺陷。这一系列事件凸显了数字资产平台及其在全球关键地区的互联服务提供商所面临的持续且聚焦的威胁。",
+  "sources_hash": "28c574f77d4861cb",
+  "source_intro_hash": "69bc76c8bf61143f",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:20:06.951Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

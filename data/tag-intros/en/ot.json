@@ -1,0 +1,9 @@
+{
+  "tag": "ot",
+  "locale": "en",
+  "intro": "Critical infrastructure and energy sectors were the primary targets of a concentrated series of operational technology incidents in mid-April 2026. All five documented events were assessed as high severity, with additional impacts noted across industrial, building automation, and engineering sectors globally. The activity had a significant footprint in North America, particularly the United States, though its scope was international. This cluster of high-severity attacks underscores a focused period of risk to essential systems controlling physical industrial processes.",
+  "sources_hash": "8821bc6063620412",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:15:01.760Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

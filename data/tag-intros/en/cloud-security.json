@@ -1,0 +1,9 @@
+{
+  "tag": "cloud-security",
+  "locale": "en",
+  "intro": "This archive contains 12 articles from April 13 to April 20, 2026, covering cloud security incidents and analysis. The reporting details a mix of 2 critical, 8 high, and 2 informational severity events affecting a global scope. The threat actor APT41 was prominently active during this period, exploiting vulnerabilities including CVE-2026-33413, which carries a CVSS score of 8.8. The technology, government, healthcare, and cloud services sectors were the primary targets of these campaigns, with cloud-services providers facing significant attention from adversaries.",
+  "sources_hash": "a9b1dc6a69acb8ab",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T10:59:54.686Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

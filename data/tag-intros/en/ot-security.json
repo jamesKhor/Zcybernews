@@ -1,0 +1,9 @@
+{
+  "tag": "ot-security",
+  "locale": "en",
+  "intro": "Critical infrastructure and manufacturing were the primary sectors impacted by operational technology security events reported between April 13 and April 17, 2026. The six articles in this period also covered incidents within energy, industrial, and utilities environments. The severity of these reports varied, with four classified as informational, alongside one critical and one medium-severity alert. This snapshot reflects a week of focused activity targeting industrial control systems and essential service networks.",
+  "sources_hash": "25e5305d5c6be205",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:13:15.678Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

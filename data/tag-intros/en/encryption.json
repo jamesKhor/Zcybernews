@@ -1,0 +1,9 @@
+{
+  "tag": "encryption",
+  "locale": "en",
+  "intro": "This archive contains seven articles from April 12 to 15, 2026, covering encryption-related cybersecurity developments. The reporting includes one critical and one high-severity incident, alongside two medium and three informational reports. The affected scope was global, with all sectors noted, particularly technology and telecommunications. The articles detail technical vulnerabilities, policy debates, and implementation challenges surrounding encryption standards during this period.",
+  "sources_hash": "0f061e9bd0121a51",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:17:16.750Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,10 @@
+{
+  "tag": "network-security",
+  "locale": "zh",
+  "intro": "本档案收录了 5 篇带有「network-security」标签的文章，发布时间从2026年4月12日至2026年4月19日。其中包含3 篇严重、1 篇中危、1 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "fc8b2a62efb2c504",
+  "source_intro_hash": "aec163c43307cdb9",
+  "model": "template:sparse",
+  "generated_at": "2026-04-20T11:21:42.924Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,9 @@
+{
+  "tag": "iran",
+  "locale": "en",
+  "intro": "Between April 12 and April 13, 2026, ZCyberNews published five reports on cyber activity linked to Iran. The threat actor CyberAv3ngers was prominently observed in these incidents, which were all assessed as high severity. The operations primarily affected the water, civil-society, energy, government, and industrial sectors. Geographically, the reported incidents involved entities in the United States and Iran, highlighting a concentrated period of significant cyber activity across these regions and critical infrastructures.",
+  "sources_hash": "3770e052131c1dad",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T10:59:45.523Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

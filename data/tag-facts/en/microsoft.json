@@ -1,0 +1,53 @@
+{
+  "tag": "microsoft",
+  "locale": "en",
+  "count": 33,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["Storm-2755"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33104",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-34054",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-26179",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2026-32183",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2026-32201",
+      "cvss": 6.5
+    }
+  ],
+  "top_sectors": [
+    "multiple",
+    "cross-sector",
+    "education",
+    "enterprise",
+    "federal government"
+  ],
+  "top_regions": ["Global", "Canada", "Japan"],
+  "severity_mix": {
+    "high": 16,
+    "critical": 5,
+    "low": 1,
+    "medium": 9,
+    "informational": 2
+  },
+  "recent_excerpts": [
+    "Microsoft released out-of-band updates for Windows Server 2019 and 2022 after April 2026 security patches caused boot failures and domain controller authentication issues, forcing some administrators",
+    "CISA orders federal agencies to patch CVE-2009-0238, a 17-year-old Microsoft Office Excel remote code execution flaw, by April 28, 2026, due to active exploitation.",
+    "A recent Microsoft Edge browser update has introduced a bug that breaks the right-click paste functionality within chats in the Microsoft Teams desktop client, impacting user workflow."
+  ],
+  "sources_hash": "b3d10231e897c7bf"
+}

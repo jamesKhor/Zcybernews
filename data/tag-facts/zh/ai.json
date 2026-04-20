@@ -1,0 +1,31 @@
+{
+  "tag": "ai",
+  "locale": "zh",
+  "count": 21,
+  "date_range": {
+    "first": "2026-04-08",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["Pushpaganda"],
+  "top_cves": [],
+  "top_sectors": [
+    "critical_infrastructure",
+    "finance",
+    "government",
+    "manufacturing",
+    "technology"
+  ],
+  "top_regions": ["United states", "Asia", "Australia", "Canada", "Japan"],
+  "severity_mix": {
+    "informational": 9,
+    "critical": 1,
+    "medium": 3,
+    "high": 8
+  },
+  "recent_excerpts": [
+    "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。",
+    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。",
+    "Rapid7 的新 AI 助手为 SOC 团队分析了 22,052 起安全事件，以即时总结日志数据，解释警报，并生成调查查询，旨在减少分析师的疲劳。"
+  ],
+  "sources_hash": "0794c4c3152c7bc2"
+}

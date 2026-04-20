@@ -1,0 +1,10 @@
+{
+  "tag": "social-engineering",
+  "locale": "zh",
+  "intro": "APT37 (ScarCruft, InkySquid)、ClickFix和Pushpaganda是2026年4月8日至4月20日期间记录的一波集中性社会工程攻击中最活跃的威胁行为者。本档案中的36篇文章详细记录了25起高严重性事件，以及10起中等级别事件和一份信息性报告。这些攻击活动主要针对金融服务、加密货币和酒店行业，对个人及物流领域造成显著影响。攻击活动在全球范围内均有观测，重点关注美国、加拿大、英国和澳大利亚。",
+  "sources_hash": "9f85e8bb7d31f74e",
+  "source_intro_hash": "cfa53091dcb3feae",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T10:56:51.837Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

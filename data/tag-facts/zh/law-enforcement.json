@@ -1,0 +1,35 @@
+{
+  "tag": "law-enforcement",
+  "locale": "zh",
+  "count": 13,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["W3LL", "W3LL Team"],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "corporate",
+    "cryptocurrency",
+    "education",
+    "entertainment"
+  ],
+  "top_regions": [
+    "United states",
+    "North america",
+    "Canada",
+    "Europe",
+    "Florida"
+  ],
+  "severity_mix": {
+    "high": 10,
+    "medium": 3
+  },
+  "recent_excerpts": [
+    "佛罗里达执法部门正在调查一名学生如何使用ChatGPT制造校园枪击威胁，这是AI聊天机器人未能阻止危险内容的更广泛模式的一部分。",
+    "洛杉矶警察局报告称，一名城市律师的数字存储系统遭到7.7TB和337,000个文件的泄露，暴露了敏感的执法数据。",
+    "参与2022年DraftKings凭证填充攻击的Kamerin Stokes，在认罪后继续出售被盗账户，被判处已服刑期和三年监督释放。"
+  ],
+  "sources_hash": "a55ce48d5b49862e"
+}

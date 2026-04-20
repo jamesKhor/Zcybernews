@@ -1,0 +1,23 @@
+{
+  "tag": "threat-intelligence",
+  "locale": "en",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-19"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["critical-infrastructure", "technology"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 3,
+    "informational": 4
+  },
+  "recent_excerpts": [
+    "Qualys warns that AI agents like Claude Mythos can cut vulnerability discovery time from months to hours, compressing the patch window and overwhelming security teams with a surge of new CVEs.",
+    "Recorded Future's Insikt Group outlines four essential integration workflows to move threat intelligence from a siloed feed to an automated component of security operations, enabling a shift from reac",
+    "Anthropic has restricted its Claude Mythos Preview AI to ~50 critical infrastructure vendors, citing its advanced ability to autonomously find and exploit software vulnerabilities, raising concerns ab"
+  ],
+  "sources_hash": "f100b2a57d7d1468"
+}

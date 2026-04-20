@@ -1,0 +1,31 @@
+{
+  "tag": "browser-security",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-11",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Pushpaganda"],
+  "top_cves": [],
+  "top_sectors": [],
+  "top_regions": [
+    "Australia",
+    "Canada",
+    "New zealand",
+    "United kingdom",
+    "United states"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "informational": 1,
+    "critical": 1,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "Socket识别出108款恶意Chrome扩展，感染了20,000名用户，窃取Google和Telegram会话cookie，并通过共享的命令和控制服务器注入广告。",
+    "Malwarebytes Browser Guard 4.0 引入了一个新的访问控制模块，允许用户集中管理和阻止网站请求敏感权限，如摄像头、麦克风和位置，以减轻社会工程和驱动下载攻击。",
+    "安全研究人员警告称，由AI驱动的'agentic'浏览器，这些浏览器自动化网络任务，引入了包括即时注入、会话劫持和未经授权的数据外泄在内的新风险，从根本上改变了浏览器的安全模型。"
+  ],
+  "sources_hash": "e58f73891b471f01"
+}

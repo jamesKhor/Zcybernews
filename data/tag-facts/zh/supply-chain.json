@@ -1,0 +1,42 @@
+{
+  "tag": "supply-chain",
+  "locale": "zh",
+  "count": 50,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["Lazarus Group", "TeamPCP"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-39987",
+      "cvss": 9.3
+    },
+    {
+      "id": "CVE-2026-40176"
+    },
+    {
+      "id": "CVE-2026-40177"
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "logistics",
+    "manufacturing",
+    "cryptocurrency",
+    "financial-services"
+  ],
+  "top_regions": ["Global", "Europe", "Asia", "North america"],
+  "severity_mix": {
+    "critical": 6,
+    "informational": 4,
+    "high": 30,
+    "medium": 9
+  },
+  "recent_excerpts": [
+    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。",
+    "Boost Security 的 SmokedMeat 框架从单一 CI/CD 流水线缺陷执行实时攻击演示，向工程团队展示攻击者如何移动以破坏代码、机密和基础设施。",
+    "Socket识别出108款恶意Chrome扩展，感染了20,000名用户，窃取Google和Telegram会话cookie，并通过共享的命令和控制服务器注入广告。"
+  ],
+  "sources_hash": "d0d3c6abbeb20824"
+}

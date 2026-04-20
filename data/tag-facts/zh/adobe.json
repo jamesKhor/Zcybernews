@@ -1,0 +1,37 @@
+{
+  "tag": "adobe",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-15"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-34621",
+      "cvss": 8.6
+    },
+    {
+      "id": "CVE-2024-20662"
+    },
+    {
+      "id": "CVE-2024-21412"
+    },
+    {
+      "id": "CVE-2024-34102"
+    }
+  ],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "critical": 4,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "Adobe 针对 Windows 和 macOS 上的 Acrobat 和 Reader 发布了一项关键安全更新，以解决多个漏洞，这些漏洞可能允许攻击者在目标系统上执行任意代码或读取任意文件。",
+    "Adobe 修补了 11 个产品中的 55 个漏洞，警告 ColdFusion 中的关键漏洞在攻击中具有最高的被利用风险。",
+    "CISA 将其已知被利用漏洞目录中添加了六个 Fortinet、Microsoft 和 Adobe 软件中的漏洞，警告存在活跃的野外攻击，需要紧急修补。"
+  ],
+  "sources_hash": "43169494e2ecc4a2"
+}

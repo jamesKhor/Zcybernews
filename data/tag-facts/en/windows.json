@@ -1,0 +1,43 @@
+{
+  "tag": "windows",
+  "locale": "en",
+  "count": 16,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-18"
+  },
+  "top_actors": ["Chaotic Eclipse"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33104",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-26179",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2026-32183",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2024-20662"
+    },
+    {
+      "id": "CVE-2024-21412"
+    }
+  ],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "high": 12,
+    "medium": 3,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Microsoft has patched a local privilege escalation vulnerability (CVE-2026-33104) in the Windows win32kfull driver, which could allow authenticated attackers to gain SYSTEM privileges.",
+    "A double-free vulnerability (CVE-2026-26179) in the Microsoft Windows Secure Kernel allows local attackers to escalate privileges, potentially to SYSTEM.",
+    "A vulnerability (CVE-2026-32183) in the Microsoft Windows Snipping Tool allows remote attackers to execute arbitrary code via a malicious file or webpage, requiring only user interaction to trigger th"
+  ],
+  "sources_hash": "56f70ddc49923e09"
+}

@@ -1,0 +1,9 @@
+{
+  "tag": "iot",
+  "locale": "en",
+  "intro": "The residential and logistics sectors were among the most impacted by a series of IoT vulnerabilities reported in April 2026. The eight articles in this archive detail threats including the critical flaws CVE-2026-22898 and CVE-2026-4682, both with a CVSS of 8.8, alongside CVE-2026-5057. The coverage, spanning just four days, reflects a severity mix of two critical, three high, and three medium vulnerabilities. Affected sectors also included individuals, telecommunications, and transportation, highlighting the broad attack surface of connected devices.",
+  "sources_hash": "3f090677246c36c3",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:10:12.388Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

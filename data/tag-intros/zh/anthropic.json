@@ -1,0 +1,10 @@
+{
+  "tag": "anthropic",
+  "locale": "zh",
+  "intro": "本档案收录了 6 篇带有「anthropic」标签的文章，发布时间从2026年4月14日至2026年4月20日。其中包含2 篇严重、1 篇高危、1 篇中危、2 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "c93da524d2c66f19",
+  "source_intro_hash": "916612e3792f3cd6",
+  "model": "template:sparse",
+  "generated_at": "2026-04-20T11:19:24.601Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

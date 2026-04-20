@@ -1,0 +1,10 @@
+{
+  "tag": "iran",
+  "locale": "zh",
+  "intro": "2026年4月12日至13日期间，ZCyberNews发布了五份关于与伊朗相关的网络活动报告。在这些事件中，威胁行为者CyberAv3ngers表现突出，所有事件均被评估为高严重性。这些行动主要影响了水务、公民社会、能源、政府和工业领域。从地理分布看，报告的事件涉及美国和伊朗的实体，凸显了这些地区及关键基础设施在此期间经历了一段密集且重大的网络活动期。",
+  "sources_hash": "3770e052131c1dad",
+  "source_intro_hash": "f7bfa6f564d0357a",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:21:06.095Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

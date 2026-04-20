@@ -1,0 +1,31 @@
+{
+  "tag": "ai",
+  "locale": "en",
+  "count": 22,
+  "date_range": {
+    "first": "2026-04-08",
+    "latest": "2026-04-20"
+  },
+  "top_actors": ["Pushpaganda"],
+  "top_cves": [],
+  "top_sectors": [
+    "critical_infrastructure",
+    "finance",
+    "government",
+    "manufacturing",
+    "technology"
+  ],
+  "top_regions": ["United states", "Asia", "Australia", "Canada", "Japan"],
+  "severity_mix": {
+    "informational": 9,
+    "critical": 1,
+    "medium": 3,
+    "high": 9
+  },
+  "recent_excerpts": [
+    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n",
+    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution.",
+    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout."
+  ],
+  "sources_hash": "209304035c4b62c9"
+}

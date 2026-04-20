@@ -1,0 +1,27 @@
+{
+  "tag": "wordpress",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-1492"
+    }
+  ],
+  "top_sectors": [],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 3,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "一名恶意买家利用 Flippa 市场收购了一家插件开发商，向安装量达数十万的 30 多款 WordPress 插件中注入后门，以部署隐藏的 SEO 垃圾内容。",
+    "包含超过30个流行WordPress插件的EssentialPlugin套件已被入侵，以注入后门，使攻击者能够获得对数千个网站的管理员访问权限。供应链攻击正在被积极利用。",
+    "User Registration & Membership WordPress插件中存在一个严重漏洞（CVE-2026-1492），允许未经认证的攻击者绕过登录并获得完整的管理员访问权限，影响数千个站点。"
+  ],
+  "sources_hash": "aa0bd7dd803246b2"
+}

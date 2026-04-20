@@ -1,0 +1,9 @@
+{
+  "tag": "microsoft",
+  "locale": "en",
+  "intro": "Over the past week, from April 12 to April 20, 2026, ZCyberNews published 33 articles tracking Microsoft-related security developments. The activity was global, with notable focus on Canada and Japan, and impacted multiple sectors including education, enterprise, and federal government. The threat actor Storm-2755 was prominently observed. Key vulnerabilities exploited included CVE-2026-33104 (CVSS 7.8), CVE-2026-34054 (CVSS 7.8), CVE-2026-26179 (CVSS 7.5), CVE-2026-32183 (CVSS 7.5), and CVE-2026-32201 (CVSS 6.5). The severity of reported incidents was varied, with 16 classified as high and 5 as critical, alongside medium, low, and informational alerts.",
+  "sources_hash": "b3d10231e897c7bf",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T10:58:56.267Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,9 @@
+{
+  "tag": "phishing",
+  "locale": "en",
+  "intro": "The hospitality and finance sectors were primary targets in a concentrated wave of phishing campaigns observed between April 8 and April 20, 2026. This activity, detailed in 35 reports, was dominated by high-severity threats. The threat actors FakeWallet, Storm-2755, and Tycoon 2FA were active, exploiting vulnerabilities including CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. While the impact was global, significant incidents were also noted in Canada, Latin America, Mexico, and Ukraine, affecting the technology and travel sectors alongside multiple other industries.",
+  "sources_hash": "d06b30c727bca1d5",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T10:59:06.358Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

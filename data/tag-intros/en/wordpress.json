@@ -1,0 +1,9 @@
+{
+  "tag": "wordpress",
+  "locale": "en",
+  "intro": "Global organizations faced a concentrated wave of WordPress security incidents between April 13 and 17, 2026, as documented in five recent reports. The activity included two critical and three high-severity vulnerabilities, with the specific flaw CVE-2026-1492 highlighted among them. The targeting was broad, with a global scope of affected regions. This series of reports underscores the ongoing and focused attention threat actors are directing at this ubiquitous content management system.",
+  "sources_hash": "aa0bd7dd803246b2",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:00:54.289Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

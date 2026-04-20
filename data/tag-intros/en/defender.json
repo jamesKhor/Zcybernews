@@ -1,0 +1,9 @@
+{
+  "tag": "defender",
+  "locale": "en",
+  "intro": "Global organizations faced a concentrated wave of high-severity threats between April 15 and 17, 2026, as detailed in our recent coverage. The five reports from this period, which include three high and two critical severity incidents, highlight the widespread nature of the activity. A key technical vulnerability exploited during this timeframe was CVE-2026-33825. The impact spanned multiple sectors across global regions, underscoring a broad defensive challenge for security teams monitoring these developments.",
+  "sources_hash": "a74cb1d5d94ae979",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T11:13:50.490Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,24 @@
+{
+  "tag": "network-security",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-19"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "medium": 1,
+    "critical": 3,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "Censys research finds 5.9 million internet-facing FTP servers remain online in 2026, a 40% drop from 2024, but still representing a significant attack surface due to the protocol's inherent security w",
+    "Cisco warns of multiple critical vulnerabilities in its Identity Services Engine (ISE) and ISE Passive Identity Connector that allow authenticated attackers to execute arbitrary commands on affected d",
+    "Fortinet released patches for 11 vulnerabilities, including two Critical flaws in FortiSandbox and FortiAnalyzer/FortiManager, requiring immediate attention from network administrators."
+  ],
+  "sources_hash": "fc8b2a62efb2c504"
+}

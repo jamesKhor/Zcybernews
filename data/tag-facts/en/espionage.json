@@ -1,0 +1,29 @@
+{
+  "tag": "espionage",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-15"
+  },
+  "top_actors": ["APT28 (Fancy Bear)"],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "healthcare",
+    "technology",
+    "defense",
+    "enterprise"
+  ],
+  "top_regions": ["Global", "Ukraine"],
+  "severity_mix": {
+    "high": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "A new malware family dubbed 'AgingFly' is stealing authentication data from Chromium browsers and WhatsApp in targeted attacks against Ukrainian local government bodies and hospitals.",
+    "Multiple critical vulnerabilities in Microsoft Windows, Apple iOS, and Cisco networking gear were actively exploited in April 2026, requiring immediate patching.",
+    "A critical zero-day vulnerability in widely used PDF software has been actively exploited for months. Concurrently, state-sponsored actors have been targeting fiber optic infrastructure for espionage."
+  ],
+  "sources_hash": "7314e54cef166a7a"
+}

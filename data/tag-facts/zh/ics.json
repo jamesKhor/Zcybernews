@@ -1,0 +1,30 @@
+{
+  "tag": "ics",
+  "locale": "zh",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "critical-infrastructure",
+    "energy",
+    "manufacturing",
+    "industrial",
+    "utilities"
+  ],
+  "top_regions": ["Global", "United states", "North-america"],
+  "severity_mix": {
+    "high": 6,
+    "critical": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "一种名为 ZionSiphon 的新型恶意软件家族旨在通过操纵工业控制系统破坏水处理和海水淡化厂。恶意软件针对特定的 OT 硬件和软件以干扰关键过程。",
+    "西门子、施耐德电气和其他六家主要工业控制系统供应商发布了安全通告，解决了数十个漏洞，包括西门子SIMATIC和施耐德电气EcoStruxure产品中的关键缺陷。",
+    "运营技术资产所有者面临监管压力，需要证明其后量子密码准备情况，但缺乏必要的发现和库存工具，导致表面合规。"
+  ],
+  "sources_hash": "3caf4ee64c64fb38"
+}

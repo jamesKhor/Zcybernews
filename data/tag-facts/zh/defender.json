@@ -1,0 +1,27 @@
+{
+  "tag": "defender",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-04-17"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33825"
+    }
+  ],
+  "top_sectors": ["multiple"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "high": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "威胁行为者正在积极利用最近泄露的三个Windows Defender权限提升漏洞，使用公开的概念验证代码在企业系统上获得SYSTEM权限。",
+    "一名安全研究人员发布了针对Microsoft Defender中两个新的零日漏洞的概念验证漏洞利用代码，分别被称为RedSun和UnDefend。结合之前披露的漏洞，现在已确认这三个漏洞都在野外被积极利用。",
+    "威胁行为者正在积极利用微软 Defender 中的三个零日漏洞，代号为 BlueHammer、RedSun 和 UnDefend，以获得 SYSTEM 权限。截至 2026 年 4 月 17 日，微软仅修补了这三个漏洞中的一个。"
+  ],
+  "sources_hash": "a74cb1d5d94ae979"
+}

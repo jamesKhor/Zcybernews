@@ -1,0 +1,22 @@
+{
+  "tag": "rat",
+  "locale": "zh",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Mirax", "REF6598"],
+  "top_cves": [],
+  "top_sectors": ["cryptocurrency", "financial-services"],
+  "top_regions": ["Europe", "Latin america", "Spain", "Turkey"],
+  "severity_mix": {
+    "high": 8
+  },
+  "recent_excerpts": [
+    "Mirax Android RAT 通过 Meta 广告感染了超过 220,000 用户，将受感染的设备变成 SOCKS5 代理，供威胁行为者路由恶意流量并从讲西班牙语的受害者那里窃取数据。",
+    "威胁行为者滥用 Obsidian 笔记应用通过恶意插件投递新型 PHANTOMPULSE RAT，针对金融和加密货币领域的个人进行攻击，此次行动被追踪为 REF6598。",
+    "新发现的基于 Rust 的远程访问木马（RAT）工具包 SpankRAT，滥用 Windows Explorer 进程来绕过基于声誉的安全措施，并维持对被入侵系统的持续、低检测访问。"
+  ],
+  "sources_hash": "2d50f07ead97ae0c"
+}

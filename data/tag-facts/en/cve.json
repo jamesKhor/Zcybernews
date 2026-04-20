@@ -1,0 +1,23 @@
+{
+  "tag": "cve",
+  "locale": "en",
+  "count": 9,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["all", "critical-infrastructure", "technology"],
+  "top_regions": ["European union", "Global"],
+  "severity_mix": {
+    "informational": 8,
+    "high": 1
+  },
+  "recent_excerpts": [
+    "The EPSS v3 model reduces false positive rates by 40% for defenders prioritizing the 28,000+ CVEs published annually, according to analysis by the SANS Internet Storm Center.",
+    "NIST will no longer analyze all 263,000+ annual CVE submissions, shifting to a risk-based model to prioritize high-impact flaws as submissions surge 263% since 2020.",
+    "NIST has fundamentally changed its CVE enrichment process, prioritizing only high-impact vulnerabilities for detailed analysis due to an overwhelming surge in submissions, straining downstream vulnera"
+  ],
+  "sources_hash": "373b207a5dba4b28"
+}

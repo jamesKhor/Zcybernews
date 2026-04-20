@@ -1,0 +1,30 @@
+{
+  "tag": "anthropic",
+  "locale": "en",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "ai-development",
+    "cybersecurity",
+    "software development",
+    "technology"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "critical": 2,
+    "high": 1,
+    "informational": 2,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution.",
+    "Anthropic restricts access to its Claude Mythos Preview AI model, citing its ability to automate vulnerability discovery and exploit chain creation, and launches Project Glasswing to find and patch fl",
+    "White House Chief of Staff Jeff Zients will meet with Anthropic CEO Dario Amodei to discuss the security implications of the company's newly released AI technology, amid broader government scrutiny of"
+  ],
+  "sources_hash": "c93da524d2c66f19"
+}

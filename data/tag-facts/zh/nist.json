@@ -1,0 +1,22 @@
+{
+  "tag": "nist",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": ["all"],
+  "top_regions": ["Global"],
+  "severity_mix": {
+    "informational": 5
+  },
+  "recent_excerpts": [
+    "NIST将不再分析所有263,000+年度CVE提交，转向基于风险的模型来优先处理高影响漏洞，因为自2020年以来提交量激增了263%。",
+    "NIST 已经根本改变了其 CVE 丰富过程，仅优先考虑高影响漏洞进行详细分析，因为提交数量的激增，给下游漏洞管理带来了压力。",
+    "NIST 将不再完全分析提交给国家漏洞数据库的所有 CVE，原因是提交量增加了 263%，使其丰富性处理过程不堪重负，导致安全团队获得的上下文信息减少。"
+  ],
+  "sources_hash": "340dde48a490a5c9"
+}

@@ -1,0 +1,35 @@
+{
+  "tag": "ransomware",
+  "locale": "zh",
+  "count": 19,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-19"
+  },
+  "top_actors": ["Payouts King", "Interlock", "Rhysida"],
+  "top_cves": [
+    {
+      "id": "CVE-2026-34197",
+      "cvss": 8.8
+    }
+  ],
+  "top_sectors": [
+    "healthcare",
+    "logistics",
+    "automotive",
+    "data-analytics",
+    "entertainment"
+  ],
+  "top_regions": ["Europe", "Global", "Turkey", "Netherlands", "North america"],
+  "severity_mix": {
+    "informational": 1,
+    "high": 15,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "NAKIVO Inc.发布了其Backup & Replication平台的11.2版本，引入了勒索软件防御模块，支持Proxmox VE 9.0，并为VMware vSphere 9环境增强了性能。",
+    "Apache ActiveMQ Classic 中存在一个高严重性的漏洞，CVE-2026-34197（CVSS 8.8），目前正在被积极利用，促使 CISA 将其加入其已知被利用漏洞目录，并要求联邦机构进行补丁修复。",
+    "Payouts King 勒索软件团伙正在部署开源 QEMU 模拟器，在被入侵的主机上创建隐藏的虚拟机，建立持久的反向 SSH 后门，以规避传统的端点检测。"
+  ],
+  "sources_hash": "e9644e6eac3cc212"
+}

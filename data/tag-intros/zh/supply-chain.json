@@ -1,0 +1,10 @@
+{
+  "tag": "supply-chain",
+  "locale": "zh",
+  "intro": "2026年4月12日至4月20日期间，ZCyberNews发布了50篇关于供应链安全的文章。报道详述了包括Lazarus Group和TeamPCP在内的不同威胁组织的活动，并追踪了特定漏洞的利用情况，例如CVE-2026-39987（CVSS 9.3分）、CVE-2026-40176和CVE-2026-40177。这些事件主要针对全球、欧洲、亚洲和北美地区的科技、物流、制造、加密货币及金融服务行业。所涵盖的威胁事件严重性分布为6起严重、30起高危、9起中危和4起信息类事件，展现了该时期内各组织面临的多层次风险态势。",
+  "sources_hash": "d0d3c6abbeb20824",
+  "source_intro_hash": "0afe062c9ab10dcb",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-20T10:56:59.440Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}
