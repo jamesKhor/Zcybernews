@@ -34,9 +34,22 @@ export async function generateStaticParams() {
   return params;
 }
 
+const THIN_TAG_THRESHOLD = 5;
+
+function countArticlesForTag(locale: string, tag: string): number {
+  const posts = getAllPosts(locale, "posts").filter((p) =>
+    p.frontmatter.tags.includes(tag),
+  ).length;
+  const ti = getAllPosts(locale, "threat-intel").filter((p) =>
+    p.frontmatter.tags.includes(tag),
+  ).length;
+  return posts + ti;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, tag } = await params;
   const isZh = locale === "zh";
+  const isThin = countArticlesForTag(locale, tag) < THIN_TAG_THRESHOLD;
   return {
     title: `#${tag}`,
     description: isZh
@@ -58,6 +71,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: locale === "zh" ? "zh_CN" : "en_US",
       type: "website",
     },
+    // Thin tag pages (<5 articles) emit `noindex, follow` so Google doesn't
+    // index them but still discovers linked articles. Paired with sitemap
+    // exclusion in app/sitemap.ts. Target: reduce GSC "Crawled - not
+    // indexed" (was 128 on 2026-04-20).
+    ...(isThin && { robots: { index: false, follow: true } }),
   };
 }
 

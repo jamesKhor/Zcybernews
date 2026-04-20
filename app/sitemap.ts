@@ -120,7 +120,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    // Tag pages — only include tags with 3+ articles to avoid thin content
+    // Tag pages — only include tags with 5+ articles to avoid thin content.
+    // Bumped from 3 to 5 (2026-04-20) after GSC flagged 128 pages "Crawled -
+    // currently not indexed"; thin tag pages were a primary driver. Tags
+    // below threshold also emit `robots: noindex, follow` on the page itself
+    // (see app/[locale]/tags/[tag]/page.tsx).
     const postTags = getAllTags(locale, "posts");
     const tiTags = getAllTags(locale, "threat-intel");
     const allTags = [...new Set([...postTags, ...tiTags])];
@@ -131,7 +135,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const tiCount = getAllPosts(locale, "threat-intel").filter((p) =>
         p.frontmatter.tags.includes(tag),
       ).length;
-      if (postCount + tiCount < 3) continue;
+      if (postCount + tiCount < 5) continue;
       entries.push({
         url: `${BASE_URL}/${locale}/tags/${tag}`,
         lastModified: new Date(),
