@@ -1,0 +1,46 @@
+---
+title: The Gentlemen Ransomware Deploys SystemBC Proxy for C2 Evasion
+slug: 2026-04-20-the-gentlemen-ransomware-deploys-systembc-proxy-for-c2-evasion
+date: '2026-04-20'
+excerpt: >-
+  The Gentlemen ransomware-as-a-service group uses the SystemBC SOCKS5 proxy
+  tool to hide command-and-control traffic, according to a Check Point DFIR
+  report analyzing a recent affiliate attack.
+category: malware
+tags:
+  - ransomware
+  - raas
+  - systembc
+  - c2
+  - evasion
+language: en
+source_urls:
+  - 'https://research.checkpoint.com/2026/dfir-report-the-gentlemen/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-the-gentlemen-ransomware-deploys-systembc-proxy-for-c2-evasion
+severity: high
+threat_actor: The Gentlemen
+---
+## Executive Summary
+The Gentlemen, a ransomware-as-a-service (RaaS) operation active since mid-2025, is equipping its affiliates with the SystemBC tool to establish a covert SOCKS5 proxy for hiding malicious command-and-control (C2) traffic. According to a DFIR report from Check Point Research, this tactic allows the ransomware to communicate with its operators through an encrypted tunnel, complicating network-based detection and blocking efforts.
+
+## Technical Analysis
+Check Point's analysis details an attack chain where an affiliate of The Gentlemen RaaS deployed the SystemBC payload, a tool known for creating persistent SOCKS5 proxies on compromised systems. The proxy is configured to connect to a hardcoded C2 server, tunneling all subsequent ransomware-related traffic through this encrypted channel. This method obscures the final destination of C2 communications from standard network monitoring tools that might block direct connections to known malicious IPs.
+
+The ransomware locker itself, provided by the RaaS platform, is designed for multiple operating systems. The analyzed sample for Windows employs strong encryption to lock files and drops a ransom note. The integration with SystemBC indicates a focus on operational security, moving beyond basic ransomware deployment to include infrastructure designed for stealth and persistence.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary TTP identified is the use of a legitimate, albeit repurposed, proxy tool (SystemBC) for network evasion (T1090.001 - Proxy). This falls under the Command and Control tactic. The deployment follows a typical affiliate model, where the central RaaS operators provide the payloads and infrastructure, while affiliates are responsible for initial access and execution. The use of a RaaS platform itself is a defining procedure, lowering the barrier to entry for technically skilled threat actors.
+
+## Threat Actor Context
+The Gentlemen is a relatively new RaaS operation that began advertising its services on underground forums around mid-2025. The group promotes its multi-OS ransomware lockers and recruits affiliates, including penetration testers and other skilled individuals, to carry out attacks. This business model separates the developers of the ransomware from the actors who breach networks, distributing risk and scaling the threat. The adoption of SystemBC suggests the operators are incorporating established, effective tools from the broader cybercriminal ecosystem into their service offering.
+
+## Mitigations & Recommendations
+Network security monitoring should be tuned to detect the use of unauthorized SOCKS5 proxies and anomalous outbound connections that could indicate tunneling activity. Since the source material does not provide specific hashes or network IOCs, defensive focus should be on behavioral detection: identifying processes that establish proxy connections without a legitimate business need and monitoring for the simultaneous execution of proxy software and file encryption activities. Segmenting networks to restrict lateral movement can limit the impact of a successful ransomware deployment.
+
+## References
+- https://research.checkpoint.com/2026/dfir-report-the-gentlemen/

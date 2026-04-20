@@ -1,0 +1,42 @@
+---
+title: 威胁行为者滥用 QEMU 模拟器以规避安全软件
+slug: 2026-04-20-threat-actors-abuse-qemu-emulator-to-evade-security-software
+date: '2026-04-20'
+excerpt: 在两个不同的活动中，威胁行为者使用开源 QEMU 机器模拟器加载和执行勒索软件和远程访问工具，通过在受信任的虚拟化进程中运行恶意代码来绕过端点检测。
+category: malware
+tags:
+  - qemu
+  - defense-evasion
+  - ransomware
+  - rat
+  - living-off-trusted-tools
+language: zh
+source_urls:
+  - 'https://www.securityweek.com/hackers-abuse-qemu-for-defense-evasion/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-threat-actors-abuse-qemu-emulator-to-evade-security-software
+severity: high
+---
+## 执行摘要
+威胁行为者正在积极利用合法的QEMU机器模拟器来绕过安全控制并部署恶意软件。安全研究人员已经识别出至少两个独立的活动，攻击者使用QEMU加载并直接在内存中执行勒索软件和远程访问木马（RAT）有效载荷，这种技术利用了模拟器的受信任状态来规避端点检测和响应（EDR）工具。
+
+## 技术分析
+根据SecurityWeek的一份报告，攻击者正在滥用开源QEMU模拟器作为在野外生存的二进制文件（LOLBin）进行防御规避。核心技术涉及使用QEMU的`-device`参数加载恶意固件映像，然后在QEMU进程空间内执行。这使得攻击者能够在一个合法、受信任的虚拟化工具的幌子下运行他们的有效载荷，大大降低了可能白名单或不深入检查此类进程的安全软件检测的可能性。
+
+报告详细描述了两个不同的活动。在一个活动中，攻击者使用QEMU部署了一个勒索软件有效载荷。在另一个活动中，使用相同的方法交付了一个远程访问工具（RAT）。通过在QEMU内执行恶意代码，攻击者避免了将最终有效载荷写入磁盘，实现了无文件执行策略，这使得取证分析和传统的基于签名的检测变得复杂。
+
+## 入侵指标
+来源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+观察到的主要技术是滥用QEMU进行防御规避（T1218.011: 签名二进制代理执行）。攻击者使用模拟器作为代理来加载和执行恶意固件或代码。这属于更广泛的在野外生存（LOTL）策略，攻击者利用预安装的合法软件进行恶意活动。QEMU的具体命令行调用，带有指向恶意文件的`-device`参数，是一个关键的行为指标。
+
+## 威胁行为者背景
+来源材料确认至少有两个独立的活动正在使用这种技术，但没有将其归因于已知的威胁团体，也没有提供有关他们的起源或动机的信息，除了部署勒索软件和RAT之外。使用像QEMU这样的复杂、非标准的LOLBin表明行为者具有中等至高水平的技术能力，他们正在积极研究规避方法。
+
+## 缓解措施与建议
+安全团队应监控不寻常的QEMU进程执行，特别是包含指向不熟悉固件文件的`-device`参数的命令行（例如，`*.bin`，`*.rom`）。应用控制或端点检测和响应（EDR）策略应配置为在非标准路径上或由非特权用户执行QEMU时发出警报或阻止，特别是在该工具不是批准的工作流程一部分的环境中。由于QEMU是一个合法的系统工具，直接阻止可能不可行；因此，关注QEMU启动后紧接着进行异常网络连接或执行文件加密的行为检测至关重要。
+
+## 参考资料
+- SecurityWeek: [Hackers Abuse QEMU for Defense Evasion](https://www.securityweek.com/hackers-abuse-qemu-for-defense-evasion/)

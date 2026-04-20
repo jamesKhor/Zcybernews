@@ -1,0 +1,43 @@
+---
+title: Windows 11 Dev Build 26300.8170 为安全应用添加了安全启动监控
+slug: >-
+  2026-04-20-windows-11-dev-build-26300-8170-adds-secure-boot-monitoring-to-security-app
+date: '2026-04-20'
+excerpt: >-
+  微软的 Windows 11 Dev Build 26300.8170 在 Windows
+  安全应用中添加了一个专门的安全启动监控面板，为管理员提供了固件安全特性的状态和配置的单窗格视图。
+category: vulnerabilities
+tags:
+  - microsoft
+  - windows-11
+  - secure-boot
+  - device-security
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/windows-11-dev-secure-boot-controls/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-windows-11-dev-build-26300-8170-adds-secure-boot-monitoring-to-security-app
+severity: informational
+---
+## 执行摘要
+Microsoft发布了Windows 11 Insider Preview Build 26300.8170到Dev Channel，新增了在Windows Security应用内直接监控Secure Boot状态的新界面。此次更新还包括对存储管理控制和Feedback Hub的更改，重点是提高对核心系统安全特性的行政可见性，而不是修补漏洞。
+
+## 技术分析
+该构建的主要安全增强是集成了一个专门的Secure Boot信息面板。根据发布说明，用户现在可以导航到**Windows Security > Device Security > Secure Boot**来查看统一可扩展固件接口（UEFI）安全特性的当前状态。这种集中显示旨在提供清晰、权威的视图，以确定Secure Boot是否在设备上启用并正确配置，减少了访问UEFI/BIOS设置进行基本状态检查的需求。该特性的实现表明Microsoft正在继续其努力，在受管理的Windows界面中展示低级安全状态。在可用的源材料中没有披露对Secure Boot协议或验证过程的任何底层更改。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+源材料中未识别出任何战术、技术与程序。
+
+## 威胁行为者背景
+此开发构建没有提及特定的威胁行为者或活动。这些更改是安全监控和管理工具的主动增强。
+
+## 缓解措施与建议
+由于这是一个在Dev Channel中的Insider Preview构建的功能更新，因此不打算用于生产部署。跟踪Microsoft安全界面发展的组织应该注意到固件级安全报告持续集成到Windows Security应用程序套件中。Secure Boot的一般建议保持不变：确保在UEFI设置中启用它，并确保所有启动软件都正确签名。
+
+## 参考资料
+- https://cybersecuritynews.com/windows-11-dev-secure-boot-controls/

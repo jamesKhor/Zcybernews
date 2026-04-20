@@ -1,0 +1,45 @@
+---
+title: The Gentlemen 勒索软件部署 SystemBC 代理以进行 C2 规避
+slug: 2026-04-20-the-gentlemen-ransomware-deploys-systembc-proxy-for-c2-evasion
+date: '2026-04-20'
+excerpt: >-
+  根据 Check Point DFIR 报告分析最近的一次关联攻击，The Gentlemen 勒索软件即服务组织使用 SystemBC SOCKS5
+  代理工具来隐藏命令和控制流量。
+category: malware
+tags:
+  - ransomware
+  - raas
+  - systembc
+  - c2
+  - evasion
+language: zh
+source_urls:
+  - 'https://research.checkpoint.com/2026/dfir-report-the-gentlemen/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-20-the-gentlemen-ransomware-deploys-systembc-proxy-for-c2-evasion
+severity: high
+threat_actor: The Gentlemen
+---
+## 执行摘要
+自2025年中以来活跃的勒索软件即服务（RaaS）运营The Gentlemen，为其合作伙伴配备了SystemBC工具，以建立一个隐蔽的SOCKS5代理，用于隐藏恶意的命令和控制（C2）流量。根据Check Point Research的DFIR报告，这种策略允许勒索软件通过加密隧道与其操作者通信，使基于网络的检测和阻止工作变得复杂。
+
+## 技术分析
+Check Point的分析详细描述了一个攻击链，其中The Gentlemen RaaS的一个合作伙伴部署了SystemBC有效载荷，这是一个已知用于在被入侵系统上创建持久SOCKS5代理的工具。该代理被配置为连接到一个硬编码的C2服务器，将所有随后与勒索软件相关的流量通过这个加密通道进行隧道传输。这种方法从可能阻止直接连接到已知恶意IP的标准网络监控工具中隐藏了C2通信的最终目的地。
+
+勒索软件本身，由RaaS平台提供，设计用于多个操作系统。分析的Windows样本使用强加密锁定文件并丢弃勒索信。与SystemBC的集成表明，重点在于运营安全，超越了基本的勒索软件部署，包括为隐蔽性和持久性而设计的基础设施。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+识别出的主要战术、技术与程序是使用一个合法的、尽管被重新利用的代理工具（SystemBC）进行网络规避（T1090.001 - 代理）。这属于命令和控制策略。部署遵循典型的合作伙伴模型，其中中央RaaS操作者提供有效载荷和基础设施，而合作伙伴负责初始访问和执行。使用RaaS平台本身是一个定义程序，降低了技术熟练的威胁行为者的进入门槛。
+
+## 威胁行为者背景
+The Gentlemen是一个相对较新的RaaS运营，始于2025年中左右在地下论坛上宣传其服务。该组织推广其多操作系统勒索软件锁定器，并招募合作伙伴，包括渗透测试人员和其他技术熟练的个人，以执行攻击。这种商业模式将勒索软件开发者与入侵网络的行为者分开，分散风险并扩大威胁。采用SystemBC表明，操作者正在将更广泛的网络犯罪生态系统中建立的、有效的工具纳入其服务提供中。
+
+## 缓解措施与建议
+网络安全监控应调整以检测未经授权的SOCKS5代理的使用和可能表明隧道活动的异常出站连接。由于源材料没有提供特定的哈希值或网络IOC，防御重点应放在行为检测上：识别建立代理连接而没有合法业务需求的过程，并监控代理软件和文件加密活动的同时执行。将网络分段以限制横向移动可以限制成功部署勒索软件的影响。
+
+## 参考资料
+- https://research.checkpoint.com/2026/dfir-report-the-gentlemen/
