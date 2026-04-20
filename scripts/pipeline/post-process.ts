@@ -22,6 +22,12 @@ import type { Story } from "../utils/dedup.js";
 // ── Regex (shared with fact-check) ────────────────────────────────────────
 
 const CVE_REGEX = /CVE-\d{4}-\d{4,}/g;
+// Catches prompt placeholders the LLM was told to use as fallback but
+// shouldn't literal-copy: CVE-2026-XXXXX, CVE-YYYY-NNNNN, CVE-2026-?????,
+// CVE-XXXX-XXXXX. Real CVEs have digits after the year; placeholders
+// have letters or question marks. Used to detect + recover, not just flag.
+const CVE_PLACEHOLDER_REGEX =
+  /CVE-(?:\d{4}|[A-Z]{4})-(?:[XNY?]{2,}|[A-Z]{5})/gi;
 const MD5_REGEX = /\b[a-fA-F0-9]{32}\b/g;
 const SHA1_REGEX = /\b[a-fA-F0-9]{40}\b/g;
 const SHA256_REGEX = /\b[a-fA-F0-9]{64}\b/g;
@@ -241,6 +247,72 @@ export function postProcessArticle(
   const bodyCves = uniqueMatches(article.body, CVE_REGEX);
   const sourceCves = uniqueMatches(sourceText.toUpperCase(), CVE_REGEX);
   article.cve_ids = bodyCves.filter((c) => sourceCves.includes(c));
+
+  // ── 2a. CVE placeholder recovery — catch CVE-2026-XXXXX etc ────────────
+  // The LLM sometimes literal-copies the prompt's fallback token into the
+  // body (bug observed 2026-04-20 on syncthing article). Flow:
+  //   1. Scan body for placeholder pattern.
+  //   2. If present AND source text contains a real CVE → swap in source CVE.
+  //   3. If present AND no real CVE in sources → strip the entire sentence
+  //      containing the placeholder (avoids dangling "a critical flaw," text).
+  //   4. If sentence-strip leaves body unchanged, fact-check will reject.
+  const placeholderMatches = Array.from(
+    article.body.matchAll(CVE_PLACEHOLDER_REGEX),
+  );
+  if (placeholderMatches.length > 0) {
+    const realSourceCve = sourceCves[0]; // first real CVE in sources, if any
+    if (realSourceCve) {
+      // Recovery path: swap placeholder → real CVE from source
+      article.body = article.body.replace(CVE_PLACEHOLDER_REGEX, realSourceCve);
+      if (!article.cve_ids.includes(realSourceCve)) {
+        article.cve_ids = [...article.cve_ids, realSourceCve];
+      }
+    } else {
+      // No real CVE to swap in — remove sentences that contain a placeholder.
+      // Conservative: split on /[.!?]\s+/, drop sentences with a placeholder,
+      // rejoin. Fact-check will still reject if any placeholder survives.
+      article.body = article.body
+        .split(/(?<=[.!?])\s+/)
+        .filter((s) => !CVE_PLACEHOLDER_REGEX.test(s))
+        .join(" ");
+      // Reset regex lastIndex after use (test() on /g regex is stateful)
+      CVE_PLACEHOLDER_REGEX.lastIndex = 0;
+    }
+  }
+
+  // ── 2aa. Scrub placeholder tags from frontmatter ──────────────────────
+  // The LLM also slugs placeholders into tags (e.g. "cve-2026-xxxxx").
+  // Drop any tag matching the placeholder pattern — they never lead to
+  // useful tag archives.
+  if (article.tags) {
+    article.tags = article.tags.filter(
+      (t) => !/^cve-(?:\d{4}|[a-z]{4})-(?:[xny?]{2,}|[a-z]{5})$/i.test(t),
+    );
+  }
+
+  // ── 2ab. Scrub placeholder from excerpt/title ─────────────────────────
+  // LLM sometimes lands the placeholder in the excerpt/title too (e.g.
+  // syncthing article 2026-04-20). Apply same recovery rule: swap if a
+  // real CVE exists in sources, otherwise strip the token entirely (and
+  // collapse ", ," artifacts).
+  const realSourceCveForMeta = sourceCves[0];
+  for (const field of ["excerpt", "title"] as const) {
+    const v = article[field];
+    if (typeof v === "string" && CVE_PLACEHOLDER_REGEX.test(v)) {
+      CVE_PLACEHOLDER_REGEX.lastIndex = 0;
+      if (realSourceCveForMeta) {
+        article[field] = v.replace(CVE_PLACEHOLDER_REGEX, realSourceCveForMeta);
+      } else {
+        article[field] = v
+          .replace(CVE_PLACEHOLDER_REGEX, "")
+          .replace(/,\s*,/g, ",")
+          .replace(/\s{2,}/g, " ")
+          .replace(/\s+([,.])/g, "$1")
+          .trim();
+      }
+      CVE_PLACEHOLDER_REGEX.lastIndex = 0;
+    }
+  }
 
   // ── 2b. cvss_score — derive from body + verify against sources ────────
   // Phase P-A enrichment (2026-04-18). Previously the LLM emitted

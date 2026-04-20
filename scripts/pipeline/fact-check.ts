@@ -130,6 +130,8 @@ export type FactCheckIssue = {
   severity: FactCheckSeverity;
   type:
     | "cve_not_in_source"
+    | "cve_placeholder_in_body"
+    | "vuln_article_missing_cve"
     | "hash_not_in_source"
     | "ip_not_in_source"
     | "domain_not_in_source"
@@ -148,6 +150,13 @@ export type FactCheckResult = {
 // ── Regex patterns ────────────────────────────────────────────────────────
 
 const CVE_REGEX = /CVE-\d{4}-\d{4,}/g;
+// Catches prompt-placeholder tokens the LLM may literal-copy into the body:
+// CVE-2026-XXXXX, CVE-YYYY-NNNNN, CVE-2026-?????. Real CVEs have digits;
+// placeholders have letters or question marks. post-process tries to
+// recover (swap in a real CVE from sources or strip the sentence) — if
+// anything survives to fact-check, we reject the article as HIGH severity.
+const CVE_PLACEHOLDER_REGEX =
+  /CVE-(?:\d{4}|[A-Z]{4})-(?:[XNY?]{2,}|[A-Z]{5})/gi;
 const MD5_REGEX = /\b[a-fA-F0-9]{32}\b/g;
 const SHA1_REGEX = /\b[a-fA-F0-9]{40}\b/g;
 const SHA256_REGEX = /\b[a-fA-F0-9]{64}\b/g;
@@ -231,9 +240,46 @@ export async function factCheckArticle(
   const issues: FactCheckIssue[] = [];
   const sourceText = buildSourceCorpus(sources);
 
-  // ── 1. CVE IDs ──────────────────────────────────────────────────────────
+  // ── 1a. CVE placeholder hard gate ──────────────────────────────────────
+  // If post-process.ts failed to recover or strip the placeholder, reject
+  // outright. A vuln article with "CVE-YYYY-XXXXX" in body/excerpt/title
+  // has zero value to readers and hurts domain trust.
+  const placeholderHaystack = [
+    article.body ?? "",
+    article.excerpt ?? "",
+    article.title ?? "",
+  ].join("\n");
+  const placeholderMatches = uniqueMatches(
+    placeholderHaystack,
+    CVE_PLACEHOLDER_REGEX,
+  );
+  for (const p of placeholderMatches) {
+    issues.push({
+      severity: "high",
+      type: "cve_placeholder_in_body",
+      message: `Article contains literal CVE placeholder "${p}" (body/excerpt/title) — no real CVE ID. Reject.`,
+      value: p,
+    });
+  }
+
+  // ── 1b. Vulnerability article without any CVE ──────────────────────────
+  // If the article is categorized as a vulnerability OR the title / body
+  // strongly implies a specific flaw, it MUST cite a real CVE in the body.
+  // Otherwise it's filler ("a critical flaw was disclosed" with no ID).
+  const vulnCategory = article.category === "vulnerabilities";
+  const vulnTitleHint =
+    /\b(vulnerability|vulnerable|flaw|zero[- ]?day|rce|remote code execution|privilege escalation|sql injection|xss)\b/i.test(
+      article.title ?? "",
+    );
   const articleCves = uniqueMatches(article.body, CVE_REGEX);
   const sourceCves = uniqueMatches(sourceText.toUpperCase(), CVE_REGEX);
+  if ((vulnCategory || vulnTitleHint) && articleCves.length === 0) {
+    issues.push({
+      severity: "high",
+      type: "vuln_article_missing_cve",
+      message: `Article is framed as a vulnerability${vulnCategory ? " (category=vulnerabilities)" : ""} but contains no CVE ID. Either source didn't disclose one — pick a different category — or the LLM omitted it.`,
+    });
+  }
   for (const cve of articleCves) {
     if (!sourceCves.includes(cve)) {
       issues.push({
