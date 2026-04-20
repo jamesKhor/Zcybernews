@@ -1,0 +1,40 @@
+name: Tag intros guard
+
+# PR check — when a PR touches data/tag-intros/** or data/tag-facts/**,
+# re-run the fact-check audit. Fails the check if any intro cites a CVE
+# or actor not in its fact sheet, or contains a banned filler phrase.
+#
+# Defense against a human (or bot) hand-editing a JSON file and slipping
+# in a hallucinated CVE or actor name. The inline generator already
+# fact-checks at write time; this is the CI gate for everything else.
+
+on:
+  pull_request:
+    paths:
+      - "data/tag-intros/**"
+      - "data/tag-facts/**"
+      - "scripts/tag-intros/**"
+      - "scripts/audit-intros.ts"
+      - "scripts/ai/prompts/tag-intro.ts"
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci
+      - name: Run tag-intro audit
+        run: |
+          set -euo pipefail
+          output=$(npx tsx scripts/audit-intros.ts)
+          echo "$output"
+          # Fail if any line contains ❌
+          if echo "$output" | grep -q "❌"; then
+            echo "::error::tag-intro audit found issues — see log above"
+            exit 1
+          fi

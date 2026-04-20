@@ -1,5 +1,7 @@
 import { getAllPosts, getAllTags } from "@/lib/content";
+import { getTagIntro } from "@/lib/tag-intros";
 import { ArticleCard } from "@/components/articles/ArticleCard";
+import { TagIntro } from "@/components/tags/TagIntro";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -121,7 +123,7 @@ export default async function TagPage({ params }: Props) {
           { label: `#${tag}` },
         ]}
       />
-      <div className="mb-8">
+      <div className="mb-6">
         <div className="flex items-center gap-3">
           <Tag className="w-8 h-8 text-primary" />
           <div>
@@ -135,6 +137,13 @@ export default async function TagPage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      {(() => {
+        const tagIntro = getTagIntro(locale, tag);
+        return tagIntro ? (
+          <TagIntro intro={tagIntro} locale={locale as "en" | "zh"} />
+        ) : null;
+      })()}
 
       <div className="flex gap-8">
         {/* Sidebar — related tags */}

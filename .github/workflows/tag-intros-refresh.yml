@@ -1,0 +1,171 @@
+name: Refresh tag intros
+
+# Daily refresh of data/tag-facts/ + data/tag-intros/ as new articles land.
+# Runs at 03:00 UTC (11:00 SGT — off-peak, before morning traffic).
+#
+# Flow:
+#   1. aggregate-facts.ts  — regenerates fact sheets from latest MDX.
+#      Sheets where sources_hash changed get a new write; unchanged
+#      sheets are rewritten identically (idempotent).
+#   2. generate-intros.ts  — sources_hash cache check skips every intro
+#      whose fact sheet hasn't changed. Only the deltas re-hit the LLM.
+#   3. translate-intros.ts — source_intro_hash cache skips unchanged EN
+#      intros. Only newly regenerated EN intros cost ZH API calls.
+#   4. audit-intros.ts     — hard gate. If any intro fails fact-check,
+#      exit non-zero and do NOT commit. Telegram failure notify fires.
+#   5. Commit + push data/** back to main.
+#   6. Dispatch deploy-vps.yml — commit path matches content-only deploy
+#      route (no rebuild, ISR cache invalidated via /api/revalidate).
+#
+# Budget: typical day regenerates 5-10 intros (~$0.02/day). Bounded at
+# ~$0.10/day in the worst case where all 140 tags churn simultaneously.
+
+on:
+  schedule:
+    # 03:00 UTC daily = 11:00 SGT = off-peak for both CN and US traffic
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regenerate every intro (ignore sources_hash cache)"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: tag-intros-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    permissions:
+      contents: write
+      # Required for `gh workflow run deploy-vps.yml` (GITHUB_TOKEN pushes
+      # don't auto-trigger downstream workflows — anti-loop safety).
+      actions: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          HUSKY: 0
+
+      - name: Aggregate fact sheets
+        run: npx tsx scripts/tag-intros/aggregate-facts.ts
+
+      - name: Generate EN intros (delta only)
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          ARGS="--provider deepseek"
+          if [ "$FORCE" = "true" ]; then
+            ARGS="$ARGS --force"
+          fi
+          npx tsx scripts/tag-intros/generate-intros.ts $ARGS
+
+      - name: Translate to ZH (delta only)
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          ARGS="--provider deepseek"
+          if [ "$FORCE" = "true" ]; then
+            ARGS="$ARGS --force"
+          fi
+          npx tsx scripts/tag-intros/translate-intros.ts $ARGS
+
+      - name: Audit — hard gate
+        id: audit
+        run: |
+          set -euo pipefail
+          output=$(npx tsx scripts/audit-intros.ts)
+          echo "$output"
+          if echo "$output" | grep -q "❌"; then
+            echo "::error::Tag-intro audit found issues — refusing to commit"
+            exit 1
+          fi
+
+      - name: Detect changes
+        id: detect
+        run: |
+          CHANGED=$(git status --short data/tag-facts data/tag-intros 2>/dev/null | wc -l | tr -d ' ')
+          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
+          echo "📂 $CHANGED changed file(s) in data/tag-*"
+
+      - name: Commit + push
+        if: ${{ steps.detect.outputs.changed != '0' }}
+        run: |
+          set -e
+          git config user.name "zcybernews-bot"
+          git config user.email "bot@zcybernews.com"
+          git add data/tag-facts data/tag-intros 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "::notice::Nothing staged — skipping push"
+            exit 0
+          fi
+          git commit -m "chore(seo): tag intros refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+          # Retry-on-reject to handle concurrent pushes from ai-content-pipeline
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin main; then
+              if git push origin main; then
+                echo "✅ Pushed on attempt $attempt"
+                exit 0
+              fi
+            else
+              git rebase --abort 2>/dev/null || true
+            fi
+            echo "::warning::Push attempt $attempt failed, retry in $((5 * attempt))s"
+            sleep $((5 * attempt))
+          done
+          echo "::error::Push failed after 3 attempts"
+          exit 1
+
+      - name: Trigger deploy-vps
+        if: ${{ steps.detect.outputs.changed != '0' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # data/tag-intros/** + data/tag-facts/** are treated as content by
+          # deploy-vps.yml classify job (no rebuild needed — next
+          # request re-reads the JSON via lib/tag-intros.ts mtime cache).
+          if gh workflow run deploy-vps.yml --ref main; then
+            echo "✅ Dispatched deploy-vps.yml"
+          else
+            echo "::error::Failed to dispatch deploy-vps"
+            exit 1
+          fi
+
+      - name: Notify Telegram — failure
+        if: ${{ failure() }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            exit 0
+          fi
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          MSG="❌ <b>Tag intros refresh failed</b>"$'\n\n'"Run: ${RUN_URL}"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode parse_mode="HTML" \
+            --data-urlencode text="$MSG" > /dev/null || true
