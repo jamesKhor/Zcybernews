@@ -8,6 +8,7 @@ import { MitreMatrix } from "@/components/threat-intel/MitreMatrix";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { NewsArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { CommunityCTA } from "@/components/community/CommunityCTA";
+import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
 import { useTranslations } from "next-intl";
 import { stripMarkdown } from "@/lib/utils";
@@ -243,6 +244,11 @@ function ArticlePageContent({
 
           {/* In-article ad */}
           <InArticleAd className="my-8" />
+
+          {/* Newsletter signup — primary conversion CTA at end of article */}
+          <div className="my-10">
+            <SubscribeForm />
+          </div>
 
           {/* Community CTA — renders null until Discord/WeChat env vars set */}
           <CommunityCTA variant="full" locale={locale} />

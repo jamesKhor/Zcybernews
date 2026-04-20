@@ -8,6 +8,7 @@ import { IOCTable } from "@/components/threat-intel/IOCTable";
 import { MitreMatrix } from "@/components/threat-intel/MitreMatrix";
 import { NewsArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { CommunityCTA } from "@/components/community/CommunityCTA";
+import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
 import { useTranslations } from "next-intl";
 import { CVEArticleBody } from "@/components/cve/CVEArticleBody";
@@ -231,6 +232,11 @@ function TIPageContent({
           <CVEArticleBody>{mdxContent}</CVEArticleBody>
 
           <InArticleAd className="my-8" />
+
+          {/* Newsletter signup — primary conversion CTA */}
+          <div className="my-10">
+            <SubscribeForm />
+          </div>
 
           {/* Community CTA — renders null until Discord/WeChat env vars set */}
           <CommunityCTA variant="full" locale={locale} />

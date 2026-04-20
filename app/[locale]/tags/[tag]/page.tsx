@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
+import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 import { ArrowLeft, Tag } from "lucide-react";
 
 interface Props {
@@ -186,6 +187,11 @@ export default async function TagPage({ params }: Props) {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Newsletter signup — primary conversion CTA on tag pages */}
+      <div className="mt-16">
+        <SubscribeForm />
       </div>
     </main>
   );
