@@ -1,0 +1,44 @@
+---
+title: MiningDropper 框架向 Android 设备传送 Infostealers、RATs
+slug: >-
+  2026-04-20-miningdropper-framework-delivers-infostealers-rats-to-android-devices
+date: '2026-04-20'
+excerpt: >-
+  据 CyberSecurity News 研究人员称，MiningDropper 是一个多阶段的 Android 恶意软件框架，通过伪装的应用程序向设备传送
+  infostealers、RATs 和银行木马。
+category: malware
+tags:
+  - android
+  - malware
+  - dropper
+  - infostealer
+  - remote-access-trojan
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/hackers-use-miningdropper/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-miningdropper-framework-delivers-infostealers-rats-to-android-devices
+severity: high
+---
+## 执行摘要
+一个迅速扩张的Android恶意软件活动正在使用一个名为MiningDropper的模块化框架来传递一系列高严重性的有效载荷，包括信息窃取器、远程访问木马（RATs）和银行恶意软件。根据CyberSecurity News报道的研究，该框架作为一个多阶段交付系统运作，最初伪装成合法应用程序以绕过初始安全检查，然后部署更危险的二级有效载荷。
+
+## 技术分析
+MiningDropper框架作为一个复杂的加载器，旨在在初始安装期间逃避检测。源材料表明，恶意软件被伪装成正常的Android应用程序进行分发，尽管具体的分发渠道（例如，第三方应用商店、网络钓鱼链接）没有详细说明。一旦安装，卸载器执行一个多阶段过程来下载和部署最终阶段的恶意软件。框架的模块化特性允许威胁行为者传递各种有效载荷，研究人员识别出包括信息窃取器、RATs、银行木马和加密货币矿工。提供的源材料中没有指定持久性、权限提升或代码混淆的技术机制。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+根据源描述，主要的TTP是使用卸载器框架（MiningDropper）进行多阶段恶意软件交付（T1204.002: 用户执行 - 恶意文件）。初始感染渠道涉及伪装恶意软件为合法应用程序（T1036.005: 伪装 - 匹配合法名称或位置）。最终目标是部署二级能力，这与通过信息窃取器进行凭证访问（T1555）的技术、通过RATs进行命令和控制（T1071）以及通过资源劫持进行影响（T1496）的技术相一致，用于加密货币挖矿。
+
+## 威胁行为者背景
+源材料没有将MiningDropper活动归因于特定的命名威胁行为者或团体。该活动被广泛描述为被“黑客”使用。鉴于传递的有效载荷的性质（银行恶意软件、信息窃取器、加密货币矿工），操作重点似乎是出于财务动机。提供的源材料中没有关于该活动地理范围或特定目标的信息。
+
+## 缓解措施与建议
+源材料没有提供针对MiningDropper框架的具体缓解步骤。适用于Android安全的一般最佳实践：用户应仅从官方、受信任的应用商店（如Google Play）安装应用程序，仔细审查应用权限，并保持设备操作系统和安全补丁的最新。企业移动设备管理（MDM）解决方案应配置为阻止来自未知来源的安装，并监控可疑应用行为。
+
+## 参考资料
+- [Hackers Use MiningDropper to Deliver Infostealers, RATs, and Banking Malware on Android](https://cybersecuritynews.com/hackers-use-miningdropper/)

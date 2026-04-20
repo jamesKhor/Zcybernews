@@ -1,0 +1,45 @@
+---
+title: 'MiningDropper Framework Delivers Infostealers, RATs to Android Devices'
+slug: >-
+  2026-04-20-miningdropper-framework-delivers-infostealers-rats-to-android-devices
+date: '2026-04-20'
+excerpt: >-
+  MiningDropper, a multi-stage Android malware framework, delivers infostealers,
+  RATs, and banking trojans to devices via disguised apps, according to
+  CyberSecurity News researchers.
+category: malware
+tags:
+  - android
+  - malware
+  - dropper
+  - infostealer
+  - remote-access-trojan
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/hackers-use-miningdropper/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-20-miningdropper-framework-delivers-infostealers-rats-to-android-devices
+severity: high
+---
+## Executive Summary
+A rapidly expanding Android malware campaign is using a modular framework called MiningDropper to deliver a range of high-severity payloads, including information stealers, remote access trojans (RATs), and banking malware. According to research reported by CyberSecurity News, the framework operates as a multi-stage delivery system, initially posing as legitimate applications to bypass initial security checks before deploying more dangerous secondary payloads.
+
+## Technical Analysis
+The MiningDropper framework functions as a sophisticated loader designed to evade detection during initial installation. The source material indicates the malware is distributed disguised as normal Android applications, though the specific distribution vectors (e.g., third-party app stores, phishing links) are not detailed. Once installed, the dropper executes a multi-stage process to download and deploy final-stage malware. The framework's modular nature allows threat actors to deliver a variety of payloads, which researchers identified as including infostealers, RATs, banking trojans, and cryptocurrency miners. The technical mechanisms for persistence, privilege escalation, or code obfuscation were not specified in the provided source.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+Based on the source description, the primary TTP is the use of a dropper framework (MiningDropper) for multi-stage malware delivery (T1204.002: User Execution - Malicious File). The initial infection vector involves masquerading malicious software as a legitimate application (T1036.005: Masquerading - Match Legitimate Name or Location). The final objective is the deployment of secondary capabilities, which align with techniques such as Credential Access (T1555) via infostealers, Command and Control (T1071) via RATs, and Impact (T1496) via resource hijacking for cryptomining.
+
+## Threat Actor Context
+The source material does not attribute the MiningDropper campaign to a specific named threat actor or group. The campaign is described broadly as being used by "hackers." The operational focus appears to be financially motivated, given the nature of the delivered payloads (banking malware, infostealers, cryptominers). There is no information in the provided source regarding the campaign's geographic scope or specific targeting.
+
+## Mitigations & Recommendations
+The source material did not provide specific mitigation steps tailored to the MiningDropper framework. General best practices for Android security apply: users should install applications only from official, trusted app stores like Google Play, carefully review app permissions, and maintain updated device operating systems and security patches. Enterprise mobile device management (MDM) solutions should be configured to block installations from unknown sources and to monitor for suspicious application behavior.
+
+## References
+- [Hackers Use MiningDropper to Deliver Infostealers, RATs, and Banking Malware on Android](https://cybersecuritynews.com/hackers-use-miningdropper/)
