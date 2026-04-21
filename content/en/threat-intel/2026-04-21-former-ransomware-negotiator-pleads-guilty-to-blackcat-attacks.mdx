@@ -1,0 +1,49 @@
+---
+title: Former Ransomware Negotiator Pleads Guilty to BlackCat Attacks
+slug: 2026-04-21-former-ransomware-negotiator-pleads-guilty-to-blackcat-attacks
+date: '2026-04-21'
+excerpt: >-
+  Angelo Martino, a 41-year-old former employee of cybersecurity firm
+  DigitalMint, pleads guilty to conspiring in BlackCat ransomware attacks
+  against U.S. companies while working as a negotiator.
+category: threat-intel
+tags:
+  - ransomware
+  - blackcat
+  - law-enforcement
+  - insider-threat
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/former-ransomware-negotiator-pleads-guilty-to-blackcat-attacks/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-former-ransomware-negotiator-pleads-guilty-to-blackcat-attacks
+severity: informational
+threat_actor: BlackCat (ALPHV)
+threat_actor_origin: Russia
+affected_sectors:
+  - multiple
+affected_regions:
+  - United States
+---
+## Executive Summary
+A former cybersecurity professional has pleaded guilty to participating in BlackCat (ALPHV) ransomware attacks while employed as a negotiator for a prominent incident response firm. Angelo Martino, 41, admitted to conspiring with the Russia-linked ransomware gang to extort U.S. companies in 2023, leveraging his insider knowledge of the negotiation process to aid the threat actors.
+
+## Technical Analysis
+According to court documents, Martino, while employed by DigitalMint, conspired with BlackCat affiliates to attack U.S. businesses. The U.S. Department of Justice states Martino used his position to provide information about victim companies to the ransomware operators, facilitating the extortion process. The specific technical vectors used in the attacks Martino aided are not detailed in the plea agreement. However, BlackCat is known for its Rust-based malware, double-extortion tactics, and use of custom data exfiltration tools. Martino's role was operational, exploiting the trust and access inherent to his legitimate job function.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary TTP detailed in this case is an insider threat leveraging legitimate access (T1078 - Valid Accounts) and trusted position (T1199 - Trusted Relationship) to enable external threat actors. Martino's actions align with the technique of gathering victim intelligence (TA0043 - Reconnaissance) from internal incident response channels and sharing it with attackers to strengthen their negotiation position (T1657 - Financial Theft). This represents a corruption of the standard ransomware negotiation process, where a third-party firm is hired to liaise with attackers on behalf of the victim.
+
+## Threat Actor Context
+BlackCat, also known as ALPHV, is a Russia-linked ransomware-as-a-service (RaaS) operation known for its high-profile attacks and aggressive extortion tactics. The group has been linked to numerous attacks against critical infrastructure sectors. In December 2023, the group's infrastructure was seized by the FBI in a coordinated law enforcement action, though the group later re-emerged. Martino is not alleged to be a core member of BlackCat but rather an affiliate or collaborator who provided material support.
+
+## Mitigations & Recommendations
+Organizations engaging third-party incident response or ransomware negotiation firms must implement stringent controls and oversight for personnel with access to sensitive victim data. Recommendations include enforcing strict need-to-know principles, auditing communications and data access logs of personnel involved in active incidents, and conducting thorough background checks for employees in positions of extreme trust. The case underscores that the insider threat extends to trusted partners in the security ecosystem.
+
+## References
+- https://www.bleepingcomputer.com/news/security/former-ransomware-negotiator-pleads-guilty-to-blackcat-attacks/

@@ -1,0 +1,46 @@
+---
+title: 前勒索软件谈判代表承认参与BlackCat攻击
+slug: 2026-04-21-former-ransomware-negotiator-pleads-guilty-to-blackcat-attacks
+date: '2026-04-21'
+excerpt: 41岁的前网络安全公司DigitalMint员工Angelo Martino承认在担任谈判代表期间共谋针对美国公司的BlackCat勒索软件攻击。
+category: threat-intel
+tags:
+  - ransomware
+  - blackcat
+  - law-enforcement
+  - insider-threat
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/former-ransomware-negotiator-pleads-guilty-to-blackcat-attacks/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-former-ransomware-negotiator-pleads-guilty-to-blackcat-attacks
+severity: informational
+threat_actor: BlackCat (ALPHV)
+threat_actor_origin: Russia
+affected_sectors:
+  - multiple
+affected_regions:
+  - United States
+---
+## 执行摘要
+一名前网络安全专业人员已承认参与BlackCat (ALPHV) 勒索软件攻击，当时他受雇于一家知名事件响应公司的谈判代表。41岁的Angelo Martino承认与俄罗斯关联的勒索软件团伙合谋，在2023年敲诈美国公司，利用他对谈判过程的内部知识帮助威胁行为者。
+
+## 技术分析
+根据法庭文件，Martino在DigitalMint工作期间与BlackCat关联者合谋攻击美国企业。美国司法部表示，Martino利用他的职位向勒索软件操作者提供有关受害者公司的信息，促进了敲诈过程。认罪协议中没有详细说明Martino协助的攻击中使用的具体技术手段。然而，BlackCat以其基于Rust的恶意软件、双重勒索策略和使用定制数据泄露工具而闻名。Martino的角色是操作性的，利用他合法工作职能固有的信任和访问权限。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+本案中详细描述的主要TTP是内部威胁利用合法访问（T1078 - 有效账户）和信任地位（T1199 - 信任关系）以使外部威胁行为者能够行动。Martino的行为与从内部事件响应渠道收集受害者情报（TA0043 - 侦察）并与攻击者分享以加强他们的谈判地位（T1657 - 金融盗窃）的技术一致。这代表了标准的勒索软件谈判过程的腐败，其中第三方公司被雇佣代表受害者与攻击者进行联络。
+
+## 威胁行为者背景
+BlackCat，也被称为ALPHV，是一个与俄罗斯有关联的勒索软件即服务（RaaS）行动，以其高调攻击和激进的敲诈策略而闻名。该组织已被牵连到针对关键基础设施部门的多次攻击。2023年12月，该组织的基础设施被FBI在一次协调的执法行动中查获，尽管该组织后来重新出现。Martino并未被指控为BlackCat的核心成员，而是提供物质支持的关联者或合作者。
+
+## 缓解措施与建议
+与第三方事件响应或勒索软件谈判公司合作的组织必须对能够访问敏感受害者数据的人员实施严格的控制和监督。建议包括执行严格的知情权原则，审计参与积极事件的人员通信和数据访问日志，并对处于极端信任位置的员工进行全面背景调查。该案例强调，内部威胁扩展到了安全生态系统中的信任合作伙伴。
+
+## 参考资料
+- https://www.bleepingcomputer.com/news/security/former-ransomware-negotiator-pleads-guilty-to-blackcat-attacks/

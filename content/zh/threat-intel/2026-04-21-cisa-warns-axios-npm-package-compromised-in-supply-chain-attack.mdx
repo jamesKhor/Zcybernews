@@ -1,0 +1,50 @@
+---
+title: CISA 警告 Axios npm 包在供应链攻击中被入侵
+slug: 2026-04-21-cisa-warns-axios-npm-package-compromised-in-supply-chain-attack
+date: '2026-04-21'
+excerpt: CISA 提醒 Axios npm 包，每周下载量超过6000万次，在供应链攻击中被入侵，将恶意代码注入下游应用程序。
+category: threat-intel
+tags:
+  - supply-chain
+  - npm
+  - javascript
+  - cisa
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/cisa-warns-axios-npm-supply-chain/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-cisa-warns-axios-npm-package-compromised-in-supply-chain-attack
+severity: critical
+affected_sectors:
+  - software development
+  - technology
+affected_regions:
+  - global
+---
+## CISA Warns Axios npm Package Compromised in Supply Chain Attack
+
+## 执行摘要
+网络安全和基础设施安全局（CISA）发布了一项关键警报，确认了针对Axios npm包的软件供应链攻击。攻击者破坏了该包，该包每周下载量超过6000万次，将恶意代码注入下游应用程序。此次破坏的规模对全球JavaScript和Node.js生态系统构成了重大风险，任何使用受污染包的应用程序都可能受到影响。
+
+## 技术分析
+根据CISA的警报，攻击者获得了对Axios包分发渠道的未经授权访问。初始破坏的确切方法在可用的源材料中没有详细说明。一旦获得访问权限，威胁行为者就将恶意代码插入到包中。当应用程序加载受破坏的Axios库时，该代码旨在执行，尽管提供的源材料中没有描述具体的有效载荷及其目标。这次攻击利用了对Axios库的深度信任和广泛依赖，Axios库是Node.js和基于浏览器的JavaScript应用程序中发起HTTP请求的基石。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+根据CISA的警告，观察到的主要技术是**供应链破坏（T1195.002）**。攻击者针对的是源头处受信任的组件——官方npm仓库——而不是攻击单个最终用户应用程序。这种方法允许单一破坏自动传播到所有下游消费者，他们更新或安装包，以最小的持续努力最大化影响。具体的子技术与破坏开发工具或软件仓库相一致。
+
+## 威胁行为者背景
+源材料没有将这次攻击归因于已知的威胁行为者或团体。破坏背后的动机也没有具体说明，尽管软件供应链攻击通常是为了从数据盗窃和凭证收集到部署勒索软件或加密货币矿工等目的。全球定位和对基础开发库的关注表明，行为者具有足够的复杂性，能够识别和利用高价值目标。
+
+## 缓解措施与建议
+CISA的警报意味着需要立即采取行动。组织和开发人员必须：
+1.  **识别使用情况：** 立即审计项目和依赖项，以确定是否使用了Axios npm包。
+2.  **验证完整性：** 如果可用，检查安装的Axios包的完整性，与来自独立、可信来源的已知良好哈希值进行对比。
+3.  **更新或回退：** 遵循Axios维护者或npm安全咨询的官方指导。这可能涉及更新到新发布的清洁版本，或者如果破坏是最近的，暂时回退到已知安全的版本。源材料没有提供具体的补丁版本号。
+4.  **监控异常：** 加强监控依赖于受破坏包的应用程序的可疑网络活动或意外行为。
+
+## 参考资料
+- CISA Warns Axios npm Package Was Compromised in Major Supply Chain Attack: https://cybersecuritynews.com/cisa-warns-axios-npm-supply-chain/
