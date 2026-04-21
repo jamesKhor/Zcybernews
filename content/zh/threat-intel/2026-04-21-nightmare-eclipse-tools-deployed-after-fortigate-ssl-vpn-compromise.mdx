@@ -1,0 +1,53 @@
+---
+title: FortiGate SSL VPN 被入侵后部署 Nightmare-Eclipse 工具
+slug: 2026-04-21-nightmare-eclipse-tools-deployed-after-fortigate-ssl-vpn-compromise
+date: '2026-04-21'
+excerpt: >-
+  黑客首先入侵 FortiGate SSL VPN，然后部署了 Nightmare-Eclipse、BlueHammer 和 RedSun
+  工具进行实时企业攻击，标志着这个公开可用的权限提升工具包首次被确认在野外使用。
+category: threat-intel
+tags:
+  - fortinet
+  - privilege-escalation
+  - post-exploitation
+  - vpn
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/nightmare-eclipse-tools-fortigate-ssl-vpn/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-nightmare-eclipse-tools-deployed-after-fortigate-ssl-vpn-compromise
+severity: high
+---
+## 噩梦-日食工具在FortiGate SSL VPN被入侵后部署
+
+## 执行摘要
+黑客们在一次针对企业网络的入侵中部署了一系列公开可用的后利用工具，包括噩梦-日食、BlueHammer、RedSun和UnDefend。攻击链始于FortiGate SSL VPN设备的入侵，该设备作为初始访问点。这一事件由CyberSecurity News记录，代表了噩梦-日食工具包首次在野外针对生产环境的确认使用，标志着威胁行为者向开源攻击安全工具的操作化转变。
+
+## 技术分析
+攻击遵循了一个清晰的序列。根据来源报告，威胁行为者首先通过入侵FortiGate SSL VPN获得了目标网络的未经授权的访问。此次初始入侵所使用的具体漏洞或方法未详细说明。一旦进入内部，攻击者部署了一系列旨在提升权限和规避防御的工具。主要工具集被称为噩梦-日食，可在GitHub上公开获取，旨在利用Windows安全机制。它与其他工具一起使用：BlueHammer、RedSun和UnDefend。这些伴随工具的确切功能在来源材料中未指明，但它们的名字和上下文暗示了它们在凭证转储、持久性和禁用安全软件中的作用。
+
+来源强调，这是噩梦-日食工具包首次被记录用于针对真实企业的积极入侵。这些工具的公开可用性降低了不太复杂威胁行为者的入门门槛，使他们能够在成功进行初始入侵后进行更高级的后利用活动。
+
+## 入侵指标
+来源材料中未识别出任何指标。
+
+## 战术、技术与程序
+根据来源报告，观察到的TTPs包括：
+*   **初始访问：** 入侵FortiGate SSL VPN设备。未指定技术（例如，利用已知漏洞、凭证窃取）。
+*   **执行与持久性：** 部署噩梦-日食权限提升工具包。
+*   **权限提升：** 使用噩梦-日食提升被入侵Windows系统上的权限。
+*   **防御规避：** 使用相关工具（BlueHammer、RedSun、UnDefend）可能旨在禁用安全控制并避免检测。
+
+## 威胁行为者背景
+来源材料没有将此活动归因于已知的威胁行为者群体。使用公开可用的开源工具表明涉及具有中等技术技能的行为者，他们利用共享资源来增强其操作能力。这种模式与网络犯罪生态系统中商品化的更广泛趋势一致，其中高级技术变得更加易于更广泛的对手获取。
+
+## 缓解措施与建议
+来源报告没有提供具体的缓解步骤。然而，根据描述的攻击向量，组织应该：
+*   确保所有FortiGate SSL VPN设备都更新到最新的固件版本，并根据安全最佳实践进行配置。
+*   实施严格的网络分段，以限制从VPN边界的横向移动。
+*   监控已知后利用工具的执行，包括与噩梦-日食、BlueHammer、RedSun和UnDefend相关的哈希值和行为签名。
+*   对用户和服务帐户应用最小权限原则，以减轻权限提升尝试的影响。
+
+## 参考资料
+*   Hackers Use Nightmare-Eclipse Tools After Compromising FortiGate SSL VPN Access - CyberSecurity News: https://cybersecuritynews.com/nightmare-eclipse-tools-fortigate-ssl-vpn/
