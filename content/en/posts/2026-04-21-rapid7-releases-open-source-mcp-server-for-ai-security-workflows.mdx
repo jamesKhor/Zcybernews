@@ -1,0 +1,46 @@
+---
+title: Rapid7 Releases Open-Source MCP Server for AI Security Workflows
+slug: 2026-04-21-rapid7-releases-open-source-mcp-server-for-ai-security-workflows
+date: '2026-04-21'
+excerpt: >-
+  Rapid7's open-source MCP server and Agent Skill connects its Insight platform
+  to AI assistants like Claude, enabling security teams to query 1.5 million
+  vulnerability records and automate workflows via natural language.
+category: tools
+tags:
+  - rapid7
+  - mcp
+  - ai-security
+  - automation
+  - open-source
+language: en
+source_urls:
+  - >-
+    https://www.rapid7.com/blog/post/em-bulk-export-ai-ready-security-workflows-open-source-mcp-server-agent-skill
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-rapid7-releases-open-source-mcp-server-for-ai-security-workflows
+severity: informational
+---
+## Executive Summary
+Rapid7 has released an open-source Model Context Protocol (MCP) server and a corresponding Agent Skill designed to integrate its Insight Platform data directly into AI-powered workflows. The tool allows security teams to query vulnerability and asset data using natural language through AI assistants like Anthropic's Claude, aiming to streamline investigation and reporting tasks that traditionally require manual API calls or bulk data exports.
+
+## Technical Analysis
+The core component is an MCP server, released under the MIT license on GitHub. The MCP is an open protocol, developed by Anthropic, that standardizes how external data sources and tools connect to Large Language Model (LLM) applications. Rapid7's implementation creates a bridge between its Insight Platform—which holds data on assets, vulnerabilities, and exposures—and an MCP-compatible AI assistant.
+
+According to Rapid7's blog post, the server provides several key resources and tools to the connected AI. These include access to a "vulnerabilities database" resource, which the company states contains over 1.5 million records, and tools for executing structured queries against Insight data. The accompanying "Agent Skill" is a pre-configured capability for the Rapid7 Insight Agent, which automates the local deployment and connection of the MCP server to a user's AI assistant environment. This setup is intended to allow analysts to perform tasks like asking for "all critical vulnerabilities on Windows servers in the finance segment" without writing API code or parsing CSV exports.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+None identified in source material.
+
+## Threat Actor Context
+This is not a threat actor disclosure. The release is a tooling announcement from a security vendor.
+
+## Mitigations & Recommendations
+The tool itself is a mitigation and workflow enhancement. Rapid7 positions it as a method to reduce operational friction for security teams. The primary recommendation from the source material is for organizations experimenting with private AI assistants to evaluate the open-source MCP server to integrate live security data into their analytical workflows. Implementation requires access to the Rapid7 Insight Platform and an MCP-compatible AI client.
+
+## References
+- https://www.rapid7.com/blog/post/em-bulk-export-ai-ready-security-workflows-open-source-mcp-server-agent-skill

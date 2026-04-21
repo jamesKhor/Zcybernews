@@ -1,0 +1,45 @@
+---
+title: Rapid7 发布开源 MCP 服务器以支持 AI 安全工作流
+slug: 2026-04-21-rapid7-releases-open-source-mcp-server-for-ai-security-workflows
+date: '2026-04-21'
+excerpt: >-
+  Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询
+  150 万条漏洞记录，并通过自然语言自动化工作流程。
+category: tools
+tags:
+  - rapid7
+  - mcp
+  - ai-security
+  - automation
+  - open-source
+language: zh
+source_urls:
+  - >-
+    https://www.rapid7.com/blog/post/em-bulk-export-ai-ready-security-workflows-open-source-mcp-server-agent-skill
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-rapid7-releases-open-source-mcp-server-for-ai-security-workflows
+severity: informational
+---
+## 执行摘要
+Rapid7 发布了一个开源的 Model Context Protocol（MCP）服务器和一个相应的 Agent Skill，旨在将其 Insight Platform 数据直接集成到 AI 驱动的工作流程中。该工具允许安全团队通过 Anthropic 的 Claude 等 AI 助手使用自然语言查询漏洞和资产数据，目的是简化传统上需要手动 API 调用或批量数据导出的调查和报告任务。
+
+## 技术分析
+核心组件是一个 MCP 服务器，已在 GitHub 上以 MIT 许可证发布。MCP 是由 Anthropic 开发的开放协议，它标准化了外部数据源和工具如何连接到大型语言模型（LLM）应用程序。Rapid7 的实现在其 Insight Platform（包含有关资产、漏洞和暴露的数据）与兼容 MCP 的 AI 助手之间建立了一座桥梁。
+
+根据 Rapid7 的博客文章，服务器为连接的 AI 提供了几个关键资源和工具。这些包括访问一个“漏洞数据库”资源，该公司表示该资源包含超过 150 万条记录，以及执行针对 Insight 数据的结构化查询的工具。随附的“Agent Skill”是 Rapid7 Insight Agent 的预配置能力，它自动化了 MCP 服务器到用户 AI 助手环境的本地部署和连接。这种设置旨在允许分析师执行任务，例如询问“金融部门所有 Windows 服务器上的关键漏洞”，而无需编写 API 代码或解析 CSV 导出。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+源材料中未识别出任何战术、技术与程序。
+
+## 威胁行为者背景
+这不是一个威胁行为者披露。发布是一个安全供应商的工具公告。
+
+## 缓解措施与建议
+该工具本身就是一种缓解措施和工作流程增强。Rapid7 将其定位为减少安全团队操作摩擦的方法。源材料中的主要建议是，建议尝试使用私有 AI 助手的组织评估开源 MCP 服务器，以将实时安全数据集成到他们的分析工作流程中。实施需要访问 Rapid7 Insight Platform 和一个兼容 MCP 的 AI 客户端。
+
+## 参考资料
+- https://www.rapid7.com/blog/post/em-bulk-export-ai-ready-security-workflows-open-source-mcp-server-agent-skill
