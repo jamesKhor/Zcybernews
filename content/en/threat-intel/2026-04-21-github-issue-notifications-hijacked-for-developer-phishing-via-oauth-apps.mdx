@@ -1,0 +1,51 @@
+---
+title: GitHub Issue Notifications Hijacked for Developer Phishing via OAuth Apps
+slug: >-
+  2026-04-21-github-issue-notifications-hijacked-for-developer-phishing-via-oauth-apps
+date: '2026-04-21'
+excerpt: >-
+  Threat actors are using GitHub's trusted notification system to phish
+  developers, pushing malicious OAuth apps that steal account data and hijack
+  repositories. The campaign exploits the platform's own infrastructure to
+  bypass traditional email security.
+category: threat-intel
+tags:
+  - phishing
+  - supply-chain
+  - github
+  - oauth
+  - developers
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/hackers-abuse-github-issue-notifications/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-github-issue-notifications-hijacked-for-developer-phishing-via-oauth-apps
+severity: high
+affected_sectors:
+  - software development
+  - technology
+---
+## Executive Summary
+Threat actors are conducting a targeted phishing campaign against software developers by abusing GitHub's built-in issue notification system. The attack delivers malicious OAuth application authorization requests directly within GitHub's trusted interface, bypassing email security filters and significantly increasing the likelihood of victim compromise. Successful authorization grants attackers extensive access to a victim's account, including private repositories, email addresses, and the ability to commit code.
+
+## Technical Analysis
+The attack chain begins with a threat actor creating a malicious OAuth application on GitHub. They then exploit the platform's notification feature, which is designed to alert repository collaborators about new issues or comments. According to analysis, the attackers use this mechanism to send a notification that appears to originate from a legitimate, often popular, open-source project. The notification itself is crafted to mimic a routine security alert or a request for developer input.
+
+Embedded within this notification is a link that directs the user to an OAuth authorization page for the malicious app. Because the entire interaction occurs within the `github.com` domain, traditional indicators like suspicious sender addresses or foreign URLs are absent. The authorization request often uses broad, seemingly legitimate permissions scopes, such as `repo`, `user`, and `workflow`, which are common for developer tools. If a user grants access, the attacker's application receives an OAuth token that provides persistent API access to the victim's account and associated resources.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The campaign employs several distinct techniques to increase efficacy. The primary method is **Trusted Service Abuse (T1585.001)**, leveraging GitHub's own notification service as the delivery vector. This is coupled with **OAuth App Phishing (T1608.001)**, where the malicious app masquerades as a legitimate development tool. The attackers also utilize **Masquerading (T1036)**, spoofing the identity of well-known open-source projects to lend credibility to the fraudulent notifications. The objective is **Credential Access (TA0006)** and **Persistence (TA0003)** via stolen OAuth tokens, which can lead to further **Collection (TA0009)** of source code and sensitive metadata.
+
+## Threat Actor Context
+The source material does not attribute this campaign to a specific named threat actor or group. The tactics suggest a focus on software supply chain compromise, aiming to gain a foothold in developer accounts which can be used to poison repositories, steal intellectual property, or launch downstream attacks against users of the compromised projects. The technique's sophistication indicates it is likely the work of financially motivated or state-aligned groups targeting high-value development assets.
+
+## Mitigations & Recommendations
+Developers and organizations should implement strict controls for third-party OAuth application authorizations. GitHub users must scrutinize every OAuth authorization request, verifying the application name, publisher, and requested permissions—especially for unsolicited requests received via notifications. Organizations should enforce policies requiring security review for any OAuth app before employee authorization. Administrators are advised to regularly audit authorized OAuth applications in their organization's GitHub settings (`Settings > Applications > Authorized OAuth Apps`) and revoke any that are unfamiliar or unnecessary. Enabling two-factor authentication (2FA) provides a secondary defense but does not prevent OAuth token theft if authorization is granted.
+
+## References
+- https://cybersecuritynews.com/hackers-abuse-github-issue-notifications/

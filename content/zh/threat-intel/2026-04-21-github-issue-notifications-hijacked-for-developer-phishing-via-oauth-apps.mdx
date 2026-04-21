@@ -1,0 +1,49 @@
+---
+title: GitHub 问题通知被劫持用于开发者钓鱼攻击通过 OAuth 应用
+slug: >-
+  2026-04-21-github-issue-notifications-hijacked-for-developer-phishing-via-oauth-apps
+date: '2026-04-21'
+excerpt: >-
+  威胁行为者正在利用 GitHub 的可信通知系统来钓鱼开发者，推送恶意的 OAuth
+  应用，这些应用窃取账户数据并劫持代码仓库。该活动利用平台自身的基础设施来绕过传统的电子邮件安全。
+category: threat-intel
+tags:
+  - phishing
+  - supply-chain
+  - github
+  - oauth
+  - developers
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/hackers-abuse-github-issue-notifications/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-github-issue-notifications-hijacked-for-developer-phishing-via-oauth-apps
+severity: high
+affected_sectors:
+  - software development
+  - technology
+---
+## 执行摘要
+威胁行为者通过滥用GitHub内置的问题通知系统，针对软件开发人员开展有针对性的网络钓鱼活动。攻击在GitHub受信任的界面内直接传递恶意OAuth应用程序授权请求，绕过电子邮件安全过滤器，显著增加了受害者被入侵的可能性。成功授权后，攻击者将获得对受害者账户的广泛访问权限，包括私有仓库、电子邮件地址以及提交代码的能力。
+
+## 技术分析
+攻击链始于威胁行为者在GitHub上创建恶意OAuth应用程序。然后，他们利用该平台的通知功能，该功能旨在提醒仓库协作者有关新问题或评论。根据分析，攻击者使用此机制发送看似来自合法且通常是流行开源项目的通知。通知本身被设计成模仿常规的安全警报或请求开发者输入。
+
+此通知中嵌入了一个链接，将用户导向恶意应用程序的OAuth授权页面。由于整个交互发生在`github.com`域内，因此缺少可疑的发件人地址或外国URL等传统指标。授权请求通常使用广泛且看似合法的权限范围，如`repo`、`user`和`workflow`，这些对于开发人员工具来说很常见。如果用户授权访问，攻击者的应用程序将收到一个OAuth令牌，该令牌为受害者的账户及其关联资源提供持久的API访问权限。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+该活动采用几种不同的技术来提高效率。主要方法是**信任服务滥用（T1585.001）**，利用GitHub自己的通知服务作为传递向量。这与**OAuth应用钓鱼（T1608.001）**相结合，其中恶意应用伪装成合法的开发工具。攻击者还利用**伪装（T1036）**，冒充知名开源项目的身份，以增加欺诈通知的可信度。目标是**凭证访问（TA0006）**和**持久性（TA0003）**，通过被盗的OAuth令牌实现，这可能导致进一步的**收集（TA0009）**源代码和敏感元数据。
+
+## 威胁行为者背景
+源材料没有将此活动归因于特定的命名威胁行为者或团体。这些战术表明，重点是软件供应链入侵，旨在获得开发者账户的立足点，这些账户可以用于污染仓库、窃取知识产权或对受感染项目的下游用户发起攻击。该技术的复杂性表明，这很可能是针对高价值开发资产的财务动机或国家对齐团体的工作。
+
+## 缓解措施与建议
+开发者和组织应实施严格的第三方OAuth应用程序授权控制。GitHub用户必须仔细审查每个OAuth授权请求，验证应用程序名称、发布者和请求的权限—特别是通过通知收到的未经请求的请求。组织应执行政策，要求在员工授权之前对任何OAuth应用程序进行安全审查。建议管理员定期审计其组织GitHub设置中授权的OAuth应用程序（`Settings > Applications > Authorized OAuth Apps`），并撤销任何不熟悉或不必要的应用程序。启用双因素认证（2FA）提供了二次防御，但如果授权被批准，它并不能阻止OAuth令牌被盗。
+
+## 参考资料
+- https://cybersecuritynews.com/hackers-abuse-github-issue-notifications/
