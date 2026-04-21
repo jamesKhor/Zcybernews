@@ -1,0 +1,53 @@
+---
+title: SideWinder APT Deploys Fake Chrome PDF Viewer and Zimbra Clone to Steal
+slug: >-
+  2026-04-21-sidewinder-apt-deploys-fake-chrome-pdf-viewer-and-zimbra-clone-to-steal-governme
+date: '2026-04-21'
+excerpt: >-
+  SideWinder APT targets South Asian government bodies with a phishing campaign
+  using a fake Chrome PDF viewer and a cloned Zimbra login portal to steal
+  webmail credentials, active since February 2026.
+category: threat-intel
+tags:
+  - apt
+  - phishing
+  - zimbra
+  - sidewinder
+  - credential-theft
+language: en
+source_urls:
+  - >-
+    https://cybersecuritynews.com/sidewinder-uses-fake-chrome-pdf-viewer-and-zimbra-clone/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-sidewinder-apt-deploys-fake-chrome-pdf-viewer-and-zimbra-clone-to-steal-governme
+severity: high
+threat_actor: SideWinder
+threat_actor_origin: 'Unknown, suspected South Asia'
+affected_sectors:
+  - government
+affected_regions:
+  - South Asia
+  - Bangladesh
+---
+## Executive Summary
+The SideWinder advanced persistent threat (APT) group is conducting a targeted credential harvesting campaign against government organizations in South Asia, according to analysis from CyberSecurity News. The operation, active since at least February 2026, uses a sophisticated phishing chain involving a fake Chrome PDF viewer application and a meticulously cloned Zimbra Collaboration Suite webmail login portal to steal employee credentials.
+
+## Technical Analysis
+The attack begins with a phishing email containing a malicious link. When a target clicks the link, they are directed to a website impersonating a Chrome extension store, which prompts the download of a file named `Chrome_PDF_Viewer.exe`. This executable is a malicious downloader. Upon execution, the downloader retrieves and runs a second-stage payload from a remote server. This payload is designed to open the victim's default web browser to a fraudulent Zimbra webmail login page. The cloned login portal is a near-perfect replica of the legitimate interface, intended to trick users into entering their email credentials. The exact mechanism of credential exfiltration and the nature of any subsequent payloads delivered post-compromise are not detailed in the available source material.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The campaign employs several distinct techniques. For initial access, SideWinder uses **Spearphishing Link (T1566.002)**. The group demonstrates sophisticated **Resource Development (TA0042)** by creating a fake software distribution site mimicking a Chrome extension store and developing a pixel-perfect clone of the Zimbra web client. The use of a benign-looking downloader (`Chrome_PDF_Viewer.exe`) constitutes **Masquerading (T1036)** to evade user suspicion. The final phase involves **Credential Harvesting (T1589.001)** through the cloned web portal.
+
+## Threat Actor Context
+SideWinder, also tracked by various vendors as Rattlesnake, T-APT-04, and Hardcore Nationalist (HN2), is a prolific APT group with suspected origins in South Asia. It has been active since at least 2012 and is known for conducting long-running cyber-espionage campaigns primarily targeting government, military, and law enforcement entities across Asia. The group's operations are characterized by high volumes of attacks, constant evolution of tools and infrastructure, and a focus on intelligence gathering. This latest campaign aligns with SideWinder's consistent targeting of governmental bodies in the region.
+
+## Mitigations & Recommendations
+Organizations, particularly in the government sector and those using Zimbra Collaboration Suite, should implement heightened user awareness training focused on identifying sophisticated phishing attempts, even those that mimic trusted internal services like webmail. Security teams should monitor for and block network traffic to unauthorized or newly registered domains that closely resemble legitimate software download or service portals. Application allowlisting can prevent the execution of unauthorized binaries like `Chrome_PDF_Viewer.exe`. Multi-factor authentication (MFA) should be enforced for all email and collaboration suite access to mitigate the impact of stolen credentials.
+
+## References
+- https://cybersecuritynews.com/sidewinder-uses-fake-chrome-pdf-viewer-and-zimbra-clone/

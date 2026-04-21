@@ -1,0 +1,52 @@
+---
+title: SideWinder APT 部署假 Chrome PDF 查看器和 Zimbra 克隆以窃取
+slug: >-
+  2026-04-21-sidewinder-apt-deploys-fake-chrome-pdf-viewer-and-zimbra-clone-to-steal-governme
+date: '2026-04-21'
+excerpt: >-
+  SideWinder APT 针对南亚政府机构发起网络钓鱼活动，使用假 Chrome PDF 查看器和克隆的 Zimbra 登录门户窃取网络邮件凭证，活动自
+  2026 年 2 月开始。
+category: threat-intel
+tags:
+  - apt
+  - phishing
+  - zimbra
+  - sidewinder
+  - credential-theft
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/sidewinder-uses-fake-chrome-pdf-viewer-and-zimbra-clone/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-sidewinder-apt-deploys-fake-chrome-pdf-viewer-and-zimbra-clone-to-steal-governme
+severity: high
+threat_actor: SideWinder
+threat_actor_origin: 'Unknown, suspected South Asia'
+affected_sectors:
+  - government
+affected_regions:
+  - South Asia
+  - Bangladesh
+---
+## 执行摘要
+根据 CyberSecurity News 的分析，SideWinder 高级持续性威胁（APT）组织正在针对南亚政府组织进行针对性的凭证收集活动。自至少2026年2月以来活跃的这项行动，使用了一个复杂的钓鱼链，涉及一个假冒的Chrome PDF查看器应用程序和一个精心克隆的Zimbra Collaboration Suite网页邮件登录门户，以窃取员工凭证。
+
+## 技术分析
+攻击始于包含恶意链接的钓鱼电子邮件。当目标点击链接时，他们被重定向到一个冒充Chrome扩展商店的网站，该网站提示下载名为`Chrome_PDF_Viewer.exe`的文件。这个可执行文件是一个恶意下载器。执行后，下载器从远程服务器检索并运行第二阶段的有效载荷。此有效载荷旨在打开受害者的默认网页浏览器到一个假冒的Zimbra网页邮件登录页面。克隆的登录门户是对合法界面的近乎完美复制，目的是诱使用户输入他们的电子邮件凭证。在可用的源材料中没有详细说明凭证外泄的确切机制以及在妥协后交付的任何后续有效载荷的性质。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+该活动采用几种不同的技术。对于初始访问，SideWinder使用**鱼叉式钓鱼链接（T1566.002）**。该组织展示了复杂的**资源开发（TA0042）**，通过创建一个模仿Chrome扩展商店的假冒软件分发站点，并开发了一个与Zimbra网页客户端完全相同的像素级克隆。使用看似无害的下载器（`Chrome_PDF_Viewer.exe`）构成**伪装（T1036）**以逃避用户怀疑。最后阶段涉及通过克隆的网络门户进行**凭证收集（T1589.001）**。
+
+## 威胁行为者背景
+SideWinder，也被各种供应商追踪为Rattlesnake、T-APT-04和Hardcore Nationalist（HN2），是一个在南亚疑似起源的多产APT组织。自至少2012年以来一直活跃，以针对亚洲各地政府、军事和执法实体的长期网络间谍活动而闻名。该组织的行动特点是攻击量高，工具和基础设施不断演变，以及专注于情报收集。这项最新的活动与SideWinder一贯针对该地区政府机构的目标一致。
+
+## 缓解措施与建议
+组织，特别是政府部门以及使用Zimbra Collaboration Suite的组织，应实施加强用户意识培训，重点在于识别复杂的钓鱼尝试，即使是那些模仿受信任的内部服务如网页邮件的尝试。安全团队应监控并阻止网络流量流向未经授权或新注册的域名，这些域名与合法的软件下载或服务门户非常相似。应用程序允许列表可以阻止执行未经授权的二进制文件，如`Chrome_PDF_Viewer.exe`。应对所有电子邮件和协作套件访问强制执行多因素认证（MFA），以减轻被盗凭证的影响。
+
+## 参考资料
+- https://cybersecuritynews.com/sidewinder-uses-fake-chrome-pdf-viewer-and-zimbra-clone/
