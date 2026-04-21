@@ -1,0 +1,65 @@
+---
+title: 'Healthcare Data Breaches in Illinois and Texas Expose 600,000 Patients'
+slug: >-
+  2026-04-21-healthcare-data-breaches-in-illinois-and-texas-expose-600-000-patients
+date: '2026-04-21'
+excerpt: >-
+  Southern Illinois Dermatology, Saint Anthony Hospital, and North Texas
+  Behavioral Health Authority disclose breaches affecting over 600,000 patients,
+  exposing names, SSNs, and medical data.
+category: threat-intel
+tags:
+  - data-breach
+  - healthcare
+  - hipaa
+  - illinois
+  - texas
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/data-breaches-at-healthcare-organizations-in-illinois-and-texas-affect-600000/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-healthcare-data-breaches-in-illinois-and-texas-expose-600-000-patients
+severity: high
+affected_sectors:
+  - healthcare
+affected_regions:
+  - United States
+  - Illinois
+  - Texas
+---
+## Executive Summary
+Three separate healthcare providers in Illinois and Texas have disclosed data breaches impacting over 600,000 patients in total. The incidents, reported to federal regulators by Southern Illinois Dermatology, Saint Anthony Hospital, and North Texas Behavioral Health Authority, exposed sensitive personal and protected health information (PHI). The breaches were discovered between late 2025 and early 2026, with notification letters sent to affected individuals in April 2026.
+
+## Technical Analysis
+The breaches stem from distinct security incidents at each organization, though specific technical details regarding initial access vectors remain undisclosed. According to breach notification reports filed with the U.S. Department of Health and Human Services (HHS), the events are as follows:
+
+Southern Illinois Dermatology reported a breach affecting 547,784 individuals. The organization discovered on January 27, 2026, that an unauthorized party had accessed its network between January 21 and January 27, 2026. The compromised data includes patient names, Social Security numbers, and medical treatment information.
+
+Saint Anthony Hospital in Chicago reported a breach affecting 31,107 individuals. The hospital detected "suspicious activity" within its network on December 23, 2025. A subsequent investigation concluded that an unauthorized actor accessed files containing patient names, Social Security numbers, and clinical information, such as diagnosis and treatment details.
+
+The North Texas Behavioral Health Authority (NTBHA) reported a breach impacting 24,590 individuals. NTBHA identified "unusual activity" on its systems on November 7, 2025. The investigation determined that an unauthorized actor accessed and acquired certain files, which contained patient names, Social Security numbers, and health insurance information.
+
+None of the organizations have publicly attributed the incidents to a specific threat actor or malware family. The lack of detailed technical disclosure makes it impossible to confirm if the breaches are linked or part of a broader campaign.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+None identified in source material. The source reports do not provide sufficient detail on the threat actors' methods, tools, or procedures used to gain initial access, move laterally, or exfiltrate data.
+
+## Threat Actor Context
+The source material does not identify a specific threat actor or group responsible for these breaches. Cybercriminal groups frequently target the healthcare sector due to the high value of PHI and personal identifiers on underground markets, which can be used for medical fraud, identity theft, and extortion. However, without attribution from the affected entities or security researchers, the motive and origin of these attacks remain unclear.
+
+## Mitigations & Recommendations
+The affected organizations have notified impacted individuals and offered complimentary credit monitoring and identity protection services, a standard remediation step following breaches involving Social Security numbers. Southern Illinois Dermatology stated it has implemented additional security measures and enhanced monitoring, though specifics were not provided. Saint Anthony Hospital and NTBHA made similar general statements about reviewing and strengthening their security protocols.
+
+For other healthcare organizations, these incidents underscore the critical need for robust network monitoring to detect suspicious activity promptly, as the time from initial intrusion to discovery ranged from days to weeks. Implementing and testing incident response plans, enforcing multi-factor authentication (MFA) on all access points, and conducting regular audits of access logs and file integrity are foundational defensive measures. Given the sensitivity of the data involved, encryption of data both at rest and in transit is also a HIPAA-mandated safeguard.
+
+## References
+- SecurityWeek: [Data Breaches at Healthcare Organizations in Illinois and Texas Affect 600,000](https://www.securityweek.com/data-breaches-at-healthcare-organizations-in-illinois-and-texas-affect-600000/)
+- U.S. Department of Health and Human Services Breach Portal: [Breach Report for Southern Illinois Dermatology](https://ocrportal.hhs.gov/ocr/breach/breach_report.jsf) (Report ID: 86015)
+- U.S. Department of Health and Human Services Breach Portal: [Breach Report for Saint Anthony Hospital](https://ocrportal.hhs.gov/ocr/breach/breach_report.jsf) (Report ID: 86014)
+- U.S. Department of Health and Human Services Breach Portal: [Breach Report for North Texas Behavioral Health Authority](https://ocrportal.hhs.gov/ocr/breach/breach_report.jsf) (Report ID: 86013)
