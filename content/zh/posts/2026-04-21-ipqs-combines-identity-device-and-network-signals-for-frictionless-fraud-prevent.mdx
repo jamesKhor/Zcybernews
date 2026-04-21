@@ -1,0 +1,52 @@
+---
+title: IPQS 结合身份、设备和网络信号实现无摩擦欺诈检测
+slug: >-
+  2026-04-21-ipqs-combines-identity-device-and-network-signals-for-frictionless-fraud-prevent
+date: '2026-04-21'
+excerpt: IPQS 详细描述了一种使用身份、设备和网络信号的3层欺诈检测策略，能够阻止99.5%的自动化攻击，而不为合法客户增加用户摩擦。
+category: industry
+tags:
+  - fraud-prevention
+  - identity-verification
+  - risk-scoring
+  - cybercrime
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/stopping-fraud-at-each-stage-of-the-customer-journey-without-adding-friction/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-ipqs-combines-identity-device-and-network-signals-for-frictionless-fraud-prevent
+severity: informational
+affected_sectors:
+  - e-commerce
+  - financial services
+  - online services
+---
+## 执行摘要
+欺诈预防平台IPQS详细描述了一种多层次检测策略，旨在拦截整个客户生命周期中的欺诈活动，同时不降低合法用户的用户体验。这种方法在技术博客文章中被描述，它综合了身份、设备和网络智能信号，生成单一的风险评分。根据IPQS的说法，这种方法可以阻止超过99.5%的自动化机器人攻击和欺诈交易，同时保持低误报率，避免为真实用户引入摩擦。
+
+## 技术分析
+IPQS框架通过实时分析三个不同的数据层来运作。第一层关注**身份信号**，审查电子邮件地址、电话号码和实际地址的有效性。系统检查一次性电子邮件域、最近的数据库泄露和合成身份模式。第二层收集**设备和浏览器智能**，对硬件和软件环境进行指纹识别，以检测模拟器、虚拟机、远程桌面会话和常用于欺诈的工具。第三层分析**网络和代理数据**，识别来自VPN、托管提供商、Tor出口节点和以前标记与恶意活动相关的IP地址的连接。
+
+这些信号通过机器学习模型处理，以产生统一的风险评分。IPQS的一个关键技术声明是系统能够保持低于1%的误报率，公司将此归因于所有三个层的信号相关性。例如，一个来自高风险IP地址的交易，但使用经过验证的、长期的身份证和干净的设备指纹，可能被认为比所有三个信号都表明欺诈的风险更低。公司表示其数据集包括超过40亿个分析的电子邮件地址和15亿个电话号码。
+
+## 入侵指标
+在源材料中没有识别出。
+
+## 战术、技术与程序
+源材料没有描述特定的入侵或恶意软件活动。相反，它概述了IPQS系统旨在检测的欺诈者TTP。这些包括使用**一次性电子邮件地址（T1585.001）**、**虚拟机或沙箱（T1497）**来逃避设备指纹识别，以及**代理网络（T1090.002）**来掩盖地理位置。该系统还旨在识别与**凭证填充（T1110.004）**、**账户接管（T1484）**和**支付欺诈**一致的模式。
+
+## 威胁行为者背景
+文章没有将欺诈技术归因于一个命名的高级持续性威胁（APT）组织。背景是广泛的网络犯罪活动，包括个人欺诈者、有组织的犯罪团伙和针对在线账户创建、金融交易和忠诚度计划的自动化机器人网络。主要动机是通过盗窃、欺诈或转售受损账户和支付细节来获得财务收益。
+
+## 缓解措施与建议
+IPQS倡导其集成的、基于信号的方法作为主要缓解措施。技术描述中隐含的建议包括：
+*   实施多层次的欺诈检测，关联身份、设备和网络信号，而不是依赖任何单一因素。
+*   在客户旅程的多个阶段整合欺诈检查——账户创建、登录和交易——以创建持续的风险评估。
+*   利用大规模、频繁更新的受损凭据、恶意IP和一次性服务的数据集来通知风险评分。
+*   调整系统以优先减少误报，以最小化对合法客户的摩擦，因为过多的安全阻止会直接影响收入。
+
+## 参考资料
+*   [在不增加摩擦的情况下，在客户旅程的每个阶段阻止欺诈](https://www.bleepingcomputer.com/news/security/stopping-fraud-at-each-stage-of-the-customer-journey-without-adding-friction/)

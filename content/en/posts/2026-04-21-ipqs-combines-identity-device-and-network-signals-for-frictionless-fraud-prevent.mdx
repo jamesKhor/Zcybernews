@@ -1,0 +1,55 @@
+---
+title: 'IPQS Combines Identity, Device, and Network Signals for Frictionless Fraud'
+slug: >-
+  2026-04-21-ipqs-combines-identity-device-and-network-signals-for-frictionless-fraud-prevent
+date: '2026-04-21'
+excerpt: >-
+  IPQS details a 3-layer fraud detection strategy using identity, device, and
+  network signals to block 99.5% of automated attacks without adding user
+  friction for legitimate customers.
+category: industry
+tags:
+  - fraud-prevention
+  - identity-verification
+  - risk-scoring
+  - cybercrime
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/stopping-fraud-at-each-stage-of-the-customer-journey-without-adding-friction/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-ipqs-combines-identity-device-and-network-signals-for-frictionless-fraud-prevent
+severity: informational
+affected_sectors:
+  - e-commerce
+  - financial services
+  - online services
+---
+## Executive Summary
+Fraud prevention platform IPQS has detailed a multi-layered detection strategy designed to intercept fraudulent activity across the customer lifecycle without degrading the user experience for legitimate customers. The approach, described in a technical blog post, synthesizes identity, device, and network intelligence signals to generate a single risk score. According to IPQS, this methodology can block over 99.5% of automated bot attacks and fraudulent transactions while maintaining low false-positive rates that avoid introducing friction for genuine users.
+
+## Technical Analysis
+The IPQS framework operates by analyzing three distinct data layers in real-time. The first layer focuses on **identity signals**, scrutinizing the validity of email addresses, phone numbers, and physical addresses. The system checks for disposable email domains, recent data breaches, and synthetic identity patterns. The second layer gathers **device and browser intelligence**, fingerprinting the hardware and software environment to detect emulators, virtual machines, remote desktop sessions, and tools commonly used for fraud. The third layer analyzes **network and proxy data**, identifying connections from VPNs, hosting providers, Tor exit nodes, and previously flagged IP addresses associated with malicious activity.
+
+These signals are processed through machine learning models to produce a unified risk score. A key technical claim from IPQS is the system's ability to maintain a sub-1% false-positive rate, which the company attributes to the correlation of signals across all three layers. For example, a transaction originating from a high-risk IP address but using a verified, long-standing identity and a clean device fingerprint may be deemed lower risk than one where all three signals indicate fraud. The company states its data set includes over 4 billion analyzed email addresses and 1.5 billion phone numbers.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The source material does not describe a specific intrusion or malware campaign. Instead, it outlines the fraudster TTPs that the IPQS system is designed to detect. These include the use of **disposable email addresses (T1585.001)**, **virtual machines or sandboxes (T1497)** to evade device fingerprinting, and **proxy networks (T1090.002)** to obfuscate geographic location. The system also aims to identify patterns consistent with **credential stuffing (T1110.004)**, **account takeover (T1484)**, and **payment fraud**.
+
+## Threat Actor Context
+The article does not attribute the fraud techniques to a named advanced persistent threat (APT) group. The context is broadly cybercriminal activity, encompassing individual fraudsters, organized crime rings, and automated botnets that target online account creation, financial transactions, and loyalty programs. The primary motive is financial gain through theft, fraud, or the resale of compromised accounts and payment details.
+
+## Mitigations & Recommendations
+IPQS advocates for its integrated, signal-based approach as a primary mitigation. The recommendations implicit in the technical description include:
+*   Implementing multi-layered fraud detection that correlates identity, device, and network signals, rather than relying on any single factor.
+*   Integrating fraud checks at multiple stages of the customer journey—account creation, login, and transaction—to create a continuous risk assessment.
+*   Leveraging large-scale, frequently updated data sets on compromised credentials, malicious IPs, and disposable services to inform risk scoring.
+*   Tuning systems to prioritize reducing false positives to minimize friction for legitimate customers, as excessive security blocks can directly impact revenue.
+
+## References
+*   [Stopping Fraud at Each Stage of the Customer Journey Without Adding Friction](https://www.bleepingcomputer.com/news/security/stopping-fraud-at-each-stage-of-the-customer-journey-without-adding-friction/)
