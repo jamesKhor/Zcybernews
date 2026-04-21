@@ -8,8 +8,12 @@
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": ["all"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "all"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "informational": 5
   },

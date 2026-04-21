@@ -6,10 +6,18 @@
     "first": "2026-04-13",
     "latest": "2026-04-19"
   },
-  "top_actors": ["Triad Nexus", "W3LL Team"],
+  "top_actors": [
+    "Triad Nexus",
+    "W3LL Team"
+  ],
   "top_cves": [],
-  "top_sectors": ["financial-services", "multiple"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "financial-services",
+    "multiple"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "informational": 1,
     "high": 5,

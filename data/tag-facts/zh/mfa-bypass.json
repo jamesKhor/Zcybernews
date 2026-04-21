@@ -6,10 +6,21 @@
     "first": "2026-04-13",
     "latest": "2026-04-18"
   },
-  "top_actors": ["Storm-2755", "Tycoon 2FA"],
+  "top_actors": [
+    "Storm-2755",
+    "Tycoon 2FA"
+  ],
   "top_cves": [],
-  "top_sectors": ["finance", "hr", "multiple", "payroll"],
-  "top_regions": ["Canada", "Global"],
+  "top_sectors": [
+    "finance",
+    "hr",
+    "multiple",
+    "payroll"
+  ],
+  "top_regions": [
+    "Canada",
+    "Global"
+  ],
   "severity_mix": {
     "high": 5
   },

@@ -1,22 +1,29 @@
 {
   "tag": "evasion",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-17"
+    "latest": "2026-04-20"
   },
-  "top_actors": ["Payouts King"],
+  "top_actors": [
+    "Payouts King",
+    "The Gentlemen"
+  ],
   "top_cves": [],
-  "top_sectors": ["multiple"],
-  "top_regions": ["Czech republic"],
+  "top_sectors": [
+    "multiple"
+  ],
+  "top_regions": [
+    "Czech republic"
+  ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "The Gentlemen ransomware-as-a-service group uses the SystemBC SOCKS5 proxy tool to hide command-and-control traffic, according to a Check Point DFIR report analyzing a recent affiliate attack.",
     "The Payouts King ransomware group is deploying the open-source QEMU emulator to create hidden virtual machines on compromised hosts, establishing a persistent reverse SSH backdoor that evades conventi",
-    "Cisco Talos researchers identify the PowMix botnet, active since December 2025, targeting Czech workers with randomized C2 beaconing to evade detection and deploy additional payloads.",
-    "A newly identified Rust-based Remote Access Trojan (RAT) toolkit, SpankRAT, abuses Windows Explorer processes to bypass reputation-based security and maintain persistent, low-detection access to compr"
+    "Cisco Talos researchers identify the PowMix botnet, active since December 2025, targeting Czech workers with randomized C2 beaconing to evade detection and deploy additional payloads."
   ],
-  "sources_hash": "54873e3036fd81a3"
+  "sources_hash": "a1e91dcb90ac7efd"
 }

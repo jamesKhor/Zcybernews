@@ -1,9 +1,9 @@
 {
   "tag": "patch-tuesday",
   "locale": "en",
-  "intro": "This archive covers 16 articles from April 12–20, 2026, analyzing the Patch Tuesday security updates. The reporting details 16 vulnerabilities, with a severity mix of 7 critical, 6 high, and 3 medium issues. The most prominent flaws include CVE-2026-27681, a critical 9.9 CVSS vulnerability, and CVE-2026-33104. Additional critical CVEs covered are CVE-2025-27080 and CVE-2025-27088. These patches addressed risks primarily targeting the global operations of critical infrastructure, government, enterprise, energy, and education sectors.",
-  "sources_hash": "4ffc95a2a7cca7c1",
+  "intro": "This archive covers 17 articles from April 12–20, 2026, focused on Patch Tuesday updates. The most prominent vulnerabilities addressed include the critical CVE-2026-27681 (CVSS 9.9) and CVE-2026-33104 (CVSS 7.8), alongside CVE-2025-27080 and CVE-2025-27088. The updates targeted a severity mix of 7 critical, 6 high, and 4 medium flaws. These patches were crucial for sectors such as critical infrastructure, education, energy, enterprise, and government, with a global scope of affected regions.",
+  "sources_hash": "bec983ef072af18d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:07:55.190Z",
+  "generated_at": "2026-04-21T04:06:56.296Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

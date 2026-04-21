@@ -1,0 +1,28 @@
+{
+  "tag": "initial-access",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "cryptocurrency",
+    "financial-services",
+    "general-business",
+    "logistics",
+    "shipping"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "一个木马化的 Slack 安装程序提供了一个远程访问工具，该工具创建了一个隐藏的桌面，允许攻击者绕过多因素认证并悄无声息地控制受害者的机器。",
+    "威胁行为者滥用 Obsidian 笔记应用通过恶意插件投递新型 PHANTOMPULSE RAT，针对金融和加密货币领域的个人进行攻击，此次行动被追踪为 REF6598。",
+    "威胁行为者正在使用Microsoft Teams冒充IT帮助台工作人员，诱骗员工安装微软自家的Quick Assist工具，以授予攻击者对企业系统的完全远程控制权。"
+  ],
+  "sources_hash": "1b7ef136d304655e"
+}

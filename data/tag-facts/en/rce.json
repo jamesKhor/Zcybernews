@@ -1,7 +1,7 @@
 {
   "tag": "rce",
   "locale": "en",
-  "count": 18,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-20"
@@ -29,16 +29,21 @@
       "cvss": 8.8
     }
   ],
-  "top_sectors": ["academia", "healthcare", "industrial", "research"],
+  "top_sectors": [
+    "academia",
+    "healthcare",
+    "industrial",
+    "research"
+  ],
   "top_regions": [],
   "severity_mix": {
-    "critical": 12,
+    "critical": 11,
     "high": 6
   },
   "recent_excerpts": [
     "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution.",
-    "Syncthing versions before 1.28.0 contain a critical vulnerability, CVE-2026-XXXXX, enabling remote code execution on the Syncthing relay server infrastructure.",
-    "A critical vulnerability (CVE-2026-32861) in NI LabVIEW allows remote attackers to execute arbitrary code by tricking a user into opening a malicious LVCLASS file, with a CVSS score of 7.8."
+    "A critical vulnerability (CVE-2026-32861) in NI LabVIEW allows remote attackers to execute arbitrary code by tricking a user into opening a malicious LVCLASS file, with a CVSS score of 7.8.",
+    "A heap-based buffer overflow vulnerability (CVE-2026-2050) in the GNU Image Manipulation Program (GIMP) allows remote attackers to execute arbitrary code when a user opens a malicious HDR image file."
   ],
-  "sources_hash": "98001604288a88bb"
+  "sources_hash": "787c0b2492c23ce5"
 }

@@ -6,7 +6,10 @@
     "first": "2026-04-12",
     "latest": "2026-04-20"
   },
-  "top_actors": ["Lazarus Group", "TeamPCP"],
+  "top_actors": [
+    "Lazarus Group",
+    "TeamPCP"
+  ],
   "top_cves": [
     {
       "id": "CVE-2026-39987",
@@ -26,7 +29,12 @@
     "cryptocurrency",
     "financial-services"
   ],
-  "top_regions": ["Global", "Europe", "Asia", "North america"],
+  "top_regions": [
+    "Global",
+    "Europe",
+    "Asia",
+    "North america"
+  ],
   "severity_mix": {
     "critical": 6,
     "informational": 4,

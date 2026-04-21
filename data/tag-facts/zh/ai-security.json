@@ -1,31 +1,40 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 37,
+  "count": 38,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-20"
   },
-  "top_actors": ["OpenClaw"],
-  "top_cves": [],
+  "top_actors": [
+    "OpenClaw"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-5760",
+      "cvss": 9.8
+    }
+  ],
   "top_sectors": [
     "technology",
     "cybersecurity",
     "healthcare",
     "ai-development",
-    "cloud services"
+    "artificial intelligence"
   ],
-  "top_regions": ["Global"],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
+    "critical": 5,
     "high": 17,
     "medium": 6,
-    "critical": 4,
     "informational": 10
   },
   "recent_excerpts": [
+    "CVE-2026-5760，SGLang 推理引擎中的一个关键 9.8 CVSS 漏洞，允许攻击者通过上传恶意 GGUF 模型文件来执行任意代码，危及 AI/ML 服务部署。",
     "Qualys警告称，像Claude Mythos这样的AI代理可以将漏洞发现时间从几个月缩短到几小时，压缩补丁窗口，并以大量新的CVEs压倒安全团队。",
-    "Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project Glasswing 项目以发现并修补漏洞。",
-    "云安全联盟警告称Anthropic的Claude Mythos模型将引发一场'AI漏洞风暴'，迫使CISOs在18个月内管理代码缺陷和新颖利用技术的10倍激增。"
+    "Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project Glasswing 项目以发现并修补漏洞。"
   ],
-  "sources_hash": "6a518bf501ebd797"
+  "sources_hash": "49240392ee3a2d34"
 }

@@ -1,24 +1,26 @@
 {
   "tag": "threat-detection",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-19"
+    "latest": "2026-04-20"
   },
-  "top_actors": ["OpenClaw"],
+  "top_actors": [
+    "OpenClaw"
+  ],
   "top_cves": [],
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
-    "informational": 6,
+    "informational": 7,
     "high": 1,
     "critical": 1
   },
   "recent_excerpts": [
+    "SentinelOne 研究发现，人类主导的安全团队需要 4-6 小时来验证单个警报，而自动化攻击在几秒钟内展开，为企业创造了一个关键的防御缺口。",
     "Rapid7 的新 AI 助手为 SOC 团队分析了 22,052 起安全事件，以即时总结日志数据，解释警报，并生成调查查询，旨在减少分析师的疲劳。",
-    "一项新的分析认为，大多数由 AI 驱动的安全运营中心工具仅仅加快了警报分类的速度，而没有减少分析师的基本工作量，未能实现真正的自动化承诺。",
-    "SentinelOne 概述了其 AI原生安全平台，利用设备上的模型和全球数据湖，以机器速度自动检测和响应威胁。"
+    "一项新的分析认为，大多数由 AI 驱动的安全运营中心工具仅仅加快了警报分类的速度，而没有减少分析师的基本工作量，未能实现真正的自动化承诺。"
   ],
-  "sources_hash": "5a2e80a8adc297dc"
+  "sources_hash": "13ef788170c01142"
 }

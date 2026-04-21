@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "2026年4月12日至19日期间的勒索软件态势主要由威胁行为者Payouts King主导，同时活跃的还有Interlock和Rhysida。本期收录的19篇文章详述了其活动情况，这些活动主要针对医疗保健、物流和汽车行业，同时对数据分析和娱乐领域也造成了重大影响。从地理分布看，其攻击行动波及欧洲、土耳其、荷兰和北美，其中多次活动具有全球性影响。技术分析常聚焦于对CVE-2026-34197漏洞的利用，该漏洞CVSS评分为8.8分。在涉及的事件中，严重程度普遍偏高：15篇文章归类为高度严重，1篇为严重。",
-  "sources_hash": "e9644e6eac3cc212",
-  "source_intro_hash": "f10f60388dad153d",
+  "intro": "2026年4月12日至20日期间，ZCyberNews追踪到23起勒索软件事件，其中大多数被评定为高严重性。威胁行为者Payouts King是报告频率最高的，同时出现的还有Interlock和RansomHub的活动。此期间被利用的一个关键漏洞是CVE-2026-34197，其CVSS评分为8.8。攻击主要针对医疗保健、物流、制造和零售行业，对欧洲、美国、土耳其和荷兰造成了显著影响，同时也有波及全球的事件发生。",
+  "sources_hash": "dbb6707bb4518135",
+  "source_intro_hash": "4ed21dfa2514e3f2",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:22:16.086Z",
+  "generated_at": "2026-04-21T04:09:36.530Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

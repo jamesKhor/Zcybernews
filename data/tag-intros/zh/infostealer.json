@@ -1,0 +1,10 @@
+{
+  "tag": "infostealer",
+  "locale": "zh",
+  "intro": "2026年4月10日至4月20日期间，ZCyberNews发布了五份关于信息窃取恶意软件的报告。相关活动主要围绕威胁行为体Omnistealer展开，其攻击目标集中于乌克兰的政府和医疗保健领域。所有五起事件均被评估为高严重性威胁，表明在此期间该地区发生了一场针对关键机构数据窃取的集中且严重的攻击活动。",
+  "sources_hash": "a372c5562e99d9de",
+  "source_intro_hash": "c390bee72a54a176",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-21T04:09:04.117Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

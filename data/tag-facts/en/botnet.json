@@ -6,7 +6,9 @@
     "first": "2026-04-14",
     "latest": "2026-04-18"
   },
-  "top_actors": ["W3LL"],
+  "top_actors": [
+    "W3LL"
+  ],
   "top_cves": [
     {
       "id": "CVE-2024-3721",
@@ -23,7 +25,10 @@
     "residential",
     "technology"
   ],
-  "top_regions": ["Czech republic", "Global"],
+  "top_regions": [
+    "Czech republic",
+    "Global"
+  ],
   "severity_mix": {
     "medium": 2,
     "high": 4,

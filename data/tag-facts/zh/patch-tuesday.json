@@ -1,7 +1,7 @@
 {
   "tag": "patch-tuesday",
   "locale": "zh",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-20"
@@ -30,16 +30,18 @@
     "enterprise",
     "government"
   ],
-  "top_regions": ["Global"],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 6,
-    "medium": 3,
+    "medium": 4,
     "critical": 7
   },
   "recent_excerpts": [
     "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。",
-    "微软修补了Windows win32kfull驱动程序中的一个本地权限提升漏洞（CVE-2026-33104），该漏洞可能允许经过身份验证的攻击者获得SYSTEM权限。该漏洞由Zero Day Initiative披露。",
-    "微软确认 2026 年 4 月的 Windows 11 更新 KB5083769 和 KB5082052 可能会迫使具有特定组策略配置的设备上的用户进入 BitLocker 恢复模式，从而有数据无法访问的风险。"
+    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。",
+    "微软修补了Windows win32kfull驱动程序中的一个本地权限提升漏洞（CVE-2026-33104），该漏洞可能允许经过身份验证的攻击者获得SYSTEM权限。该漏洞由Zero Day Initiative披露。"
   ],
-  "sources_hash": "4ffc95a2a7cca7c1"
+  "sources_hash": "bec983ef072af18d"
 }

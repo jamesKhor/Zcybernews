@@ -17,7 +17,12 @@
       "cvss": 6.5
     }
   ],
-  "top_sectors": ["education", "government", "healthcare", "utilities"],
+  "top_sectors": [
+    "education",
+    "government",
+    "healthcare",
+    "utilities"
+  ],
   "top_regions": [],
   "severity_mix": {
     "medium": 1,

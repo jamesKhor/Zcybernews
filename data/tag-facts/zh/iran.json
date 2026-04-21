@@ -6,7 +6,9 @@
     "first": "2026-04-12",
     "latest": "2026-04-13"
   },
-  "top_actors": ["CyberAv3ngers"],
+  "top_actors": [
+    "CyberAv3ngers"
+  ],
   "top_cves": [],
   "top_sectors": [
     "water",
@@ -15,7 +17,10 @@
     "government",
     "industrial"
   ],
-  "top_regions": ["United states", "Iran"],
+  "top_regions": [
+    "United states",
+    "Iran"
+  ],
   "severity_mix": {
     "high": 4
   },

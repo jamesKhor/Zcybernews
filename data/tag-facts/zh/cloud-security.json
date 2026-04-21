@@ -6,7 +6,9 @@
     "first": "2026-04-13",
     "latest": "2026-04-20"
   },
-  "top_actors": ["APT41"],
+  "top_actors": [
+    "APT41"
+  ],
   "top_cves": [
     {
       "id": "CVE-2026-33413",
@@ -20,7 +22,9 @@
     "cloud services",
     "cloud-services"
   ],
-  "top_regions": ["Global"],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 8,
     "critical": 2,

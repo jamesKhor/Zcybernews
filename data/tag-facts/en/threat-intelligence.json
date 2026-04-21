@@ -8,8 +8,13 @@
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": ["critical-infrastructure", "technology"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "critical-infrastructure",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 3,
     "informational": 4

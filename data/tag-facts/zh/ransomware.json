@@ -1,12 +1,16 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 19,
+  "count": 23,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-19"
+    "latest": "2026-04-20"
   },
-  "top_actors": ["Payouts King", "Interlock", "Rhysida"],
+  "top_actors": [
+    "Payouts King",
+    "Interlock",
+    "RansomHub"
+  ],
   "top_cves": [
     {
       "id": "CVE-2026-34197",
@@ -16,20 +20,26 @@
   "top_sectors": [
     "healthcare",
     "logistics",
-    "automotive",
-    "data-analytics",
-    "entertainment"
+    "manufacturing",
+    "multiple",
+    "retail"
   ],
-  "top_regions": ["Europe", "Global", "Turkey", "Netherlands", "North america"],
+  "top_regions": [
+    "Europe",
+    "Global",
+    "Turkey",
+    "United states",
+    "Netherlands"
+  ],
   "severity_mix": {
+    "high": 19,
     "informational": 1,
-    "high": 15,
     "critical": 1
   },
   "recent_excerpts": [
-    "NAKIVO Inc.发布了其Backup & Replication平台的11.2版本，引入了勒索软件防御模块，支持Proxmox VE 9.0，并为VMware vSphere 9环境增强了性能。",
-    "Apache ActiveMQ Classic 中存在一个高严重性的漏洞，CVE-2026-34197（CVSS 8.8），目前正在被积极利用，促使 CISA 将其加入其已知被利用漏洞目录，并要求联邦机构进行补丁修复。",
-    "Payouts King 勒索软件团伙正在部署开源 QEMU 模拟器，在被入侵的主机上创建隐藏的虚拟机，建立持久的反向 SSH 后门，以规避传统的端点检测。"
+    "Datto 的 2026 年报告揭示了即使有备份，43% 的企业在遭受攻击后仍面临超过 24 小时的停机时间，突显了数据备份与真正的业务连续性和灾难恢复（BCDR）之间的关键差距。",
+    "根据 Check Point DFIR 报告分析最近的一次关联攻击，The Gentlemen 勒索软件即服务组织使用 SystemBC SOCKS5 代理工具来隐藏命令和控制流量。",
+    "在两个不同的活动中，威胁行为者使用开源 QEMU 机器模拟器加载和执行勒索软件和远程访问工具，通过在受信任的虚拟化进程中运行恶意代码来绕过端点检测。"
   ],
-  "sources_hash": "e9644e6eac3cc212"
+  "sources_hash": "dbb6707bb4518135"
 }

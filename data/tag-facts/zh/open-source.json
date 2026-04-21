@@ -8,7 +8,10 @@
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": ["software-development", "technology"],
+  "top_sectors": [
+    "software-development",
+    "technology"
+  ],
   "top_regions": [],
   "severity_mix": {
     "informational": 3,

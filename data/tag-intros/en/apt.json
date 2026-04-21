@@ -1,0 +1,9 @@
+{
+  "tag": "apt",
+  "locale": "en",
+  "intro": "Between April 13 and 20, 2026, ZCyberNews tracked five high-severity reports on advanced persistent threats. The activity featured distinct threat actors CyberAv3ngers, Sapphire Sleet, and UAC-0247. Their operations primarily targeted the cryptocurrency, government, healthcare, industrial, and technology sectors. The observed impact was global in scope, with notable focus on Ukraine and the United States. This concentrated wave of high-level incidents underscores the persistent and widespread nature of sophisticated cyber campaigns across critical infrastructure and financial systems.",
+  "sources_hash": "8559d13cd48aeae5",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-21T04:08:02.192Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,35 +1,39 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-20"
   },
-  "top_actors": ["Rhysida", "ShinyHunters"],
+  "top_actors": [
+    "RansomHub",
+    "Rhysida",
+    "ShinyHunters"
+  ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "hospitality",
+    "retail",
     "technology",
-    "travel",
-    "healthcare"
+    "travel"
   ],
   "top_regions": [
     "Europe",
-    "North america",
     "United states",
+    "North america",
     "Global",
     "Mexico"
   ],
   "severity_mix": {
-    "high": 14,
+    "high": 15,
     "medium": 3
   },
   "recent_excerpts": [
     "TheGentlemen勒索软件团伙声称已完全入侵Atlassian合作伙伴Adaptavist的基础设施，窃取了来自NASA、Visa等客户的源代码和客户数据。",
-    "Vercel 确认了一起泄露事件，暴露了有限的客户凭证，攻击者通过第三方 AI 工具 Context.ai 入侵了一名员工的账户。云平台正在为受影响的用户重置密码和 API 令牌。",
-    "洛杉矶警察局报告称，一名城市律师的数字存储系统遭到7.7TB和337,000个文件的泄露，暴露了敏感的执法数据。"
+    "Seiko 美国的网站被一名黑客篡改，声称窃取了其Shopify客户数据库，包括30,000个人的姓名、电子邮件和订单详情，并要求支付赎金以防止公开泄露。",
+    "Vercel 确认了一起泄露事件，暴露了有限的客户凭证，攻击者通过第三方 AI 工具 Context.ai 入侵了一名员工的账户。云平台正在为受影响的用户重置密码和 API 令牌。"
   ],
-  "sources_hash": "957bcc972cebf825"
+  "sources_hash": "9608950502fe5f83"
 }

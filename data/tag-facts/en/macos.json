@@ -6,10 +6,20 @@
     "first": "2026-04-10",
     "latest": "2026-04-17"
   },
-  "top_actors": ["ClickFix", "Lazarus Group", "Sapphire Sleet"],
+  "top_actors": [
+    "ClickFix",
+    "Lazarus Group",
+    "Sapphire Sleet"
+  ],
   "top_cves": [],
-  "top_sectors": ["cryptocurrency", "technology", "artificial-intelligence"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "cryptocurrency",
+    "technology",
+    "artificial-intelligence"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 5,
     "medium": 2

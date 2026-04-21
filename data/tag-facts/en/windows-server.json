@@ -8,8 +8,14 @@
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": ["education", "enterprise", "government"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "education",
+    "enterprise",
+    "government"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 2,
     "medium": 2,

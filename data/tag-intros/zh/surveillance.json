@@ -1,0 +1,10 @@
+{
+  "tag": "surveillance",
+  "locale": "zh",
+  "intro": "2026年4月中旬，政府和电信实体成为监控相关网络活动的主要目标，美国和伊朗受到显著影响。该期间共出现五份报告，其中包含一项CVSS评分达8.8的关键漏洞CVE-2026-22898。活动波及公民社会、私营部门和技术等多个领域，严重程度从信息级到关键级不等。这批报告揭示了此轮监控活动的技术漏洞特征与行业针对性。",
+  "sources_hash": "d9e3565479e21e42",
+  "source_intro_hash": "730a6f6cc30eeae4",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-21T04:09:51.248Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -6,7 +6,10 @@
     "first": "2026-04-12",
     "latest": "2026-04-16"
   },
-  "top_actors": ["Rhysida", "UAC-0247"],
+  "top_actors": [
+    "Rhysida",
+    "UAC-0247"
+  ],
   "top_cves": [],
   "top_sectors": [
     "healthcare",
@@ -15,7 +18,11 @@
     "research",
     "technology"
   ],
-  "top_regions": ["Netherlands", "Ukraine", "United states"],
+  "top_regions": [
+    "Netherlands",
+    "Ukraine",
+    "United states"
+  ],
   "severity_mix": {
     "high": 5
   },

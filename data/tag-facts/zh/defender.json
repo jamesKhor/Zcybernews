@@ -12,8 +12,12 @@
       "id": "CVE-2026-33825"
     }
   ],
-  "top_sectors": ["multiple"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "multiple"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 3,
     "critical": 2

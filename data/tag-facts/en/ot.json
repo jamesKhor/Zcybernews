@@ -15,7 +15,11 @@
     "building automation",
     "engineering"
   ],
-  "top_regions": ["Global", "North-america", "United states"],
+  "top_regions": [
+    "Global",
+    "North-america",
+    "United states"
+  ],
   "severity_mix": {
     "high": 5
   },

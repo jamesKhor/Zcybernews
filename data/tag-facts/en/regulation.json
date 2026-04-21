@@ -15,7 +15,12 @@
     "critical_infrastructure",
     "education"
   ],
-  "top_regions": ["United states", "European union", "Global", "Asia"],
+  "top_regions": [
+    "United states",
+    "European union",
+    "Global",
+    "Asia"
+  ],
   "severity_mix": {
     "medium": 2,
     "informational": 5,

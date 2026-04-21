@@ -15,7 +15,9 @@
     "any-email-sender",
     "automotive"
   ],
-  "top_regions": ["Global"],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "informational": 2,
     "medium": 3,

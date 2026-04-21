@@ -6,7 +6,9 @@
     "first": "2026-04-12",
     "latest": "2026-04-17"
   },
-  "top_actors": ["CyberAv3ngers"],
+  "top_actors": [
+    "CyberAv3ngers"
+  ],
   "top_cves": [],
   "top_sectors": [
     "critical-infrastructure",
@@ -15,7 +17,9 @@
     "utilities",
     "water"
   ],
-  "top_regions": ["United states"],
+  "top_regions": [
+    "United states"
+  ],
   "severity_mix": {
     "informational": 3,
     "high": 4,

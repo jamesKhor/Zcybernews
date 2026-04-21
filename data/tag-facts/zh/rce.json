@@ -1,7 +1,7 @@
 {
   "tag": "rce",
   "locale": "zh",
-  "count": 18,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-20"
@@ -29,16 +29,21 @@
       "cvss": 8.8
     }
   ],
-  "top_sectors": ["academia", "healthcare", "industrial", "research"],
+  "top_sectors": [
+    "academia",
+    "healthcare",
+    "industrial",
+    "research"
+  ],
   "top_regions": [],
   "severity_mix": {
-    "critical": 12,
+    "critical": 11,
     "high": 6
   },
   "recent_excerpts": [
     "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。",
-    "Syncthing 版本在 1.28.0 之前的版本包含一个关键漏洞，CVE-2026-XXXXX，使得远程代码执行成为可能，影响 Syncthing 中继服务器基础设施。攻击者可以利用这个缺陷来破坏全球中继网络，该网络被数百万用户用于私人文件传输。",
-    "NI LabVIEW中存在一个关键漏洞（CVE-2026-32861），允许远程攻击者通过诱使用户打开恶意的LVCLASS文件来执行任意代码，CVSS得分为7.8。"
+    "NI LabVIEW中存在一个关键漏洞（CVE-2026-32861），允许远程攻击者通过诱使用户打开恶意的LVCLASS文件来执行任意代码，CVSS得分为7.8。",
+    "GNU 图像处理程序（GIMP）中存在一个基于堆的缓冲区溢出漏洞（CVE-2026-2050），允许远程攻击者在用户打开恶意HDR图像文件时执行任意代码。"
   ],
-  "sources_hash": "98001604288a88bb"
+  "sources_hash": "787c0b2492c23ce5"
 }

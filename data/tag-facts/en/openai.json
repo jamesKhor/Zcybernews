@@ -6,10 +6,18 @@
     "first": "2026-04-12",
     "latest": "2026-04-16"
   },
-  "top_actors": ["Lazarus Group"],
+  "top_actors": [
+    "Lazarus Group"
+  ],
   "top_cves": [],
-  "top_sectors": ["technology", "artificial-intelligence", "cybersecurity"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "technology",
+    "artificial-intelligence",
+    "cybersecurity"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "informational": 2,
     "medium": 3,

@@ -15,7 +15,11 @@
     "industrial",
     "utilities"
   ],
-  "top_regions": ["Global", "United states", "North-america"],
+  "top_regions": [
+    "Global",
+    "United states",
+    "North-america"
+  ],
   "severity_mix": {
     "high": 6,
     "critical": 1,

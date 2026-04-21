@@ -1,10 +1,10 @@
 {
   "tag": "windows",
   "locale": "zh",
-  "intro": "本周的Windows安全报道聚焦于威胁组织Chaotic Eclipse，以及包括CVE-2026-33104、CVE-2026-26179和CVE-2026-32183在内的关键漏洞。该档案详细记录了单周内的16篇文章，突出呈现了以高危和严重缺陷为主的风险分布。较早的漏洞如CVE-2024-20662和CVE-2024-21412在相关报告中仍具现实意义。这种高度集中的安全动态既揭示了特定组织对Windows生态系统的持续针对性攻击，也凸显了处理新披露漏洞与历史遗留安全弱点的长期必要性。",
-  "sources_hash": "56f70ddc49923e09",
-  "source_intro_hash": "05a377984e1af6b9",
+  "intro": "2026年4月12日至20日期间的Windows威胁态势主要由Chaotic Eclipse的活动主导。本档案收录的17篇文章详细记录了一处严重、12处高危及四处中危漏洞的混合风险。涉及的关键CVE包括CVE-2026-33104（CVSS 7.8）、CVE-2026-26179（CVSS 7.5）和CVE-2026-32183（CVSS 7.5），以及早期漏洞CVE-2024-20662和CVE-2024-21412。报告针对这些具体漏洞利用方式及相关威胁行为体的手法提供了聚焦分析。",
+  "sources_hash": "442c65f58fc53565",
+  "source_intro_hash": "d51b58581af1c0a2",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:22:52.117Z",
+  "generated_at": "2026-04-21T04:10:08.260Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

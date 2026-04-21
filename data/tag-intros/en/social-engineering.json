@@ -1,9 +1,9 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "intro": "APT37 (ScarCruft, InkySquid), ClickFix, and Pushpaganda were the most active threat actors in a concentrated wave of social-engineering attacks documented between April 8 and April 20, 2026. The 36 articles in this archive detail 25 high-severity incidents, alongside 10 medium and one informational report. These campaigns primarily targeted the financial-services, cryptocurrency, and hospitality sectors, with significant impact on individuals and logistics. Activity was observed globally, with notable focus on the United States, Canada, the United Kingdom, and Australia.",
-  "sources_hash": "9f85e8bb7d31f74e",
+  "intro": "This archive contains 38 reports on social-engineering threats from April 8-20, 2026. APT37 (ScarCruft, InkySquid) was the most frequently cited actor, alongside ClickFix and Pushpaganda. The majority of incidents were rated high severity, targeting the cryptocurrency and financial-services sectors, as well as hospitality, individuals, and logistics. These campaigns had a global footprint, with notable focus on the United States, Canada, the United Kingdom, and Australia.",
+  "sources_hash": "3c81fc8eef5500e2",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T10:55:15.241Z",
+  "generated_at": "2026-04-21T04:06:13.544Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

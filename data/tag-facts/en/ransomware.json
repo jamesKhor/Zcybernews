@@ -1,12 +1,16 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 19,
+  "count": 23,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-19"
+    "latest": "2026-04-20"
   },
-  "top_actors": ["Payouts King", "Interlock", "Rhysida"],
+  "top_actors": [
+    "Payouts King",
+    "Interlock",
+    "RansomHub"
+  ],
   "top_cves": [
     {
       "id": "CVE-2026-34197",
@@ -16,20 +20,26 @@
   "top_sectors": [
     "healthcare",
     "logistics",
-    "automotive",
-    "data-analytics",
-    "entertainment"
+    "manufacturing",
+    "multiple",
+    "retail"
   ],
-  "top_regions": ["Europe", "Global", "Turkey", "Netherlands", "North america"],
+  "top_regions": [
+    "Europe",
+    "Global",
+    "Turkey",
+    "United states",
+    "Netherlands"
+  ],
   "severity_mix": {
+    "high": 19,
     "informational": 1,
-    "high": 15,
     "critical": 1
   },
   "recent_excerpts": [
-    "NAKIVO Inc. has released version 11.2 of its Backup & Replication platform, introducing a ransomware defense module, support for Proxmox VE 9.0, and performance enhancements for VMware vSphere 9 envir",
-    "A high-severity flaw in Apache ActiveMQ Classic, CVE-2026-34197 (CVSS 8.8), is under active exploitation, prompting CISA to add it to its Known Exploited Vulnerabilities catalog and mandate patching f",
-    "The Payouts King ransomware group is deploying the open-source QEMU emulator to create hidden virtual machines on compromised hosts, establishing a persistent reverse SSH backdoor that evades conventi"
+    "Datto's 2026 report reveals 43% of businesses with backups still face over 24 hours of downtime after an attack, highlighting the critical gap between data backup and true business continuity and disa",
+    "The Gentlemen ransomware-as-a-service group uses the SystemBC SOCKS5 proxy tool to hide command-and-control traffic, according to a Check Point DFIR report analyzing a recent affiliate attack.",
+    "Threat actors in two distinct campaigns are using the open-source QEMU machine emulator to load and execute ransomware and remote access tools, bypassing endpoint detection by running malicious code w"
   ],
-  "sources_hash": "e9644e6eac3cc212"
+  "sources_hash": "dbb6707bb4518135"
 }

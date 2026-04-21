@@ -1,31 +1,40 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 37,
+  "count": 38,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-20"
   },
-  "top_actors": ["OpenClaw"],
-  "top_cves": [],
+  "top_actors": [
+    "OpenClaw"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-5760",
+      "cvss": 9.8
+    }
+  ],
   "top_sectors": [
     "technology",
     "cybersecurity",
     "healthcare",
     "ai-development",
-    "cloud services"
+    "artificial intelligence"
   ],
-  "top_regions": ["Global"],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
+    "critical": 5,
     "high": 17,
     "medium": 6,
-    "critical": 4,
     "informational": 10
   },
   "recent_excerpts": [
+    "CVE-2026-5760, a critical 9.8 CVSS flaw in the SGLang inference engine, allows attackers to execute arbitrary code by uploading malicious GGUF model files, compromising AI/ML serving deployments.",
     "Qualys warns that AI agents like Claude Mythos can cut vulnerability discovery time from months to hours, compressing the patch window and overwhelming security teams with a surge of new CVEs.",
-    "Anthropic restricts access to its Claude Mythos Preview AI model, citing its ability to automate vulnerability discovery and exploit chain creation, and launches Project Glasswing to find and patch fl",
-    "The Cloud Security Alliance warns that Anthropic's Claude Mythos model will trigger an 'AI vulnerability storm,' forcing CISOs to manage a 10x surge in code flaws and novel exploit techniques within 1"
+    "Anthropic restricts access to its Claude Mythos Preview AI model, citing its ability to automate vulnerability discovery and exploit chain creation, and launches Project Glasswing to find and patch fl"
   ],
-  "sources_hash": "6a518bf501ebd797"
+  "sources_hash": "49240392ee3a2d34"
 }

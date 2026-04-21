@@ -1,24 +1,24 @@
 {
   "tag": "automation",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-19"
+    "latest": "2026-04-20"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
-    "informational": 3,
+    "informational": 4,
     "medium": 1,
     "high": 1
   },
   "recent_excerpts": [
+    "SentinelOne research finds human-led security teams require 4-6 hours to validate a single alert, while automated attacks unfold in seconds, creating a critical defensive gap for enterprises.",
     "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout.",
-    "Recorded Future's Insikt Group outlines four essential integration workflows to move threat intelligence from a siloed feed to an automated component of security operations, enabling a shift from reac",
-    "A new analysis argues most AI-powered security operations center tools merely accelerate alert triage without reducing the underlying workload for analysts, failing to deliver on promises of true auto"
+    "Recorded Future's Insikt Group outlines four essential integration workflows to move threat intelligence from a siloed feed to an automated component of security operations, enabling a shift from reac"
   ],
-  "sources_hash": "0c7a8a2b22ced82d"
+  "sources_hash": "563de92cffd1adab"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "intro": "The ransomware landscape from April 12–19, 2026, was dominated by the threat actor Payouts King, alongside Interlock and Rhysida. This archive of 19 articles details their activity, which heavily targeted the healthcare, logistics, and automotive sectors, with significant incidents also affecting data-analytics and entertainment. Geographically, operations impacted Europe, Turkey, the Netherlands, and North America, with several campaigns having a global reach. Technical analysis frequently centered on the exploitation of CVE-2026-34197, a vulnerability with a CVSS score of 8.8. Of the incidents covered, the severity was overwhelmingly high, with 15 articles classified as such and one as critical.",
-  "sources_hash": "e9644e6eac3cc212",
+  "intro": "Between April 12 and 20, 2026, ZCyberNews tracked 23 ransomware incidents, with the majority rated as high severity. The threat actor Payouts King was the most frequently reported, alongside activity from Interlock and RansomHub. A key vulnerability exploited during this period was CVE-2026-34197, which carries a CVSS score of 8.8. The attacks primarily targeted the healthcare, logistics, manufacturing, and retail sectors, with notable impact across Europe, the United States, Turkey, and the Netherlands, as well as incidents with a global footprint.",
+  "sources_hash": "dbb6707bb4518135",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:07:39.006Z",
+  "generated_at": "2026-04-21T04:06:39.057Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

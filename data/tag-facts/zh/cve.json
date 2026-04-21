@@ -8,8 +8,15 @@
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": ["all", "critical-infrastructure", "technology"],
-  "top_regions": ["European union", "Global"],
+  "top_sectors": [
+    "all",
+    "critical-infrastructure",
+    "technology"
+  ],
+  "top_regions": [
+    "European union",
+    "Global"
+  ],
   "severity_mix": {
     "informational": 8,
     "high": 1

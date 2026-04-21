@@ -8,8 +8,15 @@
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": ["creators", "media", "technology", "telecommunications"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "creators",
+    "media",
+    "technology",
+    "telecommunications"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "informational": 5,
     "high": 2

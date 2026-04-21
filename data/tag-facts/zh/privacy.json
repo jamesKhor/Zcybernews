@@ -15,7 +15,10 @@
     "telecommunications",
     "Advertising"
   ],
-  "top_regions": ["Global", "United states"],
+  "top_regions": [
+    "Global",
+    "United states"
+  ],
   "severity_mix": {
     "informational": 5,
     "medium": 7,

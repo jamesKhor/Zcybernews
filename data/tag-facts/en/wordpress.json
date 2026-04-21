@@ -13,7 +13,9 @@
     }
   ],
   "top_sectors": [],
-  "top_regions": ["Global"],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "critical": 2,
     "high": 3

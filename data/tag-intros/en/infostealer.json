@@ -1,0 +1,9 @@
+{
+  "tag": "infostealer",
+  "locale": "en",
+  "intro": "Between April 10 and April 20, 2026, ZCyberNews published five reports on infostealer malware. The activity centered on the threat actor Omnistealer, which primarily targeted government and healthcare sectors in Ukraine. All five of these incidents were assessed as high-severity threats, indicating a concentrated and serious campaign focused on data exfiltration from critical entities in the region during this period.",
+  "sources_hash": "a372c5562e99d9de",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-21T04:08:14.952Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

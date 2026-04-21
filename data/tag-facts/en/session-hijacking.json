@@ -6,10 +6,18 @@
     "first": "2026-04-11",
     "latest": "2026-04-19"
   },
-  "top_actors": ["Storm-2755"],
+  "top_actors": [
+    "Storm-2755"
+  ],
   "top_cves": [],
-  "top_sectors": ["finance", "hr", "payroll"],
-  "top_regions": ["Canada"],
+  "top_sectors": [
+    "finance",
+    "hr",
+    "payroll"
+  ],
+  "top_regions": [
+    "Canada"
+  ],
   "severity_mix": {
     "high": 3,
     "medium": 1

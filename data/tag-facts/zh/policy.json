@@ -1,7 +1,7 @@
 {
   "tag": "policy",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
     "latest": "2026-04-20"
@@ -14,15 +14,18 @@
     "technology",
     "telecommunications"
   ],
-  "top_regions": ["United states", "Global"],
+  "top_regions": [
+    "United states",
+    "Global"
+  ],
   "severity_mix": {
-    "informational": 5,
+    "informational": 6,
     "medium": 1
   },
   "recent_excerpts": [
     "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。",
-    "NIST 已经根本改变了其 CVE 丰富过程，仅优先考虑高影响漏洞进行详细分析，因为提交数量的激增，给下游漏洞管理带来了压力。",
-    "美国立法者就人工智能举行了一次保密简报会，表达了对其可能造成社会破坏、国家安全威胁以及发展速度超过监管的深刻担忧。"
+    "美国参议院通过了Section 702监控权力的48小时延长，避免了众议院混乱后的中断。该计划由NSA和FBI使用，无需搜查令即可收集外国通信。",
+    "NIST 已经根本改变了其 CVE 丰富过程，仅优先考虑高影响漏洞进行详细分析，因为提交数量的激增，给下游漏洞管理带来了压力。"
   ],
-  "sources_hash": "6af0f7be04ba3073"
+  "sources_hash": "6baa4355cd3c9139"
 }

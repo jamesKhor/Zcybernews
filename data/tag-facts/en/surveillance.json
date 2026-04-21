@@ -1,0 +1,39 @@
+{
+  "tag": "surveillance",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-22898",
+      "cvss": 8.8
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "telecommunications",
+    "civil-society",
+    "private-sector",
+    "technology"
+  ],
+  "top_regions": [
+    "United states",
+    "Iran"
+  ],
+  "severity_mix": {
+    "informational": 2,
+    "critical": 1,
+    "high": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "The U.S. Senate passed a 48-hour extension of Section 702 surveillance powers, averting a lapse after House chaos.",
+    "A critical vulnerability (CVE-2026-22898) in QNAP TS-453E QVRPro allows network-adjacent attackers to execute arbitrary code without authentication, receiving a CVSS score of 8.8 from the Zero Day Ini",
+    "The U.S. Congress is debating the reauthorization of FISA Section 702, a surveillance authority that allows warrantless collection of foreign communications but also sweeps in American data, pitting n"
+  ],
+  "sources_hash": "d9e3565479e21e42"
+}

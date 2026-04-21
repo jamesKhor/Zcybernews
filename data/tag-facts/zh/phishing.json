@@ -1,12 +1,16 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "count": 35,
+  "count": 36,
   "date_range": {
     "first": "2026-04-08",
     "latest": "2026-04-20"
   },
-  "top_actors": ["FakeWallet", "Storm-2755", "Tycoon 2FA"],
+  "top_actors": [
+    "FakeWallet",
+    "Storm-2755",
+    "Tycoon 2FA"
+  ],
   "top_cves": [
     {
       "id": "CVE-2023-22515"
@@ -24,16 +28,28 @@
       "id": "CVE-2024-21893"
     }
   ],
-  "top_sectors": ["hospitality", "finance", "multiple", "technology", "travel"],
-  "top_regions": ["Global", "Canada", "Latin america", "Mexico", "Ukraine"],
+  "top_sectors": [
+    "hospitality",
+    "finance",
+    "multiple",
+    "technology",
+    "travel"
+  ],
+  "top_regions": [
+    "Global",
+    "Canada",
+    "Latin america",
+    "Mexico",
+    "Ukraine"
+  ],
   "severity_mix": {
     "high": 29,
-    "medium": 6
+    "medium": 7
   },
   "recent_excerpts": [
     "Kaspersky 发现了 22 个恶意的 iOS 应用程序在官方 App Store 上冒充 MetaMask 和 Coinbase 等加密钱包，从超过 1,000 名受害者那里窃取种子短语和私钥。",
-    "一个通过苹果官方App Store分发的恶意Ledger Live应用通过收集恢复短语，从50名受害者那里窃取了大约950万美元。",
-    "Windows 现默认拦截不受信任的 .rdp 文件以阻止类似 Storm-1977 的凭证窃取钓鱼 — 系统侧的改动、管理员仍需配置的项，以及如何判断自己是否被针对。"
+    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。",
+    "一个通过苹果官方App Store分发的恶意Ledger Live应用通过收集恢复短语，从50名受害者那里窃取了大约950万美元。"
   ],
-  "sources_hash": "d06b30c727bca1d5"
+  "sources_hash": "d498c84c12affc7f"
 }

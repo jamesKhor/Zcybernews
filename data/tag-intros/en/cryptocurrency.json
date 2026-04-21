@@ -1,9 +1,9 @@
 {
   "tag": "cryptocurrency",
   "locale": "en",
-  "intro": "The cryptocurrency sector faced a concentrated wave of attacks in mid-April 2026, with 11 high and critical severity incidents reported. The campaigns primarily targeted organizations in North America, Europe, Canada, the United Kingdom, and Kyrgyzstan, also impacting financial-services and telecommunications. The distinct threat actors FakeWallet and Omnistealer were active, exploiting vulnerabilities including the critical CVE-2023-4863. This series of incidents underscores the persistent and focused threats facing digital asset platforms and their interconnected service providers across key global regions.",
-  "sources_hash": "28c574f77d4861cb",
+  "intro": "The cryptocurrency sector was the primary target in a concentrated wave of attacks documented between April 12 and April 20, 2026. The thirteen incidents, comprising ten high and three critical severity alerts, also heavily impacted decentralized finance (DeFi), financial-services, telecommunications, and venture capital. Activity spanned North America, Europe, the United Kingdom, Canada, and Kyrgyzstan. The threat actors FakeWallet, Lazarus Group, and Omnistealer were prominently active, with exploitation of the critical vulnerability CVE-2023-4863 featuring across the reported campaigns.",
+  "sources_hash": "88d489ef0088307c",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:09:00.711Z",
+  "generated_at": "2026-04-21T04:07:23.817Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

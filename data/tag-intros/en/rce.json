@@ -1,9 +1,9 @@
 {
   "tag": "rce",
   "locale": "en",
-  "intro": "Academia, healthcare, industrial, and research sectors were the primary targets of a concentrated wave of remote code execution attacks documented in 18 articles between April 12 and 20, 2026. The activity included 12 critical and six high-severity vulnerabilities, with the most prominent being CVE-2025-54987 (CVSS 9.8), CVE-2025-0520 (CVSS 9.4), and CVE-2026-39987 (CVSS 9.3). Additional significant flaws exploited were CVE-2026-22898 and CVE-2026-4682, both rated at CVSS 8.8. This cluster of high-impact exploits underscores a focused period of significant risk across critical infrastructure and institutional networks.",
-  "sources_hash": "98001604288a88bb",
+  "intro": "The academic and healthcare sectors were primary targets in a concentrated wave of remote code execution attacks documented between April 12 and 20, 2026. The seventeen articles in this archive detail eleven critical and six high-severity vulnerabilities, with notable CVEs including CVE-2025-54987 (CVSS 9.8), CVE-2025-0520 (CVSS 9.4), and CVE-2026-39987 (CVSS 9.3). Industrial and research organizations were also significantly impacted by these exploits, which frequently enabled complete system compromise.",
+  "sources_hash": "787c0b2492c23ce5",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:07:47.708Z",
+  "generated_at": "2026-04-21T04:07:01.626Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

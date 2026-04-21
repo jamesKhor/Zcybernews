@@ -1,0 +1,39 @@
+{
+  "tag": "surveillance",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-22898",
+      "cvss": 8.8
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "telecommunications",
+    "civil-society",
+    "private-sector",
+    "technology"
+  ],
+  "top_regions": [
+    "United states",
+    "Iran"
+  ],
+  "severity_mix": {
+    "informational": 2,
+    "critical": 1,
+    "high": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "美国参议院通过了Section 702监控权力的48小时延长，避免了众议院混乱后的中断。该计划由NSA和FBI使用，无需搜查令即可收集外国通信。",
+    "QNAP TS-453E QVRPro 中存在一个关键漏洞（CVE-2026-22898），允许网络相邻的攻击者在未经认证的情况下执行任意代码，从 Zero Day Initiative 获得的 CVSS 评分为 8.8。",
+    "美国国会正在辩论FISA第702条的重新授权，这是一种允许无需搜查令即可收集外国通信的监控权力，但也涵盖了美国数据，将国家安全主张与隐私问题对立起来。"
+  ],
+  "sources_hash": "d9e3565479e21e42"
+}

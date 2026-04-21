@@ -1,9 +1,9 @@
 {
   "tag": "enterprise-security",
   "locale": "en",
-  "intro": "This archive collects recent coverage of enterprise security threats from April 13-18, 2026. The five articles detail four critical vulnerabilities and one informational report. The most severe flaws include CVE-2026-27681, with a CVSS score of 9.9, and CVE-2025-54987, rated 9.8. These vulnerabilities primarily targeted the enterprise, government, and technology sectors, reflecting a concentrated focus on critical infrastructure and corporate networks during this period.",
-  "sources_hash": "597fa6ffde42856e",
+  "intro": "This archive collects recent coverage of enterprise security threats from April 2026. The reporting focuses on critical vulnerabilities, including CVE-2026-27681 and CVE-2025-54987, which carry CVSS scores of 9.9 and 9.8 respectively. These and other issues primarily targeted the enterprise, government, and technology sectors. Of the seven articles published in this period, four were classified as covering critical threats, one as medium, and two as informational, reflecting a period of significant activity against organizational defenses.",
+  "sources_hash": "35b68d4071fb2179",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:17:47.193Z",
+  "generated_at": "2026-04-21T04:07:52.321Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

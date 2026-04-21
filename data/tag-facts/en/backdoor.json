@@ -6,10 +6,17 @@
     "first": "2026-04-13",
     "latest": "2026-04-17"
   },
-  "top_actors": ["APT41"],
+  "top_actors": [
+    "APT41"
+  ],
   "top_cves": [],
-  "top_sectors": ["cloud-services", "technology"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "cloud-services",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "critical": 1,
     "high": 5

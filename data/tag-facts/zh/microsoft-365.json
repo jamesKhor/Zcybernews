@@ -6,10 +6,20 @@
     "first": "2026-04-16",
     "latest": "2026-04-19"
   },
-  "top_actors": ["Tycoon 2FA", "W3LL"],
+  "top_actors": [
+    "Tycoon 2FA",
+    "W3LL"
+  ],
   "top_cves": [],
-  "top_sectors": ["multiple", "corporate", "finance", "technology"],
-  "top_regions": ["Global"],
+  "top_sectors": [
+    "multiple",
+    "corporate",
+    "finance",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 5
   },

@@ -1,19 +1,23 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-19"
+    "latest": "2026-04-20"
   },
-  "top_actors": ["W3LL", "W3LL Team"],
+  "top_actors": [
+    "Scattered Spider",
+    "W3LL",
+    "W3LL Team"
+  ],
   "top_cves": [],
   "top_sectors": [
     "government",
-    "corporate",
     "cryptocurrency",
-    "education",
-    "entertainment"
+    "telecommunications",
+    "corporate",
+    "education"
   ],
   "top_regions": [
     "United states",
@@ -23,13 +27,13 @@
     "Florida"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "medium": 3
   },
   "recent_excerpts": [
     "佛罗里达执法部门正在调查一名学生如何使用ChatGPT制造校园枪击威胁，这是AI聊天机器人未能阻止危险内容的更广泛模式的一部分。",
-    "洛杉矶警察局报告称，一名城市律师的数字存储系统遭到7.7TB和337,000个文件的泄露，暴露了敏感的执法数据。",
-    "参与2022年DraftKings凭证填充攻击的Kamerin Stokes，在认罪后继续出售被盗账户，被判处已服刑期和三年监督释放。"
+    "Tyler Buchanan，英国Scattered Spider网络犯罪集团的成员，对共谋实施电汇欺诈和计算机黑客攻击的指控表示认罪，承认通过SIM交换攻击从受害者那里窃取了超过800,000美元的加密货币。",
+    "洛杉矶警察局报告称，一名城市律师的数字存储系统遭到7.7TB和337,000个文件的泄露，暴露了敏感的执法数据。"
   ],
-  "sources_hash": "a55ce48d5b49862e"
+  "sources_hash": "739e272178f4ee97"
 }

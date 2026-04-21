@@ -1,12 +1,14 @@
 {
   "tag": "microsoft",
   "locale": "zh",
-  "count": 33,
+  "count": 36,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-20"
   },
-  "top_actors": ["Storm-2755"],
+  "top_actors": [
+    "Storm-2755"
+  ],
   "top_cves": [
     {
       "id": "CVE-2026-33104",
@@ -36,18 +38,22 @@
     "enterprise",
     "federal government"
   ],
-  "top_regions": ["Global", "Canada", "Japan"],
+  "top_regions": [
+    "Global",
+    "Canada",
+    "Japan"
+  ],
   "severity_mix": {
-    "high": 16,
+    "high": 17,
+    "medium": 10,
+    "informational": 3,
     "critical": 5,
-    "low": 1,
-    "medium": 9,
-    "informational": 2
+    "low": 1
   },
   "recent_excerpts": [
     "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。",
-    "CISA 命令联邦机构在 2026 年 4 月 28 日之前修补 CVE-2009-0238，这是一个 17 岁的 Microsoft Office Excel 远程代码执行漏洞，由于正在被积极利用。",
-    "最近的 Microsoft Edge 浏览器更新引入了一个错误，破坏了 Microsoft Teams 桌面客户端中聊天内的右键粘贴功能，影响了用户的工作流程。"
+    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。",
+    "微软的 Windows 11 Dev Build 26300.8170 在 Windows 安全应用中添加了一个专门的安全启动监控面板，为管理员提供了固件安全特性的状态和配置的单窗格视图。"
   ],
-  "sources_hash": "b3d10231e897c7bf"
+  "sources_hash": "4ab3fbf38e05b7f2"
 }

@@ -1,7 +1,7 @@
 {
   "tag": "patch-tuesday",
   "locale": "en",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-20"
@@ -30,16 +30,18 @@
     "enterprise",
     "government"
   ],
-  "top_regions": ["Global"],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 6,
-    "medium": 3,
+    "medium": 4,
     "critical": 7
   },
   "recent_excerpts": [
     "Microsoft released out-of-band updates for Windows Server 2019 and 2022 after April 2026 security patches caused boot failures and domain controller authentication issues, forcing some administrators",
-    "Microsoft has patched a local privilege escalation vulnerability (CVE-2026-33104) in the Windows win32kfull driver, which could allow authenticated attackers to gain SYSTEM privileges.",
-    "Microsoft confirms April 2026 Windows 11 updates KB5083769 and KB5082052 can force users into BitLocker recovery on devices with specific Group Policy configurations, risking data inaccessibility."
+    "Microsoft's April 2026 Patch Tuesday adds a critical warning dialog to Windows Remote Desktop, blocking threat actors from using malicious .rdp files to steal credentials via phishing.",
+    "Microsoft has patched a local privilege escalation vulnerability (CVE-2026-33104) in the Windows win32kfull driver, which could allow authenticated attackers to gain SYSTEM privileges."
   ],
-  "sources_hash": "4ffc95a2a7cca7c1"
+  "sources_hash": "bec983ef072af18d"
 }

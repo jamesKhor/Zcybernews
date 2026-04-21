@@ -1,0 +1,29 @@
+{
+  "tag": "infostealer",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-10",
+    "latest": "2026-04-20"
+  },
+  "top_actors": [
+    "Omnistealer"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "healthcare"
+  ],
+  "top_regions": [
+    "Ukraine"
+  ],
+  "severity_mix": {
+    "high": 4
+  },
+  "recent_excerpts": [
+    "据 CyberSecurity News 研究人员称，MiningDropper 是一个多阶段的 Android 恶意软件框架，通过伪装的应用程序向设备传送 infostealers、RATs 和银行木马。",
+    "Omnistealer 恶意软件，由 Malwarebytes 详细描述，窃取来自 1Password、Bitwarden、NordPass 和 Exodus 加密钱包的凭证，使用 Solana 区块链进行隐蔽的命令和控制通信。",
+    "一种名为 'AgingFly' 的新恶意软件家族正在从 Chromium 浏览器和 WhatsApp 窃取认证数据，在针对乌克兰地方政府机构和医院的定向攻击中。"
+  ],
+  "sources_hash": "a372c5562e99d9de"
+}

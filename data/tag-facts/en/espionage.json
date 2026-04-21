@@ -6,7 +6,9 @@
     "first": "2026-04-12",
     "latest": "2026-04-15"
   },
-  "top_actors": ["APT28 (Fancy Bear)"],
+  "top_actors": [
+    "APT28 (Fancy Bear)"
+  ],
   "top_cves": [],
   "top_sectors": [
     "government",
@@ -15,7 +17,10 @@
     "defense",
     "enterprise"
   ],
-  "top_regions": ["Global", "Ukraine"],
+  "top_regions": [
+    "Global",
+    "Ukraine"
+  ],
   "severity_mix": {
     "high": 3,
     "critical": 2

@@ -1,10 +1,10 @@
 {
   "tag": "enterprise-security",
   "locale": "zh",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-18"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [
@@ -17,16 +17,21 @@
       "cvss": 9.8
     }
   ],
-  "top_sectors": ["enterprise", "government", "technology"],
+  "top_sectors": [
+    "enterprise",
+    "government",
+    "technology"
+  ],
   "top_regions": [],
   "severity_mix": {
-    "critical": 4,
-    "informational": 1
+    "informational": 2,
+    "medium": 1,
+    "critical": 4
   },
   "recent_excerpts": [
-    "CVE-2025-54987，趋势科技Apex One中一个关键的9.8 CVSS漏洞，允许未经认证的攻击者通过管理控制台的目录遍历执行任意代码。",
-    "SAP 修补了其业务规划和合并以及商务仓库应用程序中的一个关键SQL注入漏洞（CVE-2026-27681，CVSS 9.9），允许攻击者执行任意数据库命令。",
-    "SAP 发布了 19 个安全通告，包括针对 ABAP 平台的一个关键漏洞的补丁，该漏洞可能允许攻击者破坏企业系统。"
+    "The Hacker News 报告称，大多数企业AI安全工具在演示后因数据质量、集成和成本问题而失败，导致关键的威胁检测和响应计划停滞。",
+    "Qualys数据显示企业在12个月内部署了超过800万Chrome补丁，但Visual C++和.NET更新延迟超过30天，导致关键的第三方软件暴露。",
+    "CVE-2025-54987，趋势科技Apex One中一个关键的9.8 CVSS漏洞，允许未经认证的攻击者通过管理控制台的目录遍历执行任意代码。"
   ],
-  "sources_hash": "597fa6ffde42856e"
+  "sources_hash": "35b68d4071fb2179"
 }

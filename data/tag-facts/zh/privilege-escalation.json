@@ -6,7 +6,9 @@
     "first": "2026-04-13",
     "latest": "2026-04-19"
   },
-  "top_actors": ["Chaotic Eclipse"],
+  "top_actors": [
+    "Chaotic Eclipse"
+  ],
   "top_cves": [
     {
       "id": "CVE-2026-5490",
@@ -36,7 +38,9 @@
     "government",
     "healthcare"
   ],
-  "top_regions": ["Global"],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 12,
     "critical": 2,

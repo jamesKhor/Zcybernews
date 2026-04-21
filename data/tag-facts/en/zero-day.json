@@ -6,7 +6,10 @@
     "first": "2026-04-12",
     "latest": "2026-04-19"
   },
-  "top_actors": ["Chaotic Eclipse", "Interlock"],
+  "top_actors": [
+    "Chaotic Eclipse",
+    "Interlock"
+  ],
   "top_cves": [
     {
       "id": "CVE-2026-34621",
@@ -34,7 +37,10 @@
     "government",
     "healthcare"
   ],
-  "top_regions": ["Global", "Kyrgyzstan"],
+  "top_regions": [
+    "Global",
+    "Kyrgyzstan"
+  ],
   "severity_mix": {
     "high": 11,
     "critical": 12,

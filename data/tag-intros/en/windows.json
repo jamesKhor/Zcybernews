@@ -1,9 +1,9 @@
 {
   "tag": "windows",
   "locale": "en",
-  "intro": "The week's Windows coverage focused on the threat actor Chaotic Eclipse, alongside critical vulnerabilities including CVE-2026-33104, CVE-2026-26179, and CVE-2026-32183. The archive details 16 articles from a single week, highlighting a severity mix dominated by high and critical flaws. Older CVEs such as CVE-2024-20662 and CVE-2024-21412 also remained relevant in the reporting. This concentration of activity underscores the persistent targeting of the Windows ecosystem by specific groups and the ongoing need to address both newly disclosed and historical security weaknesses.",
-  "sources_hash": "56f70ddc49923e09",
+  "intro": "The Windows threat landscape from April 12–20, 2026, was dominated by activity from Chaotic Eclipse. This archive of 17 articles details a severity mix of one critical, 12 high, and four medium vulnerabilities. Key CVEs covered include CVE-2026-33104 (CVSS 7.8), CVE-2026-26179 (CVSS 7.5), and CVE-2026-32183 (CVSS 7.5), alongside earlier issues like CVE-2024-20662 and CVE-2024-21412. The reporting provides focused analysis on these specific exploits and the associated threat actor's methods.",
+  "sources_hash": "442c65f58fc53565",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:08:16.576Z",
+  "generated_at": "2026-04-21T04:07:13.431Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
