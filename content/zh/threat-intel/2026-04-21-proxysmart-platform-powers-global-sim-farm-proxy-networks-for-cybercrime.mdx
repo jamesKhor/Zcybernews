@@ -1,0 +1,45 @@
+---
+title: ProxySmart 平台为网络犯罪提供全球SIM农场代理网络
+slug: >-
+  2026-04-21-proxysmart-platform-powers-global-sim-farm-proxy-networks-for-cybercrime
+date: '2026-04-21'
+excerpt: ProxySmart，一个在白俄罗斯明斯克运营的平台，为17个国家的94个地点提供SIM农场代理网络，为网络犯罪分子提供用于欺诈和凭证填充的住宅IP地址。
+category: threat-intel
+tags:
+  - proxy
+  - sim-farm
+  - cybercrime
+  - infrastructure
+  - fraud
+language: zh
+source_urls:
+  - >-
+    https://www.helpnetsecurity.com/2026/04/21/sim-farm-proxy-network-cybercrime/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-proxysmart-platform-powers-global-sim-farm-proxy-networks-for-cybercrime
+severity: medium
+---
+## 执行摘要
+一个名为ProxySmart的单一软件平台是全球商业SIM农场网络的运营支柱，这些农场为网络犯罪分子提供移动代理服务。根据Infrawatch的一项调查，这些由手机和4G调制解调器组成的农场在17个国家的至少94个地点活跃。该平台在白俄罗斯明斯克建造和运营，将访问住宅IP地址商品化，这些IP地址被广泛用于凭证填充、广告欺诈和规避与数据中心IP范围相关的安全控制。
+
+## 技术分析
+SIM农场，也称为住宅代理网络，是连接到实时运营商网络的移动设备的物理部署。这些设备被配置为路由互联网流量，为用户提供看似来自合法移动或宽带用户的IP地址。Infrawatch的调查由Help Net Security报道，追踪到这个全球基础设施的很大一部分归功于一个名为ProxySmart的共同控制平台。
+
+该平台集中管理这些分布式设备架，允许运营商在商业规模上出租代理访问。技术设置绕过了运营商级网络地址转换（CG-NAT）和其他旨在标记数据中心流量的IP声誉系统。通过利用每个国家当地移动运营商的真实SIM卡，代理流量继承了正常移动用户的信任和地理属性，使得自动化防御难以区分恶意活动。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+这种基础设施主要支持的技术是滥用住宅IP代理（T1583.002: 获取基础设施 - 服务器）。租用这些网络访问权限的网络犯罪分子使用它们进行凭证填充攻击（T1110.004: 凭证填充），其中登录尝试分布在数千个看似合法的IP地址上，以避免速率限制和基于IP的阻止。该基础设施还通过从多样化的地理位置生成虚假点击和印象来促进广告欺诈（T1588.002: 获取能力 - 工具），并规避触发对来自不熟悉数据中心或VPN端点的登录警报的账户安全措施。
+
+## 威胁行为者背景
+源材料没有指明使用ProxySmart平台的具体威胁行为者群体。然而，该服务作为网络犯罪即服务（CaaS）提供，为从低级欺诈者到更有组织的团体的广泛恶意行为者提供关键基础设施。注意到该平台在白俄罗斯明斯克的开发和运营基地，但现有来源中没有直接归因于国家支持的活动。
+
+## 缓解措施与建议
+组织应加强对来自住宅代理网络的攻击的防御。这包括普遍实施多因素认证（MFA），特别是在面向客户的登录门户上，以减轻凭证填充的有效性。安全团队应考虑整合跟踪已知代理和VPN IP范围的威胁情报源，尽管这些IP的住宅性质使得纯粹的阻止列表变得困难。检测异常登录模式的行为分析——例如，从物理上不可能的不同地理位置快速连续尝试——是更有效的对策。应用程序所有者还应审查流量，寻找来自住宅IP的自动化工具迹象。
+
+## 参考资料
+- https://www.helpnetsecurity.com/2026/04/21/sim-farm-proxy-network-cybercrime/

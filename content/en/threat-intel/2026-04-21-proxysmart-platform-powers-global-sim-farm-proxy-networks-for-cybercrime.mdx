@@ -1,0 +1,48 @@
+---
+title: ProxySmart Platform Powers Global SIM Farm Proxy Networks for Cybercrime
+slug: >-
+  2026-04-21-proxysmart-platform-powers-global-sim-farm-proxy-networks-for-cybercrime
+date: '2026-04-21'
+excerpt: >-
+  ProxySmart, a platform operated from Minsk, Belarus, powers SIM farm proxy
+  networks across 94 locations in 17 countries, providing cybercriminals with
+  residential IP addresses for fraud and credential stuffing.
+category: threat-intel
+tags:
+  - proxy
+  - sim-farm
+  - cybercrime
+  - infrastructure
+  - fraud
+language: en
+source_urls:
+  - >-
+    https://www.helpnetsecurity.com/2026/04/21/sim-farm-proxy-network-cybercrime/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-proxysmart-platform-powers-global-sim-farm-proxy-networks-for-cybercrime
+severity: medium
+---
+## Executive Summary
+A single software platform, ProxySmart, is the operational backbone for a global network of commercial SIM farms providing mobile proxy services to cybercriminals. According to an investigation by Infrawatch, these farms, consisting of racks of phones and 4G modems, are active in at least 94 locations across 17 countries. The platform, built and operated from Minsk, Belarus, commoditizes access to residential IP addresses, which are heavily used for credential stuffing, ad fraud, and evading security controls tied to data center IP ranges.
+
+## Technical Analysis
+SIM farms, also known as residential proxy networks, are physical deployments of mobile devices connected to live carrier networks. These devices are configured to route internet traffic, providing users with IP addresses that appear to originate from legitimate mobile or broadband subscribers. The Infrawatch investigation, reported by Help Net Security, traced a significant portion of this global infrastructure to a common control platform named ProxySmart.
+
+The platform centralizes the management of these distributed device racks, allowing operators to rent out proxy access on a commercial scale. The technical setup bypasses carrier-grade network address translation (CG-NAT) and other IP reputation systems designed to flag data center traffic. By leveraging genuine SIM cards from local mobile operators in each country, the proxy traffic inherits the trust and geographic attributes of a normal mobile subscriber, making it difficult for automated defenses to distinguish malicious activity.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary technique enabled by this infrastructure is the abuse of residential IP proxies (T1583.002: Acquire Infrastructure – Server). Cybercriminals renting access to these networks use them to conduct credential stuffing attacks (T1110.004: Credential Stuffing), where login attempts are distributed across thousands of seemingly legitimate IP addresses to avoid rate-limiting and IP-based blocking. The infrastructure also facilitates ad fraud (T1588.002: Obtain Capabilities – Tool) by generating fake clicks and impressions from diverse geographic locations, and evades account security measures that trigger alerts for logins from unfamiliar data centers or VPN endpoints.
+
+## Threat Actor Context
+The source material does not name specific threat actor groups utilizing the ProxySmart platform. However, the service operates as a cybercrime-as-a-service (CaaS) offering, providing critical infrastructure to a broad range of malicious actors, from low-tier fraudsters to more organized groups. The platform's development and operational base in Minsk, Belarus, is noted, but no direct attribution to state-sponsored activity is made in the available sources.
+
+## Mitigations & Recommendations
+Organizations should enhance defenses against attacks originating from residential proxy networks. This includes implementing multi-factor authentication (MFA) universally, especially on customer-facing login portals, to mitigate the effectiveness of credential stuffing. Security teams should consider integrating threat intelligence feeds that track known proxy and VPN IP ranges, though the residential nature of these IPs makes pure blocklisting difficult. Behavioral analytics that detect anomalous login patterns—such as rapid successions of attempts from different geographic locations that are physically improbable—are more effective countermeasures. Application owners should also scrutinize traffic for signs of automated tooling, even from residential IPs.
+
+## References
+- https://www.helpnetsecurity.com/2026/04/21/sim-farm-proxy-network-cybercrime/
