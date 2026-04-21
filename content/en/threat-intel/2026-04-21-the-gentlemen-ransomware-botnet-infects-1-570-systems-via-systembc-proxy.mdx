@@ -1,0 +1,46 @@
+---
+title: 'The Gentlemen Ransomware Botnet Infects 1,570+ Systems via SystemBC Proxy'
+slug: >-
+  2026-04-21-the-gentlemen-ransomware-botnet-infects-1-570-systems-via-systembc-proxy
+date: '2026-04-21'
+excerpt: >-
+  Check Point Research uncovers a 1,570-victim botnet linked to The Gentlemen
+  ransomware, using the SystemBC proxy malware to establish stealthy SOCKS5
+  tunnels for command and control.
+category: threat-intel
+tags:
+  - ransomware
+  - botnet
+  - command-and-control
+  - systembc
+language: en
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/systembc-c2-server-reveals-1570-victims.html
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-the-gentlemen-ransomware-botnet-infects-1-570-systems-via-systembc-proxy
+severity: high
+threat_actor: The Gentlemen
+---
+## Executive Summary
+Check Point Research has uncovered a command-and-control (C2) server for the SystemBC proxy malware, revealing a botnet of more than 1,570 compromised systems. The infrastructure is linked to the ransomware-as-a-service (RaaS) operation known as The Gentlemen, which uses SystemBC to establish stealthy SOCKS5 network tunnels for post-compromise activity.
+
+## Technical Analysis
+The threat actors associated with The Gentlemen RaaS operation deploy SystemBC, a known proxy malware, to create persistent network tunnels on victim machines. According to Check Point, the discovered C2 server manages a botnet of over 1,570 infected systems. SystemBC functions as a SOCKS5 proxy, allowing operators to route malicious traffic through the compromised host. This technique obscures the origin of subsequent attacks, such as ransomware deployment or data exfiltration, by blending command-and-control communications with legitimate-looking network traffic.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary technique observed is the deployment of SystemBC (T1090.001 - Proxy: Internal Proxy) to establish a non-application layer protocol tunnel (T1572 - Protocol Tunneling). This provides a covert channel for C2 communications, enabling follow-on actions like lateral movement and ransomware staging. The use of a RaaS model suggests the core operators provide the infrastructure and malware to affiliates, who then conduct the intrusions.
+
+## Threat Actor Context
+The threat actor is identified as The Gentlemen, a ransomware-as-a-service operation. The source material does not provide attribution to a specific nation-state or cybercrime group. The operation's use of a commercially available proxy malware like SystemBC indicates a focus on operational security and a willingness to leverage established tools to facilitate ransomware campaigns.
+
+## Mitigations & Recommendations
+None identified in source material.
+
+## References
+- [SystemBC C2 Server Reveals 1,570+ Victims in The Gentlemen Ransomware Operation](https://thehackernews.com/2026/04/systembc-c2-server-reveals-1570-victims.html)

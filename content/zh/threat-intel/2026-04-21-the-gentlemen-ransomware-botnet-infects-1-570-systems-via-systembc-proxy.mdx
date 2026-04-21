@@ -1,0 +1,45 @@
+---
+title: 'The Gentlemen 勒索软件僵尸网络通过 SystemBC 代理感染 1,570+ 系统'
+slug: >-
+  2026-04-21-the-gentlemen-ransomware-botnet-infects-1-570-systems-via-systembc-proxy
+date: '2026-04-21'
+excerpt: >-
+  Check Point Research 发现一个与 The Gentlemen 勒索软件有关的 1,570 名受害者的僵尸网络，使用 SystemBC
+  代理恶意软件建立隐蔽的 SOCKS5 隧道进行命令和控制。
+category: threat-intel
+tags:
+  - ransomware
+  - botnet
+  - command-and-control
+  - systembc
+language: zh
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/systembc-c2-server-reveals-1570-victims.html
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-the-gentlemen-ransomware-botnet-infects-1-570-systems-via-systembc-proxy
+severity: high
+threat_actor: The Gentlemen
+---
+## 执行摘要
+Check Point Research 发现了 SystemBC 代理恶意软件的命令和控制（C2）服务器，揭示了一个超过 1,570 个受感染系统的僵尸网络。该基础设施与被称为 The Gentlemen 的勒索软件即服务（RaaS）行动有关，该行动使用 SystemBC 建立隐蔽的 SOCKS5 网络隧道进行妥协后的行动。
+
+## 技术分析
+与 The Gentlemen RaaS 行动相关的威胁行为者部署了 SystemBC，一种已知的代理恶意软件，以在受害者机器上创建持久的网络隧道。根据 Check Point 的说法，发现的 C2 服务器管理着超过 1,570 个受感染系统的僵尸网络。SystemBC 作为 SOCKS5 代理，允许操作者通过受感染的主机路由恶意流量。这种技术通过将命令和控制通信与看似合法的网络流量混合，掩盖了随后攻击的来源，例如勒索软件部署或数据泄露。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+观察到的主要技术是部署 SystemBC（T1090.001 - 代理：内部代理）以建立非应用层协议隧道（T1572 - 协议隧道）。这为 C2 通信提供了一个隐蔽的通道，使后续行动如横向移动和勒索软件准备成为可能。使用 RaaS 模型表明核心操作者提供基础设施和恶意软件给关联者，然后由关联者进行入侵。
+
+## 威胁行为者背景
+威胁行为者被识别为 The Gentlemen，一个勒索软件即服务行动。源材料没有提供归因于特定国家或网络犯罪集团的信息。该行动使用像 SystemBC 这样的商业可用代理恶意软件表明了对运营安全的重视，以及愿意利用既定工具促进勒索软件活动。
+
+## 缓解措施与建议
+源材料中未识别出任何缓解措施与建议。
+
+## 参考资料
+- [SystemBC C2 Server Reveals 1,570+ Victims in The Gentlemen Ransomware Operation](https://thehackernews.com/2026/04/systembc-c2-server-reveals-1570-victims.html)
