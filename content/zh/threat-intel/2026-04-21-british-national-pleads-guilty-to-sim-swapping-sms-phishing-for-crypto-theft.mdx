@@ -1,0 +1,54 @@
+---
+title: 英国国民承认SIM交换、短信钓鱼以窃取加密货币
+slug: >-
+  2026-04-21-british-national-pleads-guilty-to-sim-swapping-sms-phishing-for-crypto-theft
+date: '2026-04-21'
+excerpt: Tyler Robert Buchanan承认参与美国阴谋，通过短信钓鱼、企业网络入侵和针对全国受害者的SIM交换攻击，窃取了超过100万美元的加密货币。
+category: threat-intel
+tags:
+  - sim-swapping
+  - phishing
+  - cryptocurrency
+  - wire-fraud
+  - law-enforcement
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/british-national-stealing-millions-in-virtual-currency/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-british-national-pleads-guilty-to-sim-swapping-sms-phishing-for-crypto-theft
+severity: high
+threat_actor: Scattered Spider
+affected_regions:
+  - United States
+---
+## 执行摘要
+一名英国公民在美国联邦法院承认共谋实施电汇欺诈罪，他参与了一个网络犯罪计划，该计划至少窃取了100万美元的虚拟货币。来自苏格兰邓迪的Tyler Robert Buchanan参与了结合了短信钓鱼（smishing）、企业网络入侵和SIM卡交换的攻击，以破坏受害者账户并耗尽加密货币持有量。
+
+## 技术分析
+根据法庭文件，该共谋涉及多种技术，以获得对受害者账户和企业网络的未经授权的访问。虽然在可用来源中没有详细说明公司网络内被利用的具体技术漏洞，但该计划的成功依赖于拦截多因素认证（MFA）代码。这主要是通过SIM卡交换实现的，攻击者欺诈性地将受害者的电话号码转移到他们控制的设备上，使他们能够接收基于短信的身份验证码。这些SIM卡交换的初始访问权限很可能是通过短信钓鱼活动获得的，这些活动诱使受害者透露个人信息。一旦控制了电话号码，共谋者就可以绕过电子邮件和金融账户上的MFA保护，特别是那些持有加密货币的账户。
+
+## 入侵指标
+来源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+威胁行为者采用了与财务动机网络犯罪一致的多阶段方法：
+1. **初始访问 (TA0001):** 通过短信钓鱼（smishing）获得立足点，以收集凭证和个人数据。
+2. **初始访问 (TA0001):** 侵入企业网络，尽管具体的初始向量（例如，钓鱼、被利用的漏洞）未指定。
+3. **凭证访问 (TA0006):** 执行SIM卡交换攻击，以劫持受害者电话号码并拦截基于短信的MFA代码。
+4. **影响 (TA0040):** 使用被破坏的访问权限从受害者账户中窃取虚拟货币。
+
+## 威胁行为者背景
+Tyler Robert Buchanan的认罪表明，有个体行为者或松散的网络犯罪团伙的参与，而不是国家支持的高级持续性威胁（APT）。通过SIM卡交换和smishing专注于加密货币盗窃的焦点与Scattered Spider等财务动机团体和其他SIM卡交换团伙的战术一致。一名英国公民在美国受到起诉的国际层面反映了此类网络犯罪的跨境性质以及正在进行的执法合作。
+
+## 缓解措施与建议
+尽管来源没有提供针对受害者的具体缓解建议，但所描述的技术需要标准的防御措施：
+- 放弃对高价值账户（特别是加密货币交易所和电子邮件）使用基于短信的多因素认证，改用身份验证应用程序或硬件安全密钥。
+- 与移动运营商实施严格的程序，以防止未经授权的SIM卡交换，例如使用端口PIN或账户特定密码。
+- 培训员工和个人识别和报告短信钓鱼企图，这些企图经常制造紧迫感或冒充受信任的服务。
+- 对于组织，分割网络访问权限，并为管理员工或客户电信数据的系统实施强大的身份验证。
+
+## 参考资料
+- https://cybersecuritynews.com/british-national-stealing-millions-in-virtual-currency/
