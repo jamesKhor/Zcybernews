@@ -1,0 +1,46 @@
+---
+title: Malicious Crypto Apps Hijack Recovery Phrases from Apple App Store
+slug: 2026-04-21-malicious-crypto-apps-hijack-recovery-phrases-from-apple-app-store
+date: '2026-04-21'
+excerpt: >-
+  Apple removed 45 malicious cryptocurrency apps from its App Store after they
+  stole recovery phrases and private keys from users, mimicking legitimate
+  wallets like MetaMask and Coinbase.
+category: malware
+tags:
+  - apple-app-store
+  - cryptocurrency
+  - supply-chain
+  - mobile-security
+  - phishing
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/dozens-of-malicious-crypto-apps-land-in-apple-app-store/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-malicious-crypto-apps-hijack-recovery-phrases-from-apple-app-store
+severity: high
+affected_sectors:
+  - cryptocurrency
+---
+## Executive Summary
+Apple removed at least 45 malicious applications from its official App Store after they were found to be sophisticated facsimiles of legitimate cryptocurrency wallets. According to a report from SecurityWeek, the apps were designed to steal users' secret recovery phrases and private keys, granting attackers full control over victims' digital assets. The discovery highlights a persistent threat of supply chain compromise within curated mobile application marketplaces.
+
+## Technical Analysis
+The malicious applications impersonated well-known cryptocurrency wallets and services, including MetaMask, Coinbase Wallet, and Trust Wallet. SecurityWeek's analysis indicates the apps functioned as effective phishing interfaces, presenting users with a familiar login or wallet recovery flow. When a user entered their 12-word or 24-word secret recovery phrase—the master key to a cryptocurrency wallet—the application would silently exfiltrate the data to an attacker-controlled server. The apps also reportedly solicited private keys directly. Once in possession of these credentials, attackers could drain the associated wallets of all funds from any location. The technical sophistication of the apps was sufficient to pass Apple's App Review process, though the exact evasion mechanisms used are not detailed in the source material.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary technique employed was application masquerading (T1556.001), where malicious software is disguised as a legitimate, trusted application. The threat actors leveraged this to conduct credential harvesting (T1555) specifically targeting cryptocurrency secrets. The operation relied on distribution through a trusted source, the Apple App Store, constituting a software supply chain compromise (T1195.002). The source report does not specify the command-and-control infrastructure, social engineering lures, or persistence mechanisms used by the apps.
+
+## Threat Actor Context
+The source material does not attribute this campaign to a known threat actor or group. The objective is purely financial, aligning with the broader trend of crypto-focused theft. The ability to successfully submit and maintain fraudulent applications on the Apple App Store suggests a degree of operational planning and potentially the use of fake developer accounts or compromised legitimate accounts. It remains uncertain if this is the work of a single group or multiple independent actors copying the same technique.
+
+## Mitigations & Recommendations
+Users should only download cryptocurrency wallet applications by using direct, verified links from the official project websites, not through App Store searches alone. SecurityWeek advises users to treat any app that requests a secret recovery phrase or private key with extreme skepticism, as legitimate wallets rarely, if ever, ask for this information after initial setup. For organizations and developers, the incident underscores that curated app stores are not infallible. Implementing secondary verification methods, such as hardware security keys for transaction signing, provides a critical layer of defense even if a software wallet is compromised. Apple has removed the identified apps, but users should manually check their devices for any unfamiliar cryptocurrency applications.
+
+## References
+- SecurityWeek: [Dozens of Malicious Crypto Apps Land in Apple App Store](https://www.securityweek.com/dozens-of-malicious-crypto-apps-land-in-apple-app-store/)

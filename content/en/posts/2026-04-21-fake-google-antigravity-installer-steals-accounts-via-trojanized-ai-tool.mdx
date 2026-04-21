@@ -1,0 +1,50 @@
+---
+title: Fake Google Antigravity Installer Steals Accounts via Trojanized AI Tool
+slug: >-
+  2026-04-21-fake-google-antigravity-installer-steals-accounts-via-trojanized-ai-tool
+date: '2026-04-21'
+excerpt: >-
+  Malwarebytes reports a trojanized installer for Google's Antigravity AI tool
+  steals browser cookies and account credentials within minutes, targeting users
+  seeking the leaked software.
+category: malware
+tags:
+  - infostealer
+  - google
+  - ai
+  - malware-distribution
+  - cookie-theft
+language: en
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/threat-intel/2026/04/fake-google-antigravity-downloads-are-stealing-accounts-in-minutes
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-fake-google-antigravity-installer-steals-accounts-via-trojanized-ai-tool
+severity: high
+---
+## Executive Summary
+A trojanized installer masquerading as Google's unreleased Antigravity AI tool is actively stealing user credentials and browser session cookies. According to Malwarebytes, the malicious installer, distributed through unofficial channels, functions as a fully-featured infostealer, exfiltrating data to attacker-controlled servers within minutes of execution. The campaign exploits interest in the leaked AI software to compromise Google, Microsoft, and other online accounts.
+
+## Technical Analysis
+The threat is a single executable file named `antigravity_setup.exe`. Malwarebytes analysis confirms the file is digitally signed with a valid certificate issued to "ALEXANDER BORISOV," which may lend it a false appearance of legitimacy. Upon execution, the installer presents a seemingly normal setup wizard, complete with progress bars and installation completion prompts, mimicking legitimate software behavior.
+
+Concurrently, in the background, the malware executes a PowerShell script that harvests sensitive data from the victim's system. The primary targets are web browsers. The script systematically copies browser profile directories, which contain login data, cookies, and local storage. This data is then compressed into a ZIP archive. The stolen archive is exfiltrated via a HTTP POST request to a command-and-control (C2) server at the domain `cdnfile[.]cloud`. According to Malwarebytes, the entire process from execution to data theft can occur in under five minutes, providing attackers with immediate access to the victim's logged-in sessions.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The attackers employ several techniques to enable credential theft and maintain stealth. The initial infection vector is **Drive-by Compromise** (T1189), relying on users seeking the Antigravity tool from unofficial sources. The use of a valid code-signing certificate for the malicious executable constitutes **Code Signing** (T1553.002) to bypass security warnings and evade detection.
+
+The core theft mechanism involves **Archive Collected Data** (T1560) by compressing stolen browser profiles into a ZIP file. Data exfiltration is performed via **Exfiltration Over Web Service** (T1567) to a seemingly benign cloud storage domain (`cdnfile[.]cloud`). The malware's operation demonstrates **User Execution** (T1204) as it requires the victim to manually run the trojanized installer.
+
+## Threat Actor Context
+The source material does not attribute this campaign to a known threat actor or group. The operation appears financially motivated, leveraging the hype around a high-profile, leaked AI tool to distribute a commodity infostealer. The use of a valid digital certificate suggests the actors have some resources to acquire such certificates, either fraudulently or through compromised entities. The infrastructure used (`cdnfile[.]cloud`) is not linked to any previously documented campaigns in the report.
+
+## Mitigations & Recommendations
+Organizations and individuals should treat any download of unreleased or leaked software, especially from unofficial forums, websites, or peer-to-peer networks, as high-risk. Technical controls can mitigate this specific threat. Malwarebytes recommends enabling **Protected App** features in supported browsers like Microsoft Edge, which can help prevent the theft of browser cookies and stored credentials. Network monitoring for outbound connections to suspicious domains like `cdnfile[.]cloud` may also aid in detection. As a general principle, users should only download software from official vendor websites or trusted app stores.
+
+## References
+- https://www.malwarebytes.com/blog/threat-intel/2026/04/fake-google-antigravity-downloads-are-stealing-accounts-in-minutes

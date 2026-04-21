@@ -1,0 +1,49 @@
+---
+title: 假冒的 Google Antigravity 安装程序通过木马化的 AI 工具窃取账户
+slug: >-
+  2026-04-21-fake-google-antigravity-installer-steals-accounts-via-trojanized-ai-tool
+date: '2026-04-21'
+excerpt: >-
+  Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies
+  和账户凭证，针对寻求泄露软件的用户。
+category: malware
+tags:
+  - infostealer
+  - google
+  - ai
+  - malware-distribution
+  - cookie-theft
+language: zh
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/threat-intel/2026/04/fake-google-antigravity-downloads-are-stealing-accounts-in-minutes
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-21-fake-google-antigravity-installer-steals-accounts-via-trojanized-ai-tool
+severity: high
+---
+## 执行摘要
+一个伪装成谷歌未发布的反重力AI工具的木马化安装程序正在积极窃取用户凭证和浏览器会话Cookie。根据Malwarebytes的说法，这个恶意安装程序通过非官方渠道分发，作为一个功能齐全的信息窃取器，执行几分钟内就将数据泄露到攻击者控制的服务器。该活动利用对泄露的AI软件的兴趣来破坏谷歌、微软和其他在线账户。
+
+## 技术分析
+威胁是一个名为`antigravity_setup.exe`的单个可执行文件。Malwarebytes分析确认该文件是用颁发给“ALEXANDER BORISOV”的有效证书数字签名的，这可能会给它一个虚假的合法外观。执行时，安装程序呈现一个看似正常的安装向导，包括进度条和安装完成提示，模仿合法软件的行为。
+
+同时，在后台，恶意软件执行一个PowerShell脚本，从受害者的系统中收集敏感数据。主要目标是网络浏览器。该脚本系统地复制包含登录数据、Cookie和本地存储的浏览器配置文件目录。然后这些数据被压缩成一个ZIP存档。被盗的存档通过HTTP POST请求泄露到命令和控制（C2）服务器在域`cdnfile[.]cloud`。根据Malwarebytes的说法，从执行到数据盗窃的整个过程可以在不到五分钟内完成，为攻击者提供对受害者登录会话的即时访问。
+
+## 入侵指标
+源材料中未识别出任何指标。
+
+## 战术、技术与程序
+攻击者使用几种技术来实现凭证盗窃并保持隐蔽性。最初的感染向量是**Drive-by Compromise**（T1189），依赖于用户从非官方来源寻找反重力工具。使用有效代码签名证书的恶意可执行文件构成**Code Signing**（T1553.002），以绕过安全警告和逃避检测。
+
+核心盗窃机制涉及**Archive Collected Data**（T1560），通过将被盗的浏览器配置文件压缩成ZIP文件来收集数据。数据泄露是通过**Exfiltration Over Web Service**（T1567）到看似良性的云存储域（`cdnfile[.]cloud`）进行的。恶意软件的操作展示了**User Execution**（T1204），因为它需要受害者手动运行木马化安装程序。
+
+## 威胁行为者背景
+源材料没有将此次活动归因于已知的威胁行为者或团体。该操作似乎是出于财务动机，利用围绕高调泄露的AI工具的炒作来分发商品信息窃取器。使用有效的数字证书表明，行为者拥有一些资源来获取此类证书，无论是欺诈性还是通过被破坏的实体。报告中使用的基础设施（`cdnfile[.]cloud`）没有与任何先前记录的活动联系起来。
+
+## 缓解措施与建议
+组织和个人应将任何未发布或泄露软件的下载，特别是来自非官方论坛、网站或点对点网络的下载，视为高风险。技术控制可以缓解这一特定威胁。Malwarebytes建议在支持的浏览器（如Microsoft Edge）中启用**Protected App**功能，这可以帮助防止浏览器Cookie和存储的凭证被盗。对可疑域（如`cdnfile[.]cloud`）的出站连接进行网络监控也可能有助于检测。作为一般原则，用户应仅从官方供应商网站或受信任的应用商店下载软件。
+
+## 参考资料
+- https://www.malwarebytes.com/blog/threat-intel/2026/04/fake-google-antigravity-downloads-are-stealing-accounts-in-minutes

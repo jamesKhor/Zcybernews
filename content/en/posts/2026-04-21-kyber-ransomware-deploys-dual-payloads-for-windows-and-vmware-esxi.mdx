@@ -1,0 +1,48 @@
+---
+title: Kyber Ransomware Deploys Dual Payloads for Windows and VMware ESXi
+slug: 2026-04-21-kyber-ransomware-deploys-dual-payloads-for-windows-and-vmware-esxi
+date: '2026-04-21'
+excerpt: >-
+  Kyber ransomware deploys two distinct payloads to encrypt both Windows systems
+  and VMware ESXi servers, using a custom tool to wipe ESXi snapshots and hinder
+  recovery. The attack chain begins with compromised RDP credentials.
+category: malware
+tags:
+  - ransomware
+  - vmware
+  - esxi
+  - windows
+  - rapid7
+language: en
+source_urls:
+  - >-
+    https://www.rapid7.com/blog/post/tr-kyber-ransomware-double-trouble-windows-esxi-attacks-explained
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-kyber-ransomware-deploys-dual-payloads-for-windows-and-vmware-esxi
+severity: high
+threat_actor: Kyber
+---
+## Executive Summary
+The Kyber ransomware operation is deploying a dual-payload attack designed to simultaneously encrypt files on Windows systems and VMware ESXi hypervisors, according to an analysis by Rapid7. This cross-platform approach targets core enterprise infrastructure, using a custom tool to delete ESXi snapshots and virtual machine files to complicate recovery efforts. The attacks observed by researchers begin with the compromise of Remote Desktop Protocol (RDP) credentials.
+
+## Technical Analysis
+Rapid7's investigation details a two-stage encryption process. Upon gaining initial access, the threat actors deploy a primary Windows-based ransomware binary. This executable is responsible for file encryption on the Windows host and also serves as a loader for the secondary ESXi-focused payload.
+The secondary component is a 64-bit Linux executable, compiled with MinGW and UPX-packed, specifically designed to target VMware ESXi servers. Its core function is to connect to a target ESXi host via SSH using credentials harvested or brute-forced from the compromised Windows environment. Once connected, the tool executes a series of commands to locate and delete all virtual machine snapshots and associated `.vmsn` files, effectively removing standard recovery points before initiating file encryption on the ESXi datastores.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The attack follows a recognizable pattern. Initial Access is achieved through valid RDP credentials (T1078). After establishing a foothold on a Windows system, the actors leverage Credential Access techniques (likely T1555) to harvest credentials stored on the host, which are then used for Lateral Movement (T1021) to the ESXi server via SSH.
+The execution of the dual payloads represents a Defense Evasion (T1070) and Impact (T1485, T1489) strategy. The specific technique of deleting VM snapshots and files on ESXi is a deliberate anti-recovery measure intended to maximize disruption and pressure the victim into paying the ransom by eliminating easy restoration options.
+
+## Threat Actor Context
+The source material attributes this activity to a ransomware operation it refers to as "Kyber." The analysis does not provide attribution to a known nation-state or cybercrime group. The operational focus on both Windows and virtualization platforms indicates a deliberate targeting of enterprises where ESXi servers host critical business applications and data. The use of a custom tool for ESXi snapshot deletion suggests development resources focused on maximizing impact.
+
+## Mitigations & Recommendations
+Rapid7's recommendations center on hardening the initial attack vectors and protecting critical infrastructure. Organizations should enforce strong, unique passwords for all RDP accounts and implement multi-factor authentication (MFA) where possible, especially for administrative access to virtualization management interfaces.
+For ESXi servers, strict network segmentation is critical. Management interfaces (like SSH and the vSphere Client) should not be directly accessible from general-purpose user workstations or the broader corporate network. Employ jump boxes or dedicated management networks. Furthermore, ensure robust, isolated backups of virtual machines exist that are not accessible from the ESXi host itself, rendering the snapshot deletion tactic ineffective for complete data destruction.
+
+## References
+- https://www.rapid7.com/blog/post/tr-kyber-ransomware-double-trouble-windows-esxi-attacks-explained

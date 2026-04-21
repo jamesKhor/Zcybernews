@@ -1,0 +1,47 @@
+---
+title: Kyber 勒索软件为 Windows 和 VMware ESXi 部署双重有效载荷
+slug: 2026-04-21-kyber-ransomware-deploys-dual-payloads-for-windows-and-vmware-esxi
+date: '2026-04-21'
+excerpt: >-
+  Kyber 勒索软件部署两个不同的有效载荷以加密 Windows 系统和 VMware ESXi 服务器，使用自定义工具清除 ESXi
+  快照并阻碍恢复。攻击链始于被泄露的 RDP 凭证。
+category: malware
+tags:
+  - ransomware
+  - vmware
+  - esxi
+  - windows
+  - rapid7
+language: zh
+source_urls:
+  - >-
+    https://www.rapid7.com/blog/post/tr-kyber-ransomware-double-trouble-windows-esxi-attacks-explained
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-kyber-ransomware-deploys-dual-payloads-for-windows-and-vmware-esxi
+severity: high
+threat_actor: Kyber
+---
+## 执行摘要
+根据Rapid7的分析，Kyber勒索软件行动正在部署一种双载荷攻击，旨在同时加密Windows系统和VMware ESXi虚拟机管理程序上的文件。这种跨平台的方法针对核心企业基础设施，使用定制工具删除ESXi快照和虚拟机文件，使恢复工作变得复杂。研究人员观察到的攻击始于远程桌面协议（RDP）凭证的泄露。
+
+## 技术分析
+Rapid7的调查详细描述了一个两阶段的加密过程。在获得初始访问权限后，威胁行为者部署了一个基于Windows的主要勒索软件二进制文件。这个可执行文件负责Windows主机上的文件加密，并且也作为针对ESXi的次要载荷的加载器。
+次要组件是一个64位Linux可执行文件，使用MinGW和UPX打包，专门设计用于针对VMware ESXi服务器。其核心功能是通过SSH使用从被泄露的Windows环境中收集或暴力破解的凭证连接到目标ESXi主机。一旦连接，工具执行一系列命令来定位并删除所有虚拟机快照和相关的`.vmsn`文件，在启动ESXi数据存储上的文件加密之前，有效地移除了标准的恢复点。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+攻击遵循一个可识别的模式。通过有效的RDP凭证（T1078）获得初始访问权限。在Windows系统上建立立足点后，行为者利用凭证访问技术（可能是T1555）收集存储在主机上的凭证，然后用于通过SSH向ESXi服务器进行横向移动（T1021）。
+双载荷的执行代表了防御规避（T1070）和影响（T1485, T1489）策略。在ESXi上删除VM快照和文件的具体技术是一种故意的反恢复措施，旨在通过消除简单的恢复选项来最大化干扰，并向受害者施压支付赎金。
+
+## 威胁行为者背景
+源材料将此活动归因于一个名为“Kyber”的勒索软件行动。分析没有提供归因于已知国家或网络犯罪集团。对Windows和虚拟化平台的运营重点表明，故意针对ESXi服务器托管关键业务应用程序和数据的企业。使用定制工具删除ESXi快照表明开发资源集中在最大化影响上。
+
+## 缓解措施与建议
+Rapid7的建议集中在加强初始攻击向量和保护关键基础设施上。组织应为所有RDP账户强制执行强大且独特的密码，并在可能的情况下实施多因素认证（MFA），特别是对虚拟化管理界面的管理员访问权限。
+对于ESXi服务器，严格的网络隔离至关重要。管理界面（如SSH和vSphere Client）不应直接从通用用户工作站或更广泛的企业网络访问。使用跳转箱或专用管理网络。此外，确保存在强大、隔离的虚拟机备份，这些备份无法从ESXi主机本身访问，使快照删除策略无法完全销毁数据。
+
+## 参考资料
+- https://www.rapid7.com/blog/post/tr-kyber-ransomware-double-trouble-windows-esxi-attacks-explained

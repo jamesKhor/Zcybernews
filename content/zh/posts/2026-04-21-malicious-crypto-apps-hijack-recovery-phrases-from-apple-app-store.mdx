@@ -1,0 +1,43 @@
+---
+title: 恶意加密应用从苹果应用商店劫持恢复短语
+slug: 2026-04-21-malicious-crypto-apps-hijack-recovery-phrases-from-apple-app-store
+date: '2026-04-21'
+excerpt: 苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。
+category: malware
+tags:
+  - apple-app-store
+  - cryptocurrency
+  - supply-chain
+  - mobile-security
+  - phishing
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/dozens-of-malicious-crypto-apps-land-in-apple-app-store/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-21-malicious-crypto-apps-hijack-recovery-phrases-from-apple-app-store
+severity: high
+affected_sectors:
+  - cryptocurrency
+---
+## 执行摘要
+苹果从其官方应用商店中移除了至少45个恶意应用程序，这些应用程序被发现是合法加密货币钱包的复杂仿制品。根据SecurityWeek的报告，这些应用程序旨在窃取用户的密钥恢复短语和私钥，使攻击者能够完全控制受害者的数字资产。这一发现突显了在精选移动应用市场中供应链被破坏的持续威胁。
+
+## 技术分析
+这些恶意应用程序伪装成知名的加密货币钱包和服务，包括MetaMask、Coinbase Wallet和Trust Wallet。SecurityWeek的分析表明，这些应用程序作为有效的网络钓鱼界面运作，向用户展示了熟悉的登录或钱包恢复流程。当用户输入他们的12个或24个单词的密钥恢复短语——加密货币钱包的主密钥时——应用程序会悄无声息地将数据泄露到攻击者控制的服务器上。据报道，这些应用程序还直接索要私钥。一旦掌握了这些凭证，攻击者可以从任何位置清空相关钱包中的所有资金。这些应用程序的技术复杂性足以通过苹果的应用审查流程，尽管源材料中没有详细说明所使用的确切规避机制。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+主要采用的技术是应用伪装（T1556.001），即将恶意软件伪装成合法、可信的应用程序。威胁行为者利用这一点进行凭证收集（T1555），特别是针对加密货币秘密。该操作依赖于通过可信来源——苹果应用商店——进行分发，构成了软件供应链被破坏（T1195.002）。源报告没有具体说明这些应用程序使用的指挥与控制基础设施、社会工程诱饵或持久性机制。
+
+## 威胁行为者背景
+源材料没有将这一活动归因于已知的威胁行为者或团体。目标纯粹是财务上的，与更广泛的以加密货币为重点的盗窃趋势相一致。成功提交并在苹果应用商店上维护欺诈性应用程序的能力表明了一定程度的运营规划，可能还涉及使用假冒开发者账户或被破坏的合法账户。目前尚不确定这是否是单一团体的工作，还是多个独立行为者复制了相同的技术。
+
+## 缓解措施与建议
+用户应仅通过官方项目网站的直接、经过验证的链接下载加密货币钱包应用程序，而不是仅通过应用商店搜索。SecurityWeek建议用户对任何请求密钥恢复短语或私钥的应用程序持极度怀疑态度，因为合法钱包很少，如果有的话，在初始设置后会要求这些信息。对于组织和开发者来说，这一事件强调了精选应用商店并非无懈可击。实施次级验证方法，如用于交易签名的硬件安全密钥，即使软件钱包被破坏，也提供了一个关键的防御层。苹果已经移除了已识别的应用程序，但用户应手动检查他们的设备上是否有任何不熟悉的加密货币应用程序。
+
+## 参考资料
+- SecurityWeek: [数十个恶意加密应用进入苹果应用商店](https://www.securityweek.com/dozens-of-malicious-crypto-apps-land-in-apple-app-store/)
