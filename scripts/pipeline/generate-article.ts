@@ -64,7 +64,7 @@ function countInfoTokens(stories: Story[]): number {
   return tokens;
 }
 
-function classifySourceRichness(stories: Story[]): {
+export function classifySourceRichness(stories: Story[]): {
   label: "advisory" | "medium" | "long" | "extended";
   targetRange: string;
   maxOutputTokens: number;

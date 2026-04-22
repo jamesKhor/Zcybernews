@@ -171,7 +171,7 @@ const CVE_PLACEHOLDER_REGEX =
 // hedging makes us look amateur. 6 articles shipped with these phrases
 // before the 2026-04-21 gate (Fortinet, Marimo, Defender zero-days, Apple
 // iOS lockout, internet-wide scanning, Grinex).
-const CVE_HEDGING_PATTERNS: RegExp[] = [
+export const CVE_HEDGING_PATTERNS: RegExp[] = [
   /CVE\s*(?:ID|identifier|number)?s?\s+(?:is|was|are|have|has)?\s*not\s*yet\s*(?:been\s+)?(?:assigned|issued|published|allocated|disclosed)/i,
   /CVE\s*(?:ID|identifier|number)?s?\s+(?:is|was|are)?\s*(?:awaiting|pending)\s+(?:assignment|issuance|publication|allocation|disclosure)/i,
   /no\s+CVE\s+(?:ID|identifier|number)?s?\s*(?:has\s+been|was|is|have\s+been)?\s*(?:assigned|issued|published|allocated|disclosed|released)/i,
