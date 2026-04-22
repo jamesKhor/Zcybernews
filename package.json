@@ -12,6 +12,9 @@
     "test:watch": "vitest",
     "qa": "npm run typecheck && npm run test && npm run build",
     "qa:fast": "npm run typecheck && npm run test",
+    "quality:audit": "tsx scripts/audit-published-quality.ts",
+    "quality:audit:7d": "tsx scripts/audit-published-quality.ts --since=7d",
+    "quality:audit:all": "tsx scripts/audit-published-quality.ts --all",
     "prepare": "husky"
   },
   "dependencies": {

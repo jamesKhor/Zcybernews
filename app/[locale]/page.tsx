@@ -129,35 +129,50 @@ export default async function HomePage({ params }: Props) {
       {hasContent ? (
         <>
           <HomeGreeting locale={locale} />
+          {/* Editorial hook — our selling point promoted from buried
+              muted-gray strip (2026-04-22 v1) to above-the-fold
+              editorial callout (2026-04-22 v2). Positioned between
+              greeting and hero so readers encounter the curation
+              promise BEFORE the stories themselves. Serif italic +
+              left-border accent reads as an editor's note, not a
+              marketing banner. */}
+          <aside
+            className="max-w-7xl mx-auto px-4 mt-2 mb-6"
+            aria-label={locale === "zh" ? "编辑的话" : "Editor's note"}
+          >
+            <div className="border-l-2 border-primary/60 bg-primary/5 pl-4 pr-3 py-3 md:py-4 rounded-sm">
+              <p className="font-serif text-[15px] md:text-base leading-relaxed text-foreground/90">
+                {locale === "zh" ? (
+                  <>
+                    <span className="italic">
+                      我们每天阅读 {sources.length}+
+                      个网络安全信息源——只发布真正值得关注的内容。
+                    </span>{" "}
+                    <Link
+                      href={`/${locale}/sources`}
+                      className="whitespace-nowrap text-primary font-medium underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors"
+                    >
+                      查看信息来源 →
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <span className="italic">
+                      We read {sources.length}+ cybersecurity feeds every day —
+                      and publish only what matters.
+                    </span>{" "}
+                    <Link
+                      href={`/${locale}/sources`}
+                      className="whitespace-nowrap text-primary font-medium underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors"
+                    >
+                      See our sources →
+                    </Link>
+                  </>
+                )}
+              </p>
+            </div>
+          </aside>
           <Hero3Col picks={hero} locale={locale} />
-          {/* Sources-transparency strip (2026-04-22). One line, muted,
-              above the fold on most viewports. Anchors the curation
-              positioning and routes traffic to /sources without
-              distracting from the hero. */}
-          <div className="max-w-7xl mx-auto px-4 -mt-2 mb-4 text-xs text-muted-foreground">
-            {locale === "zh" ? (
-              <>
-                我们追踪 {sources.length}+ 个网络安全信息源,并公开筛选标准。{" "}
-                <Link
-                  href={`/${locale}/sources`}
-                  className="text-primary hover:underline"
-                >
-                  查看信息来源 →
-                </Link>
-              </>
-            ) : (
-              <>
-                We track {sources.length}+ cybersecurity sources and publish our
-                curation criteria.{" "}
-                <Link
-                  href={`/${locale}/sources`}
-                  className="text-primary hover:underline"
-                >
-                  See our sources →
-                </Link>
-              </>
-            )}
-          </div>
           <MoreFromToday articles={ticker} locale={locale} />
           <CategoryPillsRow locale={locale} />
 
