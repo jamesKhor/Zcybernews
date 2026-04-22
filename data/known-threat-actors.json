@@ -1,6 +1,7 @@
 {
   "_comment": "Curated list of known threat actors / malware families / APT groups. Used by scripts/pipeline/post-process.ts to deterministically populate the `threat_actor` frontmatter field when the LLM missed it. Extend over time as new groups emerge. Keep names in their most-common public form (e.g. 'LockBit' not 'lockbit' — comparison is case-insensitive). Aliases grouped via subarrays so variations map to a canonical name.",
-  "_version": "2026-04-18",
+  "_version": "2026-04-23",
+  "_changelog_2026_04_23": "B-015 expansion — 27 actors and malware families observed in 2026-Q1/Q2 articles but missed by v2026-04-18 list (The Gentlemen, NGate, JanelaRAT, CanisterWiper, ClickFix, Lumma Stealer, Raspberry Robin, Bumblebee, IcedID, RedLine Stealer, Vidar, StealC, Atomic Stealer, SocGholish, PikaBot, Pygmy Goat, Winos 4.0, Storm-0978, Storm-1811, UNC5221, Salt Typhoon, Flax Typhoon, Gamaredon, Turla, Charming Kitten, Handala, BlueDelta).",
   "actors": [
     {
       "canonical": "LockBit",
@@ -138,6 +139,61 @@
     {
       "canonical": "NetSupport RAT",
       "aliases": ["NetSupport RAT", "FakeUpdates"]
-    }
+    },
+
+    { "canonical": "The Gentlemen", "aliases": ["The Gentlemen"] },
+    { "canonical": "NGate", "aliases": ["NGate", "NGate Malware"] },
+    { "canonical": "JanelaRAT", "aliases": ["JanelaRAT"] },
+    {
+      "canonical": "CanisterWiper",
+      "aliases": ["CanisterWiper", "Canister Wiper"]
+    },
+    { "canonical": "ClickFix", "aliases": ["ClickFix"] },
+    {
+      "canonical": "Lumma Stealer",
+      "aliases": ["Lumma Stealer", "LummaC2", "Lumma"]
+    },
+    {
+      "canonical": "Raspberry Robin",
+      "aliases": ["Raspberry Robin", "Roshtyak"]
+    },
+    { "canonical": "Bumblebee", "aliases": ["Bumblebee"] },
+    { "canonical": "IcedID", "aliases": ["IcedID", "BokBot"] },
+    {
+      "canonical": "RedLine Stealer",
+      "aliases": ["RedLine Stealer", "RedLine"]
+    },
+    { "canonical": "Vidar", "aliases": ["Vidar", "Vidar Stealer"] },
+    { "canonical": "StealC", "aliases": ["StealC"] },
+    { "canonical": "Atomic Stealer", "aliases": ["Atomic Stealer", "AMOS"] },
+    { "canonical": "SocGholish", "aliases": ["SocGholish", "FakeUpdates"] },
+    { "canonical": "PikaBot", "aliases": ["PikaBot"] },
+    { "canonical": "Pygmy Goat", "aliases": ["Pygmy Goat"] },
+    { "canonical": "Winos 4.0", "aliases": ["Winos 4.0", "ValleyRAT"] },
+    {
+      "canonical": "Storm-0978",
+      "aliases": ["Storm-0978", "RomCom", "Void Rabisu"]
+    },
+    { "canonical": "Storm-1811", "aliases": ["Storm-1811"] },
+    { "canonical": "UNC5221", "aliases": ["UNC5221"] },
+    {
+      "canonical": "Salt Typhoon",
+      "aliases": ["Salt Typhoon", "Ghost Emperor"]
+    },
+    {
+      "canonical": "Flax Typhoon",
+      "aliases": ["Flax Typhoon", "Ethereal Panda"]
+    },
+    {
+      "canonical": "Gamaredon",
+      "aliases": ["Gamaredon", "Primitive Bear", "Shuckworm"]
+    },
+    { "canonical": "Turla", "aliases": ["Turla", "Venomous Bear", "Uroburos"] },
+    {
+      "canonical": "Charming Kitten",
+      "aliases": ["Charming Kitten", "APT35", "Magic Hound"]
+    },
+    { "canonical": "Handala", "aliases": ["Handala"] },
+    { "canonical": "BlueDelta", "aliases": ["BlueDelta", "Fancy Bear"] }
   ]
 }
