@@ -52,6 +52,38 @@ If ANY of the following apply, respond with ONLY this JSON and nothing else:
    published articles listed below (same CVE batch, same threat actor operation,
    same product feature announcement, same law enforcement action). Different angle
    on the exact same event = reject. Use reason: "already covered: <matching title>"
+
+3. VENDOR-PR-SHAPED: The source is a vendor press release with no technical
+   substance — product launch, funding round, executive hire, analyst-report
+   teaser, partnership announcement, award, certification, or webinar invite.
+   Telltale patterns: title starts with "\${Brand} Announces/Launches/Unveils/
+   Introduces/Partners/Achieves/Joins/Names/Appoints/Acquires/Wins"; body
+   predominantly markets a product or person rather than reporting an
+   incident, vulnerability, malware sample, or technique. Use reason:
+   "vendor-pr-shaped". EXCEPTION: if the press release references a specific
+   CVE ID or a concrete technical disclosure, it is acceptable to cover.
+
+4. SPECULATIVE-ONLY: The source material has no concrete facts — no CVE ID,
+   no CVSS score, no named threat actor, no IOC (hash / IP / domain / file
+   path), no named victim, no named vulnerable product version, no MITRE
+   technique. It's entirely analyst commentary, opinion, or "may/could/might"
+   prose. Our readers need specifics. Use reason: "speculative-only".
+
+5. TOO-THIN: The combined source material (across all \${stories.length} sources)
+   totals under ~400 characters of substantive prose after stripping headers,
+   bylines, ads, and social-share boilerplate. There is not enough signal
+   to write a meaningful article. Use reason: "too-thin".
+
+6. CATEGORY-MISMATCH-UNRESOLVABLE: You would be forced to classify this story
+   as category="vulnerabilities" but the sources contain ZERO real CVE IDs
+   (only placeholder-shaped strings, vague mentions, or "CVE has not been
+   assigned" phrasing). The vulnerabilities category is CVE-hard-gated at
+   the fact-check stage — an article landing there without a real CVE ID
+   will be rejected downstream. If and only if the story clearly fits
+   "industry" (breach reporting), "tools" (new defensive capability), or
+   "malware" (threat-family analysis) instead, DO NOT reject — write it
+   under the correct category with cve_ids: []. Use reason "category-
+   mismatch-unresolvable" ONLY when none of those categories fit either.
 ${recentBlock}
 ══════════════════════════════════════════
 ARTICLE RULES (only if not rejected)
@@ -139,6 +171,18 @@ it's one of these alternatives depending on the actual source content:
     \`industry\` or \`tools\`. The category enum matters for fact-check gating.
 Never pretend an article is about a specific flaw if the flaw has no
 identifier you can cite.
+
+STRUCTURED FIELD HARD-GATE for category="vulnerabilities" (CRITICAL):
+If category="vulnerabilities", then BOTH of the following must hold in the
+final JSON:
+  * cve_ids MUST be a non-empty array of real CVE IDs from the sources.
+  * At least ONE of {cvss_score, iocs, ttp_matrix, threat_actor} must be
+    populated — a "vulnerability" article with zero structured depth is
+    indistinguishable from a blog post.
+If you cannot satisfy BOTH, reclassify the article to "industry", "tools",
+or "malware" AS APPROPRIATE rather than forcing it into "vulnerabilities".
+Do NOT reject — reclassify. The fact-check stage will reject any
+vulnerabilities-category article that fails this gate.
 
 STRUCTURED FIELD EXTRACTION RULES (CRITICAL — the homepage relies on these):
 Before writing the body prose, SCAN the sources for these fields and populate the
