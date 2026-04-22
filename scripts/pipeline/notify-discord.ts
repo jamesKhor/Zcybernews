@@ -15,6 +15,11 @@
  * hard dependency.
  */
 import type { GeneratedArticle } from "../ai/schemas/article-schema.js";
+import {
+  absoluteArticleUrl,
+  type ArticleLocale,
+  type ArticleSection,
+} from "../../lib/article-url.js";
 
 type DiscordColor =
   | 0xdc2626 // red — critical
@@ -39,20 +44,9 @@ function severityColor(severity: string | null | undefined): DiscordColor {
   }
 }
 
+// Kept for the avatar_url static-asset reference below; `absoluteArticleUrl`
+// owns all article-URL construction per Phase B.3.
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
-
-type Locale = "en" | "zh";
-
-/** Build the article URL — route differs for threat-intel vs posts. */
-function articleUrl(
-  locale: Locale,
-  slug: string,
-  section: "posts" | "threat-intel",
-): string {
-  return section === "threat-intel"
-    ? `${SITE_URL}/${locale}/threat-intel/${slug}`
-    : `${SITE_URL}/${locale}/articles/${slug}`;
-}
 
 /**
  * Post a single article to the locale's Discord channel. Returns true if
@@ -61,8 +55,8 @@ function articleUrl(
  */
 export async function notifyDiscord(
   article: GeneratedArticle,
-  locale: Locale,
-  section: "posts" | "threat-intel",
+  locale: ArticleLocale,
+  section: ArticleSection,
 ): Promise<boolean> {
   const webhookEnv =
     locale === "zh" ? "DISCORD_WEBHOOK_ZH" : "DISCORD_WEBHOOK_EN";
@@ -75,7 +69,7 @@ export async function notifyDiscord(
     return false;
   }
 
-  const url = articleUrl(locale, article.slug, section);
+  const url = absoluteArticleUrl({ slug: article.slug }, locale, section);
 
   // Discord embed — rich card with title, description, color by severity.
   // Keep it simple: title + excerpt + link. Tag list as footer.
