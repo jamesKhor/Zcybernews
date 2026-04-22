@@ -14,6 +14,12 @@ import {
 import { isProcessed } from "../utils/cache.js";
 import { limit, withRetry } from "../utils/rate-limit.js";
 import { isVendorPR, vendorPrEnforceEnabled } from "./filters/vendor-pr.js";
+import {
+  loadFeedHealth,
+  saveFeedHealth,
+  updateFeedHealth,
+  type FeedRunResult,
+} from "./feed-health.js";
 
 const parser = new Parser({
   timeout: 15000,
@@ -117,15 +123,46 @@ export async function ingestFeeds(maxStories = 20): Promise<Story[]> {
   );
 
   const all: Story[] = [];
+  // A2.4 feed-health observability — collect per-source run results.
+  const healthRuns: FeedRunResult[] = [];
+  const runAt = new Date().toISOString();
   for (const [i, result] of results.entries()) {
+    const source = ENABLED_SOURCES[i];
+    if (!source) continue;
     if (result.status === "fulfilled") {
       all.push(...result.value);
+      healthRuns.push({
+        sourceId: source.id,
+        ok: true,
+        at: runAt,
+        items: result.value.length,
+      });
     } else {
-      console.warn(
-        `[ingest] Failed ${ENABLED_SOURCES[i]?.name}:`,
-        result.reason,
-      );
+      console.warn(`[ingest] Failed ${source.name}:`, result.reason);
+      healthRuns.push({
+        sourceId: source.id,
+        ok: false,
+        at: runAt,
+        error:
+          result.reason instanceof Error
+            ? result.reason.message
+            : String(result.reason),
+      });
     }
+  }
+
+  // Persist health state. Best-effort — a failed write must not abort
+  // ingestion, so loadFeedHealth / saveFeedHealth are try-wrapped at
+  // the module boundary.
+  try {
+    const prevHealth = loadFeedHealth();
+    const nextHealth = updateFeedHealth(prevHealth, healthRuns);
+    saveFeedHealth(nextHealth);
+  } catch (err) {
+    console.warn(
+      "[feed-health] update failed (non-fatal):",
+      err instanceof Error ? err.message : err,
+    );
   }
 
   console.log(`[ingest] Fetched ${all.length} raw stories`);
