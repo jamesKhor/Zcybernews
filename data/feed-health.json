@@ -1,0 +1,326 @@
+{
+  "bleepingcomputer": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 15
+      }
+    ]
+  },
+  "krebsonsecurity": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 10
+      }
+    ]
+  },
+  "thehackernews": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 25
+      }
+    ]
+  },
+  "darkreading": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 25
+      }
+    ]
+  },
+  "securityweek": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 10
+      }
+    ]
+  },
+  "schneier": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 10
+      }
+    ]
+  },
+  "blackhillsinfosec": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 25
+      }
+    ]
+  },
+  "cisa-alerts": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 10
+      }
+    ]
+  },
+  "cisa-kev": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 20
+      }
+    ]
+  },
+  "sans-isc": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 10
+      }
+    ]
+  },
+  "ncsc-uk": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 0
+      }
+    ]
+  },
+  "checkpoint-research": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 15
+      }
+    ]
+  },
+  "google-tag": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 20
+      }
+    ]
+  },
+  "project-zero": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 10
+      }
+    ]
+  },
+  "sentinelone": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 10
+      }
+    ]
+  },
+  "unit42": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 15
+      }
+    ]
+  },
+  "kaspersky-securelist": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 10
+      }
+    ]
+  },
+  "malwarebytes": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 20
+      }
+    ]
+  },
+  "welivesecurity": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 25
+      }
+    ]
+  },
+  "rapid7": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 20
+      }
+    ]
+  },
+  "zdi": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 25
+      }
+    ]
+  },
+  "elastic-security": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 20
+      }
+    ]
+  },
+  "recorded-future": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 25
+      }
+    ]
+  },
+  "the-record": {
+    "lastSuccess": "2026-04-22T14:34:14.687Z",
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 0,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": true,
+        "items": 5
+      }
+    ]
+  },
+  "volexity": {
+    "lastSuccess": null,
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 1,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": false,
+        "error": "Attribute without value\nLine: 15\nColumn: 69\nChar: >"
+      }
+    ]
+  },
+  "censys": {
+    "lastSuccess": null,
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 1,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": false,
+        "error": "Status code 404"
+      }
+    ]
+  },
+  "freebuf": {
+    "lastSuccess": null,
+    "lastAttempt": "2026-04-22T14:34:14.687Z",
+    "consecutiveFailures": 1,
+    "recent": [
+      {
+        "at": "2026-04-22T14:34:14.687Z",
+        "ok": false,
+        "error": "Status code 405"
+      }
+    ]
+  }
+}
