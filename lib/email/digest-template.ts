@@ -90,6 +90,52 @@ const DEFAULT_PILL = { bg: "#f5f5f5", color: "#525252", border: "#e5e5e5" };
 // Category pills on dark hero bg — all use the same dark tinted style
 const HERO_PILL = { bg: "#1e2a3a", color: "#22d3ee", border: "#2a3a4e" };
 
+/**
+ * Category section bar color — solid vertical bar on the left edge of
+ * every category section header, matching the site's category color
+ * scheme (red = threat-intel, orange = vulnerabilities, etc.). Mirror
+ * of CATEGORY_PILL `color` values but solid so they read as an editorial
+ * gutter, not a pill.
+ */
+const CATEGORY_BAR: Record<string, string> = {
+  "threat-intel": "#dc2626",
+  vulnerabilities: "#ea580c",
+  malware: "#be185d",
+  industry: "#0284c7",
+  tools: "#15803d",
+  ai: "#7c3aed",
+};
+
+/** Human-readable category label per locale (eyebrows + section headers). */
+const CATEGORY_LABEL: Record<Locale, Record<string, string>> = {
+  en: {
+    "threat-intel": "Threat Intel",
+    vulnerabilities: "Vulnerabilities",
+    malware: "Malware",
+    industry: "Industry",
+    tools: "Tools",
+    ai: "AI",
+  },
+  zh: {
+    "threat-intel": "威胁情报",
+    vulnerabilities: "漏洞",
+    malware: "恶意软件",
+    industry: "行业动态",
+    tools: "工具",
+    ai: "人工智能",
+  },
+};
+
+/** Display order for category sections (matches the site's homepage). */
+const CATEGORY_ORDER = [
+  "threat-intel",
+  "vulnerabilities",
+  "malware",
+  "industry",
+  "tools",
+  "ai",
+] as const;
+
 // ── Design tokens ─────────────────────────────────────────────────────────
 
 const C = {
@@ -307,9 +353,27 @@ export function buildDigestHtml({
 
   const heroBlock = hero ? renderHeroBlock(hero, locale, siteUrl, t) : "";
 
-  const secondaryBlocks = secondary
-    .map((a) => renderSecondaryBlock(a, locale, siteUrl, t))
-    .join("\n");
+  // Group secondary articles by category, emit category sections in the
+  // same order as the site homepage. Each section gets a header with a
+  // colored vertical bar + "See all →" link. This mirrors the site's
+  // per-category section structure so subscribers get the same visual
+  // reading rhythm they experience on zcybernews.com.
+  const secondaryByCategory = new Map<string, Article[]>();
+  for (const a of secondary) {
+    const cat = a.frontmatter.category ?? "industry";
+    const list = secondaryByCategory.get(cat) ?? [];
+    list.push(a);
+    secondaryByCategory.set(cat, list);
+  }
+  const secondaryBlocks = CATEGORY_ORDER.map((cat) => {
+    const group = secondaryByCategory.get(cat);
+    if (!group || group.length === 0) return "";
+    const header = renderCategoryHeader(cat, locale, siteUrl, t);
+    const cards = group
+      .map((a) => renderSecondaryBlock(a, locale, siteUrl, t))
+      .join("\n");
+    return header + cards;
+  }).join("\n");
 
   const moreBlock =
     remainingCount > 0
@@ -433,7 +497,71 @@ export function buildDigestHtml({
 </html>`;
 }
 
-// ── Hero block (DARK — contrast punch) ────────────────────────────────────
+// ── Shared helpers (category / anchor metadata) ───────────────────────────
+
+/**
+ * Build the category-specific anchor metadata line shown prominently
+ * UNDER each card title, mirroring what the operator loves on the site:
+ *   - vulnerabilities: "CVE-2026-XXXX · CVSS 9.8"
+ *   - malware / threat-intel: "ACTOR: LockBit" or malware family name
+ *   - other categories: empty string (no anchor)
+ *
+ * If the category is vuln but no CVE exists, fall back to CVSS-only.
+ * If nothing can be surfaced, returns empty — caller skips the slot.
+ */
+function renderAnchorMetadata(fm: Article["frontmatter"]): string {
+  const parts: string[] = [];
+  if (fm.cve_ids && fm.cve_ids.length > 0) {
+    // Show up to 2 CVE IDs; if more, append "+N"
+    const cves = fm.cve_ids.slice(0, 2).join(" · ");
+    const suffix = fm.cve_ids.length > 2 ? ` · +${fm.cve_ids.length - 2}` : "";
+    parts.push(cves + suffix);
+  }
+  if (typeof fm.cvss_score === "number" && fm.cvss_score > 0) {
+    parts.push(`CVSS ${fm.cvss_score}`);
+  }
+  if (parts.length === 0 && fm.threat_actor) {
+    // No CVE/CVSS but we have an actor/malware family — surface it.
+    parts.push(String(fm.threat_actor));
+  }
+  if (parts.length === 0) return "";
+  return parts.join(" · ");
+}
+
+/** Format a relative-time eyebrow like the site ("10H", "APR 22", "6D"). */
+function relativeTimeEyebrow(isoDate: string, locale: Locale): string {
+  const d = new Date(isoDate);
+  if (Number.isNaN(d.getTime())) return "";
+  const deltaMs = Date.now() - d.getTime();
+  const deltaH = Math.round(deltaMs / (60 * 60 * 1000));
+  const deltaD = Math.round(deltaH / 24);
+  if (deltaH < 48) return `${Math.max(1, deltaH)}H`;
+  if (deltaD < 10) return `${deltaD}D`;
+  // Older than 10d — show "MMM DD"
+  return d
+    .toLocaleDateString(locale === "zh" ? "zh-CN" : "en-US", {
+      month: "short",
+      day: "numeric",
+    })
+    .toUpperCase();
+}
+
+/** Render up to N tag pills (small, outlined, uppercase). */
+function renderTagPills(tags: string[] | undefined, max = 3): string {
+  if (!tags || tags.length === 0) return "";
+  return tags
+    .slice(0, max)
+    .map(
+      (tag) =>
+        `<span style="display:inline-block;margin:0 6px 0 0;padding:2px 8px;background:#fafafa;color:${C.textMuted};font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;border-radius:4px;border:1px solid ${C.cardBorder};font-family:${FONT};">${escapeHtml(tag)}</span>`,
+    )
+    .join("");
+}
+
+// ── Hero block (LIGHT, NYT-style — matches the site's 3-col hero ──────────
+// left-column treatment: narrow colored bar, eyebrow, big serif title,
+// anchor metadata, excerpt, tag pills, CTA. Collapsed to single-column
+// for email.
 
 function renderHeroBlock(
   a: Article,
@@ -445,45 +573,64 @@ function renderHeroBlock(
   const url = `${siteUrl}/${locale}/${fm.category === "threat-intel" ? "threat-intel" : "articles"}/${fm.slug}`;
   const severity = fm.severity;
   const readTime = estimateReadingTime(a);
+  const barColor =
+    SEVERITY_COLOR[severity ?? ""] ??
+    CATEGORY_BAR[fm.category] ??
+    C.brandPrimary;
+  const categoryLabel =
+    CATEGORY_LABEL[locale][fm.category] ?? fm.category ?? "";
+  const timeEyebrow = relativeTimeEyebrow(fm.date ?? "", locale);
 
-  const severityBadge = severity
-    ? `<span style="display:inline-block;padding:4px 10px;background:${SEVERITY_COLOR[severity] ?? "#6b7280"};color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;border-radius:6px;letter-spacing:0.04em;font-family:${FONT};">${escapeHtml(severity)}</span>`
-    : "";
-  const categoryBadge = `<span style="display:inline-block;padding:4px 10px;background:${HERO_PILL.bg};color:${HERO_PILL.color};font-size:11px;font-weight:600;text-transform:uppercase;border-radius:6px;letter-spacing:0.04em;border:1px solid ${HERO_PILL.border};font-family:${FONT};">${escapeHtml(fm.category)}</span>`;
-  const readTimeBadge = `<span style="display:inline-block;padding:4px 10px;background:rgba(255,255,255,0.08);color:#a1a1aa;font-size:11px;font-weight:500;border-radius:6px;font-family:${FONT};">⏱ ${readTime} ${escapeHtml(t.minRead)}</span>`;
+  // Eyebrow: "CRITICAL · VULNERABILITIES · 10H" — exactly the site's format.
+  const eyebrowParts: string[] = [];
+  if (severity) eyebrowParts.push(severity.toUpperCase());
+  if (categoryLabel) eyebrowParts.push(categoryLabel.toUpperCase());
+  if (timeEyebrow) eyebrowParts.push(timeEyebrow);
+  const eyebrow = eyebrowParts.join(
+    ' <span style="color:' + C.textMuted + ';">·</span> ',
+  );
 
+  const anchor = renderAnchorMetadata(fm);
   const heroExcerpt =
-    fm.excerpt.length > 160 ? fm.excerpt.slice(0, 157) + "..." : fm.excerpt;
+    fm.excerpt.length > 200 ? fm.excerpt.slice(0, 197) + "..." : fm.excerpt;
+  const tagPills = renderTagPills(fm.tags, 4);
 
+  // Table cell with left-edge colored bar (4px) + light content.
   return `<tr>
-    <td style="padding:0;">
-      <!-- Accent bar -->
-      <div style="height:4px;background:linear-gradient(90deg, ${C.brandAccent} 0%, ${C.brandPrimary} 100%);"></div>
-    </td>
-  </tr>
-  <tr>
-    <td style="padding:28px 32px 24px;background:${C.heroGradient};">
-      <!--[if gte mso 9]>
-      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;">
-        <v:fill type="gradient" color="#0c1222" color2="#0f172a" angle="135"/>
-        <v:textbox style="mso-fit-shape-to-text:true" inset="28px,28px,28px,24px">
-      <![endif]-->
-      <p style="margin:0 0 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:${C.brandAccent};font-family:${FONT};">▎${escapeHtml(t.topStory)}</p>
-      <div style="margin-bottom:14px;">${categoryBadge}&nbsp;&nbsp;${severityBadge}&nbsp;&nbsp;${readTimeBadge}</div>
-      <a href="${url}" style="text-decoration:none;">
-        <h2 style="margin:0 0 14px;color:#ffffff;font-size:26px;line-height:1.25;font-weight:600;letter-spacing:-0.015em;font-family:${SERIF_FONT};">${escapeHtml(fm.title)}</h2>
-      </a>
-      <p style="margin:0 0 20px;color:#d4d4d8;font-size:15px;line-height:1.55;font-family:${FONT};">${escapeHtml(heroExcerpt)}</p>
-      <a href="${url}" style="display:inline-block;padding:10px 22px;background:${C.brandPrimary};color:#ffffff;text-decoration:none;border-radius:8px;font-size:13px;font-weight:600;font-family:${FONT};">${escapeHtml(t.readHero)} →</a>
-      <!--[if gte mso 9]>
-        </v:textbox>
-      </v:rect>
-      <![endif]-->
+    <td style="padding:0 32px 24px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid ${C.cardBorder};border-radius:${C.cardRadius};overflow:hidden;background:${C.cardBg};">
+        <tr>
+          <td style="width:4px;background:${barColor};font-size:0;line-height:0;" width="4">&nbsp;</td>
+          <td style="padding:24px 28px 22px;">
+            <!-- Eyebrow (severity · category · time) -->
+            <p style="margin:0 0 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${severity ? (SEVERITY_COLOR[severity] ?? C.textSecondary) : C.textSecondary};font-family:${FONT};">${eyebrow}</p>
+            <!-- Title -->
+            <a href="${url}" style="text-decoration:none;">
+              <h2 style="margin:0 0 ${anchor ? "10px" : "14px"};color:${C.textPrimary};font-size:26px;line-height:1.2;font-weight:600;letter-spacing:-0.015em;font-family:${SERIF_FONT};">${escapeHtml(fm.title)}</h2>
+            </a>
+            ${anchor ? `<p style="margin:0 0 14px;color:${C.textSecondary};font-size:13px;font-weight:600;font-family:${FONT};letter-spacing:0.01em;">${escapeHtml(anchor)}</p>` : ""}
+            <!-- Excerpt -->
+            <p style="margin:0 0 16px;color:${C.textSecondary};font-size:15px;line-height:1.55;font-family:${FONT};">${escapeHtml(heroExcerpt)}</p>
+            <!-- Tag pills -->
+            ${tagPills ? `<div style="margin:0 0 18px;">${tagPills}</div>` : ""}
+            <!-- CTA + read time -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="vertical-align:middle;">
+                  <a href="${url}" style="display:inline-block;padding:9px 20px;background:${C.brandPrimary};color:#ffffff;text-decoration:none;border-radius:6px;font-size:13px;font-weight:600;font-family:${FONT};">${escapeHtml(t.readHero)} →</a>
+                </td>
+                <td style="vertical-align:middle;text-align:right;color:${C.textMuted};font-size:12px;font-family:${FONT};">⏱ ${readTime} ${escapeHtml(t.minRead)}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>`;
 }
 
-// ── Secondary article card (WHITE with severity left-border accent) ───────
+// ── Secondary article card (site-aligned: eyebrow + serif title +
+//    anchor metadata + excerpt + tag pills) ──────────────────────────────
 
 function renderSecondaryBlock(
   a: Article,
@@ -495,32 +642,83 @@ function renderSecondaryBlock(
   const url = `${siteUrl}/${locale}/${fm.category === "threat-intel" ? "threat-intel" : "articles"}/${fm.slug}`;
   const severity = fm.severity;
   const readTime = estimateReadingTime(a);
-  const accentColor = SEVERITY_COLOR[severity ?? ""] ?? C.cardBorder;
-  const pill = CATEGORY_PILL[fm.category] ?? DEFAULT_PILL;
+  const barColor =
+    SEVERITY_COLOR[severity ?? ""] ?? CATEGORY_BAR[fm.category] ?? C.cardBorder;
+  const timeEyebrow = relativeTimeEyebrow(fm.date ?? "", locale);
 
-  const severityBadge = severity
-    ? `<span style="display:inline-block;padding:3px 8px;background:${SEVERITY_COLOR[severity] ?? "#6b7280"};color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;border-radius:6px;letter-spacing:0.04em;font-family:${FONT};">${escapeHtml(severity)}</span>`
-    : "";
-  const categoryBadge = `<span style="display:inline-block;padding:3px 8px;background:${pill.bg};color:${pill.color};font-size:10px;font-weight:600;text-transform:uppercase;border-radius:6px;letter-spacing:0.04em;border:1px solid ${pill.border};font-family:${FONT};">${escapeHtml(fm.category)}</span>`;
-  const readTimeBadge = `<span style="color:${C.textMuted};font-size:11px;font-family:${FONT};">⏱ ${readTime} ${escapeHtml(t.minRead)}</span>`;
+  // Eyebrow: "HIGH · APR 22" — matches the site's card eyebrow format.
+  const eyebrowParts: string[] = [];
+  if (severity) eyebrowParts.push(severity.toUpperCase());
+  if (timeEyebrow) eyebrowParts.push(timeEyebrow);
+  const eyebrow = eyebrowParts.join(
+    ' <span style="color:' + C.textMuted + ';">·</span> ',
+  );
 
+  const anchor = renderAnchorMetadata(fm);
   const excerpt =
     fm.excerpt.length > 140 ? fm.excerpt.slice(0, 137) + "..." : fm.excerpt;
+  const tagPills = renderTagPills(fm.tags, 3);
 
-  // Table-based card with left border accent colored by severity
-  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:12px;border:1px solid ${C.cardBorder};border-radius:${C.cardRadius};overflow:hidden;">
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:14px;border:1px solid ${C.cardBorder};border-radius:${C.cardRadius};overflow:hidden;background:${C.cardBg};">
   <tr>
-    <td style="width:4px;background:${accentColor};font-size:0;line-height:0;" width="4">&nbsp;</td>
-    <td style="padding:16px 20px;background:${C.cardBg};">
-      <div style="margin-bottom:8px;">${categoryBadge}&nbsp;&nbsp;${severityBadge}&nbsp;&nbsp;${readTimeBadge}</div>
+    <td style="width:4px;background:${barColor};font-size:0;line-height:0;" width="4">&nbsp;</td>
+    <td style="padding:16px 20px 14px;">
+      <!-- Eyebrow: severity · time -->
+      <p style="margin:0 0 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${severity ? (SEVERITY_COLOR[severity] ?? C.textSecondary) : C.textSecondary};font-family:${FONT};">${eyebrow}</p>
+      <!-- Title -->
       <a href="${url}" style="text-decoration:none;">
-        <h3 style="margin:0 0 6px;color:${C.textPrimary};font-size:17px;line-height:1.3;font-weight:600;letter-spacing:-0.01em;font-family:${SERIF_FONT};">${escapeHtml(fm.title)}</h3>
+        <h3 style="margin:0 0 ${anchor ? "6px" : "8px"};color:${C.textPrimary};font-size:17px;line-height:1.3;font-weight:600;letter-spacing:-0.01em;font-family:${SERIF_FONT};">${escapeHtml(fm.title)}</h3>
       </a>
-      <p style="margin:0 0 8px;color:${C.textSecondary};font-size:14px;line-height:1.5;font-family:${FONT};">${escapeHtml(excerpt)}</p>
-      <a href="${url}" style="color:${C.brandPrimary};text-decoration:none;font-size:12px;font-weight:500;font-family:${FONT};">${escapeHtml(t.readMore)} →</a>
+      ${anchor ? `<p style="margin:0 0 8px;color:${C.textSecondary};font-size:12px;font-weight:600;font-family:${FONT};letter-spacing:0.01em;">${escapeHtml(anchor)}</p>` : ""}
+      <!-- Excerpt -->
+      <p style="margin:0 0 ${tagPills ? "10px" : "8px"};color:${C.textSecondary};font-size:14px;line-height:1.5;font-family:${FONT};">${escapeHtml(excerpt)}</p>
+      ${tagPills ? `<div style="margin:0 0 8px;">${tagPills}</div>` : ""}
+      <!-- Read-more + read time -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td style="vertical-align:middle;">
+            <a href="${url}" style="color:${C.brandPrimary};text-decoration:none;font-size:12px;font-weight:600;font-family:${FONT};">${escapeHtml(t.readMore)} →</a>
+          </td>
+          <td style="vertical-align:middle;text-align:right;color:${C.textMuted};font-size:11px;font-family:${FONT};">⏱ ${readTime} ${escapeHtml(t.minRead)}</td>
+        </tr>
+      </table>
     </td>
   </tr>
 </table>`;
+}
+
+/**
+ * Category section header — mirror of the site's pattern:
+ *   █ THREAT INTEL                                      See all →
+ * with a thick solid colored vertical bar + bold serif uppercase
+ * title + "See all" link aligned right.
+ */
+function renderCategoryHeader(
+  category: string,
+  locale: Locale,
+  siteUrl: string,
+  t: (typeof T)[Locale],
+): string {
+  const barColor = CATEGORY_BAR[category] ?? C.brandPrimary;
+  const label = CATEGORY_LABEL[locale][category] ?? category;
+  const seeAllUrl = `${siteUrl}/${locale}/categories/${category}`;
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:18px 0 12px;">
+    <tr>
+      <td style="vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="width:4px;height:22px;background:${barColor};font-size:0;line-height:0;padding-right:10px;">&nbsp;</td>
+            <td style="padding-left:10px;">
+              <h2 style="margin:0;color:${C.textPrimary};font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;font-family:${SERIF_FONT};">${escapeHtml(label)}</h2>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="vertical-align:middle;text-align:right;">
+        <a href="${seeAllUrl}" style="color:${C.brandPrimary};text-decoration:none;font-size:12px;font-weight:500;font-family:${FONT};">${locale === "zh" ? "查看全部" : "See all"} →</a>
+      </td>
+    </tr>
+  </table>`;
 }
 
 export { MIN_ARTICLES_TO_SEND, MAX_ARTICLES, selectArticles };
