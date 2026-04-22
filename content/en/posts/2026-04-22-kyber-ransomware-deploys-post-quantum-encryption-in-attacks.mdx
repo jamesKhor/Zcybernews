@@ -1,0 +1,46 @@
+---
+title: Kyber Ransomware Deploys Post-Quantum Encryption in Attacks
+slug: 2026-04-22-kyber-ransomware-deploys-post-quantum-encryption-in-attacks
+date: '2026-04-22'
+excerpt: >-
+  The Kyber ransomware gang is using a variant that implements Kyber1024
+  post-quantum encryption to target Windows and VMware ESXi systems, according
+  to a BleepingComputer analysis.
+category: malware
+tags:
+  - ransomware
+  - encryption
+  - windows
+  - vmware
+  - threat-intel
+  - kyber
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/kyber-ransomware-gang-toys-with-post-quantum-encryption-on-windows/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-kyber-ransomware-deploys-post-quantum-encryption-in-attacks
+severity: high
+threat_actor: Kyber
+---
+## Executive Summary
+A new ransomware operation tracked as Kyber is deploying dual payloads against Windows systems and VMware ESXi hypervisors. One variant of the ransomware is notable for its experimental use of the Kyber1024 post-quantum cryptographic algorithm for file encryption, a rare feature in current ransomware campaigns.
+
+## Technical Analysis
+According to analysis by BleepingComputer, the Kyber ransomware gang distributes separate payloads for Windows and Linux (targeting ESXi). The Windows variant is written in Rust and uses a combination of symmetric and asymmetric encryption. While it primarily employs the more common ChaCha20 and RSA algorithms, one specific sample was found to integrate the Kyber1024 key encapsulation mechanism (KEM) for key exchange. This implementation appears to be a test, as the sample still relies on RSA for the actual encryption key transport. The ransomware also attempts to terminate a list of over 200 processes and services related to databases, backups, and security software before encrypting files with a `.kyber` extension.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The ransomware employs techniques to hinder recovery and defense. It terminates processes and services to ensure files are not locked during encryption. For ESXi targets, the Linux variant is deployed to encrypt virtual machine files. The use of a post-quantum algorithm, even if not fully operational in the analyzed sample, indicates the actors are experimenting with advanced cryptographic evasion.
+
+## Threat Actor Context
+The threat actor behind this campaign is identified as the "Kyber" ransomware operation. There is no clear attribution to a known nation-state or established cybercrime group in the available source material. The operation's focus on both Windows and VMware ESXi aligns with a broader ransomware trend targeting virtualization infrastructure for maximum impact.
+
+## Mitigations & Recommendations
+Organizations should ensure robust, offline backups of critical systems, particularly VMware ESXi servers and virtual machine data. Security teams should monitor for attempts to terminate large numbers of processes related to backups and databases, which is a common precursor to ransomware encryption. Applying the principle of least privilege and segmenting networks can help limit lateral movement.
+
+## References
+- [Kyber ransomware gang toys with post-quantum encryption on Windows](https://www.bleepingcomputer.com/news/security/kyber-ransomware-gang-toys-with-post-quantum-encryption-on-windows/)

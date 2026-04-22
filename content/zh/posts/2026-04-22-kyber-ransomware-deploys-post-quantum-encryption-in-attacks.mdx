@@ -1,0 +1,45 @@
+---
+title: Kyber 勒索软件在攻击中部署后量子加密
+slug: 2026-04-22-kyber-ransomware-deploys-post-quantum-encryption-in-attacks
+date: '2026-04-22'
+excerpt: >-
+  根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对
+  Windows 和 VMware ESXi 系统。
+category: malware
+tags:
+  - ransomware
+  - encryption
+  - windows
+  - vmware
+  - threat-intel
+  - kyber
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/kyber-ransomware-gang-toys-with-post-quantum-encryption-on-windows/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-kyber-ransomware-deploys-post-quantum-encryption-in-attacks
+severity: high
+threat_actor: Kyber
+---
+## 执行摘要
+一个被追踪为Kyber的新型勒索软件行动正在针对Windows系统和VMware ESXi虚拟机管理程序部署双重有效载荷。勒索软件的一个变体因其实验性地使用Kyber1024后量子密码算法进行文件加密而引人注目，这是当前勒索软件活动中的一个罕见特性。
+
+## 技术分析
+根据BleepingComputer的分析，Kyber勒索软件团伙为Windows和Linux（针对ESXi）分发不同的有效载荷。Windows变体是用Rust编写的，使用对称和非对称加密的组合。虽然它主要使用更常见的ChaCha20和RSA算法，但发现一个特定样本集成了Kyber1024密钥封装机制（KEM）用于密钥交换。这种实现似乎是一次测试，因为样本仍然依赖于RSA来传输实际的加密密钥。勒索软件还试图终止与数据库、备份和安全软件相关的200多个进程和服务列表，然后在文件上加密带有`.kyber`扩展名。
+
+## 入侵指标
+在源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+勒索软件采用技术来阻碍恢复和防御。它终止进程和服务以确保在加密过程中文件不会被锁定。对于ESXi目标，部署了Linux变体来加密虚拟机文件。即使在分析的样本中不完全运行，使用后量子算法也表明行动者正在尝试使用高级密码规避。
+
+## 威胁行为者背景
+此次行动背后的威胁行为者被识别为“Kyber”勒索软件行动。在可用的源材料中，没有明确的归属到已知的国家或已建立的网络犯罪集团。该行动关注Windows和VMware ESXi与更广泛的勒索软件趋势相一致，目标是虚拟化基础设施以实现最大影响。
+
+## 缓解措施与建议
+组织应确保对关键系统进行强大、离线的备份，特别是VMware ESXi服务器和虚拟机数据。安全团队应监控尝试终止与备份和数据库相关的大量进程的行为，这是勒索软件加密的常见前兆。应用最小权限原则和网络分段可以帮助限制横向移动。
+
+## 参考资料
+- [Kyber勒索软件团伙在Windows上尝试后量子加密](https://www.bleepingcomputer.com/news/security/kyber-ransomware-gang-toys-with-post-quantum-encryption-on-windows/)
