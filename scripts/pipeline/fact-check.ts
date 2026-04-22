@@ -143,7 +143,8 @@ export type FactCheckIssue = {
     | "excerpt_too_long"
     | "excerpt_too_short"
     | "tags_empty"
-    | "source_urls_empty";
+    | "source_urls_empty"
+    | "cve_hedging_language";
   message: string;
   value?: string;
 };
@@ -163,6 +164,22 @@ const CVE_REGEX = /CVE-\d{4}-\d{4,}/g;
 // anything survives to fact-check, we reject the article as HIGH severity.
 const CVE_PLACEHOLDER_REGEX =
   /CVE-(?:\d{4}|[A-Z]{4})-(?:[XNY?]{2,}|[A-Z]{5})/gi;
+
+// CVE hedging patterns — phrases the LLM uses when it can't cite a real CVE
+// but shouldn't be allowed to "get away with it" by writing natural-language
+// hedging. Security professionals read ZCyberNews for SPECIFIC CVE IDs;
+// hedging makes us look amateur. 6 articles shipped with these phrases
+// before the 2026-04-21 gate (Fortinet, Marimo, Defender zero-days, Apple
+// iOS lockout, internet-wide scanning, Grinex).
+const CVE_HEDGING_PATTERNS: RegExp[] = [
+  /CVE\s*(?:ID|identifier|number)?s?\s+(?:is|was|are|have|has)?\s*not\s*yet\s*(?:been\s+)?(?:assigned|issued|published|allocated|disclosed)/i,
+  /CVE\s*(?:ID|identifier|number)?s?\s+(?:is|was|are)?\s*(?:awaiting|pending)\s+(?:assignment|issuance|publication|allocation|disclosure)/i,
+  /no\s+CVE\s+(?:ID|identifier|number)?s?\s*(?:has\s+been|was|is|have\s+been)?\s*(?:assigned|issued|published|allocated|disclosed|released)/i,
+  /lacking\s+a\s+(?:public\s+)?CVE/i,
+  /without\s+(?:an?\s+)?(?:official\s+|assigned\s+|public\s+)?CVE\s+(?:ID|identifier|number|assignment)/i,
+  /CVE\s*(?:ID|identifier)?\s*[:\-]?\s*(?:TBD|TBA|N\/A|Pending|Unknown)\b/i,
+  /CVE\s*(?:ID|identifier|number)?s?\s+.{0,20}not\s+(?:publicly\s+)?disclosed/i,
+];
 const MD5_REGEX = /\b[a-fA-F0-9]{32}\b/g;
 const SHA1_REGEX = /\b[a-fA-F0-9]{40}\b/g;
 const SHA256_REGEX = /\b[a-fA-F0-9]{64}\b/g;
@@ -294,6 +311,31 @@ export async function factCheckArticle(
       type: "tags_empty",
       message: `Article has no tags — breaks tag-page rank flow + JSON-LD keywords. post-process should derive from title if LLM omits.`,
     });
+  }
+
+  // ── 1a-pre. CVE hedging language hard gate ─────────────────────────────
+  // Reject articles that admit they don't have a CVE while still framing
+  // themselves as vulnerability coverage. Security professionals read us
+  // for concrete CVEs — "CVE ID not yet assigned" in body is a trust
+  // killer and shipped publicly 6× before this gate (2026-04-21 audit).
+  // Prompt now explicitly forbids these phrases; this gate is the safety
+  // net if LLM regresses.
+  const hedgingHaystack = [
+    article.body ?? "",
+    article.excerpt ?? "",
+    article.title ?? "",
+  ].join("\n");
+  for (const rx of CVE_HEDGING_PATTERNS) {
+    const m = rx.exec(hedgingHaystack);
+    if (m) {
+      issues.push({
+        severity: "high",
+        type: "cve_hedging_language",
+        message: `Article uses CVE hedging phrase "${m[0]}" — reframe as patch advisory without pretending it's a named flaw, or recategorize to industry.`,
+        value: m[0],
+      });
+      break; // one hit is enough to reject
+    }
   }
 
   // ── 1a. CVE placeholder hard gate ──────────────────────────────────────

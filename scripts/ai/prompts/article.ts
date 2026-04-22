@@ -112,13 +112,33 @@ TITLE RULES (CRITICAL — hallucinated dates have caused production issues):
   for the same Patch Tuesday), use the highest-credibility source's number and note
   the discrepancy in the body. Do NOT generate separate articles for the same event.
 
-CVE ID RULES (CRITICAL):
+CVE ID RULES (CRITICAL — rewrite after 2026-04-21 quality failure):
 - ONLY include real, verified CVE IDs that appear in the source material
 - NEVER invent, guess, or use placeholder CVE IDs like CVE-2026-xxxxx
-- If the source mentions a vulnerability but does NOT provide a CVE ID, write
-  "CVE ID not yet assigned" or "CVE ID not publicly disclosed" in the text
-- Leave the "cve_ids" JSON array EMPTY if no confirmed CVE IDs exist in the sources
+- NEVER write hedging phrases like "CVE ID not yet assigned", "CVE ID not
+  publicly disclosed", "awaiting CVE assignment", "lacking a public CVE",
+  "CVE identifier is pending", "no CVE has been assigned", or any variant.
+  These phrases shipped publicly for 6 articles — they make ZCyberNews look
+  like it doesn't know what it's writing about. Security professionals
+  read articles for specific CVEs; an article hedging about missing CVEs
+  has no value to them.
+- Leave the "cve_ids" JSON array EMPTY if no confirmed CVE IDs exist
 - A wrong CVE ID is far worse than no CVE ID — when in doubt, omit it
+
+WHAT TO DO WHEN SOURCES HAVE NO CVE ID:
+Reframe the article. It's no longer a "specific vulnerability" piece —
+it's one of these alternatives depending on the actual source content:
+  • "patch advisory" — describe the update/patch Fortinet/Microsoft/etc
+    released without framing it as a specific named flaw. Focus on WHAT
+    was patched (products, versions, affected sectors) and WHO should
+    apply it. Example: "Fortinet released critical patches for
+    FortiSandbox and FortiAnalyzer on April 14" (no CVE implied).
+  • "research commentary" — summarize the researcher's disclosure,
+    remediation steps, and affected versions without inventing a CVE frame.
+  • "industry/analysis" — recategorize away from \`vulnerabilities\` to
+    \`industry\` or \`tools\`. The category enum matters for fact-check gating.
+Never pretend an article is about a specific flaw if the flaw has no
+identifier you can cite.
 
 STRUCTURED FIELD EXTRACTION RULES (CRITICAL — the homepage relies on these):
 Before writing the body prose, SCAN the sources for these fields and populate the

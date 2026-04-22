@@ -1,0 +1,2173 @@
+{
+  "generated_at": "2026-04-22T05:17:18.168Z",
+  "total_scanned": 798,
+  "high_severity_count": 127,
+  "medium_only_count": 16,
+  "findings": [
+    {
+      "file": "en\\posts\\2026-04-12-anthropic-claude-api-quota-exhaustion-billing-bug.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 594
+    },
+    {
+      "file": "en\\posts\\2026-04-12-anthropic-claude-beta-microsoft-word-enterprise-security-analysis.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "industry",
+      "issues": [
+        {
+          "name": "padding_in_conclusion",
+          "severity": "medium",
+          "matched": "to summarize "
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 697
+    },
+    {
+      "file": "en\\posts\\2026-04-12-cisa-kev-remediation-analysis-patching-crisis.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 474
+    },
+    {
+      "file": "en\\posts\\2026-04-12-critical-marimo-rce-vulnerability-active-exploitation.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 492
+    },
+    {
+      "file": "en\\posts\\2026-04-12-engagesdk-intent-redirection-crypto-wallet-vulnerability.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 615
+    },
+    {
+      "file": "en\\posts\\2026-04-12-mythos-inflection-point-vulnerability-disclosure-avalanche.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "padding_in_conclusion",
+          "severity": "medium",
+          "matched": "overall "
+        },
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 540
+    },
+    {
+      "file": "en\\posts\\2026-04-12-trisquel-12-ecne-release-security-update.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 553
+    },
+    {
+      "file": "en\\posts\\2026-04-12-zero-day-windows-exploit-leaked-ahead-of-patch-tuesday.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 352
+    },
+    {
+      "file": "en\\posts\\2026-04-13-adobe-reader-zero-day-exploited-malicious-pdf.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 532
+    },
+    {
+      "file": "en\\posts\\2026-04-13-apache-tomcat-patches-critical-encryptinterceptor-flaw.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 555
+    },
+    {
+      "file": "en\\posts\\2026-04-13-chrome-147-security-update-critical-flaws.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "details_unclear",
+          "severity": "medium",
+          "matched": "details remain undisclosed"
+        },
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 366
+    },
+    {
+      "file": "en\\posts\\2026-04-13-cpuid-website-compromised-trojanized-cpu-z-hwmonitor.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "malware",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "Exercise caution"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 488
+    },
+    {
+      "file": "en\\posts\\2026-04-13-critical-axios-ssrf-flaw-cloud-metadata-rce.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 555
+    },
+    {
+      "file": "en\\posts\\2026-04-13-critical-marimo-vulnerability-exploited-hours-after-disclosure.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 503
+    },
+    {
+      "file": "en\\posts\\2026-04-13-critical-vulnerabilities-microsoft-apple-cisco-exploited-april-2026.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 640
+    },
+    {
+      "file": "en\\posts\\2026-04-13-google-pixel-10-baseband-modem-rust-dns-security.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "padding_important_note",
+          "severity": "medium",
+          "matched": "It is crucial to note"
+        },
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 697
+    },
+    {
+      "file": "en\\posts\\2026-04-13-microsoft-windows-11-updates-break-push-button-reset.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 559
+    },
+    {
+      "file": "en\\posts\\2026-04-13-nginx-freenginx-critical-security-updates-1-29-8.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 460
+    },
+    {
+      "file": "en\\posts\\2026-04-13-qualys-deep-scan-vulnerability-detection-gaps.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 617
+    },
+    {
+      "file": "en\\posts\\2026-04-13-vulnerability-data-quality-crisis-flawed-architecture.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 479
+    },
+    {
+      "file": "en\\posts\\2026-04-14-adobe-patches-critical-coldfusion-flaws-55-updates.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 537
+    },
+    {
+      "file": "en\\posts\\2026-04-14-ai-development-velocity-gap-critical-risk-surge.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "industry",
+      "issues": [
+        {
+          "name": "padding_in_conclusion",
+          "severity": "medium",
+          "matched": "overall "
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 469
+    },
+    {
+      "file": "en\\posts\\2026-04-14-cisa-fortinet-sql-injection-vulnerability-exploited.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 564
+    },
+    {
+      "file": "en\\posts\\2026-04-14-critical-fortisandbox-flaws-remote-command-execution-auth-bypass.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 657
+    },
+    {
+      "file": "en\\posts\\2026-04-14-davmail-6-6-0-patches-regex-flaw-oauth-update.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 404
+    },
+    {
+      "file": "en\\posts\\2026-04-14-fake-ledger-live-app-apple-app-store-crypto-theft.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "malware",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "remain vigilant"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 632
+    },
+    {
+      "file": "en\\posts\\2026-04-14-google-rust-dns-parser-pixel-phones-memory-safety.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 450
+    },
+    {
+      "file": "en\\posts\\2026-04-14-microsoft-april-2026-patch-tuesday-critical-rce-flaws.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 513
+    },
+    {
+      "file": "en\\posts\\2026-04-14-microsoft-patches-zero-days-windows-10-extended-security-update.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 538
+    },
+    {
+      "file": "en\\posts\\2026-04-14-microsoft-windows-protections-malicious-rdp-files.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 661
+    },
+    {
+      "file": "en\\posts\\2026-04-14-sap-patches-critical-abap-vulnerability-19-security-notes.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 584
+    },
+    {
+      "file": "en\\posts\\2026-04-15-adobe-patches-critical-code-execution-flaws-in-acrobat-and-reader.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 477
+    },
+    {
+      "file": "en\\posts\\2026-04-15-critical-flaw-in-anthropics-model-context-protocol-enables-ai-supply-chain-attac.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 711
+    },
+    {
+      "file": "en\\posts\\2026-04-15-industrial-giants-patch-critical-flaws-in-ics-and-ot-products.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 668
+    },
+    {
+      "file": "en\\posts\\2026-04-15-ivanti-patches-neurons-for-itsm-vulnerabilities-enabling-session-hijacking.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 655
+    },
+    {
+      "file": "en\\posts\\2026-04-15-microsoft-awards-2-3m-for-cloud-and-ai-vulnerabilities-in-bug-bounty-contest.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 602
+    },
+    {
+      "file": "en\\posts\\2026-04-15-microsoft-fixes-bug-causing-unplanned-windows-server-2025-upgrades.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 449
+    },
+    {
+      "file": "en\\posts\\2026-04-15-microsoft-patches-critical-windows-active-directory-code-execution-flaw.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 603
+    },
+    {
+      "file": "en\\posts\\2026-04-15-microsoft-releases-mandatory-windows-11-security-update-kb5083769.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 404
+    },
+    {
+      "file": "en\\posts\\2026-04-15-microsoft-salesforce-patch-critical-ai-agent-data-leak-vulnerabilities.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 717
+    },
+    {
+      "file": "en\\posts\\2026-04-15-nginx-1-30-0-released-with-security-fixes-and-upstream-keepalive-default.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 533
+    },
+    {
+      "file": "en\\posts\\2026-04-15-openssl-4-0-0-release-deprecations-post-quantum.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 577
+    },
+    {
+      "file": "en\\posts\\2026-04-15-raspberry-pi-os-6-2-disables-passwordless-sudo-by-default.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 616
+    },
+    {
+      "file": "en\\posts\\2026-04-16-ai-soc-tools-criticized-for-automating-triage-not-reducing-analyst-workload.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "industry",
+      "issues": [
+        {
+          "name": "padding_in_conclusion",
+          "severity": "medium",
+          "matched": "to summarize "
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 610
+    },
+    {
+      "file": "en\\posts\\2026-04-16-critical-cisco-ise-vulnerabilities-enable-remote-code-execution.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 603
+    },
+    {
+      "file": "en\\posts\\2026-04-16-interlock-researchers-detail-cisco-fmc-zero-day-among-31-actively-exploited-flaw.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 547
+    },
+    {
+      "file": "en\\posts\\2026-04-16-microsoft-365-web-services-break-for-users-on-google-chrome-147.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 419
+    },
+    {
+      "file": "en\\posts\\2026-04-16-microsoft-april-2026-update-triggers-bitlocker-recovery-on-windows-server-2025.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 576
+    },
+    {
+      "file": "en\\posts\\2026-04-16-microsofts-original-secure-boot-certificate-expires-risks-boot-failures.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 711
+    },
+    {
+      "file": "en\\posts\\2026-04-16-second-microsoft-defender-zero-day-exploit-published-grants-system-privileges.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 656
+    },
+    {
+      "file": "en\\posts\\2026-04-17-android-17-beta-4-introduces-post-quantum-cryptography-and-memory-protections.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 666
+    },
+    {
+      "file": "en\\posts\\2026-04-17-cursor-ai-ide-vulnerability-exposed-developer-machines-to-remote-takeover.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "Exercise caution"
+        },
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 618
+    },
+    {
+      "file": "en\\posts\\2026-04-17-google-tightens-android-17-privacy-rules-blocks-8-3-billion-ads-in-2025.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "industry",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "Exercise caution"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 606
+    },
+    {
+      "file": "en\\posts\\2026-04-17-leaked-windows-defender-zero-day-exploits-deployed-in-active-attacks.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 753
+    },
+    {
+      "file": "en\\posts\\2026-04-17-metasploit-framework-adds-exploits-for-avideo-opendcim-and-selenium-grid.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 651
+    },
+    {
+      "file": "en\\posts\\2026-04-17-nist-scales-back-cve-data-enrichment-straining-vulnerability-management.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 642
+    },
+    {
+      "file": "en\\posts\\2026-04-17-researcher-publishes-two-new-microsoft-defender-zero-days-all-three-now-exploite.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 704
+    },
+    {
+      "file": "en\\posts\\2026-04-17-researchers-demonstrate-airtag-location-spoofing-via-bluetooth-relay-attack.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 619
+    },
+    {
+      "file": "en\\posts\\2026-04-17-windows-11-updates-trigger-unexpected-bitlocker-recovery-prompts.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 687
+    },
+    {
+      "file": "en\\posts\\2026-04-18-censys-reports-nearly-6-million-internet-facing-ftp-servers-remain-exposed.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 768
+    },
+    {
+      "file": "en\\posts\\2026-04-18-fiverr-exposes-user-files-via-misconfigured-storage-google-indexes-sensitive-dat.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 637
+    },
+    {
+      "file": "en\\posts\\2026-04-18-gimp-hdr-file-parsing-vulnerability-enables-remote-code-execution.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "Exercise caution"
+        }
+      ],
+      "has_cve_in_body": true,
+      "word_count": 612
+    },
+    {
+      "file": "en\\posts\\2026-04-18-gstreamer-qtdemux-flaw-enables-remote-code-execution.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "Exercise caution"
+        }
+      ],
+      "has_cve_in_body": true,
+      "word_count": 569
+    },
+    {
+      "file": "en\\posts\\2026-04-18-microsoft-edge-update-breaks-right-click-paste-in-teams-desktop-client.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 360
+    },
+    {
+      "file": "en\\posts\\2026-04-18-microsoft-windows-snipping-tool-vulnerability-enables-remote-code-execution.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "Exercise Caution"
+        }
+      ],
+      "has_cve_in_body": true,
+      "word_count": 674
+    },
+    {
+      "file": "en\\posts\\2026-04-18-nist-overhauls-cve-prioritization-to-focus-on-high-impact-flaws.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 671
+    },
+    {
+      "file": "en\\posts\\2026-04-19-qualys-deep-scan-uncovers-hidden-vulnerabilities-in-decentralized-software.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 492
+    },
+    {
+      "file": "en\\posts\\2026-04-20-flowise-ai-platform-vulnerable-to-remote-code-execution-via-mcp-adapters.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 570
+    },
+    {
+      "file": "en\\posts\\2026-04-20-microsoft-emergency-updates-fix-windows-server-boot-failures-after-april-2026-pa.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 388
+    },
+    {
+      "file": "en\\posts\\2026-04-20-microsoft-rdp-update-blocks-phishing-via-malicious-rdp-files.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 411
+    },
+    {
+      "file": "en\\posts\\2026-04-20-notion-public-pages-leak-editor-email-addresses-and-profile-photos.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 474
+    },
+    {
+      "file": "en\\posts\\2026-04-20-windows-11-dev-build-26300-8170-adds-secure-boot-monitoring-to-security-app.mdx",
+      "locale": "en",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 301
+    },
+    {
+      "file": "en\\threat-intel\\2026-04-13-basic-fit-data-breach-exposes-member-records.mdx",
+      "locale": "en",
+      "type": "threat-intel",
+      "category": "threat-intel",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "remain vigilant"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 509
+    },
+    {
+      "file": "en\\threat-intel\\2026-04-14-cpuid-watering-hole-attack-redirected-official-downloads.mdx",
+      "locale": "en",
+      "type": "threat-intel",
+      "category": "threat-intel",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "Exercise Caution"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 590
+    },
+    {
+      "file": "en\\threat-intel\\2026-04-16-mcgraw-hill-data-breach-exposes-13-5-million-users-via-salesforce-misconfigurati.mdx",
+      "locale": "en",
+      "type": "threat-intel",
+      "category": "threat-intel",
+      "issues": [
+        {
+          "name": "details_unclear",
+          "severity": "medium",
+          "matched": "details are unclear"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 521
+    },
+    {
+      "file": "en\\threat-intel\\2026-04-16-researchers-map-over-1-250-active-c2-servers-across-russian-hosting-providers.mdx",
+      "locale": "en",
+      "type": "threat-intel",
+      "category": "threat-intel",
+      "issues": [
+        {
+          "name": "padding_in_conclusion",
+          "severity": "medium",
+          "matched": "overall "
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 549
+    },
+    {
+      "file": "en\\threat-intel\\2026-04-18-tycoon-2fa-phishing-kit-disruption-fuels-surge-in-copycat-attacks.mdx",
+      "locale": "en",
+      "type": "threat-intel",
+      "category": "threat-intel",
+      "issues": [
+        {
+          "name": "padding_in_conclusion",
+          "severity": "medium",
+          "matched": "overall "
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 691
+    },
+    {
+      "file": "en\\threat-intel\\2026-04-20-lazarus-group-steals-290-million-in-kelpdao-cross-chain-bridge-attack.mdx",
+      "locale": "en",
+      "type": "threat-intel",
+      "category": "threat-intel",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "exercise caution"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 444
+    },
+    {
+      "file": "en\\threat-intel\\2026-04-21-france-titres-data-breach-exposes-citizen-information-for-sale.mdx",
+      "locale": "en",
+      "type": "threat-intel",
+      "category": "threat-intel",
+      "issues": [
+        {
+          "name": "padding_stay_vigilant",
+          "severity": "medium",
+          "matched": "remain vigilant"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 543
+    },
+    {
+      "file": "zh\\posts\\2026-04-12-anthropic-claude-api-quota-exhaustion-billing-bug.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 988
+    },
+    {
+      "file": "zh\\posts\\2026-04-12-cisa-kev-remediation-analysis-patching-crisis.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 846
+    },
+    {
+      "file": "zh\\posts\\2026-04-12-critical-marimo-rce-vulnerability-active-exploitation.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 861
+    },
+    {
+      "file": "zh\\posts\\2026-04-12-engagesdk-intent-redirection-crypto-wallet-vulnerability.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1084
+    },
+    {
+      "file": "zh\\posts\\2026-04-12-mythos-inflection-point-vulnerability-disclosure-avalanche.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 942
+    },
+    {
+      "file": "zh\\posts\\2026-04-12-trisquel-12-ecne-release-security-update.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 928
+    },
+    {
+      "file": "zh\\posts\\2026-04-12-zero-day-windows-exploit-leaked-ahead-of-patch-tuesday.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 615
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-adobe-reader-zero-day-exploited-malicious-pdf.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 939
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-apache-tomcat-patches-critical-encryptinterceptor-flaw.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 888
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-chrome-147-security-update-critical-flaws.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 610
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-critical-axios-ssrf-flaw-cloud-metadata-rce.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 928
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-critical-marimo-vulnerability-exploited-hours-after-disclosure.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 914
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-critical-vulnerabilities-microsoft-apple-cisco-exploited-april-2026.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1098
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-google-pixel-10-baseband-modem-rust-dns-security.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1180
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-microsoft-windows-11-updates-break-push-button-reset.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 847
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-nginx-freenginx-critical-security-updates-1-29-8.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 766
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-qualys-deep-scan-vulnerability-detection-gaps.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1117
+    },
+    {
+      "file": "zh\\posts\\2026-04-13-vulnerability-data-quality-crisis-flawed-architecture.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 849
+    },
+    {
+      "file": "zh\\posts\\2026-04-14-adobe-patches-critical-coldfusion-flaws-55-updates.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 841
+    },
+    {
+      "file": "zh\\posts\\2026-04-14-cisa-fortinet-sql-injection-vulnerability-exploited.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 966
+    },
+    {
+      "file": "zh\\posts\\2026-04-14-critical-fortisandbox-flaws-remote-command-execution-auth-bypass.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1118
+    },
+    {
+      "file": "zh\\posts\\2026-04-14-davmail-6-6-0-patches-regex-flaw-oauth-update.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 665
+    },
+    {
+      "file": "zh\\posts\\2026-04-14-google-rust-dns-parser-pixel-phones-memory-safety.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 752
+    },
+    {
+      "file": "zh\\posts\\2026-04-14-microsoft-april-2026-patch-tuesday-critical-rce-flaws.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 886
+    },
+    {
+      "file": "zh\\posts\\2026-04-14-microsoft-patches-zero-days-windows-10-extended-security-update.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 866
+    },
+    {
+      "file": "zh\\posts\\2026-04-14-microsoft-windows-protections-malicious-rdp-files.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1133
+    },
+    {
+      "file": "zh\\posts\\2026-04-14-sap-patches-critical-abap-vulnerability-19-security-notes.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 954
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-adobe-patches-critical-code-execution-flaws-in-acrobat-and-reader.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 762
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-critical-flaw-in-anthropics-model-context-protocol-enables-ai-supply-chain-attac.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1213
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-industrial-giants-patch-critical-flaws-in-ics-and-ot-products.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1149
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-ivanti-patches-neurons-for-itsm-vulnerabilities-enabling-session-hijacking.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1105
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-microsoft-awards-2-3m-for-cloud-and-ai-vulnerabilities-in-bug-bounty-contest.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 946
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-microsoft-fixes-bug-causing-unplanned-windows-server-2025-upgrades.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 693
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-microsoft-patches-critical-windows-active-directory-code-execution-flaw.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1012
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-microsoft-releases-mandatory-windows-11-security-update-kb5083769.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 632
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-microsoft-salesforce-patch-critical-ai-agent-data-leak-vulnerabilities.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1168
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-nginx-1-30-0-released-with-security-fixes-and-upstream-keepalive-default.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 834
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-openssl-4-0-0-release-deprecations-post-quantum.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 903
+    },
+    {
+      "file": "zh\\posts\\2026-04-15-raspberry-pi-os-6-2-disables-passwordless-sudo-by-default.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 989
+    },
+    {
+      "file": "zh\\posts\\2026-04-16-critical-cisco-ise-vulnerabilities-enable-remote-code-execution.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1011
+    },
+    {
+      "file": "zh\\posts\\2026-04-16-interlock-researchers-detail-cisco-fmc-zero-day-among-31-actively-exploited-flaw.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 904
+    },
+    {
+      "file": "zh\\posts\\2026-04-16-microsoft-365-web-services-break-for-users-on-google-chrome-147.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 680
+    },
+    {
+      "file": "zh\\posts\\2026-04-16-microsoft-april-2026-update-triggers-bitlocker-recovery-on-windows-server-2025.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 849
+    },
+    {
+      "file": "zh\\posts\\2026-04-16-microsofts-original-secure-boot-certificate-expires-risks-boot-failures.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1023
+    },
+    {
+      "file": "zh\\posts\\2026-04-16-second-microsoft-defender-zero-day-exploit-published-grants-system-privileges.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1041
+    },
+    {
+      "file": "zh\\posts\\2026-04-17-android-17-beta-4-introduces-post-quantum-cryptography-and-memory-protections.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1047
+    },
+    {
+      "file": "zh\\posts\\2026-04-17-cursor-ai-ide-vulnerability-exposed-developer-machines-to-remote-takeover.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 999
+    },
+    {
+      "file": "zh\\posts\\2026-04-17-leaked-windows-defender-zero-day-exploits-deployed-in-active-attacks.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1219
+    },
+    {
+      "file": "zh\\posts\\2026-04-17-metasploit-framework-adds-exploits-for-avideo-opendcim-and-selenium-grid.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1035
+    },
+    {
+      "file": "zh\\posts\\2026-04-17-nist-scales-back-cve-data-enrichment-straining-vulnerability-management.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1092
+    },
+    {
+      "file": "zh\\posts\\2026-04-17-researcher-publishes-two-new-microsoft-defender-zero-days-all-three-now-exploite.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1200
+    },
+    {
+      "file": "zh\\posts\\2026-04-17-researchers-demonstrate-airtag-location-spoofing-via-bluetooth-relay-attack.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1002
+    },
+    {
+      "file": "zh\\posts\\2026-04-17-windows-11-updates-trigger-unexpected-bitlocker-recovery-prompts.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1022
+    },
+    {
+      "file": "zh\\posts\\2026-04-17-wordpress-supply-chain-attack-infects-30-plugins-via-flippa.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1669
+    },
+    {
+      "file": "zh\\posts\\2026-04-18-censys-reports-nearly-6-million-internet-facing-ftp-servers-remain-exposed.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1244
+    },
+    {
+      "file": "zh\\posts\\2026-04-18-fiverr-exposes-user-files-via-misconfigured-storage-google-indexes-sensitive-dat.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1004
+    },
+    {
+      "file": "zh\\posts\\2026-04-18-microsoft-edge-update-breaks-right-click-paste-in-teams-desktop-client.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 546
+    },
+    {
+      "file": "zh\\posts\\2026-04-18-nist-overhauls-cve-prioritization-to-focus-on-high-impact-flaws.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 1062
+    },
+    {
+      "file": "zh\\posts\\2026-04-19-qualys-deep-scan-uncovers-hidden-vulnerabilities-in-decentralized-software.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 864
+    },
+    {
+      "file": "zh\\posts\\2026-04-20-flowise-ai-platform-vulnerable-to-remote-code-execution-via-mcp-adapters.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 964
+    },
+    {
+      "file": "zh\\posts\\2026-04-20-microsoft-emergency-updates-fix-windows-server-boot-failures-after-april-2026-pa.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 586
+    },
+    {
+      "file": "zh\\posts\\2026-04-20-microsoft-rdp-update-blocks-phishing-via-malicious-rdp-files.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 699
+    },
+    {
+      "file": "zh\\posts\\2026-04-20-notion-public-pages-leak-editor-email-addresses-and-profile-photos.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 793
+    },
+    {
+      "file": "zh\\posts\\2026-04-20-windows-11-dev-build-26300-8170-adds-secure-boot-monitoring-to-security-app.mdx",
+      "locale": "zh",
+      "type": "posts",
+      "category": "vulnerabilities",
+      "issues": [
+        {
+          "name": "vuln_category_no_cve",
+          "severity": "high",
+          "matched": "(no CVE in body)"
+        }
+      ],
+      "has_cve_in_body": false,
+      "word_count": 435
+    }
+  ]
+}

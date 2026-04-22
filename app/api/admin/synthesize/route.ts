@@ -466,7 +466,9 @@ CONTENT RULES:
 - Is ${wc.instruction}
 - Is factual, technically precise, no marketing language — write like Krebs on Security
 - Attributes claims where possible ("according to researchers", "Mandiant reports", etc.)
-- NEVER invent or guess CVE IDs — only use CVE IDs that appear verbatim in the sources with their full numeric format (e.g. CVE-2026-12345). If a vulnerability has no confirmed CVE ID, write "CVE ID not yet assigned" instead of making one up.
+- NEVER invent or guess CVE IDs — only use CVE IDs that appear verbatim in the sources with their full numeric format (e.g. CVE-2026-12345).
+- If sources have NO CVE ID for the vulnerability, do NOT write hedging phrases like "CVE ID not yet assigned" / "no CVE has been assigned" / "lacking a public CVE" / "awaiting CVE assignment". These shipped publicly for 6 articles 2026-04-21 and look amateur to security professionals.
+- Instead: REFRAME the article. Don't pretend it's a specific named vulnerability. Write it as a "patch advisory" (describe what the vendor patched without invented flaw details), or recategorize away from "vulnerabilities" to "industry" or "tools". Better to ship a tight 600-word advisory than a padded 2000-word hedging article.
 
 SEO RULES:
 - Use the primary keyword (the main threat/CVE/actor name) naturally in the first 100 words

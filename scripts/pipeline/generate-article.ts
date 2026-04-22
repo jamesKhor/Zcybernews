@@ -24,33 +24,86 @@ import type { Story } from "../utils/dedup.js";
  * justifies more detail. Bands chosen from analysis of our 326-article
  * corpus: median source excerpt = ~1400 chars.
  */
+/**
+ * Classify source richness by INFO DENSITY, not char length (2026-04-21
+ * rewrite after Fortinet quality incident). Char-length was the wrong
+ * signal — a 2500-char vendor advisory can have ZERO substantive info
+ * (no CVE, no IOCs, no actors). Forcing 2000+ word articles from info-
+ * poor sources pressured the LLM to pad with hedging phrases like
+ * "CVE ID not yet assigned" — which shipped publicly for 6 articles.
+ *
+ * New signal: count concrete info tokens in source material:
+ *   • CVE IDs (real, not placeholders)
+ *   • CVSS scores
+ *   • IOC hashes / IPs
+ *   • Named threat actors (cross-referenced with known-actors list)
+ * If 0 tokens present → "advisory" mode (400-700 words, reframe away
+ *   from specific-vulnerability framing).
+ * 1-2 tokens → medium (800-1200 words).
+ * 3+ tokens → long (1500-2200 words).
+ * 5+ tokens AND ≥2 sources → extended (2000-3000 words).
+ */
+const CVE_REGEX = /CVE-\d{4}-\d{4,}/gi;
+const CVSS_REGEX =
+  /CVSS(?:\s*v?[234]\.?[01]?)?\s*(?:score|of|:|=)?\s*\d+(?:\.\d+)?/gi;
+const MD5_SHA_REGEX = /\b[a-fA-F0-9]{32,64}\b/g;
+
+function countInfoTokens(stories: Story[]): number {
+  let tokens = 0;
+  for (const s of stories) {
+    const text = `${s.title ?? ""} ${s.excerpt ?? ""}`;
+    tokens += (text.match(CVE_REGEX) ?? []).length;
+    tokens += (text.match(CVSS_REGEX) ?? []).length;
+    tokens += (text.match(MD5_SHA_REGEX) ?? []).length;
+    // Simple heuristic: count proper-noun sequences (capitalized consecutive
+    // words) as potential actor/org mentions. Not perfect but directionally
+    // correct — an article with "ShinyHunters" + "BlackCat" + "APT28" gets
+    // 3 tokens here without needing the full known-actors list at this layer.
+    tokens += (text.match(/\b(?:APT|FIN|TA)\d{1,3}\b/g) ?? []).length;
+  }
+  return tokens;
+}
+
 function classifySourceRichness(stories: Story[]): {
-  label: "medium" | "long" | "extended";
+  label: "advisory" | "medium" | "long" | "extended";
   targetRange: string;
   maxOutputTokens: number;
+  infoTokens: number;
 } {
-  const totalSourceChars = stories.reduce(
-    (sum, s) => sum + (s.title?.length ?? 0) + (s.excerpt?.length ?? 0),
-    0,
-  );
-  if (totalSourceChars < 800) {
+  const infoTokens = countInfoTokens(stories);
+  const multiSource = stories.length >= 2;
+
+  if (infoTokens === 0) {
+    // No concrete info — force advisory/summary framing. Short article
+    // means LLM can't pad with hedging phrases to meet length.
+    return {
+      label: "advisory",
+      targetRange: "400-700 words",
+      maxOutputTokens: 1800,
+      infoTokens,
+    };
+  }
+  if (infoTokens <= 2) {
     return {
       label: "medium",
       targetRange: "800-1200 words",
       maxOutputTokens: 2500,
+      infoTokens,
     };
   }
-  if (totalSourceChars < 2500) {
+  if (infoTokens <= 5 || !multiSource) {
     return {
       label: "long",
       targetRange: "1500-2200 words",
       maxOutputTokens: 3500,
+      infoTokens,
     };
   }
   return {
     label: "extended",
     targetRange: "2000-3000 words",
     maxOutputTokens: 4500,
+    infoTokens,
   };
 }
 
@@ -68,7 +121,7 @@ export async function generateArticle(
 ): Promise<GeneratedArticle | "reject" | null> {
   const richness = classifySourceRichness(stories);
   console.log(
-    `[generate] Source richness: ${richness.label} → target ${richness.targetRange} (maxTokens=${richness.maxOutputTokens})`,
+    `[generate] Source richness: ${richness.label} (${richness.infoTokens} info tokens) → target ${richness.targetRange} (maxTokens=${richness.maxOutputTokens})`,
   );
   const prompt = buildArticlePrompt(stories, recentTitles, {
     targetRange: richness.targetRange,
