@@ -14,6 +14,7 @@ import {
 import { isProcessed } from "../utils/cache.js";
 import { limit, withRetry } from "../utils/rate-limit.js";
 import { isVendorPR, vendorPrEnforceEnabled } from "./filters/vendor-pr.js";
+import { fetchNvd } from "./fetchers/nvd.js";
 import {
   loadFeedHealth,
   saveFeedHealth,
@@ -115,9 +116,15 @@ export async function ingestFeeds(maxStories = 20): Promise<Story[]> {
   const results = await Promise.allSettled(
     ENABLED_SOURCES.map((source) =>
       limit(() =>
-        withRetry(() =>
-          source.type === "cisa-kev" ? fetchCisaKev(source) : fetchRss(source),
-        ),
+        withRetry(() => {
+          // Dispatch by source.type. `nvd-json` shipped 2026-04-22 as
+          // the authoritative vulnerabilities primary source. Any
+          // unknown type falls through to RSS (rss-parser handles
+          // most feeds robustly).
+          if (source.type === "cisa-kev") return fetchCisaKev(source);
+          if (source.type === "nvd-json") return fetchNvd(source);
+          return fetchRss(source);
+        }),
       ),
     ),
   );

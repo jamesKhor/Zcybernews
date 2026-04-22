@@ -470,10 +470,9 @@
     "url": "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.json",
     "category": "vulnerabilities",
     "type": "nvd-json",
-    "enabled": false,
-    "tier": "under-review",
-    "description": "NIST NVD recent-CVE JSON feed — authoritative source-of-truth for the vulnerabilities category's CVE hard-gate.",
-    "whyDrop": "Parser for the NVD JSON schema is not yet built in this pipeline (type `nvd-json` is a placeholder). Enable once the parser lands.",
+    "enabled": true,
+    "tier": "trusted",
+    "description": "NIST NVD recent-CVE JSON feed — authoritative source-of-truth for the vulnerabilities category's CVE hard-gate. Parser landed 2026-04-22.",
     "lastReviewed": "2026-04-22"
   },
   {
