@@ -1,0 +1,53 @@
+---
+title: 'AirSnitch Attacks Bypass WPA2/3 Encryption, Expose Enterprise Wi-Fi'
+slug: 2026-04-22-airsnitch-attacks-bypass-wpa2-3-encryption-expose-enterprise-wi-fi
+date: '2026-04-22'
+excerpt: >-
+  Unit 42 reveals AirSnitch attacks bypass WPA2/3 encryption and client
+  isolation, exposing enterprise Wi-Fi to packet injection and credential theft.
+category: threat-intel
+tags:
+  - airsnitch
+  - wi-fi-security
+  - wpa2
+  - wpa3
+  - unit-42
+  - enterprise-wireless
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/air-snitch-enterprise-wireless-attacks/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-airsnitch-attacks-bypass-wpa2-3-encryption-expose-enterprise-wi-fi
+severity: high
+affected_sectors:
+  - enterprise
+  - critical infrastructure
+---
+## Executive Summary
+
+Unit 42 researchers have disclosed a class of wireless attacks dubbed "AirSnitch" that bypass WPA2 and WPA3 encryption as well as client isolation mechanisms in enterprise Wi-Fi networks. The attacks enable adversaries to inject malicious packets, intercept traffic, and steal credentials without compromising the pre-shared key or exploiting a specific software vulnerability. The research, published April 22, 2026, highlights fundamental weaknesses in how enterprise wireless protocols handle frame authentication and client separation.
+
+## Technical Analysis
+
+According to Unit 42's analysis, AirSnitch exploits the lack of per-packet authentication in Wi-Fi management and data frames. Even with WPA2 or WPA3 encryption enabled, an attacker within radio range can forge deauthentication frames, disassociate legitimate clients, and then inject crafted packets that appear to originate from a trusted access point. The attack does not require cracking the encryption key; instead, it leverages the fact that certain frame types—such as null data packets and QoS null frames—are not cryptographically protected in all implementations. Unit 42 demonstrated that client isolation, a feature intended to prevent lateral movement between wireless clients, can be bypassed by spoofing the MAC address of a victim's device and sending frames directly to other clients on the same network.
+
+## Indicators of Compromise
+
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+
+AirSnitch aligns with the following MITRE ATT&CK techniques: T1557.001 (Adversary-in-the-Middle: LLMNR/NBT-NS Poisoning and SMB Relay), T1562.001 (Impair Defenses: Disable or Modify Tools), and T1040 (Network Sniffing). The attack chain involves: (1) passive reconnaissance to identify target SSIDs and client MAC addresses, (2) transmission of forged deauthentication frames to disconnect a legitimate client, (3) injection of crafted packets to hijack sessions or capture credentials, and (4) bypass of client isolation to pivot to other wireless hosts.
+
+## Threat Actor Context
+
+Unit 42 did not attribute AirSnitch to any specific threat actor or group. The research is presented as a general attack vector applicable to any enterprise Wi-Fi environment using standard 802.11 protocols. No evidence of active exploitation in the wild was provided.
+
+## Mitigations & Recommendations
+
+Unit 42 recommends the following mitigations: enable 802.11w (Protected Management Frames) on all access points to cryptographically protect deauthentication and disassociation frames; deploy wireless intrusion prevention systems (WIPS) that can detect anomalous frame sequences; implement 802.1X with EAP-TLS for mutual authentication rather than pre-shared keys; and segment sensitive systems onto separate VLANs with wired-only access where possible. Organizations should audit their access point configurations to ensure client isolation is enforced at the hardware level, not just the software layer.
+
+## References
+
+- [Unit 42: When Wi-Fi Encryption Fails: Protecting Your Enterprise from AirSnitch Attacks](https://unit42.paloaltonetworks.com/air-snitch-enterprise-wireless-attacks/)

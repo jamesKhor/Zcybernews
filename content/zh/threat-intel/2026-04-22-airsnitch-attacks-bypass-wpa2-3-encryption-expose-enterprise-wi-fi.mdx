@@ -1,0 +1,51 @@
+---
+title: AirSnitch 攻击绕过 WPA2/3 加密，暴露企业 Wi-Fi
+slug: 2026-04-22-airsnitch-attacks-bypass-wpa2-3-encryption-expose-enterprise-wi-fi
+date: '2026-04-22'
+excerpt: Unit 42 揭示 AirSnitch 攻击绕过 WPA2/3 加密和客户端隔离，使企业 Wi-Fi 面临数据包注入和凭证盗窃的风险。
+category: threat-intel
+tags:
+  - airsnitch
+  - wi-fi-security
+  - wpa2
+  - wpa3
+  - unit-42
+  - enterprise-wireless
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/air-snitch-enterprise-wireless-attacks/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-airsnitch-attacks-bypass-wpa2-3-encryption-expose-enterprise-wi-fi
+severity: high
+affected_sectors:
+  - enterprise
+  - critical infrastructure
+---
+## 执行摘要
+
+Unit 42 的研究人员披露了一类被称为 "AirSnitch" 的无线攻击，这些攻击绕过了 WPA2 和 WPA3 加密以及企业 Wi-Fi 网络中的客户端隔离机制。这些攻击使得对手能够注入恶意数据包，拦截流量，并在不破坏预共享密钥或利用特定软件漏洞的情况下窃取凭证。这项研究于 2026 年 4 月 22 日发表，突出显示了企业无线协议在处理帧认证和客户端分离方面的基本弱点。
+
+## 技术分析
+
+根据 Unit 42 的分析，AirSnitch 利用了 Wi-Fi 管理和数据帧中缺乏逐包认证的缺陷。即使启用了 WPA2 或 WPA3 加密，无线电范围内的攻击者也可以伪造去认证帧，断开合法客户端的连接，然后注入看似来自受信任接入点的精心构造的数据包。这种攻击不需要破解加密密钥；相反，它利用了某些帧类型（例如空数据包和 QoS 空帧）在所有实现中都没有加密保护的事实。Unit 42 展示了客户端隔离，一个旨在防止无线客户端之间横向移动的功能，可以通过伪造受害者设备的 MAC 地址并直接向同一网络上的其他客户端发送帧来绕过。
+
+## 入侵指标
+
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+
+AirSnitch 与以下 MITRE ATT&CK 技术对齐：T1557.001（中间人攻击：LLMNR/NBT-NS 投毒和 SMB 中继），T1562.001（削弱防御：禁用或修改工具），以及 T1040（网络嗅探）。攻击链包括：(1) 被动侦察以识别目标 SSID 和客户端 MAC 地址，(2) 传输伪造的去认证帧以断开合法客户端的连接，(3) 注入精心构造的数据包以劫持会话或捕获凭证，以及 (4) 绕过客户端隔离以转向其他无线主机。
+
+## 威胁行为者背景
+
+Unit 42 没有将 AirSnitch 归因于任何特定的威胁行为者或团体。这项研究被呈现为适用于使用标准 802.11 协议的任何企业 Wi-Fi 环境的一般攻击向量。没有提供在野外积极利用的证据。
+
+## 缓解措施与建议
+
+Unit 42 建议以下缓解措施：在所有接入点上启用 802.11w（受保护的管理帧）以加密保护去认证和去关联帧；部署能够检测异常帧序列的无线入侵预防系统（WIPS）；实施 802.1X 与 EAP-TLS 进行相互认证，而不是使用预共享密钥；并将敏感系统分割到单独的 VLAN 上，尽可能仅通过有线访问。组织应审计其接入点配置，以确保在硬件层面上执行客户端隔离，而不仅仅是软件层面。
+
+## 参考资料
+
+- [Unit 42: 当 Wi-Fi 加密失败时：保护您的企业免受 AirSnitch 攻击](https://unit42.paloaltonetworks.com/air-snitch-enterprise-wireless-attacks/)
