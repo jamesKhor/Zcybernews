@@ -1,0 +1,47 @@
+---
+title: The Gentlemen 勒索软件为 Windows、Linux 和 VMware 部署双锁定器
+slug: >-
+  2026-04-22-the-gentlemen-ransomware-deploys-dual-lockers-for-windows-linux-and-vmware-esxi
+date: '2026-04-22'
+excerpt: >-
+  The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi
+  系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。
+category: malware
+tags:
+  - ransomware
+  - raas
+  - esxi
+  - linux
+  - threat-intel
+language: zh
+source_urls:
+  - 'https://cybersecuritynews.com/gentlemen-raas-attacking-windows-linux/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-22-the-gentlemen-ransomware-deploys-dual-lockers-for-windows-linux-and-vmware-esxi
+severity: high
+threat_actor: The Gentlemen
+---
+## 执行摘要
+一个名为“The Gentlemen”的勒索软件即服务（RaaS）行动自2025年中以来已感染超过320个组织，根据其公共泄露网站的数据。该组织在2026年初的行动节奏急剧加快，声称在年初的几个月内就有超过240名受害者。该威胁以其使用两个不同的勒索软件加密器而著称：一个主加密器是用Golang编写的，针对Windows和Linux系统；另一个次要加密器是用C语言编写的，专门针对VMware ESXi虚拟化平台和虚拟机。
+
+## 技术分析
+该行动采用双载荷策略，以最大化对异构企业环境的影响。主加密器是一个基于Golang的二进制文件，专为Windows和Linux操作系统设计。另一个独立的、互补的加密器是用C语言编写的，并编译以针对VMware ESXi服务器及其相关的虚拟机文件系统（VMFS）。这种技术方法允许该组织同时加密标准工作站和服务器，同时也针对关键的虚拟化基础设施，这种策略可以通过关闭整个虚拟机集群来破坏业务连续性。
+
+根据CyberSecurity News的分析，该组织采用RaaS模式运作，向执行攻击的关联方提供恶意软件和基础设施。核心团队管理一个公共数据泄露网站，用于勒索受害者并声称对违规行为负责。从2025年中出现到2026年4月超过320名受害者的受害者数量的快速增长，表明了一个成功的犯罪特许经营模式和有效的工具。
+
+## 入侵指标
+在源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+识别出的主要战术、技术与程序（TTP）是部署双目的构建的勒索软件载荷。使用Golang二进制文件用于通用系统，以及基于C的二进制文件用于ESXi，表明了一个有意识的努力，以确保在受害者网络内的两个关键技术栈中可靠执行。针对ESXi的组件表明，该组织遵循勒索软件行为者专注于虚拟化平台以放大破坏的趋势。RaaS商业模式暗示了标准的关联方TTP用于初始访问，如网络钓鱼、利用面向公众的应用程序或使用被泄露的凭证，尽管源材料中没有详细说明具体的初始访问向量。
+
+## 威胁行为者背景
+该组织自称为“The Gentlemen”，运营一个RaaS平台。其公开声称的超过320名受害者，以及2026年初的激增，将其定位为在拥挤的勒索软件生态系统中迅速扩展的行动。为不同平台开发专门的加密器指向了一个技术上有能力的核心团队，他们投资于恶意软件开发以支持其关联网络。提供的源材料中没有归因于已知的国家或网络犯罪集团。
+
+## 缓解措施与建议
+虽然源材料没有提供针对这种勒索软件的具体缓解步骤，但防御这种和类似的RaaS行动需要基础的安全实践。隔离并严格控制对VMware ESXi管理接口的访问。确保对标准系统和关键VM数据进行强大、离线的备份，并定期进行测试。实施网络分段，以限制从初始妥协点到关键虚拟化管理主机的横向移动。对所有管理账户，特别是那些有权访问虚拟化管理的账户，应用最小权限原则。
+
+## 参考资料
+- https://cybersecuritynews.com/gentlemen-raas-attacking-windows-linux/

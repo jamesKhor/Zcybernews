@@ -1,0 +1,48 @@
+---
+title: 'The Gentlemen Ransomware Deploys Dual Lockers for Windows, Linux, and VMware'
+slug: >-
+  2026-04-22-the-gentlemen-ransomware-deploys-dual-lockers-for-windows-linux-and-vmware-esxi
+date: '2026-04-22'
+excerpt: >-
+  The Gentlemen ransomware-as-a-service operation has infected over 320 victims,
+  deploying separate encryptors for Windows/Linux and VMware ESXi systems to
+  maximize disruption and ransom pressure on enterprise networks.
+category: malware
+tags:
+  - ransomware
+  - raas
+  - esxi
+  - linux
+  - threat-intel
+language: en
+source_urls:
+  - 'https://cybersecuritynews.com/gentlemen-raas-attacking-windows-linux/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-22-the-gentlemen-ransomware-deploys-dual-lockers-for-windows-linux-and-vmware-esxi
+severity: high
+threat_actor: The Gentlemen
+---
+## Executive Summary
+A ransomware-as-a-service (RaaS) operation dubbed "The Gentlemen" has infected over 320 organizations since mid-2025, according to its public leak site. The group's operational tempo accelerated sharply in early 2026, with more than 240 victims claimed in the first months of the year. The threat is distinguished by its use of two distinct ransomware encryptors: a primary locker written in Golang for Windows and Linux systems, and a secondary locker written in C specifically targeting VMware ESXi hypervisors and virtual machines.
+
+## Technical Analysis
+The operation employs a dual-payload strategy to maximize impact across heterogeneous enterprise environments. The primary encryptor is a Golang-based binary designed for Windows and Linux operating systems. A separate, complementary encryptor is written in C and compiled to target VMware ESXi servers and their associated virtual machine file systems (VMFS). This technical approach allows the group to simultaneously encrypt standard workstations and servers while also targeting critical virtualization infrastructure, a tactic that can cripple business continuity by taking down entire clusters of virtual machines.
+
+According to analysis from CyberSecurity News, the group operates with a RaaS model, providing the malware and infrastructure to affiliates who carry out the attacks. The core group manages a public data leak site used to extort victims and claims responsibility for the breaches. The rapid growth in victim count—from its emergence in mid-2025 to over 320 by April 2026—indicates a successful criminal franchise model with effective tooling.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary TTP identified is the deployment of dual, purpose-built ransomware payloads. The use of a Golang binary for general systems and a C-based binary for ESXi suggests a deliberate effort to ensure reliable execution across two critical technology stacks within victim networks. The ESXi-targeting component indicates the group follows the trend of ransomware actors focusing on hypervisors to amplify disruption. The RaaS business model implies standard affiliate TTPs for initial access, such as phishing, exploitation of public-facing applications, or use of compromised credentials, though the specific initial access vectors were not detailed in the source.
+
+## Threat Actor Context
+The group calls itself "The Gentlemen" and runs a RaaS platform. Its public claims of over 320 victims, with a surge in early 2026, position it as a rapidly scaling operation in the crowded ransomware ecosystem. The development of specialized encryptors for different platforms points to a technically capable core team that invests in malware development to support its affiliate network. There is no attribution to a known nation-state or cybercrime group in the provided source material.
+
+## Mitigations & Recommendations
+While the source material does not provide specific mitigation steps tailored to this ransomware, defending against this and similar RaaS operations requires foundational security practices. Isolate and strictly control access to VMware ESXi management interfaces. Ensure robust, offline backups of both standard systems and critical VM data are maintained and regularly tested. Implement network segmentation to limit lateral movement from initial compromise points to critical virtualization management hosts. Apply the principle of least privilege to all administrative accounts, especially those with access to hypervisor management.
+
+## References
+- https://cybersecuritynews.com/gentlemen-raas-attacking-windows-linux/
