@@ -12,21 +12,20 @@
  * wire-up in this PR; subsequent PRs refactor write sites to call this.
  */
 
-// TODO: import from scripts/contracts/schemas.ts once that PR lands (Phase B step 1).
-// Kept local for this standalone PR — shapes match v2 schema defaults.
-export type SeoIntent = "rank-en" | "rank-zh" | "rank-both" | "ingest-only";
-export type SourceLanguage = "en" | "zh";
+// Contract shapes come from the SSoT module (Phase B.2). The types we
+// re-export here keep the public surface of this module stable for
+// existing importers — they can continue `import type { SeoIntent }
+// from ".../translate-direction"` without caring that the definition
+// moved. When all B-series consumers are wired to schemas.ts directly,
+// these re-exports can be removed in a follow-up cleanup.
+import type {
+  SeoIntent,
+  SourceLanguage,
+  SourceMetadata,
+  ArticleDraft,
+} from "../contracts/schemas.js";
 
-export interface SourceMetadata {
-  id: string;
-  seoIntent?: SeoIntent; // default "rank-en" per v2 schema
-  // Additional fields exist on the real SourceMetadata; we only read these two.
-}
-
-export interface ArticleDraft {
-  sourceLanguage?: SourceLanguage; // default "en" per v2 schema
-  // Additional fields exist on the real ArticleDraft; we only read this one.
-}
+export type { SeoIntent, SourceLanguage, SourceMetadata, ArticleDraft };
 
 export type TranslationDecision =
   | { action: "publish-en-only" }
