@@ -1,0 +1,59 @@
+---
+title: Mustang Panda Deploys New LOTUSLITE Variant Targeting Indian Banks
+slug: 2026-04-22-mustang-panda-deploys-new-lotuslite-variant-targeting-indian-banks
+date: '2026-04-22'
+excerpt: >-
+  Mustang Panda's new LOTUSLITE variant targets Indian banks and South Korean
+  policy circles via a dynamic DNS C2 over HTTPS, enabling remote shell access
+  and file theft.
+category: threat-intel
+tags:
+  - mustang-panda
+  - lotuslite
+  - indian-banks
+  - south-korea
+  - backdoor
+  - espionage
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/mustang-pandas-new-lotuslite-variant.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-mustang-panda-deploys-new-lotuslite-variant-targeting-indian-banks
+severity: high
+threat_actor: Mustang Panda
+threat_actor_origin: China
+affected_sectors:
+  - banking
+  - government
+affected_regions:
+  - India
+  - South Korea
+---
+## Executive Summary
+
+Researchers have identified a new variant of the **LOTUSLITE** backdoor being deployed by the Chinese state-sponsored threat group **Mustang Panda** (also tracked as TA416, RedDelta, or Bronze President). The campaign specifically targets India's banking sector and South Korean policy circles, according to a report from cybersecurity researchers at The Hacker News. The malware variant communicates with a dynamic DNS-based command-and-control (C2) server over HTTPS, supporting remote shell access, file operations, and session management—capabilities consistent with sustained espionage operations rather than financially motivated crime.
+
+## Technical Analysis
+
+The new LOTUSLITE variant maintains the core backdoor functionality of its predecessors but introduces updated C2 infrastructure relying on dynamic DNS domains, making takedown efforts more challenging. The malware establishes encrypted HTTPS connections to its C2 server, which researchers noted is a shift from earlier variants that used simpler HTTP-based communication. The backdoor supports at least three primary commands: remote shell execution, file upload/download, and session management, allowing operators to maintain persistent access to compromised systems. The initial infection vector remains unclear from the public reporting, but Mustang Panda has historically used spear-phishing emails with malicious attachments or links to legitimate cloud services.
+
+## Indicators of Compromise
+
+None identified in source material at this time.
+
+## Tactics, Techniques & Procedures
+
+Mustang Panda's TTPs for this campaign include the use of dynamic DNS domains for C2 infrastructure (T1568.001), encrypted HTTPS communication for command and control (T1573.001), and the deployment of a modular backdoor capable of remote shell access (T1059), file operations (T1105), and session management. The group continues to rely on social engineering to deliver initial payloads, though the specific delivery mechanism for this variant has not been publicly documented.
+
+## Threat Actor Context
+
+Mustang Panda is a Chinese state-sponsored threat group active since at least 2012, primarily targeting government, diplomatic, and technology sectors in Southeast Asia, Europe, and the United States. The group's focus on Indian banks and South Korean policy circles aligns with China's strategic interests in regional economic influence and geopolitical intelligence. Previous LOTUSLITE campaigns have targeted Myanmar, Vietnam, and other Southeast Asian nations. The shift to dynamic DNS C2 infrastructure suggests the group is adapting its operational security to evade network defenses and domain blocklists.
+
+## Mitigations & Recommendations
+
+Organizations in the Indian banking sector and South Korean policy institutions should monitor for HTTPS connections to dynamic DNS domains from internal systems, particularly those involving remote shell activity. Network defenders should implement application allowlisting to prevent unauthorized executables, enforce strict email attachment scanning, and deploy endpoint detection and response (EDR) solutions capable of identifying backdoor communication patterns. Given the espionage-focused nature of the malware, organizations should prioritize segmentation of sensitive data and enforce multi-factor authentication on all remote access systems.
+
+## References
+
+- [Mustang Panda’s New LOTUSLITE Variant Targets India Banks, South Korea Policy Circles](https://thehackernews.com/2026/04/mustang-pandas-new-lotuslite-variant.html)

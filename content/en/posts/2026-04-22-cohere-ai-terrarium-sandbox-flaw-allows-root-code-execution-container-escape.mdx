@@ -1,0 +1,60 @@
+---
+title: 'Cohere AI Terrarium Sandbox Flaw Allows Root Code Execution,'
+slug: >-
+  2026-04-22-cohere-ai-terrarium-sandbox-flaw-allows-root-code-execution-container-escape
+date: '2026-04-22'
+excerpt: >-
+  CVE-2026-5752 (CVSS 9.3) in Cohere AI's Terrarium sandbox enables root-level
+  code execution and container escape via JavaScript prototype chain traversal.
+category: vulnerabilities
+tags:
+  - cohere
+  - terrarium
+  - sandbox-escape
+  - cve-2026-5752
+  - container-security
+  - ai-security
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/cohere-ai-terrarium-sandbox-flaw.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-22-cohere-ai-terrarium-sandbox-flaw-allows-root-code-execution-container-escape
+severity: critical
+cvss_score: 9.3
+cve_ids:
+  - CVE-2026-5752
+affected_sectors:
+  - technology
+  - artificial intelligence
+affected_regions:
+  - global
+---
+## Executive Summary
+
+A critical sandbox escape vulnerability in Cohere AI's Terrarium, a Python-based sandbox environment, allows unauthenticated attackers to execute arbitrary code with root privileges on the host system. Tracked as **CVE-2026-5752**, the flaw carries a CVSS score of 9.3 and stems from improper isolation in the JavaScript prototype chain, according to a disclosure by The Hacker News. The vulnerability effectively bypasses the sandbox's containment mechanisms, enabling full host compromise and potential container escape. No patch or mitigation timeline has been publicly released by Cohere as of April 22, 2026.
+
+## Technical Analysis
+
+Terrarium is designed to execute untrusted Python code in a restricted environment, commonly used in AI workflows for safe code evaluation and testing. The vulnerability, as described in the advisory, exploits a **JavaScript prototype chain traversal** within the sandbox's internal implementation. By manipulating the prototype chain, an attacker can escalate privileges from the sandboxed process to the host operating system, achieving arbitrary code execution with root-level permissions. The flaw does not require authentication, making it exploitable remotely if the sandbox is exposed to network traffic. The CVSS 9.3 rating reflects the combination of low attack complexity, no privileges required, and the potential for full system compromise. The exact code path and affected components within Terrarium have not been fully detailed by the researchers.
+
+## Indicators of Compromise
+
+None identified at this time. The vulnerability is a logic flaw rather than a malware deployment, and no specific file hashes, IP addresses, or domain names have been associated with exploitation attempts.
+
+## Tactics, Techniques & Procedures
+
+None identified in source material. The disclosure does not include observed exploitation in the wild or specific TTP mappings. The attack vector is described as a sandbox escape via prototype chain manipulation, which aligns with general techniques for bypassing execution isolation (e.g., T1204.002 for user execution, but no direct MITRE ATT&CK mapping is provided).
+
+## Threat Actor Context
+
+No threat actor has been publicly attributed to the discovery or exploitation of CVE-2026-5752. The vulnerability was disclosed by security researchers, but their affiliation or identity has not been named in the source material. It is unclear whether any malicious exploitation has occurred in the wild.
+
+## Mitigations & Recommendations
+
+Cohere has not released a patch for CVE-2026-5752 as of the publication date. Organizations using Terrarium in production or development environments should immediately restrict network access to the sandbox service, ensuring it is not exposed to untrusted networks. If feasible, disable the sandbox feature until a fix is available. Monitor host systems for signs of unauthorized root-level access or unexpected process execution. Given the CVSS 9.3 severity, treating this as a critical incident response priority is warranted.
+
+## References
+
+- [The Hacker News: Cohere AI Terrarium Sandbox Flaw Enables Root Code Execution, Container Escape](https://thehackernews.com/2026/04/cohere-ai-terrarium-sandbox-flaw.html)

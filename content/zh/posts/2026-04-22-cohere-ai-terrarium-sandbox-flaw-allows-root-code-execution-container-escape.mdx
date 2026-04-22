@@ -1,0 +1,60 @@
+---
+title: Cohere AI Terrarium Sandbox 漏洞允许 Root 代码执行
+slug: >-
+  2026-04-22-cohere-ai-terrarium-sandbox-flaw-allows-root-code-execution-container-escape
+date: '2026-04-22'
+excerpt: >-
+  CVE-2026-5752 (CVSS 9.3) 在 Cohere AI 的 Terrarium 沙箱中允许通过 JavaScript 原型链遍历执行
+  root 级别的代码和容器逃逸。
+category: vulnerabilities
+tags:
+  - cohere
+  - terrarium
+  - sandbox-escape
+  - cve-2026-5752
+  - container-security
+  - ai-security
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/cohere-ai-terrarium-sandbox-flaw.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-22-cohere-ai-terrarium-sandbox-flaw-allows-root-code-execution-container-escape
+severity: critical
+cvss_score: 9.3
+cve_ids:
+  - CVE-2026-5752
+affected_sectors:
+  - technology
+  - artificial intelligence
+affected_regions:
+  - global
+---
+## 执行摘要
+
+Cohere AI的Terrarium中存在一个严重的沙箱逃逸漏洞，这是一个基于Python的沙箱环境，允许未经身份验证的攻击者在宿主系统上以root权限执行任意代码。该漏洞被追踪为**CVE-2026-5752**，CVSS得分为9.3，源自JavaScript原型链中不当的隔离，据The Hacker News披露。该漏洞有效地绕过了沙箱的隔离机制，实现了对整个宿主的控制以及潜在的容器逃逸。截至2026年4月22日，Cohere尚未公开发布任何补丁或缓解时间表。
+
+## 技术分析
+
+Terrarium旨在在受限环境中执行不受信任的Python代码，通常用于AI工作流中进行安全的代码评估和测试。正如公告中描述的那样，该漏洞利用了沙箱内部实现中的**JavaScript原型链遍历**。通过操纵原型链，攻击者可以将权限从沙箱进程升级到宿主操作系统，实现任意代码执行，并具有root级别的权限。该漏洞不需要身份验证，如果沙箱暴露于网络流量中，可以远程利用。CVSS 9.3的评级反映了低攻击复杂性、无需权限以及可能的完整系统控制的组合。研究人员尚未完全详细说明Terrarium中受影响的确切代码路径和组件。
+
+## 入侵指标
+
+目前尚未识别出任何入侵指标。该漏洞是一个逻辑缺陷，而不是恶意软件部署，没有特定的文件哈希值、IP地址或域名与利用尝试相关联。
+
+## 战术、技术与程序
+
+在源材料中未识别出任何。披露中没有包括在野外观察到的利用或特定的TTP映射。攻击向量被描述为通过原型链操作实现沙箱逃逸，这与绕过执行隔离的一般技术相一致（例如，T1204.002用于用户执行，但没有提供直接的MITRE ATT&CK映射）。
+
+## 威胁行为者背景
+
+目前尚未公开将任何威胁行为者归因于CVE-2026-5752的发现或利用。该漏洞由安全研究人员披露，但他们的隶属关系或身份在源材料中未被命名。尚不清楚是否在野外发生了任何恶意利用。
+
+## 缓解措施与建议
+
+截至发布日期，Cohere尚未发布针对CVE-2026-5752的补丁。在生产或开发环境中使用Terrarium的组织应立即限制对沙箱服务的网络访问，确保其不会暴露于不受信任的网络。如果可行，在修复可用之前禁用沙箱功能。监控宿主系统上未经授权的root级别访问或意外进程执行的迹象。鉴于CVSS 9.3的严重性，将此作为关键事件响应优先事项是合理的。
+
+## 参考资料
+
+- [The Hacker News: Cohere AI Terrarium Sandbox Flaw Enables Root Code Execution, Container Escape](https://thehackernews.com/2026/04/cohere-ai-terrarium-sandbox-flaw.html)

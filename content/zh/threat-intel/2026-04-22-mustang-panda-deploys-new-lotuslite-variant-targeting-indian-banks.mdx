@@ -1,0 +1,58 @@
+---
+title: Mustang Panda 部署针对印度银行的新 LOTUSLITE 变种
+slug: 2026-04-22-mustang-panda-deploys-new-lotuslite-variant-targeting-indian-banks
+date: '2026-04-22'
+excerpt: >-
+  Mustang Panda 的新 LOTUSLITE 变种针对印度银行和韩国政策圈，通过动态 DNS C2 通过 HTTPS 实现远程 shell
+  访问和文件盗窃。
+category: threat-intel
+tags:
+  - mustang-panda
+  - lotuslite
+  - indian-banks
+  - south-korea
+  - backdoor
+  - espionage
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/mustang-pandas-new-lotuslite-variant.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-mustang-panda-deploys-new-lotuslite-variant-targeting-indian-banks
+severity: high
+threat_actor: Mustang Panda
+threat_actor_origin: China
+affected_sectors:
+  - banking
+  - government
+affected_regions:
+  - India
+  - South Korea
+---
+## 执行摘要
+
+研究人员发现了由中国国家赞助的威胁组织**Mustang Panda**（也被称为TA416、RedDelta或Bronze President）部署的**LOTUSLITE**后门的新变种。根据网络安全研究人员在The Hacker News的报告，该活动专门针对印度银行业和韩国政策圈。这种恶意软件变种通过HTTPS与基于动态DNS的命令和控制（C2）服务器通信，支持远程shell访问、文件操作和会话管理——这些能力与持续的间谍行动一致，而不是以财务为动机的犯罪。
+
+## 技术分析
+
+新的**LOTUSLITE**变种保持了其前身的核心后门功能，但引入了依赖于动态DNS域的更新C2基础设施，使得取缔工作更具挑战性。恶意软件与其C2服务器建立了加密的HTTPS连接，研究人员指出，这是从早期变种使用的更简单的基于HTTP的通信转变。后门支持至少三个主要命令：远程shell执行、文件上传/下载和会话管理，允许操作者保持对被入侵系统的持久访问。最初的感染向量从公开报告中尚不清楚，但Mustang Panda历史上使用带有恶意附件或链接到合法云服务的鱼叉式钓鱼邮件。
+
+## 入侵指标
+
+目前源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+
+Mustang Panda的TTPs包括使用动态DNS域进行C2基础设施（T1568.001）、加密HTTPS通信用于命令和控制（T1573.001），以及部署能够进行远程shell访问（T1059）、文件操作（T1105）和会话管理的模块化后门。该组织继续依赖社会工程学来传递初始有效载荷，尽管这种变体的具体传递机制尚未公开记录。
+
+## 威胁行为者背景
+
+Mustang Panda是一个自2012年以来活跃的中国国家赞助的威胁组织，主要针对东南亚、欧洲和美国的政府、外交和技术部门。该组织对印度银行和韩国政策圈的关注与中国在区域经济影响力和地缘政治情报方面的战略利益一致。以前的**LOTUSLITE**活动曾针对缅甸、越南和其他东南亚国家。转向动态DNS C2基础设施表明，该组织正在调整其操作安全以规避网络防御和域名封锁列表。
+
+## 缓解措施与建议
+
+印度银行业和韩国政策机构的组织应监控内部系统与动态DNS域之间的HTTPS连接，特别是涉及远程shell活动的那些。网络防御者应实施应用程序允许列表以防止未经授权的可执行文件，强制执行严格的电子邮件附件扫描，并部署能够识别后门通信模式的端点检测和响应（EDR）解决方案。鉴于恶意软件以间谍活动为重点的性质，组织应优先考虑敏感数据的隔离，并在所有远程访问系统上强制执行多因素身份验证。
+
+## 参考资料
+
+- [Mustang Panda’s New LOTUSLITE Variant Targets India Banks, South Korea Policy Circles](https://thehackernews.com/2026/04/mustang-pandas-new-lotuslite-variant.html)
