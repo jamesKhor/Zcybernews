@@ -1,0 +1,54 @@
+---
+title: Agentic AI Systems Introduce Novel Enterprise Security Risks
+slug: 2026-04-22-agentic-ai-systems-introduce-novel-enterprise-security-risks
+date: '2026-04-22'
+excerpt: >-
+  Recorded Future warns that autonomous 'agentic' AI systems, now being
+  integrated into enterprise software, create new attack surfaces for prompt
+  injection, data poisoning, and…
+category: ai
+tags:
+  - ai-security
+  - agentic-ai
+  - supply-chain
+  - enterprise-risk
+  - prompt-injection
+  - recorded-future
+language: en
+source_urls:
+  - >-
+    https://www.recordedfuture.com/research/emerging-enterprise-security-risks-of-ai
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-agentic-ai-systems-introduce-novel-enterprise-security-risks
+severity: high
+affected_sectors:
+  - enterprise
+---
+## Executive Summary
+Autonomous "agentic" AI systems, which can independently execute complex tasks, are being rapidly integrated into enterprise software, creating a new class of security risks distinct from traditional AI models. According to a report from Recorded Future's Insikt Group, these systems introduce vulnerabilities through their ability to interact with external tools and data, expanding the attack surface to include novel prompt injection, data poisoning, and supply chain attacks that can lead to data theft, fraud, and operational disruption.
+
+## Technical Analysis
+The core risk stems from the architectural shift from static, single-query large language models (LLMs) to dynamic AI agents that can perform multi-step reasoning, access external APIs, and execute code. Recorded Future analysts identify three primary risk vectors. First, **tool-augmented execution** allows agents to call external functions, creating opportunities for attackers to hijack these calls via malicious inputs, leading to unauthorized data exfiltration or actions. Second, **recursive self-improvement** mechanisms, where agents can modify their own prompts or code based on new data, open avenues for data poisoning attacks that can permanently corrupt an agent's behavior. Third, the **complex supply chains** underlying these systems, which often stitch together multiple proprietary and open-source models, tools, and data sources, increase the potential for compromise at any dependency link.
+
+The report notes that traditional application security testing is insufficient for these systems, as threats are not based on code vulnerabilities but on manipulation of the agent's reasoning process and tool usage. A specific technique highlighted is **"indirect prompt injection,"** where an attacker plants malicious instructions in data sources an agent is instructed to retrieve and process, such as emails, web pages, or databases, subverting the agent's goals without tampering with its core prompt.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+Based on the described attack vectors, potential TTPs include:
+* **T1588.002: Obtain Capabilities – Tool** – Acquiring or developing malicious tools or APIs for an agent to call.
+* **T1589.002: Gather Victim Identity Information – Email Addresses** – For crafting targeted indirect prompt injections via corporate communication channels.
+* **T1190: Exploit Public-Facing Application** – Targeting the interface through which the agent receives user queries or retrieves external data.
+* **T1556.001: Modify Authentication Process – Credential Injection** – Using a compromised agent to modify authentication flows or steal credentials via its tool access.
+* **T1565: Data Manipulation** – Poisoning training data or retrieval-augmented generation (RAG) sources to alter agent outputs.
+
+## Threat Actor Context
+The report does not attribute these emerging risks to a specific named threat group. Instead, it frames the vulnerabilities as systemic and attractive to a broad range of actors, from financially motivated criminals seeking fraud to state-sponsored groups pursuing intellectual property theft or disruption. The accessibility of the attack techniques, particularly basic prompt injection, lowers the barrier to entry for less sophisticated actors.
+
+## Mitigations & Recommendations
+Recorded Future recommends enterprises adopt new security frameworks tailored to agentic systems. Key mitigations include implementing **strict input/output sandboxing** to limit an agent's tool access and network capabilities, applying **runtime monitoring** to detect anomalous tool-call patterns or data exfiltration attempts, and conducting **red-team exercises** focused on prompt injection and data poisoning scenarios. The report emphasizes the need for **human-in-the-loop approvals** for sensitive actions and rigorous vetting of third-party tools and data sources within the AI supply chain. Organizations are advised to treat the prompts, tools, and knowledge bases that configure an agent as critical, version-controlled code.
+
+## References
+* [Emerging Enterprise Security Risks of AI – Recorded Future (Insikt Group)](https://www.recordedfuture.com/research/emerging-enterprise-security-risks-of-ai)

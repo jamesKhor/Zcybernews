@@ -1,0 +1,44 @@
+---
+title: 'Ransomware Attackers Operate Like Businesses, ESET Research Reveals'
+slug: 2026-04-22-ransomware-attackers-operate-like-businesses-eset-research-reveals
+date: '2026-04-22'
+excerpt: >-
+  ESET analysis of 100+ ransomware attacks shows threat actors run business
+  operations with defined roles, KPIs, and supply chains, not just technical
+  attacks.
+category: threat-intel
+tags:
+  - ransomware
+  - threat-intelligence
+  - cybercrime
+  - business-of-cybercrime
+  - eset
+language: en
+source_urls:
+  - 'https://www.welivesecurity.com/en/ransomware/what-ransom-note-doesnt-say/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-ransomware-attackers-operate-like-businesses-eset-research-reveals
+severity: high
+threat_actor: LockBit
+---
+## Executive Summary
+Ransomware groups function as structured business operations with specialized roles, performance metrics, and complex supply chains, not merely as technical attackers, according to an analysis of over 100 incidents by ESET researchers. The findings, based on incident response data and threat intelligence, reveal that the organizational sophistication behind the ransom note often poses a greater challenge to defenders than the malware itself. This business-like approach enables threat actors to scale operations, manage risk, and persistently pressure victims for payment.
+
+## Technical Analysis
+The ESET research, published on WeLiveSecurity, does not focus on a specific malware variant or technical exploit. Instead, it deconstructs the operational framework that supports ransomware attacks. The analysis identifies that these criminal enterprises are organized into distinct, specialized teams. These include initial access brokers who sell network footholds, penetration testers who perform internal reconnaissance and lateral movement, and dedicated data exfiltration and encryption teams. This division of labor mirrors legitimate corporate IT and security departments, creating efficiency and operational security for the attackers.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The research outlines a standardized TTP lifecycle employed by these business-oriented groups. The process begins with establishing a foothold, often via purchased access or phishing. Following initial compromise, attackers conduct extensive internal reconnaissance to map the network, identify critical assets, and locate backup systems. Data exfiltration is then executed systematically before deploying ransomware. A key TTP is the separation of duties; the individuals who exfiltrate data are often not the same as those who deploy the locker, and both are separate from the negotiators who communicate with the victim. This compartmentalization hinders attribution and increases resilience against law enforcement disruption.
+
+## Threat Actor Context
+The analysis indicates that the ransomware ecosystem has matured into a service-based economy with its own supply chains. Initial access is frequently obtained from third-party brokers rather than the core ransomware group. Other specialized services include bulletproof hosting, cryptocurrency laundering, and negotiation support. This model lowers the barrier to entry for new ransomware variants and allows established groups to franchise their malware, as seen with LockBit and BlackCat. The primary motivation remains financial, with operations calibrated to maximize profit while managing the risk of infrastructure takedowns and law enforcement action.
+
+## Mitigations & Recommendations
+ESET's recommendations focus on countering the business model, not just the technical attack. Organizations are advised to implement robust offline, immutable backups and regularly test restoration procedures to undermine the core encryption-based extortion. To combat data theft extortion, data loss prevention (DLP) controls and strict access management are critical to limit what can be exfiltrated. Enhancing detection across the attack lifecycle—particularly for lateral movement and large data transfers—can disrupt the attacker's operational timeline. Finally, having a pre-vetted incident response plan and retainer can reduce costly delays and improve negotiation posture if an attack occurs.
+
+## References
+- https://www.welivesecurity.com/en/ransomware/what-ransom-note-doesnt-say/

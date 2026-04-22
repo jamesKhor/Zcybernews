@@ -1,0 +1,53 @@
+---
+title: Agentic AI Systems 引入新型企业安全风险
+slug: 2026-04-22-agentic-ai-systems-introduce-novel-enterprise-security-risks
+date: '2026-04-22'
+excerpt: Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。
+category: ai
+tags:
+  - ai-security
+  - agentic-ai
+  - supply-chain
+  - enterprise-risk
+  - prompt-injection
+  - recorded-future
+language: zh
+source_urls:
+  - >-
+    https://www.recordedfuture.com/research/emerging-enterprise-security-risks-of-ai
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-agentic-ai-systems-introduce-novel-enterprise-security-risks
+severity: high
+affected_sectors:
+  - enterprise
+---
+## Agentic AI Systems Introduce Novel Enterprise Security Risks
+
+## 执行摘要
+能够独立执行复杂任务的自主“代理型”人工智能系统正在迅速融入企业软件，创造了一种与传统人工智能模型不同的新型安全风险。根据Recorded Future的Insikt Group的报告，这些系统通过与外部工具和数据的交互引入了漏洞，扩大了攻击面，包括新颖的提示注入、数据投毒和供应链攻击，这些攻击可能导致数据盗窃、欺诈和运营中断。
+
+## 技术分析
+核心风险源于从静态的单查询大型语言模型（LLMs）向能够执行多步骤推理、访问外部API和执行代码的动态AI代理的架构转变。Recorded Future的分析师识别出三个主要风险向量。首先，**工具增强执行**允许代理调用外部函数，为攻击者提供了通过恶意输入劫持这些调用的机会，导致未经授权的数据泄露或行动。其次，**递归自我改进**机制，代理可以根据新数据修改自己的提示或代码，为数据投毒攻击开辟了途径，这些攻击可以永久性地破坏代理的行为。第三，这些系统背后的**复杂供应链**，通常将多个专有和开源模型、工具和数据源拼接在一起，增加了在任何依赖链链接处被破坏的潜力。
+
+报告指出，传统的应用程序安全测试对这些系统来说是不够的，因为威胁不是基于代码漏洞，而是基于对代理的推理过程和工具使用的操纵。特别强调的一种技术是**“间接提示注入”**，攻击者在代理被指示检索和处理的数据源中植入恶意指令，如电子邮件、网页或数据库，颠覆代理的目标，而无需篡改其核心提示。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+根据描述的攻击向量，潜在的TTPs包括：
+* **T1588.002: Obtain Capabilities – Tool** – 获取或开发代理可以调用的恶意工具或API。
+* **T1589.002: Gather Victim Identity Information – Email Addresses** – 为了通过企业通信渠道制作针对性的间接提示注入。
+* **T1190: Exploit Public-Facing Application** – 针对代理接收用户查询或检索外部数据的界面。
+* **T1556.001: Modify Authentication Process – Credential Injection** – 使用被破坏的代理修改认证流程或通过其工具访问窃取凭据。
+* **T1565: Data Manipulation** – 投毒训练数据或检索增强生成（RAG）源，以改变代理输出。
+
+## 威胁行为者背景
+报告没有将这些新出现的风险归因于特定的命名威胁组织。相反，它将漏洞框架化为系统性的，并吸引从寻求欺诈的财务动机犯罪分子到追求知识产权盗窃或破坏的国家资助团体的广泛行为者。攻击技术的可访问性，特别是基本的提示注入，降低了不太复杂行为者的进入门槛。
+
+## 缓解措施与建议
+Recorded Future建议企业采用针对代理型系统量身定制的新安全框架。关键缓解措施包括实施**严格的输入/输出沙箱**以限制代理的工具访问和网络能力，应用**运行时监控**以检测异常的工具调用模式或数据泄露尝试，并进行**红队演习**，重点关注提示注入和数据投毒场景。报告强调需要**人为审批**敏感操作，并严格审查AI供应链中的第三方工具和数据源。建议组织将配置代理的提示、工具和知识库视为关键的、受版本控制的代码。
+
+## 参考资料
+* [Emerging Enterprise Security Risks of AI – Recorded Future (Insikt Group)](https://www.recordedfuture.com/research/emerging-enterprise-security-risks-of-ai)
