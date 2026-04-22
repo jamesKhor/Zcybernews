@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+# Pre-push QA gate (added 2026-04-22).
+#
+# Why this exists: tsc + eslint pass at pre-commit, but they can't catch
+# runtime render errors, missing server-component markers, broken
+# imports, bad JSON-LD shapes, or ISR/build-time failures. The actual
+# "safe to publish" bar is `npm test && npm run build` — both of those
+# exercise the code paths Googlebot and real visitors hit.
+#
+# Commits stay fast (pre-commit only runs lint-staged); the expensive
+# gate fires once, at the push boundary — the moment work leaves this
+# machine and can affect production.
+#
+# Bypass (rarely — justify in the PR / commit message): `git push --no-verify`
+
+set -e
+
+echo "→ pre-push: running vitest..."
+npm test --silent
+
+echo "→ pre-push: running next build (this can take ~30-60s)..."
+npm run build
+
+echo "✓ pre-push QA passed"

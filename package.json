@@ -7,8 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "qa": "npm run typecheck && npm run test && npm run build",
+    "qa:fast": "npm run typecheck && npm run test",
     "prepare": "husky"
   },
   "dependencies": {
