@@ -54,9 +54,10 @@
     "url": "https://cybersecuritynews.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
-    "enabled": true,
-    "tier": "under-review",
-    "description": "High-volume news aggregator; monitoring signal-to-noise before confirming long-term inclusion.",
+    "enabled": false,
+    "tier": "excluded",
+    "description": "Low-authority aggregator that re-writes content from BleepingComputer and The Hacker News.",
+    "whyDrop": "Signal-to-noise threshold — duplicates higher-authority primary sources.",
     "lastReviewed": "2026-04-22"
   },
   {
@@ -78,9 +79,10 @@
     "url": "https://www.helpnetsecurity.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
-    "enabled": true,
-    "tier": "standard",
-    "description": "Enterprise security news covering products, research, and vulnerability disclosures.",
+    "enabled": false,
+    "tier": "excluded",
+    "description": "Predominantly vendor surveys, product roundups, and press releases.",
+    "whyDrop": "Signal-to-noise threshold — product/survey content outweighed incident reporting.",
     "lastReviewed": "2026-04-22"
   },
   {
@@ -260,9 +262,10 @@
     "url": "https://www.crowdstrike.com/en-us/blog/feed/",
     "category": "cybersecurity",
     "type": "rss",
-    "enabled": true,
-    "tier": "standard",
-    "description": "Vendor research on eCrime, nation-state adversaries, and endpoint threats.",
+    "enabled": false,
+    "tier": "excluded",
+    "description": "Vendor blog mixing threat research with sales and product marketing at roughly a 1:4 ratio.",
+    "whyDrop": "Signal-to-noise threshold — majority of items are commercial/sales content rather than research. Revisit via whitelist on /blog/threat-research/ if the ratio improves.",
     "lastReviewed": "2026-04-22"
   },
   {
@@ -356,9 +359,10 @@
     "url": "https://blog.qualys.com/feed",
     "category": "vulnerabilities",
     "type": "rss",
-    "enabled": true,
-    "tier": "standard",
-    "description": "Patch Tuesday analysis, vulnerability research, and cloud posture findings.",
+    "enabled": false,
+    "tier": "excluded",
+    "description": "Patch Tuesday analysis and cloud posture findings that largely duplicate ZDI, Rapid7, and The Hacker News.",
+    "whyDrop": "Signal redundancy — patch coverage already provided by higher-authority sources in our pool.",
     "lastReviewed": "2026-04-22"
   },
   {
@@ -380,9 +384,10 @@
     "url": "https://feeds.fortinet.com/fortinet/blog/threat-research",
     "category": "cybersecurity",
     "type": "rss",
-    "enabled": true,
-    "tier": "standard",
-    "description": "Malware analysis, botnet tracking, and vulnerability research.",
+    "enabled": false,
+    "tier": "excluded",
+    "description": "Vendor patch summaries that typically lack CVE detail and independent analysis.",
+    "whyDrop": "Signal-to-noise threshold — contributed to the April 2026 CVE-hedging ship quality issue; patch advisories without identifiers downstream.",
     "lastReviewed": "2026-04-22"
   },
   {
@@ -392,9 +397,10 @@
     "url": "https://www.proofpoint.com/us/rss.xml",
     "category": "cybersecurity",
     "type": "rss",
-    "enabled": true,
-    "tier": "standard",
-    "description": "Email-borne threat research, BEC campaigns, and social engineering analysis.",
+    "enabled": false,
+    "tier": "excluded",
+    "description": "Mix of threat research with webinar and analyst-report promotions.",
+    "whyDrop": "Signal-to-noise threshold — promotional content interleaved with research reduced the usable yield.",
     "lastReviewed": "2026-04-22"
   },
   {
@@ -419,6 +425,69 @@
     "enabled": true,
     "tier": "standard",
     "description": "Nation-state threat research and geopolitical cyber risk analysis.",
+    "lastReviewed": "2026-04-22"
+  },
+  {
+    "id": "the-record",
+    "name": "The Record (Recorded Future News)",
+    "homepage": "https://therecord.media/",
+    "url": "https://therecord.media/feed",
+    "category": "cybersecurity",
+    "type": "rss",
+    "enabled": true,
+    "tier": "trusted",
+    "description": "Independent cybersecurity journalism covering nation-state operations, ransomware, and policy — staffed by career security reporters.",
+    "lastReviewed": "2026-04-22"
+  },
+  {
+    "id": "volexity",
+    "name": "Volexity Threat Research",
+    "homepage": "https://www.volexity.com/blog/",
+    "url": "https://www.volexity.com/blog/feed/",
+    "category": "cybersecurity",
+    "type": "rss",
+    "enabled": true,
+    "tier": "trusted",
+    "description": "Small independent research shop with a consistent track record of zero-day discoveries (Ivanti, Atlassian, Exchange).",
+    "lastReviewed": "2026-04-22"
+  },
+  {
+    "id": "censys",
+    "name": "Censys Research",
+    "homepage": "https://censys.com/blog",
+    "url": "https://censys.com/blog/rss/",
+    "category": "cybersecurity",
+    "type": "rss",
+    "enabled": true,
+    "tier": "standard",
+    "description": "Internet-scan-based research on exposed infrastructure, IOC enrichment, and attack-surface trends.",
+    "lastReviewed": "2026-04-22"
+  },
+  {
+    "id": "nvd-recent",
+    "name": "NVD — Recent CVEs",
+    "homepage": "https://nvd.nist.gov/vuln/search",
+    "url": "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-recent.json",
+    "category": "vulnerabilities",
+    "type": "nvd-json",
+    "enabled": false,
+    "tier": "under-review",
+    "description": "NIST NVD recent-CVE JSON feed — authoritative source-of-truth for the vulnerabilities category's CVE hard-gate.",
+    "whyDrop": "Parser for the NVD JSON schema is not yet built in this pipeline (type `nvd-json` is a placeholder). Enable once the parser lands.",
+    "lastReviewed": "2026-04-22"
+  },
+  {
+    "id": "freebuf",
+    "name": "FreeBuf (ZH-native)",
+    "homepage": "https://www.freebuf.com/",
+    "url": "https://www.freebuf.com/feed",
+    "category": "cybersecurity",
+    "type": "rss",
+    "enabled": true,
+    "tier": "under-review",
+    "sourceLanguage": "zh",
+    "seoIntent": "ingest-only",
+    "description": "Chinese-language security community — first native ZH source added to the pool; enters as ingest-only per the contract spec for a 30-day audit before promotion.",
     "lastReviewed": "2026-04-22"
   }
 ]
