@@ -292,7 +292,23 @@ Every resolution either (a) reduces fragile-index risk during canonicalization r
 
 **Q24** — Visual regression CI. **DEFER with cheap bridge (Eric):** Skip Percy/Chromatic ($600+/yr is disproportionate at 11 clicks/day). Raymond adds Playwright screenshot diffs for the 5 most critical pages only; CI-slow is fine at our volume. Revisit paid tools when we have revenue.
 
-**Q25** — **NEW meta-question added by Eric: Kill criterion for unified contracts project.** By **2026-07-22** (90 days from spec approval): if **GSC <20 clicks/day AND newsletter <10 subs** → pause pipeline contract work, pivot to distribution (XHS scale, Discord, direct outreach). Defined the exit condition BEFORE sunk-cost reasoning takes over.
+**Q25** — **Kill criterion for unified contracts project.** By **2026-07-22** (90 days from spec approval):
+
+**PRIMARY gate (both must fail to trigger pause):**
+
+- GSC <20 clicks/day **AND** newsletter <10 subs → pause pipeline contract work, pivot to distribution (XHS, LinkedIn, Discord, direct outreach)
+
+**Operator refinement (2026-04-22):** keep BOTH metrics, not subs-only. AI pipeline is baseline infrastructure; GSC measures organic discovery, subs measure retention+conversion. Both measure different dimensions; collapsing to one hides failure modes.
+
+**SUPPLEMENTARY amber-warning gates (Eric 2026-04-22, retained as signals not solo kills):**
+
+- Newsletter subs <100 → warning (not pause-trigger alone)
+- Human-editorial % of content <10% → moat concern (AI-slop differentiation failing)
+- LinkedIn followers <250 → dark-social bet failed; revisit channel mix
+
+**Byline deferred (operator 2026-04-22):** weekly human-bylined digest pushed to ~6-8 weeks out, after Phase B pipeline quality work stabilizes content. House byline ("ZCyberNews Editorial") until then. Loses ~4 weeks of byline compound on the 2026-07-22 clock; accepted trade-off to protect personal brand from shipping-shaky content.
+
+**Positioning thesis (operator 2026-04-22):** Product is _"curation layer for security pros currently subscribing to 10+ RSS feeds in Feedly"_ — not a content producer competing with Krebs/BleepingComputer. Editorial moat = what we INCLUDE and EXCLUDE, not prose rewrites. This is the answer to the "AI slop" threat in the research memo: we ARE curation, not AI slop, even while using AI pipeline. Judgment is the product.
 
 ### Weekly metrics to monitor during rollout (Eric)
 

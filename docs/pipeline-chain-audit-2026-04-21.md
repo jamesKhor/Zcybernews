@@ -490,3 +490,27 @@ _(Drafted after Pass 1, refined after Pass 2)_
 - **Pass 2 complete:** _(pending)_
 - **First implement cycle:** _(pending)_
 - **Repeat:** _(pending)_
+
+---
+
+## Shipped work log (Alex tracking)
+
+| Date       | Item                                             | Commit / Doc                                                                | Owner   | Status  |
+| ---------- | ------------------------------------------------ | --------------------------------------------------------------------------- | ------- | ------- |
+| 2026-04-22 | Pipeline contracts v3 unified spec               | `docs/pipeline-contracts-2026-04-22.md`                                     | Vincent | Shipped |
+| 2026-04-22 | Phase B.1 translate-direction SSoT + 13 vitests  | `18fadec`                                                                   | Raymond | Shipped |
+| 2026-04-22 | CVE-hedging article prompt rules                 | `scripts/ai/prompts/article.ts` (in `18fadec`)                              | Prompt  | Shipped |
+| 2026-04-22 | CVE-hedging fact-check patterns                  | `scripts/pipeline/fact-check.ts` (in `18fadec`)                             | Raymond | Shipped |
+| 2026-04-22 | Info-density source-richness classifier          | `scripts/pipeline/generate-article.ts` (in `18fadec`)                       | Raymond | Shipped |
+| 2026-04-22 | `/sources` editorial-transparency page (EN + ZH) | `docs/sources-transparency-2026-04-22.md` + `app/[locale]/sources/page.tsx` | Alex    | Shipped |
+| 2026-04-22 | RSS sources JSON additive schema                 | `data/rss-sources.json` (tier, homepage, whyDrop, lastReviewed)             | Alex    | Shipped |
+| 2026-04-22 | Sitemap + footer + homepage strip → `/sources`   | `app/sitemap.ts`, `components/layout/Footer.tsx`, `app/[locale]/page.tsx`   | Ken     | Shipped |
+
+**Next-session starters** (from backlog / deferred):
+
+- `B-005` hero search removal (approved; not yet shipped).
+- `B-007` kill-criterion checkpoint on 2026-07-22 (Eric reminder).
+- Phase B.2 — `scripts/contracts/schemas.ts` Zod SSoT module.
+- Phase B.3 — `lib/article-url.ts` two-function URL helper.
+- Byline equity activation (~6–8 weeks out per operator; gated on
+  content-quality stabilisation).

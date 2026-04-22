@@ -206,6 +206,35 @@
     "salaries": "Salaries",
     "articles": "Articles",
     "threatIntel": "Threat Intel",
+    "ourSources": "Our sources",
     "feeds": "Feeds"
+  },
+  "sources": {
+    "metaTitle": "Our sources — ZCyberNews",
+    "metaDescription": "The full list of cybersecurity feeds, vendor research blogs, and national CERT advisories we monitor — with tier labels and honest notes on what we've excluded and why.",
+    "breadcrumbHome": "Home",
+    "breadcrumbSources": "Our sources",
+    "heroTitle": "Our sources",
+    "heroSubtitle": "Security pros already subscribe to ten feeds in Feedly. Our job is not to publish faster than them — it is to read all of it, throw out the noise, and surface what matters. This page shows exactly what we read, so you can judge our curation for yourself.",
+    "heroCounts": "We track <strong>{total}</strong> sources today: <strong>{active}</strong> active, <strong>{review}</strong> under review, and <strong>{excluded}</strong> we have deliberately excluded.",
+    "reviewCadence": "Reviewed quarterly. Last reviewed: 2026-04-22.",
+    "sectionActiveTitle": "Active",
+    "sectionActiveDescription": "The feeds that currently drive our daily coverage. Trusted sources carry the most editorial weight; standard sources are read for breadth and cross-confirmation.",
+    "sectionReviewTitle": "Under review",
+    "sectionReviewDescription": "On probation. We are monitoring feed stability, editorial signal, and overlap with other sources before confirming long-term inclusion or exclusion.",
+    "sectionExcludedTitle": "Excluded",
+    "sectionExcludedDescription": "Deliberately not carried. Listed here so you can verify what we read — and what we don't.",
+    "tier": {
+      "trusted": "Trusted independent",
+      "standard": "Standard",
+      "under-review": "Under review",
+      "excluded": "Excluded"
+    },
+    "whyDroppedLabel": "Why excluded",
+    "suggestTitle": "Not seeing a source you trust?",
+    "suggestBody": "Email us the name, URL, and one sentence on why it belongs here. We read every message and re-review the list quarterly. We use email on purpose — no web forms, no submission queues, no public suggestion box to game.",
+    "suggestCta": "Suggest a source",
+    "suggestReplyHint": "Replies typically within a few business days. No auto-responders.",
+    "backHome": "Back to home"
   }
 }

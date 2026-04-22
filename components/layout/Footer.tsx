@@ -63,6 +63,17 @@ export function Footer({ locale }: Props) {
                   {t("threatIntel")}
                 </Link>
               </li>
+              <li>
+                {/* /sources — editorial transparency page (2026-04-22).
+                    Anchors our curation-layer positioning: we publish
+                    exactly which feeds we watch and which we reject. */}
+                <Link
+                  href={`/${locale}/sources`}
+                  className="hover:text-primary transition-colors"
+                >
+                  {t("ourSources")}
+                </Link>
+              </li>
             </ul>
           </div>
 

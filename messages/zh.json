@@ -206,6 +206,35 @@
     "salaries": "薪资",
     "articles": "文章",
     "threatIntel": "威胁情报",
+    "ourSources": "信息来源",
     "feeds": "订阅"
+  },
+  "sources": {
+    "metaTitle": "信息来源 — ZCyberNews",
+    "metaDescription": "我们每天追踪的全部网络安全信息源——权威独立媒体、厂商研究博客与国家级 CERT 通告,并诚实说明哪些已被我们排除,为什么。",
+    "breadcrumbHome": "首页",
+    "breadcrumbSources": "信息来源",
+    "heroTitle": "我们的信息来源",
+    "heroSubtitle": "安全从业者通常已经在 Feedly 订阅了十个以上的信息源。我们的价值不在于比他们更快发布,而在于把所有信息读完、剔除噪声、筛出真正值得关注的内容。本页公开我们每日阅读的全部来源,您可以据此独立判断我们的筛选质量。",
+    "heroCounts": "我们目前追踪 <strong>{total}</strong> 个信息源:<strong>{active}</strong> 个在用、<strong>{review}</strong> 个审查中、<strong>{excluded}</strong> 个已主动排除。",
+    "reviewCadence": "每季度复审一次。最近复审:2026-04-22。",
+    "sectionActiveTitle": "在用来源",
+    "sectionActiveDescription": "当前驱动我们日常报道的信息源。权威独立媒体在编辑判断中权重最高;常规来源用于扩展覆盖面与多方交叉验证。",
+    "sectionReviewTitle": "审查中",
+    "sectionReviewDescription": "试用期内。在确认长期纳入或排除前,我们会持续评估其信息源稳定性、编辑信号强度以及与其他来源的重合度。",
+    "sectionExcludedTitle": "已排除",
+    "sectionExcludedDescription": "我们主动不纳入的来源。在此列出,以便您核实我们究竟阅读什么、不阅读什么。",
+    "tier": {
+      "trusted": "权威独立媒体",
+      "standard": "常规来源",
+      "under-review": "审查中",
+      "excluded": "已排除"
+    },
+    "whyDroppedLabel": "排除原因",
+    "suggestTitle": "没看到您信任的来源?",
+    "suggestBody": "请通过邮件发给我们:名称、URL,以及一句话说明为什么值得纳入。我们会逐封阅读,并在每季度复审时一并评估。我们刻意使用邮件而非网页表单——没有表单、没有提交队列、没有可以被公开刷榜的建议入口。",
+    "suggestCta": "推荐一个来源",
+    "suggestReplyHint": "通常会在几个工作日内回复。我们不使用自动回复。",
+    "backHome": "返回首页"
   }
 }

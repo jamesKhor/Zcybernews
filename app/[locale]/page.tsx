@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getAllPosts } from "@/lib/content";
+import sources from "@/data/rss-sources.json";
 import { HomeJsonLd } from "@/components/seo/JsonLd";
 import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 import { HomeGreeting } from "@/components/home/HomeGreeting";
@@ -128,6 +130,34 @@ export default async function HomePage({ params }: Props) {
         <>
           <HomeGreeting locale={locale} />
           <Hero3Col picks={hero} locale={locale} />
+          {/* Sources-transparency strip (2026-04-22). One line, muted,
+              above the fold on most viewports. Anchors the curation
+              positioning and routes traffic to /sources without
+              distracting from the hero. */}
+          <div className="max-w-7xl mx-auto px-4 -mt-2 mb-4 text-xs text-muted-foreground">
+            {locale === "zh" ? (
+              <>
+                我们追踪 {sources.length}+ 个网络安全信息源,并公开筛选标准。{" "}
+                <Link
+                  href={`/${locale}/sources`}
+                  className="text-primary hover:underline"
+                >
+                  查看信息来源 →
+                </Link>
+              </>
+            ) : (
+              <>
+                We track {sources.length}+ cybersecurity sources and publish our
+                curation criteria.{" "}
+                <Link
+                  href={`/${locale}/sources`}
+                  className="text-primary hover:underline"
+                >
+                  See our sources →
+                </Link>
+              </>
+            )}
+          </div>
           <MoreFromToday articles={ticker} locale={locale} />
           <CategoryPillsRow locale={locale} />
 

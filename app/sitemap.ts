@@ -60,6 +60,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
       {
+        // /sources — editorial transparency page (2026-04-22).
+        // Anchors the curation-layer positioning; we want crawlers to
+        // surface this alongside the main section pages.
+        url: `${BASE_URL}/${locale}/sources`,
+        lastModified: new Date("2026-04-22"),
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/sources`,
+            "zh-Hans": `${BASE_URL}/zh/sources`,
+          },
+        },
+      },
+      {
         // /salary — destination page for XHS career-content funnel.
         // High priority + weekly changefreq: dataset refreshes quarterly
         // but we want crawlers to recheck often during the launch window.

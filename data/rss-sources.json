@@ -2,316 +2,423 @@
   {
     "id": "bleepingcomputer",
     "name": "BleepingComputer",
+    "homepage": "https://www.bleepingcomputer.com/",
     "url": "https://www.bleepingcomputer.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Security news, tutorials, malware and analysis"
+    "tier": "standard",
+    "description": "Breaking breach news, ransomware leaks, and malware analysis — fast wire coverage.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "krebsonsecurity",
     "name": "Krebs on Security",
+    "homepage": "https://krebsonsecurity.com/",
     "url": "https://krebsonsecurity.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "In-depth security news and investigation by Brian Krebs"
+    "tier": "trusted",
+    "description": "Brian Krebs' original investigative security reporting — the gold standard for attribution and follow-the-money analysis.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "thehackernews",
     "name": "The Hacker News",
+    "homepage": "https://thehackernews.com/",
     "url": "https://feeds.feedburner.com/TheHackersNews",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Cybersecurity news, hacking tutorials and vulnerability disclosures"
+    "tier": "standard",
+    "description": "High-volume daily security news aggregator covering CVEs, breaches, and disclosures.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "darkreading",
     "name": "Dark Reading",
+    "homepage": "https://www.darkreading.com/",
     "url": "https://www.darkreading.com/rss.xml",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Cybersecurity news and analysis for security professionals"
+    "tier": "standard",
+    "description": "Enterprise-focused security analysis aimed at CISOs and SOC leaders.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "cybersecuritynews",
     "name": "CyberSecurity News",
+    "homepage": "https://cybersecuritynews.com/",
     "url": "https://cybersecuritynews.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Latest cybersecurity news and analysis"
+    "tier": "under-review",
+    "description": "High-volume news aggregator; monitoring signal-to-noise before confirming long-term inclusion.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "securityweek",
     "name": "SecurityWeek",
+    "homepage": "https://www.securityweek.com/",
     "url": "https://feeds.feedburner.com/securityweek",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Major cybersecurity news outlet covering breaches, vulnerabilities, and threat intel"
+    "tier": "standard",
+    "description": "Major independent cybersecurity outlet covering breaches, vulnerabilities, and policy.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "helpnetsecurity",
     "name": "Help Net Security",
+    "homepage": "https://www.helpnetsecurity.com/",
     "url": "https://www.helpnetsecurity.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Enterprise-focused cybersecurity news covering products, research, and vulnerabilities"
+    "tier": "standard",
+    "description": "Enterprise security news covering products, research, and vulnerability disclosures.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "schneier",
     "name": "Schneier on Security",
+    "homepage": "https://www.schneier.com/",
     "url": "https://www.schneier.com/feed/atom/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Bruce Schneier's influential blog on security policy, cryptography, and privacy"
+    "tier": "trusted",
+    "description": "Bruce Schneier's long-running blog on cryptography, security policy, and privacy — essential for big-picture analysis.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "blackhillsinfosec",
     "name": "Black Hills Information Security",
+    "homepage": "https://www.blackhillsinfosec.com/",
     "url": "https://www.blackhillsinfosec.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Penetration testing, threat hunting, and active defense techniques from BHIS team"
+    "tier": "standard",
+    "description": "Practitioner-level pentest, threat hunting, and active defense content from the BHIS team.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "hackernews",
     "name": "Hacker News",
+    "homepage": "https://news.ycombinator.com/",
     "url": "https://news.ycombinator.com/rss",
     "category": "tech",
     "type": "rss",
     "enabled": false,
-    "description": "Tech news from Hacker News community"
+    "tier": "excluded",
+    "description": "General tech community feed — off-topic for a security-focused newsroom.",
+    "whyDrop": "Signal-to-noise threshold — majority of items are general tech, not security.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "cisa-alerts",
     "name": "CISA Alerts",
+    "homepage": "https://www.cisa.gov/news-events/cybersecurity-advisories",
     "url": "https://www.cisa.gov/uscert/ncas/alerts.xml",
     "category": "vulnerabilities",
     "type": "rss",
     "enabled": true,
-    "description": "Official CISA cybersecurity alerts and advisories"
+    "tier": "trusted",
+    "description": "Official U.S. CISA cybersecurity alerts and advisories — authoritative primary source.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "cisa-kev",
     "name": "CISA Known Exploited Vulnerabilities",
+    "homepage": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
     "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
     "category": "vulnerabilities",
     "type": "cisa-kev",
     "enabled": true,
-    "description": "CISA KEV catalog — actively exploited vulnerabilities requiring immediate action"
+    "tier": "trusted",
+    "description": "CISA's KEV catalog — the authoritative list of actively exploited vulnerabilities requiring immediate remediation.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "sans-isc",
     "name": "SANS Internet Storm Center",
+    "homepage": "https://isc.sans.edu/",
     "url": "https://isc.sans.edu/rssfeed_full.xml",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Daily threat analysis and security diaries from SANS ISC handlers"
+    "tier": "trusted",
+    "description": "Daily threat analysis and incident diaries from SANS ISC handlers — strong practitioner signal.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "ncsc-uk",
     "name": "NCSC UK",
+    "homepage": "https://www.ncsc.gov.uk/",
     "url": "https://www.ncsc.gov.uk/api/1/services/v1/report-rss-feed.xml",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "UK National Cyber Security Centre advisories and threat reports"
+    "tier": "trusted",
+    "description": "UK National Cyber Security Centre advisories and threat reports — authoritative national-CERT primary source.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "talos",
     "name": "Cisco Talos Intelligence",
+    "homepage": "https://blog.talosintelligence.com/",
     "url": "https://blog.talosintelligence.com/feeds/posts/default",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": false,
-    "description": "Threat intelligence and research from Cisco Talos"
+    "tier": "under-review",
+    "description": "Strong threat research, paused pending vendor-heavy-coverage review against independent sources.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "checkpoint-research",
     "name": "Check Point Research",
+    "homepage": "https://research.checkpoint.com/",
     "url": "https://research.checkpoint.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Threat intelligence and security research from Check Point"
+    "tier": "standard",
+    "description": "Vendor research arm publishing malware analysis and campaign reports.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "mandiant",
-    "name": "Mandiant Blog (Google Cloud)",
+    "name": "Mandiant (Google Cloud)",
+    "homepage": "https://cloud.google.com/blog/topics/threat-intelligence",
     "url": "https://cloud.google.com/blog/topics/threat-intelligence/rss/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": false,
-    "description": "World-class threat intelligence from Mandiant covering APT groups and campaign analysis"
+    "tier": "under-review",
+    "description": "World-class APT attribution research; paused pending feed-reliability verification.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "google-tag",
     "name": "Google Threat Analysis Group",
+    "homepage": "https://blog.google/threat-analysis-group/",
     "url": "https://blog.google/threat-analysis-group/rss/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Google's threat analysis team tracking government-backed hacking and zero-days"
+    "tier": "trusted",
+    "description": "Google's TAG on government-backed attacks and zero-day tracking — authoritative primary research.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "project-zero",
     "name": "Google Project Zero",
+    "homepage": "https://googleprojectzero.blogspot.com/",
     "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
     "category": "vulnerabilities",
     "type": "rss",
     "enabled": true,
-    "description": "Elite vulnerability research team publishing deep technical zero-day write-ups"
+    "tier": "trusted",
+    "description": "Elite vulnerability research team publishing deep technical zero-day write-ups.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "msrc",
     "name": "Microsoft Security Response Center",
+    "homepage": "https://msrc.microsoft.com/blog",
     "url": "https://msrc.microsoft.com/blog/feed",
     "category": "vulnerabilities",
     "type": "rss",
     "enabled": false,
-    "description": "Microsoft's official security response blog — Patch Tuesday, zero-days, vulnerability disclosures"
+    "tier": "under-review",
+    "description": "Authoritative Microsoft security disclosures; paused pending feed-format stability confirmation.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "microsoft-security",
     "name": "Microsoft Security Blog",
+    "homepage": "https://www.microsoft.com/en-us/security/blog/",
     "url": "https://www.microsoft.com/en-us/security/blog/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": false,
-    "description": "Microsoft Defender, Sentinel, threat analytics, and security best practices"
+    "tier": "excluded",
+    "description": "Primarily product marketing interleaved with research.",
+    "whyDrop": "Signal-to-noise threshold — marketing content outweighed standalone research value.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "crowdstrike",
     "name": "CrowdStrike Blog",
+    "homepage": "https://www.crowdstrike.com/en-us/blog/",
     "url": "https://www.crowdstrike.com/en-us/blog/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Threat research on eCrime, nation-state adversaries, and endpoint detection"
+    "tier": "standard",
+    "description": "Vendor research on eCrime, nation-state adversaries, and endpoint threats.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "sentinelone",
-    "name": "SentinelOne Labs",
+    "name": "SentinelLabs",
+    "homepage": "https://www.sentinelone.com/labs/",
     "url": "https://www.sentinelone.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "SentinelLabs research on malware families, threat actors, and vulnerability exploitation"
+    "tier": "standard",
+    "description": "SentinelLabs research on malware families, threat actors, and exploitation.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "unit42",
     "name": "Palo Alto Unit 42",
+    "homepage": "https://unit42.paloaltonetworks.com/",
     "url": "https://unit42.paloaltonetworks.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Detailed reports on ransomware, APTs, cloud threats, and IoT vulnerabilities"
+    "tier": "trusted",
+    "description": "In-depth APT, ransomware, cloud, and IoT research — one of the most cited vendor research outlets.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "sophos",
     "name": "Sophos News",
+    "homepage": "https://news.sophos.com/",
     "url": "https://news.sophos.com/en-us/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": false,
-    "description": "Sophos X-Ops research on ransomware, malware campaigns, and attacker behavior"
+    "tier": "under-review",
+    "description": "Strong X-Ops research; paused pending feed noise review (product posts interleaved with research).",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "kaspersky-securelist",
     "name": "Kaspersky Securelist",
+    "homepage": "https://securelist.com/",
     "url": "https://securelist.com/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Kaspersky GReAT team's threat research — APTs, malware campaigns, crimeware"
+    "tier": "trusted",
+    "description": "Kaspersky GReAT team's APT and crimeware research — widely cited primary source.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "malwarebytes",
     "name": "Malwarebytes Labs",
+    "homepage": "https://www.malwarebytes.com/blog",
     "url": "https://www.malwarebytes.com/blog/feed/index.xml",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Threat intelligence on malware, ransomware, scams, and enterprise threats"
+    "tier": "standard",
+    "description": "Threat intelligence on malware, scams, and enterprise threats.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "welivesecurity",
     "name": "WeLiveSecurity (ESET)",
+    "homepage": "https://www.welivesecurity.com/",
     "url": "https://www.welivesecurity.com/en/rss/feed/",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "ESET research on APT campaigns, malware analysis, and Eastern European threats"
+    "tier": "standard",
+    "description": "ESET research on APT campaigns and Eastern European threats.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "rapid7",
     "name": "Rapid7 Blog",
+    "homepage": "https://blog.rapid7.com/",
     "url": "https://blog.rapid7.com/rss/",
     "category": "vulnerabilities",
     "type": "rss",
     "enabled": true,
-    "description": "Emergent threats, vulnerability analysis, and Metasploit research"
+    "tier": "standard",
+    "description": "Emergent threat analysis and Metasploit-adjacent vulnerability research.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "qualys",
     "name": "Qualys Threat Research",
+    "homepage": "https://blog.qualys.com/",
     "url": "https://blog.qualys.com/feed",
     "category": "vulnerabilities",
     "type": "rss",
     "enabled": true,
-    "description": "Vulnerability research, Patch Tuesday analysis, and cloud security findings"
+    "tier": "standard",
+    "description": "Patch Tuesday analysis, vulnerability research, and cloud posture findings.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "zdi",
     "name": "Zero Day Initiative (ZDI)",
+    "homepage": "https://www.zerodayinitiative.com/",
     "url": "https://www.zerodayinitiative.com/rss/published/",
     "category": "vulnerabilities",
     "type": "rss",
     "enabled": true,
-    "description": "Trend Micro's ZDI vulnerability advisories from their bug bounty program"
+    "tier": "trusted",
+    "description": "Trend Micro's ZDI advisories from their bug-bounty program — primary-source vulnerability disclosures.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "fortinet",
     "name": "Fortinet FortiGuard Labs",
+    "homepage": "https://www.fortinet.com/blog/threat-research",
     "url": "https://feeds.fortinet.com/fortinet/blog/threat-research",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Malware analysis, botnet tracking, and vulnerability discoveries"
+    "tier": "standard",
+    "description": "Malware analysis, botnet tracking, and vulnerability research.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "proofpoint",
     "name": "Proofpoint Threat Insight",
+    "homepage": "https://www.proofpoint.com/us/blog",
     "url": "https://www.proofpoint.com/us/rss.xml",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Email-borne threats, BEC campaigns, phishing, and social engineering research"
+    "tier": "standard",
+    "description": "Email-borne threat research, BEC campaigns, and social engineering analysis.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "elastic-security",
     "name": "Elastic Security Labs",
+    "homepage": "https://www.elastic.co/security-labs",
     "url": "https://www.elastic.co/security-labs/rss/feed.xml",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Malware analysis, detection rules, and threat hunting techniques"
+    "tier": "standard",
+    "description": "Malware analysis, detection engineering, and threat hunting techniques.",
+    "lastReviewed": "2026-04-22"
   },
   {
     "id": "recorded-future",
     "name": "Recorded Future (Insikt Group)",
+    "homepage": "https://www.recordedfuture.com/research",
     "url": "https://www.recordedfuture.com/feed",
     "category": "cybersecurity",
     "type": "rss",
     "enabled": true,
-    "description": "Nation-state threats, cybercrime ecosystems, and geopolitical cyber risk"
+    "tier": "standard",
+    "description": "Nation-state threat research and geopolitical cyber risk analysis.",
+    "lastReviewed": "2026-04-22"
   }
 ]
