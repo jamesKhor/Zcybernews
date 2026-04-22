@@ -1,5 +1,6 @@
 import Parser from "rss-parser";
 import { ENABLED_SOURCES, type FeedSource } from "../sources/feeds.js";
+import { withWallClockTimeout } from "./timeout.js";
 import {
   deduplicate,
   loadRecentPublished,
@@ -28,8 +29,22 @@ function stripHtml(html: string): string {
     .trim();
 }
 
+// Wall-clock timeout for RSS feed fetches (A2.1 fix 2026-04-22).
+// rss-parser's internal `timeout` is a socket-read timeout — if a feed
+// responds slowly enough that the library keeps the stream alive (a
+// drip-feed attack or a misconfigured origin), parseURL can hang
+// indefinitely and block `Promise.allSettled` in ingestFeeds(). The
+// Parser timeout gets a 5s buffer against the wall-clock guard so
+// library-level errors propagate with their original message when
+// possible.
+const FEED_WALL_CLOCK_MS = 20_000;
+
 async function fetchRss(source: FeedSource): Promise<Story[]> {
-  const feed = await parser.parseURL(source.url);
+  const feed = await withWallClockTimeout(
+    parser.parseURL(source.url),
+    FEED_WALL_CLOCK_MS,
+    `rss ${source.id}`,
+  );
   return (feed.items ?? []).slice(0, 25).map((item, i) => ({
     id: `${source.id}-${item.guid ?? item.link ?? i}`,
     title: item.title ?? "Untitled",
