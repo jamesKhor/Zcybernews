@@ -1,0 +1,47 @@
+---
+title: Harvester 通过 Microsoft Graph API 部署 Linux GoGra 后门
+slug: 2026-04-22-harvester-deploys-linux-gogra-backdoor-via-microsoft-graph-api
+date: '2026-04-22'
+excerpt: >-
+  Harvester 威胁行为者部署了其 GoGra 后门的新 Linux 版本，使用 Microsoft Graph API 和 Outlook
+  邮箱进行隐蔽的 C2 通信，在针对...的攻击中。
+category: malware
+tags:
+  - harvester
+  - gogra
+  - linux
+  - microsoft-graph-api
+  - backdoor
+  - south-asia
+language: zh
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/harvester-deploys-linux-gogra-backdoor.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-harvester-deploys-linux-gogra-backdoor-via-microsoft-graph-api
+severity: high
+threat_actor: Harvester
+affected_regions:
+  - South Asia
+---
+## 执行摘要
+被称为Harvester的威胁行为者部署了其GoGra后门的新Linux变种，使用合法的Microsoft Graph API和Outlook邮箱作为隐蔽的命令与控制（C2）通道。根据赛门铁克和Carbon Black Threat Hunter团队的说法，这种技术允许恶意软件绕过传统的网络边界防御，攻击可能针对南亚的实体。
+
+## 技术分析
+新发现的GoGra后门的Linux版本利用Microsoft基于云的Graph API与其操作者通信。通过使用这个合法的服务和Outlook邮箱作为中介，恶意软件将其C2流量与正常的、受信任的网络流量混合，使得通过网络监控进行检测变得更加困难。源材料中没有完全披露Linux有效载荷的具体技术实现细节。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+主要技术涉及使用合法的云服务（Microsoft Graph API）进行C2通信（T1071.001: 应用层协议：Web协议）。这是一种利用现有资源（LOL）来规避基于网络的检测。后门被部署在Linux系统上，表明行为者的目标能力发生了转变或扩展。
+
+## 威胁行为者背景
+Harvester是一个已知的威胁行为者，先前与网络间谍活动有关。开发与其GoGra后门兼容的Linux版本表明其工具的发展，可能针对服务器、云基础设施或其他在其所关注的地区的企业和政府网络中普遍存在的基于Linux的系统。
+
+## 缓解措施与建议
+组织，特别是那些在南亚有业务或兴趣的组织，应监控Linux端点对Microsoft Graph API和Outlook服务的异常使用。安全团队应实施应用程序允许列表，监控未经授权的进程，并确保启用并审查云API使用的强大日志记录。没有特定的补丁或CVE与这次恶意软件活动相关。
+
+## 参考资料
+- https://thehackernews.com/2026/04/harvester-deploys-linux-gogra-backdoor.html

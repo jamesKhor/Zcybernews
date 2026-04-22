@@ -1,0 +1,48 @@
+---
+title: Harvester Deploys Linux GoGra Backdoor via Microsoft Graph API
+slug: 2026-04-22-harvester-deploys-linux-gogra-backdoor-via-microsoft-graph-api
+date: '2026-04-22'
+excerpt: >-
+  The Harvester threat actor deploys a new Linux version of its GoGra backdoor,
+  using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication
+  in attacks targeting…
+category: malware
+tags:
+  - harvester
+  - gogra
+  - linux
+  - microsoft-graph-api
+  - backdoor
+  - south-asia
+language: en
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/harvester-deploys-linux-gogra-backdoor.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-harvester-deploys-linux-gogra-backdoor-via-microsoft-graph-api
+severity: high
+threat_actor: Harvester
+affected_regions:
+  - South Asia
+---
+## Executive Summary
+The threat actor known as Harvester has deployed a new Linux variant of its GoGra backdoor, using the legitimate Microsoft Graph API and Outlook mailboxes as a covert command-and-control (C2) channel. According to Symantec and Carbon Black Threat Hunter teams, this technique allows the malware to bypass traditional network perimeter defenses, with attacks likely targeting entities in South Asia.
+
+## Technical Analysis
+The newly identified Linux version of the GoGra backdoor leverages Microsoft's cloud-based Graph API to communicate with its operators. By using this legitimate service and Outlook mailboxes as an intermediary, the malware blends its C2 traffic with normal, trusted web traffic, making detection via network monitoring more difficult. The specific technical implementation details of the Linux payload were not fully disclosed in the source material.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary technique involves using a legitimate cloud service (Microsoft Graph API) for C2 communication (T1071.001: Application Layer Protocol: Web Protocols). This is a form of living-off-the-land (LOL) to evade network-based detection. The backdoor is deployed on Linux systems, indicating a shift or expansion in the actor's targeting capabilities.
+
+## Threat Actor Context
+Harvester is a known threat actor, previously associated with cyber-espionage campaigns. The development of a Linux-compatible version of its GoGra backdoor suggests an evolution in its tooling, potentially to target servers, cloud infrastructure, or other Linux-based systems prevalent in enterprise and government networks in its region of interest.
+
+## Mitigations & Recommendations
+Organizations, particularly those with a presence or interest in South Asia, should monitor for anomalous use of Microsoft Graph API and Outlook services from Linux endpoints. Security teams should implement application allow-listing, monitor for unauthorized processes, and ensure robust logging of cloud API usage is enabled and reviewed. No specific patch or CVE is associated with this malware campaign.
+
+## References
+- https://thehackernews.com/2026/04/harvester-deploys-linux-gogra-backdoor.html
