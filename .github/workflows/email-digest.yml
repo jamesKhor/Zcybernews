@@ -36,10 +36,18 @@ jobs:
     name: Send Digest
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # Write-back permission for the post-success commit of
+    # data/digest-last-sent.json (B-020 no-dup / no-gap state).
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Persist credentials so the post-success commit can push
+          # back to main.
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -72,3 +80,21 @@ jobs:
             ARGS="$ARGS --locale=$LOCALE"
           fi
           npx tsx scripts/send-digest.ts $ARGS
+
+      - name: Commit last-sent state
+        # Only run if the send step succeeded AND we're not in dry-run.
+        # send-digest.ts only writes the state file on a real successful
+        # broadcast, so a missing/unchanged file means nothing to commit.
+        if: success() && inputs.dry_run != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/digest-last-sent.json
+          if git diff --cached --quiet; then
+            echo "No state changes to commit."
+          else
+            # The [skip ci] tag prevents this commit from triggering
+            # another GHA run — we don't want an infinite loop.
+            git commit -m "chore(digest): update last-sent state [skip ci]"
+            git push origin HEAD:main
+          fi
