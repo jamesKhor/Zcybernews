@@ -1,5 +1,6 @@
 import type { Article } from "@/lib/content";
 import type { Locale } from "@/lib/resend";
+import { scoreArticle } from "../../scripts/pipeline/quality-scorer";
 
 interface DigestTemplateOptions {
   articles: Article[];
@@ -111,6 +112,25 @@ const C = {
 const FONT =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
 
+/**
+ * Editorial serif stack for headlines (NYT-style gravitas).
+ *
+ * Email clients cannot reliably load custom web fonts (Gmail / Outlook
+ * strip <link> and @font-face). We use a system serif fallback chain
+ * that renders as a high-quality serif on every major client:
+ *   - macOS / iOS: New York or Charter
+ *   - Windows: Sitka Text, Cambria, Georgia
+ *   - Android / Linux: Noto Serif, Georgia
+ *   - Universal fallback: Georgia (on every platform since 1993)
+ *
+ * Used only on the digest hero H2 and secondary H3 titles — matches
+ * the site's Source Serif 4 editorial voice without requiring a
+ * network font load. Sans-serif (FONT above) remains for eyebrows,
+ * badges, badges, body, and CTAs — the NYT convention.
+ */
+const SERIF_FONT =
+  "'New York', 'Charter', 'Sitka Text', 'Cambria', Georgia, 'Noto Serif', serif";
+
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -133,7 +153,33 @@ function estimateReadingTime(article: Article): number {
 const MAX_ARTICLES = 7;
 const MIN_ARTICLES_TO_SEND = 3;
 
-function selectArticles(articles: Article[]): {
+/**
+ * Quality-weighted HERO selection (2026-04-23).
+ *
+ * The previous implementation sorted by frontmatter.severity only, so
+ * an article marked `severity: critical` with ZERO structured fields +
+ * word count below floor could still become the hero. With 2 real
+ * subscribers, that's unacceptable — the hero is the ONE article the
+ * subscriber's eye lands on first.
+ *
+ * New rule:
+ *   HERO MUST have a quality headlineScore ≥ 7.0 OR have
+ *   structuredRichness ≥ 3. If no candidate qualifies for HERO, we
+ *   fall back to the best-scoring article regardless (rather than
+ *   emit no hero), but that case is exceptional — the upstream digest
+ *   runner already filters SERIOUS-flagged articles, so remaining
+ *   candidates are at worst WARN-level.
+ *
+ * Secondary articles still use the severity+category sort for
+ * chronological/editorial ordering.
+ */
+const HERO_MIN_QUALITY_SCORE = 7.0;
+const HERO_MIN_STRUCTURED_RICHNESS = 3;
+
+function selectArticles(
+  articles: Article[],
+  locale: Locale = "en",
+): {
   hero: Article | null;
   secondary: Article[];
   remainingCount: number;
@@ -142,28 +188,66 @@ function selectArticles(articles: Article[]): {
     return { hero: null, secondary: [], remainingCount: 0 };
   }
 
-  const sorted = [...articles].sort((a, b) => {
-    const sevA = SEVERITY_RANK[a.frontmatter.severity ?? ""] ?? 0;
-    const sevB = SEVERITY_RANK[b.frontmatter.severity ?? ""] ?? 0;
-    if (sevB !== sevA) return sevB - sevA;
-    if (
-      a.frontmatter.category === "threat-intel" &&
-      b.frontmatter.category !== "threat-intel"
-    )
-      return -1;
-    if (
-      b.frontmatter.category === "threat-intel" &&
-      a.frontmatter.category !== "threat-intel"
-    )
-      return 1;
-    return a.frontmatter.title.localeCompare(b.frontmatter.title);
-  });
+  // Attach quality scores once so sort comparators don't recompute.
+  type Scored = { article: Article; q: ReturnType<typeof scoreArticle> };
+  const scored: Scored[] = articles.map((a) => ({
+    article: a,
+    q: scoreArticle({
+      slug: a.frontmatter.slug,
+      locale,
+      // Section lookup isn't fully accurate here (Article doesn't carry
+      // its source dir), but category-based floor in scoreArticle is
+      // the primary driver. Using "posts" as default is safe.
+      section: "posts",
+      frontmatter: a.frontmatter,
+      body: a.content,
+    }),
+  }));
 
-  const hero = sorted[0] ?? null;
-  const secondary = sorted.slice(1, MAX_ARTICLES);
+  // HERO: pick the best-quality story that meets the minimum bar.
+  // Among qualifying candidates, prefer critical severity + threat-
+  // intel category as a tiebreaker (the existing editorial weight).
+  const heroCandidates = scored.filter(
+    (s) =>
+      s.q.headlineScore >= HERO_MIN_QUALITY_SCORE ||
+      s.q.structuredRichness >= HERO_MIN_STRUCTURED_RICHNESS,
+  );
+  const heroRanking = (heroCandidates.length > 0 ? heroCandidates : scored)
+    .slice()
+    .sort((a, b) => {
+      if (b.q.headlineScore !== a.q.headlineScore)
+        return b.q.headlineScore - a.q.headlineScore;
+      const sevA = SEVERITY_RANK[a.article.frontmatter.severity ?? ""] ?? 0;
+      const sevB = SEVERITY_RANK[b.article.frontmatter.severity ?? ""] ?? 0;
+      if (sevB !== sevA) return sevB - sevA;
+      const aIsTI = a.article.frontmatter.category === "threat-intel";
+      const bIsTI = b.article.frontmatter.category === "threat-intel";
+      if (aIsTI !== bIsTI) return aIsTI ? -1 : 1;
+      return a.article.frontmatter.title.localeCompare(
+        b.article.frontmatter.title,
+      );
+    });
+  const hero = heroRanking[0]?.article ?? null;
+
+  // Secondary: original severity+category+title sort, excluding hero.
+  const secondarySorted = scored
+    .filter((s) => s.article !== hero)
+    .sort((a, b) => {
+      const sevA = SEVERITY_RANK[a.article.frontmatter.severity ?? ""] ?? 0;
+      const sevB = SEVERITY_RANK[b.article.frontmatter.severity ?? ""] ?? 0;
+      if (sevB !== sevA) return sevB - sevA;
+      const aIsTI = a.article.frontmatter.category === "threat-intel";
+      const bIsTI = b.article.frontmatter.category === "threat-intel";
+      if (aIsTI !== bIsTI) return aIsTI ? -1 : 1;
+      return a.article.frontmatter.title.localeCompare(
+        b.article.frontmatter.title,
+      );
+    })
+    .slice(0, MAX_ARTICLES - 1)
+    .map((s) => s.article);
+
   const remainingCount = Math.max(0, articles.length - MAX_ARTICLES);
-
-  return { hero, secondary, remainingCount };
+  return { hero, secondary: secondarySorted, remainingCount };
 }
 
 // ── Subject line ──────────────────────────────────────────────────────────
@@ -178,7 +262,7 @@ export function buildDigestSubject(
     { month: "short", day: "numeric" },
   );
 
-  const { hero } = selectArticles(articles);
+  const { hero } = selectArticles(articles, locale);
   const heroTitle = hero
     ? hero.frontmatter.title.length > 50
       ? hero.frontmatter.title.slice(0, 47) + "..."
@@ -209,7 +293,7 @@ export function buildDigestHtml({
 }: DigestTemplateOptions): string {
   const t = T[locale];
   const totalCount = articles.length;
-  const { hero, secondary, remainingCount } = selectArticles(articles);
+  const { hero, secondary, remainingCount } = selectArticles(articles, locale);
   const discordUrl = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL ?? "";
 
   const preheaderText = hero
@@ -387,7 +471,7 @@ function renderHeroBlock(
       <p style="margin:0 0 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:${C.brandAccent};font-family:${FONT};">▎${escapeHtml(t.topStory)}</p>
       <div style="margin-bottom:14px;">${categoryBadge}&nbsp;&nbsp;${severityBadge}&nbsp;&nbsp;${readTimeBadge}</div>
       <a href="${url}" style="text-decoration:none;">
-        <h2 style="margin:0 0 12px;color:#ffffff;font-size:22px;line-height:1.3;font-weight:700;font-family:${FONT};">${escapeHtml(fm.title)}</h2>
+        <h2 style="margin:0 0 14px;color:#ffffff;font-size:26px;line-height:1.25;font-weight:600;letter-spacing:-0.015em;font-family:${SERIF_FONT};">${escapeHtml(fm.title)}</h2>
       </a>
       <p style="margin:0 0 20px;color:#d4d4d8;font-size:15px;line-height:1.55;font-family:${FONT};">${escapeHtml(heroExcerpt)}</p>
       <a href="${url}" style="display:inline-block;padding:10px 22px;background:${C.brandPrimary};color:#ffffff;text-decoration:none;border-radius:8px;font-size:13px;font-weight:600;font-family:${FONT};">${escapeHtml(t.readHero)} →</a>
@@ -430,7 +514,7 @@ function renderSecondaryBlock(
     <td style="padding:16px 20px;background:${C.cardBg};">
       <div style="margin-bottom:8px;">${categoryBadge}&nbsp;&nbsp;${severityBadge}&nbsp;&nbsp;${readTimeBadge}</div>
       <a href="${url}" style="text-decoration:none;">
-        <h3 style="margin:0 0 6px;color:${C.textPrimary};font-size:15px;line-height:1.35;font-weight:600;font-family:${FONT};">${escapeHtml(fm.title)}</h3>
+        <h3 style="margin:0 0 6px;color:${C.textPrimary};font-size:17px;line-height:1.3;font-weight:600;letter-spacing:-0.01em;font-family:${SERIF_FONT};">${escapeHtml(fm.title)}</h3>
       </a>
       <p style="margin:0 0 8px;color:${C.textSecondary};font-size:14px;line-height:1.5;font-family:${FONT};">${escapeHtml(excerpt)}</p>
       <a href="${url}" style="color:${C.brandPrimary};text-decoration:none;font-size:12px;font-weight:500;font-family:${FONT};">${escapeHtml(t.readMore)} →</a>
