@@ -1,0 +1,59 @@
+---
+title: Microsoft-Signed Binary Hijacked to Deliver LOTUSLITE Backdoor in
+slug: >-
+  2026-04-22-microsoft-signed-binary-hijacked-to-deliver-lotuslite-backdoor-in-india-espionag
+date: '2026-04-22'
+excerpt: >-
+  State-linked threat actors used a Microsoft-signed binary for DLL sideloading
+  to deploy the LOTUSLITE backdoor against India's banking sector, evading
+  security controls with a…
+category: threat-intel
+tags:
+  - lotuslite
+  - dll-sideloading
+  - india-banking-sector
+  - espionage-campaign
+  - microsoft-signed-binary
+language: en
+source_urls:
+  - >-
+    https://cybersecuritynews.com/microsoft-signed-binary-used-to-sneak-lotuslite/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-22-microsoft-signed-binary-hijacked-to-deliver-lotuslite-backdoor-in-india-espionag
+severity: high
+threat_actor: LOTUSLITE
+threat_actor_origin: state-linked
+affected_sectors:
+  - banking
+affected_regions:
+  - India
+---
+## Executive Summary
+
+A state-linked threat group has been conducting a targeted espionage campaign against India's banking sector, leveraging a Microsoft-signed binary to bypass security defenses. The operation delivers a new variant of the LOTUSLITE backdoor via DLL sideloading, a technique that exploits the trust operating systems place in signed executables, according to a report from CyberSecurity News. The campaign underscores how adversaries continue to abuse legitimate code-signing mechanisms to evade detection in highly targeted operations.
+
+## Technical Analysis
+
+The attackers deploy LOTUSLITE by placing a malicious dynamic-link library (DLL) alongside a legitimate Microsoft-signed executable. When the signed binary loads, it inadvertently executes the attacker-supplied DLL, a classic DLL sideloading attack. The signed binary itself is unmodified and carries a valid Microsoft digital signature, making it appear trustworthy to endpoint detection systems and security software. The LOTUSLITE variant used in this campaign is a newer version of the backdoor, which provides remote access, file exfiltration, and command execution capabilities. The report does not specify which Microsoft binary was abused or provide a file hash for the signed executable. The campaign's targeting of India's financial sector suggests a focus on stealing sensitive data, including transaction records, customer information, and credentials.
+
+## Indicators of Compromise
+
+None identified in source material. The report from CyberSecurity News did not publish specific file hashes, IP addresses, domains, or registry keys associated with this campaign.
+
+## Tactics, Techniques & Procedures
+
+The primary technique observed is DLL sideloading (T1574.002), which falls under the Defense Evasion and Privilege Escalation tactics in the MITRE ATT&CK framework. The abuse of a Microsoft-signed binary to load malicious code is a variant of Signed Binary Proxy Execution (T1218). The LOTUSLITE backdoor itself functions as a remote access trojan, enabling persistence, command and control, and data theft. The campaign also involves targeted spear-phishing or other initial access vectors, though the report does not detail the delivery mechanism.
+
+## Threat Actor Context
+
+The LOTUSLITE backdoor has been previously associated with state-sponsored espionage operations, particularly those targeting South Asian entities. The specific threat actor behind this campaign is not named in the source material, but the targeting of India's banking sector aligns with known interests of state-linked groups focused on economic intelligence and financial sector disruption. The use of a signed binary to evade detection is a common tradecraft among advanced persistent threat (APT) groups.
+
+## Mitigations & Recommendations
+
+Organizations in the banking sector should implement application control policies that restrict execution to approved binaries and monitor for anomalous DLL loading behavior. Endpoint detection and response (EDR) solutions should be configured to alert on DLL sideloading events, especially those involving signed system binaries. Regular scanning for unauthorized DLL files in directories where signed executables reside can help detect such attacks. User awareness training on phishing remains critical, as initial access likely relies on social engineering.
+
+## References
+
+- [Microsoft-Signed Binary Used to Sneak LOTUSLITE Into India-Focused Espionage Campaign](https://cybersecuritynews.com/microsoft-signed-binary-used-to-sneak-lotuslite/)

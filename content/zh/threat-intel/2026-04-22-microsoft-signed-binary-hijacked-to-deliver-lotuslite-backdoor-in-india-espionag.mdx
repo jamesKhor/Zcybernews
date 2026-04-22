@@ -1,0 +1,56 @@
+---
+title: Microsoft-Signed Binary Hijacked to Deliver LOTUSLITE 后门
+slug: >-
+  2026-04-22-microsoft-signed-binary-hijacked-to-deliver-lotuslite-backdoor-in-india-espionag
+date: '2026-04-22'
+excerpt: 与国家有关的威胁行为者使用 Microsoft 签名的二进制文件进行 DLL 侧加载，以部署针对印度银行业的 LOTUSLITE 后门，通过一个…
+category: threat-intel
+tags:
+  - lotuslite
+  - dll-sideloading
+  - india-banking-sector
+  - espionage-campaign
+  - microsoft-signed-binary
+language: zh
+source_urls:
+  - >-
+    https://cybersecuritynews.com/microsoft-signed-binary-used-to-sneak-lotuslite/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-22-microsoft-signed-binary-hijacked-to-deliver-lotuslite-backdoor-in-india-espionag
+severity: high
+threat_actor: LOTUSLITE
+threat_actor_origin: state-linked
+affected_sectors:
+  - banking
+affected_regions:
+  - India
+---
+## 执行摘要
+
+一个与国家有关的威胁组织一直在对印度的银行部门进行有针对性的间谍活动，利用微软签名的二进制文件绕过安全防御。根据CyberSecurity News的报告，该行动通过DLL侧加载传递LOTUSLITE后门的新变种，这是一种利用操作系统对签名可执行文件的信任的技术。该活动突显了对手如何继续滥用合法的代码签名机制，在高度针对性的操作中逃避检测。
+
+## 技术分析
+
+攻击者通过将恶意动态链接库（DLL）与合法的微软签名可执行文件一起放置来部署LOTUSLITE。当签名的二进制文件加载时，它无意中执行了攻击者提供的DLL，这是一种经典的DLL侧加载攻击。签名的二进制文件本身未被修改，并带有有效的微软数字签名，使其对端点检测系统和安全软件看起来是可信的。在这次活动中使用的LOTUSLITE变种是后门的新版本，提供了远程访问、文件外泄和命令执行功能。报告没有指定滥用了哪个微软二进制文件，也没有提供签名可执行文件的文件哈希值。该活动针对印度金融部门表明了窃取敏感数据的重点，包括交易记录、客户信息和凭证。
+
+## 入侵指标
+
+在源材料中没有识别出任何入侵指标。CyberSecurity News的报告没有发布与此活动相关的特定文件哈希值、IP地址、域名或注册表键。
+
+## 战术、技术与程序
+
+观察到的主要技术是DLL侧加载（T1574.002），它属于MITRE ATT&CK框架中的防御规避和权限提升策略。滥用微软签名的二进制文件加载恶意代码是签名二进制代理执行（T1218）的一个变种。LOTUSLITE后门本身作为一个远程访问木马，使持续性、命令和控制以及数据盗窃成为可能。该活动还涉及针对性的鱼叉式网络钓鱼或其他初始访问向量，尽管报告没有详细说明交付机制。
+
+## 威胁行为者背景
+
+LOTUSLITE后门以前与国家资助的间谍活动有关，特别是那些针对南亚实体的活动。源材料中没有指明这次活动背后的具体威胁行为者，但针对印度银行部门的目标与关注经济情报和金融部门破坏的国家关联团体的已知利益一致。使用签名的二进制文件逃避检测是高级持续性威胁（APT）团体的常见手法。
+
+## 缓解措施与建议
+
+银行部门的组织应实施应用程序控制策略，限制执行到批准的二进制文件，并监控异常的DLL加载行为。端点检测和响应（EDR）解决方案应配置为在DLL侧加载事件上发出警报，特别是那些涉及签名系统二进制文件的事件。定期扫描签名可执行文件所在目录中的未授权DLL文件可以帮助检测此类攻击。用户对网络钓鱼的意识培训仍然至关重要，因为初始访问可能依赖于社会工程学。
+
+## 参考资料
+
+- [Microsoft-Signed Binary Used to Sneak LOTUSLITE Into India-Focused Espionage Campaign](https://cybersecuritynews.com/microsoft-signed-binary-used-to-sneak-lotuslite/)
