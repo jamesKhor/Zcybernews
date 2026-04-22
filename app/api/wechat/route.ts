@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/content";
 import { NextResponse, type NextRequest } from "next/server";
+import { absoluteArticleUrl } from "@/lib/article-url";
 
 export const revalidate = 3600;
 
@@ -13,7 +14,16 @@ export async function GET(request: NextRequest) {
   const feed = posts.map((p) => ({
     title: p.frontmatter.title,
     digest: p.frontmatter.excerpt,
-    content_source_url: `${siteUrl}/${locale}/articles/${p.frontmatter.slug}`,
+    // URL construction via lib/article-url (Phase B.3). Passing
+    // `siteUrl` explicitly preserves this route's historical
+    // localhost-dev fallback — the helper's default would be the
+    // production URL, which would incorrectly appear in dev feeds.
+    content_source_url: absoluteArticleUrl(
+      { slug: p.frontmatter.slug },
+      locale,
+      "posts",
+      siteUrl,
+    ),
     author: p.frontmatter.author,
     date: p.frontmatter.date,
     category: p.frontmatter.category,
