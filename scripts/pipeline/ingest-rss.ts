@@ -13,6 +13,7 @@ import {
 } from "../utils/dedup.js";
 import { isProcessed } from "../utils/cache.js";
 import { limit, withRetry } from "../utils/rate-limit.js";
+import { isVendorPR, vendorPrEnforceEnabled } from "./filters/vendor-pr.js";
 
 const parser = new Parser({
   timeout: 15000,
@@ -128,6 +129,37 @@ export async function ingestFeeds(maxStories = 20): Promise<Story[]> {
   }
 
   console.log(`[ingest] Fetched ${all.length} raw stories`);
+
+  // A2.3 vendor-PR filter. Log-only by default; flip
+  // VENDOR_PR_ENFORCE=true to drop after the FP-rate-<2% gate per
+  // Raymond's A2.6 plan. Classification populates Story.isVendor
+  // regardless of enforce mode so downstream stages (engine, fact-
+  // check) can read it for priority / gating decisions.
+  const enforceVendor = vendorPrEnforceEnabled();
+  let vendorFlagged = 0;
+  const classified = all.map((s) => {
+    const v = isVendorPR({ title: s.title, excerpt: s.excerpt });
+    if (v.isVendor) {
+      vendorFlagged++;
+      console.log(
+        `[vendor-pr] ${enforceVendor ? "DROP" : "flag"} ${s.sourceId ?? s.sourceName} ` +
+          `(${v.reason}): "${s.title.slice(0, 80)}"`,
+      );
+    }
+    return { ...s, isVendor: v.isVendor };
+  });
+  console.log(
+    `[vendor-pr] Flagged ${vendorFlagged}/${all.length} ` +
+      `(mode=${enforceVendor ? "ENFORCE" : "log-only"})`,
+  );
+  const postFilter = enforceVendor
+    ? classified.filter((s) => !s.isVendor)
+    : classified;
+  // Swap the local binding so subsequent stages (sort, dedup) operate
+  // on the post-filter collection. Deliberately keeping the same
+  // variable name so the rest of the function reads unchanged.
+  all.length = 0;
+  all.push(...postFilter);
 
   // Sort by date descending
   all.sort(
