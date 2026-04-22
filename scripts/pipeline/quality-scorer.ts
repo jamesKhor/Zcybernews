@@ -105,7 +105,28 @@ export interface QualityScore {
 
 // ─── Helpers ─────────────────────────────────────────────────────────
 
-/** Whitespace-split word count. Good enough for triage; not a linter. */
+/**
+ * Word-equivalent count with hybrid CJK + Latin handling (B-014 fix 2026-04-22).
+ *
+ * The previous `split(/\s+/)` implementation broke for ZH: CJK script has
+ * no inter-character spaces, so entire Chinese paragraphs counted as a
+ * single "word". The 2026-04-22 audit falsely flagged ~90% of ZH
+ * articles as `word_count_way_below_floor` SERIOUS and reported 59%
+ * SERIOUS articles when the true rate is likely 15-25%.
+ *
+ * Hybrid counter:
+ *   - CJK Unified Ideograph chars count as 0.5 word-equivalents
+ *     (reading-rate calibration: native readers absorb ~2 CJK chars
+ *     per English word of equivalent information density).
+ *   - Latin tokens (whitespace-split after CJK chars removed) count as 1.
+ *   - Sum both. Pure-EN behavior unchanged (no CJK chars to count).
+ *
+ * The 0.5 ratio is conservative — prefer false-negatives (miss a thin
+ * article) over false-positives (flag a real article as thin) because
+ * the downstream audit is a triage tool, not a hard gate.
+ *
+ * Good enough for triage; not a linter.
+ */
 export function countWords(body: string): number {
   const stripped = body
     // Drop fenced code blocks and markdown tables — they pad the count
@@ -116,7 +137,17 @@ export function countWords(body: string): number {
     .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
     .trim();
   if (stripped.length === 0) return 0;
-  return stripped.split(/\s+/).filter(Boolean).length;
+
+  // Count CJK characters before whitespace-splitting so CJK paragraphs
+  // don't collapse into a single "word".
+  const cjkMatches = stripped.match(/[\u4e00-\u9fff]/g);
+  const cjkChars = cjkMatches ? cjkMatches.length : 0;
+
+  // Remove CJK runs so Latin tokens aren't affected by adjacent CJK.
+  const latinOnly = stripped.replace(/[\u4e00-\u9fff]+/g, " ");
+  const latinWords = latinOnly.split(/\s+/).filter(Boolean).length;
+
+  return Math.round(cjkChars * 0.5) + latinWords;
 }
 
 /** True if body contains a References section heading. */

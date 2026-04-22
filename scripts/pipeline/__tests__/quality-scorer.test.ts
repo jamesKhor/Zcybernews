@@ -64,6 +64,53 @@ describe("countWords", () => {
     expect(countWords("")).toBe(0);
     expect(countWords("   \n  \n")).toBe(0);
   });
+
+  // ─── B-014 CJK handling ────────────────────────────────────────────
+  // Regression pin for the 2026-04-22 false-SERIOUS crisis: whitespace-
+  // split treated ZH paragraphs as 1 "word", flagging every ZH article
+  // thin. These tests lock in the hybrid counter so any future
+  // refactor that regresses CJK handling fails CI immediately.
+
+  it("counts each CJK character as 0.5 word-equivalents", () => {
+    // 4 CJK chars, no spaces → round(4 × 0.5) = 2
+    expect(countWords("网络安全")).toBe(2);
+    // 11 CJK chars → round(11 × 0.5) = round(5.5) = 6 in JS
+    expect(countWords("今日的最新网络威胁情报")).toBe(6);
+  });
+
+  it("counts CJK paragraphs faithfully (not as 1 word)", () => {
+    // The ZH Gentlemen-article-style paragraph that broke the v1 counter.
+    const zhParagraph =
+      "2025年8月，新兴的勒索软件组织发起了一场精密的多阶段攻击活动，系统性地瓦解了全球受害企业的安全防护体系。";
+    const n = countWords(zhParagraph);
+    // Pre-fix this returned ~1; post-fix should be well above 20 (57
+    // CJK chars × 0.5 = ~28).
+    expect(n).toBeGreaterThan(20);
+  });
+
+  it("handles mixed EN + CJK by summing both counts", () => {
+    // "The Gentlemen" = 2 Latin words
+    // "勒索软件组织" = 6 CJK chars → round(6 × 0.5) = 3
+    // Total = 5
+    const mixed = "The Gentlemen 勒索软件组织";
+    expect(countWords(mixed)).toBe(5);
+  });
+
+  it("preserves pure-EN behavior unchanged (no CJK present)", () => {
+    expect(countWords("one two three four five")).toBe(5);
+    // Pin that common EN body shape still counts correctly
+    expect(countWords("The quick brown fox jumps over the lazy dog.")).toBe(9);
+  });
+
+  it("keeps DO-NOT-TRANSLATE tokens as Latin words inside ZH text", () => {
+    // Translation prompt keeps "LockBit" + "CVE-2026-1234" in English.
+    // These should count as 2 Latin words; CJK chars add separately.
+    const doc = "新型勒索软件 LockBit 利用 CVE-2026-1234 入侵系统。";
+    const n = countWords(doc);
+    // 14 CJK chars → 7, plus 2 Latin tokens → 9
+    expect(n).toBeGreaterThanOrEqual(8);
+    expect(n).toBeLessThanOrEqual(10);
+  });
 });
 
 describe("hasReferencesSection", () => {
