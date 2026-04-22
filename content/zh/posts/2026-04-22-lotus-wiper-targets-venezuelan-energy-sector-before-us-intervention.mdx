@@ -1,0 +1,47 @@
+---
+title: Lotus Wiper 针对委内瑞拉能源部门在美国干预前发起攻击
+slug: 2026-04-22-lotus-wiper-targets-venezuelan-energy-sector-before-us-intervention
+date: '2026-04-22'
+excerpt: Lotus Wiper 恶意软件针对委内瑞拉国有能源公司 PDVSA，通过覆盖驱动器和删除文件破坏数据，在美国领导的干预行动之前，即 2026 年 3 月。
+category: malware
+tags:
+  - wiper
+  - energy
+  - venezuela
+  - apt
+  - incident-response
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/new-wiper-malware-targeted-venezuelan-energy-sector-prior-to-us-intervention/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-lotus-wiper-targets-venezuelan-energy-sector-before-us-intervention
+severity: high
+affected_sectors:
+  - energy
+affected_regions:
+  - Venezuela
+---
+## Lotus Wiper 针对委内瑞拉能源部门的攻击发生在美国干预之前
+
+## 执行摘要
+一种之前未被记录的擦除器恶意软件，被称为 Lotus Wiper，在2026年3月被部署针对委内瑞拉国有能源公司 Petróleos de Venezuela, S.A. (PDVSA)。根据 SecurityWeek 的一份报告，这次攻击发生在美国领导的军事干预该国之前。这种恶意软件旨在通过覆盖驱动器和系统性地删除文件来摧毁数据，特别关注阻碍恢复机制。
+
+## 技术分析
+Lotus Wiper 是一种旨在数据擦除的破坏性恶意软件。其主要功能是覆盖物理驱动器的内容，使数据恢复变得极其困难。恶意软件还在受感染的系统上执行系统性文件删除。正如 SecurityWeek 报告的那样，一个值得注意的特点是它针对系统恢复机制，这表明其意图通过阻止从备份或系统还原点恢复来最大化运营中断。源材料中未具体说明确切的初始感染向量。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+主要的 TTP 涉及通过驱动器覆盖和文件删除进行数据破坏（T1485）。恶意软件专注于通过针对系统还原功能来抑制恢复（T1490）。攻击的时机，紧接在一个重大的地缘政治事件之前，表明可能与干预相关的破坏性或间谍活动有潜在联系。
+
+## 威胁行为者背景
+源材料没有将 Lotus Wiper 归因于任何特定的已知威胁行为者或高级持续性威胁（APT）组织。在地缘政治紧张时期针对关键国家能源基础设施实体的攻击表明，这可能是一个可能由国家赞助或政治动机的操作。缺乏勒索要求与通常用于破坏而非财务收益的擦除器恶意软件相符。
+
+## 缓解措施与建议
+关键基础设施部门的组织，特别是能源部门，应确保保持强大、离线的备份，并定期进行测试。在地缘政治不稳定时期，应加强对潜在破坏性网络活动的安全性监控。事件响应计划应包括快速隔离和控制表现出类似擦除器行为的系统的程序。
+
+## 参考资料
+- [https://www.securityweek.com/new-wiper-malware-targeted-venezuelan-energy-sector-prior-to-us-intervention/](https://www.securityweek.com/new-wiper-malware-targeted-venezuelan-energy-sector-prior-to-us-intervention/)

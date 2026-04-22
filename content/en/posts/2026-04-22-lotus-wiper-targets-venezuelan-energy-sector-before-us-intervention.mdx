@@ -1,0 +1,48 @@
+---
+title: Lotus Wiper Targets Venezuelan Energy Sector Before US Intervention
+slug: 2026-04-22-lotus-wiper-targets-venezuelan-energy-sector-before-us-intervention
+date: '2026-04-22'
+excerpt: >-
+  Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA,
+  destroying data by overwriting drives and deleting files before a US-led
+  intervention in March 2026.
+category: malware
+tags:
+  - wiper
+  - energy
+  - venezuela
+  - apt
+  - incident-response
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/new-wiper-malware-targeted-venezuelan-energy-sector-prior-to-us-intervention/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-lotus-wiper-targets-venezuelan-energy-sector-before-us-intervention
+severity: high
+affected_sectors:
+  - energy
+affected_regions:
+  - Venezuela
+---
+## Executive Summary
+A previously undocumented wiper malware, dubbed Lotus Wiper, was deployed against Venezuela's state-owned energy company Petróleos de Venezuela, S.A. (PDVSA) in March 2026. According to a report by SecurityWeek, the attack occurred just prior to a U.S.-led military intervention in the country. The malware is designed to destroy data by overwriting drives and systematically deleting files, with a specific focus on hampering recovery mechanisms.
+
+## Technical Analysis
+Lotus Wiper is a destructive malware designed for data eradication. Its primary function is to overwrite the contents of physical drives, making data recovery extremely difficult. The malware also executes systematic file deletion across the infected system. A notable feature, as reported by SecurityWeek, is its targeting of system recovery mechanisms, which suggests an intent to maximize operational disruption by preventing restoration from backups or system restore points. The exact initial infection vector remains unspecified in the source material.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary TTP involves data destruction (T1485) through drive overwriting and file deletion. The malware exhibits a focus on inhibiting recovery (T1490) by targeting system restoration features. The timing of the attack, immediately preceding a significant geopolitical event, suggests a potential link to disruptive or espionage objectives aligned with the intervention.
+
+## Threat Actor Context
+The source material does not attribute Lotus Wiper to a specific known threat actor or advanced persistent threat (APT) group. The targeting of a critical national energy infrastructure entity during a period of heightened geopolitical tension indicates a likely state-sponsored or politically motivated operation. The lack of a ransom demand aligns with wiper malware typically used for sabotage rather than financial gain.
+
+## Mitigations & Recommendations
+Organizations in critical infrastructure sectors, particularly energy, should ensure robust, offline backups are maintained and tested regularly. Security monitoring should be heightened around periods of geopolitical instability for potential disruptive cyber activity. Incident response plans should include procedures for rapid isolation and containment of systems exhibiting wiper-like behavior.
+
+## References
+- https://www.securityweek.com/new-wiper-malware-targeted-venezuelan-energy-sector-prior-to-us-intervention/
