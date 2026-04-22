@@ -144,6 +144,23 @@ function writeMdx(
   frontmatter: Record<string, unknown>,
   body: string,
 ): string {
+  // SEO frontmatter sanity gate — last line of defense before MDX hits disk.
+  // post-process.ts handles auto-recovery; fact-check.ts handles severity
+  // routing. This catches the case where someone calls writeMdx directly
+  // without those layers (e.g. admin publish flow, future scripts).
+  const sourceUrls = frontmatter.source_urls;
+  if (!Array.isArray(sourceUrls) || sourceUrls.length === 0) {
+    console.warn(
+      `[write] ⚠ ${datedSlug} has empty source_urls — JSON-LD will lack citations. Should never happen via pipeline; check caller.`,
+    );
+  }
+  const tags = frontmatter.tags;
+  if (!Array.isArray(tags) || tags.length === 0) {
+    console.warn(
+      `[write] ⚠ ${datedSlug} has empty tags — breaks tag-page flow. post-process should derive from title.`,
+    );
+  }
+
   const dir = path.join(CONTENT_DIR, locale, type);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 

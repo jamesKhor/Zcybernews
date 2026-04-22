@@ -137,7 +137,13 @@ export type FactCheckIssue = {
     | "domain_not_in_source"
     | "actor_not_verified"
     | "url_unreachable"
-    | "number_not_in_source";
+    | "number_not_in_source"
+    | "title_too_long"
+    | "title_too_short"
+    | "excerpt_too_long"
+    | "excerpt_too_short"
+    | "tags_empty"
+    | "source_urls_empty";
   message: string;
   value?: string;
 };
@@ -239,6 +245,56 @@ export async function factCheckArticle(
   const { checkUrls = true } = options;
   const issues: FactCheckIssue[] = [];
   const sourceText = buildSourceCorpus(sources);
+
+  // ── 0. Frontmatter SEO gates ───────────────────────────────────────────
+  // Defense-in-depth — post-process truncates titles/excerpts and derives
+  // tags from title when empty. If any of these survive to fact-check,
+  // post-process is broken or being bypassed. Audit 2026-04-21 found 51%
+  // of EN articles had over-length titles BEFORE these gates existed.
+  const title = article.title ?? "";
+  const titleLen = title.length;
+  if (titleLen > 70) {
+    issues.push({
+      severity: "high",
+      type: "title_too_long",
+      message: `Title is ${titleLen} chars (max 70 — Google SERP truncates). post-process should have caught this.`,
+      value: String(titleLen),
+    });
+  } else if (titleLen < 30 && titleLen > 0) {
+    // Soft signal — short titles aren't catastrophic but indicate weak content
+    issues.push({
+      severity: "medium",
+      type: "title_too_short",
+      message: `Title is only ${titleLen} chars (min 30 for SEO weight)`,
+      value: String(titleLen),
+    });
+  }
+
+  const excerpt = typeof article.excerpt === "string" ? article.excerpt : "";
+  const excerptLen = excerpt.length;
+  if (excerptLen > 200) {
+    issues.push({
+      severity: "high",
+      type: "excerpt_too_long",
+      message: `Excerpt is ${excerptLen} chars (max 200 — meta description gets truncated). post-process should have caught this.`,
+      value: String(excerptLen),
+    });
+  } else if (excerptLen < 100 && excerptLen > 0) {
+    issues.push({
+      severity: "medium",
+      type: "excerpt_too_short",
+      message: `Excerpt is only ${excerptLen} chars (min 100 for useful SERP snippet)`,
+      value: String(excerptLen),
+    });
+  }
+
+  if (!Array.isArray(article.tags) || article.tags.length === 0) {
+    issues.push({
+      severity: "high",
+      type: "tags_empty",
+      message: `Article has no tags — breaks tag-page rank flow + JSON-LD keywords. post-process should derive from title if LLM omits.`,
+    });
+  }
 
   // ── 1a. CVE placeholder hard gate ──────────────────────────────────────
   // If post-process.ts failed to recover or strip the placeholder, reject

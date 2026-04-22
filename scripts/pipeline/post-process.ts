@@ -399,12 +399,103 @@ export function postProcessArticle(
     article.tags = Array.from(new Set(cleaned));
   }
 
-  // ── 6. Title — hard truncate to 80 chars (we said so in the prompt) ────
-  if (article.title.length > 80) {
-    // Truncate at last space before 80 chars
-    const cut = article.title.slice(0, 80).replace(/\s+\S*$/, "");
-    article.title = cut || article.title.slice(0, 80);
+  // ── 6. Title — hard truncate to 70 chars (Google SERP truncates at ~60 ──
+  // but allows 70 before snipping mid-word). Audit 2026-04-21 found 51% of
+  // EN articles had titles >70 chars. Prompt says 50-60 but LLM ignores ~50%
+  // of the time when content is dense. Enforce in code, not prompt.
+  if (article.title.length > 70) {
+    const cut = article.title.slice(0, 70).replace(/\s+\S*$/, "");
+    article.title = (cut || article.title.slice(0, 70)).trim();
+  }
+
+  // ── 7. Excerpt — hard truncate to 180 chars at sentence or word boundary ──
+  // Audit 2026-04-21 found 48% of EN excerpts >200 chars. Google SERP
+  // shows ~155-160 of meta description; >200 means most readers see "...".
+  // Aim for 180 max so we land in the 140-180 sweet spot.
+  if (typeof article.excerpt === "string" && article.excerpt.length > 180) {
+    let cut = article.excerpt.slice(0, 180);
+    // Prefer cut at last sentence-end punctuation (. ! ?) within window
+    const lastSentenceEnd = Math.max(
+      cut.lastIndexOf(". "),
+      cut.lastIndexOf("! "),
+      cut.lastIndexOf("? "),
+    );
+    if (lastSentenceEnd > 100) {
+      cut = cut.slice(0, lastSentenceEnd + 1);
+    } else {
+      // Fall back to word boundary, drop trailing partial word
+      cut = cut.replace(/\s+\S*$/, "").trim();
+      // Add ellipsis if we cut mid-thought
+      if (!/[.!?]$/.test(cut)) cut += "…";
+    }
+    article.excerpt = cut;
+  }
+
+  // ── 8. Tags — fallback derive from title if empty ──────────────────────
+  // Empty tags means: no JSON-LD keywords, no tag-page link flow, missing
+  // related-articles signal. Audit 2026-04-21 caught the apt28 article
+  // with empty tags — it shipped a year of zero hreflang signals.
+  if (!Array.isArray(article.tags) || article.tags.length === 0) {
+    article.tags = deriveTagsFromTitle(article.title);
   }
 
   return article;
+}
+
+/**
+ * Derive 3-5 tags from a title when LLM didn't produce any. Lowercases,
+ * filters stopwords, hyphenates multi-word phrases. Last-resort fallback —
+ * not as good as LLM-chosen tags but better than empty (which breaks
+ * tag-page rank flow entirely).
+ */
+const TITLE_STOPWORDS = new Set([
+  "a",
+  "an",
+  "the",
+  "and",
+  "or",
+  "but",
+  "for",
+  "with",
+  "to",
+  "of",
+  "in",
+  "on",
+  "at",
+  "by",
+  "from",
+  "as",
+  "is",
+  "are",
+  "was",
+  "were",
+  "be",
+  "been",
+  "has",
+  "have",
+  "had",
+  "do",
+  "does",
+  "did",
+  "will",
+  "would",
+  "could",
+  "should",
+  "may",
+  "might",
+  "must",
+  "new",
+  "via",
+  "after",
+  "before",
+  "into",
+]);
+function deriveTagsFromTitle(title: string): string[] {
+  const words = title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, " ")
+    .split(/\s+/)
+    .filter((w) => w.length > 2 && !TITLE_STOPWORDS.has(w));
+  // Take up to 5 unique words, prefer earlier (more important) words
+  return Array.from(new Set(words)).slice(0, 5);
 }
