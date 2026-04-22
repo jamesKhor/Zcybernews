@@ -1,10 +1,10 @@
 {
   "tag": "evasion",
   "locale": "en",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Payouts King",
@@ -18,12 +18,13 @@
     "Czech republic"
   ],
   "severity_mix": {
-    "high": 6
+    "high": 7,
+    "medium": 1
   },
   "recent_excerpts": [
+    "PureRAT hides its Windows PE payloads inside PNG files and executes them filelessly in memory, a technique detailed by cybersecurity researchers analyzing a new sophisticated campaign.",
     "The Gentlemen ransomware-as-a-service group uses the SystemBC SOCKS5 proxy tool to hide command-and-control traffic, according to a Check Point DFIR report analyzing a recent affiliate attack.",
-    "The Payouts King ransomware group is deploying the open-source QEMU emulator to create hidden virtual machines on compromised hosts, establishing a persistent reverse SSH backdoor that evades conventi",
-    "Cisco Talos researchers identify the PowMix botnet, active since December 2025, targeting Czech workers with randomized C2 beaconing to evade detection and deploy additional payloads."
+    "The Payouts King ransomware group is deploying the open-source QEMU emulator to create hidden virtual machines on compromised hosts, establishing a persistent reverse SSH backdoor that evades conventi"
   ],
-  "sources_hash": "a1e91dcb90ac7efd"
+  "sources_hash": "ab793ab5646c939c"
 }

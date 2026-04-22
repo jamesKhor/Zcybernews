@@ -1,9 +1,9 @@
 {
   "tag": "fraud",
   "locale": "en",
-  "intro": "Financial services and cryptocurrency firms were the most targeted sectors in a series of fraud incidents reported between April 12 and April 18, 2026. The activity, concentrated in the United States and globally, also impacted the entertainment, retail, and e-commerce industries. Of the eleven articles cataloged, the majority detailed high and medium-severity threats, indicating a significant operational risk. This period saw a diverse range of fraudulent schemes aimed at exploiting digital transactions and trust across these critical sectors.",
-  "sources_hash": "359497e91fd9725f",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:09:06.705Z",
+  "intro": "This archive collects 12 articles tagged `fraud` published between April 12, 2026 and April 21, 2026. Coverage includes 4 high, 5 medium, and 2 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "eb01a3618eeab141",
+  "model": "template:sparse",
+  "generated_at": "2026-04-22T04:06:25.066Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

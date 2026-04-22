@@ -1,10 +1,10 @@
 {
   "tag": "fraud",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-18"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
@@ -24,13 +24,13 @@
   ],
   "severity_mix": {
     "informational": 2,
-    "medium": 4,
+    "medium": 5,
     "high": 4
   },
   "recent_excerpts": [
     "MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。",
     "金融行业监管局建立了一个新的情报中心，以集中分析针对经纪商和资本市场的网络威胁和欺诈行为。",
-    "Recorded Future 详细说明了威胁行为者如何利用企业身份验证的漏洞，从兑现被盗支票转变为策划AI驱动的购物诈骗，冒充合法企业以窃取商品。"
+    "ProxySmart，一个在白俄罗斯明斯克运营的平台，为17个国家的94个地点提供SIM农场代理网络，为网络犯罪分子提供用于欺诈和凭证填充的住宅IP地址。"
   ],
-  "sources_hash": "359497e91fd9725f"
+  "sources_hash": "eb01a3618eeab141"
 }

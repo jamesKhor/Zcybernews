@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
@@ -14,13 +14,13 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "informational": 3,
+    "informational": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi",
     "Boost Security's SmokedMeat framework executes live attack demonstrations from a single CI/CD pipeline flaw, showing engineering teams exactly how attackers move to compromise code, secrets, and infra",
-    "Legit Security releases Legitify, an open-source scanner that identifies security misconfigurations in GitHub and GitLab organizations, repositories, and CI/CD runners to combat software supply chain",
-    "Objective Development releases a free Linux version of its macOS firewall, providing long-absent per-process network connection visibility for desktop privacy."
+    "Legit Security releases Legitify, an open-source scanner that identifies security misconfigurations in GitHub and GitLab organizations, repositories, and CI/CD runners to combat software supply chain"
   ],
-  "sources_hash": "c5a34a2a476224ff"
+  "sources_hash": "518054fa469201dc"
 }

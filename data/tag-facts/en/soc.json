@@ -1,22 +1,22 @@
 {
   "tag": "soc",
   "locale": "en",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-19"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
-    "informational": 5
+    "informational": 7
   },
   "recent_excerpts": [
-    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout.",
-    "Recorded Future's Insikt Group outlines four essential integration workflows to move threat intelligence from a siloed feed to an automated component of security operations, enabling a shift from reac",
-    "A new analysis argues most AI-powered security operations center tools merely accelerate alert triage without reducing the underlying workload for analysts, failing to deliver on promises of true auto"
+    "Mature security operations centers reduce mean time to respond by 40% by integrating threat intelligence into workflows, while others waste time on siloed data and manual processes.",
+    "Security operations centers (SOCs) stall at lower maturity levels when threat intelligence feeds remain external to analyst workflows, according to a new analysis.",
+    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout."
   ],
-  "sources_hash": "ebafb4a7f117761d"
+  "sources_hash": "204b09b6b610b4ec"
 }

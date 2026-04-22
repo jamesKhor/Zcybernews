@@ -1,10 +1,10 @@
 {
   "tag": "microsoft",
   "locale": "zh",
-  "count": 36,
+  "count": 37,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Storm-2755"
@@ -44,16 +44,16 @@
     "Japan"
   ],
   "severity_mix": {
-    "high": 17,
+    "high": 18,
     "medium": 10,
     "informational": 3,
     "critical": 5,
     "low": 1
   },
   "recent_excerpts": [
+    "CVE-2026-33829 在 Windows Snipping Tool 中允许攻击者通过恶意链接窃取 NTLMv2 哈希。一个公开的 PoC 漏洞利用目标是 ms-screensketch 协议，以启用凭证中继攻击。",
     "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。",
-    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。",
-    "微软的 Windows 11 Dev Build 26300.8170 在 Windows 安全应用中添加了一个专门的安全启动监控面板，为管理员提供了固件安全特性的状态和配置的单窗格视图。"
+    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。"
   ],
-  "sources_hash": "4ab3fbf38e05b7f2"
+  "sources_hash": "1e1d1c51013af600"
 }

@@ -1,12 +1,13 @@
 {
   "tag": "botnet",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-18"
+    "latest": "2026-04-21"
   },
   "top_actors": [
+    "The Gentlemen",
     "W3LL"
   ],
   "top_cves": [
@@ -31,13 +32,13 @@
   ],
   "severity_mix": {
     "medium": 2,
-    "high": 4,
+    "high": 5,
     "critical": 1
   },
   "recent_excerpts": [
     "A new Mirai botnet variant, 'Nexcorium,' is exploiting a command injection flaw (CVE-2024-3721) in TBK DVRs and end-of-life TP-Link routers to conscript devices into a distributed denial-of-service (D",
     "Cisco Talos researchers identify the PowMix botnet, active since December 2025, targeting Czech workers with randomized C2 beaconing to evade detection and deploy additional payloads.",
-    "A global law enforcement operation involving 21 countries has seized 53 internet domains used to sell DDoS-for-hire services, disrupting a key enabler of cybercrime and online harassment."
+    "Check Point Research uncovers a 1,570-victim botnet linked to The Gentlemen ransomware, using the SystemBC proxy malware to establish stealthy SOCKS5 tunnels for command and control."
   ],
-  "sources_hash": "98b9cd04f821673d"
+  "sources_hash": "1d5fb48fe9535e31"
 }

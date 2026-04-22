@@ -1,9 +1,9 @@
 {
   "tag": "surveillance",
   "locale": "en",
-  "intro": "Government and telecommunications entities were the primary targets of surveillance-related cyber activity in mid-April 2026, with notable impact in the United States and Iran. The period saw five reports, including a critical vulnerability, CVE-2026-22898, which carried a CVSS score of 8.8. The activity spanned multiple sectors, including civil-society, private-sector, and technology, with a mix of severities ranging from informational to critical. This collection of reporting provides insight into the technical vulnerabilities and sectoral targeting that characterized this wave of surveillance.",
-  "sources_hash": "d9e3565479e21e42",
+  "intro": "Government and telecommunications entities were the primary targets of surveillance activity covered in six recent reports from mid-April 2026. The private sector and civil-society groups were also affected, with notable incidents in the United states, Iran, and Mexico. The technical landscape included the critical-severity vulnerability CVE-2026-22898, which carries a CVSS score of 8.8. The archive reflects a range of incident severities, comprising three informational reports alongside one critical, one high, and one medium-severity analysis.",
+  "sources_hash": "a2633db7cf18a30d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-21T04:08:20.661Z",
+  "generated_at": "2026-04-22T04:07:42.538Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "en",
-  "count": 23,
+  "count": 24,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Pushpaganda"
@@ -25,15 +25,15 @@
     "Japan"
   ],
   "severity_mix": {
+    "high": 10,
     "informational": 10,
     "critical": 1,
-    "medium": 3,
-    "high": 9
+    "medium": 3
   },
   "recent_excerpts": [
+    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software.",
     "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n",
-    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution.",
-    "SentinelOne research finds human-led security teams require 4-6 hours to validate a single alert, while automated attacks unfold in seconds, creating a critical defensive gap for enterprises."
+    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution."
   ],
-  "sources_hash": "53a61478efc977fb"
+  "sources_hash": "b6e480782935a5e0"
 }

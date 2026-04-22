@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "zh",
-  "count": 7,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-19"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Triad Nexus",
@@ -12,21 +12,24 @@
   ],
   "top_cves": [],
   "top_sectors": [
+    "e-commerce",
+    "financial services",
     "financial-services",
-    "multiple"
+    "multiple",
+    "online services"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "informational": 1,
-    "high": 5,
-    "medium": 1
+    "informational": 2,
+    "medium": 2,
+    "high": 5
   },
   "recent_excerpts": [
+    "IPQS 详细描述了一种使用身份、设备和网络信号的3层欺诈检测策略，能够阻止99.5%的自动化攻击，而不为合法客户增加用户摩擦。",
     "MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。",
-    "一项对194个网络犯罪论坛帖子的研究表明，威胁行为者正在积极探索人工智能在恶意软件混淆、超现实网络钓鱼和自动化漏洞发现中的应用，其中40%的讨论集中在实际攻击应用上。",
-    "Tycoon 2FA 钓鱼即服务平台的中断导致山寨攻击激增，因为威胁行为者在其他工具包中重用其工具和技术，增加了多因素认证绕过尝试的总体数量。"
+    "ProxySmart，一个在白俄罗斯明斯克运营的平台，为17个国家的94个地点提供SIM农场代理网络，为网络犯罪分子提供用于欺诈和凭证填充的住宅IP地址。"
   ],
-  "sources_hash": "c6acd147d1e9733c"
+  "sources_hash": "8688373d9249e771"
 }

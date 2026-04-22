@@ -1,13 +1,14 @@
 {
   "tag": "android",
   "locale": "en",
-  "count": 9,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
-    "Mirax"
+    "Mirax",
+    "NGate"
   ],
   "top_cves": [
     {
@@ -16,25 +17,27 @@
   ],
   "top_sectors": [
     "cryptocurrency",
+    "financial services",
     "individuals",
     "technology",
     "telecommunications"
   ],
   "top_regions": [
     "Europe",
+    "Brazil",
     "Global",
     "Latin america",
     "Spain"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 6,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
-    "MiningDropper, a multi-stage Android malware framework, delivers infostealers, RATs, and banking trojans to devices via disguised apps, according to CyberSecurity News researchers.",
-    "Mirax Android RAT reached over 220,000 users via Meta ads, turning infected devices into SOCKS5 proxies for threat actors to route malicious traffic and steal data from Spanish-speaking victims.",
-    "Google's Android 17 Beta 4 release introduces support for post-quantum hybrid key agreement in TLS and imposes new memory limits on apps, marking significant security enhancements ahead of the OS's fi"
+    "NGate malware, using AI-generated code, has infected the legitimate HandyPay NFC app to steal payment card data and PINs from over 220,000 Android users in Brazil, according to ESET.",
+    "NGate malware version 2.0, built with AI assistance, hides in a trojanized NFC payment app to steal SMS, contacts, and crypto wallet data from Android devices while evading security software.",
+    "MiningDropper, a multi-stage Android malware framework, delivers infostealers, RATs, and banking trojans to devices via disguised apps, according to CyberSecurity News researchers."
   ],
-  "sources_hash": "53ad46a85c8f1c3b"
+  "sources_hash": "e558fe48a4c8a756"
 }

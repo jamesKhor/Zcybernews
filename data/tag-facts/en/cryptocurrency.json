@@ -1,10 +1,10 @@
 {
   "tag": "cryptocurrency",
   "locale": "en",
-  "count": 13,
+  "count": 15,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "FakeWallet",
@@ -24,20 +24,20 @@
     "venture capital"
   ],
   "top_regions": [
+    "United states",
     "Canada",
     "Europe",
     "Kyrgyzstan",
-    "North america",
-    "United kingdom"
+    "North america"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 12,
     "critical": 3
   },
   "recent_excerpts": [
+    "Apple removed 45 malicious cryptocurrency apps from its App Store after they stole recovery phrases and private keys from users, mimicking legitimate wallets like MetaMask and Coinbase.",
     "Kaspersky discovered 22 malicious iOS apps on the official App Store impersonating crypto wallets like MetaMask and Coinbase, stealing seed phrases and private keys from over 1,000 victims.",
-    "Omnistealer malware, detailed by Malwarebytes, steals credentials from 1Password, Bitwarden, NordPass, and Exodus crypto wallets, using the Solana blockchain for stealthy command-and-control communica",
-    "A malicious Ledger Live app distributed via Apple's official App Store for macOS stole approximately $9.5 million from 50 victims by harvesting recovery phrases."
+    "Omnistealer malware, detailed by Malwarebytes, steals credentials from 1Password, Bitwarden, NordPass, and Exodus crypto wallets, using the Solana blockchain for stealthy command-and-control communica"
   ],
-  "sources_hash": "88d489ef0088307c"
+  "sources_hash": "39ace639931061c7"
 }

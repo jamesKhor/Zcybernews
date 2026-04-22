@@ -1,23 +1,23 @@
 {
   "tag": "devsecops",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
-    "informational": 4,
+    "informational": 5,
     "high": 1
   },
   "recent_excerpts": [
+    "Analysis of 1,000+ cybersecurity job postings shows a 40% surge in demand for AI security specialists and cloud security architects, with DevSecOps roles requiring Azure DevOps expertise commanding pr",
     "Boost Security's SmokedMeat framework executes live attack demonstrations from a single CI/CD pipeline flaw, showing engineering teams exactly how attackers move to compromise code, secrets, and infra",
-    "GitLab 18.11 integrates agentic AI across the software lifecycle, automating security fix generation and CI/CD pipeline configuration, aiming to address the 'AI paradox' of rapid code creation outpaci",
-    "Legit Security releases Legitify, an open-source scanner that identifies security misconfigurations in GitHub and GitLab organizations, repositories, and CI/CD runners to combat software supply chain"
+    "GitLab 18.11 integrates agentic AI across the software lifecycle, automating security fix generation and CI/CD pipeline configuration, aiming to address the 'AI paradox' of rapid code creation outpaci"
   ],
-  "sources_hash": "e087ba8e217e0026"
+  "sources_hash": "7c9fbd4e0909981e"
 }

@@ -1,15 +1,15 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "count": 36,
+  "count": 41,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "FakeWallet",
-    "Storm-2755",
-    "Tycoon 2FA"
+    "Scattered Spider",
+    "SideWinder"
   ],
   "top_cves": [
     {
@@ -30,26 +30,26 @@
   ],
   "top_sectors": [
     "hospitality",
-    "finance",
-    "multiple",
     "technology",
-    "travel"
+    "cryptocurrency",
+    "finance",
+    "government"
   ],
   "top_regions": [
     "Global",
+    "United states",
+    "Bangladesh",
     "Canada",
-    "Latin america",
-    "Mexico",
-    "Ukraine"
+    "Latin america"
   ],
   "severity_mix": {
-    "high": 29,
+    "high": 34,
     "medium": 7
   },
   "recent_excerpts": [
+    "Apple removed 45 malicious cryptocurrency apps from its App Store after they stole recovery phrases and private keys from users, mimicking legitimate wallets like MetaMask and Coinbase.",
     "Kaspersky discovered 22 malicious iOS apps on the official App Store impersonating crypto wallets like MetaMask and Coinbase, stealing seed phrases and private keys from over 1,000 victims.",
-    "Microsoft's April 2026 Patch Tuesday adds a critical warning dialog to Windows Remote Desktop, blocking threat actors from using malicious .rdp files to steal credentials via phishing.",
-    "A malicious Ledger Live app distributed via Apple's official App Store for macOS stole approximately $9.5 million from 50 victims by harvesting recovery phrases."
+    "Microsoft's April 2026 Patch Tuesday adds a critical warning dialog to Windows Remote Desktop, blocking threat actors from using malicious .rdp files to steal credentials via phishing."
   ],
-  "sources_hash": "d498c84c12affc7f"
+  "sources_hash": "df9216858d1e84de"
 }

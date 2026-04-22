@@ -1,10 +1,10 @@
 {
   "tag": "session-hijacking",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-04-19"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "Storm-2755"
@@ -19,7 +19,7 @@
     "Canada"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "medium": 1
   },
   "recent_excerpts": [
@@ -27,5 +27,5 @@
     "Ivanti 修补了其 Neurons for ITSM 平台中的两个中等严重性的漏洞，这些漏洞可能允许经过身份验证的攻击者劫持用户会话或保留对系统的未授权访问。",
     "新的 'Storm' infostealer 将加密的浏览器数据外泄以进行服务器端解密，使得会话劫持和绕过 MFA 成为可能。Varonis 的分析详细说明了这种技术。"
   ],
-  "sources_hash": "4befe4e37e201a57"
+  "sources_hash": "9a59229e3731a4f2"
 }

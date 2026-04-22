@@ -1,13 +1,14 @@
 {
   "tag": "windows",
   "locale": "zh",
-  "count": 17,
+  "count": 20,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
-    "Chaotic Eclipse"
+    "Chaotic Eclipse",
+    "Kyber"
   ],
   "top_cves": [
     {
@@ -32,14 +33,14 @@
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
+    "high": 15,
     "medium": 4,
-    "high": 12,
     "critical": 1
   },
   "recent_excerpts": [
-    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。",
-    "微软修补了Windows win32kfull驱动程序中的一个本地权限提升漏洞（CVE-2026-33104），该漏洞可能允许经过身份验证的攻击者获得SYSTEM权限。该漏洞由Zero Day Initiative披露。",
-    "在Microsoft Windows Secure Kernel中存在一个双释放漏洞（CVE-2026-26179），允许本地攻击者提升权限，可能提升至SYSTEM级别。这个漏洞的CVSS评分为7.5，要求攻击者首先执行高权限代码。"
+    "Kyber 勒索软件部署两个不同的有效载荷以加密 Windows 系统和 VMware ESXi 服务器，使用自定义工具清除 ESXi 快照并阻碍恢复。攻击链始于被泄露的 RDP 凭证。",
+    "PureRAT 将其 Windows PE 有效载荷隐藏在 PNG 文件中，并在内存中无文件执行它们，这是网络安全研究人员分析一种新的复杂活动时详细描述的技术。",
+    "CVE-2026-33829 在 Windows Snipping Tool 中允许攻击者通过恶意链接窃取 NTLMv2 哈希。一个公开的 PoC 漏洞利用目标是 ms-screensketch 协议，以启用凭证中继攻击。"
   ],
-  "sources_hash": "442c65f58fc53565"
+  "sources_hash": "81b4a257c5002a57"
 }

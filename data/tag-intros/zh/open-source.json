@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "intro": "本档案收录了 5 篇带有「open-source」标签的文章，发布时间从2026年4月12日至2026年4月20日。其中包含2 篇中危、3 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "c5a34a2a476224ff",
-  "source_intro_hash": "8a952485c820cd6a",
+  "intro": "本档案收录了 6 篇带有「open-source」标签的文章，发布时间从2026年4月12日至2026年4月21日。其中包含2 篇中危、4 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "518054fa469201dc",
+  "source_intro_hash": "3c55859a233f9eb3",
   "model": "template:sparse",
-  "generated_at": "2026-04-20T11:21:42.931Z",
+  "generated_at": "2026-04-22T04:09:14.344Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

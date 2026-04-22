@@ -1,9 +1,9 @@
 {
   "tag": "regulation",
   "locale": "en",
-  "intro": "This tag archive collects eight articles from April 12-17, 2026, covering regulatory developments. The content includes one high-severity report, two medium-severity items, and five informational updates. The primary sectors impacted are technology, critical infrastructure, and advertising, with education also noted. Geographically, the focus is on the United States, the European Union, and Asia, with several global developments. These articles track the evolving regulatory landscape affecting cybersecurity practices across these key industries and regions.",
-  "sources_hash": "94addfe44f5207b4",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:10:31.381Z",
+  "intro": "This archive collects 9 articles tagged `regulation` published between April 12, 2026 and April 21, 2026. Coverage includes 1 high, 2 medium, and 6 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "0d4899b5dfb20346",
+  "model": "template:sparse",
+  "generated_at": "2026-04-22T04:06:53.258Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

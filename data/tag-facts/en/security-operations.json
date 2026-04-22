@@ -1,0 +1,22 @@
+{
+  "tag": "security-operations",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-21"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "informational": 5
+  },
+  "recent_excerpts": [
+    "The Hacker News reports most enterprise AI security tools fail post-demo due to data quality, integration, and cost issues, stalling critical threat detection and response initiatives.",
+    "Mature security operations centers reduce mean time to respond by 40% by integrating threat intelligence into workflows, while others waste time on siloed data and manual processes.",
+    "Security operations centers (SOCs) stall at lower maturity levels when threat intelligence feeds remain external to analyst workflows, according to a new analysis."
+  ],
+  "sources_hash": "9fd9410360855365"
+}

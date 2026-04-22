@@ -1,9 +1,9 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "intro": "This archive collects six advisories from the Cybersecurity and Infrastructure Security Agency (CISA) published between April 12 and April 17, 2026. The alerts primarily address high-severity vulnerabilities, with five rated high and one critical. Among the specific flaws highlighted are CVE-2026-34197, a high-severity issue with a CVSS score of 8.8, alongside CVE-2024-20662 and CVE-2024-21412. These entries document the agency's ongoing effort to catalog and mitigate significant security risks within that timeframe.",
-  "sources_hash": "df1139a6f9d32934",
+  "intro": "The software development and technology sectors were the primary targets of a global series of advisories from CISA in April 2026. The agency highlighted seven distinct vulnerabilities over a ten-day period, with a severity mix of five high and two critical alerts. Among the key flaws addressed were CVE-2026-34197, a high-severity issue with a CVSS score of 8.8, alongside CVE-2024-20662 and CVE-2024-21412. These advisories provided critical mitigation guidance for organizations operating worldwide.",
+  "sources_hash": "7991b825543501cc",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:13:06.501Z",
+  "generated_at": "2026-04-22T04:07:15.225Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

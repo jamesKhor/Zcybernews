@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
@@ -14,13 +14,13 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "informational": 3,
+    "informational": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。",
     "Boost Security 的 SmokedMeat 框架从单一 CI/CD 流水线缺陷执行实时攻击演示，向工程团队展示攻击者如何移动以破坏代码、机密和基础设施。",
-    "Legit Security 发布 Legitify，这是一个开源扫描器，用于识别 GitHub 和 GitLab 组织、仓库以及 CI/CD 运行器中的安全配置错误，以对抗软件供应链风险。",
-    "Objective Development发布了其macOS防火墙的免费Linux版本，为桌面隐私提供了长期缺失的进程级网络连接可见性。"
+    "Legit Security 发布 Legitify，这是一个开源扫描器，用于识别 GitHub 和 GitLab 组织、仓库以及 CI/CD 运行器中的安全配置错误，以对抗软件供应链风险。"
   ],
-  "sources_hash": "c5a34a2a476224ff"
+  "sources_hash": "518054fa469201dc"
 }

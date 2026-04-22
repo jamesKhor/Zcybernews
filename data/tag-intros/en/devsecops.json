@@ -1,9 +1,9 @@
 {
   "tag": "devsecops",
   "locale": "en",
-  "intro": "This archive collects 5 articles tagged `devsecops` published between April 13, 2026 and April 20, 2026. Coverage includes 1 high, and 4 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "e087ba8e217e0026",
+  "intro": "This archive collects 6 articles tagged `devsecops` published between April 13, 2026 and April 21, 2026. Coverage includes 1 high, and 5 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "7c9fbd4e0909981e",
   "model": "template:sparse",
-  "generated_at": "2026-04-20T11:13:50.491Z",
+  "generated_at": "2026-04-22T04:07:28.520Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

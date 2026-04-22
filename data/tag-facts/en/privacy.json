@@ -1,33 +1,34 @@
 {
   "tag": "privacy",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "technology",
-    "education",
     "government",
+    "education",
     "telecommunications",
     "Advertising"
   ],
   "top_regions": [
     "Global",
-    "United states"
+    "United states",
+    "Mexico"
   ],
   "severity_mix": {
-    "informational": 5,
+    "informational": 6,
     "medium": 7,
     "high": 3
   },
   "recent_excerpts": [
+    "Grupo Seguritech, a Mexican surveillance firm with a history of human rights allegations, is expanding its operations into the United States, raising data privacy and security concerns.",
     "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n",
-    "Notion public pages expose the email addresses and profile photos of all editors, a flaw affecting millions of users of the collaboration platform.",
-    "Freelance platform Fiverr exposed sensitive user files, including tax documents and PII, via a misconfigured cloud storage bucket, with data indexed by Google search, according to security researchers"
+    "Notion public pages expose the email addresses and profile photos of all editors, a flaw affecting millions of users of the collaboration platform."
   ],
-  "sources_hash": "a988cf46cb5017d0"
+  "sources_hash": "65af5a6cb078b587"
 }

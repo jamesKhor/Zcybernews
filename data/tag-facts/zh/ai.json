@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "count": 22,
+  "count": 23,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Pushpaganda"
@@ -25,15 +25,15 @@
     "Japan"
   ],
   "severity_mix": {
+    "high": 9,
     "informational": 10,
     "critical": 1,
-    "medium": 3,
-    "high": 8
+    "medium": 3
   },
   "recent_excerpts": [
+    "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。",
     "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。",
-    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。",
-    "SentinelOne 研究发现，人类主导的安全团队需要 4-6 小时来验证单个警报，而自动化攻击在几秒钟内展开，为企业创造了一个关键的防御缺口。"
+    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。"
   ],
-  "sources_hash": "bff40ffd8a0f7698"
+  "sources_hash": "2311434ca2a1239f"
 }

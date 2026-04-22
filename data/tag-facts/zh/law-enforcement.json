@@ -1,15 +1,15 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "count": 14,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Scattered Spider",
-    "W3LL",
-    "W3LL Team"
+    "BlackCat (ALPHV)",
+    "W3LL"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,14 @@
     "Florida"
   ],
   "severity_mix": {
-    "high": 11,
+    "high": 12,
+    "informational": 1,
     "medium": 3
   },
   "recent_excerpts": [
     "佛罗里达执法部门正在调查一名学生如何使用ChatGPT制造校园枪击威胁，这是AI聊天机器人未能阻止危险内容的更广泛模式的一部分。",
-    "Tyler Buchanan，英国Scattered Spider网络犯罪集团的成员，对共谋实施电汇欺诈和计算机黑客攻击的指控表示认罪，承认通过SIM交换攻击从受害者那里窃取了超过800,000美元的加密货币。",
-    "洛杉矶警察局报告称，一名城市律师的数字存储系统遭到7.7TB和337,000个文件的泄露，暴露了敏感的执法数据。"
+    "Tyler Robert Buchanan承认参与美国阴谋，通过短信钓鱼、企业网络入侵和针对全国受害者的SIM交换攻击，窃取了超过100万美元的加密货币。",
+    "41岁的前网络安全公司DigitalMint员工Angelo Martino承认在担任谈判代表期间共谋针对美国公司的BlackCat勒索软件攻击。"
   ],
-  "sources_hash": "739e272178f4ee97"
+  "sources_hash": "ac4b96ad8c315c6a"
 }

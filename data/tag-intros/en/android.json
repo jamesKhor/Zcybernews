@@ -1,9 +1,9 @@
 {
   "tag": "android",
   "locale": "en",
-  "intro": "This archive covers nine reports from April 12–20, 2026, detailing Android-related threats. The activity includes Mirax and exploits leveraging CVE-2023-4863. The reporting highlights a severity mix of four high, three informational, and two critical incidents. The primary affected sectors were cryptocurrency, individuals, technology, and telecommunications. Geographically, the impacts were noted in Europe, Latin America, Spain, and on a Global scale.",
-  "sources_hash": "53ad46a85c8f1c3b",
+  "intro": "The Mirax and NGate threat actors were active in the Android ecosystem during this period, with CVE-2023-4863 among the key vulnerabilities exploited. Their campaigns primarily targeted the cryptocurrency and financial services sectors, along with individuals, technology, and telecommunications. The attacks showed a significant geographic focus on Europe, Brazil, Latin America, and Spain, with some incidents having a global reach. The severity of the reported incidents was notable, with a majority classified as high or critical among the eleven articles in this archive.",
+  "sources_hash": "e558fe48a4c8a756",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-21T04:07:28.269Z",
+  "generated_at": "2026-04-22T04:06:30.140Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

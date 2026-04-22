@@ -1,31 +1,33 @@
 {
   "tag": "encryption",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-15"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
-    "all",
     "technology",
+    "all",
+    "social media",
     "telecommunications"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "United kingdom"
   ],
   "severity_mix": {
+    "informational": 4,
     "high": 1,
     "critical": 1,
-    "informational": 3,
     "medium": 2
   },
   "recent_excerpts": [
+    "英国监管机构 Ofcom 对 Telegram 展开正式调查，因为有证据显示 Telegram 分享儿童性虐待材料（CSAM）以及可能违反在线安全法的加密报告规则。",
     "密码学专家警告说，迁移到后量子密码学将需要数年时间，敦促组织现在就开始量子风险管理，以保护加密数据免受未来'Q-Day'收获现在，解密稍后攻击。",
-    "Apache 软件基金会修补了 Tomcat 的 EncryptInterceptor 中的一个关键漏洞，该漏洞可能允许攻击者绕过加密并查看敏感数据。需要立即更新。",
-    "Google 已将 Gmail 的客户端加密扩展到 Android 和 iOS，允许企业用户在移动设备上处理敏感数据，无需第三方应用程序。"
+    "Apache 软件基金会修补了 Tomcat 的 EncryptInterceptor 中的一个关键漏洞，该漏洞可能允许攻击者绕过加密并查看敏感数据。需要立即更新。"
   ],
-  "sources_hash": "0f061e9bd0121a51"
+  "sources_hash": "47de9638beb6c49c"
 }

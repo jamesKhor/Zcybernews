@@ -1,10 +1,10 @@
 {
   "tag": "infostealer",
   "locale": "en",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Omnistealer"
@@ -18,12 +18,12 @@
     "Ukraine"
   ],
   "severity_mix": {
-    "high": 4
+    "high": 6
   },
   "recent_excerpts": [
-    "MiningDropper, a multi-stage Android malware framework, delivers infostealers, RATs, and banking trojans to devices via disguised apps, according to CyberSecurity News researchers.",
-    "Omnistealer malware, detailed by Malwarebytes, steals credentials from 1Password, Bitwarden, NordPass, and Exodus crypto wallets, using the Solana blockchain for stealthy command-and-control communica",
-    "A new malware family dubbed 'AgingFly' is stealing authentication data from Chromium browsers and WhatsApp in targeted attacks against Ukrainian local government bodies and hospitals."
+    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software.",
+    "NGate malware version 2.0, built with AI assistance, hides in a trojanized NFC payment app to steal SMS, contacts, and crypto wallet data from Android devices while evading security software.",
+    "MiningDropper, a multi-stage Android malware framework, delivers infostealers, RATs, and banking trojans to devices via disguised apps, according to CyberSecurity News researchers."
   ],
-  "sources_hash": "a372c5562e99d9de"
+  "sources_hash": "7a81777c04c36980"
 }

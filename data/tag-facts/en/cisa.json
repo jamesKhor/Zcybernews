@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-17"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [
@@ -19,16 +19,21 @@
       "id": "CVE-2024-21412"
     }
   ],
-  "top_sectors": [],
-  "top_regions": [],
+  "top_sectors": [
+    "software development",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 5,
-    "critical": 1
+    "critical": 2
   },
   "recent_excerpts": [
     "A high-severity flaw in Apache ActiveMQ Classic, CVE-2026-34197 (CVSS 8.8), is under active exploitation, prompting CISA to add it to its Known Exploited Vulnerabilities catalog and mandate patching f",
     "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching.",
     "CISA warns that a critical SQL injection vulnerability in Fortinet products is being actively exploited, urging immediate patching. The specific CVE ID has not yet been publicly disclosed."
   ],
-  "sources_hash": "df1139a6f9d32934"
+  "sources_hash": "7991b825543501cc"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "regulation",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-17"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
@@ -19,17 +19,18 @@
     "United states",
     "Global",
     "Asia",
-    "European union"
+    "European union",
+    "United kingdom"
   ],
   "severity_mix": {
+    "informational": 5,
     "medium": 2,
-    "informational": 4,
     "high": 1
   },
   "recent_excerpts": [
+    "英国监管机构 Ofcom 对 Telegram 展开正式调查，因为有证据显示 Telegram 分享儿童性虐待材料（CSAM）以及可能违反在线安全法的加密报告规则。",
     "提议对16岁以下儿童禁用社交媒体可能会无意中将他们推向风险更高、监管更少的平台，并需要侵入性的年龄验证系统，这将带来新的数据隐私和安全威胁。",
-    "根据《海事运输安全法》，美国海岸警卫队新的网络安全规则要求第三方审计、针对OT的安全计划和专职人员，为关键基础设施提供监管模式。",
-    "美国立法者就人工智能举行了一次保密简报会，表达了对其可能造成社会破坏、国家安全威胁以及发展速度超过监管的深刻担忧。"
+    "根据《海事运输安全法》，美国海岸警卫队新的网络安全规则要求第三方审计、针对OT的安全计划和专职人员，为关键基础设施提供监管模式。"
   ],
-  "sources_hash": "ed12bf9e4d453c6c"
+  "sources_hash": "9d3ca10e56226f5c"
 }

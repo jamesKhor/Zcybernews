@@ -1,9 +1,9 @@
 {
   "tag": "google",
   "locale": "en",
-  "intro": "Between April 12 and April 17, 2026, ZCyberNews published seven articles covering Google-related cybersecurity developments. The reporting, which includes five informational pieces and two high-severity alerts, tracked activity with a global impact. The technology and telecommunications sectors were prominently featured, alongside significant implications for creators and media organizations. The coverage detailed distinct incidents and threats, reflecting a period of concentrated scrutiny on the tech giant's ecosystem and its broad influence across multiple industries.",
-  "sources_hash": "ba3d9efeac93ab3c",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:12:12.037Z",
+  "intro": "This archive collects 8 articles tagged `google` published between April 12, 2026 and April 21, 2026. Coverage includes 3 high, and 5 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "8e02a8cc1fcea7e5",
+  "model": "template:sparse",
+  "generated_at": "2026-04-22T04:07:09.686Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,0 +1,34 @@
+{
+  "tag": "linux",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-22"
+  },
+  "top_actors": [
+    "Payouts King",
+    "The Gentlemen"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "education",
+    "homelab",
+    "iot",
+    "maker"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 1,
+    "informational": 2
+  },
+  "recent_excerpts": [
+    "The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi 系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。",
+    "Payouts King 勒索软件团伙正在部署开源 QEMU 模拟器，在被入侵的主机上创建隐藏的虚拟机，建立持久的反向 SSH 后门，以规避传统的端点检测。",
+    "Raspberry Pi OS 6.2现在在新安装中默认要求sudo命令输入密码，这是一个重要的安全加固变更，以防止未经授权的权限提升。"
+  ],
+  "sources_hash": "b90ec5aaf3fe7665"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "microsoft",
   "locale": "en",
-  "count": 36,
+  "count": 37,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Storm-2755"
@@ -44,16 +44,16 @@
     "Japan"
   ],
   "severity_mix": {
-    "high": 17,
+    "high": 18,
     "medium": 10,
     "informational": 3,
     "critical": 5,
     "low": 1
   },
   "recent_excerpts": [
+    "CVE-2026-33829 in Windows Snipping Tool allows attackers to steal NTLMv2 hashes via malicious links. A public PoC exploit targets the ms-screensketch protocol to enable credential relay attacks.",
     "Microsoft released out-of-band updates for Windows Server 2019 and 2022 after April 2026 security patches caused boot failures and domain controller authentication issues, forcing some administrators",
-    "Microsoft's April 2026 Patch Tuesday adds a critical warning dialog to Windows Remote Desktop, blocking threat actors from using malicious .rdp files to steal credentials via phishing.",
-    "Microsoft's Windows 11 Dev Build 26300.8170 adds a dedicated Secure Boot monitoring panel to the Windows Security app, providing administrators with a single-pane view of the firmware security feature"
+    "Microsoft's April 2026 Patch Tuesday adds a critical warning dialog to Windows Remote Desktop, blocking threat actors from using malicious .rdp files to steal credentials via phishing."
   ],
-  "sources_hash": "4ab3fbf38e05b7f2"
+  "sources_hash": "1e1d1c51013af600"
 }

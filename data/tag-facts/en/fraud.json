@@ -1,10 +1,10 @@
 {
   "tag": "fraud",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-18"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
@@ -24,13 +24,13 @@
   ],
   "severity_mix": {
     "informational": 2,
-    "medium": 4,
+    "medium": 5,
     "high": 4
   },
   "recent_excerpts": [
     "MITRE released the Fight Fraud Framework (F3), a unified knowledge base mapping the intersection of cyber attack tactics and financial fraud, aiming to close the operational gap between security and f",
     "The Financial Industry Regulatory Authority has established a new intelligence hub to centralize analysis of cyber threats and fraud targeting broker-dealers and capital markets.",
-    "Recorded Future details how threat actors exploit corporate identity verification gaps, pivoting from cashing stolen checks to orchestrating AI-powered shopping scams that impersonate legitimate busin"
+    "ProxySmart, a platform operated from Minsk, Belarus, powers SIM farm proxy networks across 94 locations in 17 countries, providing cybercriminals with residential IP addresses for fraud and credential"
   ],
-  "sources_hash": "359497e91fd9725f"
+  "sources_hash": "eb01a3618eeab141"
 }

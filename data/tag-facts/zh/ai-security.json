@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 38,
+  "count": 40,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "OpenClaw"
@@ -26,15 +26,15 @@
     "Global"
   ],
   "severity_mix": {
+    "informational": 12,
     "critical": 5,
     "high": 17,
-    "medium": 6,
-    "informational": 10
+    "medium": 6
   },
   "recent_excerpts": [
-    "CVE-2026-5760，SGLang 推理引擎中的一个关键 9.8 CVSS 漏洞，允许攻击者通过上传恶意 GGUF 模型文件来执行任意代码，危及 AI/ML 服务部署。",
-    "Qualys警告称，像Claude Mythos这样的AI代理可以将漏洞发现时间从几个月缩短到几小时，压缩补丁窗口，并以大量新的CVEs压倒安全团队。",
-    "Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project Glasswing 项目以发现并修补漏洞。"
+    "对1000多个网络安全职位发布的分析显示，对人工智能安全专家和云安全架构师的需求激增了40%，需要Azure DevOps专业知识的DevSecOps角色可以获得更高的薪资。",
+    "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。",
+    "CVE-2026-5760，SGLang 推理引擎中的一个关键 9.8 CVSS 漏洞，允许攻击者通过上传恶意 GGUF 模型文件来执行任意代码，危及 AI/ML 服务部署。"
   ],
-  "sources_hash": "49240392ee3a2d34"
+  "sources_hash": "072fe6f7a6eea29e"
 }

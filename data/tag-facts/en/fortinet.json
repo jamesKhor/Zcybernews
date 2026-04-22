@@ -1,10 +1,10 @@
 {
   "tag": "fortinet",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-18"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [
@@ -16,12 +16,12 @@
   "top_regions": [],
   "severity_mix": {
     "critical": 4,
-    "high": 1
+    "high": 2
   },
   "recent_excerpts": [
     "A proof-of-concept exploit for CVE-2026-39808, a critical command injection vulnerability in Fortinet FortiSandbox, has been released.",
     "Fortinet released patches for 11 vulnerabilities, including two Critical flaws in FortiSandbox and FortiAnalyzer/FortiManager, requiring immediate attention from network administrators.",
     "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching."
   ],
-  "sources_hash": "1f6cbd18513aacd0"
+  "sources_hash": "91e2c5943b06f8a5"
 }

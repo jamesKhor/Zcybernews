@@ -1,15 +1,15 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "count": 36,
+  "count": 41,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "FakeWallet",
-    "Storm-2755",
-    "Tycoon 2FA"
+    "Scattered Spider",
+    "SideWinder"
   ],
   "top_cves": [
     {
@@ -30,26 +30,26 @@
   ],
   "top_sectors": [
     "hospitality",
-    "finance",
-    "multiple",
     "technology",
-    "travel"
+    "cryptocurrency",
+    "finance",
+    "government"
   ],
   "top_regions": [
     "Global",
+    "United states",
+    "Bangladesh",
     "Canada",
-    "Latin america",
-    "Mexico",
-    "Ukraine"
+    "Latin america"
   ],
   "severity_mix": {
-    "high": 29,
+    "high": 34,
     "medium": 7
   },
   "recent_excerpts": [
+    "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。",
     "Kaspersky 发现了 22 个恶意的 iOS 应用程序在官方 App Store 上冒充 MetaMask 和 Coinbase 等加密钱包，从超过 1,000 名受害者那里窃取种子短语和私钥。",
-    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。",
-    "一个通过苹果官方App Store分发的恶意Ledger Live应用通过收集恢复短语，从50名受害者那里窃取了大约950万美元。"
+    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。"
   ],
-  "sources_hash": "d498c84c12affc7f"
+  "sources_hash": "df9216858d1e84de"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "intro": "Between April 12 and April 20, 2026, ZCyberNews published 20 reports on data breaches, the vast majority of which were assessed as high severity. The threat landscape during this period was defined by activity from ShinyHunters, RansomHub, and Rhysida. These incidents primarily targeted organizations within the government, hospitality, retail, technology, and travel sectors. Geographically, the affected entities were concentrated in Europe, the United States, and North America, with other significant events impacting Mexico and having a global reach.",
-  "sources_hash": "1913f896b274f513",
+  "intro": "Over a ten-day span from April 12 to April 21, 2026, ZCyberNews documented 22 major data breach incidents. The overwhelming majority of these events, 18 in total, were assessed as high severity. The threat landscape was dominated by the distinct activities of ShinyHunters, RansomHub, and Rhysida. Their operations impacted a wide array of critical sectors, including government, healthcare, hospitality, retail, and technology. Geographically, the incidents were concentrated in the United States and Europe, with notable activity in North America and France, alongside several breaches with a global footprint.",
+  "sources_hash": "a8c70350eed3a784",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-21T04:06:50.222Z",
+  "generated_at": "2026-04-22T04:05:49.270Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

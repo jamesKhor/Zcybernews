@@ -1,15 +1,15 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "count": 14,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Scattered Spider",
-    "W3LL",
-    "W3LL Team"
+    "BlackCat (ALPHV)",
+    "W3LL"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,14 @@
     "Florida"
   ],
   "severity_mix": {
-    "high": 11,
+    "high": 12,
+    "informational": 1,
     "medium": 3
   },
   "recent_excerpts": [
     "Florida law enforcement is investigating how a student used ChatGPT to craft a threat of a campus shooting, part of a broader pattern where AI chatbots fail to block dangerous content.",
-    "Tyler Buchanan, a UK member of the Scattered Spider cybercrime group, pleaded guilty to charges of conspiracy to commit wire fraud and computer hacking, admitting to SIM-swapping attacks that stole ov",
-    "The Los Angeles Police Department reports a breach of 7.7 terabytes and 337,000 files from a city attorney's digital storage system, exposing sensitive law enforcement data."
+    "Tyler Robert Buchanan admitted to a U.S. conspiracy that stole over $1 million in cryptocurrency via SMS phishing, corporate network intrusions, and SIM swapping attacks targeting victims nationwide.",
+    "Angelo Martino, a 41-year-old former employee of cybersecurity firm DigitalMint, pleads guilty to conspiring in BlackCat ransomware attacks against U.S. companies while working as a negotiator."
   ],
-  "sources_hash": "739e272178f4ee97"
+  "sources_hash": "ac4b96ad8c315c6a"
 }

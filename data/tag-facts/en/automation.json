@@ -1,24 +1,24 @@
 {
   "tag": "automation",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
-    "informational": 4,
+    "informational": 5,
     "medium": 1,
     "high": 1
   },
   "recent_excerpts": [
+    "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi",
     "SentinelOne research finds human-led security teams require 4-6 hours to validate a single alert, while automated attacks unfold in seconds, creating a critical defensive gap for enterprises.",
-    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout.",
-    "Recorded Future's Insikt Group outlines four essential integration workflows to move threat intelligence from a siloed feed to an automated component of security operations, enabling a shift from reac"
+    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout."
   ],
-  "sources_hash": "563de92cffd1adab"
+  "sources_hash": "6b76343b9aa6f829"
 }

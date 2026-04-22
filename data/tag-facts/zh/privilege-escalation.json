@@ -1,10 +1,10 @@
 {
   "tag": "privilege-escalation",
   "locale": "zh",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-19"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Chaotic Eclipse"
@@ -42,7 +42,7 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "critical": 2,
     "medium": 1
   },
@@ -51,5 +51,5 @@
     "CVE-2026-5424，Avast Premium Security 自我保护驱动中的一个缺陷，允许本地攻击者提升至SYSTEM权限。Zero Day Initiative 为这个漏洞分配了7.8的CVSS评分。",
     "根据零日计划，DriveLock 终端安全软件中的关键SQL注入漏洞（CVE-2026-5490）允许经过身份验证的攻击者提升权限并绕过产品自身的安全控制。"
   ],
-  "sources_hash": "7e416acc2c367f1e"
+  "sources_hash": "6008fea59234a114"
 }

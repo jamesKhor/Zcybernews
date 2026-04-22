@@ -1,10 +1,10 @@
 {
   "tag": "google",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-17"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
@@ -18,13 +18,13 @@
     "Global"
   ],
   "severity_mix": {
-    "informational": 5,
-    "high": 2
+    "high": 3,
+    "informational": 5
   },
   "recent_excerpts": [
+    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software.",
     "Google's Android 17 Beta 4 release introduces support for post-quantum hybrid key agreement in TLS and imposes new memory limits on apps, marking significant security enhancements ahead of the OS's fi",
-    "Google announced new Android 17 privacy policies restricting contact and location data access, while its 2025 ad safety report details the blocking of 8.3 billion policy-violating ads and 24.9 million",
-    "Google has integrated a memory-safe DNS parser written in Rust into Pixel phones to eliminate an entire class of vulnerabilities in the low-level networking stack."
+    "Google announced new Android 17 privacy policies restricting contact and location data access, while its 2025 ad safety report details the blocking of 8.3 billion policy-violating ads and 24.9 million"
   ],
-  "sources_hash": "ba3d9efeac93ab3c"
+  "sources_hash": "8e02a8cc1fcea7e5"
 }

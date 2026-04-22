@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 20,
+  "count": 22,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "ShinyHunters",
@@ -14,26 +14,26 @@
   "top_cves": [],
   "top_sectors": [
     "government",
+    "healthcare",
     "hospitality",
     "retail",
-    "technology",
-    "travel"
+    "technology"
   ],
   "top_regions": [
-    "Europe",
     "United states",
+    "Europe",
     "North america",
-    "Global",
-    "Mexico"
+    "France",
+    "Global"
   ],
   "severity_mix": {
-    "high": 16,
+    "high": 18,
     "medium": 3
   },
   "recent_excerpts": [
     "TheGentlemen ransomware group claims a total infrastructure breach of Atlassian partner Adaptavist, stealing source code and customer data from clients like NASA and Visa.",
-    "Seiko USA's website was defaced by a hacker claiming theft of its Shopify customer database, including names, emails, and order details for 30,000 individuals, with a ransom demand to prevent public l",
-    "Vercel confirms a breach exposing limited customer credentials after attackers compromised an employee's account via a third-party AI tool, Context.ai."
+    "France Titres, the French government agency for ID documents, confirms a data breach after a threat actor offers to sell stolen citizen information, including names, addresses, and passport numbers.",
+    "Southern Illinois Dermatology, Saint Anthony Hospital, and North Texas Behavioral Health Authority disclose breaches affecting over 600,000 patients, exposing names, SSNs, and medical data."
   ],
-  "sources_hash": "1913f896b274f513"
+  "sources_hash": "a8c70350eed3a784"
 }

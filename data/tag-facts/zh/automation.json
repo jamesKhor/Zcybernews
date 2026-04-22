@@ -1,24 +1,24 @@
 {
   "tag": "automation",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
-    "informational": 4,
+    "informational": 5,
     "medium": 1,
     "high": 1
   },
   "recent_excerpts": [
+    "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。",
     "SentinelOne 研究发现，人类主导的安全团队需要 4-6 小时来验证单个警报，而自动化攻击在几秒钟内展开，为企业创造了一个关键的防御缺口。",
-    "Rapid7 的新 AI 助手为 SOC 团队分析了 22,052 起安全事件，以即时总结日志数据，解释警报，并生成调查查询，旨在减少分析师的疲劳。",
-    "Recorded Future 的 Insikt Group 概述了四种基本的集成工作流程，将威胁情报从一个孤立的信息源转变为安全运营的自动化组成部分，从而实现从被动防御到主动防御的转变。"
+    "Rapid7 的新 AI 助手为 SOC 团队分析了 22,052 起安全事件，以即时总结日志数据，解释警报，并生成调查查询，旨在减少分析师的疲劳。"
   ],
-  "sources_hash": "563de92cffd1adab"
+  "sources_hash": "6b76343b9aa6f829"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "initial-access",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [],
   "top_cves": [],
@@ -17,12 +17,12 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
     "A trojanized Slack installer delivers a remote access tool that creates a hidden desktop, allowing attackers to bypass multi-factor authentication and silently control victim machines.",
     "Threat actors are abusing the Obsidian note-taking app to deliver the novel PHANTOMPULSE RAT via malicious plugins, targeting individuals in finance and cryptocurrency sectors in a campaign tracked as",
-    "Threat actors are using Microsoft Teams to impersonate IT helpdesk staff, tricking employees into installing Microsoft's own Quick Assist tool to grant attackers full remote control of corporate syste"
+    "The Hacker News reports identity-based attacks, using stolen credentials and MFA bypass, are the dominant initial access vector in modern breaches, rendering sophisticated exploits unnecessary for ini"
   ],
-  "sources_hash": "1b7ef136d304655e"
+  "sources_hash": "91623df2b6bd43b7"
 }

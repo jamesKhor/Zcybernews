@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "intro": "2026年4月13日至20日期间，ZCyberNews追踪到五份关于高级持续性威胁的高危报告。相关活动涉及特征明显的威胁行为体CyberAv3ngers、Sapphire Sleet和UAC-0247。其行动主要针对加密货币、政府、医疗、工业和技术领域。观测到的影响范围遍及全球，尤其聚焦于乌克兰和美国。这波高度集中的高级别事件凸显了针对关键基础设施和金融系统的复杂网络攻击活动所具有的持续性与广泛性。",
-  "sources_hash": "8559d13cd48aeae5",
-  "source_intro_hash": "2d96ab8508a26164",
+  "intro": "本档案追踪了2026年4月中旬的六份高严重性APT报告。相关活动涉及特征鲜明的威胁行为体CyberAv3ngers、Sapphire Sleet和SideWinder。其行动主要针对加密货币、政府和医疗保健领域，并对工业与技术组织也造成了显著影响。从地理分布看，事件波及范围从美国、乌克兰延伸至孟加拉国和南亚地区，其中多个活动被记录为具有全球影响。此期间记录的所有攻击均被评估为高严重性。",
+  "sources_hash": "fc2a5dca430b5ed2",
+  "source_intro_hash": "a8df92a1972729d7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-21T04:08:40.648Z",
+  "generated_at": "2026-04-22T04:08:08.272Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

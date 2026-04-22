@@ -1,16 +1,20 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 50,
+  "count": 54,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Lazarus Group",
     "TeamPCP"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-1731",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-39987",
       "cvss": 9.3
@@ -26,8 +30,8 @@
     "technology",
     "logistics",
     "manufacturing",
-    "cryptocurrency",
-    "financial-services"
+    "software development",
+    "cryptocurrency"
   ],
   "top_regions": [
     "Global",
@@ -36,15 +40,15 @@
     "North america"
   ],
   "severity_mix": {
-    "critical": 6,
+    "critical": 8,
+    "high": 32,
     "informational": 4,
-    "high": 30,
     "medium": 9
   },
   "recent_excerpts": [
-    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution.",
-    "Boost Security's SmokedMeat framework executes live attack demonstrations from a single CI/CD pipeline flaw, showing engineering teams exactly how attackers move to compromise code, secrets, and infra",
-    "Socket identified 108 malicious Chrome extensions that infected 20,000 users, stealing Google and Telegram session cookies and injecting ads via a shared command-and-control server."
+    "CVE-2026-1731, a critical 9.8 CVSS flaw in BeyondTrust's Bomgar RMM, is being actively exploited to deploy ransomware and compromise IT service providers in global supply chain attacks.",
+    "Apple removed 45 malicious cryptocurrency apps from its App Store after they stole recovery phrases and private keys from users, mimicking legitimate wallets like MetaMask and Coinbase.",
+    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution."
   ],
-  "sources_hash": "d0d3c6abbeb20824"
+  "sources_hash": "61e8f584b57367b7"
 }

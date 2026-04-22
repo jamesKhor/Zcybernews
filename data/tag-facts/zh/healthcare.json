@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-16"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Rhysida",
@@ -19,17 +19,19 @@
     "technology"
   ],
   "top_regions": [
+    "United states",
+    "Illinois",
     "Netherlands",
-    "Ukraine",
-    "United states"
+    "Texas",
+    "Ukraine"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "南伊利诺伊州皮肤科、圣安东尼医院和北德克萨斯州行为健康局披露了影响超过60万患者的违规行为，暴露了姓名、社会安全号码和医疗数据。",
     "Cookeville Regional Medical Center 确认 2025 年 Rhysida 集团的勒索软件攻击导致 337,000 人的数据在 500GB 文件被盗后被泄露。",
-    "UAC-0247 威胁行为者正在积极针对乌克兰市政医疗保健和政府机构，部署恶意软件以窃取浏览器数据、WhatsApp会话和凭证，同时在网络内部横向移动。",
-    "荷兰医疗IT提供商ChipSoft遭受勒索软件攻击，迫使其将患者和提供者门户下线，扰乱了荷兰全国范围内的关键医疗管理。"
+    "UAC-0247 威胁行为者正在积极针对乌克兰市政医疗保健和政府机构，部署恶意软件以窃取浏览器数据、WhatsApp会话和凭证，同时在网络内部横向移动。"
   ],
-  "sources_hash": "a9029f440f5d0996"
+  "sources_hash": "bfc1701d3c4ca7cb"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "2026年4月12日至20日期间，ZCyberNews追踪到23起勒索软件事件，其中大多数被评定为高严重性。威胁行为者Payouts King是报告频率最高的，同时出现的还有Interlock和RansomHub的活动。此期间被利用的一个关键漏洞是CVE-2026-34197，其CVSS评分为8.8。攻击主要针对医疗保健、物流、制造和零售行业，对欧洲、美国、土耳其和荷兰造成了显著影响，同时也有波及全球的事件发生。",
-  "sources_hash": "dbb6707bb4518135",
-  "source_intro_hash": "4ed21dfa2514e3f2",
+  "intro": "The Gentlemen、Payouts King和BlackCat (ALPHV)是此期间最为活跃的勒索软件威胁行为者，共有29篇报道涉及其攻击活动。其操作利用关键漏洞，特别是CVE-2026-1731和CVE-2026-34197，针对广泛行业发起攻击。欧洲、美国、土耳其和法国的医疗保健、物流、制造及零售组织均受到影响。2026年4月12日至4月22日期间的报告详细描述了以高严重性事件为主的严重程度分布，反映出针对全球基础设施的一波集中勒索软件活动。",
+  "sources_hash": "5321178f9b8f6d6a",
+  "source_intro_hash": "9e8d0af630bd87fc",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-21T04:09:36.530Z",
+  "generated_at": "2026-04-22T04:09:37.069Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

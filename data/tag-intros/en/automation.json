@@ -1,9 +1,9 @@
 {
   "tag": "automation",
   "locale": "en",
-  "intro": "This archive collects 6 articles tagged `automation` published between April 12, 2026 and April 20, 2026. Coverage includes 1 high, 1 medium, and 4 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "563de92cffd1adab",
+  "intro": "This archive collects 7 articles tagged `automation` published between April 12, 2026 and April 21, 2026. Coverage includes 1 high, 1 medium, and 5 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "6b76343b9aa6f829",
   "model": "template:sparse",
-  "generated_at": "2026-04-21T04:07:52.322Z",
+  "generated_at": "2026-04-22T04:07:09.686Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

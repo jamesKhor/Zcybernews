@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "count": 7,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-19"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Triad Nexus",
@@ -12,21 +12,24 @@
   ],
   "top_cves": [],
   "top_sectors": [
+    "e-commerce",
+    "financial services",
     "financial-services",
-    "multiple"
+    "multiple",
+    "online services"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "informational": 1,
-    "high": 5,
-    "medium": 1
+    "informational": 2,
+    "medium": 2,
+    "high": 5
   },
   "recent_excerpts": [
+    "IPQS details a 3-layer fraud detection strategy using identity, device, and network signals to block 99.5% of automated attacks without adding user friction for legitimate customers.",
     "MITRE released the Fight Fraud Framework (F3), a unified knowledge base mapping the intersection of cyber attack tactics and financial fraud, aiming to close the operational gap between security and f",
-    "A study of 194 cybercrime forum threads reveals threat actors are actively exploring AI for malware obfuscation, hyper-realistic phishing, and automated vulnerability discovery, with 40% of discussion",
-    "The disruption of the Tycoon 2FA phishing-as-a-service platform has led to a surge in copycat attacks, as threat actors reuse its tools and techniques in other kits, increasing the overall volume of m"
+    "ProxySmart, a platform operated from Minsk, Belarus, powers SIM farm proxy networks across 94 locations in 17 countries, providing cybercriminals with residential IP addresses for fraud and credential"
   ],
-  "sources_hash": "c6acd147d1e9733c"
+  "sources_hash": "8688373d9249e771"
 }

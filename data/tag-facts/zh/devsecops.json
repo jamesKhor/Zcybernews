@@ -1,0 +1,22 @@
+{
+  "tag": "devsecops",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-21"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "informational": 5
+  },
+  "recent_excerpts": [
+    "对1000多个网络安全职位发布的分析显示，对人工智能安全专家和云安全架构师的需求激增了40%，需要Azure DevOps专业知识的DevSecOps角色可以获得更高的薪资。",
+    "Boost Security 的 SmokedMeat 框架从单一 CI/CD 流水线缺陷执行实时攻击演示，向工程团队展示攻击者如何移动以破坏代码、机密和基础设施。",
+    "GitLab 18.11 将代理 AI 集成到软件生命周期中，自动化安全修复生成和 CI/CD 流水线配置，旨在解决快速代码创建速度超过安全和交付的 'AI 悖论'。"
+  ],
+  "sources_hash": "4ca01f6f2089b769"
+}

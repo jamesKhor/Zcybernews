@@ -1,0 +1,22 @@
+{
+  "tag": "security-operations",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-21"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "informational": 5
+  },
+  "recent_excerpts": [
+    "The Hacker News 报告称，大多数企业AI安全工具在演示后因数据质量、集成和成本问题而失败，导致关键的威胁检测和响应计划停滞。",
+    "成熟的安全运营中心通过将威胁情报集成到工作流程中，将平均响应时间减少了40%，而其他人则在孤立的数据和手动流程上浪费时间。",
+    "根据一项新的分析，当威胁情报源保持在分析师工作流程之外时，安全运营中心（SOCs）会停留在较低的成熟度水平。报告详细说明了数据碎片化如何阻碍关键的安全决策。"
+  ],
+  "sources_hash": "9fd9410360855365"
+}

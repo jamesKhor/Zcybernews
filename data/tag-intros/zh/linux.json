@@ -1,0 +1,10 @@
+{
+  "tag": "linux",
+  "locale": "zh",
+  "intro": "教育、家庭实验室、物联网和创客领域成为近期一系列Linux相关威胁的主要目标。2026年4月12日至4月22日期间，五篇追踪报告记录了相关活动，其严重性包括两篇高危、一篇中危和两篇信息级报告。在这些事件中观察到威胁行为者Payouts King和The Gentlemen的活动，其影响范围覆盖全球。这些进展凸显了基于开源平台构建的多样化技术环境所面临的持续风险。",
+  "sources_hash": "b90ec5aaf3fe7665",
+  "source_intro_hash": "9fa047dff1f54d02",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-22T04:09:03.269Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

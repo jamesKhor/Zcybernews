@@ -1,15 +1,15 @@
 {
   "tag": "apt",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "CyberAv3ngers",
     "Sapphire Sleet",
-    "UAC-0247"
+    "SideWinder"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -20,17 +20,19 @@
     "technology"
   ],
   "top_regions": [
+    "Bangladesh",
     "Global",
+    "South asia",
     "Ukraine",
     "United states"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "SideWinder APT targets South Asian government bodies with a phishing campaign using a fake Chrome PDF viewer and a cloned Zimbra login portal to steal webmail credentials, active since February 2026.",
     "North Korean operatives are using AI tools and forged documents to pass remote job interviews, according to Flare research.",
-    "North Korean threat actor UNC1069 lures Web3 professionals with fake Zoom and Microsoft Teams meetings to deploy malware that steals cryptocurrency, according to new research.",
-    "The Ukrainian CERT-UA attributes a new campaign to threat actor UAC-0247, which uses phishing lures to deploy malware that steals data from Chromium browsers and WhatsApp on government and healthcare"
+    "North Korean threat actor UNC1069 lures Web3 professionals with fake Zoom and Microsoft Teams meetings to deploy malware that steals cryptocurrency, according to new research."
   ],
-  "sources_hash": "8559d13cd48aeae5"
+  "sources_hash": "fc2a5dca430b5ed2"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-16"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Rhysida",
@@ -19,17 +19,19 @@
     "technology"
   ],
   "top_regions": [
+    "United states",
+    "Illinois",
     "Netherlands",
-    "Ukraine",
-    "United states"
+    "Texas",
+    "Ukraine"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "Southern Illinois Dermatology, Saint Anthony Hospital, and North Texas Behavioral Health Authority disclose breaches affecting over 600,000 patients, exposing names, SSNs, and medical data.",
     "Cookeville Regional Medical Center confirms a 2025 ransomware attack by the Rhysida group compromised the data of 337,000 individuals after the theft of 500GB of files.",
-    "The UAC-0247 threat actor is actively targeting Ukrainian municipal healthcare and government bodies, deploying malware to steal browser data, WhatsApp sessions, and credentials while moving laterally",
-    "Dutch healthcare IT provider ChipSoft was hit by a ransomware attack, forcing it to take patient and provider portals offline, disrupting critical medical administration across the Netherlands."
+    "The UAC-0247 threat actor is actively targeting Ukrainian municipal healthcare and government bodies, deploying malware to steal browser data, WhatsApp sessions, and credentials while moving laterally"
   ],
-  "sources_hash": "a9029f440f5d0996"
+  "sources_hash": "bfc1701d3c4ca7cb"
 }

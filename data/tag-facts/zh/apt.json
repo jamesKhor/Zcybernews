@@ -1,15 +1,15 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "CyberAv3ngers",
     "Sapphire Sleet",
-    "UAC-0247"
+    "SideWinder"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -20,17 +20,19 @@
     "technology"
   ],
   "top_regions": [
+    "Bangladesh",
     "Global",
+    "South asia",
     "Ukraine",
     "United states"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "SideWinder APT 针对南亚政府机构发起网络钓鱼活动，使用假 Chrome PDF 查看器和克隆的 Zimbra 登录门户窃取网络邮件凭证，活动自 2026 年 2 月开始。",
     "根据Flare研究，朝鲜特工正在使用AI工具和伪造文件通过远程工作面试。这种策略旨在将威胁行为者长期安置在目标公司内，进行间谍活动和网络访问。",
-    "根据最新研究，朝鲜威胁行为者 UNC1069 利用假 Zoom 和 Microsoft Teams 会议吸引 Web3 专业人士，部署窃取加密货币的恶意软件。",
-    "乌克兰 CERT-UA 将新活动归因于威胁行为者 UAC-0247，该行为者使用网络钓鱼诱饵部署恶意软件，窃取政府和医疗系统上的 Chromium 浏览器和 WhatsApp 数据。"
+    "根据最新研究，朝鲜威胁行为者 UNC1069 利用假 Zoom 和 Microsoft Teams 会议吸引 Web3 专业人士，部署窃取加密货币的恶意软件。"
   ],
-  "sources_hash": "8559d13cd48aeae5"
+  "sources_hash": "fc2a5dca430b5ed2"
 }

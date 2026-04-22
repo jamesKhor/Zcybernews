@@ -1,16 +1,20 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 50,
+  "count": 54,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "Lazarus Group",
     "TeamPCP"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-1731",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-39987",
       "cvss": 9.3
@@ -26,8 +30,8 @@
     "technology",
     "logistics",
     "manufacturing",
-    "cryptocurrency",
-    "financial-services"
+    "software development",
+    "cryptocurrency"
   ],
   "top_regions": [
     "Global",
@@ -36,15 +40,15 @@
     "North america"
   ],
   "severity_mix": {
-    "critical": 6,
+    "critical": 8,
+    "high": 32,
     "informational": 4,
-    "high": 30,
     "medium": 9
   },
   "recent_excerpts": [
-    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。",
-    "Boost Security 的 SmokedMeat 框架从单一 CI/CD 流水线缺陷执行实时攻击演示，向工程团队展示攻击者如何移动以破坏代码、机密和基础设施。",
-    "Socket识别出108款恶意Chrome扩展，感染了20,000名用户，窃取Google和Telegram会话cookie，并通过共享的命令和控制服务器注入广告。"
+    "CVE-2026-1731，一个在BeyondTrust的Bomgar RMM中的关键9.8 CVSS漏洞，正在被积极利用来部署勒索软件和在全球供应链攻击中破坏IT服务提供商。",
+    "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。",
+    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。"
   ],
-  "sources_hash": "d0d3c6abbeb20824"
+  "sources_hash": "61e8f584b57367b7"
 }

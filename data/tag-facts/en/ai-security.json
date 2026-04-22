@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 38,
+  "count": 40,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-04-21"
   },
   "top_actors": [
     "OpenClaw"
@@ -26,15 +26,15 @@
     "Global"
   ],
   "severity_mix": {
+    "informational": 12,
     "critical": 5,
     "high": 17,
-    "medium": 6,
-    "informational": 10
+    "medium": 6
   },
   "recent_excerpts": [
-    "CVE-2026-5760, a critical 9.8 CVSS flaw in the SGLang inference engine, allows attackers to execute arbitrary code by uploading malicious GGUF model files, compromising AI/ML serving deployments.",
-    "Qualys warns that AI agents like Claude Mythos can cut vulnerability discovery time from months to hours, compressing the patch window and overwhelming security teams with a surge of new CVEs.",
-    "Anthropic restricts access to its Claude Mythos Preview AI model, citing its ability to automate vulnerability discovery and exploit chain creation, and launches Project Glasswing to find and patch fl"
+    "Analysis of 1,000+ cybersecurity job postings shows a 40% surge in demand for AI security specialists and cloud security architects, with DevSecOps roles requiring Azure DevOps expertise commanding pr",
+    "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi",
+    "CVE-2026-5760, a critical 9.8 CVSS flaw in the SGLang inference engine, allows attackers to execute arbitrary code by uploading malicious GGUF model files, compromising AI/ML serving deployments."
   ],
-  "sources_hash": "49240392ee3a2d34"
+  "sources_hash": "072fe6f7a6eea29e"
 }
