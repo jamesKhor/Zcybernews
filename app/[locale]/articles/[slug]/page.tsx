@@ -17,6 +17,11 @@ import NextLink from "next/link";
 import { CVEArticleBody } from "@/components/cve/CVEArticleBody";
 import { SidebarAd, InArticleAd } from "@/components/ads/AdSense";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
+import {
+  articleUrl,
+  absoluteArticleUrl,
+  type ArticleLocale,
+} from "@/lib/article-url";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -49,7 +54,13 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+  const { locale: rawLocale, slug } = await params;
+  // Narrow once for the URL helper. `locale` at the Next.js route-
+  // param level is `string`; the [locale] segment guarantees it is one
+  // of our configured locales, but TS doesn't know that from the
+  // Props shape, so we coerce explicitly. Non-"zh" → "en" mirrors the
+  // existing fallback behavior used elsewhere in the codebase.
+  const locale: ArticleLocale = rawLocale === "zh" ? "zh" : "en";
   const article = getPostBySlug(locale, "posts", slug);
   if (!article) return {};
 
@@ -57,7 +68,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const image =
     frontmatter.featured_image ??
     CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
-  const canonical = `/${locale}/articles/${slug}`;
+  const canonical = articleUrl({ slug }, locale, "posts");
+
+  // Resolve the alternate slugs once so the hreflang map below is easy
+  // to read. When `locale_pair` is set, the other-locale URL uses the
+  // pair slug; our own URL always uses our own slug.
+  const enSlug = locale === "en" ? slug : (frontmatter.locale_pair ?? slug);
+  const zhSlug = locale === "zh" ? slug : (frontmatter.locale_pair ?? slug);
 
   return {
     title: frontmatter.title,
@@ -66,26 +83,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     authors: [{ name: frontmatter.author ?? "ZCyberNews" }],
     alternates: {
       canonical,
-      languages: frontmatter.locale_pair
-        ? {
-            en:
-              locale === "en"
-                ? `/en/articles/${slug}`
-                : `/en/articles/${frontmatter.locale_pair}`,
-            "zh-Hans":
-              locale === "zh"
-                ? `/zh/articles/${slug}`
-                : `/zh/articles/${frontmatter.locale_pair}`,
-            "x-default":
-              locale === "en"
-                ? `/en/articles/${slug}`
-                : `/en/articles/${frontmatter.locale_pair}`,
-          }
-        : {
-            en: `/en/articles/${slug}`,
-            "zh-Hans": `/zh/articles/${slug}`,
-            "x-default": `/en/articles/${slug}`,
-          },
+      languages: {
+        en: articleUrl({ slug: enSlug }, "en", "posts"),
+        "zh-Hans": articleUrl({ slug: zhSlug }, "zh", "posts"),
+        "x-default": articleUrl({ slug: enSlug }, "en", "posts"),
+      },
     },
     openGraph: {
       title: frontmatter.title,
@@ -111,7 +113,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ArticlePage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale: rawLocale, slug } = await params;
+  // Same narrowing as in generateMetadata — see comment there.
+  const locale: ArticleLocale = rawLocale === "zh" ? "zh" : "en";
   const article = getPostBySlug(locale, "posts", slug);
   if (!article) notFound();
 
@@ -136,17 +140,19 @@ export default async function ArticlePage({ params }: Props) {
         datePublished={frontmatter.date}
         dateModified={frontmatter.updated}
         authorName={frontmatter.author ?? "ZCyberNews"}
-        url={`${siteUrl}/${locale}/articles/${slug}`}
+        url={absoluteArticleUrl({ slug }, locale, "posts", siteUrl)}
         image={image ? `${siteUrl}${image}` : undefined}
         keywords={frontmatter.tags}
       />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: `${siteUrl}/${locale}` },
+          // /articles listing root is a section page, not an article
+          // URL — lib/article-url is deliberately scoped to articles.
           { name: "Articles", url: `${siteUrl}/${locale}/articles` },
           {
             name: frontmatter.title,
-            url: `${siteUrl}/${locale}/articles/${slug}`,
+            url: absoluteArticleUrl({ slug }, locale, "posts", siteUrl),
           },
         ]}
       />

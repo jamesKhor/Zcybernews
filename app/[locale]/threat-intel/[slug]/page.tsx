@@ -15,6 +15,11 @@ import { CVEArticleBody } from "@/components/cve/CVEArticleBody";
 import { SidebarAd, InArticleAd } from "@/components/ads/AdSense";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import Image from "next/image";
+import {
+  articleUrl,
+  absoluteArticleUrl,
+  type ArticleLocale,
+} from "@/lib/article-url";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -37,14 +42,22 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+  const { locale: rawLocale, slug } = await params;
+  // Narrow once for the URL helper — same pattern as the articles
+  // detail page. See articles/[slug]/page.tsx for rationale.
+  const locale: ArticleLocale = rawLocale === "zh" ? "zh" : "en";
   const article = getPostBySlug(locale, "threat-intel", slug);
   if (!article) return {};
   const { frontmatter } = article;
   const image =
     frontmatter.featured_image ??
     CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
-  const canonical = `/${locale}/threat-intel/${slug}`;
+  const canonical = articleUrl({ slug }, locale, "threat-intel");
+
+  // Resolve alternate slugs — when locale_pair is set, the other-
+  // locale URL uses the pair slug; our own URL always uses our own.
+  const enSlug = locale === "en" ? slug : (frontmatter.locale_pair ?? slug);
+  const zhSlug = locale === "zh" ? slug : (frontmatter.locale_pair ?? slug);
 
   return {
     title: frontmatter.title,
@@ -56,26 +69,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ].filter(Boolean),
     alternates: {
       canonical,
-      languages: frontmatter.locale_pair
-        ? {
-            en:
-              locale === "en"
-                ? `/en/threat-intel/${slug}`
-                : `/en/threat-intel/${frontmatter.locale_pair}`,
-            "zh-Hans":
-              locale === "zh"
-                ? `/zh/threat-intel/${slug}`
-                : `/zh/threat-intel/${frontmatter.locale_pair}`,
-            "x-default":
-              locale === "en"
-                ? `/en/threat-intel/${slug}`
-                : `/en/threat-intel/${frontmatter.locale_pair}`,
-          }
-        : {
-            en: `/en/threat-intel/${slug}`,
-            "zh-Hans": `/zh/threat-intel/${slug}`,
-            "x-default": `/en/threat-intel/${slug}`,
-          },
+      languages: {
+        en: articleUrl({ slug: enSlug }, "en", "threat-intel"),
+        "zh-Hans": articleUrl({ slug: zhSlug }, "zh", "threat-intel"),
+        "x-default": articleUrl({ slug: enSlug }, "en", "threat-intel"),
+      },
     },
     openGraph: {
       title: frontmatter.title,
@@ -99,7 +97,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ThreatIntelArticlePage({ params }: Props) {
-  const { locale, slug } = await params;
+  const { locale: rawLocale, slug } = await params;
+  // Same narrowing pattern as generateMetadata above.
+  const locale: ArticleLocale = rawLocale === "zh" ? "zh" : "en";
   const article = getPostBySlug(locale, "threat-intel", slug);
   if (!article) notFound();
 
@@ -124,7 +124,7 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
         datePublished={frontmatter.date}
         dateModified={frontmatter.updated}
         authorName={frontmatter.author ?? "ZCyberNews"}
-        url={`${siteUrl}/${locale}/threat-intel/${slug}`}
+        url={absoluteArticleUrl({ slug }, locale, "threat-intel", siteUrl)}
         image={image ? `${siteUrl}${image}` : undefined}
         keywords={frontmatter.tags}
       />
@@ -135,12 +135,14 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
             url: `${siteUrl}/${locale}`,
           },
           {
+            // /threat-intel listing root is a section page, not an
+            // article URL — lib/article-url is scoped to articles.
             name: locale === "zh" ? "威胁情报" : "Threat Intelligence",
             url: `${siteUrl}/${locale}/threat-intel`,
           },
           {
             name: frontmatter.title,
-            url: `${siteUrl}/${locale}/threat-intel/${slug}`,
+            url: absoluteArticleUrl({ slug }, locale, "threat-intel", siteUrl),
           },
         ]}
       />

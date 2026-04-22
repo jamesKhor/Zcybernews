@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, getAllTags } from "@/lib/content";
 import { CategoryEnum } from "@/lib/types";
+import { absoluteArticleUrl } from "@/lib/article-url";
 
 // ISR: generate on first request, cache for 1 hour, regenerate on demand.
 //
@@ -168,8 +169,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Article pages
     const posts = getAllPosts(locale, "posts");
     for (const post of posts) {
+      // NOTE: pre-existing hreflang bug preserved intentionally — both
+      // `en` and `zh-Hans` alternates use `locale_pair ?? slug`, when
+      // strictly only the OTHER-locale alternate should use locale_pair
+      // and the current-locale alternate should use the post's own
+      // slug. The detail pages handle this correctly. Fixing in the
+      // sitemap is tracked as a separate item (flagged in the B.4 wire-
+      // up commit). Not fixed here so the wire-up stays surgical and
+      // reversible. `absoluteArticleUrl` reproduces the string shape
+      // byte-for-byte with this input.
+      const alternateSlug =
+        post.frontmatter.locale_pair ?? post.frontmatter.slug;
       entries.push({
-        url: `${BASE_URL}/${locale}/articles/${post.frontmatter.slug}`,
+        url: absoluteArticleUrl(
+          { slug: post.frontmatter.slug },
+          locale,
+          "posts",
+          BASE_URL,
+        ),
         lastModified: post.frontmatter.updated
           ? new Date(post.frontmatter.updated)
           : new Date(post.frontmatter.date),
@@ -177,8 +194,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
         alternates: {
           languages: {
-            en: `${BASE_URL}/en/articles/${post.frontmatter.locale_pair ?? post.frontmatter.slug}`,
-            "zh-Hans": `${BASE_URL}/zh/articles/${post.frontmatter.locale_pair ?? post.frontmatter.slug}`,
+            en: absoluteArticleUrl(
+              { slug: alternateSlug },
+              "en",
+              "posts",
+              BASE_URL,
+            ),
+            "zh-Hans": absoluteArticleUrl(
+              { slug: alternateSlug },
+              "zh",
+              "posts",
+              BASE_URL,
+            ),
           },
         },
       });
@@ -187,8 +214,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Threat intel pages
     const tiPosts = getAllPosts(locale, "threat-intel");
     for (const post of tiPosts) {
+      // Same pre-existing hreflang bug as the articles block above.
+      const alternateSlug =
+        post.frontmatter.locale_pair ?? post.frontmatter.slug;
       entries.push({
-        url: `${BASE_URL}/${locale}/threat-intel/${post.frontmatter.slug}`,
+        url: absoluteArticleUrl(
+          { slug: post.frontmatter.slug },
+          locale,
+          "threat-intel",
+          BASE_URL,
+        ),
         lastModified: post.frontmatter.updated
           ? new Date(post.frontmatter.updated)
           : new Date(post.frontmatter.date),
@@ -196,8 +231,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
         alternates: {
           languages: {
-            en: `${BASE_URL}/en/threat-intel/${post.frontmatter.locale_pair ?? post.frontmatter.slug}`,
-            "zh-Hans": `${BASE_URL}/zh/threat-intel/${post.frontmatter.locale_pair ?? post.frontmatter.slug}`,
+            en: absoluteArticleUrl(
+              { slug: alternateSlug },
+              "en",
+              "threat-intel",
+              BASE_URL,
+            ),
+            "zh-Hans": absoluteArticleUrl(
+              { slug: alternateSlug },
+              "zh",
+              "threat-intel",
+              BASE_URL,
+            ),
           },
         },
       });
