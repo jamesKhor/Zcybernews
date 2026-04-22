@@ -169,24 +169,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Article pages
     const posts = getAllPosts(locale, "posts");
     for (const post of posts) {
-      // NOTE: pre-existing hreflang bug preserved intentionally — both
-      // `en` and `zh-Hans` alternates use `locale_pair ?? slug`, when
-      // strictly only the OTHER-locale alternate should use locale_pair
-      // and the current-locale alternate should use the post's own
-      // slug. The detail pages handle this correctly. Fixing in the
-      // sitemap is tracked as a separate item (flagged in the B.4 wire-
-      // up commit). Not fixed here so the wire-up stays surgical and
-      // reversible. `absoluteArticleUrl` reproduces the string shape
-      // byte-for-byte with this input.
-      const alternateSlug =
-        post.frontmatter.locale_pair ?? post.frontmatter.slug;
+      // hreflang alternates (B-008 fix 2026-04-22). Previously both
+      // `en` and `zh-Hans` alternates used `locale_pair ?? slug`,
+      // which pointed BOTH language tags at the OTHER-locale slug
+      // (wrong for one of them). Correct rule: each alternate uses
+      // its own slug when it IS the current locale, otherwise uses
+      // the pair slug. Matches the pattern already in
+      // app/[locale]/articles/[slug]/page.tsx.
+      const slug = post.frontmatter.slug;
+      const pair = post.frontmatter.locale_pair;
+      const enSlug = locale === "en" ? slug : (pair ?? slug);
+      const zhSlug = locale === "zh" ? slug : (pair ?? slug);
       entries.push({
-        url: absoluteArticleUrl(
-          { slug: post.frontmatter.slug },
-          locale,
-          "posts",
-          BASE_URL,
-        ),
+        url: absoluteArticleUrl({ slug }, locale, "posts", BASE_URL),
         lastModified: post.frontmatter.updated
           ? new Date(post.frontmatter.updated)
           : new Date(post.frontmatter.date),
@@ -194,14 +189,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
         alternates: {
           languages: {
-            en: absoluteArticleUrl(
-              { slug: alternateSlug },
-              "en",
-              "posts",
-              BASE_URL,
-            ),
+            en: absoluteArticleUrl({ slug: enSlug }, "en", "posts", BASE_URL),
             "zh-Hans": absoluteArticleUrl(
-              { slug: alternateSlug },
+              { slug: zhSlug },
               "zh",
               "posts",
               BASE_URL,
@@ -214,16 +204,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Threat intel pages
     const tiPosts = getAllPosts(locale, "threat-intel");
     for (const post of tiPosts) {
-      // Same pre-existing hreflang bug as the articles block above.
-      const alternateSlug =
-        post.frontmatter.locale_pair ?? post.frontmatter.slug;
+      // Same hreflang pattern as the articles block above (B-008).
+      const slug = post.frontmatter.slug;
+      const pair = post.frontmatter.locale_pair;
+      const enSlug = locale === "en" ? slug : (pair ?? slug);
+      const zhSlug = locale === "zh" ? slug : (pair ?? slug);
       entries.push({
-        url: absoluteArticleUrl(
-          { slug: post.frontmatter.slug },
-          locale,
-          "threat-intel",
-          BASE_URL,
-        ),
+        url: absoluteArticleUrl({ slug }, locale, "threat-intel", BASE_URL),
         lastModified: post.frontmatter.updated
           ? new Date(post.frontmatter.updated)
           : new Date(post.frontmatter.date),
@@ -232,13 +219,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: {
           languages: {
             en: absoluteArticleUrl(
-              { slug: alternateSlug },
+              { slug: enSlug },
               "en",
               "threat-intel",
               BASE_URL,
             ),
             "zh-Hans": absoluteArticleUrl(
-              { slug: alternateSlug },
+              { slug: zhSlug },
               "zh",
               "threat-intel",
               BASE_URL,
