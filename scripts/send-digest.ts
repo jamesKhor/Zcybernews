@@ -23,6 +23,7 @@ import {
   EMAIL_REPLY_TO,
   type Locale,
 } from "@/lib/resend";
+import { scoreArticle } from "./pipeline/quality-scorer.js";
 
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -36,22 +37,79 @@ function parseArgs() {
   return { windowHours, dryRun, locales };
 }
 
+/**
+ * Quality retention guard (2026-04-23). With 2+ real newsletter
+ * subscribers, every bad digest is a retention risk. The digest MUST
+ * NOT ship articles with SERIOUS quality flags — hedging-phrase
+ * content, vuln articles with no CVE ID, catastrophically-short
+ * articles. Any of those in a digest can cause an unsubscribe; our
+ * list is so small that one unsubscribe = 50% churn.
+ *
+ * Implementation: run each article through the pure quality scorer
+ * and drop articles with at least one SERIOUS flag BEFORE selection.
+ * WARN articles still pass — they may be imperfect but are usable.
+ * If the filter leaves fewer than MIN_ARTICLES_TO_SEND, the upstream
+ * caller's "thin digest — skip" guard kicks in (digest does not send).
+ *
+ * This is a retention guard, not a content gate. We do not REJECT
+ * articles from the site — they remain indexed — we only avoid
+ * pushing them to subscribers' inboxes.
+ */
+function isSeriousQualityArticle(
+  a: Article,
+  section: "posts" | "threat-intel",
+  locale: Locale,
+): boolean {
+  const score = scoreArticle({
+    slug: a.frontmatter.slug,
+    locale,
+    section,
+    frontmatter: a.frontmatter,
+    body: a.content,
+  });
+  return score.flags.some((f) => f.severity === "serious");
+}
+
 function recentArticles(locale: Locale, windowHours: number): Article[] {
   const cutoff = Date.now() - windowHours * 60 * 60 * 1000;
   const posts = getAllPosts(locale, "posts");
   const threat = getAllPosts(locale, "threat-intel");
-  const merged = [...posts, ...threat];
-  return merged
-    .filter(
-      (a) =>
-        !a.frontmatter.draft &&
-        new Date(a.frontmatter.date).getTime() >= cutoff,
-    )
+
+  // Tag each article with its section so the quality scorer can apply
+  // the right floor. This is local to the digest runner; we don't
+  // want to mutate the shared Article type.
+  type TaggedArticle = Article & { _digestSection: "posts" | "threat-intel" };
+  const tagged: TaggedArticle[] = [
+    ...posts.map((a) => ({ ...a, _digestSection: "posts" as const })),
+    ...threat.map((a) => ({
+      ...a,
+      _digestSection: "threat-intel" as const,
+    })),
+  ];
+
+  const withinWindow = tagged.filter(
+    (a) =>
+      !a.frontmatter.draft && new Date(a.frontmatter.date).getTime() >= cutoff,
+  );
+
+  const inputCount = withinWindow.length;
+  const passQuality = withinWindow.filter(
+    (a) => !isSeriousQualityArticle(a, a._digestSection, locale),
+  );
+  const droppedCount = inputCount - passQuality.length;
+  if (droppedCount > 0) {
+    console.log(
+      `[digest:${locale}] quality guard: dropped ${droppedCount}/${inputCount} SERIOUS-flagged article(s)`,
+    );
+  }
+
+  return passQuality
     .sort(
       (a, b) =>
         new Date(b.frontmatter.date).getTime() -
         new Date(a.frontmatter.date).getTime(),
-    );
+    )
+    .map(({ _digestSection: _omit, ...rest }) => rest as Article);
 }
 
 async function sendForLocale(
