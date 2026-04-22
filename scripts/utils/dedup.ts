@@ -28,16 +28,47 @@ export type Story = {
   tags: string[];
 
   // Additive fields (Phase B A2.2, 2026-04-22). All optional so any
-  // pre-A2.2 Story literal continues to type-check. Stage 2 (ingest)
-  // populates these at fetch time; Stage 4 (engine selection) reads
-  // them. Stage 2 does NOT use them for selection — that would
-  // perturb volume during canonicalization recovery per Raymond's
-  // A2.2 design note.
-  sourceId?: string; // FeedSource.id — stable key for weighting + dedup
-  sourceCategory?: string; // FeedSource.category — informs targetCategory
-  fetchedAt?: string; // ISO timestamp of the ingest fetch
-  qualityScore?: number; // copied from FeedSource at fetch time; default 1.0 when source has none
-  isVendor?: boolean; // pre-classified vendor-PR signal; populated by A2.3 filter. A2.2 always sets false.
+  // pre-A2.2 Story literal continues to type-check.
+  //
+  // PER `feedback_fix_root_not_symptom.md` — orphan fields (those
+  // currently produced but not yet consumed) are permitted ONLY when:
+  //   (a) explicitly RESERVED for a named future consumer, and
+  //   (b) documented in code with the reason they are not yet read.
+  // Every field below that is not yet consumed carries a "RESERVED
+  // FOR ..." line. If a reader lands on this file and a RESERVED
+  // field is still unused 30 days from ship, delete the field in a
+  // follow-up — speculation expires.
+  //
+  sourceId?: string;
+  // CONSUMED today by: ingest-rss.ts vendor-PR log line; feed-health
+  // run key; nothing else. Provides a stable routable key (unlike
+  // sourceName which is the display string).
+  sourceCategory?: string;
+  // RESERVED FOR Stage 4 — engine selection reads FeedSource.category
+  // via the story to decide targetCategory and apply the vulns-
+  // without-CVE holding queue (per docs/pipeline-chain-audit-
+  // 2026-04-21.md §Stage 4). Populated at ingest now so Stage 4
+  // does not need to re-join on sourceId → FeedSource. Currently
+  // orphan; remove if Stage 4 does not land by 2026-05-22.
+  fetchedAt?: string;
+  // RESERVED FOR Stage 4 + Loop A (GSC → qualityScore feedback) —
+  // allows scoring stories by freshness window and correlating
+  // published articles back to the ingest run that produced them.
+  // Feed-health uses a separate `runAt` computed per batch, so this
+  // field is NOT redundant with that. Currently orphan; remove if
+  // Loop A does not land by 2026-06-01.
+  qualityScore?: number;
+  // RESERVED FOR Stage 4 — engine selection priority-bump for
+  // higher-trust sources. Default 1.0 today (carried forward from
+  // FeedSource.qualityScore when present). Deliberately NOT used
+  // for selection in Stage 2 — that would perturb volume during
+  // the GSC canonicalization recovery window per Raymond's A2.2
+  // design note. Currently orphan; remove if Stage 4 does not
+  // land by 2026-05-22.
+  isVendor?: boolean;
+  // CONSUMED today by: ingest-rss.ts drop logic (when
+  // VENDOR_PR_ENFORCE=true); log line. A2.3 filter populates it
+  // in enforce + log-only modes alike.
 };
 
 // ────────────────────────────── Tunable thresholds ──────────────────────────
