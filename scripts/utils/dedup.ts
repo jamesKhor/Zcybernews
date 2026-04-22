@@ -26,6 +26,18 @@ export type Story = {
   sourceName: string;
   publishedAt: string;
   tags: string[];
+
+  // Additive fields (Phase B A2.2, 2026-04-22). All optional so any
+  // pre-A2.2 Story literal continues to type-check. Stage 2 (ingest)
+  // populates these at fetch time; Stage 4 (engine selection) reads
+  // them. Stage 2 does NOT use them for selection — that would
+  // perturb volume during canonicalization recovery per Raymond's
+  // A2.2 design note.
+  sourceId?: string; // FeedSource.id — stable key for weighting + dedup
+  sourceCategory?: string; // FeedSource.category — informs targetCategory
+  fetchedAt?: string; // ISO timestamp of the ingest fetch
+  qualityScore?: number; // copied from FeedSource at fetch time; default 1.0 when source has none
+  isVendor?: boolean; // pre-classified vendor-PR signal; populated by A2.3 filter. A2.2 always sets false.
 };
 
 // ────────────────────────────── Tunable thresholds ──────────────────────────

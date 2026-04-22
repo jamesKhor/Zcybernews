@@ -45,6 +45,7 @@ async function fetchRss(source: FeedSource): Promise<Story[]> {
     FEED_WALL_CLOCK_MS,
     `rss ${source.id}`,
   );
+  const fetchedAt = new Date().toISOString();
   return (feed.items ?? []).slice(0, 25).map((item, i) => ({
     id: `${source.id}-${item.guid ?? item.link ?? i}`,
     title: item.title ?? "Untitled",
@@ -55,6 +56,12 @@ async function fetchRss(source: FeedSource): Promise<Story[]> {
     sourceName: source.name,
     publishedAt: item.pubDate ?? item.isoDate ?? new Date().toISOString(),
     tags: (item.categories ?? []).slice(0, 5),
+    // A2.2 additive fields — see Story type in dedup.ts.
+    sourceId: source.id,
+    sourceCategory: source.category,
+    fetchedAt,
+    qualityScore: source.qualityScore ?? 1.0,
+    isVendor: false,
   }));
 }
 
@@ -76,6 +83,7 @@ async function fetchCisaKev(source: FeedSource): Promise<Story[]> {
   });
   if (!res.ok) throw new Error(`CISA KEV HTTP ${res.status}`);
   const data = (await res.json()) as { vulnerabilities: CisaKevEntry[] };
+  const fetchedAt = new Date().toISOString();
   return (data.vulnerabilities ?? []).slice(0, 20).map((v) => ({
     id: `cisa-kev-${v.cveID}`,
     title: `[${v.cveID}] ${v.vulnerabilityName}`,
@@ -84,6 +92,12 @@ async function fetchCisaKev(source: FeedSource): Promise<Story[]> {
     sourceName: source.name,
     publishedAt: new Date(v.dateAdded).toISOString(),
     tags: [v.vendorProject, v.product, "KEV", "CISA"].filter(Boolean),
+    // A2.2 additive fields — see Story type in dedup.ts.
+    sourceId: source.id,
+    sourceCategory: source.category,
+    fetchedAt,
+    qualityScore: source.qualityScore ?? 1.0,
+    isVendor: false,
   }));
 }
 
