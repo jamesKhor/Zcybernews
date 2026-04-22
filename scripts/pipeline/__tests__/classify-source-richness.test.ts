@@ -118,18 +118,27 @@ describe("classifySourceRichness — tier boundaries", () => {
 });
 
 describe("classifySourceRichness — info-token signal sources", () => {
-  it("CVSS score counts as an info token (CVSS: 9.8 form)", () => {
-    // NOTE: the CVSS regex is `CVSS(?:\s*v?...)?\s*(?:score|of|:|=)?\s*\d+`.
-    // It catches "CVSS 9.8", "CVSS: 9.8", "CVSSv3.1 9.8", but NOT
-    // "CVSS score: 9.8" because `score` and `:` are alternatives in
-    // the same group; after consuming `score`, the following `:` is
-    // not matched by the subsequent `\s*\d+`. That is a real gap —
-    // "CVSS score: 9.8" is a common phrasing — filed as B-010, not
-    // fixed here.
-    const s = makeStory("Flaw disclosed", "CVSS: 9.8 critical vulnerability.");
-    const r = classifySourceRichness([s]);
-    expect(r.infoTokens).toBeGreaterThan(0);
-  });
+  // After B-010 (2026-04-22) the CVSS regex splits keyword + separator,
+  // so all common vendor-advisory phrasings count. Before B-010 only
+  // the first two forms below matched.
+  const cvssPhrasings = [
+    "CVSS 9.8 is critical.",
+    "CVSS: 9.8 critical vulnerability.",
+    "CVSS score 9.8 was assigned.",
+    "CVSS score: 9.8 assigned by NVD.",
+    "CVSS Base Score: 9.8 per the advisory.",
+    "CVSS score of 9.8 reflects the impact.",
+    "CVSSv3.1 base score of 9.8 was issued.",
+    "CVSSv3.1: 9.8 critical.",
+  ];
+
+  for (const phrase of cvssPhrasings) {
+    it(`CVSS phrasing counts as info token: "${phrase}"`, () => {
+      const s = makeStory("Flaw disclosed", phrase);
+      const r = classifySourceRichness([s]);
+      expect(r.infoTokens).toBeGreaterThan(0);
+    });
+  }
 
   it("IOC hash (MD5/SHA) counts as an info token", () => {
     const s = makeStory(

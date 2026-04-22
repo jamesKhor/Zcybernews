@@ -44,8 +44,27 @@ import type { Story } from "../utils/dedup.js";
  * 5+ tokens AND ≥2 sources → extended (2000-3000 words).
  */
 const CVE_REGEX = /CVE-\d{4}-\d{4,}/gi;
+// CVSS regex (updated 2026-04-22, B-010 fix).
+//
+// Previous form was `...(?:score|of|:|=)?\s*\d+...`. The alternation
+// grouped keyword AND separator together, so after consuming `score`
+// a following `:` could not be matched — and "CVSS score: 9.8" is the
+// phrasing most vendor advisories use. Under-counted info tokens
+// pushed some articles to shorter tiers than warranted.
+//
+// New structure splits keyword from separator:
+//   keyword group : `(?:(?:base\s+)?score(?:\s+of)?|of)?`
+//   separator    : `[:=]?`
+// Both independently optional. Captures:
+//   "CVSS 9.8"                    (neither)
+//   "CVSS: 9.8"                   (sep only)
+//   "CVSS score 9.8"              (keyword only)
+//   "CVSS score: 9.8"             (both)        ← was missing
+//   "CVSS Base Score: 9.8"        (both)        ← was missing
+//   "CVSS score of 9.8"           (keyword)     ← was missing
+//   "CVSSv3.1 base score of 9.8"  (version + keyword) ← was missing
 const CVSS_REGEX =
-  /CVSS(?:\s*v?[234]\.?[01]?)?\s*(?:score|of|:|=)?\s*\d+(?:\.\d+)?/gi;
+  /CVSS(?:\s*v?[234]\.?[01]?)?\s*(?:(?:base\s+)?score(?:\s+of)?|of)?\s*[:=]?\s*\d+(?:\.\d+)?/gi;
 const MD5_SHA_REGEX = /\b[a-fA-F0-9]{32,64}\b/g;
 
 function countInfoTokens(stories: Story[]): number {
