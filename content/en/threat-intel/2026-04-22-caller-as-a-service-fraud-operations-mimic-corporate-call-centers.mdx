@@ -1,0 +1,51 @@
+---
+title: Caller-as-a-Service Fraud Operations Mimic Corporate Call Centers
+slug: 2026-04-22-caller-as-a-service-fraud-operations-mimic-corporate-call-centers
+date: '2026-04-22'
+excerpt: >-
+  Flare researchers detail 'Caller-as-a-Service' fraud, where criminal
+  operations use hiring, training, and KPIs to manage scam callers targeting
+  victims in North America and Europe.
+category: threat-intel
+tags:
+  - social-engineering
+  - fraud
+  - caller-id-spoofing
+  - scam
+  - threat-intelligence
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/inside-caller-as-a-service-fraud-the-scam-economy-has-a-hiring-process/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-caller-as-a-service-fraud-operations-mimic-corporate-call-centers
+severity: medium
+affected_sectors:
+  - financial services
+  - telecommunications
+  - retail
+affected_regions:
+  - North America
+  - Europe
+---
+## Executive Summary
+Cybercriminal fraud operations have professionalized into structured 'Caller-as-a-Service' (CaaS) schemes, operating with corporate-style hiring, training, and performance management. According to research from Flare, these operations recruit and manage remote scam callers who use social engineering and caller ID spoofing to defraud victims, primarily in North America and Europe.
+
+## Technical Analysis
+The CaaS model functions as a distributed, gig-economy platform for fraud. Threat actors advertise for 'callers' or 'verifiers' on Telegram channels and dark web forums, offering payment per successful scam. Applicants undergo a vetting process, often requiring a sample call or proof of prior fraudulent activity. Once hired, callers receive training materials, including scripts, target phone number lists, and instructions for using VoIP services to spoof legitimate caller IDs, such as those of banks or government agencies. Flare's analysis indicates these operations use centralized management to distribute leads and track performance metrics like call duration and conversion rates.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary TTP is social engineering (TA0040), specifically vishing (T1556.004). Callers impersonate trusted entities like bank security, tech support, or government officials. They utilize caller ID spoofing (T1592.005) to enhance credibility. Operations employ a command-and-control structure where managers (or 'leads') assign targets, provide scripts, and collect results, mirroring legitimate sales operations. Payment is typically made in cryptocurrency upon proof of a successful transaction.
+
+## Threat Actor Context
+The research does not attribute the CaaS model to a specific named threat actor group. It describes a commoditized service model adopted by various fraud networks. The actors involved are financially motivated criminals operating in a decentralized, affiliate-style ecosystem. The professionalization lowers the barrier to entry, allowing individuals with minimal technical skill to participate in large-scale fraud.
+
+## Mitigations & Recommendations
+Flare recommends organizations, especially in financial services and telecom, educate customers that legitimate institutions will never ask for credentials or payments over unsolicited calls. Technical measures include implementing STIR/SHAKEN protocols to combat caller ID spoofing. Individuals should verify callers by hanging up and contacting the institution directly using a known, official number. Law enforcement is advised to focus investigative efforts on the administrative and payment layers of these operations, which are less distributed than the individual callers.
+
+## References
+- https://www.bleepingcomputer.com/news/security/inside-caller-as-a-service-fraud-the-scam-economy-has-a-hiring-process/

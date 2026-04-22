@@ -1,0 +1,52 @@
+---
+title: Caller-as-a-Service 欺诈操作模仿企业呼叫中心
+slug: 2026-04-22-caller-as-a-service-fraud-operations-mimic-corporate-call-centers
+date: '2026-04-22'
+excerpt: >-
+  Flare 研究人员详细描述了 'Caller-as-a-Service' 欺诈，其中犯罪操作使用招聘、培训和 KPIs
+  来管理针对北美和欧洲受害者的诈骗呼叫者。
+category: threat-intel
+tags:
+  - social-engineering
+  - fraud
+  - caller-id-spoofing
+  - scam
+  - threat-intelligence
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/inside-caller-as-a-service-fraud-the-scam-economy-has-a-hiring-process/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-22-caller-as-a-service-fraud-operations-mimic-corporate-call-centers
+severity: medium
+affected_sectors:
+  - financial services
+  - telecommunications
+  - retail
+affected_regions:
+  - North America
+  - Europe
+---
+## Caller-as-a-Service Fraud Operations Mimic Corporate Call Centers
+
+## 执行摘要
+网络犯罪欺诈活动已经发展成为结构化的“呼叫即服务”（CaaS）计划，采用企业风格的招聘、培训和绩效管理。根据Flare的研究，这些操作招募和管理远程诈骗呼叫者，他们使用社会工程学和呼叫者ID欺骗来欺诈受害者，主要在北美和欧洲。
+
+## 技术分析
+CaaS模型作为一个分布式的、零工经济平台进行欺诈活动。威胁行为者在Telegram频道和暗网论坛上为“呼叫者”或“验证者”做广告，提供每次成功诈骗的报酬。申请者需要经过审查过程，通常需要提供样本呼叫或证明之前的欺诈活动。一旦被雇佣，呼叫者将接受培训材料，包括脚本、目标电话号码列表以及使用VoIP服务来欺骗合法呼叫ID的指令，例如银行或政府机构的ID。Flare的分析表明，这些操作使用集中式管理来分发线索和跟踪绩效指标，如通话时长和转化率。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+主要的战术、技术和程序是社会工程学（TA0040），特别是语音网络钓鱼（vishing）（T1556.004）。呼叫者冒充银行安全、技术支持或政府官员等可信实体。他们利用呼叫者ID欺骗（T1592.005）来增强可信度。操作采用指挥与控制结构，其中经理（或“线索”）分配目标，提供脚本，并收集结果，模仿合法的销售操作。报酬通常在证明交易成功后以加密货币支付。
+
+## 威胁行为者背景
+研究没有将CaaS模型归因于特定的命名威胁行为者群体。它描述了各种欺诈网络采用的商品化服务模型。涉及的行为者是出于财务动机的犯罪分子，在分散的、联盟式的生态系统中运作。专业化降低了进入门槛，允许技术技能有限的个人参与大规模欺诈。
+
+## 缓解措施与建议
+Flare建议组织，特别是在金融服务和电信领域，教育客户合法机构永远不会在未经请求的呼叫中要求提供凭证或支付。技术措施包括实施STIR/SHAKEN协议以打击呼叫者ID欺骗。个人应通过挂断电话并使用已知的官方号码直接联系机构来验证呼叫者。建议执法部门将调查工作重点放在这些操作的行政和支付层面，这些层面比个别呼叫者更集中。
+
+## 参考资料
+- https://www.bleepingcomputer.com/news/security/inside-caller-as-a-service-fraud-the-scam-economy-has-a-hiring-process/
