@@ -17,6 +17,8 @@
     "quality:audit:all": "tsx scripts/audit-published-quality.ts --all",
     "digest:preview": "tsx scripts/preview-digest.ts",
     "digest:preview:html": "tsx scripts/preview-digest.ts --html-only --window-hours=168",
+    "backfill:iocs": "tsx scripts/backfill-iocs-ttps.ts",
+    "backfill:iocs:apply": "tsx scripts/backfill-iocs-ttps.ts --apply",
     "prepare": "husky"
   },
   "dependencies": {
