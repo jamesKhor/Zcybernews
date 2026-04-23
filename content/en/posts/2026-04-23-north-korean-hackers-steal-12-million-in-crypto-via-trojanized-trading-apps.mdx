@@ -1,0 +1,51 @@
+---
+title: North Korean Hackers Steal $12 Million in Crypto via Trojanized
+slug: >-
+  2026-04-23-north-korean-hackers-steal-12-million-in-crypto-via-trojanized-trading-apps
+date: '2026-04-23'
+excerpt: >-
+  North Korean hackers siphoned over $12 million from crypto users in Q1 2026
+  using trojanized trading apps like CoinStats and TradingView AI Agent to steal
+  recovery phrases and…
+category: malware
+tags:
+  - north-korea
+  - cryptocurrency
+  - malware
+  - phishing
+  - supply-chain
+  - lazarus
+language: en
+source_urls:
+  - >-
+    https://therecord.media/north-korean-hackers-siphon-12-million-from-crypto-users
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-23-north-korean-hackers-steal-12-million-in-crypto-via-trojanized-trading-apps
+severity: high
+threat_actor: Lazarus Group
+threat_actor_origin: North Korea
+affected_sectors:
+  - cryptocurrency
+---
+## Executive Summary
+North Korean state-sponsored hackers, identified as the Lazarus Group, stole more than $12 million in cryptocurrency from users in the first quarter of 2026. The campaign used trojanized versions of legitimate trading and portfolio management applications to steal recovery phrases and private keys, according to research from Recorded Future News.
+
+## Technical Analysis
+The attackers created fake websites mimicking legitimate services, including CoinStats and a purported "TradingView AI Agent." These sites distributed malicious installers for Windows and macOS. The malware, once installed, searched for and exfiltrated cryptocurrency wallet data, including seed phrases and private keys stored in files or browser extensions. The operation relied on convincing social engineering, with the fake TradingView site promoting a non-existent AI trading bot to lure victims.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The campaign employed supply-chain compromise by trojanizing legitimate software installers. Primary initial access vectors were fake software download sites (T1566.002). The malware performed credential harvesting from local files and browsers (T1555). Funds were transferred directly from compromised wallets to attacker-controlled addresses.
+
+## Threat Actor Context
+The activity is attributed to the Lazarus Group, a cybercrime unit operated by North Korea's Reconnaissance General Bureau (RGB). The group is known for financing state objectives through cryptocurrency theft, with billions stolen over the past decade. This campaign represents a continuation of their focus on individual crypto users and traders, supplementing larger attacks on exchanges and protocols.
+
+## Mitigations & Recommendations
+Users should only download software from official vendor websites and app stores. Cryptocurrency holders are advised to use hardware wallets for storing significant assets and never enter seed phrases into software-based portfolio managers. Researchers recommend verifying the cryptographic signatures of downloaded applications where possible.
+
+## References
+- https://therecord.media/north-korean-hackers-siphon-12-million-from-crypto-users

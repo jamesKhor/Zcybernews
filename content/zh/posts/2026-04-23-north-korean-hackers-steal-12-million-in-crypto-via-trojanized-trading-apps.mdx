@@ -1,0 +1,52 @@
+---
+title: 朝鲜黑客通过木马化软件窃取1200万美元加密货币
+slug: >-
+  2026-04-23-north-korean-hackers-steal-12-million-in-crypto-via-trojanized-trading-apps
+date: '2026-04-23'
+excerpt: >-
+  朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI
+  Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…
+category: malware
+tags:
+  - north-korea
+  - cryptocurrency
+  - malware
+  - phishing
+  - supply-chain
+  - lazarus
+language: zh
+source_urls:
+  - >-
+    https://therecord.media/north-korean-hackers-siphon-12-million-from-crypto-users
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-23-north-korean-hackers-steal-12-million-in-crypto-via-trojanized-trading-apps
+severity: high
+threat_actor: Lazarus Group
+threat_actor_origin: North Korea
+affected_sectors:
+  - cryptocurrency
+---
+## 北韩黑客通过木马化软件窃取1200万美元加密货币
+
+## 执行摘要
+被识别为Lazarus Group的北韩国家资助黑客，在2026年第一季度从用户那里窃取了超过1200万美元的加密货币。根据Recorded Future News的研究，该活动使用了木马化的合法交易和投资组合管理应用程序版本来窃取恢复短语和私钥。
+
+## 技术分析
+攻击者创建了模仿合法服务的假网站，包括CoinStats和一个所谓的“TradingView AI Agent”。这些网站分发了针对Windows和macOS的恶意安装程序。一旦安装，恶意软件就会搜索并泄露加密货币钱包数据，包括存储在文件或浏览器扩展中的种子短语和私钥。该操作依赖于令人信服的社会工程学，假的TradingView网站推广了一个不存在的AI交易机器人来吸引受害者。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+该活动通过木马化合法软件安装程序来实现供应链攻击。主要的初始访问向量是假软件下载网站（T1566.002）。恶意软件从本地文件和浏览器中进行凭证收集（T1555）。资金直接从被入侵的钱包转移到攻击者控制的地址。
+
+## 威胁行为者背景
+该活动被归因于Lazarus Group，这是北韩侦察总局（RGB）运营的一个网络犯罪单位。该组织以通过加密货币盗窃为国家目标提供资金而闻名，在过去十年中窃取了数十亿美元。这一活动代表了他们对个人加密用户和交易者的持续关注，补充了对交易所和协议的更大规模攻击。
+
+## 缓解措施与建议
+用户应仅从官方供应商网站和应用商店下载软件。建议加密货币持有者使用硬件钱包存储重要资产，并且永远不要将种子短语输入到基于软件的投资组合管理器中。研究人员建议在可能的情况下验证下载应用程序的加密签名。
+
+## 参考资料
+- https://therecord.media/north-korean-hackers-siphon-12-million-from-crypto-users
