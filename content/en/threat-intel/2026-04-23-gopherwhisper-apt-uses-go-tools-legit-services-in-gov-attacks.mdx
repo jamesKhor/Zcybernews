@@ -1,0 +1,49 @@
+---
+title: 'GopherWhisper APT Uses Go Tools, Legit Services in Gov Attacks'
+slug: 2026-04-23-gopherwhisper-apt-uses-go-tools-legit-services-in-gov-attacks
+date: '2026-04-23'
+excerpt: >-
+  GopherWhisper, a new state-backed APT, targets government entities with a
+  Go-based toolkit abusing Outlook, Slack, and Discord for C2.
+category: threat-intel
+tags:
+  - gopherwhisper
+  - apt
+  - go-malware
+  - government-attacks
+  - living-off-the-land
+  - threat-intelligence
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-gopherwhisper-apt-group-abuses-outlook-slack-discord-for-comms/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-gopherwhisper-apt-uses-go-tools-legit-services-in-gov-attacks
+severity: high
+threat_actor: GopherWhisper
+threat_actor_origin: unknown
+affected_sectors:
+  - government
+affected_regions:
+  - Asia
+---
+## Executive Summary
+
+A previously undocumented state-sponsored threat actor tracked as GopherWhisper is actively targeting government entities using a custom toolkit written in Go and abusing legitimate services — including Microsoft 365 Outlook, Slack, and Discord — for command-and-control (C2) communications, according to a report from BleepingComputer. The group employs a multi-component malware suite that includes a custom backdoor, a data theft tool, and a loader, all designed to blend into normal network traffic by leveraging APIs of widely used collaboration platforms.
+
+## Technical Analysis
+
+GopherWhisper's toolchain is built entirely in Go, a language increasingly favored by APT groups for its cross-platform compilation and relative difficulty in reverse engineering. The initial infection vector remains unclear, but once inside a victim network, the group deploys a loader that retrieves the main backdoor payload. The backdoor communicates with its C2 infrastructure by abusing the REST APIs of Microsoft 365 Outlook, Slack, and Discord — a technique known as "living off the land" (LotL) that makes detection challenging because traffic is encrypted and directed at legitimate cloud endpoints.
+
+The backdoor supports file upload/download, command execution, and system reconnaissance. A separate data theft module is capable of exfiltrating documents and credentials, packaging them, and sending them through the same abused API channels. BleepingComputer notes that the group's use of multiple communication platforms suggests a redundancy mechanism — if one service is blocked or monitored, the malware falls back to another.
+
+Attribution is based on the unique combination of Go-based tooling, the specific API abuse patterns, and the targeting of government entities, though the report does not name a specific originating country. The group's operational security includes encrypting C2 payloads and using dynamic DNS for initial staging.
+
+## Mitigations & Recommendations
+
+Defenders should monitor for anomalous outbound API calls to collaboration platforms from systems that do not typically use them — for example, a server or domain controller making API calls to Discord or Slack. Network segmentation and strict application allowlisting can limit the ability of malware to reach external APIs. Security teams should also review logs for unusual authentication patterns to Microsoft 365 Outlook APIs, especially from non-interactive accounts. Endpoint detection rules should flag Go-compiled binaries that attempt to access multiple cloud service APIs in sequence.
+
+## References
+
+- [New GopherWhisper APT group abuses Outlook, Slack, Discord for comms - BleepingComputer](https://www.bleepingcomputer.com/news/security/new-gopherwhisper-apt-group-abuses-outlook-slack-discord-for-comms/)

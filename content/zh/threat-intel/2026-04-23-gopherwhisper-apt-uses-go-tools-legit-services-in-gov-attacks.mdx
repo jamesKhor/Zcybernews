@@ -1,0 +1,49 @@
+---
+title: GopherWhisper APT 使用 Go 工具，合法服务在政府攻击中
+slug: 2026-04-23-gopherwhisper-apt-uses-go-tools-legit-services-in-gov-attacks
+date: '2026-04-23'
+excerpt: >-
+  GopherWhisper，一个新的国家支持的 APT，针对政府实体使用基于 Go 的工具包滥用 Outlook、Slack 和 Discord 进行
+  C2。
+category: threat-intel
+tags:
+  - gopherwhisper
+  - apt
+  - go-malware
+  - government-attacks
+  - living-off-the-land
+  - threat-intelligence
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-gopherwhisper-apt-group-abuses-outlook-slack-discord-for-comms/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-gopherwhisper-apt-uses-go-tools-legit-services-in-gov-attacks
+severity: high
+threat_actor: GopherWhisper
+threat_actor_origin: unknown
+affected_sectors:
+  - government
+affected_regions:
+  - Asia
+---
+## 执行摘要
+
+根据BleepingComputer的一份报告，一个以前未被记录的、由国家资助的威胁行为者GopherWhisper正在积极利用Go语言编写的定制工具包，滥用包括Microsoft 365 Outlook、Slack和Discord在内的合法服务，进行命令与控制（C2）通信，以攻击政府实体。该组织部署了一个多组件恶意软件套件，包括一个定制的后门、一个数据窃取工具和一个加载器，所有这些都设计成通过利用广泛使用的协作平台的API融入正常网络流量。
+
+## 技术分析
+
+GopherWhisper的工具链完全用Go语言构建，这是一种越来越受APT组织青睐的语言，因为它支持跨平台编译，并且在逆向工程中相对困难。初始感染向量尚不清楚，但一旦进入受害者网络，该组织就会部署一个加载器来检索主后门有效载荷。后门通过滥用Microsoft 365 Outlook、Slack和Discord的REST API与其C2基础设施通信——这种技术被称为“生活在土地上”（LotL），使得检测变得具有挑战性，因为流量是加密的，并且指向合法的云端点。
+
+后门支持文件上传/下载、命令执行和系统侦察。一个单独的数据窃取模块能够通过同样的滥用API通道窃取文档和凭证，将它们打包并发送出去。BleepingComputer指出，该组织使用多个通信平台表明了一种冗余机制——如果一个服务被封锁或监控，恶意软件就会退回到另一个服务。
+
+归因是基于基于Go的工具的独特组合、特定的API滥用模式和针对政府实体的目标，尽管报告没有指明具体的起源国家。该组织的运营安全包括加密C2有效载荷和使用动态DNS进行初始部署。
+
+## 缓解措施与建议
+
+防御者应监控来自不常使用协作平台的系统的异常外向API调用——例如，服务器或域控制器向Discord或Slack发起API调用。网络分段和严格的应用程序允许列表可以限制恶意软件访问外部API的能力。安全团队还应审查日志，以查找对Microsoft 365 Outlook API的不寻常认证模式，特别是来自非交互式账户的模式。端点检测规则应标记尝试连续访问多个云服务API的Go编译二进制文件。
+
+## 参考资料
+
+- [New GopherWhisper APT group abuses Outlook, Slack, Discord for comms - BleepingComputer](https://www.bleepingcomputer.com/news/security/new-gopherwhisper-apt-group-abuses-outlook-slack-discord-for-comms/)
