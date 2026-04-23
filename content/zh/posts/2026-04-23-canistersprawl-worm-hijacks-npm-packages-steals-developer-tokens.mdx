@@ -1,0 +1,46 @@
+---
+title: CanisterSprawl 蠕虫劫持 npm 包，窃取开发者令牌
+slug: 2026-04-23-canistersprawl-worm-hijacks-npm-packages-steals-developer-tokens
+date: '2026-04-23'
+excerpt: >-
+  根据 Socket 和…的说法，CanisterSprawl 供应链蠕虫劫持 npm 包，使用窃取的开发者令牌进行自我传播，并将数据外泄到 ICP
+  canister。
+category: malware
+tags:
+  - supply-chain
+  - npm
+  - malware
+  - worm
+  - developer-tools
+  - token-theft
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/self-propagating-supply-chain-worm.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-canistersprawl-worm-hijacks-npm-packages-steals-developer-tokens
+severity: high
+threat_actor: CanisterSprawl
+affected_sectors:
+  - software development
+---
+## 执行摘要
+一种自传播的供应链蠕虫，被追踪为CanisterSprawl，正在破坏npm包以窃取开发者的身份验证令牌，并使用它们进一步传播。安全公司Socket和StepSecurity识别了这个活动，它使用Internet Computer Protocol（ICP）区块链上的一个容器来外泄被盗数据。
+
+## 技术分析
+研究人员称，该蠕虫通过破坏现有的npm包来运作。一旦某个包被劫持，其中的恶意代码就会从开发者的环境中收集npm身份验证令牌。然后，这些被盗的令牌被用来发布新的恶意包或修改现有的包，形成一个自给自足的传播循环。最终的有效载荷将收集到的令牌和其他敏感数据外泄到ICP区块链上托管的一个容器——一种智能合约。
+
+## 入侵指标
+源材料中未识别出任何入侵指标。
+
+## 战术、技术与程序
+主要技术涉及破坏合法的npm包，作为初始感染向量（T1195.002: 供应链破坏）。然后蠕虫执行凭证访问（T1552），通过从开发者系统中收集npm令牌。这些令牌被用于通过自动化包发布（T1195）实现持久性和传播。数据外泄是向外部基于区块链的资源（T1048）进行的。
+
+## 威胁行为者背景
+研究人员在Socket和StepSecurity将此活动追踪为CanisterSprawl。使用ICP容器进行命令控制和数据外泄是此次活动的一个显著特点。行为者的具体身份或来源在可用的来源中没有详细说明。
+
+## 缓解措施与建议
+开发者应该仔细审查包依赖关系，并使用可以检测可疑包行为的供应链安全工具，例如令牌访问或意外的网络调用。组织应该对发布权限执行最小权限原则，并定期轮换身份验证令牌。还建议监控已知账户下的未经授权的包发布。
+
+## 参考资料
+- https://thehackernews.com/2026/04/self-propagating-supply-chain-worm.html

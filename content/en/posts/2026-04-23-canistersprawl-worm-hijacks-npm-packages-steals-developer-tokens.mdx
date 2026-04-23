@@ -1,0 +1,47 @@
+---
+title: 'CanisterSprawl Worm Hijacks npm Packages, Steals Developer Tokens'
+slug: 2026-04-23-canistersprawl-worm-hijacks-npm-packages-steals-developer-tokens
+date: '2026-04-23'
+excerpt: >-
+  The CanisterSprawl supply chain worm hijacks npm packages, uses stolen
+  developer tokens to self-propagate, and exfiltrates data to an ICP canister,
+  according to Socket and…
+category: malware
+tags:
+  - supply-chain
+  - npm
+  - malware
+  - worm
+  - developer-tools
+  - token-theft
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/self-propagating-supply-chain-worm.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-canistersprawl-worm-hijacks-npm-packages-steals-developer-tokens
+severity: high
+threat_actor: CanisterSprawl
+affected_sectors:
+  - software development
+---
+## Executive Summary
+A self-propagating supply chain worm, tracked as CanisterSprawl, is compromising npm packages to steal developer authentication tokens and use them to propagate further. Security firms Socket and StepSecurity identified the campaign, which uses a canister on the Internet Computer Protocol (ICP) blockchain to exfiltrate stolen data.
+
+## Technical Analysis
+According to researchers, the worm operates by compromising existing npm packages. Once a package is hijacked, malicious code within it harvests npm authentication tokens from developers' environments. These stolen tokens are then used to publish new malicious packages or modify existing ones, creating a self-sustaining propagation cycle. The final payload exfiltrates the collected tokens and other sensitive data to a canister—a type of smart contract—hosted on the ICP blockchain.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The primary technique involves compromising legitimate npm packages to serve as an initial infection vector (T1195.002: Supply Chain Compromise). The worm then performs credential access (T1552) by harvesting npm tokens from developer systems. These tokens are used for persistence and propagation via automated package publishing (T1195). Data exfiltration is conducted to an external blockchain-based resource (T1048).
+
+## Threat Actor Context
+The activity is tracked under the name CanisterSprawl by researchers at Socket and StepSecurity. The use of an ICP canister for command and control and data exfiltration is a notable feature of this campaign. The actors' specific identity or origin is not detailed in the available sources.
+
+## Mitigations & Recommendations
+Developers should scrutinize package dependencies and employ supply chain security tools that can detect suspicious package behaviors, such as token access or unexpected network calls. Organizations should enforce the principle of least privilege for publishing permissions and regularly rotate authentication tokens. Monitoring for unauthorized package publications under known accounts is also advised.
+
+## References
+- https://thehackernews.com/2026/04/self-propagating-supply-chain-worm.html
