@@ -1,0 +1,47 @@
+---
+title: 恶意Docker镜像和VS Code扩展针对Checkmarx KICS
+slug: >-
+  2026-04-23-malicious-docker-images-and-vs-code-extensions-target-checkmarx-kics
+date: '2026-04-23'
+excerpt: 威胁行为者上传了恶意Docker镜像到Checkmarx的官方KICS仓库，并发布了木马化的VS Code扩展，窃取AWS密钥和浏览器数据从…
+category: malware
+tags:
+  - supply-chain
+  - docker
+  - vscode
+  - checkmarx
+  - kics
+  - malware
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/malicious-kics-docker-images-and-vs.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-23-malicious-docker-images-and-vs-code-extensions-target-checkmarx-kics
+severity: high
+affected_sectors:
+  - software development
+---
+## 恶意 Docker 镜像和 VS Code 扩展针对 Checkmarx KICS
+
+## 执行摘要
+未知的威胁行为者破坏了官方 Checkmarx KICS Docker Hub 仓库，推送恶意容器镜像和木马化的 Visual Studio Code 扩展，进行了一次软件供应链攻击。供应链安全公司 Socket 披露的这场活动窃取了包括 AWS 凭证和浏览器信息在内的敏感开发人员数据。
+
+## 技术分析
+根据 Socket 的说法，攻击者将恶意镜像上传到了 `checkmarx/kics` Docker Hub 仓库，覆盖了像 `v2.1.20` 和 `alpine` 这样的合法标签。他们还创建了一个新的非官方 `v2.1.21` 标签。同时，模仿官方 "KICS" 和 "KICS2" 工具的恶意扩展被发布在了 VS Code 市场上。这些扩展包含了混淆代码，一旦执行，就会将受害者环境中的敏感数据泄露到命令和控制服务器。
+
+## 入侵指标
+源材料中没有识别出任何入侵指标。
+
+## 战术、技术与程序
+攻击者采用了多管齐下的软件供应链攻击，破坏了容器注册表和开发者工具市场。该技术涉及拼写错误和品牌冒充，诱骗开发人员下载恶意工具。有效载荷集中在从本地开发环境中窃取凭证。
+
+## 威胁行为者背景
+源材料没有将这场活动归因于已知的威胁行为者或团体。鉴于对窃取云凭证和其他可以货币化的数据的关注，动机似乎是财务导向的。
+
+## 缓解措施与建议
+Socket 建议开发人员在使用前验证 Docker 镜像和 VS Code 扩展的来源。对于 Docker，用户应该通过加密哈希（SHA256）而不是通过标签名称来拉取镜像。对于 VS Code，开发人员应该确认发布者是 "Checkmarx"，并在安装前审查扩展权限。组织应该监控开发和构建系统发出的出站连接，以寻找意外流量到未知域名。
+
+## 参考资料
+- https://thehackernews.com/2026/04/malicious-kics-docker-images-and-vs.html

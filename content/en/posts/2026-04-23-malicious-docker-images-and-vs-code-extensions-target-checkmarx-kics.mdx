@@ -1,0 +1,48 @@
+---
+title: Malicious Docker Images and VS Code Extensions Target Checkmarx KICS
+slug: >-
+  2026-04-23-malicious-docker-images-and-vs-code-extensions-target-checkmarx-kics
+date: '2026-04-23'
+excerpt: >-
+  Threat actors uploaded malicious Docker images to Checkmarx's official KICS
+  repository and published trojanized VS Code extensions, stealing AWS keys and
+  browser data from…
+category: malware
+tags:
+  - supply-chain
+  - docker
+  - vscode
+  - checkmarx
+  - kics
+  - malware
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/malicious-kics-docker-images-and-vs.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-23-malicious-docker-images-and-vs-code-extensions-target-checkmarx-kics
+severity: high
+affected_sectors:
+  - software development
+---
+## Executive Summary
+Unknown threat actors compromised the official Checkmarx KICS Docker Hub repository, pushing malicious container images and trojanized Visual Studio Code extensions in a software supply chain attack. The campaign, disclosed by supply chain security firm Socket, stole sensitive developer data including AWS credentials and browser information.
+
+## Technical Analysis
+According to Socket, attackers uploaded malicious images to the `checkmarx/kics` Docker Hub repository, overwriting legitimate tags like `v2.1.20` and `alpine`. They also created a new, unofficial `v2.1.21` tag. Concurrently, malicious extensions mimicking the official "KICS" and "KICS2" tools were published on the VS Code Marketplace. These extensions contained obfuscated code that, upon execution, exfiltrated sensitive data from the victim's environment to a command-and-control server.
+
+## Indicators of Compromise
+None identified in source material.
+
+## Tactics, Techniques & Procedures
+The attackers employed a multi-pronged software supply chain attack, compromising both a container registry and a developer tool marketplace. The technique involved typosquatting and brand impersonation to trick developers into downloading malicious tools. The payload focused on credential theft from the local development environment.
+
+## Threat Actor Context
+The source material does not attribute this campaign to a known threat actor or group. The motives appear financially oriented, given the focus on stealing cloud credentials and other data that can be monetized.
+
+## Mitigations & Recommendations
+Socket recommends developers verify the provenance of Docker images and VS Code extensions before use. For Docker, users should pull images only by cryptographic hash (SHA256) rather than by tag name. For VS Code, developers should confirm the publisher is "Checkmarx" and review extension permissions before installation. Organizations should monitor outbound connections from development and build systems for unexpected traffic to unknown domains.
+
+## References
+- https://thehackernews.com/2026/04/malicious-kics-docker-images-and-vs.html
