@@ -1,0 +1,50 @@
+---
+title: Trigona Ransomware Deploys Custom Exfil Tool for Faster Data Theft
+slug: 2026-04-23-trigona-ransomware-deploys-custom-exfil-tool-for-faster-data-theft
+date: '2026-04-23'
+excerpt: >-
+  Trigona ransomware attacks now use a custom CLI tool to exfiltrate data from
+  compromised networks faster, targeting backups and cloud storage before
+  encryption.
+category: malware
+tags:
+  - trigona
+  - ransomware
+  - data-exfiltration
+  - custom-tool
+  - cli
+  - network-shares
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/trigona-ransomware-attacks-use-custom-exfiltration-tool-to-steal-data/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-trigona-ransomware-deploys-custom-exfil-tool-for-faster-data-theft
+severity: high
+threat_actor: Trigona
+affected_sectors:
+  - financial services
+  - manufacturing
+  - technology
+affected_regions:
+  - North America
+  - Europe
+---
+## Executive Summary
+
+Trigona ransomware operators have incorporated a custom command-line data exfiltration tool into their attack chain, enabling faster theft of sensitive data from compromised networks, according to recent analysis by cybersecurity researchers at BleepingComputer. The tool, which lacks a formal name in public reporting, automates the collection of files from network shares, local drives, and cloud storage services, compressing and encrypting them before exfiltration via HTTP or FTP. This development marks a shift from Trigona's earlier reliance on off-the-shelf exfiltration utilities like Rclone, potentially reducing the time between initial compromise and encryption.
+
+## Technical Analysis
+
+The custom exfil tool is a compiled Windows executable that accepts command-line arguments for target paths, output directory, and exfiltration endpoint. Researchers observed it scanning for mapped drives, SMB shares, and cloud storage mount points (including OneDrive and Google Drive) using Windows API calls. It filters files by extension, targeting documents, databases, and backup archives. The tool compresses selected files into password-protected ZIP archives using a hardcoded password, then uploads them to attacker-controlled servers via HTTP POST or FTP. Notably, it deletes the local archives after successful upload to minimize forensic artifacts.
+
+BleepingComputer's report, based on incident response cases handled by an unnamed firm, indicates the tool has been deployed in at least three Trigona attacks since February 2026. The tool's code is not publicly available, but behavioral analysis suggests it was developed specifically for Trigona, as it shares no code signatures with known open-source exfiltration tools. The tool also includes a self-deletion mechanism triggered after a configurable timeout or upon receiving a kill signal from the C2 server.
+
+## Mitigations & Recommendations
+
+Defenders should monitor for outbound HTTP or FTP connections from workstations to unfamiliar IPs, especially those involving large file transfers. Restricting SMB access to only authorized shares and disabling cloud storage sync clients on non-essential systems can reduce the tool's effectiveness. Network segmentation that separates backup servers from production endpoints limits the blast radius. Organizations should also audit for the presence of unknown executables in startup folders or scheduled tasks that match the tool's observed behavior.
+
+## References
+
+- [BleepingComputer: Trigona ransomware attacks use custom exfiltration tool to steal data](https://www.bleepingcomputer.com/news/security/trigona-ransomware-attacks-use-custom-exfiltration-tool-to-steal-data/)

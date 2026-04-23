@@ -1,0 +1,49 @@
+---
+title: Trigona 勒索软件部署自定义数据泄露工具以加快数据盗窃
+slug: 2026-04-23-trigona-ransomware-deploys-custom-exfil-tool-for-faster-data-theft
+date: '2026-04-23'
+excerpt: Trigona 勒索软件攻击现在使用自定义的 CLI 工具从被入侵的网络中更快地外泄数据，加密前针对备份和云存储。
+category: malware
+tags:
+  - trigona
+  - ransomware
+  - data-exfiltration
+  - custom-tool
+  - cli
+  - network-shares
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/trigona-ransomware-attacks-use-custom-exfiltration-tool-to-steal-data/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-trigona-ransomware-deploys-custom-exfil-tool-for-faster-data-theft
+severity: high
+threat_actor: Trigona
+affected_sectors:
+  - financial services
+  - manufacturing
+  - technology
+affected_regions:
+  - North America
+  - Europe
+---
+## Trigona 勒索软件部署定制数据窃取工具以加快数据盗窃
+
+## 执行摘要
+
+根据 BleepingComputer 的网络安全研究人员最近的分析，Trigona 勒索软件操作者已将一个定制的命令行数据外泄工具纳入他们的攻击链中，这使得他们能够从被入侵的网络中更快地窃取敏感数据。这个工具在公开报告中没有正式名称，它自动化地从网络共享、本地驱动器和云存储服务中收集文件，压缩并加密它们，然后通过 HTTP 或 FTP 外泄。这一发展标志着 Trigona 从早期依赖现成的外泄工具（如 Rclone）的转变，可能减少了初始入侵和加密之间的时间。
+
+## 技术分析
+
+这个定制的外泄工具是一个编译的 Windows 可执行文件，它接受命令行参数，包括目标路径、输出目录和外泄端点。研究人员观察到它使用 Windows API 调用扫描映射的驱动器、SMB 共享和云存储挂载点（包括 OneDrive 和 Google Drive）。它通过文件扩展名过滤文件，针对文档、数据库和备份档案。该工具将选定的文件压缩到使用硬编码密码的密码保护 ZIP 存档中，然后通过 HTTP POST 或 FTP 上传到攻击者控制的服务器。值得注意的是，它在成功上传后删除本地存档，以最小化取证痕迹。
+
+BleepingComputer 的报告基于一家未具名公司处理的事件响应案例，表明该工具自 2026 年 2 月以来已在至少三次 Trigona 攻击中部署。该工具的代码并未公开可用，但行为分析表明它是专门为 Trigona 开发的，因为它与已知的开源外泄工具没有共享任何代码签名。该工具还包括一个在可配置的超时后或在接收到 C2 服务器的杀伤信号后触发的自删除机制。
+
+## 缓解措施与建议
+
+防御者应监控从工作站到不熟悉 IP 的出站 HTTP 或 FTP 连接，特别是那些涉及大文件传输的连接。限制 SMB 访问仅授权共享，并在非必要系统上禁用云存储同步客户端，可以降低该工具的有效性。将备份服务器与生产端点分开的网络分割可以限制影响范围。组织还应审计启动文件夹或计划任务中是否存在与该工具观察到的行为相匹配的未知可执行文件。
+
+## 参考资料
+
+- [BleepingComputer: Trigona 勒索软件攻击使用定制外泄工具窃取数据](https://www.bleepingcomputer.com/news/security/trigona-ransomware-attacks-use-custom-exfiltration-tool-to-steal-data/)
