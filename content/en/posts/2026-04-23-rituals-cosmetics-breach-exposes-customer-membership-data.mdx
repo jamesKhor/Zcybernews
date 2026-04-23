@@ -1,0 +1,47 @@
+---
+title: Rituals Cosmetics Breach Exposes Customer Membership Data
+slug: 2026-04-23-rituals-cosmetics-breach-exposes-customer-membership-data
+date: '2026-04-23'
+excerpt: >-
+  Attackers stole personal data from Rituals Cosmetics' My Rituals membership
+  database — names, emails, addresses, and loyalty points. Number of affected
+  customers undisclosed.
+category: industry
+tags:
+  - data-breach
+  - rituals
+  - cosmetics
+  - customer-data
+  - privacy
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/cosmetics-giant-rituals-discloses-data-breach-affecting-customers/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-rituals-cosmetics-breach-exposes-customer-membership-data
+severity: high
+affected_sectors:
+  - retail
+  - cosmetics
+affected_regions:
+  - Netherlands
+  - Europe
+---
+## Executive Summary
+
+Dutch cosmetics retailer Rituals Cosmetics disclosed a data breach after attackers infiltrated its "My Rituals" membership database, stealing personal information of an undisclosed number of customers. The company confirmed the incident in a data breach notification filed with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens) on April 22, 2026, according to a report by BleepingComputer. The breach exposed names, email addresses, physical addresses, phone numbers, and loyalty points balances, though no financial data or payment credentials were compromised.
+
+## Technical Analysis
+
+Rituals stated that the attackers gained unauthorized access to the My Rituals membership database, which stores customer profiles for the company's loyalty program. The company has not disclosed the attack vector — whether via credential stuffing, SQL injection, compromised API endpoints, or insider threat — nor the timeline of the intrusion. BleepingComputer reported that Rituals is in the process of notifying affected customers via email and has reset all My Rituals account passwords as a precautionary measure.
+
+The breach appears limited to the membership database; Rituals explicitly stated that payment card information and other financial data were not stored in the compromised system, which is consistent with PCI DSS compliance practices that segregate payment data. The company has not disclosed the number of records exfiltrated, citing an ongoing investigation. This lack of transparency is notable given that Rituals operates over 1,000 stores across 40 countries and has a significant online presence, suggesting the potential scale could be substantial.
+
+## Mitigations & Recommendations
+
+Affected My Rituals members should assume their personal details — including email and physical addresses — are now in the hands of threat actors. Defenders should monitor for targeted phishing campaigns that may leverage the stolen data to craft convincing social engineering lures, particularly those referencing Rituals purchases or loyalty points. Customers should enable multi-factor authentication on any accounts that share the same email address or password used for My Rituals. Rituals has not offered credit monitoring or identity theft protection services to affected customers as of this writing, which is a gap that security-conscious consumers should address independently.
+
+## References
+
+- [BleepingComputer: Cosmetics giant Rituals discloses data breach affecting customers](https://www.bleepingcomputer.com/news/security/cosmetics-giant-rituals-discloses-data-breach-affecting-customers/)

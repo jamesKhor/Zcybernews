@@ -1,0 +1,48 @@
+---
+title: Rituals Cosmetics 泄露暴露客户会员数据
+slug: 2026-04-23-rituals-cosmetics-breach-exposes-customer-membership-data
+date: '2026-04-23'
+excerpt: >-
+  攻击者从 Rituals Cosmetics 的 My Rituals 会员数据库中窃取了个人数据 ——
+  名字、电子邮件、地址和忠诚度积分。受影响客户数量未披露。
+category: industry
+tags:
+  - data-breach
+  - rituals
+  - cosmetics
+  - customer-data
+  - privacy
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/cosmetics-giant-rituals-discloses-data-breach-affecting-customers/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-rituals-cosmetics-breach-exposes-customer-membership-data
+severity: high
+affected_sectors:
+  - retail
+  - cosmetics
+affected_regions:
+  - Netherlands
+  - Europe
+---
+## Rituals Cosmetics 泄露事件暴露客户会员数据
+
+## 执行摘要
+
+荷兰化妆品零售商 Rituals Cosmetics 在攻击者渗透其“My Rituals”会员数据库后披露了一起数据泄露事件，窃取了未公开数量客户的个人信息。根据 BleepingComputer 的报告，该公司在 2026 年 4 月 22 日向荷兰数据保护局（Autoriteit Persoonsgegevens）提交的数据泄露通知中确认了这一事件。泄露暴露了姓名、电子邮件地址、实际地址、电话号码和忠诚度积分余额，尽管没有财务数据或支付凭证被泄露。
+
+## 技术分析
+
+Rituals 表示，攻击者获得了对 My Rituals 会员数据库的未经授权访问，该数据库存储了公司忠诚度计划的客户档案。公司尚未披露攻击向量——是否通过凭证填充、SQL 注入、泄露的 API 端点或内部威胁——也未披露入侵的时间线。BleepingComputer 报告称，Rituals 正在通过电子邮件通知受影响的客户，并已重置所有 My Rituals 账户密码作为预防措施。
+
+泄露似乎仅限于会员数据库；Rituals 明确表示，支付卡信息和其他财务数据未存储在被泄露的系统中，这与将支付数据隔离的 PCI DSS 合规做法一致。公司尚未披露被外泄的记录数量，理由是正在进行调查。鉴于 Rituals 在 40 个国家运营超过 1,000 家商店并拥有重要的在线业务，这种缺乏透明度是值得注意的，暗示潜在规模可能相当大。
+
+## 缓解措施与建议
+
+受影响的 My Rituals 成员应假设他们的个人详细信息——包括电子邮件和实际地址——现在已落入威胁行为者手中。防御者应监控可能利用被盗数据制作令人信服的社会工程诱饵的目标钓鱼活动，特别是那些提及 Rituals 购买或忠诚度积分的活动。客户应在任何使用与 My Rituals 相同电子邮件地址或密码的账户上启用多因素认证。截至本文撰写时，Rituals 尚未向受影响客户提供信用监控或身份盗窃保护服务，这是安全意识消费者应独立解决的空白。
+
+## 参考资料
+
+- [BleepingComputer: Cosmetics giant Rituals discloses data breach affecting customers](https://www.bleepingcomputer.com/news/security/cosmetics-giant-rituals-discloses-data-breach-affecting-customers/)
