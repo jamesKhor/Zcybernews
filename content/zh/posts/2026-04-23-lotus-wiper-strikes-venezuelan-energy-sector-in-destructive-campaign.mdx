@@ -1,0 +1,45 @@
+---
+title: Lotus Wiper 攻击委内瑞拉能源部门的破坏性活动
+slug: >-
+  2026-04-23-lotus-wiper-strikes-venezuelan-energy-sector-in-destructive-campaign
+date: '2026-04-23'
+excerpt: 卡巴斯基发现了 Lotus Wiper，这是一种针对委内瑞拉能源和公用事业部门的新型文件擦除器，自2025年底以来一直活跃。
+category: malware
+tags:
+  - lotus-wiper
+  - venezuela
+  - energy-sector
+  - kaspersky
+  - wiper-malware
+  - critical-infrastructure
+language: zh
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/lotus-wiper-malware-targets-venezuelan.html
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-23-lotus-wiper-strikes-venezuelan-energy-sector-in-destructive-campaign
+severity: critical
+threat_actor: Lotus Wiper
+affected_sectors:
+  - energy
+  - utilities
+affected_regions:
+  - Venezuela
+---
+## 执行摘要
+
+卡巴斯基的安全研究人员发现了一种以前未记录的数据擦除器，被称为**Lotus Wiper**，它被部署在针对委内瑞拉能源和公用事业部门的破坏性攻击中。根据这家俄罗斯网络安全公司发布的研究结果，自2025年底开始并持续到2026年初的活动，使用两个批处理脚本来系统地删除受感染系统上的文件。没有观察到恢复机制或数据泄露能力，表明这是一个纯粹的破坏任务。
+
+## 技术分析
+
+卡巴斯基的分析显示，Lotus Wiper依赖两个不同的批处理脚本来执行其擦除例程。第一个脚本枚举驱动器并针对特定文件扩展名进行删除，而第二个脚本用零覆盖剩余数据，然后触发系统关闭。恶意软件似乎没有使用任何混淆或加密，这表明操作者优先考虑破坏速度而不是隐蔽性。卡巴斯基指出，擦除器是通过一个未确认的初始访问向量交付的，但针对能源基础设施的目标与该地区的地缘政治紧张局势一致。研究人员表示，攻击发生在“去年年底和2026年初”，截至发布时，没有归因于特定的国家或犯罪集团。
+
+## 缓解措施与建议
+
+能源和公用事业部门的防御者，特别是在拉丁美洲，应监控不寻常的批处理脚本执行或大规模文件删除事件。卡巴斯基建议实施应用程序白名单以阻止未经授权的脚本解释器，启用对进程创建和文件删除操作的详细日志记录，并维护关键系统的离线备份。在IT和运营技术（OT）环境之间的网络分段可以限制擦除器的传播，如果发生初始入侵。组织还应审查远程访问日志，以寻找横向移动的迹象。
+
+## 参考资料
+
+* [The Hacker News: Lotus Wiper Malware Targets Venezuelan Energy Systems in Destructive Attack](https://thehackernews.com/2026/04/lotus-wiper-malware-targets-venezuelan.html)

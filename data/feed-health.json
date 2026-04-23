@@ -1,9 +1,14 @@
 {
   "bleepingcomputer": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 15
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -67,10 +72,15 @@
     ]
   },
   "krebsonsecurity": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -134,10 +144,15 @@
     ]
   },
   "thehackernews": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -201,10 +216,15 @@
     ]
   },
   "darkreading": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -268,10 +288,15 @@
     ]
   },
   "securityweek": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -335,10 +360,15 @@
     ]
   },
   "schneier": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -402,10 +432,15 @@
     ]
   },
   "blackhillsinfosec": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -469,10 +504,15 @@
     ]
   },
   "cisa-alerts": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -536,10 +576,15 @@
     ]
   },
   "cisa-kev": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -603,10 +648,15 @@
     ]
   },
   "sans-isc": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -670,10 +720,15 @@
     ]
   },
   "ncsc-uk": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 0
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -737,10 +792,15 @@
     ]
   },
   "checkpoint-research": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 15
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -804,10 +864,15 @@
     ]
   },
   "google-tag": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -871,10 +936,15 @@
     ]
   },
   "project-zero": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -938,10 +1008,15 @@
     ]
   },
   "sentinelone": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1005,10 +1080,15 @@
     ]
   },
   "unit42": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 15
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1072,10 +1152,15 @@
     ]
   },
   "kaspersky-securelist": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1139,10 +1224,15 @@
     ]
   },
   "malwarebytes": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1206,10 +1296,15 @@
     ]
   },
   "welivesecurity": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1273,10 +1368,15 @@
     ]
   },
   "rapid7": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1340,10 +1440,15 @@
     ]
   },
   "zdi": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1407,10 +1512,15 @@
     ]
   },
   "elastic-security": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1474,10 +1584,15 @@
     ]
   },
   "recorded-future": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1541,10 +1656,15 @@
     ]
   },
   "the-record": {
-    "lastSuccess": "2026-04-23T08:35:28.754Z",
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
+    "lastSuccess": "2026-04-23T09:33:39.549Z",
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": true,
+        "items": 5
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": true,
@@ -1609,9 +1729,14 @@
   },
   "volexity": {
     "lastSuccess": null,
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
-    "consecutiveFailures": 12,
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
+    "consecutiveFailures": 13,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": false,
+        "error": "Attribute without value\nLine: 15\nColumn: 69\nChar: >"
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": false,
@@ -1676,9 +1801,14 @@
   },
   "censys": {
     "lastSuccess": null,
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
-    "consecutiveFailures": 12,
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
+    "consecutiveFailures": 13,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": false,
+        "error": "Status code 404"
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": false,
@@ -1743,9 +1873,14 @@
   },
   "freebuf": {
     "lastSuccess": null,
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
-    "consecutiveFailures": 12,
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
+    "consecutiveFailures": 13,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": false,
+        "error": "Status code 405"
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": false,
@@ -1810,9 +1945,14 @@
   },
   "nvd-recent": {
     "lastSuccess": null,
-    "lastAttempt": "2026-04-23T08:35:28.754Z",
-    "consecutiveFailures": 10,
+    "lastAttempt": "2026-04-23T09:33:39.549Z",
+    "consecutiveFailures": 11,
     "recent": [
+      {
+        "at": "2026-04-23T09:33:39.549Z",
+        "ok": false,
+        "error": "NVD HTTP 404"
+      },
       {
         "at": "2026-04-23T08:35:28.754Z",
         "ok": false,

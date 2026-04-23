@@ -1,0 +1,47 @@
+---
+title: Lotus Wiper Strikes Venezuelan Energy Sector in Destructive Campaign
+slug: >-
+  2026-04-23-lotus-wiper-strikes-venezuelan-energy-sector-in-destructive-campaign
+date: '2026-04-23'
+excerpt: >-
+  Kaspersky discovered Lotus Wiper, a novel file wiper targeting Venezuela's
+  energy and utilities sector since late 2025.
+category: malware
+tags:
+  - lotus-wiper
+  - venezuela
+  - energy-sector
+  - kaspersky
+  - wiper-malware
+  - critical-infrastructure
+language: en
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/lotus-wiper-malware-targets-venezuelan.html
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-23-lotus-wiper-strikes-venezuelan-energy-sector-in-destructive-campaign
+severity: critical
+threat_actor: Lotus Wiper
+affected_sectors:
+  - energy
+  - utilities
+affected_regions:
+  - Venezuela
+---
+## Executive Summary
+
+Security researchers at Kaspersky have identified a previously undocumented data wiper, dubbed **Lotus Wiper**, deployed in destructive attacks against Venezuela's energy and utilities sector. The campaign, active since late 2025 and continuing into early 2026, uses two batch scripts to systematically delete files on compromised systems, according to findings published by the Russian cybersecurity firm. No recovery mechanism or data exfiltration capability has been observed, indicating a pure destruction mission.
+
+## Technical Analysis
+
+Kaspersky's analysis reveals that Lotus Wiper relies on two distinct batch scripts to execute its wiping routine. The first script enumerates drives and targets specific file extensions for deletion, while the second script overwrites remaining data with zeros before triggering a system shutdown. The malware does not appear to use any obfuscation or encryption, suggesting the operators prioritized speed of destruction over stealth. Kaspersky noted that the wiper is delivered via an initial access vector that remains unconfirmed, but the targeting of energy infrastructure aligns with geopolitical tensions in the region. The researchers stated that the attacks occurred "at the end of last year and the start of 2026," with no attribution to a specific nation-state or criminal group as of publication.
+
+## Mitigations & Recommendations
+
+Defenders in the energy and utilities sector, particularly in Latin America, should monitor for unusual batch script executions or mass file deletion events. Kaspersky recommends implementing application whitelisting to block unauthorized script interpreters, enabling detailed logging of process creation and file deletion operations, and maintaining offline backups of critical systems. Network segmentation between IT and operational technology (OT) environments can limit the wiper's spread if an initial compromise occurs. Organizations should also review remote access logs for signs of lateral movement.
+
+## References
+
+* [The Hacker News: Lotus Wiper Malware Targets Venezuelan Energy Systems in Destructive Attack](https://thehackernews.com/2026/04/lotus-wiper-malware-targets-venezuelan.html)
