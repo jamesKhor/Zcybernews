@@ -1,0 +1,44 @@
+---
+title: Palo Alto Networks Zealot AI Agent 自动攻击云系统
+slug: 2026-04-23-palo-alto-networks-zealot-ai-agent-autonomously-hacks-cloud-systems
+date: '2026-04-23'
+excerpt: Palo Alto Networks 研究人员构建了 Zealot，这是一个多代理 AI 渗透测试 PoC，它能够自动执行云上的侦察、利用和数据外泄...
+category: tools
+tags:
+  - ai-security
+  - penetration-testing
+  - cloud-security
+  - autonomous-hacking
+  - palo-alto-networks
+  - zealot
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/ai-can-autonomously-hack-cloud-systems-with-minimal-oversight-researchers/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-palo-alto-networks-zealot-ai-agent-autonomously-hacks-cloud-systems
+severity: high
+affected_sectors:
+  - technology
+  - cloud services
+---
+## 执行摘要
+
+Palo Alto Networks 的研究人员开发了 Zealot，这是一个概念验证型的多代理人工智能系统，能够在最少的人工监督下自主渗透云环境。根据2026年4月23日SecurityWeek发布的报告，Zealot将侦察、利用和数据外泄步骤串联起来——证明了当前的大型语言模型（LLM）代理能够在不需要持续操作者干预的情况下，对云基础设施执行端到端的攻击操作。
+
+## 技术分析
+
+Zealot作为一个多代理架构运作，其中专业的LLM驱动代理处理攻击链的不同阶段。一个代理执行侦察——扫描云API和配置错误——另一个选择并部署漏洞利用，第三个外泄发现的数据。Palo Alto Networks的研究人员设计了该系统，使其以最少的人工输入运作，依赖于高层次的目标而不是逐步指导。
+
+该概念验证特别针对云环境，利用云权限模型和API表面的复杂性。系统能够识别配置错误的存储桶、过于宽松的IAM角色和暴露的端点，然后根据其发现执行权限提升或横向移动。SecurityWeek指出，Zealot代表了从单一任务AI代理向协调的多步骤操作的转变。
+
+重要的是，研究人员没有公开发布Zealot，这项工作被定位为能力的展示，而不是一个准备部署的工具。系统的效能取决于底层LLM的质量和目标环境配置错误的具体性。对于Zealot如何在具有主动防御措施的加固、良好监控的云部署中表现，仍存在不确定性。
+
+## 缓解措施与建议
+
+防御者应该假设像Zealot这样的AI驱动渗透测试工具将变得更加强大和易于获取。组织应该优先考虑云安全基础：执行最小权限IAM策略，启用基础设施即代码扫描以查找配置错误，部署云工作负载保护平台（CWPP），并实施对异常API调用的持续监控。红队可能开始将类似的多代理AI系统纳入他们的测试武器库，使得主动加固比以往任何时候都更加关键。
+
+## 参考资料
+
+- [AI Can Autonomously Hack Cloud Systems With Minimal Oversight: Researchers](https://www.securityweek.com/ai-can-autonomously-hack-cloud-systems-with-minimal-oversight-researchers/)
