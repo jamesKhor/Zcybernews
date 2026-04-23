@@ -1,0 +1,54 @@
+---
+title: Apple Patches iOS Flaw That Stored Deleted Signal Notifications
+slug: 2026-04-23-apple-patches-ios-flaw-that-stored-deleted-signal-notifications
+date: '2026-04-23'
+excerpt: >-
+  CVE-2026-28950 in iOS Notification Services retained deleted Signal messages
+  on device, accessible via forensic tools. Apple fixed the logging flaw in iOS
+  18.4.1 and iPadOS 18.4.1.
+category: vulnerabilities
+tags:
+  - apple
+  - ios
+  - signal
+  - cve-2026-28950
+  - forensic
+  - notification-services
+  - privacy
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/apple-patches-ios-flaw-that-stored.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-apple-patches-ios-flaw-that-stored-deleted-signal-notifications
+severity: high
+cve_ids:
+  - CVE-2026-28950
+affected_sectors:
+  - technology
+  - government
+  - legal
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Apple released security updates for iOS and iPadOS on April 22, 2026, addressing a Notification Services vulnerability that caused deleted notifications from encrypted messaging apps like Signal to remain stored on the device. The flaw, tracked as **CVE-2026-28950**, was disclosed by researchers who demonstrated that messages users believed were permanently deleted could be recovered via forensic extraction tools — including those used by the FBI in criminal investigations. Apple described the issue as a logging problem and fixed it with improved data redaction in iOS 18.4.1 and iPadOS 18.4.1. No CVSS score has been assigned by Apple at time of writing.
+
+## Technical Analysis
+
+The vulnerability resides in Apple's Notification Services framework, which handles the delivery and display of push notifications. According to The Hacker News, which first reported the disclosure, notifications marked for deletion by the user were unexpectedly retained on the device. This means that when a user received a Signal message, dismissed the notification, and then deleted the conversation within Signal, the notification content — including the message text — remained in the Notification Services database.
+
+Forensic tools commonly used by law enforcement, such as those from Cellebrite and GrayKey, can extract the full contents of the Notification Services database from a locked or unlocked iOS device. In the context of the FBI's ongoing legal battles with Apple over device unlocking and data access, this flaw provided a backdoor for investigators to recover messages that users and app developers assumed were ephemeral.
+
+Signal, known for its end-to-end encryption and disappearing message features, relies on the operating system's notification handling to display message previews. When a user deletes a Signal conversation, the app sends a signal to iOS to remove the associated notifications. However, CVE-2026-28950 caused iOS to fail to fully purge those notifications from its internal logs, leaving a forensic artifact.
+
+The vulnerability affects all iPhone and iPad models running iOS versions prior to 18.4.1 and iPadOS prior to 18.4.1. Apple has not disclosed whether the flaw was actively exploited in the wild, nor has it attributed the discovery to a specific researcher or organization. The company's advisory states only that the issue was addressed "with improved data redaction."
+
+## Mitigations & Recommendations
+
+Users of iPhone and iPad devices should update to **iOS 18.4.1** or **iPadOS 18.4.1** immediately via Settings > General > Software Update. Organizations that manage fleets of Apple devices should prioritize this update, particularly for devices used by employees who handle sensitive communications via encrypted messaging apps. For users who require the highest assurance of message deletion — such as journalists, activists, or legal professionals — enabling Signal's "disappearing messages" feature at the shortest interval (5 seconds) and disabling notification previews entirely in iOS Settings > Notifications > Signal > Show Previews (set to "Never") can reduce the forensic window. However, only the OS patch fully eliminates the retention behavior.
+
+## References
+
+- [The Hacker News: Apple Patches iOS Flaw That Stored Deleted Signal Notifications in FBI Forensic Case](https://thehackernews.com/2026/04/apple-patches-ios-flaw-that-stored.html)

@@ -1,0 +1,53 @@
+---
+title: 苹果修补了iOS漏洞，该漏洞存储了已删除的Signal通知
+slug: 2026-04-23-apple-patches-ios-flaw-that-stored-deleted-signal-notifications
+date: '2026-04-23'
+excerpt: >-
+  CVE-2026-28950在iOS通知服务中保留了设备上的已删除Signal消息，可通过取证工具访问。苹果在iOS 18.4.1和iPadOS
+  18.4.1中修复了日志记录缺陷。
+category: vulnerabilities
+tags:
+  - apple
+  - ios
+  - signal
+  - cve-2026-28950
+  - forensic
+  - notification-services
+  - privacy
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/apple-patches-ios-flaw-that-stored.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-apple-patches-ios-flaw-that-stored-deleted-signal-notifications
+severity: high
+cve_ids:
+  - CVE-2026-28950
+affected_sectors:
+  - technology
+  - government
+  - legal
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+苹果公司于2026年4月22日发布了iOS和iPadOS的安全更新，解决了一个通知服务漏洞，该漏洞导致从加密消息应用如Signal中删除的通知仍然存储在设备上。这个被追踪为**CVE-2026-28950**的漏洞由研究人员披露，他们展示了用户认为已被永久删除的消息可以通过取证提取工具恢复——包括FBI在刑事调查中使用的工具。苹果将这个问题描述为日志记录问题，并通过iOS 18.4.1和iPadOS 18.4.1中的改进数据删除解决了这个问题。截至撰写本文时，苹果尚未分配CVSS评分。
+
+## 技术分析
+
+这个漏洞存在于苹果的通知服务框架中，该框架负责处理推送通知的传递和显示。据The Hacker News首次报道披露，用户标记为删除的通知意外地保留在设备上。这意味着，当用户收到Signal消息，关闭通知，然后在Signal内删除对话时，通知内容——包括消息文本——仍然保留在通知服务数据库中。
+
+执法部门常用的取证工具，如Cellebrite和GrayKey的工具，可以从锁定或未锁定的iOS设备中提取通知服务数据库的全部内容。在FBI与苹果就设备解锁和数据访问进行的持续法律斗争的背景下，这个漏洞为调查人员提供了一个后门，以恢复用户和应用开发者认为转瞬即逝的消息。
+
+Signal以其端到端加密和消息自动消失功能而闻名，依赖操作系统的通知处理来显示消息预览。当用户删除Signal对话时，应用会向iOS发送信号以移除相关通知。然而，CVE-2026-28950导致iOS未能从其内部日志中完全清除这些通知，留下了取证痕迹。
+
+这个漏洞影响所有运行iOS版本低于18.4.1和iPadOS低于18.4.1的iPhone和iPad型号。苹果没有披露这个漏洞是否在野外被积极利用，也没有将发现归功于特定的研究人员或组织。公司的咨询声明只提到问题已通过“改进的数据删除”得到解决。
+
+## 缓解措施与建议
+
+iPhone和iPad设备的用户应立即通过设置>通用>软件更新更新到**iOS 18.4.1**或**iPadOS 18.4.1**。管理苹果设备车队的组织应优先考虑此更新，特别是对于通过加密消息应用处理敏感通信的员工使用的设备。对于需要最高消息删除保证的用户——如记者、活动家或法律专业人士——启用Signal的“消失消息”功能在最短间隔（5秒）并完全禁用iOS设置>通知>Signal>显示预览（设置为“永不”）可以减少取证窗口。然而，只有操作系统补丁才能完全消除保留行为。
+
+## 参考资料
+
+- [The Hacker News: Apple Patches iOS Flaw That Stored Deleted Signal Notifications in FBI Forensic Case](https://thehackernews.com/2026/04/apple-patches-ios-flaw-that-stored.html)
