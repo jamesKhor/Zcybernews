@@ -19,6 +19,10 @@ locale_pair: 2026-04-13-janelarat-evolves-anti-analysis-data-theft-capabilities
 severity: high
 affected_regions:
   - Latin America
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
 ---
 ## 执行摘要
 一个更新的活动正在分发 **JanelaRAT** 远程访问木马（RAT），积极针对拉丁美洲用户，主要是为了金融盗窃。根据卡巴斯基全球研究与分析团队（GReAT），恶意软件的操作者已经通过新的反分析技术、扩展的凭证盗窃模块和改进的远程控制功能增强了其能力。感染链依赖于分发恶意的 Microsoft 安装程序（`.msi`）文件的钓鱼邮件，这些文件部署了一个多阶段的有效载荷，旨在逃避检测并在受害者系统上建立持久性。

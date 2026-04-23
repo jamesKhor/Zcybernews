@@ -24,6 +24,13 @@ severity: high
 cve_ids:
   - CVE-2026-40176
   - CVE-2026-40177
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
 ---
 ## Executive Summary
 Two high-severity command injection vulnerabilities in the PHP Composer package manager's Perforce driver enable arbitrary command execution on developer systems. Tracked as **CVE-2026-40176** and **CVE-2026-40177**, these flaws reside in the code handling the Perforce version control system (VCS). Successful exploitation requires an attacker to control a malicious Perforce repository that a developer interacts with using Composer. The maintainers have released patches in Composer versions 2.8.2 and 2.9.2; all users are urged to update immediately.

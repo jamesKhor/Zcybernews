@@ -27,6 +27,13 @@ affected_sectors:
   - e-commerce
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1552
+    technique_name: Unsecured Credentials
+  - tactic: Discovery
+    technique_id: T1083
+    technique_name: File and Directory Discovery
 ---
 ## Executive Summary
 Freelance services marketplace Fiverr exposed sensitive user files, including completed tax forms and other personally identifiable information (PII), due to a misconfigured cloud storage system. The exposed data was publicly accessible and indexed by Google search, according to a disclosure by security researchers on Hacker News. The incident highlights persistent risks associated with improper cloud storage permissions and the downstream impact of search engine indexing on data privacy.

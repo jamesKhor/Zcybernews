@@ -22,6 +22,16 @@ draft: false
 locale_pair: >-
   2026-04-21-fake-google-antigravity-installer-steals-accounts-via-trojanized-ai-tool
 severity: high
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
+  - tactic: Collection
+    technique_id: T1560
+    technique_name: Archive Collected Data
+  - tactic: Exfiltration
+    technique_id: T1567
+    technique_name: Exfiltration Over Web Service
 ---
 ## 执行摘要
 一个伪装成谷歌未发布的反重力AI工具的木马化安装程序正在积极窃取用户凭证和浏览器会话Cookie。根据Malwarebytes的说法，这个恶意安装程序通过非官方渠道分发，作为一个功能齐全的信息窃取器，执行几分钟内就将数据泄露到攻击者控制的服务器。该活动利用对泄露的AI软件的兴趣来破坏谷歌、微软和其他在线账户。

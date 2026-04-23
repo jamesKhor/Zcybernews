@@ -26,6 +26,10 @@ affected_sectors:
   - industrial
   - research
   - academia
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
 ---
 ## Executive Summary
 A critical remote code execution (RCE) vulnerability in NI LabVIEW, tracked as CVE-2026-32861, allows attackers to execute arbitrary code on a target system by convincing a user to open a maliciously crafted LVCLASS file. The flaw, discovered and disclosed by Trend Micro's Zero Day Initiative (ZDI), carries a CVSS v3.1 base score of 7.8 (High). Successful exploitation could grant an attacker full control over the affected workstation, posing a significant risk to industrial, research, and academic environments where LabVIEW is widely used for test, measurement, and control systems.

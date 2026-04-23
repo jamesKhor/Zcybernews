@@ -26,6 +26,13 @@ affected_sectors:
   - any sector using WordPress
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Command and Control
+    technique_id: T1071.001
+    technique_name: Web Protocols
 ---
 ## Executive Summary
 A widespread supply chain attack has compromised the EssentialPlugin suite, a collection of over 30 popular WordPress plugins, injecting a backdoor that grants attackers full administrative control over affected websites. The malicious code was inserted into the official plugin files distributed via the WordPress.org repository, impacting thousands of sites. The backdoor creates a secret administrator account and establishes a persistent communication channel with a command-and-control (C2) server, allowing for further malicious actions. The compromise was discovered and reported by security researchers, prompting a forced update from the WordPress Plugins team.

@@ -23,6 +23,10 @@ draft: false
 locale_pair: >-
   2026-04-16-microsofts-original-secure-boot-certificate-expires-risks-boot-failures
 severity: medium
+ttp_matrix:
+  - tactic: Persistence
+    technique_id: T1547
+    technique_name: Boot or Logon Autostart Execution
 ---
 ## Executive Summary
 Microsoft's original Secure Boot certificate, the "Microsoft Corporation UEFI CA 2011," is expiring on April 16, 2026, marking a critical inflection point for the Windows boot security ecosystem. This expiration does not represent a vulnerability in the traditional sense but poses a significant operational risk: systems that cannot transition to the newer "Microsoft Corporation UEFI CA 2023" certificate may experience boot failures or be forced to disable Secure Boot, weakening a foundational defense against rootkits and bootkits. Microsoft describes the certificate refresh as one of the largest coordinated security maintenance efforts across the Windows ecosystem, requiring action from device manufacturers, firmware vendors, and administrators of long-lived systems.

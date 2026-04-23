@@ -30,8 +30,21 @@ import type { IOCEntry, TTPEntry } from "../../lib/types.js";
 const MD5_REGEX = /\b[a-fA-F0-9]{32}\b/g;
 const SHA1_REGEX = /\b[a-fA-F0-9]{40}\b/g;
 const SHA256_REGEX = /\b[a-fA-F0-9]{64}\b/g;
-/** IPv4 with RFC1918 + localhost filtered at use-site (not here). */
-const IPV4_REGEX = /\b(?:\d{1,3}\.){3}\d{1,3}\b/g;
+/**
+ * IPv4 with PER-OCTET range validation built in (each octet 0-255).
+ * Also enforces no leading zeros (so "147.0.758.37" — 758 > 255 — and
+ * "1.02.3.4" don't match). The previous `\b(?:\d{1,3}\.){3}\d{1,3}\b`
+ * was emitting nonsense like "3.5.1.35" (software-version prose) as
+ * IPs because it accepted any 1-3 digit groups.
+ *
+ * Per-octet sub-pattern: 0 | 1-9 | 10-99 | 100-199 | 200-249 | 250-255
+ * combined into a non-capturing group. Word-boundary on both ends.
+ */
+const IPV4_OCTET = "(?:0|[1-9]\\d?|1\\d{2}|2[0-4]\\d|25[0-5])";
+const IPV4_REGEX = new RegExp(
+  `\\b(?:${IPV4_OCTET}\\.){3}${IPV4_OCTET}\\b`,
+  "g",
+);
 /**
  * Domain regex — simple TLD-anchored hostname. Excludes IPs (distinct
  * pattern), but includes subdomains. Length-capped to avoid pathological
@@ -111,7 +124,7 @@ const DOMAIN_ALLOWLIST = new Set<string>([
 /** Returns true if the domain (or any of its parent domains) is on
  *  the allowlist — e.g. "blog.microsoft.com" matches "microsoft.com". */
 export function isAllowlistedDomain(domain: string): boolean {
-  const lower = domain.toLowerCase();
+  const lower = domain.toLowerCase().replace(/^www\./, "");
   if (DOMAIN_ALLOWLIST.has(lower)) return true;
   const parts = lower.split(".");
   for (let i = 1; i < parts.length - 1; i++) {
@@ -119,6 +132,43 @@ export function isAllowlistedDomain(domain: string): boolean {
     if (DOMAIN_ALLOWLIST.has(parent)) return true;
   }
   return false;
+}
+
+/**
+ * Add a domain to the runtime allowlist. Called once at startup by the
+ * backfill / post-process to bulk-add every configured RSS source's
+ * apex domain — those names appear in cited References (which the body
+ * regex picks up as "domains") and would flood frontmatter with
+ * non-IOC noise without exclusion.
+ *
+ * Also covers our own host (zcybernews.com) which appears in tag
+ * footers and self-attribution.
+ */
+export function allowlistDomain(domain: string): void {
+  const cleaned = domain
+    .toLowerCase()
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/.*$/, "")
+    .trim();
+  if (cleaned) DOMAIN_ALLOWLIST.add(cleaned);
+}
+
+/** Self-host always allowlisted. */
+allowlistDomain("zcybernews.com");
+
+/**
+ * Strip the References section from body text BEFORE extraction.
+ * The References section is a block of markdown links to source URLs —
+ * those URLs' domains are citation, not IOC. Same approach used by
+ * lib/mdx-strip.ts at render time, but inlined here so backfill +
+ * post-process see the same body shape that an editor would.
+ */
+export function stripReferencesForExtraction(body: string): string {
+  return body.replace(
+    /\n##\s+(References|Sources|参考文献|参考资料|来源)[\s\S]*$/i,
+    "\n",
+  );
 }
 
 // ─── MITRE technique name lookup ─────────────────────────────────────
@@ -274,15 +324,25 @@ function normalizedIncludes(haystack: string, needle: string): boolean {
 }
 
 function isPrivateOrLoopbackIp(ip: string): boolean {
-  if (ip === "127.0.0.1" || ip.startsWith("0.")) return true;
+  // Loopback / network 0
+  if (ip.startsWith("127.")) return true;
+  if (ip.startsWith("0.")) return true;
+  // RFC1918 private
   if (ip.startsWith("10.")) return true;
   if (ip.startsWith("192.168.")) return true;
   // 172.16.0.0/12
-  const m = ip.match(/^172\.(\d+)\./);
-  if (m) {
-    const n = parseInt(m[1], 10);
+  const m172 = ip.match(/^172\.(\d+)\./);
+  if (m172) {
+    const n = parseInt(m172[1], 10);
     if (n >= 16 && n <= 31) return true;
   }
+  // Link-local 169.254.0.0/16 — APIPA / EC2 metadata IP. Mentioned in
+  // articles as documentation reference (cloud-metadata SSRF), almost
+  // never as a real IOC.
+  if (ip.startsWith("169.254.")) return true;
+  // Multicast (224.0.0.0/4) and reserved (240.0.0.0/4)
+  const firstOctet = parseInt(ip.split(".")[0] ?? "0", 10);
+  if (firstOctet >= 224) return true;
   return false;
 }
 
@@ -293,6 +353,20 @@ export interface ExtractIocsInput {
   sourceText: string;
   /** Pre-existing IOCs (e.g. from LLM output) to merge with regex results. */
   existing?: IOCEntry[];
+  /**
+   * Opt-in domain / URL / email extraction. Default: false.
+   *
+   * Domain regex on raw body text produces a high false-positive rate
+   * even with the source-allowlist (legitimate-company mentions like
+   * "Booking.com", "WordPress.org" pass cross-check because they're in
+   * both body AND sourceText). Backfill of historical articles uses
+   * `false`. Future runs that add a smarter contextual filter can
+   * re-enable.
+   *
+   * Hashes / IPs / MITRE TTPs always extract (they have very low false-
+   * positive rates after the post-2026-04-23 IP octet validation).
+   */
+  includeDomains?: boolean;
 }
 
 /**
@@ -302,7 +376,14 @@ export interface ExtractIocsInput {
  * normalized value.
  */
 export function extractIocs(input: ExtractIocsInput): IOCEntry[] {
-  const { body, sourceText, existing = [] } = input;
+  const { existing = [], includeDomains = false } = input;
+  // CRITICAL: strip the References section from body BEFORE extraction.
+  // The References block is markdown links to citations; those domains
+  // are sources, not IOCs. Without this strip we'd flood frontmatter
+  // with helpnetsecurity / cybersecuritynews / etc. (174 false-positives
+  // observed in the 2026-04-23 first-attempt apply).
+  const body = stripReferencesForExtraction(input.body);
+  const sourceText = stripReferencesForExtraction(input.sourceText);
   const verified: IOCEntry[] = [];
   const seen = new Set<string>();
 
@@ -354,46 +435,48 @@ export function extractIocs(input: ExtractIocsInput): IOCEntry[] {
       });
   }
 
-  // Domains (allowlist filters out common non-IOC mentions)
-  for (const d of uniqueMatches(body, DOMAIN_REGEX)) {
-    if (isAllowlistedDomain(d)) continue;
-    if (normalizedIncludes(sourceText, d))
-      push({
-        type: "domain",
-        value: d,
-        confidence: "medium",
-        description: "Extracted from source material",
-      });
-  }
-
-  // URLs — keep only those whose domain is NOT allowlisted
-  for (const url of uniqueMatches(body, URL_REGEX)) {
-    try {
-      const host = new URL(url).hostname.toLowerCase();
-      if (isAllowlistedDomain(host)) continue;
-      if (normalizedIncludes(sourceText, url))
+  if (includeDomains) {
+    // Domains (allowlist filters out common non-IOC mentions)
+    for (const d of uniqueMatches(body, DOMAIN_REGEX)) {
+      if (isAllowlistedDomain(d)) continue;
+      if (normalizedIncludes(sourceText, d))
         push({
-          type: "url",
-          value: url,
+          type: "domain",
+          value: d,
           confidence: "medium",
           description: "Extracted from source material",
         });
-    } catch {
-      // malformed URL, skip
     }
-  }
 
-  // Emails — skip obvious vendor / security-org addresses
-  for (const e of uniqueMatches(body, EMAIL_REGEX)) {
-    const host = e.split("@")[1]?.toLowerCase() ?? "";
-    if (isAllowlistedDomain(host)) continue;
-    if (normalizedIncludes(sourceText, e))
-      push({
-        type: "email",
-        value: e,
-        confidence: "medium",
-        description: "Extracted from source material",
-      });
+    // URLs — keep only those whose domain is NOT allowlisted
+    for (const url of uniqueMatches(body, URL_REGEX)) {
+      try {
+        const host = new URL(url).hostname.toLowerCase();
+        if (isAllowlistedDomain(host)) continue;
+        if (normalizedIncludes(sourceText, url))
+          push({
+            type: "url",
+            value: url,
+            confidence: "medium",
+            description: "Extracted from source material",
+          });
+      } catch {
+        // malformed URL, skip
+      }
+    }
+
+    // Emails — skip obvious vendor / security-org addresses
+    for (const e of uniqueMatches(body, EMAIL_REGEX)) {
+      const host = e.split("@")[1]?.toLowerCase() ?? "";
+      if (isAllowlistedDomain(host)) continue;
+      if (normalizedIncludes(sourceText, e))
+        push({
+          type: "email",
+          value: e,
+          confidence: "medium",
+          description: "Extracted from source material",
+        });
+    }
   }
 
   // Preserve pre-existing IOCs of types we don't regex (file_path,

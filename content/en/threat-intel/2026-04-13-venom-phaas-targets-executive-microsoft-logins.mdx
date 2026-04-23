@@ -22,6 +22,10 @@ locale_pair: 2026-04-13-venom-phaas-targets-executive-microsoft-logins
 severity: high
 affected_sectors:
   - multiple
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
 ---
 ## Executive Summary
 A previously undocumented phishing-as-a-service (PhaaS) platform named **VENOM** is being actively used in campaigns designed to harvest Microsoft login credentials from high-level corporate executives. According to analysis by cybersecurity firm Proofpoint, the platform enables threat actors to launch sophisticated, multi-stage email attacks that bypass traditional security filters by leveraging trusted cloud services like Microsoft Azure. The primary objective is credential theft, which can lead to business email compromise (BEC), financial fraud, and lateral movement within victim organizations.

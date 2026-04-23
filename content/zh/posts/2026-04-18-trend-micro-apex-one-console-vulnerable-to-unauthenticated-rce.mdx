@@ -19,6 +19,16 @@ severity: critical
 cvss_score: 9.8
 cve_ids:
   - CVE-2025-54987
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Persistence
+    technique_id: T1505
+    technique_name: Server Software Component
+  - tactic: Privilege Escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
 ---
 ## 执行摘要
 趋势科技Apex One安全管理控制台中存在一个关键漏洞，允许未经身份验证的远程攻击者在受影响的系统上执行任意代码。该漏洞被跟踪为CVE-2025-54987，并由Zero Day Initiative (ZDI)分配了一个CVSS v3.1基础得分9.8，漏洞源于对用户提供的路径遍历序列缺乏适当的验证。成功利用漏洞可以让攻击者获得Apex One服务器上的SYSTEM级权限，从而完全破坏企业端点安全管理平台。

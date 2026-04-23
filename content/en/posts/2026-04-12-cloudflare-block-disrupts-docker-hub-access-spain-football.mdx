@@ -25,6 +25,10 @@ affected_sectors:
   - software-development
 affected_regions:
   - Spain
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## Executive Summary
 A Cloudflare IP address block, implemented to comply with a Spanish court order against illegal football streaming, caused widespread collateral damage by preventing access to legitimate services, including Docker Hub's `docker.io` registry. The incident, which occurred on November 19, 2024, demonstrates the significant operational risk posed by blunt, IP-based blocking strategies on shared internet infrastructure. Engineers in Spain reported being unable to pull container images, disrupting development and deployment workflows for several hours until the block was reportedly adjusted.

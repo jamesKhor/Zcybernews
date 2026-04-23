@@ -22,6 +22,10 @@ affected_sectors:
   - software-development
 affected_regions:
   - Spain
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## 执行摘要
 Cloudflare 为遵守西班牙法院针对非法足球直播的命令而实施的 IP 地址封禁，导致了广泛的连带损害，阻止了合法服务的访问，包括 Docker Hub 的 `docker.io` 注册表。这一事件发生在 2024 年 11 月 19 日，展示了基于 IP 的粗略封禁策略对共享互联网基础设施造成的重大运营风险。西班牙的工程师报告说，他们无法拉取容器镜像，这扰乱了开发和部署工作流程，直到封禁被调整，持续了几个小时。

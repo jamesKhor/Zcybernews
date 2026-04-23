@@ -20,6 +20,13 @@ draft: false
 locale_pair: >-
   2026-04-19-108-malicious-chrome-extensions-hijack-browsers-steal-google-and-telegram-data
 severity: high
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059.007
+    technique_name: JavaScript
+  - tactic: Command and Control
+    technique_id: T1071.001
+    technique_name: Web Protocols
 ---
 ## 执行摘要
 网络安全公司Socket在2026年4月18日发布的技术分析中识别出108个恶意的Google Chrome扩展程序，这些扩展程序感染了大约20,000名用户。这些扩展程序与共享的命令和控制（C2）基础设施通信，旨在窃取敏感用户数据——包括Google和Telegram会话cookie——并通过在每个访问的网页中注入广告和任意JavaScript来执行浏览器级别的滥用。

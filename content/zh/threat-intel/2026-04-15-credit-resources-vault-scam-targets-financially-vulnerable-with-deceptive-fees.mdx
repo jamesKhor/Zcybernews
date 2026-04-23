@@ -26,6 +26,13 @@ affected_sectors:
   - financial-services
 affected_regions:
   - United States
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
 ---
 ## 执行摘要
 一个目标电子邮件活动冒充一个不存在的金融服务“信用资源库”来利用信用评分不佳的个人。这个骗局由Malwarebytes分析，使用伪造的法律和财务文件制造虚假的紧迫感和合法性，诱使收件人报名参加一个每周重复支付计划，声称提供没有实际价值的信用修复服务。这个操作旨在从最无力承担的人那里吸走资金，利用复杂的社会工程而不是技术漏洞。

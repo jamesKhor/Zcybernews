@@ -27,6 +27,19 @@ affected_sectors:
   - government
   - critical-infrastructure
   - manufacturing
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
+  - tactic: Privilege Escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
+  - tactic: Command and Control
+    technique_id: T1572
+    technique_name: Protocol Tunneling
 ---
 ## Executive Summary
 A widespread adware campaign, operating since at least 2023, has compromised over 25,000 endpoints by hijacking their Domain Name System (DNS) settings to route all internet traffic through attacker-controlled servers. Researchers from BitSight discovered the operation, which leveraged a cheap domain registration to establish a command-and-control (C2) infrastructure capable of intercepting and redirecting traffic from infected systems, including those in sensitive operational technology (OT) and government networks. The adware, which also functioned as a loader, demonstrated capabilities to terminate security software, paving the way for more dangerous secondary payloads.

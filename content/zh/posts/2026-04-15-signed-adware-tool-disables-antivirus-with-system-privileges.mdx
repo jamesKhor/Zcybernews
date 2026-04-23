@@ -22,6 +22,16 @@ affected_sectors:
   - utilities
   - government
   - healthcare
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1218
+    technique_name: System Binary Proxy Execution
+  - tactic: Defense Evasion
+    technique_id: T1562
+    technique_name: Impair Defenses
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## 执行摘要
 一个伪装成合法软件商店的数字签名广告软件应用程序已被武器化，用于部署脚本，在Windows系统上禁用防病毒和端点保护软件。根据BleepingComputer的一份报告，'PC App Store'工具利用其有效的代码签名证书和SYSTEM级别的权限执行一个批处理文件，该文件终止安全进程并修改Windows Defender设置。该活动影响了数千个端点，遥测显示受害者涉及教育、公用事业、政府和医疗保健部门。

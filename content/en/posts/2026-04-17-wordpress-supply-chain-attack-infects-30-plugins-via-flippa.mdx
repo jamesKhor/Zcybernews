@@ -22,6 +22,11 @@ locale_pair: 2026-04-17-wordpress-supply-chain-attack-infects-30-plugins-via-fli
 author: ZCyberNews
 draft: false
 severity: critical
+iocs:
+  - type: ip
+    value: 2.6.9.1
+    confidence: high
+    description: Extracted from source material
 ---
 
 A significant WordPress supply chain attack has compromised over 30 plugins with hundreds of thousands of active installations, following the acquisition of a legitimate developer business through the marketplace Flippa. The new owner, identified only as “Kris,” injected a sophisticated backdoor that lay dormant for eight months before activating a campaign to inject SEO spam hidden from site owners but visible to search engines. This incident, which led WordPress.org to permanently close all affected plugins in a single day, underscores a critical vulnerability in the open-source plugin ecosystem where ownership changes can introduce malicious code without triggering security reviews.

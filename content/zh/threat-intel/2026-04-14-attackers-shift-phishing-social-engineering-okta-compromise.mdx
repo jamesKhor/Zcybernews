@@ -17,6 +17,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-attackers-shift-phishing-social-engineering-okta-compromise
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Privilege Escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
 ---
 ## 执行摘要
 威胁行为者正从传统的网络钓鱼转向直接的、基于电话的社会工程攻击，目标是IT帮助台，主要目的是破坏Okta身份和访问管理（IAM）系统。这种技术通常被称为“MFA疲劳”或“vishing”，它绕过了电子邮件安全控制，并利用人类信任重置多因素认证（MFA）或获得特权凭据。成功的攻击为对手提供了对企业网络的初始访问权限，使他们能够在合法用户身份的掩护下进行横向移动和数据盗窃。

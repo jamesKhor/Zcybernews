@@ -2,7 +2,9 @@
 title: 微软加强Windows防御措施以抵御恶意RDP文件攻击
 slug: 2026-04-14-microsoft-windows-protections-malicious-rdp-files
 date: '2026-04-14'
-excerpt: Windows 现默认拦截不受信任的 .rdp 文件以阻止类似 Storm-1977 的凭证窃取钓鱼 — 系统侧的改动、管理员仍需配置的项，以及如何判断自己是否被针对。
+excerpt: >-
+  Windows 现默认拦截不受信任的 .rdp 文件以阻止类似 Storm-1977 的凭证窃取钓鱼 —
+  系统侧的改动、管理员仍需配置的项，以及如何判断自己是否被针对。
 category: vulnerabilities
 tags:
   - microsoft
@@ -18,6 +20,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-microsoft-windows-protections-malicious-rdp-files
 severity: medium
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
 ---
 ## 执行摘要
 Microsoft 在 Windows 中实施了新的安全特性，以减轻滥用远程桌面协议（RDP）连接文件的持续钓鱼技术。更新在最近的 Microsoft 安全博客文章中详细说明，引入了明确的用户警告，并默认禁用了打开来自不受信任来源的 `.rdp` 文件时的风险资源共享选项。这一变化直接针对威胁行为者分发恶意 RDP 文件以收集凭证或建立对受害者系统的初始访问权限的活动。

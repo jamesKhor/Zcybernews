@@ -20,6 +20,10 @@ locale_pair: 2026-04-21-malicious-crypto-apps-hijack-recovery-phrases-from-apple
 severity: high
 affected_sectors:
   - cryptocurrency
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1555
+    technique_name: Credentials from Password Stores
 ---
 ## 执行摘要
 苹果从其官方应用商店中移除了至少45个恶意应用程序，这些应用程序被发现是合法加密货币钱包的复杂仿制品。根据SecurityWeek的报告，这些应用程序旨在窃取用户的密钥恢复短语和私钥，使攻击者能够完全控制受害者的数字资产。这一发现突显了在精选移动应用市场中供应链被破坏的持续威胁。

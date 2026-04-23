@@ -19,6 +19,16 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-16-critical-cisco-ise-vulnerabilities-enable-remote-code-execution
 severity: critical
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
+  - tactic: Discovery
+    technique_id: T1083
+    technique_name: File and Directory Discovery
 ---
 ## Executive Summary
 Cisco has issued an urgent security advisory for multiple critical vulnerabilities in its Identity Services Engine (ISE) and ISE Passive Identity Connector (ISE-PIC). According to the advisory published on April 15, 2026, the flaws could allow an authenticated remote attacker to execute arbitrary commands on affected devices. The vulnerabilities also include a path traversal flaw that could lead to unauthorized file access. Cisco has released software updates to address these issues, but as of the advisory date, there is no evidence of active exploitation in the wild.

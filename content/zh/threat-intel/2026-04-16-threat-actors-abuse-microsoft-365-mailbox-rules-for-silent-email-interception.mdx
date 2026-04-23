@@ -23,6 +23,10 @@ affected_sectors:
   - multiple
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1110
+    technique_name: Brute Force
 ---
 ## 执行摘要
 威胁行为者正在利用Microsoft 365中的标准功能——客户端邮箱规则——来建立对被入侵商业电子邮件账户的持久、隐蔽访问。根据CyberSecurity News的一份报告，攻击者使用这些隐藏规则来拦截敏感电子邮件、重定向金融交易，并抑制安全通知，有效地在组织通信流程中创建了一个无声的窃听器。这种技术允许对手在不触发典型账户接管迹象的情况下，为间谍活动或欺诈保持长期访问，因为这些规则完全在云服务的预期功能内运行。

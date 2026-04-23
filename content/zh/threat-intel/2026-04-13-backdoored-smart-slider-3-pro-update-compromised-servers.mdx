@@ -19,6 +19,18 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-backdoored-smart-slider-3-pro-update-compromised-servers
 severity: high
+iocs:
+  - type: ip
+    value: 3.5.1.35
+    confidence: high
+    description: Extracted from source material
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1133
+    technique_name: External Remote Services
 ---
 ## 执行摘要
 不明攻击者对商业化的WordPress和Joomla插件Smart Slider 3 Pro执行了软件供应链攻击。通过入侵插件开发商Nextend的更新分发服务器，威胁行为者推送了一个包含后门的恶意更新，版本号为`3.5.1.35`。这个后门赋予攻击者对受影响的WordPress站点的管理员访问权限，使其能够完全控制。该事件首先由WordPress安全公司Patchstack识别并报告。目前尚不清楚此次入侵的范围以及应用了恶意更新的网站数量。

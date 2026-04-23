@@ -24,6 +24,22 @@ draft: false
 locale_pair: >-
   2026-04-20-threat-actors-impersonate-it-helpdesk-via-microsoft-teams-to-deploy-quick-assist
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
+  - tactic: Defense Evasion
+    technique_id: T1218
+    technique_name: System Binary Proxy Execution
+  - tactic: Lateral Movement
+    technique_id: T1021
+    technique_name: Remote Services
 ---
 ## Executive Summary
 Threat actors are conducting a new social engineering campaign that abuses the inherent trust in Microsoft Teams to impersonate corporate IT helpdesk staff. According to a report from CyberSecurity News, the attackers initiate contact via Teams chat, then socially engineer employees into downloading and running Microsoft's legitimate Quick Assist tool, granting the attackers remote control. This technique leverages trusted, pre-installed business applications to bypass user suspicion and security controls for initial access.

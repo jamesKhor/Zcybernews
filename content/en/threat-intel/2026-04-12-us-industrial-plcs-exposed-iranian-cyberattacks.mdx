@@ -30,6 +30,13 @@ affected_sectors:
   - industrial
 affected_regions:
   - United States
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
+  - tactic: Credential Access
+    technique_id: T1110
+    technique_name: Brute Force
 ---
 ## Executive Summary
 Nearly 4,000 industrial control devices in the United States are directly accessible from the public internet, creating a significant and immediate attack surface for Iranian state-sponsored threat actors. According to analysis by cybersecurity firm BitSight, these exposed devices—primarily Rockwell Automation programmable logic controllers (PLCs)—are part of a documented campaign by Iranian Advanced Persistent Threat (APT) groups targeting U.S. critical infrastructure. The exposure of these operational technology (OT) assets bypasses network segmentation defenses and allows for direct manipulation of physical industrial processes.

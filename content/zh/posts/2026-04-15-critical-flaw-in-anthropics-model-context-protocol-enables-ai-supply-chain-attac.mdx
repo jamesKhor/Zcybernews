@@ -24,6 +24,13 @@ severity: critical
 affected_sectors:
   - technology
   - ai-development
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1195
+    technique_name: Supply Chain Compromise
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
 ---
 ## 执行摘要
 Anthropic的模型上下文协议（MCP）存在一个关键设计漏洞，这是一个连接AI模型到外部数据源和工具的基础标准，它允许恶意或被破坏的MCP服务器以用户的完整权限在客户端系统上执行任意命令。根据Oligo Security的研究人员，这个漏洞是协议架构固有的，并且能够对使用流行的AI助手如Claude Desktop、Cursor IDE等实现MCP的开发者和企业进行沉默的、广泛的供应链攻击。漏洞源于协议未能对从服务器接收的命令进行清理或警告用户，允许完全系统妥协。

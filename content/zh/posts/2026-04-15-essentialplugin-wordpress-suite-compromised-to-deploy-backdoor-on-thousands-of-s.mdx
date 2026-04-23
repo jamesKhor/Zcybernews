@@ -24,6 +24,13 @@ affected_sectors:
   - any sector using WordPress
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Command and Control
+    technique_id: T1071.001
+    technique_name: Web Protocols
 ---
 ## 执行摘要
 一起广泛的供应链攻击已经破坏了包含超过30个流行WordPress插件的EssentialPlugin套件，注入了一个后门，使攻击者能够完全控制受影响的网站。恶意代码被插入到通过WordPress.org存储库分发的官方插件文件中，影响了数千个站点。后门创建了一个秘密管理员账户，并与命令与控制（C2）服务器建立了持久的通信渠道，允许进行进一步的恶意行动。安全研究人员发现并报告了这一妥协行为，促使WordPress插件团队进行了强制更新。

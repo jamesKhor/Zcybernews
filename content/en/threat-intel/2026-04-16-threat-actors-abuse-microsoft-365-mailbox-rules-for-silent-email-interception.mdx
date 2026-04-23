@@ -26,6 +26,10 @@ affected_sectors:
   - multiple
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1110
+    technique_name: Brute Force
 ---
 ## Executive Summary
 Threat actors are exploiting a standard feature in Microsoft 365—client-side mailbox rules—to establish persistent, stealthy access to compromised business email accounts. According to a report from CyberSecurity News, attackers use these hidden rules to intercept sensitive emails, redirect financial transactions, and suppress security notifications, effectively creating a silent wiretap within an organization's communication flow. This technique allows adversaries to maintain long-term access for espionage or fraud without triggering typical signs of account takeover, as the rules operate entirely within the cloud service's expected functionality.

@@ -25,6 +25,13 @@ severity: critical
 affected_sectors:
   - technology
   - ai-development
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1195
+    technique_name: Supply Chain Compromise
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
 ---
 ## Executive Summary
 A critical design vulnerability in Anthropic's Model Context Protocol (MCP), a foundational standard for connecting AI models to external data sources and tools, allows malicious or compromised MCP servers to execute arbitrary commands on client systems with the user's full privileges. According to researchers from Oligo Security, the flaw is inherent to the protocol's architecture and enables silent, widespread supply chain attacks against developers and enterprises using popular AI assistants like Claude Desktop, Cursor IDE, and others that implement MCP. The vulnerability stems from the protocol's failure to sanitize or warn users about commands received from servers, allowing for complete system compromise.

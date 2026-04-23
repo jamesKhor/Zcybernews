@@ -26,6 +26,10 @@ threat_actor_origin: North Korea
 affected_sectors:
   - technology
   - artificial-intelligence
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1555
+    technique_name: Credentials from Password Stores
 ---
 ## Executive Summary
 North Korea's Lazarus Group (APT38) successfully compromised internal systems at OpenAI through a sophisticated software supply chain attack. The intrusion was facilitated by a malicious package impersonating the legitimate `axios` NPM library, which was used to steal a macOS code-signing certificate. OpenAI has confirmed the incident and is taking steps to invalidate the compromised certificate and remediate affected systems.

@@ -19,6 +19,13 @@ draft: false
 locale_pair: >-
   2026-04-15-threat-actors-weaponize-n8n-workflow-platform-for-phishing-and-payload-delivery
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
 ---
 ## 执行摘要
 威胁行为者自2025年10月以来一直在积极地将合法的n8n工作流自动化平台武器化，以进行网络钓鱼活动和交付恶意软件。通过滥用n8n的Webhook和电子邮件自动化功能，攻击者从平台自身的受信任基础设施发送恶意电子邮件，有效地绕过了依赖于发件人声誉的传统电子邮件安全过滤器。这种技术代表了网络钓鱼行动的重大演变，将一个广泛使用的生产力和AI集成工具变成了一个强大的攻击向量。

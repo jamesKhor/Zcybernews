@@ -22,6 +22,19 @@ affected_sectors:
   - critical-infrastructure
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1091
+    technique_name: Replication Through Removable Media
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
+  - tactic: Lateral Movement
+    technique_id: T1570
+    technique_name: Lateral Tool Transfer
 ---
 ## 执行摘要
 2025年第四季度，通过钓鱼邮件传播的单一恶意软件引发了针对工业控制系统（ICS）和运营技术（OT）网络的电子邮件传播蠕虫的全球激增。根据CyberSecurity News的一份报告，这一活动代表了近年来在OT环境中观察到的最重大的威胁转变之一，蠕虫能够在进入网络边界后无声息地传播。

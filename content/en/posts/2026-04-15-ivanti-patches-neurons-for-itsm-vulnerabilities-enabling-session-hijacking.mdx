@@ -21,6 +21,10 @@ draft: false
 locale_pair: >-
   2026-04-15-ivanti-patches-neurons-for-itsm-vulnerabilities-enabling-session-hijacking
 severity: medium
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
 ---
 ## Executive Summary
 Ivanti has released security updates for two vulnerabilities in its on-premise Ivanti Neurons for ITSM (N-ITSM) platform that could allow authenticated attackers to hijack user sessions. The flaws, which have not yet been assigned CVE identifiers, enable an attacker to either retain unauthorized access after a password reset or harvest session data from other users. While Ivanti states it is not aware of active exploitation, the potential for session hijacking within an IT service management system poses a significant risk for credential theft and lateral movement.

@@ -2,7 +2,9 @@
 title: 麦格劳-希尔数据泄露与被利用的Salesforce配置错误相关
 slug: 2026-04-14-mcgraw-hill-data-breach-salesforce-misconfiguration
 date: '2026-04-14'
-excerpt: 麦格劳-希尔因 Salesforce 配置错误导致泄露，ShinyHunters 声称获取 1350 万条用户记录 — 根因分析、影响范围与教育机构及 SaaS 管理员即刻自查项。
+excerpt: >-
+  麦格劳-希尔因 Salesforce 配置错误导致泄露，ShinyHunters 声称获取 1350 万条用户记录 — 根因分析、影响范围与教育机构及
+  SaaS 管理员即刻自查项。
 category: threat-intel
 tags:
   - data-breach
@@ -21,6 +23,13 @@ severity: medium
 affected_sectors:
   - Education
   - Publishing
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Impact
+    technique_id: T1486
+    technique_name: Data Encrypted for Impact
 ---
 ## 执行摘要
 教育和出版巨头McGraw-Hill已确认，由于Salesforce环境配置不当，导致数据泄露。该公司表示，此次事件仅限于内部企业数据，并在攻击者发出勒索威胁后发生。据报道，没有客户、财务或学生信息被访问。此次泄露突显了即使是大型、成熟的企业，云服务配置不当所带来的持续风险。

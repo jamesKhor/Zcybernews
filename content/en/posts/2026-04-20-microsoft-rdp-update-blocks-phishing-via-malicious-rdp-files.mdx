@@ -20,6 +20,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-20-microsoft-rdp-update-blocks-phishing-via-malicious-rdp-files
 severity: medium
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
 ---
 ## Executive Summary
 Microsoft has deployed a security-focused behavioral change to the Windows Remote Desktop Connection client (MSTSC) in its April 2026 updates, introducing new warning dialogs to counter phishing campaigns that weaponize malicious Remote Desktop Protocol (.rdp) files. The update, part of the April 2026 Patch Tuesday cycle, directly addresses a technique where attackers trick users into opening crafted .rdp files that connect to attacker-controlled servers, harvesting credentials.

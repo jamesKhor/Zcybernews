@@ -20,6 +20,10 @@ severity: high
 cvss_score: 8.8
 cve_ids:
   - CVE-2026-5490
+ttp_matrix:
+  - tactic: Privilege Escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
 ---
 ## 执行摘要
 DriveLock终端安全平台中存在一个高严重性的权限提升漏洞，可能允许经过身份验证的攻击者绕过软件的核心安全功能。该漏洞被跟踪为CVE-2026-5490，由Zero Day Initiative (ZDI)分配了8.8的CVSS得分，源于缺乏适当的输入验证，使得SQL注入攻击成为可能，从而获得管理权限。这一漏洞尤其令人担忧，因为它针对的是旨在执行终端控制的安全产品，可能允许攻击者在被入侵的机器上禁用保护措施。

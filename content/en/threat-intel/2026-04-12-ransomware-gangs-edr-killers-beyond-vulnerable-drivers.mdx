@@ -20,6 +20,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-12-ransomware-gangs-edr-killers-beyond-vulnerable-drivers
 severity: high
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## Executive Summary
 Ransomware threat actors are systematically deploying a broader range of tools designed to disable Endpoint Detection and Response (EDR) software, a critical step preceding file encryption. According to ESET Research, this evolution now includes the use of maliciously signed but legitimate kernel-mode drivers to terminate security processes, moving beyond the earlier, more publicized reliance on exploiting known vulnerabilities in legitimate drivers. This shift represents a significant escalation in operational security, making detection more difficult and increasing the likelihood of successful ransomware deployment.

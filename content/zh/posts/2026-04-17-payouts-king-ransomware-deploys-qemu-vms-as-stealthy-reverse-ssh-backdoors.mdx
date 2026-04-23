@@ -20,6 +20,13 @@ locale_pair: >-
   2026-04-17-payouts-king-ransomware-deploys-qemu-vms-as-stealthy-reverse-ssh-backdoors
 severity: high
 threat_actor: Payouts King
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## 执行摘要
 Payouts King 勒索软件行动采用了一种新颖的防御规避技术，利用开源 QEMU 硬件仿真器在被入侵的 Linux 系统上创建隐藏的虚拟机。根据网络安全公司 Halcyon 的分析，威胁行为者部署这些虚拟机以建立持久的、加密的反向 SSH 后门，允许他们保持访问并从虚拟化环境中执行勒索软件负载，这个环境对基于主机的安全工具来说基本上是不可见的。这种方法代表了对手工艺的显著升级，超越了传统的本地二进制文件（LOLBins），滥用合法的系统虚拟化软件以实现隐身。

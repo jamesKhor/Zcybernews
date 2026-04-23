@@ -21,6 +21,13 @@ locale_pair: 2026-04-13-critical-wordpress-plugin-flaw-unauthenticated-admin-tak
 severity: critical
 cve_ids:
   - CVE-2026-1492
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
 ---
 ## 执行摘要
 WordPress流行插件**用户注册与会员**中存在一个关键的认证绕过漏洞，允许未经认证的攻击者完全控制受影响的网站。该漏洞被追踪为**CVE-2026-1492**，允许完全绕过登录过程，无需任何凭证或先前的访问权限。插件的广泛使用使成千上万的WordPress站点面临立即被入侵的风险。此分析基于CyberSecurity News的报告。

@@ -26,6 +26,13 @@ affected_sectors:
   - e-commerce
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1552
+    technique_name: Unsecured Credentials
+  - tactic: Discovery
+    technique_id: T1083
+    technique_name: File and Directory Discovery
 ---
 ## 执行摘要
 自由职业服务市场Fiverr由于云存储系统的配置错误，暴露了包括已完成的税务表格和其他个人身份信息（PII）在内的敏感用户文件。根据安全研究人员在Hacker News上的披露，这些暴露的数据可以公开访问，并被Google搜索索引。此事件突出了不当云存储权限所带来的持续风险以及搜索引擎索引对数据隐私的下游影响。

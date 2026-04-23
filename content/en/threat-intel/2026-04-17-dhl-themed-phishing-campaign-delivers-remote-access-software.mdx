@@ -24,6 +24,31 @@ affected_sectors:
   - logistics
   - shipping
   - general-business
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Initial Access
+    technique_id: T1566.001
+    technique_name: Spearphishing Attachment
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
+  - tactic: Execution
+    technique_id: T1059.003
+    technique_name: Windows Command Shell
+  - tactic: Persistence
+    technique_id: T1547
+    technique_name: Boot or Logon Autostart Execution
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
+  - tactic: Defense Evasion
+    technique_id: T1218
+    technique_name: System Binary Proxy Execution
 ---
 ## Executive Summary
 A new phishing campaign is using convincing DHL-branded emails to deliver legitimate remote access software, establishing an initial foothold for threat actors. According to Malwarebytes researchers, attackers leverage this access to deploy additional malware, including ransomware, directly onto compromised systems. The operation highlights a continued trend of abusing trusted software brands and tools to bypass security controls and establish persistent access.

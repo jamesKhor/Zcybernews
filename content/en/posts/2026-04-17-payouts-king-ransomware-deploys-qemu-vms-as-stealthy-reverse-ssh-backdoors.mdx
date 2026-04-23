@@ -23,6 +23,13 @@ locale_pair: >-
   2026-04-17-payouts-king-ransomware-deploys-qemu-vms-as-stealthy-reverse-ssh-backdoors
 severity: high
 threat_actor: Payouts King
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## Executive Summary
 The Payouts King ransomware operation has adopted a novel defense evasion technique, using the open-source QEMU hardware emulator to create hidden virtual machines on compromised Linux systems. According to analysis by cybersecurity firm Halcyon, the threat actors deploy these VMs to establish a persistent, encrypted reverse SSH backdoor, allowing them to maintain access and execute ransomware payloads from within a virtualized environment that is largely invisible to host-based security tools. This method represents a significant escalation in adversary tradecraft, moving beyond traditional living-off-the-land binaries (LOLBins) to abuse legitimate system virtualization software for stealth.

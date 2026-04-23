@@ -17,6 +17,16 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-critical-axios-ssrf-flaw-cloud-metadata-rce
 severity: critical
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Lateral Movement
+    technique_id: T1021
+    technique_name: Remote Services
 ---
 ## 执行摘要
 广泛使用的 Axios HTTP 客户端库中存在一个关键的服务器端请求伪造（SSRF）漏洞，使攻击者能够绕过安全控制，对内部服务（包括云元数据端点）发起未经授权的请求。根据研究员 Jason Saayman 的说法，这个漏洞允许泄露敏感的云实例元数据，这些元数据可以被用来窃取凭证、横向移动和实现远程代码执行，对部署在 AWS、Google Cloud 和 Azure 等云环境中的应用程序构成严重风险。

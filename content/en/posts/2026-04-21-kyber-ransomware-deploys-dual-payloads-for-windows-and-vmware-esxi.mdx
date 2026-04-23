@@ -22,6 +22,25 @@ draft: false
 locale_pair: 2026-04-21-kyber-ransomware-deploys-dual-payloads-for-windows-and-vmware-esxi
 severity: high
 threat_actor: Kyber
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Defense Evasion
+    technique_id: T1070
+    technique_name: Indicator Removal
+  - tactic: Credential Access
+    technique_id: T1555
+    technique_name: Credentials from Password Stores
+  - tactic: Lateral Movement
+    technique_id: T1021
+    technique_name: Remote Services
+  - tactic: Impact
+    technique_id: T1485
+    technique_name: Data Destruction
+  - tactic: Impact
+    technique_id: T1489
+    technique_name: Service Stop
 ---
 ## Executive Summary
 The Kyber ransomware operation is deploying a dual-payload attack designed to simultaneously encrypt files on Windows systems and VMware ESXi hypervisors, according to an analysis by Rapid7. This cross-platform approach targets core enterprise infrastructure, using a custom tool to delete ESXi snapshots and virtual machine files to complicate recovery efforts. The attacks observed by researchers begin with the compromise of Remote Desktop Protocol (RDP) credentials.

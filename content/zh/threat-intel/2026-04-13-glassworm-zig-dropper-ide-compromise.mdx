@@ -21,6 +21,13 @@ severity: high
 affected_sectors:
   - software development
   - technology
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059.001
+    technique_name: PowerShell
+  - tactic: Command and Control
+    technique_id: T1105
+    technique_name: Ingress Tool Transfer
 ---
 ## 执行摘要
 观察到的 **GlassWorm** 活动的新变种利用了一个基于自定义 **Zig** 的投放器，该投放器嵌入在名为 `specstudio.code-wakatime-activity-tracker` 的恶意 Open VSX 扩展中。该扩展伪装成 Visual Studio Code 及其他 IDE 的合法 WakaTime 活动跟踪器。安装后，投放器会悄悄向主机上的多个开发环境注入负载，赋予攻击者在开发者工作站上的持久代码执行能力。

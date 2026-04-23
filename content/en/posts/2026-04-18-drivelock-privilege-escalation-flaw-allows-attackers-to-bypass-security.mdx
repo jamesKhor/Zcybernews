@@ -24,6 +24,10 @@ severity: high
 cvss_score: 8.8
 cve_ids:
   - CVE-2026-5490
+ttp_matrix:
+  - tactic: Privilege Escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
 ---
 ## Executive Summary
 A high-severity privilege escalation vulnerability in the DriveLock endpoint security platform could allow authenticated attackers to bypass the software's core security functions. Tracked as CVE-2026-5490 and assigned a CVSS score of 8.8 by the Zero Day Initiative (ZDI), the flaw stems from a lack of proper input validation, enabling SQL injection attacks that can grant administrative privileges. This vulnerability is particularly concerning as it targets a security product designed to enforce endpoint control, potentially allowing an attacker to disable protections on a compromised machine.

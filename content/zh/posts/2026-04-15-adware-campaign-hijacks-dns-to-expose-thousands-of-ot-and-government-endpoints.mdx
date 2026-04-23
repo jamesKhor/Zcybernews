@@ -24,6 +24,19 @@ affected_sectors:
   - government
   - critical-infrastructure
   - manufacturing
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
+  - tactic: Privilege Escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
+  - tactic: Command and Control
+    technique_id: T1572
+    technique_name: Protocol Tunneling
 ---
 ## 执行摘要
 自2023年以来活跃的大规模广告软件活动通过劫持域名系统（DNS）设置，使超过25,000个端点受到侵害，将所有互联网流量路由至攻击者控制的服务器。BitSight的研究人员发现了这一操作，该操作利用廉价的域名注册建立了一个指挥与控制（C2）基础设施，能够截获并重定向受感染系统（包括敏感操作技术（OT）和政府网络中的系统）的流量。该广告软件还充当加载器，展示了终止安全软件的能力，为更危险的次级有效载荷铺平了道路。

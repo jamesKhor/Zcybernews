@@ -25,6 +25,16 @@ affected_sectors:
   - utilities
   - government
   - healthcare
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1218
+    technique_name: System Binary Proxy Execution
+  - tactic: Defense Evasion
+    technique_id: T1562
+    technique_name: Impair Defenses
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## Executive Summary
 A digitally signed adware application, masquerading as a legitimate software store, has been weaponized to deploy scripts that disable antivirus and endpoint protection software on Windows systems. According to a report from BleepingComputer, the 'PC App Store' tool leverages its valid code-signing certificate and SYSTEM-level privileges to execute a batch file that terminates security processes and modifies Windows Defender settings. The campaign has impacted thousands of endpoints, with telemetry showing victims in the education, utilities, government, and healthcare sectors.

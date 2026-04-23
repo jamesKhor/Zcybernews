@@ -22,6 +22,10 @@ locale_pair: >-
   2026-04-21-the-gentlemen-ransomware-botnet-infects-1-570-systems-via-systembc-proxy
 severity: high
 threat_actor: The Gentlemen
+ttp_matrix:
+  - tactic: Command and Control
+    technique_id: T1572
+    technique_name: Protocol Tunneling
 ---
 ## 执行摘要
 Check Point Research 发现了 SystemBC 代理恶意软件的命令和控制（C2）服务器，揭示了一个超过 1,570 个受感染系统的僵尸网络。该基础设施与被称为 The Gentlemen 的勒索软件即服务（RaaS）行动有关，该行动使用 SystemBC 建立隐蔽的 SOCKS5 网络隧道进行妥协后的行动。

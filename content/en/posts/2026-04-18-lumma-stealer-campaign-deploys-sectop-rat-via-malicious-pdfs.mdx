@@ -21,6 +21,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-18-lumma-stealer-campaign-deploys-sectop-rat-via-malicious-pdfs
 severity: high
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059.001
+    technique_name: PowerShell
 ---
 ## Executive Summary
 A newly documented malware campaign uses malicious PDF documents to deploy the Lumma (LummaC2) information stealer, which then acts as a loader for the Sectop remote access trojan (RAT), also known as ArechClient2. According to an analysis published by the SANS Internet Storm Center on April 17, 2026, the dual-stage attack aims to first steal credentials, cryptocurrency wallets, and browser data before establishing a persistent, stealthy backdoor for full system control. The infection chain leverages PowerShell and batch scripts to evade detection and maintain persistence on compromised Windows hosts.

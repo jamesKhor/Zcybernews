@@ -21,6 +21,19 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-malicious-chrome-extensions-oauth-token-backdoor
 severity: high
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Credential Access
+    technique_id: T1552
+    technique_name: Unsecured Credentials
+  - tactic: Command and Control
+    technique_id: T1105
+    technique_name: Ingress Tool Transfer
+  - tactic: Impact
+    technique_id: T1491
+    technique_name: Defacement
 ---
 ## Executive Summary
 A campaign involving more than 100 malicious extensions in the official Google Chrome Web Store has been actively stealing user authentication tokens, deploying backdoors, and conducting ad fraud. The extensions, which have been downloaded millions of times, specifically target Google OAuth2 Bearer tokens, granting attackers persistent access to user accounts and data without needing passwords. This represents a significant supply-chain attack against a core browser ecosystem.

@@ -25,6 +25,10 @@ affected_sectors:
   - industrial
   - research
   - academia
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
 ---
 ## 执行摘要
 NI LabVIEW中存在一个严重的远程代码执行（RCE）漏洞，编号为CVE-2026-32861，允许攻击者通过诱使用户打开恶意制作的LVCLASS文件，在目标系统上执行任意代码。这个漏洞由趋势科技的零日计划（ZDI）发现并披露，其CVSS v3.1基础得分为7.8（高）。成功利用此漏洞可以赋予攻击者对受影响工作站的完全控制权，对工业、研究和学术环境构成重大风险，在这些环境中LabVIEW被广泛用于测试、测量和控制系统。

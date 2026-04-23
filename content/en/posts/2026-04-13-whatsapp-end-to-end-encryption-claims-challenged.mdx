@@ -23,6 +23,13 @@ severity: medium
 affected_sectors:
   - telecommunications
   - technology
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
 ---
 ## Executive Summary
 Telegram founder Pavel Durov has publicly accused WhatsApp of engaging in what he terms "the biggest consumer fraud in history" regarding its end-to-end encryption (E2EE) marketing. The core allegation, made in a post on April 9, 2026, is that WhatsApp's default E2EE is rendered ineffective for a vast number of users because the platform automatically backs up chat histories to cloud services like iCloud and Google Drive in an unencrypted format. This creates a significant security gap where private messages are stored in plaintext on third-party servers, accessible to platform providers, law enforcement with legal orders, and potentially malicious actors who compromise those cloud accounts. The claim challenges the fundamental privacy promise that has been central to WhatsApp's user trust and branding.

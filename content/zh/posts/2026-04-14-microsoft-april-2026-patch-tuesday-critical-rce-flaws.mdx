@@ -18,6 +18,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-microsoft-april-2026-patch-tuesday-critical-rce-flaws
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
 ---
 ## 执行摘要
 微软2026年4月的Patch Tuesday安全更新解决了其产品组合中新披露的247个漏洞。其中八个漏洞被评为“严重”，这一等级通常保留给可能允许远程代码执行（RCE）或在无需用户交互的情况下显著系统妥协的缺陷。最严重的问题影响核心基础设施组件，包括Windows DNS服务器和Hyper-V。虽然可用来源中没有详细说明具体的CVE标识符，但数量和严重性突显了在企业环境中系统和及时补丁部署的持续需求。

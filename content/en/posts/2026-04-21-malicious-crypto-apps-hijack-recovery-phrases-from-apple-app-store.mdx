@@ -23,6 +23,10 @@ locale_pair: 2026-04-21-malicious-crypto-apps-hijack-recovery-phrases-from-apple
 severity: high
 affected_sectors:
   - cryptocurrency
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1555
+    technique_name: Credentials from Password Stores
 ---
 ## Executive Summary
 Apple removed at least 45 malicious applications from its official App Store after they were found to be sophisticated facsimiles of legitimate cryptocurrency wallets. According to a report from SecurityWeek, the apps were designed to steal users' secret recovery phrases and private keys, granting attackers full control over victims' digital assets. The discovery highlights a persistent threat of supply chain compromise within curated mobile application marketplaces.

@@ -24,6 +24,13 @@ affected_sectors:
   - education
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
 ---
 ## 执行摘要
 Microsoft 发布了一个紧急安全更新，以修补 Windows Active Directory 中的一个关键漏洞，该漏洞允许远程未经身份验证的攻击者在受影响的域控制器上执行任意代码。这个漏洞于 2026 年 4 月 14 日披露，它赋予了成功攻击者深入、持久的访问权限，以访问 Windows 企业网络的核心身份和认证服务。Microsoft 尚未为这个漏洞分配 CVE 标识符，目前尚不清楚它是否正在野外被积极利用。

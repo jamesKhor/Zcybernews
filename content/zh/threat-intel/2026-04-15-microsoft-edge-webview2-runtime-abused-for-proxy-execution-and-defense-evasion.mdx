@@ -21,6 +21,13 @@ draft: false
 locale_pair: >-
   2026-04-15-microsoft-edge-webview2-runtime-abused-for-proxy-execution-and-defense-evasion
 severity: high
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059.007
+    technique_name: JavaScript
+  - tactic: Defense Evasion
+    technique_id: T1218
+    technique_name: System Binary Proxy Execution
 ---
 ## 执行摘要
 大多数 Windows 系统预装的普遍且可信组件 Microsoft Edge WebView2 运行时，正被积极用于代理执行和防御规避。根据 Black Hills Information Security (BHIS) 的研究，攻击者正在利用运行时的架构，在合法的数字签名 `msedgewebview2.exe` 进程的幌子下加载和执行恶意代码。这种技术绕过了应用程序允许列表，规避了信任 Microsoft 签名二进制文件的端点检测和响应 (EDR) 传感器，并为后开发活动提供了一种隐蔽的机制。研究突出了可信软件依赖项如何被对手重新利用的系统性弱点。

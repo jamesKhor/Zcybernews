@@ -20,6 +20,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-edr-killer-ecosystem-expansion-byovd-defenses
 severity: high
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## Executive Summary
 A growing and increasingly accessible ecosystem of tools and services is enabling threat actors to reliably disable endpoint detection and response (EDR) software using Bring-Your-Own-Vulnerable-Driver (BYOVD) attacks. This technique, which exploits legitimate but vulnerable kernel-mode drivers to gain high-privilege access and terminate security processes, has evolved from a niche capability to a widespread threat. While challenging to defend against, experts cited by Dark Reading assert that robust, layered defenses at the kernel level can effectively mitigate these attacks.

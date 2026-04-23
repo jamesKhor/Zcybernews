@@ -25,6 +25,13 @@ affected_sectors:
   - industrial
 affected_regions:
   - United States
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
+  - tactic: Credential Access
+    technique_id: T1110
+    technique_name: Brute Force
 ---
 ## 执行摘要
 美国近4000台工业控制设备可以直接从公共互联网访问，为伊朗国家资助的威胁行为者提供了一个重大且迫在眉睫的攻击面。根据网络安全公司BitSight的分析，这些暴露的设备——主要是罗克韦尔自动化的可编程逻辑控制器（PLC）——是伊朗高级持续性威胁（APT）团体针对美国关键基础设施的有记录活动的一部分。这些运营技术（OT）资产的暴露绕过了网络分段防御，允许直接操纵物理工业流程。

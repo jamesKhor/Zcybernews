@@ -25,6 +25,13 @@ severity: high
 cvss_score: 7.5
 cve_ids:
   - CVE-2026-5057
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1133
+    technique_name: External Remote Services
+  - tactic: Impact
+    technique_id: T1499
+    technique_name: Endpoint Denial of Service
 ---
 ## Executive Summary
 A critical vulnerability in ATEN's Unizon device management platform allows unauthenticated remote attackers to trigger a denial-of-service (DoS) condition. Tracked as CVE-2026-5057 with a CVSS v3.1 base score of 7.5, the flaw resides in the platform's RPC service. According to the Zero Day Initiative (ZDI), which disclosed the advisory, exploitation does not require authentication, enabling an attacker to remotely crash the service and disrupt management of connected ATEN hardware.

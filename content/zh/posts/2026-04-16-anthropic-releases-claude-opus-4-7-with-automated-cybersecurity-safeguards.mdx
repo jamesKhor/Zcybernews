@@ -21,6 +21,10 @@ draft: false
 locale_pair: >-
   2026-04-16-anthropic-releases-claude-opus-4-7-with-automated-cybersecurity-safeguards
 severity: informational
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059.007
+    technique_name: JavaScript
 ---
 ## 执行摘要
 Anthropic 发布了 Claude Opus 4.7，这是对其前沿大型语言模型（LLM）的重大更新，引入了自动化的运行时安全防护措施，旨在在 AI 代理开始执行可能产生有害网络安全结果的任务时中断它们。根据 Anthropic 的说法，该模型被设计用于更长、更复杂、监管更少的“代理”工作流程，其中 AI 自主规划和执行多步骤任务。新的安全特性旨在为代理在遵循初始用户指令后可能偏离到漏洞扫描、漏洞开发或未经授权的网络侦察等操作的场景提供关键的断路器。

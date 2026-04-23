@@ -26,6 +26,13 @@ affected_sectors:
   - cryptocurrency
 affected_regions:
   - Latin America
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1555
+    technique_name: Credentials from Password Stores
+  - tactic: Command and Control
+    technique_id: T1573
+    technique_name: Encrypted Channel
 ---
 ## Executive Summary
 A newly documented malware campaign is actively deploying a Remote Access Trojan (RAT) known as Janela against financial institutions and cryptocurrency platforms in Latin America. The operation's primary infection vectors are fake MSI installer files and malicious browser extensions, which work in tandem to establish persistence and exfiltrate sensitive financial data from compromised systems. The specific threat actor group behind the campaign and the full scope of the impact remain unclear at this time.

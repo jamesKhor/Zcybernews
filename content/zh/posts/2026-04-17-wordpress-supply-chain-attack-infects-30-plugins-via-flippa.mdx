@@ -19,6 +19,11 @@ language: zh
 locale_pair: 2026-04-17-wordpress-supply-chain-attack-infects-30-plugins-via-flippa
 author: ZCyberNews
 draft: false
+iocs:
+  - type: ip
+    value: 2.6.9.1
+    confidence: high
+    description: Extracted from source material
 ---
 一起重大的 WordPress 供应链攻击已波及超过 30 款插件，涉及数十万活跃安装量。此次事件源于攻击者通过 Flippa 市场收购了一家合法的开发者业务。新所有者仅被称为“Kris”，其注入了一个复杂的后门，该后门潜伏八个月后激活，发起了一场向网站注入 SEO 垃圾内容的攻击活动，这些内容对网站所有者隐藏，但对搜索引擎可见。WordPress.org 因此在一天内永久关闭了所有受影响的插件。该事件凸显了开源插件生态系统中的一个关键漏洞：所有权变更可能引入恶意代码，却不会触发安全审查。
 

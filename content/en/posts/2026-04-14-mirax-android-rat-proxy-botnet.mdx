@@ -22,6 +22,10 @@ locale_pair: 2026-04-14-mirax-android-rat-proxy-botnet
 severity: high
 affected_regions:
   - Europe
+ttp_matrix:
+  - tactic: Command and Control
+    technique_id: T1090
+    technique_name: Proxy
 ---
 ## Executive Summary
 A newly identified Android Remote Access Trojan (RAT) named **Mirax** is being distributed to create a dual-purpose mobile botnet. According to analysis of its advertised capabilities on underground forums, the malware's primary functions are to harvest banking credentials and financial data from victims and to silently enroll infected Android devices into a residential proxy network. This network is then sold to other cybercriminals to anonymize malicious traffic, making Mirax both a direct financial threat and an infrastructure-as-a-service enabler. The malware has been circulating since late 2025, with reported targeting in Europe.

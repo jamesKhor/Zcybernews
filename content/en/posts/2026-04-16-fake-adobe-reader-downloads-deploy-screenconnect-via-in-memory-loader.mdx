@@ -22,6 +22,25 @@ draft: false
 locale_pair: >-
   2026-04-16-fake-adobe-reader-downloads-deploy-screenconnect-via-in-memory-loader
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
+  - tactic: Privilege Escalation
+    technique_id: T1055
+    technique_name: Process Injection
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
+  - tactic: Defense Evasion
+    technique_id: T1140
+    technique_name: Deobfuscate/Decode Files or Information
+  - tactic: Defense Evasion
+    technique_id: T1218
+    technique_name: System Binary Proxy Execution
 ---
 ## Executive Summary
 A newly documented malware campaign is delivering the legitimate ConnectWise ScreenConnect remote access tool via a sophisticated loader that impersonates an Adobe Acrobat Reader installer. The attack chain, reported by CyberSecurity News, relies on social engineering to initiate a multi-stage process that executes the final ScreenConnect payload entirely in memory, leaving minimal forensic artifacts on disk. This technique allows threat actors to establish persistent remote access while evading traditional signature-based detection.

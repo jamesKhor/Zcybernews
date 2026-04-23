@@ -22,6 +22,10 @@ locale_pair: 2026-04-13-janelarat-evolves-anti-analysis-data-theft-capabilities
 severity: high
 affected_regions:
   - Latin America
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
 ---
 ## Executive Summary
 An updated campaign distributing the **JanelaRAT** remote access trojan (RAT) is actively targeting users in Latin America, primarily for financial theft. According to Kaspersky's Global Research and Analysis Team (GReAT), the malware's operators have enhanced its capabilities with new anti-analysis techniques, expanded credential theft modules, and improved remote control functionality. The infection chain relies on phishing emails distributing malicious Microsoft Installer (`.msi`) files, which deploy a multi-stage payload designed to evade detection and establish persistence on victim systems.

@@ -21,6 +21,10 @@ draft: false
 locale_pair: >-
   2026-04-20-flowise-ai-platform-vulnerable-to-remote-code-execution-via-mcp-adapters
 severity: critical
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
 ---
 ## 执行摘要
 Flowise低代码AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架存在一个关键的架构漏洞，允许未经身份验证的远程代码执行（RCE）。根据OX Security的研究人员表示，这个漏洞不是一个传统的软件错误，而是MCP服务器集成方式的设计弱点，使攻击者能够在主机系统上执行任意命令。这个漏洞源于对MCP服务器的固有信任，这些服务器通常从外部、未经验证的存储库加载。

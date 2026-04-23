@@ -23,6 +23,10 @@ locale_pair: >-
   2026-04-21-the-gentlemen-ransomware-botnet-infects-1-570-systems-via-systembc-proxy
 severity: high
 threat_actor: The Gentlemen
+ttp_matrix:
+  - tactic: Command and Control
+    technique_id: T1572
+    technique_name: Protocol Tunneling
 ---
 ## Executive Summary
 Check Point Research has uncovered a command-and-control (C2) server for the SystemBC proxy malware, revealing a botnet of more than 1,570 compromised systems. The infrastructure is linked to the ransomware-as-a-service (RaaS) operation known as The Gentlemen, which uses SystemBC to establish stealthy SOCKS5 network tunnels for post-compromise activity.

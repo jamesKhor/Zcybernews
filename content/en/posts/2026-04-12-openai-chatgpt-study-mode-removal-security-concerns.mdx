@@ -20,6 +20,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-12-openai-chatgpt-study-mode-removal-security-concerns
 severity: medium
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## Executive Summary
 OpenAI has silently removed an undocumented feature from its ChatGPT API known as **Study Mode**, which allowed users to disable web search and file upload capabilities. This change, discovered by users when their automated scripts began failing, was not communicated through official channels. The removal highlights significant risks for organizations relying on undocumented API behaviors for security-critical functions, such as isolating AI processing from external networks. The incident underscores the challenges of managing security postures in a rapidly evolving AI-as-a-Service landscape where providers can alter functionality without warning.

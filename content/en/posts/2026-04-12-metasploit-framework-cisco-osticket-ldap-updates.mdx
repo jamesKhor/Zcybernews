@@ -21,6 +21,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-12-metasploit-framework-cisco-osticket-ldap-updates
 severity: informational
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Discovery
+    technique_id: T1046
+    technique_name: Network Service Discovery
 ---
 ## Executive Summary
 The April 10, 2026, update to the open-source Metasploit Framework introduces new offensive security capabilities, including exploit modules targeting **Cisco Catalyst SD-WAN Manager** and the **osTicket** help desk system. According to Rapid7's wrap-up post, the release also delivers substantial backend improvements for **Lightweight Directory Access Protocol (LDAP)** and **Active Directory Certificate Services (ADCS)** enumeration, and refines a technique for **Windows service-for-user persistence**. These additions provide penetration testers and red teams with expanded tools for security assessment, while underscoring the need for defenders to patch relevant systems and monitor for associated tradecraft.

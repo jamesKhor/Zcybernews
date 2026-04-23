@@ -22,6 +22,13 @@ locale_pair: 2026-04-13-critical-wordpress-plugin-flaw-unauthenticated-admin-tak
 severity: critical
 cve_ids:
   - CVE-2026-1492
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
 ---
 ## Executive Summary
 A critical authentication bypass vulnerability in the popular **User Registration & Membership** plugin for WordPress grants unauthenticated attackers full administrative control of affected websites. Tracked as **CVE-2026-1492**, the flaw allows complete circumvention of the login process, requiring no credentials or prior access. The plugin's widespread use places thousands of WordPress sites at immediate risk of compromise. This analysis is based on a report from CyberSecurity News.

@@ -20,6 +20,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-xchat-self-destructing-messages-security-analysis
 severity: medium
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1070
+    technique_name: Indicator Removal
+  - tactic: Impact
+    technique_id: T1485
+    technique_name: Data Destruction
 ---
 ## Executive Summary
 Elon Musk's X platform has launched **XChat**, a significant update to its direct messaging system centered on a new **self-destructing messages** feature. While marketed as a privacy enhancement, this functionality creates substantial challenges for corporate security, legal discovery, and incident response by intentionally destroying forensic evidence. The technical implementation details, particularly around encryption and client-side enforcement, remain unclear, raising questions about its real-world security guarantees against determined adversaries.

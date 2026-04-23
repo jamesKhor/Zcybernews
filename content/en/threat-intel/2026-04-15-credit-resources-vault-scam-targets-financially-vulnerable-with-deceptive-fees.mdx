@@ -27,6 +27,13 @@ affected_sectors:
   - financial-services
 affected_regions:
   - United States
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
 ---
 ## Executive Summary
 A targeted email campaign is impersonating a non-existent financial service called 'Credit Resources Vault' to exploit individuals with poor credit scores. The scam, analyzed by Malwarebytes, uses fabricated legal and financial documents to create a false sense of urgency and legitimacy, tricking recipients into enrolling in a recurring weekly payment plan for purported credit repair services that provide no tangible value. The operation is designed to siphon funds from those least able to afford it, leveraging sophisticated social engineering rather than technical exploits.

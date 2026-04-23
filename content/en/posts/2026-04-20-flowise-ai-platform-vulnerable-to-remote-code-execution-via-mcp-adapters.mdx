@@ -23,6 +23,10 @@ draft: false
 locale_pair: >-
   2026-04-20-flowise-ai-platform-vulnerable-to-remote-code-execution-via-mcp-adapters
 severity: critical
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
 ---
 ## Executive Summary
 A critical architectural vulnerability in the Flowise low-code AI platform and other frameworks utilizing Anthropic's Model Context Protocol (MCP) allows unauthenticated remote code execution (RCE). According to researchers from OX Security, the flaw is not a traditional software bug but a design weakness in how MCP servers are integrated, enabling attackers to execute arbitrary commands on the host system. The vulnerability stems from the inherent trust placed in MCP servers, which are often loaded from external, unverified repositories.

@@ -28,6 +28,22 @@ affected_sectors:
   - cryptocurrency
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Collection
+    technique_id: T1005
+    technique_name: Data from Local System
+  - tactic: Command and Control
+    technique_id: T1071
+    technique_name: Application Layer Protocol
 ---
 ## Executive Summary
 A North Korean advanced persistent threat (APT) group tracked as Sapphire Sleet is conducting a new social engineering campaign targeting macOS users. According to a report from CyberSecurity News, the threat actor is distributing a malicious application masquerading as an update for the Zoom software development kit (SDK). The campaign does not exploit software vulnerabilities but relies on convincing social engineering to deliver a multi-stage payload designed to steal passwords, cryptocurrency wallets, and sensitive personal data.

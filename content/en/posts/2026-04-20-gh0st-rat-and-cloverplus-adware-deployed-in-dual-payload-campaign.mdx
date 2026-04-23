@@ -20,6 +20,16 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-20-gh0st-rat-and-cloverplus-adware-deployed-in-dual-payload-campaign
 severity: high
+ttp_matrix:
+  - tactic: Persistence
+    technique_id: T1547
+    technique_name: Boot or Logon Autostart Execution
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Collection
+    technique_id: T1114
+    technique_name: Email Collection
 ---
 ## Executive Summary
 A newly identified malware campaign is delivering two distinct payloads—the Gh0st Remote Access Trojan (RAT) and CloverPlus adware—simultaneously via a single obfuscated loader. This dual-payload strategy provides attackers with both persistent, covert system control and a monetization channel from a single infection event. The campaign's technical sophistication lies in its bundling of a high-severity surveillance tool with financially motivated adware, complicating detection and remediation for defenders.

@@ -21,6 +21,10 @@ draft: false
 locale_pair: >-
   2026-04-18-censys-reports-nearly-6-million-internet-facing-ftp-servers-remain-exposed
 severity: medium
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1110
+    technique_name: Brute Force
 ---
 ## Executive Summary
 A new report from attack surface management firm Censys reveals that approximately 5.9 million internet-facing hosts were still running the File Transfer Protocol (FTP) as of April 2026. While this represents a notable 40% decrease from the 10.1 million servers observed in 2024, the persistent use of the unencrypted, decades-old protocol continues to provide a broad attack surface for credential theft, data exfiltration, and server compromise. The research, conducted by Censys security researcher Himaja Motheram, underscores the slow pace of retiring legacy services despite widespread knowledge of their risks.

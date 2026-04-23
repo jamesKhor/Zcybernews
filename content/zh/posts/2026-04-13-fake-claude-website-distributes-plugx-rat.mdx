@@ -17,6 +17,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-fake-claude-website-distributes-plugx-rat
 severity: high
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
 ---
 ## 执行摘要
 一个冒充合法Anthropic Claude AI服务的恶意网站正在分发一个自包含的安装程序，该程序部署了PlugX远程访问木马（RAT）。攻击链依赖于**DLL侧加载**来执行最终的有效载荷，并设计为删除初始感染向量的所有痕迹，使取证分析变得复杂。该活动突显了在软件供应链攻击中继续将可信软件品牌和AI工具武器化。

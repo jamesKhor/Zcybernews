@@ -26,6 +26,16 @@ affected_sectors:
   - any sector using WordPress
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Privilege Escalation
+    technique_id: T1134
+    technique_name: Access Token Manipulation
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Command and Control
+    technique_id: T1105
+    technique_name: Ingress Tool Transfer
 ---
 ## Executive Summary
 A sophisticated supply chain attack against the WordPress ecosystem saw a threat actor purchase a legitimate plugin business, inject a dormant backdoor into its code, and wait eight months before activating it to compromise thousands of websites. According to an analysis by CyberSecurity News, the attack, uncovered in April 2026, demonstrates a patient, long-term strategy designed to evade detection by leveraging the trust inherent in established software update channels. The backdoor provided attackers with persistent administrative access, enabling them to install additional malicious payloads, steal data, and maintain control over infected sites.

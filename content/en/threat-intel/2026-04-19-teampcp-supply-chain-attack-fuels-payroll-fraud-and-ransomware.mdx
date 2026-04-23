@@ -30,6 +30,16 @@ affected_sectors:
 affected_regions:
   - North America
   - Europe
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1003
+    technique_name: OS Credential Dumping
+  - tactic: Collection
+    technique_id: T1114
+    technique_name: Email Collection
+  - tactic: Impact
+    technique_id: T1486
+    technique_name: Data Encrypted for Impact
 ---
 ## Executive Summary
 A financially motivated threat actor tracked as TeamPCP has executed a multi-stage supply chain attack, compromising trusted software tools to harvest credentials from more than 100 victim organizations. According to research by Recorded Future's Insikt Group, the stolen credentials were then used to facilitate payroll diversion fraud, logistics theft, and ransomware extortion, resulting in confirmed losses exceeding $1.5 million. The operation demonstrates a sophisticated blending of initial access broker (IAB) tactics with hands-on-keyboard fraud and extortion.

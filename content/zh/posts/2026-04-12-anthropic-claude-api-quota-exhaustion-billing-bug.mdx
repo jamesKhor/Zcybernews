@@ -16,6 +16,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-12-anthropic-claude-api-quota-exhaustion-billing-bug
 severity: medium
+ttp_matrix:
+  - tactic: Persistence
+    technique_id: T1574
+    technique_name: Hijack Execution Flow
 ---
 ## 执行摘要
 Anthropic 为其 Claude API 的配额管理系统存在一个重大缺陷，允许“Pro Max”计划的客户在正常运行条件下大约1.5小时内耗尽整个月使用配额。这个漏洞已经被修补，导致受影响用户出现意外的超额费用，并暴露了API消费跟踪和警报机制的一个关键弱点。此事件突出了云服务计费和监控架构中的系统性风险。

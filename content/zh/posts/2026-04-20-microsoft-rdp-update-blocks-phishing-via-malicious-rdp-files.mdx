@@ -17,6 +17,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-20-microsoft-rdp-update-blocks-phishing-via-malicious-rdp-files
 severity: medium
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
 ---
 ## 执行摘要
 微软在2026年4月的更新中对Windows远程桌面连接客户端（MSTSC）进行了以安全为中心的行为变更，引入了新的警告对话框，以对抗利用恶意远程桌面协议（.rdp）文件进行网络钓鱼的活动。此次更新是2026年4月补丁星期二周期的一部分，直接针对攻击者诱骗用户打开指向攻击者控制服务器的精心制作的.rdp文件，从而收集凭证的技术。

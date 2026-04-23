@@ -24,6 +24,13 @@ draft: false
 locale_pair: >-
   2026-04-15-threat-actors-weaponize-n8n-workflow-platform-for-phishing-and-payload-delivery
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
 ---
 ## Executive Summary
 Threat actors have been actively weaponizing the legitimate n8n workflow automation platform to conduct phishing campaigns and deliver malware since at least October 2025. By abusing n8n's webhook and email automation features, attackers send malicious emails from the platform's own trusted infrastructure, effectively bypassing traditional email security filters that rely on sender reputation. This technique represents a significant evolution in phishing operations, turning a widely-used productivity and AI integration tool into a potent attack vector.

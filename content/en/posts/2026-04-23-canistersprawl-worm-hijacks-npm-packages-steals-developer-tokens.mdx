@@ -24,6 +24,16 @@ severity: high
 threat_actor: CanisterSprawl
 affected_sectors:
   - software development
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1195
+    technique_name: Supply Chain Compromise
+  - tactic: Credential Access
+    technique_id: T1552
+    technique_name: Unsecured Credentials
+  - tactic: Exfiltration
+    technique_id: T1048
+    technique_name: Exfiltration Over Alternative Protocol
 ---
 ## Executive Summary
 A self-propagating supply chain worm, tracked as CanisterSprawl, is compromising npm packages to steal developer authentication tokens and use them to propagate further. Security firms Socket and StepSecurity identified the campaign, which uses a canister on the Internet Computer Protocol (ICP) blockchain to exfiltrate stolen data.

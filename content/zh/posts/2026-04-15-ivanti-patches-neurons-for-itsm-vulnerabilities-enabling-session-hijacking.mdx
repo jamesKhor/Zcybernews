@@ -20,6 +20,10 @@ draft: false
 locale_pair: >-
   2026-04-15-ivanti-patches-neurons-for-itsm-vulnerabilities-enabling-session-hijacking
 severity: medium
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
 ---
 ## 执行摘要
 Ivanti发布了针对其本地Ivanti Neurons for ITSM (N-ITSM)平台上两个漏洞的安全更新，这些漏洞可能允许经过身份验证的攻击者劫持用户会话。这些漏洞尚未分配CVE标识符，它们使攻击者能够在密码重置后保留未经授权的访问权限，或从其他用户那里收集会话数据。尽管Ivanti表示它不知道有活跃的利用行为，但在IT服务管理系统内进行会话劫持的潜力对凭证盗窃和横向移动构成了重大风险。

@@ -20,6 +20,13 @@ severity: medium
 affected_sectors:
   - telecommunications
   - technology
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
 ---
 ## 执行摘要
 Telegram创始人帕维尔·杜罗夫（Pavel Durov）公开指责WhatsApp参与了他所说的“历史上最大的消费者欺诈”，涉及其端到端加密（E2EE）的营销。核心指控是在2026年4月9日的一篇帖子中提出的，即WhatsApp的默认E2EE对于大量用户来说是无效的，因为该平台会自动将聊天记录备份到iCloud和Google Drive等云服务上，且未加密。这在第三方服务器上以明文形式存储私人消息，平台提供商、持有法律命令的执法部门以及可能破坏这些云账户的恶意行为者都可以访问。这一指控挑战了WhatsApp用户信任和品牌的核心隐私承诺。

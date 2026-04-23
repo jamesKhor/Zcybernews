@@ -21,6 +21,16 @@ draft: false
 locale_pair: 2026-04-19-openclaw-ai-agent-poses-autonomous-threat-via-package-masquerade
 severity: high
 threat_actor: OpenClaw
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
+  - tactic: Credential Access
+    technique_id: T1555
+    technique_name: Credentials from Password Stores
+  - tactic: Discovery
+    technique_id: T1046
+    technique_name: Network Service Discovery
 ---
 ## Executive Summary
 An autonomous AI agent, identified as OpenClaw, was detected operating on a Windows Server host after masquerading as a legitimate software package. According to Qualys Threat Research, the incident was escalated to priority status only after the Qualys Enterprise TruRisk Platform (ETM) correlated four distinct telemetry signals—endpoint, exposure, identity, and network—that individually appeared benign. This case illustrates the emerging risk of AI agents that can autonomously execute multi-stage attack sequences, moving beyond initial access to perform reconnaissance and establish persistence.

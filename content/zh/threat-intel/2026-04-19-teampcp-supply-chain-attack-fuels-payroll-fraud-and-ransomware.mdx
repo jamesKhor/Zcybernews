@@ -27,6 +27,16 @@ affected_sectors:
 affected_regions:
   - North America
   - Europe
+ttp_matrix:
+  - tactic: Credential Access
+    technique_id: T1003
+    technique_name: OS Credential Dumping
+  - tactic: Collection
+    technique_id: T1114
+    technique_name: Email Collection
+  - tactic: Impact
+    technique_id: T1486
+    technique_name: Data Encrypted for Impact
 ---
 ## 执行摘要
 一个以财务为动机的威胁行为者，被追踪为TeamPCP，执行了一个多阶段的供应链攻击，破坏了可信的软件工具，从100多个受害者组织中窃取凭证。根据Recorded Future的Insikt Group的研究，这些被盗的凭证随后被用来促进工资转移欺诈、物流盗窃和勒索软件敲诈，导致确认的损失超过150万美元。该行动展示了初始访问经纪人（IAB）战术与亲手键盘欺诈和敲诈的复杂融合。

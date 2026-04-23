@@ -21,6 +21,18 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-backdoored-smart-slider-3-pro-update-compromised-servers
 severity: high
+iocs:
+  - type: ip
+    value: 3.5.1.35
+    confidence: high
+    description: Extracted from source material
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1133
+    technique_name: External Remote Services
 ---
 ## Executive Summary
 Unknown attackers have executed a software supply chain attack against the commercial Smart Slider 3 Pro plugin for WordPress and Joomla. By compromising the plugin developer Nextend's update distribution servers, the threat actors pushed a malicious update, version `3.5.1.35`, containing a backdoor. This backdoor grants attackers administrative access to affected WordPress sites, enabling complete compromise. The incident was first identified and reported by WordPress security firm Patchstack. The scale of the compromise and the number of sites that applied the poisoned update remain unclear at this time.

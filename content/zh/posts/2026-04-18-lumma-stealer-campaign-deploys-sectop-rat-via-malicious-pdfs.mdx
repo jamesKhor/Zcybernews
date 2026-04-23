@@ -19,6 +19,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-18-lumma-stealer-campaign-deploys-sectop-rat-via-malicious-pdfs
 severity: high
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059.001
+    technique_name: PowerShell
 ---
 ## 执行摘要
 一个新记录的恶意软件活动使用恶意PDF文档部署Lumma（LummaC2）信息窃取器，然后充当Sectop远程访问木马（RAT）的加载器，也称为ArechClient2。根据SANS互联网风暴中心在2026年4月17日发布的分析，这种双阶段攻击的目标首先是窃取凭证、加密货币钱包和浏览器数据，然后建立一个持久的、隐蔽的后门以完全控制系统。感染链利用PowerShell和批处理脚本来逃避检测，并在受感染的Windows主机上保持持久性。

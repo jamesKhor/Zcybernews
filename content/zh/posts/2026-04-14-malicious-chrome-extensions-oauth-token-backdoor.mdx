@@ -18,6 +18,19 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-malicious-chrome-extensions-oauth-token-backdoor
 severity: high
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Credential Access
+    technique_id: T1552
+    technique_name: Unsecured Credentials
+  - tactic: Command and Control
+    technique_id: T1105
+    technique_name: Ingress Tool Transfer
+  - tactic: Impact
+    technique_id: T1491
+    technique_name: Defacement
 ---
 ## 执行摘要
 涉及官方Google Chrome Web Store中100多个恶意扩展的活动一直在积极窃取用户认证令牌、部署后门和进行广告欺诈。这些扩展已被下载数百万次，特别针对Google OAuth2 Bearer令牌，使攻击者能够在不需要密码的情况下持续访问用户账户和数据。这代表了对核心浏览器生态系统的重大供应链攻击。

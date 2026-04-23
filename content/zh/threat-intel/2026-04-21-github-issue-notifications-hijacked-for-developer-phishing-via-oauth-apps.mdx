@@ -24,6 +24,10 @@ severity: high
 affected_sectors:
   - software development
   - technology
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
 ---
 ## 执行摘要
 威胁行为者通过滥用GitHub内置的问题通知系统，针对软件开发人员开展有针对性的网络钓鱼活动。攻击在GitHub受信任的界面内直接传递恶意OAuth应用程序授权请求，绕过电子邮件安全过滤器，显著增加了受害者被入侵的可能性。成功授权后，攻击者将获得对受害者账户的广泛访问权限，包括私有仓库、电子邮件地址以及提交代码的能力。

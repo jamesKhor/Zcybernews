@@ -24,6 +24,13 @@ severity: medium
 affected_sectors:
   - Education
   - Publishing
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Impact
+    technique_id: T1486
+    technique_name: Data Encrypted for Impact
 ---
 ## Executive Summary
 McGraw-Hill, a major education and publishing firm, has confirmed a data breach resulting from the exploitation of a misconfigured Salesforce environment. The incident, which the company states was limited to internal corporate data, followed an extortion threat from the attackers. No customer, financial, or student information was reportedly accessed. The breach underscores the persistent risk posed by cloud service misconfigurations, even for large, established enterprises.

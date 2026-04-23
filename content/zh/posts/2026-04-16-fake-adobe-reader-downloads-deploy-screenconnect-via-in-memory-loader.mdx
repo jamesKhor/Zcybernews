@@ -21,6 +21,25 @@ draft: false
 locale_pair: >-
   2026-04-16-fake-adobe-reader-downloads-deploy-screenconnect-via-in-memory-loader
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
+  - tactic: Privilege Escalation
+    technique_id: T1055
+    technique_name: Process Injection
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
+  - tactic: Defense Evasion
+    technique_id: T1140
+    technique_name: Deobfuscate/Decode Files or Information
+  - tactic: Defense Evasion
+    technique_id: T1218
+    technique_name: System Binary Proxy Execution
 ---
 ## 执行摘要
 一份新记录的恶意软件活动通过一个复杂的加载器分发合法的ConnectWise ScreenConnect远程访问工具，该加载器冒充Adobe Acrobat Reader安装程序。据CyberSecurity News报道，攻击链依赖于社交工程启动一个多阶段过程，该过程在内存中完全执行最终的ScreenConnect有效载荷，使磁盘上的取证痕迹最小化。这种技术允许威胁行为者建立持久的远程访问，同时逃避传统的基于签名的检测。

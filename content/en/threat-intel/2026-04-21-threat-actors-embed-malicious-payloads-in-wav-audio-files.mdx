@@ -19,6 +19,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-21-threat-actors-embed-malicious-payloads-in-wav-audio-files
 severity: medium
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.001
+    technique_name: Spearphishing Attachment
 ---
 ## Executive Summary
 Threat actors are actively using .WAV audio files to deliver malware, according to a report from the SANS Internet Storm Center (ISC). The technique involves embedding malicious payloads within the audio data of a standard .WAV file, allowing attackers to bypass security controls that may not deeply inspect this common media format. The specific malware family and delivery mechanism were not detailed in the source.

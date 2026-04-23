@@ -25,6 +25,19 @@ affected_sectors:
   - critical-infrastructure
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1091
+    technique_name: Replication Through Removable Media
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
+  - tactic: Lateral Movement
+    technique_id: T1570
+    technique_name: Lateral Tool Transfer
 ---
 ## Executive Summary
 A single piece of malware, distributed via phishing emails, drove a global surge of email-borne worms targeting industrial control system (ICS) and operational technology (OT) networks in the fourth quarter of 2025. According to a report from CyberSecurity News, this campaign represents one of the most significant threat shifts observed in OT environments in recent years, with the worm capable of spreading silently once inside a network perimeter.

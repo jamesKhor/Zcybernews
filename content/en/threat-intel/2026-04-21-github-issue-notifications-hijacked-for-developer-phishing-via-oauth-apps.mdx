@@ -26,6 +26,10 @@ severity: high
 affected_sectors:
   - software development
   - technology
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
 ---
 ## Executive Summary
 Threat actors are conducting a targeted phishing campaign against software developers by abusing GitHub's built-in issue notification system. The attack delivers malicious OAuth application authorization requests directly within GitHub's trusted interface, bypassing email security filters and significantly increasing the likelihood of victim compromise. Successful authorization grants attackers extensive access to a victim's account, including private repositories, email addresses, and the ability to commit code.

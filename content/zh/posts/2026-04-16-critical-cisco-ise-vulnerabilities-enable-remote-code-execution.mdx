@@ -16,6 +16,16 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-16-critical-cisco-ise-vulnerabilities-enable-remote-code-execution
 severity: critical
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
+  - tactic: Discovery
+    technique_id: T1083
+    technique_name: File and Directory Discovery
 ---
 ## 执行摘要
 思科针对其身份服务引擎（ISE）和ISE被动身份连接器（ISE-PIC）中的多个关键漏洞发布了紧急安全通告。根据2026年4月15日发布的通告，这些缺陷可能允许经过身份验证的远程攻击者在受影响的设备上执行任意命令。这些漏洞还包括一个路径遍历缺陷，可能导致未经授权的文件访问。思科已经发布了软件更新来解决这些问题，但截至通告日期，没有证据表明在野外有活跃的利用。

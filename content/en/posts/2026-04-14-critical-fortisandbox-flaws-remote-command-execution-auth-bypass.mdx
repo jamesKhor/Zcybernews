@@ -23,6 +23,10 @@ draft: false
 locale_pair: 2026-04-14-critical-fortisandbox-flaws-remote-command-execution-auth-bypass
 severity: critical
 cvss_score: 9.1
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
 ---
 ## Executive Summary
 Fortinet has disclosed two critical security vulnerabilities in its FortiSandbox appliance, each with a CVSSv3 base score of 9.1. According to the vendor's advisory, these flaws could allow an unauthenticated, remote attacker to execute arbitrary commands on the underlying operating system and bypass authentication mechanisms entirely. The vulnerabilities were publicly disclosed on April 14, 2026, and patches are now available. Organizations using FortiSandbox for advanced threat detection and sandboxing are urged to apply updates immediately, as exploitation could lead to full system compromise.

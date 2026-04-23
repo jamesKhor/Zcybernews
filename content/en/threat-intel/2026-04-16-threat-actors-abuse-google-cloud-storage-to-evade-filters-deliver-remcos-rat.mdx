@@ -22,6 +22,10 @@ draft: false
 locale_pair: >-
   2026-04-16-threat-actors-abuse-google-cloud-storage-to-evade-filters-deliver-remcos-rat
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
 ---
 ## Executive Summary
 Threat actors are actively exploiting the inherent trust in Google Cloud Storage to host malicious phishing pages, effectively bypassing standard email security filters and delivering the Remcos remote access trojan. This technique, documented by researchers in early 2026, leverages Google's legitimate infrastructure to lend credibility to attack campaigns, complicating detection based on domain reputation alone. The primary infection vector is phishing emails containing links to these hosted pages, which then trick users into downloading malicious payloads.

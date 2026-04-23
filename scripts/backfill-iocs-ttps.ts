@@ -30,8 +30,51 @@ import "dotenv/config";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { extractIocs, extractTtps } from "./pipeline/extract-iocs.js";
+import {
+  extractIocs,
+  extractTtps,
+  allowlistDomain,
+} from "./pipeline/extract-iocs.js";
 import type { IOCEntry, TTPEntry } from "../lib/types.js";
+
+/**
+ * Bulk-allowlist every configured RSS source's apex domain. Citing
+ * those domains in body References is normal; they should not be
+ * extracted as IOCs.
+ */
+function bootstrapSourceAllowlist(): void {
+  try {
+    const sourcesPath = path.join(process.cwd(), "data", "rss-sources.json");
+    const raw = fs.readFileSync(sourcesPath, "utf-8");
+    const sources = JSON.parse(raw) as Array<{
+      url?: string;
+      homepage?: string;
+    }>;
+    let added = 0;
+    for (const s of sources) {
+      for (const candidate of [s.url, s.homepage]) {
+        if (!candidate) continue;
+        try {
+          const u = new URL(candidate);
+          allowlistDomain(u.hostname);
+          added++;
+        } catch {
+          // Non-URL string (e.g. just a domain) — pass through to allowlistDomain
+          allowlistDomain(candidate);
+          added++;
+        }
+      }
+    }
+    console.log(
+      `[backfill] allowlisted ${added} source domains from data/rss-sources.json`,
+    );
+  } catch (err) {
+    console.warn(
+      "[backfill] could not load rss-sources.json for allowlist:",
+      err instanceof Error ? err.message : err,
+    );
+  }
+}
 
 interface Options {
   apply: boolean;
@@ -180,6 +223,7 @@ function main() {
   console.log(
     `🔁 backfill · apply=${opts.apply} locale=${opts.locale} section=${opts.section} overwrite=${opts.overwrite}`,
   );
+  bootstrapSourceAllowlist();
   const files = walkArticles(opts);
   console.log(`Found ${files.length} articles`);
 

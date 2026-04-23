@@ -17,6 +17,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-16-clickfix-phishing-campaign-masquerades-as-claude-ai-installer
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
+  - tactic: Credential Access
+    technique_id: T1555
+    technique_name: Credentials from Password Stores
 ---
 ## 执行摘要
 根据Rapid7的分析，一个网络钓鱼活动正在使用假冒的Anthropic的Claude AI聊天机器人安装程序作为诱饵，部署一种称为'ClickFix'的复杂社会工程技术。攻击者冒充技术支持，说服受害者下载合法的远程桌面软件，从而直接访问受害者的机器。一旦建立访问，威胁行为者转向窃取凭证、会话cookie和银行信息，通常导致直接从受害者账户中盗窃财务。

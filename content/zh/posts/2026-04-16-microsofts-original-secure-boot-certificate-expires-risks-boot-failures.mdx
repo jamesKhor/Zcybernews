@@ -21,6 +21,10 @@ draft: false
 locale_pair: >-
   2026-04-16-microsofts-original-secure-boot-certificate-expires-risks-boot-failures
 severity: medium
+ttp_matrix:
+  - tactic: Persistence
+    technique_id: T1547
+    technique_name: Boot or Logon Autostart Execution
 ---
 ## 执行摘要
 微软原始的Secure Boot证书，“Microsoft Corporation UEFI CA 2011”，将于2026年4月16日到期，这标志着Windows启动安全生态系统的一个关键转折点。这次到期并不代表传统意义上的漏洞，但构成了重大的操作风险：无法过渡到更新的“Microsoft Corporation UEFI CA 2023”证书的系统可能会遇到启动失败或被迫禁用Secure Boot，削弱了对抗rootkits和bootkits的基础防御。微软将证书更新描述为Windows生态系统中最大的协调安全维护工作之一，需要设备制造商、固件供应商和长期系统的管理员采取行动。

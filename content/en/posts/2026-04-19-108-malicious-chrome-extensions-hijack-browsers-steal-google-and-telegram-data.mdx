@@ -24,6 +24,13 @@ draft: false
 locale_pair: >-
   2026-04-19-108-malicious-chrome-extensions-hijack-browsers-steal-google-and-telegram-data
 severity: high
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059.007
+    technique_name: JavaScript
+  - tactic: Command and Control
+    technique_id: T1071.001
+    technique_name: Web Protocols
 ---
 ## Executive Summary
 Cybersecurity firm Socket has identified a cluster of 108 malicious Google Chrome extensions that infected approximately 20,000 users, according to a technical analysis published April 18, 2026. The extensions, which communicated with a shared command-and-control (C2) infrastructure, were designed to steal sensitive user data—including Google and Telegram session cookies—and perform browser-level abuse by injecting advertisements and arbitrary JavaScript into every visited webpage.

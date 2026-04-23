@@ -20,6 +20,10 @@ locale_pair: 2026-04-14-fake-ledger-live-app-apple-app-store-crypto-theft
 severity: high
 affected_sectors:
   - cryptocurrency
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
 ---
 ## 执行摘要
 一款冒充合法Ledger Live加密货币钱包管理软件的欺诈应用程序在苹果官方macOS App Store上可供下载，导致大约950万美元的失窃。这款恶意应用程序在列表上停留了数天，其功能是通过诱骗用户输入他们的24个单词的秘密恢复短语，然后攻击者使用这些短语来清空受害者的钱包。此事件突出了一个通过受信任的分发平台的重大软件供应链破坏。

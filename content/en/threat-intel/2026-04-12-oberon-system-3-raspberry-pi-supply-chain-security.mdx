@@ -22,6 +22,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-12-oberon-system-3-raspberry-pi-supply-chain-security
 severity: medium
+ttp_matrix:
+  - tactic: Command and Control
+    technique_id: T1105
+    technique_name: Ingress Tool Transfer
 ---
 ## Executive Summary
 A project to natively port the Oberon System 3 operating system to the Raspberry Pi 3, promoted on Hacker News, introduces a tangible supply chain security risk. The primary concern is the distribution method: a ready-to-use SD card image file (`OberonSystem3Native.img.xz`) hosted on a personal GitHub repository. While the project itself appears to be a legitimate technical endeavor, the lack of verifiable build provenance, reproducible builds, and independent code-signing for the binary image creates an opportunity for a malicious actor to compromise the image. Users who flash this image grant the contained software full control over their hardware, making trust in the source paramount.

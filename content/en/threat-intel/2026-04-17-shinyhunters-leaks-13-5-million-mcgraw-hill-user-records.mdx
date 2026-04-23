@@ -22,6 +22,10 @@ severity: high
 threat_actor: ShinyHunters
 affected_sectors:
   - education
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
 ---
 ## Executive Summary
 The ShinyHunters extortion group has publicly leaked a database containing approximately 13.5 million user records stolen from educational publisher McGraw Hill. According to the threat actor's claims and analysis of the leaked data, the breach originated from a compromised Salesforce environment used by McGraw Hill. The leaked information includes user names, email addresses, institutional affiliations, and other account details, posing significant credential stuffing and phishing risks to the global education sector.

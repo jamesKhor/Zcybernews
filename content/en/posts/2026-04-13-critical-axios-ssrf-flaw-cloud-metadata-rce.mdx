@@ -20,6 +20,16 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-critical-axios-ssrf-flaw-cloud-metadata-rce
 severity: critical
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Lateral Movement
+    technique_id: T1021
+    technique_name: Remote Services
 ---
 ## Executive Summary
 A critical server-side request forgery (SSRF) vulnerability in the widely used Axios HTTP client library enables attackers to bypass security controls and make unauthorized requests to internal services, including cloud metadata endpoints. According to researcher Jason Saayman, this flaw allows the exfiltration of sensitive cloud instance metadata, which can be leveraged to steal credentials, move laterally, and achieve remote code execution, posing a severe risk to applications deployed in cloud environments like AWS, Google Cloud, and Azure.

@@ -23,6 +23,13 @@ severity: high
 cvss_score: 7.5
 cve_ids:
   - CVE-2025-71066
+ttp_matrix:
+  - tactic: Privilege Escalation
+    technique_id: T1055
+    technique_name: Process Injection
+  - tactic: Privilege Escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
 ---
 ## 执行摘要
 Linux内核的最早合格虚拟截止时间优先（EEVDF）调度器中存在一个竞态条件漏洞，特别是在其最早传输选择（ETS）带宽管理组件内，可以被本地攻击者利用以提升权限至root。该漏洞被跟踪为CVE-2025-71066，并由趋势科技的零日计划（ZDI）分配了一个CVSS v3.1基础得分7.5，该缺陷要求攻击者首先获得在目标上执行高权限代码的能力。成功利用将授予对受影响系统的完全控制。

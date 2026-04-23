@@ -23,6 +23,13 @@ severity: high
 cve_ids:
   - CVE-2026-40176
   - CVE-2026-40177
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
 ---
 ## 执行摘要
 PHP Composer包管理器的Perforce驱动程序中存在两个高严重性的命令注入漏洞，允许在开发者系统上执行任意命令。这些漏洞被跟踪为**CVE-2026-40176**和**CVE-2026-40177**，它们存在于处理Perforce版本控制系统（VCS）的代码中。成功利用这些漏洞需要攻击者控制一个恶意的Perforce仓库，开发者使用Composer与之交互。维护者已在Composer版本2.8.2和2.9.2中发布了补丁；所有用户都被敦促立即更新。

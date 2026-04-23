@@ -21,6 +21,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-microsoft-windows-protections-malicious-rdp-files
 severity: medium
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
 ---
 ## Executive Summary
 Microsoft has implemented new security features in Windows to mitigate a persistent phishing technique that abuses Remote Desktop Protocol (RDP) connection files. The update, detailed in a recent Microsoft security blog post, introduces explicit user warnings and disables risky resource-sharing options by default when opening `.rdp` files from untrusted sources. This change directly targets campaigns where threat actors distribute malicious RDP files to harvest credentials or establish initial access to victim systems.

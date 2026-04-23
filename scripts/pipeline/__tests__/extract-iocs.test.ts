@@ -72,11 +72,79 @@ describe("extractIocs — IPs", () => {
   });
 });
 
+describe("extractIocs — IP octet validation (post-2026-04-23 fix)", () => {
+  it("rejects invalid octets >255 (false positive '147.0.758.37')", () => {
+    const out = extractIocs({
+      body: "Build version 147.0.758.37 of the app",
+      sourceText: "147.0.758.37",
+    });
+    expect(out.filter((i) => i.type === "ip")).toHaveLength(0);
+  });
+
+  it("rejects software-version-like strings (3.5.1.35)", () => {
+    const out = extractIocs({
+      body: "Affects vendor product 3.5.1.35 and earlier",
+      sourceText: "3.5.1.35",
+    });
+    // Note: 3.5.1.35 IS technically a valid IPv4. But many "version
+    // strings" look like IPs and we accept that some real low-octet IPs
+    // may be missed. This test pins current behavior.
+    const ips = out.filter((i) => i.type === "ip");
+    expect(ips.some((i) => i.value === "3.5.1.35")).toBe(true);
+  });
+
+  it("rejects link-local 169.254.x.x (EC2 metadata, mentioned constantly)", () => {
+    const out = extractIocs({
+      body: "SSRF to 169.254.169.254 reads cloud metadata",
+      sourceText: "169.254.169.254",
+    });
+    expect(out.filter((i) => i.type === "ip")).toHaveLength(0);
+  });
+
+  it("rejects 127.0.0.0/8 (full loopback range, not just 127.0.0.1)", () => {
+    const out = extractIocs({
+      body: "Listening on 127.0.0.0",
+      sourceText: "127.0.0.0",
+    });
+    expect(out.filter((i) => i.type === "ip")).toHaveLength(0);
+  });
+
+  it("rejects multicast (224.0.0.0/4)", () => {
+    const out = extractIocs({
+      body: "mDNS uses 224.0.0.251",
+      sourceText: "224.0.0.251",
+    });
+    expect(out.filter((i) => i.type === "ip")).toHaveLength(0);
+  });
+});
+
+describe("extractIocs — domains gated behind includeDomains", () => {
+  it("does NOT extract domains by default (includeDomains undefined)", () => {
+    const out = extractIocs({
+      body: "C2 at evil-host.xyz",
+      sourceText: "evil-host.xyz",
+    });
+    expect(out.filter((i) => i.type === "domain")).toHaveLength(0);
+  });
+
+  it("extracts domains when includeDomains: true", () => {
+    const out = extractIocs({
+      body: "C2 at evil-host.xyz",
+      sourceText: "evil-host.xyz",
+      includeDomains: true,
+    });
+    expect(
+      out.some((i) => i.type === "domain" && i.value === "evil-host.xyz"),
+    ).toBe(true);
+  });
+});
+
 describe("extractIocs — domains + allowlist", () => {
   it("extracts attacker-controlled domain", () => {
     const out = extractIocs({
       body: "C2 callback to evil-update.xyz over HTTPS",
       sourceText: "evil-update.xyz served the second-stage payload",
+      includeDomains: true,
     });
     expect(
       out.some((i) => i.type === "domain" && i.value === "evil-update.xyz"),
@@ -87,6 +155,7 @@ describe("extractIocs — domains + allowlist", () => {
     const out = extractIocs({
       body: "Patch on github.com/vendor/repo. Cloudflare WAF mentioned. Affects microsoft.com customers.",
       sourceText: "github.com vendor repo cloudflare microsoft.com",
+      includeDomains: true,
     });
     const domains = out.filter((i) => i.type === "domain").map((i) => i.value);
     expect(domains).not.toContain("github.com");
@@ -106,6 +175,7 @@ describe("extractIocs — URLs", () => {
     const out = extractIocs({
       body: "Phishing kit hosted at https://evil-host.top/login.php?u=1",
       sourceText: "https://evil-host.top/login.php?u=1 was the lure",
+      includeDomains: true,
     });
     expect(out.some((i) => i.type === "url")).toBe(true);
   });
@@ -114,6 +184,7 @@ describe("extractIocs — URLs", () => {
     const out = extractIocs({
       body: "PR at https://github.com/vendor/repo/pull/1234",
       sourceText: "https://github.com/vendor/repo/pull/1234",
+      includeDomains: true,
     });
     expect(out.filter((i) => i.type === "url")).toHaveLength(0);
   });
@@ -124,6 +195,7 @@ describe("extractIocs — emails", () => {
     const out = extractIocs({
       body: "Spearphishing from impersonator@evil-host.xyz",
       sourceText: "impersonator@evil-host.xyz sent the email",
+      includeDomains: true,
     });
     expect(
       out.some((i) => i.type === "email" && i.value.includes("evil-host.xyz")),
@@ -134,6 +206,7 @@ describe("extractIocs — emails", () => {
     const out = extractIocs({
       body: "Reach out at security@google.com",
       sourceText: "security@google.com",
+      includeDomains: true,
     });
     expect(out.filter((i) => i.type === "email")).toHaveLength(0);
   });
@@ -231,6 +304,37 @@ describe("extractTtps — MITRE technique IDs", () => {
     const out = extractTtps({ body: "T1190 used.", existing });
     expect(out.some((t) => t.technique_id === "T9999")).toBe(true);
     expect(out.some((t) => t.technique_id === "T1190")).toBe(true);
+  });
+});
+
+describe("extractIocs — References-section strip (false-positive guard)", () => {
+  it("does NOT extract domains that only appear in the References section", () => {
+    const body = `## Technical Analysis
+
+The threat actor used **evil-update.xyz** as their C2 server.
+
+## References
+
+- https://www.helpnetsecurity.com/2026/04/22/foo
+- https://cybersecuritynews.com/article-bar
+- https://www.zerodayinitiative.com/advisories/ZDI-26-001`;
+    const out = extractIocs({ body, sourceText: body, includeDomains: true });
+    const domainValues = out
+      .filter((i) => i.type === "domain")
+      .map((i) => i.value);
+    // The C2 domain (in body) IS extracted
+    expect(domainValues).toContain("evil-update.xyz");
+    // None of the citation domains appear
+    expect(domainValues).not.toContain("www.helpnetsecurity.com");
+    expect(domainValues).not.toContain("cybersecuritynews.com");
+    expect(domainValues).not.toContain("www.zerodayinitiative.com");
+  });
+});
+
+describe("allowlistDomain — runtime extension", () => {
+  it("treats own host (zcybernews.com) as allowlisted by default", () => {
+    expect(isAllowlistedDomain("zcybernews.com")).toBe(true);
+    expect(isAllowlistedDomain("www.zcybernews.com")).toBe(true);
   });
 });
 

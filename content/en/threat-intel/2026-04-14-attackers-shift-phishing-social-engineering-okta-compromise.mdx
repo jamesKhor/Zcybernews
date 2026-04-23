@@ -20,6 +20,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-attackers-shift-phishing-social-engineering-okta-compromise
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Privilege Escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
 ---
 ## Executive Summary
 Threat actors are pivoting from traditional phishing to direct, phone-based social engineering attacks targeting IT help desks, with the primary goal of compromising Okta identity and access management (IAM) systems. This technique, often called "MFA fatigue" or "vishing," bypasses email security controls and exploits human trust to reset multi-factor authentication (MFA) or gain privileged credentials. Successful attacks provide adversaries with initial access to corporate networks, enabling lateral movement and data theft under the guise of legitimate user identities.

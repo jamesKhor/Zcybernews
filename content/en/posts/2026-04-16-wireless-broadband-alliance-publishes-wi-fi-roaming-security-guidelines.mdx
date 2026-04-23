@@ -29,6 +29,13 @@ affected_sectors:
   - retail
 affected_regions:
   - global
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: Credential Access
+    technique_id: T1555
+    technique_name: Credentials from Password Stores
 ---
 ## Executive Summary
 The Wireless Broadband Alliance (WBA) has published a comprehensive set of security guidelines for public Wi-Fi roaming networks, addressing critical gaps in how authentication credentials are handled across disparate network operators. The guidelines target networks using Passpoint (Hotspot 2.0) and OpenRoaming technologies, where inconsistent security implementations can expose users to credential theft and man-in-the-middle attacks.

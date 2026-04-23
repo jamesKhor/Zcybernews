@@ -24,6 +24,13 @@ severity: high
 cvss_score: 7.5
 cve_ids:
   - CVE-2026-5057
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1133
+    technique_name: External Remote Services
+  - tactic: Impact
+    technique_id: T1499
+    technique_name: Endpoint Denial of Service
 ---
 ## 执行摘要
 ATEN的Unizon设备管理平台存在一个关键漏洞，允许未经身份验证的远程攻击者触发拒绝服务（DoS）条件。这个漏洞被跟踪为CVE-2026-5057，CVSS v3.1基础得分为7.5，存在于平台的RPC服务中。根据披露咨询的Zero Day Initiative（ZDI），利用不需要认证，使攻击者能够远程崩溃服务并中断连接的ATEN硬件的管理。

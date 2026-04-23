@@ -17,6 +17,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-edr-killer-ecosystem-expansion-byovd-defenses
 severity: high
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## 执行摘要
 日益增长且越来越易获得的工具和服务生态系统使得威胁行为者能够可靠地通过使用自带易受攻击驱动程序（BYOVD）攻击来禁用端点检测和响应（EDR）软件。这种技术利用合法但易受攻击的内核模式驱动程序获得高权限访问并终止安全进程，已从小众能力演变为广泛威胁。尽管防御起来具有挑战性，但Dark Reading引述的专家断言，内核级别的强大、分层防御可以有效缓解这些攻击。

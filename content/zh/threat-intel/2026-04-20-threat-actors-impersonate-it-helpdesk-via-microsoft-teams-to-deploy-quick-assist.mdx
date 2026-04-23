@@ -21,6 +21,22 @@ draft: false
 locale_pair: >-
   2026-04-20-threat-actors-impersonate-it-helpdesk-via-microsoft-teams-to-deploy-quick-assist
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
+  - tactic: Defense Evasion
+    technique_id: T1218
+    technique_name: System Binary Proxy Execution
+  - tactic: Lateral Movement
+    technique_id: T1021
+    technique_name: Remote Services
 ---
 ## 执行摘要
 威胁行为者正在进行一种新的社会工程学活动，滥用对Microsoft Teams的固有信任来冒充公司IT帮助台工作人员。根据CyberSecurity News的一份报告，攻击者通过Teams聊天启动联系，然后通过社会工程学手段诱使员工下载并运行微软的合法Quick Assist工具，授予攻击者远程控制权。这种技术利用受信任的、预安装的商业应用程序来绕过用户的怀疑和安全控制，以获取初始访问权限。

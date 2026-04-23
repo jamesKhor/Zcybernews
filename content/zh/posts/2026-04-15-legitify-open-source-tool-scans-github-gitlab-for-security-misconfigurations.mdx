@@ -21,6 +21,13 @@ draft: false
 locale_pair: >-
   2026-04-15-legitify-open-source-tool-scans-github-gitlab-for-security-misconfigurations
 severity: informational
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+  - tactic: Impact
+    technique_id: T1485
+    technique_name: Data Destruction
 ---
 ## 执行摘要
 Legit Security 推出了 Legitify，这是一个开源命令行工具，旨在扫描 GitHub 和 GitLab 环境中经常被软件供应链攻击利用的安全配置错误。该工具审计组织、仓库、成员和 CI/CD 运行器组的设置，提供可能导致未经授权访问、代码泄露或凭证盗窃的政策违规的合并报告。根据供应商的说法，组织通常缺乏对这些配置风险的全面可见性，这些风险仍然是一个普遍的初始攻击向量。

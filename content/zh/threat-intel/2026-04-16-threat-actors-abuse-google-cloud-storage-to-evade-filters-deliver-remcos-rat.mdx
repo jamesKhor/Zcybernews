@@ -19,6 +19,10 @@ draft: false
 locale_pair: >-
   2026-04-16-threat-actors-abuse-google-cloud-storage-to-evade-filters-deliver-remcos-rat
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
 ---
 ## 执行摘要
 威胁行为者正在积极利用对Google Cloud Storage的固有信任来托管恶意钓鱼页面，有效地绕过标准的电子邮件安全过滤器，并交付Remcos远程访问木马。这项技术在2026年初由研究人员记录，利用Google的合法基础设施为攻击活动增加可信度，仅基于域名声誉的检测变得更加复杂。主要感染途径是包含指向这些托管页面链接的钓鱼电子邮件，然后诱骗用户下载恶意负载。

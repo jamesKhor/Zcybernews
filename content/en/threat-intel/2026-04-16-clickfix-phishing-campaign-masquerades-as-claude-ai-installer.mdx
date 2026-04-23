@@ -20,6 +20,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-16-clickfix-phishing-campaign-masquerades-as-claude-ai-installer
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.002
+    technique_name: Spearphishing Link
+  - tactic: Credential Access
+    technique_id: T1555
+    technique_name: Credentials from Password Stores
 ---
 ## Executive Summary
 A phishing campaign is using fake installers for Anthropic's Claude AI chatbot as a lure to deploy a sophisticated social engineering technique known as 'ClickFix,' according to analysis by Rapid7. The attackers impersonate technical support to convince victims to download legitimate remote desktop software, granting them direct access to the victim's machine. Once access is established, the threat actors pivot to steal credentials, session cookies, and banking information, often leading to direct financial theft from the victim's accounts.

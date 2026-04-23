@@ -16,6 +16,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-21-threat-actors-embed-malicious-payloads-in-wav-audio-files
 severity: medium
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.001
+    technique_name: Spearphishing Attachment
 ---
 ## 执行摘要
 根据SANS互联网风暴中心（ISC）的一份报告，威胁行为者正在积极使用.WAV音频文件来传递恶意软件。这种技术涉及在标准.WAV文件的音频数据中嵌入恶意有效载荷，使攻击者能够绕过可能不会深入检查这种常见媒体格式的安全控制。源材料中没有详细说明具体的恶意软件家族和传递机制。

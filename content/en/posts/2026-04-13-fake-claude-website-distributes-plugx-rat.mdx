@@ -20,6 +20,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-fake-claude-website-distributes-plugx-rat
 severity: high
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
 ---
 ## Executive Summary
 A malicious website impersonating the legitimate Anthropic Claude AI service is distributing a self-contained installer that deploys the PlugX remote access trojan (RAT). The attack chain relies on **DLL sideloading** to execute the final payload and is designed to delete all traces of the initial infection vector, complicating forensic analysis. The campaign highlights the continued weaponization of trusted software brands and AI tools in software supply-chain attacks.

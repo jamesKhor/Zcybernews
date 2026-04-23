@@ -24,6 +24,13 @@ severity: high
 cvss_score: 7.5
 cve_ids:
   - CVE-2025-71066
+ttp_matrix:
+  - tactic: Privilege Escalation
+    technique_id: T1055
+    technique_name: Process Injection
+  - tactic: Privilege Escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
 ---
 ## Executive Summary
 A race condition vulnerability in the Linux kernel's Earliest Eligible Virtual Deadline First (EEVDF) scheduler, specifically within its Earliest Transmission Selection (ETS) bandwidth management component, can be exploited by a local attacker to escalate privileges to root. Tracked as CVE-2025-71066 and assigned a CVSS v3.1 base score of 7.5 by Trend Micro's Zero Day Initiative (ZDI), the flaw requires an attacker to first obtain the ability to execute high-privileged code on the target. Successful exploitation grants full control of the affected system.

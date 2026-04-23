@@ -19,6 +19,10 @@ locale_pair: 2026-04-13-venom-phaas-targets-executive-microsoft-logins
 severity: high
 affected_sectors:
   - multiple
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566
+    technique_name: Phishing
 ---
 ## 执行摘要
 一个名为**VENOM**的未被记录的钓鱼即服务（PhaaS）平台正在被积极使用，其目标是从高层企业高管那里窃取微软登录凭证。根据网络安全公司Proofpoint的分析，该平台使威胁行为者能够发起复杂的、多阶段的电子邮件攻击，通过利用微软Azure等可信云服务来绕过传统安全过滤器。主要目标是窃取凭证，这可能导致商业电子邮件泄露（BEC）、金融欺诈和受害者组织内部的横向移动。

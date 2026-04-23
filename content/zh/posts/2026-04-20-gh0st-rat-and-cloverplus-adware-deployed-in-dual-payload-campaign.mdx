@@ -17,6 +17,16 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-20-gh0st-rat-and-cloverplus-adware-deployed-in-dual-payload-campaign
 severity: high
+ttp_matrix:
+  - tactic: Persistence
+    technique_id: T1547
+    technique_name: Boot or Logon Autostart Execution
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
+  - tactic: Collection
+    technique_id: T1114
+    technique_name: Email Collection
 ---
 ## 执行摘要
 最近识别的恶意软件活动同时通过单一混淆加载器分发两种不同的有效载荷——Gh0st 远程访问木马（RAT）和 CloverPlus 广告软件。这种双重有效载荷策略为攻击者提供了从单一感染事件中获得持久、隐蔽的系统控制和货币化渠道。该活动的技术复杂性在于将高严重性的监视工具与以财务为动机的广告软件捆绑在一起，这增加了防御者的检测和补救难度。

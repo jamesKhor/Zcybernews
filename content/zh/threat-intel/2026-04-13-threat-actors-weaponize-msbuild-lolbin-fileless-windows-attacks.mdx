@@ -19,6 +19,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-threat-actors-weaponize-msbuild-lolbin-fileless-windows-attacks
 severity: high
+ttp_matrix:
+  - tactic: Privilege Escalation
+    technique_id: T1055
+    technique_name: Process Injection
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
 ---
 ## 执行摘要
 威胁行为者正在积极利用对Windows核心组件Microsoft Build Engine（`MSBuild.exe`）的固有信任来进行无文件攻击。通过制作恶意的MSBuild项目文件，对手可以直接在系统内存中执行任意.NET代码，绕过应用程序允许列表，并规避依赖于检测恶意文件写入的安全工具。这种技术代表了向滥用合法、签名系统实用程序进行后开发活动的重大转变。

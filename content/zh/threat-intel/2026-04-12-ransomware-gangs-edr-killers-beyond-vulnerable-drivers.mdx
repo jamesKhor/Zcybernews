@@ -19,6 +19,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-12-ransomware-gangs-edr-killers-beyond-vulnerable-drivers
 severity: high
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: Disable or Modify Tools
 ---
 ## 执行摘要
 勒索软件威胁行为者正在系统地部署更广泛的工具，这些工具旨在禁用端点检测和响应（EDR）软件，这是文件加密之前的关键步骤。根据ESET Research的报告，这种演变现在包括使用恶意签名但合法的内核模式驱动程序来终止安全进程，超越了之前更广为人知的依赖于利用合法驱动程序中已知漏洞的做法。这种转变代表了操作安全的显著升级，使得检测更加困难，并增加了成功部署勒索软件的可能性。

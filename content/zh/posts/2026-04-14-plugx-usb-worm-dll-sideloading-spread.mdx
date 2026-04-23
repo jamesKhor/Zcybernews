@@ -20,6 +20,16 @@ severity: high
 affected_regions:
   - Asia
   - Africa
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1091
+    technique_name: Replication Through Removable Media
+  - tactic: Execution
+    technique_id: T1106
+    technique_name: Native API
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
 ---
 ## 执行摘要
 最近记录的PlugX远程访问木马（RAT）变种作为USB蠕虫传播，使用DLL侧加载感染多个大陆的系统。该活动首次于2022年8月在巴布亚新几内亚观察到，并于2023年1月在加纳再次观察到，标志着PlugX投递机制的重大演变，从目标网络入侵转变为基于物理媒介的机会性传播。该蠕虫利用合法的签名驱动程序侧加载恶意DLL，建立持久性并部署二级有效载荷，包括Koadic后期开发框架。

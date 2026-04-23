@@ -23,6 +23,16 @@ draft: false
 locale_pair: >-
   2026-04-21-fake-google-antigravity-installer-steals-accounts-via-trojanized-ai-tool
 severity: high
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
+  - tactic: Collection
+    technique_id: T1560
+    technique_name: Archive Collected Data
+  - tactic: Exfiltration
+    technique_id: T1567
+    technique_name: Exfiltration Over Web Service
 ---
 ## Executive Summary
 A trojanized installer masquerading as Google's unreleased Antigravity AI tool is actively stealing user credentials and browser session cookies. According to Malwarebytes, the malicious installer, distributed through unofficial channels, functions as a fully-featured infostealer, exfiltrating data to attacker-controlled servers within minutes of execution. The campaign exploits interest in the leaked AI software to compromise Google, Microsoft, and other online accounts.

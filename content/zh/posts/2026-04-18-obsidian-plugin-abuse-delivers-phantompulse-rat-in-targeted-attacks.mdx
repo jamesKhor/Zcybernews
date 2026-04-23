@@ -21,6 +21,19 @@ severity: high
 affected_sectors:
   - financial-services
   - cryptocurrency
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1566.001
+    technique_name: Spearphishing Attachment
+  - tactic: Defense Evasion
+    technique_id: T1036
+    technique_name: Masquerading
+  - tactic: Defense Evasion
+    technique_id: T1218
+    technique_name: System Binary Proxy Execution
+  - tactic: Collection
+    technique_id: T1005
+    technique_name: Data from Local System
 ---
 ## 执行摘要
 一种新颖的社会工程学活动正在滥用流行的Obsidian笔记应用程序的可扩展性，以投递一种以前未记录的Windows远程访问木马（RAT），被称为PHANTOMPULSE。根据追踪此活动为REF6598的Elastic Security Labs的说法，攻击者正在分发恶意的Obsidian插件以获得初始访问权限，主要针对金融和加密货币领域的个人。该活动代表了初始访问技术的显著演变，利用受信任的开发工具和软件供应链来绕过传统的安全控制。

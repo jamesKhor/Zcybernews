@@ -3,8 +3,8 @@ title: Obsidian 插件生态系统被滥用以在针对性活动中传递 Phanto
 slug: 2026-04-13-obsidian-plugin-abused-phantompulse-rat-targeted-campaign
 date: '2026-04-13'
 excerpt: >-
-  REF6598 威胁组织利用 Obsidian 笔记插件向金融科技与加密货币从业者投递
-  PhantomPulse RAT — 完整攻击链 TTP、IOC 指标与蓝队排查建议。
+  REF6598 威胁组织利用 Obsidian 笔记插件向金融科技与加密货币从业者投递 PhantomPulse RAT — 完整攻击链 TTP、IOC
+  指标与蓝队排查建议。
 category: malware
 tags:
   - obsidian
@@ -23,6 +23,10 @@ threat_actor: REF6598
 affected_sectors:
   - financial-services
   - cryptocurrency
+ttp_matrix:
+  - tactic: Defense Evasion
+    technique_id: T1027
+    technique_name: Obfuscated Files or Information
 ---
 ## 执行摘要
 一个被追踪为**REF6598**的威胁行为者正在进行一场针对性的社会工程学活动，滥用流行的笔记应用**Obsidian**的合法插件生态系统来分发一种名为**PhantomPulse**的以前未记录的远程访问木马（RAT）。这场活动始于2024年初，主要通过LinkedIn和Telegram上的假工作机会针对金融和加密货币行业的专业人士。攻击者利用与Obsidian社区插件相关的信任来绕过安全控制，并在受害者系统上建立持久的立足点。

@@ -25,6 +25,10 @@ severity: high
 threat_actor: Harvester
 affected_regions:
   - South Asia
+ttp_matrix:
+  - tactic: Command and Control
+    technique_id: T1071.001
+    technique_name: Web Protocols
 ---
 ## Executive Summary
 The threat actor known as Harvester has deployed a new Linux variant of its GoGra backdoor, using the legitimate Microsoft Graph API and Outlook mailboxes as a covert command-and-control (C2) channel. According to Symantec and Carbon Black Threat Hunter teams, this technique allows the malware to bypass traditional network perimeter defenses, with attacks likely targeting entities in South Asia.

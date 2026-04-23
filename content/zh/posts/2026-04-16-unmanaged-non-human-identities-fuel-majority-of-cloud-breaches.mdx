@@ -17,6 +17,10 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-16-unmanaged-non-human-identities-fuel-majority-of-cloud-breaches
 severity: high
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
 ---
 ## 执行摘要
 根据最近行业网络研讨会引用的数据，2024年68%的云安全泄露的主要初始攻击向量是被泄露和遗忘的非人类身份，例如服务账户、API密钥和OAuth授权。这一统计数据，归因于2024年的分析，突显了一个系统性的安全失败，即自动化凭证在没有治理的情况下扩散，通常在项目结束后或人员离职后仍然存在。现在，对于每个人类员工，组织需要管理大约40到50个这些非人类身份，创造了一个庞大的、影子攻击面，传统安全控制经常忽略这一点，因为它们专注于人类用户。
