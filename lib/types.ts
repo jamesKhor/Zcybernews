@@ -70,6 +70,15 @@ export const ArticleFrontmatterSchema = z.object({
   featured_image_alt: z.string().optional(),
   draft: z.boolean().default(false),
   scheduled_publish: z.string().optional(),
+  /**
+   * 1-2 sentence ultra-condensed summary (B-022, 2026-04-23). Optional
+   * — when present, renders as an editorial callout above Executive
+   * Summary on the article page and used in social-share previews.
+   * Different from `excerpt` (which is the meta description / SERP
+   * snippet, ~155 chars). TLDR is for the IN-PAGE skim reader and may
+   * be longer (up to ~280 chars).
+   */
+  tldr: z.string().max(280).optional(),
   // Threat intel fields (optional on regular posts)
   threat_actor: z.string().optional(),
   threat_actor_origin: z.string().optional(),

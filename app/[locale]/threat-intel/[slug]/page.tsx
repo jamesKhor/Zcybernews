@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getPostBySlug, getRecentSlugs, getRelatedPosts } from "@/lib/content";
 import { compileMDX } from "@/lib/mdx";
 import { ArticleMeta } from "@/components/articles/ArticleMeta";
+import { TldrCallout } from "@/components/articles/TldrCallout";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { IOCTable } from "@/components/threat-intel/IOCTable";
 import { MitreMatrix } from "@/components/threat-intel/MitreMatrix";
@@ -205,6 +206,9 @@ function TIPageContent({
               {frontmatter.excerpt}
             </p>
           </header>
+
+          {/* TLDR (B-022) — renders only when frontmatter.tldr is present. */}
+          <TldrCallout tldr={frontmatter.tldr} locale={locale} />
 
           {featuredImage && (
             <div className="relative mb-8 rounded-lg overflow-hidden border border-border h-64">

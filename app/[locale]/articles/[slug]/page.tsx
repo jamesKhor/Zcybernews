@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getPostBySlug, getRecentSlugs, getRelatedPosts } from "@/lib/content";
 import { compileMDX } from "@/lib/mdx";
 import { ArticleMeta } from "@/components/articles/ArticleMeta";
+import { TldrCallout } from "@/components/articles/TldrCallout";
 import { IOCTable } from "@/components/threat-intel/IOCTable";
 import { MitreMatrix } from "@/components/threat-intel/MitreMatrix";
 import { ArticleCard } from "@/components/articles/ArticleCard";
@@ -217,6 +218,11 @@ function ArticlePageContent({
               {stripMarkdown(frontmatter.excerpt)}
             </p>
           </header>
+
+          {/* TLDR (B-022) — renders only when frontmatter.tldr is present.
+              Sits between header and the hero image so skim-readers see
+              it before deciding to commit to the full article. */}
+          <TldrCallout tldr={frontmatter.tldr} locale={locale} />
 
           {/* Hero image */}
           {featuredImage && (
