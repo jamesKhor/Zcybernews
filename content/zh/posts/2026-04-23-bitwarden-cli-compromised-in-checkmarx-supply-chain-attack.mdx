@@ -1,0 +1,45 @@
+---
+title: Bitwarden CLI 在 Checkmarx 供应链攻击中被入侵
+slug: 2026-04-23-bitwarden-cli-compromised-in-checkmarx-supply-chain-attack
+date: '2026-04-23'
+excerpt: >-
+  JFrog 和 Socket 在 @bitwarden/cli@2026.4.0 中发现了恶意代码 —— 这是同一活动，劫持了 Checkmarx npm
+  包。
+category: malware
+tags:
+  - supply-chain-attack
+  - bitwarden
+  - npm
+  - checkmarx
+  - trojanized-package
+  - jfrog
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/bitwarden-cli-compromised-in-ongoing.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-bitwarden-cli-compromised-in-checkmarx-supply-chain-attack
+severity: critical
+affected_sectors:
+  - technology
+  - software development
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+JFrog 和 Socket 的安全研究人员发现，npm 上的 Bitwarden CLI 包 (`@bitwarden/cli`) 被恶意代码破坏，这是之前针对 Checkmarx 的持续供应链活动的一部分。根据 JFrog 在 2026 年 4 月 23 日发布的报告，木马版本 `@bitwarden/cli@2026.4.0` 包含一个名为 `bw1.js` 的恶意文件，嵌入在包内容中。这一发现扩大了首次报告的活动范围，当时 Checkmarx 自己的 npm 包被劫持，现在表明攻击者利用被破坏的凭证或基础设施向广泛使用的开发工具推送恶意更新。
+
+## 技术分析
+
+JFrog 和 Socket 分析了受影响的 Bitwarden CLI 包，并发现恶意代码被插入到一个名为 `bw1.js` 的文件中，该文件包含在发布的 npm tarball 中。合法的 Bitwarden CLI 包不包含此文件。攻击者似乎已经获得了 Bitwarden npm 发布凭证或 CI/CD 管道的访问权限，允许他们发布带有木马有效载荷的版本 2026.4.0。研究人员尚未详细说明恶意代码的确切功能，但它与 Checkmarx 活动中观察到的作案手法一致，攻击者在受信任的包中注入了凭据窃取或后门功能。
+
+攻击链模仿了针对 Checkmarx 使用的技术：攻击者破坏了一个 npm 维护者账户或 CI 管道，然后发布了一个看似合法的版本更新，包含混淆的恶意代码。在版本 2026.4.0 发布和下架之间运行 `npm install -g @bitwarden/cli` 或在其 CI/CD 管道中包含该包的用户将执行恶意代码。JFrog 和 Socket 尚未发布完整的入侵指标 (IOCs) 或特定的 C2 基础设施列表，但他们建议组织审计他们的 npm lockfiles 和 package-lock.json 以查找受影响的版本。
+
+## 缓解措施与建议
+
+使用 Bitwarden CLI 的组织应立即检查其 npm package-lock.json 或 yarn.lock 文件中的 `@bitwarden/cli` 版本 `2026.4.0`。如果发现，应移除该包，并替换为最新已知的干净版本（例如，`2026.3.x` 或 Bitwarden 发布经过验证的更新后更新）。防御者还应审计任何安装了该包的系统，以寻找未经授权的访问、凭据盗窃或异常的出站连接的迹象。JFrog 和 Socket 建议将同一发布身份的任何 npm 包视为可能被破坏，直到 Bitwarden 确认违规范围。作为一般做法，开发人员应固定 npm 包版本，并使用完整性验证（例如，`npm audit`，带有 lockfiles 的 `npm ci`，或基于 Sigstore 的签名）以检测未经授权的修改。
+
+## 参考资料
+
+- [The Hacker News: Bitwarden CLI Compromised in Ongoing Checkmarx Supply Chain Campaign](https://thehackernews.com/2026/04/bitwarden-cli-compromised-in-ongoing.html)

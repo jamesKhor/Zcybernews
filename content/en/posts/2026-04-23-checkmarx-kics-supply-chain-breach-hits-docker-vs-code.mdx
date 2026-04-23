@@ -1,0 +1,47 @@
+---
+title: 'Checkmarx KICS Supply-Chain Breach Hits Docker, VS Code'
+slug: 2026-04-23-checkmarx-kics-supply-chain-breach-hits-docker-vs-code
+date: '2026-04-23'
+excerpt: >-
+  Attackers compromised Checkmarx KICS Docker images and VS Code extensions to
+  steal cloud credentials, API keys, and source code from developer
+  environments.
+category: malware
+tags:
+  - supply-chain
+  - checkmarx
+  - kics
+  - docker
+  - vs-code
+  - credential-theft
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-checkmarx-supply-chain-breach-affects-kics-analysis-tool/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-checkmarx-kics-supply-chain-breach-hits-docker-vs-code
+severity: critical
+affected_sectors:
+  - software development
+  - cloud services
+---
+## Executive Summary
+
+Attackers compromised the software supply chain of Checkmarx KICS, an open-source infrastructure-as-code (IaC) scanning tool, by injecting credential-harvesting payloads into its official Docker images and both VS Code and Open VSX extensions. The breach, reported by BleepingComputer on April 23, 2026, targeted developer environments to exfiltrate cloud provider credentials, API tokens, and source code. Checkmarx confirmed the incident and has since removed the compromised artifacts, but the full scope of affected users remains unclear.
+
+## Technical Analysis
+
+The attackers gained unauthorized access to Checkmarx's build pipeline or artifact storage, allowing them to replace legitimate KICS Docker images and extensions with trojanized versions. The malicious code, once executed in a developer's environment, harvested credentials stored in environment variables, configuration files, and cloud SDK profiles — including AWS, Azure, and GCP tokens — along with private SSH keys and repository access tokens. The payload also collected source code from active projects and transmitted the stolen data to external command-and-control infrastructure.
+
+BleepingComputer's analysis indicates the compromised Docker images were available on Docker Hub for an unspecified period before Checkmarx detected the intrusion. The malicious VS Code extension was also published to the Visual Studio Marketplace and the Open VSX Registry, potentially affecting developers who installed or updated KICS during the compromise window. Checkmarx has not disclosed the exact timeframe of the breach or the method of initial access.
+
+The attack mirrors previous supply-chain incidents targeting developer tools, such as the 2024 compromise of the `axios` npm package and the 2023 infiltration of the `eslint-plugin-*` ecosystem. By targeting a security scanning tool, the attackers gained access to environments that are typically highly privileged, as KICS requires broad permissions to analyze IaC templates and cloud configurations.
+
+## Mitigations & Recommendations
+
+Developers who use Checkmarx KICS should immediately verify the integrity of their installations. Checkmarx has published updated, clean Docker images and extension versions; users should pull the latest tags and compare SHA256 checksums against the official hashes provided by the vendor. Organizations should rotate any cloud credentials, API keys, and repository tokens that were present on systems where the compromised KICS artifacts ran. Additionally, audit cloud access logs for unauthorized API calls originating from developer workstations during the compromise window. As a general precaution, restrict the permissions of CI/CD pipelines and developer environments to the minimum necessary for their function, and implement runtime monitoring for anomalous outbound data transfers.
+
+## References
+
+- [New Checkmarx supply-chain breach affects KICS analysis tool - BleepingComputer](https://www.bleepingcomputer.com/news/security/new-checkmarx-supply-chain-breach-affects-kics-analysis-tool/)

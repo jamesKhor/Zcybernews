@@ -1,0 +1,44 @@
+---
+title: Checkmarx KICS 供应链泄露影响 Docker 和 VS Code
+slug: 2026-04-23-checkmarx-kics-supply-chain-breach-hits-docker-vs-code
+date: '2026-04-23'
+excerpt: 攻击者破坏了 Checkmarx KICS 的 Docker 镜像和 VS Code 扩展，以窃取开发者环境中的云凭证、API 密钥和源代码。
+category: malware
+tags:
+  - supply-chain
+  - checkmarx
+  - kics
+  - docker
+  - vs-code
+  - credential-theft
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-checkmarx-supply-chain-breach-affects-kics-analysis-tool/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-checkmarx-kics-supply-chain-breach-hits-docker-vs-code
+severity: critical
+affected_sectors:
+  - software development
+  - cloud services
+---
+## 执行摘要
+
+攻击者破坏了开源基础设施即代码（IaC）扫描工具Checkmarx KICS的软件供应链，通过在其官方Docker镜像和VS Code及Open VSX扩展中注入凭证收集有效载荷。BleepingComputer于2026年4月23日报道的这一安全漏洞，目标是开发者环境，以窃取云服务提供商凭证、API令牌和源代码。Checkmarx已确认该事件，并已移除受污染的工件，但受影响用户的范围尚不清楚。
+
+## 技术分析
+
+攻击者未经授权访问了Checkmarx的构建管道或工件存储，允许他们用木马化版本替换合法的KICS Docker镜像和扩展。一旦在开发者环境中执行恶意代码，就会收集存储在环境变量、配置文件和云SDK配置文件中的凭证——包括AWS、Azure和GCP令牌——以及私有SSH密钥和仓库访问令牌。有效载荷还收集了活跃项目的源代码，并将被盗数据传输到外部命令和控制基础设施。
+
+BleepingComputer的分析表明，受污染的Docker镜像在Checkmarx检测到入侵前在Docker Hub上可用了一段不确定的时间。恶意VS Code扩展也发布到了Visual Studio Marketplace和Open VSX Registry，可能影响在受污染窗口期间安装或更新KICS的开发者。Checkmarx没有披露安全漏洞的确切时间框架或初始访问的方法。
+
+这次攻击模仿了以前针对开发者工具的供应链事件，例如2024年`axios` npm包的泄露和2023年`eslint-plugin-*`生态系统的渗透。通过针对安全扫描工具，攻击者获得了通常具有高度权限的环境访问权限，因为KICS需要广泛的权限来分析IaC模板和云配置。
+
+## 缓解措施与建议
+
+使用Checkmarx KICS的开发者应立即验证其安装的完整性。Checkmarx已发布更新、清洁的Docker镜像和扩展版本；用户应拉取最新的标签，并与供应商提供的官方哈希值比较SHA256校验和。组织应轮换在运行受污染KICS工件的系统上存在的任何云凭证、API密钥和仓库令牌。此外，在受污染窗口期间，审计云访问日志，查找来自开发者工作站的未经授权的API调用。作为一般预防措施，将CI/CD管道和开发者环境的权限限制在功能所需的最低限度，并实施运行时监控，以监测异常的出站数据传输。
+
+## 参考资料
+
+- [Checkmarx供应链安全漏洞影响KICS分析工具 - BleepingComputer](https://www.bleepingcomputer.com/news/security/new-checkmarx-supply-chain-breach-affects-kics-analysis-tool/)

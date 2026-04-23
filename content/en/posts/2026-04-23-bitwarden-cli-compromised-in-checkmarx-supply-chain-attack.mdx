@@ -1,0 +1,45 @@
+---
+title: Bitwarden CLI Compromised in Checkmarx Supply Chain Attack
+slug: 2026-04-23-bitwarden-cli-compromised-in-checkmarx-supply-chain-attack
+date: '2026-04-23'
+excerpt: >-
+  JFrog and Socket found malicious code in @bitwarden/cli@2026.4.0 — the same
+  campaign that hijacked Checkmarx npm packages.
+category: malware
+tags:
+  - supply-chain-attack
+  - bitwarden
+  - npm
+  - checkmarx
+  - trojanized-package
+  - jfrog
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/bitwarden-cli-compromised-in-ongoing.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-23-bitwarden-cli-compromised-in-checkmarx-supply-chain-attack
+severity: critical
+affected_sectors:
+  - technology
+  - software development
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Security researchers at JFrog and Socket have identified that the Bitwarden CLI package on npm (`@bitwarden/cli`) was compromised with malicious code as part of an ongoing supply chain campaign that previously targeted Checkmarx. The trojanized version, `@bitwarden/cli@2026.4.0`, contains a malicious file named `bw1.js` embedded within the package contents, according to a report from JFrog published April 23, 2026. This discovery extends the scope of a campaign first reported when Checkmarx's own npm packages were hijacked, now demonstrating that the attackers leveraged compromised credentials or infrastructure to push malicious updates to widely used developer tools.
+
+## Technical Analysis
+
+JFrog and Socket analyzed the affected Bitwarden CLI package and found that the malicious code was inserted into a file called `bw1.js`, which is included in the published npm tarball. The legitimate Bitwarden CLI package does not contain this file. The attackers appear to have gained access to the Bitwarden npm publishing credentials or the CI/CD pipeline, allowing them to publish version 2026.4.0 with the trojanized payload. The exact functionality of the malicious code has not been fully detailed by researchers, but it is consistent with the modus operandi observed in the Checkmarx campaign, where attackers injected credential-stealing or backdoor capabilities into trusted packages.
+
+The attack chain mirrors the technique used against Checkmarx: attackers compromise an npm maintainer account or CI pipeline, then publish a seemingly legitimate version update containing obfuscated malicious code. Users who ran `npm install -g @bitwarden/cli` or included the package in their CI/CD pipelines between the publication of version 2026.4.0 and its takedown would have executed the malicious code. JFrog and Socket have not yet published a full list of indicators of compromise (IOCs) or the specific C2 infrastructure used, but they recommend that organizations audit their npm lockfiles and package-lock.json for the affected version.
+
+## Mitigations & Recommendations
+
+Organizations that use Bitwarden CLI should immediately check their npm package-lock.json or yarn.lock files for `@bitwarden/cli` version `2026.4.0`. If found, the package should be removed and replaced with the latest known clean version (e.g., `2026.3.x` or newer once Bitwarden releases a verified update). Defenders should also audit any systems where the package was installed for signs of unauthorized access, credential theft, or unusual outbound connections. JFrog and Socket advise treating any npm packages from the same publishing identity as potentially compromised until Bitwarden confirms the scope of the breach. As a general practice, developers should pin npm package versions and use integrity verification (e.g., `npm audit`, `npm ci` with lockfiles, or Sigstore-based signing) to detect unauthorized modifications.
+
+## References
+
+- [The Hacker News: Bitwarden CLI Compromised in Ongoing Checkmarx Supply Chain Campaign](https://thehackernews.com/2026/04/bitwarden-cli-compromised-in-ongoing.html)
