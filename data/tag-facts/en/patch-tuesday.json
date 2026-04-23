@@ -1,7 +1,7 @@
 {
   "tag": "patch-tuesday",
   "locale": "en",
-  "count": 17,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-20"
@@ -36,12 +36,12 @@
   "severity_mix": {
     "high": 6,
     "medium": 4,
-    "critical": 7
+    "critical": 6
   },
   "recent_excerpts": [
     "Microsoft released out-of-band updates for Windows Server 2019 and 2022 after April 2026 security patches caused boot failures and domain controller authentication issues, forcing some administrators",
     "Microsoft's April 2026 Patch Tuesday adds a critical warning dialog to Windows Remote Desktop, blocking threat actors from using malicious .rdp files to steal credentials via phishing.",
     "Microsoft has patched a local privilege escalation vulnerability (CVE-2026-33104) in the Windows win32kfull driver, which could allow authenticated attackers to gain SYSTEM privileges."
   ],
-  "sources_hash": "bec983ef072af18d"
+  "sources_hash": "ce35d736821cf754"
 }

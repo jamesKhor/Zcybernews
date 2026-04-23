@@ -1,9 +1,9 @@
 {
   "tag": "botnet",
   "locale": "en",
-  "intro": "This archive contains eight articles from April 14 to April 21, 2026, covering botnet activity. The reported incidents were predominantly high or critical in severity. The threat actors The Gentlemen and W3LL were active, exploiting vulnerabilities including CVE-2024-3721 and CVE-2023-33538. Their campaigns targeted a wide range of sectors, notably corporate, finance, technology, and residential environments. Geographically, impacts were felt globally, with specific reporting from the Czech republic. The coverage reflects a concentrated period of significant botnet threats across multiple critical industries.",
-  "sources_hash": "1d5fb48fe9535e31",
+  "intro": "Between April 14 and April 23, 2026, ZCyberNews published nine articles tracking botnet activity. The threat actors Mirai, The Gentlemen, and W3LL were prominently observed, exploiting vulnerabilities including CVE-2025-29635 (CVSS 8.8), CVE-2024-3721 (CVSS 6.3), and CVE-2023-33538. These campaigns primarily targeted the corporate, finance, and technology sectors, with significant impact also noted across residential networks and multiple other industries. Geographically, incidents ranged from a focus on the Czech republic to global operations. The reported severity of these events was weighted toward high and critical levels, with six high-severity reports, two medium, and one critical.",
+  "sources_hash": "d21fb4c091845aac",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:06:58.277Z",
+  "generated_at": "2026-04-23T04:08:13.139Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

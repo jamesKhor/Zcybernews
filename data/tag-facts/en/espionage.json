@@ -1,34 +1,38 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-15"
+    "latest": "2026-04-22"
   },
   "top_actors": [
-    "APT28 (Fancy Bear)"
+    "APT28 (Fancy Bear)",
+    "Mustang Panda"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "healthcare",
     "technology",
-    "defense",
-    "enterprise"
+    "banking",
+    "critical infrastructure"
   ],
   "top_regions": [
     "Global",
-    "Ukraine"
+    "India",
+    "South korea",
+    "Ukraine",
+    "United kingdom"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 5,
     "critical": 2
   },
   "recent_excerpts": [
+    "The UK's NCSC reports handling four nationally significant cyber incidents per week, with most now attributed to hostile foreign states like China and Russia, up from two per week…",
     "A new malware family dubbed 'AgingFly' is stealing authentication data from Chromium browsers and WhatsApp in targeted attacks against Ukrainian local government bodies and hospitals.",
-    "Multiple critical vulnerabilities in Microsoft Windows, Apple iOS, and Cisco networking gear were actively exploited in April 2026, requiring immediate patching.",
-    "A critical zero-day vulnerability in widely used PDF software has been actively exploited for months. Concurrently, state-sponsored actors have been targeting fiber optic infrastructure for espionage."
+    "Multiple critical vulnerabilities in Microsoft Windows, Apple iOS, and Cisco networking gear were actively exploited in April 2026, requiring immediate patching."
   ],
-  "sources_hash": "7314e54cef166a7a"
+  "sources_hash": "439c480dcb94fd56"
 }

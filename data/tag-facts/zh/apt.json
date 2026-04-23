@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "CyberAv3ngers",
@@ -15,9 +15,9 @@
   "top_sectors": [
     "cryptocurrency",
     "government",
+    "energy",
     "healthcare",
-    "industrial",
-    "technology"
+    "industrial"
   ],
   "top_regions": [
     "Bangladesh",
@@ -27,12 +27,12 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 6
+    "high": 7
   },
   "recent_excerpts": [
+    "Lotus Wiper 恶意软件针对委内瑞拉国有能源公司 PDVSA，通过覆盖驱动器和删除文件破坏数据，在美国领导的干预行动之前，即 2026 年 3 月。",
     "SideWinder APT 针对南亚政府机构发起网络钓鱼活动，使用假 Chrome PDF 查看器和克隆的 Zimbra 登录门户窃取网络邮件凭证，活动自 2026 年 2 月开始。",
-    "根据Flare研究，朝鲜特工正在使用AI工具和伪造文件通过远程工作面试。这种策略旨在将威胁行为者长期安置在目标公司内，进行间谍活动和网络访问。",
-    "根据最新研究，朝鲜威胁行为者 UNC1069 利用假 Zoom 和 Microsoft Teams 会议吸引 Web3 专业人士，部署窃取加密货币的恶意软件。"
+    "根据Flare研究，朝鲜特工正在使用AI工具和伪造文件通过远程工作面试。这种策略旨在将威胁行为者长期安置在目标公司内，进行间谍活动和网络访问。"
   ],
-  "sources_hash": "fc2a5dca430b5ed2"
+  "sources_hash": "d9172c2cc6916ee6"
 }

@@ -1,0 +1,28 @@
+{
+  "tag": "agentic-ai",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-22"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "cross-sector",
+    "enterprise"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。",
+    "对超过400个LLM代理路由服务的安全分析揭示了普遍存在的漏洞，使攻击者能够注入恶意命令，泄露敏感数据，并绕过预期的AI模型行为。",
+    "Anthropic 发布 Claude Opus 4.7，这是一个前沿的 AI 模型，具有新的自动防护功能，旨在检测和阻止在长时间、无监督的代理工作流程中可能有害的网络安全任务。"
+  ],
+  "sources_hash": "1641defbeac56bfb"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 22,
+  "count": 23,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "ShinyHunters",
@@ -22,18 +22,18 @@
   "top_regions": [
     "United states",
     "Europe",
-    "North america",
     "France",
+    "North america",
     "Global"
   ],
   "severity_mix": {
-    "high": 18,
+    "high": 19,
     "medium": 3
   },
   "recent_excerpts": [
+    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…",
     "TheGentlemen ransomware group claims a total infrastructure breach of Atlassian partner Adaptavist, stealing source code and customer data from clients like NASA and Visa.",
-    "France Titres, the French government agency for ID documents, confirms a data breach after a threat actor offers to sell stolen citizen information, including names, addresses, and passport numbers.",
-    "Southern Illinois Dermatology, Saint Anthony Hospital, and North Texas Behavioral Health Authority disclose breaches affecting over 600,000 patients, exposing names, SSNs, and medical data."
+    "France Titres, the French government agency for ID documents, confirms a data breach after a threat actor offers to sell stolen citizen information, including names, addresses, and passport numbers."
   ],
-  "sources_hash": "a8c70350eed3a784"
+  "sources_hash": "aa75f9298e1f911f"
 }

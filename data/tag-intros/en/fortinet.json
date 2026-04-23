@@ -1,9 +1,9 @@
 {
   "tag": "fortinet",
   "locale": "en",
-  "intro": "This archive collects 6 articles tagged `fortinet` published between April 14, 2026 and April 21, 2026. Coverage includes 4 critical, and 2 high reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "91e2c5943b06f8a5",
+  "intro": "This archive collects 5 articles tagged `fortinet` published between April 14, 2026 and April 21, 2026. Coverage includes 3 critical, and 2 high reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "dec417773f30af5b",
   "model": "template:sparse",
-  "generated_at": "2026-04-22T04:07:28.520Z",
+  "generated_at": "2026-04-23T04:09:17.564Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,28 +1,36 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 10,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
-  "top_actors": [],
+  "top_actors": [
+    "LockBit"
+  ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "critical-infrastructure",
-    "technology"
+    "cybersecurity",
+    "financial services",
+    "retail"
   ],
   "top_regions": [
-    "Global"
+    "Europe",
+    "Global",
+    "North america"
   ],
   "severity_mix": {
+    "high": 6,
     "informational": 6,
-    "high": 3
+    "medium": 1
   },
   "recent_excerpts": [
+    "An unauthorized group accessed Anthropic's exclusive Claude Mythos Preview AI, a cybersecurity tool capable of generating exploits and malware.",
     "Mature security operations centers reduce mean time to respond by 40% by integrating threat intelligence into workflows, while others waste time on siloed data and manual processes.",
-    "Security operations centers (SOCs) stall at lower maturity levels when threat intelligence feeds remain external to analyst workflows, according to a new analysis.",
-    "Qualys warns that AI agents like Claude Mythos can cut vulnerability discovery time from months to hours, compressing the patch window and overwhelming security teams with a surge of new CVEs."
+    "Security operations centers (SOCs) stall at lower maturity levels when threat intelligence feeds remain external to analyst workflows, according to a new analysis."
   ],
-  "sources_hash": "98b5920a325e5bc0"
+  "sources_hash": "d78444b9b65be35b"
 }

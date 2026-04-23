@@ -1,9 +1,9 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "intro": "The Gentlemen, Payouts King, and BlackCat (ALPHV) were the most active ransomware threat actors in this period, with 29 articles covering their campaigns. Their operations exploited critical vulnerabilities, notably CVE-2026-1731 and CVE-2026-34197, to target a wide range of sectors. Healthcare, logistics, manufacturing, and retail organizations across Europe, the United States, Turkey, and France were impacted. The reporting from April 12 to April 22, 2026, detailed a severity mix dominated by high-severity incidents, reflecting a concentrated wave of ransomware activity against global infrastructure.",
-  "sources_hash": "5321178f9b8f6d6a",
+  "intro": "Over a ten-day period in April 2026, ZCyberNews tracked 31 ransomware incidents, with the threat actor The Gentlemen featuring prominently. Activity from Kyber and Payouts King was also observed. The most frequently cited vulnerabilities were CVE-2026-1731, a critical flaw with a CVSS score of 9.8, and CVE-2026-34197. Attacks spanned multiple sectors, with healthcare, logistics, manufacturing, and retail heavily targeted. Geographically, impact was noted across Europe, with specific focus on the United States, Turkey, and France, alongside reports of global campaigns. The severity of covered incidents was predominantly high, with a smaller number of critical and informational reports.",
+  "sources_hash": "20ca2978bc661ce9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:05:33.671Z",
+  "generated_at": "2026-04-23T04:06:59.886Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

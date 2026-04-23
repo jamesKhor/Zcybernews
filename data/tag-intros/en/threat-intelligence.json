@@ -1,9 +1,9 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "intro": "This archive collects 10 articles tagged `threat-intelligence` published between April 13, 2026 and April 21, 2026. Coverage includes 3 high, and 6 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "98b5920a325e5bc0",
-  "model": "template:sparse",
-  "generated_at": "2026-04-22T04:06:35.332Z",
+  "intro": "This archive contains 14 threat intelligence reports from a ten-day period in April 2026. The most frequently covered threat actor was LockBit. The reporting highlights a range of incidents affecting the technology, critical-infrastructure, cybersecurity, financial services, and retail sectors, with primary impacts noted across Europe, North America, and on a Global scale. The severity of these reports was varied, with six classified as high, six as informational, and one as medium.",
+  "sources_hash": "d78444b9b65be35b",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-23T04:07:54.997Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

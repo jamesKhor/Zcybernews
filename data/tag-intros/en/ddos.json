@@ -1,0 +1,9 @@
+{
+  "tag": "ddos",
+  "locale": "en",
+  "intro": "Between April 16 and 2026, and April 23, 2026, ZCyberNews published six articles covering DDoS threats. The Mirai botnet was a prominent threat actor during this period, exploiting vulnerabilities including CVE-2025-29635, a high-severity flaw with a CVSS score of 8.8, and CVE-2024-3721, which has a CVSS score of 6.3. These attacks primarily targeted the social media sector with a global impact. The reported incidents included two high-severity events, three medium-severity events, and one informational report, illustrating a range of operational impacts.",
+  "sources_hash": "3c3364874be2ade3",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-23T04:09:02.915Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,12 +1,13 @@
 {
   "tag": "linux",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-22"
   },
   "top_actors": [
+    "Harvester",
     "Payouts King",
     "The Gentlemen"
   ],
@@ -18,17 +19,18 @@
     "maker"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "South asia"
   ],
   "severity_mix": {
-    "high": 2,
+    "high": 3,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…",
     "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent",
-    "The Payouts King ransomware group is deploying the open-source QEMU emulator to create hidden virtual machines on compromised hosts, establishing a persistent reverse SSH backdoor that evades conventi",
-    "Raspberry Pi OS 6.2 now requires a password for sudo commands by default on new installations, a significant security hardening change to protect against unauthorized privilege escalation."
+    "The Payouts King ransomware group is deploying the open-source QEMU emulator to create hidden virtual machines on compromised hosts, establishing a persistent reverse SSH backdoor that evades conventi"
   ],
-  "sources_hash": "b90ec5aaf3fe7665"
+  "sources_hash": "80c7f766a2622696"
 }

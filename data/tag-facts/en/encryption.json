@@ -1,12 +1,14 @@
 {
   "tag": "encryption",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
-  "top_actors": [],
+  "top_actors": [
+    "Kyber"
+  ],
   "top_cves": [],
   "top_sectors": [
     "technology",
@@ -19,15 +21,15 @@
     "United kingdom"
   ],
   "severity_mix": {
+    "high": 2,
     "informational": 4,
-    "high": 1,
     "critical": 1,
     "medium": 2
   },
   "recent_excerpts": [
+    "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis.",
     "UK regulator Ofcom launches a formal investigation into Telegram over evidence of child sexual abuse material (CSAM) sharing and potential breaches of the Online Safety Act's encryption reporting rule",
-    "Cryptography experts warn that migrating to post-quantum cryptography will take years, urging organizations to begin quantum risk management now to protect encrypted data from future 'Q-Day' harvest-n",
-    "The Apache Software Foundation patched a critical vulnerability in Tomcat's EncryptInterceptor that could allow attackers to bypass encryption and view sensitive data. Immediate updates are required."
+    "Cryptography experts warn that migrating to post-quantum cryptography will take years, urging organizations to begin quantum risk management now to protect encrypted data from future 'Q-Day' harvest-n"
   ],
-  "sources_hash": "47de9638beb6c49c"
+  "sources_hash": "0799936089b78521"
 }

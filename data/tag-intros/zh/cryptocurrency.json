@@ -1,10 +1,10 @@
 {
   "tag": "cryptocurrency",
   "locale": "zh",
-  "intro": "2026年4月12日至4月21日期间，加密货币行业成为一系列集中攻击的主要目标，相关事件在15篇文章中均有详述。此次攻击活动包含12起高危和3起严重级别事件，同时对去中心化金融（DeFi）、金融服务、电信及风险资本领域造成严重影响。威胁行为者FakeWallet、Lazarus Group和Omnistealer在此次活动中尤为活跃，其中对高危漏洞CVE-2023-4863的利用被重点关注。从地理分布看，这些攻击活动影响了美国、加拿大、欧洲、吉尔吉斯斯坦及北美地区的组织与用户。",
-  "sources_hash": "39ace639931061c7",
-  "source_intro_hash": "1076e3abd43f2da1",
+  "intro": "2026年4月中旬，加密货币行业遭遇了一波高度和严重威胁的集中冲击，十六份ZCyberNews报告对此进行了详细说明。Lazarus Group、FakeWallet和Omnistealer是主要针对加密货币、去中心化金融（DeFi）和金融服务领域的威胁行为者。其攻击活动影响了美国、加拿大和欧洲的实体，并频繁利用了包括CVE-2023-4863在内的漏洞。软件开发和科技行业也明显受到此次全球性活动的影响，该活动共包含十三起高度严重事件和三起严重事件。",
+  "sources_hash": "fa0e0a634c701a20",
+  "source_intro_hash": "4edf30a0d006e4ab",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:08:34.831Z",
+  "generated_at": "2026-04-23T04:09:59.083Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

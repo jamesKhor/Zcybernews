@@ -1,28 +1,36 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "count": 10,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
-  "top_actors": [],
+  "top_actors": [
+    "LockBit"
+  ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "critical-infrastructure",
-    "technology"
+    "cybersecurity",
+    "financial services",
+    "retail"
   ],
   "top_regions": [
-    "Global"
+    "Europe",
+    "Global",
+    "North america"
   ],
   "severity_mix": {
+    "high": 6,
     "informational": 6,
-    "high": 3
+    "medium": 1
   },
   "recent_excerpts": [
+    "一个未授权团体访问了Anthropic的独家Claude Mythos预览AI，这是一个能够生成漏洞和恶意软件的网络安全工具。",
     "成熟的安全运营中心通过将威胁情报集成到工作流程中，将平均响应时间减少了40%，而其他人则在孤立的数据和手动流程上浪费时间。",
-    "根据一项新的分析，当威胁情报源保持在分析师工作流程之外时，安全运营中心（SOCs）会停留在较低的成熟度水平。报告详细说明了数据碎片化如何阻碍关键的安全决策。",
-    "Qualys警告称，像Claude Mythos这样的AI代理可以将漏洞发现时间从几个月缩短到几小时，压缩补丁窗口，并以大量新的CVEs压倒安全团队。"
+    "根据一项新的分析，当威胁情报源保持在分析师工作流程之外时，安全运营中心（SOCs）会停留在较低的成熟度水平。报告详细说明了数据碎片化如何阻碍关键的安全决策。"
   ],
-  "sources_hash": "98b5920a325e5bc0"
+  "sources_hash": "d78444b9b65be35b"
 }

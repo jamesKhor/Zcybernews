@@ -1,14 +1,14 @@
 {
   "tag": "windows",
   "locale": "en",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
-    "Chaotic Eclipse",
-    "Kyber"
+    "Kyber",
+    "Chaotic Eclipse"
   ],
   "top_cves": [
     {
@@ -33,14 +33,14 @@
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
-    "high": 15,
+    "high": 16,
     "medium": 4,
     "critical": 1
   },
   "recent_excerpts": [
+    "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis.",
     "Kyber ransomware deploys two distinct payloads to encrypt both Windows systems and VMware ESXi servers, using a custom tool to wipe ESXi snapshots and hinder recovery.",
-    "PureRAT hides its Windows PE payloads inside PNG files and executes them filelessly in memory, a technique detailed by cybersecurity researchers analyzing a new sophisticated campaign.",
-    "CVE-2026-33829 in Windows Snipping Tool allows attackers to steal NTLMv2 hashes via malicious links. A public PoC exploit targets the ms-screensketch protocol to enable credential relay attacks."
+    "PureRAT hides its Windows PE payloads inside PNG files and executes them filelessly in memory, a technique detailed by cybersecurity researchers analyzing a new sophisticated campaign."
   ],
-  "sources_hash": "81b4a257c5002a57"
+  "sources_hash": "36c4911027e0def9"
 }

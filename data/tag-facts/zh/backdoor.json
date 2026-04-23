@@ -1,29 +1,36 @@
 {
   "tag": "backdoor",
   "locale": "zh",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-17"
+    "latest": "2026-04-22"
   },
   "top_actors": [
-    "APT41"
+    "APT41",
+    "Harvester",
+    "Mustang Panda"
   ],
   "top_cves": [],
   "top_sectors": [
+    "banking",
     "cloud-services",
+    "government",
     "technology"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "India",
+    "South asia",
+    "South korea"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 7
   },
   "recent_excerpts": [
+    "Harvester 威胁行为者部署了其 GoGra 后门的新 Linux 版本，使用 Microsoft Graph API 和 Outlook 邮箱进行隐蔽的 C2 通信，在针对...的攻击中。",
     "一名恶意买家利用 Flippa 市场收购了一家插件开发商，向安装量达数十万的 30 多款 WordPress 插件中注入后门，以部署隐藏的 SEO 垃圾内容。",
-    "包含超过30个流行WordPress插件的EssentialPlugin套件已被入侵，以注入后门，使攻击者能够获得对数千个网站的管理员访问权限。供应链攻击正在被积极利用。",
-    "威胁行为者部署 VIPERTUNNEL，一个 Python 后门，使用假 DLL 和多阶段混淆加载器来建立隐蔽的 SOCKS5 代理隧道，以实现持久的网络访问。"
+    "包含超过30个流行WordPress插件的EssentialPlugin套件已被入侵，以注入后门，使攻击者能够获得对数千个网站的管理员访问权限。供应链攻击正在被积极利用。"
   ],
-  "sources_hash": "bd4a93a75f4f6764"
+  "sources_hash": "a9e3a70e601dd2f6"
 }

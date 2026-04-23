@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-17"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "CyberAv3ngers"
@@ -18,18 +18,19 @@
     "water"
   ],
   "top_regions": [
-    "United states"
+    "United states",
+    "United kingdom"
   ],
   "severity_mix": {
+    "high": 5,
     "informational": 3,
-    "high": 4,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
+    "The UK's NCSC reports handling four nationally significant cyber incidents per week, with most now attributed to hostile foreign states like China and Russia, up from two per week…",
     "New U.S. Coast Guard cybersecurity rules under the Maritime Transportation Security Act mandate third-party audits, OT-specific security plans, and dedicated personnel, providing a regulatory model fo",
-    "Security researchers propose extending two-factor authentication (2FA) principles to physical access control systems for critical infrastructure, creating a hybrid defense against credential-based att",
-    "Senior U.S. government officials argue that effective national cyber defense is impossible without faster, deeper collaboration with private industry, citing shared infrastructure and threat intellige"
+    "Security researchers propose extending two-factor authentication (2FA) principles to physical access control systems for critical infrastructure, creating a hybrid defense against credential-based att"
   ],
-  "sources_hash": "c95351dd94a14574"
+  "sources_hash": "55f3aa97660013c6"
 }

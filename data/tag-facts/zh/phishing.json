@@ -1,15 +1,15 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "count": 41,
+  "count": 44,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "FakeWallet",
-    "Scattered Spider",
-    "SideWinder"
+    "Lazarus Group",
+    "Scattered Spider"
   ],
   "top_cves": [
     {
@@ -30,8 +30,8 @@
   ],
   "top_sectors": [
     "hospitality",
-    "technology",
     "cryptocurrency",
+    "technology",
     "finance",
     "government"
   ],
@@ -43,13 +43,13 @@
     "Latin america"
   ],
   "severity_mix": {
-    "high": 34,
+    "high": 37,
     "medium": 7
   },
   "recent_excerpts": [
-    "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。",
-    "Kaspersky 发现了 22 个恶意的 iOS 应用程序在官方 App Store 上冒充 MetaMask 和 Coinbase 等加密钱包，从超过 1,000 名受害者那里窃取种子短语和私钥。",
-    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。"
+    "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…",
+    "一个冒充TradingView AI代理的恶意网站部署了恶意软件，该软件赋予攻击者对受害者浏览器的完全控制权，使得账户盗窃和金融数据泄露成为可能…",
+    "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。"
   ],
-  "sources_hash": "df9216858d1e84de"
+  "sources_hash": "131809db64f4b569"
 }

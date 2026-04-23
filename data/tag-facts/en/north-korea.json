@@ -1,0 +1,34 @@
+{
+  "tag": "north-korea",
+  "locale": "en",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-23"
+  },
+  "top_actors": [
+    "Lazarus Group",
+    "APT37 (ScarCruft, InkySquid)",
+    "Sapphire Sleet"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "cryptocurrency",
+    "technology",
+    "software development",
+    "venture capital",
+    "web3"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 6
+  },
+  "recent_excerpts": [
+    "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
+    "North Korean operatives use a 'contagious interview' tactic, where a compromised developer's GitHub repo spreads RATs to other job seekers.",
+    "North Korean operatives are using AI tools and forged documents to pass remote job interviews, according to Flare research."
+  ],
+  "sources_hash": "0798b1f1095b7bf3"
+}

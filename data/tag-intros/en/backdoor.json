@@ -1,9 +1,9 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "intro": "Between April 13 and April 17, 2026, ZCyberNews published six articles detailing high and critical severity backdoor threats. The activity primarily involved the threat actor APT41, which targeted the cloud-services and technology sectors with a global impact. The reporting covered one critical and five high-severity incidents, illustrating a concentrated wave of sophisticated backdoor deployments aimed at critical digital infrastructure during this period.",
-  "sources_hash": "bd4a93a75f4f6764",
+  "intro": "Between April 13 and April 22, 2026, ZCyberNews published eight articles tracking backdoor threats. The coverage detailed activity from distinct threat actors APT41, Harvester, and Mustang Panda, primarily targeting the banking, cloud-services, government, and technology sectors. Incidents were reported globally, with notable focus on India, South Asia, and South Korea. The severity of these threats was significant, with seven reports classified as high and one as critical.",
+  "sources_hash": "a9e3a70e601dd2f6",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:17:41.728Z",
+  "generated_at": "2026-04-23T04:08:29.617Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

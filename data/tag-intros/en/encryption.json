@@ -1,9 +1,9 @@
 {
   "tag": "encryption",
   "locale": "en",
-  "intro": "This archive collects 8 articles tagged `encryption` published between April 12, 2026 and April 21, 2026. Coverage includes 1 critical, 1 high, 2 medium, and 4 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "47de9638beb6c49c",
-  "model": "template:sparse",
-  "generated_at": "2026-04-22T04:06:58.278Z",
+  "intro": "Between April 12 and April 22, 2026, ZCyberNews published nine articles tagged with encryption. The coverage detailed a mix of incidents and analysis, including one critical, two high, two medium, and four informational reports. The threat actor Kyber was prominently featured. The technology sector was most frequently impacted, followed by social media and telecommunications, with several events affecting all sectors. Geographically, the reported activity spanned the globe, with specific attention on the United Kingdom.",
+  "sources_hash": "0799936089b78521",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-23T04:08:17.886Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "intro": "本档案收录了 10 篇带有「threat-intelligence」标签的文章，发布时间从2026年4月13日至2026年4月21日。其中包含3 篇高危、6 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "98b5920a325e5bc0",
-  "source_intro_hash": "4aaaee568a8994ec",
-  "model": "template:sparse",
-  "generated_at": "2026-04-22T04:09:55.652Z",
+  "intro": "本档案包含2026年4月某十天内产生的14份威胁情报报告。其中提及最频繁的威胁行为者是LockBit。报告重点列举了一系列影响科技、关键基础设施、网络安全、金融服务及零售行业的事件，主要波及范围包括欧洲、北美及全球。这些报告的严重程度不一，其中六份被归类为高级，六份为信息级，一份为中级。",
+  "sources_hash": "d78444b9b65be35b",
+  "source_intro_hash": "18c531bcf34a65db",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-23T04:11:54.587Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

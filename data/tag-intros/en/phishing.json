@@ -1,9 +1,9 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "intro": "The hospitality and technology sectors were primary targets in a concentrated wave of phishing activity documented in 41 reports from early to mid-April 2026. The incidents, predominantly high in severity, spanned globally with notable focus in the United States, Bangladesh, and Canada. Key threat actors behind these campaigns included FakeWallet, Scattered Spider, and SideWinder. These operations frequently exploited critical vulnerabilities such as CVE-2023-22515, CVE-2023-34048, and CVE-2023-46805, alongside CVE-2023-4966 and CVE-2024-21893. The cryptocurrency, finance, and government sectors were also significantly affected by these persistent threats.",
-  "sources_hash": "df9216858d1e84de",
+  "intro": "The hospitality and cryptocurrency sectors were primary targets in a concentrated wave of phishing activity documented across 44 reports. The threat landscape was driven by distinct actors including FakeWallet, Lazarus Group, and Scattered Spider, exploiting vulnerabilities such as CVE-2023-22515, CVE-2023-46805, and CVE-2023-4966. With a global impact particularly noted in the United States, Bangladesh, and Canada, the financial, technology, and government sectors also faced significant pressure. The majority of these incidents, 37 of 44, were assessed as high severity, highlighting the persistent risk across these regions and industries.",
+  "sources_hash": "131809db64f4b569",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:05:16.133Z",
+  "generated_at": "2026-04-23T04:06:34.407Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

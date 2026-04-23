@@ -1,13 +1,19 @@
 {
   "tag": "iot",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-18"
+    "latest": "2026-04-23"
   },
-  "top_actors": [],
+  "top_actors": [
+    "Mirai"
+  ],
   "top_cves": [
+    {
+      "id": "CVE-2025-29635",
+      "cvss": 8.8
+    },
     {
       "id": "CVE-2026-22898",
       "cvss": 8.8
@@ -23,9 +29,6 @@
     {
       "id": "CVE-2024-3721",
       "cvss": 6.3
-    },
-    {
-      "id": "CVE-2023-33538"
     }
   ],
   "top_sectors": [
@@ -37,14 +40,14 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "medium": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Mirai botnet operators exploit CVE-2025-29635, a CVSS 8.8 command injection flaw in end-of-life D-Link DIR-823X routers, to deploy malware and launch DDoS attacks.",
     "CVE-2026-5057, with a CVSS score of 7.5, exposes ATEN Unizon to unauthenticated denial-of-service attacks via its RPC service, allowing remote attackers to crash the device management platform.",
-    "A stack-based buffer overflow vulnerability (CVE-2026-4682) in the HP DeskJet 2855e printer allows network-adjacent attackers to execute arbitrary code without authentication, earning a CVSS score of",
-    "A new Mirai botnet variant, 'Nexcorium,' is exploiting a command injection flaw (CVE-2024-3721) in TBK DVRs and end-of-life TP-Link routers to conscript devices into a distributed denial-of-service (D"
+    "A stack-based buffer overflow vulnerability (CVE-2026-4682) in the HP DeskJet 2855e printer allows network-adjacent attackers to execute arbitrary code without authentication, earning a CVSS score of"
   ],
-  "sources_hash": "3f090677246c36c3"
+  "sources_hash": "2573dc7d91ac01b5"
 }

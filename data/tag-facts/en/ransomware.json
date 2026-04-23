@@ -1,15 +1,15 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 29,
+  "count": 31,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-22"
   },
   "top_actors": [
     "The Gentlemen",
-    "Payouts King",
-    "BlackCat (ALPHV)"
+    "Kyber",
+    "Payouts King"
   ],
   "top_cves": [
     {
@@ -36,14 +36,14 @@
     "France"
   ],
   "severity_mix": {
-    "high": 23,
+    "high": 25,
     "critical": 2,
     "informational": 2
   },
   "recent_excerpts": [
+    "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis.",
     "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent",
-    "CVE-2026-1731, a critical 9.8 CVSS flaw in BeyondTrust's Bomgar RMM, is being actively exploited to deploy ransomware and compromise IT service providers in global supply chain attacks.",
-    "Kyber ransomware deploys two distinct payloads to encrypt both Windows systems and VMware ESXi servers, using a custom tool to wipe ESXi snapshots and hinder recovery."
+    "CVE-2026-1731, a critical 9.8 CVSS flaw in BeyondTrust's Bomgar RMM, is being actively exploited to deploy ransomware and compromise IT service providers in global supply chain attacks."
   ],
-  "sources_hash": "5321178f9b8f6d6a"
+  "sources_hash": "20ca2978bc661ce9"
 }

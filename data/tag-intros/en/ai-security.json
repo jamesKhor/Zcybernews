@@ -1,9 +1,9 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "intro": "The technology and cybersecurity sectors were the primary focus of a concentrated wave of threats documented across 40 reports from April 12-21, 2026. The activity, which also heavily impacted healthcare and AI development, was global in scope. The threat actor OpenClaw was notably active, while the critical vulnerability CVE-2026-5760 (CVSS 9.8) was a key point of concern. The severity of the covered incidents was predominantly high, with 17 such reports alongside 5 critical and 6 medium-severity alerts, indicating a period of significant operational risk across the artificial intelligence landscape.",
-  "sources_hash": "072fe6f7a6eea29e",
+  "intro": "The technology and cybersecurity sectors were the primary focus of a concentrated wave of threats documented across 42 reports in a ten-day span. The activity was global in scope, also significantly impacting artificial intelligence, healthcare, and ai-development. The threat actor OpenClaw was prominently observed, while critical vulnerabilities CVE-2026-5760 and CVE-2026-5752, with CVSS scores of 9.8 and 9.3 respectively, were key points of exploitation. The severity of the covered incidents was weighted toward high and critical alerts, which together comprised the majority of the reporting period's analysis.",
+  "sources_hash": "f1ce572b58ff1726",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:05:21.900Z",
+  "generated_at": "2026-04-23T04:06:41.380Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

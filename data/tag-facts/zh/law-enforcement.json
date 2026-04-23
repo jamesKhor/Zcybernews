@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "Scattered Spider",
@@ -27,14 +27,14 @@
     "Florida"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "informational": 1,
     "medium": 3
   },
   "recent_excerpts": [
+    "法国当局逮捕了一名20岁的嫌疑人，他涉嫌48起针对公共机构、体育联合会和私营公司的数据库泄露，扣押了设备和...",
     "佛罗里达执法部门正在调查一名学生如何使用ChatGPT制造校园枪击威胁，这是AI聊天机器人未能阻止危险内容的更广泛模式的一部分。",
-    "Tyler Robert Buchanan承认参与美国阴谋，通过短信钓鱼、企业网络入侵和针对全国受害者的SIM交换攻击，窃取了超过100万美元的加密货币。",
-    "41岁的前网络安全公司DigitalMint员工Angelo Martino承认在担任谈判代表期间共谋针对美国公司的BlackCat勒索软件攻击。"
+    "Tyler Robert Buchanan承认参与美国阴谋，通过短信钓鱼、企业网络入侵和针对全国受害者的SIM交换攻击，窃取了超过100万美元的加密货币。"
   ],
-  "sources_hash": "ac4b96ad8c315c6a"
+  "sources_hash": "8968b42a37d66b86"
 }

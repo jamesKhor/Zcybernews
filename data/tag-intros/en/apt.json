@@ -1,9 +1,9 @@
 {
   "tag": "apt",
   "locale": "en",
-  "intro": "This archive tracks six high-severity APT reports from mid-April 2026. The activity features distinct threat actors CyberAv3ngers, Sapphire Sleet, and SideWinder. Their operations primarily targeted the cryptocurrency, government, and healthcare sectors, with significant impact on industrial and technology organizations as well. Geographically, incidents spanned from the United States and Ukraine to Bangladesh and South Asia, with several campaigns noted as having a Global reach. All documented attacks in this period were assessed as high severity.",
-  "sources_hash": "fc2a5dca430b5ed2",
+  "intro": "Between April 13 and 22, 2026, ZCyberNews tracked seven high-severity reports on advanced persistent threats. The activity prominently featured the threat actors CyberAv3ngers, Sapphire Sleet, and SideWinder. Their operations targeted a range of critical sectors, including cryptocurrency, government, energy, healthcare, and industrial systems. Geographically, the incidents showed a focus on Bangladesh, South Asia, Ukraine, and the United States, with several campaigns noted as having a global impact. The consistent high-severity rating across all documented cases underscores the significant risk posed by these coordinated and persistent cyber campaigns.",
+  "sources_hash": "d9172c2cc6916ee6",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:07:28.519Z",
+  "generated_at": "2026-04-23T04:08:50.910Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

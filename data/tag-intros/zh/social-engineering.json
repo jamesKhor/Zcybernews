@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月8日至20日期间38份关于社会工程威胁的报告。APT37 (ScarCruft, InkySquid) 是最常被提及的攻击者，同时出现的还有ClickFix和Pushpaganda。大多数事件被评定为高严重性，主要针对加密货币和金融服务行业，以及酒店住宿、个人和物流领域。这些攻击活动具有全球影响范围，尤其重点关注美国、加拿大、英国和澳大利亚。",
-  "sources_hash": "3c81fc8eef5500e2",
-  "source_intro_hash": "790cb04f92a923da",
+  "intro": "2026年4月上旬至中旬的社会工程威胁态势主要由APT37 (ScarCruft, InkySquid)、ClickFix和Lazarus Group的活动主导。这些攻击者主要针对加密货币、金融服务和科技行业，同时还有针对酒店业和个人的额外攻击活动。从地理分布看，其影响遍及全球，尤其集中在美国、加拿大、英国和澳大利亚。在此期间涉及的40篇报道中，所披露事件的严重程度较高，其中28起被归类为高风险，11起为中等风险。",
+  "sources_hash": "608e814486955124",
+  "source_intro_hash": "0a3670f910428af0",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-21T04:09:46.960Z",
+  "generated_at": "2026-04-23T04:11:44.007Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

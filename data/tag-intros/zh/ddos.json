@@ -1,0 +1,10 @@
+{
+  "tag": "ddos",
+  "locale": "zh",
+  "intro": "2026年4月16日至4月23日期间，ZCyberNews发布了六篇关于DDoS威胁的文章。Mirai僵尸网络是这一时期的主要威胁行为者，利用了包括CVSS评分为8.8的高危漏洞CVE-2025-29635以及CVSS评分为6.3的CVE-2024-3721在内的多个漏洞。这些攻击主要针对社交媒体领域，并产生全球性影响。报道的事件包括两起高危事件、三起中危事件以及一份信息性报告，体现了不同程度的运营影响。",
+  "sources_hash": "3c3364874be2ade3",
+  "source_intro_hash": "ea2875200a984ef2",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-23T04:10:14.767Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,13 +1,14 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 54,
+  "count": 59,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "Lazarus Group",
+    "CanisterSprawl",
     "TeamPCP"
   ],
   "top_cves": [
@@ -28,10 +29,10 @@
   ],
   "top_sectors": [
     "technology",
-    "logistics",
-    "manufacturing",
     "software development",
-    "cryptocurrency"
+    "cryptocurrency",
+    "logistics",
+    "manufacturing"
   ],
   "top_regions": [
     "Global",
@@ -40,15 +41,15 @@
     "North america"
   ],
   "severity_mix": {
+    "high": 37,
     "critical": 8,
-    "high": 32,
     "informational": 4,
     "medium": 9
   },
   "recent_excerpts": [
-    "CVE-2026-1731, a critical 9.8 CVSS flaw in BeyondTrust's Bomgar RMM, is being actively exploited to deploy ransomware and compromise IT service providers in global supply chain attacks.",
-    "Apple removed 45 malicious cryptocurrency apps from its App Store after they stole recovery phrases and private keys from users, mimicking legitimate wallets like MetaMask and Coinbase.",
-    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution."
+    "The CanisterSprawl supply chain worm hijacks npm packages, uses stolen developer tokens to self-propagate, and exfiltrates data to an ICP canister, according to Socket and…",
+    "Threat actors uploaded malicious Docker images to Checkmarx's official KICS repository and published trojanized VS Code extensions, stealing AWS keys and browser data from…",
+    "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…"
   ],
-  "sources_hash": "61e8f584b57367b7"
+  "sources_hash": "17929a03a8146211"
 }

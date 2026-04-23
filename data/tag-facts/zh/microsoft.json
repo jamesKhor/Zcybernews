@@ -1,7 +1,7 @@
 {
   "tag": "microsoft",
   "locale": "zh",
-  "count": 37,
+  "count": 36,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-21"
@@ -47,7 +47,7 @@
     "high": 18,
     "medium": 10,
     "informational": 3,
-    "critical": 5,
+    "critical": 4,
     "low": 1
   },
   "recent_excerpts": [
@@ -55,5 +55,5 @@
     "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。",
     "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。"
   ],
-  "sources_hash": "1e1d1c51013af600"
+  "sources_hash": "dcf898f9426cca0a"
 }

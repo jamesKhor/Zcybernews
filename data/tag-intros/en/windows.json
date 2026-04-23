@@ -1,9 +1,9 @@
 {
   "tag": "windows",
   "locale": "en",
-  "intro": "This archive covers 20 articles from April 12-21, 2026, detailing a range of Windows security events. The threat actor Chaotic Eclipse was a prominent subject, as was Kyber. Coverage frequently addressed critical vulnerabilities, including CVE-2026-33104, CVE-2026-26179, and CVE-2026-32183, alongside older CVEs like CVE-2024-20662 and CVE-2024-21412. The reported incidents were predominantly high severity, with 15 such cases, alongside four medium and one critical severity event.",
-  "sources_hash": "81b4a257c5002a57",
+  "intro": "The Windows threat landscape in this period was dominated by activity from Kyber and Chaotic Eclipse. Their campaigns frequently exploited several critical vulnerabilities, most notably CVE-2026-33104, CVE-2026-26179, and CVE-2026-32183. Older CVEs, including CVE-2024-20662 and CVE-2024-21412, also remained in active use. Across the 21 articles analyzed, the severity of reported incidents was significant, with the majority classified as high-severity events. This concentrated activity underscores the persistent targeting of Windows environments by distinct threat groups leveraging both newly disclosed and established security flaws.",
+  "sources_hash": "36c4911027e0def9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:05:55.705Z",
+  "generated_at": "2026-04-23T04:07:22.173Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

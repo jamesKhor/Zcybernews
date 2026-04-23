@@ -1,12 +1,13 @@
 {
   "tag": "cybercrime",
   "locale": "zh",
-  "count": 9,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
+    "LockBit",
     "Triad Nexus",
     "W3LL Team"
   ],
@@ -15,21 +16,22 @@
     "e-commerce",
     "financial services",
     "financial-services",
-    "multiple",
-    "online services"
+    "government",
+    "multiple"
   ],
   "top_regions": [
+    "France",
     "Global"
   ],
   "severity_mix": {
+    "high": 7,
     "informational": 2,
-    "medium": 2,
-    "high": 5
+    "medium": 2
   },
   "recent_excerpts": [
+    "法国当局逮捕了一名20岁的嫌疑人，他涉嫌48起针对公共机构、体育联合会和私营公司的数据库泄露，扣押了设备和...",
     "IPQS 详细描述了一种使用身份、设备和网络信号的3层欺诈检测策略，能够阻止99.5%的自动化攻击，而不为合法客户增加用户摩擦。",
-    "MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。",
-    "ProxySmart，一个在白俄罗斯明斯克运营的平台，为17个国家的94个地点提供SIM农场代理网络，为网络犯罪分子提供用于欺诈和凭证填充的住宅IP地址。"
+    "MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。"
   ],
-  "sources_hash": "8688373d9249e771"
+  "sources_hash": "0678f18648606837"
 }

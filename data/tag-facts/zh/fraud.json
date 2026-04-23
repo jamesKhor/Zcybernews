@@ -1,36 +1,36 @@
 {
   "tag": "fraud",
   "locale": "zh",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "financial-services",
+    "retail",
     "cryptocurrency",
     "entertainment",
-    "retail",
-    "e-commerce"
+    "telecommunications"
   ],
   "top_regions": [
     "United states",
-    "Global",
-    "Canada",
     "Europe",
-    "North america"
+    "Global",
+    "North america",
+    "Canada"
   ],
   "severity_mix": {
     "informational": 2,
-    "medium": 5,
+    "medium": 6,
     "high": 4
   },
   "recent_excerpts": [
     "MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。",
     "金融行业监管局建立了一个新的情报中心，以集中分析针对经纪商和资本市场的网络威胁和欺诈行为。",
-    "ProxySmart，一个在白俄罗斯明斯克运营的平台，为17个国家的94个地点提供SIM农场代理网络，为网络犯罪分子提供用于欺诈和凭证填充的住宅IP地址。"
+    "Flare 研究人员详细描述了 'Caller-as-a-Service' 欺诈，其中犯罪操作使用招聘、培训和 KPIs 来管理针对北美和欧洲受害者的诈骗呼叫者。"
   ],
-  "sources_hash": "eb01a3618eeab141"
+  "sources_hash": "de248952800d68c8"
 }

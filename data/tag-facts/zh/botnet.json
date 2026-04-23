@@ -1,16 +1,21 @@
 {
   "tag": "botnet",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [
+    "Mirai",
     "The Gentlemen",
     "W3LL"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2025-29635",
+      "cvss": 8.8
+    },
     {
       "id": "CVE-2024-3721",
       "cvss": 6.3
@@ -31,14 +36,14 @@
     "Global"
   ],
   "severity_mix": {
+    "high": 6,
     "medium": 2,
-    "high": 5,
     "critical": 1
   },
   "recent_excerpts": [
+    "Mirai 僵尸网络操作者利用 CVE-2025-29635，这是一个 CVSS 8.8 命令注入漏洞，存在于生命周期结束的 D-Link DIR-823X 路由器中，以部署恶意软件并发起 DDoS 攻击。",
     "一种新的 Mirai 僵尸网络变种 'Nexcorium'，正在利用 TBK DVR 和生命周期结束的 TP-Link 路由器中的命令注入漏洞（CVE-2024-3721）来征召设备加入分布式拒绝服务（DDoS）攻击群。",
-    "思科Talos研究人员识别出自2025年12月以来活跃的PowMix僵尸网络，针对捷克工作人员使用随机化C2信标以规避检测并部署额外的有效载荷。",
-    "Check Point Research 发现一个与 The Gentlemen 勒索软件有关的 1,570 名受害者的僵尸网络，使用 SystemBC 代理恶意软件建立隐蔽的 SOCKS5 隧道进行命令和控制。"
+    "思科Talos研究人员识别出自2025年12月以来活跃的PowMix僵尸网络，针对捷克工作人员使用随机化C2信标以规避检测并部署额外的有效载荷。"
   ],
-  "sources_hash": "1d5fb48fe9535e31"
+  "sources_hash": "d21fb4c091845aac"
 }

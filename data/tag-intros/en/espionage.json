@@ -1,9 +1,9 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "intro": "Our recent coverage of espionage activity from April 12 to 15, 2026, details five incidents, all rated high or critical in severity. The threat actor APT28 (Fancy Bear) was prominently featured in this reporting. The operations had a global reach, with specific focus on Ukraine, and targeted a range of critical sectors. These included government agencies, healthcare, technology firms, defense contractors, and large enterprise networks. The collected intelligence underscores a concentrated period of sophisticated cyber espionage against these vital industries.",
-  "sources_hash": "7314e54cef166a7a",
+  "intro": "APT28 (Fancy Bear) and Mustang Panda were the most active threat actors in a recent wave of espionage activity documented across seven reports. These incidents, all rated high or critical in severity, targeted a wide range of sectors including government, healthcare, technology, banking, and critical infrastructure. The campaigns had a global footprint, with notable impact in India, South Korea, Ukraine, and the United Kingdom. This concentrated burst of cyber espionage operations occurred over a short period in April 2026.",
+  "sources_hash": "439c480dcb94fd56",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:00:40.160Z",
+  "generated_at": "2026-04-23T04:08:56.646Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

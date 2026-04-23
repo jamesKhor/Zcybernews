@@ -1,14 +1,14 @@
 {
   "tag": "cryptocurrency",
   "locale": "zh",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [
-    "FakeWallet",
     "Lazarus Group",
+    "FakeWallet",
     "Omnistealer"
   ],
   "top_cves": [
@@ -20,24 +20,24 @@
     "cryptocurrency",
     "decentralized finance (DeFi)",
     "financial-services",
-    "telecommunications",
-    "venture capital"
+    "software development",
+    "technology"
   ],
   "top_regions": [
     "United states",
     "Canada",
     "Europe",
-    "Kyrgyzstan",
+    "Global",
     "North america"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "critical": 3
   },
   "recent_excerpts": [
+    "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…",
     "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。",
-    "Kaspersky 发现了 22 个恶意的 iOS 应用程序在官方 App Store 上冒充 MetaMask 和 Coinbase 等加密钱包，从超过 1,000 名受害者那里窃取种子短语和私钥。",
-    "Omnistealer 恶意软件，由 Malwarebytes 详细描述，窃取来自 1Password、Bitwarden、NordPass 和 Exodus 加密钱包的凭证，使用 Solana 区块链进行隐蔽的命令和控制通信。"
+    "Kaspersky 发现了 22 个恶意的 iOS 应用程序在官方 App Store 上冒充 MetaMask 和 Coinbase 等加密钱包，从超过 1,000 名受害者那里窃取种子短语和私钥。"
   ],
-  "sources_hash": "39ace639931061c7"
+  "sources_hash": "fa0e0a634c701a20"
 }

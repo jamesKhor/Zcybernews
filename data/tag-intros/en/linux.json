@@ -1,9 +1,9 @@
 {
   "tag": "linux",
   "locale": "en",
-  "intro": "The education, homelab, IoT, and maker sectors were the primary targets in a recent series of Linux-related threats. Between April 12 and April 22, 2026, five articles tracked activity with a severity mix of two high, one medium, and two informational reports. The threat actors Payouts King and The Gentlemen were observed in these incidents, which had a Global regional impact. These developments highlight ongoing risks to diverse technological environments built on the open-source platform.",
-  "sources_hash": "b90ec5aaf3fe7665",
+  "intro": "The education and homelab sectors were a primary focus of recent Linux-related threats, alongside activity targeting IoT and maker communities. Between April 12 and April 22, 2026, six reports tracked a mix of three high-severity events, one medium, and two informational alerts. The threat actors Harvester, Payouts King, and The Gentlemen were observed in this activity, which showed a global footprint with notable concentration in South Asia.",
+  "sources_hash": "80c7f766a2622696",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:07:47.238Z",
+  "generated_at": "2026-04-23T04:09:07.731Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "initial-access",
   "locale": "zh",
-  "intro": "本档案收录了 6 篇带有「initial-access」标签的文章，发布时间从2026年4月14日至2026年4月21日。其中包含6 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "91623df2b6bd43b7",
-  "source_intro_hash": "eca01a05d92305a7",
+  "intro": "本档案收录了 7 篇带有「initial-access」标签的文章，发布时间从2026年4月14日至2026年4月22日。其中包含7 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "85dd10896320733a",
+  "source_intro_hash": "cd63148aea96bdb3",
   "model": "template:sparse",
-  "generated_at": "2026-04-22T04:08:52.951Z",
+  "generated_at": "2026-04-23T04:10:38.557Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

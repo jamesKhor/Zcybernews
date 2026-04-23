@@ -1,36 +1,36 @@
 {
   "tag": "fraud",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "financial-services",
+    "retail",
     "cryptocurrency",
     "entertainment",
-    "retail",
-    "e-commerce"
+    "telecommunications"
   ],
   "top_regions": [
     "United states",
-    "Global",
-    "Canada",
     "Europe",
-    "North america"
+    "Global",
+    "North america",
+    "Canada"
   ],
   "severity_mix": {
     "informational": 2,
-    "medium": 5,
+    "medium": 6,
     "high": 4
   },
   "recent_excerpts": [
     "MITRE released the Fight Fraud Framework (F3), a unified knowledge base mapping the intersection of cyber attack tactics and financial fraud, aiming to close the operational gap between security and f",
     "The Financial Industry Regulatory Authority has established a new intelligence hub to centralize analysis of cyber threats and fraud targeting broker-dealers and capital markets.",
-    "ProxySmart, a platform operated from Minsk, Belarus, powers SIM farm proxy networks across 94 locations in 17 countries, providing cybercriminals with residential IP addresses for fraud and credential"
+    "Flare researchers detail 'Caller-as-a-Service' fraud, where criminal operations use hiring, training, and KPIs to manage scam callers targeting victims in North America and Europe."
   ],
-  "sources_hash": "eb01a3618eeab141"
+  "sources_hash": "de248952800d68c8"
 }

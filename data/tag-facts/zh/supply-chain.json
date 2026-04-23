@@ -1,13 +1,14 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 54,
+  "count": 59,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "Lazarus Group",
+    "CanisterSprawl",
     "TeamPCP"
   ],
   "top_cves": [
@@ -28,10 +29,10 @@
   ],
   "top_sectors": [
     "technology",
-    "logistics",
-    "manufacturing",
     "software development",
-    "cryptocurrency"
+    "cryptocurrency",
+    "logistics",
+    "manufacturing"
   ],
   "top_regions": [
     "Global",
@@ -40,15 +41,15 @@
     "North america"
   ],
   "severity_mix": {
+    "high": 37,
     "critical": 8,
-    "high": 32,
     "informational": 4,
     "medium": 9
   },
   "recent_excerpts": [
-    "CVE-2026-1731，一个在BeyondTrust的Bomgar RMM中的关键9.8 CVSS漏洞，正在被积极利用来部署勒索软件和在全球供应链攻击中破坏IT服务提供商。",
-    "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。",
-    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。"
+    "根据 Socket 和…的说法，CanisterSprawl 供应链蠕虫劫持 npm 包，使用窃取的开发者令牌进行自我传播，并将数据外泄到 ICP canister。",
+    "威胁行为者上传了恶意Docker镜像到Checkmarx的官方KICS仓库，并发布了木马化的VS Code扩展，窃取AWS密钥和浏览器数据从…",
+    "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…"
   ],
-  "sources_hash": "61e8f584b57367b7"
+  "sources_hash": "17929a03a8146211"
 }

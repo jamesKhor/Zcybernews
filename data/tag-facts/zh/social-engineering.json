@@ -1,23 +1,23 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "count": 38,
+  "count": 40,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-20"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "APT37 (ScarCruft, InkySquid)",
     "ClickFix",
-    "Pushpaganda"
+    "Lazarus Group"
   ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
     "financial-services",
+    "technology",
     "hospitality",
-    "individuals",
-    "logistics"
+    "individuals"
   ],
   "top_regions": [
     "Global",
@@ -27,8 +27,8 @@
     "Australia"
   ],
   "severity_mix": {
-    "high": 27,
-    "medium": 10,
+    "high": 28,
+    "medium": 11,
     "informational": 1
   },
   "recent_excerpts": [
@@ -36,5 +36,5 @@
     "威胁行为者滥用 Obsidian 笔记应用通过恶意插件投递新型 PHANTOMPULSE RAT，针对金融和加密货币领域的个人进行攻击，此次行动被追踪为 REF6598。",
     "一项受控研究表明，人类在战略游戏中将公平和合作等社会启发式应用于LLM对手，导致可预测的利用和人机AI互动中的潜在安全风险。"
   ],
-  "sources_hash": "3c81fc8eef5500e2"
+  "sources_hash": "608e814486955124"
 }

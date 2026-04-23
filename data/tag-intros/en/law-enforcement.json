@@ -1,9 +1,9 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "intro": "This archive contains 16 articles from April 12 to April 21, 2026, detailing a series of high-severity incidents. The activity primarily targeted the government, cryptocurrency, telecommunications, corporate, and education sectors, with notable impact in the United states, North america, Canada, Europe, and Florida. The threat landscape was dominated by distinct actors: Scattered Spider, BlackCat (ALPHV), and W3LL. The reporting mix consists of 12 high, 3 medium, and 1 informational severity articles, reflecting a concentrated period of significant cyber activity across these regions and industries.",
-  "sources_hash": "ac4b96ad8c315c6a",
+  "intro": "This archive contains 17 articles from April 12 to April 22, 2026, detailing a series of high-severity incidents primarily targeting the government, cryptocurrency, and telecommunications sectors. The majority of the coverage focuses on activity in the United States, North America, and Europe, with notable reports from Florida and Canada. The threat actors Scattered Spider, BlackCat (ALPHV), and W3LL were prominently observed during this period. The education and corporate sectors were also significantly affected. Of the 17 reports, 13 were classified as high severity, underscoring the concentrated operational tempo of these campaigns across a short timeframe.",
+  "sources_hash": "8968b42a37d66b86",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:06:01.315Z",
+  "generated_at": "2026-04-23T04:07:32.515Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

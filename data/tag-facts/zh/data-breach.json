@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 21,
+  "count": 22,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "RansomHub",
@@ -22,18 +22,18 @@
   "top_regions": [
     "United states",
     "Europe",
-    "North america",
     "France",
+    "North america",
     "Global"
   ],
   "severity_mix": {
-    "high": 17,
+    "high": 18,
     "medium": 3
   },
   "recent_excerpts": [
+    "法国当局逮捕了一名20岁的嫌疑人，他涉嫌48起针对公共机构、体育联合会和私营公司的数据库泄露，扣押了设备和...",
     "TheGentlemen勒索软件团伙声称已完全入侵Atlassian合作伙伴Adaptavist的基础设施，窃取了来自NASA、Visa等客户的源代码和客户数据。",
-    "法国身份证，法国政府身份证明文件机构，确认数据泄露后，威胁行为者提供出售被盗公民信息，包括姓名、地址和护照号码。",
-    "南伊利诺伊州皮肤科、圣安东尼医院和北德克萨斯州行为健康局披露了影响超过60万患者的违规行为，暴露了姓名、社会安全号码和医疗数据。"
+    "法国身份证，法国政府身份证明文件机构，确认数据泄露后，威胁行为者提供出售被盗公民信息，包括姓名、地址和护照号码。"
   ],
-  "sources_hash": "ecadf23d02b1b110"
+  "sources_hash": "47f01c4600840533"
 }

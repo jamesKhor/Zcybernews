@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "CyberAv3ngers",
@@ -15,9 +15,9 @@
   "top_sectors": [
     "cryptocurrency",
     "government",
+    "energy",
     "healthcare",
-    "industrial",
-    "technology"
+    "industrial"
   ],
   "top_regions": [
     "Bangladesh",
@@ -27,12 +27,12 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 6
+    "high": 7
   },
   "recent_excerpts": [
+    "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026.",
     "SideWinder APT targets South Asian government bodies with a phishing campaign using a fake Chrome PDF viewer and a cloned Zimbra login portal to steal webmail credentials, active since February 2026.",
-    "North Korean operatives are using AI tools and forged documents to pass remote job interviews, according to Flare research.",
-    "North Korean threat actor UNC1069 lures Web3 professionals with fake Zoom and Microsoft Teams meetings to deploy malware that steals cryptocurrency, according to new research."
+    "North Korean operatives are using AI tools and forged documents to pass remote job interviews, according to Flare research."
   ],
-  "sources_hash": "fc2a5dca430b5ed2"
+  "sources_hash": "d9172c2cc6916ee6"
 }

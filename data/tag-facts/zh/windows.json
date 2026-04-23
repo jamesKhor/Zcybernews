@@ -1,14 +1,14 @@
 {
   "tag": "windows",
   "locale": "zh",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
-    "Chaotic Eclipse",
-    "Kyber"
+    "Kyber",
+    "Chaotic Eclipse"
   ],
   "top_cves": [
     {
@@ -33,14 +33,14 @@
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
-    "high": 15,
+    "high": 16,
     "medium": 4,
     "critical": 1
   },
   "recent_excerpts": [
+    "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。",
     "Kyber 勒索软件部署两个不同的有效载荷以加密 Windows 系统和 VMware ESXi 服务器，使用自定义工具清除 ESXi 快照并阻碍恢复。攻击链始于被泄露的 RDP 凭证。",
-    "PureRAT 将其 Windows PE 有效载荷隐藏在 PNG 文件中，并在内存中无文件执行它们，这是网络安全研究人员分析一种新的复杂活动时详细描述的技术。",
-    "CVE-2026-33829 在 Windows Snipping Tool 中允许攻击者通过恶意链接窃取 NTLMv2 哈希。一个公开的 PoC 漏洞利用目标是 ms-screensketch 协议，以启用凭证中继攻击。"
+    "PureRAT 将其 Windows PE 有效载荷隐藏在 PNG 文件中，并在内存中无文件执行它们，这是网络安全研究人员分析一种新的复杂活动时详细描述的技术。"
   ],
-  "sources_hash": "81b4a257c5002a57"
+  "sources_hash": "36c4911027e0def9"
 }

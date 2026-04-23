@@ -1,0 +1,31 @@
+{
+  "tag": "remote-access-trojan",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-22"
+  },
+  "top_actors": [
+    "Lazarus Group"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "cryptocurrency",
+    "software development",
+    "technology"
+  ],
+  "top_regions": [
+    "Global",
+    "Latin america"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "一个新的恶意软件活动通过单一混淆加载器同时部署Gh0st RAT和CloverPlus广告软件，使攻击者能够从单一感染中获得持久的远程控制和收入流。",
+    "据 CyberSecurity News 研究人员称，MiningDropper 是一个多阶段的 Android 恶意软件框架，通过伪装的应用程序向设备传送 infostealers、RATs 和银行木马。",
+    "一个木马化的 Slack 安装程序提供了一个远程访问工具，该工具创建了一个隐藏的桌面，允许攻击者绕过多因素认证并悄无声息地控制受害者的机器。"
+  ],
+  "sources_hash": "5b6d2e525c8a0ce3"
+}

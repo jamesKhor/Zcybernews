@@ -1,10 +1,10 @@
 {
   "tag": "encryption",
   "locale": "zh",
-  "intro": "本档案收录了 8 篇带有「encryption」标签的文章，发布时间从2026年4月12日至2026年4月21日。其中包含1 篇严重、1 篇高危、2 篇中危、4 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "47de9638beb6c49c",
-  "source_intro_hash": "90c457e2336939de",
-  "model": "template:sparse",
-  "generated_at": "2026-04-22T04:08:44.352Z",
+  "intro": "2026年4月12日至4月22日期间，ZCyberNews发布了九篇标注为加密类别的文章。报道内容涵盖事件与分析，包括一份关键报告、两份高级报告、两份中级报告以及四份信息性报告。威胁行为者Kyber被重点提及。科技行业受影响最为频繁，其次是社交媒体和电信行业，其中多起事件波及所有领域。从地理分布看，报告的活动遍及全球，特别关注了英国地区。",
+  "sources_hash": "0799936089b78521",
+  "source_intro_hash": "a9e9efef6ebca769",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-23T04:10:19.462Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

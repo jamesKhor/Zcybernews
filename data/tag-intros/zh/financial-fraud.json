@@ -1,0 +1,10 @@
+{
+  "tag": "financial-fraud",
+  "locale": "zh",
+  "intro": "威胁行为体NGate是近期五份金融欺诈报告中最突出的主题。这些事件发生于2026年4月12日至4月22日期间，被评估为三起高严重性事件和两起中严重性事件。主要攻击目标为金融服务行业及包括个人在内的公众群体，娱乐行业也受到显著影响。从地理分布看，攻击主要集中在巴西和美国的机构与用户。",
+  "sources_hash": "ef2c782733785e86",
+  "source_intro_hash": "ea49c435a1ca2d66",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-23T04:10:38.556Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

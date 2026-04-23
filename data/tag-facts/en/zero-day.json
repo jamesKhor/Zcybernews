@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "count": 24,
+  "count": 23,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-19"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "Chaotic Eclipse",
@@ -32,18 +32,17 @@
   ],
   "top_sectors": [
     "technology",
-    "cryptocurrency",
     "enterprise",
     "government",
-    "healthcare"
+    "healthcare",
+    "multiple"
   ],
   "top_regions": [
-    "Global",
-    "Kyrgyzstan"
+    "Global"
   ],
   "severity_mix": {
     "high": 11,
-    "critical": 12,
+    "critical": 11,
     "medium": 1
   },
   "recent_excerpts": [
@@ -51,5 +50,5 @@
     "A proof-of-concept exploit for CVE-2026-39808, a critical command injection vulnerability in Fortinet FortiSandbox, has been released.",
     "A security researcher has published proof-of-concept exploits for two new zero-day flaws in Microsoft Defender, dubbed RedSun and UnDefend."
   ],
-  "sources_hash": "6b11de26c2495774"
+  "sources_hash": "8a05be16b58e878c"
 }

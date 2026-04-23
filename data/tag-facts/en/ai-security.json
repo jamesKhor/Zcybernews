@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 40,
+  "count": 42,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "OpenClaw"
@@ -13,28 +13,32 @@
     {
       "id": "CVE-2026-5760",
       "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-5752",
+      "cvss": 9.3
     }
   ],
   "top_sectors": [
     "technology",
     "cybersecurity",
+    "artificial intelligence",
     "healthcare",
-    "ai-development",
-    "artificial intelligence"
+    "ai-development"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "high": 19,
+    "critical": 6,
     "informational": 12,
-    "critical": 5,
-    "high": 17,
-    "medium": 6
+    "medium": 5
   },
   "recent_excerpts": [
-    "Analysis of 1,000+ cybersecurity job postings shows a 40% surge in demand for AI security specialists and cloud security architects, with DevSecOps roles requiring Azure DevOps expertise commanding pr",
-    "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi",
-    "CVE-2026-5760, a critical 9.8 CVSS flaw in the SGLang inference engine, allows attackers to execute arbitrary code by uploading malicious GGUF model files, compromising AI/ML serving deployments."
+    "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…",
+    "An unauthorized group accessed Anthropic's exclusive Claude Mythos Preview AI, a cybersecurity tool capable of generating exploits and malware.",
+    "CVE-2026-5752 (CVSS 9.3) in Cohere AI's Terrarium sandbox enables root-level code execution and container escape via JavaScript prototype chain traversal."
   ],
-  "sources_hash": "072fe6f7a6eea29e"
+  "sources_hash": "f1ce572b58ff1726"
 }

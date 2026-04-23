@@ -1,10 +1,10 @@
 {
   "tag": "windows",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月12日至21日期间的20篇文章，详述了一系列Windows安全事件。威胁行为者Chaotic Eclipse是重点关注对象，Kyber同样受到关注。报道频繁提及多个关键漏洞，包括CVE-2026-33104、CVE-2026-26179和CVE-2026-32183，以及较早期的CVE-2024-20662和CVE-2024-21412。所报告的事件以高危为主，共计15起，另有4起中危事件和1起严重事件。",
-  "sources_hash": "81b4a257c5002a57",
-  "source_intro_hash": "a190429d3c78bf3d",
+  "intro": "在此期间，Windows威胁态势主要由Kyber和Chaotic Eclipse的活动主导。他们的攻击行动频繁利用多个关键漏洞，最显著的是CVE-2026-33104、CVE-2026-26179和CVE-2026-32183。较旧的漏洞，包括CVE-2024-20662和CVE-2024-21412，也仍被活跃利用。在所分析的21篇文章中，报告事件严重性较高，大多数被归类为高严重性事件。这种集中活动凸显了不同威胁组织持续针对Windows环境，利用新披露及既有的安全漏洞。",
+  "sources_hash": "36c4911027e0def9",
+  "source_intro_hash": "658e836df192224e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:10:05.842Z",
+  "generated_at": "2026-04-23T04:12:04.746Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

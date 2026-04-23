@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-17"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "CyberAv3ngers"
@@ -18,18 +18,19 @@
     "water"
   ],
   "top_regions": [
-    "United states"
+    "United states",
+    "United kingdom"
   ],
   "severity_mix": {
+    "high": 5,
     "informational": 3,
-    "high": 4,
     "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "英国NCSC报告称每周处理四起具有全国意义的网络事件，其中大部分现在归因于像中国和俄罗斯这样的敌对外国，从每周两起增加...",
     "根据《海事运输安全法》，美国海岸警卫队新的网络安全规则要求第三方审计、针对OT的安全计划和专职人员，为关键基础设施提供监管模式。",
-    "安全研究人员提议将双因素认证（2FA）原则扩展到关键基础设施的物理访问控制系统，创建一种混合防御机制，以抵御针对操作技术的基于凭证的攻击。",
-    "美国高级政府官员认为，没有与私营行业的更快、更深入的合作，就无法实现有效的国家网络防御，他们提到了共享基础设施和威胁情报。"
+    "安全研究人员提议将双因素认证（2FA）原则扩展到关键基础设施的物理访问控制系统，创建一种混合防御机制，以抵御针对操作技术的基于凭证的攻击。"
   ],
-  "sources_hash": "4e082eeb509f4426"
+  "sources_hash": "6db28d8af756acff"
 }

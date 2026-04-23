@@ -1,30 +1,30 @@
 {
   "tag": "anthropic",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-20"
+    "latest": "2026-04-22"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
-    "ai-development",
     "cybersecurity",
-    "software development",
-    "technology"
+    "technology",
+    "ai-development",
+    "software development"
   ],
   "top_regions": [],
   "severity_mix": {
+    "high": 2,
     "critical": 2,
-    "high": 1,
     "informational": 2,
     "medium": 1
   },
   "recent_excerpts": [
+    "一个未授权团体访问了Anthropic的独家Claude Mythos预览AI，这是一个能够生成漏洞和恶意软件的网络安全工具。",
     "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。",
-    "Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project Glasswing 项目以发现并修补漏洞。",
-    "白宫幕僚长Jeff Zients将与Anthropic首席执行官Dario Amodei会面，讨论公司新发布的AI技术的安全影响，在更广泛的政府对先进AI模型的审查中。"
+    "Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project Glasswing 项目以发现并修补漏洞。"
   ],
-  "sources_hash": "c93da524d2c66f19"
+  "sources_hash": "94931c5a80829fe0"
 }

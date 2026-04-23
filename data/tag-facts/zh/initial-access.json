@@ -1,10 +1,10 @@
 {
   "tag": "initial-access",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [],
   "top_cves": [],
@@ -17,12 +17,12 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "high": 6
+    "high": 7
   },
   "recent_excerpts": [
     "一个木马化的 Slack 安装程序提供了一个远程访问工具，该工具创建了一个隐藏的桌面，允许攻击者绕过多因素认证并悄无声息地控制受害者的机器。",
     "威胁行为者滥用 Obsidian 笔记应用通过恶意插件投递新型 PHANTOMPULSE RAT，针对金融和加密货币领域的个人进行攻击，此次行动被追踪为 REF6598。",
-    "The Hacker News 报告称，基于身份的攻击，使用被盗凭证和 MFA 绕过，是现代入侵中主导的初始访问向量，使得复杂的漏洞利用对于初始进入变得不必要。"
+    "思科Talos发现在2026年第一季度，钓鱼攻击占初始访问参与的三分之一以上，这是自2025年第二季度以来首次超过对公共应用程序的利用。"
   ],
-  "sources_hash": "91623df2b6bd43b7"
+  "sources_hash": "85dd10896320733a"
 }

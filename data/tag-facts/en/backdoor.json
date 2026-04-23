@@ -1,30 +1,37 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-17"
+    "latest": "2026-04-22"
   },
   "top_actors": [
-    "APT41"
+    "APT41",
+    "Harvester",
+    "Mustang Panda"
   ],
   "top_cves": [],
   "top_sectors": [
+    "banking",
     "cloud-services",
+    "government",
     "technology"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "India",
+    "South asia",
+    "South korea"
   ],
   "severity_mix": {
-    "critical": 1,
-    "high": 5
+    "high": 7,
+    "critical": 1
   },
   "recent_excerpts": [
+    "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…",
     "A malicious buyer used the Flippa marketplace to acquire a plugin developer, injecting a backdoor into over 30 WordPress plugins with hundreds of thousands of installations to deploy hidden SEO spam.",
-    "The EssentialPlugin suite, comprising over 30 popular WordPress plugins, has been compromised to inject a backdoor granting attackers administrative access to thousands of websites.",
-    "Threat actors deploy VIPERTUNNEL, a Python backdoor, using a fake DLL and multi-stage obfuscated loader to establish stealthy SOCKS5 proxy tunnels for persistent network access."
+    "The EssentialPlugin suite, comprising over 30 popular WordPress plugins, has been compromised to inject a backdoor granting attackers administrative access to thousands of websites."
   ],
-  "sources_hash": "bd4a93a75f4f6764"
+  "sources_hash": "a9e3a70e601dd2f6"
 }

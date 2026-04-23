@@ -1,0 +1,28 @@
+{
+  "tag": "agentic-ai",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-22"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "cross-sector",
+    "enterprise"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…",
+    "A security analysis of over 400 LLM agent routing services reveals widespread vulnerabilities enabling attackers to inject malicious commands, leak sensitive data, and bypass intended AI model behavio",
+    "Anthropic releases Claude Opus 4.7, a frontier AI model with new automated safeguards designed to detect and halt potentially harmful cybersecurity tasks during long, unsupervised agentic workflows."
+  ],
+  "sources_hash": "1641defbeac56bfb"
+}

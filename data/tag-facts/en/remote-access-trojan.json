@@ -1,0 +1,31 @@
+{
+  "tag": "remote-access-trojan",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-22"
+  },
+  "top_actors": [
+    "Lazarus Group"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "cryptocurrency",
+    "software development",
+    "technology"
+  ],
+  "top_regions": [
+    "Global",
+    "Latin america"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "A new malware campaign deploys both Gh0st RAT and CloverPlus adware via a single obfuscated loader, giving attackers persistent remote control and a revenue stream from a single infection.",
+    "MiningDropper, a multi-stage Android malware framework, delivers infostealers, RATs, and banking trojans to devices via disguised apps, according to CyberSecurity News researchers.",
+    "A trojanized Slack installer delivers a remote access tool that creates a hidden desktop, allowing attackers to bypass multi-factor authentication and silently control victim machines."
+  ],
+  "sources_hash": "5b6d2e525c8a0ce3"
+}

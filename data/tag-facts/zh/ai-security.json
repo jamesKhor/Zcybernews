@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 40,
+  "count": 42,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "OpenClaw"
@@ -13,28 +13,32 @@
     {
       "id": "CVE-2026-5760",
       "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-5752",
+      "cvss": 9.3
     }
   ],
   "top_sectors": [
     "technology",
     "cybersecurity",
+    "artificial intelligence",
     "healthcare",
-    "ai-development",
-    "artificial intelligence"
+    "ai-development"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "high": 19,
+    "critical": 6,
     "informational": 12,
-    "critical": 5,
-    "high": 17,
-    "medium": 6
+    "medium": 5
   },
   "recent_excerpts": [
-    "对1000多个网络安全职位发布的分析显示，对人工智能安全专家和云安全架构师的需求激增了40%，需要Azure DevOps专业知识的DevSecOps角色可以获得更高的薪资。",
-    "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。",
-    "CVE-2026-5760，SGLang 推理引擎中的一个关键 9.8 CVSS 漏洞，允许攻击者通过上传恶意 GGUF 模型文件来执行任意代码，危及 AI/ML 服务部署。"
+    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。",
+    "一个未授权团体访问了Anthropic的独家Claude Mythos预览AI，这是一个能够生成漏洞和恶意软件的网络安全工具。",
+    "CVE-2026-5752 (CVSS 9.3) 在 Cohere AI 的 Terrarium 沙箱中允许通过 JavaScript 原型链遍历执行 root 级别的代码和容器逃逸。"
   ],
-  "sources_hash": "072fe6f7a6eea29e"
+  "sources_hash": "f1ce572b58ff1726"
 }

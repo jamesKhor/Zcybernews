@@ -1,0 +1,39 @@
+{
+  "tag": "ddos",
+  "locale": "zh",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-04-23"
+  },
+  "top_actors": [
+    "Mirai"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2025-29635",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2024-3721",
+      "cvss": 6.3
+    }
+  ],
+  "top_sectors": [
+    "social media"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 3,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "Mirai 僵尸网络操作者利用 CVE-2025-29635，这是一个 CVSS 8.8 命令注入漏洞，存在于生命周期结束的 D-Link DIR-823X 路由器中，以部署恶意软件并发起 DDoS 攻击。",
+    "一种新的 Mirai 僵尸网络变种 'Nexcorium'，正在利用 TBK DVR 和生命周期结束的 TP-Link 路由器中的命令注入漏洞（CVE-2024-3721）来征召设备加入分布式拒绝服务（DDoS）攻击群。",
+    "去中心化的社交网络 Mastodon 在 2026 年 4 月 22 日缓解了一场重大的 DDoS 攻击，导致用户服务中断数小时。"
+  ],
+  "sources_hash": "3c3364874be2ade3"
+}

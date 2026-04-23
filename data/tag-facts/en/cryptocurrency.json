@@ -1,14 +1,14 @@
 {
   "tag": "cryptocurrency",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [
-    "FakeWallet",
     "Lazarus Group",
+    "FakeWallet",
     "Omnistealer"
   ],
   "top_cves": [
@@ -20,24 +20,24 @@
     "cryptocurrency",
     "decentralized finance (DeFi)",
     "financial-services",
-    "telecommunications",
-    "venture capital"
+    "software development",
+    "technology"
   ],
   "top_regions": [
     "United states",
     "Canada",
     "Europe",
-    "Kyrgyzstan",
+    "Global",
     "North america"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "critical": 3
   },
   "recent_excerpts": [
+    "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
     "Apple removed 45 malicious cryptocurrency apps from its App Store after they stole recovery phrases and private keys from users, mimicking legitimate wallets like MetaMask and Coinbase.",
-    "Kaspersky discovered 22 malicious iOS apps on the official App Store impersonating crypto wallets like MetaMask and Coinbase, stealing seed phrases and private keys from over 1,000 victims.",
-    "Omnistealer malware, detailed by Malwarebytes, steals credentials from 1Password, Bitwarden, NordPass, and Exodus crypto wallets, using the Solana blockchain for stealthy command-and-control communica"
+    "Kaspersky discovered 22 malicious iOS apps on the official App Store impersonating crypto wallets like MetaMask and Coinbase, stealing seed phrases and private keys from over 1,000 victims."
   ],
-  "sources_hash": "39ace639931061c7"
+  "sources_hash": "fa0e0a634c701a20"
 }

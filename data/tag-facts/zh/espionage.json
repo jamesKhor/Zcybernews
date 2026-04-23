@@ -1,0 +1,38 @@
+{
+  "tag": "espionage",
+  "locale": "zh",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-22"
+  },
+  "top_actors": [
+    "APT28 (Fancy Bear)",
+    "Mustang Panda"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "healthcare",
+    "technology",
+    "banking",
+    "critical infrastructure"
+  ],
+  "top_regions": [
+    "Global",
+    "India",
+    "South korea",
+    "Ukraine",
+    "United kingdom"
+  ],
+  "severity_mix": {
+    "high": 5,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "英国NCSC报告称每周处理四起具有全国意义的网络事件，其中大部分现在归因于像中国和俄罗斯这样的敌对外国，从每周两起增加...",
+    "一种名为 'AgingFly' 的新恶意软件家族正在从 Chromium 浏览器和 WhatsApp 窃取认证数据，在针对乌克兰地方政府机构和医院的定向攻击中。",
+    "2026年4月，微软Windows、苹果iOS和思科网络设备中的多个关键漏洞被积极利用，需要立即修补。攻击针对企业和政府网络进行数据盗窃和间谍活动。"
+  ],
+  "sources_hash": "09ebf7e1ea8fc8a2"
+}

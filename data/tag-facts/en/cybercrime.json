@@ -1,12 +1,13 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "count": 9,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
+    "LockBit",
     "Triad Nexus",
     "W3LL Team"
   ],
@@ -15,21 +16,22 @@
     "e-commerce",
     "financial services",
     "financial-services",
-    "multiple",
-    "online services"
+    "government",
+    "multiple"
   ],
   "top_regions": [
+    "France",
     "Global"
   ],
   "severity_mix": {
+    "high": 7,
     "informational": 2,
-    "medium": 2,
-    "high": 5
+    "medium": 2
   },
   "recent_excerpts": [
+    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…",
     "IPQS details a 3-layer fraud detection strategy using identity, device, and network signals to block 99.5% of automated attacks without adding user friction for legitimate customers.",
-    "MITRE released the Fight Fraud Framework (F3), a unified knowledge base mapping the intersection of cyber attack tactics and financial fraud, aiming to close the operational gap between security and f",
-    "ProxySmart, a platform operated from Minsk, Belarus, powers SIM farm proxy networks across 94 locations in 17 countries, providing cybercriminals with residential IP addresses for fraud and credential"
+    "MITRE released the Fight Fraud Framework (F3), a unified knowledge base mapping the intersection of cyber attack tactics and financial fraud, aiming to close the operational gap between security and f"
   ],
-  "sources_hash": "8688373d9249e771"
+  "sources_hash": "0678f18648606837"
 }

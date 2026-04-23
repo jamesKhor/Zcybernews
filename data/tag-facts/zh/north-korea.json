@@ -1,0 +1,34 @@
+{
+  "tag": "north-korea",
+  "locale": "zh",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-23"
+  },
+  "top_actors": [
+    "Lazarus Group",
+    "APT37 (ScarCruft, InkySquid)",
+    "Sapphire Sleet"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "cryptocurrency",
+    "technology",
+    "software development",
+    "venture capital",
+    "web3"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 6
+  },
+  "recent_excerpts": [
+    "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…",
+    "朝鲜特工使用一种'传染式面试'策略，其中被入侵开发者的GitHub仓库将RATs传播给其他求职者。",
+    "根据Flare研究，朝鲜特工正在使用AI工具和伪造文件通过远程工作面试。这种策略旨在将威胁行为者长期安置在目标公司内，进行间谍活动和网络访问。"
+  ],
+  "sources_hash": "0798b1f1095b7bf3"
+}

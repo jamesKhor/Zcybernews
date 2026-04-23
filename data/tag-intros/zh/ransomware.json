@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "The Gentlemen、Payouts King和BlackCat (ALPHV)是此期间最为活跃的勒索软件威胁行为者，共有29篇报道涉及其攻击活动。其操作利用关键漏洞，特别是CVE-2026-1731和CVE-2026-34197，针对广泛行业发起攻击。欧洲、美国、土耳其和法国的医疗保健、物流、制造及零售组织均受到影响。2026年4月12日至4月22日期间的报告详细描述了以高严重性事件为主的严重程度分布，反映出针对全球基础设施的一波集中勒索软件活动。",
-  "sources_hash": "5321178f9b8f6d6a",
-  "source_intro_hash": "9e8d0af630bd87fc",
+  "intro": "2026年4月的十天内，ZCyberNews追踪到31起勒索软件事件，其中威胁行为者The Gentlemen表现突出。同时观察到Kyber和Payouts King的活动。最常被提及的漏洞是关键级缺陷CVE-2026-1731（CVSS评分9.8）和CVE-2026-34197。攻击波及多个行业，其中医疗保健、物流、制造业和零售业遭受重点攻击。从地理分布看，影响范围覆盖欧洲，尤其集中在美国、土耳其和法国，同时有全球性攻击活动的报告。所记录事件的严重程度以高级为主，关键级和信息类报告数量较少。",
+  "sources_hash": "20ca2978bc661ce9",
+  "source_intro_hash": "0349c72655b8c3b9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:09:37.069Z",
+  "generated_at": "2026-04-23T04:11:34.216Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

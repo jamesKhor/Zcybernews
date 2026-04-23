@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-22"
   },
   "top_actors": [
     "Scattered Spider",
@@ -27,14 +27,14 @@
     "Florida"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "informational": 1,
     "medium": 3
   },
   "recent_excerpts": [
+    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…",
     "Florida law enforcement is investigating how a student used ChatGPT to craft a threat of a campus shooting, part of a broader pattern where AI chatbots fail to block dangerous content.",
-    "Tyler Robert Buchanan admitted to a U.S. conspiracy that stole over $1 million in cryptocurrency via SMS phishing, corporate network intrusions, and SIM swapping attacks targeting victims nationwide.",
-    "Angelo Martino, a 41-year-old former employee of cybersecurity firm DigitalMint, pleads guilty to conspiring in BlackCat ransomware attacks against U.S. companies while working as a negotiator."
+    "Tyler Robert Buchanan admitted to a U.S. conspiracy that stole over $1 million in cryptocurrency via SMS phishing, corporate network intrusions, and SIM swapping attacks targeting victims nationwide."
   ],
-  "sources_hash": "ac4b96ad8c315c6a"
+  "sources_hash": "8968b42a37d66b86"
 }

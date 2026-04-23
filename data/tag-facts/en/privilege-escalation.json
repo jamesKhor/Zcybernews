@@ -1,7 +1,7 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "count": 16,
+  "count": 15,
   "date_range": {
     "first": "2026-04-13",
     "latest": "2026-04-21"
@@ -43,7 +43,7 @@
   ],
   "severity_mix": {
     "high": 13,
-    "critical": 2,
+    "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
@@ -51,5 +51,5 @@
     "CVE-2026-5424, a flaw in Avast Premium Security's self-protection driver, allows local attackers to escalate to SYSTEM privileges.",
     "A critical SQL injection vulnerability (CVE-2026-5490) in DriveLock endpoint security software allows authenticated attackers to escalate privileges and bypass the product's own security controls, acc"
   ],
-  "sources_hash": "6008fea59234a114"
+  "sources_hash": "3a9e4693e9655de3"
 }

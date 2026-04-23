@@ -1,15 +1,15 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 29,
+  "count": 31,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-22"
   },
   "top_actors": [
     "The Gentlemen",
-    "Payouts King",
-    "BlackCat (ALPHV)"
+    "Kyber",
+    "Payouts King"
   ],
   "top_cves": [
     {
@@ -36,14 +36,14 @@
     "France"
   ],
   "severity_mix": {
-    "high": 23,
+    "high": 25,
     "critical": 2,
     "informational": 2
   },
   "recent_excerpts": [
+    "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。",
     "The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi 系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。",
-    "CVE-2026-1731，一个在BeyondTrust的Bomgar RMM中的关键9.8 CVSS漏洞，正在被积极利用来部署勒索软件和在全球供应链攻击中破坏IT服务提供商。",
-    "Kyber 勒索软件部署两个不同的有效载荷以加密 Windows 系统和 VMware ESXi 服务器，使用自定义工具清除 ESXi 快照并阻碍恢复。攻击链始于被泄露的 RDP 凭证。"
+    "CVE-2026-1731，一个在BeyondTrust的Bomgar RMM中的关键9.8 CVSS漏洞，正在被积极利用来部署勒索软件和在全球供应链攻击中破坏IT服务提供商。"
   ],
-  "sources_hash": "5321178f9b8f6d6a"
+  "sources_hash": "20ca2978bc661ce9"
 }
