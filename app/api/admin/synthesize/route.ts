@@ -71,7 +71,7 @@ function clampCategory(cat?: string): ValidCategory {
 // stated range, not middle. Each preset now explicitly frames the range
 // AND tells the model not to pad when source is thin.
 const ANTI_FILLER_CLAUSE =
-  "DO NOT pad to hit the upper bound if source material does not support it. A tight shorter article beats a bloated one with filler, speculation, or marketing-style closers. If a section has no source support, write 'None identified in source material' — never invent generic best-practices.";
+  "DO NOT pad to hit the upper bound if source material does not support it. A tight shorter article beats a bloated one with filler, speculation, or marketing-style closers. If a CONDITIONAL section (IOCs / TTPs / Threat Actor Context) has no source support, OMIT the H2 header entirely — never write 'None identified' stubs. The frontmatter fields are the source of truth; the body section only exists to add context the structured fields cannot convey.";
 
 const WORD_COUNT_GUIDANCE = {
   short: {

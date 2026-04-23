@@ -6,6 +6,16 @@ import GithubSlugger from "github-slugger";
 import type { ReactElement } from "react";
 import { MDXCode } from "@/components/cve/CVEBadge";
 import { rehypeCVE } from "./rehype-cve";
+import {
+  stripReferencesSection as _stripReferencesSection,
+  stripEmptyConditionalSections as _stripEmptyConditionalSections,
+} from "./mdx-strip";
+
+// Re-export the pure helpers from their no-imports sibling (lib/mdx-strip.ts)
+// so existing callers + tests that import from "@/lib/mdx" keep working
+// without changing import paths.
+export const stripReferencesSection = _stripReferencesSection;
+export const stripEmptyConditionalSections = _stripEmptyConditionalSections;
 
 export type CompileMDXOptions = {
   /**
@@ -20,17 +30,6 @@ export type CompileMDXOptions = {
   stripReferences?: boolean;
 };
 
-const REFERENCES_HEADING_RE =
-  /\n##\s+(References|Sources|参考文献|参考资料|来源)[\s\S]*$/i;
-
-/**
- * Strip the References section from MDX source. Exported for unit testing
- * and for the admin panel's "what the public sees" preview.
- */
-export function stripReferencesSection(source: string): string {
-  return source.replace(REFERENCES_HEADING_RE, "\n");
-}
-
 export async function compileMDX(
   source: string,
   options: CompileMDXOptions = {},
@@ -38,9 +37,13 @@ export async function compileMDX(
   content: ReactElement;
   headings: { id: string; text: string; level: number }[];
 }> {
+  // Always strip empty conditional-section stubs — they provide zero
+  // reader value regardless of whether refs are stripped. Pure string
+  // op, ~one regex pass.
+  const stubFreeSource = stripEmptyConditionalSections(source);
   const processedSource = options.stripReferences
-    ? stripReferencesSection(source)
-    : source;
+    ? stripReferencesSection(stubFreeSource)
+    : stubFreeSource;
 
   const { content } = await nextMdxCompile({
     source: processedSource,

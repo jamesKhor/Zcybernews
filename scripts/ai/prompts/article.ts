@@ -89,14 +89,35 @@ ${recentBlock}
 ARTICLE RULES (only if not rejected)
 ══════════════════════════════════════════
 
-REQUIRED SECTIONS (exact H2 headers in this order):
+REQUIRED SECTIONS (always include — exact H2 headers in this order):
 ## Executive Summary
 ## Technical Analysis
-## Indicators of Compromise
-## Tactics, Techniques & Procedures
-## Threat Actor Context
 ## Mitigations & Recommendations
 ## References
+
+CONDITIONAL SECTIONS (include ONLY when sources provide concrete data —
+OMIT THE H2 HEADER ENTIRELY otherwise; never write a stub like
+"None identified" because the renderer surfaces the dedicated fields
+[IOCTable, MitreMatrix, threat_actor cards] from frontmatter when
+populated, so an empty body section is pure visual noise):
+## Indicators of Compromise           ← include only if you also populate
+                                        the \`iocs\` JSON field. Body content
+                                        should add context (campaign timing,
+                                        infrastructure cluster notes) that
+                                        the table can't convey alone.
+## Tactics, Techniques & Procedures   ← include only if you also populate
+                                        the \`ttp_matrix\` JSON field. Body
+                                        content explains the sequencing /
+                                        attribution rationale beyond the
+                                        bare technique IDs.
+## Threat Actor Context               ← include only when you have a named
+                                        actor / family / group with concrete
+                                        attribution detail. If \`threat_actor\`
+                                        is null, omit the section.
+
+Order, when conditional sections ARE included: Executive Summary →
+Technical Analysis → IOCs → TTPs → Threat Actor Context → Mitigations
+→ References. Skip any conditional section whose data isn't there.
 
 WRITING RULES:
 - Do NOT copy sentences verbatim — rewrite entirely in your own words
@@ -109,9 +130,16 @@ WRITING RULES:
   * Every paragraph must add a NEW fact, analysis, or technical detail
     attributable to the source material. No restating the same point
     in different words.
-  * If a required section (IOCs, TTPs, Mitigations) has no support in
-    sources, write exactly "None identified in source material." Do
-    NOT invent generic best-practices to fill it.
+  * If a CONDITIONAL section (IOCs, TTPs, Threat Actor Context) has no
+    support in sources, OMIT the H2 header entirely. Do NOT write
+    "None identified" stubs — they are visual noise that erodes
+    reader trust. The frontmatter fields are the source of truth;
+    the body section only exists to add context the structured field
+    cannot.
+  * For Mitigations specifically: if sources truly have nothing, write
+    a single short paragraph explaining what defenders should monitor
+    given the threat shape (not generic "patch immediately" boilerplate).
+    Mitigations is a REQUIRED section — never omit; just keep it honest.
   * Do NOT speculate. Do NOT add phrases like "could potentially",
     "might theoretically", "in some cases", "it is believed that"
     unless the source uses exactly that hedging for a specific claim.
@@ -126,7 +154,8 @@ WRITING RULES:
 - Use markdown (## headings, **bold** for key terms, \`code\` for CVE IDs/hashes/commands)
 - Start Executive Summary with the most important finding
 - References section: list all source URLs as markdown links
-- If a section has no data (e.g. no IOCs), write "None identified at this time."
+- If a CONDITIONAL section has no data, OMIT its H2 header entirely (see
+  CONDITIONAL SECTIONS rule above). Do not emit "None identified" stubs.
 - Article body MUST be written entirely in English. No Chinese, Arabic, or any
   other language characters anywhere in the body or frontmatter fields.
 - The "excerpt" field becomes the Google SERP meta description that sells the
