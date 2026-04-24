@@ -1,0 +1,50 @@
+---
+title: Tropic Trooper APT 劫持家用路由器以针对日本网络
+slug: 2026-04-24-tropic-trooper-apt-hijacks-home-routers-to-target-japanese-networks
+date: '2026-04-24'
+excerpt: 中国政府支持的 Tropic Trooper 正在破坏家用路由器作为代理据点，以渗透日本组织，转向新的 TTPs 和受害者行业。
+category: threat-intel
+tags:
+  - tropic-trooper
+  - apt
+  - home-routers
+  - japan
+  - chinese-state-sponsored
+  - proxy-attacks
+language: zh
+source_urls:
+  - >-
+    https://www.darkreading.com/threat-intelligence/tropic-trooper-apt-takes-aim-home-routers-japanese-targets
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-tropic-trooper-apt-hijacks-home-routers-to-target-japanese-networks
+severity: high
+threat_actor: Tropic Trooper
+threat_actor_origin: China
+affected_sectors:
+  - government
+  - technology
+  - manufacturing
+affected_regions:
+  - Japan
+  - East Asia
+---
+## 执行摘要
+
+据Dark Reading的报告称，被称为Tropic Trooper的中国国家资助的威胁组织已经改变战术，通过劫持家用路由器作为代理基础设施来针对日本组织。该组织历史上专注于台湾和菲律宾的政府和军事实体，现在正在扩大其受害者范围，包括日本的技术和制造公司。通过劫持住宅路由器，攻击者建立了隐蔽的指挥与控制（C2）通道，这些通道融入合法流量中，使得检测变得更加困难。
+
+## 技术分析
+
+Tropic Trooper，也被称为APT27或Emissary Panda，以其快速适应和非传统攻击向量而闻名。Dark Reading的报告表明，该组织现在正在劫持家用路由器——可能是通过默认凭据或未修补的固件——来充当代理节点。这些被劫持的设备在攻击者和受害者网络之间中继C2流量，掩盖了恶意活动的真正来源。转向基于路由器的基础设施标志着该组织放弃了之前依赖的鱼叉式网络钓鱼和定制后门，尽管这些方法仍在使用。
+
+针对日本实体的行动是一个值得注意的地理扩张。以前的Tropic Trooper活动集中在台湾的政府和军事部门，以及菲律宾的海事和能源组织。包括日本的技术和制造公司表明，间谍活动的优先事项正在扩大，可能与中国国家在知识产权和工业秘密方面的利益一致。
+
+报告没有具体说明被利用的确切路由器型号或固件漏洞，但这种战术反映了APT组织利用IoT设备进行持久性和隐蔽性的更广泛趋势。Tropic Trooper使用家用路由器作为C2代理减少了基于IP的阻止的可能性，并复杂化了归属问题，因为攻击流量似乎来自合法的住宅IP地址。
+
+## 缓解措施与建议
+
+防御者应该审计网络日志，寻找来自住宅IP范围的异常流量，特别是非工作时间连接到内部系统的连接。有远程工作人员的组织应该强制执行多因素认证，并监控未经授权的路由器访问。将IoT设备与关键资产隔离的网络分段可以限制被劫持路由器的影响范围。对所有网络设备进行固件更新和凭据加固，包括在远程工作场景中使用的家用路由器，是拒绝初始立足点的关键。
+
+## 参考资料
+
+- [Tropic Trooper APT Takes Aim at Home Routers, Japanese Targets - Dark Reading](https://www.darkreading.com/threat-intelligence/tropic-trooper-apt-takes-aim-home-routers-japanese-targets)
