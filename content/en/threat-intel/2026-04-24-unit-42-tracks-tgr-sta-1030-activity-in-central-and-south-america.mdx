@@ -1,0 +1,48 @@
+---
+title: Unit 42 Tracks TGR-STA-1030 Activity in Central and South America
+slug: 2026-04-24-unit-42-tracks-tgr-sta-1030-activity-in-central-and-south-america
+date: '2026-04-24'
+excerpt: >-
+  Palo Alto Unit 42 reports TGR-STA-1030 remains active in Central and South
+  America, targeting government and energy sectors with custom malware and
+  living-off-the-land techniques.
+category: threat-intel
+tags:
+  - tgr-sta-1030
+  - unit-42
+  - central-america
+  - south-america
+  - apt
+  - living-off-the-land
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/new-activity-central-south-america/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-unit-42-tracks-tgr-sta-1030-activity-in-central-and-south-america
+severity: high
+threat_actor: TGR-STA-1030
+affected_sectors:
+  - government
+  - energy
+affected_regions:
+  - Central America
+  - South America
+---
+## Executive Summary
+
+Palo Alto Networks Unit 42 has published new intelligence indicating that the threat group tracked as TGR-STA-1030 remains operationally active, with a sustained focus on government and energy sector targets in Central and South America. The research, released April 24, 2026, details the group's continued use of custom malware combined with living-off-the-land (LotL) techniques to evade detection and maintain persistence.
+
+## Technical Analysis
+
+According to Unit 42's report, TGR-STA-1030 employs a mix of bespoke malicious tools and legitimate system binaries to conduct espionage and data exfiltration. The group has been observed deploying custom backdoors that communicate over encrypted channels, alongside leveraging native Windows utilities such as PowerShell and WMI for lateral movement and credential harvesting. The report notes that the group's targeting patterns align with strategic geopolitical interests in the region, though attribution to a specific nation-state remains unconfirmed by Unit 42.
+
+The researchers highlight that TGR-STA-1030's recent campaigns show an evolution in their operational security, including the use of compromised legitimate infrastructure for command-and-control (C2) relay, making network-based detection more challenging. The group also appears to have refined its initial access methods, though the report does not disclose specific vectors to avoid tipping off adversaries.
+
+## Mitigations & Recommendations
+
+Defenders operating in Central and South America, particularly those in government and energy sectors, should prioritize monitoring for anomalous use of native administrative tools and unexpected outbound encrypted connections. Unit 42 recommends implementing application allowlisting, restricting PowerShell execution policy, and enabling detailed logging of WMI activity. Network segmentation and strict egress filtering can help limit the effectiveness of C2 channels. Organizations should also review their supply chain and third-party access controls, as compromised infrastructure has been a key enabler for this group.
+
+## References
+
+* [Palo Alto Unit 42: TGR-STA-1030: New Activity in Central and South America](https://unit42.paloaltonetworks.com/new-activity-central-south-america/)

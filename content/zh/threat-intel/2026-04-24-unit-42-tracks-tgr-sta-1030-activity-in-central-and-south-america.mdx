@@ -1,0 +1,45 @@
+---
+title: Unit 42 追踪 TGR-STA-1030 在中南美洲的活动
+slug: 2026-04-24-unit-42-tracks-tgr-sta-1030-activity-in-central-and-south-america
+date: '2026-04-24'
+excerpt: Palo Alto Unit 42 报告称 TGR-STA-1030 在中南美洲保持活跃，针对政府和能源部门使用定制恶意软件和本地存活技术。
+category: threat-intel
+tags:
+  - tgr-sta-1030
+  - unit-42
+  - central-america
+  - south-america
+  - apt
+  - living-off-the-land
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/new-activity-central-south-america/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-unit-42-tracks-tgr-sta-1030-activity-in-central-and-south-america
+severity: high
+threat_actor: TGR-STA-1030
+affected_sectors:
+  - government
+  - energy
+affected_regions:
+  - Central America
+  - South America
+---
+## 执行摘要
+
+Palo Alto Networks Unit 42 发布了新的情报，表明被追踪为 TGR-STA-1030 的威胁组织仍然活跃，持续关注中美洲和南美洲的政府和能源部门目标。这项研究于 2026 年 4 月 24 日发布，详细描述了该组织继续使用定制恶意软件结合土生土长（LotL）技术来逃避检测并保持持续性。
+
+## 技术分析
+
+根据 Unit 42 的报告，TGR-STA-1030 使用一系列定制的恶意工具和合法系统二进制文件进行间谍活动和数据泄露。观察到该组织部署了通过加密通道通信的定制后门，并利用 PowerShell 和 WMI 等原生 Windows 工具进行横向移动和凭证收集。报告指出，该组织的攻击模式与该地区的地缘政治利益一致，尽管 Unit 42 尚未确认归因于特定国家。
+
+研究人员强调，TGR-STA-1030 最近的活动显示出他们在操作安全方面的演变，包括使用被破坏的合法基础设施进行命令和控制（C2）中继，使得基于网络的检测更具挑战性。该组织似乎也改进了其初始访问方法，尽管报告没有披露具体向量以避免泄露给对手。
+
+## 缓解措施与建议
+
+在中美洲和南美洲运营的防御者，特别是政府和能源部门的防御者，应优先监控原生管理工具的异常使用和意外的出站加密连接。Unit 42 建议实施应用程序允许列表，限制 PowerShell 执行策略，并启用 WMI 活动的详细日志记录。网络分段和严格的出口过滤可以帮助限制 C2 通道的有效性。组织还应审查其供应链和第三方访问控制，因为被破坏的基础设施一直是该组织的关键支持。
+
+## 参考资料
+
+* [Palo Alto Unit 42: TGR-STA-1030: New Activity in Central and South America](https://unit42.paloaltonetworks.com/new-activity-central-south-america/)
