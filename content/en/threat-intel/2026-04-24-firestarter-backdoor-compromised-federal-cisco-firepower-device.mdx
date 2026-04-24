@@ -1,0 +1,46 @@
+---
+title: FIRESTARTER Backdoor Compromised Federal Cisco Firepower Device
+slug: 2026-04-24-firestarter-backdoor-compromised-federal-cisco-firepower-device
+date: '2026-04-24'
+excerpt: >-
+  CISA revealed FIRESTARTER backdoor compromised a federal Cisco Firepower
+  device running ASA software in September 2025, surviving patching and enabling
+  persistent remote access.
+category: threat-intel
+tags:
+  - firestarter
+  - cisco-firepower
+  - cisa
+  - ncsc
+  - backdoor
+  - federal-agency
+language: en
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/firestarter-backdoor-hit-federal-cisco.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-firestarter-backdoor-compromised-federal-cisco-firepower-device
+severity: high
+affected_sectors:
+  - government
+affected_regions:
+  - United States
+---
+## Executive Summary
+
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA), in coordination with the U.K.'s National Cyber Security Centre (NCSC), disclosed that an unnamed federal civilian agency's Cisco Firepower device running Adaptive Security Appliance (ASA) software was compromised with a backdoor dubbed **FIRESTARTER** in September 2025. The malware provided persistent remote access to the device and survived subsequent security patching, according to a joint advisory published April 24, 2026.
+
+## Technical Analysis
+
+FIRESTARTER is assessed by CISA and NCSC as a custom backdoor designed specifically for Cisco ASA/Firepower environments. The malware establishes remote access capabilities that persisted on the compromised device even after the agency applied security updates. The advisory did not disclose the initial infection vector, but noted the backdoor's ability to maintain access across patch cycles suggests it may have modified firmware or boot-level components, or leveraged configuration persistence mechanisms common to network appliances.
+
+CISA and NCSC have not attributed FIRESTARTER to any known threat actor group as of this writing. The agencies did not release specific indicators of compromise (IOCs) such as file hashes, IP addresses, or domains in the public advisory, though they stated such data is available to cleared partners via classified channels. The compromised device was a Cisco Firepower 2100 series appliance running ASA code, a widely deployed platform in U.S. government networks.
+
+## Mitigations & Recommendations
+
+CISA and NCSC recommend that organizations running Cisco ASA/Firepower appliances audit device configurations for unauthorized accounts, review system logs for anomalous remote access patterns, and verify firmware integrity against known-good hashes. The agencies advise treating any device that has been offline or unpatched for extended periods as potentially compromised and performing a factory reset followed by secure reconfiguration. Defenders should monitor for unexpected outbound connections from network appliances, particularly on non-standard ports, and implement strict access controls limiting management interfaces to trusted IP ranges.
+
+## References
+
+- [FIRESTARTER Backdoor Hit Federal Cisco Firepower Device, Survives Security Patches - The Hacker News](https://thehackernews.com/2026/04/firestarter-backdoor-hit-federal-cisco.html)

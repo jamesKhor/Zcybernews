@@ -1,0 +1,45 @@
+---
+title: FIRESTARTER 后门入侵联邦 Cisco Firepower 设备
+slug: 2026-04-24-firestarter-backdoor-compromised-federal-cisco-firepower-device
+date: '2026-04-24'
+excerpt: >-
+  CISA 揭露 FIRESTARTER 后门在 2025 年 9 月入侵了一个运行 ASA 软件的联邦 Cisco Firepower
+  设备，存活于补丁更新并启用持久远程访问。
+category: threat-intel
+tags:
+  - firestarter
+  - cisco-firepower
+  - cisa
+  - ncsc
+  - backdoor
+  - federal-agency
+language: zh
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/firestarter-backdoor-hit-federal-cisco.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-firestarter-backdoor-compromised-federal-cisco-firepower-device
+severity: high
+affected_sectors:
+  - government
+affected_regions:
+  - United States
+---
+## 执行摘要
+
+美国网络安全和基础设施安全局（CISA）与英国国家网络安全中心（NCSC）协调披露，一个未具名的联邦民用机构的Cisco Firepower设备运行着自适应安全设备（ASA）软件，在2025年9月被一个名为**FIRESTARTER**的后门程序入侵。根据2026年4月24日发布的联合咨询报告，这种恶意软件为设备提供了持续的远程访问权限，并在随后的安全补丁更新后仍然存活。
+
+## 技术分析
+
+CISA和NCSC评估认为，FIRESTARTER是一个专为Cisco ASA/Firepower环境设计的定制后门程序。该恶意软件建立了远程访问能力，即使在机构应用安全更新后，也能在被入侵的设备上持续存在。咨询报告没有披露初始感染途径，但指出后门程序能够在补丁周期中保持访问，这表明它可能修改了固件或启动级别的组件，或利用了网络设备中常见的配置持久性机制。
+
+截至本文撰写时，CISA和NCSC尚未将FIRESTARTER归因于任何已知的威胁行为者团体。这些机构没有在公开咨询中发布具体的入侵指标（IOCs），如文件哈希值、IP地址或域名，尽管他们表示这些数据可以通过分类渠道提供给经过审查的合作伙伴。被入侵的设备是一款运行ASA代码的Cisco Firepower 2100系列设备，这是一个在美国政府网络中广泛部署的平台。
+
+## 缓解措施与建议
+
+CISA和NCSC建议运行Cisco ASA/Firepower设备的组织审计设备配置，查找未经授权的账户，审查系统日志以查找异常的远程访问模式，并验证固件完整性与已知的良好哈希值。这些机构建议将任何已经离线或未打补丁的设备视为潜在的被入侵对象，并执行工厂重置，随后进行安全的重新配置。防御者应监控网络设备中意外的出站连接，特别是在非标准端口上，并实施严格的访问控制，将管理接口限制在受信任的IP范围内。
+
+## 参考资料
+
+- [FIRESTARTER Backdoor Hit Federal Cisco Firepower Device, Survives Security Patches - The Hacker News](https://thehackernews.com/2026/04/firestarter-backdoor-hit-federal-cisco.html)
