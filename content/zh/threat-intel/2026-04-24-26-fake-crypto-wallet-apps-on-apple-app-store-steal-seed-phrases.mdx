@@ -1,0 +1,43 @@
+---
+title: 苹果应用商店上的26个假加密钱包应用窃取助记词
+slug: 2026-04-24-26-fake-crypto-wallet-apps-on-apple-app-store-steal-seed-phrases
+date: '2026-04-24'
+excerpt: 卡巴斯基自2025年秋季以来在苹果应用商店发现了26个恶意应用，这些应用冒充MetaMask和Coinbase等钱包，通过…来窃取恢复短语和私钥。
+category: threat-intel
+tags:
+  - cryptocurrency
+  - apple-app-store
+  - fake-wallet
+  - seed-phrase-theft
+  - kaspersky
+  - supply-chain
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/26-fakewallet-apps-found-on-apple-app.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-26-fake-crypto-wallet-apps-on-apple-app-store-steal-seed-phrases
+severity: high
+affected_sectors:
+  - cryptocurrency
+  - finance
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+卡巴斯基研究人员在苹果应用商店发现了26个冒充流行加密货币钱包的恶意应用程序，包括MetaMask、Coinbase和Trust Wallet。这些应用程序自2025年秋季以来一直在活动，它们将用户重定向到模仿应用商店的基于浏览器的网络钓鱼页面，以分发特洛伊化的钱包安装程序，旨在捕获恢复短语和私钥。卡巴斯基在2026年4月24日报告称，该活动通过苹果的官方分发渠道，针对iOS和潜在的macOS用户。
+
+## 技术分析
+
+根据卡巴斯基的分析，这些假冒应用程序采用了多阶段感染链。一旦启动，应用程序会立即打开WebView或将用户重定向到与真实应用商店界面完全相同的网络钓鱼页面。此页面提示用户下载看似合法的钱包应用程序——但安装程序被特洛伊化。一旦安装，特洛伊化的钱包在基本功能上表现正常，但在创建或导入钱包时截获并外泄用户的种子短语或私钥。
+
+卡巴斯基指出，这些应用程序以各种开发者名称和类别提交到应用商店，可能使用被盗或伪造的开发者凭据绕过苹果的审查流程。研究人员没有披露应用程序名称或开发者账户的完整列表，理由是正在进行调查。该活动似乎是出于财务动机，针对高价值的加密货币持有者。
+
+## 缓解措施与建议
+
+苹果尚未公开评论下架时间表，卡巴斯基也未确认所有26个应用程序是否已被移除。用户在下载之前应验证任何钱包应用程序的发布者——合法的钱包开发者在经过验证的账户下发布，并提供清晰的支持渠道。启用基于硬件的双因素认证，并且永远不要在任何请求它们之外的钱包自己的安全界面中输入种子短语，可以降低风险。卡巴斯基建议检查应用程序评论中的可疑模式，并避免下载下载量少或创建日期最近的应用程序。
+
+## 参考资料
+
+- [The Hacker News: 26 FakeWallet Apps Found on Apple App Store Targeting Crypto Seed Phrases](https://thehackernews.com/2026/04/26-fakewallet-apps-found-on-apple-app.html)

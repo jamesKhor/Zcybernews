@@ -1,0 +1,46 @@
+---
+title: 26 Fake Crypto Wallet Apps on Apple App Store Steal Seed Phrases
+slug: 2026-04-24-26-fake-crypto-wallet-apps-on-apple-app-store-steal-seed-phrases
+date: '2026-04-24'
+excerpt: >-
+  Kaspersky found 26 malicious apps on the Apple App Store since fall 2025 that
+  impersonate wallets like MetaMask and Coinbase to steal recovery phrases and
+  private keys via…
+category: threat-intel
+tags:
+  - cryptocurrency
+  - apple-app-store
+  - fake-wallet
+  - seed-phrase-theft
+  - kaspersky
+  - supply-chain
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/26-fakewallet-apps-found-on-apple-app.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-26-fake-crypto-wallet-apps-on-apple-app-store-steal-seed-phrases
+severity: high
+affected_sectors:
+  - cryptocurrency
+  - finance
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Kaspersky researchers have identified 26 malicious applications on the Apple App Store that impersonate popular cryptocurrency wallets, including MetaMask, Coinbase, and Trust Wallet. Active since at least fall 2025, these apps redirect users to browser-based phishing pages mimicking the App Store to distribute trojanized wallet installers designed to capture recovery phrases and private keys. The campaign targets both iOS and potentially macOS users through Apple's official distribution channel, Kaspersky reported on April 24, 2026.
+
+## Technical Analysis
+
+According to Kaspersky's analysis, the fake apps employ a multi-stage infection chain. Upon launch, the app immediately opens a WebView or redirects the user to a phishing page styled identically to the real App Store interface. This page prompts the user to download a seemingly legitimate wallet app — but the installer is trojanized. Once installed, the trojanized wallet behaves normally for basic functions but intercepts and exfiltrates the user's seed phrase or private key when the wallet is created or imported.
+
+Kaspersky noted that the apps were submitted to the App Store under various developer names and categories, likely using stolen or fabricated developer credentials to bypass Apple's review process. The researchers did not disclose the full list of app names or developer accounts, citing ongoing investigations. The campaign appears to be financially motivated, targeting high-value cryptocurrency holders.
+
+## Mitigations & Recommendations
+
+Apple has not publicly commented on the takedown timeline, and Kaspersky did not confirm whether all 26 apps have been removed. Users should verify the publisher of any wallet app before downloading — legitimate wallet developers publish under verified accounts with clear support channels. Enabling hardware-based two-factor authentication and never entering seed phrases into any app that requests them outside of the wallet's own secure interface can reduce risk. Kaspersky recommends checking app reviews for suspicious patterns and avoiding apps with few downloads or recent creation dates.
+
+## References
+
+- [The Hacker News: 26 FakeWallet Apps Found on Apple App Store Targeting Crypto Seed Phrases](https://thehackernews.com/2026/04/26-fakewallet-apps-found-on-apple-app.html)
