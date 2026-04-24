@@ -14,6 +14,7 @@ import {
 import { isProcessed } from "../utils/cache.js";
 import { limit, withRetry } from "../utils/rate-limit.js";
 import { isVendorPR, vendorPrEnforceEnabled } from "./filters/vendor-pr.js";
+import { isThinExcerpt } from "./filters/thin-excerpt.js";
 import { fetchNvd } from "./fetchers/nvd.js";
 import {
   loadFeedHealth,
@@ -173,6 +174,34 @@ export async function ingestFeeds(maxStories = 20): Promise<Story[]> {
   }
 
   console.log(`[ingest] Fetched ${all.length} raw stories`);
+
+  // Thin-excerpt filter (2026-04-24). Drops items where the RSS
+  // description is boilerplate-only (SANS ISC Stormcast items are the
+  // canonical case — copyright notice + link with no topic summary).
+  // Unlike the vendor-PR filter, this one is HARD-ENFORCE from day one
+  // because a thin-source article has no path to substantive content —
+  // the LLM would either hallucinate filler (what happened with the
+  // 2026-04-24 "No Major Incidents Reported" article) or produce a
+  // skeleton that fails every downstream quality gate anyway. Either
+  // way, zero upside + guaranteed token spend.
+  const thinCountBefore = all.length;
+  const afterThin: typeof all = [];
+  for (const s of all) {
+    const v = isThinExcerpt({ title: s.title, excerpt: s.excerpt });
+    if (v.isThin) {
+      console.log(
+        `[thin-excerpt] DROP ${s.sourceId ?? s.sourceName} ` +
+          `(${v.reason}, ${v.substantiveChars} substantive chars): "${s.title.slice(0, 80)}"`,
+      );
+      continue;
+    }
+    afterThin.push(s);
+  }
+  console.log(
+    `[thin-excerpt] Dropped ${thinCountBefore - afterThin.length}/${thinCountBefore} boilerplate-only items`,
+  );
+  all.length = 0;
+  all.push(...afterThin);
 
   // A2.3 vendor-PR filter. Log-only by default; flip
   // VENDOR_PR_ENFORCE=true to drop after the FP-rate-<2% gate per
