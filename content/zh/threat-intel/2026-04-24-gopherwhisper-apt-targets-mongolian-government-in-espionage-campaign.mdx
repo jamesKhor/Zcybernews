@@ -1,0 +1,47 @@
+---
+title: GopherWhisper APT 针对蒙古政府进行间谍活动
+slug: >-
+  2026-04-24-gopherwhisper-apt-targets-mongolian-government-in-espionage-campaign
+date: '2026-04-24'
+excerpt: ESET 发现与中国对齐的 APT GopherWhisper 针对蒙古政府机构使用基于 Go 的定制恶意软件，利用合法服务进行 C2。
+category: threat-intel
+tags:
+  - gopherwhisper
+  - apt
+  - china
+  - mongolia
+  - go-malware
+  - eset
+language: zh
+source_urls:
+  - >-
+    https://www.welivesecurity.com/en/eset-research/gopherwhisper-burrow-full-malware/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-24-gopherwhisper-apt-targets-mongolian-government-in-espionage-campaign
+severity: high
+threat_actor: GopherWhisper
+threat_actor_origin: China
+affected_sectors:
+  - government
+affected_regions:
+  - Mongolia
+---
+## 执行摘要
+
+ESET Research 发现了一个以前未记录的与中国对齐的高级持续性威胁（APT）组织，追踪为 GopherWhisper，该组织一直在针对蒙古国政府机构。根据 2026 年 4 月 24 日发布的报告，该组织使用 Go 编程语言编写的定制恶意软件，并利用合法的云和网络服务作为命令和控制（C2）基础设施。该活动突显了中国国家资助行为者对中亚政府网络的持续关注。
+
+## 技术分析
+
+ESET 研究人员根据其一贯使用基于 Go 的工具和其操作的隐蔽、低而慢的特性，将该组织命名为 GopherWhisper。ESET 分析的恶意软件样本与托管在合法平台上的 C2 服务器通信，这是一种将恶意流量与良性流量混合以逃避网络检测的技术。报告没有披露具体的 C2 域名或 IP 地址，也没有命名被滥用的确切云服务，但这种方法模仿了其他与中国有联系的组织如 Mustang Panda 所使用的策略，以避免被列入黑名单。
+
+从公开摘要中仍不清楚初始访问向量。ESET 表示该组织针对蒙古国政府实体，暗示鱼叉式网络钓鱼或利用面向公众的基础设施作为可能的入口点。恶意软件有效载荷是编译的 Go 二进制文件，ESET 指出，由于其跨平台能力和对静态分析的抵抗力，这在中国 APT 组织中越来越常见。
+
+## 缓解措施与建议
+
+蒙古国政府和相邻部门的网络防御者应监控对外合法云和网络服务端点的出站连接，以寻找异常流量模式，特别是那些通常不会产生此类流量的系统。ESET 建议部署能够分析基于 Go 的二进制文件的端点检测和响应（EDR）解决方案，因为传统的基于签名的检测可能会错过定制编译的有效载荷。组织还应强制执行应用程序允许列表，并在可行的情况下限制执行未签名的二进制文件。
+
+## 参考资料
+
+- [GopherWhisper: A burrow full of malware - WeLiveSecurity (ESET)](https://www.welivesecurity.com/en/eset-research/gopherwhisper-burrow-full-malware/)

@@ -1,9 +1,14 @@
 {
   "bleepingcomputer": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 15
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -96,21 +101,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 15
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 15
       }
     ]
   },
   "krebsonsecurity": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -203,21 +208,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "thehackernews": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -310,21 +315,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "darkreading": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -417,21 +422,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "securityweek": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -524,21 +529,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "schneier": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -631,21 +636,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "blackhillsinfosec": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -738,21 +743,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "cisa-alerts": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -845,21 +850,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "cisa-kev": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -952,21 +957,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "sans-isc": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -1059,21 +1064,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "ncsc-uk": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 0
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -1166,21 +1171,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 0
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 0
       }
     ]
   },
   "checkpoint-research": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 15
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -1273,21 +1278,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 15
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 15
       }
     ]
   },
   "google-tag": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -1380,21 +1385,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "project-zero": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -1487,21 +1492,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "sentinelone": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -1594,21 +1599,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "unit42": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 15
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -1701,21 +1706,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 15
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 15
       }
     ]
   },
   "kaspersky-securelist": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -1808,21 +1813,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "malwarebytes": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -1915,21 +1920,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "welivesecurity": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -2022,21 +2027,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "rapid7": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -2129,21 +2134,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "zdi": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -2236,21 +2241,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "elastic-security": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -2343,21 +2348,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "recorded-future": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -2450,21 +2455,21 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "the-record": {
-    "lastSuccess": "2026-04-24T06:38:06.263Z",
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
+    "lastSuccess": "2026-04-24T07:36:28.178Z",
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": true,
+        "items": 5
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": true,
@@ -2557,11 +2562,6 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": true,
-        "items": 5
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": true,
         "items": 5
       }
@@ -2569,9 +2569,14 @@
   },
   "volexity": {
     "lastSuccess": null,
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
-    "consecutiveFailures": 24,
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
+    "consecutiveFailures": 25,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": false,
+        "error": "Feed not recognized as RSS 1 or 2."
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": false,
@@ -2664,11 +2669,6 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": false,
-        "error": "Attribute without value\nLine: 15\nColumn: 69\nChar: >"
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": false,
         "error": "Attribute without value\nLine: 15\nColumn: 69\nChar: >"
       }
@@ -2676,9 +2676,14 @@
   },
   "censys": {
     "lastSuccess": null,
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
-    "consecutiveFailures": 24,
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
+    "consecutiveFailures": 25,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": false,
+        "error": "Status code 404"
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": false,
@@ -2771,11 +2776,6 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": false,
-        "error": "Status code 404"
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": false,
         "error": "Status code 404"
       }
@@ -2783,9 +2783,14 @@
   },
   "freebuf": {
     "lastSuccess": null,
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
-    "consecutiveFailures": 24,
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
+    "consecutiveFailures": 25,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": false,
+        "error": "Status code 405"
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": false,
@@ -2878,11 +2883,6 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": false,
-        "error": "Status code 405"
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": false,
         "error": "Status code 405"
       }
@@ -2890,9 +2890,14 @@
   },
   "nvd-recent": {
     "lastSuccess": null,
-    "lastAttempt": "2026-04-24T06:38:06.263Z",
-    "consecutiveFailures": 22,
+    "lastAttempt": "2026-04-24T07:36:28.178Z",
+    "consecutiveFailures": 23,
     "recent": [
+      {
+        "at": "2026-04-24T07:36:28.178Z",
+        "ok": false,
+        "error": "NVD HTTP 404"
+      },
       {
         "at": "2026-04-24T06:38:06.263Z",
         "ok": false,
@@ -2985,11 +2990,6 @@
       },
       {
         "at": "2026-04-22T19:29:33.339Z",
-        "ok": false,
-        "error": "NVD HTTP 404"
-      },
-      {
-        "at": "2026-04-22T18:22:17.568Z",
         "ok": false,
         "error": "NVD HTTP 404"
       }
