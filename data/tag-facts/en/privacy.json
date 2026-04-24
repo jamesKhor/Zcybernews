@@ -1,16 +1,20 @@
 {
   "tag": "privacy",
   "locale": "en",
-  "count": 16,
+  "count": 19,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-28950"
+    }
+  ],
   "top_sectors": [
-    "technology",
     "government",
+    "technology",
     "education",
     "telecommunications",
     "Advertising"
@@ -18,17 +22,19 @@
   "top_regions": [
     "Global",
     "United states",
-    "Mexico"
+    "Europe",
+    "Mexico",
+    "Netherlands"
   ],
   "severity_mix": {
-    "informational": 6,
-    "medium": 7,
-    "high": 3
+    "high": 5,
+    "medium": 8,
+    "informational": 6
   },
   "recent_excerpts": [
-    "Grupo Seguritech, a Mexican surveillance firm with a history of human rights allegations, is expanding its operations into the United States, raising data privacy and security concerns.",
-    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n",
-    "Notion public pages expose the email addresses and profile photos of all editors, a flaw affecting millions of users of the collaboration platform."
+    "CVE-2026-28950 in iOS Notification Services retained deleted Signal messages on device, accessible via forensic tools. Apple fixed the logging flaw in iOS 18.4.1 and iPadOS 18.4.1.",
+    "U.S. Immigration and Customs Enforcement (ICE) confirmed using spyware from Israeli firm Graphite, a tool capable of extracting data from encrypted messaging apps like WhatsApp…",
+    "Attackers stole personal data from Rituals Cosmetics' My Rituals membership database — names, emails, addresses, and loyalty points. Number of affected customers undisclosed."
   ],
-  "sources_hash": "65af5a6cb078b587"
+  "sources_hash": "2ba30c91611be881"
 }

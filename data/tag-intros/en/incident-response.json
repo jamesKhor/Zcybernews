@@ -1,0 +1,9 @@
+{
+  "tag": "incident-response",
+  "locale": "en",
+  "intro": "This archive collects 5 articles tagged `incident-response` published between April 13, 2026 and April 23, 2026. Coverage includes 1 critical, 3 high, and 1 medium reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "806a28a81f4a35b7",
+  "model": "template:sparse",
+  "generated_at": "2026-04-24T04:09:51.276Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "count": 13,
+  "count": 15,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "APT41"
@@ -17,23 +17,23 @@
   ],
   "top_sectors": [
     "technology",
+    "cloud services",
     "government",
     "healthcare",
-    "cloud services",
-    "cloud-services"
+    "cloud service providers"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "high": 10,
     "informational": 3,
-    "high": 8,
     "critical": 2
   },
   "recent_excerpts": [
+    "Palo Alto Networks researchers built Zealot, a multi-agent AI penetration testing PoC that autonomously performs reconnaissance, exploitation, and data exfiltration on cloud…",
     "Analysis of 1,000+ cybersecurity job postings shows a 40% surge in demand for AI security specialists and cloud security architects, with DevSecOps roles requiring Azure DevOps expertise commanding pr",
-    "The Cloud Security Alliance warns that Anthropic's Claude Mythos model will trigger an 'AI vulnerability storm,' forcing CISOs to manage a 10x surge in code flaws and novel exploit techniques within 1",
-    "Freelance platform Fiverr exposed sensitive user files, including tax documents and PII, via a misconfigured cloud storage bucket, with data indexed by Google search, according to security researchers"
+    "The Cloud Security Alliance warns that Anthropic's Claude Mythos model will trigger an 'AI vulnerability storm,' forcing CISOs to manage a 10x surge in code flaws and novel exploit techniques within 1"
   ],
-  "sources_hash": "552e0385a01605ae"
+  "sources_hash": "bdbf92eb09c7d380"
 }

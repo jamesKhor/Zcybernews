@@ -1,9 +1,9 @@
 {
   "tag": "privacy",
   "locale": "en",
-  "intro": "This archive collects 16 articles tagged `privacy` published between April 12, 2026 and April 21, 2026. Coverage includes 3 high, 7 medium, and 6 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "65af5a6cb078b587",
-  "model": "template:sparse",
-  "generated_at": "2026-04-22T04:06:01.323Z",
+  "intro": "Government, technology, education, telecommunications, and advertising sectors were the most affected in a recent wave of privacy-related incidents, with 19 articles published between April 12 and April 23, 2026. The coverage includes five high-severity and eight medium-severity issues, alongside six informational pieces. The top CVE identified was CVE-2026-28950. Affected regions spanned globally, with specific impact in the United States, Europe, Mexico, and the Netherlands.",
+  "sources_hash": "2ba30c91611be881",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-24T04:09:17.324Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

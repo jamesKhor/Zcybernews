@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 40,
+  "count": 42,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "APT37 (ScarCruft, InkySquid)",
@@ -16,25 +16,25 @@
     "cryptocurrency",
     "financial-services",
     "technology",
-    "hospitality",
-    "individuals"
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "Global",
     "United states",
     "Canada",
-    "United kingdom",
-    "Australia"
+    "North america",
+    "United kingdom"
   ],
   "severity_mix": {
-    "high": 28,
+    "high": 30,
     "medium": 11,
     "informational": 1
   },
   "recent_excerpts": [
+    "Specops Software documents how helpdesk social engineering turns password reset requests into full account compromise — attackers bypass MFA and gain persistent access.",
     "A trojanized Slack installer delivers a remote access tool that creates a hidden desktop, allowing attackers to bypass multi-factor authentication and silently control victim machines.",
-    "Threat actors are abusing the Obsidian note-taking app to deliver the novel PHANTOMPULSE RAT via malicious plugins, targeting individuals in finance and cryptocurrency sectors in a campaign tracked as",
-    "A controlled study reveals humans apply social heuristics like fairness and cooperation to LLM opponents in strategic games, leading to predictable exploitation and potential security risks in human-A"
+    "Threat actors are abusing the Obsidian note-taking app to deliver the novel PHANTOMPULSE RAT via malicious plugins, targeting individuals in finance and cryptocurrency sectors in a campaign tracked as"
   ],
-  "sources_hash": "608e814486955124"
+  "sources_hash": "bd33aa146a857482"
 }

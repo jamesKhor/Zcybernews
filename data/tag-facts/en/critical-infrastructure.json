@@ -1,36 +1,38 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
-    "CyberAv3ngers"
+    "CyberAv3ngers",
+    "Lotus Wiper"
   ],
   "top_cves": [],
   "top_sectors": [
     "critical-infrastructure",
     "energy",
-    "manufacturing",
     "utilities",
+    "manufacturing",
     "water"
   ],
   "top_regions": [
     "United states",
-    "United kingdom"
+    "United kingdom",
+    "Venezuela"
   ],
   "severity_mix": {
+    "critical": 3,
     "high": 5,
     "informational": 3,
-    "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
+    "Kaspersky discovered Lotus Wiper, a novel file wiper targeting Venezuela's energy and utilities sector since late 2025.",
     "The UK's NCSC reports handling four nationally significant cyber incidents per week, with most now attributed to hostile foreign states like China and Russia, up from two per week…",
-    "New U.S. Coast Guard cybersecurity rules under the Maritime Transportation Security Act mandate third-party audits, OT-specific security plans, and dedicated personnel, providing a regulatory model fo",
-    "Security researchers propose extending two-factor authentication (2FA) principles to physical access control systems for critical infrastructure, creating a hybrid defense against credential-based att"
+    "New U.S. Coast Guard cybersecurity rules under the Maritime Transportation Security Act mandate third-party audits, OT-specific security plans, and dedicated personnel, providing a regulatory model fo"
   ],
-  "sources_hash": "55f3aa97660013c6"
+  "sources_hash": "3df36f900c124773"
 }

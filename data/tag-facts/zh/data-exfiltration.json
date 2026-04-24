@@ -1,0 +1,32 @@
+{
+  "tag": "data-exfiltration",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-23"
+  },
+  "top_actors": [
+    "Payouts King",
+    "Trigona"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "manufacturing",
+    "technology"
+  ],
+  "top_regions": [
+    "Europe",
+    "North america"
+  ],
+  "severity_mix": {
+    "high": 4
+  },
+  "recent_excerpts": [
+    "Trigona 勒索软件攻击现在使用自定义的 CLI 工具从被入侵的网络中更快地外泄数据，加密前针对备份和云存储。",
+    "安全研究人员警告称，由AI驱动的'agentic'浏览器，这些浏览器自动化网络任务，引入了包括即时注入、会话劫持和未经授权的数据外泄在内的新风险，从根本上改变了浏览器的安全模型。",
+    "The Gentlemen勒索软件组织在全球范围内破坏了企业安全控制，并入侵了Atlassian合作伙伴Adaptavist，窃取了数TB的源代码和数据。"
+  ],
+  "sources_hash": "4609ec46d9ff21cb"
+}

@@ -1,0 +1,33 @@
+{
+  "tag": "incident-response",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-23"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "cloud computing",
+    "energy",
+    "hospitality",
+    "multiple",
+    "technology"
+  ],
+  "top_regions": [
+    "Global",
+    "Venezuela"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "critical": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Vercel identified additional compromised customer accounts linked to the Context.ai breach, expanding investigation with new indicators and network request reviews.",
+    "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026.",
+    "Phishing continues to be the dominant initial attack vector for cybercrime, driving a surge in incidents that managed service providers (MSPs) and their clients are struggling to contain with traditio"
+  ],
+  "sources_hash": "806a28a81f4a35b7"
+}

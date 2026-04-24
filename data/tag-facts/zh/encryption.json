@@ -1,10 +1,10 @@
 {
   "tag": "encryption",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "Kyber"
@@ -13,23 +13,25 @@
   "top_sectors": [
     "technology",
     "all",
+    "government",
     "social media",
     "telecommunications"
   ],
   "top_regions": [
     "Global",
-    "United kingdom"
+    "United kingdom",
+    "United states"
   ],
   "severity_mix": {
+    "medium": 3,
     "high": 2,
     "informational": 4,
-    "critical": 1,
-    "medium": 2
+    "critical": 1
   },
   "recent_excerpts": [
+    "美国移民和海关执法局（ICE）确认使用了以色列公司 Graphite 的间谍软件，这是一个能够从加密消息应用如 WhatsApp 中提取数据的工具…",
     "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。",
-    "英国监管机构 Ofcom 对 Telegram 展开正式调查，因为有证据显示 Telegram 分享儿童性虐待材料（CSAM）以及可能违反在线安全法的加密报告规则。",
-    "密码学专家警告说，迁移到后量子密码学将需要数年时间，敦促组织现在就开始量子风险管理，以保护加密数据免受未来'Q-Day'收获现在，解密稍后攻击。"
+    "英国监管机构 Ofcom 对 Telegram 展开正式调查，因为有证据显示 Telegram 分享儿童性虐待材料（CSAM）以及可能违反在线安全法的加密报告规则。"
   ],
-  "sources_hash": "0799936089b78521"
+  "sources_hash": "526d56bf30b56dba"
 }

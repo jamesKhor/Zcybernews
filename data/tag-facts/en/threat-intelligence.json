@@ -1,12 +1,13 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
+    "GopherWhisper",
     "LockBit"
   ],
   "top_cves": [],
@@ -15,15 +16,16 @@
     "critical-infrastructure",
     "cybersecurity",
     "financial services",
-    "retail"
+    "government"
   ],
   "top_regions": [
+    "Asia",
     "Europe",
     "Global",
     "North america"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 7,
     "informational": 6,
     "medium": 1
   },
@@ -32,5 +34,5 @@
     "Mature security operations centers reduce mean time to respond by 40% by integrating threat intelligence into workflows, while others waste time on siloed data and manual processes.",
     "Security operations centers (SOCs) stall at lower maturity levels when threat intelligence feeds remain external to analyst workflows, according to a new analysis."
   ],
-  "sources_hash": "d78444b9b65be35b"
+  "sources_hash": "0fb17973f239e0ce"
 }

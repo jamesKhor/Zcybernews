@@ -1,10 +1,10 @@
 {
   "tag": "fraud",
   "locale": "zh",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [],
   "top_cves": [],
@@ -13,24 +13,24 @@
     "retail",
     "cryptocurrency",
     "entertainment",
-    "telecommunications"
+    "financial services"
   ],
   "top_regions": [
     "United states",
     "Europe",
-    "Global",
     "North america",
+    "Global",
     "Canada"
   ],
   "severity_mix": {
+    "medium": 7,
     "informational": 2,
-    "medium": 6,
     "high": 4
   },
   "recent_excerpts": [
+    "Malwarebytes 分析显示，企业数据泄露暴露了客户个人信息（PII），使得后续欺诈行为成为可能，并导致保险费率上升——甚至影响到了未受影响的个人。",
     "MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。",
-    "金融行业监管局建立了一个新的情报中心，以集中分析针对经纪商和资本市场的网络威胁和欺诈行为。",
-    "Flare 研究人员详细描述了 'Caller-as-a-Service' 欺诈，其中犯罪操作使用招聘、培训和 KPIs 来管理针对北美和欧洲受害者的诈骗呼叫者。"
+    "金融行业监管局建立了一个新的情报中心，以集中分析针对经纪商和资本市场的网络威胁和欺诈行为。"
   ],
-  "sources_hash": "de248952800d68c8"
+  "sources_hash": "8bf9d2c16d8a9406"
 }

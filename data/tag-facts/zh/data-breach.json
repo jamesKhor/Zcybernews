@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 22,
+  "count": 24,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "RansomHub",
@@ -14,26 +14,26 @@
   "top_cves": [],
   "top_sectors": [
     "government",
+    "retail",
     "healthcare",
     "hospitality",
-    "retail",
     "technology"
   ],
   "top_regions": [
-    "United states",
     "Europe",
-    "France",
+    "United states",
     "North america",
+    "France",
     "Global"
   ],
   "severity_mix": {
-    "high": 18,
-    "medium": 3
+    "medium": 4,
+    "high": 19
   },
   "recent_excerpts": [
-    "法国当局逮捕了一名20岁的嫌疑人，他涉嫌48起针对公共机构、体育联合会和私营公司的数据库泄露，扣押了设备和...",
-    "TheGentlemen勒索软件团伙声称已完全入侵Atlassian合作伙伴Adaptavist的基础设施，窃取了来自NASA、Visa等客户的源代码和客户数据。",
-    "法国身份证，法国政府身份证明文件机构，确认数据泄露后，威胁行为者提供出售被盗公民信息，包括姓名、地址和护照号码。"
+    "Malwarebytes 分析显示，企业数据泄露暴露了客户个人信息（PII），使得后续欺诈行为成为可能，并导致保险费率上升——甚至影响到了未受影响的个人。",
+    "攻击者从 Rituals Cosmetics 的 My Rituals 会员数据库中窃取了个人数据 —— 名字、电子邮件、地址和忠诚度积分。受影响客户数量未披露。",
+    "法国当局逮捕了一名20岁的嫌疑人，他涉嫌48起针对公共机构、体育联合会和私营公司的数据库泄露，扣押了设备和..."
   ],
-  "sources_hash": "47f01c4600840533"
+  "sources_hash": "65685b8c6409180c"
 }

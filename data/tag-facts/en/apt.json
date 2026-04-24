@@ -1,38 +1,38 @@
 {
   "tag": "apt",
   "locale": "en",
-  "count": 7,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-22"
+    "latest": "2026-04-24"
   },
   "top_actors": [
+    "GopherWhisper",
     "CyberAv3ngers",
-    "Sapphire Sleet",
-    "SideWinder"
+    "Sapphire Sleet"
   ],
   "top_cves": [],
   "top_sectors": [
-    "cryptocurrency",
     "government",
+    "cryptocurrency",
+    "technology",
     "energy",
-    "healthcare",
-    "industrial"
+    "healthcare"
   ],
   "top_regions": [
+    "Asia",
     "Bangladesh",
+    "East asia",
     "Global",
-    "South asia",
-    "Ukraine",
-    "United states"
+    "Japan"
   ],
   "severity_mix": {
-    "high": 7
+    "high": 11
   },
   "recent_excerpts": [
     "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026.",
-    "SideWinder APT targets South Asian government bodies with a phishing campaign using a fake Chrome PDF viewer and a cloned Zimbra login portal to steal webmail credentials, active since February 2026.",
-    "North Korean operatives are using AI tools and forged documents to pass remote job interviews, according to Flare research."
+    "Chinese state-sponsored Tropic Trooper is compromising home routers as proxy footholds to infiltrate Japanese organizations, shifting to novel TTPs and victim sectors.",
+    "ESET identified GopherWhisper, a China-aligned APT, breaching 12 Mongolian government systems with Go-based backdoors, injectors, and loaders since early 2026."
   ],
-  "sources_hash": "d9172c2cc6916ee6"
+  "sources_hash": "256d9d426d13b91f"
 }

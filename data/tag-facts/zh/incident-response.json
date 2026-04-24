@@ -1,0 +1,33 @@
+{
+  "tag": "incident-response",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-23"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "cloud computing",
+    "energy",
+    "hospitality",
+    "multiple",
+    "technology"
+  ],
+  "top_regions": [
+    "Global",
+    "Venezuela"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "critical": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Vercel 识别到与 Context.ai 违规相关的更多被入侵客户账户，通过新的指标和网络请求审查扩大调查。",
+    "Lotus Wiper 恶意软件针对委内瑞拉国有能源公司 PDVSA，通过覆盖驱动器和删除文件破坏数据，在美国领导的干预行动之前，即 2026 年 3 月。",
+    "钓鱼继续是网络犯罪的主要初始攻击向量，导致事件激增，管理服务提供商（MSPs）及其客户正在努力用传统防御手段来控制。"
+  ],
+  "sources_hash": "806a28a81f4a35b7"
+}

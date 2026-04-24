@@ -1,7 +1,7 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 59,
+  "count": 61,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-23"
@@ -41,15 +41,15 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 37,
-    "critical": 8,
+    "high": 38,
+    "critical": 9,
     "informational": 4,
     "medium": 9
   },
   "recent_excerpts": [
     "根据 Socket 和…的说法，CanisterSprawl 供应链蠕虫劫持 npm 包，使用窃取的开发者令牌进行自我传播，并将数据外泄到 ICP canister。",
-    "威胁行为者上传了恶意Docker镜像到Checkmarx的官方KICS仓库，并发布了木马化的VS Code扩展，窃取AWS密钥和浏览器数据从…",
-    "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…"
+    "攻击者破坏了 Checkmarx KICS 的 Docker 镜像和 VS Code 扩展，以窃取开发者环境中的云凭证、API 密钥和源代码。",
+    "威胁行为者上传了恶意Docker镜像到Checkmarx的官方KICS仓库，并发布了木马化的VS Code扩展，窃取AWS密钥和浏览器数据从…"
   ],
-  "sources_hash": "17929a03a8146211"
+  "sources_hash": "30816287f2e24d16"
 }

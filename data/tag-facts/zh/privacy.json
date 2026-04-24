@@ -1,16 +1,20 @@
 {
   "tag": "privacy",
   "locale": "zh",
-  "count": 16,
+  "count": 19,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-28950"
+    }
+  ],
   "top_sectors": [
-    "technology",
     "government",
+    "technology",
     "education",
     "telecommunications",
     "Advertising"
@@ -18,17 +22,19 @@
   "top_regions": [
     "Global",
     "United states",
-    "Mexico"
+    "Europe",
+    "Mexico",
+    "Netherlands"
   ],
   "severity_mix": {
-    "informational": 6,
-    "medium": 7,
-    "high": 3
+    "high": 5,
+    "medium": 8,
+    "informational": 6
   },
   "recent_excerpts": [
-    "Grupo Seguritech，一家有侵犯人权指控历史的墨西哥监控公司，正在将其业务扩展到美国，引发了数据隐私和安全方面的担忧。",
-    "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。",
-    "Notion 公共页面暴露了所有编辑者的电子邮件地址和个人资料照片，这个漏洞影响了数百万协作平台用户。研究人员警告说，数据泄露是无声且持续进行的。"
+    "CVE-2026-28950在iOS通知服务中保留了设备上的已删除Signal消息，可通过取证工具访问。苹果在iOS 18.4.1和iPadOS 18.4.1中修复了日志记录缺陷。",
+    "美国移民和海关执法局（ICE）确认使用了以色列公司 Graphite 的间谍软件，这是一个能够从加密消息应用如 WhatsApp 中提取数据的工具…",
+    "攻击者从 Rituals Cosmetics 的 My Rituals 会员数据库中窃取了个人数据 —— 名字、电子邮件、地址和忠诚度积分。受影响客户数量未披露。"
   ],
-  "sources_hash": "65af5a6cb078b587"
+  "sources_hash": "2ba30c91611be881"
 }

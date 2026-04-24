@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 31,
+  "count": 32,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "The Gentlemen",
@@ -22,28 +22,28 @@
     }
   ],
   "top_sectors": [
+    "manufacturing",
     "multiple",
     "healthcare",
     "logistics",
-    "manufacturing",
     "retail"
   ],
   "top_regions": [
     "Europe",
     "Global",
     "United states",
-    "Turkey",
-    "France"
+    "North america",
+    "Turkey"
   ],
   "severity_mix": {
-    "high": 25,
+    "high": 26,
     "critical": 2,
     "informational": 2
   },
   "recent_excerpts": [
+    "Trigona ransomware attacks now use a custom CLI tool to exfiltrate data from compromised networks faster, targeting backups and cloud storage before encryption.",
     "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis.",
-    "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent",
-    "CVE-2026-1731, a critical 9.8 CVSS flaw in BeyondTrust's Bomgar RMM, is being actively exploited to deploy ransomware and compromise IT service providers in global supply chain attacks."
+    "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent"
   ],
-  "sources_hash": "20ca2978bc661ce9"
+  "sources_hash": "a52f53296de428fa"
 }

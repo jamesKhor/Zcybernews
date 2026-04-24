@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 31,
+  "count": 32,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "The Gentlemen",
@@ -22,28 +22,28 @@
     }
   ],
   "top_sectors": [
+    "manufacturing",
     "multiple",
     "healthcare",
     "logistics",
-    "manufacturing",
     "retail"
   ],
   "top_regions": [
     "Europe",
     "Global",
     "United states",
-    "Turkey",
-    "France"
+    "North america",
+    "Turkey"
   ],
   "severity_mix": {
-    "high": 25,
+    "high": 26,
     "critical": 2,
     "informational": 2
   },
   "recent_excerpts": [
+    "Trigona 勒索软件攻击现在使用自定义的 CLI 工具从被入侵的网络中更快地外泄数据，加密前针对备份和云存储。",
     "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。",
-    "The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi 系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。",
-    "CVE-2026-1731，一个在BeyondTrust的Bomgar RMM中的关键9.8 CVSS漏洞，正在被积极利用来部署勒索软件和在全球供应链攻击中破坏IT服务提供商。"
+    "The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi 系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。"
   ],
-  "sources_hash": "20ca2978bc661ce9"
+  "sources_hash": "a52f53296de428fa"
 }

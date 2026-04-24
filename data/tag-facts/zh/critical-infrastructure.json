@@ -1,36 +1,38 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
-    "CyberAv3ngers"
+    "CyberAv3ngers",
+    "Lotus Wiper"
   ],
   "top_cves": [],
   "top_sectors": [
     "critical-infrastructure",
     "energy",
-    "manufacturing",
     "utilities",
+    "manufacturing",
     "water"
   ],
   "top_regions": [
     "United states",
-    "United kingdom"
+    "United kingdom",
+    "Venezuela"
   ],
   "severity_mix": {
+    "critical": 2,
     "high": 5,
     "informational": 3,
-    "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "卡巴斯基发现了 Lotus Wiper，这是一种针对委内瑞拉能源和公用事业部门的新型文件擦除器，自2025年底以来一直活跃。",
     "英国NCSC报告称每周处理四起具有全国意义的网络事件，其中大部分现在归因于像中国和俄罗斯这样的敌对外国，从每周两起增加...",
-    "根据《海事运输安全法》，美国海岸警卫队新的网络安全规则要求第三方审计、针对OT的安全计划和专职人员，为关键基础设施提供监管模式。",
-    "安全研究人员提议将双因素认证（2FA）原则扩展到关键基础设施的物理访问控制系统，创建一种混合防御机制，以抵御针对操作技术的基于凭证的攻击。"
+    "根据《海事运输安全法》，美国海岸警卫队新的网络安全规则要求第三方审计、针对OT的安全计划和专职人员，为关键基础设施提供监管模式。"
   ],
-  "sources_hash": "6db28d8af756acff"
+  "sources_hash": "f9a707aed6919fb7"
 }

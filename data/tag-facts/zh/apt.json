@@ -1,38 +1,38 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "count": 7,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-22"
+    "latest": "2026-04-24"
   },
   "top_actors": [
+    "GopherWhisper",
     "CyberAv3ngers",
-    "Sapphire Sleet",
-    "SideWinder"
+    "Sapphire Sleet"
   ],
   "top_cves": [],
   "top_sectors": [
-    "cryptocurrency",
     "government",
+    "cryptocurrency",
+    "technology",
     "energy",
-    "healthcare",
-    "industrial"
+    "healthcare"
   ],
   "top_regions": [
+    "Asia",
     "Bangladesh",
+    "East asia",
     "Global",
-    "South asia",
-    "Ukraine",
-    "United states"
+    "Japan"
   ],
   "severity_mix": {
-    "high": 7
+    "high": 11
   },
   "recent_excerpts": [
     "Lotus Wiper 恶意软件针对委内瑞拉国有能源公司 PDVSA，通过覆盖驱动器和删除文件破坏数据，在美国领导的干预行动之前，即 2026 年 3 月。",
-    "SideWinder APT 针对南亚政府机构发起网络钓鱼活动，使用假 Chrome PDF 查看器和克隆的 Zimbra 登录门户窃取网络邮件凭证，活动自 2026 年 2 月开始。",
-    "根据Flare研究，朝鲜特工正在使用AI工具和伪造文件通过远程工作面试。这种策略旨在将威胁行为者长期安置在目标公司内，进行间谍活动和网络访问。"
+    "中国政府支持的 Tropic Trooper 正在破坏家用路由器作为代理据点，以渗透日本组织，转向新的 TTPs 和受害者行业。",
+    "ESET识别出与China对齐的APT GopherWhisper，自2026年初以来，利用基于Go的后门、注入器和加载器侵入12个蒙古国政府系统。"
   ],
-  "sources_hash": "d9172c2cc6916ee6"
+  "sources_hash": "256d9d426d13b91f"
 }

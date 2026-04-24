@@ -1,10 +1,10 @@
 {
   "tag": "surveillance",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [],
   "top_cves": [
@@ -26,15 +26,15 @@
     "Mexico"
   ],
   "severity_mix": {
+    "medium": 2,
     "informational": 3,
     "critical": 1,
-    "high": 1,
-    "medium": 1
+    "high": 1
   },
   "recent_excerpts": [
+    "美国移民和海关执法局（ICE）确认使用了以色列公司 Graphite 的间谍软件，这是一个能够从加密消息应用如 WhatsApp 中提取数据的工具…",
     "Grupo Seguritech，一家有侵犯人权指控历史的墨西哥监控公司，正在将其业务扩展到美国，引发了数据隐私和安全方面的担忧。",
-    "美国参议院通过了Section 702监控权力的48小时延长，避免了众议院混乱后的中断。该计划由NSA和FBI使用，无需搜查令即可收集外国通信。",
-    "QNAP TS-453E QVRPro 中存在一个关键漏洞（CVE-2026-22898），允许网络相邻的攻击者在未经认证的情况下执行任意代码，从 Zero Day Initiative 获得的 CVSS 评分为 8.8。"
+    "美国参议院通过了Section 702监控权力的48小时延长，避免了众议院混乱后的中断。该计划由NSA和FBI使用，无需搜查令即可收集外国通信。"
   ],
-  "sources_hash": "a2633db7cf18a30d"
+  "sources_hash": "0a81cfe070191e79"
 }

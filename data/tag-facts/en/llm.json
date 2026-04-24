@@ -1,18 +1,21 @@
 {
   "tag": "llm",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-18"
+    "latest": "2026-04-23"
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": [],
+  "top_sectors": [
+    "cloud service providers",
+    "enterprise"
+  ],
   "top_regions": [],
   "severity_mix": {
     "medium": 3,
-    "high": 3,
+    "high": 4,
     "informational": 1
   },
   "recent_excerpts": [
@@ -20,5 +23,5 @@
     "A security analysis of over 400 LLM agent routing services reveals widespread vulnerabilities enabling attackers to inject malicious commands, leak sensitive data, and bypass intended AI model behavio",
     "Anthropic releases Claude Opus 4.7, a frontier AI model with new automated safeguards designed to detect and halt potentially harmful cybersecurity tasks during long, unsupervised agentic workflows."
   ],
-  "sources_hash": "7309254ebd53542b"
+  "sources_hash": "80ab483d039ca9d3"
 }

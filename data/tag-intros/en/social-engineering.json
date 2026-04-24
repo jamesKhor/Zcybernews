@@ -1,9 +1,9 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "intro": "The social-engineering threat landscape from early to mid-April 2026 was dominated by activity from APT37 (ScarCruft, InkySquid), ClickFix, and the Lazarus Group. These actors primarily targeted the cryptocurrency, financial-services, and technology sectors, with additional campaigns affecting hospitality and individuals. Geographically, the impact was global, with notable focus on the United States, Canada, the United Kingdom, and Australia. Across the 40 articles in this period, the severity of reported incidents was significant, with 28 classified as high and 11 as medium.",
-  "sources_hash": "608e814486955124",
+  "intro": "APT37 (ScarCruft, InkySquid), ClickFix, and Lazarus Group were the most prominent threat actors in 42 articles covering social-engineering tactics from April 8 to April 23, 2026. The coverage included 30 high-severity and 11 medium-severity reports, with one informational piece. Affected sectors spanned cryptocurrency, financial-services, technology, financial services, and government, while targeted regions included Global, United states, Canada, North america, and United kingdom.",
+  "sources_hash": "bd33aa146a857482",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:06:46.447Z",
+  "generated_at": "2026-04-24T04:09:04.528Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

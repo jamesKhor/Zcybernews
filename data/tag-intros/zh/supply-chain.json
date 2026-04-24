@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "intro": "2026年4月12日至4月23日期间，ZCyberNews发布了59篇关于供应链安全的文章。报道详述了包括Lazarus Group、CanisterSprawl和TeamPCP在内的不同威胁行为体的活动，其目标涉及科技、软件开发、加密货币、物流和制造等行业。被利用的关键漏洞包括CVE-2026-1731（CVSS 9.8）、CVE-2026-39987（CVSS 9.3）、CVE-2026-40176和CVE-2026-40177。事件记录覆盖全球，重点关注欧洲、亚洲和北美地区。在所报道的威胁中，严重程度分布为37篇高级别、8篇严重级别、9篇中级别以及4篇信息类报告。",
-  "sources_hash": "17929a03a8146211",
-  "source_intro_hash": "ea8068d29014cba3",
+  "intro": "在2026年4月12日至23日的十二天期间，ZCyberNews发布了61篇标记为“供应链”的文章，涵盖38起高严重性事件和9起重大事件。威胁行为者Lazarus Group、CanisterSprawl和TeamPCP被观察到针对全球技术、软件开发、加密货币、物流和制造业领域，重点关注欧洲、亚洲和北美。关键漏洞包括CVE-2026-1731（CVSS 9.8）、CVE-2026-39987（CVSS 9.3）、CVE-2026-40176和CVE-2026-40177。",
+  "sources_hash": "30816287f2e24d16",
+  "source_intro_hash": "8a6cfba72746fffd",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:11:50.641Z",
+  "generated_at": "2026-04-24T04:10:09.920Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

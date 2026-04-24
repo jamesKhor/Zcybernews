@@ -1,12 +1,13 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
+    "GopherWhisper",
     "LockBit"
   ],
   "top_cves": [],
@@ -15,15 +16,16 @@
     "critical-infrastructure",
     "cybersecurity",
     "financial services",
-    "retail"
+    "government"
   ],
   "top_regions": [
+    "Asia",
     "Europe",
     "Global",
     "North america"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 7,
     "informational": 6,
     "medium": 1
   },
@@ -32,5 +34,5 @@
     "成熟的安全运营中心通过将威胁情报集成到工作流程中，将平均响应时间减少了40%，而其他人则在孤立的数据和手动流程上浪费时间。",
     "根据一项新的分析，当威胁情报源保持在分析师工作流程之外时，安全运营中心（SOCs）会停留在较低的成熟度水平。报告详细说明了数据碎片化如何阻碍关键的安全决策。"
   ],
-  "sources_hash": "d78444b9b65be35b"
+  "sources_hash": "0fb17973f239e0ce"
 }

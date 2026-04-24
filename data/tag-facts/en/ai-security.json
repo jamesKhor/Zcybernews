@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 42,
+  "count": 44,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "OpenClaw"
@@ -23,22 +23,22 @@
     "technology",
     "cybersecurity",
     "artificial intelligence",
-    "healthcare",
-    "ai-development"
+    "cloud services",
+    "healthcare"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 19,
+    "high": 20,
     "critical": 6,
     "informational": 12,
     "medium": 5
   },
   "recent_excerpts": [
-    "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…",
-    "An unauthorized group accessed Anthropic's exclusive Claude Mythos Preview AI, a cybersecurity tool capable of generating exploits and malware.",
-    "CVE-2026-5752 (CVSS 9.3) in Cohere AI's Terrarium sandbox enables root-level code execution and container escape via JavaScript prototype chain traversal."
+    "Palo Alto Networks researchers built Zealot, a multi-agent AI penetration testing PoC that autonomously performs reconnaissance, exploitation, and data exfiltration on cloud…",
+    "Palo Alto Unit 42 outlines defensive strategies for frontier AI threats — model poisoning, prompt injection, and data leakage — in response to top customer queries.",
+    "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…"
   ],
-  "sources_hash": "f1ce572b58ff1726"
+  "sources_hash": "bde5ca157ec435ec"
 }

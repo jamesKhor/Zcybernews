@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 23,
+  "count": 25,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "ShinyHunters",
@@ -14,26 +14,26 @@
   "top_cves": [],
   "top_sectors": [
     "government",
+    "retail",
     "healthcare",
     "hospitality",
-    "retail",
     "technology"
   ],
   "top_regions": [
-    "United states",
     "Europe",
-    "France",
+    "United states",
     "North america",
+    "France",
     "Global"
   ],
   "severity_mix": {
-    "high": 19,
-    "medium": 3
+    "medium": 4,
+    "high": 20
   },
   "recent_excerpts": [
-    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…",
-    "TheGentlemen ransomware group claims a total infrastructure breach of Atlassian partner Adaptavist, stealing source code and customer data from clients like NASA and Visa.",
-    "France Titres, the French government agency for ID documents, confirms a data breach after a threat actor offers to sell stolen citizen information, including names, addresses, and passport numbers."
+    "Malwarebytes analysis shows corporate breaches expose customer PII, enable follow-on fraud, and inflate insurance premiums — affecting even unaffected individuals.",
+    "Attackers stole personal data from Rituals Cosmetics' My Rituals membership database — names, emails, addresses, and loyalty points. Number of affected customers undisclosed.",
+    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…"
   ],
-  "sources_hash": "aa75f9298e1f911f"
+  "sources_hash": "8bcbcddcab900979"
 }

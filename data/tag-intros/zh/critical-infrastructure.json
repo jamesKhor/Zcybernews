@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "intro": "关键基础设施标签涵盖了最近十一天内的11份报告。该活动主要由威胁行为者CyberAv3ngers主导，其攻击目标集中在能源、制造业、公用事业和水务部门。从地理分布看，事件主要集中在美国和英国。这些报告的严重性较高，总计包含五份高危警报和两份严重警报，表明针对关键服务领域的威胁正处于一个集中爆发期。",
-  "sources_hash": "55f3aa97660013c6",
-  "source_intro_hash": "f00a56a7eb03f4e5",
+  "intro": "2026年4月12日至4月23日期间，ZCyberNews在关键基础设施标签下发布了12篇文章，其中CyberAv3ngers和Lotus Wiper被识别为最主要的威胁行为体。受影响最严重的行业包括关键基础设施、能源、公用事业、制造业和水务，主要涉及美国、英国和委内瑞拉。严重程度分布为：3篇严重、5篇高危、1篇中等和3篇信息性报告，反映出针对基础服务的一段集中活跃期。",
+  "sources_hash": "3df36f900c124773",
+  "source_intro_hash": "d27b99e3d2bece5f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:09:53.492Z",
+  "generated_at": "2026-04-24T04:10:00.321Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

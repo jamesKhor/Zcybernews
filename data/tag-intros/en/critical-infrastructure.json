@@ -1,9 +1,9 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "intro": "The tag critical-infrastructure encompasses 11 reports from a recent eleven-day span. The activity is dominated by the threat actor CyberAv3ngers, which targeted the energy, manufacturing, utilities, and water sectors. Geographically, incidents were concentrated in the United states and United kingdom. The severity of these reports was significant, with a mix of five high-severity and two critical-severity alerts among the total, indicating a focused period of threats against essential services.",
-  "sources_hash": "55f3aa97660013c6",
+  "intro": "Between April 12 and April 23, 2026, ZCyberNews covered 12 articles under the critical-infrastructure tag, with CyberAv3ngers and Lotus Wiper identified as the top threat actors. The most affected sectors included critical-infrastructure, energy, utilities, manufacturing, and water, primarily in the United States, United Kingdom, and Venezuela. The severity mix comprised three critical, five high, one medium, and three informational reports, reflecting a concentrated period of activity against essential services.",
+  "sources_hash": "3df36f900c124773",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:08:00.356Z",
+  "generated_at": "2026-04-24T04:09:31.998Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "mfa-bypass",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-18"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "Storm-2755",
@@ -12,6 +12,7 @@
   ],
   "top_cves": [],
   "top_sectors": [
+    "all",
     "finance",
     "hr",
     "multiple",
@@ -22,12 +23,12 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "Specops Software 文档记录了如何将帮助台社会工程学转变为密码重置请求，从而导致完整账户泄露 —— 攻击者绕过 MFA 并获得持续访问权限。",
     "新的 'Storm' infostealer 将加密的浏览器数据外泄以进行服务器端解密，使得会话劫持和绕过 MFA 成为可能。Varonis 的分析详细说明了这种技术。",
-    "Tycoon 2FA 钓鱼即服务平台的中断导致山寨攻击激增，因为威胁行为者在其他工具包中重用其工具和技术，增加了多因素认证绕过尝试的总体数量。",
-    "Tycoon 2FA 钓鱼团伙已经放弃了其标志性工具包，转而采用设备代码钓鱼来绕过多因素认证，并入侵 Microsoft 365 和 Gmail 账户。"
+    "Tycoon 2FA 钓鱼即服务平台的中断导致山寨攻击激增，因为威胁行为者在其他工具包中重用其工具和技术，增加了多因素认证绕过尝试的总体数量。"
   ],
-  "sources_hash": "8c928c03d6d8c01d"
+  "sources_hash": "d4e9799715384a1e"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "mfa-bypass",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-18"
+    "latest": "2026-04-23"
   },
   "top_actors": [
     "Storm-2755",
@@ -12,6 +12,7 @@
   ],
   "top_cves": [],
   "top_sectors": [
+    "all",
     "finance",
     "hr",
     "multiple",
@@ -22,12 +23,12 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "Specops Software documents how helpdesk social engineering turns password reset requests into full account compromise — attackers bypass MFA and gain persistent access.",
     "The new 'Storm' infostealer exfiltrates encrypted browser data for server-side decryption, enabling session hijacking and bypassing MFA. Analysis by Varonis details the technique.",
-    "The disruption of the Tycoon 2FA phishing-as-a-service platform has led to a surge in copycat attacks, as threat actors reuse its tools and techniques in other kits, increasing the overall volume of m",
-    "The Tycoon 2FA phishing group has abandoned its namesake toolkit, adopting device code phishing to bypass multi-factor authentication and compromise Microsoft 365 and Gmail accounts."
+    "The disruption of the Tycoon 2FA phishing-as-a-service platform has led to a surge in copycat attacks, as threat actors reuse its tools and techniques in other kits, increasing the overall volume of m"
   ],
-  "sources_hash": "8c928c03d6d8c01d"
+  "sources_hash": "d4e9799715384a1e"
 }

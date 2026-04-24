@@ -1,10 +1,10 @@
 {
   "tag": "surveillance",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-23"
   },
   "top_actors": [],
   "top_cves": [
@@ -26,15 +26,15 @@
     "Mexico"
   ],
   "severity_mix": {
+    "medium": 2,
     "informational": 3,
     "critical": 1,
-    "high": 1,
-    "medium": 1
+    "high": 1
   },
   "recent_excerpts": [
+    "U.S. Immigration and Customs Enforcement (ICE) confirmed using spyware from Israeli firm Graphite, a tool capable of extracting data from encrypted messaging apps like WhatsApp…",
     "Grupo Seguritech, a Mexican surveillance firm with a history of human rights allegations, is expanding its operations into the United States, raising data privacy and security concerns.",
-    "The U.S. Senate passed a 48-hour extension of Section 702 surveillance powers, averting a lapse after House chaos.",
-    "A critical vulnerability (CVE-2026-22898) in QNAP TS-453E QVRPro allows network-adjacent attackers to execute arbitrary code without authentication, receiving a CVSS score of 8.8 from the Zero Day Ini"
+    "The U.S. Senate passed a 48-hour extension of Section 702 surveillance powers, averting a lapse after House chaos."
   ],
-  "sources_hash": "a2633db7cf18a30d"
+  "sources_hash": "0a81cfe070191e79"
 }

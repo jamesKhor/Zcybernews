@@ -1,0 +1,32 @@
+{
+  "tag": "data-exfiltration",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-23"
+  },
+  "top_actors": [
+    "Payouts King",
+    "Trigona"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "manufacturing",
+    "technology"
+  ],
+  "top_regions": [
+    "Europe",
+    "North america"
+  ],
+  "severity_mix": {
+    "high": 4
+  },
+  "recent_excerpts": [
+    "Trigona ransomware attacks now use a custom CLI tool to exfiltrate data from compromised networks faster, targeting backups and cloud storage before encryption.",
+    "Security researchers warn that AI-powered 'agentic' browsers, which automate web tasks, introduce novel risks including prompt injection, session hijacking, and unauthorized data exfiltration, fundame",
+    "The Gentlemen ransomware group dismantled enterprise security controls globally and breached Atlassian partner Adaptavist, stealing terabytes of source code and data."
+  ],
+  "sources_hash": "4609ec46d9ff21cb"
+}
