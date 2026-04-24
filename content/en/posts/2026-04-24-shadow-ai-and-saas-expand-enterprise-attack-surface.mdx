@@ -1,0 +1,45 @@
+---
+title: Shadow AI and SaaS Expand Enterprise Attack Surface
+slug: 2026-04-24-shadow-ai-and-saas-expand-enterprise-attack-surface
+date: '2026-04-24'
+excerpt: >-
+  Forgotten integrations, shadow IT, and unmanaged SaaS agents create new attack
+  vectors. Dark Reading reports attackers exploit these gaps without
+  sophisticated AI.
+category: industry
+tags:
+  - shadow-it
+  - saas
+  - shadow-ai
+  - attack-surface
+  - enterprise-security
+language: en
+source_urls:
+  - >-
+    https://www.darkreading.com/cyberattacks-data-breaches/glasswing-secured-code-stack-on-you
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-shadow-ai-and-saas-expand-enterprise-attack-surface
+severity: high
+affected_sectors:
+  - technology
+  - financial services
+  - healthcare
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Attackers are exploiting forgotten integrations, shadow IT, and unmanaged SaaS agents — including emerging shadow AI tools — to breach enterprise environments, according to a Dark Reading analysis published April 24, 2026. The report, citing interviews with security practitioners, emphasizes that these attacks do not require sophisticated AI models; basic exploitation of misconfigured or orphaned integrations suffices. The finding underscores a widening gap between code-level security and operational attack surface management.
+
+## Technical Analysis
+
+Dark Reading's report highlights that enterprise security teams often focus on securing custom application code while neglecting the broader stack of third-party integrations, SaaS platforms, and agent-based tools that accumulate over time. These forgotten components — including API keys left active after decommissioned services, unmonitored OAuth grants, and auto-provisioned AI agents — create persistent entry points. Attackers enumerate these integrations using standard reconnaissance techniques, such as scanning for exposed `.env` files or testing stale API endpoints. The report notes that shadow AI, where employees deploy AI agents without IT oversight, adds a new dimension to this problem, as these agents may access sensitive data or trigger automated actions without proper authentication controls.
+
+## Mitigations & Recommendations
+
+Enterprises should conduct regular audits of all third-party integrations, SaaS subscriptions, and API tokens, revoking access for any that are no longer in active use. Implementing a zero-trust model for agent and AI tool deployments — requiring explicit approval and least-privilege access — can reduce the risk from shadow AI. Security teams should also monitor for anomalous OAuth token usage and unexpected API calls, as these often indicate exploitation of forgotten integrations. The report advises against over-reliance on static code analysis alone, as the attack surface extends well beyond custom code.
+
+## References
+
+- [Glasswing Secured the Code. The Rest of Your Stack Is Still on You - Dark Reading](https://www.darkreading.com/cyberattacks-data-breaches/glasswing-secured-code-stack-on-you)

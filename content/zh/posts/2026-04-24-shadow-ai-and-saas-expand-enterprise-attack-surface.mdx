@@ -1,0 +1,42 @@
+---
+title: 影子AI和SaaS扩大企业攻击面
+slug: 2026-04-24-shadow-ai-and-saas-expand-enterprise-attack-surface
+date: '2026-04-24'
+excerpt: 被遗忘的集成、影子IT和未管理的SaaS代理创造了新的攻击向量。Dark Reading报告称攻击者利用这些漏洞，而无需复杂的AI。
+category: industry
+tags:
+  - shadow-it
+  - saas
+  - shadow-ai
+  - attack-surface
+  - enterprise-security
+language: zh
+source_urls:
+  - >-
+    https://www.darkreading.com/cyberattacks-data-breaches/glasswing-secured-code-stack-on-you
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-shadow-ai-and-saas-expand-enterprise-attack-surface
+severity: high
+affected_sectors:
+  - technology
+  - financial services
+  - healthcare
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+根据2026年4月24日发表的Dark Reading分析报告，攻击者正在利用被遗忘的集成、影子IT和未管理的SaaS代理——包括新兴的影子AI工具——来入侵企业环境。报告引用了与安全从业者的访谈，强调这些攻击不需要复杂的AI模型；基本的对配置错误或被遗弃的集成的利用就足够了。这一发现突显了代码级安全和运营攻击面管理之间日益扩大的差距。
+
+## 技术分析
+
+Dark Reading的报告强调，企业安全团队通常专注于保护定制应用程序代码，而忽视了随时间积累的第三方集成、SaaS平台和基于代理的工具的更广泛堆栈。这些被遗忘的组件——包括服务退役后仍保持活跃的API密钥、未监控的OAuth授权和自动配置的AI代理——创造了持久的入口点。攻击者使用标准的侦察技术来枚举这些集成，例如扫描暴露的`.env`文件或测试陈旧的API端点。报告指出，影子AI（员工在没有IT监督的情况下部署AI代理）为这个问题增加了一个新的维度，因为这些代理可能在没有适当的认证控制的情况下访问敏感数据或触发自动操作。
+
+## 缓解措施与建议
+
+企业应定期审计所有第三方集成、SaaS订阅和API令牌，撤销任何不再活跃使用的访问权限。实施零信任模型用于代理和AI工具部署——要求明确的批准和最小权限访问——可以减少影子AI的风险。安全团队还应监控异常的OAuth令牌使用和意外的API调用，因为这些通常表明对被遗忘的集成的利用。报告建议不要过度依赖静态代码分析，因为攻击面远远超出了定制代码。
+
+## 参考资料
+
+- [Glasswing Secured the Code. The Rest of Your Stack Is Still on You - Dark Reading](https://www.darkreading.com/cyberattacks-data-breaches/glasswing-secured-code-stack-on-you)
