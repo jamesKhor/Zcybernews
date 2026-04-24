@@ -1,0 +1,54 @@
+---
+title: Lazarus Hijacks macOS via ClickFix to Target Executives
+slug: 2026-04-24-lazarus-hijacks-macos-via-clickfix-to-target-executives
+date: '2026-04-24'
+excerpt: >-
+  Lazarus APT uses ClickFix social engineering to deliver macOS malware — fake
+  browser update prompts trick executives into running AppleScript payloads that
+  steal credentials and…
+category: threat-intel
+tags:
+  - lazarus
+  - macos
+  - clickfix
+  - applescript
+  - social-engineering
+  - north-korea
+language: en
+source_urls:
+  - >-
+    https://www.darkreading.com/threat-intelligence/north-koreas-lazarus-targets-macos-users-clickfix
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-lazarus-hijacks-macos-via-clickfix-to-target-executives
+severity: high
+threat_actor: Lazarus Group
+threat_actor_origin: North Korea
+affected_sectors:
+  - technology
+  - finance
+  - cryptocurrency
+affected_regions:
+  - North America
+  - Europe
+  - Asia
+---
+## Executive Summary
+
+The North Korean state-sponsored Lazarus Group has launched a new campaign targeting macOS users, specifically executives at organizations handling cryptocurrency and sensitive financial data, according to Dark Reading. The operation relies on the ClickFix social engineering technique — fake browser update prompts — to trick victims into executing malicious AppleScript code that steals credentials, exfiltrates files, and establishes persistent remote access.
+
+## Technical Analysis
+
+ClickFix, a technique increasingly adopted by multiple threat actors since early 2025, presents victims with a fabricated browser notification claiming an update is required. In this Lazarus variant, the prompt appears as a legitimate-looking Safari or Chrome update dialog. When the user clicks the button, instead of downloading a binary, the attack executes an AppleScript payload directly via the macOS `osascript` command, Dark Reading reports.
+
+The AppleScript performs several actions: it harvests saved credentials from the macOS Keychain, collects browser cookies and session tokens, and downloads a second-stage payload from a remote server. The second-stage component, which researchers identified as a variant of the group's known macOS backdoor, establishes persistence via LaunchAgents and opens a reverse shell for command-and-control (C2) communication. The campaign specifically targets high-value individuals — C-suite executives and technical leads at organizations involved in blockchain, cryptocurrency exchanges, and fintech.
+
+Lazarus has a long history of targeting macOS, including the 2021 Operation DreamJob campaign that used fake job offers to deliver malware. The shift to ClickFix represents an evolution in their social engineering playbook, moving from trojanized applications to browser-based lures that bypass traditional file-scanning defenses.
+
+## Mitigations & Recommendations
+
+Defenders should educate macOS users — particularly executives and finance teams — about the ClickFix technique. Browser updates are delivered through the browser's built-in update mechanism or the Mac App Store, never via a pop-up on a random website. Organizations should implement application allowlisting to block unauthorized execution of `osascript` from web browsers, and deploy endpoint detection rules that flag suspicious AppleScript execution chains. Monitoring for outbound connections to known Lazarus C2 infrastructure, which overlaps with previous campaigns, can aid early detection.
+
+## References
+
+- [Dark Reading: North Korea's Lazarus Targets macOS Users via ClickFix](https://www.darkreading.com/threat-intelligence/north-koreas-lazarus-targets-macos-users-clickfix)

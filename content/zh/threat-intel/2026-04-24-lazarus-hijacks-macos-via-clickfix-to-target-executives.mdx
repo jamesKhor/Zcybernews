@@ -1,0 +1,53 @@
+---
+title: Lazarus 通过 ClickFix 劫持 macOS 以针对高管
+slug: 2026-04-24-lazarus-hijacks-macos-via-clickfix-to-target-executives
+date: '2026-04-24'
+excerpt: >-
+  Lazarus APT 利用 ClickFix 社会工程学来传递 macOS 恶意软件 —— 假的浏览器更新提示诱使高管运行 AppleScript
+  有效载荷，这些载荷窃取凭证并…
+category: threat-intel
+tags:
+  - lazarus
+  - macos
+  - clickfix
+  - applescript
+  - social-engineering
+  - north-korea
+language: zh
+source_urls:
+  - >-
+    https://www.darkreading.com/threat-intelligence/north-koreas-lazarus-targets-macos-users-clickfix
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-lazarus-hijacks-macos-via-clickfix-to-target-executives
+severity: high
+threat_actor: Lazarus Group
+threat_actor_origin: North Korea
+affected_sectors:
+  - technology
+  - finance
+  - cryptocurrency
+affected_regions:
+  - North America
+  - Europe
+  - Asia
+---
+## 执行摘要
+
+据Dark Reading报道，由朝鲜政府资助的Lazarus Group发起了一项新的活动，针对macOS用户，特别是处理加密货币和敏感金融数据的组织的高管。该行动依赖于ClickFix社交工程技术——伪造的浏览器更新提示——诱使受害者执行恶意AppleScript代码，窃取凭证，外泄文件，并建立持久的远程访问。
+
+## 技术分析
+
+自2025年初以来，ClickFix技术被多个威胁行为者越来越多地采用，它向受害者展示了一个伪造的浏览器通知，声称需要更新。在这种Lazarus变体中，提示看起来像是一个合法的Safari或Chrome更新对话框。当用户点击按钮时，攻击不会下载二进制文件，而是通过macOS `osascript`命令直接执行AppleScript有效载荷，Dark Reading报告。
+
+AppleScript执行多个操作：它从macOS Keychain中收集保存的凭证，收集浏览器cookie和会话令牌，并从远程服务器下载第二阶段有效载荷。研究人员识别出的第二阶段组件是该组织已知macOS后门的变体，通过LaunchAgents建立持久性，并打开反向shell进行命令和控制（C2）通信。该活动特别针对高价值个人——涉及区块链、加密货币交易所和金融科技的组织的C级高管和技术负责人。
+
+Lazarus有着针对macOS的悠久历史，包括2021年的Operation DreamJob活动，该活动使用假工作机会提供恶意软件。转向ClickFix代表了他们社交工程剧本的演变，从木马化应用程序转向基于浏览器的诱饵，绕过传统的文件扫描防御。
+
+## 缓解措施与建议
+
+防御者应该教育macOS用户——特别是高管和财务团队——了解ClickFix技术。浏览器更新是通过浏览器内置的更新机制或Mac App Store提供的，而不是通过随机网站上的弹出窗口。组织应该实施应用程序允许列表，以阻止未经授权的从Web浏览器执行`osascript`，并部署端点检测规则，标记可疑的AppleScript执行链。监测已知Lazarus C2基础设施的出站连接，这与以前的活动重叠，可以帮助早期检测。
+
+## 参考资料
+
+- [Dark Reading: North Korea's Lazarus Targets macOS Users via ClickFix](https://www.darkreading.com/threat-intelligence/north-koreas-lazarus-targets-macos-users-clickfix)
