@@ -1,0 +1,47 @@
+---
+title: BlackFile 勒索团伙通过 Vishing 针对零售和酒店业
+slug: 2026-04-24-blackfile-extortion-group-targets-retail-hospitality-via-vishing
+date: '2026-04-24'
+excerpt: 自2026年2月以来，BlackFile 勒索团伙至少攻击了12家零售和酒店组织，使用 vishing 窃取 VPN 凭证并窃取数据，然后才提出要求...
+category: threat-intel
+tags:
+  - blackfile
+  - vishing
+  - extortion
+  - retail
+  - hospitality
+  - social-engineering
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-blackfile-extortion-gang-targets-retail-and-hospitality-orgs/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-blackfile-extortion-group-targets-retail-hospitality-via-vishing
+severity: high
+threat_actor: BlackFile
+affected_sectors:
+  - retail
+  - hospitality
+affected_regions:
+  - North America
+---
+## 执行摘要
+
+根据网络安全公司Huntress Labs向BleepingComputer分享的一份报告，自2026年2月以来，一个以前未记录的以财务为动机的团体BlackFile至少与针对零售和酒店组织的12起数据盗窃和勒索事件有关。该团体依赖于vishing（语音网络钓鱼）电话，诱骗员工透露VPN凭证，然后使用合法的远程访问工具横向移动并窃取敏感数据，最后要求支付赎金。
+
+## 技术分析
+
+Huntress的分析师观察到BlackFile操作者打电话给目标组织的帮助台或个别员工，冒充IT员工或供应商。来电者声称需要紧急的安全更新或账户问题，要求员工提供他们的VPN登录凭证或多因素认证（MFA）一次性代码。在几个案例中，该团体成功绕过了MFA，通过在通话期间提示受害者批准推送通知。
+
+一旦通过VPN进入网络，BlackFile部署远程监控和管理（RMM）工具，如AnyDesk或ScreenConnect，以保持持久性。然后该团体使用原生Windows工具（PowerShell，RDP）和本地二进制文件来枚举Active Directory，识别文件共享，并压缩数据，通过Mega或pCloud等云存储服务进行数据泄露。Huntress报告称，BlackFile通常每个受害者泄露50GB至200GB的数据，包括客户PII、支付记录和内部财务文件。
+
+勒索阶段遵循一种模式：该团体通过电子邮件或电话联系受害者组织，威胁如果不支付赎金，就会在专用的泄露网站上发布被盗数据。Huntress指出，BlackFile在任何观察到的事件中都还没有部署勒索软件，只专注于数据盗窃和勒索。该团体的泄露网站于2026年3月上线，目前列出了五名受害者，尽管Huntress认为实际受害组织的数量更高。
+
+## 缓解措施与建议
+
+防御者应在所有远程访问点，特别是VPN网关上强制执行MFA，并实施基于号码匹配或硬件令牌的MFA，以防止推送通知疲劳攻击。组织还应定期为帮助台员工和员工进行vishing意识培训，强调合法的IT人员永远不会在电话中要求密码或MFA代码。监控来自非公司IP范围的异常RDP或RMM工具安装可以提供横向移动的早期检测。
+
+## 参考资料
+
+- [BleepingComputer: New BlackFile extortion group linked to surge of vishing attacks](https://www.bleepingcomputer.com/news/security/new-blackfile-extortion-gang-targets-retail-and-hospitality-orgs/)

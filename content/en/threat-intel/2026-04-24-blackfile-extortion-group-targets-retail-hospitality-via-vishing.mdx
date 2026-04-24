@@ -1,0 +1,50 @@
+---
+title: 'BlackFile Extortion Group Targets Retail, Hospitality via Vishing'
+slug: 2026-04-24-blackfile-extortion-group-targets-retail-hospitality-via-vishing
+date: '2026-04-24'
+excerpt: >-
+  BlackFile extortion group has hit at least 12 retail and hospitality
+  organizations since Feb 2026, using vishing to steal VPN credentials and
+  exfiltrate data before demanding…
+category: threat-intel
+tags:
+  - blackfile
+  - vishing
+  - extortion
+  - retail
+  - hospitality
+  - social-engineering
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-blackfile-extortion-gang-targets-retail-and-hospitality-orgs/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-blackfile-extortion-group-targets-retail-hospitality-via-vishing
+severity: high
+threat_actor: BlackFile
+affected_sectors:
+  - retail
+  - hospitality
+affected_regions:
+  - North America
+---
+## Executive Summary
+
+A previously undocumented financially motivated group tracked as BlackFile has been linked to at least a dozen data theft and extortion incidents targeting retail and hospitality organizations since February 2026, according to a report from cybersecurity firm Huntress Labs shared with BleepingComputer. The group relies on vishing (voice phishing) calls to trick employees into disclosing VPN credentials, then uses legitimate remote access tools to move laterally and exfiltrate sensitive data before demanding a ransom.
+
+## Technical Analysis
+
+Huntress analysts observed BlackFile operators calling target organizations' help desks or individual employees, impersonating IT staff or vendors. The callers claim an urgent security update or account issue requires the employee to provide their VPN login credentials or multi-factor authentication (MFA) one-time codes. In several cases, the group successfully bypassed MFA by prompting victims to approve push notifications during the call.
+
+Once inside the network via VPN, BlackFile deploys remote monitoring and management (RMM) tools such as AnyDesk or ScreenConnect to maintain persistence. The group then uses native Windows utilities (PowerShell, RDP) and living-off-the-land binaries to enumerate Active Directory, identify file shares, and compress data for exfiltration via cloud storage services like Mega or pCloud. Huntress reported that BlackFile typically exfiltrates between 50 GB and 200 GB of data per victim, including customer PII, payment records, and internal financial documents.
+
+The extortion phase follows a pattern: the group contacts the victim organization via email or phone, threatening to publish the stolen data on a dedicated leak site unless a ransom is paid. Huntress noted that BlackFile has not yet deployed ransomware in any observed incident, focusing solely on data theft and extortion. The group's leak site, which went live in March 2026, currently lists five victims, though Huntress believes the actual number of compromised organizations is higher.
+
+## Mitigations & Recommendations
+
+Defenders should enforce MFA on all remote access points, particularly VPN gateways, and implement number-matching or hardware-token-based MFA to prevent push-notification fatigue attacks. Organizations should also conduct regular vishing awareness training for help desk staff and employees, emphasizing that legitimate IT personnel will never ask for passwords or MFA codes over the phone. Monitoring for unusual RDP or RMM tool installations from non-corporate IP ranges can provide early detection of lateral movement.
+
+## References
+
+- [BleepingComputer: New BlackFile extortion group linked to surge of vishing attacks](https://www.bleepingcomputer.com/news/security/new-blackfile-extortion-gang-targets-retail-and-hospitality-orgs/)
