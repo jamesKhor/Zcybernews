@@ -1,0 +1,52 @@
+---
+title: Tropic Trooper Uses Trojanized SumatraPDF to Deploy AdaptixC2
+slug: 2026-04-24-tropic-trooper-uses-trojanized-sumatrapdf-to-deploy-adaptixc2
+date: '2026-04-24'
+excerpt: >-
+  Zscaler ThreatLabz links Tropic Trooper to a campaign using trojanized
+  SumatraPDF to drop AdaptixC2 Beacon and abuse VS Code tunnels for remote
+  access, targeting Chinese-speaking…
+category: threat-intel
+tags:
+  - tropic-trooper
+  - adaptixc2
+  - sumatrapdf
+  - vs-code-tunnels
+  - zscaler-threatlabz
+  - supply-chain
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/tropic-trooper-uses-trojanized.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-tropic-trooper-uses-trojanized-sumatrapdf-to-deploy-adaptixc2
+severity: high
+threat_actor: Tropic Trooper
+threat_actor_origin: China
+affected_sectors:
+  - government
+  - technology
+affected_regions:
+  - Asia
+  - Taiwan
+  - Philippines
+---
+## Executive Summary
+
+Zscaler ThreatLabz has identified a new campaign by the China-linked advanced persistent threat group Tropic Trooper (also tracked as APT23, Pirate Panda) that uses a trojanized version of the open-source SumatraPDF reader to deliver the AdaptixC2 Beacon post-exploitation framework. The campaign, discovered in March 2026, targets Chinese-speaking individuals and leverages Microsoft Visual Studio Code (VS Code) tunnels for persistent remote access. Zscaler assesses attribution with high confidence based on infrastructure overlap and TTP consistency with prior Tropic Trooper operations.
+
+## Technical Analysis
+
+According to Zscaler ThreatLabz, the attack chain begins with victims downloading a modified SumatraPDF installer from compromised or lookalike websites. The trojanized binary, while retaining the legitimate PDF reader functionality, drops a loader that decrypts and executes the AdaptixC2 Beacon in memory. AdaptixC2 is a publicly available command-and-control framework that supports multiple communication protocols, including HTTPS and DNS tunneling.
+
+Once the Beacon establishes initial access, the attackers deploy a secondary payload that creates a VS Code tunnel, allowing them to maintain persistent remote shell access through Microsoft's legitimate cloud infrastructure. VS Code tunnels, designed for remote development, use TLS-encrypted WebSocket connections to the `vscode.dev` domain, blending malicious traffic with legitimate Microsoft traffic. Zscaler notes that the group has used this technique to evade network-based detection in environments where outbound connections to Microsoft services are whitelisted.
+
+The campaign specifically targets Chinese-speaking users, likely in government and technology sectors across Taiwan and the Philippines — consistent with Tropic Trooper's historical focus on geopolitical espionage. The group has previously employed trojanized software and watering-hole attacks, but this marks the first publicly documented use of AdaptixC2 and VS Code tunnels in their toolkit.
+
+## Mitigations & Recommendations
+
+Organizations should enforce application control policies to block execution of unsigned SumatraPDF binaries, as the legitimate application is digitally signed by its developer. Network defenders should monitor for unexpected VS Code tunnel creation events, particularly from hosts that do not typically run development tools. The creation of tunnels can be logged via Microsoft 365 audit logs (Operation: `VsCodeTunnelCreated`) and should trigger alerts when observed on non-developer workstations. Additionally, blocking outbound connections to `vscode.dev` and `*.tunnels.api.visualstudio.com` for non-development systems can reduce the risk of abuse.
+
+## References
+
+- [The Hacker News: Tropic Trooper Uses Trojanized SumatraPDF and GitHub to Deploy AdaptixC2](https://thehackernews.com/2026/04/tropic-trooper-uses-trojanized.html)

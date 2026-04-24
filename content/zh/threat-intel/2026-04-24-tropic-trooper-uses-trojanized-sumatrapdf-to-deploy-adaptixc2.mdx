@@ -1,0 +1,51 @@
+---
+title: Tropic Trooper 使用木马化的 SumatraPDF 部署 AdaptixC2
+slug: 2026-04-24-tropic-trooper-uses-trojanized-sumatrapdf-to-deploy-adaptixc2
+date: '2026-04-24'
+excerpt: >-
+  Zscaler ThreatLabz 将 Tropic Trooper 与使用木马化的 SumatraPDF 投放 AdaptixC2 Beacon 并滥用
+  VS Code 隧道进行远程访问的活动联系起来，目标是说中文的...
+category: threat-intel
+tags:
+  - tropic-trooper
+  - adaptixc2
+  - sumatrapdf
+  - vs-code-tunnels
+  - zscaler-threatlabz
+  - supply-chain
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/tropic-trooper-uses-trojanized.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-tropic-trooper-uses-trojanized-sumatrapdf-to-deploy-adaptixc2
+severity: high
+threat_actor: Tropic Trooper
+threat_actor_origin: China
+affected_sectors:
+  - government
+  - technology
+affected_regions:
+  - Asia
+  - Taiwan
+  - Philippines
+---
+## 执行摘要
+
+Zscaler ThreatLabz 发现了一个与中国有关的高级持续性威胁组织 Tropic Trooper（也称为 APT23，Pirate Panda）的新活动，该活动使用开源 SumatraPDF 阅读器的木马化版本来部署 AdaptixC2 Beacon 后开发框架。该活动于 2026 年 3 月被发现，目标是讲中文的个人，并利用 Microsoft Visual Studio Code（VS Code）隧道实现持久的远程访问。Zscaler 基于基础设施重叠和与之前 Tropic Trooper 行动的 TTP 一致性，以高信心度评估归因。
+
+## 技术分析
+
+根据 Zscaler ThreatLabz 的说法，攻击链始于受害者从被破坏或仿冒网站下载修改版的 SumatraPDF 安装程序。木马化二进制文件在保留合法 PDF 阅读器功能的同时，会释放一个加载器，该加载器解密并执行内存中的 AdaptixC2 Beacon。AdaptixC2 是一个公开可用的命令与控制框架，支持包括 HTTPS 和 DNS 隧道在内的多种通信协议。
+
+一旦 Beacon 建立初始访问，攻击者部署一个次级有效载荷，创建一个 VS Code 隧道，允许他们通过 Microsoft 的合法云基础设施保持持久的远程 shell 访问。VS Code 隧道旨在用于远程开发，使用 TLS 加密的 WebSocket 连接到 `vscode.dev` 域，将恶意流量与合法的 Microsoft 流量混合。Zscaler 指出，该组织已使用这种技术来规避在白名单中列出对 Microsoft 服务的出站连接的网络环境中的基于网络的检测。
+
+该活动特别针对讲中文的用户，可能在台湾和菲律宾的政府和技术部门——与 Tropic Trooper 历史上对地缘政治间谍活动的重点一致。该组织以前曾使用过木马化软件和水坑攻击，但这是他们工具箱中首次公开记录使用 AdaptixC2 和 VS Code 隧道。
+
+## 缓解措施与建议
+
+组织应执行应用程序控制策略，以阻止未经签名的 SumatraPDF 二进制文件的执行，因为合法应用程序由其开发者进行数字签名。网络防御者应监控意外的 VS Code 隧道创建事件，特别是来自通常不运行开发工具的主机。可以通过 Microsoft 365 审核日志记录隧道的创建（操作：`VsCodeTunnelCreated`），并在非开发工作站上观察到时触发警报。此外，阻止非开发系统对 `vscode.dev` 和 `*.tunnels.api.visualstudio.com` 的出站连接可以降低被滥用的风险。
+
+## 参考资料
+
+- [The Hacker News: Tropic Trooper Uses Trojanized SumatraPDF and GitHub to Deploy AdaptixC2](https://thehackernews.com/2026/04/tropic-trooper-uses-trojanized.html)
