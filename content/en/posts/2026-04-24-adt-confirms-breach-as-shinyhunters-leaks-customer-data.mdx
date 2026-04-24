@@ -1,0 +1,45 @@
+---
+title: ADT Confirms Breach as ShinyHunters Leaks Customer Data
+slug: 2026-04-24-adt-confirms-breach-as-shinyhunters-leaks-customer-data
+date: '2026-04-24'
+excerpt: >-
+  ADT confirmed a data breach after ShinyHunters leaked 30,000+ customer records
+  including names, emails, and account details from a compromised Salesforce
+  instance.
+category: industry
+tags:
+  - adt
+  - shinyhunters
+  - data-breach
+  - salesforce
+  - customer-data
+  - extortion
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/adt-confirms-data-breach-after-shinyhunters-leak-threat/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-adt-confirms-breach-as-shinyhunters-leaks-customer-data
+severity: high
+threat_actor: ShinyHunters
+affected_sectors:
+  - security services
+affected_regions:
+  - North America
+---
+## Executive Summary
+
+Home security provider ADT confirmed a data breach after the extortion group ShinyHunters threatened to leak stolen customer records unless a ransom was paid. According to a statement ADT provided to BleepingComputer on April 23, 2026, the breach involved a compromised Salesforce instance used for customer support, exposing names, email addresses, and phone numbers for approximately 30,800 customers. ADT stated that no financial data, Social Security numbers, or alarm system credentials were accessed. The company is notifying affected individuals and has engaged external cybersecurity experts.
+
+## Technical Analysis
+
+ShinyHunters, a group known for extorting companies via stolen databases, claimed responsibility for the breach and published a sample of the data on their Telegram channel. The leaked records appear to be from a Salesforce Customer Relationship Management (CRM) environment used by ADT to manage support tickets and customer interactions. BleepingComputer reported that the group threatened to release the full dataset if ADT did not meet ransom demands. ADT’s investigation confirmed the intrusion but did not disclose the initial access vector. The breach mirrors a pattern seen in previous ShinyHunters operations, where misconfigured or compromised cloud-based CRM instances were exploited to exfiltrate customer data.
+
+## Mitigations & Recommendations
+
+Defenders should prioritize securing Salesforce and other CRM platforms by enabling multi-factor authentication for all user accounts, auditing API access logs for unauthorized activity, and restricting data export permissions to only necessary roles. Organizations using cloud-based CRM systems should also implement network segmentation and monitor for anomalous bulk data retrieval patterns. ADT customers who suspect their data was exposed should remain vigilant against phishing attempts that may leverage the leaked contact information.
+
+## References
+
+- [BleepingComputer: ADT confirms data breach after ShinyHunters leak threat](https://www.bleepingcomputer.com/news/security/adt-confirms-data-breach-after-shinyhunters-leak-threat/)

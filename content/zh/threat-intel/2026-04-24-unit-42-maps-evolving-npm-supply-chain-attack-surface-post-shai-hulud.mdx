@@ -1,0 +1,41 @@
+---
+title: Unit 42 映射不断发展的 npm 供应链攻击面后Shai Hulud
+slug: >-
+  2026-04-24-unit-42-maps-evolving-npm-supply-chain-attack-surface-post-shai-hulud
+date: '2026-04-24'
+excerpt: Unit 42 详细描述了可蠕虫化的 npm 恶意软件，CI/CD 管道持久性，以及针对开发者的多阶段攻击。
+category: threat-intel
+tags:
+  - npm
+  - supply-chain
+  - unit-42
+  - shai-hulud
+  - ci/cd
+  - malware
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-24-unit-42-maps-evolving-npm-supply-chain-attack-surface-post-shai-hulud
+severity: high
+affected_sectors:
+  - software development
+  - technology
+---
+## 执行摘要
+
+Palo Alto Networks Unit 42 发布了一份关于 npm 供应链攻击态势演变的详细分析报告，重点指出了在 Shai Hulud 蠕虫事件之后观察到的新战术。研究识别了能够在开发者环境中自我传播的可蠕虫化恶意软件、CI/CD 管道持久性机制，以及超出初始包妥协的多阶段攻击链。Unit 42 的发现强调了向更复杂、自动化的攻击转变，这些攻击针对的是 npm 生态系统。
+
+## 技术分析
+
+Unit 42 的分析将 npm 供应链威胁归类为几种新兴模式。可蠕虫化恶意软件包首次在 Shai Hulud 活动中显著观察到，它们通过感染其他包或开发者机器自主传播，创建连锁妥协链。攻击者越来越多地在 CI/CD 管道中嵌入持久性，使用恶意包修改构建脚本，在部署工件中注入后门，或在自动化构建期间外泄凭证。多阶段攻击涉及初始低怀疑包下载次级有效载荷，规避静态分析和注册表扫描。研究人员指出，攻击者正在利用开源依赖中固有的信任，针对流行包进行类型混淆、依赖混淆和账户接管，以分发恶意版本。Unit 42 强调，npm 攻击面现在已扩展到包发布之外，包括开发者工具、注册表 API 和自动化构建过程。
+
+## 缓解措施与建议
+
+Unit 42 建议组织实施几项防御措施：使用 npm 的完整性检查功能强制执行严格的包来源验证，使用允许列表的注册表镜像，并使用能够检测行为异常而不仅仅是已知签名的工具扫描所有依赖项。CI/CD 管道应在隔离环境中运行，权限最小化，开发者应使用固定版本的包锁定。还建议定期审计依赖树并监控意外的包更新或新维护者。研究人员强调，没有任何单一控制措施是足够的；在整个软件供应链中进行深度防御是必不可少的。
+
+## 参考资料
+
+* [The npm Threat Landscape: Attack Surface and Mitigations - Unit 42](https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/)

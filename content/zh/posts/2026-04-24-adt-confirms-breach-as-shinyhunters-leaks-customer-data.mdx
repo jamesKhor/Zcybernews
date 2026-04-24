@@ -1,0 +1,44 @@
+---
+title: ADT确认数据泄露，ShinyHunters泄露客户数据
+slug: 2026-04-24-adt-confirms-breach-as-shinyhunters-leaks-customer-data
+date: '2026-04-24'
+excerpt: 'ADT确认数据泄露后，ShinyHunters泄露了30,000+客户记录，包括姓名、电子邮件和账户详情，这些信息来自一个被破坏的Salesforce实例。'
+category: industry
+tags:
+  - adt
+  - shinyhunters
+  - data-breach
+  - salesforce
+  - customer-data
+  - extortion
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/adt-confirms-data-breach-after-shinyhunters-leak-threat/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-24-adt-confirms-breach-as-shinyhunters-leaks-customer-data
+severity: high
+threat_actor: ShinyHunters
+affected_sectors:
+  - security services
+affected_regions:
+  - North America
+---
+## ADT确认数据泄露，ShinyHunters泄露客户数据
+
+## 执行摘要
+
+家庭安全服务提供商ADT在勒索团伙ShinyHunters威胁要泄露被盗客户记录，除非支付赎金后，确认了一起数据泄露事件。根据ADT在2026年4月23日向BleepingComputer提供的声明，此次泄露涉及一个被破坏的Salesforce实例，该实例用于客户支持，暴露了大约30,800名客户的姓名、电子邮件地址和电话号码。ADT表示，没有财务数据、社会安全号码或报警系统凭证被访问。该公司正在通知受影响的个人，并已聘请外部网络安全专家。
+
+## 技术分析
+
+ShinyHunters是一个以通过被盗数据库勒索公司而闻名的团伙，他们声称对此次泄露负责，并在他们的Telegram频道上发布了数据样本。泄露的记录似乎来自ADT用于管理支持票据和客户互动的Salesforce客户关系管理（CRM）环境。BleepingComputer报道称，该团伙威胁说，如果ADT不满足赎金要求，他们将发布完整的数据集。ADT的调查确认了入侵行为，但没有透露初始访问途径。此次泄露反映了ShinyHunters以往操作中看到的模式，即利用配置错误或被破坏的基于云的CRM实例来窃取客户数据。
+
+## 缓解措施与建议
+
+防御者应优先保护Salesforce和其他CRM平台，为所有用户账户启用多因素身份验证，审核API访问日志以查找未经授权的活动，并限制数据导出权限，只授予必要的角色。使用基于云的CRM系统的组织还应实施网络分段，并监控异常的批量数据检索模式。怀疑自己的数据被泄露的ADT客户应保持警惕，防范可能利用泄露的联系信息进行的网络钓鱼企图。
+
+## 参考资料
+
+- [BleepingComputer: ADT confirms data breach after ShinyHunters leak threat](https://www.bleepingcomputer.com/news/security/adt-confirms-data-breach-after-shinyhunters-leak-threat/)
