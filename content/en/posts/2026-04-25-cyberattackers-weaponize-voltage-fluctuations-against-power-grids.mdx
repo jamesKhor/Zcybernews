@@ -1,0 +1,41 @@
+---
+title: Cyberattackers Weaponize Voltage Fluctuations Against Power Grids
+slug: 2026-04-25-cyberattackers-weaponize-voltage-fluctuations-against-power-grids
+date: '2026-04-25'
+excerpt: >-
+  Dark Reading reports attackers are manipulating voltage to destabilize power
+  grids — a growing cyber-physical threat vector targeting electricity
+  infrastructure with no patch…
+category: industry
+tags:
+  - critical-infrastructure
+  - power-grid
+  - cyber-physical-attacks
+  - voltage-manipulation
+  - industrial-control-systems
+language: en
+source_urls:
+  - 'https://www.darkreading.com/cyber-risk/electricity-growing-area-cyber-risk'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-25-cyberattackers-weaponize-voltage-fluctuations-against-power-grids
+severity: high
+threat_actor: Sandworm
+affected_sectors:
+  - energy
+---
+## Executive Summary
+
+Cyberattackers are increasingly targeting the electrical supply chain by manipulating voltage fluctuations, a vector that has historically been the domain of IT reliability teams but is now being weaponized to destabilize power grids. Dark Reading reports that adversaries are exploiting the fine-grained control systems that manage voltage levels, potentially causing equipment damage, blackouts, or cascading failures. This emerging threat class lacks a traditional patch — mitigation depends on network segmentation and anomaly detection at the operational technology (OT) layer.
+
+## Technical Analysis
+
+Voltage fluctuations in power systems are typically managed by automatic voltage regulators (AVRs) and supervisory control and data acquisition (SCADA) systems that adjust generation and distribution in real time. Attackers are now probing these systems for vulnerabilities that allow them to inject malicious commands or manipulate sensor readings, causing voltage sags, swells, or transients outside normal operating ranges. Such manipulation can trip protective relays, damage transformers, or destabilize grid frequency, according to the report. The attack surface includes both legacy protocols like Modbus and DNP3, which lack authentication, and modern IP-connected substation automation systems. No specific CVE IDs or named threat actor operations were disclosed in the source material, but the trend aligns with prior research on cyber-physical attacks against industrial control systems (ICS) by groups such as Sandworm and Xenotime.
+
+## Mitigations & Recommendations
+
+Defenders should monitor ICS network traffic for anomalous voltage setpoint changes or unauthorized commands to AVRs and SCADA controllers. Implementing network segmentation between IT and OT environments, deploying intrusion detection systems tuned for industrial protocols, and enforcing strict access controls on substation automation devices can reduce risk. Regular patching of known vulnerabilities in ICS equipment remains essential, though the voltage manipulation vector may require behavioral anomaly detection rather than signature-based defenses. Organizations should also conduct tabletop exercises simulating voltage-based attacks to test response procedures.
+
+## References
+
+- [Electricity Is a Growing Area of Cyber Risk — Dark Reading](https://www.darkreading.com/cyber-risk/electricity-growing-area-cyber-risk)

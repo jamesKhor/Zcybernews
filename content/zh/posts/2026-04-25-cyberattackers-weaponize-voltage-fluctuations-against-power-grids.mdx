@@ -1,0 +1,40 @@
+---
+title: 网络攻击者利用电压波动对抗电网
+slug: 2026-04-25-cyberattackers-weaponize-voltage-fluctuations-against-power-grids
+date: '2026-04-25'
+excerpt: Dark Reading 报告称攻击者正在操纵电压以破坏电网 —— 这是一个日益增长的网络物理威胁向量，针对没有补丁的电力基础设施进行攻击…
+category: industry
+tags:
+  - critical-infrastructure
+  - power-grid
+  - cyber-physical-attacks
+  - voltage-manipulation
+  - industrial-control-systems
+language: zh
+source_urls:
+  - 'https://www.darkreading.com/cyber-risk/electricity-growing-area-cyber-risk'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-25-cyberattackers-weaponize-voltage-fluctuations-against-power-grids
+severity: high
+threat_actor: Sandworm
+affected_sectors:
+  - energy
+---
+## Cyberattackers Weaponize Voltage Fluctuations Against Power Grids
+
+## 执行摘要
+
+网络攻击者越来越多地通过操纵电压波动来针对电力供应链，这一向量历来是IT可靠性团队的领域，但现在被武器化以破坏电网。Dark Reading报道，对手正在利用管理电压水平的细粒度控制系统，可能会造成设备损坏、停电或级联故障。这种新兴威胁类别缺乏传统的补丁——缓解措施依赖于网络分割和在运营技术（OT）层的异常检测。
+
+## 技术分析
+
+电力系统中的电压波动通常由自动电压调节器（AVR）和监督控制与数据采集（SCADA）系统管理，这些系统实时调整发电和分配。攻击者现在正在探测这些系统的漏洞，允许他们注入恶意命令或操纵传感器读数，导致电压下降、膨胀或瞬态超出正常操作范围。根据报告，这种操纵可能会触发保护继电器、损坏变压器或破坏电网频率。攻击面包括缺乏认证的遗留协议如Modbus和DNP3，以及现代IP连接的变电站自动化系统。源材料中没有披露具体的CVE ID或命名的威胁行为者操作，但这一趋势与先前对工业控制系统（ICS）的网络物理攻击的研究一致，这些攻击是由Sandworm和Xenotime等团体进行的。
+
+## 缓解措施与建议
+
+防御者应监控ICS网络流量，以寻找异常的电压设定点变化或对AVR和SCADA控制器的未经授权的命令。在IT和OT环境之间实施网络分割，部署针对工业协议调整的入侵检测系统，并对变电站自动化设备实施严格的访问控制，可以降低风险。定期修补ICS设备中已知的漏洞仍然至关重要，尽管电压操纵向量可能需要行为异常检测而不是基于签名的防御。组织还应进行模拟基于电压的攻击的桌面演习，以测试响应程序。
+
+## 参考资料
+
+- [Electricity Is a Growing Area of Cyber Risk — Dark Reading](https://www.darkreading.com/cyber-risk/electricity-growing-area-cyber-risk)
