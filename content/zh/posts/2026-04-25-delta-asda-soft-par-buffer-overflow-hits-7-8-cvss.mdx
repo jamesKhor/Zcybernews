@@ -1,0 +1,48 @@
+---
+title: Delta ASDA-Soft PAR 缓冲区溢出得分7.8 CVSS
+slug: 2026-04-25-delta-asda-soft-par-buffer-overflow-hits-7-8-cvss
+date: '2026-04-25'
+excerpt: >-
+  CVE-2026-5726: Delta Electronics ASDA-Soft PAR 文件解析中的基于栈的缓冲区溢出得分7.8
+  CVSS，并可通过精心制作的PAR文件实现远程代码执行。
+category: vulnerabilities
+tags:
+  - delta-electronics
+  - asda-soft
+  - cve-2026-5726
+  - buffer-overflow
+  - rce
+  - ics
+language: zh
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-296/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-25-delta-asda-soft-par-buffer-overflow-hits-7-8-cvss
+severity: high
+cvss_score: 7.8
+cve_ids:
+  - CVE-2026-5726
+affected_sectors:
+  - industrial control systems
+  - manufacturing
+---
+## 执行摘要
+
+Delta Electronics ASDA-Soft，一种用于工业自动化中伺服驱动器配置和监控的实用工具，其PAR文件解析程序中存在基于栈的缓冲区溢出漏洞。该漏洞被追踪为**CVE-2026-5726**，由Zero Day Initiative (ZDI) 评为**7.8**的CVSS分数，允许远程攻击者在受影响的安装上执行任意代码。利用此漏洞需要用户交互——目标必须打开恶意的PAR文件或访问提供该文件的受妥协页面。ZDI在2026年4月25日发布了该公告，标识符为ZDI-26-296。
+
+## 技术分析
+
+根据ZDI的公告，该漏洞存在于ASDA-Soft如何处理PAR文件中，PAR文件是Delta伺服驱动器参数配置的专有格式。解析函数在将用户提供的数据复制到固定长度的栈缓冲区之前，未能验证数据的大小，导致经典的基于栈的缓冲区溢出。攻击者可以制作一个包含过大字段的PAR文件，覆盖返回地址和其他关键的栈数据，从而在ASDA-Soft进程的上下文中启用任意代码执行。
+
+CVSS 7.8的评分反映了对机密性、完整性和可用性（根据ZDI的评分均为“高”）的高影响，尽管攻击向量是本地的（需要文件访问）且用户交互是强制性的。一旦文件被打开，触发溢出不需要任何身份验证。ZDI没有在公告之外披露具体的证明概念代码或可利用性细节，但漏洞类别是众所周知的，并且可以用公开可用的技术轻易武器化。
+
+在ZDI披露时，Delta Electronics尚未发布公开补丁或安全公告。公告指出，ZDI遵循协调披露政策；时间线表明Delta在发布前已被通知。用户应监控Delta的官方支持渠道，以获取解决CVE-2026-5726的固件或软件更新。
+
+## 缓解措施与建议
+
+在补丁可用之前，使用Delta ASDA-Soft的组织应限制从不受信任来源访问PAR文件。实施应用程序白名单或沙箱以限制如果打开恶意文件时代码执行的影响。培训操作员和工程师避免打开来自未经验证的电子邮件附件、下载或可移动媒体的PAR文件。对工业控制系统（ICS）环境进行网络分段可以减少如果攻击者通过此向量获得初始访问权限时的影响范围。考虑使用文件完整性监控来检测对PAR文件的未经授权的修改。监控ZDI和Delta公告以获取补丁可用性，并及时应用。
+
+## 参考资料
+
+- [ZDI-26-296: Delta Electronics ASDA-Soft PAR File Parsing Stack-based Buffer Overflow Remote Code Execution Vulnerability](http://www.zerodayinitiative.com/advisories/ZDI-26-296/)

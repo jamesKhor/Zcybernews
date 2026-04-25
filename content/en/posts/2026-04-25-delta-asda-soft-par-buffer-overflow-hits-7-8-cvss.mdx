@@ -1,0 +1,49 @@
+---
+title: Delta ASDA-Soft PAR Buffer Overflow Hits 7.8 CVSS
+slug: 2026-04-25-delta-asda-soft-par-buffer-overflow-hits-7-8-cvss
+date: '2026-04-25'
+excerpt: >-
+  CVE-2026-5726: A stack-based buffer overflow in Delta Electronics ASDA-Soft
+  PAR file parsing scores 7.8 CVSS and enables remote code execution via crafted
+  PAR files.
+category: vulnerabilities
+tags:
+  - delta-electronics
+  - asda-soft
+  - cve-2026-5726
+  - buffer-overflow
+  - rce
+  - ics
+language: en
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-296/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-25-delta-asda-soft-par-buffer-overflow-hits-7-8-cvss
+severity: high
+cvss_score: 7.8
+cve_ids:
+  - CVE-2026-5726
+affected_sectors:
+  - industrial control systems
+  - manufacturing
+---
+## Executive Summary
+
+Delta Electronics ASDA-Soft, a configuration and monitoring utility for servo drives used in industrial automation, contains a stack-based buffer overflow vulnerability in its PAR file parsing routine. Tracked as **CVE-2026-5726** and assigned a CVSS score of **7.8** by the Zero Day Initiative (ZDI), the flaw allows remote attackers to execute arbitrary code on affected installations. Exploitation requires user interaction — the target must open a malicious PAR file or visit a compromised page serving the file. The advisory was published by ZDI on April 25, 2026, under identifier ZDI-26-296.
+
+## Technical Analysis
+
+According to ZDI's advisory, the vulnerability resides in how ASDA-Soft handles PAR files, a proprietary format used for parameter configuration of Delta servo drives. The parsing function fails to validate the size of user-supplied data before copying it into a fixed-length stack buffer, leading to a classic stack-based buffer overflow. An attacker can craft a PAR file containing an oversized field that overwrites the return address and other critical stack data, enabling arbitrary code execution in the context of the ASDA-Soft process.
+
+The CVSS 7.8 rating reflects a high impact on confidentiality, integrity, and availability (all rated as 'high' per ZDI's scoring), though the attack vector is local (requiring file access) and user interaction is mandatory. No authentication is required to trigger the overflow once the file is opened. ZDI did not disclose specific proof-of-concept code or exploitability details beyond the advisory, but the vulnerability class is well-understood and trivially weaponizable with publicly available techniques.
+
+Delta Electronics has not yet released a public patch or security advisory at the time of ZDI's disclosure. The advisory notes that ZDI follows a coordinated disclosure policy; the timeline suggests Delta was notified prior to publication. Users should monitor Delta's official support channels for firmware or software updates addressing CVE-2026-5726.
+
+## Mitigations & Recommendations
+
+Until a patch is available, organizations using Delta ASDA-Soft should restrict access to PAR files from untrusted sources. Implement application whitelisting or sandboxing to limit the impact of code execution if a malicious file is opened. Train operators and engineers to avoid opening PAR files from unverified email attachments, downloads, or removable media. Network segmentation of industrial control system (ICS) environments can reduce the blast radius if an attacker gains initial access through this vector. Consider using file integrity monitoring to detect unauthorized modifications to PAR files. Monitor ZDI and Delta advisories for patch availability and apply promptly.
+
+## References
+
+- [ZDI-26-296: Delta Electronics ASDA-Soft PAR File Parsing Stack-based Buffer Overflow Remote Code Execution Vulnerability](http://www.zerodayinitiative.com/advisories/ZDI-26-296/)
