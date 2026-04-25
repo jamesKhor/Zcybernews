@@ -1,0 +1,54 @@
+---
+title: Unit 42 详述针对云身份的 Kubernetes 攻击升级
+slug: 2026-04-25-unit-42-details-escalating-kubernetes-attacks-on-cloud-identities
+date: '2026-04-25'
+excerpt: Unit 42 报告威胁行为者利用 Kubernetes 身份和关键漏洞来破坏云环境，攻击目标是配置错误的 RBAC 和暴露的...
+category: threat-intel
+tags:
+  - kubernetes
+  - cloud-security
+  - identity-attacks
+  - rbac
+  - api-exploitation
+  - unit-42
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/modern-kubernetes-threats/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-25-unit-42-details-escalating-kubernetes-attacks-on-cloud-identities
+severity: high
+affected_sectors:
+  - cloud-services
+  - technology
+---
+## 执行摘要
+
+Palo Alto Networks Unit 42 发现针对 Kubernetes 环境的攻击激增，威胁行为者越来越多地利用身份配置错误和关键漏洞来破坏云原生基础设施。2026年4月25日发布的研究强调了攻击者如何利用暴露的 API、过于宽松的基于角色的访问控制（RBAC）设置和未修补的缺陷在集群内横向移动和窃取数据。
+
+## 技术分析
+
+Unit 42 的分析基于多个云环境的遥测数据，揭示攻击者优先考虑基于身份的攻击而不是传统的网络利用。主要发现包括：
+
+- **RBAC 配置错误**：超过60%的受破坏集群拥有授予过多权限的 RBAC 角色，例如将 `cluster-admin` 授予服务账户或 pod。攻击者利用这些来提升权限并部署恶意工作负载。
+- **暴露的 API**：未受保护的 Kubernetes API 服务器（例如，从互联网可访问的端口 6443）作为初始访问向量。Unit 42 观察到针对配置错误的 kubelets 和 etcd 实例的扫描。
+- **漏洞利用**：尽管报告中没有提到具体的 CVE，但 Unit 42 指出攻击者将已知的容器运行时和入口控制器漏洞与基于身份的攻击链式结合，以建立持久性。
+- **横向移动**：一旦进入，对手使用窃取的服务账户令牌在命名空间之间移动，通常部署加密货币矿机或数据窃取工具。
+
+研究强调，传统的边界防御对于 Kubernetes 是不够的，因为攻击面由身份和 API 访问而不是网络段来定义。
+
+## 缓解措施与建议
+
+Unit 42 为 Kubernetes 管理员推荐以下缓解措施：
+
+- **最小权限原则**：审计 RBAC 角色，确保除非绝对必要，否则没有服务账户或用户拥有 `cluster-admin`。使用 `kubectl auth can-i` 等工具测试权限。
+- **API 服务器加固**：通过云防火墙规则或网络策略将 Kubernetes API 服务器的访问限制在受信任的 IP 范围内。禁用匿名认证。
+- **定期修补**：及时应用 Kubernetes 组件和容器运行时的安全更新，优先考虑已知漏洞的 CVE。
+- **身份监控**：启用所有 API 调用的审计日志记录，并监控异常的服务账户活动，例如从意外的 IP 或时间使用的令牌。
+- **网络分段**：使用 Kubernetes 网络策略限制 pod 到 pod 的通信，防止横向移动。
+
+防御者还应实施运行时安全工具，以检测未经授权的容器执行和权限提升尝试。
+
+## 参考资料
+
+- [Unit 42: Understanding Current Threats to Kubernetes Environments](https://unit42.paloaltonetworks.com/modern-kubernetes-threats/)
