@@ -1,0 +1,50 @@
+---
+title: Elastic Security 支持英国国防部防御网络 Marvel 2026 演习
+slug: 2026-04-25-elastic-security-backs-uk-mod-defence-cyber-marvel-2026-exercise
+date: '2026-04-25'
+excerpt: >-
+  Elastic Security Labs 为英国国防部的防御网络 Marvel 2026 演习部署了 AI 驱动的检测流程，处理了 1.2TB
+  的遥测数据，涉及 50 个模拟的...
+category: industry
+tags:
+  - elastic
+  - uk-ministry-of-defence
+  - defence-cyber-marvel
+  - cyber-exercise
+  - ai-detection
+  - threat-intelligence
+language: zh
+source_urls:
+  - 'https://www.elastic.co/security-labs/elastic-defence-cyber-marvel'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-25-elastic-security-backs-uk-mod-defence-cyber-marvel-2026-exercise
+severity: informational
+affected_sectors:
+  - government
+  - defense
+affected_regions:
+  - United Kingdom
+---
+## 执行摘要
+
+Elastic Security Labs 为英国国防部（MoD）的旗舰网络演习——2026年3月举行的 Defence Cyber Marvel 2026 提供了检测和响应的骨干支持。根据 Elastic 于2026年4月25日发布的技术概览，部署处理了1.2TB的遥测数据，涵盖了50个模拟攻击场景，包括勒索软件、供应链渗透和内部威胁。演习涉及多个英国军事部门和盟国，测试在有争议的网络环境中的防御能力。
+
+## 技术分析
+
+Elastic 在模拟的 MoD 企业环境中部署了其 Security AI Assistant 和一套定制的检测规则。基础设施从端点、网络传感器、云工作负载和身份提供商中摄取日志，通过 Elastic Stack 的检测引擎关联事件。演习场景包括：
+
+- **勒索软件模拟**：加密文件服务器和工作站，Elastic 的基于行为的检测在几分钟内识别出横向移动和加密模式。
+- **供应链渗透**：攻击者将恶意代码注入模拟的软件更新管道；Elastic 的文件完整性监控和异常检测标记了与基线哈希的偏差。
+- **内部威胁**：一个特权用户通过加密隧道外泄数据；Elastic 的网络流量分析和用户行为分析检测到了不寻常的出站连接。
+- **AI增强钓鱼**：攻击者使用生成性 AI 制作个性化诱饵；Elastic 的电子邮件安全集成标记了语言异常和可疑链接模式。
+
+Elastic 的 Security AI Assistant，由一个在安全数据上微调的大型语言模型提供支持，提供了实时自然语言查询和自动化调查剧本。根据报告，该系统将模拟攻击的平均检测时间（MTTD）从之前演习的45分钟降低到不到12分钟。Elastic 指出，AI助手偶尔会将良性的行政行为误解释为恶意行为，产生需要人类分析师审查的误报——团队正在通过改进上下文感知过滤来解决这一限制。
+
+## 缓解措施与建议
+
+参加 Defence Cyber Marvel 2026 的防御者受益于预部署的覆盖 MITRE ATT&CK 技术的检测规则、定期遥测基线调整和跨团队通信协议。Elastic 建议组织采取类似的实践：部署基于行为的检测而不是仅基于签名的方法，将 AI 助手与人类在环验证集成，并进行模拟包括供应链和内部威胁在内的现实攻击链的桌面演习。演习强调，AI驱动的检测工具加速了分类，但仍然需要熟练的分析师来裁决模糊不清的警报。
+
+## 参考资料
+
+- [Elastic Security Labs: Elastic on Defence Cyber Marvel 2026](https://www.elastic.co/security-labs/elastic-defence-cyber-marvel)
