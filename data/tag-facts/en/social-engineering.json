@@ -1,40 +1,40 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 42,
+  "count": 46,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-23"
+    "latest": "2026-04-24"
   },
   "top_actors": [
+    "Lazarus Group",
     "APT37 (ScarCruft, InkySquid)",
-    "ClickFix",
-    "Lazarus Group"
+    "BlackFile"
   ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
-    "financial-services",
     "technology",
+    "financial-services",
     "financial services",
-    "government"
+    "hospitality"
   ],
   "top_regions": [
     "Global",
-    "United states",
-    "Canada",
     "North america",
-    "United kingdom"
+    "Europe",
+    "United states",
+    "Canada"
   ],
   "severity_mix": {
-    "high": 30,
+    "high": 34,
     "medium": 11,
     "informational": 1
   },
   "recent_excerpts": [
+    "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months.",
     "Specops Software documents how helpdesk social engineering turns password reset requests into full account compromise — attackers bypass MFA and gain persistent access.",
-    "A trojanized Slack installer delivers a remote access tool that creates a hidden desktop, allowing attackers to bypass multi-factor authentication and silently control victim machines.",
-    "Threat actors are abusing the Obsidian note-taking app to deliver the novel PHANTOMPULSE RAT via malicious plugins, targeting individuals in finance and cryptocurrency sectors in a campaign tracked as"
+    "A trojanized Slack installer delivers a remote access tool that creates a hidden desktop, allowing attackers to bypass multi-factor authentication and silently control victim machines."
   ],
-  "sources_hash": "bd33aa146a857482"
+  "sources_hash": "ee5cc7436081376b"
 }

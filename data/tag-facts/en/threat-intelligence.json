@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "GopherWhisper",
@@ -30,9 +30,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors.",
     "An unauthorized group accessed Anthropic's exclusive Claude Mythos Preview AI, a cybersecurity tool capable of generating exploits and malware.",
-    "Mature security operations centers reduce mean time to respond by 40% by integrating threat intelligence into workflows, while others waste time on siloed data and manual processes.",
-    "Security operations centers (SOCs) stall at lower maturity levels when threat intelligence feeds remain external to analyst workflows, according to a new analysis."
+    "Mature security operations centers reduce mean time to respond by 40% by integrating threat intelligence into workflows, while others waste time on siloed data and manual processes."
   ],
-  "sources_hash": "0fb17973f239e0ce"
+  "sources_hash": "d86491dfb01a3328"
 }

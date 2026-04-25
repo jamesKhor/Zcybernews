@@ -1,0 +1,33 @@
+{
+  "tag": "generative-ai",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-24"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "healthcare",
+    "technology",
+    "cybersecurity",
+    "enterprise"
+  ],
+  "top_regions": [
+    "Europe",
+    "Global",
+    "North america"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months.",
+    "Anthropic restricts access to its Claude Mythos Preview AI model, citing its ability to automate vulnerability discovery and exploit chain creation, and launches Project Glasswing to find and patch fl",
+    "The Cloud Security Alliance warns that Anthropic's Claude Mythos model will trigger an 'AI vulnerability storm,' forcing CISOs to manage a 10x surge in code flaws and novel exploit techniques within 1"
+  ],
+  "sources_hash": "7fc7b13674d5fc1e"
+}

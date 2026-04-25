@@ -1,27 +1,34 @@
 {
   "tag": "llm",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-23"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33626",
+      "cvss": 7.5
+    }
+  ],
   "top_sectors": [
     "cloud service providers",
-    "enterprise"
+    "enterprise",
+    "research",
+    "technology"
   ],
   "top_regions": [],
   "severity_mix": {
+    "high": 5,
     "medium": 3,
-    "high": 4,
     "informational": 1
   },
   "recent_excerpts": [
+    "CVE-2026-33626 (CVSS 7.5) in LMDeploy, an open-source LLM toolkit, was exploited in the wild within 13 hours of public disclosure, enabling SSRF attacks to access sensitive…",
     "A controlled study reveals humans apply social heuristics like fairness and cooperation to LLM opponents in strategic games, leading to predictable exploitation and potential security risks in human-A",
-    "A security analysis of over 400 LLM agent routing services reveals widespread vulnerabilities enabling attackers to inject malicious commands, leak sensitive data, and bypass intended AI model behavio",
-    "Anthropic releases Claude Opus 4.7, a frontier AI model with new automated safeguards designed to detect and halt potentially harmful cybersecurity tasks during long, unsupervised agentic workflows."
+    "A security analysis of over 400 LLM agent routing services reveals widespread vulnerabilities enabling attackers to inject malicious commands, leak sensitive data, and bypass intended AI model behavio"
   ],
-  "sources_hash": "80ab483d039ca9d3"
+  "sources_hash": "e3ba68fcba7e92bb"
 }

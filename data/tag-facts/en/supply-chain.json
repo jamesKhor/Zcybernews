@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 61,
+  "count": 65,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "Lazarus Group",
@@ -36,20 +36,21 @@
   ],
   "top_regions": [
     "Global",
-    "Europe",
     "Asia",
-    "North america"
+    "Europe",
+    "Arctic",
+    "China"
   ],
   "severity_mix": {
-    "high": 38,
+    "high": 41,
     "critical": 9,
     "informational": 4,
-    "medium": 9
+    "medium": 10
   },
   "recent_excerpts": [
     "The CanisterSprawl supply chain worm hijacks npm packages, uses stolen developer tokens to self-propagate, and exfiltrates data to an ICP canister, according to Socket and…",
     "Attackers compromised Checkmarx KICS Docker images and VS Code extensions to steal cloud credentials, API keys, and source code from developer environments.",
     "Threat actors uploaded malicious Docker images to Checkmarx's official KICS repository and published trojanized VS Code extensions, stealing AWS keys and browser data from…"
   ],
-  "sources_hash": "30816287f2e24d16"
+  "sources_hash": "1a362c2c5f6ca892"
 }

@@ -1,27 +1,31 @@
 {
   "tag": "macos",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-17"
+    "latest": "2026-04-24"
   },
   "top_actors": [
-    "ClickFix",
     "Lazarus Group",
+    "ClickFix",
     "Sapphire Sleet"
   ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
     "technology",
-    "artificial-intelligence"
+    "artificial-intelligence",
+    "finance"
   ],
   "top_regions": [
-    "Global"
+    "Asia",
+    "Europe",
+    "Global",
+    "North america"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "medium": 2
   },
   "recent_excerpts": [
@@ -29,5 +33,5 @@
     "新的 ClickFix 风格活动针对 macOS 用户，使用虚假苹果指令运行恶意命令。",
     "一个ClickFix社会工程学活动通过使用脚本编辑器执行恶意命令来绕过macOS安全警告，标志着针对Mac的恶意软件的重大演变。"
   ],
-  "sources_hash": "92757ff18fb09818"
+  "sources_hash": "4fbb132fe9def05f"
 }

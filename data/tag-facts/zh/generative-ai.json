@@ -1,0 +1,33 @@
+{
+  "tag": "generative-ai",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-24"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "healthcare",
+    "technology",
+    "cybersecurity",
+    "enterprise"
+  ],
+  "top_regions": [
+    "Europe",
+    "Global",
+    "North america"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。",
+    "Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project Glasswing 项目以发现并修补漏洞。",
+    "云安全联盟警告称Anthropic的Claude Mythos模型将引发一场'AI漏洞风暴'，迫使CISOs在18个月内管理代码缺陷和新颖利用技术的10倍激增。"
+  ],
+  "sources_hash": "7fc7b13674d5fc1e"
+}

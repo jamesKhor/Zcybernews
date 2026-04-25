@@ -1,0 +1,9 @@
+{
+  "tag": "zdi",
+  "locale": "en",
+  "intro": "Between 18 and 24 April 2026, ZCyberNews published six articles under the zdi tag, covering five high-severity vulnerabilities and one critical issue. The top CVEs identified include CVE-2026-22898, CVE-2026-6406, CVE-2026-25203, CVE-2026-5424, and CVE-2025-71066, with scores ranging from 7.5 to 8.8. These flaws affected sectors such as critical infrastructure, digital signage, energy, enterprise, and industrial control systems on a global scale.",
+  "sources_hash": "4210d29dc7b9830b",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-25T04:03:11.325Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

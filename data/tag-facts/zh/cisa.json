@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
   "top_cves": [
@@ -20,14 +20,16 @@
     }
   ],
   "top_sectors": [
+    "government",
     "software development",
     "technology"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "United states"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "critical": 2
   },
   "recent_excerpts": [
@@ -35,5 +37,5 @@
     "CISA 将其已知被利用漏洞目录中添加了六个 Fortinet、Microsoft 和 Adobe 软件中的漏洞，警告存在活跃的野外攻击，需要紧急修补。",
     "CISA 警告称 Fortinet 产品中存在一个关键的 SQL 注入漏洞，正在被积极利用，敦促立即修补。具体的 CVE ID 尚未公开披露。"
   ],
-  "sources_hash": "7991b825543501cc"
+  "sources_hash": "415d6c9603bc2c7f"
 }

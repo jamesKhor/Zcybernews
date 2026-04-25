@@ -1,10 +1,10 @@
 {
   "tag": "cryptocurrency",
   "locale": "zh",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-24"
   },
   "top_actors": [
     "Lazarus Group",
@@ -19,19 +19,19 @@
   "top_sectors": [
     "cryptocurrency",
     "decentralized finance (DeFi)",
+    "finance",
     "financial-services",
-    "software development",
-    "technology"
+    "software development"
   ],
   "top_regions": [
+    "Global",
     "United states",
     "Canada",
     "Europe",
-    "Global",
     "North america"
   ],
   "severity_mix": {
-    "high": 13,
+    "high": 14,
     "critical": 3
   },
   "recent_excerpts": [
@@ -39,5 +39,5 @@
     "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。",
     "Kaspersky 发现了 22 个恶意的 iOS 应用程序在官方 App Store 上冒充 MetaMask 和 Coinbase 等加密钱包，从超过 1,000 名受害者那里窃取种子短语和私钥。"
   ],
-  "sources_hash": "fa0e0a634c701a20"
+  "sources_hash": "bd21e1167e0d5745"
 }

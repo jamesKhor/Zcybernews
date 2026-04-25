@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 25,
+  "count": 27,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "ShinyHunters",
@@ -21,19 +21,19 @@
   ],
   "top_regions": [
     "Europe",
-    "United states",
     "North america",
+    "United states",
     "France",
     "Global"
   ],
   "severity_mix": {
-    "medium": 4,
-    "high": 20
+    "high": 22,
+    "medium": 4
   },
   "recent_excerpts": [
-    "Malwarebytes analysis shows corporate breaches expose customer PII, enable follow-on fraud, and inflate insurance premiums — affecting even unaffected individuals.",
-    "Attackers stole personal data from Rituals Cosmetics' My Rituals membership database — names, emails, addresses, and loyalty points. Number of affected customers undisclosed.",
-    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…"
+    "ADT confirmed cybercriminals breached its systems on April 20, 2026, stealing a limited set of customer and prospect data. No financial info or credentials compromised.",
+    "ADT confirmed a data breach after ShinyHunters leaked 30,000+ customer records including names, emails, and account details from a compromised Salesforce instance.",
+    "Malwarebytes analysis shows corporate breaches expose customer PII, enable follow-on fraud, and inflate insurance premiums — affecting even unaffected individuals."
   ],
-  "sources_hash": "8bcbcddcab900979"
+  "sources_hash": "537349356b4c10ec"
 }

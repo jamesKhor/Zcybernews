@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-24"
   },
   "top_actors": [
     "Scattered Spider",
@@ -14,10 +14,10 @@
   "top_cves": [],
   "top_sectors": [
     "government",
-    "cryptocurrency",
     "telecommunications",
-    "corporate",
-    "education"
+    "cryptocurrency",
+    "law enforcement",
+    "corporate"
   ],
   "top_regions": [
     "United states",
@@ -27,14 +27,14 @@
     "Florida"
   ],
   "severity_mix": {
-    "high": 13,
+    "high": 14,
     "informational": 1,
     "medium": 3
   },
   "recent_excerpts": [
+    "加拿大首起短信爆炸器案件中三名男子被捕 — 设备冒充蜂窝塔发送大规模网络钓鱼信息并干扰多伦多的移动网络。",
     "法国当局逮捕了一名20岁的嫌疑人，他涉嫌48起针对公共机构、体育联合会和私营公司的数据库泄露，扣押了设备和...",
-    "佛罗里达执法部门正在调查一名学生如何使用ChatGPT制造校园枪击威胁，这是AI聊天机器人未能阻止危险内容的更广泛模式的一部分。",
-    "Tyler Robert Buchanan承认参与美国阴谋，通过短信钓鱼、企业网络入侵和针对全国受害者的SIM交换攻击，窃取了超过100万美元的加密货币。"
+    "佛罗里达执法部门正在调查一名学生如何使用ChatGPT制造校园枪击威胁，这是AI聊天机器人未能阻止危险内容的更广泛模式的一部分。"
   ],
-  "sources_hash": "8968b42a37d66b86"
+  "sources_hash": "4e16e35d63263291"
 }

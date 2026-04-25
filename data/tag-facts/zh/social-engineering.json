@@ -1,40 +1,40 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "count": 42,
+  "count": 46,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-23"
+    "latest": "2026-04-24"
   },
   "top_actors": [
+    "Lazarus Group",
     "APT37 (ScarCruft, InkySquid)",
-    "ClickFix",
-    "Lazarus Group"
+    "BlackFile"
   ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
-    "financial-services",
     "technology",
+    "financial-services",
     "financial services",
-    "government"
+    "hospitality"
   ],
   "top_regions": [
     "Global",
-    "United states",
-    "Canada",
     "North america",
-    "United kingdom"
+    "Europe",
+    "United states",
+    "Canada"
   ],
   "severity_mix": {
-    "high": 30,
+    "high": 34,
     "medium": 11,
     "informational": 1
   },
   "recent_excerpts": [
+    "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。",
     "Specops Software 文档记录了如何将帮助台社会工程学转变为密码重置请求，从而导致完整账户泄露 —— 攻击者绕过 MFA 并获得持续访问权限。",
-    "一个木马化的 Slack 安装程序提供了一个远程访问工具，该工具创建了一个隐藏的桌面，允许攻击者绕过多因素认证并悄无声息地控制受害者的机器。",
-    "威胁行为者滥用 Obsidian 笔记应用通过恶意插件投递新型 PHANTOMPULSE RAT，针对金融和加密货币领域的个人进行攻击，此次行动被追踪为 REF6598。"
+    "一个木马化的 Slack 安装程序提供了一个远程访问工具，该工具创建了一个隐藏的桌面，允许攻击者绕过多因素认证并悄无声息地控制受害者的机器。"
   ],
-  "sources_hash": "bd33aa146a857482"
+  "sources_hash": "ee5cc7436081376b"
 }

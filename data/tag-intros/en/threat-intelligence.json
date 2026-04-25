@@ -1,9 +1,9 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "intro": "This archive contains 14 threat intelligence reports from a ten-day period in April 2026. The most frequently covered threat actor was LockBit. The reporting highlights a range of incidents affecting the technology, critical-infrastructure, cybersecurity, financial services, and retail sectors, with primary impacts noted across Europe, North America, and on a Global scale. The severity of these reports was varied, with six classified as high, six as informational, and one as medium.",
-  "sources_hash": "d78444b9b65be35b",
+  "intro": "Between April 13 and 25, 2026, ZCyberNews published 16 articles under the threat-intelligence tag, with GopherWhisper and LockBit as the most covered threat actors. The reporting highlighted seven high-severity incidents, six informational pieces, and one medium-severity item, affecting sectors including technology, critical-infrastructure, cybersecurity, financial services, and government. Observed impacts spanned Asia, Europe, North America, and global regions, reflecting a concentrated period of intelligence on these actors and their targets.",
+  "sources_hash": "d86491dfb01a3328",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:07:54.997Z",
+  "generated_at": "2026-04-25T04:02:07.922Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

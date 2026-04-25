@@ -1,30 +1,38 @@
 {
   "tag": "ot-security",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-17"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-24032",
+      "cvss": 7.3
+    }
+  ],
   "top_sectors": [
-    "critical-infrastructure",
     "manufacturing",
+    "critical-infrastructure",
     "energy",
     "industrial",
     "utilities"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
+    "high": 1,
     "informational": 4,
     "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "ZDI披露了CVE-2026-24032，这是一个7.3-CVSS认证绕过漏洞，存在于西门子SINEC NMS中，无需认证即可利用。影响工业网络管理系统。",
     "Axonius 更新了其 Asset Cloud 平台，增加了 AI 驱动的暴露修复，添加了 IoT/OT 资产管理，并引入了资产信任标准以量化安全姿态。",
-    "安全研究人员提议将双因素认证（2FA）原则扩展到关键基础设施的物理访问控制系统，创建一种混合防御机制，以抵御针对操作技术的基于凭证的攻击。",
-    "西门子、施耐德电气和其他六家主要工业控制系统供应商发布了安全通告，解决了数十个漏洞，包括西门子SIMATIC和施耐德电气EcoStruxure产品中的关键缺陷。"
+    "安全研究人员提议将双因素认证（2FA）原则扩展到关键基础设施的物理访问控制系统，创建一种混合防御机制，以抵御针对操作技术的基于凭证的攻击。"
   ],
-  "sources_hash": "25e5305d5c6be205"
+  "sources_hash": "4e0dab1faaff60a6"
 }

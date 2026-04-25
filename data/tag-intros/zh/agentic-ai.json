@@ -1,10 +1,10 @@
 {
   "tag": "agentic-ai",
   "locale": "zh",
-  "intro": "本档案收录了 5 篇带有「agentic-ai」标签的文章，发布时间从2026年4月14日至2026年4月22日。其中包含4 篇高危、1 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "1641defbeac56bfb",
-  "source_intro_hash": "844866e5d39a9ba1",
+  "intro": "本档案收录了 6 篇带有「agentic-ai」标签的文章，发布时间从2026年4月14日至2026年4月24日。其中包含4 篇高危、1 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "981bbb3b9b4059ae",
+  "source_intro_hash": "4b8d2fd01a48f1d7",
   "model": "template:sparse",
-  "generated_at": "2026-04-23T04:09:26.834Z",
+  "generated_at": "2026-04-25T04:03:25.239Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

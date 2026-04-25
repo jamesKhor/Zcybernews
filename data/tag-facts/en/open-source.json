@@ -1,26 +1,33 @@
 {
   "tag": "open-source",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33626",
+      "cvss": 7.5
+    }
+  ],
   "top_sectors": [
-    "software-development",
-    "technology"
+    "technology",
+    "research",
+    "software-development"
   ],
   "top_regions": [],
   "severity_mix": {
+    "high": 1,
     "informational": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "CVE-2026-33626 (CVSS 7.5) in LMDeploy, an open-source LLM toolkit, was exploited in the wild within 13 hours of public disclosure, enabling SSRF attacks to access sensitive…",
     "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi",
-    "Boost Security's SmokedMeat framework executes live attack demonstrations from a single CI/CD pipeline flaw, showing engineering teams exactly how attackers move to compromise code, secrets, and infra",
-    "Legit Security releases Legitify, an open-source scanner that identifies security misconfigurations in GitHub and GitLab organizations, repositories, and CI/CD runners to combat software supply chain"
+    "Boost Security's SmokedMeat framework executes live attack demonstrations from a single CI/CD pipeline flaw, showing engineering teams exactly how attackers move to compromise code, secrets, and infra"
   ],
-  "sources_hash": "518054fa469201dc"
+  "sources_hash": "22a44ab991738ad8"
 }

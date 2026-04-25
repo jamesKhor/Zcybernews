@@ -1,26 +1,33 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33626",
+      "cvss": 7.5
+    }
+  ],
   "top_sectors": [
-    "software-development",
-    "technology"
+    "technology",
+    "research",
+    "software-development"
   ],
   "top_regions": [],
   "severity_mix": {
+    "high": 1,
     "informational": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "CVE-2026-33626（CVSS 7.5）在 LMDeploy 中，一个开源的 LLM 工具包，被在野外利用，距离公开披露仅 13 小时，使得 SSRF 攻击能够访问敏感信息...",
     "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。",
-    "Boost Security 的 SmokedMeat 框架从单一 CI/CD 流水线缺陷执行实时攻击演示，向工程团队展示攻击者如何移动以破坏代码、机密和基础设施。",
-    "Legit Security 发布 Legitify，这是一个开源扫描器，用于识别 GitHub 和 GitLab 组织、仓库以及 CI/CD 运行器中的安全配置错误，以对抗软件供应链风险。"
+    "Boost Security 的 SmokedMeat 框架从单一 CI/CD 流水线缺陷执行实时攻击演示，向工程团队展示攻击者如何移动以破坏代码、机密和基础设施。"
   ],
-  "sources_hash": "518054fa469201dc"
+  "sources_hash": "22a44ab991738ad8"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "enterprise-security",
   "locale": "en",
-  "count": 7,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
   "top_cves": [
@@ -18,20 +18,27 @@
     }
   ],
   "top_sectors": [
+    "technology",
+    "financial services",
+    "healthcare",
     "enterprise",
-    "government",
-    "technology"
+    "government"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Global",
+    "Europe",
+    "North america"
+  ],
   "severity_mix": {
+    "high": 3,
     "informational": 2,
     "medium": 1,
     "critical": 4
   },
   "recent_excerpts": [
-    "The Hacker News reports most enterprise AI security tools fail post-demo due to data quality, integration, and cost issues, stalling critical threat detection and response initiatives.",
-    "Qualys data shows enterprises deployed over 8 million Chrome patches in 12 months, but Visual C++ and .NET updates are delayed by 30+ days, leaving critical third-party software exposures.",
-    "CVE-2025-54987, a critical 9.8 CVSS flaw in Trend Micro Apex One, allows unauthenticated attackers to execute arbitrary code via directory traversal in the management console."
+    "The Hacker News reports AI agents create a structural security gap: delegated actors lack continuous oversight, enabling lateral movement and privilege escalation without human…",
+    "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months.",
+    "SecurityWeek argues autonomous agents — from code generators to decision-making systems — require new defense models as they act without human intervention."
   ],
-  "sources_hash": "35b68d4071fb2179"
+  "sources_hash": "7080a946ad9e58c5"
 }

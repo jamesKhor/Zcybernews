@@ -1,15 +1,15 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 24,
+  "count": 26,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [
+    "ShinyHunters",
     "RansomHub",
-    "Rhysida",
-    "ShinyHunters"
+    "Rhysida"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -21,19 +21,19 @@
   ],
   "top_regions": [
     "Europe",
-    "United states",
     "North america",
+    "United states",
     "France",
     "Global"
   ],
   "severity_mix": {
-    "medium": 4,
-    "high": 19
+    "high": 21,
+    "medium": 4
   },
   "recent_excerpts": [
-    "Malwarebytes 分析显示，企业数据泄露暴露了客户个人信息（PII），使得后续欺诈行为成为可能，并导致保险费率上升——甚至影响到了未受影响的个人。",
-    "攻击者从 Rituals Cosmetics 的 My Rituals 会员数据库中窃取了个人数据 —— 名字、电子邮件、地址和忠诚度积分。受影响客户数量未披露。",
-    "法国当局逮捕了一名20岁的嫌疑人，他涉嫌48起针对公共机构、体育联合会和私营公司的数据库泄露，扣押了设备和..."
+    "ADT 确认网络犯罪分子在 2026 年 4 月 20 日入侵其系统，窃取了有限的客户和潜在客户数据集。没有财务信息或凭证被泄露。",
+    "ADT确认数据泄露后，ShinyHunters泄露了30,000+客户记录，包括姓名、电子邮件和账户详情，这些信息来自一个被破坏的Salesforce实例。",
+    "Malwarebytes 分析显示，企业数据泄露暴露了客户个人信息（PII），使得后续欺诈行为成为可能，并导致保险费率上升——甚至影响到了未受影响的个人。"
   ],
-  "sources_hash": "65685b8c6409180c"
+  "sources_hash": "cc5b2df4f7aeb317"
 }

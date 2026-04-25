@@ -1,10 +1,10 @@
 {
   "tag": "ics",
   "locale": "zh",
-  "intro": "本档案收录了 8 篇带有「ics」标签的文章，发布时间从2026年4月12日至2026年4月17日。其中包含1 篇严重、6 篇高危、1 篇中危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "3caf4ee64c64fb38",
-  "source_intro_hash": "dc5c131a3bf21c74",
-  "model": "template:sparse",
-  "generated_at": "2026-04-20T11:20:55.250Z",
+  "intro": "过去两周，ZCyberNews追踪了九篇关于工业控制系统（ICS）安全的文章，重点关注高严重性漏洞：其中七个为高危、一个为严重、一个为中危。最突出的漏洞是CVE-2026-5726，其CVSS评分为7.8。相关报道主要集中于关键基础设施、能源、制造业、工业及公用事业领域面临的威胁，影响范围波及全球，尤其在美国和北美地区。",
+  "sources_hash": "a58a20b4baee58e6",
+  "source_intro_hash": "d3db6ad75eb81b66",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-25T04:03:40.687Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
   "top_cves": [
@@ -20,14 +20,16 @@
     }
   ],
   "top_sectors": [
+    "government",
     "software development",
     "technology"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "United states"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "critical": 2
   },
   "recent_excerpts": [
@@ -35,5 +37,5 @@
     "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching.",
     "CISA warns that a critical SQL injection vulnerability in Fortinet products is being actively exploited, urging immediate patching. The specific CVE ID has not yet been publicly disclosed."
   ],
-  "sources_hash": "7991b825543501cc"
+  "sources_hash": "415d6c9603bc2c7f"
 }

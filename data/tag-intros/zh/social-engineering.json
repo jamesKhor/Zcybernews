@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "intro": "APT37 (ScarCruft, InkySquid)、ClickFix 和 Lazarus Group 是2026年4月8日至4月23日期间42篇涉及社会工程策略文章中最突出的威胁行为者。相关报道包括30篇高严重性报告、11篇中严重性报告以及1篇信息性文章。受影响行业涵盖加密货币、金融服务、技术、金融服务及政府领域，目标区域包括全球、美国、加拿大、北美和英国。",
-  "sources_hash": "bd33aa146a857482",
-  "source_intro_hash": "62583c803be9d31e",
+  "intro": "Lazarus Group、APT37 (ScarCruft, InkySquid) 和 BlackFile 是2026年4月8日至24日期间发布的46篇社会工程相关文章中最常被观测到的威胁行为体。报道覆盖了加密货币、技术、金融服务及酒店行业，受害者遍布全球，包括北美、欧洲、美国和加拿大。严重程度分布为：34篇高风险、11篇中等风险及1篇信息性报告。",
+  "sources_hash": "ee5cc7436081376b",
+  "source_intro_hash": "e7b3de43ba6f5ded",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-24T04:10:07.815Z",
+  "generated_at": "2026-04-25T04:03:55.401Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

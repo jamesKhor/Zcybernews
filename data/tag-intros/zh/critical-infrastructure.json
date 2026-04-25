@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "intro": "2026年4月12日至4月23日期间，ZCyberNews在关键基础设施标签下发布了12篇文章，其中CyberAv3ngers和Lotus Wiper被识别为最主要的威胁行为体。受影响最严重的行业包括关键基础设施、能源、公用事业、制造业和水务，主要涉及美国、英国和委内瑞拉。严重程度分布为：3篇严重、5篇高危、1篇中等和3篇信息性报告，反映出针对基础服务的一段集中活跃期。",
-  "sources_hash": "3df36f900c124773",
-  "source_intro_hash": "d27b99e3d2bece5f",
+  "intro": "2026年4月12日至25日期间，ZCyberNews追踪了15篇关于关键基础设施的文章，涉及威胁行为者CyberAv3ngers、Lotus Wiper和Sandworm。最突出的漏洞是CVE-2026-24032（CVSS 7.3），受影响行业包括能源、制造业、公用事业和关键基础设施。受影响区域涵盖美国、亚太、欧洲和北美。报道严重程度分布为：7篇高危、3篇严重、3篇信息性及1篇中危报告。",
+  "sources_hash": "7610667c595ec00e",
+  "source_intro_hash": "af6013298c010318",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-24T04:10:00.321Z",
+  "generated_at": "2026-04-25T04:03:33.501Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "count": 44,
+  "count": 46,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-23"
+    "latest": "2026-04-24"
   },
   "top_actors": [
     "FakeWallet",
@@ -37,19 +37,19 @@
   ],
   "top_regions": [
     "Global",
+    "Canada",
     "United states",
     "Bangladesh",
-    "Canada",
     "Latin america"
   ],
   "severity_mix": {
-    "high": 37,
+    "high": 39,
     "medium": 7
   },
   "recent_excerpts": [
+    "Three men arrested in Canada's first SMS blaster case — device impersonated cell towers to send mass phishing messages and disrupt mobile networks in Toronto.",
     "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
-    "A malicious website impersonating a TradingView AI agent deploys malware that hands attackers full control of victims' browsers, enabling account theft and financial data…",
-    "Apple removed 45 malicious cryptocurrency apps from its App Store after they stole recovery phrases and private keys from users, mimicking legitimate wallets like MetaMask and Coinbase."
+    "A malicious website impersonating a TradingView AI agent deploys malware that hands attackers full control of victims' browsers, enabling account theft and financial data…"
   ],
-  "sources_hash": "131809db64f4b569"
+  "sources_hash": "7238de442cac5e04"
 }

@@ -1,0 +1,10 @@
+{
+  "tag": "zdi",
+  "locale": "zh",
+  "intro": "2026年4月18日至24日期间，ZCyberNews在zdi标签下发布了六篇文章，涵盖五个高危漏洞和一个严重漏洞。排名前列的CVE编号包括CVE-2026-22898、CVE-2026-6406、CVE-2026-25203、CVE-2026-5424和CVE-2025-71066，评分在7.5至8.8之间。这些漏洞在全球范围内影响了关键基础设施、数字标牌、能源、企业及工业控制系统等行业。",
+  "sources_hash": "4210d29dc7b9830b",
+  "source_intro_hash": "66afa28a586525e6",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-25T04:04:01.399Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

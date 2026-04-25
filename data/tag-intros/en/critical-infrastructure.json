@@ -1,9 +1,9 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "intro": "Between April 12 and April 23, 2026, ZCyberNews covered 12 articles under the critical-infrastructure tag, with CyberAv3ngers and Lotus Wiper identified as the top threat actors. The most affected sectors included critical-infrastructure, energy, utilities, manufacturing, and water, primarily in the United States, United Kingdom, and Venezuela. The severity mix comprised three critical, five high, one medium, and three informational reports, reflecting a concentrated period of activity against essential services.",
-  "sources_hash": "3df36f900c124773",
+  "intro": "Between April 12 and 25, 2026, ZCyberNews tracked 15 articles on critical-infrastructure, featuring threat actors CyberAv3ngers, Lotus Wiper, and Sandworm. The most prominent vulnerability was CVE-2026-24032 (CVSS 7.3), with affected sectors including energy, manufacturing, utilities, and critical infrastructure. Regions impacted spanned the United States, Asia-Pacific, Europe, and North America. The coverage severity mix comprised 7 high, 3 critical, 3 informational, and 1 medium reports.",
+  "sources_hash": "7610667c595ec00e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-24T04:09:31.998Z",
+  "generated_at": "2026-04-25T04:02:10.250Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

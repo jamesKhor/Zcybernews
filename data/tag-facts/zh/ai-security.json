@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 44,
+  "count": 47,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-24"
   },
   "top_actors": [
     "OpenClaw"
@@ -24,21 +24,23 @@
     "cybersecurity",
     "artificial intelligence",
     "cloud services",
-    "healthcare"
+    "government"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "China",
+    "United states"
   ],
   "severity_mix": {
+    "medium": 6,
     "high": 20,
     "critical": 6,
-    "informational": 12,
-    "medium": 5
+    "informational": 12
   },
   "recent_excerpts": [
-    "Palo Alto Networks 研究人员构建了 Zealot，这是一个多代理 AI 渗透测试 PoC，它能够自动执行云上的侦察、利用和数据外泄...",
-    "Palo Alto Unit 42 概述了针对前沿 AI 威胁 —— 模型投毒、提示注入和数据泄露 —— 的防御策略，以回应顶级客户查询。",
-    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。"
+    "SecurityWeek 认为，从代码生成器到决策系统，自主代理需要新的防御模型，因为它们在没有人类干预的情况下行动。",
+    "Rapid7的全球网络安全峰会关注由AI驱动的威胁、持续威胁暴露管理（CTEM），以及缩小可见性和响应之间的差距。",
+    "特朗普政府宣布政策，惩罚通过逆向工程或未经授权访问利用美国AI模型的中国公司，引用国家安全风险。"
   ],
-  "sources_hash": "bde5ca157ec435ec"
+  "sources_hash": "c85480cca23d2b53"
 }

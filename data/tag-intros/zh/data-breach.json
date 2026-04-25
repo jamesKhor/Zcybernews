@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "intro": "在2026年4月12日至4月22日短短十天内，ZCyberNews记录了23起独立的数据泄露事件。其中绝大多数事件被评定为高严重性。在此期间，威胁行为者ShinyHunters、RansomHub和Rhysida尤为活跃。这些泄露事件波及多个行业领域，政府、医疗保健、酒店服务、零售和科技组织最常受到影响。从地理分布看，事件集中发生在美国和北美地区，欧洲和法国也有显著活动报告，同时存在数起全球范围的入侵事件。",
-  "sources_hash": "aa75f9298e1f911f",
-  "source_intro_hash": "c0510123960184f9",
+  "intro": "过去两周，ZCyberNews发布了27篇关于数据泄露的文章，涵盖2026年4月12日至4月25日期间的事件。报道记录了22起高严重性和4起中等严重性事件。在这些事件中观察到了威胁行为者ShinyHunters、RansomHub和Rhysida。受影响最严重的行业是政府、零售、医疗、酒店和科技领域，而受影响地区包括欧洲、北美、美国、法国及全球实体。",
+  "sources_hash": "537349356b4c10ec",
+  "source_intro_hash": "703d1105a656dc60",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:10:09.575Z",
+  "generated_at": "2026-04-25T04:03:36.930Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

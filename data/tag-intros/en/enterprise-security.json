@@ -1,9 +1,9 @@
 {
   "tag": "enterprise-security",
   "locale": "en",
-  "intro": "This archive collects recent coverage of enterprise security threats from April 2026. The reporting focuses on critical vulnerabilities, including CVE-2026-27681 and CVE-2025-54987, which carry CVSS scores of 9.9 and 9.8 respectively. These and other issues primarily targeted the enterprise, government, and technology sectors. Of the seven articles published in this period, four were classified as covering critical threats, one as medium, and two as informational, reflecting a period of significant activity against organizational defenses.",
-  "sources_hash": "35b68d4071fb2179",
+  "intro": "Between 13 and 24 April 2026, ZCyberNews published 11 articles under the enterprise-security tag, covering four critical and three high-severity vulnerabilities. The most notable CVEs were CVE-2026-27681, with a CVSS score of 9.9, and CVE-2025-54987, rated 9.8. These threats impacted the technology, financial services, healthcare, enterprise, and government sectors globally, with specific focus on Europe and North America. The coverage also included one medium and two informational severity items, providing a broad view of the current enterprise security landscape.",
+  "sources_hash": "7080a946ad9e58c5",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-21T04:07:52.321Z",
+  "generated_at": "2026-04-25T04:02:18.160Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

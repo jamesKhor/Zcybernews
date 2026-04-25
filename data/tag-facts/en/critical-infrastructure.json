@@ -1,38 +1,46 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 12,
+  "count": 15,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "CyberAv3ngers",
-    "Lotus Wiper"
+    "Lotus Wiper",
+    "Sandworm"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-24032",
+      "cvss": 7.3
+    }
+  ],
   "top_sectors": [
-    "critical-infrastructure",
     "energy",
-    "utilities",
+    "critical-infrastructure",
     "manufacturing",
-    "water"
+    "utilities",
+    "critical infrastructure"
   ],
   "top_regions": [
     "United states",
-    "United kingdom",
-    "Venezuela"
+    "Asia-pacific",
+    "Europe",
+    "Global",
+    "North america"
   ],
   "severity_mix": {
+    "high": 7,
     "critical": 3,
-    "high": 5,
     "informational": 3,
     "medium": 1
   },
   "recent_excerpts": [
-    "Kaspersky discovered Lotus Wiper, a novel file wiper targeting Venezuela's energy and utilities sector since late 2025.",
-    "The UK's NCSC reports handling four nationally significant cyber incidents per week, with most now attributed to hostile foreign states like China and Russia, up from two per week…",
-    "New U.S. Coast Guard cybersecurity rules under the Maritime Transportation Security Act mandate third-party audits, OT-specific security plans, and dedicated personnel, providing a regulatory model fo"
+    "Dark Reading reports attackers are manipulating voltage to destabilize power grids — a growing cyber-physical threat vector targeting electricity infrastructure with no patch…",
+    "Locked Shields 2026 involved 41 nations in the largest live-fire cyber defense exercise, testing response to critical infrastructure attacks including power grid and telecom…",
+    "ZDI disclosed CVE-2026-24032, a 7.3-CVSS authentication bypass in Siemens SINEC NMS that requires no authentication to exploit. Affects industrial network management systems."
   ],
-  "sources_hash": "3df36f900c124773"
+  "sources_hash": "7610667c595ec00e"
 }

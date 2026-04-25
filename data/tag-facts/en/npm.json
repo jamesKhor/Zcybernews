@@ -1,0 +1,30 @@
+{
+  "tag": "npm",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-21",
+    "latest": "2026-04-24"
+  },
+  "top_actors": [
+    "CanisterSprawl"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "software development",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "critical": 3,
+    "high": 2
+  },
+  "recent_excerpts": [
+    "JFrog and Socket found malicious code in @bitwarden/cli@2026.4.0 — the same campaign that hijacked Checkmarx npm packages.",
+    "The CanisterSprawl supply chain worm hijacks npm packages, uses stolen developer tokens to self-propagate, and exfiltrates data to an ICP canister, according to Socket and…",
+    "Unit 42 details wormable npm malware, CI/CD pipeline persistence, and multi-stage attacks targeting developers."
+  ],
+  "sources_hash": "e7d8dd089839f0c0"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-23"
+    "latest": "2026-04-24"
   },
   "top_actors": [
     "APT41"
@@ -23,7 +23,8 @@
     "cloud service providers"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "Israel"
   ],
   "severity_mix": {
     "high": 10,
@@ -31,9 +32,9 @@
     "critical": 2
   },
   "recent_excerpts": [
+    "Copperhelm, an Israel-based startup founded by ex-RSA and McAfee engineers, raised $7 million in seed funding for an agentic AI platform that autonomously hunts cloud…",
     "Palo Alto Networks researchers built Zealot, a multi-agent AI penetration testing PoC that autonomously performs reconnaissance, exploitation, and data exfiltration on cloud…",
-    "Analysis of 1,000+ cybersecurity job postings shows a 40% surge in demand for AI security specialists and cloud security architects, with DevSecOps roles requiring Azure DevOps expertise commanding pr",
-    "The Cloud Security Alliance warns that Anthropic's Claude Mythos model will trigger an 'AI vulnerability storm,' forcing CISOs to manage a 10x surge in code flaws and novel exploit techniques within 1"
+    "Analysis of 1,000+ cybersecurity job postings shows a 40% surge in demand for AI security specialists and cloud security architects, with DevSecOps roles requiring Azure DevOps expertise commanding pr"
   ],
-  "sources_hash": "bdbf92eb09c7d380"
+  "sources_hash": "ad1259817fb66144"
 }

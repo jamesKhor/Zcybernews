@@ -1,13 +1,18 @@
 {
   "tag": "ics",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-17"
+    "latest": "2026-04-25"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-5726",
+      "cvss": 7.8
+    }
+  ],
   "top_sectors": [
     "critical-infrastructure",
     "energy",
@@ -21,14 +26,14 @@
     "North-america"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 7,
     "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-5726: A stack-based buffer overflow in Delta Electronics ASDA-Soft PAR file parsing scores 7.8 CVSS and enables remote code execution via crafted PAR files.",
     "A new malware family named ZionSiphon is designed to sabotage water treatment and desalination plants by manipulating industrial control systems.",
-    "Siemens, Schneider Electric, and six other major industrial control system vendors released security advisories addressing dozens of vulnerabilities, including critical flaws in Siemens SIMATIC and Sc",
-    "Operational Technology asset owners face regulatory pressure to attest to post-quantum cryptographic readiness but lack the necessary discovery and inventory tools, leading to superficial compliance."
+    "Siemens, Schneider Electric, and six other major industrial control system vendors released security advisories addressing dozens of vulnerabilities, including critical flaws in Siemens SIMATIC and Sc"
   ],
-  "sources_hash": "3caf4ee64c64fb38"
+  "sources_hash": "a58a20b4baee58e6"
 }

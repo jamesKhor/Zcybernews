@@ -1,10 +1,10 @@
 {
   "tag": "enterprise-security",
   "locale": "zh",
-  "count": 7,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
   "top_cves": [
@@ -18,20 +18,27 @@
     }
   ],
   "top_sectors": [
+    "technology",
+    "financial services",
+    "healthcare",
     "enterprise",
-    "government",
-    "technology"
+    "government"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Global",
+    "Europe",
+    "North america"
+  ],
   "severity_mix": {
+    "high": 3,
     "informational": 2,
     "medium": 1,
     "critical": 4
   },
   "recent_excerpts": [
-    "The Hacker News 报告称，大多数企业AI安全工具在演示后因数据质量、集成和成本问题而失败，导致关键的威胁检测和响应计划停滞。",
-    "Qualys数据显示企业在12个月内部署了超过800万Chrome补丁，但Visual C++和.NET更新延迟超过30天，导致关键的第三方软件暴露。",
-    "CVE-2025-54987，趋势科技Apex One中一个关键的9.8 CVSS漏洞，允许未经认证的攻击者通过管理控制台的目录遍历执行任意代码。"
+    "The Hacker News 报道 AI 代理创建了一个结构性安全缺口：委托的行动者缺乏持续的监督，使得横向移动和权限提升无需人类…",
+    "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。",
+    "SecurityWeek 认为，从代码生成器到决策系统，自主代理需要新的防御模型，因为它们在没有人类干预的情况下行动。"
   ],
-  "sources_hash": "35b68d4071fb2179"
+  "sources_hash": "7080a946ad9e58c5"
 }

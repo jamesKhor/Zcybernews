@@ -1,0 +1,30 @@
+{
+  "tag": "npm",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-21",
+    "latest": "2026-04-24"
+  },
+  "top_actors": [
+    "CanisterSprawl"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "software development",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "critical": 3,
+    "high": 2
+  },
+  "recent_excerpts": [
+    "JFrog 和 Socket 在 @bitwarden/cli@2026.4.0 中发现了恶意代码 —— 这是同一活动，劫持了 Checkmarx npm 包。",
+    "根据 Socket 和…的说法，CanisterSprawl 供应链蠕虫劫持 npm 包，使用窃取的开发者令牌进行自我传播，并将数据外泄到 ICP canister。",
+    "Unit 42 详细描述了可蠕虫化的 npm 恶意软件，CI/CD 管道持久性，以及针对开发者的多阶段攻击。"
+  ],
+  "sources_hash": "e7d8dd089839f0c0"
+}

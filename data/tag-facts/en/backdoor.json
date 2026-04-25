@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-22"
+    "latest": "2026-04-24"
   },
   "top_actors": [
     "APT41",
@@ -13,19 +13,20 @@
   ],
   "top_cves": [],
   "top_sectors": [
+    "government",
     "banking",
     "cloud-services",
-    "government",
     "technology"
   ],
   "top_regions": [
     "Global",
     "India",
     "South asia",
-    "South korea"
+    "South korea",
+    "United states"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 8,
     "critical": 1
   },
   "recent_excerpts": [
@@ -33,5 +34,5 @@
     "A malicious buyer used the Flippa marketplace to acquire a plugin developer, injecting a backdoor into over 30 WordPress plugins with hundreds of thousands of installations to deploy hidden SEO spam.",
     "The EssentialPlugin suite, comprising over 30 popular WordPress plugins, has been compromised to inject a backdoor granting attackers administrative access to thousands of websites."
   ],
-  "sources_hash": "a9e3a70e601dd2f6"
+  "sources_hash": "40697257de5e6b21"
 }

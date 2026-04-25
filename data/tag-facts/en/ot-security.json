@@ -1,30 +1,38 @@
 {
   "tag": "ot-security",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-17"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-24032",
+      "cvss": 7.3
+    }
+  ],
   "top_sectors": [
-    "critical-infrastructure",
     "manufacturing",
+    "critical-infrastructure",
     "energy",
     "industrial",
     "utilities"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
+    "high": 1,
     "informational": 4,
     "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "ZDI disclosed CVE-2026-24032, a 7.3-CVSS authentication bypass in Siemens SINEC NMS that requires no authentication to exploit. Affects industrial network management systems.",
     "Axonius has updated its Asset Cloud platform with AI-powered remediation for exposures, added IoT/OT asset management, and introduced an asset trust standard to quantify security posture.",
-    "Security researchers propose extending two-factor authentication (2FA) principles to physical access control systems for critical infrastructure, creating a hybrid defense against credential-based att",
-    "Siemens, Schneider Electric, and six other major industrial control system vendors released security advisories addressing dozens of vulnerabilities, including critical flaws in Siemens SIMATIC and Sc"
+    "Security researchers propose extending two-factor authentication (2FA) principles to physical access control systems for critical infrastructure, creating a hybrid defense against credential-based att"
   ],
-  "sources_hash": "25e5305d5c6be205"
+  "sources_hash": "4e0dab1faaff60a6"
 }

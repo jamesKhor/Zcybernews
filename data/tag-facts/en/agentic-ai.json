@@ -1,28 +1,30 @@
 {
   "tag": "agentic-ai",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-22"
+    "latest": "2026-04-24"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "cross-sector",
-    "enterprise"
+    "enterprise",
+    "technology"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "Israel"
   ],
   "severity_mix": {
     "high": 4,
     "informational": 1
   },
   "recent_excerpts": [
+    "Copperhelm, an Israel-based startup founded by ex-RSA and McAfee engineers, raised $7 million in seed funding for an agentic AI platform that autonomously hunts cloud…",
     "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…",
-    "A security analysis of over 400 LLM agent routing services reveals widespread vulnerabilities enabling attackers to inject malicious commands, leak sensitive data, and bypass intended AI model behavio",
-    "Anthropic releases Claude Opus 4.7, a frontier AI model with new automated safeguards designed to detect and halt potentially harmful cybersecurity tasks during long, unsupervised agentic workflows."
+    "A security analysis of over 400 LLM agent routing services reveals widespread vulnerabilities enabling attackers to inject malicious commands, leak sensitive data, and bypass intended AI model behavio"
   ],
-  "sources_hash": "1641defbeac56bfb"
+  "sources_hash": "981bbb3b9b4059ae"
 }

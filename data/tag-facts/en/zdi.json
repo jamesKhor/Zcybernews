@@ -1,0 +1,52 @@
+{
+  "tag": "zdi",
+  "locale": "en",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-18",
+    "latest": "2026-04-24"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-22898",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-6406",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-25203",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-5424",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2025-71066",
+      "cvss": 7.5
+    }
+  ],
+  "top_sectors": [
+    "critical infrastructure",
+    "digital signage",
+    "energy",
+    "enterprise",
+    "industrial control systems"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 5,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "CVE-2026-6406 (CVSS 8.8) in Docker Desktop's Enhanced Container Isolation allows local attackers with low-privileged code execution inside a container to escalate privileges on…",
+    "ZDI disclosed CVE-2026-24032, a 7.3-CVSS authentication bypass in Siemens SINEC NMS that requires no authentication to exploit. Affects industrial network management systems.",
+    "CVE-2026-25203, a CVSS 7.8 local privilege escalation flaw in Samsung MagicINFO 9 Server, allows authenticated attackers to gain SYSTEM privileges by exploiting incorrect default permissions on a serv"
+  ],
+  "sources_hash": "4210d29dc7b9830b"
+}

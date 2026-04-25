@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "zh",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-23"
+    "latest": "2026-04-24"
   },
   "top_actors": [
     "APT41"
@@ -23,7 +23,8 @@
     "cloud service providers"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "Israel"
   ],
   "severity_mix": {
     "high": 10,
@@ -31,9 +32,9 @@
     "critical": 2
   },
   "recent_excerpts": [
+    "Copperhelm，一家由前 RSA 和 McAfee 工程师创立的以色列初创公司，为一个自主搜寻云的 agentic AI 平台筹集了700万美元的种子资金...",
     "Palo Alto Networks 研究人员构建了 Zealot，这是一个多代理 AI 渗透测试 PoC，它能够自动执行云上的侦察、利用和数据外泄...",
-    "对1000多个网络安全职位发布的分析显示，对人工智能安全专家和云安全架构师的需求激增了40%，需要Azure DevOps专业知识的DevSecOps角色可以获得更高的薪资。",
-    "云安全联盟警告称Anthropic的Claude Mythos模型将引发一场'AI漏洞风暴'，迫使CISOs在18个月内管理代码缺陷和新颖利用技术的10倍激增。"
+    "对1000多个网络安全职位发布的分析显示，对人工智能安全专家和云安全架构师的需求激增了40%，需要Azure DevOps专业知识的DevSecOps角色可以获得更高的薪资。"
   ],
-  "sources_hash": "bdbf92eb09c7d380"
+  "sources_hash": "ad1259817fb66144"
 }

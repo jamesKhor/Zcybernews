@@ -1,0 +1,33 @@
+{
+  "tag": "unit-42",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-22",
+    "latest": "2026-04-24"
+  },
+  "top_actors": [
+    "TGR-STA-1030"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "enterprise",
+    "cloud service providers",
+    "critical infrastructure",
+    "energy",
+    "government"
+  ],
+  "top_regions": [
+    "Central america",
+    "South america"
+  ],
+  "severity_mix": {
+    "high": 4
+  },
+  "recent_excerpts": [
+    "Palo Alto Unit 42 outlines defensive strategies for frontier AI threats — model poisoning, prompt injection, and data leakage — in response to top customer queries.",
+    "Unit 42 details wormable npm malware, CI/CD pipeline persistence, and multi-stage attacks targeting developers.",
+    "Palo Alto Unit 42 reports TGR-STA-1030 remains active in Central and South America, targeting government and energy sectors with custom malware and living-off-the-land techniques."
+  ],
+  "sources_hash": "2bffba65947a4702"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "intro": "酒店业和加密货币行业是近期44份报告中记录的集中网络钓鱼活动的主要目标。此次威胁态势由FakeWallet、Lazarus Group和Scattered Spider等不同攻击者推动，利用了CVE-2023-22515、CVE-2023-46805和CVE-2023-4966等漏洞。全球范围内尤其以美国、孟加拉国和加拿大受影响显著，金融、技术和政府部门也承受着重大压力。44起事件中有37起被评估为高严重性，凸显了这些地区和行业持续面临的风险。",
-  "sources_hash": "131809db64f4b569",
-  "source_intro_hash": "7f3577cda12ffd9f",
+  "intro": "在2026年4月8日至4月24日期间追踪到的46起网络钓鱼事件中，酒店行业成为最受针对的目标，其中39起被归类为高严重性。在这些攻击活动中，观察到威胁行为者FakeWallet、Lazarus Group和Scattered Spider，这些活动还影响了全球范围内的加密货币、科技、金融及政府机构，涉及加拿大、美国、孟加拉国和拉丁美洲。被利用的关键漏洞包括CVE-2023-22515、CVE-2023-34048、CVE-2023-46805、CVE-2023-4966和CVE-2024-21893。",
+  "sources_hash": "7238de442cac5e04",
+  "source_intro_hash": "eaedd9dfaa68c9f8",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:11:22.271Z",
+  "generated_at": "2026-04-25T04:03:48.648Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

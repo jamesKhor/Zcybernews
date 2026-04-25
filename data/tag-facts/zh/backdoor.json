@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-22"
+    "latest": "2026-04-24"
   },
   "top_actors": [
     "APT41",
@@ -13,24 +13,25 @@
   ],
   "top_cves": [],
   "top_sectors": [
+    "government",
     "banking",
     "cloud-services",
-    "government",
     "technology"
   ],
   "top_regions": [
     "Global",
     "India",
     "South asia",
-    "South korea"
+    "South korea",
+    "United states"
   ],
   "severity_mix": {
-    "high": 7
+    "high": 8
   },
   "recent_excerpts": [
     "Harvester 威胁行为者部署了其 GoGra 后门的新 Linux 版本，使用 Microsoft Graph API 和 Outlook 邮箱进行隐蔽的 C2 通信，在针对...的攻击中。",
     "一名恶意买家利用 Flippa 市场收购了一家插件开发商，向安装量达数十万的 30 多款 WordPress 插件中注入后门，以部署隐藏的 SEO 垃圾内容。",
     "包含超过30个流行WordPress插件的EssentialPlugin套件已被入侵，以注入后门，使攻击者能够获得对数千个网站的管理员访问权限。供应链攻击正在被积极利用。"
   ],
-  "sources_hash": "a9e3a70e601dd2f6"
+  "sources_hash": "40697257de5e6b21"
 }

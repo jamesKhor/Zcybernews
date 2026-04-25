@@ -1,10 +1,10 @@
 {
   "tag": "ot-security",
   "locale": "zh",
-  "intro": "本档案收录了 6 篇带有「ot-security」标签的文章，发布时间从2026年4月13日至2026年4月17日。其中包含1 篇严重、1 篇中危、4 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "25e5305d5c6be205",
-  "source_intro_hash": "7b72b0172b572752",
-  "model": "template:sparse",
-  "generated_at": "2026-04-20T11:21:46.903Z",
+  "intro": "2026年4月13日至4月24日期间，全球制造业和关键基础设施领域遭遇了一波集中的运营技术安全事件。在七篇相关报道中，记录了一起严重等级问题，以及一起高等级和一起中等级事件，其中CVE-2026-24032的CVSS评分为7.3。能源、工业和公用事业部门也是受影响最严重的领域，全球多个地区均有影响报告。",
+  "sources_hash": "4e0dab1faaff60a6",
+  "source_intro_hash": "86217a2a4957a867",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-25T04:03:46.330Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
