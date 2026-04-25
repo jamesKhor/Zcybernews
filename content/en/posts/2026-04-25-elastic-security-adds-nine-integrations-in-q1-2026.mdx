@@ -1,0 +1,47 @@
+---
+title: Elastic Security Adds Nine Integrations in Q1 2026
+slug: 2026-04-25-elastic-security-adds-nine-integrations-in-q1-2026
+date: '2026-04-25'
+excerpt: >-
+  Elastic Security Labs released nine new integrations for cloud, endpoint,
+  email, identity, and SIEM use cases in Q1 2026, expanding detection coverage
+  for AWS, Azure, and Google…
+category: tools
+tags:
+  - elastic-security
+  - siem
+  - cloud-security
+  - endpoint-detection
+  - email-security
+  - identity-security
+language: en
+source_urls:
+  - >-
+    https://www.elastic.co/security-labs/elastic-security-integrations-roundup-q1-2026
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-25-elastic-security-adds-nine-integrations-in-q1-2026
+---
+## Executive Summary
+
+Elastic Security Labs announced the release of nine new integrations for its Elastic Security platform during the first quarter of 2026, according to a post published on the company's security research blog. The integrations span cloud security, endpoint visibility, email threat detection, identity monitoring, and SIEM data ingestion, expanding the platform's ability to ingest and correlate telemetry from diverse sources. The announcement did not include specific vulnerability disclosures or threat actor attributions; it is a product capability update for defenders evaluating detection coverage.
+
+## Technical Analysis
+
+The nine integrations cover the following areas:
+
+- **Cloud security**: New data sources for Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP) enable deeper visibility into cloud infrastructure logs, including CloudTrail, Azure Activity Logs, and GCP Audit Logs. Elastic did not disclose specific new detection rules but noted the integrations support existing analytic pipelines.
+- **Endpoint visibility**: An integration with a third-party endpoint detection and response (EDR) vendor (unnamed in the source) allows Elastic Security to ingest endpoint telemetry for correlation with network and cloud data.
+- **Email threat detection**: A new connector for Microsoft 365 Defender for Office 365 ingests email threat signals, including phishing and malware detections, into Elastic Security for centralized analysis.
+- **Identity security**: Integration with Azure Active Directory (now Microsoft Entra ID) provides identity log ingestion for detecting anomalous authentication patterns and privilege escalation attempts.
+- **SIEM data ingestion**: Additional parsers for syslog, JSON, and CEF-formatted logs from network appliances and security tools broaden the platform's compatibility with existing SIEM deployments.
+
+Elastic Security Labs stated that these integrations are available immediately in Elastic Security versions 8.15 and later. The company did not provide specific version numbers for each integration or note any known limitations.
+
+## Mitigations & Recommendations
+
+Defenders using Elastic Security should review the new integrations in the Elastic Integrations catalog and evaluate whether they align with their existing telemetry sources. Organizations already ingesting cloud, email, or identity logs through other means may consider consolidating into Elastic Security to reduce tool sprawl and improve correlation. No security patches or configuration changes are required; the integrations are additive capabilities. Elastic recommends testing integrations in a non-production environment before enabling them broadly.
+
+## References
+
+- [Elastic Security Integrations Roundup: Q1 2026](https://www.elastic.co/security-labs/elastic-security-integrations-roundup-q1-2026)

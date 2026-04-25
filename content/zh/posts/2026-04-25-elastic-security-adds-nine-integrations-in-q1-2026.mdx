@@ -1,0 +1,49 @@
+---
+title: Elastic Security 在 2026 年第一季度新增九个集成
+slug: 2026-04-25-elastic-security-adds-nine-integrations-in-q1-2026
+date: '2026-04-25'
+excerpt: >-
+  Elastic Security Labs 在 2026 年第一季度发布了九个新的集成，用于云、端点、电子邮件、身份和 SIEM 用例，扩展了对
+  AWS、Azure 和 Google 的检测覆盖范围...
+category: tools
+tags:
+  - elastic-security
+  - siem
+  - cloud-security
+  - endpoint-detection
+  - email-security
+  - identity-security
+language: zh
+source_urls:
+  - >-
+    https://www.elastic.co/security-labs/elastic-security-integrations-roundup-q1-2026
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-25-elastic-security-adds-nine-integrations-in-q1-2026
+---
+ARTICLE TITLE: Elastic Security Adds Nine Integrations in Q1 2026
+
+ARTICLE BODY:
+## 执行摘要
+
+Elastic Security Labs 在公司安全研究博客上发表的一篇帖子中宣布，在 2026 年第一季度为其 Elastic Security 平台发布了九个新的集成。这些集成涵盖了云安全、端点可见性、电子邮件威胁检测、身份监控和 SIEM 数据摄取，扩展了平台从不同来源摄取和关联遥测数据的能力。该公告没有包括具体的漏洞披露或威胁行为者归属；它是针对评估检测覆盖范围的防御者的一次产品能力更新。
+
+## 技术分析
+
+这九个集成覆盖了以下领域：
+
+- **云安全**：新的数据源用于 Amazon Web Services (AWS)、Microsoft Azure 和 Google Cloud Platform (GCP)，能够更深入地查看云基础设施日志，包括 CloudTrail、Azure Activity Logs 和 GCP Audit Logs。Elastic 没有披露具体的新检测规则，但指出这些集成支持现有的分析管道。
+- **端点可见性**：与第三方端点检测和响应 (EDR) 供应商（来源中未命名）的集成允许 Elastic Security 摄取端点遥测数据，以便与网络和云数据进行关联。
+- **电子邮件威胁检测**：新的 Microsoft 365 Defender for Office 365 连接器将电子邮件威胁信号，包括钓鱼和恶意软件检测，摄取到 Elastic Security 中进行集中分析。
+- **身份安全**：与 Azure Active Directory（现 Microsoft Entra ID）的集成提供了身份日志摄取，用于检测异常认证模式和权限提升尝试。
+- **SIEM 数据摄取**：从网络设备和安全工具中增加的 syslog、JSON 和 CEF 格式日志的额外解析器，扩大了平台与现有 SIEM 部署的兼容性。
+
+Elastic Security Labs 表示，这些集成在 Elastic Security 版本 8.15 及更高版本中立即可用。公司没有为每个集成提供具体的版本号，也没有指出任何已知限制。
+
+## 缓解措施与建议
+
+使用 Elastic Security 的防御者应该查看 Elastic Integrations 目录中的新集成，并评估它们是否与他们现有的遥测源一致。已经通过其他方式摄取云、电子邮件或身份日志的组织可以考虑整合到 Elastic Security 中，以减少工具扩散并提高关联性。不需要安全补丁或配置更改；这些集成是附加能力。Elastic 建议在广泛启用之前，在非生产环境中测试集成。
+
+## 参考资料
+
+- [Elastic Security Integrations Roundup: Q1 2026](https://www.elastic.co/security-labs/elastic-security-integrations-roundup-q1-2026)
