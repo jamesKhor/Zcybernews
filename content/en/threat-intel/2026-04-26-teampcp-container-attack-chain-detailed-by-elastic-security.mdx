@@ -1,0 +1,47 @@
+---
+title: TeamPCP Container Attack Chain Detailed by Elastic Security
+slug: 2026-04-26-teampcp-container-attack-chain-detailed-by-elastic-security
+date: '2026-04-26'
+excerpt: >-
+  Elastic Security Labs publishes a real-world walkthrough of TeamPCP's
+  multi-stage container compromise, showing how runtime signals across each
+  attack phase are detected by…
+category: threat-intel
+tags:
+  - teampcp
+  - container-security
+  - elastic-security
+  - cloud-detection
+  - runtime-security
+  - attack-chain
+language: en
+source_urls:
+  - 'https://www.elastic.co/security-labs/teampcp-container-attack-scenario'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-teampcp-container-attack-chain-detailed-by-elastic-security
+severity: high
+threat_actor: TeamPCP
+affected_sectors:
+  - technology
+  - cloud infrastructure
+---
+## Executive Summary
+
+Elastic Security Labs published a detailed walkthrough of a multi-stage container compromise attributed to the threat actor known as TeamPCP, demonstrating how Elastic's Detection as Code (D4C) framework surfaces runtime signals across each phase of the attack chain. The scenario, documented in a technical report released April 26, 2026, provides defenders with a concrete blueprint for identifying container-native intrusions that often evade traditional endpoint detection.
+
+## Technical Analysis
+
+The TeamPCP attack scenario, as reconstructed by Elastic Security Labs, begins with initial access to a containerized environment — likely through compromised credentials or exposed management interfaces. The actor then executes a series of lateral movements within the container orchestration layer, leveraging legitimate Kubernetes and container runtime features to maintain persistence and escalate privileges.
+
+Elastic's D4C platform detects these activities by correlating audit logs from the container runtime, Kubernetes API server, and host-level system calls. The walkthrough highlights specific detection signals at each stage: anomalous pod creation events, unexpected container image pulls from untrusted registries, and privilege escalation attempts via mounted host paths or service account token abuse.
+
+The report emphasizes that TeamPCP's tactics align with known cloud-native attack patterns, including the abuse of `kubectl exec` for command execution and the use of sidecar containers for data exfiltration. Elastic's detection rules are designed to flag these behaviors without relying on static signatures, instead using behavioral baselines established through D4C's continuous monitoring.
+
+## Mitigations & Recommendations
+
+Defenders operating containerized environments should review Elastic's published detection rules for the TeamPCP scenario and adapt them to their own Kubernetes audit policies. Key mitigations include enforcing least-privilege service accounts, restricting pod-to-host access via PodSecurityPolicies or OPA Gatekeeper, and enabling detailed audit logging for the Kubernetes API server and container runtime. Organizations should also validate that their security information and event management (SIEM) systems can ingest and correlate container runtime logs with host-level telemetry, as the attack chain spans both layers.
+
+## References
+
+- [Elastic Security Labs - TeamPCP Container Attack Scenario](https://www.elastic.co/security-labs/teampcp-container-attack-scenario)
