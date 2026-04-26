@@ -1,9 +1,9 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "intro": "Between 13 and 24 April 2026, ZCyberNews published 16 articles under the cloud-security tag. The coverage included two critical and ten high-severity items. Threat actor APT41 was identified among the top adversaries. The most prominent vulnerability was CVE-2026-33413, which carries a CVSS score of 8.8. Affected sectors included technology, cloud services, government, healthcare, and cloud service providers, with impacts reported globally and in Israel.",
-  "sources_hash": "ad1259817fb66144",
+  "intro": "Over 18 articles published between April 13 and April 25, 2026, examine cloud-security developments. The threat actor APT41 was observed, and the vulnerability CVE-2026-33413 carries a CVSS score of 8.8. The coverage includes 11 high-severity and 2 critical-severity incidents, affecting sectors such as technology, cloud services, government, and healthcare. Global and Israeli regions were impacted, with three informational reports also filed.",
+  "sources_hash": "ed356c8154d842d8",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:02:05.967Z",
+  "generated_at": "2026-04-26T04:13:25.481Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

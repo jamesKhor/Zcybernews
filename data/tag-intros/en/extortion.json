@@ -1,0 +1,9 @@
+{
+  "tag": "extortion",
+  "locale": "en",
+  "intro": "ShinyHunters and BlackFile were among the top threat actors observed in a recent cluster of extortion incidents tracked by ZCyberNews. Between April 14 and April 24, 2026, a total of six articles documented these campaigns, which predominantly affected the education, cryptocurrency, hospitality, and publishing sectors in North America. The severity mix included five high-severity and one medium-severity incident, reflecting a concentrated period of activity.",
+  "sources_hash": "3664ecbdf1264de6",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-26T04:14:17.545Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

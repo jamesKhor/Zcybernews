@@ -1,13 +1,17 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-04-25"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2024-57726",
+      "cvss": 9.9
+    },
     {
       "id": "CVE-2026-34197",
       "cvss": 8.8
@@ -21,21 +25,21 @@
   ],
   "top_sectors": [
     "government",
-    "software development",
-    "technology"
+    "technology",
+    "software development"
   ],
   "top_regions": [
-    "Global",
-    "United states"
+    "United states",
+    "Global"
   ],
   "severity_mix": {
-    "high": 6,
-    "critical": 2
+    "critical": 3,
+    "high": 6
   },
   "recent_excerpts": [
+    "CISA 将其 KEV 目录中添加了 4 个正在被积极利用的漏洞 —— SimpleHelp、Samsung MagicINFO 9 和 D-Link DIR-823X —— 并设定了 2026 年 5 月的联邦补救截止日期。",
     "Apache ActiveMQ Classic 中存在一个高严重性的漏洞，CVE-2026-34197（CVSS 8.8），目前正在被积极利用，促使 CISA 将其加入其已知被利用漏洞目录，并要求联邦机构进行补丁修复。",
-    "CISA 将其已知被利用漏洞目录中添加了六个 Fortinet、Microsoft 和 Adobe 软件中的漏洞，警告存在活跃的野外攻击，需要紧急修补。",
-    "CISA 警告称 Fortinet 产品中存在一个关键的 SQL 注入漏洞，正在被积极利用，敦促立即修补。具体的 CVE ID 尚未公开披露。"
+    "CISA 将其已知被利用漏洞目录中添加了六个 Fortinet、Microsoft 和 Adobe 软件中的漏洞，警告存在活跃的野外攻击，需要紧急修补。"
   ],
-  "sources_hash": "415d6c9603bc2c7f"
+  "sources_hash": "9451afbbb68546a4"
 }

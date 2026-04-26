@@ -1,0 +1,30 @@
+{
+  "tag": "axios",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-26"
+  },
+  "top_actors": [
+    "Lazarus Group"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "software development",
+    "artificial-intelligence"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "high": 3,
+    "critical": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。",
+    "Elastic Security Labs 研究员 Joe Desimone 在一个下午构建了一个概念验证工具，该工具检测到了 Axios HTTP 库的供应链被破坏，影响了 npm…",
+    "Axios HTTP 客户端库中的一个严重 SSRF 漏洞允许攻击者窃取云实例元数据，可能导致远程代码执行和完整的云账户泄露。"
+  ],
+  "sources_hash": "14170229ff436389"
+}

@@ -1,0 +1,39 @@
+{
+  "tag": "kev",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-25"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2024-57726",
+      "cvss": 9.9
+    },
+    {
+      "id": "CVE-2024-20662"
+    },
+    {
+      "id": "CVE-2024-21412"
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "technology"
+  ],
+  "top_regions": [
+    "United states"
+  ],
+  "severity_mix": {
+    "critical": 2,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "CISA added 4 actively exploited vulnerabilities to its KEV catalog — SimpleHelp, Samsung MagicINFO 9, and D-Link DIR-823X — with a May 2026 federal remediation deadline.",
+    "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching.",
+    "CISA warns that a critical SQL injection vulnerability in Fortinet products is being actively exploited, urging immediate patching. The specific CVE ID has not yet been publicly disclosed."
+  ],
+  "sources_hash": "bd4e823884dd502b"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "npm",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-21",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "CanisterSprawl"
@@ -18,13 +18,13 @@
     "Global"
   ],
   "severity_mix": {
-    "critical": 3,
-    "high": 2
+    "high": 3,
+    "critical": 3
   },
   "recent_excerpts": [
+    "Elastic Security Labs researcher Joe Desimone built a proof-of-concept tool in an afternoon that detected a supply chain compromise of the Axios HTTP library, affecting npm…",
     "JFrog and Socket found malicious code in @bitwarden/cli@2026.4.0 — the same campaign that hijacked Checkmarx npm packages.",
-    "The CanisterSprawl supply chain worm hijacks npm packages, uses stolen developer tokens to self-propagate, and exfiltrates data to an ICP canister, according to Socket and…",
-    "Unit 42 details wormable npm malware, CI/CD pipeline persistence, and multi-stage attacks targeting developers."
+    "The CanisterSprawl supply chain worm hijacks npm packages, uses stolen developer tokens to self-propagate, and exfiltrates data to an ICP canister, according to Socket and…"
   ],
-  "sources_hash": "e7d8dd089839f0c0"
+  "sources_hash": "311063dbb8116b41"
 }

@@ -112,5 +112,77 @@
     "locale": "en",
     "lastError": "word count 44 outside 60-140 (en)",
     "at": "2026-04-25T04:03:24.407Z"
+  },
+  {
+    "tag": "encryption",
+    "locale": "en",
+    "lastError": "word count 55 outside 60-140 (en)",
+    "at": "2026-04-26T04:13:38.859Z"
+  },
+  {
+    "tag": "llm",
+    "locale": "en",
+    "lastError": "word count 49 outside 60-140 (en)",
+    "at": "2026-04-26T04:13:46.429Z"
+  },
+  {
+    "tag": "macos",
+    "locale": "en",
+    "lastError": "word count 51 outside 60-140 (en)",
+    "at": "2026-04-26T04:13:51.372Z"
+  },
+  {
+    "tag": "open-source",
+    "locale": "en",
+    "lastError": "word count 46 outside 60-140 (en)",
+    "at": "2026-04-26T04:14:07.244Z"
+  },
+  {
+    "tag": "unit-42",
+    "locale": "en",
+    "lastError": "word count 48 outside 60-140 (en)",
+    "at": "2026-04-26T04:14:11.935Z"
+  },
+  {
+    "tag": "fortinet",
+    "locale": "en",
+    "lastError": "word count 51 outside 60-140 (en)",
+    "at": "2026-04-26T04:14:22.498Z"
+  },
+  {
+    "tag": "incident-response",
+    "locale": "en",
+    "lastError": "word count 58 outside 60-140 (en)",
+    "at": "2026-04-26T04:14:28.033Z"
+  },
+  {
+    "tag": "iran",
+    "locale": "en",
+    "lastError": "word count 44 outside 60-140 (en)",
+    "at": "2026-04-26T04:14:32.639Z"
+  },
+  {
+    "tag": "npm",
+    "locale": "en",
+    "lastError": "word count 58 outside 60-140 (en)",
+    "at": "2026-04-26T04:14:37.313Z"
+  },
+  {
+    "tag": "critical-vulnerability",
+    "locale": "en",
+    "lastError": "word count 47 outside 60-140 (en)",
+    "at": "2026-04-26T04:14:48.253Z"
+  },
+  {
+    "tag": "data-exfiltration",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-04-26T04:14:52.610Z"
+  },
+  {
+    "tag": "kev",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-04-26T04:14:58.431Z"
   }
 ]

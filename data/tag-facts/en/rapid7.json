@@ -1,25 +1,38 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "count": 5,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Kyber"
   ],
-  "top_cves": [],
-  "top_sectors": [],
-  "top_regions": [],
+  "top_cves": [
+    {
+      "id": "CVE-2025-59718",
+      "cvss": 9.8
+    }
+  ],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "technology"
+  ],
+  "top_regions": [
+    "Europe",
+    "North america"
+  ],
   "severity_mix": {
-    "high": 1,
-    "informational": 3
+    "critical": 1,
+    "informational": 4,
+    "high": 1
   },
   "recent_excerpts": [
-    "Rapid7's Global Cybersecurity Summit focuses on AI-driven threats, continuous threat exposure management (CTEM), and closing the gap between visibility and response.",
-    "Kyber ransomware deploys two distinct payloads to encrypt both Windows systems and VMware ESXi servers, using a custom tool to wipe ESXi snapshots and hinder recovery.",
-    "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi"
+    "Rapid7 argues most breaches result from visibility gaps in asset, identity, and attack path coverage rather than sophisticated exploits.",
+    "Rapid7 IR confirms active exploitation of CVE-2025-59718 — a 9.8-CVSS FortiGate SSO bypass — enabling attackers to gain persistent admin access on unpatched appliances.",
+    "Rapid7's May 12–13 summit agenda reveals industry pivot from reactive defense to preemptive security operations, featuring sessions on AI-driven threat hunting and autonomous…"
   ],
-  "sources_hash": "bc402316564f5e3f"
+  "sources_hash": "6ee826c008f48e4a"
 }

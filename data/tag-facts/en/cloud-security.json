@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "count": 16,
+  "count": 18,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "APT41"
@@ -18,23 +18,23 @@
   "top_sectors": [
     "technology",
     "cloud services",
+    "cloud-services",
     "government",
-    "healthcare",
-    "cloud service providers"
+    "healthcare"
   ],
   "top_regions": [
     "Global",
     "Israel"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Elastic Security Labs released nine new integrations for cloud, endpoint, email, identity, and SIEM use cases in Q1 2026, expanding detection coverage for AWS, Azure, and Google…",
     "Copperhelm, an Israel-based startup founded by ex-RSA and McAfee engineers, raised $7 million in seed funding for an agentic AI platform that autonomously hunts cloud…",
-    "Palo Alto Networks researchers built Zealot, a multi-agent AI penetration testing PoC that autonomously performs reconnaissance, exploitation, and data exfiltration on cloud…",
-    "Analysis of 1,000+ cybersecurity job postings shows a 40% surge in demand for AI security specialists and cloud security architects, with DevSecOps roles requiring Azure DevOps expertise commanding pr"
+    "Palo Alto Networks researchers built Zealot, a multi-agent AI penetration testing PoC that autonomously performs reconnaissance, exploitation, and data exfiltration on cloud…"
   ],
-  "sources_hash": "ad1259817fb66144"
+  "sources_hash": "ed356c8154d842d8"
 }

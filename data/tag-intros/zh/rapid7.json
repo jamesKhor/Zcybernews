@@ -1,10 +1,10 @@
 {
   "tag": "rapid7",
   "locale": "zh",
-  "intro": "本档案收录了 5 篇带有「rapid7」标签的文章，发布时间从2026年4月13日至2026年4月24日。其中包含1 篇高危、3 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "bc402316564f5e3f",
-  "source_intro_hash": "b50b78388b673263",
-  "model": "template:sparse",
-  "generated_at": "2026-04-25T04:03:50.864Z",
+  "intro": "2026年4月13日至26日期间，ZCyberNews发布了八篇标记为rapid7的文章。报道重点强调了威胁行为者Kyber的活动以及严重级别漏洞CVE-2025-59718，该漏洞的CVSS评分为9.8。受影响行业包括金融服务、政府和技术领域，报告的事件发生在欧洲和北美。文章组合包括一篇严重、一篇高危和四篇信息类内容。",
+  "sources_hash": "6ee826c008f48e4a",
+  "source_intro_hash": "0df1952660379c73",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-26T04:15:31.320Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

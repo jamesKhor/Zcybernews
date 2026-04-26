@@ -1,9 +1,9 @@
 {
   "tag": "fraud",
   "locale": "en",
-  "intro": "This archive collects 14 articles tagged `fraud` published between April 12, 2026 and April 23, 2026. Coverage includes 4 high, 7 medium, and 2 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "8bf9d2c16d8a9406",
+  "intro": "This archive collects 15 articles tagged `fraud` published between April 12, 2026 and April 25, 2026. Coverage includes 5 high, 7 medium, and 2 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "4e6d403e2cc53eea",
   "model": "template:sparse",
-  "generated_at": "2026-04-24T04:09:28.446Z",
+  "generated_at": "2026-04-26T04:13:29.853Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

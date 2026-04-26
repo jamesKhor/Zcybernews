@@ -1,10 +1,10 @@
 {
   "tag": "security-operations",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [],
   "top_cves": [],
@@ -14,9 +14,9 @@
     "informational": 5
   },
   "recent_excerpts": [
+    "Rapid7 argues most breaches result from visibility gaps in asset, identity, and attack path coverage rather than sophisticated exploits.",
     "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors.",
-    "The Hacker News reports most enterprise AI security tools fail post-demo due to data quality, integration, and cost issues, stalling critical threat detection and response initiatives.",
-    "Mature security operations centers reduce mean time to respond by 40% by integrating threat intelligence into workflows, while others waste time on siloed data and manual processes."
+    "The Hacker News reports most enterprise AI security tools fail post-demo due to data quality, integration, and cost issues, stalling critical threat detection and response initiatives."
   ],
-  "sources_hash": "678c711594098b15"
+  "sources_hash": "b540537a3e3672d4"
 }

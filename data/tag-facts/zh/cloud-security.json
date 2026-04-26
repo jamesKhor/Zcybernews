@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "zh",
-  "count": 16,
+  "count": 18,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "APT41"
@@ -18,23 +18,23 @@
   "top_sectors": [
     "technology",
     "cloud services",
+    "cloud-services",
     "government",
-    "healthcare",
-    "cloud service providers"
+    "healthcare"
   ],
   "top_regions": [
     "Global",
     "Israel"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Elastic Security Labs 在 2026 年第一季度发布了九个新的集成，用于云、端点、电子邮件、身份和 SIEM 用例，扩展了对 AWS、Azure 和 Google 的检测覆盖范围...",
     "Copperhelm，一家由前 RSA 和 McAfee 工程师创立的以色列初创公司，为一个自主搜寻云的 agentic AI 平台筹集了700万美元的种子资金...",
-    "Palo Alto Networks 研究人员构建了 Zealot，这是一个多代理 AI 渗透测试 PoC，它能够自动执行云上的侦察、利用和数据外泄...",
-    "对1000多个网络安全职位发布的分析显示，对人工智能安全专家和云安全架构师的需求激增了40%，需要Azure DevOps专业知识的DevSecOps角色可以获得更高的薪资。"
+    "Palo Alto Networks 研究人员构建了 Zealot，这是一个多代理 AI 渗透测试 PoC，它能够自动执行云上的侦察、利用和数据外泄..."
   ],
-  "sources_hash": "ad1259817fb66144"
+  "sources_hash": "ed356c8154d842d8"
 }

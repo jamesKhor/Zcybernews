@@ -1,15 +1,19 @@
 {
   "tag": "microsoft",
   "locale": "en",
-  "count": 36,
+  "count": 37,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "Storm-2755"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-40372",
+      "cvss": 9.1
+    },
     {
       "id": "CVE-2026-33104",
       "cvss": 7.8
@@ -25,17 +29,13 @@
     {
       "id": "CVE-2026-32183",
       "cvss": 7.5
-    },
-    {
-      "id": "CVE-2026-32201",
-      "cvss": 6.5
     }
   ],
   "top_sectors": [
     "multiple",
+    "enterprise",
     "cross-sector",
     "education",
-    "enterprise",
     "federal government"
   ],
   "top_regions": [
@@ -44,16 +44,16 @@
     "Japan"
   ],
   "severity_mix": {
+    "critical": 5,
     "high": 18,
     "medium": 10,
     "informational": 3,
-    "critical": 4,
     "low": 1
   },
   "recent_excerpts": [
+    "Microsoft released out-of-band patches for CVE-2026-40372, a 9.1-CVSS privilege escalation flaw in ASP.NET Core affecting all supported versions.",
     "CVE-2026-33829 in Windows Snipping Tool allows attackers to steal NTLMv2 hashes via malicious links. A public PoC exploit targets the ms-screensketch protocol to enable credential relay attacks.",
-    "Microsoft released out-of-band updates for Windows Server 2019 and 2022 after April 2026 security patches caused boot failures and domain controller authentication issues, forcing some administrators",
-    "Microsoft's April 2026 Patch Tuesday adds a critical warning dialog to Windows Remote Desktop, blocking threat actors from using malicious .rdp files to steal credentials via phishing."
+    "Microsoft released out-of-band updates for Windows Server 2019 and 2022 after April 2026 security patches caused boot failures and domain controller authentication issues, forcing some administrators"
   ],
-  "sources_hash": "dcf898f9426cca0a"
+  "sources_hash": "a29bccb23a9e563d"
 }

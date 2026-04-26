@@ -1,0 +1,38 @@
+{
+  "tag": "latin-america",
+  "locale": "en",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-26"
+  },
+  "top_actors": [
+    "LockBit"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "retail",
+    "cryptocurrency",
+    "Financial Services"
+  ],
+  "top_regions": [
+    "Latin america",
+    "Caribbean",
+    "Africa",
+    "Brazil",
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 5,
+    "medium": 1,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "A new campaign deploying the Janela RAT uses fake MSI installers and malicious browser extensions to target financial and cryptocurrency entities in Latin America for data theft.",
+    "Kaspersky researchers detail an updated JanelaRAT campaign targeting Latin American users with enhanced anti-analysis, credential theft, and remote access capabilities delivered via phishing.",
+    "A modified version of BX RAT, dubbed JanelaRAT, has been deployed in over 14,000 attacks against banks and financial institutions in Brazil and Mexico, stealing financial data and keystrokes."
+  ],
+  "sources_hash": "d22a95377b05d76c"
+}

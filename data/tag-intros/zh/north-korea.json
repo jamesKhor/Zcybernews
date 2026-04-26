@@ -1,10 +1,10 @@
 {
   "tag": "north-korea",
   "locale": "zh",
-  "intro": "2026年4月发生的一系列高严重性网络攻击行动集中针对全球加密货币和技术领域。这些攻击被归因于不同的威胁行为者Lazarus Group、APT37 (ScarCruft, InkySquid)和Sapphire Sleet，同时也影响了软件开发、风险投资和web3行业。所有六起已记录的事件均被评估为高严重性，表明这是一场针对全球范围内这些相互关联的数字资产与创新领域的定向攻击活动。",
-  "sources_hash": "0798b1f1095b7bf3",
-  "source_intro_hash": "b2d084be681f9e00",
+  "intro": "加密货币和技术行业是2026年4月13日至4月24日期间一系列七起高严重性事件的主要目标，这些事件被归因于与朝鲜相关的活动。Lazarus Group、APT37 (ScarCruft, InkySquid) 和 Sapphire Sleet 是观察到的主要威胁行为者，其影响波及全球、亚洲、欧洲和北美。在此期间，金融、软件开发和风险投资行业也面临重大威胁。",
+  "sources_hash": "bd7548ea5b22888c",
+  "source_intro_hash": "403447595ccc73f8",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:11:12.194Z",
+  "generated_at": "2026-04-26T04:15:22.428Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

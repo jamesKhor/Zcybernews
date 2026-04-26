@@ -1,15 +1,19 @@
 {
   "tag": "privilege-escalation",
   "locale": "zh",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "Chaotic Eclipse"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-40372",
+      "cvss": 9.1
+    },
     {
       "id": "CVE-2026-5490",
       "cvss": 8.8
@@ -25,31 +29,27 @@
     {
       "id": "CVE-2026-33104",
       "cvss": 7.8
-    },
-    {
-      "id": "CVE-2026-34054",
-      "cvss": 7.8
     }
   ],
   "top_sectors": [
-    "education",
-    "healthcare",
     "technology",
-    "digital signage",
-    "enterprise"
+    "education",
+    "enterprise",
+    "healthcare",
+    "digital signage"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "critical": 2,
     "high": 15,
-    "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "微软发布了针对CVE-2026-40372的紧急补丁，这是一个9.1-CVSS的ASP.NET Core权限提升漏洞，影响所有支持的版本。",
     "The Hacker News 报道 AI 代理创建了一个结构性安全缺口：委托的行动者缺乏持续的监督，使得横向移动和权限提升无需人类…",
-    "CVE-2026-6406 (CVSS 8.8) 在 Docker Desktop 的增强容器隔离中，允许具有容器内低权限代码执行能力的本地攻击者提升权限...",
-    "CVE-2026-25203，一个CVSS 7.8本地权限提升漏洞在三星MagicINFO 9服务器中，允许经过身份验证的攻击者通过利用服务上不正确的默认权限来获得SYSTEM权限。"
+    "CVE-2026-6406 (CVSS 8.8) 在 Docker Desktop 的增强容器隔离中，允许具有容器内低权限代码执行能力的本地攻击者提升权限..."
   ],
-  "sources_hash": "4422999574765f03"
+  "sources_hash": "86bcab241c7a2ae8"
 }

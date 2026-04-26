@@ -1,9 +1,9 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "intro": "Between April 13 and April 22, 2026, ZCyberNews published eight articles tracking backdoor threats. The coverage detailed activity from distinct threat actors APT41, Harvester, and Mustang Panda, primarily targeting the banking, cloud-services, government, and technology sectors. Incidents were reported globally, with notable focus on India, South Asia, and South Korea. The severity of these threats was significant, with seven reports classified as high and one as critical.",
-  "sources_hash": "a9e3a70e601dd2f6",
+  "intro": "Over the past two weeks, from April 13 to April 26, 2026, ZCyberNews has published 10 articles tagged with backdoor. The coverage includes nine high-severity incidents and one critical event. Threat actors APT41, Harvester, and Mustang Panda were observed in these campaigns. Affected sectors include government, technology, banking, cloud-services, and software development, with reported impacts across Global, India, South Asia, South Korea, and the United States.",
+  "sources_hash": "7a03266841dc922e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:08:29.617Z",
+  "generated_at": "2026-04-26T04:13:33.805Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

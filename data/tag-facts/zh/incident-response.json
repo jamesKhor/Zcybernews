@@ -1,33 +1,40 @@
 {
   "tag": "incident-response",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2025-59718",
+      "cvss": 9.8
+    }
+  ],
   "top_sectors": [
+    "technology",
     "cloud computing",
     "energy",
-    "hospitality",
-    "multiple",
-    "technology"
+    "financial services",
+    "government"
   ],
   "top_regions": [
+    "Europe",
     "Global",
+    "North america",
     "Venezuela"
   ],
   "severity_mix": {
+    "critical": 2,
     "high": 3,
-    "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "Rapid7 IR 确认 CVE-2025-59718 —— 一个 9.8-CVSS FortiGate SSO 绕过 —— 被活跃利用，使攻击者能够在未打补丁的设备上获得持久的管理员访问权限。",
     "Vercel 识别到与 Context.ai 违规相关的更多被入侵客户账户，通过新的指标和网络请求审查扩大调查。",
-    "Lotus Wiper 恶意软件针对委内瑞拉国有能源公司 PDVSA，通过覆盖驱动器和删除文件破坏数据，在美国领导的干预行动之前，即 2026 年 3 月。",
-    "钓鱼继续是网络犯罪的主要初始攻击向量，导致事件激增，管理服务提供商（MSPs）及其客户正在努力用传统防御手段来控制。"
+    "Lotus Wiper 恶意软件针对委内瑞拉国有能源公司 PDVSA，通过覆盖驱动器和删除文件破坏数据，在美国领导的干预行动之前，即 2026 年 3 月。"
   ],
-  "sources_hash": "806a28a81f4a35b7"
+  "sources_hash": "4a1794357200d808"
 }

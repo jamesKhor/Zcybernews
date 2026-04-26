@@ -1,15 +1,15 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "count": 46,
+  "count": 49,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "FakeWallet",
     "Lazarus Group",
-    "Scattered Spider"
+    "LockBit"
   ],
   "top_cves": [
     {
@@ -29,27 +29,27 @@
     }
   ],
   "top_sectors": [
+    "financial services",
+    "government",
     "hospitality",
     "cryptocurrency",
-    "technology",
-    "finance",
-    "government"
+    "technology"
   ],
   "top_regions": [
     "Global",
+    "Latin america",
     "Canada",
-    "United states",
-    "Bangladesh",
-    "Latin america"
+    "Caribbean",
+    "United states"
   ],
   "severity_mix": {
-    "high": 39,
-    "medium": 7
+    "high": 41,
+    "medium": 8
   },
   "recent_excerpts": [
     "加拿大首起短信爆炸器案件中三名男子被捕 — 设备冒充蜂窝塔发送大规模网络钓鱼信息并干扰多伦多的移动网络。",
     "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…",
     "一个冒充TradingView AI代理的恶意网站部署了恶意软件，该软件赋予攻击者对受害者浏览器的完全控制权，使得账户盗窃和金融数据泄露成为可能…"
   ],
-  "sources_hash": "7238de442cac5e04"
+  "sources_hash": "36ffc72611f85c5c"
 }

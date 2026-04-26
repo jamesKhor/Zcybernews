@@ -1,0 +1,10 @@
+{
+  "tag": "latin-america",
+  "locale": "zh",
+  "intro": "在过去两周内，ZCyberNews追踪了七篇涉及拉丁美洲的文章，其中LockBit是最主要的威胁行为体。受影响最严重的行业包括金融服务、政府、零售和加密货币，而受影响地区涵盖拉丁美洲、加勒比地区、非洲、巴西及全球范围。事件严重程度分布为五起高风险事件、一起中等风险事件和一份信息性报告，时间跨度从2026年4月13日至4月26日。",
+  "sources_hash": "d22a95377b05d76c",
+  "source_intro_hash": "66c37cef2e064d98",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-26T04:15:17.794Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

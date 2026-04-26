@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "intro": "2026年4月13日至25日期间，ZCyberNews在威胁情报标签下发布了16篇文章，其中GopherWhisper和LockBit是报道最多的威胁行为者。报道重点涵盖了七起高严重性事件、六篇信息性文章以及一起中等严重性事件，影响的行业包括技术、关键基础设施、网络安全、金融服务和政府。观察到的受影响区域遍及亚洲、欧洲、北美及全球范围，反映出针对这些行为者及其目标的情报集中期。",
-  "sources_hash": "d86491dfb01a3328",
-  "source_intro_hash": "0d897230de6dd441",
+  "intro": "过去两周，ZCyberNews发布了19篇关于威胁情报的文章，内容涵盖GopherWhisper和LockBit的活动。报道时间跨度为2026年4月13日至4月25日，警报严重程度分布为：8条信息性、8条高严重性和1条中等严重性。受影响行业包括政府、科技、关键基础设施、网络安全和国防，受影响区域涵盖亚洲、欧洲、全球、北美和英国。",
+  "sources_hash": "2b6892bdefbc1d80",
+  "source_intro_hash": "9eb9a7ec9982325f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:03:59.432Z",
+  "generated_at": "2026-04-26T04:15:33.169Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

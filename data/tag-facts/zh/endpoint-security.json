@@ -1,10 +1,10 @@
 {
   "tag": "endpoint-security",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-18"
+    "latest": "2026-04-26"
   },
   "top_actors": [],
   "top_cves": [
@@ -25,14 +25,14 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "medium": 1,
+    "medium": 2,
     "high": 2,
     "informational": 2
   },
   "recent_excerpts": [
+    "Elastic Security Labs 发布 Linux 根工具检测系列的第二部分，详细描述了行为检测方法，这些方法能够捕捉到静态扫描遗漏的内存中和内核级别的根工具。",
     "DriveLock 终端安全软件中的目录遍历漏洞（CVE-2026-5492）允许经过身份验证的攻击者读取任意文件，可能会暴露敏感的系统信息和配置数据。",
-    "根据零日计划，DriveLock 终端安全软件中的关键SQL注入漏洞（CVE-2026-5490）允许经过身份验证的攻击者提升权限并绕过产品自身的安全控制。",
-    "SentinelOne 概述了其 AI原生安全平台，利用设备上的模型和全球数据湖，以机器速度自动检测和响应威胁。"
+    "根据零日计划，DriveLock 终端安全软件中的关键SQL注入漏洞（CVE-2026-5490）允许经过身份验证的攻击者提升权限并绕过产品自身的安全控制。"
   ],
-  "sources_hash": "96a1d76fb66c0c79"
+  "sources_hash": "f9ac5e726a2a81ad"
 }

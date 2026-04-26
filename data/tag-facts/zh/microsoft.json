@@ -1,15 +1,19 @@
 {
   "tag": "microsoft",
   "locale": "zh",
-  "count": 36,
+  "count": 37,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "Storm-2755"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-40372",
+      "cvss": 9.1
+    },
     {
       "id": "CVE-2026-33104",
       "cvss": 7.8
@@ -25,17 +29,13 @@
     {
       "id": "CVE-2026-32183",
       "cvss": 7.5
-    },
-    {
-      "id": "CVE-2026-32201",
-      "cvss": 6.5
     }
   ],
   "top_sectors": [
     "multiple",
+    "enterprise",
     "cross-sector",
     "education",
-    "enterprise",
     "federal government"
   ],
   "top_regions": [
@@ -44,16 +44,16 @@
     "Japan"
   ],
   "severity_mix": {
+    "critical": 5,
     "high": 18,
     "medium": 10,
     "informational": 3,
-    "critical": 4,
     "low": 1
   },
   "recent_excerpts": [
+    "微软发布了针对CVE-2026-40372的紧急补丁，这是一个9.1-CVSS的ASP.NET Core权限提升漏洞，影响所有支持的版本。",
     "CVE-2026-33829 在 Windows Snipping Tool 中允许攻击者通过恶意链接窃取 NTLMv2 哈希。一个公开的 PoC 漏洞利用目标是 ms-screensketch 协议，以启用凭证中继攻击。",
-    "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。",
-    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。"
+    "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。"
   ],
-  "sources_hash": "dcf898f9426cca0a"
+  "sources_hash": "a29bccb23a9e563d"
 }

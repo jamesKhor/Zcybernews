@@ -1,15 +1,15 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "count": 46,
+  "count": 49,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "FakeWallet",
     "Lazarus Group",
-    "Scattered Spider"
+    "LockBit"
   ],
   "top_cves": [
     {
@@ -29,27 +29,27 @@
     }
   ],
   "top_sectors": [
+    "financial services",
+    "government",
     "hospitality",
     "cryptocurrency",
-    "technology",
-    "finance",
-    "government"
+    "technology"
   ],
   "top_regions": [
     "Global",
+    "Latin america",
     "Canada",
-    "United states",
-    "Bangladesh",
-    "Latin america"
+    "Caribbean",
+    "United states"
   ],
   "severity_mix": {
-    "high": 39,
-    "medium": 7
+    "high": 41,
+    "medium": 8
   },
   "recent_excerpts": [
     "Three men arrested in Canada's first SMS blaster case — device impersonated cell towers to send mass phishing messages and disrupt mobile networks in Toronto.",
     "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
     "A malicious website impersonating a TradingView AI agent deploys malware that hands attackers full control of victims' browsers, enabling account theft and financial data…"
   ],
-  "sources_hash": "7238de442cac5e04"
+  "sources_hash": "36ffc72611f85c5c"
 }

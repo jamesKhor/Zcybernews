@@ -1,10 +1,10 @@
 {
   "tag": "endpoint-security",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-18"
+    "latest": "2026-04-26"
   },
   "top_actors": [],
   "top_cves": [
@@ -25,14 +25,14 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "medium": 1,
+    "medium": 2,
     "high": 2,
     "informational": 2
   },
   "recent_excerpts": [
+    "Elastic Security Labs publishes part two of Linux rootkit detection series, detailing behavioral detection methods that catch in-memory and kernel-level rootkits static scans miss.",
     "A directory traversal vulnerability (CVE-2026-5492) in DriveLock endpoint security software allows authenticated attackers to read arbitrary files, potentially exposing sensitive system information an",
-    "A critical SQL injection vulnerability (CVE-2026-5490) in DriveLock endpoint security software allows authenticated attackers to escalate privileges and bypass the product's own security controls, acc",
-    "SentinelOne outlines its AI-native security platform, leveraging on-device models and a global data lake to autonomously detect and respond to threats at machine speed."
+    "A critical SQL injection vulnerability (CVE-2026-5490) in DriveLock endpoint security software allows authenticated attackers to escalate privileges and bypass the product's own security controls, acc"
   ],
-  "sources_hash": "96a1d76fb66c0c79"
+  "sources_hash": "f9ac5e726a2a81ad"
 }

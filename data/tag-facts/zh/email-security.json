@@ -1,10 +1,10 @@
 {
   "tag": "email-security",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-19"
+    "latest": "2026-04-25"
   },
   "top_actors": [],
   "top_cves": [],
@@ -24,9 +24,9 @@
     "high": 5
   },
   "recent_excerpts": [
+    "Elastic Security Labs 在 2026 年第一季度发布了九个新的集成，用于云、端点、电子邮件、身份和 SIEM 用例，扩展了对 AWS、Azure 和 Google 的检测覆盖范围...",
     "Bitdefender 已将持续的电子邮件威胁保护集成到其 GravityZone 平台中，结合终端检测和响应（EDR）与电子邮件安全，以对抗网络钓鱼、BEC 和勒索软件。",
-    "DavMail 6.6.0 解决了一个正则表达式漏洞的安全警告，并更新 OAuth 处理以与 Microsoft 的变化保持一致，影响将邮件客户端桥接到 Exchange/Office 365 的用户。",
-    "Google 已为选择的企业客户启用了 Android 和 iOS 上 Gmail 的客户端端到端加密，允许他们在移动应用内原生发送和接收加密消息。"
+    "DavMail 6.6.0 解决了一个正则表达式漏洞的安全警告，并更新 OAuth 处理以与 Microsoft 的变化保持一致，影响将邮件客户端桥接到 Exchange/Office 365 的用户。"
   ],
-  "sources_hash": "ad056007f6e53f35"
+  "sources_hash": "6038b8fec7bc6e39"
 }

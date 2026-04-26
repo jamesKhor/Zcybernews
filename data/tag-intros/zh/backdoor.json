@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "zh",
-  "intro": "2026年4月13日至4月22日期间，ZCyberNews发布了八篇追踪后门威胁的文章。报道详细记录了APT41、Harvester和Mustang Panda等不同威胁行为体的活动，其主要目标集中在银行、云服务、政府和科技领域。相关事件在全球范围内均有报告，重点关注区域包括印度、南亚和韩国。这些威胁的严重性较高，其中七份报告被归类为高级，一份被归类为严重。",
-  "sources_hash": "a9e3a70e601dd2f6",
-  "source_intro_hash": "7a78379c500f2a58",
+  "intro": "过去两周（2026年4月13日至4月26日），ZCyberNews共发布了10篇标记为后门的文章。报道涵盖9起高严重性事件和1起重大事件。在这些活动中观察到威胁行为者APT41、Harvester和Mustang Panda。受影响行业包括政府、科技、银行、云服务和软件开发，报告的影响范围涉及全球、印度、南亚、韩国和美国。",
+  "sources_hash": "7a03266841dc922e",
+  "source_intro_hash": "3bc2e86174688887",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:09:42.740Z",
+  "generated_at": "2026-04-26T04:15:06.983Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

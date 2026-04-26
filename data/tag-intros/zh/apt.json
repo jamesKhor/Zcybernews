@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "intro": "2026年4月13日至22日期间，ZCyberNews追踪了七份关于高级持续性威胁的高危报告。这些活动显著涉及威胁行为者CyberAv3ngers、Sapphire Sleet和SideWinder。其行动针对多个关键领域，包括加密货币、政府、能源、医疗和工业系统。从地理分布看，事件重点关注孟加拉国、南亚、乌克兰和美国，其中多个活动被指出具有全球性影响。所有记录案例均持续被评为高危，这凸显了这些协同且持久的网络攻击活动所带来的重大风险。",
-  "sources_hash": "d9172c2cc6916ee6",
-  "source_intro_hash": "14b684514d8b2455",
+  "intro": "2026年4月13日至24日期间，ZCyberNews在APT标签下报道了13起高严重性事件，其中GopherWhisper、CyberAv3ngers和Sapphire Sleet成为最常被观测到的威胁行为体。这些攻击活动主要针对蒙古、亚洲、孟加拉国、中美洲和东亚地区的政府、加密货币、能源、科技及医疗保健行业。相关报道反映了针对这些地区及行业的高度集中活跃期，全部13篇文章均被评估为高严重性等级。",
+  "sources_hash": "6b63d03cbd312893",
+  "source_intro_hash": "d66594457a8b92b6",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:09:38.218Z",
+  "generated_at": "2026-04-26T04:15:03.773Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

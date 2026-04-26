@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "APT41",
@@ -14,9 +14,10 @@
   "top_cves": [],
   "top_sectors": [
     "government",
+    "technology",
     "banking",
     "cloud-services",
-    "technology"
+    "software development"
   ],
   "top_regions": [
     "Global",
@@ -26,13 +27,13 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 9,
     "critical": 1
   },
   "recent_excerpts": [
+    "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
     "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…",
-    "A malicious buyer used the Flippa marketplace to acquire a plugin developer, injecting a backdoor into over 30 WordPress plugins with hundreds of thousands of installations to deploy hidden SEO spam.",
-    "The EssentialPlugin suite, comprising over 30 popular WordPress plugins, has been compromised to inject a backdoor granting attackers administrative access to thousands of websites."
+    "A malicious buyer used the Flippa marketplace to acquire a plugin developer, injecting a backdoor into over 30 WordPress plugins with hundreds of thousands of installations to deploy hidden SEO spam."
   ],
-  "sources_hash": "40697257de5e6b21"
+  "sources_hash": "7a03266841dc922e"
 }

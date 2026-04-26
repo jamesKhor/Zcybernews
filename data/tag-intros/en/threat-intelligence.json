@@ -1,9 +1,9 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "intro": "Between April 13 and 25, 2026, ZCyberNews published 16 articles under the threat-intelligence tag, with GopherWhisper and LockBit as the most covered threat actors. The reporting highlighted seven high-severity incidents, six informational pieces, and one medium-severity item, affecting sectors including technology, critical-infrastructure, cybersecurity, financial services, and government. Observed impacts spanned Asia, Europe, North America, and global regions, reflecting a concentrated period of intelligence on these actors and their targets.",
-  "sources_hash": "d86491dfb01a3328",
+  "intro": "Over the past two weeks, ZCyberNews has published 19 articles on threat intelligence, covering activity from GopherWhisper and LockBit. The reporting spans April 13 to April 25, 2026, with a severity mix of eight informational, eight high, and one medium alerts. Affected sectors include government, technology, critical-infrastructure, cybersecurity, and defense, while regions impacted are Asia, Europe, Global, North America, and the United Kingdom.",
+  "sources_hash": "2b6892bdefbc1d80",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:02:07.922Z",
+  "generated_at": "2026-04-26T04:13:20.121Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

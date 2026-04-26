@@ -1,9 +1,9 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "intro": "Between 12 and 23 April 2026, ZCyberNews covered 32 ransomware incidents, with The Gentlemen, Kyber, and Payouts King emerging as the top threat actors. The most critical vulnerability observed was CVE-2026-1731, carrying a CVSS score of 9.8, alongside CVE-2026-34197 at 8.8. The manufacturing, healthcare, logistics, and retail sectors were most affected, with Europe, the United States, and Turkey among the primary regions targeted. Of the 32 articles, 26 were classified as high severity, two as critical, and two as informational.",
-  "sources_hash": "a52f53296de428fa",
+  "intro": "Over the past two weeks, ZCyberNews has tracked 33 ransomware articles, with The Gentlemen, Kyber, and Payouts King emerging as the top threat actors. Two critical vulnerabilities, CVE-2026-1731 (CVSS 9.8) and CVE-2026-34197 (CVSS 8.8), were widely exploited across multiple sectors, including manufacturing, healthcare, logistics, and retail. The incidents primarily affected Europe, the United States, North America, and Turkey, with 27 high-severity and two critical reports logged between April 12 and April 25, 2026.",
+  "sources_hash": "25661457e8b09473",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-24T04:09:06.675Z",
+  "generated_at": "2026-04-26T04:13:18.056Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

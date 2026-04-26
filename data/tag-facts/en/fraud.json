@@ -1,36 +1,36 @@
 {
   "tag": "fraud",
   "locale": "en",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "financial-services",
     "retail",
+    "financial services",
     "cryptocurrency",
-    "entertainment",
-    "financial services"
+    "e-commerce"
   ],
   "top_regions": [
     "United states",
     "Europe",
-    "North america",
     "Global",
+    "North america",
     "Canada"
   ],
   "severity_mix": {
     "medium": 7,
     "informational": 2,
-    "high": 4
+    "high": 5
   },
   "recent_excerpts": [
     "Malwarebytes analysis shows corporate breaches expose customer PII, enable follow-on fraud, and inflate insurance premiums — affecting even unaffected individuals.",
     "MITRE released the Fight Fraud Framework (F3), a unified knowledge base mapping the intersection of cyber attack tactics and financial fraud, aiming to close the operational gap between security and f",
     "The Financial Industry Regulatory Authority has established a new intelligence hub to centralize analysis of cyber threats and fraud targeting broker-dealers and capital markets."
   ],
-  "sources_hash": "8bf9d2c16d8a9406"
+  "sources_hash": "4e6d403e2cc53eea"
 }

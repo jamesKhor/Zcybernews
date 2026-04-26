@@ -1,9 +1,9 @@
 {
   "tag": "email-security",
   "locale": "en",
-  "intro": "Between April 12 and 19, 2026, ZCyberNews published 10 articles on email security, covering a range of high-severity threats. The reporting detailed five high-severity incidents, alongside three medium and two informational alerts, with a global impact across multiple sectors. The technology, hospitality, sports, any-email-sender, and automotive industries were the most frequently affected. This concentration of activity highlights a period of significant focus on vulnerabilities and campaigns targeting email-based systems.",
-  "sources_hash": "ad056007f6e53f35",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:16:45.726Z",
+  "intro": "This archive collects 11 articles tagged `email-security` published between April 12, 2026 and April 25, 2026. Coverage includes 5 high, 3 medium, and 2 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "6038b8fec7bc6e39",
+  "model": "template:sparse",
+  "generated_at": "2026-04-26T04:13:31.826Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

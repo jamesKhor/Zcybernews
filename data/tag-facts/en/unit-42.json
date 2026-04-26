@@ -1,33 +1,33 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "TGR-STA-1030"
   ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "enterprise",
+    "software development",
     "cloud service providers",
-    "critical infrastructure",
-    "energy",
-    "government"
+    "cloud-services"
   ],
   "top_regions": [
     "Central america",
     "South america"
   ],
   "severity_mix": {
-    "high": 4
+    "high": 6
   },
   "recent_excerpts": [
+    "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
     "Palo Alto Unit 42 outlines defensive strategies for frontier AI threats — model poisoning, prompt injection, and data leakage — in response to top customer queries.",
-    "Unit 42 details wormable npm malware, CI/CD pipeline persistence, and multi-stage attacks targeting developers.",
-    "Palo Alto Unit 42 reports TGR-STA-1030 remains active in Central and South America, targeting government and energy sectors with custom malware and living-off-the-land techniques."
+    "Unit 42 reports threat actors exploiting Kubernetes identities and critical vulnerabilities to compromise cloud environments, with attacks targeting misconfigured RBAC and exposed…"
   ],
-  "sources_hash": "2bffba65947a4702"
+  "sources_hash": "88e4369b0fad64e4"
 }

@@ -1,0 +1,9 @@
+{
+  "tag": "latin-america",
+  "locale": "en",
+  "intro": "In the past two weeks, ZCyberNews has tracked seven articles covering Latin America, with LockBit as the top threat actor. The most affected sectors include financial services, government, retail, and cryptocurrency, while the regions impacted span Latin America, the Caribbean, Africa, Brazil, and globally. The severity mix features five high-severity incidents, one medium, and one informational report, spanning from April 13 to April 26, 2026.",
+  "sources_hash": "d22a95377b05d76c",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-26T04:13:58.423Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

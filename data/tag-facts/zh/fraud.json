@@ -1,36 +1,36 @@
 {
   "tag": "fraud",
   "locale": "zh",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "financial-services",
     "retail",
+    "financial services",
     "cryptocurrency",
-    "entertainment",
-    "financial services"
+    "e-commerce"
   ],
   "top_regions": [
     "United states",
     "Europe",
-    "North america",
     "Global",
+    "North america",
     "Canada"
   ],
   "severity_mix": {
     "medium": 7,
     "informational": 2,
-    "high": 4
+    "high": 5
   },
   "recent_excerpts": [
     "Malwarebytes 分析显示，企业数据泄露暴露了客户个人信息（PII），使得后续欺诈行为成为可能，并导致保险费率上升——甚至影响到了未受影响的个人。",
     "MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。",
     "金融行业监管局建立了一个新的情报中心，以集中分析针对经纪商和资本市场的网络威胁和欺诈行为。"
   ],
-  "sources_hash": "8bf9d2c16d8a9406"
+  "sources_hash": "4e6d403e2cc53eea"
 }

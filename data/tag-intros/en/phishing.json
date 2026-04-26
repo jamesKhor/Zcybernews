@@ -1,9 +1,9 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "intro": "The hospitality sector has been the most targeted in a wave of 46 phishing incidents tracked between April 8 and April 24, 2026, with 39 classified as high severity. Threat actors FakeWallet, Lazarus Group, and Scattered Spider were observed in these campaigns, which also affected cryptocurrency, technology, finance, and government organizations globally, including Canada, the United States, Bangladesh, and Latin America. Key vulnerabilities exploited include CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893.",
-  "sources_hash": "7238de442cac5e04",
+  "intro": "Financial services and government organisations were the primary targets in a wave of 49 phishing attacks recorded between 8 and 26 April 2026. The campaign involved threat actors FakeWallet, Lazarus Group, and LockBit, and exploited vulnerabilities including CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. The attacks affected sectors such as hospitality, cryptocurrency, and technology, with a global reach that also included Latin America, Canada, the Caribbean, and the United States. Of the incidents, 41 were rated high severity and 8 medium.",
+  "sources_hash": "36ffc72611f85c5c",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:01:47.444Z",
+  "generated_at": "2026-04-26T04:13:13.106Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

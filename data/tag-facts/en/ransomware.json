@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 32,
+  "count": 33,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "The Gentlemen",
@@ -22,8 +22,8 @@
     }
   ],
   "top_sectors": [
-    "manufacturing",
     "multiple",
+    "manufacturing",
     "healthcare",
     "logistics",
     "retail"
@@ -36,7 +36,7 @@
     "Turkey"
   ],
   "severity_mix": {
-    "high": 26,
+    "high": 27,
     "critical": 2,
     "informational": 2
   },
@@ -45,5 +45,5 @@
     "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis.",
     "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent"
   ],
-  "sources_hash": "a52f53296de428fa"
+  "sources_hash": "25661457e8b09473"
 }

@@ -1,33 +1,33 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "TGR-STA-1030"
   ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "enterprise",
+    "software development",
     "cloud service providers",
-    "critical infrastructure",
-    "energy",
-    "government"
+    "cloud-services"
   ],
   "top_regions": [
     "Central america",
     "South america"
   ],
   "severity_mix": {
-    "high": 4
+    "high": 6
   },
   "recent_excerpts": [
+    "Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。",
     "Palo Alto Unit 42 概述了针对前沿 AI 威胁 —— 模型投毒、提示注入和数据泄露 —— 的防御策略，以回应顶级客户查询。",
-    "Unit 42 详细描述了可蠕虫化的 npm 恶意软件，CI/CD 管道持久性，以及针对开发者的多阶段攻击。",
-    "Palo Alto Unit 42 报告称 TGR-STA-1030 在中南美洲保持活跃，针对政府和能源部门使用定制恶意软件和本地存活技术。"
+    "Unit 42 报告威胁行为者利用 Kubernetes 身份和关键漏洞来破坏云环境，攻击目标是配置错误的 RBAC 和暴露的..."
   ],
-  "sources_hash": "2bffba65947a4702"
+  "sources_hash": "88e4369b0fad64e4"
 }

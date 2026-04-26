@@ -1,9 +1,9 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "intro": "Government and technology sectors faced significant cybersecurity challenges in mid-April 2026, with six high-severity and two critical vulnerabilities reported globally, particularly across the United States. Among the most notable issues were CVE-2026-34197, carrying a CVSS score of 8.8, alongside CVE-2024-20662 and CVE-2024-21412. The eight articles tagged with CISA, published between April 12 and April 24, 2026, highlighted risks affecting software development and government entities, underscoring the need for vigilance across these industries.",
-  "sources_hash": "415d6c9603bc2c7f",
+  "intro": "Government and technology sectors were the primary focus of recent cybersecurity advisories from CISA, which published nine alerts between April 12 and April 25, 2026. The alerts addressed three critical and six high-severity vulnerabilities, including CVE-2024-57726 (CVSS 9.9), CVE-2026-34197 (CVSS 8.8), CVE-2024-20662, and CVE-2024-21412. These vulnerabilities primarily affected organizations in the United States and globally, with software development also among the impacted sectors.",
+  "sources_hash": "9451afbbb68546a4",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:02:42.795Z",
+  "generated_at": "2026-04-26T04:13:41.420Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

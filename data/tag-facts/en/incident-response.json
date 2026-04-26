@@ -1,33 +1,40 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2025-59718",
+      "cvss": 9.8
+    }
+  ],
   "top_sectors": [
+    "technology",
     "cloud computing",
     "energy",
-    "hospitality",
-    "multiple",
-    "technology"
+    "financial services",
+    "government"
   ],
   "top_regions": [
+    "Europe",
     "Global",
+    "North america",
     "Venezuela"
   ],
   "severity_mix": {
+    "critical": 2,
     "high": 3,
-    "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "Rapid7 IR confirms active exploitation of CVE-2025-59718 — a 9.8-CVSS FortiGate SSO bypass — enabling attackers to gain persistent admin access on unpatched appliances.",
     "Vercel identified additional compromised customer accounts linked to the Context.ai breach, expanding investigation with new indicators and network request reviews.",
-    "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026.",
-    "Phishing continues to be the dominant initial attack vector for cybercrime, driving a surge in incidents that managed service providers (MSPs) and their clients are struggling to contain with traditio"
+    "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026."
   ],
-  "sources_hash": "806a28a81f4a35b7"
+  "sources_hash": "4a1794357200d808"
 }

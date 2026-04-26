@@ -1,0 +1,38 @@
+{
+  "tag": "latin-america",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-26"
+  },
+  "top_actors": [
+    "LockBit"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "retail",
+    "cryptocurrency",
+    "Financial Services"
+  ],
+  "top_regions": [
+    "Latin america",
+    "Caribbean",
+    "Africa",
+    "Brazil",
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 5,
+    "medium": 1,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "一个新的活动部署了 Janela RAT，使用假 MSI 安装程序和恶意浏览器扩展来针对拉丁美洲的金融和加密货币实体进行数据盗窃。",
+    "卡巴斯基研究人员详细描述了一个更新的JanelaRAT活动，该活动针对拉丁美洲用户，通过钓鱼邮件提供增强的反分析、凭证窃取和远程访问能力。",
+    "被称为 JanelaRAT 的 BX RAT 修改版本已在针对巴西和墨西哥的银行及金融机构的超过 14,000 次攻击中部署，窃取金融数据和按键记录。"
+  ],
+  "sources_hash": "d22a95377b05d76c"
+}

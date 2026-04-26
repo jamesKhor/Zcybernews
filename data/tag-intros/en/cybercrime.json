@@ -1,9 +1,9 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "intro": "This archive covers 11 cybercrime reports from mid-April 2026, with a clear focus on high-severity incidents. The financial services and e-commerce sectors were primary targets, alongside government entities and attacks affecting multiple industries. Geographically, activity centered on France and had a Global reach. The threat actors LockBit, Triad Nexus, and W3LL Team were prominently active during this period, driving a threat landscape where seven of the eleven documented events were classified as high severity.",
-  "sources_hash": "0678f18648606837",
+  "intro": "Financial services and government entities bore the brunt of a concentrated wave of cybercrime between April 13 and April 26, 2026, with the Caribbean and Latin America among the most affected regions. Fifteen articles documented ten high-severity incidents attributed to LockBit, REvil, and Triad Nexus. The threat actors targeted sectors including e-commerce and retail, with activity spanning Global, China, and France.",
+  "sources_hash": "3c8699ac44df3f46",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:08:06.289Z",
+  "generated_at": "2026-04-26T04:13:29.845Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

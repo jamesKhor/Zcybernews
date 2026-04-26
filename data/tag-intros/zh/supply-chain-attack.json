@@ -1,0 +1,10 @@
+{
+  "tag": "supply-chain-attack",
+  "locale": "zh",
+  "intro": "本档案收录了 6 篇带有「supply-chain-attack」标签的文章，发布时间从2026年4月13日至2026年4月26日。其中包含2 篇严重、3 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "8ded2c5cd07cb93b",
+  "source_intro_hash": "8b75c017b352af96",
+  "model": "template:sparse",
+  "generated_at": "2026-04-26T04:15:31.322Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

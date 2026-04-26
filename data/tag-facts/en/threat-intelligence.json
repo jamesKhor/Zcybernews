@@ -1,7 +1,7 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 16,
+  "count": 19,
   "date_range": {
     "first": "2026-04-13",
     "latest": "2026-04-25"
@@ -12,27 +12,28 @@
   ],
   "top_cves": [],
   "top_sectors": [
+    "government",
     "technology",
     "critical-infrastructure",
     "cybersecurity",
-    "financial services",
-    "government"
+    "defense"
   ],
   "top_regions": [
     "Asia",
     "Europe",
     "Global",
-    "North america"
+    "North america",
+    "United kingdom"
   ],
   "severity_mix": {
-    "high": 7,
-    "informational": 6,
+    "informational": 8,
+    "high": 8,
     "medium": 1
   },
   "recent_excerpts": [
-    "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors.",
-    "An unauthorized group accessed Anthropic's exclusive Claude Mythos Preview AI, a cybersecurity tool capable of generating exploits and malware.",
-    "Mature security operations centers reduce mean time to respond by 40% by integrating threat intelligence into workflows, while others waste time on siloed data and manual processes."
+    "Elastic Security Labs deployed AI-driven detection pipelines for the UK Ministry of Defence's Defence Cyber Marvel 2026 exercise, processing 1.2TB of telemetry across 50 simulated…",
+    "Rapid7's May 12–13 summit agenda reveals industry pivot from reactive defense to preemptive security operations, featuring sessions on AI-driven threat hunting and autonomous…",
+    "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors."
   ],
-  "sources_hash": "d86491dfb01a3328"
+  "sources_hash": "2b6892bdefbc1d80"
 }

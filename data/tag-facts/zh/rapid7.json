@@ -1,25 +1,38 @@
 {
   "tag": "rapid7",
   "locale": "zh",
-  "count": 5,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Kyber"
   ],
-  "top_cves": [],
-  "top_sectors": [],
-  "top_regions": [],
+  "top_cves": [
+    {
+      "id": "CVE-2025-59718",
+      "cvss": 9.8
+    }
+  ],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "technology"
+  ],
+  "top_regions": [
+    "Europe",
+    "North america"
+  ],
   "severity_mix": {
-    "high": 1,
-    "informational": 3
+    "critical": 1,
+    "informational": 4,
+    "high": 1
   },
   "recent_excerpts": [
-    "Rapid7的全球网络安全峰会关注由AI驱动的威胁、持续威胁暴露管理（CTEM），以及缩小可见性和响应之间的差距。",
-    "Kyber 勒索软件部署两个不同的有效载荷以加密 Windows 系统和 VMware ESXi 服务器，使用自定义工具清除 ESXi 快照并阻碍恢复。攻击链始于被泄露的 RDP 凭证。",
-    "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。"
+    "Rapid7 认为，大多数泄露源于资产、身份和攻击路径覆盖的可见性差距，而不是复杂的漏洞利用。",
+    "Rapid7 IR 确认 CVE-2025-59718 —— 一个 9.8-CVSS FortiGate SSO 绕过 —— 被活跃利用，使攻击者能够在未打补丁的设备上获得持久的管理员访问权限。",
+    "Rapid7 5月12-13日峰会议程揭示了行业从反应式防御向预防性安全运营的转变，包括有关AI驱动的威胁狩猎和自主的会议..."
   ],
-  "sources_hash": "bc402316564f5e3f"
+  "sources_hash": "6ee826c008f48e4a"
 }

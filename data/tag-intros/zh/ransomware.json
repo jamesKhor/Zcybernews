@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "2026年4月12日至23日期间，ZCyberNews报道了32起勒索软件事件，其中The Gentlemen、Kyber和Payouts King成为最活跃的威胁行为者。观测到的最严重漏洞为CVE-2026-1731，其CVSS评分为9.8，同时CVE-2026-34197的评分为8.8。制造业、医疗保健、物流和零售行业受影响最大，欧洲、美国和土耳其是主要攻击目标地区。在32篇报道中，26篇被归类为高严重性，2篇为严重，2篇为信息性。",
-  "sources_hash": "a52f53296de428fa",
-  "source_intro_hash": "89f760af02f0ad0d",
+  "intro": "过去两周，ZCyberNews追踪了33篇勒索软件相关文章，其中The Gentlemen、Kyber和Payouts King成为最活跃的威胁行为者。两个关键漏洞CVE-2026-1731（CVSS 9.8）和CVE-2026-34197（CVSS 8.8）在制造业、医疗、物流和零售等多个行业被广泛利用。相关事件主要影响欧洲、美国、北美和土耳其，在2026年4月12日至4月25日期间，共记录27起高严重性和2起严重级别报告。",
+  "sources_hash": "25661457e8b09473",
+  "source_intro_hash": "f84beafa6e121917",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-24T04:10:06.047Z",
+  "generated_at": "2026-04-26T04:15:29.623Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

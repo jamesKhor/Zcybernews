@@ -1,9 +1,9 @@
 {
   "tag": "microsoft",
   "locale": "en",
-  "intro": "This archive contains 36 articles from April 12 to April 21, 2026, detailing a range of Microsoft-related security events. The threat actor Storm-2755 was notably active, exploiting vulnerabilities including CVE-2026-33104, CVE-2026-34054, CVE-2026-26179, CVE-2026-32183, and CVE-2026-32201, which carried CVSS scores from 6.5 to 7.8. The reporting covers a severity mix of 4 critical, 18 high, 10 medium, 1 low, and 3 informational items. These incidents impacted multiple, cross-sector organizations, with specific focus on the education, enterprise, and federal government sectors across Global, Canadian, and Japanese regions.",
-  "sources_hash": "dcf898f9426cca0a",
+  "intro": "Over the past two weeks, from April 12 to April 25, 2026, ZCyberNews has published 37 articles under the Microsoft tag, covering a severity mix of 5 critical, 18 high, 10 medium, 3 informational, and 1 low. The threat actor Storm-2755 was observed in these reports. Key vulnerabilities include CVE-2026-40372 (CVSS 9.1), CVE-2026-33104 (CVSS 7.8), CVE-2026-34054 (CVSS 7.8), CVE-2026-26179 (CVSS 7.5), and CVE-2026-32183 (CVSS 7.5). Affected sectors span multiple, enterprise, cross-sector, education, and federal government, with impacts reported globally and in Canada and Japan.",
+  "sources_hash": "a29bccb23a9e563d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:06:53.326Z",
+  "generated_at": "2026-04-26T04:13:15.716Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

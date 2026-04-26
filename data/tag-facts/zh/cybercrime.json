@@ -1,37 +1,40 @@
 {
   "tag": "cybercrime",
   "locale": "zh",
-  "count": 11,
+  "count": 15,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-22"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "LockBit",
-    "Triad Nexus",
-    "W3LL Team"
+    "REvil",
+    "Triad Nexus"
   ],
   "top_cves": [],
   "top_sectors": [
-    "e-commerce",
     "financial services",
-    "financial-services",
     "government",
-    "multiple"
+    "e-commerce",
+    "multiple",
+    "retail"
   ],
   "top_regions": [
-    "France",
-    "Global"
+    "Caribbean",
+    "Global",
+    "Latin america",
+    "China",
+    "France"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 10,
     "informational": 2,
-    "medium": 2
+    "medium": 3
   },
   "recent_excerpts": [
     "法国当局逮捕了一名20岁的嫌疑人，他涉嫌48起针对公共机构、体育联合会和私营公司的数据库泄露，扣押了设备和...",
     "IPQS 详细描述了一种使用身份、设备和网络信号的3层欺诈检测策略，能够阻止99.5%的自动化攻击，而不为合法客户增加用户摩擦。",
     "MITRE发布了打击欺诈框架（F3），这是一个统一的知识库，映射网络攻击策略和金融欺诈的交集，旨在缩小安全和欺诈团队之间的运营差距。"
   ],
-  "sources_hash": "0678f18648606837"
+  "sources_hash": "3c8699ac44df3f46"
 }

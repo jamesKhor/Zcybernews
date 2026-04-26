@@ -1,7 +1,7 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "count": 16,
+  "count": 19,
   "date_range": {
     "first": "2026-04-13",
     "latest": "2026-04-25"
@@ -12,27 +12,28 @@
   ],
   "top_cves": [],
   "top_sectors": [
+    "government",
     "technology",
     "critical-infrastructure",
     "cybersecurity",
-    "financial services",
-    "government"
+    "defense"
   ],
   "top_regions": [
     "Asia",
     "Europe",
     "Global",
-    "North america"
+    "North america",
+    "United kingdom"
   ],
   "severity_mix": {
-    "high": 7,
-    "informational": 6,
+    "informational": 8,
+    "high": 8,
     "medium": 1
   },
   "recent_excerpts": [
-    "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。",
-    "一个未授权团体访问了Anthropic的独家Claude Mythos预览AI，这是一个能够生成漏洞和恶意软件的网络安全工具。",
-    "成熟的安全运营中心通过将威胁情报集成到工作流程中，将平均响应时间减少了40%，而其他人则在孤立的数据和手动流程上浪费时间。"
+    "Elastic Security Labs 为英国国防部的防御网络 Marvel 2026 演习部署了 AI 驱动的检测流程，处理了 1.2TB 的遥测数据，涉及 50 个模拟的...",
+    "Rapid7 5月12-13日峰会议程揭示了行业从反应式防御向预防性安全运营的转变，包括有关AI驱动的威胁狩猎和自主的会议...",
+    "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。"
   ],
-  "sources_hash": "d86491dfb01a3328"
+  "sources_hash": "2b6892bdefbc1d80"
 }

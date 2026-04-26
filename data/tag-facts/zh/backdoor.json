@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "APT41",
@@ -14,9 +14,10 @@
   "top_cves": [],
   "top_sectors": [
     "government",
+    "technology",
     "banking",
     "cloud-services",
-    "technology"
+    "software development"
   ],
   "top_regions": [
     "Global",
@@ -26,12 +27,12 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 8
+    "high": 9
   },
   "recent_excerpts": [
+    "Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。",
     "Harvester 威胁行为者部署了其 GoGra 后门的新 Linux 版本，使用 Microsoft Graph API 和 Outlook 邮箱进行隐蔽的 C2 通信，在针对...的攻击中。",
-    "一名恶意买家利用 Flippa 市场收购了一家插件开发商，向安装量达数十万的 30 多款 WordPress 插件中注入后门，以部署隐藏的 SEO 垃圾内容。",
-    "包含超过30个流行WordPress插件的EssentialPlugin套件已被入侵，以注入后门，使攻击者能够获得对数千个网站的管理员访问权限。供应链攻击正在被积极利用。"
+    "一名恶意买家利用 Flippa 市场收购了一家插件开发商，向安装量达数十万的 30 多款 WordPress 插件中注入后门，以部署隐藏的 SEO 垃圾内容。"
   ],
-  "sources_hash": "40697257de5e6b21"
+  "sources_hash": "7a03266841dc922e"
 }

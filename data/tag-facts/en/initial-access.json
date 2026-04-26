@@ -1,10 +1,10 @@
 {
   "tag": "initial-access",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-22"
+    "latest": "2026-04-25"
   },
   "top_actors": [],
   "top_cves": [],
@@ -17,12 +17,12 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "high": 7
+    "high": 8
   },
   "recent_excerpts": [
+    "SentinelLabs finds edge devices are primary intrusion vectors as attackers exploit misconfigurations and unpatched flaws to gain access, then pivot to identity systems for…",
     "A trojanized Slack installer delivers a remote access tool that creates a hidden desktop, allowing attackers to bypass multi-factor authentication and silently control victim machines.",
-    "Threat actors are abusing the Obsidian note-taking app to deliver the novel PHANTOMPULSE RAT via malicious plugins, targeting individuals in finance and cryptocurrency sectors in a campaign tracked as",
-    "Cisco Talos found phishing accounted for over a third of initial access engagements in Q1 2026, surpassing exploitation of public-facing apps for the first time since Q2 2025."
+    "Threat actors are abusing the Obsidian note-taking app to deliver the novel PHANTOMPULSE RAT via malicious plugins, targeting individuals in finance and cryptocurrency sectors in a campaign tracked as"
   ],
-  "sources_hash": "85dd10896320733a"
+  "sources_hash": "f4e6102e7daafccd"
 }

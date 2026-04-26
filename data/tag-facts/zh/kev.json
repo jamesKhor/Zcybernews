@@ -1,0 +1,39 @@
+{
+  "tag": "kev",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-25"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2024-57726",
+      "cvss": 9.9
+    },
+    {
+      "id": "CVE-2024-20662"
+    },
+    {
+      "id": "CVE-2024-21412"
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "technology"
+  ],
+  "top_regions": [
+    "United states"
+  ],
+  "severity_mix": {
+    "critical": 2,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "CISA 将其 KEV 目录中添加了 4 个正在被积极利用的漏洞 —— SimpleHelp、Samsung MagicINFO 9 和 D-Link DIR-823X —— 并设定了 2026 年 5 月的联邦补救截止日期。",
+    "CISA 将其已知被利用漏洞目录中添加了六个 Fortinet、Microsoft 和 Adobe 软件中的漏洞，警告存在活跃的野外攻击，需要紧急修补。",
+    "CISA 警告称 Fortinet 产品中存在一个关键的 SQL 注入漏洞，正在被积极利用，敦促立即修补。具体的 CVE ID 尚未公开披露。"
+  ],
+  "sources_hash": "bd4e823884dd502b"
+}

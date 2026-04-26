@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 32,
+  "count": 33,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-25"
   },
   "top_actors": [
     "The Gentlemen",
@@ -22,8 +22,8 @@
     }
   ],
   "top_sectors": [
-    "manufacturing",
     "multiple",
+    "manufacturing",
     "healthcare",
     "logistics",
     "retail"
@@ -36,7 +36,7 @@
     "Turkey"
   ],
   "severity_mix": {
-    "high": 26,
+    "high": 27,
     "critical": 2,
     "informational": 2
   },
@@ -45,5 +45,5 @@
     "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。",
     "The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi 系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。"
   ],
-  "sources_hash": "a52f53296de428fa"
+  "sources_hash": "25661457e8b09473"
 }
