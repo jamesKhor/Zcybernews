@@ -1,0 +1,50 @@
+---
+title: TeamPCP Partners with Vect Ransomware in Supply Chain Attacks
+slug: 2026-04-26-teampcp-partners-with-vect-ransomware-in-supply-chain-attacks
+date: '2026-04-26'
+excerpt: >-
+  Unit 42 reports TeamPCP has partnered with Vect ransomware group to target
+  security software vendors in multi-stage supply chain attacks, compromising
+  trusted update mechanisms.
+category: threat-intel
+tags:
+  - teampcp
+  - vect-ransomware
+  - supply-chain-attack
+  - unit-42
+  - security-infrastructure
+  - ransomware
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/teampcp-supply-chain-attacks/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-teampcp-partners-with-vect-ransomware-in-supply-chain-attacks
+severity: critical
+threat_actor: TeamPCP
+affected_sectors:
+  - cybersecurity
+  - software development
+  - enterprise IT
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Palo Alto Networks Unit 42 has documented a new campaign by the threat actor known as TeamPCP, who have formed a partnership with the Vect ransomware group to conduct multi-stage supply chain attacks targeting security software vendors. The attackers compromise trusted update mechanisms used by security products to deliver backdoors and, ultimately, ransomware payloads to downstream customers. This marks an escalation in TeamPCP's operational capabilities, moving from credential theft and data exfiltration to ransomware deployment through trusted software distribution channels.
+
+## Technical Analysis
+
+According to Unit 42's analysis, TeamPCP's latest campaign involves compromising the build or update infrastructure of security software vendors. The attackers inject malicious code into legitimate software updates, which are then signed and distributed to customers through official channels. Once executed, the malicious update deploys a loader that establishes persistence and downloads additional payloads from command-and-control infrastructure.
+
+The partnership with Vect ransomware adds a new dimension to TeamPCP's operations. After establishing access via the compromised update, the attackers deploy Vect ransomware to encrypt victim systems. Unit 42 notes that TeamPCP has historically focused on stealing credentials and intellectual property from technology companies, but this collaboration indicates a shift toward financially motivated ransomware operations.
+
+The attack chain leverages the inherent trust customers place in security software updates. By compromising the update pipeline, TeamPCP bypasses traditional security controls that might flag unsigned or suspicious executables. Unit 42's report does not specify which security vendors were targeted or the total number of affected organizations.
+
+## Mitigations & Recommendations
+
+Organizations should implement software supply chain security controls, including verifying code signing certificates against known good values, monitoring for anomalous update behavior, and maintaining offline backups of critical systems. Security teams should audit update mechanisms for any unexpected changes in file hashes or signing certificates. Unit 42 recommends that software vendors implement build integrity verification, enforce multi-party approval for code releases, and monitor for unauthorized access to build systems.
+
+## References
+
+- [Weaponizing the Protectors: TeamPCP’s Multi-Stage Supply Chain Attack on Security Infrastructure - Unit 42](https://unit42.paloaltonetworks.com/teampcp-supply-chain-attacks/)

@@ -1,0 +1,47 @@
+---
+title: TeamPCP 与 Vect 勒索软件合作进行供应链攻击
+slug: 2026-04-26-teampcp-partners-with-vect-ransomware-in-supply-chain-attacks
+date: '2026-04-26'
+excerpt: Unit 42 报告称 TeamPCP 已与 Vect 勒索软件集团合作，针对安全软件供应商进行多阶段供应链攻击，破坏了受信任的更新机制。
+category: threat-intel
+tags:
+  - teampcp
+  - vect-ransomware
+  - supply-chain-attack
+  - unit-42
+  - security-infrastructure
+  - ransomware
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/teampcp-supply-chain-attacks/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-teampcp-partners-with-vect-ransomware-in-supply-chain-attacks
+severity: critical
+threat_actor: TeamPCP
+affected_sectors:
+  - cybersecurity
+  - software development
+  - enterprise IT
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+Palo Alto Networks Unit 42 记录了名为 TeamPCP 的威胁行为者发起的一项新活动，他们与 Vect 勒索软件集团建立了合作关系，共同进行多阶段供应链攻击，目标是安全软件供应商。攻击者破坏了安全产品所使用的受信任更新机制，以传递后门和最终的勒索软件有效载荷给下游客户。这标志着 TeamPCP 运营能力的升级，从窃取凭证和数据外泄转变为通过受信任的软件分发渠道部署勒索软件。
+
+## 技术分析
+
+根据 Unit 42 的分析，TeamPCP 的最新活动涉及破坏安全软件供应商的构建或更新基础设施。攻击者将恶意代码注入合法软件更新中，然后通过官方渠道签名并分发给客户。一旦执行，恶意更新部署了一个加载器，该加载器建立了持久性并从命令与控制基础设施下载额外的有效载荷。
+
+与 Vect 勒索软件的合作为 TeamPCP 的运营增加了新的维度。通过受破坏的更新建立访问后，攻击者部署 Vect 勒索软件以加密受害者系统。Unit 42 指出，TeamPCP 历史上一直专注于从科技公司窃取凭证和知识产权，但这种合作表明了向财务驱动的勒索软件运营转变。
+
+攻击链利用了客户对安全软件更新的固有信任。通过破坏更新管道，TeamPCP 绕过了可能会标记未签名或可疑可执行文件的传统安全控制。Unit 42 的报告没有指明哪些安全供应商被针对性攻击，或者受影响的组织总数。
+
+## 缓解措施与建议
+
+组织应实施软件供应链安全控制，包括验证代码签名证书与已知良好值，监控异常更新行为，并维护关键系统的离线备份。安全团队应审计更新机制，检查文件哈希或签名证书中是否有任何意外的变更。Unit 42 建议软件供应商实施构建完整性验证，强制多方批准代码发布，并监控对构建系统的未授权访问。
+
+## 参考资料
+
+- [Weaponizing the Protectors: TeamPCP’s Multi-Stage Supply Chain Attack on Security Infrastructure - Unit 42](https://unit42.paloaltonetworks.com/teampcp-supply-chain-attacks/)
