@@ -1,0 +1,46 @@
+---
+title: Elastic 通过自定义工具捕获 Axios 供应链攻击
+slug: 2026-04-26-elastic-catches-axios-supply-chain-attack-via-custom-tool
+date: '2026-04-26'
+excerpt: >-
+  Elastic Security Labs 研究员 Joe Desimone 在一个下午构建了一个概念验证工具，该工具检测到了 Axios HTTP
+  库的供应链被破坏，影响了 npm…
+category: industry
+tags:
+  - supply-chain-attack
+  - axios
+  - npm
+  - elastic-security-labs
+  - open-source-security
+language: zh
+source_urls:
+  - >-
+    https://www.elastic.co/security-labs/how-we-caught-the-axios-supply-chain-attack
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-elastic-catches-axios-supply-chain-attack-via-custom-tool
+severity: high
+affected_sectors:
+  - software development
+  - technology
+---
+ARTICLE TITLE: Elastic Catches Axios Supply Chain Attack via Custom Tool
+
+ARTICLE BODY:
+## 执行摘要
+
+根据Elastic于2026年4月26日发布的技术文章，Elastic Security Labs的研究员Joe Desimone发现了一起针对广泛使用的Node.js Axios HTTP库的供应链攻击。Desimone在一个下午构建了一个概念验证检测工具，该工具标记了恶意软件包注入，展示了低强度自动化扫描可以在复杂的供应链入侵到达生产环境之前捕获它们。这次攻击针对的是npm生态系统，其中Axios是数十万个项目的关键依赖项。
+
+## 技术分析
+
+作为Elastic Security Labs的首席安全研究员，Desimone描述了他构建的一个轻量级工具，该工具监控npm软件包注册表中对流行库的异常更改。该工具检测到对合法Axios软件包版本的未经授权的代码注入，这将从安装了受损依赖项的系统中泄露环境变量和API密钥。Elastic没有透露受影响的Axios软件包的确切版本号，也没有透露具体的有效载荷机制，但指出该工具基于与库的典型更新模式的行为偏差标记了该软件包。
+
+攻击向量反映了以前的npm供应链事件，其中威胁行为者破坏维护者账户或利用CI/CD管道弱点来推送恶意更新。在这种情况下，注入的代码旨在收集存储在环境变量中的凭证和令牌，这是寻求云服务访问权限的攻击者的常见目标。Desimone强调，该工具是为了快速原型设计而构建的，并不打算作为生产级扫描器，但它成功地识别了入侵。
+
+## 缓解措施与建议
+
+防御者应该为所有第三方依赖项实施自动化软件包完整性验证，特别是那些下载量高的依赖项，如Axios。Elastic建议监控npm注册表事件，以寻找意外的版本提升或与既定模式偏离的软件包源代码更改。组织还应该实施严格的CI/CD管道控制，包括对依赖项更新的强制代码审查和使用软件包锁定文件以防止自动安装篡改版本。虽然Elastic的工具是一个概念验证，但这种方法展示了即使是轻量级扫描，如果调整到行为基线，也可以捕获供应链攻击。
+
+## 参考资料
+
+- [Elastic Security Labs: How we caught the Axios supply chain attack](https://www.elastic.co/security-labs/how-we-caught-the-axios-supply-chain-attack)
