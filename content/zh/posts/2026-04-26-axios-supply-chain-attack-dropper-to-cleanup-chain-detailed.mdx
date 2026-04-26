@@ -1,0 +1,51 @@
+---
+title: Axios 供应链攻击：从投放者到清理链的详细分析
+slug: 2026-04-26-axios-supply-chain-attack-dropper-to-cleanup-chain-detailed
+date: '2026-04-26'
+excerpt: Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。
+category: malware
+tags:
+  - supply-chain-attack
+  - axios
+  - unit-42
+  - trojanized-packages
+  - dropper
+  - backdoor
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/axios-supply-chain-attack/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-axios-supply-chain-attack-dropper-to-cleanup-chain-detailed
+severity: high
+affected_sectors:
+  - software development
+  - technology
+---
+## Axios供应链攻击：从投放者到清理链的详细说明
+
+## 执行摘要
+
+Palo Alto Networks的Unit 42详细分析了针对Axios HTTP库的供应链攻击，揭示了一个完整的攻击链，从最初的入侵到后期的利用清理。这次攻击将木马化的软件包分发给不知情的下游消费者，执行了一个多阶段的投放者，最终在受影响的系统上部署了一个后门。Unit 42在2026年4月发布的技术简报，提供了迄今为止最全面的公开事件分解。
+
+## 技术分析
+
+根据Unit 42的分析，攻击始于Axios软件包分发管道的入侵，允许威胁行为者将恶意代码注入合法的库版本中。木马化的软件包包含了一个投放者组件，安装后启动了一个多阶段的执行流程。投放者首先建立了持久性，然后下载并执行了二级有效载荷——一个能够远程命令执行和数据泄露的后门。
+
+Unit 42的研究人员绘制了完整的杀伤链，并指出攻击者实施了清理程序，以在成功入侵后移除取证痕迹。这表明了一个故意的操作安全姿态，可能旨在延迟检测并阻碍事件响应。分析没有具体说明受影响的确切版本号或管道入侵的初始向量，但确认了多个下游消费者受到了影响。
+
+Unit 42描述的攻击链包括：
+- **第一阶段（投放者）：**嵌入在木马化的Axios软件包中，在软件包安装时执行。
+- **第二阶段（有效载荷下载）：**联系命令和控制（C2）服务器以检索后门二进制文件。
+- **第三阶段（后门部署）：**安装了一个具有远程shell能力的持久性后门。
+- **第四阶段（清理）：**移除投放者痕迹和日志条目以逃避检测。
+
+Unit 42在公开简报中没有披露具体的C2基础设施指标或文件哈希值，但指出后门与以前观察到的商品恶意软件家族有行为上的相似之处。研究人员强调，攻击的复杂性在于其供应链向量，而不是其技术复杂性。
+
+## 缓解措施与建议
+
+防御者应对软件供应链进行审计，检查在入侵窗口期间安装的任何Axios软件包的使用情况。Unit 42建议通过与官方来源的校验和比较来验证软件包的完整性，监控构建或运行时环境中的意外外发连接，并审查系统日志中分析中描述的清理痕迹。组织还应实施软件物料清单（SBOM）跟踪，并在可能的情况下强制执行软件包签名验证。截至报告发布时，没有宣布具体的补丁或版本更新；主要的缓解措施是检测入侵后的迹象。
+
+## 参考资料
+
+- [Unit 42威胁简报：Axios供应链攻击的广泛影响](https://unit42.paloaltonetworks.com/axios-supply-chain-attack/)
