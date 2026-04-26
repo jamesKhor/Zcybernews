@@ -1,0 +1,64 @@
+---
+title: VoidLink Rootkit Framework 结合 LKM 和 eBPF 实现 Linux 持久性
+slug: >-
+  2026-04-26-voidlink-rootkit-framework-combines-lkm-and-ebpf-for-linux-persistence
+date: '2026-04-26'
+excerpt: >-
+  Elastic Security Labs 解析 VoidLink，这是一个 Linux rootkit 框架，它融合了 Loadable Kernel
+  Modules 与 eBPF 钩子，以规避检测并保持隐蔽的持久性在…
+category: malware
+tags:
+  - voidlink
+  - linux-rootkit
+  - ebpf
+  - lkm
+  - elastic-security-labs
+  - kernel-malware
+  - persistence
+language: zh
+source_urls:
+  - 'https://www.elastic.co/security-labs/illuminating-voidlink'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-26-voidlink-rootkit-framework-combines-lkm-and-ebpf-for-linux-persistence
+severity: high
+threat_actor: VoidLink
+affected_sectors:
+  - technology
+  - government
+ttp_matrix:
+  - tactic: Persistence
+    technique_id: T1547.001
+    technique_name: 'Boot or Logon Autostart Execution: Kernel Modules and Extensions'
+  - tactic: Defense Evasion
+    technique_id: T1622
+    technique_name: Debugger Evasion
+  - tactic: Defense Evasion
+    technique_id: T1562.001
+    technique_name: 'Impair Defenses: Disable or Modify Tools'
+  - tactic: Execution
+    technique_id: T1204.002
+    technique_name: 'User Execution: Malicious File'
+---
+## 执行摘要
+
+Elastic Security Labs 发布了对 VoidLink 的技术分析，VoidLink 是一个复杂的 Linux 根工具框架，结合了传统的可加载内核模块（LKMs）和 eBPF（扩展 Berkeley 数据包过滤器）以实现隐蔽持久性并逃避检测。该框架代表了 Linux 内核级恶意软件的演变，利用既定和新兴的内核检测技术来维持对被入侵系统的访问。根据 Elastic 的分析，VoidLink 的双管齐下的方法使得依赖于标准内核完整性检查或单独的 eBPF 监控的防御者面临特别挑战。
+
+## 技术分析
+
+VoidLink 采用了模块化架构，将其 LKM 和 eBPF 组件分开，每个组件在感染生命周期中扮演不同的角色。LKM 组件处理核心持久性机制，包括挂钩系统调用和操纵内核数据结构以隐藏文件、进程和网络连接。Elastic 研究人员确定 LKM 使用技术 T1547.001（启动或登录自动启动执行：内核模块和扩展）通过 `/etc/modules` 或 `modprobe` 配置在启动时自动加载。
+
+相比之下，eBPF 组件专注于运行时逃避。VoidLink 加载 eBPF 程序，这些程序拦截系统调用跟踪并从用户空间监控工具中过滤出入侵指标。这种方法利用了许多安全代理不检查 eBPF 程序状态的事实，允许 rootkit 从 `bpftrace` 或 `perf` 等工具中选择性隐藏其活动。Elastic 指出，VoidLink 的 eBPF 钩子针对与进程创建和文件 I/O 相关的 `kprobes` 和 `tracepoints`，有效地为通过 eBPF 监控这些事件的防御者创造了盲点。
+
+该框架还包括反分析功能。Elastic 观察到 VoidLink 检查调试器存在（T1622）并尝试通过挂钩 `kill()` 和 `ptrace()` 系统调用来禁用或修改安全工具（T1562.001）。恶意软件作为恶意文件（T1204.002）交付，很可能是通过钓鱼或利用面向互联网的服务等初始访问向量。
+
+Elastic 没有将 VoidLink 归因于特定的威胁行为者，也没有提供诸如 IP 地址或文件哈希值等活动级别的指标。分析侧重于框架的架构设计，而不是运营部署。缺乏 IOC 表明框架可能正在积极开发或测试中，或者 Elastic 尚未观察到广泛部署。
+
+## 缓解措施与建议
+
+防御者应使用 `lsmod` 和内核审计子系统（auditd）等工具监控意外的内核模块加载事件，特别是来自不受信任的来源。由于 VoidLink 的 eBPF 组件可以隐藏在标准监控之外，组织应部署 eBPF 感知检测工具，这些工具验证加载的 eBPF 程序的完整性并与已知的良好基线进行比较。Elastic 建议实施运行时内核完整性监控，检查 LKM 签名和 eBPF 程序哈希值。此外，限制 `CAP_BPF` 和 `CAP_SYS_ADMIN` 能力仅用于受信任的进程，减少了基于 eBPF 的 rootkits 的攻击面。
+
+## 参考资料
+
+- [Elastic Security Labs: Illuminating VoidLink](https://www.elastic.co/security-labs/illuminating-voidlink)
