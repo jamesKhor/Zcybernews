@@ -1,0 +1,49 @@
+---
+title: 伊朗冲突蔓延：针对关键基础设施的网络威胁
+slug: 2026-04-26-iran-conflict-spills-over-cyber-threats-to-critical-infrastructure
+date: '2026-04-26'
+excerpt: ESET 警告称，随着中东冲突的升级，针对全球能源、水和交通部门的伊朗网络活动增加。
+category: threat-intel
+tags:
+  - iran
+  - critical-infrastructure
+  - ot-security
+  - eset
+  - geopolitical-cyber-threats
+  - energy-sector
+language: zh
+source_urls:
+  - >-
+    https://www.welivesecurity.com/en/business-security/cyber-fallout-iran-war-what-have-radar/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-iran-conflict-spills-over-cyber-threats-to-critical-infrastructure
+severity: high
+threat_actor: APT33
+threat_actor_origin: Iran
+affected_sectors:
+  - energy
+  - water
+  - transportation
+affected_regions:
+  - Middle East
+  - North America
+  - Europe
+---
+## 执行摘要
+
+中东地区持续的冲突正在推动伊朗与国家关联的网络行动针对关键基础设施领域——能源、水和交通——在该地区之外的显著增加。ESET的威胁情报团队在2026年4月24日发布的一份报告中警告说，全球的防御者应该为针对操作技术（OT）环境的持续性破坏性和破坏性攻击活动做好准备。该咨询没有引用具体的CVE或命名的恶意软件家族，但它为防御者提供了一个战术框架，以加强工业控制系统（ICS）以应对更高的威胁态势。
+
+## 技术分析
+
+ESET基于2026年初以来观察到的活动分析表明，与伊朗对齐的威胁行为者越来越多地关注操作技术和工业控制系统（ICS），特别是在难以隔离的领域——特别是电网、水处理设施和交通网络。报告强调，这些攻击不仅限于中东；北美和欧洲的组织也观察到针对互联网暴露的ICS设备（包括可编程逻辑控制器（PLC）和人机界面（HMI））的侦察和探测活动。
+
+ESET没有将活动归因于一个命名的团体（例如，APT33、APT34或相关的黑客活动家群体），但指出操作节奏和目标模式与国家指导的努力一致。该咨询标志攻击者正在利用公开可用的工具和漏洞，而不是零日漏洞，使检测和网络分割成为主要的防御杠杆。具体技术包括扫描工业协议（Modbus、DNP3）上的默认凭据和利用远程访问解决方案（例如，VPN、RDP网关）中已知漏洞以进入OT网络。
+
+## 缓解措施与建议
+
+ESET建议关键基础设施领域的组织立即实施以下控制措施：使用防火墙或单向网关在IT和OT环境之间实施网络分割；禁用或更改所有ICS设备的默认凭据；对远程访问软件中已知漏洞应用供应商补丁；部署特定于OT的监控工具，可以检测异常协议流量（例如，意外的Modbus功能代码）。防御者还应该审查涉及物理过程中断的场景的事件响应计划，而不仅仅是数据盗窃。ESET指出，虽然没有单一的缓解措施是万能的，但分层防御显著提高了成功入侵的成本。
+
+## 参考资料
+
+* [WeLiveSecurity: Cyber fallout from the Iran war: What to have on your radar](https://www.welivesecurity.com/en/business-security/cyber-fallout-iran-war-what-have-radar/)

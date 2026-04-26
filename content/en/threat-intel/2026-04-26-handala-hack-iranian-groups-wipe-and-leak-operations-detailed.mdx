@@ -1,0 +1,53 @@
+---
+title: 'Handala Hack: Iranian Group''s Wipe-and-Leak Operations Detailed'
+slug: 2026-04-26-handala-hack-iranian-groups-wipe-and-leak-operations-detailed
+date: '2026-04-26'
+excerpt: >-
+  Check Point Research details Handala Hack (Void Manticore), an Iranian threat
+  actor behind destructive wiper attacks and hack-and-leak ops via the Homeland
+  Justice persona since…
+category: threat-intel
+tags:
+  - handala-hack
+  - void-manticore
+  - iranian-threat-actor
+  - wiper-attacks
+  - hack-and-leak
+  - homeland-justice
+  - check-point-research
+language: en
+source_urls:
+  - >-
+    https://research.checkpoint.com/2026/handala-hack-unveiling-groups-modus-operandi/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-handala-hack-iranian-groups-wipe-and-leak-operations-detailed
+severity: high
+threat_actor: Handala Hack
+threat_actor_origin: Iran
+affected_sectors:
+  - government
+  - critical infrastructure
+affected_regions:
+  - Middle East
+  - Israel
+---
+## Executive Summary
+
+Check Point Research (CPR) has published a detailed profile of the Iranian threat actor tracked as Handala Hack, also designated Void Manticore by CPR. The group has been active since at least mid-2022, conducting destructive wiping attacks combined with hack-and-leak operations under the online persona "Homeland Justice." The report, released April 26, 2026, outlines the group's modus operandi, including its use of custom wiper malware and strategic data disclosure to amplify impact.
+
+## Technical Analysis
+
+According to CPR, Handala Hack employs a multi-stage attack chain that begins with initial access via spear-phishing or exploitation of public-facing applications. Once inside a target network, the group deploys a custom wiper tool designed to overwrite critical system files and databases, rendering systems inoperable. The wiper is often paired with data exfiltration, which is later published on the Homeland Justice Telegram channel and associated websites.
+
+CPR notes that the group's leak operations are carefully timed to coincide with geopolitical events, maximizing media and operational disruption. The data dumps typically include internal documents, credentials, and personally identifiable information (PII) from victims, which CPR says have included government agencies and critical infrastructure entities in the Middle East, particularly Israel. The report does not attribute specific CVEs or provide technical indicators of compromise (IOCs) in the public summary, but it describes the wiper as leveraging techniques similar to those seen in other Iranian state-aligned operations, such as disk-level overwrite and log deletion.
+
+The Homeland Justice persona has been active since mid-2022, according to CPR, and serves as the primary channel for claiming responsibility and publishing leaked data. CPR assesses with moderate confidence that Handala Hack operates under the direction of Iran's Ministry of Intelligence and Security (MOIS), though it notes that attribution is based on behavioral and infrastructure overlaps rather than direct evidence.
+
+## Mitigations & Recommendations
+
+CPR recommends that organizations in the Middle East, particularly those in government and critical infrastructure sectors, implement network segmentation to limit lateral movement, enforce multi-factor authentication on all remote access, and deploy endpoint detection and response (EDR) solutions capable of identifying wiper-like behavior (e.g., mass file deletion or overwrite). Defenders should also monitor for unauthorized data staging and outbound transfers, as exfiltration often precedes leak publication. CPR did not provide specific patch guidance, as the report focuses on threat actor behavior rather than software vulnerabilities.
+
+## References
+
+- [Check Point Research: “Handala Hack” – Unveiling Group’s Modus Operandi](https://research.checkpoint.com/2026/handala-hack-unveiling-groups-modus-operandi/)

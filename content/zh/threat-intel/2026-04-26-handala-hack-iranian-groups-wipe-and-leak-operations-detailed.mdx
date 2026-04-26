@@ -1,0 +1,52 @@
+---
+title: Handala Hack：伊朗集团的擦除和泄露行动详细说明
+slug: 2026-04-26-handala-hack-iranian-groups-wipe-and-leak-operations-detailed
+date: '2026-04-26'
+excerpt: >-
+  Check Point Research 详细说明了 Handala Hack（Void Manticore），这是一个伊朗威胁行为者，自...以来通过
+  Homeland Justice 身份进行破坏性擦除攻击和黑客攻击及泄露操作。
+category: threat-intel
+tags:
+  - handala-hack
+  - void-manticore
+  - iranian-threat-actor
+  - wiper-attacks
+  - hack-and-leak
+  - homeland-justice
+  - check-point-research
+language: zh
+source_urls:
+  - >-
+    https://research.checkpoint.com/2026/handala-hack-unveiling-groups-modus-operandi/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-handala-hack-iranian-groups-wipe-and-leak-operations-detailed
+severity: high
+threat_actor: Handala Hack
+threat_actor_origin: Iran
+affected_sectors:
+  - government
+  - critical infrastructure
+affected_regions:
+  - Middle East
+  - Israel
+---
+## 执行摘要
+
+Check Point Research (CPR) 发布了一份详细分析伊朗威胁行为者Handala Hack的报告，CPR也将其指定为Void Manticore。该组织自2022年中以来一直活跃，进行破坏性的擦除攻击，并结合在线身份“Homeland Justice”进行黑客和泄露操作。2026年4月26日发布的报告概述了该组织的作案手法，包括使用定制的擦除恶意软件和战略性数据披露来放大影响。
+
+## 技术分析
+
+根据CPR的说法，Handala Hack采用多阶段攻击链，始于通过鱼叉式网络钓鱼或利用面向公众的应用程序获得初始访问权限。一旦进入目标网络，该组织部署了一款定制的擦除工具，旨在覆盖关键系统文件和数据库，使系统无法运行。擦除工具通常与数据泄露配对，稍后发布在Homeland Justice的Telegram频道和相关网站上。
+
+CPR指出，该组织的泄露操作精心安排，与地缘政治事件同时发生，以最大化媒体和运营干扰。数据转储通常包括来自受害者的内部文件、凭证和个人身份信息（PII），CPR表示受害者包括中东地区的政府机构和关键基础设施实体，特别是以色列。报告没有在公共摘要中指定具体的CVE或提供技术入侵指标（IOCs），但它描述了擦除工具利用了类似于其他伊朗国家对齐操作中看到的技术，例如磁盘级覆盖和日志删除。
+
+根据CPR的说法，Homeland Justice身份自2022年中以来一直活跃，并作为声称责任和发布泄露数据的主要渠道。CPR以中等信心评估Handala Hack在伊朗情报和安全部（MOIS）的指导下运作，尽管它指出归因是基于行为和基础设施重叠，而不是直接证据。
+
+## 缓解措施与建议
+
+CPR建议中东地区的组织，特别是政府和关键基础设施部门的组织，实施网络分段以限制横向移动，强制所有远程访问进行多因素身份验证，并部署能够识别类似擦除行为（例如，大规模文件删除或覆盖）的端点检测和响应（EDR）解决方案。防御者还应监控未经授权的数据暂存和出站传输，因为泄露通常在泄露发布之前发生。由于报告侧重于威胁行为者行为而非软件漏洞，CPR没有提供具体的补丁指导。
+
+## 参考资料
+
+- [Check Point Research: “Handala Hack” – Unveiling Group’s Modus Operandi](https://research.checkpoint.com/2026/handala-hack-unveiling-groups-modus-operandi/)
