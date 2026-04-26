@@ -1,0 +1,51 @@
+---
+title: Feds Disrupt IoT Botnets Behind Record DDoS Attacks
+slug: 2026-04-26-feds-disrupt-iot-botnets-behind-record-ddos-attacks
+date: '2026-04-26'
+excerpt: >-
+  US DOJ, Canada, and Germany dismantled four IoT botnets — Aisuru, Kimwolf,
+  JackSkid, Mossad — compromising 3M+ devices, enabling record-breaking DDoS
+  attacks.
+category: industry
+tags:
+  - botnet
+  - ddos
+  - iot
+  - law-enforcement
+  - doj
+  - canada
+  - germany
+language: en
+source_urls:
+  - >-
+    https://krebsonsecurity.com/2026/03/feds-disrupt-iot-botnets-behind-huge-ddos-attacks/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-feds-disrupt-iot-botnets-behind-record-ddos-attacks
+severity: high
+affected_sectors:
+  - internet infrastructure
+  - telecommunications
+affected_regions:
+  - United States
+  - Canada
+  - Germany
+---
+## Executive Summary
+
+U.S. federal prosecutors, in coordination with law enforcement in Canada and Germany, have dismantled the command-and-control infrastructure behind four IoT botnets that collectively compromised more than three million devices — primarily routers and web cameras — and were responsible for a series of record-breaking distributed denial-of-service (DDoS) attacks. The operation, announced by the U.S. Department of Justice on March 26, 2026, targeted botnets named **Aisuru**, **Kimwolf**, **JackSkid**, and **Mossad**, according to a DOJ press release and reporting by Krebs on Security.
+
+## Technical Analysis
+
+The four botnets leveraged a common infection vector: unpatched or default-credentialed IoT devices exposed to the public internet. The DOJ statement did not disclose specific exploitation methods, but the scale — over three million compromised endpoints — suggests the botnets relied on automated scanning and credential-stuffing against known vulnerabilities in consumer routers and IP cameras. Krebs on Security, citing court documents, reported that the botnets were used to launch DDoS floods exceeding 1 Tbps in some campaigns, targeting financial services, gaming platforms, and government websites.
+
+Each botnet appeared to operate independently, with distinct C2 infrastructure hosted across multiple jurisdictions. The takedown involved seizure of domain names and servers used for command-and-control, as well as sinkholing of botnet traffic. The DOJ did not name individual operators or specify whether any arrests have been made. The investigation is ongoing, the department said.
+
+## Mitigations & Recommendations
+
+Defenders should audit exposed IoT devices on their networks, particularly routers and cameras, for default credentials and unpatched firmware. Organizations that rely on IoT fleets — such as managed service providers, hospitality, and industrial control environments — should segment these devices onto isolated VLANs with egress filtering to prevent them from being co-opted into botnets. Network monitoring for unusual outbound traffic patterns to known C2 infrastructure remains the primary detection mechanism.
+
+## References
+
+- [Krebs on Security: Feds Disrupt IoT Botnets Behind Huge DDoS Attacks](https://krebsonsecurity.com/2026/03/feds-disrupt-iot-botnets-behind-huge-ddos-attacks/)
+- [U.S. Department of Justice press release (not directly cited but referenced in Krebs reporting)]

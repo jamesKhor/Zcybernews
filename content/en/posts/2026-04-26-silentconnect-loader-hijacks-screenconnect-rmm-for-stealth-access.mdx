@@ -1,0 +1,43 @@
+---
+title: SILENTCONNECT Loader Hijacks ScreenConnect RMM for Stealth Access
+slug: 2026-04-26-silentconnect-loader-hijacks-screenconnect-rmm-for-stealth-access
+date: '2026-04-26'
+excerpt: >-
+  Elastic Security Labs details SILENTCONNECT, a multi-stage loader using
+  VBScript and in-memory PowerShell to deploy ScreenConnect RMM silently for
+  persistent remote access.
+category: malware
+tags:
+  - silentconnect
+  - screenconnect
+  - loader
+  - vbscript
+  - powershell
+  - remote-access
+language: en
+source_urls:
+  - 'https://www.elastic.co/security-labs/silentconnect-delivers-screenconnect'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-silentconnect-loader-hijacks-screenconnect-rmm-for-stealth-access
+severity: high
+---
+## Executive Summary
+
+Elastic Security Labs has published an analysis of a multi-stage loader tracked as **SILENTCONNECT**, which deploys the legitimate ScreenConnect remote monitoring and management (RMM) tool as a covert access mechanism. The loader chains VBScript execution, in-memory PowerShell, and Process Environment Block (PEB) masquerading to evade detection, according to the firm's April 2026 research. SILENTCONNECT does not exploit any vulnerability; rather, it weaponizes a trusted RMM platform for persistent remote access, a technique increasingly observed in post-compromise activity.
+
+## Technical Analysis
+
+SILENTCONNECT's infection chain begins with a VBScript file that, when executed, launches an encoded PowerShell command in memory. Elastic's researchers found that the PowerShell payload performs PEB masquerading — altering the PEB structure to disguise the running process as a legitimate Windows binary such as `svchost.exe` or `explorer.exe`. This technique is designed to bypass security products that rely on process name or path heuristics.
+
+After masquerading, the loader downloads and silently installs ScreenConnect's client software, registering it with an attacker-controlled server. ScreenConnect, a legitimate RMM tool developed by ConnectWise, provides full remote desktop control, file transfer, and command execution capabilities. By deploying it without the victim's knowledge, attackers gain persistent, interactive access that blends in with legitimate IT administration traffic.
+
+Elastic noted that SILENTCONNECT does not use any custom backdoor or C2 protocol — it relies entirely on ScreenConnect's standard encrypted channels. This makes network detection difficult, as the traffic appears identical to authorized RMM use. The loader's multi-stage, fileless execution also reduces forensic artifacts on disk.
+
+## Mitigations & Recommendations
+
+Defenders should inventory all ScreenConnect installations in their environment and verify that each deployment corresponds to an authorized IT management workflow. Elastic recommends monitoring for ScreenConnect processes launched from unusual parent processes (e.g., `wscript.exe`, `powershell.exe`) rather than the expected installer or service manager. Endpoint detection rules should flag VBScript files that invoke encoded PowerShell commands, especially those that download executables from external hosts. Network teams can consider blocking ScreenConnect connections to unknown or unapproved servers, though this may require maintaining an allowlist of legitimate RMM endpoints.
+
+## References
+
+- [Elastic Security Labs: From Invitation to Infection: How SILENTCONNECT Delivers ScreenConnect](https://www.elastic.co/security-labs/silentconnect-delivers-screenconnect)

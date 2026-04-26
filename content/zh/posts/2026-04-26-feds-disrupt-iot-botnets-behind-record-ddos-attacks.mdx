@@ -1,0 +1,50 @@
+---
+title: 联邦政府破坏了背后记录DDoS攻击的IoT僵尸网络
+slug: 2026-04-26-feds-disrupt-iot-botnets-behind-record-ddos-attacks
+date: '2026-04-26'
+excerpt: >-
+  美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad ——
+  影响超过300万台设备，使得DDoS攻击达到创纪录的水平。
+category: industry
+tags:
+  - botnet
+  - ddos
+  - iot
+  - law-enforcement
+  - doj
+  - canada
+  - germany
+language: zh
+source_urls:
+  - >-
+    https://krebsonsecurity.com/2026/03/feds-disrupt-iot-botnets-behind-huge-ddos-attacks/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-feds-disrupt-iot-botnets-behind-record-ddos-attacks
+severity: high
+affected_sectors:
+  - internet infrastructure
+  - telecommunications
+affected_regions:
+  - United States
+  - Canada
+  - Germany
+---
+## 执行摘要
+
+美国联邦检察官与加拿大和德国的执法机构协调，捣毁了四个物联网（IoT）僵尸网络背后的命令与控制基础设施。这些僵尸网络总共控制了超过三百万设备——主要是路由器和网络摄像头——并负责一系列创纪录的分布式拒绝服务（DDoS）攻击。美国司法部于2026年3月26日宣布了这一行动，根据司法部的新闻稿和Krebs on Security的报道，目标是名为**Aisuru**、**Kimwolf**、**JackSkid**和**Mossad**的僵尸网络。
+
+## 技术分析
+
+这四个僵尸网络利用了一个共同的感染途径：暴露在公共互联网上且未打补丁或使用默认凭证的IoT设备。司法部的声明没有透露具体的利用方法，但超过三百万被控制的终端规模表明，这些僵尸网络依赖于自动化扫描和针对消费者路由器和IP摄像头中已知漏洞的凭证填充。Krebs on Security引用法庭文件报道称，这些僵尸网络被用来发起DDoS洪流，其中一些活动超过了1 Tbps，目标是金融服务、游戏平台和政府网站。
+
+每个僵尸网络似乎独立运作，拥有分布在多个司法管辖区的不同C2基础设施。此次打击行动涉及对用于命令与控制的域名和服务器的查封，以及对僵尸网络流量的黑洞化。司法部没有指明个别操作者，也没有具体说明是否进行了逮捕。该部门表示，调查仍在进行中。
+
+## 缓解措施与建议
+
+防御者应审计其网络上暴露的IoT设备，特别是路由器和摄像头，检查默认凭证和未打补丁的固件。依赖IoT设备的组织——如托管服务提供商、酒店和工业控制系统环境——应将这些设备分割到隔离的VLAN上，并进行出口过滤，以防止它们被纳入僵尸网络。网络监控异常的出站流量模式到已知的C2基础设施仍然是主要的检测机制。
+
+## 参考资料
+
+- [Krebs on Security: Feds Disrupt IoT Botnets Behind Huge DDoS Attacks](https://krebsonsecurity.com/2026/03/feds-disrupt-iot-botnets-behind-huge-ddos-attacks/)
+- [U.S. Department of Justice press release (not directly cited but referenced in Krebs reporting)]

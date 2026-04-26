@@ -1,0 +1,42 @@
+---
+title: SILENTCONNECT Loader 劫持 ScreenConnect RMM 以实现隐蔽访问
+slug: 2026-04-26-silentconnect-loader-hijacks-screenconnect-rmm-for-stealth-access
+date: '2026-04-26'
+excerpt: >-
+  Elastic Security Labs 详细介绍了 SILENTCONNECT，这是一个多阶段加载器，使用 VBScript 和内存中的
+  PowerShell 来悄无声息地部署 ScreenConnect RMM，以实现持久的远程访问。
+category: malware
+tags:
+  - silentconnect
+  - screenconnect
+  - loader
+  - vbscript
+  - powershell
+  - remote-access
+language: zh
+source_urls:
+  - 'https://www.elastic.co/security-labs/silentconnect-delivers-screenconnect'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-silentconnect-loader-hijacks-screenconnect-rmm-for-stealth-access
+severity: high
+---
+## 执行摘要
+
+Elastic Security Labs 发布了对一个多阶段加载器 **SILENTCONNECT** 的分析，该加载器部署了合法的 ScreenConnect 远程监控和管理 (RMM) 工具，作为一种隐蔽的访问机制。根据该公司 2026 年 4 月的研究，该加载器链 VBScript 执行、内存 PowerShell 和进程环境块 (PEB) 伪装来逃避检测。SILENTCONNECT 并不利用任何漏洞；相反，它将一个受信任的 RMM 平台武器化，用于持久的远程访问，这是一种在妥协后活动中越来越多地观察到的技术。
+
+## 技术分析
+
+SILENTCONNECT 的感染链始于一个 VBScript 文件，当执行时，会在内存中启动一个编码的 PowerShell 命令。Elastic 的研究人员发现 PowerShell 有效载荷执行 PEB 伪装 —— 更改 PEB 结构，将运行中的进程伪装成一个合法的 Windows 二进制文件，如 `svchost.exe` 或 `explorer.exe`。这种技术旨在绕过依赖进程名称或路径启发式安全产品。
+
+伪装后，加载器下载并静默安装 ScreenConnect 的客户端软件，并用攻击者控制的服务器注册它。ScreenConnect 是 ConnectWise 开发的合法 RMM 工具，提供完整的远程桌面控制、文件传输和命令执行功能。通过在不知情的情况下部署它，攻击者获得了与合法 IT 管理流量融为一体的持久、交互式访问。
+
+Elastic 指出 SILENTCONNECT 不使用任何自定义后门或 C2 协议 —— 它完全依赖于 ScreenConnect 的标准加密通道。这使得网络检测变得困难，因为流量看起来与授权的 RMM 使用完全相同。加载器的多阶段、无文件执行还减少了磁盘上的取证工件。
+
+## 缓解措施与建议
+
+防御者应该清点他们环境中的所有 ScreenConnect 安装，并验证每个部署是否对应于授权的 IT 管理工作流程。Elastic 建议监控从不寻常的父进程启动的 ScreenConnect 进程（例如，`wscript.exe`，`powershell.exe`），而不是预期的安装程序或服务管理器。端点检测规则应该标记调用编码 PowerShell 命令的 VBScript 文件，特别是那些从外部主机下载可执行文件的文件。网络团队可以考虑阻止 ScreenConnect 连接到未知或未批准的服务器，尽管这可能需要维护一个合法 RMM 端点的允许列表。
+
+## 参考资料
+
+- [Elastic Security Labs: From Invitation to Infection: How SILENTCONNECT Delivers ScreenConnect](https://www.elastic.co/security-labs/silentconnect-delivers-screenconnect)
