@@ -1,0 +1,40 @@
+---
+title: 'Kaspersky MDR Report: Ransomware Dwell Time Drops to 3.5 Days'
+slug: 2026-04-26-kaspersky-mdr-report-ransomware-dwell-time-drops-to-3-5-days
+date: '2026-04-26'
+excerpt: >-
+  Kaspersky's 2026 Global Report finds ransomware dwell time fell to 3.5 days in
+  2025, down from 5 days, as attackers accelerate encryption.
+category: industry
+tags:
+  - kaspersky
+  - mdr
+  - ransomware
+  - dwell-time
+  - incident-response
+  - threat-statistics
+language: en
+source_urls:
+  - 'https://securelist.com/global-report-security-services-2026/119233/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-kaspersky-mdr-report-ransomware-dwell-time-drops-to-3-5-days
+severity: high
+---
+## Executive Summary
+
+Ransomware operators are encrypting victim networks in a median of just 3.5 days, down from 5 days in prior reporting periods, according to Kaspersky's 2026 Global Report on cyber threat trends. The findings, drawn from the company's Managed Detection and Response (MDR) and Incident Response (IR) casework throughout 2025, indicate that attackers are compressing the window defenders have to detect and respond before critical data is encrypted. The report, published on Securelist, also notes that 68% of all IR engagements handled by Kaspersky in 2025 involved ransomware, cementing it as the dominant incident type.
+
+## Technical Analysis
+
+Kaspersky's Security Services team analyzed telemetry from its MDR platform and forensic data from IR engagements conducted globally in 2025. The median dwell time — the interval between initial compromise and ransomware deployment — shrank to 3.5 days, a 30% reduction from the 5-day median observed in earlier periods. The report attributes this acceleration to several factors: increased use of living-off-the-land binaries (LOLBins) for lateral movement, automated deployment scripts that minimize manual attacker interaction, and the proliferation of initial access brokers who sell pre-compromised network footholds. Kaspersky's IR casework further revealed that in 42% of ransomware incidents, the attackers leveraged valid credentials — either stolen, purchased, or brute-forced — to gain initial access, bypassing the need for exploit-based entry. The remaining cases involved phishing (31%) and exploitation of internet-facing vulnerabilities (27%).
+
+Notably, the report highlights that the finance and government sectors experienced the highest proportion of ransomware attacks among IR cases, though Kaspersky did not provide raw incident counts or victim naming due to confidentiality agreements. The report also notes a rise in "multipoint extortion" — attackers exfiltrating data before encryption and threatening to leak it, while also deploying ransomware — a tactic observed in 74% of ransomware IR cases in 2025.
+
+## Mitigations & Recommendations
+
+Kaspersky recommends organizations focus on reducing credential-based risk as the primary vector. Deploying multi-factor authentication (MFA) across all remote access points, enforcing least-privilege access models, and implementing continuous credential monitoring can cut off the most common entry path. Additionally, defenders should shorten their detection and response timelines by tuning EDR tools to flag lateral movement patterns — such as PsExec, WMI, or scheduled task creation — that precede ransomware deployment. Network segmentation and offline backups remain critical controls; the report notes that organizations with isolated backup infrastructure recovered in 4.2 days on average versus 12.8 days for those without. Kaspersky also advises conducting regular tabletop exercises that simulate a 3.5-day dwell time window to pressure-test incident response plans.
+
+## References
+
+- [Kaspersky Securelist: Anatomy of a Cyber World Global Report 2026](https://securelist.com/global-report-security-services-2026/119233/)
