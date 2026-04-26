@@ -1,0 +1,49 @@
+---
+title: BRUSHWORM Backdoor and BRUSHLOGGER Keylogger Hit South Asian Bank
+slug: 2026-04-26-brushworm-backdoor-and-brushlogger-keylogger-hit-south-asian-bank
+date: '2026-04-26'
+excerpt: >-
+  Elastic Security Labs details BRUSHWORM, a modular backdoor spreading via USB,
+  and BRUSHLOGGER, a DLL-side-loaded keylogger, targeting a South Asian
+  financial institution.
+category: malware
+tags:
+  - brushworm
+  - brushlogger
+  - elastic-security-labs
+  - financial-sector
+  - south-asia
+  - usb-propagation
+  - dll-side-loading
+  - keylogger
+language: en
+source_urls:
+  - 'https://www.elastic.co/security-labs/brushworm-targets-financial-services'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-brushworm-backdoor-and-brushlogger-keylogger-hit-south-asian-bank
+severity: high
+affected_sectors:
+  - financial services
+affected_regions:
+  - South Asia
+---
+## Executive Summary
+
+Elastic Security Labs has identified two custom malware components — a modular backdoor named **BRUSHWORM** and a DLL-side-loaded keylogger named **BRUSHLOGGER** — deployed against a financial institution in South Asia. The backdoor spreads via USB removable media and establishes persistent remote access, while the keylogger captures keystrokes from a targeted process. Elastic's analysis, published April 26, 2026, does not attribute the operation to a named threat actor or provide specific CVEs, as the malware appears custom-built for this campaign.
+
+## Technical Analysis
+
+BRUSHWORM functions as a modular backdoor with USB-based propagation capabilities. According to Elastic Security Labs, the malware monitors for insertion of removable drives and copies itself to the target device, likely using an autorun mechanism or shortcut-file technique to achieve execution on adjacent systems. Once active, BRUSHWORM establishes command-and-control (C2) communication, allowing operators to deploy additional modules or exfiltrate data. Elastic did not disclose the specific C2 protocol or encryption methods used.
+
+BRUSHLOGGER is a keylogger implemented via DLL side-loading — a technique where a legitimate executable loads a malicious DLL from an adjacent directory instead of the system path. The keylogger hooks keyboard input from a specific process, though Elastic's report does not name the target application. The combination of a USB-spreading backdoor and a process-specific keylogger suggests the operators aimed to move laterally within the victim network and capture credentials or sensitive data from a monitored workstation.
+
+Elastic noted that both components were observed in a single incident at the unnamed financial institution. No public indicators of compromise (IOCs) such as file hashes, IP addresses, or domains were released in the initial disclosure.
+
+## Mitigations & Recommendations
+
+Defenders in the financial sector, particularly in South Asia, should monitor for anomalous USB device activity and unauthorized DLL loads. Elastic recommends enabling logging for Windows Event ID 4688 (process creation) and Sysmon event ID 7 (image loaded) to detect DLL side-loading attempts. Organizations should restrict auto-run functionality on removable media via Group Policy and enforce application whitelisting where feasible. Given the absence of public IOCs, network defenders should prioritize behavioral detection rules for unexpected child processes spawned from removable drives and for DLL load events from non-standard paths.
+
+## References
+
+- [Elastic Security Labs: BRUSHWORM and BRUSHLOGGER](https://www.elastic.co/security-labs/brushworm-targets-financial-services)

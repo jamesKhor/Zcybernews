@@ -1,0 +1,45 @@
+---
+title: Silver Fox APT Spoofs Japanese Tax Emails in Targeted Campaign
+slug: 2026-04-26-silver-fox-apt-spoofs-japanese-tax-emails-in-targeted-campaign
+date: '2026-04-26'
+excerpt: >-
+  ESET details Silver Fox APT targeting Japanese firms with tax-themed phishing
+  emails delivering malware via weaponized Excel attachments during tax season.
+category: threat-intel
+tags:
+  - silver-fox
+  - apt
+  - japan
+  - phishing
+  - tax-season
+  - eset
+language: en
+source_urls:
+  - >-
+    https://www.welivesecurity.com/en/business-security/cunning-predator-how-silver-fox-preys-japanese-firms-tax-season/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-silver-fox-apt-spoofs-japanese-tax-emails-in-targeted-campaign
+severity: high
+threat_actor: Silver Fox
+affected_sectors:
+  - business services
+  - finance
+affected_regions:
+  - Japan
+---
+## Executive Summary
+
+ESET researchers have documented a renewed campaign by the threat actor tracked as Silver Fox, targeting Japanese companies with tax-themed phishing emails timed to the country's fiscal year-end period. The operation, detailed in a report published April 26, 2026, uses weaponized Excel attachments that deliver malware when macros are enabled. The campaign exploits the seasonal urgency around tax filings and human resources procedures, a social engineering tactic that reduces suspicion among recipients. ESET notes that Silver Fox has historically focused on Japanese organizations and that this latest wave aligns with previous operational patterns.
+
+## Technical Analysis
+
+According to ESET's analysis, the phishing emails masquerade as tax-related notifications or HR correspondence, using Japanese-language content that references tax season deadlines. The attachments are Excel spreadsheets (.xls or .xlsx) that contain malicious macros. When the victim enables macro execution—a step often required by the social engineering pretext—the macro downloads and executes a payload from a remote server. ESET did not disclose the specific malware family delivered in this campaign, but noted that Silver Fox has previously deployed remote access trojans (RATs) and information stealers. The infrastructure used for command-and-control (C2) includes domains registered to mimic legitimate Japanese business entities, though ESET did not publish a full list of indicators of compromise (IOCs) in the public report. The campaign appears to be ongoing as of the report's publication date, with ESET attributing it to Silver Fox based on TTP overlap with prior operations.
+
+## Mitigations & Recommendations
+
+Organizations in Japan should treat unsolicited emails with tax or HR themes as high-risk during the fiscal year-end period. Defenders should disable macros by default for Office documents originating from external senders and implement email filtering rules that flag attachments from untrusted domains. ESET recommends that security teams monitor for anomalous process executions triggered by Excel or other Office applications, and review network logs for connections to recently registered domains mimicking Japanese corporate entities. User awareness training should specifically address the tax-season lure pattern.
+
+## References
+
+- [ESET WeLiveSecurity: "A cunning predator: How Silver Fox preys on Japanese firms this tax season"](https://www.welivesecurity.com/en/business-security/cunning-predator-how-silver-fox-preys-japanese-firms-tax-season/)

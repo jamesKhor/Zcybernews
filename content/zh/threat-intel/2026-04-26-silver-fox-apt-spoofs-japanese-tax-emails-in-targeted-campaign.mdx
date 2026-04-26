@@ -1,0 +1,43 @@
+---
+title: Silver Fox APT 伪装成日本税务邮件在目标活动中
+slug: 2026-04-26-silver-fox-apt-spoofs-japanese-tax-emails-in-targeted-campaign
+date: '2026-04-26'
+excerpt: ESET 详细描述 Silver Fox APT 针对日本公司，使用以税务为主题的网络钓鱼邮件，在税务季节通过武器化的 Excel 附件传递恶意软件。
+category: threat-intel
+tags:
+  - silver-fox
+  - apt
+  - japan
+  - phishing
+  - tax-season
+  - eset
+language: zh
+source_urls:
+  - >-
+    https://www.welivesecurity.com/en/business-security/cunning-predator-how-silver-fox-preys-japanese-firms-tax-season/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-silver-fox-apt-spoofs-japanese-tax-emails-in-targeted-campaign
+severity: high
+threat_actor: Silver Fox
+affected_sectors:
+  - business services
+  - finance
+affected_regions:
+  - Japan
+---
+## 执行摘要
+
+ESET研究人员记录了被追踪为Silver Fox的威胁行为者发起的新一轮活动，该活动针对日本公司，以税务为主题的网络钓鱼邮件与该国财政年度末的时间相吻合。该操作详细记录在2026年4月26日发布的一份报告中，使用武器化的Excel附件，在启用宏时传递恶意软件。该活动利用了围绕税务申报和人力资源程序的季节性紧迫性，这是一种减少收件人怀疑的社会工程学策略。ESET指出，Silver Fox历史上一直专注于日本组织，而最新的一波活动与之前的运营模式一致。
+
+## 技术分析
+
+根据ESET的分析，网络钓鱼邮件伪装成与税务相关的通告或人力资源通信，使用引用税务季节截止日期的日语内容。附件是包含恶意宏的Excel电子表格（.xls或.xlsx）。当受害者启用宏执行——一个通常由社会工程学前提要求的步骤——宏从远程服务器下载并执行有效载荷。ESET没有透露在这次活动中传递的具体恶意软件家族，但指出Silver Fox以前部署过远程访问木马（RATs）和信息窃取器。用于命令和控制（C2）的基础设施包括注册为模仿合法日本商业实体的域名，尽管ESET没有在公共报告中发布完整的入侵指标（IOCs）列表。截至报告发布日期，该活动似乎仍在进行中，ESET根据与以前操作的TTP重叠将其归因于Silver Fox。
+
+## 缓解措施与建议
+
+日本组织应在财政年度末期间将带有税务或人力资源主题的未经请求的电子邮件视为高风险。防御者应默认禁用来自外部发件人的Office文档的宏，并实施电子邮件过滤规则，以标记来自不受信任域名的附件。ESET建议安全团队监控由Excel或其他Office应用程序触发的异常进程执行，并审查网络日志，以查找连接到模仿日本企业实体的最近注册域名。用户意识培训应特别针对税务季节的诱惑模式。
+
+## 参考资料
+
+- [ESET WeLiveSecurity: "A cunning predator: How Silver Fox preys on Japanese firms this tax season"](https://www.welivesecurity.com/en/business-security/cunning-predator-how-silver-fox-preys-japanese-firms-tax-season/)
