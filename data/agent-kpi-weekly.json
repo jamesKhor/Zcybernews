@@ -27,5 +27,34 @@
       "revert_rate": "0%",
       "pipeline_success": "100%"
     }
+  },
+  {
+    "event": "agent_kpi_weekly",
+    "timestamp": "2026-04-26T01:42:50.369Z",
+    "window_days": 7,
+    "commits": {
+      "total": 1,
+      "reverts": 0,
+      "content": 1,
+      "fixes": 0,
+      "features": 0
+    },
+    "pipeline": {
+      "runs_total": 100,
+      "runs_success": 100,
+      "runs_failure": 0,
+      "success_rate": "100%"
+    },
+    "attribution": {
+      "raymond_engineering": 1,
+      "prompt_engineer": 0,
+      "harness_engineer": 0,
+      "code_reviewer": 0,
+      "content_pipeline": 1
+    },
+    "health": {
+      "revert_rate": "0%",
+      "pipeline_success": "100%"
+    }
   }
 ]
