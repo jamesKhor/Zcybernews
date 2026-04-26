@@ -1,0 +1,47 @@
+---
+title: ESET：云虚拟机暴露企业关键安全漏洞
+slug: >-
+  2026-04-26-eset-cloud-vms-expose-critical-security-gaps-in-enterprise-deployments
+date: '2026-04-26'
+excerpt: ESET 警告称，配置不当的云虚拟机—过度授权的 IAM 角色、暴露的管理端口和未修补的操作系统镜像—在企业环境中创造了系统性安全漏洞。
+category: industry
+tags:
+  - cloud-security
+  - virtual-machines
+  - eset
+  - iam-misconfiguration
+  - attack-surface
+language: zh
+source_urls:
+  - >-
+    https://www.welivesecurity.com/en/business-security/virtual-machines-virtually-everywhere-real-security-gaps/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-26-eset-cloud-vms-expose-critical-security-gaps-in-enterprise-deployments
+severity: high
+affected_sectors:
+  - technology
+  - financial services
+  - healthcare
+  - government
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+ESET研究人员在WeLiveSecurity上发布的2026年4月报告中指出，在企业云虚拟机（VM）部署中发现了系统性的安全漏洞。分析强调，组织通常部署具有过度权限IAM角色、暴露的管理端口和未修补的基础镜像的云VM，这为攻击者提供了广泛的攻击面，攻击者可以利用这些攻击面进行横向移动和数据外泄。ESET强调，云VM配置的速度和灵活性常常超过安全控制，使环境容易受到基于配置错误的攻击。
+
+## 技术分析
+
+ESET基于企业云环境的遥测研究，发现最常见的配置错误分为三类：身份和访问管理（IAM）角色授予超出最小权限原则的过多权限；管理接口（SSH、RDP）暴露给公共互联网；以及部署带有过时操作系统或未修补软件的VM镜像。报告指出，攻击者经常扫描这些暴露的端点，使用它们作为初始访问向量进入内部网络。ESET没有将这些漏洞归因于任何特定的威胁行为者，而是将其描述为包括AWS、Azure和GCP在内的云提供商的系统性问题。
+
+研究人员观察到，自动化配置管道优先考虑速度而非安全验证，这加剧了问题。在许多情况下，开发人员部署带有默认凭据或配置文件中嵌入的秘密的VM，ESET表示，攻击者可以通过供应链攻击或被破坏的CI/CD系统收集这些信息。报告还指出，为短期任务启动的临时VM通常缺乏适当的日志记录和监控，为安全团队创造了盲点。
+
+## 缓解措施与建议
+
+ESET建议组织在部署前实施VM镜像的自动化安全扫描，定期强制执行IAM角色审查，并限制通过安全组或VPN将管理端口访问限制在受信任的IP范围内。研究人员还建议部署云原生安全态势管理（CSPM）工具，以持续监控配置错误和漂移。对于临时VM，ESET建议将它们集成到集中的日志记录管道中，并应用不可变基础设施模式以减少攻击面。
+
+## 参考资料
+
+- [虚拟机，几乎无处不在——以及真正的安全漏洞](https://www.welivesecurity.com/en/business-security/virtual-machines-virtually-everywhere-real-security-gaps/)

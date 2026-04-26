@@ -1,0 +1,50 @@
+---
+title: 'ESET: Cloud VMs Expose Critical Security Gaps in Enterprise'
+slug: >-
+  2026-04-26-eset-cloud-vms-expose-critical-security-gaps-in-enterprise-deployments
+date: '2026-04-26'
+excerpt: >-
+  ESET warns that misconfigured cloud VMs—overprivileged IAM roles, exposed
+  management ports, and unpatched OS images—create systemic security gaps across
+  enterprise environments.
+category: industry
+tags:
+  - cloud-security
+  - virtual-machines
+  - eset
+  - iam-misconfiguration
+  - attack-surface
+language: en
+source_urls:
+  - >-
+    https://www.welivesecurity.com/en/business-security/virtual-machines-virtually-everywhere-real-security-gaps/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-26-eset-cloud-vms-expose-critical-security-gaps-in-enterprise-deployments
+severity: high
+affected_sectors:
+  - technology
+  - financial services
+  - healthcare
+  - government
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+ESET researchers have identified systemic security gaps in enterprise cloud virtual machine (VM) deployments, according to a report published April 2026 on WeLiveSecurity. The analysis highlights that organizations routinely deploy cloud VMs with overprivileged IAM roles, exposed management ports, and unpatched base images, creating a broad attack surface that attackers can exploit for lateral movement and data exfiltration. ESET emphasizes that the speed and flexibility of cloud VM provisioning often outpaces security controls, leaving environments vulnerable to misconfiguration-based attacks.
+
+## Technical Analysis
+
+ESET's research, based on telemetry from enterprise cloud environments, found that the most common misconfigurations fall into three categories: identity and access management (IAM) roles granted excessive permissions beyond the principle of least privilege; management interfaces (SSH, RDP) left exposed to the public internet; and VM images deployed with outdated operating systems or unpatched software. The report notes that attackers frequently scan for such exposed endpoints, using them as initial access vectors to pivot into internal networks. ESET did not attribute these gaps to any specific threat actor but characterized them as a systemic issue across cloud providers including AWS, Azure, and GCP.
+
+The researchers observed that the problem is exacerbated by automated provisioning pipelines that prioritize speed over security validation. In many cases, developers deploy VMs with default credentials or embedded secrets in configuration files, which ESET says can be harvested by attackers through supply chain attacks or compromised CI/CD systems. The report also flags that ephemeral VMs—spun up for short-lived tasks—often lack proper logging and monitoring, creating blind spots for security teams.
+
+## Mitigations & Recommendations
+
+ESET recommends that organizations implement automated security scanning of VM images before deployment, enforce IAM role reviews at regular intervals, and restrict management port access to trusted IP ranges via security groups or VPNs. The researchers also advise deploying cloud-native security posture management (CSPM) tools to continuously monitor for misconfigurations and drift. For ephemeral VMs, ESET suggests integrating them into centralized logging pipelines and applying immutable infrastructure patterns to reduce the attack surface.
+
+## References
+
+- [Virtual machines, virtually everywhere – and with real security gaps](https://www.welivesecurity.com/en/business-security/virtual-machines-virtually-everywhere-real-security-gaps/)
