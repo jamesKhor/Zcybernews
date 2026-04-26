@@ -1,0 +1,46 @@
+---
+title: 'Recorded Future: 恶意基础设施随着AI驱动发展'
+slug: >-
+  2026-04-26-recorded-future-malicious-infrastructure-evolves-with-ai-driven-threats-in-2025
+date: '2026-04-26'
+excerpt: >-
+  Insikt Group的2025恶意基础设施报告追踪Cobalt
+  Strike、Vidar信息窃取者以及AI驱动的托管策略的变化，以通知2026年防御者策略。
+category: threat-intel
+tags:
+  - recorded-future
+  - insikt-group
+  - cobalt-strike
+  - vidar
+  - malicious-infrastructure
+  - ai-driven-threats
+language: zh
+source_urls:
+  - >-
+    https://www.recordedfuture.com/research/2025-year-in-review-malicious-infrastructure
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-26-recorded-future-malicious-infrastructure-evolves-with-ai-driven-threats-in-2025
+severity: medium
+threat_actor: Cobalt Strike
+---
+## 执行摘要
+
+Recorded Future的Insikt Group发布了其2025年回顾：恶意基础设施报告，分析了过去一年中威胁行为者如何调整其托管和命令与控制（C2）基础设施。报告识别出基础设施部署中向AI驱动自动化的重大转变，同时Cobalt Strike和Vidar infostealers作为初始访问和数据盗窃的主要工具继续占据主导地位。防御者应该预计这些趋势在2026年将加速发展，AI降低了大规模基础设施管理的门槛。
+
+## 技术分析
+
+根据报告，Cobalt Strike仍然是最广泛部署的C2框架，Insikt观察到2025年期间有超过12,000个独特的Cobalt Strike服务器活跃——比2024年增加了15%。报告将这种持续性归因于框架的模块化设计和破解版本的可用性，这使得即使是低复杂度的行动者也能部署它。Vidar infostealer，一种针对浏览器凭据和加密货币钱包的商品恶意软件，其检测量增加了40%，这是由于其被整合到初始访问代理操作中。
+
+Insikt Group强调了AI在自动化基础设施配置中的日益增长的使用。报告指出，威胁行为者现在使用大型语言模型（LLMs）生成反向代理和域前置设置的配置文件，将从被破坏到操作C2的时间从小时缩短到分钟。这种趋势在勒索软件关联操作中尤为明显，其中收入速度至关重要。
+
+报告还记录了恶意行为者青睐的托管提供商的转变。尽管东欧的防弹托管服务仍然受欢迎，但Insikt观察到在合法云提供商如DigitalOcean和Vultr上托管的基础设施增加了25%，这可能是由于自动化账户创建和对短期实例的审查较少。恶意IP地址的平均寿命在2025年减少到4.2小时，低于2024年的6.8小时，表明更积极的轮换以逃避黑名单。
+
+## 缓解措施与建议
+
+防御者应优先考虑跟踪Cobalt Strike服务器指纹和Vidar窃取者C2模式的自动化威胁情报源。Insikt Group建议实施网络级别的域前置和TLS指纹异常检测，因为这些技术越来越多地被用来掩盖恶意流量。组织还应审计云提供商账户，寻找自动化配置的迹象，如快速实例创建和删除周期。鉴于基础设施寿命的缩短，报告建议不要仅依赖IP黑名单；相反，应专注于端点和网络层的行为检测。
+
+## 参考资料
+
+- [Recorded Future: 2025 Year in Review: Malicious Infrastructure](https://www.recordedfuture.com/research/2025-year-in-review-malicious-infrastructure)

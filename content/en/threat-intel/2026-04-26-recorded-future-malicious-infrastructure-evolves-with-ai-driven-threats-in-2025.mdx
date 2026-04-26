@@ -1,0 +1,47 @@
+---
+title: 'Recorded Future: Malicious Infrastructure Evolves with AI-Driven'
+slug: >-
+  2026-04-26-recorded-future-malicious-infrastructure-evolves-with-ai-driven-threats-in-2025
+date: '2026-04-26'
+excerpt: >-
+  Insikt Group's 2025 Malicious Infrastructure Report tracks shifts in Cobalt
+  Strike, Vidar infostealers, and AI-driven hosting tactics to inform defender
+  strategies for 2026.
+category: threat-intel
+tags:
+  - recorded-future
+  - insikt-group
+  - cobalt-strike
+  - vidar
+  - malicious-infrastructure
+  - ai-driven-threats
+language: en
+source_urls:
+  - >-
+    https://www.recordedfuture.com/research/2025-year-in-review-malicious-infrastructure
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-26-recorded-future-malicious-infrastructure-evolves-with-ai-driven-threats-in-2025
+severity: medium
+threat_actor: Cobalt Strike
+---
+## Executive Summary
+
+Recorded Future's Insikt Group published its 2025 Year in Review: Malicious Infrastructure report, analyzing how threat actors adapted their hosting and command-and-control (C2) infrastructure over the past year. The report identifies a significant shift toward AI-driven automation in infrastructure deployment, alongside the continued dominance of Cobalt Strike and Vidar infostealers as primary tools for initial access and data theft. Defenders should expect these trends to accelerate in 2026, with AI lowering the barrier for infrastructure management at scale.
+
+## Technical Analysis
+
+According to the report, Cobalt Strike remains the most widely deployed C2 framework, with Insikt observing over 12,000 unique Cobalt Strike servers active during 2025 — a 15% increase from 2024. The report attributes this persistence to the framework's modular design and the availability of cracked versions, which allow even low-sophistication actors to deploy it. Vidar infostealer, a commodity malware that targets browser credentials and cryptocurrency wallets, saw a 40% rise in detections, driven by its integration into initial-access broker operations.
+
+Insikt Group highlights the growing use of AI to automate infrastructure provisioning. The report notes that threat actors are now using large language models (LLMs) to generate configuration files for reverse proxies and domain fronting setups, reducing the time from compromise to operational C2 from hours to minutes. This trend is particularly pronounced in ransomware affiliate operations, where speed-to-revenue is critical.
+
+The report also documents a shift in hosting providers favored by malicious actors. While bulletproof hosting services in Eastern Europe remain popular, Insikt observed a 25% increase in infrastructure hosted on legitimate cloud providers like DigitalOcean and Vultr, likely due to automated account creation and lower scrutiny for short-lived instances. The average lifespan of a malicious IP address decreased to 4.2 hours in 2025, down from 6.8 hours in 2024, suggesting more aggressive rotation to evade blocklists.
+
+## Mitigations & Recommendations
+
+Defenders should prioritize automated threat intelligence feeds that track Cobalt Strike server fingerprints and Vidar stealer C2 patterns. Insikt Group recommends implementing network-level detection for domain fronting and TLS fingerprint anomalies, as these techniques are increasingly used to obscure malicious traffic. Organizations should also audit cloud provider accounts for signs of automated provisioning, such as rapid instance creation and deletion cycles. The report advises against relying solely on IP blocklists given the shortened infrastructure lifespan; instead, focus on behavioral detection at the endpoint and network layers.
+
+## References
+
+- [Recorded Future: 2025 Year in Review: Malicious Infrastructure](https://www.recordedfuture.com/research/2025-year-in-review-malicious-infrastructure)
