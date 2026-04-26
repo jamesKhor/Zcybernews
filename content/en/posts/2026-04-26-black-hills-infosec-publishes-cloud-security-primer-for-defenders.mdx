@@ -1,0 +1,45 @@
+---
+title: Black Hills InfoSec Publishes Cloud Security Primer for Defenders
+slug: 2026-04-26-black-hills-infosec-publishes-cloud-security-primer-for-defenders
+date: '2026-04-26'
+excerpt: >-
+  BHIS released a cloud security guide covering IAM misconfigurations, shared
+  responsibility gaps, and logging blind spots — essential reading for teams
+  securing AWS, Azure, or GCP…
+category: tools
+tags:
+  - cloud-security
+  - bhis
+  - iam
+  - shared-responsibility-model
+  - logging
+  - defensive-guidance
+language: en
+source_urls:
+  - >-
+    https://www.blackhillsinfosec.com/cloud-security-tips-and-resources-for-securing-the-cloud/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-black-hills-infosec-publishes-cloud-security-primer-for-defenders
+---
+## Executive Summary
+
+Black Hills Information Security (BHIS) published a cloud security resource post on 2026-04-26 that distills foundational defensive practices for organizations operating in AWS, Azure, or GCP. The guide emphasizes identity and access management (IAM) misconfigurations as the leading root cause of cloud breaches, the persistent confusion around shared responsibility boundaries, and the critical need for centralized logging and monitoring. While the post is introductory in nature — aimed at teams new to cloud defense — it compiles actionable configuration checks and monitoring strategies that align with real-world incident patterns observed by BHIS during penetration tests and incident response engagements.
+
+## Technical Analysis
+
+The BHIS post breaks cloud security into three operational pillars: identity hardening, network segmentation, and visibility. On identity, the authors flag overly permissive IAM roles, unused service accounts with administrative privileges, and the absence of multi-factor authentication (MFA) on root or break-glass accounts as the most common findings during cloud assessments. They recommend implementing least-privilege policies using attribute-based access control (ABAC) where feasible, and regularly auditing IAM policy bindings via tools such as AWS IAM Access Analyzer or Azure AD Identity Protection.
+
+Network segmentation guidance focuses on virtual private cloud (VPC) design, recommending micro-segmentation at the subnet level, strict egress filtering, and the use of cloud-native web application firewalls (WAFs) in front of internet-facing workloads. The post notes that many organizations still rely on default VPC configurations that allow unrestricted outbound traffic, a posture that attackers routinely exploit for data exfiltration after initial compromise.
+
+On the logging front, BHIS stresses enabling and centralizing CloudTrail (AWS), Azure Monitor Activity Logs, and GCP Cloud Audit Logs into a SIEM or log analytics platform. The authors caution that enabling logging alone is insufficient — organizations must also configure alerts for specific high-risk events such as creation of new access keys, modification of VPC flow logs, or deletion of log sources. The post references the MITRE ATT&CK Cloud Matrix (technique T1525 for IAM abuse and T1562 for defense evasion via log tampering) as a framework for building detection rules.
+
+Notably, the guide does not address container-specific security (e.g., Kubernetes pod security policies, container image scanning) or serverless function hardening, which are increasingly common attack surfaces in cloud-native environments. This omission is consistent with the post's stated scope as a foundational primer rather than an advanced technical deep-dive.
+
+## Mitigations & Recommendations
+
+Organizations should treat the BHIS guide as a baseline checklist rather than a comprehensive cloud security program. Defenders should prioritize IAM hygiene — revoking unused roles, enforcing MFA, and rotating access keys on a 90-day cadence. For network security, implement default-deny egress rules and deploy cloud WAFs with OWASP Core Rule Set (CRS) enabled. Logging configurations should be tested quarterly by simulating an attacker action (e.g., disabling CloudTrail) and verifying that the alert fires within the expected latency window.
+
+## References
+
+- [Cloud Security: Tips and Resources for Securing the Cloud — Black Hills Information Security](https://www.blackhillsinfosec.com/cloud-security-tips-and-resources-for-securing-the-cloud/)

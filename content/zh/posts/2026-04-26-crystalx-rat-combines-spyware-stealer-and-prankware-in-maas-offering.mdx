@@ -1,0 +1,55 @@
+---
+title: CrystalX RAT 结合间谍软件、窃取器和恶作剧软件在 MaaS 提供中
+slug: >-
+  2026-04-26-crystalx-rat-combines-spyware-stealer-and-prankware-in-maas-offering
+date: '2026-04-26'
+excerpt: >-
+  卡巴斯基详细描述了 CrystalX RAT，这是一种自 2025 年中以来针对全球 Windows 用户的 MaaS
+  恶意软件，具有间谍软件、凭证盗窃和恶作剧软件功能。
+category: malware
+tags:
+  - crystalx
+  - rat
+  - malware-as-a-service
+  - spyware
+  - credential-theft
+  - kaspersky
+language: zh
+source_urls:
+  - 'https://securelist.com/crystalx-rat-with-prankware-features/119283/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-26-crystalx-rat-combines-spyware-stealer-and-prankware-in-maas-offering
+severity: high
+threat_actor: CrystalX
+---
+## CrystalX RAT将间谍软件、窃取器和恶作剧软件结合在MaaS提供中
+
+## 执行摘要
+
+卡巴斯基研究人员发现了一种新的远程访问木马（RAT），被称为CrystalX，它被分发为恶意软件即服务（MaaS）操作。CrystalX首次在2025年中左右在野外观察到，它将传统的间谍软件和凭证窃取功能与一系列破坏性的“恶作剧软件”功能结合起来，包括远程弹出光驱、播放大声音频和显示假错误消息的能力。该恶意软件全球范围内针对Windows系统，初始感染向量包括网络钓鱼电子邮件和木马化软件下载。
+
+## 技术分析
+
+根据卡巴斯基的分析，CrystalX主要是用Python编写的，并使用PyInstaller编译成Windows可执行文件。执行后，加载器会释放一个核心模块，该模块通过注册表运行键或计划任务建立持久性，然后通过HTTP或HTTPS联系一个硬编码的命令和控制（C2）服务器。C2协议使用基本XOR混淆的JSON编码消息。
+
+RAT的间谍软件模块捕获按键，定期截屏，记录剪贴板内容，并从Chrome、Firefox和Edge中窃取浏览器凭证。一个单独的窃取组件针对加密货币钱包文件、VPN配置文件和密码管理器数据库。卡巴斯基指出，CrystalX还枚举安装的软件和运行的进程，以分析受害者机器。
+
+CrystalX与典型RAT的区别在于其恶作剧软件功能，包括：
+- 远程打开和关闭CD/DVD驱动器托盘
+- 通过系统扬声器以最大音量播放任意音频文件
+- 显示模仿Windows蓝屏死亡或勒索软件要求的全屏假错误对话框
+- 快速切换Caps Lock键以迷惑用户
+
+这些恶作剧软件功能似乎旨在骚扰或心理操纵，而不是直接获得经济利益，尽管卡巴斯基评估它们可能被用来在间谍软件在后台运行时分散受害者的注意力。
+
+该恶意软件通过私人电报频道和地下论坛出售，定价层次从50美元的基本构建器到200美元的高级版本，具有混淆和反分析功能。卡巴斯基报告称，MaaS模型包括一个基于Web的控制面板，用于管理受感染的主机，具有实时数据窃取和命令执行功能。
+
+## 缓解措施与建议
+
+防御者应监控表明CrystalX的不寻常系统行为，包括意外的光驱活动、突然的音频播放或无法消除的假错误对话框。网络防御者可以通过寻找包含base64编码数据的JSON有效载荷的HTTP POST请求到不寻常的端点来检测C2流量。组织应执行应用程序白名单，以阻止从不受信任的来源执行PyInstaller打包的二进制文件，并部署能够识别基于Python的恶意软件行为的端点检测和响应（EDR）工具。用户意识培训应强调打开未经请求的电子邮件附件或从非官方渠道下载软件的风险。
+
+## 参考资料
+
+- [卡巴斯基Securelist：一个笑RAT：CrystalX结合了间谍软件、窃取器和恶作剧软件功能](https://securelist.com/crystalx-rat-with-prankware-features/119283/)

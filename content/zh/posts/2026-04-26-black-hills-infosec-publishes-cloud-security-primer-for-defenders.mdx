@@ -1,0 +1,42 @@
+---
+title: Black Hills InfoSec 发布针对防御者的云安全入门指南
+slug: 2026-04-26-black-hills-infosec-publishes-cloud-security-primer-for-defenders
+date: '2026-04-26'
+excerpt: BHIS 发布了一份云安全指南，涵盖了 IAM 配置错误、共享责任差距和日志盲点 —— 对于保护 AWS、Azure 或 GCP 的团队来说是必读材料…
+category: tools
+tags:
+  - cloud-security
+  - bhis
+  - iam
+  - shared-responsibility-model
+  - logging
+  - defensive-guidance
+language: zh
+source_urls:
+  - >-
+    https://www.blackhillsinfosec.com/cloud-security-tips-and-resources-for-securing-the-cloud/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-black-hills-infosec-publishes-cloud-security-primer-for-defenders
+---
+## 执行摘要
+
+Black Hills Information Security（BHIS）于2026-04-26发布了一篇关于云安全资源的文章，该文章为在AWS、Azure或GCP中运营的组织提炼了基础的防御实践。该指南强调身份和访问管理（IAM）配置错误是云安全漏洞的主要原因，共享责任边界的持续混淆，以及对集中日志记录和监控的迫切需求。虽然这篇文章的性质是入门级别的——针对新接触云防御的团队——但它汇编了与BHIS在渗透测试和事件响应活动中观察到的实际事件模式相一致的可操作配置检查和监控策略。
+
+## 技术分析
+
+BHIS的文章将云安全分为三个运营支柱：身份硬化、网络分割和可见性。在身份方面，作者指出过度宽松的IAM角色、未使用的具有管理权限的服务账户以及根账户或应急账户上缺少多因素认证（MFA）是云评估中最常见的发现。他们建议尽可能实施基于属性的访问控制（ABAC）的最小权限策略，并定期通过工具如AWS IAM Access Analyzer或Azure AD Identity Protection审计IAM策略绑定。
+
+网络分割指导侧重于虚拟私有云（VPC）设计，推荐在子网级别进行微分割、严格的出口过滤，并在面向互联网的工作负载前使用云原生的Web应用程序防火墙（WAF）。文章指出，许多组织仍然依赖默认的VPC配置，允许不受限制的出站流量，这种姿态攻击者经常在初始入侵后用于数据外泄。
+
+在日志记录方面，BHIS强调启用并集中CloudTrail（AWS）、Azure Monitor Activity Logs和GCP Cloud Audit Logs到SIEM或日志分析平台。作者警告说，仅仅启用日志记录是不够的——组织还必须为特定高风险事件配置警报，如创建新的访问密钥、修改VPC流量日志或删除日志源。文章参考了MITRE ATT&CK Cloud Matrix（技术T1525用于IAM滥用和T1562用于通过日志篡改进行防御规避）作为构建检测规则的框架。
+
+值得注意的是，该指南没有涉及容器特定的安全（例如，Kubernetes Pod安全策略、容器镜像扫描）或无服务器函数硬化，这些在云原生环境中越来越常见的攻击面。这一遗漏与文章声明的范围一致，即作为基础入门读物而非高级技术深入探讨。
+
+## 缓解措施与建议
+
+组织应将BHIS指南视为基线检查表，而不是全面的云安全计划。防御者应优先考虑IAM卫生——撤销未使用的角色、强制MFA，并在90天周期内轮换访问密钥。对于网络安全，实施默认拒绝的出口规则，并部署启用OWASP Core Rule Set（CRS）的云WAF。应每季度通过模拟攻击者行为（例如，禁用CloudTrail）并验证警报是否在预期的延迟窗口内触发来测试日志配置。
+
+## 参考资料
+
+- [Cloud Security: Tips and Resources for Securing the Cloud — Black Hills Information Security](https://www.blackhillsinfosec.com/cloud-security-tips-and-resources-for-securing-the-cloud/)
