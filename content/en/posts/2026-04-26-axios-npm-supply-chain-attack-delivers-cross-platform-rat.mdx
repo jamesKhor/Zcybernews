@@ -1,0 +1,44 @@
+---
+title: Axios npm Supply Chain Attack Delivers Cross-Platform RAT
+slug: 2026-04-26-axios-npm-supply-chain-attack-delivers-cross-platform-rat
+date: '2026-04-26'
+excerpt: >-
+  Elastic Security Labs details a supply chain compromise of the axios npm
+  package that deployed a unified RAT across platforms, impacting an unknown
+  number of downstream…
+category: malware
+tags:
+  - axios
+  - supply-chain
+  - npm
+  - rat
+  - elastic-security-labs
+  - cross-platform
+language: en
+source_urls:
+  - 'https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-axios-npm-supply-chain-attack-delivers-cross-platform-rat
+severity: critical
+affected_sectors:
+  - software development
+  - technology
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Elastic Security Labs has published an analysis of a supply chain compromise targeting the widely used `axios` npm package, which delivered a unified cross-platform Remote Access Trojan (RAT) to downstream consumers. The trojanized version of axios, a popular HTTP client library with millions of weekly downloads, was distributed through the npm registry, potentially compromising any application that incorporated the malicious update. Elastic researchers have not yet identified the full scope of the attack or the initial access vector, but they confirmed that the RAT operates across Windows, macOS, and Linux environments.
+
+## Technical Analysis
+
+According to Elastic Security Labs, the attackers embedded malicious code within a legitimate update of the axios package, creating a backdoor that communicates with a command-and-control (C2) server upon execution. The RAT, which Elastic describes as a unified cross-platform threat, is capable of executing arbitrary commands, exfiltrating data, and maintaining persistence on infected systems. The malicious payload is designed to blend in with normal axios HTTP requests, making detection challenging for signature-based defenses. Elastic noted that the compromised package version was live on the npm registry for an unspecified period before being identified and removed. The researchers emphasized that the attack leveraged the trust inherent in open-source software supply chains, similar to previous incidents targeting popular npm packages like `event-stream` and `ua-parser-js`.
+
+## Mitigations & Recommendations
+
+Organizations using axios in their software supply chain should immediately audit their dependency trees to identify and roll back any affected versions. Elastic recommends verifying package integrity against known good checksums and monitoring for unexpected outbound network connections from applications that use axios. Developers should consider pinning dependency versions and using lock files to prevent automatic updates from introducing compromised packages. Additionally, implementing runtime application self-protection (RASP) or endpoint detection and response (EDR) solutions that can detect anomalous HTTP request patterns may help identify post-exploitation activity. Elastic has not released specific indicators of compromise (IOCs) at this time, but they advise reviewing their full analysis for updated detection guidance.
+
+## References
+
+- [Elastic Security Labs: Inside the Axios supply chain compromise - one RAT to rule them all](https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all)

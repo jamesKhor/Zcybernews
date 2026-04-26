@@ -1,0 +1,43 @@
+---
+title: Axios npm 供应链攻击分发跨平台 RAT
+slug: 2026-04-26-axios-npm-supply-chain-attack-delivers-cross-platform-rat
+date: '2026-04-26'
+excerpt: Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游...
+category: malware
+tags:
+  - axios
+  - supply-chain
+  - npm
+  - rat
+  - elastic-security-labs
+  - cross-platform
+language: zh
+source_urls:
+  - 'https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-axios-npm-supply-chain-attack-delivers-cross-platform-rat
+severity: critical
+affected_sectors:
+  - software development
+  - technology
+affected_regions:
+  - Global
+---
+## Axios npm供应链攻击分发跨平台RAT
+
+## 执行摘要
+
+Elastic Security Labs 发布了一篇针对广泛使用的 `axios` npm 包的供应链攻击分析报告，该攻击分发了统一的跨平台远程访问木马（RAT）给下游消费者。axios的木马化版本是一个流行的HTTP客户端库，每周下载量达数百万，通过npm注册表分发，可能危及任何整合了恶意更新的应用。Elastic研究人员尚未确定攻击的全貌或初始访问向量，但他们确认RAT在Windows、macOS和Linux环境中运行。
+
+## 技术分析
+
+根据Elastic Security Labs的说法，攻击者在axios包的合法更新中嵌入了恶意代码，创建了一个执行时与命令和控制（C2）服务器通信的后门。Elastic将RAT描述为统一的跨平台威胁，能够执行任意命令、数据泄露和在受感染系统上保持持久性。恶意负载旨在与正常的axios HTTP请求融为一体，使基于签名的防御难以检测。Elastic指出，受感染的包版本在npm注册表上活跃了一段未指定的时间后被识别并移除。研究人员强调，攻击利用了开源软件供应链中固有的信任，类似于以前针对流行的npm包如`event-stream`和`ua-parser-js`的事件。
+
+## 缓解措施与建议
+
+在软件供应链中使用axios的组织应立即审计其依赖树，以识别并回滚任何受影响的版本。Elastic建议验证包完整性与已知好的校验和，并监控使用axios的应用程序的意外出站网络连接。开发者应考虑固定依赖版本并使用锁定文件以防止自动更新引入受污染的包。此外，实施运行时应用程序自我保护（RASP）或端点检测和响应（EDR）解决方案，可以检测异常的HTTP请求模式，可能有助于识别利用后活动。Elastic目前尚未发布具体的入侵指标（IOCs），但他们建议查看他们的完整分析以获取更新的检测指导。
+
+## 参考资料
+
+- [Elastic Security Labs: Inside the Axios supply chain compromise - one RAT to rule them all](https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all)
