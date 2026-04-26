@@ -1,0 +1,43 @@
+---
+title: Elastic XDR Unifies Endpoint and Cloud Threat Hunting
+slug: 2026-04-26-elastic-xdr-unifies-endpoint-and-cloud-threat-hunting
+date: '2026-04-26'
+excerpt: >-
+  Elastic Security XDR now correlates endpoint telemetry with cloud and network
+  data, enabling analysts to trace multi-stage attacks across hybrid
+  environments in a single query…
+category: tools
+tags:
+  - elastic-security
+  - xdr
+  - endpoint-detection
+  - cloud-security
+  - threat-hunting
+  - hybrid-environments
+language: en
+source_urls:
+  - >-
+    https://www.elastic.co/security-labs/investigating-from-the-endpoint-across-your-environment
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-elastic-xdr-unifies-endpoint-and-cloud-threat-hunting
+---
+## Executive Summary
+
+Elastic Security Labs published a deep-dive on how its XDR platform now correlates endpoint telemetry with cloud, network, and identity data in a single investigation interface. The capability, detailed in an April 2026 technical post, aims to reduce the time analysts spend pivoting between separate monitoring tools when tracing multi-stage attacks that span on-premise endpoints, cloud workloads, and SaaS applications.
+
+## Technical Analysis
+
+The Elastic Security XDR approach centers on a unified query language that allows analysts to start from an endpoint alert — such as a suspicious process execution or file modification — and then expand the search laterally across network logs, cloud audit trails, and identity provider events without switching contexts. According to the Elastic Security Labs post, the platform ingests data from Elastic Endpoint Security, Elastic Cloud Security, and third-party integrations via the Elastic Agent fleet.
+
+A key technical detail is the use of the Elasticsearch Query Language (ES|QL) to perform cross-cluster searches. For example, an analyst investigating a detected credential theft on a Windows endpoint can pivot to cloud provider logs (AWS CloudTrail, Azure Activity Logs) to check for subsequent API calls from the compromised identity. The platform also surfaces related alerts from network analysis tools like Zeek and Suricata, which Elastic can ingest natively.
+
+The article emphasizes that the XDR correlation engine does not rely solely on pre-built detection rules. Instead, it provides a timeline view of all events associated with a given entity (host, user, IP address, or cloud resource), allowing manual reconstruction of attack chains. Elastic Security Labs notes this is particularly useful for incidents involving "island-hopping" — where attackers move from an endpoint to a cloud service to a SaaS application — a pattern increasingly observed in supply chain and identity-based attacks.
+
+## Mitigations & Recommendations
+
+Defenders using Elastic Security should ensure their Elastic Agent fleet is configured to collect logs from all relevant data sources, including cloud provider APIs, network sensors, and identity providers. The platform's value increases with data breadth; partial coverage may leave blind spots in the cross-environment investigation workflow. Elastic recommends enabling the pre-built integration packages for AWS, Azure, GCP, and common SaaS platforms (Office 365, Google Workspace) to maximize correlation fidelity.
+
+## References
+
+- [Investigating from the Endpoint Across Your Environment with Elastic Security XDR](https://www.elastic.co/security-labs/investigating-from-the-endpoint-across-your-environment)

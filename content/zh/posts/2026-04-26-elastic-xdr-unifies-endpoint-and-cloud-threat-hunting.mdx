@@ -1,0 +1,42 @@
+---
+title: Elastic XDR 统一终端和云威胁狩猎
+slug: 2026-04-26-elastic-xdr-unifies-endpoint-and-cloud-threat-hunting
+date: '2026-04-26'
+excerpt: Elastic Security XDR 现在将终端遥测与云和网络数据相关联，使分析师能够在单一查询中追踪跨混合环境的多阶段攻击…
+category: tools
+tags:
+  - elastic-security
+  - xdr
+  - endpoint-detection
+  - cloud-security
+  - threat-hunting
+  - hybrid-environments
+language: zh
+source_urls:
+  - >-
+    https://www.elastic.co/security-labs/investigating-from-the-endpoint-across-your-environment
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-26-elastic-xdr-unifies-endpoint-and-cloud-threat-hunting
+---
+## Elastic XDR 统一终端和云威胁狩猎
+
+## 执行摘要
+
+Elastic Security Labs 发布了一篇深入文章，介绍了其 XDR 平台如何将终端遥测与云、网络和身份数据在单一调查界面中进行关联。这项能力在 2026 年 4 月的技术文章中详细说明，旨在减少分析师在追踪跨越本地终端、云工作负载和 SaaS 应用程序的多阶段攻击时，需要在不同监控工具之间切换的时间。
+
+## 技术分析
+
+Elastic Security XDR 方法的核心是统一查询语言，允许分析师从一个终端警报（例如可疑的进程执行或文件修改）开始，然后横向扩展搜索到网络日志、云审计跟踪和身份提供者事件，而无需切换上下文。根据 Elastic Security Labs 的文章，该平台通过 Elastic Agent 车队从 Elastic Endpoint Security、Elastic Cloud Security 和第三方集成中摄取数据。
+
+一个关键的技术细节是使用 Elasticsearch 查询语言（ES|QL）执行跨集群搜索。例如，调查在 Windows 终端上检测到的凭证盗窃的分析师可以转向云提供商日志（AWS CloudTrail、Azure Activity Logs）以检查从被泄露身份发出的后续 API 调用。该平台还显示了来自网络分析工具（如 Zeek 和 Suricata）的相关警报，Elastic 可以原生摄取这些工具的数据。
+
+文章强调，XDR 相关引擎不仅仅依赖于预建的检测规则。相反，它提供了与给定实体（主机、用户、IP 地址或云资源）相关的所有事件的时间线视图，允许手动重建攻击链。Elastic Security Labs 指出，这对于涉及“岛屿跳跃”的事件特别有用——攻击者从终端移动到云服务再到 SaaS 应用程序——这是在供应链和基于身份的攻击中越来越多观察到的模式。
+
+## 缓解措施与建议
+
+使用 Elastic Security 的防御者应确保他们的 Elastic Agent 车队配置为从所有相关数据源收集日志，包括云提供商 API、网络传感器和身份提供者。平台的价值随着数据广度的增加而增加；部分覆盖可能会在跨环境调查工作流程中留下盲点。Elastic 建议启用预建的集成包，用于 AWS、Azure、GCP 和常见 SaaS 平台（Office 365、Google Workspace），以最大化相关性保真度。
+
+## 参考资料
+
+- [使用 Elastic Security XDR 从终端跨环境调查](https://www.elastic.co/security-labs/investigating-from-the-endpoint-across-your-environment)
