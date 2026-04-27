@@ -1,0 +1,42 @@
+---
+title: 假冒 CAPTCHA IRSF 诈骗通过 Keitaro 活动推动短信欺诈
+slug: 2026-04-27-fake-captcha-irsf-scam-drives-sms-fraud-via-keitaro-campaigns
+date: '2026-04-27'
+excerpt: Infoblox 揭露使用假冒 CAPTCHAs 的 IRSF 诈骗，诱骗用户发送付费短信；120+ Keitaro 流量分发活动助力全球加密和短信欺诈。
+category: threat-intel
+tags:
+  - irsf
+  - keitaro
+  - sms-fraud
+  - captcha-scam
+  - infoblox
+  - telecom-fraud
+language: zh
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/fake-captcha-irsf-scam-and-120-keitaro.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-fake-captcha-irsf-scam-drives-sms-fraud-via-keitaro-campaigns
+severity: high
+affected_sectors:
+  - telecommunications
+  - mobile users
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+Infoblox的研究人员详细描述了一个电信诈骗活动，该活动利用假冒CAPTCHA验证页面诱骗用户发送高额国际短信，为运营商创造非法收入。Infoblox将这场活动描述为国际收入共享欺诈（IRSF）计划，与使用Keitaro流量分配系统（TDS）的120多个活动相关联。该操作针对全球移动用户，利用对CAPTCHA提示的信任，授权在用户不知情的情况下发送昂贵的短信。
+
+## 技术分析
+
+根据Infoblox报告引用The Hacker News的说法，诈骗始于用户访问一个被破坏或恶意网站，该网站展示了一个假冒的CAPTCHA挑战。CAPTCHA页面不是验证用户是否为人类，而是执行一个脚本，触发从用户的移动设备发送国际短信。消息被路由到威胁行为者租用的高额号码，然后他们收集运营商费用的一部分。Infoblox识别出超过120个不同的活动使用Keitaro TDS，这是一个合法但被广泛滥用的流量路由平台，将受害者引导至这些欺诈性的CAPTCHA页面。TDS允许行为者旋转着陆页面，按地理位置或设备类型过滤，并逃避取缔尝试。该计划是更广泛的短信和加密货币欺诈生态系统的一部分，相同的基础设施有时被重新用于加密钱包网络钓鱼或SIM交换攻击。
+
+## 缓解措施与建议
+
+移动用户应对意外的CAPTCHA提示保持警惕，特别是在非标准网站或那些请求电话号码输入的网站。Infoblox建议运营商监控来自个人用户国际短信流量的异常激增，并实施限制或阻止高额短信代码。企业应教育员工了解这种社会工程向量，因为用于工作的移动设备可能会使企业计费系统暴露于IRSF收费。防御者还可以使用威胁情报源跟踪Keitaro TDS域和已知的欺诈性CAPTCHA页面模式。
+
+## 参考资料
+
+- [The Hacker News: Fake CAPTCHA IRSF Scam and 120 Keitaro Campaigns Drive Global SMS, Crypto Fraud](https://thehackernews.com/2026/04/fake-captcha-irsf-scam-and-120-keitaro.html)

@@ -1,0 +1,45 @@
+---
+title: Fake CAPTCHA IRSF Scam Drives SMS Fraud via Keitaro Campaigns
+slug: 2026-04-27-fake-captcha-irsf-scam-drives-sms-fraud-via-keitaro-campaigns
+date: '2026-04-27'
+excerpt: >-
+  Infoblox uncovers IRSF scam using fake CAPTCHAs to trick users into sending
+  premium SMS; 120+ Keitaro traffic distribution campaigns enable global crypto
+  and SMS fraud.
+category: threat-intel
+tags:
+  - irsf
+  - keitaro
+  - sms-fraud
+  - captcha-scam
+  - infoblox
+  - telecom-fraud
+language: en
+source_urls:
+  - >-
+    https://thehackernews.com/2026/04/fake-captcha-irsf-scam-and-120-keitaro.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-fake-captcha-irsf-scam-drives-sms-fraud-via-keitaro-campaigns
+severity: high
+affected_sectors:
+  - telecommunications
+  - mobile users
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Researchers at Infoblox have detailed a telecommunications fraud campaign that leverages fake CAPTCHA verification pages to trick users into sending premium-rate international SMS messages, generating illicit revenue for the operators. The campaign, which Infoblox describes as an International Revenue Share Fraud (IRSF) scheme, is linked to over 120 campaigns using the Keitaro traffic distribution system (TDS). The operation targets mobile users globally, exploiting the trust in CAPTCHA prompts to authorize costly text messages without user awareness.
+
+## Technical Analysis
+
+According to an Infoblox report cited by The Hacker News, the scam begins when a user visits a compromised or malicious website that presents a fake CAPTCHA challenge. Instead of verifying the user is human, the CAPTCHA page executes a script that triggers the sending of an international SMS from the user's mobile device. The message is routed to a premium-rate number leased by the threat actors, who then collect a share of the carrier fees. Infoblox identified over 120 distinct campaigns using the Keitaro TDS, a legitimate but widely abused traffic routing platform, to direct victims to these fraudulent CAPTCHA pages. The TDS allows the actors to rotate landing pages, filter by geolocation or device type, and evade takedown attempts. The scheme is part of a broader ecosystem of SMS and cryptocurrency fraud, with the same infrastructure sometimes repurposed for crypto wallet phishing or SIM-swap attacks.
+
+## Mitigations & Recommendations
+
+Mobile users should be wary of unexpected CAPTCHA prompts, especially on non-standard sites or those requesting phone number input. Infoblox recommends that carriers monitor for unusual spikes in international SMS traffic from individual subscribers and implement rate-limiting or blocking of premium-rate shortcodes. Enterprises should educate employees about this social engineering vector, as mobile devices used for work may expose corporate billing systems to IRSF charges. Defenders can also track Keitaro TDS domains and known fraudulent CAPTCHA page patterns using threat intelligence feeds.
+
+## References
+
+- [The Hacker News: Fake CAPTCHA IRSF Scam and 120 Keitaro Campaigns Drive Global SMS, Crypto Fraud](https://thehackernews.com/2026/04/fake-captcha-irsf-scam-and-120-keitaro.html)
