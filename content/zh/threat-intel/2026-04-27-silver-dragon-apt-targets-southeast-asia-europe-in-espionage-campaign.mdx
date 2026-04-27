@@ -1,0 +1,64 @@
+---
+title: Silver Dragon APT 针对东南亚、欧洲进行间谍活动
+slug: >-
+  2026-04-27-silver-dragon-apt-targets-southeast-asia-europe-in-espionage-campaign
+date: '2026-04-27'
+excerpt: >-
+  Check Point Research 追踪到 Silver Dragon，一个与 APT41 有操作联系的中国对齐 APT
+  组织，针对东南亚和欧洲的政府和电信实体进行攻击，使用...
+category: threat-intel
+tags:
+  - silver-dragon
+  - apt41
+  - check-point-research
+  - southeast-asia
+  - europe
+  - espionage
+language: zh
+source_urls:
+  - >-
+    https://research.checkpoint.com/2026/silver-dragon-targets-organizations-in-southeast-asia-and-europe/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-27-silver-dragon-apt-targets-southeast-asia-europe-in-espionage-campaign
+severity: high
+threat_actor: Silver Dragon
+threat_actor_origin: China
+affected_sectors:
+  - government
+  - telecommunications
+affected_regions:
+  - Southeast Asia
+  - Europe
+---
+ARTICLE TITLE: 银龙APT针对东南亚和欧洲进行间谍活动
+
+ARTICLE BODY:
+## 执行摘要
+
+Check Point Research (CPR) 发现了一个以前未记录的与中国对齐的威胁组织，指定为 **银龙**，该组织正在积极对东南亚和欧洲的政府和电信组织进行间谍活动。根据CPR于2026年4月27日发布的分析，银龙在行动上与以前归因于 **APT41** 的活动有重叠，APT41是一个多产的国家赞助的中国网络间谍组织。该组织使用定制的恶意软件、凭证盗窃工具和复杂的横向移动技术来维持对目标网络的持久访问。CPR以中等信心评估，鉴于观察到的独特工具集和目标模式，银龙是中国更广泛威胁生态系统内的一个独特操作集群。
+
+## 技术分析
+
+CPR对银龙的调查始于2025年底在几个东南亚政府网络中检测到异常网络活动。根据公开可用的数据，该组织的初始访问向量仍然不清楚，但CPR注意到使用带有恶意附件的鱼叉式网络钓鱼电子邮件作为可能的入口方法，这与APT41的历史战术一致。
+
+一旦进入目标网络，银龙部署了一个CPR以前在公开报告中没有记录的定制后门。该后门使用HTTPS通过非标准端口建立加密的命令和控制（C2）通道，使其难以从合法网络流量中区分出来。CPR研究人员观察到后门与多个国家托管的C2基础设施进行通信，包括美国和新加坡。
+
+银龙还使用一个凭证盗窃工具，该工具旨在通过LSASS内存转储和键盘记录从Windows系统收集凭证。该工具使用进程注入技术来逃避端点安全产品的检测。CPR报告称，该组织利用本地二进制文件（LOLBins）如 `powershell.exe` 和 `wmic.exe` 进行横向移动，使用计划任务来维持持久性。
+
+该组织的目标似乎战略性地集中在涉及区域政策、国防和电信基础设施的实体上。CPR在至少三个东南亚国家和两个欧洲国家中识别出受害者，但由于正在进行的补救工作，研究人员没有指明具体组织。该活动似乎在2026年初仍然活跃，CPR观察到最近在2026年3月部署了新的C2基础设施。
+
+## 缓解措施与建议
+
+根据CPR的发现，防御者应优先考虑以下措施：
+
+- **监控不寻常的出站HTTPS连接** 到不熟悉的IP地址，特别是在非标准端口上。银龙的后门使用加密通道，如果没有深度数据包检查，可能看起来是良性的。
+- **限制LOLBins的使用**，如 `powershell.exe`、`wmic.exe` 和 `schtasks.exe` 仅限于授权的管理员用户，并启用通过Windows事件ID 4688和Sysmon记录它们的执行。
+- **实施凭证保护**，通过启用Windows Defender Credential Guard和限制LSASS访问管理员。监控事件ID 4663以获取对LSASS进程的可疑访问。
+- **进行网络钓鱼意识培训**，重点关注在此活动中观察到的特定诱饵主题，CPR指出这些主题经常涉及区域政治或经济话题。
+- **分割网络**，以限制横向移动的机会，特别是在用户工作站和关键服务器之间。
+
+## 参考资料
+
+- [Check Point Research: Silver Dragon Targets Organizations in Southeast Asia and Europe](https://research.checkpoint.com/2026/silver-dragon-targets-organizations-in-southeast-asia-and-europe/)

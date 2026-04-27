@@ -1,0 +1,41 @@
+---
+title: 移动应用权限仍然暴露用户隐私风险
+slug: 2026-04-27-mobile-app-permissions-still-expose-users-to-privacy-risks
+date: '2026-04-27'
+excerpt: ESET 分析显示 1/3 的 Android 应用请求不必要的权限 —— 位置、相机、麦克风 —— 使数据收集和监视成为可能。用户应该审计权限。
+category: industry
+tags:
+  - mobile-security
+  - app-permissions
+  - privacy
+  - android
+  - eset
+language: zh
+source_urls:
+  - >-
+    https://www.welivesecurity.com/en/mobile-security/mobile-app-permissions-still-matter-more-think/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-mobile-app-permissions-still-expose-users-to-privacy-risks
+severity: medium
+affected_sectors:
+  - consumer
+  - technology
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+ESET的WeLiveSecurity博客的新分析警告说，移动应用权限仍然是一个重大的隐私和安全风险，许多应用请求访问它们不需要的数据以正常工作。2026年4月27日发布的报告强调，盲目接受权限提示可能会使用户面临数据收集、监视和凭证盗窃的风险。ESET研究人员发现，大约三分之一的Android应用请求与其核心功能无关的权限——例如手电筒应用请求位置或麦克风访问权限。该帖子敦促用户将权限授予视为安全决策，而不是方便提示。
+
+## 技术分析
+
+ESET的分析检查了Android和iOS应用之间的常见模式，尽管详细的发现集中在Android上，因为它具有更细粒度的权限模型。研究人员识别了几类过度权限的应用：公用事业（手电筒、二维码扫描器）请求相机和位置；社交媒体应用要求联系人列表和通话记录；以及游戏访问麦克风和存储。报告指出，尽管Android 11+引入了未使用应用的自动重置权限，但许多用户仍然在未经审查的情况下授予永久访问权限。ESET引用了一个二维码扫描器的例子，它还请求读取和发送短信的权限——如果应用被破坏，这种组合可能会启用高级短信欺诈。该帖子没有指明特定的应用或版本，但描述了应用商店中系统性的风险。
+
+## 缓解措施与建议
+
+ESET建议用户采取默认拒绝的方法：只授予对应用声明功能明显必要的权限。在Android上，用户应该导航到设置>应用>[应用名称]>权限以撤销任何可疑的授权。对于iOS，隐私设置菜单提供了类似的控制。报告还建议启用Android的“自动重置权限”功能（设置>隐私）并定期审计权限仪表板。对于企业，ESET建议移动设备管理（MDM）政策，阻止安装请求高风险权限组合的应用，例如相机加麦克风加位置。
+
+## 参考资料
+
+* [移动应用权限（仍然）比你想象的更重要 — WeLiveSecurity (ESET)](https://www.welivesecurity.com/en/mobile-security/mobile-app-permissions-still-matter-more-think/)

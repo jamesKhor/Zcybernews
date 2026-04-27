@@ -1,0 +1,44 @@
+---
+title: Mobile App Permissions Still Expose Users to Privacy Risks
+slug: 2026-04-27-mobile-app-permissions-still-expose-users-to-privacy-risks
+date: '2026-04-27'
+excerpt: >-
+  ESET analysis shows 1 in 3 Android apps request unnecessary permissions —
+  location, camera, microphone — enabling data harvesting and surveillance.
+  Users should audit permissions.
+category: industry
+tags:
+  - mobile-security
+  - app-permissions
+  - privacy
+  - android
+  - eset
+language: en
+source_urls:
+  - >-
+    https://www.welivesecurity.com/en/mobile-security/mobile-app-permissions-still-matter-more-think/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-mobile-app-permissions-still-expose-users-to-privacy-risks
+severity: medium
+affected_sectors:
+  - consumer
+  - technology
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+A new analysis from ESET's WeLiveSecurity blog warns that mobile app permissions remain a significant privacy and security risk, with many apps requesting access to data they do not need to function. The report, published April 27, 2026, highlights that blindly accepting permission prompts can expose users to data harvesting, surveillance, and credential theft. ESET researchers found that approximately one in three Android apps request permissions unrelated to their core functionality — such as a flashlight app asking for location or microphone access. The post urges users to treat permission grants as security decisions, not convenience prompts.
+
+## Technical Analysis
+
+ESET's analysis examined common patterns across Android and iOS apps, though the detailed findings focus on Android due to its more granular permission model. The researchers identified several categories of over-permissioned apps: utilities (flashlights, QR scanners) requesting camera and location; social media apps demanding contact lists and call logs; and games accessing microphone and storage. The report notes that while Android 11+ introduced auto-reset permissions for unused apps, many users still grant permanent access without review. ESET cites the example of a QR scanner that also requests SMS read and send permissions — a combination that could enable premium SMS fraud if the app were compromised. The post does not name specific apps or versions, but describes the risk as systemic across app stores.
+
+## Mitigations & Recommendations
+
+ESET recommends users adopt a deny-by-default approach: only grant permissions that are clearly necessary for the app's stated function. On Android, users should navigate to Settings > Apps > [App Name] > Permissions to revoke any suspicious grants. For iOS, the Privacy settings menu offers similar controls. The report also advises enabling Android's "Auto-reset permissions" feature (Settings > Privacy) and regularly auditing the permission dashboard. For enterprises, ESET suggests mobile device management (MDM) policies that block installation of apps requesting high-risk permission combinations, such as camera plus microphone plus location.
+
+## References
+
+* [Mobile app permissions (still) matter more than you may think — WeLiveSecurity (ESET)](https://www.welivesecurity.com/en/mobile-security/mobile-app-permissions-still-matter-more-think/)
