@@ -1,0 +1,43 @@
+---
+title: 'BHIS Guide: OSINT Collection, Analysis, and Operational Security'
+slug: 2026-04-27-bhis-guide-osint-collection-analysis-and-operational-security
+date: '2026-04-27'
+excerpt: >-
+  Black Hills InfoSec published a practical guide to OSINT — covering collection
+  methods, analysis frameworks, and operational security controls to protect
+  analysts from exposure.
+category: tools
+tags:
+  - osint
+  - open-source-intelligence
+  - black-hills-information-security
+  - threat-intelligence
+  - operational-security
+language: en
+source_urls:
+  - >-
+    https://www.blackhillsinfosec.com/osint-how-to-find-use-and-control-open-source-intelligence/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-bhis-guide-osint-collection-analysis-and-operational-security
+severity: informational
+---
+## Executive Summary
+
+Black Hills Information Security (BHIS) published a comprehensive guide on open-source intelligence (OSINT), covering the full lifecycle from collection to operational security. The guide, authored by the BHIS team, defines OSINT as publicly available information obtained without special access requirements such as paywalls or invitations. It emphasizes that OSINT is not merely data gathering but a structured process requiring disciplined analysis and protective measures for the analyst.
+
+## Technical Analysis
+
+The BHIS guide breaks OSINT into three core phases: collection, analysis, and operational security. Collection involves harvesting data from public sources including social media, government records, corporate websites, and technical infrastructure like DNS records and SSL certificates. The guide notes that automated scraping tools must respect rate limits and terms of service to avoid legal or account repercussions.
+
+Analysis applies structured analytic techniques — such as link analysis, timeline construction, and hypothesis testing — to transform raw data into actionable intelligence. BHIS stresses that confirmation bias is a primary failure mode; analysts should actively seek disconfirming evidence.
+
+Operational security receives particular attention. The guide advises using dedicated virtual machines, VPNs, and burner accounts to prevent the analyst's identity or location from being exposed. BHIS warns that adversaries monitor OSINT activity and may retaliate against exposed researchers. Specific recommendations include compartmentalizing research by project and never using personal credentials for OSINT work.
+
+## Mitigations & Recommendations
+
+Defenders conducting OSINT should implement the operational security controls outlined in the guide: use isolated environments (VMs or dedicated hardware), route traffic through trusted VPNs or Tor, and create role-specific accounts with no ties to personal identity. Organizations should formalize OSINT policies that define acceptable sources, data retention limits, and disclosure procedures. BHIS also recommends regular training to keep analysts current on legal boundaries and emerging collection techniques.
+
+## References
+
+- [OSINT: How to Find, Use, and Control Open-Source Intelligence — Black Hills Information Security](https://www.blackhillsinfosec.com/osint-how-to-find-use-and-control-open-source-intelligence/)
