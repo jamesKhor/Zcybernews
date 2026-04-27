@@ -1,0 +1,46 @@
+---
+title: 深度伪造声音攻击超越防御，绕过MFA
+slug: 2026-04-27-deepfake-voice-attacks-outpace-defenses-bypass-mfa
+date: '2026-04-27'
+excerpt: Adaptive Security发现3秒钟的音频足以克隆声音进行欺诈；在一例中，深度伪造电话欺骗员工汇款243K美元。没有检测工具捕捉到这次攻击。
+category: industry
+tags:
+  - deepfake
+  - voice-cloning
+  - social-engineering
+  - mfa-bypass
+  - vishing
+  - adaptive-security
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/deepfake-voice-attacks-are-outpacing-defenses-what-security-leaders-should-know/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-deepfake-voice-attacks-outpace-defenses-bypass-mfa
+severity: high
+affected_sectors:
+  - financial services
+  - enterprise
+affected_regions:
+  - North America
+---
+## 执行摘要
+
+Adaptive Security 的一项新分析显示，深度伪造语音克隆技术已经发展到只需三秒钟的音频就足以生成一个令人信服的语音复制品，使欺诈者能够绕过基于语音的多因素认证（MFA），并诱使员工授权欺诈性电汇转账。在一个记录在案的事件中，一个冒充公司高管的深度伪造电话导致了243,000美元的损失。根据该公司与BleepingComputer分享的报告，没有现有的检测工具将该电话标记为异常。
+
+## 技术分析
+
+Adaptive Security 的研究基于事件响应参与和受控测试，表明现代语音克隆模型——包括那些通过开源框架和商业API可用的模型——可以从语音邮件问候、电话会议或社交媒体剪辑中刮取的源音频中，仅用三秒钟就能制作出高保真度的克隆。然后，克隆的声音通过使用语音IP（VoIP）基础设施注入实时电话通话，通常音高、节奏和情感语调与目标匹配。
+
+攻击链通常以侦察开始：攻击者从公开可用的来源或被破坏的电子邮件线程中收集音频样本。然后他们使用一个生成性的AI模型来合成目标的声音，并向受害者——通常是财务或应付账款——打电话，冒充高级管理人员或可信供应商。电话指示受害者发起电汇或批准付款，绕过传统的回拨验证，因为来电显示和声音与预期的联系人匹配。
+
+Adaptive Security 指出，依赖说话人验证的基于语音的MFA系统在他们的测试中未能检测到深度伪造，因为合成的声音在可接受的置信阈值内匹配了注册的声音印记。该公司还发现，当前的异常检测工具——无论是商业的还是定制的——都缺乏区分深度伪造音频和合法录音的声学指纹识别能力。
+
+## 缓解措施与建议
+
+Adaptive Security 建议组织对任何通过语音请求的财务交易或敏感操作实施带外验证。这包括通过一个单独的通信渠道进行的二次确认——例如预先建立的短信、专用应用通知，或回拨到已知号码——不单独依赖语音生物识别。该公司还建议限制高管语音样本的公开曝光，培训财务团队识别和质疑紧急付款请求，并部署行为分析以标记请求模式的偏差，而不是仅依赖语音认证。
+
+## 参考资料
+
+- [深度伪造语音攻击正在超越防御：安全领导者应该知道什么 - BleepingComputer](https://www.bleepingcomputer.com/news/security/deepfake-voice-attacks-are-outpacing-defenses-what-security-leaders-should-know/)
