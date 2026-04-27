@@ -1,10 +1,10 @@
 {
   "tag": "ddos",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-04-23"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Mirai"
@@ -20,20 +20,25 @@
     }
   ],
   "top_sectors": [
-    "social media"
+    "internet infrastructure",
+    "social media",
+    "telecommunications"
   ],
   "top_regions": [
-    "Global"
+    "Canada",
+    "Germany",
+    "Global",
+    "United states"
   ],
   "severity_mix": {
-    "high": 2,
+    "high": 3,
     "medium": 3,
     "informational": 1
   },
   "recent_excerpts": [
+    "US DOJ, Canada, and Germany dismantled four IoT botnets — Aisuru, Kimwolf, JackSkid, Mossad — compromising 3M+ devices, enabling record-breaking DDoS attacks.",
     "Mirai botnet operators exploit CVE-2025-29635, a CVSS 8.8 command injection flaw in end-of-life D-Link DIR-823X routers, to deploy malware and launch DDoS attacks.",
-    "A new Mirai botnet variant, 'Nexcorium,' is exploiting a command injection flaw (CVE-2024-3721) in TBK DVRs and end-of-life TP-Link routers to conscript devices into a distributed denial-of-service (D",
-    "The decentralized social network Mastodon mitigated a major DDoS attack on April 22, 2026, causing a multi-hour outage for users."
+    "A new Mirai botnet variant, 'Nexcorium,' is exploiting a command injection flaw (CVE-2024-3721) in TBK DVRs and end-of-life TP-Link routers to conscript devices into a distributed denial-of-service (D"
   ],
-  "sources_hash": "3c3364874be2ade3"
+  "sources_hash": "7d99bd794f75ef44"
 }

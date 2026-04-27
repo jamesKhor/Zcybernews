@@ -1,15 +1,15 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "count": 14,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [
+    "APT33",
     "CyberAv3ngers",
-    "Lotus Wiper",
-    "Sandworm"
+    "Lotus Wiper"
   ],
   "top_cves": [
     {
@@ -20,27 +20,27 @@
   "top_sectors": [
     "energy",
     "critical-infrastructure",
-    "manufacturing",
     "utilities",
-    "critical infrastructure"
+    "manufacturing",
+    "water"
   ],
   "top_regions": [
     "United states",
-    "Asia-pacific",
     "Europe",
-    "Global",
-    "North america"
+    "North america",
+    "Asia-pacific",
+    "Global"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 9,
     "critical": 2,
     "informational": 3,
     "medium": 1
   },
   "recent_excerpts": [
+    "Itron 在 SEC 8-K 文件中披露了一起网络安全事件：未经授权的第三方访问了内部IT系统。",
     "Dark Reading 报告称攻击者正在操纵电压以破坏电网 —— 这是一个日益增长的网络物理威胁向量，针对没有补丁的电力基础设施进行攻击…",
-    "Locked Shields 2026涉及41个国家参与最大的实弹网络防御演习，测试对关键基础设施攻击的响应，包括电网和电信…",
-    "ZDI披露了CVE-2026-24032，这是一个7.3-CVSS认证绕过漏洞，存在于西门子SINEC NMS中，无需认证即可利用。影响工业网络管理系统。"
+    "Locked Shields 2026涉及41个国家参与最大的实弹网络防御演习，测试对关键基础设施攻击的响应，包括电网和电信…"
   ],
-  "sources_hash": "27b5b802d28d5f66"
+  "sources_hash": "e9650bdda4d6ecc0"
 }

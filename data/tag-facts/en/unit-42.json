@@ -1,33 +1,36 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-22",
     "latest": "2026-04-26"
   },
   "top_actors": [
+    "TeamPCP",
     "TGR-STA-1030"
   ],
   "top_cves": [],
   "top_sectors": [
+    "software development",
     "technology",
     "enterprise",
-    "software development",
     "cloud service providers",
     "cloud-services"
   ],
   "top_regions": [
     "Central america",
+    "Global",
     "South america"
   ],
   "severity_mix": {
-    "high": 6
+    "high": 6,
+    "critical": 1
   },
   "recent_excerpts": [
     "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
     "Palo Alto Unit 42 outlines defensive strategies for frontier AI threats — model poisoning, prompt injection, and data leakage — in response to top customer queries.",
-    "Unit 42 reports threat actors exploiting Kubernetes identities and critical vulnerabilities to compromise cloud environments, with attacks targeting misconfigured RBAC and exposed…"
+    "Unit 42 reports TeamPCP has partnered with Vect ransomware group to target security software vendors in multi-stage supply chain attacks, compromising trusted update mechanisms."
   ],
-  "sources_hash": "88e4369b0fad64e4"
+  "sources_hash": "9fd0092e7f2d6c19"
 }

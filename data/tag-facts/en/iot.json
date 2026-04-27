@@ -1,10 +1,10 @@
 {
   "tag": "iot",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-23"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Mirai"
@@ -32,22 +32,26 @@
     }
   ],
   "top_sectors": [
-    "individuals",
-    "logistics",
-    "residential",
     "telecommunications",
-    "transportation"
+    "individuals",
+    "internet infrastructure",
+    "logistics",
+    "residential"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Canada",
+    "Germany",
+    "United states"
+  ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "US DOJ, Canada, and Germany dismantled four IoT botnets — Aisuru, Kimwolf, JackSkid, Mossad — compromising 3M+ devices, enabling record-breaking DDoS attacks.",
     "Mirai botnet operators exploit CVE-2025-29635, a CVSS 8.8 command injection flaw in end-of-life D-Link DIR-823X routers, to deploy malware and launch DDoS attacks.",
-    "CVE-2026-5057, with a CVSS score of 7.5, exposes ATEN Unizon to unauthenticated denial-of-service attacks via its RPC service, allowing remote attackers to crash the device management platform.",
-    "A stack-based buffer overflow vulnerability (CVE-2026-4682) in the HP DeskJet 2855e printer allows network-adjacent attackers to execute arbitrary code without authentication, earning a CVSS score of"
+    "CVE-2026-5057, with a CVSS score of 7.5, exposes ATEN Unizon to unauthenticated denial-of-service attacks via its RPC service, allowing remote attackers to crash the device management platform."
   ],
-  "sources_hash": "2573dc7d91ac01b5"
+  "sources_hash": "0c1f0db092886c4a"
 }

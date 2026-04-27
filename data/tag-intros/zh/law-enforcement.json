@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "intro": "在2026年4月12日至4月24日期间发布的18篇以上文章详细描述了在执法标签下的一段集中高严重性活动。其中14篇报告被归类为高严重性，3篇为中等严重性，1篇为信息性。观察到的威胁行为者包括Scattered Spider、BlackCat (ALPHV)和W3LL。受影响的行业涵盖政府、电信、加密货币、执法以及美国、北美、加拿大、欧洲和佛罗里达州的企业实体。",
-  "sources_hash": "4e16e35d63263291",
-  "source_intro_hash": "10954c529d4706a6",
+  "intro": "在2026年4月12日至4月26日期间发布的19篇报道中，ZCyberNews追踪了15起标记为执法行动的高严重性事件。威胁行为者Scattered Spider、BlackCat (ALPHV)和W3LL被观察到针对政府、电信、加密货币、执法及企业领域。受影响地区包括美国、加拿大、北美、欧洲及佛罗里达州。报道内容还涵盖了三起中等严重性事件及一份信息性报告。",
+  "sources_hash": "02db16bd21e34416",
+  "source_intro_hash": "1cbe3da105b972cd",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:03:42.726Z",
+  "generated_at": "2026-04-27T04:20:25.982Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

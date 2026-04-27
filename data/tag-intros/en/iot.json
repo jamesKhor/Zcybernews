@@ -1,9 +1,9 @@
 {
   "tag": "iot",
   "locale": "en",
-  "intro": "The residential and transportation sectors were primary targets in a recent wave of IoT threats, which also impacted individuals, logistics, and telecommunications. Analysis of nine reports from late April 2026 reveals a severity mix of two critical, four high, and three medium incidents. The Mirai threat actor was active, exploiting vulnerabilities including CVE-2025-29635, CVE-2026-22898, and CVE-2026-4682, all with a CVSS score of 8.8. Additional leveraged flaws were CVE-2026-5057 (7.5) and CVE-2024-3721 (6.3).",
-  "sources_hash": "2573dc7d91ac01b5",
+  "intro": "Telecommunications, individual users, and internet infrastructure across Canada, Germany, and the United States were the primary targets in a recent wave of IoT-focused attacks. Over ten days in April 2026, ZCyberNews documented ten incidents linked to the Mirai threat actor. Key vulnerabilities exploited included CVE-2025-29635, CVE-2026-22898, CVE-2026-4682, CVE-2026-5057, and CVE-2024-3721, with the severity mix comprising two critical, five high, and three medium alerts. The logistics and residential sectors also faced significant exposure.",
+  "sources_hash": "0c1f0db092886c4a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:08:24.552Z",
+  "generated_at": "2026-04-27T04:18:30.433Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

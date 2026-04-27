@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 65,
+  "count": 68,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Lazarus Group",
@@ -42,15 +42,15 @@
     "China"
   ],
   "severity_mix": {
-    "high": 41,
-    "critical": 9,
-    "informational": 4,
-    "medium": 10
+    "critical": 10,
+    "medium": 11,
+    "high": 42,
+    "informational": 4
   },
   "recent_excerpts": [
-    "The CanisterSprawl supply chain worm hijacks npm packages, uses stolen developer tokens to self-propagate, and exfiltrates data to an ICP canister, according to Socket and…",
-    "Attackers compromised Checkmarx KICS Docker images and VS Code extensions to steal cloud credentials, API keys, and source code from developer environments.",
-    "Threat actors uploaded malicious Docker images to Checkmarx's official KICS repository and published trojanized VS Code extensions, stealing AWS keys and browser data from…"
+    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…",
+    "ESET's Tony Anscombe warns that March 2026 attacks — including ransomware, supply chain compromises, and AI-driven phishing — reveal systemic gaps in organizational…",
+    "Itron disclosed a cybersecurity incident in an SEC 8-K filing: an unauthorized third party accessed internal IT systems."
   ],
-  "sources_hash": "1a362c2c5f6ca892"
+  "sources_hash": "8c09e1129e55f92e"
 }

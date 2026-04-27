@@ -1,39 +1,40 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "count": 19,
+  "count": 21,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "GopherWhisper",
+    "Handala Hack",
     "LockBit"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
+    "financial services",
     "technology",
     "critical-infrastructure",
-    "cybersecurity",
-    "defense"
+    "cybersecurity"
   ],
   "top_regions": [
     "Asia",
     "Europe",
     "Global",
-    "North america",
-    "United kingdom"
+    "Iran",
+    "North america"
   ],
   "severity_mix": {
     "informational": 8,
-    "high": 8,
-    "medium": 1
+    "high": 9,
+    "medium": 2
   },
   "recent_excerpts": [
     "Elastic Security Labs 为英国国防部的防御网络 Marvel 2026 演习部署了 AI 驱动的检测流程，处理了 1.2TB 的遥测数据，涉及 50 个模拟的...",
     "Rapid7 5月12-13日峰会议程揭示了行业从反应式防御向预防性安全运营的转变，包括有关AI驱动的威胁狩猎和自主的会议...",
     "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。"
   ],
-  "sources_hash": "2b6892bdefbc1d80"
+  "sources_hash": "759f088b9f3e3205"
 }

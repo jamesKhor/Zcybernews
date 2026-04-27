@@ -1,0 +1,30 @@
+{
+  "tag": "persistence",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-26"
+  },
+  "top_actors": [
+    "VoidLink"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "multiple",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Elastic Security Labs 解析 VoidLink，这是一个 Linux rootkit 框架，它融合了 Loadable Kernel Modules 与 eBPF 钩子，以规避检测并保持隐蔽的持久性在…",
+    "新发现的基于 Rust 的远程访问木马（RAT）工具包 SpankRAT，滥用 Windows Explorer 进程来绕过基于声誉的安全措施，并维持对被入侵系统的持续、低检测访问。",
+    "威胁行为者部署 VIPERTUNNEL，一个 Python 后门，使用假 DLL 和多阶段混淆加载器来建立隐蔽的 SOCKS5 代理隧道，以实现持久的网络访问。"
+  ],
+  "sources_hash": "b09c516922b9a105"
+}

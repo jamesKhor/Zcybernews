@@ -1,39 +1,39 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "count": 23,
+  "count": 24,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-21"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "Pushpaganda"
   ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "critical_infrastructure",
     "finance",
-    "government",
-    "manufacturing",
-    "technology"
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "United states",
     "Asia",
     "Australia",
     "Canada",
-    "Japan"
+    "Global"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "informational": 10,
     "critical": 1,
     "medium": 3
   },
   "recent_excerpts": [
+    "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…",
     "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。",
-    "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。",
-    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。"
+    "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。"
   ],
-  "sources_hash": "2311434ca2a1239f"
+  "sources_hash": "80b628c51e5d841c"
 }

@@ -1,0 +1,10 @@
+{
+  "tag": "npm",
+  "locale": "zh",
+  "intro": "2026年4月21日至26日期间，ZCyberNews追踪到七篇与npm标签相关的文章，严重程度分布为四篇关键级和三篇高危级。观察到的主要威胁行为者为CanisterSprawl，影响全球软件开发和技术行业。这些事件凸显了npm生态系统中持续存在的风险，要求依赖该包注册表的开发者和组织保持警惕。",
+  "sources_hash": "bb461997b804f6e2",
+  "source_intro_hash": "1c3989895e7b1dd0",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-27T04:20:33.099Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

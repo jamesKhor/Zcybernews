@@ -1,10 +1,10 @@
 {
   "tag": "enterprise-security",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [
@@ -30,15 +30,15 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "informational": 2,
     "medium": 1,
     "critical": 4
   },
   "recent_excerpts": [
+    "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…",
     "The Hacker News 报道 AI 代理创建了一个结构性安全缺口：委托的行动者缺乏持续的监督，使得横向移动和权限提升无需人类…",
-    "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。",
-    "SecurityWeek 认为，从代码生成器到决策系统，自主代理需要新的防御模型，因为它们在没有人类干预的情况下行动。"
+    "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。"
   ],
-  "sources_hash": "7080a946ad9e58c5"
+  "sources_hash": "602d8dbea1b6c513"
 }

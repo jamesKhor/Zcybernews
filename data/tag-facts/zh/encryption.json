@@ -1,30 +1,32 @@
 {
   "tag": "encryption",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Kyber"
   ],
   "top_cves": [],
   "top_sectors": [
+    "government",
     "technology",
     "all",
-    "government",
-    "social media",
-    "telecommunications"
+    "critical infrastructure",
+    "defense"
   ],
   "top_regions": [
     "Global",
+    "Iran",
+    "Middle east",
     "United kingdom",
     "United states"
   ],
   "severity_mix": {
     "medium": 3,
-    "high": 2,
+    "high": 3,
     "informational": 4,
     "critical": 1
   },
@@ -33,5 +35,5 @@
     "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。",
     "英国监管机构 Ofcom 对 Telegram 展开正式调查，因为有证据显示 Telegram 分享儿童性虐待材料（CSAM）以及可能违反在线安全法的加密报告规则。"
   ],
-  "sources_hash": "526d56bf30b56dba"
+  "sources_hash": "988821345ceeb409"
 }

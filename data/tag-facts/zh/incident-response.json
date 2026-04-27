@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "zh",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [],
   "top_cves": [
@@ -27,14 +27,14 @@
     "Venezuela"
   ],
   "severity_mix": {
+    "high": 4,
     "critical": 2,
-    "high": 3,
     "medium": 1
   },
   "recent_excerpts": [
-    "Rapid7 IR 确认 CVE-2025-59718 —— 一个 9.8-CVSS FortiGate SSO 绕过 —— 被活跃利用，使攻击者能够在未打补丁的设备上获得持久的管理员访问权限。",
-    "Vercel 识别到与 Context.ai 违规相关的更多被入侵客户账户，通过新的指标和网络请求审查扩大调查。",
-    "Lotus Wiper 恶意软件针对委内瑞拉国有能源公司 PDVSA，通过覆盖驱动器和删除文件破坏数据，在美国领导的干预行动之前，即 2026 年 3 月。"
+    "Black Hills InfoSec 详细说明了如何将陈旧的网络安全桌面演练转变为沉浸式的场景模拟，以测试真实的事件响应决策。",
+    "卡巴斯基2026年全球报告发现，勒索软件潜伏时间在2025年从5天降至3.5天，因为攻击者加快了加密速度。",
+    "Rapid7 IR 确认 CVE-2025-59718 —— 一个 9.8-CVSS FortiGate SSO 绕过 —— 被活跃利用，使攻击者能够在未打补丁的设备上获得持久的管理员访问权限。"
   ],
-  "sources_hash": "4a1794357200d808"
+  "sources_hash": "a3e503446d1585e4"
 }

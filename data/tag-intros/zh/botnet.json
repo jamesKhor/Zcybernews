@@ -1,10 +1,10 @@
 {
   "tag": "botnet",
   "locale": "zh",
-  "intro": "2026年4月14日至23日期间，ZCyberNews发布了九篇追踪僵尸网络活动的文章。其中威胁行为者Mirai、The Gentlemen和W3LL的活动尤为显著，它们利用了包括CVE-2025-29635（CVSS 8.8）、CVE-2024-3721（CVSS 6.3）和CVE-2023-33538在内的多个漏洞。这些攻击活动主要针对企业、金融和科技领域，同时对住宅网络及其他多个行业也造成了显著影响。从地理分布看，事件范围从集中于捷克共和国到全球性行动均有涉及。所报告事件的严重程度普遍偏高，其中六份报告为高危级别，两份为中危，一份为严重级别。",
-  "sources_hash": "d21fb4c091845aac",
-  "source_intro_hash": "6809cf1c751051e2",
+  "intro": "在2026年4月14日至4月26日期间，ZCyberNews通过十篇系列文章报道了涉及七起高严重性事件的僵尸网络活动。观察到威胁行为者Mirai、The Gentlemen和W3LL，其利用行为与CVE-2025-29635（CVSS 8.8）、CVE-2024-3721（CVSS 6.3）及CVE-2023-33538相关。受影响行业包括电信、企业、金融及互联网基础设施，影响范围覆盖加拿大、捷克共和国、德国、美国及全球多地。",
+  "sources_hash": "6d22ea37ba049d28",
+  "source_intro_hash": "4dfe922a67873e1b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:09:49.302Z",
+  "generated_at": "2026-04-27T04:19:59.015Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

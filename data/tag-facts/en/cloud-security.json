@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "count": 18,
+  "count": 21,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "APT41"
@@ -17,24 +17,24 @@
   ],
   "top_sectors": [
     "technology",
-    "cloud services",
-    "cloud-services",
     "government",
-    "healthcare"
+    "healthcare",
+    "cloud services",
+    "cloud-services"
   ],
   "top_regions": [
     "Global",
     "Israel"
   ],
   "severity_mix": {
-    "high": 11,
+    "high": 12,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
-    "Elastic Security Labs released nine new integrations for cloud, endpoint, email, identity, and SIEM use cases in Q1 2026, expanding detection coverage for AWS, Azure, and Google…",
-    "Copperhelm, an Israel-based startup founded by ex-RSA and McAfee engineers, raised $7 million in seed funding for an agentic AI platform that autonomously hunts cloud…",
-    "Palo Alto Networks researchers built Zealot, a multi-agent AI penetration testing PoC that autonomously performs reconnaissance, exploitation, and data exfiltration on cloud…"
+    "BHIS released a cloud security guide covering IAM misconfigurations, shared responsibility gaps, and logging blind spots — essential reading for teams securing AWS, Azure, or GCP…",
+    "Elastic Security XDR now correlates endpoint telemetry with cloud and network data, enabling analysts to trace multi-stage attacks across hybrid environments in a single query…",
+    "ESET warns that misconfigured cloud VMs—overprivileged IAM roles, exposed management ports, and unpatched OS images—create systemic security gaps across enterprise environments."
   ],
-  "sources_hash": "ed356c8154d842d8"
+  "sources_hash": "dd5d4ada791d49f7"
 }

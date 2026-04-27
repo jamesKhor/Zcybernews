@@ -1,33 +1,38 @@
 {
   "tag": "rat",
   "locale": "zh",
-  "count": 9,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-20"
+    "latest": "2026-04-26"
   },
   "top_actors": [
+    "CrystalX",
     "Mirax",
     "REF6598"
   ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
-    "financial-services"
+    "financial-services",
+    "software development",
+    "technology"
   ],
   "top_regions": [
     "Europe",
+    "Global",
     "Latin america",
     "Spain",
     "Turkey"
   ],
   "severity_mix": {
-    "high": 9
+    "critical": 1,
+    "high": 10
   },
   "recent_excerpts": [
-    "在两个不同的活动中，威胁行为者使用开源 QEMU 机器模拟器加载和执行勒索软件和远程访问工具，通过在受信任的虚拟化进程中运行恶意代码来绕过端点检测。",
-    "Mirax Android RAT 通过 Meta 广告感染了超过 220,000 用户，将受感染的设备变成 SOCKS5 代理，供威胁行为者路由恶意流量并从讲西班牙语的受害者那里窃取数据。",
-    "威胁行为者滥用 Obsidian 笔记应用通过恶意插件投递新型 PHANTOMPULSE RAT，针对金融和加密货币领域的个人进行攻击，此次行动被追踪为 REF6598。"
+    "Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游...",
+    "卡巴斯基详细描述了 CrystalX RAT，这是一种自 2025 年中以来针对全球 Windows 用户的 MaaS 恶意软件，具有间谍软件、凭证盗窃和恶作剧软件功能。",
+    "在两个不同的活动中，威胁行为者使用开源 QEMU 机器模拟器加载和执行勒索软件和远程访问工具，通过在受信任的虚拟化进程中运行恶意代码来绕过端点检测。"
   ],
-  "sources_hash": "c29c3f0c042c256e"
+  "sources_hash": "4175247c5dd2149e"
 }

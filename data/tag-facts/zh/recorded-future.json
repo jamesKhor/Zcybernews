@@ -1,0 +1,38 @@
+{
+  "tag": "recorded-future",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-22",
+    "latest": "2026-04-26"
+  },
+  "top_actors": [
+    "Cobalt Strike",
+    "LockBit"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "e-commerce",
+    "enterprise",
+    "government",
+    "retail"
+  ],
+  "top_regions": [
+    "Caribbean",
+    "China",
+    "Global",
+    "Latin america",
+    "Southeast asia"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。",
+    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。",
+    "Recorded Future 的 Insikt Group 绘制了一个成熟的拉丁美洲网络犯罪生态系统地图：RaaS 附属机构、加密欺诈团伙以及针对金融和政府的定向网络钓鱼攻击…"
+  ],
+  "sources_hash": "5927a04d0ad8671b"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "GopherWhisper",
@@ -17,22 +17,22 @@
     "cryptocurrency",
     "energy",
     "technology",
-    "healthcare"
+    "business services"
   ],
   "top_regions": [
+    "Japan",
     "Mongolia",
     "Asia",
     "Bangladesh",
-    "Central america",
-    "East asia"
+    "Central america"
   ],
   "severity_mix": {
-    "high": 13
+    "high": 14
   },
   "recent_excerpts": [
     "Lotus Wiper 恶意软件针对委内瑞拉国有能源公司 PDVSA，通过覆盖驱动器和删除文件破坏数据，在美国领导的干预行动之前，即 2026 年 3 月。",
-    "ESET 发现与中国对齐的 APT GopherWhisper 针对蒙古政府机构使用基于 Go 的定制恶意软件，利用合法服务进行 C2。",
-    "中国政府支持的 Tropic Trooper 正在破坏家用路由器作为代理据点，以渗透日本组织，转向新的 TTPs 和受害者行业。"
+    "ESET 详细描述 Silver Fox APT 针对日本公司，使用以税务为主题的网络钓鱼邮件，在税务季节通过武器化的 Excel 附件传递恶意软件。",
+    "ESET 发现与中国对齐的 APT GopherWhisper 针对蒙古政府机构使用基于 Go 的定制恶意软件，利用合法服务进行 C2。"
   ],
-  "sources_hash": "6b63d03cbd312893"
+  "sources_hash": "6573d1742ec4b388"
 }

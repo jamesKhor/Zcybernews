@@ -1,9 +1,9 @@
 {
   "tag": "llm",
   "locale": "en",
-  "intro": "This archive collects 8 articles tagged `llm` published between April 8, 2026 and April 23, 2026. Coverage includes 4 high, 3 medium, and 1 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "80ab483d039ca9d3",
-  "model": "template:sparse",
-  "generated_at": "2026-04-24T04:09:41.994Z",
+  "intro": "Over a two-week period in April 2026, ZCyberNews published nine articles under the llm tag, covering five high-severity and three medium-severity vulnerabilities. The most prominent issue was CVE-2026-33626, a CVSS 7.5 flaw affecting cloud service providers, enterprise, research, and technology sectors. The coverage also included one informational item, reflecting a concentrated focus on risks to large language model infrastructure during this timeframe.",
+  "sources_hash": "e3ba68fcba7e92bb",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-27T04:18:34.514Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

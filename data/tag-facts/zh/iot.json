@@ -1,10 +1,10 @@
 {
   "tag": "iot",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-23"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Mirai"
@@ -32,22 +32,26 @@
     }
   ],
   "top_sectors": [
-    "individuals",
-    "logistics",
-    "residential",
     "telecommunications",
-    "transportation"
+    "individuals",
+    "internet infrastructure",
+    "logistics",
+    "residential"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Canada",
+    "Germany",
+    "United states"
+  ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。",
     "Mirai 僵尸网络操作者利用 CVE-2025-29635，这是一个 CVSS 8.8 命令注入漏洞，存在于生命周期结束的 D-Link DIR-823X 路由器中，以部署恶意软件并发起 DDoS 攻击。",
-    "CVE-2026-5057，CVSS 评分为 7.5，暴露 ATEN Unizon 于未认证的拒绝服务攻击，通过其 RPC 服务，允许远程攻击者使设备管理平台崩溃。",
-    "HP DeskJet 2855e 打印机中存在一个基于栈的缓冲区溢出漏洞（CVE-2026-4682），允许网络邻近的攻击者在无需认证的情况下执行任意代码，CVSS 评分为 8.8。"
+    "CVE-2026-5057，CVSS 评分为 7.5，暴露 ATEN Unizon 于未认证的拒绝服务攻击，通过其 RPC 服务，允许远程攻击者使设备管理平台崩溃。"
   ],
-  "sources_hash": "2573dc7d91ac01b5"
+  "sources_hash": "0c1f0db092886c4a"
 }

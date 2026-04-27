@@ -1,39 +1,40 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 19,
+  "count": 21,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "GopherWhisper",
+    "Handala Hack",
     "LockBit"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
+    "financial services",
     "technology",
     "critical-infrastructure",
-    "cybersecurity",
-    "defense"
+    "cybersecurity"
   ],
   "top_regions": [
     "Asia",
     "Europe",
     "Global",
-    "North america",
-    "United kingdom"
+    "Iran",
+    "North america"
   ],
   "severity_mix": {
     "informational": 8,
-    "high": 8,
-    "medium": 1
+    "high": 9,
+    "medium": 2
   },
   "recent_excerpts": [
     "Elastic Security Labs deployed AI-driven detection pipelines for the UK Ministry of Defence's Defence Cyber Marvel 2026 exercise, processing 1.2TB of telemetry across 50 simulated…",
     "Rapid7's May 12–13 summit agenda reveals industry pivot from reactive defense to preemptive security operations, featuring sessions on AI-driven threat hunting and autonomous…",
     "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors."
   ],
-  "sources_hash": "2b6892bdefbc1d80"
+  "sources_hash": "759f088b9f3e3205"
 }

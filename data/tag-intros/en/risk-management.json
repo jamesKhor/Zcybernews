@@ -1,9 +1,9 @@
 {
   "tag": "risk-management",
   "locale": "en",
-  "intro": "Global organizations faced a concentrated wave of high-severity incidents from April 12 to 18, 2026, with all sectors, particularly software-development and technology, in focus. The archive details six recent articles, four of which concern high-severity risks while two are medium. This activity underscores the pervasive and critical nature of contemporary risk management challenges, requiring vigilant strategies to identify, assess, and mitigate threats across digital and operational environments. The coverage provides analysis of the tactics and vulnerabilities driving this period of elevated cyber risk.",
-  "sources_hash": "5fb0f8ab74a61087",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:13:27.733Z",
+  "intro": "This archive collects 7 articles tagged `risk-management` published between April 12, 2026 and April 27, 2026. Coverage includes 4 high, and 2 medium reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "c6135abfdaa17815",
+  "model": "template:sparse",
+  "generated_at": "2026-04-27T04:19:06.547Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "zh",
-  "count": 18,
+  "count": 21,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "APT41"
@@ -17,24 +17,24 @@
   ],
   "top_sectors": [
     "technology",
-    "cloud services",
-    "cloud-services",
     "government",
-    "healthcare"
+    "healthcare",
+    "cloud services",
+    "cloud-services"
   ],
   "top_regions": [
     "Global",
     "Israel"
   ],
   "severity_mix": {
-    "high": 11,
+    "high": 12,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
-    "Elastic Security Labs 在 2026 年第一季度发布了九个新的集成，用于云、端点、电子邮件、身份和 SIEM 用例，扩展了对 AWS、Azure 和 Google 的检测覆盖范围...",
-    "Copperhelm，一家由前 RSA 和 McAfee 工程师创立的以色列初创公司，为一个自主搜寻云的 agentic AI 平台筹集了700万美元的种子资金...",
-    "Palo Alto Networks 研究人员构建了 Zealot，这是一个多代理 AI 渗透测试 PoC，它能够自动执行云上的侦察、利用和数据外泄..."
+    "BHIS 发布了一份云安全指南，涵盖了 IAM 配置错误、共享责任差距和日志盲点 —— 对于保护 AWS、Azure 或 GCP 的团队来说是必读材料…",
+    "Elastic Security XDR 现在将终端遥测与云和网络数据相关联，使分析师能够在单一查询中追踪跨混合环境的多阶段攻击…",
+    "ESET 警告称，配置不当的云虚拟机—过度授权的 IAM 角色、暴露的管理端口和未修补的操作系统镜像—在企业环境中创造了系统性安全漏洞。"
   ],
-  "sources_hash": "ed356c8154d842d8"
+  "sources_hash": "dd5d4ada791d49f7"
 }

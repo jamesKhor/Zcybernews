@@ -1,0 +1,9 @@
+{
+  "tag": "persistence",
+  "locale": "en",
+  "intro": "VoidLink was the most frequently observed threat actor in the five high-severity persistence incidents tracked by ZCyberNews between April 13 and 26, 2026. These attacks primarily targeted the government, technology, and multiple other sectors on a global scale. The tag archive covers a concentrated period of activity, with all five entries rated as high severity, reflecting a consistent level of threat across the affected regions and industries.",
+  "sources_hash": "b09c516922b9a105",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-27T04:19:43.819Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

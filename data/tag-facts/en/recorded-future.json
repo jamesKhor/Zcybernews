@@ -1,0 +1,38 @@
+{
+  "tag": "recorded-future",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-22",
+    "latest": "2026-04-26"
+  },
+  "top_actors": [
+    "Cobalt Strike",
+    "LockBit"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "e-commerce",
+    "enterprise",
+    "government",
+    "retail"
+  ],
+  "top_regions": [
+    "Caribbean",
+    "China",
+    "Global",
+    "Latin america",
+    "Southeast asia"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors.",
+    "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…",
+    "Recorded Future's Insikt Group maps a maturing Latin American cybercrime ecosystem: RaaS affiliates, crypto fraud rings, and targeted phishing against financial and government…"
+  ],
+  "sources_hash": "5927a04d0ad8671b"
+}

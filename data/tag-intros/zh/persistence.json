@@ -1,0 +1,10 @@
+{
+  "tag": "persistence",
+  "locale": "zh",
+  "intro": "VoidLink 是 ZCyberNews 在 2026 年 4 月 13 日至 26 日期间追踪的五起高严重性持久性入侵事件中最常被观察到的威胁行为者。这些攻击主要针对全球范围内的政府、科技及其他多个行业。标签档案涵盖了一段集中的活动期，所有五条记录均被评定为高严重性，反映出受影响地区和行业面临的持续威胁水平。",
+  "sources_hash": "b09c516922b9a105",
+  "source_intro_hash": "261e64e91984e6d7",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-27T04:20:37.155Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

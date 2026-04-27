@@ -1,0 +1,36 @@
+{
+  "tag": "kaspersky",
+  "locale": "zh",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-04-26"
+  },
+  "top_actors": [
+    "CrystalX",
+    "Lotus Wiper"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "energy",
+    "building automation",
+    "cryptocurrency",
+    "engineering",
+    "finance"
+  ],
+  "top_regions": [
+    "Global",
+    "Latin america",
+    "Venezuela"
+  ],
+  "severity_mix": {
+    "high": 5,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "卡巴斯基详细描述了 CrystalX RAT，这是一种自 2025 年中以来针对全球 Windows 用户的 MaaS 恶意软件，具有间谍软件、凭证盗窃和恶作剧软件功能。",
+    "卡巴斯基2026年全球报告发现，勒索软件潜伏时间在2025年从5天降至3.5天，因为攻击者加快了加密速度。",
+    "卡巴斯基发现了 Lotus Wiper，这是一种针对委内瑞拉能源和公用事业部门的新型文件擦除器，自2025年底以来一直活跃。"
+  ],
+  "sources_hash": "261c6b02c7b74412"
+}

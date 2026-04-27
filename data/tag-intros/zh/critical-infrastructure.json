@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "intro": "2026年4月12日至25日期间，ZCyberNews追踪了15篇关于关键基础设施的文章，涉及威胁行为者CyberAv3ngers、Lotus Wiper和Sandworm。最突出的漏洞是CVE-2026-24032（CVSS 7.3），受影响行业包括能源、制造业、公用事业和关键基础设施。受影响区域涵盖美国、亚太、欧洲和北美。报道严重程度分布为：7篇高危、3篇严重、3篇信息性及1篇中危报告。",
-  "sources_hash": "7610667c595ec00e",
-  "source_intro_hash": "af6013298c010318",
+  "intro": "2026年4月12日至26日期间，ZCyberNews发布了17篇关于关键基础设施安全的文章，其中APT33、CyberAv3ngers和Lotus Wiper是最常被观测到的威胁行为体。报道重点提及了CVSS评分为7.3的漏洞CVE-2026-24032，并聚焦于美国、欧洲、北美、亚太地区及全球范围内的能源、公用事业、制造业和水务等行业。这些报道涵盖了9起高严重性事件、3起严重事件、3起信息性事件和1起中等严重性事件。",
+  "sources_hash": "13bc3a624a65ca44",
+  "source_intro_hash": "114a269153fe5b68",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:03:33.501Z",
+  "generated_at": "2026-04-27T04:20:05.943Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

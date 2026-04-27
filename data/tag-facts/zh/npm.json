@@ -1,7 +1,7 @@
 {
   "tag": "npm",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-21",
     "latest": "2026-04-26"
@@ -18,13 +18,13 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 3,
-    "critical": 3
+    "critical": 4,
+    "high": 3
   },
   "recent_excerpts": [
+    "Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游...",
     "Elastic Security Labs 研究员 Joe Desimone 在一个下午构建了一个概念验证工具，该工具检测到了 Axios HTTP 库的供应链被破坏，影响了 npm…",
-    "JFrog 和 Socket 在 @bitwarden/cli@2026.4.0 中发现了恶意代码 —— 这是同一活动，劫持了 Checkmarx npm 包。",
-    "根据 Socket 和…的说法，CanisterSprawl 供应链蠕虫劫持 npm 包，使用窃取的开发者令牌进行自我传播，并将数据外泄到 ICP canister。"
+    "JFrog 和 Socket 在 @bitwarden/cli@2026.4.0 中发现了恶意代码 —— 这是同一活动，劫持了 Checkmarx npm 包。"
   ],
-  "sources_hash": "311063dbb8116b41"
+  "sources_hash": "bb461997b804f6e2"
 }

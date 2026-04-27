@@ -1,10 +1,10 @@
 {
   "tag": "enterprise-security",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [
@@ -30,15 +30,15 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "informational": 2,
     "medium": 1,
     "critical": 4
   },
   "recent_excerpts": [
+    "Autonomous AI agents with file and service access are forcing organizations to rethink identity controls, data boundaries, and monitoring — Krebs reports on shifting attack…",
     "The Hacker News reports AI agents create a structural security gap: delegated actors lack continuous oversight, enabling lateral movement and privilege escalation without human…",
-    "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months.",
-    "SecurityWeek argues autonomous agents — from code generators to decision-making systems — require new defense models as they act without human intervention."
+    "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months."
   ],
-  "sources_hash": "7080a946ad9e58c5"
+  "sources_hash": "602d8dbea1b6c513"
 }

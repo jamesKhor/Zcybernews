@@ -1,0 +1,36 @@
+{
+  "tag": "kaspersky",
+  "locale": "en",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-04-26"
+  },
+  "top_actors": [
+    "CrystalX",
+    "Lotus Wiper"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "energy",
+    "building automation",
+    "cryptocurrency",
+    "engineering",
+    "finance"
+  ],
+  "top_regions": [
+    "Global",
+    "Latin america",
+    "Venezuela"
+  ],
+  "severity_mix": {
+    "high": 5,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Kaspersky details CrystalX RAT, a MaaS malware with spyware, credential theft, and prankware features targeting Windows users globally since mid-2025.",
+    "Kaspersky's 2026 Global Report finds ransomware dwell time fell to 3.5 days in 2025, down from 5 days, as attackers accelerate encryption.",
+    "Kaspersky discovered Lotus Wiper, a novel file wiper targeting Venezuela's energy and utilities sector since late 2025."
+  ],
+  "sources_hash": "261c6b02c7b74412"
+}

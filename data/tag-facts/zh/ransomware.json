@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 33,
+  "count": 36,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "The Gentlemen",
@@ -29,21 +29,22 @@
     "retail"
   ],
   "top_regions": [
-    "Europe",
     "Global",
+    "Europe",
     "United states",
     "North america",
     "Turkey"
   ],
   "severity_mix": {
-    "high": 27,
-    "critical": 2,
+    "medium": 1,
+    "high": 28,
+    "critical": 3,
     "informational": 2
   },
   "recent_excerpts": [
-    "Trigona 勒索软件攻击现在使用自定义的 CLI 工具从被入侵的网络中更快地外泄数据，加密前针对备份和云存储。",
-    "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。",
-    "The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi 系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。"
+    "ESET的Tony Anscombe警告说，2026年3月的攻击——包括勒索软件、供应链妥协和AI驱动的网络钓鱼——揭示了组织中系统性的差距……",
+    "卡巴斯基2026年全球报告发现，勒索软件潜伏时间在2025年从5天降至3.5天，因为攻击者加快了加密速度。",
+    "Trigona 勒索软件攻击现在使用自定义的 CLI 工具从被入侵的网络中更快地外泄数据，加密前针对备份和云存储。"
   ],
-  "sources_hash": "25661457e8b09473"
+  "sources_hash": "dbcecbe00944e3ed"
 }

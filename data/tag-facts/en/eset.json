@@ -1,0 +1,40 @@
+{
+  "tag": "eset",
+  "locale": "en",
+  "count": 10,
+  "date_range": {
+    "first": "2026-04-22",
+    "latest": "2026-04-27"
+  },
+  "top_actors": [
+    "GopherWhisper",
+    "APT33",
+    "LockBit"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "business services",
+    "energy",
+    "finance",
+    "financial services"
+  ],
+  "top_regions": [
+    "Global",
+    "Mongolia",
+    "Europe",
+    "Japan",
+    "Middle east"
+  ],
+  "severity_mix": {
+    "informational": 1,
+    "high": 7,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "ESET argues cybersecurity is an unmeasured competitive advantage enabling safe operations in hostile environments, not just a cost center. Brief analysis.",
+    "ESET Threat Research Director Jean-Ian Boutin explains how SMBs leverage MDR and threat intel to detect intrusions faster, citing 3.5-day median dwell time reduction.",
+    "ESET warns that misconfigured cloud VMs—overprivileged IAM roles, exposed management ports, and unpatched OS images—create systemic security gaps across enterprise environments."
+  ],
+  "sources_hash": "9943ac9dcadcd754"
+}

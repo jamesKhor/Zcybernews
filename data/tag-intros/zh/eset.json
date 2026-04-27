@@ -1,0 +1,10 @@
+{
+  "tag": "eset",
+  "locale": "zh",
+  "intro": "2026年4月22日至27日期间，ZCyberNews发布了10篇标注为ESET的文章，覆盖了一段高严重性活动期。GopherWhisper、APT33和LockBit是观察到的主要威胁行为体，攻击主要针对政府、商业服务、能源、金融及金融服务行业。受影响区域包括全球、蒙古、欧洲、日本和中东。这些报告的严重性分布为：一篇信息性报告、七篇高严重性报告和一篇中等严重性报告。",
+  "sources_hash": "9943ac9dcadcd754",
+  "source_intro_hash": "40d2513bf2ea5a9e",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-27T04:20:17.387Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

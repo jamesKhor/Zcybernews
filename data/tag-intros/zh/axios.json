@@ -1,10 +1,10 @@
 {
   "tag": "axios",
   "locale": "zh",
-  "intro": "技术、软件开发及人工智能行业成为近期攻击浪潮的主要目标，Lazarus Group被认定为头号威胁行为体。2026年4月13日至4月26日期间，共发布五篇标注为axios的文章，涵盖三起高严重性事件、一起严重事件及一起中等严重性事件。这一动向凸显了高级别对手对这些行业的持续关注。",
-  "sources_hash": "14170229ff436389",
-  "source_intro_hash": "38d32762581cc6d8",
+  "intro": "技术、软件开发和人工智能行业是近期与Lazarus Group相关的一波攻击的主要目标。在2026年4月13日至4月26日期间，ZCyberNews在axios标签下报道了六起事件，严重程度包括两起关键、三起高危和一起中危。威胁行为者Lazarus Group被观察到参与了这些全球行动。",
+  "sources_hash": "830dc96055c3067e",
+  "source_intro_hash": "d60b9b6dce4aeffc",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:15:05.308Z",
+  "generated_at": "2026-04-27T04:19:56.643Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

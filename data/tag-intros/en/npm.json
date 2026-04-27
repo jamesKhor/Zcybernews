@@ -1,0 +1,9 @@
+{
+  "tag": "npm",
+  "locale": "en",
+  "intro": "Between April 21 and 26, 2026, ZCyberNews tracked seven articles concerning the npm tag, with a severity mix of four critical and three high. The primary threat actor observed was CanisterSprawl, affecting the software development and technology sectors globally. These incidents underscore the persistent risks within the npm ecosystem, demanding vigilance from developers and organizations relying on this package registry.",
+  "sources_hash": "bb461997b804f6e2",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-27T04:19:01.066Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

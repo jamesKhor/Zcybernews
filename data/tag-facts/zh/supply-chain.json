@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 65,
+  "count": 68,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Lazarus Group",
@@ -42,15 +42,15 @@
     "China"
   ],
   "severity_mix": {
-    "high": 41,
-    "critical": 9,
-    "informational": 4,
-    "medium": 10
+    "critical": 10,
+    "medium": 11,
+    "high": 42,
+    "informational": 4
   },
   "recent_excerpts": [
-    "根据 Socket 和…的说法，CanisterSprawl 供应链蠕虫劫持 npm 包，使用窃取的开发者令牌进行自我传播，并将数据外泄到 ICP canister。",
-    "攻击者破坏了 Checkmarx KICS 的 Docker 镜像和 VS Code 扩展，以窃取开发者环境中的云凭证、API 密钥和源代码。",
-    "威胁行为者上传了恶意Docker镜像到Checkmarx的官方KICS仓库，并发布了木马化的VS Code扩展，窃取AWS密钥和浏览器数据从…"
+    "Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游...",
+    "ESET的Tony Anscombe警告说，2026年3月的攻击——包括勒索软件、供应链妥协和AI驱动的网络钓鱼——揭示了组织中系统性的差距……",
+    "Itron 在 SEC 8-K 文件中披露了一起网络安全事件：未经授权的第三方访问了内部IT系统。"
   ],
-  "sources_hash": "1a362c2c5f6ca892"
+  "sources_hash": "8c09e1129e55f92e"
 }

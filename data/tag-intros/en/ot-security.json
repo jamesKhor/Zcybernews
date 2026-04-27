@@ -1,9 +1,9 @@
 {
   "tag": "ot-security",
   "locale": "en",
-  "intro": "Manufacturing and critical infrastructure sectors globally faced a concentrated wave of operational technology security incidents between April 13 and April 24, 2026. Among seven articles, one critical severity issue was recorded alongside one high and one medium severity event, with CVE-2026-24032 carrying a CVSS score of 7.3. The energy, industrial, and utilities sectors were also among the most affected, with impacts reported across global regions.",
-  "sources_hash": "4e0dab1faaff60a6",
+  "intro": "European energy and manufacturing sectors faced heightened risk in mid-April 2026, with eight ZCyberNews articles covering OT security between 13 and 26 April. The threat actor APT33 was observed, alongside the critical-severity vulnerability CVE-2026-24032 (CVSS 7.3). The coverage included two high-severity, four informational, one critical, and one medium-severity report, impacting critical-infrastructure, industrial, and utilities across Europe, Global, Middle east, and North america regions.",
+  "sources_hash": "642324479d009c09",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:02:57.785Z",
+  "generated_at": "2026-04-27T04:18:49.600Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

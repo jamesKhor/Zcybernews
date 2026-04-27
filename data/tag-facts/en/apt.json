@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "GopherWhisper",
@@ -17,22 +17,22 @@
     "cryptocurrency",
     "energy",
     "technology",
-    "healthcare"
+    "business services"
   ],
   "top_regions": [
+    "Japan",
     "Mongolia",
     "Asia",
     "Bangladesh",
-    "Central america",
-    "East asia"
+    "Central america"
   ],
   "severity_mix": {
-    "high": 13
+    "high": 14
   },
   "recent_excerpts": [
     "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026.",
-    "ESET discovered China-aligned APT GopherWhisper targeting Mongolian government institutions with custom Go-based malware, leveraging legitimate services for C2.",
-    "Chinese state-sponsored Tropic Trooper is compromising home routers as proxy footholds to infiltrate Japanese organizations, shifting to novel TTPs and victim sectors."
+    "ESET details Silver Fox APT targeting Japanese firms with tax-themed phishing emails delivering malware via weaponized Excel attachments during tax season.",
+    "ESET discovered China-aligned APT GopherWhisper targeting Mongolian government institutions with custom Go-based malware, leveraging legitimate services for C2."
   ],
-  "sources_hash": "6b63d03cbd312893"
+  "sources_hash": "6573d1742ec4b388"
 }

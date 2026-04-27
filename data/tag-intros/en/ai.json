@@ -1,9 +1,9 @@
 {
   "tag": "ai",
   "locale": "en",
-  "intro": "Between April 8 and April 21, 2026, ZCyberNews published 24 articles on AI-related threats. The threat actor Pushpaganda was a primary focus, with campaigns targeting critical_infrastructure, finance, government, manufacturing, and technology sectors. These activities were most reported in the United states, Asia, Australia, Canada, and Japan. The severity of the covered incidents varied, including 10 high-severity reports, 10 informational updates, 1 critical alert, and 3 medium-level threats.",
-  "sources_hash": "b6e480782935a5e0",
+  "intro": "Over the past three weeks, ZCyberNews has tracked 25 articles tagged with ai, with Pushpaganda emerging as the most frequently cited threat actor. The coverage spans from April 8 to April 26, 2026, affecting the technology, critical infrastructure, finance, financial services, and government sectors across the United States, Asia, Australia, Canada, and globally. The severity mix includes 11 high-severity incidents, 10 informational reports, 1 critical, and 3 medium-severity events, reflecting a concentrated period of activity.",
+  "sources_hash": "bcaa3af0858bf4a9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:05:43.577Z",
+  "generated_at": "2026-04-27T04:17:49.572Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

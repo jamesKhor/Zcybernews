@@ -1,30 +1,32 @@
 {
   "tag": "agentic-ai",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-24"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "cross-sector",
     "enterprise",
-    "technology"
+    "financial services",
+    "healthcare"
   ],
   "top_regions": [
     "Global",
     "Israel"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "informational": 1
   },
   "recent_excerpts": [
+    "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…",
     "Copperhelm，一家由前 RSA 和 McAfee 工程师创立的以色列初创公司，为一个自主搜寻云的 agentic AI 平台筹集了700万美元的种子资金...",
-    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。",
-    "对超过400个LLM代理路由服务的安全分析揭示了普遍存在的漏洞，使攻击者能够注入恶意命令，泄露敏感数据，并绕过预期的AI模型行为。"
+    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。"
   ],
-  "sources_hash": "981bbb3b9b4059ae"
+  "sources_hash": "bc789ef1e8c9df03"
 }

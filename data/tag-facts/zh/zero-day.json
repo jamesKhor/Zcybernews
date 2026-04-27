@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "count": 22,
+  "count": 23,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Chaotic Eclipse",
@@ -16,6 +16,10 @@
       "cvss": 8.6
     },
     {
+      "id": "CVE-2026-3502",
+      "cvss": 7.8
+    },
+    {
       "id": "CVE-2026-32183",
       "cvss": 7.5
     },
@@ -25,30 +29,28 @@
     },
     {
       "id": "CVE-2024-20662"
-    },
-    {
-      "id": "CVE-2024-21412"
     }
   ],
   "top_sectors": [
+    "government",
     "technology",
     "enterprise",
-    "government",
     "healthcare",
     "multiple"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "Southeast asia"
   ],
   "severity_mix": {
-    "high": 11,
+    "high": 12,
     "critical": 10,
     "medium": 1
   },
   "recent_excerpts": [
+    "Check Point Research 发现了 CVE-2026-3502，这是一个 7.8-CVSS 权限提升漏洞，存在于 TrueConf 客户端中，自…以来被用于针对东南亚政府实体的定向攻击。",
     "一个漏洞（CVE-2026-32183）存在于微软Windows截图工具中，允许远程攻击者通过恶意文件或网页执行任意代码，仅需要用户交互即可触发漏洞。",
-    "针对CVE-2026-39808的PoC漏洞利用代码已经发布，这是一个Fortinet FortiSandbox中的关键命令注入漏洞。该漏洞允许未经身份验证的攻击者以root身份执行任意操作系统命令。",
-    "一名安全研究人员发布了针对Microsoft Defender中两个新的零日漏洞的概念验证漏洞利用代码，分别被称为RedSun和UnDefend。结合之前披露的漏洞，现在已确认这三个漏洞都在野外被积极利用。"
+    "针对CVE-2026-39808的PoC漏洞利用代码已经发布，这是一个Fortinet FortiSandbox中的关键命令注入漏洞。该漏洞允许未经身份验证的攻击者以root身份执行任意操作系统命令。"
   ],
-  "sources_hash": "c30e2579cb85dd20"
+  "sources_hash": "0f08f918f0d4970f"
 }

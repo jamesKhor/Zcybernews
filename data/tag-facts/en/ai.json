@@ -1,39 +1,39 @@
 {
   "tag": "ai",
   "locale": "en",
-  "count": 24,
+  "count": 25,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-21"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "Pushpaganda"
   ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "critical_infrastructure",
     "finance",
-    "government",
-    "manufacturing",
-    "technology"
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "United states",
     "Asia",
     "Australia",
     "Canada",
-    "Japan"
+    "Global"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "informational": 10,
     "critical": 1,
     "medium": 3
   },
   "recent_excerpts": [
+    "Autonomous AI agents with file and service access are forcing organizations to rethink identity controls, data boundaries, and monitoring — Krebs reports on shifting attack…",
     "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software.",
-    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n",
-    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution."
+    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n"
   ],
-  "sources_hash": "b6e480782935a5e0"
+  "sources_hash": "bcaa3af0858bf4a9"
 }

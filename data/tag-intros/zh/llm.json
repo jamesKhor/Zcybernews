@@ -1,10 +1,10 @@
 {
   "tag": "llm",
   "locale": "zh",
-  "intro": "本档案收录了 8 篇带有「llm」标签的文章，发布时间从2026年4月8日至2026年4月23日。其中包含4 篇高危、3 篇中危、1 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "80ab483d039ca9d3",
-  "source_intro_hash": "ce7ce64638e5cf7e",
-  "model": "template:sparse",
-  "generated_at": "2026-04-24T04:10:00.325Z",
+  "intro": "在2026年4月的两周内，ZCyberNews以llm标签发布了九篇文章，涵盖五个高严重性和三个中等严重性漏洞。其中最突出的问题是CVE-2026-33626，这是一个CVSS 7.5分的漏洞，影响云服务提供商、企业、研究和技术领域。报道还包括一项信息性内容，反映出在此期间对大型语言模型基础设施风险的集中关注。",
+  "sources_hash": "e3ba68fcba7e92bb",
+  "source_intro_hash": "1e887c78d29ca125",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-27T04:20:29.573Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

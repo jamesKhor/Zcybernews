@@ -1,7 +1,7 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "count": 49,
+  "count": 50,
   "date_range": {
     "first": "2026-04-08",
     "latest": "2026-04-26"
@@ -33,7 +33,7 @@
     "government",
     "hospitality",
     "cryptocurrency",
-    "technology"
+    "finance"
   ],
   "top_regions": [
     "Global",
@@ -43,7 +43,7 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 41,
+    "high": 42,
     "medium": 8
   },
   "recent_excerpts": [
@@ -51,5 +51,5 @@
     "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
     "A malicious website impersonating a TradingView AI agent deploys malware that hands attackers full control of victims' browsers, enabling account theft and financial data…"
   ],
-  "sources_hash": "36ffc72611f85c5c"
+  "sources_hash": "b280c7f6f845a2c9"
 }

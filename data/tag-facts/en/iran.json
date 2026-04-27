@@ -1,34 +1,38 @@
 {
   "tag": "iran",
   "locale": "en",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
+    "APT33",
     "CyberAv3ngers",
     "Fast16"
   ],
   "top_cves": [],
   "top_sectors": [
     "water",
-    "civil-society",
-    "critical infrastructure",
     "energy",
-    "government"
+    "government",
+    "civil-society",
+    "critical infrastructure"
   ],
   "top_regions": [
     "Iran",
-    "United states"
+    "United states",
+    "Europe",
+    "Middle east",
+    "North america"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 7
   },
   "recent_excerpts": [
     "Security researchers uncovered 'Fast16,' a pre-Stuxnet sabotage malware that targeted high-precision calculation software in Iran, tampering with results and self-propagating.",
     "A criminal group deployed the self-propagating CanisterWiper malware against Iranian entities, exploiting misconfigured cloud storage to spread and destroy data.",
     "A state-directed internet blackout in Iran has surpassed 1,000 cumulative hours, marking a significant escalation in digital censorship and control tactics."
   ],
-  "sources_hash": "f7e76822bea811a3"
+  "sources_hash": "4a9343838356bf2a"
 }

@@ -1,15 +1,15 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 15,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-04-26"
   },
   "top_actors": [
+    "APT33",
     "CyberAv3ngers",
-    "Lotus Wiper",
-    "Sandworm"
+    "Lotus Wiper"
   ],
   "top_cves": [
     {
@@ -20,27 +20,27 @@
   "top_sectors": [
     "energy",
     "critical-infrastructure",
-    "manufacturing",
     "utilities",
-    "critical infrastructure"
+    "manufacturing",
+    "water"
   ],
   "top_regions": [
     "United states",
-    "Asia-pacific",
     "Europe",
-    "Global",
-    "North america"
+    "North america",
+    "Asia-pacific",
+    "Global"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 9,
     "critical": 3,
     "informational": 3,
     "medium": 1
   },
   "recent_excerpts": [
+    "Itron disclosed a cybersecurity incident in an SEC 8-K filing: an unauthorized third party accessed internal IT systems.",
     "Dark Reading reports attackers are manipulating voltage to destabilize power grids — a growing cyber-physical threat vector targeting electricity infrastructure with no patch…",
-    "Locked Shields 2026 involved 41 nations in the largest live-fire cyber defense exercise, testing response to critical infrastructure attacks including power grid and telecom…",
-    "ZDI disclosed CVE-2026-24032, a 7.3-CVSS authentication bypass in Siemens SINEC NMS that requires no authentication to exploit. Affects industrial network management systems."
+    "Locked Shields 2026 involved 41 nations in the largest live-fire cyber defense exercise, testing response to critical infrastructure attacks including power grid and telecom…"
   ],
-  "sources_hash": "7610667c595ec00e"
+  "sources_hash": "13bc3a624a65ca44"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "intro": "This archive collects 5 articles tagged `incident-response` published between April 13, 2026 and April 23, 2026. Coverage includes 1 critical, 3 high, and 1 medium reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "806a28a81f4a35b7",
-  "model": "template:sparse",
-  "generated_at": "2026-04-24T04:09:51.276Z",
+  "intro": "Technology, cloud computing, energy, financial services, and government sectors were the primary targets in eight incident-response articles published between April 13 and April 26, 2026. The coverage included four high-severity and two critical-severity incidents, with one medium-severity event. The top CVE was CVE-2025-59718, carrying a CVSS score of 9.8. Affected regions included Europe, North America, Venezuela, and broader global areas.",
+  "sources_hash": "a3e503446d1585e4",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-27T04:18:41.682Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

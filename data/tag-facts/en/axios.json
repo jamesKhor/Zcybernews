@@ -1,7 +1,7 @@
 {
   "tag": "axios",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
     "latest": "2026-04-26"
@@ -15,16 +15,18 @@
     "software development",
     "artificial-intelligence"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
+    "critical": 2,
     "high": 3,
-    "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…",
     "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
-    "Elastic Security Labs researcher Joe Desimone built a proof-of-concept tool in an afternoon that detected a supply chain compromise of the Axios HTTP library, affecting npm…",
-    "A critical SSRF vulnerability in the Axios HTTP client library allows attackers to exfiltrate cloud instance metadata, potentially leading to remote code execution and full cloud account compromise."
+    "Elastic Security Labs researcher Joe Desimone built a proof-of-concept tool in an afternoon that detected a supply chain compromise of the Axios HTTP library, affecting npm…"
   ],
-  "sources_hash": "14170229ff436389"
+  "sources_hash": "830dc96055c3067e"
 }

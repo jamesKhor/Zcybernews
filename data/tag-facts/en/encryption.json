@@ -1,30 +1,32 @@
 {
   "tag": "encryption",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Kyber"
   ],
   "top_cves": [],
   "top_sectors": [
+    "government",
     "technology",
     "all",
-    "government",
-    "social media",
-    "telecommunications"
+    "critical infrastructure",
+    "defense"
   ],
   "top_regions": [
     "Global",
+    "Iran",
+    "Middle east",
     "United kingdom",
     "United states"
   ],
   "severity_mix": {
     "medium": 3,
-    "high": 2,
+    "high": 3,
     "informational": 4,
     "critical": 1
   },
@@ -33,5 +35,5 @@
     "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis.",
     "UK regulator Ofcom launches a formal investigation into Telegram over evidence of child sexual abuse material (CSAM) sharing and potential breaches of the Online Safety Act's encryption reporting rule"
   ],
-  "sources_hash": "526d56bf30b56dba"
+  "sources_hash": "988821345ceeb409"
 }

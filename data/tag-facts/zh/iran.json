@@ -1,34 +1,38 @@
 {
   "tag": "iran",
   "locale": "zh",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-04-26"
   },
   "top_actors": [
+    "APT33",
     "CyberAv3ngers",
     "Fast16"
   ],
   "top_cves": [],
   "top_sectors": [
     "water",
-    "civil-society",
-    "critical infrastructure",
     "energy",
-    "government"
+    "government",
+    "civil-society",
+    "critical infrastructure"
   ],
   "top_regions": [
     "Iran",
-    "United states"
+    "United states",
+    "Europe",
+    "Middle east",
+    "North america"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 7
   },
   "recent_excerpts": [
     "安全研究人员发现了'Fast16'，这是一种针对伊朗高精度计算软件的前Stuxnet破坏性恶意软件，篡改结果并自我传播。",
     "一个犯罪团伙利用配置不当的云存储传播并销毁数据，向伊朗实体部署了具有自我传播能力的CanisterWiper恶意软件。",
     "伊朗的国家指导的互联网封锁已经超过了1000小时，标志着数字审查和控制手段的显著升级。"
   ],
-  "sources_hash": "f7e76822bea811a3"
+  "sources_hash": "4a9343838356bf2a"
 }

@@ -1,33 +1,38 @@
 {
   "tag": "rat",
   "locale": "en",
-  "count": 9,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-20"
+    "latest": "2026-04-26"
   },
   "top_actors": [
+    "CrystalX",
     "Mirax",
     "REF6598"
   ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
-    "financial-services"
+    "financial-services",
+    "software development",
+    "technology"
   ],
   "top_regions": [
     "Europe",
+    "Global",
     "Latin america",
     "Spain",
     "Turkey"
   ],
   "severity_mix": {
-    "high": 9
+    "critical": 1,
+    "high": 10
   },
   "recent_excerpts": [
-    "Threat actors in two distinct campaigns are using the open-source QEMU machine emulator to load and execute ransomware and remote access tools, bypassing endpoint detection by running malicious code w",
-    "Mirax Android RAT reached over 220,000 users via Meta ads, turning infected devices into SOCKS5 proxies for threat actors to route malicious traffic and steal data from Spanish-speaking victims.",
-    "Threat actors are abusing the Obsidian note-taking app to deliver the novel PHANTOMPULSE RAT via malicious plugins, targeting individuals in finance and cryptocurrency sectors in a campaign tracked as"
+    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…",
+    "Kaspersky details CrystalX RAT, a MaaS malware with spyware, credential theft, and prankware features targeting Windows users globally since mid-2025.",
+    "Threat actors in two distinct campaigns are using the open-source QEMU machine emulator to load and execute ransomware and remote access tools, bypassing endpoint detection by running malicious code w"
   ],
-  "sources_hash": "c29c3f0c042c256e"
+  "sources_hash": "4175247c5dd2149e"
 }

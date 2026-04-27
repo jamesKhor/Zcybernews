@@ -1,10 +1,10 @@
 {
   "tag": "botnet",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-23"
+    "latest": "2026-04-26"
   },
   "top_actors": [
     "Mirai",
@@ -25,25 +25,28 @@
     }
   ],
   "top_sectors": [
+    "telecommunications",
     "corporate",
     "finance",
-    "multiple",
-    "residential",
-    "technology"
+    "internet infrastructure",
+    "multiple"
   ],
   "top_regions": [
+    "Canada",
     "Czech republic",
-    "Global"
+    "Germany",
+    "Global",
+    "United states"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 7,
     "medium": 2,
     "critical": 1
   },
   "recent_excerpts": [
+    "US DOJ, Canada, and Germany dismantled four IoT botnets — Aisuru, Kimwolf, JackSkid, Mossad — compromising 3M+ devices, enabling record-breaking DDoS attacks.",
     "Mirai botnet operators exploit CVE-2025-29635, a CVSS 8.8 command injection flaw in end-of-life D-Link DIR-823X routers, to deploy malware and launch DDoS attacks.",
-    "A new Mirai botnet variant, 'Nexcorium,' is exploiting a command injection flaw (CVE-2024-3721) in TBK DVRs and end-of-life TP-Link routers to conscript devices into a distributed denial-of-service (D",
-    "Cisco Talos researchers identify the PowMix botnet, active since December 2025, targeting Czech workers with randomized C2 beaconing to evade detection and deploy additional payloads."
+    "A new Mirai botnet variant, 'Nexcorium,' is exploiting a command injection flaw (CVE-2024-3721) in TBK DVRs and end-of-life TP-Link routers to conscript devices into a distributed denial-of-service (D"
   ],
-  "sources_hash": "d21fb4c091845aac"
+  "sources_hash": "6d22ea37ba049d28"
 }
