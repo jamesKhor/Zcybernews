@@ -1,0 +1,45 @@
+---
+title: ADT 泄露：ShinyHunters 窃取 550 万数据
+slug: 2026-04-27-adt-breach-shinyhunters-steals-data-of-5-5-million
+date: '2026-04-27'
+excerpt: ShinyHunters 侵入 ADT，窃取了 550 万名个人数据 —— 名字、电子邮件、电话号码和地址 —— 来自内部系统。没有支付数据被泄露。
+category: industry
+tags:
+  - adt
+  - shinyhunters
+  - data-breach
+  - pii-exposure
+  - extortion-group
+  - have-i-been-pwned
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/home-security-giant-adt-data-breach-affects-55-million-people/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-adt-breach-shinyhunters-steals-data-of-5-5-million
+severity: high
+threat_actor: ShinyHunters
+affected_sectors:
+  - home security
+  - consumer services
+affected_regions:
+  - North America
+---
+## ADT 泄露：ShinyHunters 窃取 550 万数据
+
+## 执行摘要
+
+家庭安全提供商 ADT 遭受数据泄露，影响了大约 550 万人，据数据泄露通知服务 Have I Been Pwned (HIBP) 称。ShinyHunters 勒索集团声称对此次入侵负责，该入侵发生在 2026 年 4 月早些时候。被盗记录包括 ADT 客户和员工的姓名、电子邮件地址、电话号码和实际地址。ADT 确认没有财务数据、信用卡信息或家庭安全系统凭证被泄露。该事件突显了以勒索为中心的网络犯罪集团针对大型面向消费者的企业构成的持续威胁。
+
+## 技术分析
+
+根据 HIBP 创始人 Troy Hunt 的说法，ShinyHunters 从 ADT 的内部系统窃取了数据，并随后在他们的勒索门户网站上发布了样本。被盗数据集包含 550 万个独特的电子邮件地址以及相关的个人标识符。ADT 的内部调查确定，攻击者访问了一个客户支持数据库，但没有渗透到控制报警监控、视频监控或家庭自动化服务的系统。公司声明没有安全系统配置、报警代码或访问凭证被暴露。ShinyHunters 有针对大型组织进行数据勒索的历史记录，包括之前对 Microsoft、AT&T 和其他主要公司的入侵。该集团通常要求支付以换取不拍卖或泄露被盗数据，尽管在这种情况下数据似乎已经被部分泄露。
+
+## 缓解措施与建议
+
+ADT 已开始通知受影响的个人，并提供免费的信用监控和身份盗窃保护服务。受影响的客户应保持警惕，防范可能利用暴露的个人信息进行的网络钓鱼尝试——攻击者可以制作令人信服的电子邮件或短信消息，引用 ADT 服务来诱使收件人透露更多凭证或安装恶意软件。用户应在他们的 ADT 账户上启用多因素身份验证，并监控未经授权的账户更改。处理敏感客户 PII 的组织应审查客户支持数据库的访问控制，将此类系统与运营技术隔离，并实施强大的日志记录和异常检测以识别大规模数据提取。
+
+## 参考资料
+
+* [BleepingComputer: 家庭安全巨头 ADT 数据泄露影响 550 万人](https://www.bleepingcomputer.com/news/security/home-security-giant-adt-data-breach-affects-55-million-people/)

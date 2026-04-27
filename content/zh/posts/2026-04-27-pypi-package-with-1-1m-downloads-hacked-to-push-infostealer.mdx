@@ -1,0 +1,56 @@
+---
+title: PyPI 包下载量达110万次被黑客攻击以推送信息窃取器
+slug: 2026-04-27-pypi-package-with-1-1m-downloads-hacked-to-push-infostealer
+date: '2026-04-27'
+excerpt: 攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。
+category: malware
+tags:
+  - supply-chain
+  - pypi
+  - infostealer
+  - open-source
+  - credential-theft
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/pypi-package-with-11m-monthly-downloads-hacked-to-push-infostealer/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-pypi-package-with-1-1m-downloads-hacked-to-push-infostealer
+severity: critical
+affected_sectors:
+  - software development
+  - technology
+---
+## 执行摘要
+
+攻击者破坏了Python包索引（PyPI）上的`elementary-data`包——这是一个数据可见性库，每月下载量超过110万次——以分发针对开发人员凭证、加密货币钱包和环境变量的信息窃取器。根据BleepingComputer的说法，恶意版本0.76.0于2026年4月24日发布。该事件突显了针对Python生态系统中高信任包的软件供应链攻击的持续风险。
+
+## 技术分析
+
+`elementary-data`包由同名公司维护，为dbt和Snowflake等工具提供数据管道监控。攻击者获得了包维护者的PyPI账户访问权限——可能是通过凭证盗窃或会话劫持——并推送了包含混淆恶意代码的版本0.76.0。
+
+根据报告，恶意有效载荷在安装时执行（`pip install elementary-data==0.76.0`）并执行以下操作：
+- 收集环境变量，包括云提供商密钥（AWS、GCP、Azure）和API令牌
+- 窃取浏览器存储的凭证和会话cookie
+- 外泄加密货币钱包文件和私钥
+- 收集SSH密钥和`~/.kube/config`以访问Kubernetes集群
+
+被盗数据被外泄到攻击者控制的服务器。恶意版本在维护团队移除并发布干净的0.76.1版本前可用数小时。
+
+BleepingComputer确认，合法维护者此后已轮换所有PyPI凭证并启用了双因素认证。确切的攻击向量——无论是网络钓鱼活动、密码重用还是会话令牌盗窃——截至本文撰写时尚未公开披露。
+
+## 缓解措施与建议
+
+在4月24日至其下架期间下载了`elementary-data==0.76.0`的组织应立即将受影响的系统视为被破坏。建议的行动包括：
+- 在受影响的机器上轮换所有API密钥、云提供商凭证和存储在环境变量中的秘密
+- 撤销并重新颁发可能已暴露的任何SSH密钥或Kubernetes配置
+- 扫描未经授权访问云账户和加密货币钱包的行为
+- 审计PyPI包哈希值与已知良好的校验和（维护者已发布版本0.76.1的SHA256哈希值）
+- 在所有PyPI维护者账户上强制执行多因素认证，并使用具有有限范围的API令牌进行自动发布
+
+防御者还应监控Python开发环境中的出站连接到未知IP或域名，因为恶意软件与可能仍处于活跃状态的C2服务器通信。
+
+## 参考资料
+
+- [PyPI包每月下载量达110万次被黑客入侵以推送信息窃取器 — BleepingComputer](https://www.bleepingcomputer.com/news/security/pypi-package-with-11m-monthly-downloads-hacked-to-push-infostealer/)

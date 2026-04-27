@@ -1,0 +1,59 @@
+---
+title: PyPI Package With 1.1M Downloads Hacked to Push Infostealer
+slug: 2026-04-27-pypi-package-with-1-1m-downloads-hacked-to-push-infostealer
+date: '2026-04-27'
+excerpt: >-
+  Attackers compromised the elementary-data PyPI package (1.1M monthly
+  downloads) to push an infostealer targeting developer credentials, crypto
+  wallets, and environment variables.
+category: malware
+tags:
+  - supply-chain
+  - pypi
+  - infostealer
+  - open-source
+  - credential-theft
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/pypi-package-with-11m-monthly-downloads-hacked-to-push-infostealer/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-pypi-package-with-1-1m-downloads-hacked-to-push-infostealer
+severity: critical
+affected_sectors:
+  - software development
+  - technology
+---
+## Executive Summary
+
+Attackers compromised the `elementary-data` package on the Python Package Index (PyPI) — a data-observability library with over 1.1 million monthly downloads — to distribute an infostealer targeting developer credentials, cryptocurrency wallets, and environment variables. The malicious version 0.76.0 was published on April 24, 2026, according to BleepingComputer. The incident underscores the persistent risk of software supply-chain attacks against high-trust packages in the Python ecosystem.
+
+## Technical Analysis
+
+The `elementary-data` package is maintained by a company of the same name and provides data pipeline monitoring for tools like dbt and Snowflake. The attacker gained access to the package maintainer's PyPI account — likely through credential theft or session hijacking — and pushed version 0.76.0 containing obfuscated malicious code.
+
+According to the report, the malicious payload executes on installation (`pip install elementary-data==0.76.0`) and performs the following actions:
+- Harvests environment variables, including cloud provider keys (AWS, GCP, Azure) and API tokens
+- Steals browser-stored credentials and session cookies
+- Exfiltrates cryptocurrency wallet files and private keys
+- Collects SSH keys and `~/.kube/config` for Kubernetes cluster access
+
+The stolen data is exfiltrated to an attacker-controlled server. The malicious version remained available for several hours before the maintainer team removed it and published a clean 0.76.1 release.
+
+BleepingComputer confirmed that the legitimate maintainers have since rotated all PyPI credentials and enabled two-factor authentication. The exact attack vector — whether a phishing campaign, password reuse, or session token theft — has not been publicly disclosed as of this writing.
+
+## Mitigations & Recommendations
+
+Organizations that downloaded `elementary-data==0.76.0` between April 24 and its takedown should immediately treat the affected systems as compromised. Recommended actions include:
+- Rotating all API keys, cloud provider credentials, and secrets stored in environment variables on affected machines
+- Revoking and reissuing any SSH keys or Kubernetes configs that may have been exposed
+- Scanning for unauthorized access to cloud accounts and cryptocurrency wallets
+- Auditing PyPI package hashes against known-good checksums (the maintainers have published SHA256 hashes for version 0.76.1)
+- Enforcing multi-factor authentication on all PyPI maintainer accounts and using API tokens with limited scopes for automated publishing
+
+Defenders should also monitor for outbound connections to unknown IPs or domains from Python development environments, as the malware communicates with a C2 server that may still be active.
+
+## References
+
+- [PyPI package with 1.1M monthly downloads hacked to push infostealer — BleepingComputer](https://www.bleepingcomputer.com/news/security/pypi-package-with-11m-monthly-downloads-hacked-to-push-infostealer/)

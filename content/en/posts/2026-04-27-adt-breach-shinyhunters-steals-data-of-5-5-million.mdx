@@ -1,0 +1,46 @@
+---
+title: 'ADT Breach: ShinyHunters Steals Data of 5.5 Million'
+slug: 2026-04-27-adt-breach-shinyhunters-steals-data-of-5-5-million
+date: '2026-04-27'
+excerpt: >-
+  ShinyHunters breached ADT, stealing personal data of 5.5 million individuals —
+  names, emails, phone numbers, and addresses — from internal systems. No
+  payment data compromised.
+category: industry
+tags:
+  - adt
+  - shinyhunters
+  - data-breach
+  - pii-exposure
+  - extortion-group
+  - have-i-been-pwned
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/home-security-giant-adt-data-breach-affects-55-million-people/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-adt-breach-shinyhunters-steals-data-of-5-5-million
+severity: high
+threat_actor: ShinyHunters
+affected_sectors:
+  - home security
+  - consumer services
+affected_regions:
+  - North America
+---
+## Executive Summary
+
+Home security provider ADT suffered a data breach affecting approximately 5.5 million individuals, according to data breach notification service Have I Been Pwned (HIBP). The ShinyHunters extortion group claimed responsibility for the intrusion, which occurred earlier in April 2026. Stolen records include names, email addresses, phone numbers, and physical addresses of ADT customers and employees. ADT confirmed that no financial data, credit card information, or home security system credentials were compromised. The incident underscores the persistent threat of extortion-focused cybercriminal groups targeting large consumer-facing enterprises.
+
+## Technical Analysis
+
+According to HIBP founder Troy Hunt, ShinyHunters exfiltrated the data from ADT's internal systems and subsequently published a sample on their extortion portal. The stolen dataset contains 5.5 million unique email addresses, alongside associated personal identifiers. ADT's internal investigation determined that the attackers gained access to a customer support database, but did not penetrate systems controlling alarm monitoring, video surveillance, or home automation services. The company stated that no security system configurations, alarm codes, or access credentials were exposed. ShinyHunters has a track record of targeting large organizations for data extortion, including previous breaches of Microsoft, AT&T, and other major firms. The group typically demands payment in exchange for not auctioning or leaking stolen data, though in this case the data appears to have been partially leaked already.
+
+## Mitigations & Recommendations
+
+ADT has begun notifying affected individuals and is offering complimentary credit monitoring and identity theft protection services. Affected customers should remain vigilant against phishing attempts that may leverage the exposed personal information — attackers could craft convincing emails or SMS messages referencing ADT services to trick recipients into revealing additional credentials or installing malware. Users should enable multi-factor authentication on their ADT accounts and monitor for unauthorized account changes. Organizations handling sensitive customer PII should review access controls on customer support databases, segment such systems from operational technology, and implement robust logging and anomaly detection to identify mass data extraction.
+
+## References
+
+* [BleepingComputer: Home security giant ADT data breach affects 5.5 million people](https://www.bleepingcomputer.com/news/security/home-security-giant-adt-data-breach-affects-55-million-people/)
