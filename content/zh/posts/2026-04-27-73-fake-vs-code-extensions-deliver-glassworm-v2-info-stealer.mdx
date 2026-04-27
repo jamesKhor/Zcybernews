@@ -1,0 +1,42 @@
+---
+title: 73 个假冒 VS Code 扩展传递 GlassWorm v2 信息窃取器
+slug: 2026-04-27-73-fake-vs-code-extensions-deliver-glassworm-v2-info-stealer
+date: '2026-04-27'
+excerpt: 研究人员在 Open VSX 上发现了 73 个克隆的 VS Code 扩展，其中 6 个被确认为恶意，传递 GlassWorm v2 信息窃取器。
+category: malware
+tags:
+  - glassworm
+  - vs-code
+  - supply-chain-attack
+  - info-stealer
+  - open-vsx
+  - typosquatting
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/researchers-uncover-73-fake-vs-code.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-73-fake-vs-code-extensions-deliver-glassworm-v2-info-stealer
+severity: high
+threat_actor: GlassWorm
+affected_sectors:
+  - software development
+  - technology
+---
+## 执行摘要
+
+研究人员在Open VSX仓库中识别出73个假冒的Microsoft Visual Studio Code（VS Code）扩展，其中六个被确认会传递GlassWorm v2信息窃取恶意软件。其余的67个扩展是合法对应物的克隆版本，可能用作诱饵或未来有效载荷的基础设施。被追踪为GlassWorm的活动，通过typosquatting和社会工程学针对开发者，旨在收集凭证、会话令牌和敏感项目数据。这些发现由The Hacker News的网络安全研究人员在2026年4月27日发表。
+
+## 技术分析
+
+恶意扩展是在Open VSX注册表上发现的，这是一个开源的Microsoft官方VS Code市场的替代品。攻击者克隆了合法扩展，用轻微的typosquatting变体重命名（例如，替换字符或添加连字符），并将它们上传到仓库。在识别出的73个中，六个扩展被确认包含混淆的JavaScript，安装后执行GlassWorm v2有效载荷。恶意软件通过VS Code的扩展自动更新机制建立持久性，并外泄数据，包括环境变量、SSH密钥、云提供商令牌和剪贴板内容。
+
+GlassWorm v2是之前记录的GlassWorm信息窃取器的演变，现在具有改进的混淆和反分析检查。恶意软件在执行其有效载荷之前检查沙箱环境和调试器的存在。该活动似乎是正在进行的，威胁行为者积极更新扩展以逃避检测。尽管Open VSX仓库的监管不如Microsoft的市场严格，但由于其在CI/CD管道和隔离环境中的使用，它仍然是供应链攻击的一个载体。
+
+## 缓解措施与建议
+
+开发者和组织应该审计所有当前安装的VS Code扩展，特别是那些来自Open VSX注册表的。移除任何明确不需要的扩展，并验证发布者身份与官方市场相对照。对于企业环境，考虑完全阻止Open VSX仓库，并通过组策略或端点管理工具强制执行精选的扩展允许列表。监控来自VS Code进程的异常网络出站流量，特别是到未知IP或域名，因为已知GlassWorm v2通过HTTPS与命令和控制服务器通信。
+
+## 参考资料
+
+- [The Hacker News: Researchers Uncover 73 Fake VS Code Extensions Delivering GlassWorm v2 Malware](https://thehackernews.com/2026/04/researchers-uncover-73-fake-vs-code.html)

@@ -1,0 +1,44 @@
+---
+title: 73 Fake VS Code Extensions Deliver GlassWorm v2 Info-Stealer
+slug: 2026-04-27-73-fake-vs-code-extensions-deliver-glassworm-v2-info-stealer
+date: '2026-04-27'
+excerpt: >-
+  Researchers found 73 cloned VS Code extensions on Open VSX, with 6 confirmed
+  malicious, delivering the GlassWorm v2 info-stealer.
+category: malware
+tags:
+  - glassworm
+  - vs-code
+  - supply-chain-attack
+  - info-stealer
+  - open-vsx
+  - typosquatting
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/researchers-uncover-73-fake-vs-code.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-73-fake-vs-code-extensions-deliver-glassworm-v2-info-stealer
+severity: high
+threat_actor: GlassWorm
+affected_sectors:
+  - software development
+  - technology
+---
+## Executive Summary
+
+Researchers have identified 73 fake Microsoft Visual Studio Code (VS Code) extensions hosted on the Open VSX repository, six of which are confirmed to deliver the GlassWorm v2 information-stealing malware. The remaining 67 extensions are cloned versions of legitimate counterparts, likely serving as decoys or infrastructure for future payloads. The campaign, tracked as GlassWorm, targets developers through typosquatting and social engineering, aiming to harvest credentials, session tokens, and sensitive project data. The findings were published by cybersecurity researchers at The Hacker News on April 27, 2026.
+
+## Technical Analysis
+
+The malicious extensions were discovered on the Open VSX registry, an open-source alternative to Microsoft's official VS Code marketplace. Attackers cloned legitimate extensions, renamed them with slight typosquatting variations (e.g., substituting characters or adding hyphens), and uploaded them to the repository. Of the 73 identified, six extensions were confirmed to contain obfuscated JavaScript that, when installed, executes the GlassWorm v2 payload. The malware establishes persistence via VS Code's extension auto-update mechanism and exfiltrates data including environment variables, SSH keys, cloud provider tokens, and clipboard contents.
+
+GlassWorm v2 is an evolution of the previously documented GlassWorm info-stealer, now featuring improved obfuscation and anti-analysis checks. The malware checks for sandbox environments and debugger presence before executing its payload. The campaign appears to be ongoing, with the threat actor actively updating extensions to evade detection. The Open VSX repository, while less policed than Microsoft's marketplace, remains a vector for supply chain attacks due to its use in CI/CD pipelines and air-gapped environments.
+
+## Mitigations & Recommendations
+
+Developers and organizations should audit all VS Code extensions currently installed, particularly those sourced from the Open VSX registry. Remove any extensions that are not explicitly required and verify the publisher identity against the official marketplace. For enterprise environments, consider blocking the Open VSX repository entirely and enforcing a curated extension allowlist via group policy or endpoint management tools. Monitor for unusual network outbound traffic from VS Code processes, especially to unknown IPs or domains, as GlassWorm v2 is known to communicate with command-and-control servers over HTTPS.
+
+## References
+
+- [The Hacker News: Researchers Uncover 73 Fake VS Code Extensions Delivering GlassWorm v2 Malware](https://thehackernews.com/2026/04/researchers-uncover-73-fake-vs-code.html)
