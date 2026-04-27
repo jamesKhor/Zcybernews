@@ -1,0 +1,43 @@
+---
+title: Vercel 通过 Context.ai OAuth Token 盗窃被入侵
+slug: 2026-04-27-vercel-breach-via-context-ai-oauth-token-theft
+date: '2026-04-27'
+excerpt: Vercel 在从 Context.ai 被盗的 OAuth 令牌使未授权访问内部系统成为可能后披露了一起入侵事件，通过连接的应用程序。没有客户数据被暴露。
+category: industry
+tags:
+  - vercel
+  - context.ai
+  - oauth
+  - token-theft
+  - supply-chain
+  - cloud-security
+language: zh
+source_urls:
+  - 'https://research.checkpoint.com/2026/27th-april-threat-intelligence-report/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-27-vercel-breach-via-context-ai-oauth-token-theft
+severity: high
+affected_sectors:
+  - technology
+  - cloud computing
+affected_regions:
+  - Global
+---
+## Vercel Breach via Context.ai OAuth Token Theft
+
+## 执行摘要
+
+Vercel，一个广泛用于部署Web应用程序的前端云平台，在2026年4月27日披露了一起与Context.ai相关的安全事件。根据Check Point Research的每周威胁情报报告，从Context.ai盗取的OAuth令牌使得未经授权的访问者能够通过连接的第三方应用程序访问Vercel的内部系统。该事件暴露了员工账户，但Vercel声明没有客户数据被泄露。这一事件突显了相互连接的SaaS生态系统中的风险，其中一个供应商的漏洞可能通过受信任的OAuth集成传播给其他供应商。
+
+## 技术分析
+
+攻击链始于Context.ai的一次泄露，这是一个由AI驱动的分析平台。威胁行为者盗取了Context.ai为与Vercel内部系统集成而配置的OAuth令牌。利用这些令牌，攻击者作为合法的连接应用程序对Vercel的环境进行了身份验证，绕过了基于正常凭证的访问控制。Vercel检测到与未授权访问相关的异常活动，并启动了调查。公司报告称，入侵者访问了员工账户，但没有发现客户生产环境、部署管道或存储数据受到影响的证据。Check Point Research在其4月27日的威胁情报公告中将此事件标记为涉及OAuth令牌盗窃的显著供应链攻击向量。
+
+## 缓解措施与建议
+
+集成第三方SaaS应用程序的组织应该审计OAuth令牌范围，并为每个连接的应用程序强制实施最小权限权限。实施令牌过期策略，并定期轮换令牌，特别是对于访问内部系统的集成。监控异常的OAuth令牌使用情况，例如从意外的IP范围进行身份验证或在不寻常的时间。Vercel用户应该验证他们的账户设置中不存在未经授权的OAuth授权，并在所有账户上启用多因素身份验证。应该评估第三方供应商在令牌存储和生命周期管理方面的安全姿态。
+
+## 参考资料
+
+- [Check Point Research: 27th April – Threat Intelligence Report](https://research.checkpoint.com/2026/27th-april-threat-intelligence-report/)
