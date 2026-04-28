@@ -1,0 +1,46 @@
+---
+title: VECT 2.0 勒索软件破坏超过131KB的文件
+slug: 2026-04-28-vect-2-0-ransomware-wiper-bug-destroys-files-over-131kb
+date: '2026-04-28'
+excerpt: >-
+  VECT 2.0 勒索软件包含一个关键的加密缺陷，该缺陷会不可逆转地破坏Windows、Linux和ESXi上大于131KB的文件 ——
+  即使拥有也无法恢复...
+category: malware
+tags:
+  - vect
+  - ransomware
+  - wiper
+  - encryption-bug
+  - data-destruction
+  - cross-platform
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/vect-20-ransomware-irreversibly.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-vect-2-0-ransomware-wiper-bug-destroys-files-over-131kb
+severity: critical
+threat_actor: VECT
+affected_sectors:
+  - technology
+  - critical infrastructure
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+根据《黑客新闻》发布的分析报告，威胁猎人发现了 VECT 2.0 勒索软件中一个关键的实现缺陷，导致它永久性地销毁大于 131KB 的文件而不是加密它们。这个缺陷影响所有三个平台变体——Windows、Linux 和 ESXi——并且使得支付赎金变得无用，因为无论是受害者还是威胁行为者都无法恢复被销毁的数据。对于任何超过大小阈值的文件，VECT 2.0 实际上充当了一个擦除器。
+
+## 技术分析
+
+VECT 2.0 中的加密程序包含一个逻辑错误，当目标文件大小超过大约 131KB（134,217,728 字节）时触发。勒索软件不是应用加密算法，而是用随机数据覆盖文件内容，然后截断或删除原始文件。这一行为在所有支持的操作系统中得到了确认，表明这个缺陷位于共享的加密库中，而不是平台特定的代码。
+
+研究人员指出，这个缺陷不是一个故意的擦除功能，而是一个编程缺陷——威胁行为者可能打算加密这些文件，但没有正确处理较大负载的缓冲区或内存分配。结果是不可逆转的数据丢失，因为即使使用私有解密密钥，被覆盖的扇区也无法重建。小于阈值的较小文件被正常加密，并且理论上如果获得密钥，可以恢复，尽管操作者在此类情况下没有表现出合作的意愿。
+
+## 缓解措施与建议
+
+组织应将 VECT 2.0 视为破坏性擦除器，并维护离线、不可变的备份，这些备份无法从生产网络访问。在 Windows、Linux 和 ESXi 环境之间的网络分割可以限制横向移动。端点检测和响应（EDR）规则应标记尝试在多个目录中快速连续读取或写入文件的进程，这是勒索软件加密程序的特征。鉴于这个缺陷的不可恢复性，不建议支付赎金。
+
+## 参考资料
+
+- [The Hacker News: VECT 2.0 Ransomware Irreversibly Destroys Files Over 131KB on Windows, Linux, ESXi](https://thehackernews.com/2026/04/vect-20-ransomware-irreversibly.html)

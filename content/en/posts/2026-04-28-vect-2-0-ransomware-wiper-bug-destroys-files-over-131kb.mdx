@@ -1,0 +1,47 @@
+---
+title: VECT 2.0 Ransomware Wiper Bug Destroys Files Over 131KB
+slug: 2026-04-28-vect-2-0-ransomware-wiper-bug-destroys-files-over-131kb
+date: '2026-04-28'
+excerpt: >-
+  VECT 2.0 ransomware contains a critical encryption flaw that irreversibly
+  destroys files larger than 131KB on Windows, Linux, and ESXi — no recovery
+  possible even with a…
+category: malware
+tags:
+  - vect
+  - ransomware
+  - wiper
+  - encryption-bug
+  - data-destruction
+  - cross-platform
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/vect-20-ransomware-irreversibly.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-vect-2-0-ransomware-wiper-bug-destroys-files-over-131kb
+severity: critical
+threat_actor: VECT
+affected_sectors:
+  - technology
+  - critical infrastructure
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Threat hunters have identified a critical implementation flaw in VECT 2.0 ransomware that causes it to permanently destroy files larger than 131KB instead of encrypting them, according to an analysis published by The Hacker News. The bug affects all three platform variants — Windows, Linux, and ESXi — and renders ransom payment futile, as neither victims nor the threat actors can recover the destroyed data. VECT 2.0 effectively operates as a wiper for any file exceeding the size threshold.
+
+## Technical Analysis
+
+The encryption routine in VECT 2.0 contains a logic error that triggers when the target file size exceeds approximately 131KB (134,217,728 bytes). Instead of applying the encryption algorithm, the ransomware overwrites the file contents with random data and then truncates or deletes the original. This behavior was confirmed across all supported operating systems, indicating the bug resides in the shared encryption library rather than platform-specific code.
+
+Researchers noted that the flaw is not a deliberate wiper feature but a programming defect — the threat actors likely intended to encrypt these files but failed to handle the buffer or memory allocation correctly for larger payloads. The result is irreversible data loss, as the overwritten sectors cannot be reconstructed even with the private decryption key. Smaller files under the threshold are encrypted normally and could theoretically be recovered if the key were obtained, though the operators have shown no willingness to cooperate in such cases.
+
+## Mitigations & Recommendations
+
+Organizations should treat VECT 2.0 as a destructive wiper and maintain offline, immutable backups that cannot be reached from the production network. Network segmentation between Windows, Linux, and ESXi environments can limit lateral movement. Endpoint detection and response (EDR) rules should flag processes that attempt to read or write files in rapid succession across multiple directories, a hallmark of ransomware encryption routines. Given the irrecoverable nature of the bug, paying the ransom is not advised.
+
+## References
+
+- [The Hacker News: VECT 2.0 Ransomware Irreversibly Destroys Files Over 131KB on Windows, Linux, ESXi](https://thehackernews.com/2026/04/vect-20-ransomware-irreversibly.html)
