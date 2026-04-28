@@ -1,0 +1,40 @@
+---
+title: 'Comburglar Intrusion: BHIS Details Stealthy C2 Persistence'
+slug: 2026-04-28-comburglar-intrusion-bhis-details-stealthy-c2-persistence
+date: '2026-04-28'
+excerpt: >-
+  Black Hills Information Security uncovers Comburglar intrusion technique
+  enabling persistent C2 via compromised COM hijacking during a breach
+  assessment engagement.
+category: threat-intel
+tags:
+  - com-hijacking
+  - persistence
+  - c2
+  - bhis
+  - breach-assessment
+  - windows-security
+language: en
+source_urls:
+  - 'https://www.blackhillsinfosec.com/the-curious-case-of-the-comburglar/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-comburglar-intrusion-bhis-details-stealthy-c2-persistence
+severity: high
+threat_actor: Comburglar
+---
+## Executive Summary
+
+Black Hills Information Security (BHIS) has disclosed a novel intrusion technique dubbed "Comburglar" discovered during a recent Breach Assessment engagement. The method leverages Component Object Model (COM) hijacking to establish persistent, stealthy command-and-control (C2) within a victim environment. According to BHIS researcher Troy Wojewoda, the technique exploits Windows COM registration mechanisms to evade traditional detection tools, allowing attackers to maintain long-term access without triggering standard alerts.
+
+## Technical Analysis
+
+The Comburglar technique hinges on abusing Windows COM object registration. Attackers modify or create COM class identifiers (CLSIDs) in the Windows Registry, pointing them to malicious DLLs or executables. When legitimate applications or system components invoke the COM object, the attacker's code executes instead, providing a persistent C2 channel. BHIS observed this method during a breach assessment where the threat actor had already established initial access and then used COM hijacking to survive reboots and evade endpoint detection. The technique is particularly stealthy because COM hijacking can blend into normal system activity—many applications rely on COM for inter-process communication, making anomalous CLSID lookups harder to distinguish from benign operations. BHIS did not disclose the specific victim sector or region, but the engagement context suggests a corporate environment.
+
+## Mitigations & Recommendations
+
+Defenders should audit Windows Registry keys under `HKEY_CLASSES_ROOT\CLSID` and `HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID` for unauthorized or modified entries, especially those pointing to non-standard file paths. BHIS recommends monitoring for unusual COM object instantiation via Sysmon Event ID 7 (Image loaded) or Windows Event Log 4688 (Process creation) with CLSID lookups. Additionally, restrict write permissions to COM registration keys to administrative accounts only, and deploy application whitelisting to block unauthorized DLLs. Regular breach assessments should include COM hijacking scenarios in their scope.
+
+## References
+
+- [The Curious Case of the Comburglar — Black Hills Information Security](https://www.blackhillsinfosec.com/the-curious-case-of-the-comburglar/)

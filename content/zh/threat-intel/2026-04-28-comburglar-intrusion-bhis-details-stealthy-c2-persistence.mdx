@@ -1,0 +1,41 @@
+---
+title: Comburglar 入侵：BHIS 详细描述隐蔽的 C2 持久性
+slug: 2026-04-28-comburglar-intrusion-bhis-details-stealthy-c2-persistence
+date: '2026-04-28'
+excerpt: >-
+  Black Hills Information Security 在一次违规评估活动中发现 Comburglar 入侵技术，该技术通过在违规期间被破坏的
+  COM 劫持实现持久的 C2。
+category: threat-intel
+tags:
+  - com-hijacking
+  - persistence
+  - c2
+  - bhis
+  - breach-assessment
+  - windows-security
+language: zh
+source_urls:
+  - 'https://www.blackhillsinfosec.com/the-curious-case-of-the-comburglar/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-comburglar-intrusion-bhis-details-stealthy-c2-persistence
+severity: high
+threat_actor: Comburglar
+---
+## Comburglar 入侵：BHIS 详述隐蔽的 C2 持久性
+
+## 执行摘要
+
+Black Hills Information Security (BHIS) 在最近的一次违规评估活动中披露了一种名为 "Comburglar" 的新型入侵技术。该方法利用组件对象模型 (COM) 劫持在受害者环境中建立持久、隐蔽的命令和控制 (C2)。根据 BHIS 研究员 Troy Wojewoda 的说法，这种技术利用 Windows COM 注册机制来规避传统检测工具，允许攻击者在不触发标准警报的情况下保持长期访问。
+
+## 技术分析
+
+Comburglar 技术依赖于滥用 Windows COM 对象注册。攻击者修改或创建 Windows 注册表中的 COM 类标识符 (CLSIDs)，将它们指向恶意 DLL 或可执行文件。当合法应用程序或系统组件调用 COM 对象时，攻击者的代码取而代之执行，提供持久的 C2 通道。BHIS 在一次违规评估中观察到这种方法，其中威胁行为者已经建立了初始访问，然后使用 COM 劫持来在重启后存活并规避端点检测。这种技术特别隐蔽，因为 COM 劫持可以融入正常系统活动——许多应用程序依赖于 COM 进行进程间通信，使得异常 CLSID 查找更难与良性操作区分。BHIS 没有披露具体的受害者行业或地区，但参与的背景暗示了一个企业环境。
+
+## 缓解措施与建议
+
+防御者应该审计 `HKEY_CLASSES_ROOT\CLSID` 和 `HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID` 下的 Windows 注册表键，寻找未经授权或修改的条目，特别是那些指向非标准文件路径的条目。BHIS 建议通过 Sysmon 事件 ID 7（Image loaded）或 Windows 事件日志 4688（Process creation）监控不寻常的 COM 对象实例化，并进行 CLSID 查找。此外，限制对 COM 注册键的写权限，仅限于管理员账户，并部署应用程序白名单以阻止未经授权的 DLL。定期的违规评估应包括 COM 劫持场景在内。
+
+## 参考资料
+
+- [The Curious Case of the Comburglar — Black Hills Information Security](https://www.blackhillsinfosec.com/the-curious-case-of-the-comburglar/)
