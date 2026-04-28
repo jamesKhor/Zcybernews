@@ -2,6 +2,6 @@
   "_comment": "Tracks the ISO timestamp of the most-recent successful digest broadcast per locale. send-digest.ts writes this on success; email-digest.yml commits it back so GHA runs have persistent state. Dry-runs DO NOT mutate this. See scripts/send-digest.ts::computeCutoffMs for the cutoff rule.",
   "_seeded": "2026-04-23T13:55:00Z",
   "_seed_note": "Re-seeded 2026-04-23 ~14:00 UTC after the original seed (2026-04-23T15:00:00Z) was a future timestamp — clock-skew guard correctly invalidated it, but caused 02:22 UTC cron to fall back to a 13h sliding window with too few articles to pass MIN_ARTICLES_TO_SEND. Re-seeded to a past timestamp; next 14:30 UTC cron will use 13h sliding window, then state advances on first successful send.",
-  "en": "2026-04-26T02:23:00.221Z",
+  "en": "2026-04-28T02:24:20.550Z",
   "zh": "2026-04-22T01:00:00Z"
 }
