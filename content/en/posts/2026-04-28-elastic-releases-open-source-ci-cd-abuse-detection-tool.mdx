@@ -1,0 +1,45 @@
+---
+title: Elastic Releases Open-Source CI/CD Abuse Detection Tool
+slug: 2026-04-28-elastic-releases-open-source-ci-cd-abuse-detection-tool
+date: '2026-04-28'
+excerpt: >-
+  Elastic Security Labs published an open-source CI/CD abuse detection template
+  using signal extraction and LLM reasoning to catch pipeline attacks across
+  GitHub Actions, GitLab CI,…
+category: tools
+tags:
+  - ci/cd
+  - elastic-security
+  - supply-chain-security
+  - open-source
+  - github-actions
+  - azure-devops
+language: en
+source_urls:
+  - >-
+    https://www.elastic.co/security-labs/detecting-cicd-pipeline-abuse-with-llm-augmented-analysis
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-elastic-releases-open-source-ci-cd-abuse-detection-tool
+---
+## Executive Summary
+
+Elastic Security Labs released an open-source CI/CD pipeline abuse detection template on April 28, 2026, designed to catch malicious activity in GitHub Actions, GitLab CI, and Azure DevOps pipelines. The tool combines signal extraction from pipeline logs with LLM-based reasoning to identify anomalies such as unauthorized code injection, credential theft, and artifact tampering. Elastic positions the template as a drop-in solution that requires no proprietary infrastructure, addressing a gap in defensive tooling for software supply chain attacks.
+
+## Technical Analysis
+
+The detection template, detailed in a blog post by Elastic Security Labs, operates by extracting structured signals from CI/CD pipeline execution logs — including job triggers, environment variable access, artifact uploads, and runner identity changes. These signals are then fed into an LLM reasoning layer that correlates events against known abuse patterns, such as pull request title manipulation, outbound network connections from build runners, and unexpected dependency fetching.
+
+Elastic specifically calls out three CI/CD platforms: GitHub Actions, GitLab CI, and Azure DevOps. For GitHub Actions, the template monitors `workflow_dispatch` events and `pull_request_target` triggers, which have been abused in past supply chain attacks to exfiltrate secrets. For GitLab CI, it flags jobs that override predefined CI variables or connect to external hosts. For Azure DevOps, it detects pipeline runs that modify build artifacts after the initial compilation step.
+
+The template is built on Elastic's open-source detection rule format and can be deployed via Elastic Agent or integrated into existing SIEM pipelines. Elastic notes that the LLM component is optional — the signal extraction layer alone can surface suspicious activity, while the LLM reasoning adds contextual alert enrichment.
+
+Elastic did not attribute the template to any specific recent attack campaign, but the timing follows a wave of CI/CD compromises including the Axios npm supply chain attack and the Checkmarx GitHub data leak, both reported in April 2026.
+
+## Mitigations & Recommendations
+
+Defenders should evaluate the Elastic template against their existing CI/CD security posture. The tool is designed to complement — not replace — secrets scanning, dependency pinning, and signed commits. Organizations using GitHub Actions should audit `pull_request_target` triggers and restrict `workflow_dispatch` to trusted actors. GitLab CI users should enforce CI variable scoping and disable runner access to production secrets. Azure DevOps teams should implement artifact integrity checks and monitor pipeline agent pools for unauthorized registrations.
+
+## References
+
+- [Elastic Security Labs: Detecting CI/CD Pipeline Abuse with LLM-Augmented Analysis](https://www.elastic.co/security-labs/detecting-cicd-pipeline-abuse-with-llm-augmented-analysis)

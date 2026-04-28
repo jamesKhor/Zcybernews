@@ -1,0 +1,44 @@
+---
+title: Elastic 发布开源 CI/CD 滥用检测工具
+slug: 2026-04-28-elastic-releases-open-source-ci-cd-abuse-detection-tool
+date: '2026-04-28'
+excerpt: >-
+  Elastic Security Labs 发布了一个开源的 CI/CD 滥用检测模板，使用信号提取和 LLM 推理来捕捉 GitHub
+  Actions、GitLab CI 等跨平台的流水线攻击…
+category: tools
+tags:
+  - ci/cd
+  - elastic-security
+  - supply-chain-security
+  - open-source
+  - github-actions
+  - azure-devops
+language: zh
+source_urls:
+  - >-
+    https://www.elastic.co/security-labs/detecting-cicd-pipeline-abuse-with-llm-augmented-analysis
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-elastic-releases-open-source-ci-cd-abuse-detection-tool
+---
+## 执行摘要
+
+Elastic Security Labs 在 2026 年 4 月 28 日发布了一个开源的 CI/CD 流水线滥用检测模板，旨在捕捉 GitHub Actions、GitLab CI 和 Azure DevOps 流水线中的恶意活动。该工具结合了从流水线日志中提取信号与基于 LLM 的推理，以识别诸如未经授权的代码注入、凭证盗窃和工件篡改等异常行为。Elastic 将该模板定位为一个即插即用的解决方案，不需要任何专有基础设施，以解决软件供应链攻击中的防御工具缺口。
+
+## 技术分析
+
+Elastic Security Labs 在博客文章中详细介绍的检测模板，通过从 CI/CD 流水线执行日志中提取结构化信号来运行——包括作业触发器、环境变量访问、工件上传和运行器身份变更。然后将这些信号输入到 LLM 推理层，该层将事件与已知的滥用模式进行关联，例如拉取请求标题操纵、构建运行器的出站网络连接和意外的依赖项获取。
+
+Elastic 特别提到了三个 CI/CD 平台：GitHub Actions、GitLab CI 和 Azure DevOps。对于 GitHub Actions，该模板监控 `workflow_dispatch` 事件和 `pull_request_target` 触发器，这些在过去的供应链攻击中被滥用以窃取机密。对于 GitLab CI，它标记了覆盖预定义 CI 变量或连接到外部主机的作业。对于 Azure DevOps，它检测在初始编译步骤后修改构建工件的流水线运行。
+
+该模板基于 Elastic 的开源检测规则格式构建，可以通过 Elastic Agent 部署或集成到现有的 SIEM 流水线中。Elastic 指出 LLM 组件是可选的——单独的信号提取层可以显示可疑活动，而 LLM 推理增加了上下文警报的丰富性。
+
+Elastic 没有将该模板归因于任何特定的最近攻击活动，但发布时间紧随一系列 CI/CD 泄露事件，包括 Axios npm 供应链攻击和 Checkmarx GitHub 数据泄露，两者均在 2026 年 4 月报告。
+
+## 缓解措施与建议
+
+防御者应该根据现有的 CI/CD 安全态势评估 Elastic 模板。该工具旨在补充——而不是替代——秘密扫描、依赖项固定和签名提交。使用 GitHub Actions 的组织应该审计 `pull_request_target` 触发器，并限制 `workflow_dispatch` 到可信参与者。GitLab CI 用户应该强制执行 CI 变量作用域，并禁用运行器访问生产机密。Azure DevOps 团队应该实施工件完整性检查，并监控流水线代理池以查找未经授权的注册。
+
+## 参考资料
+
+- [Elastic Security Labs: Detecting CI/CD Pipeline Abuse with LLM-Augmented Analysis](https://www.elastic.co/security-labs/detecting-cicd-pipeline-abuse-with-llm-augmented-analysis)
