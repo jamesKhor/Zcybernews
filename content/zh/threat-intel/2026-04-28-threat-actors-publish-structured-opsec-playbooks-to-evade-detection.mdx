@@ -1,0 +1,43 @@
+---
+title: 威胁行为者发布结构化OPSEC剧本以规避检测
+slug: 2026-04-28-threat-actors-publish-structured-opsec-playbooks-to-evade-detection
+date: '2026-04-28'
+excerpt: Flare详细说明了威胁行为者现在如何分发带有分层基础设施、身份分离和长期规避战术的OPSEC剧本，以避免被防御者检测到。
+category: threat-intel
+tags:
+  - opsec
+  - threat-actors
+  - evasion
+  - playbooks
+  - infrastructure
+  - flare
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/inside-an-opsec-playbook-how-threat-actors-evade-detection/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-threat-actors-publish-structured-opsec-playbooks-to-evade-detection
+severity: medium
+---
+## 执行摘要
+
+根据Flare发布的研究，威胁行为者现在正在分发详细的操作安全（OPSEC）剧本，这些剧本涵盖了分层基础设施管理、身份分离和长期规避战术。这些指南在地下论坛中被观察到，为避免被防御者发现而编入最佳实践，包括具体步骤，用于分隔命令和控制（C2）节点、轮换凭证和清除数字指纹。正式化的OPSEC剧本的出现标志着对手工艺的成熟，从临时规避转变为可重复、有文档记录的程序。
+
+## 技术分析
+
+Flare的分析，由BleepingComputer报道，描述了这些剧本涵盖了操作的多个阶段。关键组成部分包括：
+
+- **基础设施分层：**剧本建议使用多层代理、VPN和住宅IP网络来混淆C2流量的来源。具体指导包括避免从已知的托管提供商直接连接，而是通过被破坏的住宅路由器或IoT设备进行路由。
+- **身份分离：**建议对手为每个操作维护不同的数字人物，包括单独的电子邮件账户、加密货币钱包和虚拟机环境。剧本强调永远不要在不同的活动中重用用户名或句柄，以防止交叉归属。
+- **长期规避：**记录了诸如交错的信标间隔、抖动流量模式和定期基础设施拆除等技术，以避免基于模式的检测。一些剧本包括反取证步骤，如清除日志、禁用被破坏主机上的遥测和使用模仿合法应用程序流量的加密通信通道。
+
+这些剧本并没有归因于一个单一的团体，而是出现在多个论坛上，表明在犯罪生态系统内存在更广泛的知识共享趋势。Flare指出，细节水平与合法组织内部安全文件相媲美。
+
+## 缓解措施与建议
+
+防御者应监控与这些剧本建议一致的基础设施模式，例如通过多个住宅代理路由流量或故意避免规律间隔的不寻常信标行为。网络检测团队可以专注于识别模仿合法应用程序协议的C2流量（例如，具有非标准证书链的HTTPS）。基于身份的检测——跨事件关联用户名、电子邮件地址或钱包地址——可能因对手采用更严格的分隔而变得不那么可靠。组织还应审查自己的OPSEC实践，确保内部安全文件不会泄露或变得对威胁行为者可访问。
+
+## 参考资料
+
+- [Inside an OPSEC Playbook: How Threat Actors Evade Detection — BleepingComputer](https://www.bleepingcomputer.com/news/security/inside-an-opsec-playbook-how-threat-actors-evade-detection/)

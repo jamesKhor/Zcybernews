@@ -1,0 +1,40 @@
+---
+title: Attackers Scan for Vercel Bypass Cookie Header in Wild
+slug: 2026-04-28-attackers-scan-for-vercel-bypass-cookie-header-in-wild
+date: '2026-04-28'
+excerpt: >-
+  SANS ISC honeypots detected HTTP requests carrying X-Vercel-Set-Bypass-Cookie
+  header, indicating active scanning for Vercel deployments vulnerable to
+  authentication bypass.
+category: threat-intel
+tags:
+  - vercel
+  - authentication-bypass
+  - scanning
+  - honeypot
+  - sans-isc
+language: en
+source_urls:
+  - 'https://isc.sans.edu/diary/rss/32930'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-attackers-scan-for-vercel-bypass-cookie-header-in-wild
+severity: medium
+---
+## Executive Summary
+
+SANS Internet Storm Center (ISC) reported observing HTTP requests targeting its honeypots over the weekend that included a custom header `X-Vercel-Set-Bypass-Cookie`. This header appears to be an attempt to exploit a previously undocumented or misconfigured authentication bypass mechanism in Vercel deployments. The presence of these requests in the wild suggests active reconnaissance or exploitation scanning, though no specific CVE ID or vendor advisory has been linked to this header as of April 28, 2026.
+
+## Technical Analysis
+
+According to a diary entry published by SANS ISC on April 28, 2026, the honeypot received several requests containing the `X-Vercel-Set-Bypass-Cookie` header. The exact payload and target path were not detailed in the public diary entry, but the header name strongly implies an attempt to set a bypass cookie on a Vercel-hosted application or serverless function. Vercel is a popular platform-as-a-service provider used for deploying frontend applications and serverless functions. If such a header were honored by a misconfigured Vercel deployment or a vulnerable middleware component, it could allow an attacker to bypass authentication checks and gain unauthorized access to protected resources.
+
+The ISC diary did not attribute the scanning to any known threat actor group or provide indicators of compromise such as IP addresses or request patterns. The source of the requests and the specific vulnerability being targeted remain unclear. It is possible this is a novel attack technique, a misconfiguration exploit, or a test against a specific application that uses a custom header for internal authentication.
+
+## Mitigations & Recommendations
+
+Defenders operating Vercel deployments should review their serverless function and middleware configurations to ensure no custom headers like `X-Vercel-Set-Bypass-Cookie` are inadvertently processed for authentication decisions. Vercel users should audit access logs for any requests containing this header and investigate any anomalous access patterns. As a general precaution, authentication logic should rely on standard HTTP authentication mechanisms (e.g., cookies set by the application, OAuth tokens, or API keys) rather than custom headers that could be injected by an attacker. Vercel has not yet issued a public statement or security advisory regarding this header; organizations should monitor Vercel's security channels for updates.
+
+## References
+
+- [SANS Internet Storm Center Diary: HTTP Requests with X-Vercel-Set-Bypass-Cookie Header](https://isc.sans.edu/diary/rss/32930)

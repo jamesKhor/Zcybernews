@@ -1,0 +1,39 @@
+---
+title: 攻击者在野外扫描Vercel绕过Cookie头部
+slug: 2026-04-28-attackers-scan-for-vercel-bypass-cookie-header-in-wild
+date: '2026-04-28'
+excerpt: >-
+  SANS
+  ISC蜜罐检测到携带X-Vercel-Set-Bypass-Cookie头部的HTTP请求，表明正在积极扫描容易受到身份验证绕过攻击的Vercel部署。
+category: threat-intel
+tags:
+  - vercel
+  - authentication-bypass
+  - scanning
+  - honeypot
+  - sans-isc
+language: zh
+source_urls:
+  - 'https://isc.sans.edu/diary/rss/32930'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-attackers-scan-for-vercel-bypass-cookie-header-in-wild
+severity: medium
+---
+## 执行摘要
+
+SANS Internet Storm Center (ISC) 报告称，在周末观察到针对其蜜罐的 HTTP 请求中包含了一个自定义头部 `X-Vercel-Set-Bypass-Cookie`。这个头部似乎是企图利用 Vercel 部署中之前未记录或配置错误的认证绕过机制。这些请求在野外的出现表明正在进行积极的侦察或利用扫描，尽管截至 2026 年 4 月 28 日，没有特定的 CVE ID 或供应商咨询与此头部相关联。
+
+## 技术分析
+
+根据 SANS ISC 在 2026 年 4 月 28 日发表的日记条目，蜜罐收到了几个包含 `X-Vercel-Set-Bypass-Cookie` 头部的请求。公开的日记条目中没有详细说明确切的有效载荷和目标路径，但头部名称强烈暗示了尝试在 Vercel 托管的应用程序或无服务器函数上设置一个绕过 cookie。Vercel 是一个流行的平台即服务提供商，用于部署前端应用程序和无服务器函数。如果这样的头部被配置错误的 Vercel 部署或易受攻击的中间件组件接受，它可能允许攻击者绕过认证检查并获得对受保护资源的未经授权访问。
+
+ISC 日记没有将扫描归因于任何已知的威胁行为者组，也没有提供入侵指标，如 IP 地址或请求模式。请求的来源和被针对的具体漏洞仍然不清楚。这可能是一个新颖的攻击技术，一个配置错误的漏洞利用，或者是一个针对使用自定义头部进行内部认证的特定应用程序的测试。
+
+## 缓解措施与建议
+
+运营 Vercel 部署的防御者应该检查他们的无服务器函数和中间件配置，确保没有像 `X-Vercel-Set-Bypass-Cookie` 这样的自定义头部被无意中用于认证决策。Vercel 用户应该审计访问日志，查找包含此头部的任何请求，并调查任何异常的访问模式。作为一般预防措施，认证逻辑应该依赖于标准的 HTTP 认证机制（例如，由应用程序设置的 cookie、OAuth 令牌或 API 密钥），而不是可能被攻击者注入的自定义头部。Vercel 尚未就这个头部发表公开声明或安全咨询；组织应该监控 Vercel 的安全渠道以获取更新。
+
+## 参考资料
+
+- [SANS Internet Storm Center Diary: HTTP Requests with X-Vercel-Set-Bypass-Cookie Header](https://isc.sans.edu/diary/rss/32930)
