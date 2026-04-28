@@ -1,0 +1,41 @@
+---
+title: 对手勒索软件团伙0APT和KryBit相互泄露数据
+slug: 2026-04-28-rival-ransomware-gangs-0apt-krybit-leak-each-others-data
+date: '2026-04-28'
+excerpt: 0APT和KryBit勒索软件团伙在一场争执后泄露了对方的基础设施数据，将C2服务器、面板凭证和受害者名单暴露给防御者。
+category: threat-intel
+tags:
+  - 0apt
+  - krybit
+  - ransomware
+  - threat-intel
+  - data-leak
+  - dark-reading
+language: zh
+source_urls:
+  - >-
+    https://www.darkreading.com/threat-intelligence/feuding-ransomware-groups-leak-data
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-rival-ransomware-gangs-0apt-krybit-leak-each-others-data
+severity: high
+threat_actor: 0APT
+threat_actor_origin: unknown
+---
+## 执行摘要
+
+两个勒索软件行动 —— 0APT 和 KryBit —— 已经相互对立，泄露了内部基础设施数据，安全研究人员表示，这些数据提供了对这两个组织的罕见操作洞察。根据 Dark Reading 的报道，这场争执始于对一个失败的勒索软件即服务（RaaS）合作伙伴关系的争议，升级为相互倾泻命令和控制（C2）服务器地址、面板登录凭证和受害者名单。
+
+## 技术分析
+
+0APT，一个相对较新的 RaaS 组织，据报道招募了 KryBit 作为其分支机构。当 KryBit 未能支付赎金的一部分时，0APT 通过泄露 KryBit 的面板凭证和 C2 基础设施进行报复。KryBit 回应称，泄露了 0APT 的构建者源代码和受害者名单。泄露的数据包括 C2 服务器的 IP 地址、面板 URL 和管理凭证 —— 所有这些都可以被防御者用来识别被入侵的网络或阻止基础设施。
+
+Dark Reading 指出，这些泄露暴露了两个组织的运营安全失败：0APT 使用了一个通过硬编码域访问的集中式面板，而 KryBit 在活动中重复使用基础设施。交叉泄露为研究人员提供了一个罕见的窗口，了解这两个组织的内部运作，包括他们的加密程序和支付处理。
+
+## 缓解措施与建议
+
+防御者应该将泄露的 C2 IP 和域名与自己的网络日志进行交叉比对，并在边界处阻止它们。经历过勒索软件事件的组织应该检查他们的数据是否出现在泄露的受害者名单中。监控 0APT 或 KryBit 的指标 —— 特别是特定的面板 URL 和凭证 —— 可以帮助识别活跃的入侵。没有适用的补丁；这是一个情报共享机会。
+
+## 参考资料
+
+- [Dark Reading: Feuding Ransomware Groups Leak Each Other's Data](https://www.darkreading.com/threat-intelligence/feuding-ransomware-groups-leak-data)

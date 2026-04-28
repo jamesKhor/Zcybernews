@@ -1,0 +1,44 @@
+---
+title: 'Rival Ransomware Gangs 0APT, KryBit Leak Each Other''s Data'
+slug: 2026-04-28-rival-ransomware-gangs-0apt-krybit-leak-each-others-data
+date: '2026-04-28'
+excerpt: >-
+  0APT and KryBit ransomware groups leaked each other's infrastructure data
+  after a feud, exposing C2 servers, panel credentials, and victim lists to
+  defenders.
+category: threat-intel
+tags:
+  - 0apt
+  - krybit
+  - ransomware
+  - threat-intel
+  - data-leak
+  - dark-reading
+language: en
+source_urls:
+  - >-
+    https://www.darkreading.com/threat-intelligence/feuding-ransomware-groups-leak-data
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-rival-ransomware-gangs-0apt-krybit-leak-each-others-data
+severity: high
+threat_actor: 0APT
+threat_actor_origin: unknown
+---
+## Executive Summary
+
+Two ransomware operations — 0APT and KryBit — have turned on each other, leaking internal infrastructure data that security researchers say provides rare operational insight into both groups. According to Dark Reading, the feud began after a dispute over a failed ransomware-as-a-service (RaaS) partnership, escalating into tit-for-tat dumps of command-and-control (C2) server addresses, panel login credentials, and victim lists.
+
+## Technical Analysis
+
+0APT, a relatively new RaaS group, reportedly recruited KryBit as an affiliate. When KryBit failed to pay a share of a ransom, 0APT retaliated by leaking KryBit's panel credentials and C2 infrastructure. KryBit responded by dumping 0APT's builder source code and a list of victims. The leaked data includes IP addresses of C2 servers, panel URLs, and administrative credentials — all of which could be used by defenders to identify compromised networks or block infrastructure.
+
+Dark Reading notes that the leaks expose both groups' operational security failures: 0APT used a centralized panel accessible via a hardcoded domain, while KryBit reused infrastructure across campaigns. The cross-leak has given researchers a rare window into the inner workings of both groups, including their encryption routines and payment handling.
+
+## Mitigations & Recommendations
+
+Defenders should cross-reference the leaked C2 IPs and domains against their own network logs and block them at the perimeter. Organizations that have experienced ransomware incidents should check if their data appears in the leaked victim lists. Monitoring for 0APT or KryBit indicators — particularly the specific panel URLs and credentials — can help identify active compromises. No patch is applicable; this is an intelligence-sharing opportunity.
+
+## References
+
+- [Dark Reading: Feuding Ransomware Groups Leak Each Other's Data](https://www.darkreading.com/threat-intelligence/feuding-ransomware-groups-leak-data)
