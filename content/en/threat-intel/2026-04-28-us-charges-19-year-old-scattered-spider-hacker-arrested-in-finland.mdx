@@ -1,0 +1,51 @@
+---
+title: US Charges 19-Year-Old Scattered Spider Hacker Arrested in Finland
+slug: 2026-04-28-us-charges-19-year-old-scattered-spider-hacker-arrested-in-finland
+date: '2026-04-28'
+excerpt: >-
+  A 19-year-old US-Estonian dual citizen arrested in Finland faces federal
+  charges as a prolific Scattered Spider member linked to ransomware attacks on
+  MGM Resorts and Caesars.
+category: threat-intel
+tags:
+  - scattered-spider
+  - ransomware
+  - law-enforcement
+  - cybercrime
+  - us-charges
+  - finland-arrest
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/us-reportedly-charges-scattered-spider-hacker-arrested-in-finland/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-us-charges-19-year-old-scattered-spider-hacker-arrested-in-finland
+severity: high
+threat_actor: Scattered Spider
+threat_actor_origin: United States
+affected_sectors:
+  - gaming
+  - hospitality
+  - financial services
+affected_regions:
+  - North America
+  - Europe
+---
+## Executive Summary
+
+A 19-year-old dual US-Estonian citizen arrested in Finland earlier this month has been charged in the United States for his alleged role as a prolific member of the **Scattered Spider** cybercriminal collective, according to a report from BleepingComputer citing court documents. The individual, whose name has not been publicly released, is accused of participating in a series of high-profile ransomware and extortion attacks against major US corporations, including **MGM Resorts International** and **Caesars Entertainment**, as well as telecommunications and financial services firms. The charges underscore ongoing international law enforcement efforts to dismantle the loosely organized but highly disruptive hacking group.
+
+## Technical Analysis
+
+Scattered Spider, also tracked as **UNC3944** and **Roasted 0ktapus**, is known for its sophisticated social engineering campaigns, particularly **SIM-swapping** and **vishing** (voice phishing) attacks targeting help desks and IT support staff. The group typically gains initial access by impersonating employees to reset credentials or enroll new devices in multi-factor authentication (MFA) systems, often via phone calls to corporate help desks. Once inside, they deploy ransomware payloads such as **BlackCat/ALPHV** and **LockBit** via affiliate arrangements, and have also conducted data extortion without encryption.
+
+The charges against the 19-year-old, filed in the Central District of California, reportedly include conspiracy to commit wire fraud, computer fraud and abuse, and aggravated identity theft, according to the BleepingComputer report. The arrest in Finland was carried out by Finnish authorities at the request of the US Department of Justice, and extradition proceedings are expected. The suspect is alleged to have been involved in attacks that collectively caused hundreds of millions of dollars in losses.
+
+## Mitigations & Recommendations
+
+Organizations should reinforce help desk verification protocols to defend against the social engineering tactics Scattered Spider relies on. Implement **out-of-band verification** for credential resets and MFA device enrollments — for example, requiring a callback to a known phone number or confirmation via a manager. Deploy **phishing-resistant MFA** such as FIDO2 security keys or certificate-based authentication where possible. Monitor for unusual patterns in help desk ticket volumes, especially after-hours requests for password resets or SIM swaps. Segment networks to limit lateral movement and ensure offline, immutable backups are available for rapid recovery in the event of a ransomware deployment.
+
+## References
+
+- [US reportedly charges Scattered Spider hacker arrested in Finland](https://www.bleepingcomputer.com/news/security/us-reportedly-charges-scattered-spider-hacker-arrested-in-finland/)
