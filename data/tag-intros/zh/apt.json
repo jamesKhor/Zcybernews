@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "intro": "2026年4月13日至24日期间，ZCyberNews在APT标签下报道了13起高严重性事件，其中GopherWhisper、CyberAv3ngers和Sapphire Sleet成为最常被观测到的威胁行为体。这些攻击活动主要针对蒙古、亚洲、孟加拉国、中美洲和东亚地区的政府、加密货币、能源、科技及医疗保健行业。相关报道反映了针对这些地区及行业的高度集中活跃期，全部13篇文章均被评估为高严重性等级。",
-  "sources_hash": "6b63d03cbd312893",
-  "source_intro_hash": "d66594457a8b92b6",
+  "intro": "过去两周，ZCyberNews追踪了14起标记为APT的高严重性事件，其中GopherWhisper、CyberAv3ngers和Sapphire Sleet成为最常被观测到的威胁行为体。这些攻击活动主要针对日本、蒙古、亚洲、孟加拉国及中美洲地区的政府、加密货币、能源、科技和商业服务行业。2026年4月13日至4月26日期间的高度集中活动，凸显了这些区域和行业持续受到重点攻击。",
+  "sources_hash": "6573d1742ec4b388",
+  "source_intro_hash": "4baf4c2ccfd19758",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:15:03.773Z",
+  "generated_at": "2026-04-28T04:22:29.301Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

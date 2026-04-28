@@ -1,9 +1,9 @@
 {
   "tag": "eset",
   "locale": "en",
-  "intro": "Between April 22 and 27, 2026, ZCyberNews published 10 articles tagged with ESET, covering a period of high-severity activity. GopherWhisper, APT33, and LockBit were the top threat actors observed, with attacks primarily targeting government, business services, energy, finance, and financial services sectors. The affected regions included Global, Mongolia, Europe, Japan, and the Middle east. The severity mix of these reports was one informational, seven high, and one medium.",
-  "sources_hash": "9943ac9dcadcd754",
+  "intro": "Between April 22 and 27, 2026, ESET’s telemetry captured 11 events, with a severity mix of one informational, two medium, and seven high alerts. The most-covered threat actors were GopherWhisper, APT33, and LockBit, targeting government, technology, business services, consumer, and energy sectors across Global, Mongolia, Europe, Japan, and the Middle East. The high-severity majority underscores concentrated activity against these diverse regions and industries.",
+  "sources_hash": "220282d5b5660b3b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:18:27.797Z",
+  "generated_at": "2026-04-28T04:20:55.577Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

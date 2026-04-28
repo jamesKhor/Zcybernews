@@ -1,7 +1,7 @@
 {
   "tag": "eset",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-22",
     "latest": "2026-04-27"
@@ -14,10 +14,10 @@
   "top_cves": [],
   "top_sectors": [
     "government",
+    "technology",
     "business services",
-    "energy",
-    "finance",
-    "financial services"
+    "consumer",
+    "energy"
   ],
   "top_regions": [
     "Global",
@@ -28,13 +28,13 @@
   ],
   "severity_mix": {
     "informational": 1,
-    "high": 7,
-    "medium": 1
+    "medium": 2,
+    "high": 7
   },
   "recent_excerpts": [
     "ESET argues cybersecurity is an unmeasured competitive advantage enabling safe operations in hostile environments, not just a cost center. Brief analysis.",
     "ESET Threat Research Director Jean-Ian Boutin explains how SMBs leverage MDR and threat intel to detect intrusions faster, citing 3.5-day median dwell time reduction.",
-    "ESET warns that misconfigured cloud VMs—overprivileged IAM roles, exposed management ports, and unpatched OS images—create systemic security gaps across enterprise environments."
+    "ESET analysis shows 1 in 3 Android apps request unnecessary permissions — location, camera, microphone — enabling data harvesting and surveillance. Users should audit permissions."
   ],
-  "sources_hash": "9943ac9dcadcd754"
+  "sources_hash": "220282d5b5660b3b"
 }

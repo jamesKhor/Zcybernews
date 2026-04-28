@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "zh",
-  "intro": "金融服务业和政府实体在2026年4月13日至4月26日期间遭受了一波集中网络犯罪的冲击，其中加勒比地区和拉丁美洲是受影响最严重的区域。十五篇文章记录了十起归因于LockBit、REvil和Triad Nexus的高严重性事件。这些威胁行为者将目标对准了电子商务和零售等行业，活动范围覆盖全球、中国和法国。",
-  "sources_hash": "3c8699ac44df3f46",
-  "source_intro_hash": "ffe9bc6f7c15cad3",
+  "intro": "过去两周，金融服务业、政府部门和电子商务领域成为一系列17起网络犯罪事件的主要目标，其中11起被评定为高严重性。LockBit、Chinese Transnational Organized Crime和REvil在影响加勒比地区、全球范围、拉丁美洲、东南亚及美国的攻击活动中被观测到。报告期从2026年4月13日至4月27日，凸显了针对这些地区和行业的一波集中攻击活动。",
+  "sources_hash": "1bce259221aa30ae",
+  "source_intro_hash": "2f89e762d3f1d1a1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:15:12.435Z",
+  "generated_at": "2026-04-28T04:22:36.746Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

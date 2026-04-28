@@ -1,9 +1,9 @@
 {
   "tag": "android",
   "locale": "en",
-  "intro": "The Mirax and NGate threat actors were active in the Android ecosystem during this period, with CVE-2023-4863 among the key vulnerabilities exploited. Their campaigns primarily targeted the cryptocurrency and financial services sectors, along with individuals, technology, and telecommunications. The attacks showed a significant geographic focus on Europe, Brazil, Latin America, and Spain, with some incidents having a global reach. The severity of the reported incidents was notable, with a majority classified as high or critical among the eleven articles in this archive.",
-  "sources_hash": "e558fe48a4c8a756",
+  "intro": "Over the past two weeks, ZCyberNews has tracked 12 articles concerning Android, with the threat actors Mirax and NGate appearing prominently. The coverage spans from April 12 to April 26, 2026, and includes a severity mix of one medium, six high, three informational, and two critical reports. The most frequently cited vulnerability is CVE-2023-4863. Affected sectors include cryptocurrency, technology, consumer, financial services, and individuals, while impacted regions span Europe, Global, Brazil, Latin America, and Spain.",
+  "sources_hash": "eaef9be75eee1fdf",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:06:30.140Z",
+  "generated_at": "2026-04-28T04:20:51.599Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

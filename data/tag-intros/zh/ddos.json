@@ -1,10 +1,10 @@
 {
   "tag": "ddos",
   "locale": "zh",
-  "intro": "2026年4月16日至4月26日期间发布的七篇文章涉及DDoS标签，严重程度分布为三篇高危、三篇中危和一篇信息性报告。威胁行为者Mirai被观察到针对加拿大、德国、全球区域及美国的互联网基础设施、社交媒体和电信行业。关键漏洞包括CVSS评分为8.8的CVE-2025-29635和CVSS评分为6.3的CVE-2024-3721。",
-  "sources_hash": "7d99bd794f75ef44",
-  "source_intro_hash": "0cbd92213e4d8ae3",
+  "intro": "2026年4月16日至27日期间，ZCyberNews在DDoS标签下发布了八篇文章，涵盖四起高严重性和三起中等严重性事件。威胁行为者Dort和Mirai被观察到针对加拿大、德国、全球区域及美国的互联网基础设施、社交媒体、科技和电信行业。关键漏洞包括CVSS评分为8.8的CVE-2025-29635和评分为6.3的CVE-2024-3721。该期间还包含一份信息性报告。",
+  "sources_hash": "44305bc8a13df111",
+  "source_intro_hash": "28528b36ddbd3dd7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:20:10.425Z",
+  "generated_at": "2026-04-28T04:22:38.615Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

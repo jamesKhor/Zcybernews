@@ -1,7 +1,7 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "count": 24,
+  "count": 25,
   "date_range": {
     "first": "2026-04-08",
     "latest": "2026-04-27"
@@ -13,27 +13,27 @@
   "top_sectors": [
     "technology",
     "critical_infrastructure",
+    "enterprise software",
     "finance",
-    "financial services",
-    "government"
+    "financial services"
   ],
   "top_regions": [
+    "Global",
     "United states",
     "Asia",
     "Australia",
-    "Canada",
-    "Global"
+    "Canada"
   ],
   "severity_mix": {
     "high": 10,
     "informational": 10,
     "critical": 1,
-    "medium": 3
+    "medium": 4
   },
   "recent_excerpts": [
     "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…",
     "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。",
     "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。"
   ],
-  "sources_hash": "80b628c51e5d841c"
+  "sources_hash": "77019c1572757dcb"
 }

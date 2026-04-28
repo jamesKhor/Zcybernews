@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [
@@ -16,18 +16,20 @@
   "top_sectors": [
     "technology",
     "research",
+    "software development",
     "software-development"
   ],
   "top_regions": [],
   "severity_mix": {
+    "critical": 1,
     "high": 1,
     "informational": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。",
     "CVE-2026-33626（CVSS 7.5）在 LMDeploy 中，一个开源的 LLM 工具包，被在野外利用，距离公开披露仅 13 小时，使得 SSRF 攻击能够访问敏感信息...",
-    "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。",
-    "Boost Security 的 SmokedMeat 框架从单一 CI/CD 流水线缺陷执行实时攻击演示，向工程团队展示攻击者如何移动以破坏代码、机密和基础设施。"
+    "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。"
   ],
-  "sources_hash": "22a44ab991738ad8"
+  "sources_hash": "0fbd383d4ebc002b"
 }

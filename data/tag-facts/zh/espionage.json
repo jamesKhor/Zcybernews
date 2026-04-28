@@ -1,14 +1,15 @@
 {
   "tag": "espionage",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "APT28 (Fancy Bear)",
-    "Mustang Panda"
+    "Mustang Panda",
+    "Silver Dragon"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -19,14 +20,14 @@
     "critical infrastructure"
   ],
   "top_regions": [
+    "Europe",
     "Global",
     "India",
     "South korea",
-    "Ukraine",
-    "United kingdom"
+    "Southeast asia"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "critical": 1
   },
   "recent_excerpts": [
@@ -34,5 +35,5 @@
     "一种名为 'AgingFly' 的新恶意软件家族正在从 Chromium 浏览器和 WhatsApp 窃取认证数据，在针对乌克兰地方政府机构和医院的定向攻击中。",
     "2026年4月，微软Windows、苹果iOS和思科网络设备中的多个关键漏洞被积极利用，需要立即修补。攻击针对企业和政府网络进行数据盗窃和间谍活动。"
   ],
-  "sources_hash": "09ebf7e1ea8fc8a2"
+  "sources_hash": "1c4a34cda7aecd3e"
 }

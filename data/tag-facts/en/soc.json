@@ -1,10 +1,10 @@
 {
   "tag": "soc",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-21"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [],
@@ -14,9 +14,9 @@
     "informational": 7
   },
   "recent_excerpts": [
+    "Black Hills InfoSec SOC team recounts a 14-hour overnight incident response engagement from Wild West Hackin' Fest in Deadwood — real-world triage, containment, and lessons for…",
     "Mature security operations centers reduce mean time to respond by 40% by integrating threat intelligence into workflows, while others waste time on siloed data and manual processes.",
-    "Security operations centers (SOCs) stall at lower maturity levels when threat intelligence feeds remain external to analyst workflows, according to a new analysis.",
-    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout."
+    "Security operations centers (SOCs) stall at lower maturity levels when threat intelligence feeds remain external to analyst workflows, according to a new analysis."
   ],
-  "sources_hash": "204b09b6b610b4ec"
+  "sources_hash": "a828f0b377de6c87"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "intro": "Lazarus Group, APT37 (ScarCruft, InkySquid), and BlackFile were the most frequently observed threat actors across 46 social-engineering articles published between April 8 and April 24, 2026. The coverage spanned cryptocurrency, technology, financial-services, financial services, and hospitality sectors, with victims reported globally, including North America, Europe, the United States, and Canada. The severity mix included 34 high, 11 medium, and 1 informational report.",
-  "sources_hash": "ee5cc7436081376b",
+  "intro": "Lazarus Group, UNC6692, and APT37 (ScarCruft, InkySquid) were the most frequently cited threat actors across 50 articles on social-engineering tactics published between April 8 and April 28, 2026. The coverage, which included 38 high-severity reports, primarily targeted the technology, cryptocurrency, financial services, and hospitality sectors. Affected regions spanned North America, Europe, and Global, with specific mentions of the United States and Canada. One informational piece rounded out the mix.",
+  "sources_hash": "b02f4a82c48b8ffb",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:01:51.063Z",
+  "generated_at": "2026-04-28T04:20:08.604Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

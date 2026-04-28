@@ -1,14 +1,15 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "APT28 (Fancy Bear)",
-    "Mustang Panda"
+    "Mustang Panda",
+    "Silver Dragon"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -19,14 +20,14 @@
     "critical infrastructure"
   ],
   "top_regions": [
+    "Europe",
     "Global",
     "India",
     "South korea",
-    "Ukraine",
-    "United kingdom"
+    "Southeast asia"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "critical": 2
   },
   "recent_excerpts": [
@@ -34,5 +35,5 @@
     "A new malware family dubbed 'AgingFly' is stealing authentication data from Chromium browsers and WhatsApp in targeted attacks against Ukrainian local government bodies and hospitals.",
     "Multiple critical vulnerabilities in Microsoft Windows, Apple iOS, and Cisco networking gear were actively exploited in April 2026, requiring immediate patching."
   ],
-  "sources_hash": "439c480dcb94fd56"
+  "sources_hash": "9f94c11c69457c31"
 }

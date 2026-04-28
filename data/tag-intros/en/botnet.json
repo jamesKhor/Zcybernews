@@ -1,9 +1,9 @@
 {
   "tag": "botnet",
   "locale": "en",
-  "intro": "Over a ten-article span from April 14 to April 26, 2026, ZCyberNews covered botnet activity featuring seven high-severity incidents. Threat actors Mirai, The Gentlemen, and W3LL were observed, with exploitation tied to CVE-2025-29635 (CVSS 8.8), CVE-2024-3721 (CVSS 6.3), and CVE-2023-33538. Affected sectors included telecommunications, corporate, finance, and internet infrastructure, with impacts reported across Canada, the Czech Republic, Germany, the United States, and globally.",
-  "sources_hash": "6d22ea37ba049d28",
+  "intro": "Between 14 and 27 April 2026, ZCyberNews published 11 articles under the botnet tag. Threat actors Dort, Mirai, and The Gentlemen were observed. Key vulnerabilities included CVE-2025-29635 (CVSS 8.8), CVE-2024-3721 (CVSS 6.3), and CVE-2023-33538. Affected sectors spanned technology, telecommunications, corporate, finance, and internet infrastructure, with reported impacts in Canada, the Czech Republic, Germany, the United States, and globally. The coverage comprised eight high-severity incidents, two medium, and one critical.",
+  "sources_hash": "5d9c66016a36ef54",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:18:25.709Z",
+  "generated_at": "2026-04-28T04:20:53.720Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

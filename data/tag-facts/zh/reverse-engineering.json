@@ -1,0 +1,27 @@
+{
+  "tag": "reverse-engineering",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-04-27"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "cybersecurity",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "informational": 5
+  },
+  "recent_excerpts": [
+    "Black Hills InfoSec 发布了一份实用的恶意软件分析指南，涵盖了静态、动态和内存分析技术，供寻求逆向工程样本的防御者使用。",
+    "OpenAI 正在扩大其 GPT-5.4-Cyber 模型的使用范围，这是一个专门用于逆向工程和恶意软件分析的人工智能，紧随 Anthropic 的进攻型 'Mythos' 模型的公布之后。此举旨在降低合法安全研究的障碍。",
+    "OpenAI 正在扩展其信任访问网络（TAC）项目，为经过审查的安全研究人员和团队提供优先访问 GPT-5.4-Cyber 模型的权限，用于逆向工程和漏洞发现。"
+  ],
+  "sources_hash": "3c9913112b3db5d1"
+}

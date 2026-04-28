@@ -1,10 +1,10 @@
 {
   "tag": "privacy",
   "locale": "zh",
-  "count": 19,
+  "count": 20,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [
@@ -13,8 +13,8 @@
     }
   ],
   "top_sectors": [
-    "government",
     "technology",
+    "government",
     "education",
     "telecommunications",
     "Advertising"
@@ -27,14 +27,14 @@
     "Netherlands"
   ],
   "severity_mix": {
+    "medium": 9,
     "high": 5,
-    "medium": 8,
     "informational": 6
   },
   "recent_excerpts": [
+    "ESET 分析显示 1/3 的 Android 应用请求不必要的权限 —— 位置、相机、麦克风 —— 使数据收集和监视成为可能。用户应该审计权限。",
     "CVE-2026-28950在iOS通知服务中保留了设备上的已删除Signal消息，可通过取证工具访问。苹果在iOS 18.4.1和iPadOS 18.4.1中修复了日志记录缺陷。",
-    "美国移民和海关执法局（ICE）确认使用了以色列公司 Graphite 的间谍软件，这是一个能够从加密消息应用如 WhatsApp 中提取数据的工具…",
-    "攻击者从 Rituals Cosmetics 的 My Rituals 会员数据库中窃取了个人数据 —— 名字、电子邮件、地址和忠诚度积分。受影响客户数量未披露。"
+    "美国移民和海关执法局（ICE）确认使用了以色列公司 Graphite 的间谍软件，这是一个能够从加密消息应用如 WhatsApp 中提取数据的工具…"
   ],
-  "sources_hash": "2ba30c91611be881"
+  "sources_hash": "e98d5bae8db42aa7"
 }

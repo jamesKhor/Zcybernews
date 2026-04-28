@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [
@@ -16,18 +16,20 @@
   "top_sectors": [
     "technology",
     "research",
+    "software development",
     "software-development"
   ],
   "top_regions": [],
   "severity_mix": {
+    "critical": 1,
     "high": 1,
     "informational": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "Attackers compromised the elementary-data PyPI package (1.1M monthly downloads) to push an infostealer targeting developer credentials, crypto wallets, and environment variables.",
     "CVE-2026-33626 (CVSS 7.5) in LMDeploy, an open-source LLM toolkit, was exploited in the wild within 13 hours of public disclosure, enabling SSRF attacks to access sensitive…",
-    "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi",
-    "Boost Security's SmokedMeat framework executes live attack demonstrations from a single CI/CD pipeline flaw, showing engineering teams exactly how attackers move to compromise code, secrets, and infra"
+    "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi"
   ],
-  "sources_hash": "22a44ab991738ad8"
+  "sources_hash": "0fbd383d4ebc002b"
 }

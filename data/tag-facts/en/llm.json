@@ -1,10 +1,10 @@
 {
   "tag": "llm",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-24"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [
@@ -14,15 +14,18 @@
     }
   ],
   "top_sectors": [
+    "technology",
     "cloud service providers",
     "enterprise",
-    "research",
-    "technology"
+    "enterprise software",
+    "research"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "high": 5,
-    "medium": 3,
+    "medium": 4,
     "informational": 1
   },
   "recent_excerpts": [
@@ -30,5 +33,5 @@
     "A controlled study reveals humans apply social heuristics like fairness and cooperation to LLM opponents in strategic games, leading to predictable exploitation and potential security risks in human-A",
     "A security analysis of over 400 LLM agent routing services reveals widespread vulnerabilities enabling attackers to inject malicious commands, leak sensitive data, and bypass intended AI model behavio"
   ],
-  "sources_hash": "e3ba68fcba7e92bb"
+  "sources_hash": "f68a18382159b020"
 }

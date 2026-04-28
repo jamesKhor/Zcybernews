@@ -1,0 +1,30 @@
+{
+  "tag": "identity-security",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "all",
+    "financial services",
+    "healthcare",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "Black Hills InfoSec demonstrates how attackers abuse Microsoft SSPR to bypass MFA and reset credentials via social engineering. Real-world test scenario reveals detection gaps.",
+    "Autonomous AI agents with file and service access are forcing organizations to rethink identity controls, data boundaries, and monitoring — Krebs reports on shifting attack…",
+    "Elastic Security Labs released nine new integrations for cloud, endpoint, email, identity, and SIEM use cases in Q1 2026, expanding detection coverage for AWS, Azure, and Google…"
+  ],
+  "sources_hash": "8977ef918f434a71"
+}

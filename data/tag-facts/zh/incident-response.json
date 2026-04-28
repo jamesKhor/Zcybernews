@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [
@@ -32,9 +32,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Black Hills InfoSec SOC团队回顾了在Deadwood的Wild West Hackin' Fest中进行的14小时通宵事件响应参与——现实世界的分类、控制和教训，用于...",
     "Black Hills InfoSec 详细说明了如何将陈旧的网络安全桌面演练转变为沉浸式的场景模拟，以测试真实的事件响应决策。",
-    "卡巴斯基2026年全球报告发现，勒索软件潜伏时间在2025年从5天降至3.5天，因为攻击者加快了加密速度。",
-    "Rapid7 IR 确认 CVE-2025-59718 —— 一个 9.8-CVSS FortiGate SSO 绕过 —— 被活跃利用，使攻击者能够在未打补丁的设备上获得持久的管理员访问权限。"
+    "卡巴斯基2026年全球报告发现，勒索软件潜伏时间在2025年从5天降至3.5天，因为攻击者加快了加密速度。"
   ],
-  "sources_hash": "a3e503446d1585e4"
+  "sources_hash": "b57f94f8fac375b7"
 }

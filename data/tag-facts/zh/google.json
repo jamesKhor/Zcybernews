@@ -1,17 +1,18 @@
 {
   "tag": "google",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
-    "creators",
-    "media",
     "technology",
+    "creators",
+    "enterprise software",
+    "media",
     "telecommunications"
   ],
   "top_regions": [
@@ -19,12 +20,13 @@
   ],
   "severity_mix": {
     "high": 3,
-    "informational": 5
+    "informational": 5,
+    "medium": 1
   },
   "recent_excerpts": [
     "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。",
     "Google 的 Android 17 Beta 4 版本引入了对 TLS 中后量子混合密钥协商的支持，并对应用程序施加了新的内存限制，这标志着在操作系统最终稳定版本发布之前的重要安全增强。",
     "Google 宣布新的 Android 17 隐私政策限制了接触和位置数据访问，而其2025年广告安全报告详细说明了拦截83亿违反政策的广告和2490万广告商账户的暂停。"
   ],
-  "sources_hash": "8e02a8cc1fcea7e5"
+  "sources_hash": "81b3aa32c457e5db"
 }

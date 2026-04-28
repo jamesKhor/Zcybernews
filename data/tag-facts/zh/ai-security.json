@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 47,
+  "count": 48,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "OpenClaw"
@@ -22,9 +22,9 @@
   "top_sectors": [
     "technology",
     "cybersecurity",
-    "artificial intelligence",
-    "cloud services",
-    "government"
+    "government",
+    "healthcare",
+    "artificial intelligence"
   ],
   "top_regions": [
     "Global",
@@ -32,15 +32,15 @@
     "United states"
   ],
   "severity_mix": {
+    "high": 21,
     "medium": 6,
-    "high": 20,
     "critical": 6,
     "informational": 12
   },
   "recent_excerpts": [
+    "Anthropic的 Claude Mythos Preview 自4月7日以来大规模识别漏洞，但研究人员警告说，组织缺乏分类和修补能力以跟上步伐。",
     "SecurityWeek 认为，从代码生成器到决策系统，自主代理需要新的防御模型，因为它们在没有人类干预的情况下行动。",
-    "Rapid7的全球网络安全峰会关注由AI驱动的威胁、持续威胁暴露管理（CTEM），以及缩小可见性和响应之间的差距。",
-    "特朗普政府宣布政策，惩罚通过逆向工程或未经授权访问利用美国AI模型的中国公司，引用国家安全风险。"
+    "Rapid7的全球网络安全峰会关注由AI驱动的威胁、持续威胁暴露管理（CTEM），以及缩小可见性和响应之间的差距。"
   ],
-  "sources_hash": "c85480cca23d2b53"
+  "sources_hash": "cdc35befba31f48f"
 }

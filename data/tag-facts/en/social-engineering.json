@@ -1,40 +1,40 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 46,
+  "count": 50,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-24"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Lazarus Group",
-    "APT37 (ScarCruft, InkySquid)",
-    "BlackFile"
+    "UNC6692",
+    "APT37 (ScarCruft, InkySquid)"
   ],
   "top_cves": [],
   "top_sectors": [
-    "cryptocurrency",
     "technology",
-    "financial-services",
+    "cryptocurrency",
     "financial services",
+    "financial-services",
     "hospitality"
   ],
   "top_regions": [
-    "Global",
     "North america",
+    "Global",
     "Europe",
     "United states",
     "Canada"
   ],
   "severity_mix": {
-    "high": 34,
+    "high": 38,
     "medium": 11,
     "informational": 1
   },
   "recent_excerpts": [
-    "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months.",
-    "Specops Software documents how helpdesk social engineering turns password reset requests into full account compromise — attackers bypass MFA and gain persistent access.",
-    "A trojanized Slack installer delivers a remote access tool that creates a hidden desktop, allowing attackers to bypass multi-factor authentication and silently control victim machines."
+    "Black Hills InfoSec demonstrates how attackers abuse Microsoft SSPR to bypass MFA and reset credentials via social engineering. Real-world test scenario reveals detection gaps.",
+    "Adaptive Security finds 3 seconds of audio enough to clone a voice for fraud; deepfake calls tricked employees into wiring $243K in one case. No detection tool caught the attack.",
+    "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months."
   ],
-  "sources_hash": "ee5cc7436081376b"
+  "sources_hash": "b02f4a82c48b8ffb"
 }

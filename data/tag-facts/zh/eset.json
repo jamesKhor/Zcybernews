@@ -1,7 +1,7 @@
 {
   "tag": "eset",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-22",
     "latest": "2026-04-27"
@@ -14,10 +14,10 @@
   "top_cves": [],
   "top_sectors": [
     "government",
+    "technology",
     "business services",
-    "energy",
-    "finance",
-    "financial services"
+    "consumer",
+    "energy"
   ],
   "top_regions": [
     "Global",
@@ -28,13 +28,13 @@
   ],
   "severity_mix": {
     "informational": 1,
-    "high": 7,
-    "medium": 1
+    "medium": 2,
+    "high": 7
   },
   "recent_excerpts": [
     "ESET 认为网络安全是一个未被衡量的竞争优势，它使企业能够在敌对环境中安全运营，而不仅仅是一个成本中心。简要分析。",
     "ESET 威胁研究总监 Jean-Ian Boutin 解释了 SMBs 如何利用 MDR 和威胁情报更快地检测入侵，引用了 3.5 天的中位数驻留时间减少。",
-    "ESET 警告称，配置不当的云虚拟机—过度授权的 IAM 角色、暴露的管理端口和未修补的操作系统镜像—在企业环境中创造了系统性安全漏洞。"
+    "ESET 分析显示 1/3 的 Android 应用请求不必要的权限 —— 位置、相机、麦克风 —— 使数据收集和监视成为可能。用户应该审计权限。"
   ],
-  "sources_hash": "9943ac9dcadcd754"
+  "sources_hash": "220282d5b5660b3b"
 }

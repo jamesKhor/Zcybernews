@@ -1,12 +1,14 @@
 {
   "tag": "supply-chain-attack",
   "locale": "zh",
-  "count": 7,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
+    "GlassWorm",
+    "Fast16",
     "TeamPCP"
   ],
   "top_cves": [],
@@ -14,19 +16,20 @@
     "software development",
     "technology",
     "cybersecurity",
+    "enterprise",
     "enterprise IT"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 7,
     "critical": 3
   },
   "recent_excerpts": [
-    "Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。",
-    "Elastic Security Labs 研究员 Joe Desimone 在一个下午构建了一个概念验证工具，该工具检测到了 Axios HTTP 库的供应链被破坏，影响了 npm…",
-    "JFrog 和 Socket 在 @bitwarden/cli@2026.4.0 中发现了恶意代码 —— 这是同一活动，劫持了 Checkmarx npm 包。"
+    "研究人员在 Open VSX 上发现了 73 个克隆的 VS Code 扩展，其中 6 个被确认为恶意，传递 GlassWorm v2 信息窃取器。",
+    "Checkmarx 确认一个网络犯罪团伙在暗网上发布了 GitHub 仓库数据，追溯到 3 月 23 日的供应链攻击。",
+    "Fast16 恶意软件在新的供应链攻击中重新出现，滥用远程监控工具和浏览器扩展来窃取凭证。活动针对企业环境。"
   ],
-  "sources_hash": "25717ae083330ade"
+  "sources_hash": "ed1190e5d3a43587"
 }

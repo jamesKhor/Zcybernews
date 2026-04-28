@@ -1,0 +1,9 @@
+{
+  "tag": "patch-management",
+  "locale": "en",
+  "intro": "Financial services and government sectors bore the brunt of a concentrated wave of vulnerabilities between April 12 and April 27, 2026, as five high-profile CVEs demanded urgent patching. The critical CVE-2023-22515 and high-severity CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893 affected organisations globally, with healthcare and technology also among the most impacted. The severity mix included one critical, two high, and two medium vulnerabilities across the five articles published during this period.",
+  "sources_hash": "0e30cfa1e9f4a6ef",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-28T04:22:16.552Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

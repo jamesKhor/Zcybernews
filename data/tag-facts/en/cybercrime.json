@@ -1,15 +1,15 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "count": 15,
+  "count": 17,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "LockBit",
-    "REvil",
-    "Triad Nexus"
+    "Chinese Transnational Organized Crime",
+    "REvil"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -23,18 +23,18 @@
     "Caribbean",
     "Global",
     "Latin america",
-    "China",
-    "France"
+    "Southeast asia",
+    "United states"
   ],
   "severity_mix": {
-    "high": 10,
-    "informational": 2,
-    "medium": 3
+    "medium": 4,
+    "high": 11,
+    "informational": 2
   },
   "recent_excerpts": [
-    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…",
-    "IPQS details a 3-layer fraud detection strategy using identity, device, and network signals to block 99.5% of automated attacks without adding user friction for legitimate customers.",
-    "MITRE released the Fight Fraud Framework (F3), a unified knowledge base mapping the intersection of cyber attack tactics and financial fraud, aiming to close the operational gap between security and f"
+    "A California man received a 63-month prison sentence for laundering cryptocurrency stolen by a cybercriminal ring that defrauded victims of approximately $260 million.",
+    "U.S. Treasury sanctioned Cambodian Senator Ly Yong Phat over alleged ties to human trafficking and cyberscam compounds.",
+    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…"
   ],
-  "sources_hash": "3c8699ac44df3f46"
+  "sources_hash": "1bce259221aa30ae"
 }

@@ -1,37 +1,44 @@
 {
   "tag": "macos",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-24"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Lazarus Group",
     "ClickFix",
     "Sapphire Sleet"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2024-54529"
+    },
+    {
+      "id": "CVE-2025-31235"
+    }
+  ],
   "top_sectors": [
-    "cryptocurrency",
     "technology",
+    "cryptocurrency",
     "artificial-intelligence",
     "finance"
   ],
   "top_regions": [
+    "Global",
     "Asia",
     "Europe",
-    "Global",
     "North america"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 7,
     "medium": 2
   },
   "recent_excerpts": [
+    "Google Project Zero 发布了 CVE-2024-54529 的漏洞细节，这是一个 macOS coreaudiod 中的类型混淆问题，允许通过知识驱动的模糊测试逃逸沙箱。",
     "一个通过苹果官方App Store分发的恶意Ledger Live应用通过收集恢复短语，从50名受害者那里窃取了大约950万美元。",
-    "新的 ClickFix 风格活动针对 macOS 用户，使用虚假苹果指令运行恶意命令。",
-    "一个ClickFix社会工程学活动通过使用脚本编辑器执行恶意命令来绕过macOS安全警告，标志着针对Mac的恶意软件的重大演变。"
+    "新的 ClickFix 风格活动针对 macOS 用户，使用虚假苹果指令运行恶意命令。"
   ],
-  "sources_hash": "4fbb132fe9def05f"
+  "sources_hash": "d2feba3a3d34e775"
 }

@@ -1,37 +1,44 @@
 {
   "tag": "macos",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-24"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Lazarus Group",
     "ClickFix",
     "Sapphire Sleet"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2024-54529"
+    },
+    {
+      "id": "CVE-2025-31235"
+    }
+  ],
   "top_sectors": [
-    "cryptocurrency",
     "technology",
+    "cryptocurrency",
     "artificial-intelligence",
     "finance"
   ],
   "top_regions": [
+    "Global",
     "Asia",
     "Europe",
-    "Global",
     "North america"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 7,
     "medium": 2
   },
   "recent_excerpts": [
+    "Google Project Zero published exploit details for CVE-2024-54529, a type confusion in macOS coreaudiod allowing sandbox escape via knowledge-driven fuzzing.",
     "A malicious Ledger Live app distributed via Apple's official App Store for macOS stole approximately $9.5 million from 50 victims by harvesting recovery phrases.",
-    "A new ClickFix-style campaign targets macOS users with fake Apple instructions to run malicious commands.",
-    "A ClickFix social engineering campaign bypasses macOS security warnings by using Script Editor to execute malicious commands, marking a significant evolution in Mac-targeting malware."
+    "A new ClickFix-style campaign targets macOS users with fake Apple instructions to run malicious commands."
   ],
-  "sources_hash": "4fbb132fe9def05f"
+  "sources_hash": "d2feba3a3d34e775"
 }

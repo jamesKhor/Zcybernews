@@ -1,7 +1,7 @@
 {
   "tag": "agentic-ai",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-14",
     "latest": "2026-04-27"
@@ -20,7 +20,7 @@
     "Israel"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "informational": 1
   },
   "recent_excerpts": [
@@ -28,5 +28,5 @@
     "Copperhelm, an Israel-based startup founded by ex-RSA and McAfee engineers, raised $7 million in seed funding for an agentic AI platform that autonomously hunts cloud…",
     "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…"
   ],
-  "sources_hash": "bc789ef1e8c9df03"
+  "sources_hash": "122c0f25d55443ff"
 }

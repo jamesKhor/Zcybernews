@@ -1,15 +1,15 @@
 {
   "tag": "botnet",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
+    "Dort",
     "Mirai",
-    "The Gentlemen",
-    "W3LL"
+    "The Gentlemen"
   ],
   "top_cves": [
     {
@@ -25,11 +25,11 @@
     }
   ],
   "top_sectors": [
+    "technology",
     "telecommunications",
     "corporate",
     "finance",
-    "internet infrastructure",
-    "multiple"
+    "internet infrastructure"
   ],
   "top_regions": [
     "Canada",
@@ -39,7 +39,7 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 8,
     "medium": 2,
     "critical": 1
   },
@@ -48,5 +48,5 @@
     "Mirai botnet operators exploit CVE-2025-29635, a CVSS 8.8 command injection flaw in end-of-life D-Link DIR-823X routers, to deploy malware and launch DDoS attacks.",
     "A new Mirai botnet variant, 'Nexcorium,' is exploiting a command injection flaw (CVE-2024-3721) in TBK DVRs and end-of-life TP-Link routers to conscript devices into a distributed denial-of-service (D"
   ],
-  "sources_hash": "6d22ea37ba049d28"
+  "sources_hash": "5d9c66016a36ef54"
 }

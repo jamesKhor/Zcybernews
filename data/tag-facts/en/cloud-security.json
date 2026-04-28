@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "count": 21,
+  "count": 22,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "APT41"
@@ -27,14 +27,14 @@
     "Israel"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Vercel disclosed a breach after stolen OAuth tokens from Context.ai enabled unauthorized access to internal systems via a connected app. No customer data exposed.",
     "BHIS released a cloud security guide covering IAM misconfigurations, shared responsibility gaps, and logging blind spots — essential reading for teams securing AWS, Azure, or GCP…",
-    "Elastic Security XDR now correlates endpoint telemetry with cloud and network data, enabling analysts to trace multi-stage attacks across hybrid environments in a single query…",
-    "ESET warns that misconfigured cloud VMs—overprivileged IAM roles, exposed management ports, and unpatched OS images—create systemic security gaps across enterprise environments."
+    "Elastic Security XDR now correlates endpoint telemetry with cloud and network data, enabling analysts to trace multi-stage attacks across hybrid environments in a single query…"
   ],
-  "sources_hash": "dd5d4ada791d49f7"
+  "sources_hash": "4e3b6fcfd8138167"
 }

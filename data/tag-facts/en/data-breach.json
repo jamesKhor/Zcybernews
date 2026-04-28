@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 27,
+  "count": 28,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "ShinyHunters",
@@ -20,20 +20,20 @@
     "technology"
   ],
   "top_regions": [
-    "Europe",
     "North america",
+    "Europe",
     "United states",
     "France",
     "Global"
   ],
   "severity_mix": {
-    "high": 22,
+    "high": 23,
     "medium": 4
   },
   "recent_excerpts": [
+    "ShinyHunters breached ADT, stealing personal data of 5.5 million individuals — names, emails, phone numbers, and addresses — from internal systems. No payment data compromised.",
     "ADT confirmed cybercriminals breached its systems on April 20, 2026, stealing a limited set of customer and prospect data. No financial info or credentials compromised.",
-    "ADT confirmed a data breach after ShinyHunters leaked 30,000+ customer records including names, emails, and account details from a compromised Salesforce instance.",
-    "Malwarebytes analysis shows corporate breaches expose customer PII, enable follow-on fraud, and inflate insurance premiums — affecting even unaffected individuals."
+    "ADT confirmed a data breach after ShinyHunters leaked 30,000+ customer records including names, emails, and account details from a compromised Salesforce instance."
   ],
-  "sources_hash": "537349356b4c10ec"
+  "sources_hash": "6115b07fb4b5255d"
 }

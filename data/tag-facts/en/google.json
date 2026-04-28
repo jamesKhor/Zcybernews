@@ -1,17 +1,18 @@
 {
   "tag": "google",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
-    "creators",
-    "media",
     "technology",
+    "creators",
+    "enterprise software",
+    "media",
     "telecommunications"
   ],
   "top_regions": [
@@ -19,12 +20,13 @@
   ],
   "severity_mix": {
     "high": 3,
-    "informational": 5
+    "informational": 5,
+    "medium": 1
   },
   "recent_excerpts": [
     "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software.",
     "Google's Android 17 Beta 4 release introduces support for post-quantum hybrid key agreement in TLS and imposes new memory limits on apps, marking significant security enhancements ahead of the OS's fi",
     "Google announced new Android 17 privacy policies restricting contact and location data access, while its 2025 ad safety report details the blocking of 8.3 billion policy-violating ads and 24.9 million"
   ],
-  "sources_hash": "8e02a8cc1fcea7e5"
+  "sources_hash": "81b3aa32c457e5db"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "intro": "Financial services and government entities bore the brunt of a concentrated wave of cybercrime between April 13 and April 26, 2026, with the Caribbean and Latin America among the most affected regions. Fifteen articles documented ten high-severity incidents attributed to LockBit, REvil, and Triad Nexus. The threat actors targeted sectors including e-commerce and retail, with activity spanning Global, China, and France.",
-  "sources_hash": "3c8699ac44df3f46",
+  "intro": "Over the past two weeks, financial services, government, and e-commerce sectors have been the primary targets in a series of 17 cybercrime incidents, with 11 rated as high severity. LockBit, Chinese Transnational Organized Crime, and REvil were observed across attacks affecting the Caribbean, Global, Latin America, Southeast Asia, and the United States. The reporting period from April 13 to April 27, 2026, highlights a concentrated wave of activity against these regions and industries.",
+  "sources_hash": "1bce259221aa30ae",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:13:29.845Z",
+  "generated_at": "2026-04-28T04:20:44.114Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

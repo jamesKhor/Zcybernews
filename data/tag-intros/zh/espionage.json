@@ -1,10 +1,10 @@
 {
   "tag": "espionage",
   "locale": "zh",
-  "intro": "APT28 (Fancy Bear)和Mustang Panda是近期一波间谍活动中最为活跃的威胁行为者，相关活动记录在七份报告中。这些事件严重性均被评为高危或严重，波及政府、医疗、科技、银行和关键基础设施等多个广泛领域。相关攻击活动具有全球影响范围，在印度、韩国、乌克兰和英国造成了显著冲击。这轮密集的网络间谍行动集中发生在2026年4月的一个短暂时期内。",
-  "sources_hash": "439c480dcb94fd56",
-  "source_intro_hash": "83c2d2c33aba2e63",
+  "intro": "过去两周，ZCyberNews追踪了八份以间谍活动为重点的报告，其中六份被评为高严重性，两份为严重级别。APT28 (Fancy Bear)、Mustang Panda和Silver Dragon是最常被观测到的威胁行为者，其目标涉及政府、医疗、科技、银行及关键基础设施领域。受影响地区包括欧洲、全球、印度、韩国和东南亚，相关事件记录于2026年4月12日至4月27日期间。",
+  "sources_hash": "9f94c11c69457c31",
+  "source_intro_hash": "b834d29759d811b8",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:10:24.269Z",
+  "generated_at": "2026-04-28T04:22:42.276Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

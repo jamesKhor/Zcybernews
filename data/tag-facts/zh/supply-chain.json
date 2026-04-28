@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 68,
+  "count": 70,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "Lazarus Group",
@@ -42,15 +42,15 @@
     "China"
   ],
   "severity_mix": {
-    "critical": 10,
+    "critical": 11,
+    "high": 43,
     "medium": 11,
-    "high": 42,
     "informational": 4
   },
   "recent_excerpts": [
-    "Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游...",
-    "ESET的Tony Anscombe警告说，2026年3月的攻击——包括勒索软件、供应链妥协和AI驱动的网络钓鱼——揭示了组织中系统性的差距……",
-    "Itron 在 SEC 8-K 文件中披露了一起网络安全事件：未经授权的第三方访问了内部IT系统。"
+    "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。",
+    "Vercel 在从 Context.ai 被盗的 OAuth 令牌使未授权访问内部系统成为可能后披露了一起入侵事件，通过连接的应用程序。没有客户数据被暴露。",
+    "Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游..."
   ],
-  "sources_hash": "8c09e1129e55f92e"
+  "sources_hash": "5de74859ace0a8ce"
 }

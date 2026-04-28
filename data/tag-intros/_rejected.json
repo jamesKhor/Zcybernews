@@ -250,5 +250,107 @@
     "locale": "en",
     "lastError": "word count 50 outside 60-140 (en)",
     "at": "2026-04-27T04:19:49.103Z"
+  },
+  {
+    "tag": "data-breach",
+    "locale": "en",
+    "lastError": "word count 53 outside 60-140 (en)",
+    "at": "2026-04-28T04:20:17.945Z"
+  },
+  {
+    "tag": "cloud-security",
+    "locale": "en",
+    "lastError": "word count 59 outside 60-140 (en)",
+    "at": "2026-04-28T04:20:28.773Z"
+  },
+  {
+    "tag": "law-enforcement",
+    "locale": "en",
+    "lastError": "word count 59 outside 60-140 (en)",
+    "at": "2026-04-28T04:20:36.078Z"
+  },
+  {
+    "tag": "rat",
+    "locale": "en",
+    "lastError": "word count 47 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:00.143Z"
+  },
+  {
+    "tag": "supply-chain-attack",
+    "locale": "en",
+    "lastError": "word count 40 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:04.426Z"
+  },
+  {
+    "tag": "incident-response",
+    "locale": "en",
+    "lastError": "word count 51 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:17.225Z"
+  },
+  {
+    "tag": "initial-access",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:21.563Z"
+  },
+  {
+    "tag": "infostealer",
+    "locale": "en",
+    "lastError": "word count 42 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:35.645Z"
+  },
+  {
+    "tag": "iran",
+    "locale": "en",
+    "lastError": "word count 53 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:40.623Z"
+  },
+  {
+    "tag": "mfa-bypass",
+    "locale": "en",
+    "lastError": "word count 44 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:44.940Z"
+  },
+  {
+    "tag": "open-source",
+    "locale": "en",
+    "lastError": "word count 51 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:50.123Z"
+  },
+  {
+    "tag": "unit-42",
+    "locale": "en",
+    "lastError": "word count 55 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:54.620Z"
+  },
+  {
+    "tag": "fortinet",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-04-28T04:21:59.784Z"
+  },
+  {
+    "tag": "kaspersky",
+    "locale": "en",
+    "lastError": "word count 59 outside 60-140 (en)",
+    "at": "2026-04-28T04:22:04.218Z"
+  },
+  {
+    "tag": "authentication-bypass",
+    "locale": "en",
+    "lastError": "word count 47 outside 60-140 (en)",
+    "at": "2026-04-28T04:22:10.165Z"
+  },
+  {
+    "tag": "data-exfiltration",
+    "locale": "en",
+    "lastError": "word count 43 outside 60-140 (en)",
+    "at": "2026-04-28T04:22:14.451Z"
+  },
+  {
+    "tag": "recorded-future",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-04-28T04:22:21.024Z"
   }
 ]

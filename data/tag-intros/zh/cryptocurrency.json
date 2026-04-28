@@ -1,10 +1,10 @@
 {
   "tag": "cryptocurrency",
   "locale": "zh",
-  "intro": "2026年4月12日至24日期间，加密货币与去中心化金融领域遭遇集中攻击浪潮，17篇报道记录了14起高严重性事件和3起重大事件。主要威胁行为体包括Lazarus Group、FakeWallet和Omnistealer，唯一记录的漏洞为CVE-2023-4863。全球影响范围覆盖美国、加拿大、欧洲及北美地区，波及金融、金融服务及软件开发行业。",
-  "sources_hash": "bd21e1167e0d5745",
-  "source_intro_hash": "2b768587c73246c7",
+  "intro": "2026年4月12日至4月27日期间，加密货币和去中心化金融领域遭遇了一波集中的高严重性攻击，在美国、加拿大、欧洲及其他全球区域共记录到18起事件。在这些行动中观察到威胁行为者Lazarus Group、FakeWallet和Omnistealer，同时涉及对CVE-2023-4863的利用。相关活动包括14起高严重性事件和3起严重性事件，另有1起中等严重性事件，主要针对金融服务机构。",
+  "sources_hash": "ceaf1a0156482a5b",
+  "source_intro_hash": "eeda0314281a6913",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:03:35.215Z",
+  "generated_at": "2026-04-28T04:22:35.151Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

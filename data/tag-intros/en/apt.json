@@ -1,9 +1,9 @@
 {
   "tag": "apt",
   "locale": "en",
-  "intro": "Between April 13 and 24, 2026, ZCyberNews covered 13 high-severity incidents under the APT tag, with GopherWhisper, CyberAv3ngers, and Sapphire Sleet emerging as the most frequently observed threat actors. These campaigns primarily targeted government, cryptocurrency, energy, technology, and healthcare sectors across Mongolia, Asia, Bangladesh, Central America, and East Asia. The reporting reflects a concentrated period of activity against these regions and industries, with all 13 articles assessed at a high severity level.",
-  "sources_hash": "6b63d03cbd312893",
+  "intro": "Over the past two weeks, ZCyberNews has tracked 14 high-severity incidents tagged under APT, with GopherWhisper, CyberAv3ngers, and Sapphire Sleet emerging as the most frequently observed threat actors. These campaigns primarily targeted government, cryptocurrency, energy, technology, and business services sectors across Japan, Mongolia, Asia, Bangladesh, and Central America. The concentrated activity between April 13 and April 26, 2026, underscores sustained operational focus on these regions and industries.",
+  "sources_hash": "6573d1742ec4b388",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:13:31.825Z",
+  "generated_at": "2026-04-28T04:20:49.704Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

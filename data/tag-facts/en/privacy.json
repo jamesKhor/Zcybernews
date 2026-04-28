@@ -1,10 +1,10 @@
 {
   "tag": "privacy",
   "locale": "en",
-  "count": 19,
+  "count": 20,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-23"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [
@@ -13,8 +13,8 @@
     }
   ],
   "top_sectors": [
-    "government",
     "technology",
+    "government",
     "education",
     "telecommunications",
     "Advertising"
@@ -27,14 +27,14 @@
     "Netherlands"
   ],
   "severity_mix": {
+    "medium": 9,
     "high": 5,
-    "medium": 8,
     "informational": 6
   },
   "recent_excerpts": [
+    "ESET analysis shows 1 in 3 Android apps request unnecessary permissions — location, camera, microphone — enabling data harvesting and surveillance. Users should audit permissions.",
     "CVE-2026-28950 in iOS Notification Services retained deleted Signal messages on device, accessible via forensic tools. Apple fixed the logging flaw in iOS 18.4.1 and iPadOS 18.4.1.",
-    "U.S. Immigration and Customs Enforcement (ICE) confirmed using spyware from Israeli firm Graphite, a tool capable of extracting data from encrypted messaging apps like WhatsApp…",
-    "Attackers stole personal data from Rituals Cosmetics' My Rituals membership database — names, emails, addresses, and loyalty points. Number of affected customers undisclosed."
+    "U.S. Immigration and Customs Enforcement (ICE) confirmed using spyware from Israeli firm Graphite, a tool capable of extracting data from encrypted messaging apps like WhatsApp…"
   ],
-  "sources_hash": "2ba30c91611be881"
+  "sources_hash": "e98d5bae8db42aa7"
 }

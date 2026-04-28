@@ -1,9 +1,9 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "intro": "The technology sector bore the brunt of a concentrated two-week wave of ai-security incidents tracked by ZCyberNews, with 47 articles published between April 12 and April 24, 2026. The threat actor OpenClaw was observed in multiple campaigns, while the critical-severity vulnerabilities CVE-2026-5760 and CVE-2026-5752, carrying CVSS scores of 9.8 and 9.3 respectively, were widely exploited. Impacts spanned cybersecurity, artificial intelligence, cloud services, and government entities across global, Chinese, and United States regions. The reporting mix included 20 high-severity, 6 critical, 6 medium, and 12 informational entries.",
-  "sources_hash": "c85480cca23d2b53",
+  "intro": "Technology, cybersecurity, government, healthcare, and artificial intelligence sectors were the primary targets in 48 articles tagged ai-security from April 12 to 27, 2026, with a severity mix of 21 high, 6 medium, 6 critical, and 12 informational reports. The threat actor OpenClaw was observed, alongside critical vulnerabilities CVE-2026-5760 (CVSS 9.8) and CVE-2026-5752 (CVSS 9.3). Impacts were recorded globally, with specific focus on China and the United States.",
+  "sources_hash": "cdc35befba31f48f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:01:44.924Z",
+  "generated_at": "2026-04-28T04:20:10.782Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

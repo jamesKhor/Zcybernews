@@ -1,0 +1,47 @@
+{
+  "tag": "patch-management",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-27"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2023-22515"
+    },
+    {
+      "id": "CVE-2023-34048"
+    },
+    {
+      "id": "CVE-2023-46805"
+    },
+    {
+      "id": "CVE-2023-4966"
+    },
+    {
+      "id": "CVE-2024-21893"
+    }
+  ],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "healthcare",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 2,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Anthropic的 Claude Mythos Preview 自4月7日以来大规模识别漏洞，但研究人员警告说，组织缺乏分类和修补能力以跟上步伐。",
+    "Qualys数据显示企业在12个月内部署了超过800万Chrome补丁，但Visual C++和.NET更新延迟超过30天，导致关键的第三方软件暴露。",
+    "Nginx 项目发布了版本 1.30.0，整合了 1.29.x 主线分支的特性，并引入了安全修复，包括针对潜在 HTTP/2 DoS 漏洞的补丁。更新还默认启用了与上游服务器的 keepalive 连接。"
+  ],
+  "sources_hash": "0e30cfa1e9f4a6ef"
+}

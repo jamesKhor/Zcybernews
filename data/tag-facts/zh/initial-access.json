@@ -1,12 +1,14 @@
 {
   "tag": "initial-access",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-25"
+    "latest": "2026-04-27"
   },
-  "top_actors": [],
+  "top_actors": [
+    "UNC6692"
+  ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
@@ -17,12 +19,12 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "high": 8
+    "high": 9
   },
   "recent_excerpts": [
     "SentinelLabs 发现边缘设备是主要的入侵向量，因为攻击者利用配置错误和未修补的漏洞来获取访问权限，然后转换到身份系统进行…",
     "一个木马化的 Slack 安装程序提供了一个远程访问工具，该工具创建了一个隐藏的桌面，允许攻击者绕过多因素认证并悄无声息地控制受害者的机器。",
     "威胁行为者滥用 Obsidian 笔记应用通过恶意插件投递新型 PHANTOMPULSE RAT，针对金融和加密货币领域的个人进行攻击，此次行动被追踪为 REF6598。"
   ],
-  "sources_hash": "f4e6102e7daafccd"
+  "sources_hash": "e5f3f8d44c45ea47"
 }

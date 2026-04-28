@@ -1,10 +1,10 @@
 {
   "tag": "mfa-bypass",
   "locale": "zh",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-23"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Storm-2755",
@@ -13,22 +13,23 @@
   "top_cves": [],
   "top_sectors": [
     "all",
+    "enterprise",
     "finance",
-    "hr",
-    "multiple",
-    "payroll"
+    "financial services",
+    "hr"
   ],
   "top_regions": [
     "Canada",
-    "Global"
+    "Global",
+    "North america"
   ],
   "severity_mix": {
-    "high": 6
+    "high": 8
   },
   "recent_excerpts": [
-    "Specops Software 文档记录了如何将帮助台社会工程学转变为密码重置请求，从而导致完整账户泄露 —— 攻击者绕过 MFA 并获得持续访问权限。",
-    "新的 'Storm' infostealer 将加密的浏览器数据外泄以进行服务器端解密，使得会话劫持和绕过 MFA 成为可能。Varonis 的分析详细说明了这种技术。",
-    "Tycoon 2FA 钓鱼即服务平台的中断导致山寨攻击激增，因为威胁行为者在其他工具包中重用其工具和技术，增加了多因素认证绕过尝试的总体数量。"
+    "Black Hills InfoSec 展示了攻击者如何滥用 Microsoft SSPR 绕过 MFA 并通过社会工程学重置凭证。现实世界的测试场景揭示了检测漏洞。",
+    "Adaptive Security发现3秒钟的音频足以克隆声音进行欺诈；在一例中，深度伪造电话欺骗员工汇款243K美元。没有检测工具捕捉到这次攻击。",
+    "Specops Software 文档记录了如何将帮助台社会工程学转变为密码重置请求，从而导致完整账户泄露 —— 攻击者绕过 MFA 并获得持续访问权限。"
   ],
-  "sources_hash": "d4e9799715384a1e"
+  "sources_hash": "c045e99bad471eb1"
 }

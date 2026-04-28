@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 68,
+  "count": 70,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "Lazarus Group",
@@ -42,15 +42,15 @@
     "China"
   ],
   "severity_mix": {
-    "critical": 10,
+    "critical": 11,
+    "high": 43,
     "medium": 11,
-    "high": 42,
     "informational": 4
   },
   "recent_excerpts": [
-    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…",
-    "ESET's Tony Anscombe warns that March 2026 attacks — including ransomware, supply chain compromises, and AI-driven phishing — reveal systemic gaps in organizational…",
-    "Itron disclosed a cybersecurity incident in an SEC 8-K filing: an unauthorized third party accessed internal IT systems."
+    "Attackers compromised the elementary-data PyPI package (1.1M monthly downloads) to push an infostealer targeting developer credentials, crypto wallets, and environment variables.",
+    "Vercel disclosed a breach after stolen OAuth tokens from Context.ai enabled unauthorized access to internal systems via a connected app. No customer data exposed.",
+    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…"
   ],
-  "sources_hash": "8c09e1129e55f92e"
+  "sources_hash": "5de74859ace0a8ce"
 }

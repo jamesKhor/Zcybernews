@@ -1,0 +1,47 @@
+{
+  "tag": "patch-management",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-04-27"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2023-22515"
+    },
+    {
+      "id": "CVE-2023-34048"
+    },
+    {
+      "id": "CVE-2023-46805"
+    },
+    {
+      "id": "CVE-2023-4966"
+    },
+    {
+      "id": "CVE-2024-21893"
+    }
+  ],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "healthcare",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 2,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Anthropic's Claude Mythos Preview identifies vulnerabilities at scale since April 7, but organizations lack the triage and patching capacity to keep pace, researchers warn.",
+    "Qualys data shows enterprises deployed over 8 million Chrome patches in 12 months, but Visual C++ and .NET updates are delayed by 30+ days, leaving critical third-party software exposures.",
+    "The Nginx project has released version 1.30.0, consolidating features from the 1.29.x mainline branch and introducing security fixes, including a patch for a potential HTTP/2 DoS vulnerability."
+  ],
+  "sources_hash": "0e30cfa1e9f4a6ef"
+}

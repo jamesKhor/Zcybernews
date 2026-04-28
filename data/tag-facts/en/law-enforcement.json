@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "count": 19,
+  "count": 20,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "Scattered Spider",
@@ -27,14 +27,14 @@
     "Florida"
   ],
   "severity_mix": {
-    "high": 15,
+    "high": 16,
     "informational": 1,
     "medium": 3
   },
   "recent_excerpts": [
+    "Three men arrested in Toronto for operating an SMS blaster that impersonated cell towers to send phishing texts targeting banking credentials in a multi-month campaign.",
     "US DOJ, Canada, and Germany dismantled four IoT botnets — Aisuru, Kimwolf, JackSkid, Mossad — compromising 3M+ devices, enabling record-breaking DDoS attacks.",
-    "Three men arrested in Canada's first SMS blaster case — device impersonated cell towers to send mass phishing messages and disrupt mobile networks in Toronto.",
-    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…"
+    "Three men arrested in Canada's first SMS blaster case — device impersonated cell towers to send mass phishing messages and disrupt mobile networks in Toronto."
   ],
-  "sources_hash": "02db16bd21e34416"
+  "sources_hash": "46518ac67af33416"
 }

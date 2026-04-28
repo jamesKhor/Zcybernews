@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "count": 21,
+  "count": 23,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "GopherWhisper",
@@ -14,27 +14,27 @@
   "top_cves": [],
   "top_sectors": [
     "government",
-    "financial services",
     "technology",
+    "financial services",
     "critical-infrastructure",
     "cybersecurity"
   ],
   "top_regions": [
+    "Global",
     "Asia",
     "Europe",
-    "Global",
     "Iran",
     "North america"
   ],
   "severity_mix": {
-    "informational": 8,
+    "informational": 9,
     "high": 9,
-    "medium": 2
+    "medium": 3
   },
   "recent_excerpts": [
+    "Black Hills InfoSec 发布了一份实用的开源情报(OSINT)指南 —— 涵盖收集方法、分析框架以及保护分析人员免受暴露的运营安全控制。",
     "Elastic Security Labs 为英国国防部的防御网络 Marvel 2026 演习部署了 AI 驱动的检测流程，处理了 1.2TB 的遥测数据，涉及 50 个模拟的...",
-    "Rapid7 5月12-13日峰会议程揭示了行业从反应式防御向预防性安全运营的转变，包括有关AI驱动的威胁狩猎和自主的会议...",
-    "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。"
+    "Rapid7 5月12-13日峰会议程揭示了行业从反应式防御向预防性安全运营的转变，包括有关AI驱动的威胁狩猎和自主的会议..."
   ],
-  "sources_hash": "759f088b9f3e3205"
+  "sources_hash": "bb43a33b09a85022"
 }

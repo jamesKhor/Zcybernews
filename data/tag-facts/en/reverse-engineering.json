@@ -1,0 +1,27 @@
+{
+  "tag": "reverse-engineering",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-04-27"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "cybersecurity",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "informational": 5
+  },
+  "recent_excerpts": [
+    "Black Hills InfoSec published a practical guide to malware analysis covering static, dynamic, and memory analysis techniques for defenders seeking to reverse-engineer samples.",
+    "OpenAI is expanding access to its GPT-5.4-Cyber model, a specialized AI for reverse engineering and malware analysis, following the reveal of Anthropic's offensive-capable 'Mythos' model.",
+    "OpenAI is scaling its Trusted Access for Cyber (TAC) program, providing vetted security researchers and teams with prioritized access to the GPT-5.4-Cyber model for reverse engineering and vulnerabili"
+  ],
+  "sources_hash": "3c9913112b3db5d1"
+}

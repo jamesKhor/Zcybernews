@@ -1,10 +1,10 @@
 {
   "tag": "mfa-bypass",
   "locale": "en",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-23"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Storm-2755",
@@ -13,22 +13,23 @@
   "top_cves": [],
   "top_sectors": [
     "all",
+    "enterprise",
     "finance",
-    "hr",
-    "multiple",
-    "payroll"
+    "financial services",
+    "hr"
   ],
   "top_regions": [
     "Canada",
-    "Global"
+    "Global",
+    "North america"
   ],
   "severity_mix": {
-    "high": 6
+    "high": 8
   },
   "recent_excerpts": [
-    "Specops Software documents how helpdesk social engineering turns password reset requests into full account compromise — attackers bypass MFA and gain persistent access.",
-    "The new 'Storm' infostealer exfiltrates encrypted browser data for server-side decryption, enabling session hijacking and bypassing MFA. Analysis by Varonis details the technique.",
-    "The disruption of the Tycoon 2FA phishing-as-a-service platform has led to a surge in copycat attacks, as threat actors reuse its tools and techniques in other kits, increasing the overall volume of m"
+    "Black Hills InfoSec demonstrates how attackers abuse Microsoft SSPR to bypass MFA and reset credentials via social engineering. Real-world test scenario reveals detection gaps.",
+    "Adaptive Security finds 3 seconds of audio enough to clone a voice for fraud; deepfake calls tricked employees into wiring $243K in one case. No detection tool caught the attack.",
+    "Specops Software documents how helpdesk social engineering turns password reset requests into full account compromise — attackers bypass MFA and gain persistent access."
   ],
-  "sources_hash": "d4e9799715384a1e"
+  "sources_hash": "c045e99bad471eb1"
 }

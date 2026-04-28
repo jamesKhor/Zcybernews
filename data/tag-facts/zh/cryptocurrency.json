@@ -1,10 +1,10 @@
 {
   "tag": "cryptocurrency",
   "locale": "zh",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "Lazarus Group",
@@ -20,24 +20,25 @@
     "cryptocurrency",
     "decentralized finance (DeFi)",
     "finance",
-    "financial-services",
-    "software development"
+    "financial services",
+    "financial-services"
   ],
   "top_regions": [
-    "Global",
     "United states",
+    "Global",
     "Canada",
     "Europe",
     "North america"
   ],
   "severity_mix": {
+    "medium": 1,
     "high": 14,
     "critical": 3
   },
   "recent_excerpts": [
+    "一名加利福尼亚男子因洗钱被判63个月监禁，这些加密货币是由一个网络犯罪团伙盗窃的，该团伙诈骗受害者约2.6亿美元。",
     "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…",
-    "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。",
-    "Kaspersky 发现了 22 个恶意的 iOS 应用程序在官方 App Store 上冒充 MetaMask 和 Coinbase 等加密钱包，从超过 1,000 名受害者那里窃取种子短语和私钥。"
+    "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。"
   ],
-  "sources_hash": "bd21e1167e0d5745"
+  "sources_hash": "ceaf1a0156482a5b"
 }

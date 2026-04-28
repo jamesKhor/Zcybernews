@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "count": 50,
+  "count": 51,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "FakeWallet",
@@ -43,13 +43,13 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 42,
+    "high": 43,
     "medium": 8
   },
   "recent_excerpts": [
+    "Three men arrested in Toronto for operating an SMS blaster that impersonated cell towers to send phishing texts targeting banking credentials in a multi-month campaign.",
     "Three men arrested in Canada's first SMS blaster case — device impersonated cell towers to send mass phishing messages and disrupt mobile networks in Toronto.",
-    "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
-    "A malicious website impersonating a TradingView AI agent deploys malware that hands attackers full control of victims' browsers, enabling account theft and financial data…"
+    "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…"
   ],
-  "sources_hash": "b280c7f6f845a2c9"
+  "sources_hash": "bf4e084d6fd73fbe"
 }

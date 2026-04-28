@@ -1,9 +1,9 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "intro": "Over the two weeks from 12 to 26 April 2026, ZCyberNews published 68 articles tagged supply-chain, reflecting a period of intense activity. The threat actors Lazarus Group, CanisterSprawl, and TeamPCP were observed, while critical vulnerabilities CVE-2026-1731 (CVSS 9.8), CVE-2026-39987 (CVSS 9.3), CVE-2026-40176, and CVE-2026-40177 were highlighted. Coverage spanned the technology, software development, cryptocurrency, logistics, and manufacturing sectors, with global impact across Asia, Europe, the Arctic, and China. The severity mix included 10 critical, 11 medium, 42 high, and 4 informational reports.",
-  "sources_hash": "8c09e1129e55f92e",
+  "intro": "Over the 15-day period from 12 to 27 April 2026, ZCyberNews tracked 70 articles under the supply-chain tag, spanning 11 critical, 43 high, 11 medium, and 4 informational severity reports. Key threat actors observed include Lazarus Group, CanisterSprawl, and TeamPCP. Notable vulnerabilities are CVE-2026-1731 (CVSS 9.8), CVE-2026-39987 (CVSS 9.3), CVE-2026-40176, and CVE-2026-40177. The technology, software development, cryptocurrency, logistics, and manufacturing sectors were primarily affected, with incidents reported across Global, Asia, Europe, Arctic, and China regions.",
+  "sources_hash": "5de74859ace0a8ce",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:17:39.406Z",
+  "generated_at": "2026-04-28T04:20:04.568Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

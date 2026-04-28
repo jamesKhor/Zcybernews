@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 21,
+  "count": 23,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "GopherWhisper",
@@ -14,27 +14,27 @@
   "top_cves": [],
   "top_sectors": [
     "government",
-    "financial services",
     "technology",
+    "financial services",
     "critical-infrastructure",
     "cybersecurity"
   ],
   "top_regions": [
+    "Global",
     "Asia",
     "Europe",
-    "Global",
     "Iran",
     "North america"
   ],
   "severity_mix": {
-    "informational": 8,
+    "informational": 9,
     "high": 9,
-    "medium": 2
+    "medium": 3
   },
   "recent_excerpts": [
+    "Black Hills InfoSec published a practical guide to OSINT — covering collection methods, analysis frameworks, and operational security controls to protect analysts from exposure.",
     "Elastic Security Labs deployed AI-driven detection pipelines for the UK Ministry of Defence's Defence Cyber Marvel 2026 exercise, processing 1.2TB of telemetry across 50 simulated…",
-    "Rapid7's May 12–13 summit agenda reveals industry pivot from reactive defense to preemptive security operations, featuring sessions on AI-driven threat hunting and autonomous…",
-    "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors."
+    "Rapid7's May 12–13 summit agenda reveals industry pivot from reactive defense to preemptive security operations, featuring sessions on AI-driven threat hunting and autonomous…"
   ],
-  "sources_hash": "759f088b9f3e3205"
+  "sources_hash": "bb43a33b09a85022"
 }

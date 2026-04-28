@@ -1,7 +1,7 @@
 {
   "tag": "agentic-ai",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-14",
     "latest": "2026-04-27"
@@ -20,7 +20,7 @@
     "Israel"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "informational": 1
   },
   "recent_excerpts": [
@@ -28,5 +28,5 @@
     "Copperhelm，一家由前 RSA 和 McAfee 工程师创立的以色列初创公司，为一个自主搜寻云的 agentic AI 平台筹集了700万美元的种子资金...",
     "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。"
   ],
-  "sources_hash": "bc789ef1e8c9df03"
+  "sources_hash": "122c0f25d55443ff"
 }

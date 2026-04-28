@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [],
   "top_cves": [
@@ -32,9 +32,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Black Hills InfoSec SOC team recounts a 14-hour overnight incident response engagement from Wild West Hackin' Fest in Deadwood — real-world triage, containment, and lessons for…",
     "Black Hills InfoSec details how to transform stale cybersecurity tabletop exercises into immersive scenario simulations that test real incident response decisions.",
-    "Kaspersky's 2026 Global Report finds ransomware dwell time fell to 3.5 days in 2025, down from 5 days, as attackers accelerate encryption.",
-    "Rapid7 IR confirms active exploitation of CVE-2025-59718 — a 9.8-CVSS FortiGate SSO bypass — enabling attackers to gain persistent admin access on unpatched appliances."
+    "Kaspersky's 2026 Global Report finds ransomware dwell time fell to 3.5 days in 2025, down from 5 days, as attackers accelerate encryption."
   ],
-  "sources_hash": "a3e503446d1585e4"
+  "sources_hash": "b57f94f8fac375b7"
 }

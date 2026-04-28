@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 47,
+  "count": 48,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "OpenClaw"
@@ -22,9 +22,9 @@
   "top_sectors": [
     "technology",
     "cybersecurity",
-    "artificial intelligence",
-    "cloud services",
-    "government"
+    "government",
+    "healthcare",
+    "artificial intelligence"
   ],
   "top_regions": [
     "Global",
@@ -32,15 +32,15 @@
     "United states"
   ],
   "severity_mix": {
+    "high": 21,
     "medium": 6,
-    "high": 20,
     "critical": 6,
     "informational": 12
   },
   "recent_excerpts": [
+    "Anthropic's Claude Mythos Preview identifies vulnerabilities at scale since April 7, but organizations lack the triage and patching capacity to keep pace, researchers warn.",
     "SecurityWeek argues autonomous agents — from code generators to decision-making systems — require new defense models as they act without human intervention.",
-    "Rapid7's Global Cybersecurity Summit focuses on AI-driven threats, continuous threat exposure management (CTEM), and closing the gap between visibility and response.",
-    "Trump administration announces policy to penalize Chinese companies exploiting U.S. AI models via reverse engineering or unauthorized access, citing national security risks."
+    "Rapid7's Global Cybersecurity Summit focuses on AI-driven threats, continuous threat exposure management (CTEM), and closing the gap between visibility and response."
   ],
-  "sources_hash": "c85480cca23d2b53"
+  "sources_hash": "cdc35befba31f48f"
 }

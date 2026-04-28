@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "zh",
-  "count": 21,
+  "count": 22,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "APT41"
@@ -27,14 +27,14 @@
     "Israel"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Vercel 在从 Context.ai 被盗的 OAuth 令牌使未授权访问内部系统成为可能后披露了一起入侵事件，通过连接的应用程序。没有客户数据被暴露。",
     "BHIS 发布了一份云安全指南，涵盖了 IAM 配置错误、共享责任差距和日志盲点 —— 对于保护 AWS、Azure 或 GCP 的团队来说是必读材料…",
-    "Elastic Security XDR 现在将终端遥测与云和网络数据相关联，使分析师能够在单一查询中追踪跨混合环境的多阶段攻击…",
-    "ESET 警告称，配置不当的云虚拟机—过度授权的 IAM 角色、暴露的管理端口和未修补的操作系统镜像—在企业环境中创造了系统性安全漏洞。"
+    "Elastic Security XDR 现在将终端遥测与云和网络数据相关联，使分析师能够在单一查询中追踪跨混合环境的多阶段攻击…"
   ],
-  "sources_hash": "dd5d4ada791d49f7"
+  "sources_hash": "4e3b6fcfd8138167"
 }

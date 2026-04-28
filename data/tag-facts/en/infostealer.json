@@ -1,10 +1,10 @@
 {
   "tag": "infostealer",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-21"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "Omnistealer"
@@ -12,18 +12,21 @@
   "top_cves": [],
   "top_sectors": [
     "government",
-    "healthcare"
+    "healthcare",
+    "software development",
+    "technology"
   ],
   "top_regions": [
     "Ukraine"
   ],
   "severity_mix": {
+    "critical": 1,
     "high": 6
   },
   "recent_excerpts": [
+    "Attackers compromised the elementary-data PyPI package (1.1M monthly downloads) to push an infostealer targeting developer credentials, crypto wallets, and environment variables.",
     "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software.",
-    "NGate malware version 2.0, built with AI assistance, hides in a trojanized NFC payment app to steal SMS, contacts, and crypto wallet data from Android devices while evading security software.",
-    "MiningDropper, a multi-stage Android malware framework, delivers infostealers, RATs, and banking trojans to devices via disguised apps, according to CyberSecurity News researchers."
+    "NGate malware version 2.0, built with AI assistance, hides in a trojanized NFC payment app to steal SMS, contacts, and crypto wallet data from Android devices while evading security software."
   ],
-  "sources_hash": "7a81777c04c36980"
+  "sources_hash": "b0efd1d50e97c2ef"
 }

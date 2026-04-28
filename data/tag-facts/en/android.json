@@ -1,10 +1,10 @@
 {
   "tag": "android",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "Mirax",
@@ -17,27 +17,28 @@
   ],
   "top_sectors": [
     "cryptocurrency",
-    "financial services",
-    "individuals",
     "technology",
-    "telecommunications"
+    "consumer",
+    "financial services",
+    "individuals"
   ],
   "top_regions": [
     "Europe",
-    "Brazil",
     "Global",
+    "Brazil",
     "Latin america",
     "Spain"
   ],
   "severity_mix": {
+    "medium": 1,
     "high": 6,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "ESET analysis shows 1 in 3 Android apps request unnecessary permissions — location, camera, microphone — enabling data harvesting and surveillance. Users should audit permissions.",
     "NGate malware, using AI-generated code, has infected the legitimate HandyPay NFC app to steal payment card data and PINs from over 220,000 Android users in Brazil, according to ESET.",
-    "NGate malware version 2.0, built with AI assistance, hides in a trojanized NFC payment app to steal SMS, contacts, and crypto wallet data from Android devices while evading security software.",
-    "MiningDropper, a multi-stage Android malware framework, delivers infostealers, RATs, and banking trojans to devices via disguised apps, according to CyberSecurity News researchers."
+    "NGate malware version 2.0, built with AI assistance, hides in a trojanized NFC payment app to steal SMS, contacts, and crypto wallet data from Android devices while evading security software."
   ],
-  "sources_hash": "e558fe48a4c8a756"
+  "sources_hash": "eaef9be75eee1fdf"
 }

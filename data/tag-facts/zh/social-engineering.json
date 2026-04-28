@@ -1,40 +1,40 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "count": 46,
+  "count": 50,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-24"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Lazarus Group",
-    "APT37 (ScarCruft, InkySquid)",
-    "BlackFile"
+    "UNC6692",
+    "APT37 (ScarCruft, InkySquid)"
   ],
   "top_cves": [],
   "top_sectors": [
-    "cryptocurrency",
     "technology",
-    "financial-services",
+    "cryptocurrency",
     "financial services",
+    "financial-services",
     "hospitality"
   ],
   "top_regions": [
-    "Global",
     "North america",
+    "Global",
     "Europe",
     "United states",
     "Canada"
   ],
   "severity_mix": {
-    "high": 34,
+    "high": 38,
     "medium": 11,
     "informational": 1
   },
   "recent_excerpts": [
-    "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。",
-    "Specops Software 文档记录了如何将帮助台社会工程学转变为密码重置请求，从而导致完整账户泄露 —— 攻击者绕过 MFA 并获得持续访问权限。",
-    "一个木马化的 Slack 安装程序提供了一个远程访问工具，该工具创建了一个隐藏的桌面，允许攻击者绕过多因素认证并悄无声息地控制受害者的机器。"
+    "Black Hills InfoSec 展示了攻击者如何滥用 Microsoft SSPR 绕过 MFA 并通过社会工程学重置凭证。现实世界的测试场景揭示了检测漏洞。",
+    "Adaptive Security发现3秒钟的音频足以克隆声音进行欺诈；在一例中，深度伪造电话欺骗员工汇款243K美元。没有检测工具捕捉到这次攻击。",
+    "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。"
   ],
-  "sources_hash": "ee5cc7436081376b"
+  "sources_hash": "b02f4a82c48b8ffb"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "cryptocurrency",
   "locale": "en",
-  "intro": "The cryptocurrency and decentralized finance sectors faced a concentrated wave of attacks between April 12 and April 24, 2026, with 17 articles documenting 14 high-severity and 3 critical incidents. Key threat actors observed include Lazarus Group, FakeWallet, and Omnistealer, while the single recorded vulnerability was CVE-2023-4863. The global impact spanned the United States, Canada, Europe, and North America, affecting finance, financial-services, and software development sectors.",
-  "sources_hash": "bd21e1167e0d5745",
+  "intro": "The cryptocurrency and decentralized finance sectors faced a concentrated wave of high-severity attacks between April 12 and April 27, 2026, with 18 incidents recorded across the United States, Canada, Europe, and other global regions. Threat actors Lazarus Group, FakeWallet, and Omnistealer were observed in these operations, alongside the exploitation of CVE-2023-4863. The activity included 14 high-severity and 3 critical-severity events, with a single medium-severity incident, primarily targeting financial services organizations.",
+  "sources_hash": "ceaf1a0156482a5b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:02:01.472Z",
+  "generated_at": "2026-04-28T04:20:42.354Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

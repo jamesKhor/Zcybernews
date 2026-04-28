@@ -1,0 +1,32 @@
+{
+  "tag": "prompt-injection",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-04-27"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "enterprise",
+    "enterprise software",
+    "multiple",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "informational": 1,
+    "critical": 1,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。",
+    "安全研究人员警告称，由AI驱动的'agentic'浏览器，这些浏览器自动化网络任务，引入了包括即时注入、会话劫持和未经授权的数据外泄在内的新风险，从根本上改变了浏览器的安全模型。",
+    "Capsule Security 以 700 万美元的种子资金启动，旨在为 AI 代理执行安全策略的平台，防止数据泄露、未经授权的行为和通过提示注入的操纵。"
+  ],
+  "sources_hash": "1e9fd5ad764e4085"
+}

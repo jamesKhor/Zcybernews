@@ -1,12 +1,14 @@
 {
   "tag": "rce",
   "locale": "en",
-  "count": 18,
+  "count": 20,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-04-28"
   },
-  "top_actors": [],
+  "top_actors": [
+    "PhantomCore"
+  ],
   "top_cves": [
     {
       "id": "CVE-2025-54987",
@@ -31,20 +33,22 @@
   ],
   "top_sectors": [
     "academia",
-    "healthcare",
-    "industrial",
-    "industrial control systems",
-    "manufacturing"
+    "enterprise",
+    "general",
+    "government",
+    "healthcare"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Russia"
+  ],
   "severity_mix": {
-    "high": 7,
-    "critical": 11
+    "high": 8,
+    "critical": 12
   },
   "recent_excerpts": [
+    "CVE-2026-5943: A use-after-free in Foxit PDF Reader's AcroForm annotation handling allows unauthenticated RCE (CVSS 7.8). Requires user to open a malicious PDF.",
     "CVE-2026-5726: A stack-based buffer overflow in Delta Electronics ASDA-Soft PAR file parsing scores 7.8 CVSS and enables remote code execution via crafted PAR files.",
-    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution.",
-    "A critical vulnerability (CVE-2026-32861) in NI LabVIEW allows remote attackers to execute arbitrary code by tricking a user into opening a malicious LVCLASS file, with a CVSS score of 7.8."
+    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution."
   ],
-  "sources_hash": "e75d2510b435c2a4"
+  "sources_hash": "f531f649368999ee"
 }

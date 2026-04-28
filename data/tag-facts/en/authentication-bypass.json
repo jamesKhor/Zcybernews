@@ -1,0 +1,47 @@
+{
+  "tag": "authentication-bypass",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-33413",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-41276",
+      "cvss": 8.1
+    },
+    {
+      "id": "CVE-2026-24032",
+      "cvss": 7.3
+    },
+    {
+      "id": "CVE-2026-1492"
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "critical infrastructure",
+    "energy",
+    "finance",
+    "government"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "critical": 3
+  },
+  "recent_excerpts": [
+    "CVE-2026-41276 (CVSS 8.1) in Flowise AccountService resetPassword lets unauthenticated attackers bypass authentication. ZDI advisory warns no auth required.",
+    "ZDI disclosed CVE-2026-24032, a 7.3-CVSS authentication bypass in Siemens SINEC NMS that requires no authentication to exploit. Affects industrial network management systems.",
+    "A critical authentication bypass flaw in etcd, CVE-2026-33413 (CVSS 8.8), allows unauthorized access to sensitive cluster APIs, potentially exposing secrets and configurations in Kubernetes and cloud-"
+  ],
+  "sources_hash": "2e438c5d3aeb1cb6"
+}

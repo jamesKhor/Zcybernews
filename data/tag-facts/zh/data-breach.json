@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 26,
+  "count": 27,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-04-27"
   },
   "top_actors": [
     "ShinyHunters",
@@ -20,20 +20,20 @@
     "technology"
   ],
   "top_regions": [
-    "Europe",
     "North america",
+    "Europe",
     "United states",
     "France",
     "Global"
   ],
   "severity_mix": {
-    "high": 21,
+    "high": 22,
     "medium": 4
   },
   "recent_excerpts": [
+    "ShinyHunters 侵入 ADT，窃取了 550 万名个人数据 —— 名字、电子邮件、电话号码和地址 —— 来自内部系统。没有支付数据被泄露。",
     "ADT 确认网络犯罪分子在 2026 年 4 月 20 日入侵其系统，窃取了有限的客户和潜在客户数据集。没有财务信息或凭证被泄露。",
-    "ADT确认数据泄露后，ShinyHunters泄露了30,000+客户记录，包括姓名、电子邮件和账户详情，这些信息来自一个被破坏的Salesforce实例。",
-    "Malwarebytes 分析显示，企业数据泄露暴露了客户个人信息（PII），使得后续欺诈行为成为可能，并导致保险费率上升——甚至影响到了未受影响的个人。"
+    "ADT确认数据泄露后，ShinyHunters泄露了30,000+客户记录，包括姓名、电子邮件和账户详情，这些信息来自一个被破坏的Salesforce实例。"
   ],
-  "sources_hash": "cc5b2df4f7aeb317"
+  "sources_hash": "36b321ebc33a42e2"
 }

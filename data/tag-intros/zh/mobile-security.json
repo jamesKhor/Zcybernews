@@ -1,0 +1,10 @@
+{
+  "tag": "mobile-security",
+  "locale": "zh",
+  "intro": "本档案收录了 6 篇带有「mobile-security」标签的文章，发布时间从2026年4月12日至2026年4月27日。其中包含1 篇严重、3 篇高危、2 篇中危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "539bc5557a6ff368",
+  "source_intro_hash": "cc93cb004cd0bf7c",
+  "model": "template:sparse",
+  "generated_at": "2026-04-28T04:22:47.763Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

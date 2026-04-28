@@ -1,0 +1,10 @@
+{
+  "tag": "patch-management",
+  "locale": "zh",
+  "intro": "金融服务业与政府部门在2026年4月12日至4月27日期间承受了集中爆发的漏洞浪潮冲击，五个高关注度CVE亟需紧急修补。关键级漏洞CVE-2023-22515及高危漏洞CVE-2023-34048、CVE-2023-46805、CVE-2023-4966、CVE-2024-21893影响了全球组织机构，其中医疗保健与科技行业亦属受影响最严重领域。此期间发布的五篇文章所涉漏洞严重程度分布为：一个关键级、两个高危级及两个中危级漏洞。",
+  "sources_hash": "0e30cfa1e9f4a6ef",
+  "source_intro_hash": "b9ba13327df9ad1b",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-28T04:22:49.942Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

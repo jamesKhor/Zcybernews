@@ -1,12 +1,14 @@
 {
   "tag": "supply-chain-attack",
   "locale": "en",
-  "count": 7,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-27"
   },
   "top_actors": [
+    "GlassWorm",
+    "Fast16",
     "TeamPCP"
   ],
   "top_cves": [],
@@ -14,19 +16,20 @@
     "software development",
     "technology",
     "cybersecurity",
+    "enterprise",
     "enterprise IT"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 7,
     "critical": 4
   },
   "recent_excerpts": [
-    "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
-    "Elastic Security Labs researcher Joe Desimone built a proof-of-concept tool in an afternoon that detected a supply chain compromise of the Axios HTTP library, affecting npm…",
-    "JFrog and Socket found malicious code in @bitwarden/cli@2026.4.0 — the same campaign that hijacked Checkmarx npm packages."
+    "Researchers found 73 cloned VS Code extensions on Open VSX, with 6 confirmed malicious, delivering the GlassWorm v2 info-stealer.",
+    "Checkmarx confirmed a cybercriminal group published GitHub repository data on the dark web, traced to a March 23 supply chain attack.",
+    "Fast16 malware resurfaces in new supply chain attacks, abusing remote monitoring tools and browser extensions to steal credentials. Campaign targets enterprise environments."
   ],
-  "sources_hash": "25717ae083330ade"
+  "sources_hash": "ed1190e5d3a43587"
 }
