@@ -1,0 +1,50 @@
+---
+title: BlueNoroff 伪造 Zoom 通话以引诱加密高管
+slug: 2026-04-28-bluenoroff-fakes-zoom-calls-to-lure-crypto-execs
+date: '2026-04-28'
+excerpt: BlueNoroff 使用被盗视频、AI 头像和伪造的 Zoom 邀请，将加密高管变成攻击诱饵。
+category: threat-intel
+tags:
+  - bluenoroff
+  - north-korea
+  - cryptocurrency
+  - social-engineering
+  - ai-avatars
+  - zoom
+language: zh
+source_urls:
+  - >-
+    https://www.darkreading.com/cyberattacks-data-breaches/bluenoroff-turns-victims-into-new-attack-lures
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-bluenoroff-fakes-zoom-calls-to-lure-crypto-execs
+severity: high
+threat_actor: BlueNoroff
+threat_actor_origin: North Korea
+affected_sectors:
+  - financial services
+  - cryptocurrency
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+BlueNoroff，朝鲜Lazarus网络间谍机构的一个分支，采用了一种新颖的社会工程学技术，将被泄露的受害者作为攻击诱饵。据Dark Reading报道，该团队窃取了初始目标的视频录像，使用AI生成的头像冒充可信联系人，并安排假冒Zoom通话，诱骗加密货币高管下载恶意软件。该活动通过利用真实受害者的视觉和音频保真度，增强了鱼叉式网络钓鱼的心理可信度。
+
+## 技术分析
+
+BlueNoroff的攻击链始于常规的入侵——通常是针对加密货币员工的鱼叉式网络钓鱼邮件或恶意文档。一旦初始受害者的系统被攻破，该团队就会窃取该个人的录像，通常是通过受害者自己的网络摄像头捕获的，或者从存储的会议文件中提取。据Dark Reading报道，BlueNoroff随后使用AI换脸和语音克隆工具生成受害者的合成头像。
+
+下一阶段涉及从被泄露的受害者的电子邮件账户向第二高价值目标——加密货币交易所的高级执行官或合作伙伴——发送假冒Zoom会议邀请。由于邀请来自已知的、可信的联系人，因此看起来是合法的。当目标加入通话时，AI头像实时模仿受害者的外观和语言模式，继续欺骗。在通话过程中，BlueNoroff指导目标下载文件或点击链接，以传递恶意软件，如远程访问木马或加密货币钱包窃取器。
+
+Dark Reading指出，该技术利用了视频通信中固有的信任，视频通信已成为加密货币领域业务互动的默认模式。该团队已被观察到针对去中心化金融（DeFi）平台、托管钱包提供商和代币发行人的高管。恶意软件负载旨在窃取私钥、种子短语和交易所凭证。
+
+这一活动代表了BlueNoroff以往策略的升级，这些策略依赖于假冒工作机会、基于PDF的漏洞利用和以加密货币为主题的诱饵。通过将受害者变成不知情的同谋，该团队增加了自动化安全工具和人类收件人检测的难度。AI生成的头像尚未与真实视频无法区分——Dark Reading报告称，一些目标已经注意到在唇部同步或面部动作中的微妙痕迹——但这项技术正在迅速发展。
+
+## 缓解措施与建议
+
+加密货币领域的组织应为任何涉及文件下载或凭证请求的会议邀请实施带外验证。防御者应配置电子邮件安全网关，以标记来自已知联系人但包含不寻常附件或URL的外部会议邀请。应监控视频会议平台，以寻找异常的登录尝试或账户接管。BlueNoroff依赖于被盗的视频数据，这意味着任何低价值员工的泄露都可能演变成高价值高管的泄露；访问权限的分割和定期凭证轮换可以限制横向移动。源材料中没有披露具体的CVE或IOC，使得基于签名的检测不可靠——建议进行行为监控，以监测不寻常的出站视频流量或AI生成的内容。
+
+## 参考资料
+
+- [BlueNoroff使用假冒Zoom通话将受害者变成攻击诱饵 —— Dark Reading](https://www.darkreading.com/cyberattacks-data-breaches/bluenoroff-turns-victims-into-new-attack-lures)
