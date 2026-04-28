@@ -1,0 +1,45 @@
+---
+title: VECT 勒索软件 Wiper 漏洞破坏数据，不仅仅是加密
+slug: 2026-04-28-vect-ransomware-wiper-bug-destroys-data-not-just-encrypts
+date: '2026-04-28'
+excerpt: >-
+  Check Point Research 发现 VECT 勒索软件的加密逻辑中存在一个漏洞，该漏洞会永久性地破坏 Windows 系统上的文件 ——
+  即使支付赎金后也无法恢复。
+category: malware
+tags:
+  - vect-ransomware
+  - wiper
+  - raas
+  - check-point-research
+  - data-destruction
+  - windows
+language: zh
+source_urls:
+  - >-
+    https://research.checkpoint.com/2026/vect-ransomware-by-design-wiper-by-accident/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-vect-ransomware-wiper-bug-destroys-data-not-just-encrypts
+severity: critical
+threat_actor: VECT Ransomware
+threat_actor_origin: Russia
+---
+## 执行摘要
+
+Check Point Research (CPR) 在 2026 年 4 月 28 日披露，**VECT 勒索软件** —— 一种 Ransomware-as-a-Service (RaaS) 程序，最初于 2025 年 12 月在俄语网络犯罪论坛上广告 —— 包含一个关键的实现错误，导致其在 Windows 系统上表现为 **擦除器**，永久性地破坏文件而不是加密它们。支付赎金的受害者将无法恢复他们的数据，因为加密程序不可逆转地损坏了文件内容。CPR 在分析 2026 年 1 月 VECT 的前两个已知受害者的样本时发现了这个缺陷，截至出版时，勒索软件操作者尚未修补这个错误。
+
+## 技术分析
+
+根据 CPR 的逆向工程，VECT 在 Windows 上的加密逻辑使用了一个自定义的加密程序，该程序错误地处理文件 I/O 操作。具体来说，勒索软件将目标文件读入内存，使用硬编码的 XOR 密钥结合每个文件的 nonce 加密，然后将加密数据写回原始文件路径。然而，写入操作中的一个缺陷导致文件的原始数据在加密完成之前被截断或损坏的缓冲区覆盖，使文件处于无法恢复的状态。CPR 指出，Linux 系统上的相同程序似乎可以正确运行，表明这个错误是特定于 Windows 文件系统 API 的平台问题。
+
+CPR 分析的所有 VECT 样本中都一致地表现出这个错误，表明这是一个设计缺陷，而不是环境因素造成的。勒索软件的配置不包括恢复机制或备份删除功能 —— 数据破坏是无意的，但彻底的。CPR 的分析还发现，VECT 的勒索信包括一个独特的受害者 ID 和支付门户 URL，但为支付的受害者提供的解密工具会失败，因为加密数据已经损坏到无法修复。
+
+CPR 将这一发现归功于他们对 RaaS 生态系统的持续监控。VECT 在 2026 年初与 **TeamPCP** 合作后引起了关注，这是一个之前与供应链攻击有关的威胁行为者（如 Elastic Security 在 2026 年 3 月报告的）。在俄语论坛上的合作公告声称 VECT 将为 TeamPCP 的访问操作提供加密有效载荷，但 CPR 的发现表明该有效载荷不可靠。
+
+## 缓解措施与建议
+
+防御者应将任何 Windows 系统上的 VECT 勒索软件感染视为 **数据丢失事件** —— 不要假设可以通过支付赎金来恢复文件。组织应保持离线、不可变的备份，并定期测试恢复程序。网络分段和端点检测规则应标记 CPR 观察到的特定文件写入模式（用固定大小的加密块快速覆盖常见的文档和数据库文件扩展名）。CPR 没有发布解密工具，因为数据按设计无法恢复。监控 VECT 已知的 C2 基础设施（CPR 全面报告中共享的 IP 和域名）可以帮助早期检测。
+
+## 参考资料
+
+- [Check Point Research: VECT Ransomware by design, Wiper by accident](https://research.checkpoint.com/2026/vect-ransomware-by-design-wiper-by-accident/)

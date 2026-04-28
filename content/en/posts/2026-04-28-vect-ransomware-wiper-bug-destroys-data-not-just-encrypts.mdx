@@ -1,0 +1,46 @@
+---
+title: 'VECT Ransomware Wiper Bug Destroys Data, Not Just Encrypts'
+slug: 2026-04-28-vect-ransomware-wiper-bug-destroys-data-not-just-encrypts
+date: '2026-04-28'
+excerpt: >-
+  Check Point Research found a bug in VECT ransomware's encryption logic that
+  permanently destroys files on Windows systems — no recovery possible even
+  after paying.
+category: malware
+tags:
+  - vect-ransomware
+  - wiper
+  - raas
+  - check-point-research
+  - data-destruction
+  - windows
+language: en
+source_urls:
+  - >-
+    https://research.checkpoint.com/2026/vect-ransomware-by-design-wiper-by-accident/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-vect-ransomware-wiper-bug-destroys-data-not-just-encrypts
+severity: critical
+threat_actor: VECT Ransomware
+threat_actor_origin: Russia
+---
+## Executive Summary
+
+Check Point Research (CPR) disclosed on April 28, 2026, that the **VECT ransomware** — a Ransomware-as-a-Service (RaaS) program first advertised on a Russian-language cybercrime forum in December 2025 — contains a critical implementation bug that causes it to act as a **wiper** on Windows systems, permanently destroying files instead of encrypting them. Victims who pay the ransom will be unable to recover their data, as the encryption routine irreversibly corrupts the file content. CPR identified the flaw while analyzing samples from VECT's first two known victims in January 2026, and the bug has not been patched by the ransomware operators as of publication.
+
+## Technical Analysis
+
+According to CPR's reverse engineering, VECT's encryption logic on Windows uses a custom cryptographic routine that mishandles file I/O operations. Specifically, the ransomware reads the target file into memory, encrypts it using a hardcoded XOR key combined with a per-file nonce, and then writes the encrypted data back to the original file path. However, a flaw in the write operation causes the file's original data to be overwritten with a truncated or corrupted buffer before encryption completes, leaving the file in an unrecoverable state. CPR notes that the same routine on Linux systems appears to function correctly, suggesting the bug is platform-specific to Windows file system APIs.
+
+The bug manifests consistently across all VECT samples analyzed by CPR, indicating it is a design flaw rather than an environmental artifact. The ransomware's configuration does not include a recovery mechanism or backup deletion feature — the data destruction is unintentional but total. CPR's analysis also found that VECT's ransom note includes a unique victim ID and a payment portal URL, but the decryption tool provided to victims who pay would fail because the encrypted data is already corrupted beyond repair.
+
+CPR attributed the discovery to their ongoing monitoring of the RaaS ecosystem. VECT gained attention in early 2026 after partnering with **TeamPCP**, a threat actor previously linked to supply-chain attacks (as reported by Elastic Security in March 2026). The partnership announcement on Russian-language forums claimed VECT would provide encryption payloads for TeamPCP's access operations, but CPR's findings suggest the payload is unreliable.
+
+## Mitigations & Recommendations
+
+Defenders should treat any VECT ransomware infection on Windows systems as a **data-loss event** — do not assume file recovery is possible through ransom payment. Organizations should maintain offline, immutable backups and test restoration procedures regularly. Network segmentation and endpoint detection rules should flag the specific file-write patterns observed by CPR (rapid overwriting of common document and database file extensions with fixed-size encrypted blocks). CPR has not published a decryption tool, as the data is irrecoverable by design. Monitoring for VECT's known C2 infrastructure (IPs and domains shared in CPR's full report) can aid in early detection.
+
+## References
+
+- [Check Point Research: VECT Ransomware by design, Wiper by accident](https://research.checkpoint.com/2026/vect-ransomware-by-design-wiper-by-accident/)
