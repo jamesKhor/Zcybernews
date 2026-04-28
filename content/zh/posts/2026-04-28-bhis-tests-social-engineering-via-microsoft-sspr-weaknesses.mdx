@@ -1,0 +1,42 @@
+---
+title: BHIS 通过 Microsoft SSPR 弱点测试社会工程学
+slug: 2026-04-28-bhis-tests-social-engineering-via-microsoft-sspr-weaknesses
+date: '2026-04-28'
+excerpt: >-
+  Black Hills InfoSec 展示了攻击者如何滥用 Microsoft SSPR 绕过 MFA
+  并通过社会工程学重置凭证。现实世界的测试场景揭示了检测漏洞。
+category: industry
+tags:
+  - social-engineering
+  - microsoft-sspr
+  - mfa-bypass
+  - identity-security
+  - black-hills-infosec
+  - red-team
+language: zh
+source_urls:
+  - 'https://www.blackhillsinfosec.com/social-engineering-and-microsoft-sspr/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-bhis-tests-social-engineering-via-microsoft-sspr-weaknesses
+severity: high
+---
+## BHIS Tests Social Engineering via Microsoft SSPR Weaknesses
+
+## 执行摘要
+
+Black Hills Information Security (BHIS) 发布了一个详细的场景，展示了攻击者如何结合社会工程学和微软的自助密码重置（SSPR）来破坏账户，即使在启用了多因素认证（MFA）和条件访问策略的情况下。这篇文章由 BHIS 团队撰写，描述了一个红队演习，同时测试身份确认工具、用户在压力下的行为，以及组织检测和响应社会工程攻击的能力。核心发现：如果攻击者成功地通过社会工程学让帮助台或用户批准密码重置请求，SSPR 可以被武器化以重置凭证并绕过 MFA。
+
+## 技术分析
+
+微软 SSPR 允许用户在不需要 IT 干预的情况下重置自己的密码，通常通过电子邮件 OTP、电话或安全问题等验证方法。BHIS 的场景利用了一个常见漏洞：验证步骤可以通过社会工程学被绕过。攻击者打电话给帮助台，冒充目标用户，声称由于忘记了手机或电子邮件而无法访问 SSPR，并请求手动重置密码。如果帮助台代理绕过适当的验证，或者如果攻击者已经收集了足够的个人信息（例如，来自 OSINT）来回答安全问题，攻击者就会获得新密码并可以登录，通常可以绕过 MFA，如果会话是从受信任的设备或位置建立的。
+
+文章强调，这不是 SSPR 本身的技术漏洞，而是流程和培训的弱点。BHIS 指出，许多组织在没有足够的用户教育或帮助台协议的情况下部署 SSPR，以在密码重置请求期间验证身份。场景测试了可能阻止从不寻常位置或设备登录的条件访问策略，但如果攻击者首先破坏了用户的主设备或使用 VPN，这些策略可以被击败。
+
+## 缓解措施与建议
+
+BHIS 建议组织定期进行特别针对 SSPR 工作流程的社会工程测试。防御者应执行严格的帮助台验证程序，例如在批准密码重置之前要求回拨到已知号码或使用单独的带外通道。此外，组织应实施条件访问策略，要求所有登录都需要 MFA，即使在密码重置后，监控异常的密码重置模式，如短时间内多次重置或从不熟悉的 IP 地址重置。用户培训应强调帮助台工作人员永远不会索要密码或未经严格身份确认就批准重置。
+
+## 参考资料
+
+- [Social Engineering and Microsoft SSPR: The Road to Pwnage is Paved with Good Intentions](https://www.blackhillsinfosec.com/social-engineering-and-microsoft-sspr/)

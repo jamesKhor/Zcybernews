@@ -1,0 +1,41 @@
+---
+title: BHIS Tests Social Engineering via Microsoft SSPR Weaknesses
+slug: 2026-04-28-bhis-tests-social-engineering-via-microsoft-sspr-weaknesses
+date: '2026-04-28'
+excerpt: >-
+  Black Hills InfoSec demonstrates how attackers abuse Microsoft SSPR to bypass
+  MFA and reset credentials via social engineering. Real-world test scenario
+  reveals detection gaps.
+category: industry
+tags:
+  - social-engineering
+  - microsoft-sspr
+  - mfa-bypass
+  - identity-security
+  - black-hills-infosec
+  - red-team
+language: en
+source_urls:
+  - 'https://www.blackhillsinfosec.com/social-engineering-and-microsoft-sspr/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-28-bhis-tests-social-engineering-via-microsoft-sspr-weaknesses
+severity: high
+---
+## Executive Summary
+
+Black Hills Information Security (BHIS) published a detailed scenario demonstrating how attackers can combine social engineering with Microsoft's Self-Service Password Reset (SSPR) to compromise accounts, even when multi-factor authentication (MFA) and Conditional Access policies are in place. The post, authored by the BHIS team, describes a red-team exercise that simultaneously tests identity confirmation tooling, user behavior under pressure, and an organization's ability to detect and respond to social engineering attacks. The core finding: SSPR can be weaponized to reset credentials and bypass MFA if an attacker successfully socially engineers a help desk or user into approving a password reset request.
+
+## Technical Analysis
+
+Microsoft SSPR allows users to reset their own passwords without IT intervention, typically through verification methods such as email OTP, phone call, or security questions. BHIS's scenario exploits a common gap: the verification step can be subverted via social engineering. The attacker calls the help desk posing as the target user, claiming they cannot access SSPR due to a forgotten phone or email, and requests a manual password reset. If the help desk agent bypasses proper verification—or if the attacker has already gathered enough personal information (e.g., from OSINT) to answer security questions—the attacker gains a new password and can log in, often bypassing MFA if the session is established from a trusted device or location.
+
+The post emphasizes that this is not a technical vulnerability in SSPR itself but a process and training weakness. BHIS notes that many organizations deploy SSPR without adequate user education or help desk protocols for verifying identity during password reset requests. The scenario tests Conditional Access policies that might block logins from unusual locations or devices, but these can be defeated if the attacker first compromises a user's primary device or uses a VPN.
+
+## Mitigations & Recommendations
+
+BHIS recommends organizations conduct regular social engineering tests that specifically target SSPR workflows. Defenders should enforce strict help desk verification procedures—such as requiring a call-back to a known number or using a separate out-of-band channel—before approving password resets. Additionally, organizations should implement Conditional Access policies that require MFA for all logins, even after a password reset, and monitor for anomalous password reset patterns, such as multiple resets in a short period or resets from unfamiliar IP addresses. User training should emphasize that help desk staff will never ask for passwords or approve resets without rigorous identity confirmation.
+
+## References
+
+- [Social Engineering and Microsoft SSPR: The Road to Pwnage is Paved with Good Intentions](https://www.blackhillsinfosec.com/social-engineering-and-microsoft-sspr/)
