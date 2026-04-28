@@ -1,0 +1,48 @@
+---
+title: Foxit PDF Reader Use-After-Free Leaks Memory via AcroForm Signatures
+slug: >-
+  2026-04-28-foxit-pdf-reader-use-after-free-leaks-memory-via-acroform-signatures
+date: '2026-04-28'
+excerpt: >-
+  CVE-2026-5942: A use-after-free in Foxit PDF Reader's AcroForm signature
+  handling lets attackers read process memory. CVSS 3.3. User must open a
+  malicious file.
+category: vulnerabilities
+tags:
+  - foxit
+  - pdf-reader
+  - use-after-free
+  - information-disclosure
+  - cve-2026-5942
+  - zdi
+language: en
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-303/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-28-foxit-pdf-reader-use-after-free-leaks-memory-via-acroform-signatures
+severity: low
+cvss_score: 3.3
+cve_ids:
+  - CVE-2026-5942
+affected_sectors:
+  - software
+---
+## Executive Summary
+
+A use-after-free vulnerability in Foxit PDF Reader's AcroForm signature handling (CVE-2026-5942) could allow an attacker to read sensitive data from process memory. The flaw, disclosed by the Zero Day Initiative (ZDI) on April 28, 2026, carries a CVSS base score of 3.3, reflecting the requirement for user interaction. An attacker must convince a target to open a malicious PDF file or visit a crafted web page that loads the reader. No evidence of in-the-wild exploitation has been reported as of publication.
+
+## Technical Analysis
+
+The vulnerability resides in the way Foxit PDF Reader processes digital signature fields within AcroForm objects. According to the ZDI advisory (ZDI-26-303), the application fails to properly manage object lifetimes during signature validation, leading to a use-after-free condition. When a specially crafted PDF containing a malformed AcroForm signature is parsed, the reader frees a memory object but retains a pointer to it. Subsequent operations on that dangling pointer can read freed heap memory, potentially leaking contents such as document data, credentials, or other in-memory artifacts.
+
+The ZDI notes that exploitation requires no special privileges beyond the ability to deliver a malicious PDF. The attack vector is local (the file must be opened locally), and the complexity is moderate — the attacker must craft the PDF to trigger the specific memory corruption path. The ZDI does not provide a proof-of-concept or exploit code in the public advisory. The vulnerability affects Foxit PDF Reader versions prior to the patch that addresses CVE-2026-5942; Foxit has not yet publicly disclosed the patched version number as of this writing.
+
+## Mitigations & Recommendations
+
+Until Foxit releases a patched version, users should treat PDFs from untrusted sources with caution. Disabling automatic rendering of AcroForm objects in Foxit PDF Reader may reduce exposure, though the ZDI advisory does not specify a workaround. Organizations using Foxit PDF Reader in enterprise environments should monitor Foxit's security advisory page for patch availability and apply it promptly once released. Given the low CVSS score and the requirement for user interaction, this vulnerability is unlikely to be a priority for most threat actors, but it underscores the importance of keeping PDF readers updated.
+
+## References
+
+- [ZDI-26-303: Foxit PDF Reader AcroForm Signature Use-After-Free Information Disclosure Vulnerability](http://www.zerodayinitiative.com/advisories/ZDI-26-303/)

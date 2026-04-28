@@ -1,0 +1,49 @@
+---
+title: Foxit PDF Reader 通过 AcroForm 签名泄露内存
+slug: >-
+  2026-04-28-foxit-pdf-reader-use-after-free-leaks-memory-via-acroform-signatures
+date: '2026-04-28'
+excerpt: >-
+  CVE-2026-5942: Foxit PDF Reader 的 AcroForm 签名处理中的 use-after-free
+  允许攻击者读取进程内存。CVSS 3.3。用户必须打开恶意文件。
+category: vulnerabilities
+tags:
+  - foxit
+  - pdf-reader
+  - use-after-free
+  - information-disclosure
+  - cve-2026-5942
+  - zdi
+language: zh
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-303/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-28-foxit-pdf-reader-use-after-free-leaks-memory-via-acroform-signatures
+severity: low
+cvss_score: 3.3
+cve_ids:
+  - CVE-2026-5942
+affected_sectors:
+  - software
+---
+## Foxit PDF Reader Use-After-Free Leaks Memory via AcroForm Signatures
+
+## 执行摘要
+
+Foxit PDF Reader 的 AcroForm 签名处理中存在一个使用后释放漏洞（CVE-2026-5942），可能允许攻击者从进程内存中读取敏感数据。该漏洞由 Zero Day Initiative (ZDI) 在 2026 年 4 月 28 日披露，CVSS 基础得分为 3.3，反映了需要用户交互的要求。攻击者必须说服目标打开恶意 PDF 文件或访问加载阅读器的精心制作的网页。截至发表时，尚未报告有野外利用的证据。
+
+## 技术分析
+
+该漏洞存在于 Foxit PDF Reader 处理 AcroForm 对象中的数字签名字段的方式中。根据 ZDI 咨询（ZDI-26-303），应用程序在签名验证期间未能正确管理对象生命周期，导致使用后释放条件。当解析包含畸形 AcroForm 签名的特制 PDF 时，阅读器会释放一个内存对象但保留指向它的指针。对该悬挂指针的后续操作可以读取已释放的堆内存，可能泄露内容，如文档数据、凭证或其他内存工件。
+
+ZDI 指出，利用不需要除了能够传递恶意 PDF 之外的特殊权限。攻击向量是本地的（文件必须在本地打开），复杂度是中等的——攻击者必须制作 PDF 以触发特定的内存腐败路径。ZDI 在公共咨询中没有提供概念验证或漏洞代码。该漏洞影响 Foxit PDF Reader 修补 CVE-2026-5942 之前的版本；截至本文撰写时，Foxit 尚未公开披露修补版本号。
+
+## 缓解措施与建议
+
+在 Foxit 发布修补版本之前，用户应对来自不受信任来源的 PDF 保持谨慎。在 Foxit PDF Reader 中禁用 AcroForm 对象的自动渲染可能会减少暴露，尽管 ZDI 咨询没有指定变通方法。在企业环境中使用 Foxit PDF Reader 的组织应监控 Foxit 的安全咨询页面以获取补丁可用性，并在发布后立即应用。鉴于 CVSS 得分低和需要用户交互，这种漏洞不太可能成为大多数威胁行为者的优先事项，但它强调了保持 PDF 阅读器更新的重要性。
+
+## 参考资料
+
+- [ZDI-26-303: Foxit PDF Reader AcroForm Signature Use-After-Free Information Disclosure Vulnerability](http://www.zerodayinitiative.com/advisories/ZDI-26-303/)
