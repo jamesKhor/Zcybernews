@@ -1,0 +1,37 @@
+---
+title: SANS 蜜罐捕获两个新型侦察请求
+slug: 2026-04-29-two-novel-recon-requests-hit-sans-honeypots
+date: '2026-04-29'
+excerpt: >-
+  SANS ISC 蜜罐在4月29日记录了两个不寻常的HTTP请求 ——
+  这两个请求均未与已知的CVE关联，但都可能预示着正在出现的侦察战术。目前没有可用的补丁。
+category: threat-intel
+tags:
+  - reconnaissance
+  - honeypot
+  - sans-isc
+  - web-requests
+  - emerging-threats
+language: zh
+source_urls:
+  - 'https://isc.sans.edu/diary/rss/32934'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-29-two-novel-recon-requests-hit-sans-honeypots
+severity: informational
+---
+## 执行摘要
+
+SANS互联网风暴中心（ISC）在2026年4月29日报告称，其分布式蜜罐网络检测到两种新的HTTP请求模式，这些模式以前未与任何已知漏洞或利用活动相关联。这些请求在同一天被记录，似乎是侦察探测，而不是积极的利用尝试。截至发表之时，没有CVE ID、威胁行为者归属或特定易受攻击的产品与这些请求相关联。ISC正在征求社区的意见，以帮助描述这些活动。
+
+## 技术分析
+
+根据ISC在周三发布的日记条目，蜜罐接收到了两种不同的请求类型，这些请求与任何已记录漏洞的签名都不匹配。日记的作者以“Bojan”为笔名，指出这两种请求似乎都是“侦察请求，与特定漏洞无关”。ISC没有在公共日记条目中披露原始请求字符串、HTTP方法或目标路径，限制了外部研究人员可获得的技术分析深度。缺乏相关的CVEs或利用有效载荷表明，这些请求可能是在探测配置错误的端点或测试未来的利用机会。ISC没有指明这些请求是否来自单一IP范围或多个来源，也没有指明它们是否针对特定行业或地区。日记条目明确要求有更多信息的读者联系ISC，这意味着该组织尚未完全描述这些活动。
+
+## 缓解措施与建议
+
+防御者应监控Web服务器访问日志，寻找与已知应用程序端点或API路由不对应的异常请求模式。虽然没有确认立即威胁，但组织可以通过确保非必要服务不暴露于互联网、默认凭据已轮换，以及配置Web应用程序防火墙以记录并可选地阻止具有意外URI结构的请求，来减少它们的侦察暴露。ISC鼓励观察到类似请求模式的网络防御者通过ISC联系表单或日记评论报告它们，以帮助集体提高态势感知。
+
+## 参考资料
+
+- [SANS互联网风暴中心日记：今天的奇怪Web请求，（周三，4月29日）](https://isc.sans.edu/diary/rss/32934)

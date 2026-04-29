@@ -1,0 +1,38 @@
+---
+title: Two Novel Recon Requests Hit SANS Honeypots
+slug: 2026-04-29-two-novel-recon-requests-hit-sans-honeypots
+date: '2026-04-29'
+excerpt: >-
+  SANS ISC honeypots recorded two unusual HTTP requests on April 29 — neither
+  tied to known CVEs but both may signal emerging recon tactics. No patch
+  available.
+category: threat-intel
+tags:
+  - reconnaissance
+  - honeypot
+  - sans-isc
+  - web-requests
+  - emerging-threats
+language: en
+source_urls:
+  - 'https://isc.sans.edu/diary/rss/32934'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-29-two-novel-recon-requests-hit-sans-honeypots
+severity: informational
+---
+## Executive Summary
+
+SANS Internet Storm Center (ISC) reported on April 29, 2026, that its distributed honeypot network detected two novel HTTP request patterns not previously associated with any known vulnerability or exploit campaign. The requests, logged on the same day, appear to be reconnaissance probes rather than active exploitation attempts. As of publication, no CVE IDs, threat actor attribution, or specific vulnerable products have been linked to these requests. The ISC is soliciting community input to help characterize the activity.
+
+## Technical Analysis
+
+According to the ISC diary entry published Wednesday, the honeypots received two distinct request types that do not match signatures for any documented vulnerability. The diary author, writing under the handle "Bojan," noted that both appear to be "recon requests and not associated with specific vulnerabilities." The ISC did not disclose the raw request strings, HTTP methods, or target paths in the public diary entry, limiting the depth of technical analysis available to external researchers. The lack of associated CVEs or exploit payloads suggests the requests may be probing for misconfigured endpoints or testing for future exploitation opportunities. The ISC has not indicated whether the requests originated from a single IP range or multiple sources, nor whether they targeted specific industries or regions. The diary entry explicitly requests that readers with additional information contact the ISC, implying the organization has not yet fully characterized the activity.
+
+## Mitigations & Recommendations
+
+Defenders should monitor web server access logs for unusual request patterns that do not correspond to known application endpoints or API routes. While no immediate threat has been confirmed, organizations can reduce their reconnaissance exposure by ensuring that non-essential services are not exposed to the internet, that default credentials are rotated, and that web application firewalls are configured to log and optionally block requests with unexpected URI structures. The ISC encourages network defenders who observe similar request patterns to report them via the ISC contact form or diary comments to aid in collective situational awareness.
+
+## References
+
+- [SANS Internet Storm Center Diary: Today's Odd Web Requests, (Wed, Apr 29th)](https://isc.sans.edu/diary/rss/32934)
