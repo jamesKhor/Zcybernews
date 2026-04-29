@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [],
   "top_cves": [
@@ -27,9 +27,9 @@
     "medium": 2
   },
   "recent_excerpts": [
+    "Elastic Security Labs published an open-source CI/CD abuse detection template using signal extraction and LLM reasoning to catch pipeline attacks across GitHub Actions, GitLab CI,…",
     "Attackers compromised the elementary-data PyPI package (1.1M monthly downloads) to push an infostealer targeting developer credentials, crypto wallets, and environment variables.",
-    "CVE-2026-33626 (CVSS 7.5) in LMDeploy, an open-source LLM toolkit, was exploited in the wild within 13 hours of public disclosure, enabling SSRF attacks to access sensitive…",
-    "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi"
+    "CVE-2026-33626 (CVSS 7.5) in LMDeploy, an open-source LLM toolkit, was exploited in the wild within 13 hours of public disclosure, enabling SSRF attacks to access sensitive…"
   ],
-  "sources_hash": "0fbd383d4ebc002b"
+  "sources_hash": "f9e06e10d26e75eb"
 }

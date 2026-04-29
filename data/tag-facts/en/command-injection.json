@@ -1,0 +1,47 @@
+{
+  "tag": "command-injection",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-29"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-3854",
+      "cvss": 8.7
+    },
+    {
+      "id": "CVE-2023-33538"
+    },
+    {
+      "id": "CVE-2026-39808"
+    },
+    {
+      "id": "CVE-2026-40176"
+    },
+    {
+      "id": "CVE-2026-40177"
+    }
+  ],
+  "top_sectors": [
+    "residential",
+    "software development",
+    "technology",
+    "telecommunications"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "critical": 3
+  },
+  "recent_excerpts": [
+    "CVE-2026-3854 (CVSS 8.7) lets authenticated users with push access achieve remote code execution on GitHub.com and GitHub Enterprise Server via a crafted git push command.",
+    "A proof-of-concept exploit for CVE-2026-39808, a critical command injection vulnerability in Fortinet FortiSandbox, has been released.",
+    "Fortinet disclosed two critical vulnerabilities (CVSS 9.1) in FortiSandbox, enabling unauthenticated attackers to execute arbitrary commands and bypass authentication. Patches are available."
+  ],
+  "sources_hash": "ce51e0e6fe124cec"
+}

@@ -1,0 +1,34 @@
+{
+  "tag": "data-leak",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [
+    "0APT"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "business services",
+    "e-commerce",
+    "education",
+    "financial-services",
+    "freelance-services"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "medium": 1,
+    "high": 3,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Notion 公共页面暴露了所有编辑者的电子邮件地址和个人资料照片，这个漏洞影响了数百万协作平台用户。研究人员警告说，数据泄露是无声且持续进行的。",
+    "据安全研究人员称，自由职业平台 Fiverr 通过配置错误的云存储桶暴露了敏感用户文件，包括税务文件和个人身份信息（PII），并且这些数据被 Google 搜索索引。",
+    "微软和 Salesforce 修补了他们 AI 代理平台——Copilot Studio 和 Agentforce 中的关键提示注入漏洞，这些漏洞可能允许外部攻击者窃取敏感的内部数据。"
+  ],
+  "sources_hash": "9992931f655a5d9c"
+}

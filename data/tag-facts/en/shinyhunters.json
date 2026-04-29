@@ -1,0 +1,33 @@
+{
+  "tag": "shinyhunters",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [
+    "ShinyHunters"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "consumer services",
+    "education",
+    "entertainment",
+    "gaming",
+    "healthcare"
+  ],
+  "top_regions": [
+    "North america",
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data.",
+    "ShinyHunters breached ADT, stealing personal data of 5.5 million individuals — names, emails, phone numbers, and addresses — from internal systems. No payment data compromised.",
+    "ADT confirmed a data breach after ShinyHunters leaked 30,000+ customer records including names, emails, and account details from a compromised Salesforce instance."
+  ],
+  "sources_hash": "f1241b086508f32e"
+}

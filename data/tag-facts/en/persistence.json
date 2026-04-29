@@ -1,12 +1,13 @@
 {
   "tag": "persistence",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-28"
   },
   "top_actors": [
+    "Comburglar",
     "VoidLink"
   ],
   "top_cves": [],
@@ -19,12 +20,12 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
     "Elastic Security Labs dissects VoidLink, a Linux rootkit framework that blends Loadable Kernel Modules with eBPF hooks to evade detection and maintain stealthy persistence on…",
     "A newly identified Rust-based Remote Access Trojan (RAT) toolkit, SpankRAT, abuses Windows Explorer processes to bypass reputation-based security and maintain persistent, low-detection access to compr",
     "Threat actors deploy VIPERTUNNEL, a Python backdoor, using a fake DLL and multi-stage obfuscated loader to establish stealthy SOCKS5 proxy tunnels for persistent network access."
   ],
-  "sources_hash": "b09c516922b9a105"
+  "sources_hash": "e3374f4a69bd5a92"
 }

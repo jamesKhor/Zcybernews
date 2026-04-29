@@ -1,13 +1,14 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "count": 23,
+  "count": 25,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-26"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Chaotic Eclipse",
+    "Claude Mythos",
     "Interlock"
   ],
   "top_cves": [
@@ -32,25 +33,25 @@
     }
   ],
   "top_sectors": [
-    "government",
     "technology",
+    "critical infrastructure",
+    "government",
     "enterprise",
-    "healthcare",
-    "multiple"
+    "healthcare"
   ],
   "top_regions": [
     "Global",
     "Southeast asia"
   ],
   "severity_mix": {
-    "high": 12,
-    "critical": 10,
+    "critical": 11,
+    "high": 13,
     "medium": 1
   },
   "recent_excerpts": [
-    "Check Point Research 发现了 CVE-2026-3502，这是一个 7.8-CVSS 权限提升漏洞，存在于 TrueConf 客户端中，自…以来被用于针对东南亚政府实体的定向攻击。",
-    "一个漏洞（CVE-2026-32183）存在于微软Windows截图工具中，允许远程攻击者通过恶意文件或网页执行任意代码，仅需要用户交互即可触发漏洞。",
-    "针对CVE-2026-39808的PoC漏洞利用代码已经发布，这是一个Fortinet FortiSandbox中的关键命令注入漏洞。该漏洞允许未经身份验证的攻击者以root身份执行任意操作系统命令。"
+    "Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…",
+    "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。",
+    "Check Point Research 发现了 CVE-2026-3502，这是一个 7.8-CVSS 权限提升漏洞，存在于 TrueConf 客户端中，自…以来被用于针对东南亚政府实体的定向攻击。"
   ],
-  "sources_hash": "0f08f918f0d4970f"
+  "sources_hash": "c9fcc4a861b19332"
 }

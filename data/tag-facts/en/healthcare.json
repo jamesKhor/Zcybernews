@@ -1,13 +1,14 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Rhysida",
+    "ShinyHunters",
     "UAC-0247"
   ],
   "top_cves": [],
@@ -20,18 +21,18 @@
   ],
   "top_regions": [
     "United states",
+    "Global",
     "Illinois",
     "Netherlands",
-    "Texas",
-    "Ukraine"
+    "Texas"
   ],
   "severity_mix": {
-    "high": 6
+    "high": 7
   },
   "recent_excerpts": [
+    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data.",
     "Southern Illinois Dermatology, Saint Anthony Hospital, and North Texas Behavioral Health Authority disclose breaches affecting over 600,000 patients, exposing names, SSNs, and medical data.",
-    "Cookeville Regional Medical Center confirms a 2025 ransomware attack by the Rhysida group compromised the data of 337,000 individuals after the theft of 500GB of files.",
-    "The UAC-0247 threat actor is actively targeting Ukrainian municipal healthcare and government bodies, deploying malware to steal browser data, WhatsApp sessions, and credentials while moving laterally"
+    "Cookeville Regional Medical Center confirms a 2025 ransomware attack by the Rhysida group compromised the data of 337,000 individuals after the theft of 500GB of files."
   ],
-  "sources_hash": "bfc1701d3c4ca7cb"
+  "sources_hash": "71777157b012d398"
 }

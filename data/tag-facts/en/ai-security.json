@@ -1,12 +1,13 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 48,
+  "count": 50,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
   "top_actors": [
+    "Claude Mythos",
     "OpenClaw"
   ],
   "top_cves": [
@@ -32,15 +33,15 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 21,
+    "critical": 7,
+    "high": 22,
     "medium": 6,
-    "critical": 6,
     "informational": 12
   },
   "recent_excerpts": [
-    "Anthropic's Claude Mythos Preview identifies vulnerabilities at scale since April 7, but organizations lack the triage and patching capacity to keep pace, researchers warn.",
-    "SecurityWeek argues autonomous agents — from code generators to decision-making systems — require new defense models as they act without human intervention.",
-    "Rapid7's Global Cybersecurity Summit focuses on AI-driven threats, continuous threat exposure management (CTEM), and closing the gap between visibility and response."
+    "Anthropic's Claude Mythos Preview autonomously discovers and weaponizes software vulnerabilities in OS and internet infrastructure without expert guidance, raising urgent…",
+    "Claude Mythos and Project Glasswing shrink exploit windows to near-zero. The Hacker News details NDR playbooks to contain AI-driven attacks before patching is possible.",
+    "Anthropic's Claude Mythos Preview identifies vulnerabilities at scale since April 7, but organizations lack the triage and patching capacity to keep pace, researchers warn."
   ],
-  "sources_hash": "cdc35befba31f48f"
+  "sources_hash": "885ae797c96331c3"
 }

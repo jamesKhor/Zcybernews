@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "count": 20,
+  "count": 22,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Scattered Spider",
@@ -16,25 +16,25 @@
     "government",
     "telecommunications",
     "cryptocurrency",
-    "law enforcement",
-    "corporate"
+    "financial services",
+    "gaming"
   ],
   "top_regions": [
     "United states",
     "Canada",
     "North america",
     "Europe",
-    "Florida"
+    "Global"
   ],
   "severity_mix": {
-    "high": 16,
-    "informational": 1,
-    "medium": 3
+    "medium": 4,
+    "high": 17,
+    "informational": 1
   },
   "recent_excerpts": [
+    "Ukrainian police detained hackers suspected of stealing thousands of Roblox accounts containing valuable digital items and in-game currency purchased with real money from players…",
     "Three men arrested in Toronto for operating an SMS blaster that impersonated cell towers to send phishing texts targeting banking credentials in a multi-month campaign.",
-    "US DOJ, Canada, and Germany dismantled four IoT botnets — Aisuru, Kimwolf, JackSkid, Mossad — compromising 3M+ devices, enabling record-breaking DDoS attacks.",
-    "Three men arrested in Canada's first SMS blaster case — device impersonated cell towers to send mass phishing messages and disrupt mobile networks in Toronto."
+    "US DOJ, Canada, and Germany dismantled four IoT botnets — Aisuru, Kimwolf, JackSkid, Mossad — compromising 3M+ devices, enabling record-breaking DDoS attacks."
   ],
-  "sources_hash": "46518ac67af33416"
+  "sources_hash": "59b702553f187833"
 }

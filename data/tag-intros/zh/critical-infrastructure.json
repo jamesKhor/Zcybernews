@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "intro": "2026年4月12日至26日期间，ZCyberNews发布了17篇关于关键基础设施安全的文章，其中APT33、CyberAv3ngers和Lotus Wiper是最常被观测到的威胁行为体。报道重点提及了CVSS评分为7.3的漏洞CVE-2026-24032，并聚焦于美国、欧洲、北美、亚太地区及全球范围内的能源、公用事业、制造业和水务等行业。这些报道涵盖了9起高严重性事件、3起严重事件、3起信息性事件和1起中等严重性事件。",
-  "sources_hash": "13bc3a624a65ca44",
-  "source_intro_hash": "114a269153fe5b68",
+  "intro": "APT33、CyberAv3ngers和Lotus Wiper是2026年4月12日至4月28日期间18篇涉及关键基础设施的文章中最常被观察到的威胁行为体。报道重点提及了CVE-2026-24032，这是一个CVSS评分为7.3的漏洞，并聚焦于能源、公用事业和制造业等领域。受影响区域涵盖美国、北美、欧洲、亚太及全球网络。相关报道包括10起高严重性事件、3起严重事件、3起信息性事件和1起中等严重性事件。",
+  "sources_hash": "e18f61fbcde956f3",
+  "source_intro_hash": "307b4f75f752a5e5",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:20:05.943Z",
+  "generated_at": "2026-04-29T04:20:03.560Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

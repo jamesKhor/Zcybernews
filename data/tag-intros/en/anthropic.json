@@ -1,9 +1,9 @@
 {
   "tag": "anthropic",
   "locale": "en",
-  "intro": "This archive collects 8 articles tagged `anthropic` published between April 14, 2026 and April 27, 2026. Coverage includes 2 critical, 3 high, 1 medium, and 2 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "6e4c10a776895541",
-  "model": "template:sparse",
-  "generated_at": "2026-04-28T04:21:27.531Z",
+  "intro": "Over a concentrated two-week period in April 2026, ZCyberNews tracked ten articles tagged under Anthropic, with the threat actor Claude Mythos appearing as the most-covered entity. The reporting spanned three critical, four high, one medium, and two informational severity items, affecting technology, critical infrastructure, cybersecurity, ai-development, and financial services sectors globally. These incidents, recorded between April 14 and April 29, highlight the sustained focus on Claude Mythos across multiple high-severity events.",
+  "sources_hash": "d98d7326aa3438e1",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-29T04:18:01.327Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

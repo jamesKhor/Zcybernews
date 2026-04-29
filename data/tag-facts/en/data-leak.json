@@ -1,0 +1,34 @@
+{
+  "tag": "data-leak",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [
+    "0APT"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "business services",
+    "e-commerce",
+    "education",
+    "financial-services",
+    "freelance-services"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "medium": 1,
+    "high": 3,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Notion public pages expose the email addresses and profile photos of all editors, a flaw affecting millions of users of the collaboration platform.",
+    "Freelance platform Fiverr exposed sensitive user files, including tax documents and PII, via a misconfigured cloud storage bucket, with data indexed by Google search, according to security researchers",
+    "Microsoft and Salesforce have patched critical prompt injection vulnerabilities in their AI agent platforms—Copilot Studio and Agentforce—that could have allowed external attackers to exfiltrate sensi"
+  ],
+  "sources_hash": "9992931f655a5d9c"
+}

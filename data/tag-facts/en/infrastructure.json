@@ -1,0 +1,29 @@
+{
+  "tag": "infrastructure",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [
+    "Triad Nexus"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "multiple"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "medium": 2,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "Flare details how threat actors now distribute OPSEC playbooks with layered infrastructure, identity separation, and long-term evasion tactics to avoid detection by defenders.",
+    "ProxySmart, a platform operated from Minsk, Belarus, powers SIM farm proxy networks across 94 locations in 17 countries, providing cybercriminals with residential IP addresses for fraud and credential",
+    "A three-month investigation has identified more than 1,250 active command-and-control servers operating across 165 Russian hosting providers, forming a resilient infrastructure for malware and ransomw"
+  ],
+  "sources_hash": "e9278bcb0fe008c4"
+}

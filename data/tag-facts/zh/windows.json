@@ -1,14 +1,15 @@
 {
   "tag": "windows",
   "locale": "zh",
-  "count": 21,
+  "count": 22,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Kyber",
-    "Chaotic Eclipse"
+    "Chaotic Eclipse",
+    "VECT Ransomware"
   ],
   "top_cves": [
     {
@@ -33,14 +34,14 @@
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
+    "critical": 2,
     "high": 16,
-    "medium": 4,
-    "critical": 1
+    "medium": 4
   },
   "recent_excerpts": [
+    "Check Point Research 发现 VECT 勒索软件的加密逻辑中存在一个漏洞，该漏洞会永久性地破坏 Windows 系统上的文件 —— 即使支付赎金后也无法恢复。",
     "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。",
-    "Kyber 勒索软件部署两个不同的有效载荷以加密 Windows 系统和 VMware ESXi 服务器，使用自定义工具清除 ESXi 快照并阻碍恢复。攻击链始于被泄露的 RDP 凭证。",
-    "PureRAT 将其 Windows PE 有效载荷隐藏在 PNG 文件中，并在内存中无文件执行它们，这是网络安全研究人员分析一种新的复杂活动时详细描述的技术。"
+    "Kyber 勒索软件部署两个不同的有效载荷以加密 Windows 系统和 VMware ESXi 服务器，使用自定义工具清除 ESXi 快照并阻碍恢复。攻击链始于被泄露的 RDP 凭证。"
   ],
-  "sources_hash": "36c4911027e0def9"
+  "sources_hash": "2beaf6fa11fa147d"
 }

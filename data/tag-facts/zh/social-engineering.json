@@ -1,7 +1,7 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "count": 50,
+  "count": 51,
   "date_range": {
     "first": "2026-04-08",
     "latest": "2026-04-28"
@@ -13,21 +13,21 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "technology",
     "cryptocurrency",
+    "technology",
     "financial services",
     "financial-services",
     "hospitality"
   ],
   "top_regions": [
-    "North america",
     "Global",
+    "North america",
     "Europe",
     "United states",
     "Canada"
   ],
   "severity_mix": {
-    "high": 38,
+    "high": 39,
     "medium": 11,
     "informational": 1
   },
@@ -36,5 +36,5 @@
     "Adaptive Security发现3秒钟的音频足以克隆声音进行欺诈；在一例中，深度伪造电话欺骗员工汇款243K美元。没有检测工具捕捉到这次攻击。",
     "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。"
   ],
-  "sources_hash": "b02f4a82c48b8ffb"
+  "sources_hash": "3f79bbc8ac3a989b"
 }

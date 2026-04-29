@@ -1,0 +1,35 @@
+{
+  "tag": "raas",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-20",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [
+    "The Gentlemen",
+    "LockBit",
+    "VECT Ransomware"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "retail"
+  ],
+  "top_regions": [
+    "Caribbean",
+    "Latin america"
+  ],
+  "severity_mix": {
+    "critical": 1,
+    "high": 3,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Check Point Research 发现 VECT 勒索软件的加密逻辑中存在一个漏洞，该漏洞会永久性地破坏 Windows 系统上的文件 —— 即使支付赎金后也无法恢复。",
+    "The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi 系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。",
+    "根据 Check Point DFIR 报告分析最近的一次关联攻击，The Gentlemen 勒索软件即服务组织使用 SystemBC SOCKS5 代理工具来隐藏命令和控制流量。"
+  ],
+  "sources_hash": "2db4464d8c2726cb"
+}

@@ -1,0 +1,28 @@
+{
+  "tag": "elastic-security",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-25",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [
+    "TeamPCP"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "cloud infrastructure",
+    "technology"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "medium": 1,
+    "high": 1
+  },
+  "recent_excerpts": [
+    "Elastic Security Labs published an open-source CI/CD abuse detection template using signal extraction and LLM reasoning to catch pipeline attacks across GitHub Actions, GitLab CI,…",
+    "Elastic Security Labs publishes part two of Linux rootkit detection series, detailing behavioral detection methods that catch in-memory and kernel-level rootkits static scans miss.",
+    "Elastic Security XDR now correlates endpoint telemetry with cloud and network data, enabling analysts to trace multi-stage attacks across hybrid environments in a single query…"
+  ],
+  "sources_hash": "6f72f584f7cdec69"
+}

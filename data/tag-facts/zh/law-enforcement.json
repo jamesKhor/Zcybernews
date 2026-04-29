@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "count": 20,
+  "count": 22,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Scattered Spider",
@@ -16,25 +16,25 @@
     "government",
     "telecommunications",
     "cryptocurrency",
-    "law enforcement",
-    "corporate"
+    "financial services",
+    "gaming"
   ],
   "top_regions": [
     "United states",
     "Canada",
     "North america",
     "Europe",
-    "Florida"
+    "Global"
   ],
   "severity_mix": {
-    "high": 16,
-    "informational": 1,
-    "medium": 3
+    "medium": 4,
+    "high": 17,
+    "informational": 1
   },
   "recent_excerpts": [
+    "乌克兰警方拘留了涉嫌盗取数千个Roblox账户的黑客，这些账户包含玩家用真金白银购买的有价值的数字物品和游戏内货币...",
     "三名男子在多伦多被捕，因为他们操作了一个冒充手机塔的SMS blaster，发送针对银行凭证的钓鱼短信，在数月的活动中进行。",
-    "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。",
-    "加拿大首起短信爆炸器案件中三名男子被捕 — 设备冒充蜂窝塔发送大规模网络钓鱼信息并干扰多伦多的移动网络。"
+    "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。"
   ],
-  "sources_hash": "46518ac67af33416"
+  "sources_hash": "59b702553f187833"
 }

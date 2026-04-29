@@ -1,13 +1,14 @@
 {
   "tag": "ot-security",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-28"
   },
   "top_actors": [
-    "APT33"
+    "APT33",
+    "Pro-Russia Hacktivists"
   ],
   "top_cves": [
     {
@@ -19,17 +20,17 @@
     "energy",
     "manufacturing",
     "critical-infrastructure",
-    "industrial",
-    "utilities"
+    "critical infrastructure",
+    "industrial"
   ],
   "top_regions": [
-    "Europe",
     "Global",
-    "Middle east",
-    "North america"
+    "North america",
+    "Europe",
+    "Middle east"
   ],
   "severity_mix": {
-    "high": 2,
+    "high": 3,
     "informational": 4,
     "critical": 1,
     "medium": 1
@@ -39,5 +40,5 @@
     "Axonius 更新了其 Asset Cloud 平台，增加了 AI 驱动的暴露修复，添加了 IoT/OT 资产管理，并引入了资产信任标准以量化安全姿态。",
     "安全研究人员提议将双因素认证（2FA）原则扩展到关键基础设施的物理访问控制系统，创建一种混合防御机制，以抵御针对操作技术的基于凭证的攻击。"
   ],
-  "sources_hash": "642324479d009c09"
+  "sources_hash": "829ac52cc83fe974"
 }

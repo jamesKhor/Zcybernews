@@ -1,0 +1,30 @@
+{
+  "tag": "vercel",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-19",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "cloud computing",
+    "cloud services",
+    "software development"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Vercel 在从 Context.ai 被盗的 OAuth 令牌使未授权访问内部系统成为可能后披露了一起入侵事件，通过连接的应用程序。没有客户数据被暴露。",
+    "Vercel 识别到与 Context.ai 违规相关的更多被入侵客户账户，通过新的指标和网络请求审查扩大调查。",
+    "SANS ISC蜜罐检测到携带X-Vercel-Set-Bypass-Cookie头部的HTTP请求，表明正在积极扫描容易受到身份验证绕过攻击的Vercel部署。"
+  ],
+  "sources_hash": "9fe1ebd2acba9ab2"
+}

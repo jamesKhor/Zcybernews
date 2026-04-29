@@ -1,9 +1,9 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "intro": "Over the past two weeks, ZCyberNews has published 27 articles on data breaches, covering incidents from April 12 to April 25, 2026. The reporting documents 22 high-severity and 4 medium-severity events. Threat actors ShinyHunters, RansomHub, and Rhysida were observed in these incidents. The most affected sectors were government, retail, healthcare, hospitality, and technology, while the impacted regions included Europe, North America, the United States, France, and Global entities.",
-  "sources_hash": "537349356b4c10ec",
+  "intro": "Over the past two weeks, ZCyberNews has covered 30 data-breach incidents, from April 12 to April 28, 2026. Among the most active threat actors were ShinyHunters, RansomHub, and Rhysida. The breaches primarily affected government, healthcare, retail, technology, and hospitality sectors, with victims concentrated in North America, Europe, the United States, France, and globally. The severity of these incidents was notable, with 24 classified as high and 5 as medium.",
+  "sources_hash": "0d56204ef7bf10af",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:01:55.058Z",
+  "generated_at": "2026-04-29T04:17:30.808Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

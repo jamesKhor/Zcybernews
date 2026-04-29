@@ -1,9 +1,9 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "intro": "Technology, cybersecurity, government, healthcare, and artificial intelligence sectors were the primary targets in 48 articles tagged ai-security from April 12 to 27, 2026, with a severity mix of 21 high, 6 medium, 6 critical, and 12 informational reports. The threat actor OpenClaw was observed, alongside critical vulnerabilities CVE-2026-5760 (CVSS 9.8) and CVE-2026-5752 (CVSS 9.3). Impacts were recorded globally, with specific focus on China and the United States.",
-  "sources_hash": "cdc35befba31f48f",
+  "intro": "Technology, cybersecurity, government, healthcare, and artificial intelligence sectors were the most affected in a global wave of attacks between April 12 and April 29, 2026, with China and the United States among the top regions targeted. Threat actors Claude Mythos and OpenClaw were observed exploiting critical vulnerabilities including CVE-2026-5760 (CVSS 9.8) and CVE-2026-5752 (CVSS 9.3). The 50 articles in this archive cover a severity mix of 7 critical, 22 high, 6 medium, and 12 informational incidents.",
+  "sources_hash": "885ae797c96331c3",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-28T04:20:10.782Z",
+  "generated_at": "2026-04-29T04:17:22.938Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

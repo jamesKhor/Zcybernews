@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-26"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "APT33",
@@ -21,18 +21,18 @@
     "energy",
     "critical-infrastructure",
     "utilities",
-    "manufacturing",
-    "water"
+    "critical infrastructure",
+    "manufacturing"
   ],
   "top_regions": [
     "United states",
-    "Europe",
     "North america",
-    "Asia-pacific",
-    "Global"
+    "Europe",
+    "Global",
+    "Asia-pacific"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "critical": 3,
     "informational": 3,
     "medium": 1
@@ -42,5 +42,5 @@
     "Dark Reading reports attackers are manipulating voltage to destabilize power grids — a growing cyber-physical threat vector targeting electricity infrastructure with no patch…",
     "Locked Shields 2026 involved 41 nations in the largest live-fire cyber defense exercise, testing response to critical infrastructure attacks including power grid and telecom…"
   ],
-  "sources_hash": "13bc3a624a65ca44"
+  "sources_hash": "e18f61fbcde956f3"
 }

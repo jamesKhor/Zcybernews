@@ -1,0 +1,28 @@
+{
+  "tag": "elastic-security",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-25",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [
+    "TeamPCP"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "cloud infrastructure",
+    "technology"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "medium": 1,
+    "high": 1
+  },
+  "recent_excerpts": [
+    "Elastic Security Labs 发布了一个开源的 CI/CD 滥用检测模板，使用信号提取和 LLM 推理来捕捉 GitHub Actions、GitLab CI 等跨平台的流水线攻击…",
+    "Elastic Security Labs 发布 Linux 根工具检测系列的第二部分，详细描述了行为检测方法，这些方法能够捕捉到静态扫描遗漏的内存中和内核级别的根工具。",
+    "Elastic Security XDR 现在将终端遥测与云和网络数据相关联，使分析师能够在单一查询中追踪跨混合环境的多阶段攻击…"
+  ],
+  "sources_hash": "6f72f584f7cdec69"
+}

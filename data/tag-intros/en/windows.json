@@ -1,9 +1,9 @@
 {
   "tag": "windows",
   "locale": "en",
-  "intro": "The Windows threat landscape in this period was dominated by activity from Kyber and Chaotic Eclipse. Their campaigns frequently exploited several critical vulnerabilities, most notably CVE-2026-33104, CVE-2026-26179, and CVE-2026-32183. Older CVEs, including CVE-2024-20662 and CVE-2024-21412, also remained in active use. Across the 21 articles analyzed, the severity of reported incidents was significant, with the majority classified as high-severity events. This concentrated activity underscores the persistent targeting of Windows environments by distinct threat groups leveraging both newly disclosed and established security flaws.",
-  "sources_hash": "36c4911027e0def9",
+  "intro": "Over the past two weeks, ZCyberNews has tracked 22 articles covering Windows-related threats, with Kyber, Chaotic Eclipse, and VECT Ransomware among the most active actors. The coverage spans from April 12 to April 28, 2026, and includes two critical, sixteen high, and four medium severity incidents. Key vulnerabilities highlighted are CVE-2026-33104 (CVSS 7.8), CVE-2026-26179 (CVSS 7.5), CVE-2026-32183 (CVSS 7.5), CVE-2024-20662, and CVE-2024-21412. These actors and CVEs represent the primary focus of our reporting during this period.",
+  "sources_hash": "2beaf6fa11fa147d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:07:22.173Z",
+  "generated_at": "2026-04-29T04:17:42.571Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

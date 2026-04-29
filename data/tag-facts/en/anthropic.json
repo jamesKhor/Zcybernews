@@ -1,33 +1,35 @@
 {
   "tag": "anthropic",
   "locale": "en",
-  "count": 8,
+  "count": 10,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
-  "top_actors": [],
+  "top_actors": [
+    "Claude Mythos"
+  ],
   "top_cves": [],
   "top_sectors": [
     "technology",
+    "critical infrastructure",
     "cybersecurity",
     "ai-development",
-    "financial services",
-    "government"
+    "financial services"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 3,
-    "critical": 2,
+    "critical": 3,
+    "high": 4,
     "informational": 2,
     "medium": 1
   },
   "recent_excerpts": [
-    "Anthropic's Claude Mythos Preview identifies vulnerabilities at scale since April 7, but organizations lack the triage and patching capacity to keep pace, researchers warn.",
-    "An unauthorized group accessed Anthropic's exclusive Claude Mythos Preview AI, a cybersecurity tool capable of generating exploits and malware.",
-    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution."
+    "Anthropic's Claude Mythos Preview autonomously discovers and weaponizes software vulnerabilities in OS and internet infrastructure without expert guidance, raising urgent…",
+    "Claude Mythos and Project Glasswing shrink exploit windows to near-zero. The Hacker News details NDR playbooks to contain AI-driven attacks before patching is possible.",
+    "Anthropic's Claude Mythos Preview identifies vulnerabilities at scale since April 7, but organizations lack the triage and patching capacity to keep pace, researchers warn."
   ],
-  "sources_hash": "6e4c10a776895541"
+  "sources_hash": "d98d7326aa3438e1"
 }

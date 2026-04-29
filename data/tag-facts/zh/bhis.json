@@ -1,0 +1,25 @@
+{
+  "tag": "bhis",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-25",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [
+    "Comburglar"
+  ],
+  "top_cves": [],
+  "top_sectors": [],
+  "top_regions": [],
+  "severity_mix": {
+    "informational": 1,
+    "high": 1
+  },
+  "recent_excerpts": [
+    "Black Hills InfoSec 发布了一份实用的恶意软件分析指南，涵盖了静态、动态和内存分析技术，供寻求逆向工程样本的防御者使用。",
+    "Black Hills InfoSec 详细说明了如何将陈旧的网络安全桌面演练转变为沉浸式的场景模拟，以测试真实的事件响应决策。",
+    "BHIS 发布了一份云安全指南，涵盖了 IAM 配置错误、共享责任差距和日志盲点 —— 对于保护 AWS、Azure 或 GCP 的团队来说是必读材料…"
+  ],
+  "sources_hash": "3014f2b775b3a3ba"
+}

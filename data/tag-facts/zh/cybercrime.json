@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "zh",
-  "count": 17,
+  "count": 20,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "LockBit",
@@ -16,25 +16,25 @@
     "financial services",
     "government",
     "e-commerce",
-    "multiple",
-    "retail"
+    "gaming",
+    "multiple"
   ],
   "top_regions": [
-    "Caribbean",
     "Global",
+    "Caribbean",
     "Latin america",
     "Southeast asia",
     "United states"
   ],
   "severity_mix": {
-    "medium": 4,
-    "high": 11,
+    "high": 13,
+    "medium": 5,
     "informational": 2
   },
   "recent_excerpts": [
-    "一名加利福尼亚男子因洗钱被判63个月监禁，这些加密货币是由一个网络犯罪团伙盗窃的，该团伙诈骗受害者约2.6亿美元。",
-    "美国财政部因涉及人口贩卖和网络诈骗团伙的指控而制裁柬埔寨参议员Ly Yong Phat。",
-    "法国当局逮捕了一名20岁的嫌疑人，他涉嫌48起针对公共机构、体育联合会和私营公司的数据库泄露，扣押了设备和..."
+    "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。",
+    "乌克兰警方拘留了涉嫌盗取数千个Roblox账户的黑客，这些账户包含玩家用真金白银购买的有价值的数字物品和游戏内货币...",
+    "一名加利福尼亚男子因洗钱被判63个月监禁，这些加密货币是由一个网络犯罪团伙盗窃的，该团伙诈骗受害者约2.6亿美元。"
   ],
-  "sources_hash": "1bce259221aa30ae"
+  "sources_hash": "d5ff995757da9938"
 }

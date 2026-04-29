@@ -1,14 +1,15 @@
 {
   "tag": "windows",
   "locale": "en",
-  "count": 21,
+  "count": 22,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Kyber",
-    "Chaotic Eclipse"
+    "Chaotic Eclipse",
+    "VECT Ransomware"
   ],
   "top_cves": [
     {
@@ -33,14 +34,14 @@
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
+    "critical": 2,
     "high": 16,
-    "medium": 4,
-    "critical": 1
+    "medium": 4
   },
   "recent_excerpts": [
+    "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying.",
     "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis.",
-    "Kyber ransomware deploys two distinct payloads to encrypt both Windows systems and VMware ESXi servers, using a custom tool to wipe ESXi snapshots and hinder recovery.",
-    "PureRAT hides its Windows PE payloads inside PNG files and executes them filelessly in memory, a technique detailed by cybersecurity researchers analyzing a new sophisticated campaign."
+    "Kyber ransomware deploys two distinct payloads to encrypt both Windows systems and VMware ESXi servers, using a custom tool to wipe ESXi snapshots and hinder recovery."
   ],
-  "sources_hash": "36c4911027e0def9"
+  "sources_hash": "2beaf6fa11fa147d"
 }

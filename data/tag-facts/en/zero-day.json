@@ -1,13 +1,14 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "count": 24,
+  "count": 26,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-26"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Chaotic Eclipse",
+    "Claude Mythos",
     "Interlock"
   ],
   "top_cves": [
@@ -32,25 +33,25 @@
     }
   ],
   "top_sectors": [
-    "government",
     "technology",
+    "critical infrastructure",
+    "government",
     "enterprise",
-    "healthcare",
-    "multiple"
+    "healthcare"
   ],
   "top_regions": [
     "Global",
     "Southeast asia"
   ],
   "severity_mix": {
-    "high": 12,
-    "critical": 11,
+    "critical": 12,
+    "high": 13,
     "medium": 1
   },
   "recent_excerpts": [
-    "Check Point Research uncovered CVE-2026-3502, a 7.8-CVSS privilege escalation in TrueConf client, exploited in targeted attacks against Southeast Asian government entities since…",
-    "A vulnerability (CVE-2026-32183) in the Microsoft Windows Snipping Tool allows remote attackers to execute arbitrary code via a malicious file or webpage, requiring only user interaction to trigger th",
-    "A proof-of-concept exploit for CVE-2026-39808, a critical command injection vulnerability in Fortinet FortiSandbox, has been released."
+    "Anthropic's Claude Mythos Preview autonomously discovers and weaponizes software vulnerabilities in OS and internet infrastructure without expert guidance, raising urgent…",
+    "Claude Mythos and Project Glasswing shrink exploit windows to near-zero. The Hacker News details NDR playbooks to contain AI-driven attacks before patching is possible.",
+    "Check Point Research uncovered CVE-2026-3502, a 7.8-CVSS privilege escalation in TrueConf client, exploited in targeted attacks against Southeast Asian government entities since…"
   ],
-  "sources_hash": "52c143a0857f8871"
+  "sources_hash": "dc32bf831aa6ef69"
 }

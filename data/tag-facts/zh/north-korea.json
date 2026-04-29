@@ -1,23 +1,23 @@
 {
   "tag": "north-korea",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Lazarus Group",
     "APT37 (ScarCruft, InkySquid)",
-    "Sapphire Sleet"
+    "BlueNoroff"
   ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
     "technology",
     "finance",
-    "software development",
-    "venture capital"
+    "financial services",
+    "software development"
   ],
   "top_regions": [
     "Global",
@@ -26,12 +26,12 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 7
+    "high": 8
   },
   "recent_excerpts": [
     "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…",
-    "Lazarus APT 利用 ClickFix 社会工程学来传递 macOS 恶意软件 —— 假的浏览器更新提示诱使高管运行 AppleScript 有效载荷，这些载荷窃取凭证并…",
-    "朝鲜特工使用一种'传染式面试'策略，其中被入侵开发者的GitHub仓库将RATs传播给其他求职者。"
+    "BlueNoroff 使用被盗视频、AI 头像和伪造的 Zoom 邀请，将加密高管变成攻击诱饵。",
+    "Lazarus APT 利用 ClickFix 社会工程学来传递 macOS 恶意软件 —— 假的浏览器更新提示诱使高管运行 AppleScript 有效载荷，这些载荷窃取凭证并…"
   ],
-  "sources_hash": "bd7548ea5b22888c"
+  "sources_hash": "f745ad7a1fabcdd1"
 }

@@ -1,0 +1,30 @@
+{
+  "tag": "vercel",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-19",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "cloud computing",
+    "cloud services",
+    "software development"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Vercel disclosed a breach after stolen OAuth tokens from Context.ai enabled unauthorized access to internal systems via a connected app. No customer data exposed.",
+    "Vercel identified additional compromised customer accounts linked to the Context.ai breach, expanding investigation with new indicators and network request reviews.",
+    "SANS ISC honeypots detected HTTP requests carrying X-Vercel-Set-Bypass-Cookie header, indicating active scanning for Vercel deployments vulnerable to authentication bypass."
+  ],
+  "sources_hash": "9fe1ebd2acba9ab2"
+}

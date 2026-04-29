@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 70,
+  "count": 71,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Lazarus Group",
@@ -38,19 +38,19 @@
     "Global",
     "Asia",
     "Europe",
-    "Arctic",
-    "China"
+    "North america",
+    "Arctic"
   ],
   "severity_mix": {
+    "medium": 12,
     "critical": 11,
     "high": 43,
-    "medium": 11,
     "informational": 4
   },
   "recent_excerpts": [
+    "Vimeo attributed a security incident to a breach at analytics vendor Anodot; hackers accessed internal systems but not video content, logins, or payment data.",
     "Attackers compromised the elementary-data PyPI package (1.1M monthly downloads) to push an infostealer targeting developer credentials, crypto wallets, and environment variables.",
-    "Vercel disclosed a breach after stolen OAuth tokens from Context.ai enabled unauthorized access to internal systems via a connected app. No customer data exposed.",
-    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…"
+    "Vercel disclosed a breach after stolen OAuth tokens from Context.ai enabled unauthorized access to internal systems via a connected app. No customer data exposed."
   ],
-  "sources_hash": "5de74859ace0a8ce"
+  "sources_hash": "b6d6e3547e9d236c"
 }

@@ -1,0 +1,35 @@
+{
+  "tag": "raas",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-20",
+    "latest": "2026-04-28"
+  },
+  "top_actors": [
+    "The Gentlemen",
+    "LockBit",
+    "VECT Ransomware"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "retail"
+  ],
+  "top_regions": [
+    "Caribbean",
+    "Latin america"
+  ],
+  "severity_mix": {
+    "critical": 1,
+    "high": 3,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying.",
+    "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent",
+    "The Gentlemen ransomware-as-a-service group uses the SystemBC SOCKS5 proxy tool to hide command-and-control traffic, according to a Check Point DFIR report analyzing a recent affiliate attack."
+  ],
+  "sources_hash": "2db4464d8c2726cb"
+}

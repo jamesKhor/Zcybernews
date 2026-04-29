@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [],
   "top_cves": [
@@ -27,9 +27,9 @@
     "medium": 2
   },
   "recent_excerpts": [
+    "Elastic Security Labs 发布了一个开源的 CI/CD 滥用检测模板，使用信号提取和 LLM 推理来捕捉 GitHub Actions、GitLab CI 等跨平台的流水线攻击…",
     "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。",
-    "CVE-2026-33626（CVSS 7.5）在 LMDeploy 中，一个开源的 LLM 工具包，被在野外利用，距离公开披露仅 13 小时，使得 SSRF 攻击能够访问敏感信息...",
-    "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。"
+    "CVE-2026-33626（CVSS 7.5）在 LMDeploy 中，一个开源的 LLM 工具包，被在野外利用，距离公开披露仅 13 小时，使得 SSRF 攻击能够访问敏感信息..."
   ],
-  "sources_hash": "0fbd383d4ebc002b"
+  "sources_hash": "f9e06e10d26e75eb"
 }

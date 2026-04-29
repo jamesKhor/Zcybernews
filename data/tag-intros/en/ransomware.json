@@ -1,9 +1,9 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "intro": "The Gentlemen, Kyber, and Payouts King were the most active ransomware threat actors across 36 articles published between April 12 and April 26, 2026. Two critical vulnerabilities, CVE-2026-1731 (CVSS 9.8) and CVE-2026-34197 (CVSS 8.8), were frequently cited in attacks targeting multiple sectors including manufacturing, healthcare, logistics, and retail. The incidents had a global reach, with significant impacts in Europe, the United States, North America, and Turkey. The coverage included 28 high-severity, three critical, one medium, and two informational reports.",
-  "sources_hash": "dbcecbe00944e3ed",
+  "intro": "The Gentlemen, Kyber, and Payouts King were the most active ransomware threat actors across 39 articles published between April 12 and April 28, 2026. Two critical vulnerabilities, CVE-2026-1731 (CVSS 9.8) and CVE-2026-34197 (CVSS 8.8), were frequently exploited in attacks targeting multiple sectors including manufacturing, technology, financial services, and gaming. The campaigns affected regions globally, with significant incidents in Europe, North America, the United States, and Turkey. The coverage mix included 4 critical, 30 high, 1 medium, and 2 informational severity reports.",
+  "sources_hash": "bce47163f104a4e5",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:17:44.980Z",
+  "generated_at": "2026-04-29T04:17:25.382Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

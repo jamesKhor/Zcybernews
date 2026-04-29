@@ -1,9 +1,9 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "intro": "Between 12 and 26 April 2026, ZCyberNews published 17 articles on critical-infrastructure security, with APT33, CyberAv3ngers, and Lotus Wiper among the most frequently observed threat actors. The coverage highlighted CVE-2026-24032, a vulnerability rated 7.3 on the CVSS scale, and focused on sectors including energy, utilities, manufacturing, and water across the United States, Europe, North America, the Asia-Pacific region, and globally. The reporting comprised nine high-severity incidents, three critical, three informational, and one medium.",
-  "sources_hash": "13bc3a624a65ca44",
+  "intro": "APT33, CyberAv3ngers, and Lotus Wiper were the most frequently observed threat actors in 18 articles covering critical infrastructure from April 12 to April 28, 2026. The coverage highlighted CVE-2026-24032, a vulnerability with a CVSS score of 7.3, and focused on sectors including energy, utilities, and manufacturing. Affected regions spanned the United States, North America, Europe, Asia-Pacific, and global networks. The reporting included 10 high-severity incidents, 3 critical, 3 informational, and 1 medium-severity event.",
+  "sources_hash": "e18f61fbcde956f3",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:18:07.932Z",
+  "generated_at": "2026-04-29T04:17:48.497Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

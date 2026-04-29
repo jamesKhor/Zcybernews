@@ -1,10 +1,10 @@
 {
   "tag": "anthropic",
   "locale": "zh",
-  "intro": "本档案收录了 8 篇带有「anthropic」标签的文章，发布时间从2026年4月14日至2026年4月27日。其中包含2 篇严重、3 篇高危、1 篇中危、2 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "6e4c10a776895541",
-  "source_intro_hash": "11c3c0594b02b8ea",
-  "model": "template:sparse",
-  "generated_at": "2026-04-28T04:22:27.430Z",
+  "intro": "在2026年4月密集的两周时间内，ZCyberNews追踪了十篇标注为Anthropic相关的文章，其中威胁行为者Claude Mythos成为报道最多的实体。这些报道涵盖三项严重、四项高危、一项中等及两项信息级严重性事件，影响全球范围内的技术、关键基础设施、网络安全、人工智能开发及金融服务行业。这些记录于4月14日至4月29日期间的事件，凸显了Claude Mythos在多个高危事件中持续受到关注。",
+  "sources_hash": "d98d7326aa3438e1",
+  "source_intro_hash": "072c175dd071f1ca",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-29T04:19:57.516Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

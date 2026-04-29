@@ -1,13 +1,14 @@
 {
   "tag": "ot-security",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-28"
   },
   "top_actors": [
-    "APT33"
+    "APT33",
+    "Pro-Russia Hacktivists"
   ],
   "top_cves": [
     {
@@ -19,17 +20,17 @@
     "energy",
     "manufacturing",
     "critical-infrastructure",
-    "industrial",
-    "utilities"
+    "critical infrastructure",
+    "industrial"
   ],
   "top_regions": [
-    "Europe",
     "Global",
-    "Middle east",
-    "North america"
+    "North america",
+    "Europe",
+    "Middle east"
   ],
   "severity_mix": {
-    "high": 2,
+    "high": 3,
     "informational": 4,
     "critical": 1,
     "medium": 1
@@ -39,5 +40,5 @@
     "Axonius has updated its Asset Cloud platform with AI-powered remediation for exposures, added IoT/OT asset management, and introduced an asset trust standard to quantify security posture.",
     "Security researchers propose extending two-factor authentication (2FA) principles to physical access control systems for critical infrastructure, creating a hybrid defense against credential-based att"
   ],
-  "sources_hash": "642324479d009c09"
+  "sources_hash": "829ac52cc83fe974"
 }

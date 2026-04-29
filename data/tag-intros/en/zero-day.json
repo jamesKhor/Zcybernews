@@ -1,9 +1,9 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "intro": "Government and technology sectors bore the brunt of a concentrated wave of zero-day exploits between April 12 and April 26, 2026, with 24 articles covering 11 critical and 12 high-severity vulnerabilities. Threat actors Chaotic Eclipse and Interlock were observed leveraging flaws including CVE-2026-34621, CVE-2026-3502, CVE-2026-32183, CVE-2026-32201, and CVE-2024-20662. The campaign affected enterprises and healthcare globally, with particular impact across Southeast Asia.",
-  "sources_hash": "52c143a0857f8871",
+  "intro": "Technology, critical infrastructure, and government sectors were the primary targets in a wave of zero-day attacks spanning April 2026, with 26 articles covering the period from April 12 to April 29. Threat actors Chaotic Eclipse, Claude Mythos, and Interlock were observed exploiting vulnerabilities including CVE-2026-34621, CVE-2026-3502, CVE-2026-32183, CVE-2026-32201, and CVE-2024-20662. The activity, which affected global regions and Southeast Asia, comprised 12 critical-severity incidents, 13 high-severity incidents, and one medium-severity incident.",
+  "sources_hash": "dc32bf831aa6ef69",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:17:52.016Z",
+  "generated_at": "2026-04-29T04:17:33.189Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

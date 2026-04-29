@@ -1,10 +1,10 @@
 {
   "tag": "evasion",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Payouts King",
@@ -19,12 +19,12 @@
   ],
   "severity_mix": {
     "high": 7,
-    "medium": 1
+    "medium": 2
   },
   "recent_excerpts": [
     "PureRAT 将其 Windows PE 有效载荷隐藏在 PNG 文件中，并在内存中无文件执行它们，这是网络安全研究人员分析一种新的复杂活动时详细描述的技术。",
     "根据 Check Point DFIR 报告分析最近的一次关联攻击，The Gentlemen 勒索软件即服务组织使用 SystemBC SOCKS5 代理工具来隐藏命令和控制流量。",
     "Payouts King 勒索软件团伙正在部署开源 QEMU 模拟器，在被入侵的主机上创建隐藏的虚拟机，建立持久的反向 SSH 后门，以规避传统的端点检测。"
   ],
-  "sources_hash": "ab793ab5646c939c"
+  "sources_hash": "4fa4941eab0de6b2"
 }

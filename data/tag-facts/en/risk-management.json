@@ -1,10 +1,10 @@
 {
   "tag": "risk-management",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [],
   "top_cves": [],
@@ -21,9 +21,9 @@
     "medium": 2
   },
   "recent_excerpts": [
+    "Resilience analysis links security gaps to financial losses, giving CISOs hard data to convince boards to fund defenses. Report ties specific controls to premium reductions.",
     "ESET argues cybersecurity is an unmeasured competitive advantage enabling safe operations in hostile environments, not just a cost center. Brief analysis.",
-    "ESET researchers warn that small and medium businesses (SMBs) face significant cybersecurity risks from unmanaged third-party and fourth-party dependencies, which can lead to credential theft, data br",
-    "Global workforce stress, anger, and sadness remain significantly above pre-pandemic levels, creating a sustained environment conducive to insider threats and security lapses, according to Gallup's 202"
+    "ESET researchers warn that small and medium businesses (SMBs) face significant cybersecurity risks from unmanaged third-party and fourth-party dependencies, which can lead to credential theft, data br"
   ],
-  "sources_hash": "c6135abfdaa17815"
+  "sources_hash": "65e983696ebd2c1f"
 }

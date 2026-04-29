@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "count": 17,
+  "count": 20,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "LockBit",
@@ -16,25 +16,25 @@
     "financial services",
     "government",
     "e-commerce",
-    "multiple",
-    "retail"
+    "gaming",
+    "multiple"
   ],
   "top_regions": [
-    "Caribbean",
     "Global",
+    "Caribbean",
     "Latin america",
     "Southeast asia",
     "United states"
   ],
   "severity_mix": {
-    "medium": 4,
-    "high": 11,
+    "high": 13,
+    "medium": 5,
     "informational": 2
   },
   "recent_excerpts": [
-    "A California man received a 63-month prison sentence for laundering cryptocurrency stolen by a cybercriminal ring that defrauded victims of approximately $260 million.",
-    "U.S. Treasury sanctioned Cambodian Senator Ly Yong Phat over alleged ties to human trafficking and cyberscam compounds.",
-    "French authorities arrested a 20-year-old suspected of 48 data breaches targeting public institutions, sports federations, and private companies, seizing equipment and…"
+    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data.",
+    "Ukrainian police detained hackers suspected of stealing thousands of Roblox accounts containing valuable digital items and in-game currency purchased with real money from players…",
+    "A California man received a 63-month prison sentence for laundering cryptocurrency stolen by a cybercriminal ring that defrauded victims of approximately $260 million."
   ],
-  "sources_hash": "1bce259221aa30ae"
+  "sources_hash": "d5ff995757da9938"
 }

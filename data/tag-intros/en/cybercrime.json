@@ -1,9 +1,9 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "intro": "Over the past two weeks, financial services, government, and e-commerce sectors have been the primary targets in a series of 17 cybercrime incidents, with 11 rated as high severity. LockBit, Chinese Transnational Organized Crime, and REvil were observed across attacks affecting the Caribbean, Global, Latin America, Southeast Asia, and the United States. The reporting period from April 13 to April 27, 2026, highlights a concentrated wave of activity against these regions and industries.",
-  "sources_hash": "1bce259221aa30ae",
+  "intro": "Between April 13 and 28, 2026, ZCyberNews covered 20 cybercrime incidents, with financial services and government sectors most frequently targeted across global, Caribbean, Latin American, Southeast Asian, and United States regions. The reporting featured LockBit, Chinese Transnational Organized Crime, and REvil as distinct threat actors. Of the 20 articles, 13 were classified as high severity, five as medium, and two as informational.",
+  "sources_hash": "d5ff995757da9938",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-28T04:20:44.114Z",
+  "generated_at": "2026-04-29T04:17:44.329Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

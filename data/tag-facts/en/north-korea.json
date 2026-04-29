@@ -1,23 +1,23 @@
 {
   "tag": "north-korea",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-24"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Lazarus Group",
     "APT37 (ScarCruft, InkySquid)",
-    "Sapphire Sleet"
+    "BlueNoroff"
   ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
     "technology",
     "finance",
-    "software development",
-    "venture capital"
+    "financial services",
+    "software development"
   ],
   "top_regions": [
     "Global",
@@ -26,12 +26,12 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 7
+    "high": 8
   },
   "recent_excerpts": [
     "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
-    "Lazarus APT uses ClickFix social engineering to deliver macOS malware — fake browser update prompts trick executives into running AppleScript payloads that steal credentials and…",
-    "North Korean operatives use a 'contagious interview' tactic, where a compromised developer's GitHub repo spreads RATs to other job seekers."
+    "BlueNoroff uses stolen video, AI avatars, and fake Zoom invites to turn crypto executives into attack lures.",
+    "Lazarus APT uses ClickFix social engineering to deliver macOS malware — fake browser update prompts trick executives into running AppleScript payloads that steal credentials and…"
   ],
-  "sources_hash": "bd7548ea5b22888c"
+  "sources_hash": "f745ad7a1fabcdd1"
 }

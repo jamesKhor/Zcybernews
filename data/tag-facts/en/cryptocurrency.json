@@ -1,15 +1,15 @@
 {
   "tag": "cryptocurrency",
   "locale": "en",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Lazarus Group",
-    "FakeWallet",
-    "Omnistealer"
+    "BlueNoroff",
+    "FakeWallet"
   ],
   "top_cves": [
     {
@@ -18,21 +18,21 @@
   ],
   "top_sectors": [
     "cryptocurrency",
+    "financial services",
     "decentralized finance (DeFi)",
     "finance",
-    "financial services",
     "financial-services"
   ],
   "top_regions": [
-    "United states",
     "Global",
+    "United states",
     "Canada",
     "Europe",
     "North america"
   ],
   "severity_mix": {
     "medium": 1,
-    "high": 14,
+    "high": 15,
     "critical": 3
   },
   "recent_excerpts": [
@@ -40,5 +40,5 @@
     "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
     "Apple removed 45 malicious cryptocurrency apps from its App Store after they stole recovery phrases and private keys from users, mimicking legitimate wallets like MetaMask and Coinbase."
   ],
-  "sources_hash": "ceaf1a0156482a5b"
+  "sources_hash": "8f04cc821719d82a"
 }

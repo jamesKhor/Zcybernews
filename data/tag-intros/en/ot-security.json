@@ -1,9 +1,9 @@
 {
   "tag": "ot-security",
   "locale": "en",
-  "intro": "European energy and manufacturing sectors faced heightened risk in mid-April 2026, with eight ZCyberNews articles covering OT security between 13 and 26 April. The threat actor APT33 was observed, alongside the critical-severity vulnerability CVE-2026-24032 (CVSS 7.3). The coverage included two high-severity, four informational, one critical, and one medium-severity report, impacting critical-infrastructure, industrial, and utilities across Europe, Global, Middle east, and North america regions.",
-  "sources_hash": "642324479d009c09",
+  "intro": "Industrial and energy sectors bore the brunt of OT-security incidents between April 13 and April 28, 2026, with critical infrastructure globally affected across North America, Europe, and the Middle East. Threat actors APT33 and Pro-Russia Hacktivists were observed, while CVE-2026-24032 (CVSS 7.3) was among the top vulnerabilities. The nine articles in this archive cover a severity mix of one critical, three high, one medium, and four informational reports.",
+  "sources_hash": "829ac52cc83fe974",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:18:49.600Z",
+  "generated_at": "2026-04-29T04:18:26.608Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

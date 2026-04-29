@@ -1,7 +1,7 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 50,
+  "count": 51,
   "date_range": {
     "first": "2026-04-08",
     "latest": "2026-04-28"
@@ -13,21 +13,21 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "technology",
     "cryptocurrency",
+    "technology",
     "financial services",
     "financial-services",
     "hospitality"
   ],
   "top_regions": [
-    "North america",
     "Global",
+    "North america",
     "Europe",
     "United states",
     "Canada"
   ],
   "severity_mix": {
-    "high": 38,
+    "high": 39,
     "medium": 11,
     "informational": 1
   },
@@ -36,5 +36,5 @@
     "Adaptive Security finds 3 seconds of audio enough to clone a voice for fraud; deepfake calls tricked employees into wiring $243K in one case. No detection tool caught the attack.",
     "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months."
   ],
-  "sources_hash": "b02f4a82c48b8ffb"
+  "sources_hash": "3f79bbc8ac3a989b"
 }

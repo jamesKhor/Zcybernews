@@ -1,0 +1,47 @@
+{
+  "tag": "command-injection",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-04-29"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-3854",
+      "cvss": 8.7
+    },
+    {
+      "id": "CVE-2023-33538"
+    },
+    {
+      "id": "CVE-2026-39808"
+    },
+    {
+      "id": "CVE-2026-40176"
+    },
+    {
+      "id": "CVE-2026-40177"
+    }
+  ],
+  "top_sectors": [
+    "residential",
+    "software development",
+    "technology",
+    "telecommunications"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "critical": 3
+  },
+  "recent_excerpts": [
+    "CVE-2026-3854（CVSS 8.7）允许具有推送权限的认证用户通过精心制作的git推送命令在GitHub.com和GitHub Enterprise Server上实现远程代码执行。",
+    "针对CVE-2026-39808的PoC漏洞利用代码已经发布，这是一个Fortinet FortiSandbox中的关键命令注入漏洞。该漏洞允许未经身份验证的攻击者以root身份执行任意操作系统命令。",
+    "Fortinet 披露了 FortiSandbox 中的两个关键漏洞（CVSS 9.1），使未经认证的攻击者能够执行任意命令并绕过认证。补丁已可用。"
+  ],
+  "sources_hash": "ce51e0e6fe124cec"
+}

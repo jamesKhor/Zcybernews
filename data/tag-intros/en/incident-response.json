@@ -1,9 +1,9 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "intro": "Technology, cloud computing, energy, financial services, and government sectors were the primary targets in eight incident-response articles published between April 13 and April 26, 2026. The coverage included four high-severity and two critical-severity incidents, with one medium-severity event. The top CVE was CVE-2025-59718, carrying a CVSS score of 9.8. Affected regions included Europe, North America, Venezuela, and broader global areas.",
-  "sources_hash": "a3e503446d1585e4",
+  "intro": "Technology, cloud computing, energy, financial services, and government sectors were the most affected by incidents covered under the incident-response tag. Across nine articles published between April 13 and April 27, 2026, the coverage included four high-severity, two critical, and one medium-severity event, with CVE-2025-59718 (CVSS 9.8) as the top vulnerability. Europe, North America, Venezuela, and global regions were the primary areas of impact.",
+  "sources_hash": "b57f94f8fac375b7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:18:41.682Z",
+  "generated_at": "2026-04-29T04:18:15.413Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

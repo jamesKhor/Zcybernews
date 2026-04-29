@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "The Gentlemen、Kyber和Payouts King是2026年4月12日至4月26日期间发表的36篇文章中最活跃的勒索软件威胁行为者。两个关键漏洞CVE-2026-1731（CVSS 9.8）和CVE-2026-34197（CVSS 8.8）在针对制造业、医疗保健、物流和零售等多个行业的攻击中被频繁引用。这些事件具有全球影响，对欧洲、美国、北美和土耳其造成了重大冲击。相关报道包括28篇高严重性、3篇严重、1篇中等和2篇信息性报告。",
-  "sources_hash": "dbcecbe00944e3ed",
-  "source_intro_hash": "4540b53281500ebe",
+  "intro": "The Gentlemen、Kyber和Payouts King是2026年4月12日至4月28日期间发表的39篇文章中最活跃的勒索软件威胁行为者。两个关键漏洞CVE-2026-1731（CVSS 9.8）和CVE-2026-34197（CVSS 8.8）在针对制造业、科技、金融服务和游戏等多个行业的攻击中被频繁利用。这些攻击活动影响了全球多个地区，其中欧洲、北美、美国和土耳其发生了重大事件。报道涵盖的严重程度包括4篇关键、30篇高危、1篇中等和2篇信息性报告。",
+  "sources_hash": "bce47163f104a4e5",
+  "source_intro_hash": "553e67546cfee724",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:20:42.405Z",
+  "generated_at": "2026-04-29T04:20:18.008Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

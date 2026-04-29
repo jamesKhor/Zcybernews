@@ -1,33 +1,35 @@
 {
   "tag": "anthropic",
   "locale": "zh",
-  "count": 8,
+  "count": 10,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
-  "top_actors": [],
+  "top_actors": [
+    "Claude Mythos"
+  ],
   "top_cves": [],
   "top_sectors": [
     "technology",
+    "critical infrastructure",
     "cybersecurity",
     "ai-development",
-    "financial services",
-    "government"
+    "financial services"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 3,
-    "critical": 2,
+    "critical": 3,
+    "high": 4,
     "informational": 2,
     "medium": 1
   },
   "recent_excerpts": [
-    "Anthropic的 Claude Mythos Preview 自4月7日以来大规模识别漏洞，但研究人员警告说，组织缺乏分类和修补能力以跟上步伐。",
-    "一个未授权团体访问了Anthropic的独家Claude Mythos预览AI，这是一个能够生成漏洞和恶意软件的网络安全工具。",
-    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。"
+    "Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…",
+    "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。",
+    "Anthropic的 Claude Mythos Preview 自4月7日以来大规模识别漏洞，但研究人员警告说，组织缺乏分类和修补能力以跟上步伐。"
   ],
-  "sources_hash": "6e4c10a776895541"
+  "sources_hash": "d98d7326aa3438e1"
 }

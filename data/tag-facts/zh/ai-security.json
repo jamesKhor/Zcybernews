@@ -1,12 +1,13 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 48,
+  "count": 50,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
   "top_actors": [
+    "Claude Mythos",
     "OpenClaw"
   ],
   "top_cves": [
@@ -32,15 +33,15 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 21,
+    "critical": 7,
+    "high": 22,
     "medium": 6,
-    "critical": 6,
     "informational": 12
   },
   "recent_excerpts": [
-    "Anthropic的 Claude Mythos Preview 自4月7日以来大规模识别漏洞，但研究人员警告说，组织缺乏分类和修补能力以跟上步伐。",
-    "SecurityWeek 认为，从代码生成器到决策系统，自主代理需要新的防御模型，因为它们在没有人类干预的情况下行动。",
-    "Rapid7的全球网络安全峰会关注由AI驱动的威胁、持续威胁暴露管理（CTEM），以及缩小可见性和响应之间的差距。"
+    "Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…",
+    "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。",
+    "Anthropic的 Claude Mythos Preview 自4月7日以来大规模识别漏洞，但研究人员警告说，组织缺乏分类和修补能力以跟上步伐。"
   ],
-  "sources_hash": "cdc35befba31f48f"
+  "sources_hash": "885ae797c96331c3"
 }

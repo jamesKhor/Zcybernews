@@ -1,9 +1,9 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "intro": "Government and technology sectors were the primary focus of recent cybersecurity advisories from CISA, which published nine alerts between April 12 and April 25, 2026. The alerts addressed three critical and six high-severity vulnerabilities, including CVE-2024-57726 (CVSS 9.9), CVE-2026-34197 (CVSS 8.8), CVE-2024-20662, and CVE-2024-21412. These vulnerabilities primarily affected organizations in the United States and globally, with software development also among the impacted sectors.",
-  "sources_hash": "9451afbbb68546a4",
+  "intro": "Government and technology sectors faced a concentrated wave of high-severity threats between April 12 and April 28, 2026, with Pro-Russia Hacktivists among the primary actors observed. The ten articles covering CISA-related activity included three critical and seven high-severity alerts, highlighting vulnerabilities such as CVE-2024-57726, CVE-2026-34197, CVE-2024-20662, and CVE-2024-21412. Affected sectors spanned government, technology, critical infrastructure, energy, and software development, while impacted regions included Global, United States, and North America.",
+  "sources_hash": "5040ae9362dc4ffd",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:13:41.420Z",
+  "generated_at": "2026-04-29T04:18:03.505Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

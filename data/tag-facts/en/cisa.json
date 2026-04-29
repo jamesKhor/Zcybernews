@@ -1,12 +1,14 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-04-28"
   },
-  "top_actors": [],
+  "top_actors": [
+    "Pro-Russia Hacktivists"
+  ],
   "top_cves": [
     {
       "id": "CVE-2024-57726",
@@ -26,20 +28,23 @@
   "top_sectors": [
     "government",
     "technology",
+    "critical infrastructure",
+    "energy",
     "software development"
   ],
   "top_regions": [
+    "Global",
     "United states",
-    "Global"
+    "North america"
   ],
   "severity_mix": {
     "critical": 3,
-    "high": 6
+    "high": 7
   },
   "recent_excerpts": [
     "CISA added 4 actively exploited vulnerabilities to its KEV catalog — SimpleHelp, Samsung MagicINFO 9, and D-Link DIR-823X — with a May 2026 federal remediation deadline.",
     "A high-severity flaw in Apache ActiveMQ Classic, CVE-2026-34197 (CVSS 8.8), is under active exploitation, prompting CISA to add it to its Known Exploited Vulnerabilities catalog and mandate patching f",
     "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching."
   ],
-  "sources_hash": "9451afbbb68546a4"
+  "sources_hash": "5040ae9362dc4ffd"
 }

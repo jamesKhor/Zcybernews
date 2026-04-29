@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 70,
+  "count": 71,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "Lazarus Group",
@@ -38,19 +38,19 @@
     "Global",
     "Asia",
     "Europe",
-    "Arctic",
-    "China"
+    "North america",
+    "Arctic"
   ],
   "severity_mix": {
+    "medium": 12,
     "critical": 11,
     "high": 43,
-    "medium": 11,
     "informational": 4
   },
   "recent_excerpts": [
+    "Vimeo 将一起安全事件归因于分析供应商 Anodot 的泄露；黑客访问了内部系统，但未访问视频内容、登录信息或支付数据。",
     "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。",
-    "Vercel 在从 Context.ai 被盗的 OAuth 令牌使未授权访问内部系统成为可能后披露了一起入侵事件，通过连接的应用程序。没有客户数据被暴露。",
-    "Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游..."
+    "Vercel 在从 Context.ai 被盗的 OAuth 令牌使未授权访问内部系统成为可能后披露了一起入侵事件，通过连接的应用程序。没有客户数据被暴露。"
   ],
-  "sources_hash": "5de74859ace0a8ce"
+  "sources_hash": "b6d6e3547e9d236c"
 }

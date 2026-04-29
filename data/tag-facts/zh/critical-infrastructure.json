@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-26"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "APT33",
@@ -21,18 +21,18 @@
     "energy",
     "critical-infrastructure",
     "utilities",
-    "manufacturing",
-    "water"
+    "critical infrastructure",
+    "manufacturing"
   ],
   "top_regions": [
     "United states",
-    "Europe",
     "North america",
-    "Asia-pacific",
-    "Global"
+    "Europe",
+    "Global",
+    "Asia-pacific"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "critical": 2,
     "informational": 3,
     "medium": 1
@@ -42,5 +42,5 @@
     "Dark Reading 报告称攻击者正在操纵电压以破坏电网 —— 这是一个日益增长的网络物理威胁向量，针对没有补丁的电力基础设施进行攻击…",
     "Locked Shields 2026涉及41个国家参与最大的实弹网络防御演习，测试对关键基础设施攻击的响应，包括电网和电信…"
   ],
-  "sources_hash": "e9650bdda4d6ecc0"
+  "sources_hash": "e47e47ecd42a1395"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "zh",
-  "intro": "过去两周，金融服务业、政府部门和电子商务领域成为一系列17起网络犯罪事件的主要目标，其中11起被评定为高严重性。LockBit、Chinese Transnational Organized Crime和REvil在影响加勒比地区、全球范围、拉丁美洲、东南亚及美国的攻击活动中被观测到。报告期从2026年4月13日至4月27日，凸显了针对这些地区和行业的一波集中攻击活动。",
-  "sources_hash": "1bce259221aa30ae",
-  "source_intro_hash": "2f89e762d3f1d1a1",
+  "intro": "2026年4月13日至28日期间，ZCyberNews报道了20起网络犯罪事件，金融服务业和政府机构成为全球、加勒比地区、拉丁美洲、东南亚及美国地区最常被攻击的目标。报道中提及LockBit、Chinese Transnational Organized Crime和REvil作为不同的威胁行为者。在这20篇文章中，13篇被归类为高严重性，5篇为中等严重性，2篇为信息性报道。",
+  "sources_hash": "d5ff995757da9938",
+  "source_intro_hash": "5750cfc3f400cbae",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-28T04:22:36.746Z",
+  "generated_at": "2026-04-29T04:20:07.382Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

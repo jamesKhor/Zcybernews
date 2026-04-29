@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 27,
+  "count": 29,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-04-28"
   },
   "top_actors": [
     "ShinyHunters",
@@ -14,10 +14,10 @@
   "top_cves": [],
   "top_sectors": [
     "government",
-    "retail",
     "healthcare",
-    "hospitality",
-    "technology"
+    "retail",
+    "technology",
+    "hospitality"
   ],
   "top_regions": [
     "North america",
@@ -27,13 +27,13 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 22,
-    "medium": 4
+    "high": 23,
+    "medium": 5
   },
   "recent_excerpts": [
-    "ShinyHunters 侵入 ADT，窃取了 550 万名个人数据 —— 名字、电子邮件、电话号码和地址 —— 来自内部系统。没有支付数据被泄露。",
-    "ADT 确认网络犯罪分子在 2026 年 4 月 20 日入侵其系统，窃取了有限的客户和潜在客户数据集。没有财务信息或凭证被泄露。",
-    "ADT确认数据泄露后，ShinyHunters泄露了30,000+客户记录，包括姓名、电子邮件和账户详情，这些信息来自一个被破坏的Salesforce实例。"
+    "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。",
+    "Vimeo 将一起安全事件归因于分析供应商 Anodot 的泄露；黑客访问了内部系统，但未访问视频内容、登录信息或支付数据。",
+    "ShinyHunters 侵入 ADT，窃取了 550 万名个人数据 —— 名字、电子邮件、电话号码和地址 —— 来自内部系统。没有支付数据被泄露。"
   ],
-  "sources_hash": "36b321ebc33a42e2"
+  "sources_hash": "c8fe822ce5214ed9"
 }
