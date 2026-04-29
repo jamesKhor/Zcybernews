@@ -1,0 +1,52 @@
+---
+title: Oracle VirtualBox 竞态条件允许攻击者提升权限
+slug: 2026-04-29-oracle-virtualbox-race-condition-lets-attackers-escalate-privileges
+date: '2026-04-29'
+excerpt: >-
+  CVE-2026-35230: VirtualBox 的 SoundBlaster 16 模拟中存在竞态条件，允许具有高权限的本地攻击者提升权限。CVSS
+  7.5。
+category: vulnerabilities
+tags:
+  - oracle
+  - virtualbox
+  - privilege-escalation
+  - race-condition
+  - cve-2026-35230
+  - zdi
+language: zh
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-306/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-29-oracle-virtualbox-race-condition-lets-attackers-escalate-privileges
+severity: high
+cvss_score: 7.5
+cve_ids:
+  - CVE-2026-35230
+---
+## Oracle VirtualBox 竞态条件允许攻击者提升权限
+
+## 执行摘要
+
+Oracle VirtualBox 的 SoundBlaster 16 音频仿真组件中存在一个竞态条件漏洞，跟踪编号为 **CVE-2026-35230**，允许本地攻击者在受影响的安装上提升权限。该漏洞的 CVSS 评分为 7.5（高），由 Zero Day Initiative (ZDI) 评定。利用此漏洞需要攻击者首先获得在目标客户系统上执行高权限代码的能力，之后可以利用该缺陷在宿主机上获得提升的权限。截至本文撰写时，尚未确认有补丁。
+
+## 技术分析
+
+该漏洞通过 ZDI 计划报告，并分配了咨询编号 ZDI-26-306，存在于 Oracle VirtualBox 中的 SoundBlaster 16 仿真中。问题是一个典型的竞态条件 —— 一个检查时间/使用时间（TOCTOU）错误 —— 当对仿真音频设备中的共享资源进行并发访问时，未能正确序列化。已经实现在客户虚拟机内部执行高权限代码的攻击者可以触发此竞态，以破坏内核内存或在宿主系统上操纵特权数据结构。
+
+ZDI 咨询指出，CVSS 7.5 分数反映了对机密性、完整性和可用性的高影响，但由于攻击者已经需要在客户机内拥有提升的权限，因此有所缓和。这意味着该漏洞不能从未经授权的客户机上下文中远程利用；它是从客户机内核级访问到宿主级访问的权限提升。受影响的组件是 SoundBlaster 16 仿真，这是一个通常为与旧操作系统兼容而启用的遗留音频设备。
+
+VirtualBox 在其设备仿真层中有着漏洞的历史，特别是在音频和网络组件中。这一发现延续了一个模式，即复杂的仿真代码引入了并发错误，可能会破坏虚拟机隔离。
+
+## 缓解措施与建议
+
+在 Oracle 发布补丁之前，防御者应考虑以下措施：
+
+- **在不需要的地方禁用 VirtualBox VMs 中的 SoundBlaster 16 仿真**。在 VM 设置中，在音频下选择不同的音频控制器（例如，Intel HD Audio）或完全禁用音频。
+- **仅允许受信任的用户访问高权限客户机**。由于攻击需要在客户机内核级别执行，限制谁可以在 VMs 内安装或运行特权软件，可以减少攻击面。
+- **监控不寻常的客户机到宿主的交互** —— 尽管竞态条件可能不会留下明显的日志，但从 VM 上下文中的宿主进程行为异常可能表明尝试利用。
+- **及时应用 Oracle 的补丁**。当补丁可用时，跟踪咨询编号 ZDI-26-306 以获取更新。
+
+## 参考资料
+
+- [Zero Day Initiative Advisory ZDI-26-306](http://www.zerodayinitiative.com/advisories/ZDI-26-306/)

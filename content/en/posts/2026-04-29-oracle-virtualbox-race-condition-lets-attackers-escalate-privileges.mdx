@@ -1,0 +1,51 @@
+---
+title: Oracle VirtualBox Race Condition Lets Attackers Escalate Privileges
+slug: 2026-04-29-oracle-virtualbox-race-condition-lets-attackers-escalate-privileges
+date: '2026-04-29'
+excerpt: >-
+  CVE-2026-35230: A race condition in VirtualBox's SoundBlaster 16 emulation
+  allows local attackers with high-privileged guest access to escalate
+  privileges. CVSS 7.5.
+category: vulnerabilities
+tags:
+  - oracle
+  - virtualbox
+  - privilege-escalation
+  - race-condition
+  - cve-2026-35230
+  - zdi
+language: en
+source_urls:
+  - 'http://www.zerodayinitiative.com/advisories/ZDI-26-306/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-29-oracle-virtualbox-race-condition-lets-attackers-escalate-privileges
+severity: high
+cvss_score: 7.5
+cve_ids:
+  - CVE-2026-35230
+---
+## Executive Summary
+
+A race condition in Oracle VirtualBox's SoundBlaster 16 audio emulation component, tracked as **CVE-2026-35230**, allows local attackers to escalate privileges on affected installations. The vulnerability carries a CVSS score of 7.5 (High) as assigned by the Zero Day Initiative (ZDI). Exploitation requires an attacker to first obtain the ability to execute high-privileged code on the target guest system, after which the flaw can be leveraged to gain elevated privileges on the host. No patch has been confirmed as of this writing.
+
+## Technical Analysis
+
+The vulnerability, reported through ZDI's program and assigned advisory ZDI-26-306, resides in the SoundBlaster 16 emulation within Oracle VirtualBox. The issue is a classic race condition — a time-of-check/time-of-use (TOCTOU) flaw — that occurs when concurrent access to shared resources in the emulated audio device is not properly serialized. An attacker who has already achieved high-privileged code execution inside a guest virtual machine can trigger this race to corrupt kernel memory or manipulate privileged data structures on the host system.
+
+The ZDI advisory notes that the CVSS 7.5 score reflects the high impact on confidentiality, integrity, and availability, tempered by the requirement that the attacker already have elevated privileges within the guest. This means the vulnerability is not remotely exploitable from an unprivileged guest context; it is a privilege escalation from guest kernel-level access to host-level access. The affected component is the SoundBlaster 16 emulation, a legacy audio device commonly enabled for compatibility with older operating systems.
+
+VirtualBox has a history of vulnerabilities in its device emulation layers, particularly in audio and networking components. This finding continues a pattern where complex emulation code introduces concurrency bugs that can break virtual machine isolation.
+
+## Mitigations & Recommendations
+
+Until Oracle releases a patch, defenders should consider the following:
+
+- **Disable the SoundBlaster 16 emulation** in VirtualBox VMs where it is not required. In the VM settings, under Audio, select a different audio controller (e.g., Intel HD Audio) or disable audio entirely.
+- **Restrict high-privileged guest access** to trusted users only. Since the attack requires kernel-level execution in the guest, limiting who can install or run privileged software inside VMs reduces the attack surface.
+- **Monitor for unusual guest-to-host interactions** — though the race condition may not leave obvious logs, anomalous host process behavior from a VM context could indicate exploitation attempts.
+- **Apply Oracle's patch promptly** when it becomes available. Track the advisory at ZDI-26-306 for updates.
+
+## References
+
+- [Zero Day Initiative Advisory ZDI-26-306](http://www.zerodayinitiative.com/advisories/ZDI-26-306/)
