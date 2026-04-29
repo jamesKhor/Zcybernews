@@ -1,0 +1,49 @@
+---
+title: Fake CAPTCHA Scam Racks Up International SMS Charges
+slug: 2026-04-29-fake-captcha-scam-racks-up-international-sms-charges
+date: '2026-04-29'
+excerpt: >-
+  Malwarebytes reports scammers using fake CAPTCHA pages to trigger premium-rate
+  international SMS charges, billing victims up to $15 per message via a Keitaro
+  traffic distribution…
+category: threat-intel
+tags:
+  - fake-captcha
+  - sms-fraud
+  - keitaro
+  - malvertising
+  - phone-billing-scam
+  - malwarebytes
+language: en
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/news/2026/04/fake-captcha-scam-turns-a-quick-click-into-a-costly-phone-bill
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-29-fake-captcha-scam-racks-up-international-sms-charges
+severity: medium
+affected_sectors:
+  - general consumers
+affected_regions:
+  - North America
+  - Europe
+---
+## Executive Summary
+
+Scammers are deploying fake CAPTCHA verification pages that trick victims into inadvertently sending premium-rate international SMS messages, according to a report published April 29, 2026 by Malwarebytes Labs. The scheme uses a Keitaro traffic distribution system to route users through a multi-step redirect chain, ultimately presenting a counterfeit CAPTCHA page that prompts the victim to click a button labeled "Verify I'm Human" — which triggers an SMS to a premium-rate number, often costing $10–$15 per message. Malwarebytes researchers state the scam has been observed across multiple ad networks and is likely generating significant revenue for the operators through carrier payouts.
+
+## Technical Analysis
+
+The attack chain begins with malvertising or compromised websites that redirect users through a Keitaro-based traffic distribution system. Keitaro, a legitimate but widely abused ad-tech platform, allows the threat actors to filter traffic by geolocation, device type, and browser fingerprint before serving the malicious payload. Once the user reaches the final landing page, they see a fake CAPTCHA interface that mimics Google's reCAPTCHA branding, complete with a spinning icon and a "Verify" button.
+
+Clicking the button executes JavaScript that initiates an SMS to a premium-rate number registered in a foreign country — Malwarebytes notes the destination numbers observed were in the +297 (Aruba) and +682 (Cook Islands) country codes. The SMS is sent via the phone's native SMS gateway, not through a web API, meaning the charge appears directly on the victim's mobile carrier bill. The scammers earn a commission from the premium-rate SMS provider, typically a share of the $10–$15 per-message fee.
+
+Malwarebytes did not identify specific malware payloads or persistent backdoors in this campaign; the scam is purely a billing fraud operation. The researchers flagged that the Keitaro infrastructure allows the operators to rotate landing pages and block security researchers by IP, making takedown efforts more difficult. The campaign appears to target users primarily in North America and Europe, based on the ad-network traffic patterns observed.
+
+## Mitigations & Recommendations
+
+Defenders and consumers should be aware that legitimate CAPTCHA challenges never require sending an SMS or calling a premium-rate number. Malwarebytes recommends that users enable carrier-level blocking of premium-rate SMS services where available, and that organizations educate employees to recognize fake CAPTCHA pages as a social engineering vector. Network-level ad-blocking and DNS filtering can disrupt the Keitaro redirect chain before the user reaches the fraudulent page. Mobile carriers should consider flagging or blocking short-duration international SMS bursts from individual subscriber lines.
+
+## References
+
+- [Malwarebytes Labs: Fake CAPTCHA scam turns a quick click into a costly phone bill](https://www.malwarebytes.com/blog/news/2026/04/fake-captcha-scam-turns-a-quick-click-into-a-costly-phone-bill)

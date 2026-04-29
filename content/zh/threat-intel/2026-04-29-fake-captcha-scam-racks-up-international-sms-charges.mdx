@@ -1,0 +1,48 @@
+---
+title: 假冒 CAPTCHA 骗局导致国际短信费用
+slug: 2026-04-29-fake-captcha-scam-racks-up-international-sms-charges
+date: '2026-04-29'
+excerpt: >-
+  Malwarebytes 报告称骗子使用假冒 CAPTCHA 页面触发高额国际短信费用，通过 Keitaro 流量分发向受害者收取每条短信高达 15
+  美元的费用…
+category: threat-intel
+tags:
+  - fake-captcha
+  - sms-fraud
+  - keitaro
+  - malvertising
+  - phone-billing-scam
+  - malwarebytes
+language: zh
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/news/2026/04/fake-captcha-scam-turns-a-quick-click-into-a-costly-phone-bill
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-29-fake-captcha-scam-racks-up-international-sms-charges
+severity: medium
+affected_sectors:
+  - general consumers
+affected_regions:
+  - North America
+  - Europe
+---
+## 执行摘要
+
+根据Malwarebytes Labs于2026年4月29日发布的报告，骗子正在部署假冒的CAPTCHA验证页面，诱使受害者无意中发送高额国际短信。该计划使用Keitaro流量分发系统将用户通过多步骤重定向链路由，最终展示一个假冒的CAPTCHA页面，提示受害者点击标有“Verify I'm Human”的按钮——这会触发一条短信发送到一个高额号码，通常每条消息费用为10-15美元。Malwarebytes研究人员表示，已在多个广告网络中观察到这种骗局，并通过运营商支付为运营商带来可观的收入。
+
+## 技术分析
+
+攻击链始于恶意广告或被妥协的网站，这些网站通过基于Keitaro的流量分发系统重定向用户。Keitaro是一个合法但被广泛滥用的广告技术平台，允许威胁行为者通过地理位置、设备类型和浏览器指纹过滤流量，然后提供恶意有效载荷。一旦用户到达最终着陆页面，他们就会看到一个模仿Google的reCAPTCHA品牌的假冒CAPTCHA界面，包括一个旋转图标和一个“Verify”按钮。
+
+点击按钮执行JavaScript，发起一条短信到一个在外国注册的高额号码——Malwarebytes注意到观察到的目标号码在+297（阿鲁巴）和+682（库克群岛）国家代码中。短信是通过手机的原生短信网关发送的，而不是通过Web API，这意味着费用直接出现在受害者的移动运营商账单上。骗子从高额短信提供商那里赚取佣金，通常是每条消息10-15美元费用的份额。
+
+Malwarebytes没有识别出这次活动中的具体恶意软件负载或持久后门；这种骗局纯粹是计费欺诈操作。研究人员指出，Keitaro基础设施允许运营商旋转着陆页面，并通过IP阻止安全研究人员，使得取缔工作更加困难。根据观察到的广告网络流量模式，该活动似乎主要针对北美和欧洲的用户。
+
+## 缓解措施与建议
+
+防御者和消费者应该意识到，合法的CAPTCHA挑战从不要求发送短信或拨打高额号码。Malwarebytes建议用户在可用的情况下启用运营商级别的阻止高额短信服务，并教育员工识别假冒CAPTCHA页面作为社会工程学向量。网络级别的广告拦截和DNS过滤可以在用户到达欺诈页面之前中断Keitaro重定向链。移动运营商应考虑标记或阻止来自单个订户线路的短时国际短信突发。
+
+## 参考资料
+
+- [Malwarebytes Labs: Fake CAPTCHA scam turns a quick click into a costly phone bill](https://www.malwarebytes.com/blog/news/2026/04/fake-captcha-scam-turns-a-quick-click-into-a-costly-phone-bill)
