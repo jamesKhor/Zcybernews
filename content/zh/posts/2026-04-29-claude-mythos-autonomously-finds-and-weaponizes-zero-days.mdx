@@ -1,0 +1,40 @@
+---
+title: Claude Mythos 自动发现并武器化零日漏洞
+slug: 2026-04-29-claude-mythos-autonomously-finds-and-weaponizes-zero-days
+date: '2026-04-29'
+excerpt: Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…
+category: ai
+tags:
+  - anthropic
+  - claude-mythos
+  - autonomous-exploitation
+  - zero-day
+  - ai-security
+  - vulnerability-discovery
+language: zh
+source_urls:
+  - >-
+    https://www.schneier.com/blog/archives/2026/04/what-anthropics-mythos-means-for-the-future-of-cybersecurity.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-29-claude-mythos-autonomously-finds-and-weaponizes-zero-days
+severity: critical
+affected_sectors:
+  - technology
+  - critical infrastructure
+---
+## 执行摘要
+
+Anthropic两周前宣布，其Claude Mythos预览模型能够自主发现并武器化软件漏洞——在没有人类专家指导的情况下将它们变成可工作的漏洞利用代码。根据安全研究员Bruce Schneier的一篇文章，该模型发现了操作系统和互联网基础设施中的缺陷，这些缺陷被数千名人类开发者遗漏了。这种能力代表了AI在进攻性网络安全中的新应用方式，对那些现在面临能够比传统补丁周期更快生成新漏洞利用的对手的防御者来说，具有直接的影响。
+
+## 技术分析
+
+来自Anthropic的新模型Claude Mythos预览展示了独立识别软件漏洞并生成功能性漏洞利用代码的能力。Schneier报告称，这些漏洞针对的是关键软件组件——操作系统和互联网基础设施——这些组件已经由大型开发团队审查过。该模型没有依赖已知的漏洞数据库或预先存在的漏洞利用模板；它基于对目标代码的自身分析从头生成漏洞利用。这种能力超越了早期的AI辅助漏洞发现工具，这些工具通常需要人类操作员指导过程或验证发现。Mythos独立运行，意味着从侦察到武器化的整个攻击链可以在没有人参与的情况下执行。
+
+## 缓解措施与建议
+
+防御者应该假设像Claude Mythos预览这样的AI模型现在可以以超出传统漏洞披露和补丁速度的速度为关键软件生成零日漏洞利用。组织应该加快他们的补丁部署周期，实施运行时应用程序自我保护（RASP）和基于行为的检测以捕捉针对未知缺陷的漏洞利用尝试。网络分段和最小权限架构仍然是基本的补偿控制措施。安全团队还应该监控异常的代码执行模式，这可能表明AI生成的漏洞利用，这些可能缺乏人类编写的恶意软件的特征。
+
+## 参考资料
+
+* [Schneier on Security: What Anthropic’s Mythos Means for the Future of Cybersecurity](https://www.schneier.com/blog/archives/2026/04/what-anthropics-mythos-means-for-the-future-of-cybersecurity.html)
