@@ -1,0 +1,43 @@
+---
+title: 'Chrome 147, Firefox 150 修补关键代码执行漏洞'
+slug: 2026-04-29-chrome-147-firefox-150-patch-critical-code-execution-flaws
+date: '2026-04-29'
+excerpt: 谷歌和Mozilla发布Chrome 147和Firefox 150以修复关键和高严重性的漏洞，这些漏洞允许任意代码执行。用户被敦促立即更新。
+category: industry
+tags:
+  - chrome
+  - firefox
+  - browser-security
+  - critical-vulnerabilities
+  - arbitrary-code-execution
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/chrome-147-firefox-150-security-updates-rolling-out/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-29-chrome-147-firefox-150-patch-critical-code-execution-flaws
+severity: critical
+affected_sectors:
+  - technology
+  - all
+affected_regions:
+  - global
+---
+## Chrome 147，Firefox 150 补丁修复关键代码执行漏洞
+
+## 执行摘要
+
+谷歌和Mozilla已经开始分别推出Chrome 147和Firefox 150，以解决可能允许攻击者在受影响系统上执行任意代码的多个关键和高严重性漏洞。据SecurityWeek报道，这些更新适用于桌面和移动平台。截至撰写本文时，尚未披露CVE标识符或具体的漏洞细节。建议用户和企业管理员在更新可用时尽快应用。
+
+## 技术分析
+
+Chrome 147解决了一组内部分类为关键和高严重性的漏洞，尽管谷歌尚未发布完整的变更日志或CVE条目。历史上，关键的Chrome补丁解决了V8、Blink和GPU处理等组件中的内存损坏问题。根据Mozilla的咨询，Firefox 150同样针对可能导致远程代码执行的高严重性缺陷。两家浏览器供应商都遵循分阶段推出模型，这意味着更新可能不会立即对所有用户可用。在这个阶段缺乏公开的CVE细节并不罕见——两家公司通常在大多数用户更新后才延迟披露。
+
+## 缓解措施与建议
+
+对于个人用户：在Chrome（设置>关于Chrome）和Firefox（首选项>更新）中启用自动更新，以便在补丁传播时接收。企业管理员应在广泛部署前在暂存环境中测试更新，特别是如果使用自定义扩展或遗留Web应用程序。监控浏览器版本号——Chrome 147和Firefox 150——以确认安装。对于潜在的漏洞，没有可用的变通方法；补丁是唯一可靠的缓解措施。
+
+## 参考资料
+
+- [SecurityWeek: Chrome 147, Firefox 150 安全更新推出](https://www.securityweek.com/chrome-147-firefox-150-security-updates-rolling-out/)
