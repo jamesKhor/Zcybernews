@@ -1,0 +1,51 @@
+---
+title: 'Silver Fox Targets Russia, India With ABCDoor Backdoor'
+slug: 2026-04-30-silver-fox-targets-russia-india-with-abcdoor-backdoor
+date: '2026-04-30'
+excerpt: >-
+  Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new
+  ABCDoor backdoor to organizations in Russia and India, per Kaspersky.
+category: malware
+tags:
+  - silver-fox
+  - abcdoor
+  - valleyrat
+  - backdoor
+  - phishing
+  - russia
+  - india
+language: en
+source_urls:
+  - 'https://securelist.com/silver-fox-tax-notification-campaign/119575/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-silver-fox-targets-russia-india-with-abcdoor-backdoor
+severity: high
+threat_actor: Silver Fox
+affected_sectors:
+  - government
+  - financial services
+  - manufacturing
+affected_regions:
+  - Russia
+  - India
+---
+## Executive Summary
+
+The threat group tracked as Silver Fox has been observed targeting organizations in Russia and India with a new backdoor called ABCDoor, delivered alongside the known remote access trojan ValleyRAT. According to a report from Kaspersky Securelist, the campaign uses tax-themed phishing emails impersonating government authorities to trick recipients into opening malicious attachments. The operation appears to focus on government, financial, and manufacturing entities in both countries.
+
+## Technical Analysis
+
+Kaspersky researchers identified the campaign as active since at least early 2026. The initial infection vector is a phishing email that claims to be from a tax authority, carrying a weaponized document or archive. Upon execution, the payload drops ValleyRAT — a known RAT previously associated with Chinese-speaking threat actors — alongside ABCDoor, a previously undocumented backdoor.
+
+ABCDoor, as described by Kaspersky, is a modular backdoor written in C++ that supports file upload/download, command execution, and keylogging. It communicates with its command-and-control (C2) server over HTTP or HTTPS, using a custom encryption scheme to obfuscate traffic. The backdoor can also download additional modules, making it extensible. Kaspersky notes that ABCDoor shares some code similarities with ValleyRAT, suggesting the same developers may be behind both tools.
+
+The campaign primarily targets organizations in Russia and India, with victims spanning government agencies, financial institutions, and manufacturing firms. Kaspersky did not attribute the activity to a specific state sponsor but noted the group's focus on these two countries is unusual for typical cybercrime operations.
+
+## Mitigations & Recommendations
+
+Defenders should monitor for phishing emails referencing tax authorities, especially those containing compressed archives or document files with macros. Network defenders can look for HTTP/HTTPS traffic to unknown domains using custom encryption patterns. Organizations in Russia and India should treat unsolicited tax-related communications as high-risk and verify their authenticity through alternative channels. Kaspersky recommends blocking known ValleyRAT and ABCDoor indicators and applying least-privilege controls to limit post-exploitation movement.
+
+## References
+
+- [Kaspersky Securelist: Silver Fox uses the new ABCDoor backdoor to target organizations in Russia and India](https://securelist.com/silver-fox-tax-notification-campaign/119575/)

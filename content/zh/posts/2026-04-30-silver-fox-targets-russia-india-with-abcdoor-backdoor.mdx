@@ -1,0 +1,49 @@
+---
+title: Silver Fox 针对俄罗斯、印度发动 ABCDoor 后门攻击
+slug: 2026-04-30-silver-fox-targets-russia-india-with-abcdoor-backdoor
+date: '2026-04-30'
+excerpt: 据卡巴斯基称，Silver Fox 团伙冒充税务机关，向俄罗斯和印度的组织分发 ValleyRAT 和新的 ABCDoor 后门。
+category: malware
+tags:
+  - silver-fox
+  - abcdoor
+  - valleyrat
+  - backdoor
+  - phishing
+  - russia
+  - india
+language: zh
+source_urls:
+  - 'https://securelist.com/silver-fox-tax-notification-campaign/119575/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-silver-fox-targets-russia-india-with-abcdoor-backdoor
+severity: high
+threat_actor: Silver Fox
+affected_sectors:
+  - government
+  - financial services
+  - manufacturing
+affected_regions:
+  - Russia
+  - India
+---
+## 执行摘要
+
+被追踪为银狐的威胁组织被发现针对俄罗斯和印度的组织使用一种名为ABCDoor的新后门，与已知的远程访问木马ValleyRAT一起投递。根据卡巴斯基安全列表的一份报告，该活动使用以税务为主题的网络钓鱼电子邮件冒充政府当局，诱使收件人打开恶意附件。该行动似乎集中在两国的政府、金融和制造实体上。
+
+## 技术分析
+
+卡巴斯基研究人员确定该活动自2026年初以来一直在进行。初始感染向量是一个声称来自税务机关的网络钓鱼电子邮件，携带一个武器化的文档或归档文件。执行后，有效载荷会释放ValleyRAT——一个已知的RAT，之前与中国说话的威胁行为者有关——以及ABCDoor，一个以前未记录的后门。
+
+卡巴斯基描述的ABCDoor是一个用C++编写的模块化后门，支持文件上传/下载、命令执行和键盘记录。它通过HTTP或HTTPS与其命令和控制（C2）服务器通信，使用自定义加密方案来混淆流量。后门还可以下载额外的模块，使其可扩展。卡巴斯基指出，ABCDoor与ValleyRAT共享一些代码相似性，暗示可能是同一批开发者在背后操作这两个工具。
+
+该活动主要针对俄罗斯和印度的组织，受害者包括政府机构、金融机构和制造公司。卡巴斯基没有将活动归因于特定的国家赞助者，但指出该组织对这两个国家的专注对于典型的网络犯罪行动来说是不寻常的。
+
+## 缓解措施与建议
+
+防御者应监控提及税务机关的网络钓鱼电子邮件，特别是那些包含压缩归档或带有宏的文档文件。网络防御者可以寻找使用自定义加密模式的未知域名的HTTP/HTTPS流量。俄罗斯和印度的组织应将未经请求的与税务相关的通信视为高风险，并通过其他渠道验证其真实性。卡巴斯基建议封锁已知的ValleyRAT和ABCDoor指标，并应用最小权限控制以限制利用后的活动。
+
+## 参考资料
+
+- [卡巴斯基安全列表：银狐使用新的ABCDoor后门针对俄罗斯和印度的组织](https://securelist.com/silver-fox-tax-notification-campaign/119575/)

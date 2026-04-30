@@ -1,0 +1,47 @@
+---
+title: 'CISA 详细说明 Interlock 勒索软件 TTPs, IOCs 在联合咨询中'
+slug: 2026-04-30-cisa-details-interlock-ransomware-ttps-iocs-in-joint-advisory
+date: '2026-04-30'
+excerpt: >-
+  CISA 和 FBI 发布了关于 Interlock 勒索软件的联合咨询，详细说明了 TTPs,
+  IOCs，以及从双重勒索转向仅针对医疗保健的数据盗窃攻击的转变...
+category: threat-intel
+tags:
+  - interlock
+  - ransomware
+  - cisa
+  - fbi
+  - data-extortion
+  - healthcare
+  - critical-infrastructure
+language: zh
+source_urls:
+  - 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-203a'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-cisa-details-interlock-ransomware-ttps-iocs-in-joint-advisory
+severity: high
+threat_actor: Interlock
+affected_sectors:
+  - healthcare
+  - critical infrastructure
+affected_regions:
+  - United States
+---
+## CISA Details Interlock Ransomware TTPs, IOCs in Joint Advisory
+
+## 执行摘要
+
+CISA 和 FBI 在 2026 年 4 月 30 日发布了一份联合咨询，详细说明了与 Interlock 勒索软件行动相关的战术、技术和程序（TTPs）以及入侵指标（IOCs）。这份咨询是 #StopRansomware 倡议的一部分，指出 Interlock 已经从传统的双重勒索—加密文件和窃取数据—转变为只关注数据盗窃的模式，威胁如果不支付赎金就泄露外泄的信息。该组织已经针对美国的医疗保健组织和关键基础设施部门，使用定制工具和本地存活技术来逃避检测。
+
+## 技术分析
+
+根据咨询，Interlock 通过钓鱼活动和利用面向公众的应用程序获得初始访问权限，包括远程桌面协议中的漏洞和未修补的 Web 服务器。一旦进入，该组织部署自定义后门，并利用 PowerShell、PsExec 和 Windows 管理工具（WMI）等合法的行政工具进行横向移动。咨询强调，Interlock 操作者使用了一个自定义的数据外泄工具，研究人员称之为 "ExfilTool"，该工具在通过 HTTPS 外泄到攻击者控制的基础设施之前，将被盗数据压缩成加密存档。该组织还被发现通过进程终止和服务操作禁用安全软件，包括端点检测和响应（EDR）代理。CISA 和 FBI 评估 Interlock 可能在执行数据盗窃阶段之前保持访问权限数周，以便有时间映射网络并识别高价值的数据存储。
+
+## 缓解措施与建议
+
+CISA 和 FBI 建议组织在所有远程访问点实施多因素身份验证，分割网络以限制横向移动，并强制执行严格的应用程序允许列表以防止未经授权的可执行文件。防御者应监控 PowerShell 异常执行、通过 HTTPS 的大宗数据外传以及禁用安全工具的尝试。咨询还敦促组织保持离线备份并定期测试恢复程序。鉴于 Interlock 专注于不加密的数据盗窃，网络防御者应优先考虑数据丢失防护（DLP）控制并审计对敏感文件共享的访问。
+
+## 参考资料
+
+- [CISA #StopRansomware: Interlock Advisory](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-203a)

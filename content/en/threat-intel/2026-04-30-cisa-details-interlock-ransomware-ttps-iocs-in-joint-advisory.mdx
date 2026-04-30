@@ -1,0 +1,46 @@
+---
+title: 'CISA Details Interlock Ransomware TTPs, IOCs in Joint Advisory'
+slug: 2026-04-30-cisa-details-interlock-ransomware-ttps-iocs-in-joint-advisory
+date: '2026-04-30'
+excerpt: >-
+  CISA and FBI released a joint advisory on Interlock ransomware, detailing
+  TTPs, IOCs, and a shift from double extortion to data-theft-only attacks
+  targeting healthcare and…
+category: threat-intel
+tags:
+  - interlock
+  - ransomware
+  - cisa
+  - fbi
+  - data-extortion
+  - healthcare
+  - critical-infrastructure
+language: en
+source_urls:
+  - 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-203a'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-cisa-details-interlock-ransomware-ttps-iocs-in-joint-advisory
+severity: high
+threat_actor: Interlock
+affected_sectors:
+  - healthcare
+  - critical infrastructure
+affected_regions:
+  - United States
+---
+## Executive Summary
+
+CISA and the FBI published a joint advisory on April 30, 2026, detailing the tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) associated with the Interlock ransomware operation. The advisory, part of the #StopRansomware initiative, notes that Interlock has shifted from traditional double extortion—encrypting files and stealing data—to a model focused solely on data theft, threatening to leak exfiltrated information if ransoms are not paid. The group has targeted U.S. healthcare organizations and critical infrastructure sectors, using custom tooling and living-off-the-land techniques to evade detection.
+
+## Technical Analysis
+
+According to the advisory, Interlock gains initial access through phishing campaigns and exploitation of public-facing applications, including vulnerabilities in remote desktop protocols and unpatched web servers. Once inside, the group deploys custom backdoors and leverages legitimate administrative tools such as PowerShell, PsExec, and Windows Management Instrumentation (WMI) for lateral movement. The advisory highlights that Interlock operators use a custom data exfiltration tool, dubbed "ExfilTool" by researchers, which compresses stolen data into encrypted archives before exfiltration via HTTPS to attacker-controlled infrastructure. The group has also been observed disabling security software, including endpoint detection and response (EDR) agents, through process termination and service manipulation. CISA and the FBI assess that Interlock likely maintains access for weeks before executing the data theft phase, allowing time to map networks and identify high-value data stores.
+
+## Mitigations & Recommendations
+
+CISA and the FBI recommend that organizations implement multi-factor authentication on all remote access points, segment networks to limit lateral movement, and enforce strict application allowlisting to prevent unauthorized executables. Defenders should monitor for anomalous PowerShell execution, large outbound data transfers over HTTPS, and attempts to disable security tools. The advisory also urges organizations to maintain offline backups and test restoration procedures regularly. Given Interlock's focus on data theft without encryption, network defenders should prioritize data loss prevention (DLP) controls and audit access to sensitive file shares.
+
+## References
+
+- [CISA #StopRansomware: Interlock Advisory](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-203a)
