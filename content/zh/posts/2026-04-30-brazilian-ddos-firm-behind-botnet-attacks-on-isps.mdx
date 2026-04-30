@@ -1,0 +1,42 @@
+---
+title: 巴西DDoS公司背后的僵尸网络攻击ISP
+slug: 2026-04-30-brazilian-ddos-firm-behind-botnet-attacks-on-isps
+date: '2026-04-30'
+excerpt: 巴西反DDoS公司的基础设施被用来对竞争对手ISP发起大规模僵尸网络攻击。首席执行官声称竞争对手的入侵导致了滥用。
+category: industry
+tags:
+  - ddos
+  - botnet
+  - brazil
+  - krebsonsecurity
+  - isp-attacks
+  - cybercrime
+language: zh
+source_urls:
+  - >-
+    https://krebsonsecurity.com/2026/04/anti-ddos-firm-heaped-attacks-on-brazilian-isps/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-brazilian-ddos-firm-behind-botnet-attacks-on-isps
+severity: high
+affected_sectors:
+  - telecommunications
+  - cybersecurity services
+affected_regions:
+  - Brazil
+---
+## 执行摘要
+
+根据KrebsOnSecurity的调查，一家提供分布式拒绝服务（DDoS）防护服务的巴西公司暗中支持一个僵尸网络，用于对巴西的竞争对手互联网服务提供商（ISPs）发起持续、大规模的DDoS攻击。该公司的首席执行官声称恶意流量源自安全漏洞，是由竞争对手策划的，但证据指向公司直接参与了这些攻击。
+
+## 技术分析
+
+KrebsOnSecurity报告称，这家未具名的巴西公司专门从事反DDoS解决方案，运营的基础设施被重新用于指挥针对多个巴西网络运营商的僵尸网络。这些攻击被描述为“大规模”，并且持续了很长时间，对受害者的服务造成了重大干扰。首席执行官承认了恶意活动，但将其归因于安全事件，声称竞争对手侵入了公司的系统，并利用其资源发起了攻击。然而，KrebsOnSecurity对网络日志和攻击模式的分析表明，公司自己的人员可能有所牵连，因为僵尸网络的命令和控制服务器托管在公司的内部IP范围内，并使用了与其产品线一致的专有工具。僵尸网络架构的技术细节，包括其命令协议和逃避技术，在原始材料中并未完全披露，但攻击的规模表明这是一个资源丰富的操作。
+
+## 缓解措施与建议
+
+巴西和邻近地区的网络运营商应该检查防火墙和流量日志，以查找与巴西DDoS缓解公司相关的异常出站连接，特别是那些为当地ISP提供服务的公司。防御者应该在用于DDoS保护的基础设施上实施严格的访问控制，以防止未经授权的命令和控制流量。受到这些攻击的组织应该与执法部门和国家CERT协调，共享入侵指标并阻止已知的恶意IP。巴西监管机构ANATEL可能需要调查该公司的许可和运营实践，以防止未来的滥用。
+
+## 参考资料
+
+- [Krebs on Security: Anti-DDoS Firm Heaped Attacks on Brazilian ISPs](https://krebsonsecurity.com/2026/04/anti-ddos-firm-heaped-attacks-on-brazilian-isps/)

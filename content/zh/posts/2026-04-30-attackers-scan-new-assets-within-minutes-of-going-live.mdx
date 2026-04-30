@@ -1,0 +1,40 @@
+---
+title: 攻击者在新资产上线几分钟内进行扫描
+slug: 2026-04-30-attackers-scan-new-assets-within-minutes-of-going-live
+date: '2026-04-30'
+excerpt: Sprocket Security 分析显示，自动化攻击在新面向互联网的资产上线后15分钟内进行扫描，并在24小时内尝试初步入侵。
+category: industry
+tags:
+  - attack-surface-management
+  - automated-scanning
+  - initial-access
+  - reconnaissance
+  - sprocket-security
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/what-happens-in-the-first-24-hours-after-a-new-asset-goes-live/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-attackers-scan-new-assets-within-minutes-of-going-live
+severity: medium
+---
+## 攻击者在资产上线几分钟内进行扫描
+
+### 执行摘要
+
+根据Sprocket Security的研究，新的面向互联网的资产在上线几分钟内就会被自动化攻击者工具发现和扫描。该公司对现实世界攻击数据的分析显示，资产部署与初次入侵尝试之间的时间窗口可能短至24小时，这是由持续监控新目标的自动化侦察和利用框架驱动的。
+
+### 技术分析
+
+Sprocket Security观察到，攻击者利用对公共IP范围和云服务提供商地址块的持续扫描来识别新配置的资产。资产在互联网上可访问后15分钟内，自动化扫描器开始探测开放端口、运行服务和已知漏洞。研究人员记录了一个典型的时间线：15分钟内进行初始端口扫描，30分钟内进行服务枚举，24小时内针对常见漏洞（例如，未修补的Web服务器、默认凭据、暴露的管理界面）进行利用尝试。
+
+攻击者使用公开可用的工具，如masscan、Shodan和Censys进行发现，结合像Metasploit这样的自动化利用框架和针对具有公开概念验证代码的CVE的自定义脚本。研究强调，配置薄弱的资产——默认凭据、未修补的软件或开放的管理界面——最有可能在最初的24小时内被入侵。Sprocket Security指出，即使没有已知漏洞的资产，仍然可能在同一时间窗口内遭受暴力破解攻击和凭证填充尝试。
+
+### 缓解措施与建议
+
+组织应假设任何新的面向互联网的资产将在部署后的几小时内被发现和攻击。防御者应在上线前应用以下措施：强制执行强大、独特的密码；禁用不必要的服务；应用最新的安全补丁；将管理界面限制在受信任的IP范围内；部署Web应用程序防火墙或网络访问控制。在最初的24小时内持续监控意外的出站连接或认证失败，可以提供入侵的早期警告。Sprocket Security建议进行部署前的安全审查，并使用自动化配置扫描工具在攻击者之前捕捉配置错误。
+
+### 参考资料
+
+- [资产上线后24小时内会发生什么](https://www.bleepingcomputer.com/news/security/what-happens-in-the-first-24-hours-after-a-new-asset-goes-live/)

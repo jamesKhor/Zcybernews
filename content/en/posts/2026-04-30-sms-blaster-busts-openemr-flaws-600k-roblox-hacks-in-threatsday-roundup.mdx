@@ -1,0 +1,48 @@
+---
+title: 'SMS Blaster Busts, OpenEMR Flaws, 600K Roblox Hacks in ThreatsDay'
+slug: >-
+  2026-04-30-sms-blaster-busts-openemr-flaws-600k-roblox-hacks-in-threatsday-roundup
+date: '2026-04-30'
+excerpt: >-
+  Fake cell towers blast scam texts; OpenEMR flaws expose patient data; 600,000
+  Roblox accounts hacked via credential stuffing. A busy week in cyber threats.
+category: industry
+tags:
+  - sms-blaster
+  - openemr
+  - roblox
+  - credential-stuffing
+  - fake-cell-towers
+  - threat-roundup
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/threatsday-bulletin-sms-blaster-busts.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-30-sms-blaster-busts-openemr-flaws-600k-roblox-hacks-in-threatsday-roundup
+severity: high
+affected_sectors:
+  - healthcare
+  - gaming
+  - telecommunications
+---
+## Executive Summary
+
+Law enforcement actions against SMS blaster operations, unpatched vulnerabilities in the OpenEMR healthcare platform, and a massive credential-stuffing campaign targeting Roblox accounts are among the major stories in this week's ThreatsDay bulletin from The Hacker News. Attackers are deploying fake cell towers to distribute scam text messages at scale, while OpenEMR flaws could expose sensitive patient data. Separately, over 600,000 Roblox accounts were compromised in a credential-stuffing attack.
+
+## Technical Analysis
+
+According to the bulletin, law enforcement agencies have conducted busts targeting SMS blaster operations that use fake cell towers (IMSI catchers) to send bulk scam texts without carrier oversight. These devices bypass SMS filters and can target victims geographically. The technical details of the specific busts were not disclosed.
+
+OpenEMR, a widely used open-source electronic medical records system, contains unpatched security flaws that could allow attackers to access patient records. The bulletin did not specify CVE IDs or CVSS scores for these vulnerabilities, but the risk to healthcare organizations is significant given OpenEMR's deployment in clinics and hospitals.
+
+In the gaming sector, attackers compromised approximately 600,000 Roblox accounts through credential stuffing, where stolen usernames and passwords from other breaches are tested against the platform. Roblox has not publicly confirmed the incident, but the scale suggests automated attacks using large credential lists.
+
+## Mitigations & Recommendations
+
+Healthcare organizations using OpenEMR should monitor for patches and restrict network access to the application. Roblox users should enable two-factor authentication and avoid password reuse. Telecom providers and law enforcement should continue to monitor for unauthorized IMSI catchers. Defenders should audit SMS traffic for anomalies and enforce strong authentication on all web-facing systems.
+
+## References
+
+- [The Hacker News ThreatsDay Bulletin](https://thehackernews.com/2026/04/threatsday-bulletin-sms-blaster-busts.html)

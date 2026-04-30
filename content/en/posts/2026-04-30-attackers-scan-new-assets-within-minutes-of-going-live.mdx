@@ -1,0 +1,41 @@
+---
+title: Attackers Scan New Assets Within Minutes of Going Live
+slug: 2026-04-30-attackers-scan-new-assets-within-minutes-of-going-live
+date: '2026-04-30'
+excerpt: >-
+  Sprocket Security analysis shows automated attacks scan new internet-facing
+  assets within 15 minutes of going live, with initial compromise attempts
+  within 24 hours.
+category: industry
+tags:
+  - attack-surface-management
+  - automated-scanning
+  - initial-access
+  - reconnaissance
+  - sprocket-security
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/what-happens-in-the-first-24-hours-after-a-new-asset-goes-live/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-attackers-scan-new-assets-within-minutes-of-going-live
+severity: medium
+---
+## Executive Summary
+
+New internet-facing assets are discovered and scanned by automated attacker tools within minutes of going live, according to research from Sprocket Security. The firm's analysis of real-world attack data shows that the window between asset deployment and initial compromise attempts can be as short as 24 hours, driven by automated reconnaissance and exploitation frameworks that continuously monitor for new targets.
+
+## Technical Analysis
+
+Sprocket Security observed that attackers leverage continuous scanning of public IP ranges and cloud provider address blocks to identify newly provisioned assets. Within 15 minutes of an asset becoming reachable on the internet, automated scanners begin probing for open ports, running services, and known vulnerabilities. The researchers documented a typical timeline: initial port scan within 15 minutes, service enumeration within 30 minutes, and exploitation attempts against common vulnerabilities (e.g., unpatched web servers, default credentials, exposed management interfaces) within 24 hours.
+
+Attackers use publicly available tools such as masscan, Shodan, and Censys for discovery, combined with automated exploitation frameworks like Metasploit and custom scripts that target CVEs with public proof-of-concept code. The research highlights that assets with weak configurations — default credentials, unpatched software, or open administrative interfaces — are the most likely to be compromised in the first 24 hours. Sprocket Security noted that even assets with no known vulnerabilities are still subject to brute-force attacks and credential stuffing attempts within the same window.
+
+## Mitigations & Recommendations
+
+Organizations should assume that any new internet-facing asset will be discovered and attacked within hours of deployment. Defenders should apply the following measures before going live: enforce strong, unique passwords; disable unnecessary services; apply the latest security patches; restrict administrative interfaces to trusted IP ranges; and deploy web application firewalls or network access controls. Continuous monitoring for unexpected outbound connections or authentication failures in the first 24 hours can provide early warning of compromise. Sprocket Security recommends conducting pre-deployment security reviews and using automated configuration scanning tools to catch misconfigurations before attackers do.
+
+## References
+
+- [What Happens in the First 24 Hours After a New Asset Goes Live](https://www.bleepingcomputer.com/news/security/what-happens-in-the-first-24-hours-after-a-new-asset-goes-live/)

@@ -1,0 +1,44 @@
+---
+title: Brazilian DDoS Firm Behind Botnet Attacks on ISPs
+slug: 2026-04-30-brazilian-ddos-firm-behind-botnet-attacks-on-isps
+date: '2026-04-30'
+excerpt: >-
+  Brazilian anti-DDoS firm's infrastructure used to launch massive botnet
+  attacks against rival ISPs. CEO claims breach by competitor caused the abuse.
+category: industry
+tags:
+  - ddos
+  - botnet
+  - brazil
+  - krebsonsecurity
+  - isp-attacks
+  - cybercrime
+language: en
+source_urls:
+  - >-
+    https://krebsonsecurity.com/2026/04/anti-ddos-firm-heaped-attacks-on-brazilian-isps/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-brazilian-ddos-firm-behind-botnet-attacks-on-isps
+severity: high
+affected_sectors:
+  - telecommunications
+  - cybersecurity services
+affected_regions:
+  - Brazil
+---
+## Executive Summary
+
+A Brazilian company that markets distributed denial-of-service (DDoS) protection services has been secretly powering a botnet used to launch sustained, high-volume DDoS attacks against competing internet service providers (ISPs) in Brazil, according to an investigation by KrebsOnSecurity. The firm's CEO claims the malicious traffic originated from a security breach and was orchestrated by a rival, but evidence points to the company's direct involvement in the attacks.
+
+## Technical Analysis
+
+KrebsOnSecurity reports that the unnamed Brazilian firm, which specializes in anti-DDoS solutions, operated infrastructure that was repurposed to command a botnet targeting multiple Brazilian network operators. The attacks were described as "massive" and extended over a prolonged campaign, causing significant disruption to the victims' services. The CEO acknowledged the malicious activity but attributed it to a security incident, alleging that a competitor breached the company's systems and used its resources to launch the attacks. However, KrebsOnSecurity's analysis of network logs and attack patterns suggests the firm's own personnel may have been complicit, as the botnet command-and-control servers were hosted on the company's internal IP ranges and used proprietary tools consistent with its product line. The technical details of the botnet's architecture, including its command protocol and evasion techniques, were not fully disclosed in the source material, but the scale of the attacks indicates a well-resourced operation.
+
+## Mitigations & Recommendations
+
+Network operators in Brazil and neighboring regions should review firewall and traffic logs for anomalous outbound connections to IP ranges associated with Brazilian DDoS mitigation firms, particularly those offering services to local ISPs. Defenders should implement strict access controls on infrastructure used for DDoS protection to prevent unauthorized command-and-control traffic. Organizations targeted by these attacks should coordinate with law enforcement and national CERTs to share indicators of compromise and block known malicious IPs. The Brazilian regulator ANATEL may need to investigate the firm's licensing and operational practices to prevent future abuse.
+
+## References
+
+- [Krebs on Security: Anti-DDoS Firm Heaped Attacks on Brazilian ISPs](https://krebsonsecurity.com/2026/04/anti-ddos-firm-heaped-attacks-on-brazilian-isps/)

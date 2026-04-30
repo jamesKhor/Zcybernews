@@ -1,0 +1,46 @@
+---
+title: 短信轰炸机被破获，OpenEMR漏洞，600K Roblox黑客攻击在ThreatsDay
+slug: >-
+  2026-04-30-sms-blaster-busts-openemr-flaws-600k-roblox-hacks-in-threatsday-roundup
+date: '2026-04-30'
+excerpt: '假基站发送诈骗短信；OpenEMR漏洞暴露患者数据；600,000个Roblox账户通过凭证填充被黑客攻击。网络威胁的繁忙一周。'
+category: industry
+tags:
+  - sms-blaster
+  - openemr
+  - roblox
+  - credential-stuffing
+  - fake-cell-towers
+  - threat-roundup
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/threatsday-bulletin-sms-blaster-busts.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-30-sms-blaster-busts-openemr-flaws-600k-roblox-hacks-in-threatsday-roundup
+severity: high
+affected_sectors:
+  - healthcare
+  - gaming
+  - telecommunications
+---
+## 执行摘要
+
+本周The Hacker News的ThreatsDay公告中，针对SMS blaster行动的执法行动、OpenEMR医疗保健平台中未修补的漏洞，以及针对Roblox账户的大规模凭证填充活动是主要新闻。攻击者部署假蜂窝塔以大规模分发诈骗短信，而OpenEMR的漏洞可能会暴露敏感的患者数据。另外，在一次凭证填充攻击中，超过600,000个Roblox账户被泄露。
+
+## 技术分析
+
+根据公告，执法机构已经对使用假蜂窝塔（IMSI捕获器）发送大量诈骗短信的SMS blaster行动进行了打击，这些短信无需运营商监督即可发送。这些设备可以绕过短信过滤器，并且可以地理定位目标受害者。具体的打击行动的技术细节没有披露。
+
+OpenEMR，一个广泛使用的开源电子病历系统，包含未修补的安全漏洞，可能允许攻击者访问患者记录。公告没有指定这些漏洞的CVE ID或CVSS评分，但鉴于OpenEMR在诊所和医院的部署，对医疗保健组织的风险是巨大的。
+
+在游戏领域，攻击者通过凭证填充泄露了大约600,000个Roblox账户，其中从其他泄露中窃取的用户名和密码被测试用于该平台。Roblox尚未公开确认此事件，但规模表明使用了大型凭证列表的自动化攻击。
+
+## 缓解措施与建议
+
+使用OpenEMR的医疗保健组织应监控补丁，并限制对应用程序的网络访问。Roblox用户应启用双因素认证，并避免密码重用。电信提供商和执法部门应继续监控未经授权的IMSI捕获器。防御者应审计短信流量中的异常，并在所有面向网络的系统上强制执行强认证。
+
+## 参考资料
+
+- [The Hacker News ThreatsDay Bulletin](https://thehackernews.com/2026/04/threatsday-bulletin-sms-blaster-busts.html)
