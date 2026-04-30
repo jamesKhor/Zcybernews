@@ -1,0 +1,45 @@
+---
+title: 'CISA, FBI 警告 LummaC2 信息窃取者针对组织'
+slug: 2026-04-30-cisa-fbi-warn-of-lummac2-infostealer-targeting-orgs
+date: '2026-04-30'
+excerpt: CISA 和 FBI 联合咨询详细描述了 LummaC2 信息窃取者的 TTPs 和 IOCs：恶意软件从被入侵的网络中窃取凭证、加密钱包和会话数据。
+category: malware
+tags:
+  - lummac2
+  - infostealer
+  - cisa
+  - fbi
+  - threat-intel
+  - credential-theft
+language: zh
+source_urls:
+  - 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141b'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-cisa-fbi-warn-of-lummac2-infostealer-targeting-orgs
+severity: high
+threat_actor: LummaC2
+affected_sectors:
+  - multiple
+affected_regions:
+  - global
+---
+## CISA, FBI 警告 LummaC2 信息窃取者针对组织
+
+## 执行摘要
+
+美国网络安全和基础设施安全局（CISA）和联邦调查局（FBI）发布了联合咨询，详细说明了与 LummaC2 信息窃取者（infostealer）恶意软件相关的战术、技术和程序（TTPs）以及入侵指标（IOCs）。根据咨询（AA25-141B），威胁行为者正在积极部署 LummaC2 以渗透受害者计算机网络并窃取敏感数据，包括凭证、加密货币钱包信息和浏览器会话数据。该咨询旨在帮助网络防御者检测和应对这一持续威胁。
+
+## 技术分析
+
+LummaC2 是一种在网络犯罪论坛上可用的商品信息窃取者，以其能够从被入侵的主机中窃取广泛的敏感信息而闻名。CISA/FBI 咨询描述了恶意软件窃取存储在网络浏览器中的凭证、加密货币钱包扩展和其他本地缓存数据的能力。LummaC2 还捕获浏览器会话 cookie，使攻击者能够绕过 Web 应用程序的多因素认证（MFA）。恶意软件与命令和控制（C2）基础设施通信，以窃取数据并接收更新。
+
+咨询没有指定特定的初始访问向量，但这类信息窃取者通常通过钓鱼邮件、恶意下载或漏洞利用工具包进行分发。一旦执行，LummaC2 执行系统侦察，收集目标数据，并将其发送到攻击者控制的服务器。联合咨询提供了与 LummaC2 操作相关的文件哈希、IP 地址和域名的 IOC 列表，防御者可以用于威胁狩猎和检测。
+
+## 缓解措施与建议
+
+CISA 和 FBI 建议组织实施以下措施，以降低 LummaC2 感染和数据外泄的风险：为所有账户启用多因素认证，特别是电子邮件和远程访问；在网络边界和端点检测系统上阻止已知恶意 IOC；强制执行应用程序允许列表，以防止未经授权的二进制文件执行；并进行用户意识培训，以识别钓鱼企图。防御者应监控异常的出站网络连接到不熟悉的 IP 地址，并审查日志以查找未经授权的凭证访问或浏览器会话重用。咨询指出，没有特定的产品漏洞与此活动相关联，因此修补不是主要的缓解措施 —— 检测和用户教育是关键。
+
+## 参考资料
+
+- [CISA AA25-141B: 威胁行为者部署 LummaC2 恶意软件以从组织中窃取敏感数据](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141b)

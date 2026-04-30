@@ -1,0 +1,46 @@
+---
+title: 'CISA, FBI Warn of LummaC2 Infostealer Targeting Orgs'
+slug: 2026-04-30-cisa-fbi-warn-of-lummac2-infostealer-targeting-orgs
+date: '2026-04-30'
+excerpt: >-
+  CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware
+  steals credentials, crypto wallets, and session data from compromised
+  networks.
+category: malware
+tags:
+  - lummac2
+  - infostealer
+  - cisa
+  - fbi
+  - threat-intel
+  - credential-theft
+language: en
+source_urls:
+  - 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141b'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-cisa-fbi-warn-of-lummac2-infostealer-targeting-orgs
+severity: high
+threat_actor: LummaC2
+affected_sectors:
+  - multiple
+affected_regions:
+  - global
+---
+## Executive Summary
+
+The U.S. Cybersecurity and Infrastructure Security Agency (CISA) and the Federal Bureau of Investigation (FBI) have issued a joint advisory detailing the tactics, techniques, and procedures (TTPs) and indicators of compromise (IOCs) associated with the LummaC2 information stealer (infostealer) malware. According to the advisory (AA25-141B), threat actors are actively deploying LummaC2 to infiltrate victim computer networks and exfiltrate sensitive data, including credentials, cryptocurrency wallet information, and browser session data. The advisory is intended to help network defenders detect and respond to this ongoing threat.
+
+## Technical Analysis
+
+LummaC2 is a commodity infostealer available on cybercrime forums, known for its ability to harvest a wide range of sensitive information from compromised hosts. The CISA/FBI advisory describes the malware's capability to steal credentials stored in web browsers, cryptocurrency wallet extensions, and other locally cached data. LummaC2 also captures browser session cookies, enabling attackers to bypass multi-factor authentication (MFA) for web applications. The malware communicates with command-and-control (C2) infrastructure to exfiltrate stolen data and receive updates.
+
+The advisory does not specify a particular initial access vector, but infostealers of this class are commonly distributed via phishing emails, malicious downloads, or exploit kits. Once executed, LummaC2 performs system reconnaissance, collects targeted data, and sends it to attacker-controlled servers. The joint advisory provides a list of IOCs, including file hashes, IP addresses, and domains associated with LummaC2 operations, which defenders can use for threat hunting and detection.
+
+## Mitigations & Recommendations
+
+CISA and FBI recommend organizations implement the following measures to reduce the risk of LummaC2 infection and data exfiltration: enable multi-factor authentication on all accounts, particularly for email and remote access; block known malicious IOCs at network perimeter and endpoint detection systems; enforce application allowlisting to prevent execution of unauthorized binaries; and conduct user awareness training to identify phishing attempts. Defenders should monitor for unusual outbound network connections to unfamiliar IP addresses and review logs for unauthorized credential access or browser session reuse. The advisory notes that no specific product vulnerabilities are associated with this campaign, so patching is not a primary mitigation — detection and user education are key.
+
+## References
+
+- [CISA AA25-141B: Threat Actors Deploy LummaC2 Malware to Exfiltrate Sensitive Data from Organizations](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141b)
