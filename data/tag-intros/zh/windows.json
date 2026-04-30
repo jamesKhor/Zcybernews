@@ -1,10 +1,10 @@
 {
   "tag": "windows",
   "locale": "zh",
-  "intro": "过去两周，ZCyberNews追踪了22篇涉及Windows相关威胁的报道，其中Kyber、Chaotic Eclipse和VECT Ransomware是最活跃的威胁行为体。报道时间覆盖2026年4月12日至4月28日，涉及2起严重、16起高危和4起中危安全事件。重点提及的关键漏洞包括CVE-2026-33104（CVSS 7.8）、CVE-2026-26179（CVSS 7.5）、CVE-2026-32183（CVSS 7.5）、CVE-2024-20662和CVE-2024-21412。这些行为体与漏洞构成了本阶段报道的核心关注点。",
-  "sources_hash": "2beaf6fa11fa147d",
-  "source_intro_hash": "ad0ce80b674d6e12",
+  "intro": "过去两周，ZCyberNews追踪了23篇关于Windows安全的文章，其中Kyber、Chaotic Eclipse和VECT Ransomware是最主要的威胁行为体。被引用最频繁的漏洞包括CVE-2024-1708（CVSS 8.4）、CVE-2026-33104（CVSS 7.8）、CVE-2026-26179（CVSS 7.5）、CVE-2026-32183（CVSS 7.5）以及CVE-2024-20662。这些问题主要影响了北美地区的政府、IT及托管服务提供商行业，共报告了17起高严重性、2起严重及4起中等严重性事件。",
+  "sources_hash": "f540b87b967040dd",
+  "source_intro_hash": "53b4b2cc6f42c20f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:20:24.795Z",
+  "generated_at": "2026-04-30T04:21:58.434Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

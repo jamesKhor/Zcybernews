@@ -496,5 +496,149 @@
     "locale": "en",
     "lastError": "word count 37 outside 60-140 (en)",
     "at": "2026-04-29T04:19:52.501Z"
+  },
+  {
+    "tag": "supply-chain-attack",
+    "locale": "en",
+    "lastError": "word count 46 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:03.385Z"
+  },
+  {
+    "tag": "open-source",
+    "locale": "en",
+    "lastError": "word count 57 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:11.264Z"
+  },
+  {
+    "tag": "rat",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:16.053Z"
+  },
+  {
+    "tag": "evasion",
+    "locale": "en",
+    "lastError": "word count 47 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:25.082Z"
+  },
+  {
+    "tag": "initial-access",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:29.633Z"
+  },
+  {
+    "tag": "iran",
+    "locale": "en",
+    "lastError": "word count 51 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:34.592Z"
+  },
+  {
+    "tag": "infostealer",
+    "locale": "en",
+    "lastError": "word count 46 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:41.076Z"
+  },
+  {
+    "tag": "mfa-bypass",
+    "locale": "en",
+    "lastError": "word count 53 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:45.765Z"
+  },
+  {
+    "tag": "north-korea",
+    "locale": "en",
+    "lastError": "word count 58 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:50.835Z"
+  },
+  {
+    "tag": "npm",
+    "locale": "en",
+    "lastError": "word count 55 outside 60-140 (en)",
+    "at": "2026-04-30T04:19:55.559Z"
+  },
+  {
+    "tag": "unit-42",
+    "locale": "en",
+    "lastError": "word count 48 outside 60-140 (en)",
+    "at": "2026-04-30T04:20:00.292Z"
+  },
+  {
+    "tag": "authentication-bypass",
+    "locale": "en",
+    "lastError": "word count 53 outside 60-140 (en)",
+    "at": "2026-04-30T04:20:06.915Z"
+  },
+  {
+    "tag": "bhis",
+    "locale": "en",
+    "lastError": "word count 44 outside 60-140 (en)",
+    "at": "2026-04-30T04:20:11.424Z"
+  },
+  {
+    "tag": "kaspersky",
+    "locale": "en",
+    "lastError": "word count 49 outside 60-140 (en)",
+    "at": "2026-04-30T04:20:30.506Z"
+  },
+  {
+    "tag": "persistence",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-04-30T04:20:37.530Z"
+  },
+  {
+    "tag": "command-injection",
+    "locale": "en",
+    "lastError": "word count 45 outside 60-140 (en)",
+    "at": "2026-04-30T04:20:43.379Z"
+  },
+  {
+    "tag": "data-exfiltration",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-04-30T04:20:47.833Z"
+  },
+  {
+    "tag": "data-leak",
+    "locale": "en",
+    "lastError": "word count 42 outside 60-140 (en)",
+    "at": "2026-04-30T04:20:52.490Z"
+  },
+  {
+    "tag": "elastic-security",
+    "locale": "en",
+    "lastError": "word count 43 outside 60-140 (en)",
+    "at": "2026-04-30T04:20:56.822Z"
+  },
+  {
+    "tag": "infrastructure",
+    "locale": "en",
+    "lastError": "word count 44 outside 60-140 (en)",
+    "at": "2026-04-30T04:21:00.847Z"
+  },
+  {
+    "tag": "meta",
+    "locale": "en",
+    "lastError": "word count 49 outside 60-140 (en)",
+    "at": "2026-04-30T04:21:05.668Z"
+  },
+  {
+    "tag": "raas",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-04-30T04:21:10.621Z"
+  },
+  {
+    "tag": "recorded-future",
+    "locale": "en",
+    "lastError": "word count 49 outside 60-140 (en)",
+    "at": "2026-04-30T04:21:15.207Z"
+  },
+  {
+    "tag": "shinyhunters",
+    "locale": "en",
+    "lastError": "word count 38 outside 60-140 (en)",
+    "at": "2026-04-30T04:21:19.528Z"
   }
 ]

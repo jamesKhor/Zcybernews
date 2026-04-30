@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "en",
-  "count": 26,
+  "count": 27,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Pushpaganda"
@@ -25,15 +25,15 @@
     "Canada"
   ],
   "severity_mix": {
+    "informational": 11,
     "high": 11,
-    "informational": 10,
     "critical": 1,
     "medium": 4
   },
   "recent_excerpts": [
+    "Malwarebytes integrated its scam-checking threat intelligence directly into Anthropic's Claude AI assistant — users can now query suspicious links, phone numbers, or email…",
     "Autonomous AI agents with file and service access are forcing organizations to rethink identity controls, data boundaries, and monitoring — Krebs reports on shifting attack…",
-    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software.",
-    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n"
+    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software."
   ],
-  "sources_hash": "693e9edf1915e1af"
+  "sources_hash": "15aa10b5de29942a"
 }

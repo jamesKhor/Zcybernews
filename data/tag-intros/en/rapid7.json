@@ -1,9 +1,9 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "intro": "Between 13 and 26 April 2026, ZCyberNews published eight articles tagged with rapid7. The coverage highlighted activity by the threat actor Kyber and the critical-severity vulnerability CVE-2025-59718, which carries a CVSS score of 9.8. Affected sectors included financial services, government, and technology, with reported incidents in Europe and North America. The article mix comprised one critical, one high, and four informational pieces.",
-  "sources_hash": "6ee826c008f48e4a",
+  "intro": "Over the 16 days from April 13 to 29, 2026, ZCyberNews published 10 articles tagged with rapid7, covering two critical and two high-severity incidents alongside four informational reports. The threat actor Kyber was observed targeting enterprise IT, financial services, government, managed services, and technology sectors across Europe, Global, and North America regions. Key vulnerabilities included CVE-2025-59718 and CVE-2026-41940, both carrying a CVSS score of 9.8.",
+  "sources_hash": "31dee5091419afca",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:13:53.329Z",
+  "generated_at": "2026-04-30T04:19:18.132Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

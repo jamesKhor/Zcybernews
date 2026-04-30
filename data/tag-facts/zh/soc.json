@@ -1,22 +1,24 @@
 {
   "tag": "soc",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": [],
+  "top_sectors": [
+    "cybersecurity"
+  ],
   "top_regions": [],
   "severity_mix": {
     "informational": 7
   },
   "recent_excerpts": [
+    "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。",
     "Black Hills InfoSec SOC团队回顾了在Deadwood的Wild West Hackin' Fest中进行的14小时通宵事件响应参与——现实世界的分类、控制和教训，用于...",
-    "成熟的安全运营中心通过将威胁情报集成到工作流程中，将平均响应时间减少了40%，而其他人则在孤立的数据和手动流程上浪费时间。",
-    "根据一项新的分析，当威胁情报源保持在分析师工作流程之外时，安全运营中心（SOCs）会停留在较低的成熟度水平。报告详细说明了数据碎片化如何阻碍关键的安全决策。"
+    "成熟的安全运营中心通过将威胁情报集成到工作流程中，将平均响应时间减少了40%，而其他人则在孤立的数据和手动流程上浪费时间。"
   ],
-  "sources_hash": "a828f0b377de6c87"
+  "sources_hash": "dcabeb8955e652f6"
 }

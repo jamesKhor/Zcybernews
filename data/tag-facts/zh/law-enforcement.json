@@ -1,22 +1,22 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "count": 22,
+  "count": 23,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Scattered Spider",
-    "BlackCat (ALPHV)",
-    "W3LL"
+    "Black Axe",
+    "BlackCat (ALPHV)"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "telecommunications",
-    "cryptocurrency",
     "financial services",
+    "cryptocurrency",
     "gaming"
   ],
   "top_regions": [
@@ -24,17 +24,17 @@
     "Canada",
     "North america",
     "Europe",
-    "Global"
+    "Germany"
   ],
   "severity_mix": {
+    "high": 18,
     "medium": 4,
-    "high": 17,
     "informational": 1
   },
   "recent_excerpts": [
+    "瑞士和德国警方逮捕了与尼日利亚有联系的Black Axe网络的10名嫌疑人，包括一名负责监督南欧业务的地区领导人。",
     "乌克兰警方拘留了涉嫌盗取数千个Roblox账户的黑客，这些账户包含玩家用真金白银购买的有价值的数字物品和游戏内货币...",
-    "三名男子在多伦多被捕，因为他们操作了一个冒充手机塔的SMS blaster，发送针对银行凭证的钓鱼短信，在数月的活动中进行。",
-    "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。"
+    "三名男子在多伦多被捕，因为他们操作了一个冒充手机塔的SMS blaster，发送针对银行凭证的钓鱼短信，在数月的活动中进行。"
   ],
-  "sources_hash": "59b702553f187833"
+  "sources_hash": "f4f0e7b837d921ff"
 }

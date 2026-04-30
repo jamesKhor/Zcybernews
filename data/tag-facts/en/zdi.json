@@ -1,10 +1,10 @@
 {
   "tag": "zdi",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-18",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [],
   "top_cves": [
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 8,
     "low": 1,
     "critical": 1
   },
   "recent_excerpts": [
+    "CVE-2026-35230: A race condition in VirtualBox's SoundBlaster 16 emulation allows local attackers with high-privileged guest access to escalate privileges. CVSS 7.5.",
     "CVE-2026-41276 (CVSS 8.1) in Flowise AccountService resetPassword lets unauthenticated attackers bypass authentication. ZDI advisory warns no auth required.",
-    "CVE-2026-5943: A use-after-free in Foxit PDF Reader's AcroForm annotation handling allows unauthenticated RCE (CVSS 7.8). Requires user to open a malicious PDF.",
-    "CVE-2026-5942: A use-after-free in Foxit PDF Reader's AcroForm signature handling lets attackers read process memory. CVSS 3.3. User must open a malicious file."
+    "CVE-2026-5943: A use-after-free in Foxit PDF Reader's AcroForm annotation handling allows unauthenticated RCE (CVSS 7.8). Requires user to open a malicious PDF."
   ],
-  "sources_hash": "49380d069d74332b"
+  "sources_hash": "717bd0f7e363c41c"
 }

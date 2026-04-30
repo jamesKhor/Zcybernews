@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "count": 9,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-04-30"
   },
   "top_actors": [],
   "top_cves": [
@@ -14,27 +14,28 @@
     }
   ],
   "top_sectors": [
+    "government",
     "technology",
     "cloud computing",
-    "energy",
-    "financial services",
-    "government"
+    "cybersecurity",
+    "energy"
   ],
   "top_regions": [
     "Europe",
     "Global",
     "North america",
+    "United states",
     "Venezuela"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
-    "Black Hills InfoSec SOC team recounts a 14-hour overnight incident response engagement from Wild West Hackin' Fest in Deadwood — real-world triage, containment, and lessons for…",
-    "Black Hills InfoSec details how to transform stale cybersecurity tabletop exercises into immersive scenario simulations that test real incident response decisions.",
-    "Kaspersky's 2026 Global Report finds ransomware dwell time fell to 3.5 days in 2025, down from 5 days, as attackers accelerate encryption."
+    "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders.",
+    "Black Hills Information Security's SOC replaced tiered ticket queues with a flat team model where analysts solve incidents in real time.",
+    "Black Hills InfoSec SOC team recounts a 14-hour overnight incident response engagement from Wild West Hackin' Fest in Deadwood — real-world triage, containment, and lessons for…"
   ],
-  "sources_hash": "b57f94f8fac375b7"
+  "sources_hash": "e9b12dd966a22b78"
 }

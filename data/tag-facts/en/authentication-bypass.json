@@ -1,13 +1,17 @@
 {
   "tag": "authentication-bypass",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-41940",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-33413",
       "cvss": 8.8
@@ -28,21 +32,21 @@
     "technology",
     "critical infrastructure",
     "energy",
-    "finance",
-    "government"
+    "enterprise IT",
+    "finance"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "critical": 4,
     "high": 2,
-    "critical": 3,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-41940: Unauthenticated remote attackers can bypass authentication in cPanel & WHM and WP Squared. CVSS 9.8. Patch released April 28, 2026.",
     "CVE-2026-41276 (CVSS 8.1) in Flowise AccountService resetPassword lets unauthenticated attackers bypass authentication. ZDI advisory warns no auth required.",
-    "ZDI disclosed CVE-2026-24032, a 7.3-CVSS authentication bypass in Siemens SINEC NMS that requires no authentication to exploit. Affects industrial network management systems.",
-    "A critical authentication bypass flaw in etcd, CVE-2026-33413 (CVSS 8.8), allows unauthorized access to sensitive cluster APIs, potentially exposing secrets and configurations in Kubernetes and cloud-"
+    "ZDI disclosed CVE-2026-24032, a 7.3-CVSS authentication bypass in Siemens SINEC NMS that requires no authentication to exploit. Affects industrial network management systems."
   ],
-  "sources_hash": "f696d5d0bef35a51"
+  "sources_hash": "daac67d0214f57ab"
 }

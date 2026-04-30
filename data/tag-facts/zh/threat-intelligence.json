@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "count": 23,
+  "count": 24,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "GopherWhisper",
@@ -27,14 +27,14 @@
     "North america"
   ],
   "severity_mix": {
-    "informational": 9,
+    "informational": 10,
     "high": 9,
     "medium": 3
   },
   "recent_excerpts": [
+    "Malwarebytes 将其反诈骗威胁情报直接集成到 Anthropic 的 Claude AI 助手中 —— 用户现在可以查询可疑链接、电话号码或电子邮件…",
     "Black Hills InfoSec 发布了一份实用的开源情报(OSINT)指南 —— 涵盖收集方法、分析框架以及保护分析人员免受暴露的运营安全控制。",
-    "Elastic Security Labs 为英国国防部的防御网络 Marvel 2026 演习部署了 AI 驱动的检测流程，处理了 1.2TB 的遥测数据，涉及 50 个模拟的...",
-    "Rapid7 5月12-13日峰会议程揭示了行业从反应式防御向预防性安全运营的转变，包括有关AI驱动的威胁狩猎和自主的会议..."
+    "Elastic Security Labs 为英国国防部的防御网络 Marvel 2026 演习部署了 AI 驱动的检测流程，处理了 1.2TB 的遥测数据，涉及 50 个模拟的..."
   ],
-  "sources_hash": "bb43a33b09a85022"
+  "sources_hash": "300dbf9c45a570ac"
 }

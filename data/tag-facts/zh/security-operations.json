@@ -1,22 +1,24 @@
 {
   "tag": "security-operations",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-26"
+    "latest": "2026-04-29"
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": [],
+  "top_sectors": [
+    "cybersecurity"
+  ],
   "top_regions": [],
   "severity_mix": {
     "informational": 5
   },
   "recent_excerpts": [
+    "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。",
     "Rapid7 认为，大多数泄露源于资产、身份和攻击路径覆盖的可见性差距，而不是复杂的漏洞利用。",
-    "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。",
-    "The Hacker News 报告称，大多数企业AI安全工具在演示后因数据质量、集成和成本问题而失败，导致关键的威胁检测和响应计划停滞。"
+    "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。"
   ],
-  "sources_hash": "b540537a3e3672d4"
+  "sources_hash": "282c9d1b5f4c4df8"
 }

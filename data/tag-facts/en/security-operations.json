@@ -1,22 +1,24 @@
 {
   "tag": "security-operations",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-26"
+    "latest": "2026-04-29"
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": [],
+  "top_sectors": [
+    "cybersecurity"
+  ],
   "top_regions": [],
   "severity_mix": {
     "informational": 5
   },
   "recent_excerpts": [
+    "Black Hills Information Security's SOC replaced tiered ticket queues with a flat team model where analysts solve incidents in real time.",
     "Rapid7 argues most breaches result from visibility gaps in asset, identity, and attack path coverage rather than sophisticated exploits.",
-    "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors.",
-    "The Hacker News reports most enterprise AI security tools fail post-demo due to data quality, integration, and cost issues, stalling critical threat detection and response initiatives."
+    "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors."
   ],
-  "sources_hash": "b540537a3e3672d4"
+  "sources_hash": "282c9d1b5f4c4df8"
 }

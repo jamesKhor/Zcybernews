@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
   "top_actors": [],
   "top_cves": [
@@ -16,9 +16,9 @@
   "top_sectors": [
     "technology",
     "cloud computing",
+    "cybersecurity",
     "energy",
-    "financial services",
-    "government"
+    "financial services"
   ],
   "top_regions": [
     "Europe",
@@ -32,9 +32,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。",
     "Black Hills InfoSec SOC团队回顾了在Deadwood的Wild West Hackin' Fest中进行的14小时通宵事件响应参与——现实世界的分类、控制和教训，用于...",
-    "Black Hills InfoSec 详细说明了如何将陈旧的网络安全桌面演练转变为沉浸式的场景模拟，以测试真实的事件响应决策。",
-    "卡巴斯基2026年全球报告发现，勒索软件潜伏时间在2025年从5天降至3.5天，因为攻击者加快了加密速度。"
+    "Black Hills InfoSec 详细说明了如何将陈旧的网络安全桌面演练转变为沉浸式的场景模拟，以测试真实的事件响应决策。"
   ],
-  "sources_hash": "b57f94f8fac375b7"
+  "sources_hash": "7fcc728384c867ce"
 }

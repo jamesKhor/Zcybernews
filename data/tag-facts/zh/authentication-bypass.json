@@ -1,13 +1,17 @@
 {
   "tag": "authentication-bypass",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-41940",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-33413",
       "cvss": 8.8
@@ -28,21 +32,21 @@
     "technology",
     "critical infrastructure",
     "energy",
-    "finance",
-    "government"
+    "enterprise IT",
+    "finance"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "critical": 4,
     "high": 2,
-    "critical": 3,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-41940：未经认证的远程攻击者可以绕过 cPanel & WHM 和 WP Squared 的认证。CVSS 9.8。补丁于 2026 年 4 月 28 日发布。",
     "CVE-2026-41276（CVSS 8.1）在 Flowise AccountService resetPassword 中允许未经身份验证的攻击者绕过认证。ZDI 咨询警告无需认证。",
-    "ZDI披露了CVE-2026-24032，这是一个7.3-CVSS认证绕过漏洞，存在于西门子SINEC NMS中，无需认证即可利用。影响工业网络管理系统。",
-    "etcd中的关键认证绕过漏洞CVE-2026-33413（CVSS 8.8），允许未经授权的访问敏感集群API，可能暴露Kubernetes和云原生环境中的秘密和配置。"
+    "ZDI披露了CVE-2026-24032，这是一个7.3-CVSS认证绕过漏洞，存在于西门子SINEC NMS中，无需认证即可利用。影响工业网络管理系统。"
   ],
-  "sources_hash": "f696d5d0bef35a51"
+  "sources_hash": "daac67d0214f57ab"
 }

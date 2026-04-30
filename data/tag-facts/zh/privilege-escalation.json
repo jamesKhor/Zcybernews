@@ -1,10 +1,10 @@
 {
   "tag": "privilege-escalation",
   "locale": "zh",
-  "count": 18,
+  "count": 20,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-25"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Chaotic Eclipse"
@@ -36,20 +36,21 @@
     "education",
     "enterprise",
     "healthcare",
-    "digital signage"
+    "multiple"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "North america"
   ],
   "severity_mix": {
+    "high": 17,
     "critical": 2,
-    "high": 15,
     "medium": 1
   },
   "recent_excerpts": [
-    "微软发布了针对CVE-2026-40372的紧急补丁，这是一个9.1-CVSS的ASP.NET Core权限提升漏洞，影响所有支持的版本。",
-    "The Hacker News 报道 AI 代理创建了一个结构性安全缺口：委托的行动者缺乏持续的监督，使得横向移动和权限提升无需人类…",
-    "CVE-2026-6406 (CVSS 8.8) 在 Docker Desktop 的增强容器隔离中，允许具有容器内低权限代码执行能力的本地攻击者提升权限..."
+    "Black Hills InfoSec 对2025年15个月数据的渗透测试分析显示，与2022年相同的前10个漏洞——弱密码、未修补的RDP和配置错误的MFA仍然存在…",
+    "CVE-2026-35230: VirtualBox 的 SoundBlaster 16 模拟中存在竞态条件，允许具有高权限的本地攻击者提升权限。CVSS 7.5。",
+    "微软发布了针对CVE-2026-40372的紧急补丁，这是一个9.1-CVSS的ASP.NET Core权限提升漏洞，影响所有支持的版本。"
   ],
-  "sources_hash": "86bcab241c7a2ae8"
+  "sources_hash": "0ff06eacbb09b80b"
 }

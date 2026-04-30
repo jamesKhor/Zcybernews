@@ -1,10 +1,10 @@
 {
   "tag": "zdi",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-18",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [],
   "top_cves": [
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 8,
     "low": 1,
     "critical": 1
   },
   "recent_excerpts": [
+    "CVE-2026-35230: VirtualBox 的 SoundBlaster 16 模拟中存在竞态条件，允许具有高权限的本地攻击者提升权限。CVSS 7.5。",
     "CVE-2026-41276（CVSS 8.1）在 Flowise AccountService resetPassword 中允许未经身份验证的攻击者绕过认证。ZDI 咨询警告无需认证。",
-    "CVE-2026-5943：Foxit PDF Reader 的 AcroForm 注释处理中存在利用后释放漏洞，允许未经身份验证的 RCE（CVSS 7.8）。需要用户打开恶意 PDF。",
-    "CVE-2026-5942: Foxit PDF Reader 的 AcroForm 签名处理中的 use-after-free 允许攻击者读取进程内存。CVSS 3.3。用户必须打开恶意文件。"
+    "CVE-2026-5943：Foxit PDF Reader 的 AcroForm 注释处理中存在利用后释放漏洞，允许未经身份验证的 RCE（CVSS 7.8）。需要用户打开恶意 PDF。"
   ],
-  "sources_hash": "49380d069d74332b"
+  "sources_hash": "717bd0f7e363c41c"
 }

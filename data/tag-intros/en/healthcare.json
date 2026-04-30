@@ -1,9 +1,9 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "intro": "Between April 12 and 21, 2026, six high-severity incidents targeted the healthcare sector. The threat actors Rhysida and UAC-0247 were prominently observed in these attacks. The affected sectors included healthcare, Government, research, and technology, with impacts felt in the United states, Illinois, Netherlands, Texas, and Ukraine. All reported incidents were assessed as high severity, highlighting a concentrated period of significant cyber activity against critical infrastructure.",
-  "sources_hash": "bfc1701d3c4ca7cb",
+  "intro": "Between April 12 and 28, 2026, ZCyberNews covered seven high-severity incidents tagged under healthcare, with Rhysida, ShinyHunters, and UAC-0247 emerging as the most prominent threat actors. These attacks primarily targeted the healthcare, Government, research, and technology sectors across the United States, Global, Illinois, Netherlands, and Texas. The concentrated activity underscores a sustained focus on healthcare-related infrastructure by multiple distinct groups.",
+  "sources_hash": "71777157b012d398",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:07:33.259Z",
+  "generated_at": "2026-04-30T04:20:13.584Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

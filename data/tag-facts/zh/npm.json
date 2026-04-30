@@ -1,30 +1,33 @@
 {
   "tag": "npm",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-21",
-    "latest": "2026-04-26"
+    "latest": "2026-04-29"
   },
   "top_actors": [
-    "CanisterSprawl"
+    "CanisterSprawl",
+    "mini Shai-Hulud"
   ],
   "top_cves": [],
   "top_sectors": [
     "software development",
-    "technology"
+    "technology",
+    "cloud services",
+    "enterprise software"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 4,
+    "critical": 5,
     "high": 3
   },
   "recent_excerpts": [
+    "攻击者破坏了多个与SAP相关的npm包，部署窃取凭证的恶意软件，针对SAP BTP和云应用凭证。活动被称为迷你Shai-Hulud。",
     "Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游...",
-    "Elastic Security Labs 研究员 Joe Desimone 在一个下午构建了一个概念验证工具，该工具检测到了 Axios HTTP 库的供应链被破坏，影响了 npm…",
-    "JFrog 和 Socket 在 @bitwarden/cli@2026.4.0 中发现了恶意代码 —— 这是同一活动，劫持了 Checkmarx npm 包。"
+    "Elastic Security Labs 研究员 Joe Desimone 在一个下午构建了一个概念验证工具，该工具检测到了 Axios HTTP 库的供应链被破坏，影响了 npm…"
   ],
-  "sources_hash": "bb461997b804f6e2"
+  "sources_hash": "2e8aadfe793222bd"
 }

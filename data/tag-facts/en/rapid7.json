@@ -1,10 +1,10 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "count": 8,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Kyber"
@@ -13,26 +13,33 @@
     {
       "id": "CVE-2025-59718",
       "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-41940",
+      "cvss": 9.8
     }
   ],
   "top_sectors": [
+    "enterprise IT",
     "financial services",
     "government",
+    "managed services",
     "technology"
   ],
   "top_regions": [
     "Europe",
+    "Global",
     "North america"
   ],
   "severity_mix": {
-    "critical": 1,
-    "informational": 4,
-    "high": 1
+    "critical": 2,
+    "high": 2,
+    "informational": 4
   },
   "recent_excerpts": [
-    "Rapid7 argues most breaches result from visibility gaps in asset, identity, and attack path coverage rather than sophisticated exploits.",
-    "Rapid7 IR confirms active exploitation of CVE-2025-59718 — a 9.8-CVSS FortiGate SSO bypass — enabling attackers to gain persistent admin access on unpatched appliances.",
-    "Rapid7's May 12–13 summit agenda reveals industry pivot from reactive defense to preemptive security operations, featuring sessions on AI-driven threat hunting and autonomous…"
+    "CVE-2026-41940: Unauthenticated remote attackers can bypass authentication in cPanel & WHM and WP Squared. CVSS 9.8. Patch released April 28, 2026.",
+    "Rapid7 VP Christiaan Beek warns attackers are exploiting weak credentials and known flaws faster than defenders can patch — pace, not technique, is the 2026 differentiator.",
+    "Rapid7 argues most breaches result from visibility gaps in asset, identity, and attack path coverage rather than sophisticated exploits."
   ],
-  "sources_hash": "6ee826c008f48e4a"
+  "sources_hash": "31dee5091419afca"
 }

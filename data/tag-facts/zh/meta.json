@@ -1,0 +1,35 @@
+{
+  "tag": "meta",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-29"
+  },
+  "top_actors": [
+    "Mirax"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "social media",
+    "consumer",
+    "telecommunications"
+  ],
+  "top_regions": [
+    "European union",
+    "Latin america",
+    "Spain",
+    "United states"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "欧洲委员会发现Meta违反了数字服务法案，未能保护Facebook和Instagram上13岁以下的未成年人 —— 风险未被评估或减轻。",
+    "FTC报告称，2025年美国人因社交媒体诈骗损失超过21亿美元——自2020年以来增加了10倍。投资和恋爱诈骗占损失的主导地位。",
+    "Meta的漏洞赏金计划与PortSwigger合作，为研究人员提供Burp Suite许可证和培训，旨在扩大其平台上高质量漏洞发现的规模。"
+  ],
+  "sources_hash": "4b30f6455e417cdf"
+}

@@ -1,9 +1,9 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "intro": "Over 19 articles published between April 12 and April 26, 2026, ZCyberNews tracked 15 high-severity incidents tagged law-enforcement. Threat actors Scattered Spider, BlackCat (ALPHV), and W3LL were observed targeting government, telecommunications, cryptocurrency, law enforcement, and corporate sectors. Affected regions included the United States, Canada, North America, Europe, and Florida. The coverage mix also included three medium-severity and one informational report.",
-  "sources_hash": "02db16bd21e34416",
+  "intro": "Over 23 articles published between April 12 and April 29, 2026, covered law-enforcement actions and related cybersecurity incidents, with 18 classified as high severity. Threat actors Scattered Spider, Black Axe, and BlackCat (ALPHV) were observed targeting sectors including government, telecommunications, financial services, cryptocurrency, and gaming. Affected regions spanned the United States, Canada, North America, Europe, and Germany, with four medium and one informational report rounding out the coverage.",
+  "sources_hash": "f4f0e7b837d921ff",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:18:03.125Z",
+  "generated_at": "2026-04-30T04:18:46.487Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Pro-Russia Hacktivists"
@@ -19,6 +19,10 @@
       "cvss": 8.8
     },
     {
+      "id": "CVE-2024-1708",
+      "cvss": 8.4
+    },
+    {
       "id": "CVE-2024-20662"
     },
     {
@@ -30,21 +34,21 @@
     "technology",
     "critical infrastructure",
     "energy",
-    "software development"
+    "IT"
   ],
   "top_regions": [
     "Global",
-    "United states",
-    "North america"
+    "North america",
+    "United states"
   ],
   "severity_mix": {
-    "critical": 3,
-    "high": 7
+    "high": 8,
+    "critical": 3
   },
   "recent_excerpts": [
+    "CISA 将 CVE-2024-1708（ConnectWise ScreenConnect 路径遍历，CVSS 8.4）和一个未命名的 Windows 漏洞添加到其 KEV 目录，基于确认的积极利用。",
     "CISA 将其 KEV 目录中添加了 4 个正在被积极利用的漏洞 —— SimpleHelp、Samsung MagicINFO 9 和 D-Link DIR-823X —— 并设定了 2026 年 5 月的联邦补救截止日期。",
-    "Apache ActiveMQ Classic 中存在一个高严重性的漏洞，CVE-2026-34197（CVSS 8.8），目前正在被积极利用，促使 CISA 将其加入其已知被利用漏洞目录，并要求联邦机构进行补丁修复。",
-    "CISA 将其已知被利用漏洞目录中添加了六个 Fortinet、Microsoft 和 Adobe 软件中的漏洞，警告存在活跃的野外攻击，需要紧急修补。"
+    "Apache ActiveMQ Classic 中存在一个高严重性的漏洞，CVE-2026-34197（CVSS 8.8），目前正在被积极利用，促使 CISA 将其加入其已知被利用漏洞目录，并要求联邦机构进行补丁修复。"
   ],
-  "sources_hash": "5040ae9362dc4ffd"
+  "sources_hash": "15fec9e6bfe89d38"
 }

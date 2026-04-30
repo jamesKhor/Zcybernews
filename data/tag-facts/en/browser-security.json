@@ -1,33 +1,36 @@
 {
   "tag": "browser-security",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-04-19"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Pushpaganda"
   ],
   "top_cves": [],
-  "top_sectors": [],
+  "top_sectors": [
+    "all",
+    "technology"
+  ],
   "top_regions": [
     "Australia",
     "Canada",
+    "Global",
     "New zealand",
-    "United kingdom",
-    "United states"
+    "United kingdom"
   ],
   "severity_mix": {
+    "critical": 2,
     "high": 2,
     "informational": 1,
-    "critical": 1,
     "medium": 2
   },
   "recent_excerpts": [
+    "Google and Mozilla ship Chrome 147 and Firefox 150 to fix critical and high-severity vulnerabilities enabling arbitrary code execution. Users urged to update immediately.",
     "Socket identified 108 malicious Chrome extensions that infected 20,000 users, stealing Google and Telegram session cookies and injecting ads via a shared command-and-control server.",
-    "Malwarebytes Browser Guard 4.0 introduces a new Access Control module, allowing users to centrally manage and block website requests for sensitive permissions like camera, microphone, and location to",
-    "Security researchers warn that AI-powered 'agentic' browsers, which automate web tasks, introduce novel risks including prompt injection, session hijacking, and unauthorized data exfiltration, fundame"
+    "Malwarebytes Browser Guard 4.0 introduces a new Access Control module, allowing users to centrally manage and block website requests for sensitive permissions like camera, microphone, and location to"
   ],
-  "sources_hash": "e58f73891b471f01"
+  "sources_hash": "f13101340f715bbd"
 }

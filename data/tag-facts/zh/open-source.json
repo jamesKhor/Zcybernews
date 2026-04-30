@@ -1,13 +1,17 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-25874",
+      "cvss": 9.3
+    },
     {
       "id": "CVE-2026-33626",
       "cvss": 7.5
@@ -21,15 +25,15 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "critical": 1,
+    "critical": 2,
     "high": 1,
     "informational": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "CVE-2026-25874 (CVSS 9.3) 在 Hugging Face LeRobot 中通过不安全的反序列化启用未经认证的 RCE。",
     "Elastic Security Labs 发布了一个开源的 CI/CD 滥用检测模板，使用信号提取和 LLM 推理来捕捉 GitHub Actions、GitLab CI 等跨平台的流水线攻击…",
-    "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。",
-    "CVE-2026-33626（CVSS 7.5）在 LMDeploy 中，一个开源的 LLM 工具包，被在野外利用，距离公开披露仅 13 小时，使得 SSRF 攻击能够访问敏感信息..."
+    "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。"
   ],
-  "sources_hash": "f9e06e10d26e75eb"
+  "sources_hash": "6e34100d0bf74743"
 }

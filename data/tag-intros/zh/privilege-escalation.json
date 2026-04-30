@@ -1,10 +1,10 @@
 {
   "tag": "privilege-escalation",
   "locale": "zh",
-  "intro": "在2026年4月13日发布的18篇文章中，ZCyberNews追踪了权限提升活动，其中包括2起严重级别和15起高严重级别事件。观察到威胁行为者Chaotic Eclipse，而最常被引用的漏洞为CVE-2026-40372（CVSS 9.1）、CVE-2026-5490（CVSS 8.8）、CVE-2026-6406（CVSS 8.8）、CVE-2026-25203（CVSS 7.8）和CVE-2026-33104（CVSS 7.8）。受影响行业涵盖技术、教育、企业、医疗及数字标牌领域，影响报告遍布全球。",
-  "sources_hash": "86bcab241c7a2ae8",
-  "source_intro_hash": "5586c3c4ace53e5d",
+  "intro": "在2026年4月13日至4月30日期间发布的20余篇文章中，涉及权限提升漏洞，其中包括17起高严重性事件和2起关键级别事件。威胁行为者Chaotic Eclipse在这些攻击中被观察到。排名靠前的CVE包括CVE-2026-40372（CVSS 9.1）、CVE-2026-5490（CVSS 8.8）、CVE-2026-6406（CVSS 8.8）、CVE-2026-25203（CVSS 7.8）和CVE-2026-33104（CVSS 7.8）。受影响行业涵盖科技、教育、企业和医疗领域，波及全球及北美地区。",
+  "sources_hash": "0ff06eacbb09b80b",
+  "source_intro_hash": "ddf300751c7aef1e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:15:27.388Z",
+  "generated_at": "2026-04-30T04:21:52.510Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,35 +1,35 @@
 {
   "tag": "supply-chain-attack",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "GlassWorm",
     "Fast16",
-    "TeamPCP"
+    "mini Shai-Hulud"
   ],
   "top_cves": [],
   "top_sectors": [
     "software development",
     "technology",
     "cybersecurity",
-    "enterprise",
-    "enterprise IT"
+    "cloud services",
+    "enterprise"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 7,
-    "critical": 3
+    "critical": 4,
+    "high": 7
   },
   "recent_excerpts": [
+    "攻击者破坏了多个与SAP相关的npm包，部署窃取凭证的恶意软件，针对SAP BTP和云应用凭证。活动被称为迷你Shai-Hulud。",
     "研究人员在 Open VSX 上发现了 73 个克隆的 VS Code 扩展，其中 6 个被确认为恶意，传递 GlassWorm v2 信息窃取器。",
-    "Checkmarx 确认一个网络犯罪团伙在暗网上发布了 GitHub 仓库数据，追溯到 3 月 23 日的供应链攻击。",
-    "Fast16 恶意软件在新的供应链攻击中重新出现，滥用远程监控工具和浏览器扩展来窃取凭证。活动针对企业环境。"
+    "Checkmarx 确认一个网络犯罪团伙在暗网上发布了 GitHub 仓库数据，追溯到 3 月 23 日的供应链攻击。"
   ],
-  "sources_hash": "ed1190e5d3a43587"
+  "sources_hash": "53670f94855d8e2c"
 }

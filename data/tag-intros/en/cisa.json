@@ -1,9 +1,9 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "intro": "Government and technology sectors faced a concentrated wave of high-severity threats between April 12 and April 28, 2026, with Pro-Russia Hacktivists among the primary actors observed. The ten articles covering CISA-related activity included three critical and seven high-severity alerts, highlighting vulnerabilities such as CVE-2024-57726, CVE-2026-34197, CVE-2024-20662, and CVE-2024-21412. Affected sectors spanned government, technology, critical infrastructure, energy, and software development, while impacted regions included Global, United States, and North America.",
-  "sources_hash": "5040ae9362dc4ffd",
+  "intro": "Government and technology sectors were the primary targets across 12 articles from mid-to-late April 2026, with Pro-Russia Hacktivists among the threat actors observed. The coverage included five specific CVEs, with CVE-2024-57726 carrying a CVSS score of 9.9 and CVE-2026-34197 scoring 8.8, alongside CVE-2024-1708, CVE-2024-20662, and CVE-2024-21412. Affected regions spanned the United States, North America, and globally, impacting critical infrastructure, energy, and IT. The severity mix comprised nine high-severity and three critical-severity incidents.",
+  "sources_hash": "a70185c03974248b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:18:03.505Z",
+  "generated_at": "2026-04-30T04:18:58.723Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

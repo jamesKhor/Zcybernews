@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "intro": "2026年4月12日至21日期间，医疗健康领域遭受了六起高严重性安全事件。在这些攻击中，威胁行为者Rhysida和UAC-0247被显著观测到。受影响领域包括医疗健康、政府、研究和技术部门，波及美国、伊利诺伊州、荷兰、德克萨斯州及乌克兰。所有上报事件均被评估为高严重性，凸显出针对关键基础设施的重大网络活动在短期内高度集中。",
-  "sources_hash": "bfc1701d3c4ca7cb",
-  "source_intro_hash": "8c3f3b481a3742bb",
+  "intro": "2026年4月12日至28日期间，ZCyberNews报道了七起标记为医疗行业的高严重性事件，其中Rhysida、ShinyHunters和UAC-0247成为最突出的威胁行为者。这些攻击主要针对美国、全球、伊利诺伊州、荷兰和得克萨斯州的医疗、政府、研究和技术行业。集中的攻击活动凸显了多个不同团体对医疗相关基础设施的持续关注。",
+  "sources_hash": "71777157b012d398",
+  "source_intro_hash": "4e250a15457f8fc9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:08:48.656Z",
+  "generated_at": "2026-04-30T04:21:40.321Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

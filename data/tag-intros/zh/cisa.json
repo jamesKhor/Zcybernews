@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "intro": "政府与技术领域在2026年4月12日至4月28日期间面临一波集中的高严重性威胁，其中Pro-Russia Hacktivists是观察到的主要行为体之一。涵盖CISA相关活动的十篇文章包括三项严重警报和七项高严重性警报，重点提及了CVE-2024-57726、CVE-2026-34197、CVE-2024-20662和CVE-2024-21412等漏洞。受影响领域涵盖政府、技术、关键基础设施、能源及软件开发，受影响区域包括全球、美国及北美。",
-  "sources_hash": "5040ae9362dc4ffd",
-  "source_intro_hash": "a4e2de9e1142ed6a",
+  "intro": "政府和技术部门是2026年4月中下旬12篇文章的主要目标，其中观察到的威胁行为者包括Pro-Russia Hacktivists。报道涵盖了五个特定CVE，其中CVE-2024-57726的CVSS评分为9.9，CVE-2026-34197评分为8.8，此外还有CVE-2024-1708、CVE-2024-20662和CVE-2024-21412。受影响区域遍及美国、北美及全球，涉及关键基础设施、能源和信息技术领域。严重程度分布包括九起高严重性事件和三起严重性事件。",
+  "sources_hash": "a70185c03974248b",
+  "source_intro_hash": "ea9c330feacbae3e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:19:59.715Z",
+  "generated_at": "2026-04-30T04:21:30.573Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

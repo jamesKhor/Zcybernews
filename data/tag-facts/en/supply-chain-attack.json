@@ -1,35 +1,35 @@
 {
   "tag": "supply-chain-attack",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "GlassWorm",
     "Fast16",
-    "TeamPCP"
+    "mini Shai-Hulud"
   ],
   "top_cves": [],
   "top_sectors": [
     "software development",
     "technology",
     "cybersecurity",
-    "enterprise",
-    "enterprise IT"
+    "cloud services",
+    "enterprise"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 7,
-    "critical": 4
+    "critical": 5,
+    "high": 7
   },
   "recent_excerpts": [
+    "Attackers compromised multiple SAP-related npm packages to deploy credential-stealing malware, targeting SAP BTP and cloud app credentials. Campaign dubbed mini Shai-Hulud.",
     "Researchers found 73 cloned VS Code extensions on Open VSX, with 6 confirmed malicious, delivering the GlassWorm v2 info-stealer.",
-    "Checkmarx confirmed a cybercriminal group published GitHub repository data on the dark web, traced to a March 23 supply chain attack.",
-    "Fast16 malware resurfaces in new supply chain attacks, abusing remote monitoring tools and browser extensions to steal credentials. Campaign targets enterprise environments."
+    "Checkmarx confirmed a cybercriminal group published GitHub repository data on the dark web, traced to a March 23 supply chain attack."
   ],
-  "sources_hash": "ed1190e5d3a43587"
+  "sources_hash": "53670f94855d8e2c"
 }

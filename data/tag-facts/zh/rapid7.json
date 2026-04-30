@@ -1,10 +1,10 @@
 {
   "tag": "rapid7",
   "locale": "zh",
-  "count": 8,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Kyber"
@@ -13,26 +13,33 @@
     {
       "id": "CVE-2025-59718",
       "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-41940",
+      "cvss": 9.8
     }
   ],
   "top_sectors": [
+    "enterprise IT",
     "financial services",
     "government",
+    "managed services",
     "technology"
   ],
   "top_regions": [
     "Europe",
+    "Global",
     "North america"
   ],
   "severity_mix": {
-    "critical": 1,
-    "informational": 4,
-    "high": 1
+    "critical": 2,
+    "high": 2,
+    "informational": 4
   },
   "recent_excerpts": [
-    "Rapid7 认为，大多数泄露源于资产、身份和攻击路径覆盖的可见性差距，而不是复杂的漏洞利用。",
-    "Rapid7 IR 确认 CVE-2025-59718 —— 一个 9.8-CVSS FortiGate SSO 绕过 —— 被活跃利用，使攻击者能够在未打补丁的设备上获得持久的管理员访问权限。",
-    "Rapid7 5月12-13日峰会议程揭示了行业从反应式防御向预防性安全运营的转变，包括有关AI驱动的威胁狩猎和自主的会议..."
+    "CVE-2026-41940：未经认证的远程攻击者可以绕过 cPanel & WHM 和 WP Squared 的认证。CVSS 9.8。补丁于 2026 年 4 月 28 日发布。",
+    "Rapid7 副总裁 Christiaan Beek 警告说，攻击者正在比防御者更快地利用弱凭证和已知漏洞进行攻击 —— 在 2026 年，速度而非技术是区分因素。",
+    "Rapid7 认为，大多数泄露源于资产、身份和攻击路径覆盖的可见性差距，而不是复杂的漏洞利用。"
   ],
-  "sources_hash": "6ee826c008f48e4a"
+  "sources_hash": "31dee5091419afca"
 }

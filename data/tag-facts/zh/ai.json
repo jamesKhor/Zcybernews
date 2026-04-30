@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "count": 25,
+  "count": 26,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-27"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Pushpaganda"
@@ -25,15 +25,15 @@
     "Canada"
   ],
   "severity_mix": {
+    "informational": 11,
     "high": 10,
-    "informational": 10,
     "critical": 1,
     "medium": 4
   },
   "recent_excerpts": [
+    "Malwarebytes 将其反诈骗威胁情报直接集成到 Anthropic 的 Claude AI 助手中 —— 用户现在可以查询可疑链接、电话号码或电子邮件…",
     "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…",
-    "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。",
-    "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。"
+    "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。"
   ],
-  "sources_hash": "77019c1572757dcb"
+  "sources_hash": "be8a579e941fdbde"
 }

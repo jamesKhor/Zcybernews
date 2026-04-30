@@ -1,10 +1,10 @@
 {
   "tag": "windows",
   "locale": "en",
-  "count": 22,
+  "count": 23,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "Kyber",
@@ -12,6 +12,10 @@
     "VECT Ransomware"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2024-1708",
+      "cvss": 8.4
+    },
     {
       "id": "CVE-2026-33104",
       "cvss": 7.8
@@ -26,22 +30,25 @@
     },
     {
       "id": "CVE-2024-20662"
-    },
-    {
-      "id": "CVE-2024-21412"
     }
   ],
-  "top_sectors": [],
-  "top_regions": [],
+  "top_sectors": [
+    "government",
+    "IT",
+    "managed service providers"
+  ],
+  "top_regions": [
+    "North america"
+  ],
   "severity_mix": {
+    "high": 17,
     "critical": 2,
-    "high": 16,
     "medium": 4
   },
   "recent_excerpts": [
+    "CISA added CVE-2024-1708 (ConnectWise ScreenConnect path traversal, CVSS 8.4) and an unnamed Windows flaw to its KEV catalog based on confirmed active exploitation.",
     "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying.",
-    "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis.",
-    "Kyber ransomware deploys two distinct payloads to encrypt both Windows systems and VMware ESXi servers, using a custom tool to wipe ESXi snapshots and hinder recovery."
+    "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis."
   ],
-  "sources_hash": "2beaf6fa11fa147d"
+  "sources_hash": "f540b87b967040dd"
 }

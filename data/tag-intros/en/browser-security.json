@@ -1,9 +1,9 @@
 {
   "tag": "browser-security",
   "locale": "en",
-  "intro": "This archive collects seven reports on browser security from April 11–19, 2026, focusing on activity targeting users in Australia, Canada, New Zealand, the United Kingdom, and the United States. The threat actor Pushpaganda was prominently observed during this period. The reports detail a range of incidents, with the severity of the covered threats including two high, two medium, one critical, and one informational alert.",
-  "sources_hash": "e58f73891b471f01",
+  "intro": "The technology sector bore the brunt of recent browser-security threats, with organisations in Australia, Canada, New Zealand, the United Kingdom, and globally affected. Among eight articles published between April 11 and April 29, 2026, the threat actor Pushpaganda was observed. The coverage spanned two critical, two high, two medium, and one informational severity incidents, highlighting a concentrated period of activity targeting browser environments.",
+  "sources_hash": "f13101340f715bbd",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:17:11.841Z",
+  "generated_at": "2026-04-30T04:19:36.355Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

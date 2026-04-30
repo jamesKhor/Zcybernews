@@ -1,15 +1,15 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "LockBit",
-    "Chinese Transnational Organized Crime",
-    "REvil"
+    "Black Axe",
+    "Chinese Transnational Organized Crime"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -22,19 +22,19 @@
   "top_regions": [
     "Global",
     "Caribbean",
+    "Germany",
     "Latin america",
-    "Southeast asia",
-    "United states"
+    "Southeast asia"
   ],
   "severity_mix": {
-    "high": 13,
+    "high": 14,
     "medium": 5,
     "informational": 2
   },
   "recent_excerpts": [
+    "Swiss and German police arrested 10 suspects tied to the Nigeria-linked Black Axe network, including a regional leader overseeing Southern Europe operations.",
     "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data.",
-    "Ukrainian police detained hackers suspected of stealing thousands of Roblox accounts containing valuable digital items and in-game currency purchased with real money from players…",
-    "A California man received a 63-month prison sentence for laundering cryptocurrency stolen by a cybercriminal ring that defrauded victims of approximately $260 million."
+    "Ukrainian police detained hackers suspected of stealing thousands of Roblox accounts containing valuable digital items and in-game currency purchased with real money from players…"
   ],
-  "sources_hash": "d5ff995757da9938"
+  "sources_hash": "3e02b4006ff4b5c1"
 }

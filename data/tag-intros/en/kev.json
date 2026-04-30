@@ -1,9 +1,9 @@
 {
   "tag": "kev",
   "locale": "en",
-  "intro": "Government and technology sectors in the United States were the primary targets in a series of five high-severity incidents tagged kev, documented between April 12 and April 25, 2026. The coverage includes two critical and three high-severity vulnerabilities, with specific attention to CVE-2024-57726, which carries a CVSS score of 9.9, along with CVE-2024-20662 and CVE-2024-21412. These exploits were observed affecting organizations across the government and technology sectors, underscoring the concentrated risk to these industries during the reporting period.",
-  "sources_hash": "bd4e823884dd502b",
+  "intro": "Government and IT sectors across North America, particularly the United States, faced a concentrated wave of high-severity vulnerabilities between April 12 and April 29, 2026, with six articles tagged under KEV. The coverage highlighted four critical CVEs, including CVE-2024-57726 with a CVSS score of 9.9, alongside CVE-2024-1708 (CVSS 8.4), CVE-2024-20662, and CVE-2024-21412. Managed service providers and technology organizations were also among the primary targets, as the reporting documented four high-severity and two critical-severity incidents affecting these sectors.",
+  "sources_hash": "58e4edb861c1a3c3",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:19:39.706Z",
+  "generated_at": "2026-04-30T04:20:32.968Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

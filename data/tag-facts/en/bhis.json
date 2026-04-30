@@ -1,25 +1,30 @@
 {
   "tag": "bhis",
   "locale": "en",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-25",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Comburglar"
   ],
   "top_cves": [],
-  "top_sectors": [],
-  "top_regions": [],
+  "top_sectors": [
+    "cybersecurity",
+    "multiple"
+  ],
+  "top_regions": [
+    "North america"
+  ],
   "severity_mix": {
-    "informational": 1,
-    "high": 1
+    "high": 2,
+    "informational": 1
   },
   "recent_excerpts": [
-    "Black Hills InfoSec published a practical guide to malware analysis covering static, dynamic, and memory analysis techniques for defenders seeking to reverse-engineer samples.",
-    "Black Hills InfoSec details how to transform stale cybersecurity tabletop exercises into immersive scenario simulations that test real incident response decisions.",
-    "BHIS released a cloud security guide covering IAM misconfigurations, shared responsibility gaps, and logging blind spots — essential reading for teams securing AWS, Azure, or GCP…"
+    "Black Hills InfoSec's 2025 pentest analysis of 15 months of data shows the same top 10 vulnerabilities as 2022 — weak passwords, unpatched RDP, and misconfigured MFA remain…",
+    "Black Hills Information Security's SOC replaced tiered ticket queues with a flat team model where analysts solve incidents in real time.",
+    "Black Hills InfoSec published a practical guide to malware analysis covering static, dynamic, and memory analysis techniques for defenders seeking to reverse-engineer samples."
   ],
-  "sources_hash": "3014f2b775b3a3ba"
+  "sources_hash": "d043ba593d813d6c"
 }

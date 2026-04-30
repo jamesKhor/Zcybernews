@@ -1,15 +1,15 @@
 {
   "tag": "cybercrime",
   "locale": "zh",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-28"
+    "latest": "2026-04-29"
   },
   "top_actors": [
     "LockBit",
-    "Chinese Transnational Organized Crime",
-    "REvil"
+    "Black Axe",
+    "Chinese Transnational Organized Crime"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -22,19 +22,19 @@
   "top_regions": [
     "Global",
     "Caribbean",
+    "Germany",
     "Latin america",
-    "Southeast asia",
-    "United states"
+    "Southeast asia"
   ],
   "severity_mix": {
-    "high": 13,
+    "high": 14,
     "medium": 5,
     "informational": 2
   },
   "recent_excerpts": [
+    "瑞士和德国警方逮捕了与尼日利亚有联系的Black Axe网络的10名嫌疑人，包括一名负责监督南欧业务的地区领导人。",
     "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。",
-    "乌克兰警方拘留了涉嫌盗取数千个Roblox账户的黑客，这些账户包含玩家用真金白银购买的有价值的数字物品和游戏内货币...",
-    "一名加利福尼亚男子因洗钱被判63个月监禁，这些加密货币是由一个网络犯罪团伙盗窃的，该团伙诈骗受害者约2.6亿美元。"
+    "乌克兰警方拘留了涉嫌盗取数千个Roblox账户的黑客，这些账户包含玩家用真金白银购买的有价值的数字物品和游戏内货币..."
   ],
-  "sources_hash": "d5ff995757da9938"
+  "sources_hash": "3e02b4006ff4b5c1"
 }

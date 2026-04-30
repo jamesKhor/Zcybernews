@@ -1,10 +1,10 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "count": 18,
+  "count": 20,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-25"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Chaotic Eclipse"
@@ -36,20 +36,21 @@
     "education",
     "enterprise",
     "healthcare",
-    "digital signage"
+    "multiple"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "North america"
   ],
   "severity_mix": {
+    "high": 17,
     "critical": 2,
-    "high": 15,
     "medium": 1
   },
   "recent_excerpts": [
-    "Microsoft released out-of-band patches for CVE-2026-40372, a 9.1-CVSS privilege escalation flaw in ASP.NET Core affecting all supported versions.",
-    "The Hacker News reports AI agents create a structural security gap: delegated actors lack continuous oversight, enabling lateral movement and privilege escalation without human…",
-    "CVE-2026-6406 (CVSS 8.8) in Docker Desktop's Enhanced Container Isolation allows local attackers with low-privileged code execution inside a container to escalate privileges on…"
+    "Black Hills InfoSec's 2025 pentest analysis of 15 months of data shows the same top 10 vulnerabilities as 2022 — weak passwords, unpatched RDP, and misconfigured MFA remain…",
+    "CVE-2026-35230: A race condition in VirtualBox's SoundBlaster 16 emulation allows local attackers with high-privileged guest access to escalate privileges. CVSS 7.5.",
+    "Microsoft released out-of-band patches for CVE-2026-40372, a 9.1-CVSS privilege escalation flaw in ASP.NET Core affecting all supported versions."
   ],
-  "sources_hash": "86bcab241c7a2ae8"
+  "sources_hash": "0ff06eacbb09b80b"
 }

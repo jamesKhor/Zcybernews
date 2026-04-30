@@ -1,9 +1,9 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "intro": "Between April 13 and 28, 2026, ZCyberNews covered 20 cybercrime incidents, with financial services and government sectors most frequently targeted across global, Caribbean, Latin American, Southeast Asian, and United States regions. The reporting featured LockBit, Chinese Transnational Organized Crime, and REvil as distinct threat actors. Of the 20 articles, 13 were classified as high severity, five as medium, and two as informational.",
-  "sources_hash": "d5ff995757da9938",
+  "intro": "Financial services and government sectors bore the brunt of a concentrated wave of cybercrime between April 13 and April 29, 2026, with 21 articles covering 14 high-severity incidents. LockBit, Black Axe, and Chinese Transnational Organized Crime were observed as the top threat actors, impacting regions including the Caribbean, Germany, Latin America, and Southeast Asia. The activity spanned e-commerce and gaming as well, with a global reach and a mix of five medium and two informational reports rounding out the coverage.",
+  "sources_hash": "3e02b4006ff4b5c1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:17:44.329Z",
+  "generated_at": "2026-04-30T04:18:53.690Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

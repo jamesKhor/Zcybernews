@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "count": 10,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Pro-Russia Hacktivists"
@@ -19,6 +19,10 @@
       "cvss": 8.8
     },
     {
+      "id": "CVE-2024-1708",
+      "cvss": 8.4
+    },
+    {
       "id": "CVE-2024-20662"
     },
     {
@@ -30,21 +34,21 @@
     "technology",
     "critical infrastructure",
     "energy",
-    "software development"
+    "IT"
   ],
   "top_regions": [
-    "Global",
     "United states",
+    "Global",
     "North america"
   ],
   "severity_mix": {
-    "critical": 3,
-    "high": 7
+    "high": 9,
+    "critical": 3
   },
   "recent_excerpts": [
-    "CISA added 4 actively exploited vulnerabilities to its KEV catalog — SimpleHelp, Samsung MagicINFO 9, and D-Link DIR-823X — with a May 2026 federal remediation deadline.",
-    "A high-severity flaw in Apache ActiveMQ Classic, CVE-2026-34197 (CVSS 8.8), is under active exploitation, prompting CISA to add it to its Known Exploited Vulnerabilities catalog and mandate patching f",
-    "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching."
+    "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders.",
+    "CISA added CVE-2024-1708 (ConnectWise ScreenConnect path traversal, CVSS 8.4) and an unnamed Windows flaw to its KEV catalog based on confirmed active exploitation.",
+    "CISA added 4 actively exploited vulnerabilities to its KEV catalog — SimpleHelp, Samsung MagicINFO 9, and D-Link DIR-823X — with a May 2026 federal remediation deadline."
   ],
-  "sources_hash": "5040ae9362dc4ffd"
+  "sources_hash": "a70185c03974248b"
 }

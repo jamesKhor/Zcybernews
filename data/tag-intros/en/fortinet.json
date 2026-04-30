@@ -1,9 +1,9 @@
 {
   "tag": "fortinet",
   "locale": "en",
-  "intro": "This archive collects 5 articles tagged `fortinet` published between April 14, 2026 and April 21, 2026. Coverage includes 3 critical, and 2 high reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "dec417773f30af5b",
-  "model": "template:sparse",
-  "generated_at": "2026-04-23T04:09:17.564Z",
+  "intro": "Between 14 and 25 April 2026, ZCyberNews published six articles under the Fortinet tag. The coverage highlighted two critical vulnerabilities: CVE-2025-59718, carrying a CVSS score of 9.8, and CVE-2026-39808. Four of the articles were classified as critical severity and two as high. The affected sectors included financial services, government, and technology, with the primary regions impacted being Europe and North America.",
+  "sources_hash": "4857dc4d42100910",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-04-30T04:20:25.433Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

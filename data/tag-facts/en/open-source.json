@@ -1,13 +1,17 @@
 {
   "tag": "open-source",
   "locale": "en",
-  "count": 9,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-25874",
+      "cvss": 9.3
+    },
     {
       "id": "CVE-2026-33626",
       "cvss": 7.5
@@ -21,15 +25,15 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "critical": 1,
+    "informational": 5,
+    "critical": 2,
     "high": 1,
-    "informational": 4,
     "medium": 2
   },
   "recent_excerpts": [
-    "Elastic Security Labs published an open-source CI/CD abuse detection template using signal extraction and LLM reasoning to catch pipeline attacks across GitHub Actions, GitLab CI,…",
-    "Attackers compromised the elementary-data PyPI package (1.1M monthly downloads) to push an infostealer targeting developer credentials, crypto wallets, and environment variables.",
-    "CVE-2026-33626 (CVSS 7.5) in LMDeploy, an open-source LLM toolkit, was exploited in the wild within 13 hours of public disclosure, enabling SSRF attacks to access sensitive…"
+    "Black Hills Information Security released GoSpoof, a Python tool that opens all ports on a honeypot to capture attacker scanning patterns and payloads in real time.",
+    "CVE-2026-25874 (CVSS 9.3) in Hugging Face LeRobot enables unauthenticated RCE via unsafe deserialization.",
+    "Elastic Security Labs published an open-source CI/CD abuse detection template using signal extraction and LLM reasoning to catch pipeline attacks across GitHub Actions, GitLab CI,…"
   ],
-  "sources_hash": "f9e06e10d26e75eb"
+  "sources_hash": "cacc656f50167387"
 }

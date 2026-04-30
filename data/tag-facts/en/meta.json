@@ -1,0 +1,35 @@
+{
+  "tag": "meta",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-29"
+  },
+  "top_actors": [
+    "Mirax"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "social media",
+    "consumer",
+    "telecommunications"
+  ],
+  "top_regions": [
+    "European union",
+    "Latin america",
+    "Spain",
+    "United states"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "European Commission finds Meta violated Digital Services Act by failing to protect minors under 13 on Facebook and Instagram — risks not assessed or mitigated.",
+    "FTC reports Americans lost over $2.1 billion to social media scams in 2025 — a 10x increase since 2020. Investment and romance scams dominate losses.",
+    "Meta's bug bounty program partners with PortSwigger to provide Burp Suite licenses and training to researchers, aiming to scale high-quality vulnerability discovery across its platforms."
+  ],
+  "sources_hash": "4b30f6455e417cdf"
+}
