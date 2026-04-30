@@ -1,0 +1,42 @@
+---
+title: BHIS GoSpoof Tool Turns Attacker Recon Into Intel
+slug: 2026-04-30-bhis-gospoof-tool-turns-attacker-recon-into-intel
+date: '2026-04-30'
+excerpt: >-
+  Black Hills Information Security released GoSpoof, a Python tool that opens
+  all ports on a honeypot to capture attacker scanning patterns and payloads in
+  real time.
+category: tools
+tags:
+  - gospoof
+  - honeypot
+  - threat-intelligence
+  - reconnaissance
+  - black-hills-information-security
+  - open-source
+language: en
+source_urls:
+  - 'https://www.blackhillsinfosec.com/gospoof-turning-attacks-into-intel/'
+author: ZCyberNews
+draft: false
+severity: informational
+---
+## Executive Summary
+
+Black Hills Information Security (BHIS) released **GoSpoof**, an open-source Python tool designed to turn attacker reconnaissance against them. GoSpoof opens every TCP and UDP port on a target system, presenting a deceptive attack surface that forces adversaries to reveal their scanning tools, payloads, and techniques. The tool logs all incoming connections and data, providing defenders with actionable intelligence about who is scanning them and what they are looking for.
+
+## Technical Analysis
+
+GoSpoof operates by binding to all 65,535 TCP and UDP ports on a designated interface. When an attacker initiates a port scan—whether using Nmap, Masscan, Zmap, or custom scripts—every port responds as open. This behavior disrupts the attacker's reconnaissance phase by removing the signal of closed or filtered ports that normally guides their next steps.
+
+According to BHIS, the tool captures the full packet payload from each connection attempt, including any initial payloads or probes sent by the attacker. This data is logged with timestamps and source IP addresses, enabling defenders to build profiles of scanning infrastructure and correlate activity across multiple events. The tool runs on Linux systems and requires root privileges to bind to low-numbered ports.
+
+BHIS noted that GoSpoof is not a traditional honeypot—it does not emulate services or attempt to engage attackers beyond the initial connection. Instead, it focuses purely on reconnaissance detection and logging. The tool is intended for deployment on network segments where defenders want to monitor for unauthorized scanning, such as DMZ interfaces or external-facing jump boxes.
+
+## Mitigations & Recommendations
+
+Defenders should deploy GoSpoof on isolated network segments or dedicated monitoring hosts, as opening all ports on a production server could interfere with legitimate services. BHIS recommends configuring firewall rules to restrict outbound traffic from the GoSpoof host, preventing it from being used as a pivot point. Logs should be forwarded to a centralized SIEM for correlation with other threat intelligence feeds.
+
+## References
+
+- [GoSpoof – Turning Attacks into Intel - Black Hills Information Security](https://www.blackhillsinfosec.com/gospoof-turning-attacks-into-intel/)
