@@ -1,0 +1,45 @@
+---
+title: Inc Ransom Breach at Sandhills Medical Exposes 170K Records
+slug: 2026-04-30-inc-ransom-breach-at-sandhills-medical-exposes-170k-records
+date: '2026-04-30'
+excerpt: >-
+  Inc Ransom group breached Sandhills Medical in 2025; the South Carolina
+  healthcare provider took nearly a year to disclose the incident, affecting
+  170,000 patients.
+category: industry
+tags:
+  - inc-ransom
+  - ransomware
+  - healthcare-breach
+  - sandhills-medical
+  - data-exfiltration
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/sandhills-medical-says-ransomware-breach-affects-170000/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-inc-ransom-breach-at-sandhills-medical-exposes-170k-records
+severity: high
+threat_actor: Inc Ransom
+threat_actor_origin: unknown
+affected_sectors:
+  - healthcare
+affected_regions:
+  - United States
+---
+## Executive Summary
+
+Sandhills Medical Foundation, a South Carolina-based healthcare provider, disclosed a ransomware breach that exposed the personal and medical information of approximately 170,000 individuals. The incident, attributed to the **Inc Ransom** group, occurred in early 2025, but the organization waited nearly 11 months before issuing public notifications — a delay that has drawn scrutiny from regulators and affected patients. According to SecurityWeek, the breach notification was filed with the U.S. Department of Health and Human Services (HHS) in late April 2026.
+
+## Technical Analysis
+
+The breach involved unauthorized access to Sandhills Medical's network, followed by the exfiltration of sensitive data. The exposed records include patient names, Social Security numbers, dates of birth, medical diagnoses, treatment information, and health insurance details. Inc Ransom, a ransomware group first observed in 2023, typically employs double-extortion tactics — encrypting systems while threatening to leak stolen data unless a ransom is paid. It remains unclear whether Sandhills Medical paid any ransom or if the group published the stolen data publicly. The organization has not released technical details about the initial access vector, such as whether a phishing campaign, unpatched vulnerability, or compromised credentials was used.
+
+## Mitigations & Recommendations
+
+Healthcare organizations should treat this incident as a case study in the consequences of delayed disclosure. Defenders should prioritize network segmentation to limit lateral movement, deploy endpoint detection and response (EDR) tools with behavioral analytics, and enforce multi-factor authentication (MFA) on all remote access and administrative accounts. Given Inc Ransom's known use of Cobalt Strike and living-off-the-land binaries, monitoring for anomalous PowerShell execution and scheduled task creation is advised. Organizations should also review their incident response plans to ensure breach notification timelines comply with HIPAA and state regulations — Sandhills Medical's 11-month gap suggests potential compliance failures.
+
+## References
+
+- [SecurityWeek: Sandhills Medical Says Ransomware Breach Affects 170,000](https://www.securityweek.com/sandhills-medical-says-ransomware-breach-affects-170000/)

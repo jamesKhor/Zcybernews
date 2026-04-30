@@ -1,0 +1,52 @@
+---
+title: 俄罗斯GRU针对支持乌克兰援助的西方物流、科技公司
+slug: >-
+  2026-04-30-russian-gru-targets-western-logistics-tech-firms-in-ukraine-aid-campaign
+date: '2026-04-30'
+excerpt: CISA警告称，自2022年以来，俄罗斯GRU黑客针对支持乌克兰援助的西方物流和科技公司。
+category: threat-intel
+tags:
+  - gru
+  - russian-state-sponsored
+  - logistics
+  - ukraine
+  - cisa
+  - spear-phishing
+  - supply-chain
+language: zh
+source_urls:
+  - 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-30-russian-gru-targets-western-logistics-tech-firms-in-ukraine-aid-campaign
+severity: high
+threat_actor: GRU
+threat_actor_origin: Russia
+affected_sectors:
+  - logistics
+  - technology
+  - defense
+affected_regions:
+  - North America
+  - Europe
+---
+## 执行摘要
+
+自2022年以来，与俄罗斯GRU（总参谋部情报总局）有关的国家支持网络行动者一直在系统性地针对参与协调、运输和向乌克兰提供外国援助的西方物流实体和技术公司。这项活动在CISA于2026年4月30日发布的联合网络安全咨询（CSA）中详细描述，采用鱼叉式网络钓鱼、凭证盗窃和定制恶意软件来破坏供应链并窃取敏感数据。该咨询警告说，这些攻击对支持乌克兰国防工作的组织构成了高风险。
+
+## 技术分析
+
+根据CSA，与GRU有关的行动者主要使用针对物流公司和IT公司员工量身定制的鱼叉式网络钓鱼电子邮件。这些电子邮件通常包含恶意附件或链接，部署定制后门和凭证收集工具。一旦获得初始访问权限，攻击者就会在网络内横向移动，以识别处理援助相关数据的系统，包括货物追踪、库存管理和通信平台。咨询指出，行动者展示了使用合法管理工具（利用现有技术手段）和加密通道进行命令与控制以规避检测的熟练程度。
+
+该活动特别针对“协调、运输和向乌克兰提供外国援助”的组织，根据CSA。这包括货运代理、仓储运营商和为援助组织管理物流软件或云基础设施的IT服务提供商。GRU的目标似乎是情报收集——绘制西方军事和人道主义援助的流动图——以及操作性干扰，可能延迟或改变关键供应。
+
+CISA在公开咨询中没有披露具体的入侵指标（IOCs）或恶意软件家族，指出技术细节通过分类渠道与已清除的合作伙伴共享。该机构建议物流和技术领域的组织审查其威胁模型，并假设他们可能已经成为目标。
+
+## 缓解措施与建议
+
+CISA建议组织在所有面向外部的系统上实施多因素认证（MFA），特别是电子邮件和远程访问门户。该机构还建议为处理援助相关数据的员工进行抗网络钓鱼的MFA培训。应执行网络分段以限制横向移动，并监控来自端点、防火墙和云服务的日志，寻找凭证滥用或不寻常的管理活动的迹象。支持乌克兰援助的组织还应审查其供应链安全姿态，并确保第三方供应商遵守类似的标准。完整的咨询可在参考资料部分的CISA链接中找到。
+
+## 参考资料
+
+- [CISA Joint Cybersecurity Advisory AA25-141A](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a)

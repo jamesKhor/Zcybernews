@@ -1,0 +1,44 @@
+---
+title: Sandhills Medical 遭遇 Inc Ransom 勒索软件攻击，暴露了 17 万条记录
+slug: 2026-04-30-inc-ransom-breach-at-sandhills-medical-exposes-170k-records
+date: '2026-04-30'
+excerpt: >-
+  2025年，Inc Ransom 集团入侵了南卡罗来纳州的医疗保健提供商 Sandhills Medical；该事件影响了 17
+  万名患者，直到近一年后才披露。
+category: industry
+tags:
+  - inc-ransom
+  - ransomware
+  - healthcare-breach
+  - sandhills-medical
+  - data-exfiltration
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/sandhills-medical-says-ransomware-breach-affects-170000/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-inc-ransom-breach-at-sandhills-medical-exposes-170k-records
+severity: high
+threat_actor: Inc Ransom
+threat_actor_origin: unknown
+affected_sectors:
+  - healthcare
+affected_regions:
+  - United States
+---
+## 执行摘要
+
+位于南卡罗来纳州的医疗保健提供者Sandhills Medical Foundation披露了一起勒索软件事件，该事件暴露了大约170,000人的个人和医疗信息。这起事件归因于**Inc Ransom**集团，发生在2025年初，但该组织在发布公开通知前等待了近11个月——这一延迟引起了监管机构和受影响患者的审查。根据SecurityWeek的报道，该事件通知在2026年4月下旬提交给了美国卫生和公众服务部（HHS）。
+
+## 技术分析
+
+该事件涉及未经授权访问Sandhills Medical的网络，随后敏感数据被泄露。暴露的记录包括患者姓名、社会安全号码、出生日期、医疗诊断、治疗信息和健康保险详情。Inc Ransom，一个在2023年首次观察到的勒索软件集团，通常采用双重勒索策略——在威胁泄露被盗数据的同时加密系统，除非支付赎金。目前尚不清楚Sandhills Medical是否支付了任何赎金，或者该集团是否公开发布了被盗数据。该组织尚未发布有关初始访问向量的技术细节，例如是否使用了网络钓鱼活动、未修补的漏洞或被泄露的凭证。
+
+## 缓解措施与建议
+
+医疗保健组织应将此事件视为延迟披露后果的案例研究。防御者应优先考虑网络分段以限制横向移动，部署带有行为分析的终端检测和响应（EDR）工具，并在所有远程访问和管理员账户上强制执行多因素认证（MFA）。鉴于Inc Ransom已知使用Cobalt Strike和本地二进制文件，建议监控异常的PowerShell执行和计划任务创建。组织还应审查他们的事件响应计划，以确保违反通知时间线符合HIPAA和州法规——Sandhills Medical的11个月差距表明可能存在合规失败。
+
+## 参考资料
+
+- [SecurityWeek: Sandhills Medical Says Ransomware Breach Affects 170,000](https://www.securityweek.com/sandhills-medical-says-ransomware-breach-affects-170000/)
