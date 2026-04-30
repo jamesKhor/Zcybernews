@@ -1,0 +1,47 @@
+---
+title: PyTorch Lightning Compromised in PyPI Supply Chain Attack
+slug: 2026-04-30-pytorch-lightning-compromised-in-pypi-supply-chain-attack
+date: '2026-04-30'
+excerpt: >-
+  Threat actors pushed malicious PyTorch Lightning versions 2.6.2 and 2.6.3 to
+  PyPI on April 30, 2026, stealing credentials via a typosquatted dependency —
+  Aikido Security, Socket,…
+category: malware
+tags:
+  - pypi
+  - supply-chain
+  - credential-theft
+  - pytorch-lightning
+  - python
+  - open-source
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/04/pytorch-lightning-compromised-in-pypi.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-pytorch-lightning-compromised-in-pypi-supply-chain-attack
+severity: critical
+affected_sectors:
+  - technology
+  - research
+  - financial services
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Threat actors compromised the popular Python package `lightning` (PyTorch Lightning) on the Python Package Index (PyPI), publishing two malicious versions — 2.6.2 and 2.6.3 — on April 30, 2026, according to analyses by Aikido Security, Socket, and StepSecurity. The malicious releases are designed to steal credentials from developers and systems that install the package, marking a targeted supply chain attack against the machine learning and data science community.
+
+## Technical Analysis
+
+The attackers gained access to the `lightning` package maintainer account and pushed versions 2.6.2 and 2.6.3 directly to PyPI, per the security firms' findings. The malicious code is delivered through a typosquatted dependency — a package with a name nearly identical to a legitimate dependency used by Lightning — which, when resolved during installation, executes a credential-harvesting payload. The payload collects environment variables, cloud provider credentials (AWS, GCP, Azure), API tokens, and SSH keys, then exfiltrates them to an external command-and-control server.
+
+Aikido Security noted that the attack is an extension of a previously observed campaign targeting the Python ecosystem, though the specific threat actor remains unidentified as of publication. The malicious versions were live on PyPI for an unknown window before being flagged; PyPI maintainers have since removed them, but users who installed within the past 24 hours may be compromised.
+
+## Mitigations & Recommendations
+
+Organizations using PyTorch Lightning should immediately check their installed version. If version 2.6.2 or 2.6.3 is present, treat the environment as compromised: rotate all credentials stored in environment variables, cloud provider secrets, and CI/CD pipeline tokens. Audit systems for unauthorized access or data exfiltration. Pin package versions in `requirements.txt` or `pyproject.toml` to a known-safe version (e.g., 2.6.1 or earlier) until the maintainers release a clean update. Enable PyPI's trusted publishing and two-factor authentication for any package publishing accounts to reduce the risk of account takeover.
+
+## References
+
+- [The Hacker News: PyTorch Lightning Compromised in PyPI Supply Chain Attack to Steal Credentials](https://thehackernews.com/2026/04/pytorch-lightning-compromised-in-pypi.html)

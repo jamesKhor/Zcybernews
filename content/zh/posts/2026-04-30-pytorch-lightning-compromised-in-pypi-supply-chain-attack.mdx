@@ -1,0 +1,46 @@
+---
+title: PyTorch Lightning 在 PyPI 供应链攻击中被入侵
+slug: 2026-04-30-pytorch-lightning-compromised-in-pypi-supply-chain-attack
+date: '2026-04-30'
+excerpt: >-
+  威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到
+  PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。
+category: malware
+tags:
+  - pypi
+  - supply-chain
+  - credential-theft
+  - pytorch-lightning
+  - python
+  - open-source
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/04/pytorch-lightning-compromised-in-pypi.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-pytorch-lightning-compromised-in-pypi-supply-chain-attack
+severity: critical
+affected_sectors:
+  - technology
+  - research
+  - financial services
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+威胁行为者破坏了Python包索引（PyPI）上流行的Python包`lightning`（PyTorch Lightning），根据Aikido Security、Socket和StepSecurity的分析，在2026年4月30日发布了两个恶意版本——2.6.2和2.6.3。这些恶意版本旨在窃取安装该包的开发者和系统的凭证，标志着针对机器学习和数据科学社区的有针对性的供应链攻击。
+
+## 技术分析
+
+攻击者获得了`lightning`包维护者账户的访问权限，并直接将版本2.6.2和2.6.3推送到PyPI，根据安全公司的发现。恶意代码通过一个拼写错误的依赖项传递——一个名称与Lightning使用的合法依赖项几乎相同的包——在安装过程中解析时执行凭证收集有效载荷。该有效载荷收集环境变量、云提供商凭证（AWS、GCP、Azure）、API令牌和SSH密钥，然后将它们泄露到外部命令和控制服务器。
+
+Aikido Security指出，这次攻击是之前针对Python生态系统观察到的活动的延续，尽管具体的威胁行为者在发布时仍未被识别。恶意版本在PyPI上活跃了未知的时间窗口后才被标记；PyPI维护者已经删除了它们，但在过去的24小时内安装的用户可能已经被破坏。
+
+## 缓解措施与建议
+
+使用PyTorch Lightning的组织应立即检查其安装的版本。如果存在版本2.6.2或2.6.3，请将环境视为已破坏：轮换存储在环境变量中、云提供商机密和CI/CD管道令牌中的所有凭证。审计系统以查找未经授权的访问或数据泄露。在维护者发布干净的更新之前，在`requirements.txt`或`pyproject.toml`中固定包版本到已知安全版本（例如2.6.1或更早）。启用PyPI的信任发布和任何包发布账户的双因素认证，以降低账户被接管的风险。
+
+## 参考资料
+
+- [The Hacker News: PyTorch Lightning Compromised in PyPI Supply Chain Attack to Steal Credentials](https://thehackernews.com/2026/04/pytorch-lightning-compromised-in-pypi.html)
