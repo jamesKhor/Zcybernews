@@ -1,0 +1,44 @@
+---
+title: Bluekit 钓鱼服务提供AI助手，40个模板
+slug: 2026-04-30-bluekit-phishing-service-offers-ai-assistant-40-templates
+date: '2026-04-30'
+excerpt: 一个名为Bluekit的新型钓鱼即服务平台提供超过40个针对银行、社交媒体和电子邮件提供商的模板，以及一个用于起草诱饵的AI助手。
+category: threat-intel
+tags:
+  - phishing
+  - phishing-as-a-service
+  - ai
+  - bluekit
+  - credential-theft
+  - telegram
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-bluekit-phishing-service-includes-an-ai-assistant-40-templates/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-bluekit-phishing-service-offers-ai-assistant-40-templates
+severity: high
+threat_actor: Bluekit
+affected_sectors:
+  - financial services
+  - social media
+  - email providers
+---
+## 执行摘要
+
+一个新的钓鱼即服务（PhaaS）平台名为Bluekit，在Telegram上出售，为订阅者提供超过40个预构建模板，针对主要银行、社交媒体平台和电子邮件提供商。根据BleepingComputer的报告，Bluekit包括一个基本的AI助手，可以生成活动草稿，使技术技能较低的攻击者更容易发起针对性的凭证收集操作。
+
+## 技术分析
+
+Bluekit作为一个基于订阅的服务运作，定价层级允许访问其模板库和AI功能。模板模仿知名服务的登录页面，包括PayPal、Outlook和几家欧洲银行。AI助手被描述为一个“聊天机器人”，集成到工具包中，允许用户输入目标品牌或场景，并接收格式化的钓鱼电子邮件或着陆页副本。BleepingComputer指出，AI生成的文本是基础的但功能齐全，减少了制作有说服力诱饵所需的手工努力。
+
+该工具包仅通过Telegram频道分发，这是PhaaS平台的常见分发方式。研究人员尚未识别出用于托管Bluekit钓鱼页面的具体基础设施，但该服务可能依赖于被破坏的域名或防弹托管。模板似乎使用标准的HTML和JavaScript进行表单提交，通过HTTP POST请求将被盗凭证外泄到攻击者控制的服务器。
+
+## 缓解措施与建议
+
+组织应该在所有面向外部的账户上强制执行多因素认证（MFA），因为像Bluekit这样的凭证收集工具包通常只捕获密码和会话令牌。安全团队应该使用像PhishTank或内部威胁情报源等服务监控模仿其品牌的钓鱼页面。用户意识培训应该强调AI生成的钓鱼内容的风险，这些内容可能比传统诱饵出现更少的语法错误。
+
+## 参考资料
+
+- [BleepingComputer: New Bluekit phishing service includes an AI assistant, 40 templates](https://www.bleepingcomputer.com/news/security/new-bluekit-phishing-service-includes-an-ai-assistant-40-templates/)

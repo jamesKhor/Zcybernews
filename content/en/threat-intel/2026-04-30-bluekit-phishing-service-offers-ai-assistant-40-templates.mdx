@@ -1,0 +1,47 @@
+---
+title: 'Bluekit Phishing Service Offers AI Assistant, 40 Templates'
+slug: 2026-04-30-bluekit-phishing-service-offers-ai-assistant-40-templates
+date: '2026-04-30'
+excerpt: >-
+  A new phishing-as-a-service platform called Bluekit provides over 40 templates
+  targeting banks, social media, and email providers, plus an AI assistant for
+  drafting lures.
+category: threat-intel
+tags:
+  - phishing
+  - phishing-as-a-service
+  - ai
+  - bluekit
+  - credential-theft
+  - telegram
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/new-bluekit-phishing-service-includes-an-ai-assistant-40-templates/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-04-30-bluekit-phishing-service-offers-ai-assistant-40-templates
+severity: high
+threat_actor: Bluekit
+affected_sectors:
+  - financial services
+  - social media
+  - email providers
+---
+## Executive Summary
+
+A new phishing-as-a-service (PhaaS) platform called Bluekit is being sold on Telegram, offering subscribers more than 40 pre-built templates targeting major banks, social media platforms, and email providers. According to a report from BleepingComputer, Bluekit includes a basic AI assistant that can generate campaign drafts, making it easier for less technically skilled attackers to launch targeted credential-harvesting operations.
+
+## Technical Analysis
+
+Bluekit operates as a subscription-based service, with pricing tiers that grant access to its template library and AI features. The templates mimic login pages for well-known services, including PayPal, Outlook, and several European banks. The AI assistant, described as a "chatbot" integrated into the kit, allows users to input a target brand or scenario and receive a formatted phishing email or landing page copy. BleepingComputer notes that the AI-generated text is rudimentary but functional, reducing the manual effort required to craft convincing lures.
+
+The kit is distributed exclusively through Telegram channels, a common distribution method for PhaaS platforms. Researchers have not yet identified the specific infrastructure used to host Bluekit phishing pages, but the service likely relies on compromised domains or bulletproof hosting. The templates appear to use standard HTML and JavaScript for form submission, with stolen credentials exfiltrated via HTTP POST requests to attacker-controlled servers.
+
+## Mitigations & Recommendations
+
+Organizations should enforce multi-factor authentication (MFA) on all externally facing accounts, as credential harvesting kits like Bluekit typically capture only passwords and session tokens. Security teams should monitor for phishing pages mimicking their brand using services like PhishTank or internal threat intelligence feeds. User awareness training should emphasize the risk of AI-generated phishing content, which may exhibit fewer grammatical errors than traditional lures.
+
+## References
+
+- [BleepingComputer: New Bluekit phishing service includes an AI assistant, 40 templates](https://www.bleepingcomputer.com/news/security/new-bluekit-phishing-service-includes-an-ai-assistant-40-templates/)
