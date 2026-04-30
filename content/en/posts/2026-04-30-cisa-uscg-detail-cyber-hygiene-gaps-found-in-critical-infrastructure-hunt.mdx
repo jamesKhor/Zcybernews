@@ -1,0 +1,46 @@
+---
+title: 'CISA, USCG Detail Cyber Hygiene Gaps Found in Critical Infrastructure'
+slug: >-
+  2026-04-30-cisa-uscg-detail-cyber-hygiene-gaps-found-in-critical-infrastructure-hunt
+date: '2026-04-30'
+excerpt: >-
+  CISA and USCG found persistent weak configurations, unpatched systems, and
+  credential reuse during a proactive threat hunt at a US critical
+  infrastructure org.
+category: industry
+tags:
+  - cisa
+  - us-coast-guard
+  - critical-infrastructure
+  - threat-hunting
+  - cyber-hygiene
+language: en
+source_urls:
+  - 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-212a'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-04-30-cisa-uscg-detail-cyber-hygiene-gaps-found-in-critical-infrastructure-hunt
+severity: high
+affected_sectors:
+  - critical infrastructure
+affected_regions:
+  - United States
+---
+## Executive Summary
+
+The Cybersecurity and Infrastructure Security Agency (CISA) and the U.S. Coast Guard (USCG) released a joint advisory on April 30, 2026, detailing findings from a proactive threat hunt engagement at a U.S. critical infrastructure organization. The advisory (AA25-212A) identifies systemic weaknesses in cyber hygiene — including unpatched software, weak credential policies, and inadequate network segmentation — that adversaries could exploit. The findings are intended to help other critical infrastructure defenders audit their own environments for similar gaps.
+
+## Technical Analysis
+
+During the hunt, CISA and USCG teams observed multiple categories of security deficiencies. The advisory highlights **persistent use of default or weak passwords** across administrative interfaces, **unpatched internet-facing services** with known vulnerabilities, and **lack of multi-factor authentication (MFA)** on remote access points. Additionally, the teams found **poor network segmentation**, allowing lateral movement from less-secure operational technology (OT) environments to information technology (IT) systems. The advisory does not name the specific victim organization or disclose whether any active compromise was detected, but it notes that the observed configuration gaps are "consistent with patterns exploited by advanced persistent threat (APT) actors."
+
+Specific technical findings include: unpatched instances of remote access software (e.g., VPN appliances, RDP gateways), credential reuse across internal and external systems, and missing endpoint detection and response (EDR) coverage on critical assets. The advisory also flags **insufficient logging and monitoring**, which would hinder detection of post-exploitation activity.
+
+## Mitigations & Recommendations
+
+CISA and USCG recommend organizations implement the following controls: enforce MFA on all remote access and administrative accounts; establish a patch management program prioritizing internet-facing systems; conduct regular credential audits to eliminate reuse; segment OT and IT networks with strict firewall rules; and deploy centralized logging with a security information and event management (SIEM) solution. The advisory also urges critical infrastructure entities to participate in CISA's free vulnerability scanning and threat hunting services. Defenders should treat the advisory as a checklist for proactive hygiene review rather than a response to a specific active threat.
+
+## References
+
+- [CISA Advisory AA25-212A](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-212a)
