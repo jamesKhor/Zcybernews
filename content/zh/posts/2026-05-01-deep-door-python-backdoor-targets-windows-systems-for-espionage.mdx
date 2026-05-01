@@ -1,0 +1,40 @@
+---
+title: Deep#Door Python 后门针对 Windows 系统进行间谍活动
+slug: 2026-05-01-deep-door-python-backdoor-targets-windows-systems-for-espionage
+date: '2026-05-01'
+excerpt: >-
+  Deep#Door Python 后门部署持久的 Windows 植入程序进行间谍活动 — 使用加密的 C2 通道、文件外泄和远程
+  shell。没有可用的补丁。
+category: malware
+tags:
+  - deep#door
+  - python-backdoor
+  - windows-implant
+  - espionage
+  - persistent-access
+  - c2
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/sophisticated-deepdoor-backdoor-enables-espionage-disruption/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-01-deep-door-python-backdoor-targets-windows-systems-for-espionage
+severity: high
+threat_actor: Deep#Door
+---
+## 执行摘要
+
+根据SecurityWeek的报告，一个名为**Deep#Door**的复杂Python后门框架正在积极部署一个为间谍活动和潜在破坏设计的持久Windows植入程序。该恶意软件使用加密的命令和控制（C2）通道来启用远程shell访问、文件外泄和系统侦察。由于该工具是定制的恶意软件而不是产品漏洞，因此不存在补丁或供应商缓解措施。
+
+## 技术分析
+
+Deep#Door是一个隐蔽的Python后门，它在被入侵的Windows系统上建立了一个持久的立足点。SecurityWeek报告称，该框架使用加密的C2通信来逃避网络检测，并包括远程命令执行、文件上传和下载以及系统分析的能力。该植入程序旨在在重启后继续存活并保持长期访问，这表明其任务配置文件是间谍活动。源材料中没有披露确切的初始访问向量，但后门的复杂性表明其目标部署而非大规模利用。
+
+## 缓解措施与建议
+
+防御者应监控Windows端点上异常的Python进程执行，特别是出站加密流量到未知IP地址或域名。网络分段和出口过滤可以限制C2通信。端点检测和响应（EDR）规则应标记生成网络连接或访问敏感目录的Python解释器。源中没有提供具体的入侵指标，但高风险行业的组织应将Deep#Door视为活跃威胁。
+
+## 参考资料
+
+- [复杂的Deep#Door后门启用间谍活动、破坏 - SecurityWeek](https://www.securityweek.com/sophisticated-deepdoor-backdoor-enables-espionage-disruption/)
