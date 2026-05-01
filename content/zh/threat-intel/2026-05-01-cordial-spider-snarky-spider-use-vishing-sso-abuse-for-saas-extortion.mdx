@@ -1,0 +1,53 @@
+---
+title: Cordial Spider，Snarky Spider 使用 Vishing，SSO 滥用针对 SaaS
+slug: >-
+  2026-05-01-cordial-spider-snarky-spider-use-vishing-sso-abuse-for-saas-extortion
+date: '2026-05-01'
+excerpt: >-
+  两个网络犯罪团伙 —— Cordial Spider 和 Snarky Spider —— 正在通过 vishing 和 SSO 滥用进行快速 SaaS
+  勒索攻击，研究人员警告说，他们能在几小时内窃取数据。
+category: threat-intel
+tags:
+  - cordial-spider
+  - snarky-spider
+  - saas-extortion
+  - vishing
+  - sso-abuse
+  - data-theft
+language: zh
+source_urls:
+  - >-
+    https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-01-cordial-spider-snarky-spider-use-vishing-sso-abuse-for-saas-extortion
+severity: high
+threat_actor: Cordial Spider
+affected_sectors:
+  - technology
+  - financial services
+  - healthcare
+affected_regions:
+  - North America
+  - Europe
+---
+## 执行摘要
+
+根据一家未具名网络安全公司的研究人员称，被追踪为Cordial Spider（又名BlackFile, CL-CRI-1116, O-UNC-045, UNC6671）和Snarky Spider（又名O-UNC-025, UNC6661）的两个网络犯罪团伙正在进行快速、高影响力的敲诈攻击，这些攻击几乎完全在SaaS环境中运行。这些团伙使用vishing（语音网络钓鱼）诱骗员工泄露凭证或批准多因素认证（MFA）提示，然后滥用单点登录（SSO）集成在云租户之间横向移动，并在几小时内窃取敏感数据。这些攻击留下的取证痕迹很少，使得检测和响应变得复杂。
+
+## 技术分析
+
+这两个团伙共享一个以社交工程和身份滥用为核心的共同剧本。初始向量是vishing：攻击者打电话给目标员工，冒充IT支持或供应商代表，声称有一个紧急的账户问题。受害者被施压提供他们的密码或批准他们MFA应用上的推送通知。一旦攻击者获得初步立足点，他们就使用被盗的SSO令牌对组织的云应用程序进行身份验证——包括电子邮件、文件存储和协作平台——而不触发额外的MFA挑战。
+
+Cordial Spider和Snarky Spider随后枚举用户账户，识别特权角色，并搜索敏感数据，如财务记录、知识产权或客户个人身份信息（PII）。数据外泄是通过原生SaaS功能执行的（例如，SharePoint下载、电子邮件转发规则或基于API的批量提取），以融入合法流量。研究人员指出，从最初的电话到外泄的整个生命周期可以在不到24小时内发生，速度远远快于传统的勒索软件或网络入侵活动。
+
+对这些团伙的归因是基于观察到的TTPs、基础设施重叠和受害者学，尽管研究人员警告说，一些战术可能在各组之间共享。源材料没有提供具体的入侵指标（IOCs），如IP地址、域名或文件哈希值，也没有详细说明用于令牌盗窃或横向移动的确切技术。
+
+## 缓解措施与建议
+
+组织应实施vishing意识的事件响应程序，包括通过单独的通信渠道强制验证任何未经请求的IT支持电话。执行抗网络钓鱼的MFA（例如，FIDO2安全密钥）以减少推送通知疲劳攻击的有效性。监控SSO认证日志中的异常模式，如来自不寻常地理位置的登录、短时间内多个租户访问或使用休眠账户。限制API访问和批量下载功能，只限于需要它们的那些角色，并部署用户行为分析以检测大规模数据提取事件。
+
+## 参考资料
+
+- [The Hacker News: Cybercrime Groups Using Vishing and SSO Abuse in Rapid SaaS Extortion Attacks](https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html)

@@ -1,0 +1,54 @@
+---
+title: 'Cordial Spider, Snarky Spider Use Vishing, SSO Abuse for SaaS'
+slug: >-
+  2026-05-01-cordial-spider-snarky-spider-use-vishing-sso-abuse-for-saas-extortion
+date: '2026-05-01'
+excerpt: >-
+  Two cybercrime groups — Cordial Spider and Snarky Spider — are conducting
+  rapid SaaS extortion attacks using vishing and SSO abuse to steal data within
+  hours, researchers warn.
+category: threat-intel
+tags:
+  - cordial-spider
+  - snarky-spider
+  - saas-extortion
+  - vishing
+  - sso-abuse
+  - data-theft
+language: en
+source_urls:
+  - >-
+    https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-01-cordial-spider-snarky-spider-use-vishing-sso-abuse-for-saas-extortion
+severity: high
+threat_actor: Cordial Spider
+affected_sectors:
+  - technology
+  - financial services
+  - healthcare
+affected_regions:
+  - North America
+  - Europe
+---
+## Executive Summary
+
+Two cybercrime clusters tracked as Cordial Spider (aka BlackFile, CL-CRI-1116, O-UNC-045, UNC6671) and Snarky Spider (aka O-UNC-025, UNC6661) are conducting rapid, high-impact extortion attacks that operate almost entirely within SaaS environments, according to researchers at an unnamed cybersecurity firm. The groups use vishing (voice phishing) to trick employees into disclosing credentials or approving multi-factor authentication (MFA) prompts, then abuse single sign-on (SSO) integrations to move laterally across cloud tenants and exfiltrate sensitive data within hours. The attacks leave minimal forensic artifacts, complicating detection and response.
+
+## Technical Analysis
+
+Both groups share a common playbook centered on social engineering and identity abuse. The initial vector is vishing: attackers call target employees posing as IT support or vendor representatives, claiming an urgent account issue. Victims are pressured to provide their password or approve a push notification on their MFA app. Once the attacker gains an initial foothold, they use stolen SSO tokens to authenticate to the organization's cloud applications — including email, file storage, and collaboration platforms — without triggering additional MFA challenges.
+
+Cordial Spider and Snarky Spider then enumerate user accounts, identify privileged roles, and search for sensitive data such as financial records, intellectual property, or customer personally identifiable information (PII). Data exfiltration is performed via native SaaS features (e.g., SharePoint downloads, email forwarding rules, or API-based bulk extraction) to blend in with legitimate traffic. Researchers note that the entire lifecycle — from initial call to exfiltration — can occur in under 24 hours, significantly faster than traditional ransomware or network intrusion campaigns.
+
+Attribution to these clusters is based on observed TTPs, infrastructure overlaps, and victimology, though the researchers caution that some tactics may be shared across groups. The source material does not provide specific indicators of compromise (IOCs) such as IP addresses, domains, or file hashes, nor does it detail the exact techniques used for token theft or lateral movement.
+
+## Mitigations & Recommendations
+
+Organizations should implement vishing-aware incident response procedures, including mandatory verification of any unsolicited IT support calls through a separate communication channel. Enforce phishing-resistant MFA (e.g., FIDO2 security keys) to reduce the effectiveness of push-notification fatigue attacks. Monitor SSO authentication logs for anomalous patterns such as logins from unusual geographies, multiple tenant accesses within short time windows, or use of dormant accounts. Restrict API access and bulk download capabilities to only those roles that require them, and deploy user behavior analytics to detect mass data extraction events.
+
+## References
+
+- [The Hacker News: Cybercrime Groups Using Vishing and SSO Abuse in Rapid SaaS Extortion Attacks](https://thehackernews.com/2026/05/cybercrime-groups-using-vishing-and-sso.html)
