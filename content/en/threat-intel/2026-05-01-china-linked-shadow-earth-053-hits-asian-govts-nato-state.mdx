@@ -1,0 +1,49 @@
+---
+title: 'China-Linked SHADOW-EARTH-053 Hits Asian Govts, NATO State'
+slug: 2026-05-01-china-linked-shadow-earth-053-hits-asian-govts-nato-state
+date: '2026-05-01'
+excerpt: >-
+  Trend Micro tracks SHADOW-EARTH-053 targeting government and defense sectors
+  across Asia and one NATO-aligned European state. Campaign uses custom
+  backdoors and spear-phishing.
+category: threat-intel
+tags:
+  - shadow-earth-053
+  - china
+  - espionage
+  - government
+  - nato
+  - trend-micro
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/05/china-linked-hackers-target-asian.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-01-china-linked-shadow-earth-053-hits-asian-govts-nato-state
+severity: high
+threat_actor: SHADOW-EARTH-053
+threat_actor_origin: China
+affected_sectors:
+  - government
+  - defense
+affected_regions:
+  - South Asia
+  - East Asia
+  - Southeast Asia
+  - Europe
+---
+## Executive Summary
+
+Trend Micro has identified a China-linked espionage campaign, tracked as SHADOW-EARTH-053, targeting government and defense entities across South, East, and Southeast Asia, as well as one European government that is a NATO member state. The campaign relies on spear-phishing emails delivering custom backdoors to exfiltrate sensitive data. No CVEs or specific malware family names were disclosed in the initial report.
+
+## Technical Analysis
+
+According to Trend Micro's analysis, SHADOW-EARTH-053 operators use tailored spear-phishing lures that impersonate legitimate government or defense-related communications. The payloads include custom backdoors designed for persistent access and data exfiltration. The group's targeting spans multiple countries in Asia and at least one European NATO member, suggesting a broad intelligence-gathering mandate. Trend Micro has not yet published detailed IOCs or TTPs, but attributes the cluster to Chinese state-sponsored activity based on infrastructure, tradecraft, and targeting patterns. The temporary designation SHADOW-EARTH-053 indicates this is an active investigation with ongoing tracking.
+
+## Mitigations & Recommendations
+
+Organizations in government and defense sectors across Asia and NATO member states should review inbound email for suspicious attachments or links, particularly those referencing regional security or diplomatic topics. Deploy email security gateways with sandbox analysis for unknown payloads. Enable endpoint detection and response (EDR) telemetry to identify anomalous process behavior associated with custom backdoors. Network segmentation can limit lateral movement if an initial compromise occurs.
+
+## References
+
+- [The Hacker News: China-Linked Hackers Target Asian Governments, NATO State, Journalists, and Activists](https://thehackernews.com/2026/05/china-linked-hackers-target-asian.html)
