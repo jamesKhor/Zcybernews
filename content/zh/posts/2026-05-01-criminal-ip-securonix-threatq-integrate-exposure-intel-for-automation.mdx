@@ -1,0 +1,40 @@
+---
+title: 'Criminal IP, Securonix ThreatQ 集成暴露情报以实现自动化'
+slug: >-
+  2026-05-01-criminal-ip-securonix-threatq-integrate-exposure-intel-for-automation
+date: '2026-05-01'
+excerpt: Criminal IP 和 Securonix ThreatQ 的合作将基于暴露的威胁情报嵌入到自动化工作流程中，减少了SOC团队的手动分类工作。
+category: tools
+tags:
+  - threat-intelligence
+  - automation
+  - soc
+  - securonix
+  - criminal-ip
+  - integration
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/criminal-ip-and-securonix-threatq-collaborate-to-enhance-threat-intelligence-operations/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-01-criminal-ip-securonix-threatq-integrate-exposure-intel-for-automation
+---
+## 执行摘要
+
+基于暴露的威胁情报提供商Criminal IP已将其数据源集成到Securonix ThreatQ平台中，这是两家公司联合宣布的消息。该集成旨在自动化地将面向外部资产风险数据纳入Securonix的威胁情报平台（TIP），减少SOC分析师将暴露遥测与内部警报相关联所需的手动工作。没有特定的漏洞、威胁行为者或事件与此公告相关联。
+
+## 技术分析
+
+这种合作将Criminal IP的扫描派生情报——包括开放端口、SSL证书异常以及互联网面向资产上的已知易受攻击软件版本——连接到ThreatQ的统一威胁情报生命周期管理系统中。根据公告，该集成使得ThreatQ能够自动用暴露上下文丰富入侵指标（IOCs），例如IP地址是否当前托管易受攻击的服务或是否与最近的扫描活动相关联。这允许分析师根据现实世界的攻击面风险而不是仅依赖静态声誉源来优先处理警报。
+
+Criminal IP的数据是通过持续的互联网范围扫描收集的，类似于Shodan或Censys等服务，但重点是包括僵尸网络跟踪和网络钓鱼基础设施识别在内的威胁情报用例。该公司声称其平台索引超过60亿个IP地址和2亿个域名。Securonix ThreatQ，于2023年被Securonix收购，是一个聚合、丰富和自动化跨多个来源的威胁数据的TIP。该集成通过REST API连接器提供，两家公司都确认它立即可供联合客户使用。
+
+## 缓解措施与建议
+
+使用Securonix ThreatQ的组织应评估Criminal IP集成作为外部攻击面可见性的潜在来源。防御者可以配置剧本以自动用暴露分数标记警报，减少缺乏当前互联网面向风险的内部IOCs的噪声。不需要立即修补或配置更改，因为这是一个功能增加而不是漏洞披露。
+
+## 参考资料
+
+- [Criminal IP和Securonix ThreatQ合作增强威胁情报运营](https://www.bleepingcomputer.com/news/security/criminal-ip-and-securonix-threatq-collaborate-to-enhance-threat-intelligence-operations/)

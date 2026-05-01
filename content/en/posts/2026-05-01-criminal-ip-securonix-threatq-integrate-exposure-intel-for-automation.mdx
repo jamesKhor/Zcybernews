@@ -1,0 +1,42 @@
+---
+title: 'Criminal IP, Securonix ThreatQ Integrate Exposure Intel for Automation'
+slug: >-
+  2026-05-01-criminal-ip-securonix-threatq-integrate-exposure-intel-for-automation
+date: '2026-05-01'
+excerpt: >-
+  Criminal IP and Securonix ThreatQ partnership embeds exposure-based threat
+  intel into automated workflows, reducing manual triage for SOC teams.
+category: tools
+tags:
+  - threat-intelligence
+  - automation
+  - soc
+  - securonix
+  - criminal-ip
+  - integration
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/criminal-ip-and-securonix-threatq-collaborate-to-enhance-threat-intelligence-operations/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-01-criminal-ip-securonix-threatq-integrate-exposure-intel-for-automation
+---
+## Executive Summary
+
+Criminal IP, an exposure-based threat intelligence provider, has integrated its data feeds into the Securonix ThreatQ platform, according to a joint announcement by the two companies. The integration aims to automate the ingestion of externally-facing asset risk data into Securonix's threat intelligence platform (TIP), reducing the manual effort required for SOC analysts to correlate exposure telemetry with internal alerts. No specific vulnerabilities, threat actors, or incidents were tied to the announcement.
+
+## Technical Analysis
+
+The partnership connects Criminal IP's scan-derived intelligence — which includes open ports, SSL certificate anomalies, and known-vulnerable software versions on internet-facing assets — into ThreatQ's unified threat intelligence lifecycle management system. According to the announcement, the integration enables ThreatQ to automatically enrich indicators of compromise (IOCs) with exposure context, such as whether an IP address is currently hosting a vulnerable service or has been associated with recent scanning activity. This allows analysts to prioritize alerts based on real-world attack surface risk rather than relying solely on static reputation feeds.
+
+Criminal IP's data is collected through continuous internet-wide scanning, similar to services like Shodan or Censys, but with a focus on threat intelligence use cases including botnet tracking and phishing infrastructure identification. The company claims its platform indexes over 6 billion IP addresses and 200 million domains. Securonix ThreatQ, acquired by Securonix in 2023, is a TIP that aggregates, enriches, and automates threat data across multiple sources. The integration is delivered via a REST API connector, and both companies confirmed it is available immediately to joint customers.
+
+## Mitigations & Recommendations
+
+Organizations using Securonix ThreatQ should evaluate the Criminal IP integration as a potential source of external attack surface visibility. Defenders can configure playbooks to automatically tag alerts with exposure scores, reducing noise from internal IOCs that lack current internet-facing risk. No immediate patching or configuration changes are required, as this is a feature addition rather than a vulnerability disclosure.
+
+## References
+
+- [Criminal IP and Securonix ThreatQ Collaborate to Enhance Threat Intelligence Operations](https://www.bleepingcomputer.com/news/security/criminal-ip-and-securonix-threatq-collaborate-to-enhance-threat-intelligence-operations/)
