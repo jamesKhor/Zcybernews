@@ -1,0 +1,43 @@
+---
+title: Mini Shai-Hulud 攻击劫持 SAP、Lightning、Intercom 包
+slug: 2026-05-01-mini-shai-hulud-attack-hijacks-sap-lightning-intercom-packages
+date: '2026-05-01'
+excerpt: 攻击者在供应链攻击中破坏了 SAP、Lightning 和 Intercom npm 包，影响了 1800 名受害者；包每月下载量达 1000 万。
+category: malware
+tags:
+  - supply-chain-attack
+  - npm
+  - sap
+  - lightning
+  - intercom
+  - shai-hulud
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/1800-hit-in-mini-shai-hulud-attack-on-sap-lightning-intercom/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-01-mini-shai-hulud-attack-hijacks-sap-lightning-intercom-packages
+severity: critical
+threat_actor: Mini Shai-Hulud
+affected_sectors:
+  - software
+  - technology
+---
+## 执行摘要
+
+根据2026年5月1日SecurityWeek发布的报告，在被称为“Mini Shai-Hulud”的供应链攻击中，攻击者破坏了三个广泛使用的npm包——SAP、Lightning和Intercom，影响了大约1800名受害者。这些被破坏的包每月下载量接近1000万次，扩大了潜在的爆炸半径。这一事件凸显了JavaScript生态系统中依赖劫持的持续风险。
+
+## 技术分析
+
+攻击针对与企业软件集成相关的npm包：SAP（用于企业资源规划连接）、Lightning（与Salesforce相关的组件）和Intercom（客户消息平台）。SecurityWeek报告称，威胁行为者将恶意代码注入到这些包中，可能是通过破坏维护者账户或利用npm发布流程中的弱点。根据现有报道，破坏的确切机制尚不清楚，并且没有为此次行动分配特定的CVE标识符。
+
+“Mini Shai-Hulud”这个名称指的是Shai-Hulud供应链攻击方法的较小规模变体，通常涉及拼写错误或依赖混淆。在这种情况下，攻击者针对的是合法的、高流量的包，而不是创建相似品，这表明了更高级别的访问或凭证盗窃。1800名受害者的统计数字表明，恶意代码在如此多的不同组织或系统的构建或运行环境中被执行。
+
+## 缓解措施与建议
+
+使用这三个命名包的组织应立即审计其npm依赖项，以检查在事件发生时（2026年4月下旬）发布的版本。防御者应将安装包的校验和与官方存储库中的已知良好哈希进行比较，并监控意外的出站网络连接或文件修改。通过lockfiles启用npm包完整性验证，并使用注册表特定范围可以降低类似攻击的风险。鉴于没有公开披露时间线，组织还应审查其npm账户的安全实践，包括强制执行多因素身份验证。
+
+## 参考资料
+
+- [SecurityWeek: 1,800 Hit in Mini Shai-Hulud Attack on SAP, Lightning, Intercom](https://www.securityweek.com/1800-hit-in-mini-shai-hulud-attack-on-sap-lightning-intercom/)
