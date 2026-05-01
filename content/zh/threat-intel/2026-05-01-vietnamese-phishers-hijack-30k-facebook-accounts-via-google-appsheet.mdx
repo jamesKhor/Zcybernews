@@ -1,0 +1,48 @@
+---
+title: 越南网络钓鱼者通过Google AppSheet劫持3万Facebook账户
+slug: >-
+  2026-05-01-vietnamese-phishers-hijack-30k-facebook-accounts-via-google-appsheet
+date: '2026-05-01'
+excerpt: Guardio追踪使用Google AppSheet作为网络钓鱼中继的AccountDumpling活动，窃取3万个Facebook账户，通过非法商店转售。
+category: threat-intel
+tags:
+  - phishing
+  - facebook
+  - google-appsheet
+  - accountdumpling
+  - vietnamese-threat-actors
+  - credential-theft
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/05/30000-facebook-accounts-hacked-via.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-01-vietnamese-phishers-hijack-30k-facebook-accounts-via-google-appsheet
+severity: high
+threat_actor: AccountDumpling
+threat_actor_origin: Vietnam
+affected_sectors:
+  - social media
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+据安全公司Guardio的报告，一个与越南有关的威胁行为者，被追踪为AccountDumpling，通过滥用Google AppSheet作为钓鱼中继，破坏了大约30,000个Facebook账户。被盗的凭证通过该组织运营的非法商店转售。
+
+## 技术分析
+
+Guardio研究人员在观察到利用Google AppSheet——一个低代码应用开发平台——托管和分发凭证收集页面的钓鱼邮件后，识别出了这场活动。攻击者制作了模仿合法Facebook登录界面的AppSheet应用程序，然后发送电子邮件引导目标访问这些页面。由于钓鱼基础设施运行在Google自己的域名上，这些电子邮件避开了许多传统的垃圾邮件过滤器，这些过滤器会阻止已知的恶意URL，Guardio指出。
+
+Guardio将这场活动代号为AccountDumpling，似乎专门针对Facebook凭证。一旦受害者输入他们的登录详情，信息就会被泄露给攻击者，账户就会被收集。Guardio报告称，在这场活动中大约有30,000个账户被盗，威胁行为者通过专门的商店销售访问权限。具体的定价和销售量没有披露，但Guardio评估这场活动是出于商业动机。
+
+Guardio根据基础设施分析和运营模式，将这场活动归因于在越南的行动者，尽管该公司没有指明具体的团体或个人。使用像AppSheet这样的合法平台进行钓鱼并不是新颖的——类似的技术已经被观察到与Google Forms、Microsoft SharePoint和其他云服务一起使用——但这场活动的规模和针对性突显了攻击者如何继续利用受信任的SaaS平台来绕过电子邮件安全控制。
+
+## 缓解措施与建议
+
+防御者应监控来自AppSheet域名的钓鱼电子邮件，并培训用户仔细审查托管在不熟悉子域名上的登录页面，即使是在google.com下的子域名。在Facebook账户上启用多因素认证可以减轻凭证盗窃，尽管Guardio指出，会话劫持技术可能会绕过一些MFA实现。使用Google Workspace的组织可以考虑审计AppSheet的使用，并限制应用程序的外部共享，以减少攻击面。
+
+## 参考资料
+
+- [The Hacker News: 30,000 Facebook Accounts Hacked via Google AppSheet Phishing Campaign](https://thehackernews.com/2026/05/30000-facebook-accounts-hacked-via.html)

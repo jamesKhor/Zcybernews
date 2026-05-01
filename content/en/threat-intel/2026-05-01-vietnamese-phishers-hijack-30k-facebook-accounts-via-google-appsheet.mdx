@@ -1,0 +1,50 @@
+---
+title: Vietnamese Phishers Hijack 30K Facebook Accounts via Google AppSheet
+slug: >-
+  2026-05-01-vietnamese-phishers-hijack-30k-facebook-accounts-via-google-appsheet
+date: '2026-05-01'
+excerpt: >-
+  Guardio tracks AccountDumpling campaign using Google AppSheet as phishing
+  relay to steal 30,000 Facebook accounts, resold via illicit storefront.
+category: threat-intel
+tags:
+  - phishing
+  - facebook
+  - google-appsheet
+  - accountdumpling
+  - vietnamese-threat-actors
+  - credential-theft
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/05/30000-facebook-accounts-hacked-via.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-01-vietnamese-phishers-hijack-30k-facebook-accounts-via-google-appsheet
+severity: high
+threat_actor: AccountDumpling
+threat_actor_origin: Vietnam
+affected_sectors:
+  - social media
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+A Vietnamese-linked threat actor tracked as AccountDumpling has compromised approximately 30,000 Facebook accounts by abusing Google AppSheet as a phishing relay, according to a report from security firm Guardio. The stolen credentials are resold through an illicit storefront operated by the group, Guardio said.
+
+## Technical Analysis
+
+Guardio researchers identified the campaign after observing phishing emails that leveraged Google AppSheet — a low-code application development platform — to host and distribute credential-harvesting pages. The attackers crafted AppSheet applications that mimicked legitimate Facebook login interfaces, then sent emails directing targets to those pages. Because the phishing infrastructure ran on Google's own domains, the emails evaded many traditional spam filters that block known malicious URLs, Guardio noted.
+
+The operation, which Guardio codenamed AccountDumpling, appears to focus exclusively on Facebook credentials. Once victims entered their login details, the information was exfiltrated to the attackers and the accounts were harvested. Guardio reported that roughly 30,000 accounts were stolen in the campaign, with the threat actors selling access through a dedicated storefront. The exact pricing and volume of sales were not disclosed, but Guardio assessed the operation as commercially motivated.
+
+Guardio attributed the campaign to actors based in Vietnam based on infrastructure analysis and operational patterns, though the firm did not name a specific group or individual. The use of a legitimate platform like AppSheet for phishing is not novel — similar techniques have been observed with Google Forms, Microsoft SharePoint, and other cloud services — but the scale and targeted nature of this campaign highlight how attackers continue to exploit trusted SaaS platforms to bypass email security controls.
+
+## Mitigations & Recommendations
+
+Defenders should monitor for phishing emails originating from AppSheet domains and train users to scrutinize login pages hosted on unfamiliar subdomains, even those under google.com. Enabling multi-factor authentication on Facebook accounts can mitigate credential theft, though Guardio noted that session hijacking techniques could bypass some MFA implementations. Organizations using Google Workspace may consider auditing AppSheet usage and restricting external sharing of applications to reduce the attack surface.
+
+## References
+
+- [The Hacker News: 30,000 Facebook Accounts Hacked via Google AppSheet Phishing Campaign](https://thehackernews.com/2026/05/30000-facebook-accounts-hacked-via.html)
