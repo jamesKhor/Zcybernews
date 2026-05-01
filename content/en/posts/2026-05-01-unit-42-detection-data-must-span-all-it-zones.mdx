@@ -1,0 +1,46 @@
+---
+title: 'Unit 42: Detection Data Must Span All IT Zones'
+slug: 2026-05-01-unit-42-detection-data-must-span-all-it-zones
+date: '2026-05-01'
+excerpt: >-
+  Palo Alto Unit 42 argues endpoint-only detection misses attacks in cloud,
+  network, and identity layers. Report details essential data sources for each
+  zone.
+category: industry
+tags:
+  - detection
+  - telemetry
+  - unit-42
+  - security-architecture
+  - data-sources
+  - defense-in-depth
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/detection-beyond-the-endpoint/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-01-unit-42-detection-data-must-span-all-it-zones
+---
+## Executive Summary
+
+Palo Alto Networks' Unit 42 published guidance arguing that endpoint-focused detection strategies leave critical blind spots across network, cloud, identity, and email infrastructure. The report, released April 30, 2026, maps essential data sources for each zone and warns that attackers routinely pivot between layers that defenders do not monitor uniformly.
+
+## Technical Analysis
+
+Unit 42's analysis identifies four primary IT zones where detection coverage is commonly insufficient. **Network telemetry** — including NetFlow, DNS logs, and proxy logs — remains underutilized for detecting lateral movement and command-and-control traffic after initial compromise. **Cloud infrastructure logs** (AWS CloudTrail, Azure Activity Logs, GCP Audit Logs) are frequently misconfigured or not forwarded to a SIEM, allowing attackers to manipulate cloud resources without triggering alerts.
+
+**Identity and authentication logs** — specifically Active Directory event IDs 4624 (logon), 4672 (admin logon), and 4768 (Kerberos TGT request) — are often collected but not correlated with endpoint or network data, the report states. Unit 42 cites real-world intrusions where attackers exploited this gap to move laterally using stolen credentials without detection.
+
+**Email security telemetry** — including message trace logs, URL click logs, and attachment sandbox results — is another overlooked source. Unit 42 notes that phishing campaigns frequently bypass endpoint detection by delivering payloads via cloud email services that defenders do not monitor at the gateway level.
+
+The report does not name specific threat actors or CVEs, but frames the guidance around observed attacker behavior patterns from Unit 42's incident response caseload.
+
+## Mitigations & Recommendations
+
+Unit 42 recommends organizations audit their current log ingestion against the four zones — network, cloud, identity, and email — and identify gaps where no telemetry is collected or where logs exist but are not correlated. The report advises prioritizing correlation rules that span at least two zones, such as matching a suspicious network connection (network zone) with a privileged account logon (identity zone) that occurred within the same time window.
+
+Defenders should also test detection coverage by running tabletop exercises that simulate attacks crossing zone boundaries, rather than single-zone scenarios.
+
+## References
+
+- [Essential Data Sources for Detection Beyond the Endpoint](https://unit42.paloaltonetworks.com/detection-beyond-the-endpoint/)

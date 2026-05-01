@@ -1,0 +1,43 @@
+---
+title: 'Unit 42: 检测数据必须覆盖所有IT区域'
+slug: 2026-05-01-unit-42-detection-data-must-span-all-it-zones
+date: '2026-05-01'
+excerpt: Palo Alto Unit 42 认为仅在端点进行检测会错过云、网络和身份层的攻击。报告详细说明了每个区域所需的数据源。
+category: industry
+tags:
+  - detection
+  - telemetry
+  - unit-42
+  - security-architecture
+  - data-sources
+  - defense-in-depth
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/detection-beyond-the-endpoint/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-01-unit-42-detection-data-must-span-all-it-zones
+---
+## 执行摘要
+
+Palo Alto Networks 的 Unit 42 发布了指导意见，认为以终端为重点的检测策略在网络、云、身份和电子邮件基础设施中留下了关键的盲点。该报告于 2026 年 4 月 30 日发布，为每个区域绘制了必要的数据源，并警告说攻击者经常在防御者不统一监控的层之间转换。
+
+## 技术分析
+
+Unit 42 的分析确定了四个主要的 IT 区域，这些区域的检测覆盖通常不足。**网络遥测** —— 包括 NetFlow、DNS 日志和代理日志 —— 用于检测横向移动和初始入侵后的命令与控制流量仍然被低估。**云基础设施日志**（AWS CloudTrail、Azure Activity Logs、GCP Audit Logs）经常被错误配置或不转发到 SIEM，允许攻击者操纵云资源而不触发警报。
+
+**身份和认证日志** —— 特别是 Active Directory 事件 ID 4624（登录）、4672（管理员登录）和 4768（Kerberos TGT 请求） —— 经常被收集但不与终端或网络数据关联，报告指出。Unit 42 引用了现实世界的入侵案例，其中攻击者利用这一差距使用被盗凭据进行横向移动而未被检测。
+
+**电子邮件安全遥测** —— 包括消息跟踪日志、URL 点击日志和附件沙箱结果 —— 是另一个被忽视的来源。Unit 42 指出，网络钓鱼活动经常通过云电子邮件服务传递有效载荷，这些服务在网关级别不被防御者监控，从而绕过终端检测。
+
+报告没有指明特定的威胁行为者或 CVE，但围绕 Unit 42 的事件响应案例负载中观察到的攻击者行为模式构建指导。
+
+## 缓解措施与建议
+
+Unit 42 建议组织审计他们当前的日志摄取情况，针对四个区域 —— 网络、云、身份和电子邮件 —— 并识别没有收集遥测数据或存在日志但不关联的空白区域。报告建议优先考虑跨越至少两个区域的相关规则，例如将可疑的网络连接（网络区域）与同一时间窗口内发生的特权账户登录（身份区域）匹配。
+
+防御者还应该通过运行模拟跨区域边界攻击的桌面演习来测试检测覆盖范围，而不是单一区域场景。
+
+## 参考资料
+
+- [Essential Data Sources for Detection Beyond the Endpoint](https://unit42.paloaltonetworks.com/detection-beyond-the-endpoint/)
