@@ -1,9 +1,9 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "intro": "Between April 12 and 28, 2026, ZCyberNews covered seven high-severity incidents tagged under healthcare, with Rhysida, ShinyHunters, and UAC-0247 emerging as the most prominent threat actors. These attacks primarily targeted the healthcare, Government, research, and technology sectors across the United States, Global, Illinois, Netherlands, and Texas. The concentrated activity underscores a sustained focus on healthcare-related infrastructure by multiple distinct groups.",
-  "sources_hash": "71777157b012d398",
+  "intro": "Interlock, Rhysida, and ShinyHunters were the top threat actors targeting the healthcare sector in a series of nine high-severity incidents reported between April 12 and April 30, 2026. The attacks affected critical infrastructure, government, and research sectors, with victims spanning the United States, Global, Illinois, Moldova, and the Netherlands. The severity mix included one medium and eight high-severity events, underscoring the concentrated risk to healthcare organizations during this period.",
+  "sources_hash": "93ac63ddb62ad987",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:20:13.584Z",
+  "generated_at": "2026-05-01T04:28:47.065Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

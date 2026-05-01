@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 29,
+  "count": 31,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "ShinyHunters",
@@ -27,13 +27,13 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 23,
-    "medium": 5
+    "high": 24,
+    "medium": 6
   },
   "recent_excerpts": [
-    "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。",
-    "Vimeo 将一起安全事件归因于分析供应商 Anodot 的泄露；黑客访问了内部系统，但未访问视频内容、登录信息或支付数据。",
-    "ShinyHunters 侵入 ADT，窃取了 550 万名个人数据 —— 名字、电子邮件、电话号码和地址 —— 来自内部系统。没有支付数据被泄露。"
+    "法国当局于4月25日拘留了一名15岁的少年，他涉嫌入侵ANTS，这是一个负责处理护照和驾驶执照的国家身份证明机构。",
+    "摩尔多瓦国家健康保险公司报告了一起可能暴露其系统有限个人数据的网络攻击，这是在最初被入侵几周后发生的。",
+    "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。"
   ],
-  "sources_hash": "c8fe822ce5214ed9"
+  "sources_hash": "7594322d0efe115f"
 }

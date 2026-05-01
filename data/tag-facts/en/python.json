@@ -4,7 +4,7 @@
   "count": 5,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-16"
+    "latest": "2026-04-30"
   },
   "top_actors": [],
   "top_cves": [
@@ -13,16 +13,22 @@
       "cvss": 9.3
     }
   ],
-  "top_sectors": [],
-  "top_regions": [],
+  "top_sectors": [
+    "financial services",
+    "research",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
-    "high": 2,
-    "critical": 3
+    "critical": 4,
+    "high": 1
   },
   "recent_excerpts": [
-    "Threat actors are exploiting a critical flaw in the Marimo reactive Python notebook framework to deploy a new variant of the NKAbuse malware, using Hugging Face Spaces as a distribution point for the",
+    "Threat actors pushed malicious PyTorch Lightning versions 2.6.2 and 2.6.3 to PyPI on April 30, 2026, stealing credentials via a typosquatted dependency — Aikido Security, Socket,…",
     "A critical, unauthenticated remote code execution flaw in the Marimo notebook framework was weaponized by attackers within nine hours of its public disclosure, highlighting rapid exploit development.",
     "A critical pre-authentication remote code execution vulnerability (CVE-2026-39987) in the Marimo Python notebook was exploited in the wild within 10 hours of public disclosure, posing a severe risk to"
   ],
-  "sources_hash": "72c8abcc72834ebe"
+  "sources_hash": "35e20ff8098a6d12"
 }

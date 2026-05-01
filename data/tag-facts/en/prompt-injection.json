@@ -1,24 +1,24 @@
 {
   "tag": "prompt-injection",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-27"
+    "latest": "2026-04-30"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "enterprise",
+    "technology",
     "enterprise software",
-    "multiple",
-    "technology"
+    "multiple"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 2,
+    "high": 3,
     "informational": 1,
     "critical": 1,
     "medium": 1
@@ -28,5 +28,5 @@
     "Security researchers warn that AI-powered 'agentic' browsers, which automate web tasks, introduce novel risks including prompt injection, session hijacking, and unauthorized data exfiltration, fundame",
     "Capsule Security launches with $7M seed funding and a policy platform that blocks prompt injection, data exfiltration, and rogue actions by enterprise AI agents."
   ],
-  "sources_hash": "1e9fd5ad764e4085"
+  "sources_hash": "b6305962ea0a53dc"
 }

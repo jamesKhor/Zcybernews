@@ -1,9 +1,9 @@
 {
   "tag": "python",
   "locale": "en",
-  "intro": "This archive collects 5 articles tagged `python` published between April 12, 2026 and April 16, 2026. Coverage includes 3 critical, and 2 high reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "72c8abcc72834ebe",
-  "model": "template:sparse",
-  "generated_at": "2026-04-20T11:15:01.761Z",
+  "intro": "Financial services, research, and technology sectors globally faced significant risk from Python-related vulnerabilities in late April 2026, with four critical and one high-severity issue reported across five articles. The most prominent flaw was CVE-2026-39987, carrying a CVSS score of 9.3. The coverage spanned from April 12 to April 30, highlighting the widespread impact of these security weaknesses on organizations worldwide.",
+  "sources_hash": "35e20ff8098a6d12",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-01T04:30:26.308Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

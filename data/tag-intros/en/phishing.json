@@ -1,9 +1,9 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "intro": "Financial services and government entities were the primary targets in a wave of 51 phishing incidents tracked between April 8 and April 27, 2026. The campaigns involved threat actors FakeWallet, Lazarus Group, and LockBit, and exploited vulnerabilities including CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. The attacks affected regions globally, with notable impact in Latin America, Canada, the Caribbean, and the United States. Of the reported incidents, 43 were rated high severity and 8 medium.",
-  "sources_hash": "bf4e084d6fd73fbe",
+  "intro": "Financial services and government sectors bore the brunt of a concentrated phishing wave tracked in 53 articles from April 8 to April 30, 2026. Threat actors Silver Fox, Bluekit, and FakeWallet were observed, with 45 high-severity and 8 medium-severity incidents. Key exploited vulnerabilities included CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. The campaign impacted regions globally, with notable activity in Latin America, Canada, the Caribbean, and the United States, affecting sectors such as hospitality, cryptocurrency, and finance.",
+  "sources_hash": "c078e0508d3d5bc4",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-28T04:20:06.696Z",
+  "generated_at": "2026-05-01T04:27:28.022Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

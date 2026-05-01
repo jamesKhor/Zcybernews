@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "intro": "2026年4月13日至4月30日期间，ZCyberNews在威胁情报标签下发布了25篇文章，其中GopherWhisper、Handala Hack和LockBit是最常被观测到的威胁行为体。报道覆盖政府、科技、金融服务、关键基础设施及网络安全领域，影响区域包括亚洲、欧洲、伊朗和北美。严重程度分布为：11篇信息性报告、9篇高危报告和3篇中危报告。",
-  "sources_hash": "5460921cdadbefe2",
-  "source_intro_hash": "90b7ceac19cbc923",
+  "intro": "在4月13日至4月30日期间发布的27篇以上文章追踪了Commercial Surveillance Vendors、GopherWhisper和Handala Hack的活动，其中针对这三个威胁行为者的报道量最大。报道覆盖了全球、亚洲、欧洲、伊朗和北美地区的政府、技术、金融服务、民间社会和关键基础设施领域。严重程度分布包括12篇信息性报告、10篇高风险报告和3篇中等风险报告，反映出情报收集和高严重性事件集中发生的时期。",
+  "sources_hash": "48ec59f1883d8266",
+  "source_intro_hash": "bfe81b2422eb10d4",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:21:56.035Z",
+  "generated_at": "2026-05-01T04:31:41.254Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

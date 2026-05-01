@@ -1,9 +1,9 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "intro": "Technology, critical infrastructure, and government sectors were the primary targets in a wave of zero-day attacks spanning April 2026, with 26 articles covering the period from April 12 to April 29. Threat actors Chaotic Eclipse, Claude Mythos, and Interlock were observed exploiting vulnerabilities including CVE-2026-34621, CVE-2026-3502, CVE-2026-32183, CVE-2026-32201, and CVE-2024-20662. The activity, which affected global regions and Southeast Asia, comprised 12 critical-severity incidents, 13 high-severity incidents, and one medium-severity incident.",
-  "sources_hash": "dc32bf831aa6ef69",
+  "intro": "Technology and government sectors bore the brunt of 28 zero-day exploits documented between April 12 and April 30, 2026, with 12 critical and 15 high-severity vulnerabilities identified. Threat actors APT29, Chaotic Eclipse, and Claude Mythos were observed in these campaigns, which targeted global regions and Southeast Asia. Key vulnerabilities included CVE-2026-34621 (CVSS 8.6), CVE-2026-3502 (CVSS 7.8), CVE-2026-32183 (CVSS 7.5), CVE-2026-32201 (CVSS 6.5), and CVE-2024-20662, affecting critical infrastructure, telecommunications, and enterprise environments.",
+  "sources_hash": "6145b4bfae4f34e8",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:17:33.189Z",
+  "generated_at": "2026-05-01T04:27:47.590Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

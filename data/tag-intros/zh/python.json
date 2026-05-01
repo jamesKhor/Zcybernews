@@ -1,10 +1,10 @@
 {
   "tag": "python",
   "locale": "zh",
-  "intro": "本档案收录了 5 篇带有「python」标签的文章，发布时间从2026年4月12日至2026年4月16日。其中包含3 篇严重、2 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "72c8abcc72834ebe",
-  "source_intro_hash": "5c519bd8884d9385",
-  "model": "template:sparse",
-  "generated_at": "2026-04-20T11:22:08.569Z",
+  "intro": "2026年4月下旬，全球金融服务、研究及技术行业面临与Python相关漏洞的重大风险，五篇文章共报告了四个严重级别和一个高严重级别的安全问题。其中最突出的漏洞是CVE-2026-39987，其CVSS评分为9.3。相关报道覆盖4月12日至4月30日期间，凸显了这些安全漏洞对全球组织的广泛影响。",
+  "sources_hash": "35e20ff8098a6d12",
+  "source_intro_hash": "3497404f27f6adf1",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-01T04:31:30.155Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,21 +1,22 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "count": 26,
+  "count": 29,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "Bluekit",
     "Pushpaganda"
   ],
   "top_cves": [],
   "top_sectors": [
     "technology",
+    "financial services",
     "critical_infrastructure",
-    "enterprise software",
-    "finance",
-    "financial services"
+    "email providers",
+    "enterprise software"
   ],
   "top_regions": [
     "Global",
@@ -25,15 +26,15 @@
     "Canada"
   ],
   "severity_mix": {
-    "informational": 11,
-    "high": 10,
+    "high": 12,
+    "informational": 12,
     "critical": 1,
     "medium": 4
   },
   "recent_excerpts": [
-    "Malwarebytes 将其反诈骗威胁情报直接集成到 Anthropic 的 Claude AI 助手中 —— 用户现在可以查询可疑链接、电话号码或电子邮件…",
-    "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…",
-    "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。"
+    "SecurityWeek报道，攻击者现在使用AI在几小时内武器化漏洞，迫使防御者采用自动化。没有特定的CVE或受害者被命名 — 分析文章。",
+    "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。",
+    "Malwarebytes 将其反诈骗威胁情报直接集成到 Anthropic 的 Claude AI 助手中 —— 用户现在可以查询可疑链接、电话号码或电子邮件…"
   ],
-  "sources_hash": "be8a579e941fdbde"
+  "sources_hash": "1d1fb695b9df8ad8"
 }

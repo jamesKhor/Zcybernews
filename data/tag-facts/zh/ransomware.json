@@ -1,15 +1,15 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 39,
+  "count": 41,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "The Gentlemen",
-    "Kyber",
-    "Payouts King"
+    "Interlock",
+    "Kyber"
   ],
   "top_cves": [
     {
@@ -23,28 +23,28 @@
   ],
   "top_sectors": [
     "multiple",
+    "healthcare",
     "manufacturing",
     "technology",
-    "financial services",
-    "gaming"
+    "critical infrastructure"
   ],
   "top_regions": [
     "Global",
     "Europe",
-    "North america",
     "United states",
+    "North america",
     "Turkey"
   ],
   "severity_mix": {
+    "high": 32,
     "critical": 4,
     "medium": 1,
-    "high": 30,
     "informational": 2
   },
   "recent_excerpts": [
+    "2025年，Inc Ransom 集团入侵了南卡罗来纳州的医疗保健提供商 Sandhills Medical；该事件影响了 17 万名患者，直到近一年后才披露。",
     "VECT 2.0 勒索软件包含一个关键的加密缺陷，该缺陷会不可逆转地破坏Windows、Linux和ESXi上大于131KB的文件 —— 即使拥有也无法恢复...",
-    "ESET的Tony Anscombe警告说，2026年3月的攻击——包括勒索软件、供应链妥协和AI驱动的网络钓鱼——揭示了组织中系统性的差距……",
-    "卡巴斯基2026年全球报告发现，勒索软件潜伏时间在2025年从5天降至3.5天，因为攻击者加快了加密速度。"
+    "ESET的Tony Anscombe警告说，2026年3月的攻击——包括勒索软件、供应链妥协和AI驱动的网络钓鱼——揭示了组织中系统性的差距……"
   ],
-  "sources_hash": "bce47163f104a4e5"
+  "sources_hash": "b11136c2d8d2014a"
 }

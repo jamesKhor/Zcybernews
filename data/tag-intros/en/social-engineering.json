@@ -1,9 +1,9 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "intro": "Between April 8 and April 28, 2026, ZCyberNews published 51 articles under the social-engineering tag, with 39 rated high severity. The most frequently covered threat actor was Lazarus Group, followed by UNC6692 and APT37 (ScarCruft, InkySquid). These campaigns primarily targeted the cryptocurrency, technology, financial services, financial-services, and hospitality sectors across Global, North America, Europe, the United States, and Canada. The coverage included 11 medium and 1 informational report, reflecting a concentrated wave of social-engineering attacks against financial and tech infrastructure.",
-  "sources_hash": "3f79bbc8ac3a989b",
+  "intro": "Lazarus Group, UNC6692, and APT37 (ScarCruft, InkySquid) were the most frequently cited threat actors in 52 articles published between April 8 and April 30, 2026, with 40 reports rated high severity. The social-engineering tag covered attacks primarily targeting the cryptocurrency, technology, financial services, and hospitality sectors. Affected regions included Global, North America, Europe, the United States, and Canada, with one informational report rounding out the coverage.",
+  "sources_hash": "cb31baa84d911cf0",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:17:20.726Z",
+  "generated_at": "2026-05-01T04:27:30.346Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

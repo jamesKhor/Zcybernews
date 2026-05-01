@@ -1,10 +1,10 @@
 {
   "tag": "botnet",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-27"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Dort",
@@ -25,28 +25,28 @@
     }
   ],
   "top_sectors": [
-    "technology",
     "telecommunications",
+    "technology",
     "corporate",
-    "finance",
-    "internet infrastructure"
+    "cybersecurity services",
+    "finance"
   ],
   "top_regions": [
+    "Brazil",
     "Canada",
     "Czech republic",
     "Germany",
-    "Global",
-    "United states"
+    "Global"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 9,
     "medium": 2,
     "critical": 1
   },
   "recent_excerpts": [
+    "巴西反DDoS公司的基础设施被用来对竞争对手ISP发起大规模僵尸网络攻击。首席执行官声称竞争对手的入侵导致了滥用。",
     "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。",
-    "Mirai 僵尸网络操作者利用 CVE-2025-29635，这是一个 CVSS 8.8 命令注入漏洞，存在于生命周期结束的 D-Link DIR-823X 路由器中，以部署恶意软件并发起 DDoS 攻击。",
-    "一种新的 Mirai 僵尸网络变种 'Nexcorium'，正在利用 TBK DVR 和生命周期结束的 TP-Link 路由器中的命令注入漏洞（CVE-2024-3721）来征召设备加入分布式拒绝服务（DDoS）攻击群。"
+    "Mirai 僵尸网络操作者利用 CVE-2025-29635，这是一个 CVSS 8.8 命令注入漏洞，存在于生命周期结束的 D-Link DIR-823X 路由器中，以部署恶意软件并发起 DDoS 攻击。"
   ],
-  "sources_hash": "5d9c66016a36ef54"
+  "sources_hash": "cdb7834d6b96e928"
 }

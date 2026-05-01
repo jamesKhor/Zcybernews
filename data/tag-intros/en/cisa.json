@@ -1,9 +1,9 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "intro": "Government and technology sectors were the primary targets across 12 articles from mid-to-late April 2026, with Pro-Russia Hacktivists among the threat actors observed. The coverage included five specific CVEs, with CVE-2024-57726 carrying a CVSS score of 9.9 and CVE-2026-34197 scoring 8.8, alongside CVE-2024-1708, CVE-2024-20662, and CVE-2024-21412. Affected regions spanned the United States, North America, and globally, impacting critical infrastructure, energy, and IT. The severity mix comprised nine high-severity and three critical-severity incidents.",
-  "sources_hash": "a70185c03974248b",
+  "intro": "Government and critical infrastructure sectors were the primary focus of 16 CISA-tagged articles published between April 12 and April 30, 2026. The coverage highlighted threat actors GRU, Interlock, and LummaC2, alongside critical vulnerabilities including CVE-2024-57726, CVE-2026-34197, CVE-2024-1708, CVE-2024-20662, and CVE-2024-21412. The severity mix comprised 13 high and 3 critical incidents, with impacts spanning the United States, North America, Europe, and other global regions.",
+  "sources_hash": "1a8ce2a03cef6b3b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:18:58.723Z",
+  "generated_at": "2026-05-01T04:28:03.840Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

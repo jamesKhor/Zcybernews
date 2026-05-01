@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "intro": "本档案收录了 6 篇带有「open-source」标签的文章，发布时间从2026年4月12日至2026年4月21日。其中包含2 篇中危、4 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "518054fa469201dc",
-  "source_intro_hash": "3c55859a233f9eb3",
-  "model": "template:sparse",
-  "generated_at": "2026-04-22T04:09:14.344Z",
+  "intro": "根据2026年4月12日至4月30日期间发布的12篇文章，ZCyberNews对开源问题的报道重点提及了两个关键漏洞：CVE-2026-25874（CVSS评分9.3）和CVE-2026-33626（CVSS评分7.5）。相关报道覆盖全球技术、研究、金融服务及软件开发领域，警报严重程度分布为：五条信息性、三条关键、一条高危及两条中危。",
+  "sources_hash": "03f7c75ada325f5f",
+  "source_intro_hash": "68b81c9f55b6ff6c",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-01T04:31:20.338Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

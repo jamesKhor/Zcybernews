@@ -1,17 +1,22 @@
 {
   "tag": "linux",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Harvester",
     "Payouts King",
     "The Gentlemen"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-31431",
+      "cvss": 7.8
+    }
+  ],
   "top_sectors": [
     "education",
     "homelab",
@@ -23,14 +28,14 @@
     "South asia"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "CVE-2026-31431 (CVSS 7.8) dubbed 'Copy Fail' lets unprivileged local users write four controlled bytes to any readable file's page cache, enabling root on major Linux…",
     "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…",
-    "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent",
-    "The Payouts King ransomware group is deploying the open-source QEMU emulator to create hidden virtual machines on compromised hosts, establishing a persistent reverse SSH backdoor that evades conventi"
+    "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent"
   ],
-  "sources_hash": "80c7f766a2622696"
+  "sources_hash": "1e3997127c90223d"
 }

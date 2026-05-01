@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "count": 21,
+  "count": 23,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "LockBit",
@@ -27,14 +27,14 @@
     "Southeast asia"
   ],
   "severity_mix": {
-    "high": 14,
+    "high": 16,
     "medium": 5,
     "informational": 2
   },
   "recent_excerpts": [
-    "Swiss and German police arrested 10 suspects tied to the Nigeria-linked Black Axe network, including a regional leader overseeing Southern Europe operations.",
-    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data.",
-    "Ukrainian police detained hackers suspected of stealing thousands of Roblox accounts containing valuable digital items and in-game currency purchased with real money from players…"
+    "SecurityWeek reports attackers now weaponize vulnerabilities within hours using AI, forcing defenders to adopt automation. No specific CVE or victim named — analysis piece.",
+    "Brazilian anti-DDoS firm's infrastructure used to launch massive botnet attacks against rival ISPs. CEO claims breach by competitor caused the abuse.",
+    "Swiss and German police arrested 10 suspects tied to the Nigeria-linked Black Axe network, including a regional leader overseeing Southern Europe operations."
   ],
-  "sources_hash": "3e02b4006ff4b5c1"
+  "sources_hash": "f4512cb7d0fcd5bc"
 }

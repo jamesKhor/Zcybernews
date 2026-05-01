@@ -1,32 +1,35 @@
 {
   "tag": "infostealer",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-27"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "LummaC2",
     "Omnistealer"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "healthcare",
+    "multiple",
     "software development",
     "technology"
   ],
   "top_regions": [
+    "Global",
     "Ukraine"
   ],
   "severity_mix": {
-    "critical": 1,
-    "high": 6
+    "high": 7,
+    "critical": 1
   },
   "recent_excerpts": [
+    "CISA 和 FBI 联合咨询详细描述了 LummaC2 信息窃取者的 TTPs 和 IOCs：恶意软件从被入侵的网络中窃取凭证、加密钱包和会话数据。",
     "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。",
-    "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。",
-    "NGate 恶意软件版本 2.0，借助 AI 构建，隐藏在木马化的 NFC 支付应用中，从 Android 设备中窃取短信、联系人和加密钱包数据，同时躲避安全软件。"
+    "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。"
   ],
-  "sources_hash": "b0efd1d50e97c2ef"
+  "sources_hash": "5d9a62f551f5e611"
 }

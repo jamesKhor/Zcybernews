@@ -1,23 +1,23 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 25,
+  "count": 27,
   "date_range": {
     "first": "2026-04-13",
     "latest": "2026-04-30"
   },
   "top_actors": [
+    "Commercial Surveillance Vendors",
     "GopherWhisper",
-    "Handala Hack",
-    "LockBit"
+    "Handala Hack"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "technology",
     "financial services",
-    "critical-infrastructure",
-    "cybersecurity"
+    "civil society",
+    "critical-infrastructure"
   ],
   "top_regions": [
     "Global",
@@ -27,14 +27,14 @@
     "North america"
   ],
   "severity_mix": {
-    "informational": 11,
-    "high": 9,
+    "informational": 12,
+    "high": 10,
     "medium": 3
   },
   "recent_excerpts": [
     "Black Hills Information Security released GoSpoof, a Python tool that opens all ports on a honeypot to capture attacker scanning patterns and payloads in real time.",
-    "Malwarebytes integrated its scam-checking threat intelligence directly into Anthropic's Claude AI assistant — users can now query suspicious links, phone numbers, or email…",
-    "Black Hills InfoSec published a practical guide to OSINT — covering collection methods, analysis frameworks, and operational security controls to protect analysts from exposure."
+    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles.",
+    "Malwarebytes integrated its scam-checking threat intelligence directly into Anthropic's Claude AI assistant — users can now query suspicious links, phone numbers, or email…"
   ],
-  "sources_hash": "5460921cdadbefe2"
+  "sources_hash": "48ec59f1883d8266"
 }

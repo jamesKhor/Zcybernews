@@ -1,10 +1,10 @@
 {
   "tag": "anthropic",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Claude Mythos"
@@ -14,22 +14,22 @@
     "technology",
     "critical infrastructure",
     "cybersecurity",
-    "ai-development",
-    "financial services"
+    "government",
+    "ai-development"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "high": 5,
     "critical": 3,
-    "high": 4,
     "informational": 2,
     "medium": 1
   },
   "recent_excerpts": [
+    "Anthropic 发布了 Claude 安全，一套防御性 AI 工具，用以对抗像 Mythos 这样的自主漏洞工具，它们能在几分钟内武器化零日漏洞。目标是企业 SOC。",
     "Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…",
-    "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。",
-    "Anthropic的 Claude Mythos Preview 自4月7日以来大规模识别漏洞，但研究人员警告说，组织缺乏分类和修补能力以跟上步伐。"
+    "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。"
   ],
-  "sources_hash": "d98d7326aa3438e1"
+  "sources_hash": "53568b2fda7e18e3"
 }

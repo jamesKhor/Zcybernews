@@ -1,0 +1,39 @@
+{
+  "tag": "google-tag",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-30",
+    "latest": "2026-04-30"
+  },
+  "top_actors": [
+    "APT29",
+    "Commercial Surveillance Vendors",
+    "DRAGONBRIDGE"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "technology",
+    "media",
+    "telecommunications",
+    "civil society"
+  ],
+  "top_regions": [
+    "Global",
+    "China",
+    "Iran",
+    "Israel",
+    "Russia"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Google TAG 发现 APT29 使用的漏洞链与 Intellexa 和 NSO Group 部署的漏洞链相同，暗示共享零日供应商或漏洞转售。",
+    "Google TAG报告称，2023年野外利用的零日漏洞数量从2022年的62个增加到了97个。商业监控供应商推动了80%的目标漏洞利用。完整报告已发布。",
+    "Google TAG 在2025年第一季度终止了12个YouTube频道和多个与俄罗斯、中国、伊朗和以色列国家支持的影响活动相关的广告账户。"
+  ],
+  "sources_hash": "d94af2ee398a4e78"
+}

@@ -1,38 +1,39 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "count": 7,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "Interlock",
     "Rhysida",
-    "ShinyHunters",
-    "UAC-0247"
+    "ShinyHunters"
   ],
   "top_cves": [],
   "top_sectors": [
     "healthcare",
     "Healthcare",
+    "critical infrastructure",
     "Government",
-    "research",
-    "technology"
+    "research"
   ],
   "top_regions": [
     "United states",
     "Global",
     "Illinois",
-    "Netherlands",
-    "Texas"
+    "Moldova",
+    "Netherlands"
   ],
   "severity_mix": {
-    "high": 7
+    "medium": 1,
+    "high": 8
   },
   "recent_excerpts": [
+    "摩尔多瓦国家健康保险公司报告了一起可能暴露其系统有限个人数据的网络攻击，这是在最初被入侵几周后发生的。",
     "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。",
-    "南伊利诺伊州皮肤科、圣安东尼医院和北德克萨斯州行为健康局披露了影响超过60万患者的违规行为，暴露了姓名、社会安全号码和医疗数据。",
-    "Cookeville Regional Medical Center 确认 2025 年 Rhysida 集团的勒索软件攻击导致 337,000 人的数据在 500GB 文件被盗后被泄露。"
+    "CISA 和 FBI 发布了关于 Interlock 勒索软件的联合咨询，详细说明了 TTPs, IOCs，以及从双重勒索转向仅针对医疗保健的数据盗窃攻击的转变..."
   ],
-  "sources_hash": "71777157b012d398"
+  "sources_hash": "93ac63ddb62ad987"
 }

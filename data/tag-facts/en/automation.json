@@ -1,24 +1,24 @@
 {
   "tag": "automation",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-21"
+    "latest": "2026-04-30"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
+    "high": 2,
     "informational": 5,
-    "medium": 1,
-    "high": 1
+    "medium": 1
   },
   "recent_excerpts": [
+    "SecurityWeek reports attackers now weaponize vulnerabilities within hours using AI, forcing defenders to adopt automation. No specific CVE or victim named — analysis piece.",
     "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi",
-    "SentinelOne research finds human-led security teams require 4-6 hours to validate a single alert, while automated attacks unfold in seconds, creating a critical defensive gap for enterprises.",
-    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout."
+    "SentinelOne research finds human-led security teams require 4-6 hours to validate a single alert, while automated attacks unfold in seconds, creating a critical defensive gap for enterprises."
   ],
-  "sources_hash": "6b76343b9aa6f829"
+  "sources_hash": "2a7ea5dce7755cdc"
 }

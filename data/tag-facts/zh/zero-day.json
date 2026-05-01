@@ -1,15 +1,15 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "count": 25,
+  "count": 27,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "APT29",
     "Chaotic Eclipse",
-    "Claude Mythos",
-    "Interlock"
+    "Claude Mythos"
   ],
   "top_cves": [
     {
@@ -34,10 +34,10 @@
   ],
   "top_sectors": [
     "technology",
-    "critical infrastructure",
     "government",
-    "enterprise",
-    "healthcare"
+    "critical infrastructure",
+    "telecommunications",
+    "enterprise"
   ],
   "top_regions": [
     "Global",
@@ -45,7 +45,7 @@
   ],
   "severity_mix": {
     "critical": 11,
-    "high": 13,
+    "high": 15,
     "medium": 1
   },
   "recent_excerpts": [
@@ -53,5 +53,5 @@
     "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。",
     "Check Point Research 发现了 CVE-2026-3502，这是一个 7.8-CVSS 权限提升漏洞，存在于 TrueConf 客户端中，自…以来被用于针对东南亚政府实体的定向攻击。"
   ],
-  "sources_hash": "c9fcc4a861b19332"
+  "sources_hash": "b25332ec08e8bfa9"
 }

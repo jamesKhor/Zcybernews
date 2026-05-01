@@ -1,0 +1,9 @@
+{
+  "tag": "fbi",
+  "locale": "en",
+  "intro": "Critical infrastructure and government entities were the primary targets in a series of high-severity incidents reported between April 13 and April 30, 2026, under the FBI tag. Threat actors Handala Hack, Interlock, and LummaC2 were observed, with impacts spanning healthcare, logistics, and multiple other sectors across the United States, Iran, Global, and North American regions. All five articles in this period were assessed as high severity.",
+  "sources_hash": "bb4ae3ccad0b3879",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-01T04:30:12.605Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-26"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "APT41",
@@ -17,23 +17,23 @@
     "technology",
     "banking",
     "cloud-services",
-    "software development"
+    "financial services"
   ],
   "top_regions": [
     "Global",
     "India",
+    "Russia",
     "South asia",
-    "South korea",
-    "United states"
+    "South korea"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "critical": 1
   },
   "recent_excerpts": [
+    "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky.",
     "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
-    "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…",
-    "A malicious buyer used the Flippa marketplace to acquire a plugin developer, injecting a backdoor into over 30 WordPress plugins with hundreds of thousands of installations to deploy hidden SEO spam."
+    "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…"
   ],
-  "sources_hash": "7a03266841dc922e"
+  "sources_hash": "112ea2de5fd55497"
 }

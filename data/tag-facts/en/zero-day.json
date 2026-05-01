@@ -1,15 +1,15 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "count": 26,
+  "count": 28,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "APT29",
     "Chaotic Eclipse",
-    "Claude Mythos",
-    "Interlock"
+    "Claude Mythos"
   ],
   "top_cves": [
     {
@@ -34,10 +34,10 @@
   ],
   "top_sectors": [
     "technology",
-    "critical infrastructure",
     "government",
-    "enterprise",
-    "healthcare"
+    "critical infrastructure",
+    "telecommunications",
+    "enterprise"
   ],
   "top_regions": [
     "Global",
@@ -45,7 +45,7 @@
   ],
   "severity_mix": {
     "critical": 12,
-    "high": 13,
+    "high": 15,
     "medium": 1
   },
   "recent_excerpts": [
@@ -53,5 +53,5 @@
     "Claude Mythos and Project Glasswing shrink exploit windows to near-zero. The Hacker News details NDR playbooks to contain AI-driven attacks before patching is possible.",
     "Check Point Research uncovered CVE-2026-3502, a 7.8-CVSS privilege escalation in TrueConf client, exploited in targeted attacks against Southeast Asian government entities since…"
   ],
-  "sources_hash": "dc32bf831aa6ef69"
+  "sources_hash": "6145b4bfae4f34e8"
 }

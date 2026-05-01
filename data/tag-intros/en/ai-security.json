@@ -1,9 +1,9 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "intro": "Technology, cybersecurity, government, healthcare, and artificial intelligence sectors were the most affected in a global wave of attacks between April 12 and April 29, 2026, with China and the United States among the top regions targeted. Threat actors Claude Mythos and OpenClaw were observed exploiting critical vulnerabilities including CVE-2026-5760 (CVSS 9.8) and CVE-2026-5752 (CVSS 9.3). The 50 articles in this archive cover a severity mix of 7 critical, 22 high, 6 medium, and 12 informational incidents.",
-  "sources_hash": "885ae797c96331c3",
+  "intro": "Technology and government sectors bore the brunt of 51 ai-security tagged articles published between April 12 and April 30, 2026. The coverage featured threat actors Claude Mythos and OpenClaw, alongside critical vulnerabilities CVE-2026-5760 (CVSS 9.8) and CVE-2026-5752 (CVSS 9.3). Affected regions included Global, China, and the United states. The severity mix comprised 23 high, 7 critical, 6 medium, and 12 informational reports, highlighting persistent risks across cybersecurity, healthcare, and artificial intelligence domains.",
+  "sources_hash": "96bf90e06cfe46b1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:17:22.938Z",
+  "generated_at": "2026-05-01T04:27:32.683Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

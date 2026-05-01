@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "intro": "技术、网络安全、政府、医疗保健和人工智能行业在2026年4月12日至4月29日期间遭受全球性攻击浪潮影响最为严重，中国和美国位列主要攻击目标地区。威胁行为者Claude Mythos和OpenClaw被观测到利用包括CVE-2026-5760（CVSS 9.8）和CVE-2026-5752（CVSS 9.3）在内的关键漏洞。本档案收录的50篇文章涵盖了7起严重、22起高危、6起中等和12起信息性事件。",
-  "sources_hash": "885ae797c96331c3",
-  "source_intro_hash": "d5ca3f726c734d7c",
+  "intro": "在2026年4月12日至4月30日期间，51篇标注为人工智能安全主题的文章中，科技与政府部门承受了主要冲击。报道涉及威胁行为者Claude Mythos和OpenClaw，以及关键漏洞CVE-2026-5760（CVSS 9.8）和CVE-2026-5752（CVSS 9.3）。受影响区域包括全球、中国和美国。严重程度分布为23篇高危、7篇严重、6篇中危和12篇信息性报告，凸显了网络安全、医疗保健及人工智能领域持续存在的风险。",
+  "sources_hash": "96bf90e06cfe46b1",
+  "source_intro_hash": "c1a6901f1d1791c1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:19:55.595Z",
+  "generated_at": "2026-05-01T04:30:47.395Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-04-26"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "TeamPCP",
@@ -12,25 +12,25 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "software development",
     "technology",
     "enterprise",
+    "software development",
     "cloud service providers",
     "cloud-services"
   ],
   "top_regions": [
-    "Central america",
     "Global",
+    "Central america",
     "South america"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 7,
     "critical": 1
   },
   "recent_excerpts": [
     "Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。",
     "Palo Alto Unit 42 概述了针对前沿 AI 威胁 —— 模型投毒、提示注入和数据泄露 —— 的防御策略，以回应顶级客户查询。",
-    "Unit 42 报告称 TeamPCP 已与 Vect 勒索软件集团合作，针对安全软件供应商进行多阶段供应链攻击，破坏了受信任的更新机制。"
+    "Unit 42 发现 30+ 恶意 AI 浏览器扩展通过提示注入和 DOM 抓取外泄电子邮件内容、凭据和 API 密钥。影响 Chrome、Edge 用户。"
   ],
-  "sources_hash": "9fd0092e7f2d6c19"
+  "sources_hash": "5b925761e784fbfc"
 }

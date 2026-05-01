@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain-attack",
   "locale": "en",
-  "count": 12,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "GlassWorm",
@@ -13,23 +13,23 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "software development",
     "technology",
+    "software development",
     "cybersecurity",
-    "cloud services",
-    "enterprise"
+    "enterprise",
+    "enterprise software"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 5,
-    "high": 7
+    "high": 9,
+    "critical": 5
   },
   "recent_excerpts": [
+    "Atos TRC identified EtherRAT in March 2026 — a remote access trojan distributed through fake GitHub repos impersonating admin utilities.",
     "Attackers compromised multiple SAP-related npm packages to deploy credential-stealing malware, targeting SAP BTP and cloud app credentials. Campaign dubbed mini Shai-Hulud.",
-    "Researchers found 73 cloned VS Code extensions on Open VSX, with 6 confirmed malicious, delivering the GlassWorm v2 info-stealer.",
-    "Checkmarx confirmed a cybercriminal group published GitHub repository data on the dark web, traced to a March 23 supply chain attack."
+    "Researchers found 73 cloned VS Code extensions on Open VSX, with 6 confirmed malicious, delivering the GlassWorm v2 info-stealer."
   ],
-  "sources_hash": "53670f94855d8e2c"
+  "sources_hash": "e502c0793c0f95a0"
 }

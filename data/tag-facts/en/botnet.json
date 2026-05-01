@@ -1,10 +1,10 @@
 {
   "tag": "botnet",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-27"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Dort",
@@ -25,28 +25,28 @@
     }
   ],
   "top_sectors": [
-    "technology",
     "telecommunications",
+    "technology",
     "corporate",
-    "finance",
-    "internet infrastructure"
+    "cybersecurity services",
+    "finance"
   ],
   "top_regions": [
+    "Brazil",
     "Canada",
     "Czech republic",
     "Germany",
-    "Global",
-    "United states"
+    "Global"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 9,
     "medium": 2,
     "critical": 1
   },
   "recent_excerpts": [
+    "Brazilian anti-DDoS firm's infrastructure used to launch massive botnet attacks against rival ISPs. CEO claims breach by competitor caused the abuse.",
     "US DOJ, Canada, and Germany dismantled four IoT botnets — Aisuru, Kimwolf, JackSkid, Mossad — compromising 3M+ devices, enabling record-breaking DDoS attacks.",
-    "Mirai botnet operators exploit CVE-2025-29635, a CVSS 8.8 command injection flaw in end-of-life D-Link DIR-823X routers, to deploy malware and launch DDoS attacks.",
-    "A new Mirai botnet variant, 'Nexcorium,' is exploiting a command injection flaw (CVE-2024-3721) in TBK DVRs and end-of-life TP-Link routers to conscript devices into a distributed denial-of-service (D"
+    "Mirai botnet operators exploit CVE-2025-29635, a CVSS 8.8 command injection flaw in end-of-life D-Link DIR-823X routers, to deploy malware and launch DDoS attacks."
   ],
-  "sources_hash": "5d9c66016a36ef54"
+  "sources_hash": "cdb7834d6b96e928"
 }

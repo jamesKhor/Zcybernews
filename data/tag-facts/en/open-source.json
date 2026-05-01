@@ -1,7 +1,7 @@
 {
   "tag": "open-source",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-30"
@@ -20,20 +20,23 @@
   "top_sectors": [
     "technology",
     "research",
+    "financial services",
     "software development",
     "software-development"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
     "informational": 5,
-    "critical": 2,
+    "critical": 3,
     "high": 1,
     "medium": 2
   },
   "recent_excerpts": [
     "Black Hills Information Security released GoSpoof, a Python tool that opens all ports on a honeypot to capture attacker scanning patterns and payloads in real time.",
-    "CVE-2026-25874 (CVSS 9.3) in Hugging Face LeRobot enables unauthenticated RCE via unsafe deserialization.",
-    "Elastic Security Labs published an open-source CI/CD abuse detection template using signal extraction and LLM reasoning to catch pipeline attacks across GitHub Actions, GitLab CI,…"
+    "Threat actors pushed malicious PyTorch Lightning versions 2.6.2 and 2.6.3 to PyPI on April 30, 2026, stealing credentials via a typosquatted dependency — Aikido Security, Socket,…",
+    "CVE-2026-25874 (CVSS 9.3) in Hugging Face LeRobot enables unauthenticated RCE via unsafe deserialization."
   ],
-  "sources_hash": "cacc656f50167387"
+  "sources_hash": "03f7c75ada325f5f"
 }

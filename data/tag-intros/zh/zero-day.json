@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "intro": "技术、关键基础设施和政府行业是2026年4月期间一波零日攻击的主要目标，共有26篇相关报道覆盖了4月12日至4月29日这一时段。威胁行为者Chaotic Eclipse、Claude Mythos和Interlock被观察到利用包括CVE-2026-34621、CVE-2026-3502、CVE-2026-32183、CVE-2026-32201和CVE-2024-20662在内的漏洞。该活动影响了全球多个地区及东南亚，共包含12起严重等级事件、13起高等级事件和1起中等等级事件。",
-  "sources_hash": "dc32bf831aa6ef69",
-  "source_intro_hash": "21f8e81de1774960",
+  "intro": "在2026年4月12日至4月30日期间记录到的28个零日漏洞利用中，技术和政府部门首当其冲，共识别出12个严重漏洞和15个高危漏洞。威胁行为者APT29、Chaotic Eclipse和Claude Mythos被观察到参与这些攻击活动，其目标覆盖全球区域及东南亚地区。关键漏洞包括CVE-2026-34621（CVSS 8.6）、CVE-2026-3502（CVSS 7.8）、CVE-2026-32183（CVSS 7.5）、CVE-2026-32201（CVSS 6.5）以及CVE-2024-20662，影响范围涉及关键基础设施、电信行业及企业环境。",
+  "sources_hash": "6145b4bfae4f34e8",
+  "source_intro_hash": "b011b920e4927b5e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:20:27.060Z",
+  "generated_at": "2026-05-01T04:31:44.070Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

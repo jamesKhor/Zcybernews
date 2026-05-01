@@ -1,32 +1,37 @@
 {
   "tag": "data-exfiltration",
   "locale": "en",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-23"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "Inc Ransom",
     "Payouts King",
     "Trigona"
   ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
+    "enterprise",
     "financial services",
-    "manufacturing",
-    "technology"
+    "healthcare",
+    "manufacturing"
   ],
   "top_regions": [
     "Europe",
-    "North america"
+    "Global",
+    "North america",
+    "United states"
   ],
   "severity_mix": {
-    "high": 4
+    "high": 6
   },
   "recent_excerpts": [
+    "Inc Ransom group breached Sandhills Medical in 2025; the South Carolina healthcare provider took nearly a year to disclose the incident, affecting 170,000 patients.",
     "Trigona ransomware attacks now use a custom CLI tool to exfiltrate data from compromised networks faster, targeting backups and cloud storage before encryption.",
-    "Security researchers warn that AI-powered 'agentic' browsers, which automate web tasks, introduce novel risks including prompt injection, session hijacking, and unauthorized data exfiltration, fundame",
-    "The Gentlemen ransomware group dismantled enterprise security controls globally and breached Atlassian partner Adaptavist, stealing terabytes of source code and data."
+    "Security researchers warn that AI-powered 'agentic' browsers, which automate web tasks, introduce novel risks including prompt injection, session hijacking, and unauthorized data exfiltration, fundame"
   ],
-  "sources_hash": "4609ec46d9ff21cb"
+  "sources_hash": "bb3ab86542a09110"
 }

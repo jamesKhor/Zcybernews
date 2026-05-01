@@ -1,10 +1,10 @@
 {
   "tag": "recorded-future",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-04-26"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Cobalt Strike",
@@ -26,13 +26,14 @@
     "Southeast asia"
   ],
   "severity_mix": {
+    "informational": 1,
     "high": 3,
     "medium": 1
   },
   "recent_excerpts": [
+    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles.",
     "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors.",
-    "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…",
-    "Recorded Future's Insikt Group maps a maturing Latin American cybercrime ecosystem: RaaS affiliates, crypto fraud rings, and targeted phishing against financial and government…"
+    "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…"
   ],
-  "sources_hash": "5927a04d0ad8671b"
+  "sources_hash": "8118f183ca4d0f78"
 }

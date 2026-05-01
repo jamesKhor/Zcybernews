@@ -1,13 +1,15 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "count": 12,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-04-30"
   },
   "top_actors": [
-    "Pro-Russia Hacktivists"
+    "GRU",
+    "Interlock",
+    "LummaC2"
   ],
   "top_cves": [
     {
@@ -31,24 +33,25 @@
   ],
   "top_sectors": [
     "government",
-    "technology",
     "critical infrastructure",
-    "energy",
-    "IT"
+    "technology",
+    "defense",
+    "energy"
   ],
   "top_regions": [
     "United states",
     "Global",
-    "North america"
+    "North america",
+    "Europe"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 13,
     "critical": 3
   },
   "recent_excerpts": [
     "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders.",
-    "CISA added CVE-2024-1708 (ConnectWise ScreenConnect path traversal, CVSS 8.4) and an unnamed Windows flaw to its KEV catalog based on confirmed active exploitation.",
-    "CISA added 4 actively exploited vulnerabilities to its KEV catalog — SimpleHelp, Samsung MagicINFO 9, and D-Link DIR-823X — with a May 2026 federal remediation deadline."
+    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
+    "CISA and USCG found persistent weak configurations, unpatched systems, and credential reuse during a proactive threat hunt at a US critical infrastructure org."
   ],
-  "sources_hash": "a70185c03974248b"
+  "sources_hash": "1a8ce2a03cef6b3b"
 }

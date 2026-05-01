@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "intro": "2026年4月12日至28日期间，ZCyberNews报道了七起标记为医疗行业的高严重性事件，其中Rhysida、ShinyHunters和UAC-0247成为最突出的威胁行为者。这些攻击主要针对美国、全球、伊利诺伊州、荷兰和得克萨斯州的医疗、政府、研究和技术行业。集中的攻击活动凸显了多个不同团体对医疗相关基础设施的持续关注。",
-  "sources_hash": "71777157b012d398",
-  "source_intro_hash": "4e250a15457f8fc9",
+  "intro": "Interlock、Rhysida和ShinyHunters是在2026年4月12日至4月30日期间报告的九起高严重性事件中，针对医疗行业的主要威胁行为者。这些攻击影响了关键基础设施、政府和研究领域，受害者遍布美国、全球、伊利诺伊州、摩尔多瓦和荷兰。严重性分布包括一起中等严重性和八起高严重性事件，凸显了在此期间医疗组织面临的集中风险。",
+  "sources_hash": "93ac63ddb62ad987",
+  "source_intro_hash": "cd452fa7f736b5db",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:21:40.321Z",
+  "generated_at": "2026-05-01T04:31:12.348Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

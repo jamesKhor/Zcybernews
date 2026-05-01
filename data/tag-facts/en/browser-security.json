@@ -1,29 +1,30 @@
 {
   "tag": "browser-security",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Pushpaganda"
   ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "all",
-    "technology"
+    "enterprise"
   ],
   "top_regions": [
+    "Global",
     "Australia",
     "Canada",
-    "Global",
     "New zealand",
     "United kingdom"
   ],
   "severity_mix": {
     "critical": 2,
-    "high": 2,
+    "high": 3,
     "informational": 1,
     "medium": 2
   },
@@ -32,5 +33,5 @@
     "Socket identified 108 malicious Chrome extensions that infected 20,000 users, stealing Google and Telegram session cookies and injecting ads via a shared command-and-control server.",
     "Malwarebytes Browser Guard 4.0 introduces a new Access Control module, allowing users to centrally manage and block website requests for sensitive permissions like camera, microphone, and location to"
   ],
-  "sources_hash": "f13101340f715bbd"
+  "sources_hash": "fe70c243c2aead43"
 }

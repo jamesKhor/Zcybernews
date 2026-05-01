@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [],
   "top_cves": [
@@ -20,20 +20,23 @@
   "top_sectors": [
     "technology",
     "research",
+    "financial services",
     "software development",
     "software-development"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "Global"
+  ],
   "severity_mix": {
-    "critical": 2,
+    "critical": 3,
     "high": 1,
     "informational": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到 PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。",
     "CVE-2026-25874 (CVSS 9.3) 在 Hugging Face LeRobot 中通过不安全的反序列化启用未经认证的 RCE。",
-    "Elastic Security Labs 发布了一个开源的 CI/CD 滥用检测模板，使用信号提取和 LLM 推理来捕捉 GitHub Actions、GitLab CI 等跨平台的流水线攻击…",
-    "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。"
+    "Elastic Security Labs 发布了一个开源的 CI/CD 滥用检测模板，使用信号提取和 LLM 推理来捕捉 GitHub Actions、GitLab CI 等跨平台的流水线攻击…"
   ],
-  "sources_hash": "6e34100d0bf74743"
+  "sources_hash": "270fae038af88df3"
 }

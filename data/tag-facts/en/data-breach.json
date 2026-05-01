@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 30,
+  "count": 32,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "ShinyHunters",
@@ -27,13 +27,13 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 24,
-    "medium": 5
+    "high": 25,
+    "medium": 6
   },
   "recent_excerpts": [
-    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data.",
-    "Vimeo attributed a security incident to a breach at analytics vendor Anodot; hackers accessed internal systems but not video content, logins, or payment data.",
-    "ShinyHunters breached ADT, stealing personal data of 5.5 million individuals — names, emails, phone numbers, and addresses — from internal systems. No payment data compromised."
+    "French authorities detained a 15-year-old on April 25 for allegedly hacking ANTS, the national ID agency handling passports and driver's licenses.",
+    "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise.",
+    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data."
   ],
-  "sources_hash": "0d56204ef7bf10af"
+  "sources_hash": "991b936eeb32cd0e"
 }

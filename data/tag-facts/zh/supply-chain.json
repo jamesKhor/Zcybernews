@@ -1,15 +1,15 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 71,
+  "count": 74,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Lazarus Group",
     "CanisterSprawl",
-    "TeamPCP"
+    "GRU"
   ],
   "top_cves": [
     {
@@ -36,21 +36,21 @@
   ],
   "top_regions": [
     "Global",
-    "Asia",
-    "Europe",
     "North america",
+    "Europe",
+    "Asia",
     "Arctic"
   ],
   "severity_mix": {
+    "high": 45,
+    "critical": 12,
     "medium": 12,
-    "critical": 11,
-    "high": 43,
     "informational": 4
   },
   "recent_excerpts": [
-    "Vimeo 将一起安全事件归因于分析供应商 Anodot 的泄露；黑客访问了内部系统，但未访问视频内容、登录信息或支付数据。",
-    "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。",
-    "Vercel 在从 Context.ai 被盗的 OAuth 令牌使未授权访问内部系统成为可能后披露了一起入侵事件，通过连接的应用程序。没有客户数据被暴露。"
+    "FBI 警告称，2025 年美国和加拿大的货物盗窃损失达到 7.25 亿美元，由网络犯罪分子利用物流 IT 系统拦截货物并重新定向货物所驱动。",
+    "威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到 PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。",
+    "Vimeo 将一起安全事件归因于分析供应商 Anodot 的泄露；黑客访问了内部系统，但未访问视频内容、登录信息或支付数据。"
   ],
-  "sources_hash": "b6d6e3547e9d236c"
+  "sources_hash": "571ba86104a00fa1"
 }

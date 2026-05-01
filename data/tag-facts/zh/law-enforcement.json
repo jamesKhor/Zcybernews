@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "count": 23,
+  "count": 24,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Scattered Spider",
@@ -24,17 +24,17 @@
     "Canada",
     "North america",
     "Europe",
-    "Germany"
+    "France"
   ],
   "severity_mix": {
-    "high": 18,
+    "high": 19,
     "medium": 4,
     "informational": 1
   },
   "recent_excerpts": [
+    "法国当局于4月25日拘留了一名15岁的少年，他涉嫌入侵ANTS，这是一个负责处理护照和驾驶执照的国家身份证明机构。",
     "瑞士和德国警方逮捕了与尼日利亚有联系的Black Axe网络的10名嫌疑人，包括一名负责监督南欧业务的地区领导人。",
-    "乌克兰警方拘留了涉嫌盗取数千个Roblox账户的黑客，这些账户包含玩家用真金白银购买的有价值的数字物品和游戏内货币...",
-    "三名男子在多伦多被捕，因为他们操作了一个冒充手机塔的SMS blaster，发送针对银行凭证的钓鱼短信，在数月的活动中进行。"
+    "乌克兰警方拘留了涉嫌盗取数千个Roblox账户的黑客，这些账户包含玩家用真金白银购买的有价值的数字物品和游戏内货币..."
   ],
-  "sources_hash": "f4f0e7b837d921ff"
+  "sources_hash": "3fa916e6b838645d"
 }

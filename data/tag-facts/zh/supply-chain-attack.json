@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain-attack",
   "locale": "zh",
-  "count": 12,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "GlassWorm",
@@ -13,23 +13,23 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "software development",
     "technology",
+    "software development",
     "cybersecurity",
-    "cloud services",
-    "enterprise"
+    "enterprise",
+    "enterprise software"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 4,
-    "high": 7
+    "high": 9,
+    "critical": 4
   },
   "recent_excerpts": [
+    "Atos TRC 在 2026 年 3 月识别出 EtherRAT —— 一种通过假冒 GitHub 仓库分发的远程访问木马，这些仓库伪装成管理工具。",
     "攻击者破坏了多个与SAP相关的npm包，部署窃取凭证的恶意软件，针对SAP BTP和云应用凭证。活动被称为迷你Shai-Hulud。",
-    "研究人员在 Open VSX 上发现了 73 个克隆的 VS Code 扩展，其中 6 个被确认为恶意，传递 GlassWorm v2 信息窃取器。",
-    "Checkmarx 确认一个网络犯罪团伙在暗网上发布了 GitHub 仓库数据，追溯到 3 月 23 日的供应链攻击。"
+    "研究人员在 Open VSX 上发现了 73 个克隆的 VS Code 扩展，其中 6 个被确认为恶意，传递 GlassWorm v2 信息窃取器。"
   ],
-  "sources_hash": "53670f94855d8e2c"
+  "sources_hash": "e502c0793c0f95a0"
 }

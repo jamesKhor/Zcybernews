@@ -1,21 +1,22 @@
 {
   "tag": "ai",
   "locale": "en",
-  "count": 27,
+  "count": 30,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "Bluekit",
     "Pushpaganda"
   ],
   "top_cves": [],
   "top_sectors": [
     "technology",
+    "financial services",
     "critical_infrastructure",
-    "enterprise software",
-    "finance",
-    "financial services"
+    "email providers",
+    "enterprise software"
   ],
   "top_regions": [
     "Global",
@@ -25,15 +26,15 @@
     "Canada"
   ],
   "severity_mix": {
-    "informational": 11,
-    "high": 11,
+    "high": 13,
+    "informational": 12,
     "critical": 1,
     "medium": 4
   },
   "recent_excerpts": [
-    "Malwarebytes integrated its scam-checking threat intelligence directly into Anthropic's Claude AI assistant — users can now query suspicious links, phone numbers, or email…",
-    "Autonomous AI agents with file and service access are forcing organizations to rethink identity controls, data boundaries, and monitoring — Krebs reports on shifting attack…",
-    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software."
+    "SecurityWeek reports attackers now weaponize vulnerabilities within hours using AI, forcing defenders to adopt automation. No specific CVE or victim named — analysis piece.",
+    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles.",
+    "Malwarebytes integrated its scam-checking threat intelligence directly into Anthropic's Claude AI assistant — users can now query suspicious links, phone numbers, or email…"
   ],
-  "sources_hash": "15aa10b5de29942a"
+  "sources_hash": "019cbd37cc39ca24"
 }

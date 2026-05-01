@@ -1,0 +1,39 @@
+{
+  "tag": "google-tag",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-30",
+    "latest": "2026-04-30"
+  },
+  "top_actors": [
+    "APT29",
+    "Commercial Surveillance Vendors",
+    "DRAGONBRIDGE"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "technology",
+    "media",
+    "telecommunications",
+    "civil society"
+  ],
+  "top_regions": [
+    "Global",
+    "China",
+    "Iran",
+    "Israel",
+    "Russia"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Google TAG finds APT29 using exploit chains identical to those deployed by Intellexa and NSO Group, suggesting shared access to zero-day suppliers or exploit resale.",
+    "Google TAG reports 97 zero-days were exploited in the wild in 2023, up from 62 in 2022. Commercial surveillance vendors drove 80% of targeted exploits. Full report released.",
+    "Google TAG terminated 12 YouTube channels and multiple ad accounts linked to state-backed influence campaigns from Russia, China, Iran, and Israel in Q1 2025."
+  ],
+  "sources_hash": "d94af2ee398a4e78"
+}

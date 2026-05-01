@@ -1,9 +1,9 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "intro": "Between April 13 and April 30, 2026, ZCyberNews published 25 articles under the threat-intelligence tag, with GopherWhisper, Handala Hack, and LockBit among the most frequently observed threat actors. The coverage spanned government, technology, financial services, critical-infrastructure, and cybersecurity sectors, affecting regions including Asia, Europe, Iran, and North America. The severity mix comprised 11 informational, nine high, and three medium reports.",
-  "sources_hash": "5460921cdadbefe2",
+  "intro": "Over 27 articles published between April 13 and April 30 tracked activity from Commercial Surveillance Vendors, GopherWhisper, and Handala Hack, with the highest volume of coverage focused on these three threat actors. The reporting spanned government, technology, financial services, civil society, and critical-infrastructure sectors across Global, Asia, Europe, Iran, and North America regions. The severity mix included 12 informational, 10 high, and 3 medium reports, reflecting a concentrated period of intelligence gathering and high-severity incidents.",
+  "sources_hash": "48ec59f1883d8266",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:18:44.486Z",
+  "generated_at": "2026-05-01T04:27:49.780Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,13 +1,15 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "count": 11,
+  "count": 15,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
-    "Pro-Russia Hacktivists"
+    "GRU",
+    "Interlock",
+    "LummaC2"
   ],
   "top_cves": [
     {
@@ -31,24 +33,25 @@
   ],
   "top_sectors": [
     "government",
-    "technology",
     "critical infrastructure",
-    "energy",
-    "IT"
+    "technology",
+    "defense",
+    "energy"
   ],
   "top_regions": [
+    "United states",
     "Global",
     "North america",
-    "United states"
+    "Europe"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 12,
     "critical": 3
   },
   "recent_excerpts": [
-    "CISA 将 CVE-2024-1708（ConnectWise ScreenConnect 路径遍历，CVSS 8.4）和一个未命名的 Windows 漏洞添加到其 KEV 目录，基于确认的积极利用。",
-    "CISA 将其 KEV 目录中添加了 4 个正在被积极利用的漏洞 —— SimpleHelp、Samsung MagicINFO 9 和 D-Link DIR-823X —— 并设定了 2026 年 5 月的联邦补救截止日期。",
-    "Apache ActiveMQ Classic 中存在一个高严重性的漏洞，CVE-2026-34197（CVSS 8.8），目前正在被积极利用，促使 CISA 将其加入其已知被利用漏洞目录，并要求联邦机构进行补丁修复。"
+    "CISA 和 FBI 联合咨询详细描述了 LummaC2 信息窃取者的 TTPs 和 IOCs：恶意软件从被入侵的网络中窃取凭证、加密钱包和会话数据。",
+    "CISA 和 USCG 在美国关键基础设施组织的一次主动威胁狩猎中发现持续的弱配置、未修补的系统和凭证重用。",
+    "CISA 将 CVE-2024-1708（ConnectWise ScreenConnect 路径遍历，CVSS 8.4）和一个未命名的 Windows 漏洞添加到其 KEV 目录，基于确认的积极利用。"
   ],
-  "sources_hash": "15fec9e6bfe89d38"
+  "sources_hash": "d90751e64f2deefd"
 }

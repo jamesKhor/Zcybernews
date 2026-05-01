@@ -1,7 +1,7 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-13",
     "latest": "2026-04-30"
@@ -27,7 +27,7 @@
       "cvss": 7.8
     },
     {
-      "id": "CVE-2026-33104",
+      "id": "CVE-2026-31431",
       "cvss": 7.8
     }
   ],
@@ -43,14 +43,14 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 17,
+    "high": 18,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
     "Black Hills InfoSec's 2025 pentest analysis of 15 months of data shows the same top 10 vulnerabilities as 2022 — weak passwords, unpatched RDP, and misconfigured MFA remain…",
-    "CVE-2026-35230: A race condition in VirtualBox's SoundBlaster 16 emulation allows local attackers with high-privileged guest access to escalate privileges. CVSS 7.5.",
-    "Microsoft released out-of-band patches for CVE-2026-40372, a 9.1-CVSS privilege escalation flaw in ASP.NET Core affecting all supported versions."
+    "CVE-2026-31431 (CVSS 7.8) dubbed 'Copy Fail' lets unprivileged local users write four controlled bytes to any readable file's page cache, enabling root on major Linux…",
+    "CVE-2026-35230: A race condition in VirtualBox's SoundBlaster 16 emulation allows local attackers with high-privileged guest access to escalate privileges. CVSS 7.5."
   ],
-  "sources_hash": "0ff06eacbb09b80b"
+  "sources_hash": "a482461c833e030a"
 }

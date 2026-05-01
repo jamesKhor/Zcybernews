@@ -1,9 +1,9 @@
 {
   "tag": "open-source",
   "locale": "en",
-  "intro": "This archive collects 6 articles tagged `open-source` published between April 12, 2026 and April 21, 2026. Coverage includes 2 medium, and 4 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "518054fa469201dc",
-  "model": "template:sparse",
-  "generated_at": "2026-04-22T04:07:33.260Z",
+  "intro": "From 12 articles published between April 12 and April 30, 2026, ZCyberNews coverage of open-source issues highlights two critical vulnerabilities: CVE-2026-25874 with a CVSS score of 9.3 and CVE-2026-33626 with a CVSS score of 7.5. The reporting spans technology, research, financial services, and software development sectors globally, with a severity mix of five informational, three critical, one high, and two medium alerts.",
+  "sources_hash": "03f7c75ada325f5f",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-01T04:28:15.592Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

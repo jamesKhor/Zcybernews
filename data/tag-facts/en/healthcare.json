@@ -1,38 +1,39 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "count": 7,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "Interlock",
     "Rhysida",
-    "ShinyHunters",
-    "UAC-0247"
+    "ShinyHunters"
   ],
   "top_cves": [],
   "top_sectors": [
     "healthcare",
     "Healthcare",
+    "critical infrastructure",
     "Government",
-    "research",
-    "technology"
+    "research"
   ],
   "top_regions": [
     "United states",
     "Global",
     "Illinois",
-    "Netherlands",
-    "Texas"
+    "Moldova",
+    "Netherlands"
   ],
   "severity_mix": {
-    "high": 7
+    "medium": 1,
+    "high": 8
   },
   "recent_excerpts": [
+    "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise.",
     "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data.",
-    "Southern Illinois Dermatology, Saint Anthony Hospital, and North Texas Behavioral Health Authority disclose breaches affecting over 600,000 patients, exposing names, SSNs, and medical data.",
-    "Cookeville Regional Medical Center confirms a 2025 ransomware attack by the Rhysida group compromised the data of 337,000 individuals after the theft of 500GB of files."
+    "CISA and FBI released a joint advisory on Interlock ransomware, detailing TTPs, IOCs, and a shift from double extortion to data-theft-only attacks targeting healthcare and…"
   ],
-  "sources_hash": "71777157b012d398"
+  "sources_hash": "93ac63ddb62ad987"
 }

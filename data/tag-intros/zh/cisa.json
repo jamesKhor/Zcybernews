@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "intro": "政府和技术部门是2026年4月中下旬12篇文章的主要目标，其中观察到的威胁行为者包括Pro-Russia Hacktivists。报道涵盖了五个特定CVE，其中CVE-2024-57726的CVSS评分为9.9，CVE-2026-34197评分为8.8，此外还有CVE-2024-1708、CVE-2024-20662和CVE-2024-21412。受影响区域遍及美国、北美及全球，涉及关键基础设施、能源和信息技术领域。严重程度分布包括九起高严重性事件和三起严重性事件。",
-  "sources_hash": "a70185c03974248b",
-  "source_intro_hash": "ea9c330feacbae3e",
+  "intro": "政府及关键基础设施领域是2026年4月12日至4月30日期间发布的16篇CISA标记文章的主要关注点。报道重点提及了威胁行为体GRU、Interlock和LummaC2，以及包括CVE-2024-57726、CVE-2026-34197、CVE-2024-1708、CVE-2024-20662和CVE-2024-21412在内的关键漏洞。严重程度分布为13起高危事件和3起严重事件，影响范围覆盖美国、北美、欧洲及其他全球地区。",
+  "sources_hash": "1a8ce2a03cef6b3b",
+  "source_intro_hash": "f180e06993e8fe8e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:21:30.573Z",
+  "generated_at": "2026-05-01T04:30:57.810Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

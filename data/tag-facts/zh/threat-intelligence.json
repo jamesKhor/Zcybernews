@@ -1,23 +1,23 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "count": 24,
+  "count": 26,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-29"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "Commercial Surveillance Vendors",
     "GopherWhisper",
-    "Handala Hack",
-    "LockBit"
+    "Handala Hack"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "technology",
     "financial services",
-    "critical-infrastructure",
-    "cybersecurity"
+    "civil society",
+    "critical-infrastructure"
   ],
   "top_regions": [
     "Global",
@@ -27,14 +27,14 @@
     "North america"
   ],
   "severity_mix": {
-    "informational": 10,
-    "high": 9,
+    "informational": 11,
+    "high": 10,
     "medium": 3
   },
   "recent_excerpts": [
+    "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。",
     "Malwarebytes 将其反诈骗威胁情报直接集成到 Anthropic 的 Claude AI 助手中 —— 用户现在可以查询可疑链接、电话号码或电子邮件…",
-    "Black Hills InfoSec 发布了一份实用的开源情报(OSINT)指南 —— 涵盖收集方法、分析框架以及保护分析人员免受暴露的运营安全控制。",
-    "Elastic Security Labs 为英国国防部的防御网络 Marvel 2026 演习部署了 AI 驱动的检测流程，处理了 1.2TB 的遥测数据，涉及 50 个模拟的..."
+    "Black Hills InfoSec 发布了一份实用的开源情报(OSINT)指南 —— 涵盖收集方法、分析框架以及保护分析人员免受暴露的运营安全控制。"
   ],
-  "sources_hash": "300dbf9c45a570ac"
+  "sources_hash": "0e566e8ca431752f"
 }

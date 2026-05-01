@@ -1,0 +1,9 @@
+{
+  "tag": "google-tag",
+  "locale": "en",
+  "intro": "Government, technology, and media sectors were the primary targets in five high-severity incidents tracked under the Google tag on April 30, 2026. Threat actors APT29, Commercial Surveillance Vendors, and DRAGONBRIDGE were observed in campaigns affecting organizations in China, Iran, Israel, and Russia. The activity, assessed as four high-severity and one medium-severity event, also impacted telecommunications and civil society entities globally.",
+  "sources_hash": "d94af2ee398a4e78",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-01T04:30:14.596Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

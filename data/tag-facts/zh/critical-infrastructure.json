@@ -1,15 +1,15 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "count": 17,
+  "count": 19,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "APT33",
     "CyberAv3ngers",
-    "Lotus Wiper"
+    "Interlock"
   ],
   "top_cves": [
     {
@@ -19,9 +19,9 @@
   ],
   "top_sectors": [
     "energy",
+    "critical infrastructure",
     "critical-infrastructure",
     "utilities",
-    "critical infrastructure",
     "manufacturing"
   ],
   "top_regions": [
@@ -32,15 +32,15 @@
     "Asia-pacific"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 12,
     "critical": 2,
     "informational": 3,
     "medium": 1
   },
   "recent_excerpts": [
+    "CISA 和 USCG 在美国关键基础设施组织的一次主动威胁狩猎中发现持续的弱配置、未修补的系统和凭证重用。",
     "Itron 在 SEC 8-K 文件中披露了一起网络安全事件：未经授权的第三方访问了内部IT系统。",
-    "Dark Reading 报告称攻击者正在操纵电压以破坏电网 —— 这是一个日益增长的网络物理威胁向量，针对没有补丁的电力基础设施进行攻击…",
-    "Locked Shields 2026涉及41个国家参与最大的实弹网络防御演习，测试对关键基础设施攻击的响应，包括电网和电信…"
+    "Dark Reading 报告称攻击者正在操纵电压以破坏电网 —— 这是一个日益增长的网络物理威胁向量，针对没有补丁的电力基础设施进行攻击…"
   ],
-  "sources_hash": "e47e47ecd42a1395"
+  "sources_hash": "47954824a8c09be6"
 }

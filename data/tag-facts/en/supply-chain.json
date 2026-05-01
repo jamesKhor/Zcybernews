@@ -1,15 +1,15 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 71,
+  "count": 74,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Lazarus Group",
     "CanisterSprawl",
-    "TeamPCP"
+    "GRU"
   ],
   "top_cves": [
     {
@@ -36,21 +36,21 @@
   ],
   "top_regions": [
     "Global",
-    "Asia",
-    "Europe",
     "North america",
+    "Europe",
+    "Asia",
     "Arctic"
   ],
   "severity_mix": {
+    "high": 45,
+    "critical": 12,
     "medium": 12,
-    "critical": 11,
-    "high": 43,
     "informational": 4
   },
   "recent_excerpts": [
-    "Vimeo attributed a security incident to a breach at analytics vendor Anodot; hackers accessed internal systems but not video content, logins, or payment data.",
-    "Attackers compromised the elementary-data PyPI package (1.1M monthly downloads) to push an infostealer targeting developer credentials, crypto wallets, and environment variables.",
-    "Vercel disclosed a breach after stolen OAuth tokens from Context.ai enabled unauthorized access to internal systems via a connected app. No customer data exposed."
+    "FBI warns cargo theft losses hit $725M in US and Canada in 2025, driven by cybercriminals exploiting logistics IT systems to intercept shipments and redirect loads.",
+    "Threat actors pushed malicious PyTorch Lightning versions 2.6.2 and 2.6.3 to PyPI on April 30, 2026, stealing credentials via a typosquatted dependency — Aikido Security, Socket,…",
+    "Vimeo attributed a security incident to a breach at analytics vendor Anodot; hackers accessed internal systems but not video content, logins, or payment data."
   ],
-  "sources_hash": "b6d6e3547e9d236c"
+  "sources_hash": "571ba86104a00fa1"
 }

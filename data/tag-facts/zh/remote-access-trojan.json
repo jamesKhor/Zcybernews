@@ -1,31 +1,32 @@
 {
   "tag": "remote-access-trojan",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-22"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Lazarus Group"
   ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "cryptocurrency",
-    "software development",
-    "technology"
+    "enterprise software",
+    "software development"
   ],
   "top_regions": [
     "Global",
     "Latin america"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "Atos TRC 在 2026 年 3 月识别出 EtherRAT —— 一种通过假冒 GitHub 仓库分发的远程访问木马，这些仓库伪装成管理工具。",
     "一个新的恶意软件活动通过单一混淆加载器同时部署Gh0st RAT和CloverPlus广告软件，使攻击者能够从单一感染中获得持久的远程控制和收入流。",
-    "据 CyberSecurity News 研究人员称，MiningDropper 是一个多阶段的 Android 恶意软件框架，通过伪装的应用程序向设备传送 infostealers、RATs 和银行木马。",
-    "一个木马化的 Slack 安装程序提供了一个远程访问工具，该工具创建了一个隐藏的桌面，允许攻击者绕过多因素认证并悄无声息地控制受害者的机器。"
+    "据 CyberSecurity News 研究人员称，MiningDropper 是一个多阶段的 Android 恶意软件框架，通过伪装的应用程序向设备传送 infostealers、RATs 和银行木马。"
   ],
-  "sources_hash": "5b6d2e525c8a0ce3"
+  "sources_hash": "1b1dafc77b44670b"
 }

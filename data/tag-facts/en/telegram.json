@@ -1,0 +1,37 @@
+{
+  "tag": "telegram",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-30"
+  },
+  "top_actors": [
+    "Bluekit"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "social media",
+    "technology",
+    "e-commerce",
+    "email providers"
+  ],
+  "top_regions": [
+    "China",
+    "Global",
+    "Southeast asia",
+    "United kingdom"
+  ],
+  "severity_mix": {
+    "informational": 1,
+    "medium": 1,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "UK regulator Ofcom launches a formal investigation into Telegram over evidence of child sexual abuse material (CSAM) sharing and potential breaches of the Online Safety Act's encryption reporting rule",
+    "Telegram founder Pavel Durov alleges WhatsApp's default end-to-end encryption is misleading, as unencrypted cloud backups can expose billions of user messages.",
+    "A new phishing-as-a-service platform called Bluekit provides over 40 templates targeting banks, social media, and email providers, plus an AI assistant for drafting lures."
+  ],
+  "sources_hash": "8f56aba438a825ad"
+}

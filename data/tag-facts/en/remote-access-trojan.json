@@ -1,31 +1,32 @@
 {
   "tag": "remote-access-trojan",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-22"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "Lazarus Group"
   ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "cryptocurrency",
-    "software development",
-    "technology"
+    "enterprise software",
+    "software development"
   ],
   "top_regions": [
     "Global",
     "Latin america"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "Atos TRC identified EtherRAT in March 2026 — a remote access trojan distributed through fake GitHub repos impersonating admin utilities.",
     "A new malware campaign deploys both Gh0st RAT and CloverPlus adware via a single obfuscated loader, giving attackers persistent remote control and a revenue stream from a single infection.",
-    "MiningDropper, a multi-stage Android malware framework, delivers infostealers, RATs, and banking trojans to devices via disguised apps, according to CyberSecurity News researchers.",
-    "A trojanized Slack installer delivers a remote access tool that creates a hidden desktop, allowing attackers to bypass multi-factor authentication and silently control victim machines."
+    "MiningDropper, a multi-stage Android malware framework, delivers infostealers, RATs, and banking trojans to devices via disguised apps, according to CyberSecurity News researchers."
   ],
-  "sources_hash": "5b6d2e525c8a0ce3"
+  "sources_hash": "1b1dafc77b44670b"
 }

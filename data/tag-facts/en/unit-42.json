@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-04-26"
+    "latest": "2026-04-30"
   },
   "top_actors": [
     "TeamPCP",
@@ -12,25 +12,25 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "software development",
     "technology",
     "enterprise",
+    "software development",
     "cloud service providers",
     "cloud-services"
   ],
   "top_regions": [
-    "Central america",
     "Global",
+    "Central america",
     "South america"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 7,
     "critical": 1
   },
   "recent_excerpts": [
     "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
     "Palo Alto Unit 42 outlines defensive strategies for frontier AI threats — model poisoning, prompt injection, and data leakage — in response to top customer queries.",
-    "Unit 42 reports TeamPCP has partnered with Vect ransomware group to target security software vendors in multi-stage supply chain attacks, compromising trusted update mechanisms."
+    "Unit 42 finds 30+ malicious AI browser extensions exfiltrating email content, credentials, and API keys via prompt injection and DOM scraping. Affects Chrome, Edge users."
   ],
-  "sources_hash": "9fd0092e7f2d6c19"
+  "sources_hash": "5b925761e784fbfc"
 }

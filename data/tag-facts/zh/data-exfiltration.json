@@ -1,32 +1,37 @@
 {
   "tag": "data-exfiltration",
   "locale": "zh",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-23"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "Inc Ransom",
     "Payouts King",
     "Trigona"
   ],
   "top_cves": [],
   "top_sectors": [
+    "technology",
+    "enterprise",
     "financial services",
-    "manufacturing",
-    "technology"
+    "healthcare",
+    "manufacturing"
   ],
   "top_regions": [
     "Europe",
-    "North america"
+    "Global",
+    "North america",
+    "United states"
   ],
   "severity_mix": {
-    "high": 4
+    "high": 6
   },
   "recent_excerpts": [
+    "2025年，Inc Ransom 集团入侵了南卡罗来纳州的医疗保健提供商 Sandhills Medical；该事件影响了 17 万名患者，直到近一年后才披露。",
     "Trigona 勒索软件攻击现在使用自定义的 CLI 工具从被入侵的网络中更快地外泄数据，加密前针对备份和云存储。",
-    "安全研究人员警告称，由AI驱动的'agentic'浏览器，这些浏览器自动化网络任务，引入了包括即时注入、会话劫持和未经授权的数据外泄在内的新风险，从根本上改变了浏览器的安全模型。",
-    "The Gentlemen勒索软件组织在全球范围内破坏了企业安全控制，并入侵了Atlassian合作伙伴Adaptavist，窃取了数TB的源代码和数据。"
+    "安全研究人员警告称，由AI驱动的'agentic'浏览器，这些浏览器自动化网络任务，引入了包括即时注入、会话劫持和未经授权的数据外泄在内的新风险，从根本上改变了浏览器的安全模型。"
   ],
-  "sources_hash": "4609ec46d9ff21cb"
+  "sources_hash": "bb3ab86542a09110"
 }

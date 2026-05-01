@@ -1,0 +1,37 @@
+{
+  "tag": "fbi",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-04-30"
+  },
+  "top_actors": [
+    "Handala Hack",
+    "Interlock",
+    "LummaC2"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "critical infrastructure",
+    "government",
+    "healthcare",
+    "logistics",
+    "multiple"
+  ],
+  "top_regions": [
+    "United states",
+    "Global",
+    "Iran",
+    "North america"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
+    "FBI warns cargo theft losses hit $725M in US and Canada in 2025, driven by cybercriminals exploiting logistics IT systems to intercept shipments and redirect loads.",
+    "CISA and FBI released a joint advisory on Interlock ransomware, detailing TTPs, IOCs, and a shift from double extortion to data-theft-only attacks targeting healthcare and…"
+  ],
+  "sources_hash": "bb4ae3ccad0b3879"
+}

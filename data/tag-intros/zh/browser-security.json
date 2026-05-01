@@ -1,10 +1,10 @@
 {
   "tag": "browser-security",
   "locale": "zh",
-  "intro": "技术行业承受了近期浏览器安全威胁的主要冲击，澳大利亚、加拿大、新西兰、英国及全球各地的组织均受到影响。在2026年4月11日至4月29日期间发布的八篇文章中，观察到威胁行为者Pushpaganda。这些报道涵盖了两起严重、两起高危、两起中危及一起信息性严重程度的事件，凸显出一段针对浏览器环境的集中活跃期。",
-  "sources_hash": "f13101340f715bbd",
-  "source_intro_hash": "5f30ac42fac45fca",
+  "intro": "2026年4月11日至30日期间，ZCyberNews追踪的浏览器安全事件中，技术行业承受了主要冲击，企业和全球用户也受到严重影响。九篇文章涵盖了两种严重、三种高危、两种中等和一种信息性严重等级的问题。在这些活动中观察到威胁行为者Pushpaganda。受影响地区包括澳大利亚、加拿大、新西兰、英国及全球目标。",
+  "sources_hash": "fe70c243c2aead43",
+  "source_intro_hash": "dc04dac2a87ab876",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:21:28.308Z",
+  "generated_at": "2026-05-01T04:30:55.472Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

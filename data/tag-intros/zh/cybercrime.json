@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "zh",
-  "intro": "金融服务业与政府部门在2026年4月13日至4月29日期间遭受了一波集中网络犯罪活动的冲击，共有21篇文章报道了14起高严重性事件。LockBit、Black Axe及Chinese Transnational Organized Crime被列为最活跃的威胁行为体，影响范围涵盖加勒比地区、德国、拉丁美洲及东南亚。相关活动还波及电子商务与游戏领域，具有全球性影响，另有五篇中等严重性与两篇信息性报告补充了整体报道内容。",
-  "sources_hash": "3e02b4006ff4b5c1",
-  "source_intro_hash": "447dbd601ba61582",
+  "intro": "2026年4月13日至4月30日期间，金融服务业和政府领域遭受了一波集中式网络犯罪活动的冲击，共有23篇文章记录了16起高严重性事件。威胁行为者LockBit、Black Axe和Chinese Transnational Organized Crime被观察到在全球范围内针对各类组织发起攻击，对加勒比地区、德国、拉丁美洲和东南亚造成了显著影响。电子商务和游戏行业也遭遇了攻击，同时两份情报报告提供了额外的背景信息。",
+  "sources_hash": "f4512cb7d0fcd5bc",
+  "source_intro_hash": "870ee9ef1f70b841",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:21:36.640Z",
+  "generated_at": "2026-05-01T04:31:04.054Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

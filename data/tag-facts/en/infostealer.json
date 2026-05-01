@@ -1,32 +1,35 @@
 {
   "tag": "infostealer",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-27"
+    "latest": "2026-04-30"
   },
   "top_actors": [
+    "LummaC2",
     "Omnistealer"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "healthcare",
+    "multiple",
     "software development",
     "technology"
   ],
   "top_regions": [
+    "Global",
     "Ukraine"
   ],
   "severity_mix": {
-    "critical": 1,
-    "high": 6
+    "high": 7,
+    "critical": 1
   },
   "recent_excerpts": [
+    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
     "Attackers compromised the elementary-data PyPI package (1.1M monthly downloads) to push an infostealer targeting developer credentials, crypto wallets, and environment variables.",
-    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software.",
-    "NGate malware version 2.0, built with AI assistance, hides in a trojanized NFC payment app to steal SMS, contacts, and crypto wallet data from Android devices while evading security software."
+    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software."
   ],
-  "sources_hash": "b0efd1d50e97c2ef"
+  "sources_hash": "5d9a62f551f5e611"
 }
