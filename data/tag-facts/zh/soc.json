@@ -1,10 +1,10 @@
 {
   "tag": "soc",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-29"
+    "latest": "2026-05-01"
   },
   "top_actors": [],
   "top_cves": [],
@@ -16,9 +16,9 @@
     "informational": 7
   },
   "recent_excerpts": [
+    "Criminal IP 和 Securonix ThreatQ 的合作将基于暴露的威胁情报嵌入到自动化工作流程中，减少了SOC团队的手动分类工作。",
     "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。",
-    "Black Hills InfoSec SOC团队回顾了在Deadwood的Wild West Hackin' Fest中进行的14小时通宵事件响应参与——现实世界的分类、控制和教训，用于...",
-    "成熟的安全运营中心通过将威胁情报集成到工作流程中，将平均响应时间减少了40%，而其他人则在孤立的数据和手动流程上浪费时间。"
+    "Black Hills InfoSec SOC团队回顾了在Deadwood的Wild West Hackin' Fest中进行的14小时通宵事件响应参与——现实世界的分类、控制和教训，用于..."
   ],
-  "sources_hash": "dcabeb8955e652f6"
+  "sources_hash": "f0efd140c9f2b660"
 }

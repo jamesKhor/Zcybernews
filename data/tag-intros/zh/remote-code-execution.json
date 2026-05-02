@@ -1,0 +1,10 @@
+{
+  "tag": "remote-code-execution",
+  "locale": "zh",
+  "intro": "2026年4月14日至5月2日期间，技术与软件开发领域遭遇了一波集中的远程代码执行攻击，共有五篇文章记录了关键及高危漏洞。其中，CVE-2026-41265和CVE-2026-5760的CVSS评分均为9.8，CVE-2026-25874为9.3，CVE-2026-3854为8.7。威胁态势呈现全球性特征，三起关键级和两起高危级事件对人工智能及研究领域造成了影响。",
+  "sources_hash": "c180effda80661e6",
+  "source_intro_hash": "2a4439678fa5c2e1",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-02T04:12:49.356Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

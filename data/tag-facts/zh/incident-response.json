@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "zh",
-  "count": 10,
+  "count": 12,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-29"
+    "latest": "2026-05-02"
   },
   "top_actors": [],
   "top_cves": [
@@ -17,8 +17,8 @@
     "technology",
     "cloud computing",
     "cybersecurity",
-    "energy",
-    "financial services"
+    "cybersecurity services",
+    "energy"
   ],
   "top_regions": [
     "Europe",
@@ -27,14 +27,15 @@
     "Venezuela"
   ],
   "severity_mix": {
-    "high": 4,
+    "informational": 1,
+    "high": 5,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
-    "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。",
-    "Black Hills InfoSec SOC团队回顾了在Deadwood的Wild West Hackin' Fest中进行的14小时通宵事件响应参与——现实世界的分类、控制和教训，用于...",
-    "Black Hills InfoSec 详细说明了如何将陈旧的网络安全桌面演练转变为沉浸式的场景模拟，以测试真实的事件响应决策。"
+    "Elastic Security Labs详细说明了如何在Elastic Security内部运行实时Osquery查询，覆盖成千上万的端点，以加速DFIR调查，无需磁盘映像。",
+    "两名滥用客户访问权限部署勒索软件的网络安全事件响应者被判处4年监禁——这是响应者转变为攻击者的罕见案例。",
+    "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。"
   ],
-  "sources_hash": "7fcc728384c867ce"
+  "sources_hash": "f9620e5c6dd4a722"
 }

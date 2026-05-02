@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "intro": "2026年4月8日至30日期间，ZCyberNews以AI标签发布了30篇文章，记录了威胁行为体Bluekit和Pushpaganda的活动。报道涵盖13起高严重性事件、1起严重事件、4起中等严重事件及12份信息性报告。受影响行业包括技术、金融服务、关键基础设施、电子邮件提供商及企业软件，影响范围涉及美国、亚洲、澳大利亚和加拿大等全球地区。",
-  "sources_hash": "019cbd37cc39ca24",
-  "source_intro_hash": "ba396d54736c2667",
+  "intro": "2026年4月8日至5月1日期间，ZCyberNews在ai标签下发布了31篇文章，涉及威胁行为体Bluekit和Pushpaganda。受影响最严重的行业包括技术、金融服务、关键基础设施和电子邮件提供商，影响范围覆盖全球、英国、美国、亚洲和澳大利亚。严重程度分布为：5起中等、13起高危、12起信息性及1起严重事件。",
+  "sources_hash": "f40956907f98acb6",
+  "source_intro_hash": "55e4171a54d230ea",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:30:49.211Z",
+  "generated_at": "2026-05-02T04:12:22.557Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

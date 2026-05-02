@@ -1,0 +1,35 @@
+{
+  "tag": "insider-threat",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-05-01"
+  },
+  "top_actors": [
+    "BlackCat",
+    "BlackCat (ALPHV)"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "multiple",
+    "all",
+    "cryptocurrency",
+    "cybersecurity services"
+  ],
+  "top_regions": [
+    "United states",
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "medium": 1,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers.",
+    "Two former IR firm employees got 4 years each for laundering $18M+ in BlackCat ransom payments and advising attackers on negotiation tactics.",
+    "Global workforce stress, anger, and sadness remain significantly above pre-pandemic levels, creating a sustained environment conducive to insider threats and security lapses, according to Gallup's 202"
+  ],
+  "sources_hash": "db0f29544aefb59e"
+}

@@ -1,0 +1,9 @@
+{
+  "tag": "china",
+  "locale": "en",
+  "intro": "Government, defense, and critical infrastructure sectors were the primary targets in a series of five high-severity incidents tagged China between April 23 and May 1, 2026. Threat actors GopherWhisper, DRAGONBRIDGE, and SHADOW-EARTH-053 were observed in these operations, which impacted regions including Mongolia, the United States, East Asia, Europe, and globally. The technology and media sectors also featured among the affected industries during this period.",
+  "sources_hash": "da8684669b2e962f",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-02T04:11:26.179Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

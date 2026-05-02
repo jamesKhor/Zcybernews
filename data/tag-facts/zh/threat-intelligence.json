@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "count": 26,
+  "count": 27,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "Commercial Surveillance Vendors",
@@ -32,9 +32,9 @@
     "medium": 3
   },
   "recent_excerpts": [
+    "Criminal IP 和 Securonix ThreatQ 的合作将基于暴露的威胁情报嵌入到自动化工作流程中，减少了SOC团队的手动分类工作。",
     "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。",
-    "Malwarebytes 将其反诈骗威胁情报直接集成到 Anthropic 的 Claude AI 助手中 —— 用户现在可以查询可疑链接、电话号码或电子邮件…",
-    "Black Hills InfoSec 发布了一份实用的开源情报(OSINT)指南 —— 涵盖收集方法、分析框架以及保护分析人员免受暴露的运营安全控制。"
+    "Malwarebytes 将其反诈骗威胁情报直接集成到 Anthropic 的 Claude AI 助手中 —— 用户现在可以查询可疑链接、电话号码或电子邮件…"
   ],
-  "sources_hash": "0e566e8ca431752f"
+  "sources_hash": "5720b59f7f980388"
 }

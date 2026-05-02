@@ -1,0 +1,35 @@
+{
+  "tag": "government",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-05-01"
+  },
+  "top_actors": [
+    "SHADOW-EARTH-053"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "defense",
+    "law enforcement"
+  ],
+  "top_regions": [
+    "United states",
+    "East asia",
+    "Europe",
+    "France",
+    "Mexico"
+  ],
+  "severity_mix": {
+    "medium": 1,
+    "high": 4
+  },
+  "recent_excerpts": [
+    "U.S. Immigration and Customs Enforcement (ICE) confirmed using spyware from Israeli firm Graphite, a tool capable of extracting data from encrypted messaging apps like WhatsApp…",
+    "Trend Micro tracks SHADOW-EARTH-053 targeting government and defense sectors across Asia and one NATO-aligned European state. Campaign uses custom backdoors and spear-phishing.",
+    "France Titres, the French government agency for ID documents, confirms a data breach after a threat actor offers to sell stolen citizen information, including names, addresses, and passport numbers."
+  ],
+  "sources_hash": "cdcd2f13f9deae55"
+}

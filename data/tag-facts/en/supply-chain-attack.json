@@ -1,15 +1,15 @@
 {
   "tag": "supply-chain-attack",
   "locale": "en",
-  "count": 14,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-02"
   },
   "top_actors": [
     "GlassWorm",
-    "Fast16",
-    "mini Shai-Hulud"
+    "BufferZoneCorp",
+    "Fast16"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -23,13 +23,13 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 9,
-    "critical": 5
+    "high": 10,
+    "critical": 6
   },
   "recent_excerpts": [
-    "Atos TRC identified EtherRAT in March 2026 — a remote access trojan distributed through fake GitHub repos impersonating admin utilities.",
-    "Attackers compromised multiple SAP-related npm packages to deploy credential-stealing malware, targeting SAP BTP and cloud app credentials. Campaign dubbed mini Shai-Hulud.",
-    "Researchers found 73 cloned VS Code extensions on Open VSX, with 6 confirmed malicious, delivering the GlassWorm v2 info-stealer."
+    "BufferZoneCorp account published malicious Ruby gems and Go modules that steal credentials, tamper with GitHub Actions, and establish SSH persistence in CI pipelines.",
+    "Attackers compromised SAP, Lightning, and Intercom npm packages in a supply chain attack affecting 1,800 victims; packages had 10M monthly downloads.",
+    "Atos TRC identified EtherRAT in March 2026 — a remote access trojan distributed through fake GitHub repos impersonating admin utilities."
   ],
-  "sources_hash": "e502c0793c0f95a0"
+  "sources_hash": "ef9d1f95bd0491d8"
 }

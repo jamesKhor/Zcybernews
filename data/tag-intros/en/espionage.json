@@ -1,9 +1,9 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "intro": "Over the past two weeks, ZCyberNews has tracked eight espionage-focused reports, with six rated high severity and two critical. APT28 (Fancy Bear), Mustang Panda, and Silver Dragon were the most frequently observed threat actors, targeting government, healthcare, technology, banking, and critical infrastructure sectors. Affected regions included Europe, Global, India, South Korea, and Southeast Asia, with incidents recorded between April 12 and April 27, 2026.",
-  "sources_hash": "9f94c11c69457c31",
+  "intro": "Between April 12 and May 1, 2026, ZCyberNews covered ten espionage-focused articles, with APT28 (Fancy Bear) appearing as the most frequently reported threat actor. Other notable actors included Deep#Door and Mustang Panda. The reporting documented eight high-severity and two critical-severity incidents affecting the government, defense, healthcare, technology, and banking sectors. Targeted regions spanned Europe, Southeast Asia, East Asia, India, and global interests.",
+  "sources_hash": "c0d6348b1673423a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-28T04:21:31.368Z",
+  "generated_at": "2026-05-02T04:10:14.088Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

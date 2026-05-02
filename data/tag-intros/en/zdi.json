@@ -1,9 +1,9 @@
 {
   "tag": "zdi",
   "locale": "en",
-  "intro": "Over ten articles published between April 18 and April 29, 2026, the ZDI tag covers a concentrated wave of high-severity vulnerabilities. Key CVEs include CVE-2026-22898, CVE-2026-6406, CVE-2026-41276, CVE-2026-25203, and CVE-2026-5424, affecting sectors such as software development, technology, critical infrastructure, digital signage, and energy globally. The severity mix comprises eight high, one low, and one critical issue, reflecting a broad but targeted risk landscape for organizations relying on these technologies.",
-  "sources_hash": "717bd0f7e363c41c",
+  "intro": "Over 11 articles published between April 18 and May 2, 2026, cover the ZDI tag, highlighting vulnerabilities in software development, technology, critical infrastructure, digital signage, and energy sectors globally. Key CVEs include CVE-2026-41265 (CVSS 9.8), CVE-2026-22898 (CVSS 8.8), CVE-2026-6406 (CVSS 8.8), CVE-2026-41276 (CVSS 8.1), and CVE-2026-25203 (CVSS 7.8). The severity mix comprises two critical, eight high, and one low severity issues.",
+  "sources_hash": "3c5eabf69c503c76",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:19:20.351Z",
+  "generated_at": "2026-05-02T04:10:12.277Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,15 +1,15 @@
 {
   "tag": "supply-chain-attack",
   "locale": "zh",
-  "count": 14,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-02"
   },
   "top_actors": [
     "GlassWorm",
-    "Fast16",
-    "mini Shai-Hulud"
+    "BufferZoneCorp",
+    "Fast16"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -23,13 +23,13 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 9,
-    "critical": 4
+    "high": 10,
+    "critical": 5
   },
   "recent_excerpts": [
-    "Atos TRC 在 2026 年 3 月识别出 EtherRAT —— 一种通过假冒 GitHub 仓库分发的远程访问木马，这些仓库伪装成管理工具。",
-    "攻击者破坏了多个与SAP相关的npm包，部署窃取凭证的恶意软件，针对SAP BTP和云应用凭证。活动被称为迷你Shai-Hulud。",
-    "研究人员在 Open VSX 上发现了 73 个克隆的 VS Code 扩展，其中 6 个被确认为恶意，传递 GlassWorm v2 信息窃取器。"
+    "BufferZoneCorp账户发布了恶意的Ruby gems和Go模块，这些模块窃取凭证，篡改GitHub Actions，并在CI流水线中建立SSH持久性。",
+    "攻击者在供应链攻击中破坏了 SAP、Lightning 和 Intercom npm 包，影响了 1800 名受害者；包每月下载量达 1000 万。",
+    "Atos TRC 在 2026 年 3 月识别出 EtherRAT —— 一种通过假冒 GitHub 仓库分发的远程访问木马，这些仓库伪装成管理工具。"
   ],
-  "sources_hash": "e502c0793c0f95a0"
+  "sources_hash": "ef9d1f95bd0491d8"
 }

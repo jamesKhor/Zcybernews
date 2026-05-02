@@ -1,9 +1,9 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "intro": "Technology and government sectors bore the brunt of 51 ai-security tagged articles published between April 12 and April 30, 2026. The coverage featured threat actors Claude Mythos and OpenClaw, alongside critical vulnerabilities CVE-2026-5760 (CVSS 9.8) and CVE-2026-5752 (CVSS 9.3). Affected regions included Global, China, and the United states. The severity mix comprised 23 high, 7 critical, 6 medium, and 12 informational reports, highlighting persistent risks across cybersecurity, healthcare, and artificial intelligence domains.",
-  "sources_hash": "96bf90e06cfe46b1",
+  "intro": "Technology, government, and cybersecurity sectors bore the brunt of 52 articles tagged with ai-security between April 12 and May 1, 2026, with 24 high and 7 critical severity reports. Threat actors Claude Mythos and OpenClaw were observed, while vulnerabilities CVE-2026-5760 (CVSS 9.8) and CVE-2026-5752 (CVSS 9.3) posed significant risks globally, particularly across China and the United States. The coverage also touched on healthcare and artificial intelligence sectors, with 6 medium and 12 informational items rounding out the mix.",
+  "sources_hash": "66b0b52a0ec2f338",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:27:32.683Z",
+  "generated_at": "2026-05-02T04:09:31.728Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

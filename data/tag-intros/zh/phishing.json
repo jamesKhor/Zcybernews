@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "intro": "金融服务业与政府部门在2026年4月8日至4月30日期间监测到的53篇报道中，成为集中式钓鱼攻击浪潮的主要目标。观察到Silver Fox、Bluekit及FakeWallet等威胁行为体，共涉及45起高严重性事件与8起中严重性事件。被利用的关键漏洞包括CVE-2023-22515、CVE-2023-34048、CVE-2023-46805、CVE-2023-4966及CVE-2024-21893。该攻击活动影响全球多个区域，其中拉丁美洲、加拿大、加勒比地区及美国活动显著，波及酒店、加密货币及金融等行业。",
-  "sources_hash": "c078e0508d3d5bc4",
-  "source_intro_hash": "1e3958d236a5b571",
+  "intro": "金融服务业和政府机构是ZCyberNews追踪的一波钓鱼攻击的主要目标，在2026年4月8日至5月1日期间共记录到54起事件。威胁行为者Silver Fox、AccountDumpling和Bluekit被观察到利用包括CVE-2023-22515、CVE-2023-34048、CVE-2023-46805、CVE-2023-4966和CVE-2024-21893在内的漏洞。这些攻击活动影响了全球多个地区，其中拉丁美洲、加拿大、加勒比地区和美国受到显著影响。严重程度分布为46起高严重性事件和8起中等严重性事件。",
+  "sources_hash": "cc3ec4f933b1e306",
+  "source_intro_hash": "e60e5c528bfaf0eb",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:31:25.256Z",
+  "generated_at": "2026-05-02T04:12:43.775Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

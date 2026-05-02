@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 27,
+  "count": 28,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "Commercial Surveillance Vendors",
@@ -32,9 +32,9 @@
     "medium": 3
   },
   "recent_excerpts": [
+    "Criminal IP and Securonix ThreatQ partnership embeds exposure-based threat intel into automated workflows, reducing manual triage for SOC teams.",
     "Black Hills Information Security released GoSpoof, a Python tool that opens all ports on a honeypot to capture attacker scanning patterns and payloads in real time.",
-    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles.",
-    "Malwarebytes integrated its scam-checking threat intelligence directly into Anthropic's Claude AI assistant — users can now query suspicious links, phone numbers, or email…"
+    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles."
   ],
-  "sources_hash": "48ec59f1883d8266"
+  "sources_hash": "15260054b962f707"
 }

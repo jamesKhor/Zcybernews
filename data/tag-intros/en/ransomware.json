@@ -1,9 +1,9 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "intro": "The Gentlemen, Interlock, and Kyber were the most active threat actors across 41 ransomware reports published between April 12 and April 30, 2026. The archive highlights exploitation of CVE-2026-1731, a critical vulnerability with a CVSS score of 9.8, and CVE-2026-34197, rated 8.8. Affected sectors included healthcare, manufacturing, technology, and critical infrastructure, with global impact observed across Europe, the United States, North America, and Turkey. The severity mix comprised 32 high, 4 critical, 1 medium, and 2 informational reports.",
-  "sources_hash": "b11136c2d8d2014a",
+  "intro": "The Gentlemen, Interlock, and Kyber were the most active ransomware threat actors across 43 articles published between April 12 and May 1, 2026. The archive covers 34 high-severity incidents and four critical events, with CVE-2026-1731 (CVSS 9.8) and CVE-2026-34197 (CVSS 8.8) appearing as the top vulnerabilities. Affected sectors include healthcare, manufacturing, technology, and critical infrastructure, with reports spanning the United States, Europe, North America, and Turkey.",
+  "sources_hash": "cb1cb32069412380",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:27:35.177Z",
+  "generated_at": "2026-05-02T04:09:33.943Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

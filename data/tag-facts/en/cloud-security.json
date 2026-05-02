@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "count": 22,
+  "count": 23,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "APT41"
@@ -17,24 +17,24 @@
   ],
   "top_sectors": [
     "technology",
+    "cloud-services",
     "government",
     "healthcare",
-    "cloud services",
-    "cloud-services"
+    "cloud services"
   ],
   "top_regions": [
     "Global",
     "Israel"
   ],
   "severity_mix": {
-    "high": 13,
+    "high": 14,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Dark Reading reports AI agents are deleting production databases because organizations deploy agent integrations without proper security testing or access controls.",
     "Vercel disclosed a breach after stolen OAuth tokens from Context.ai enabled unauthorized access to internal systems via a connected app. No customer data exposed.",
-    "BHIS released a cloud security guide covering IAM misconfigurations, shared responsibility gaps, and logging blind spots — essential reading for teams securing AWS, Azure, or GCP…",
-    "Elastic Security XDR now correlates endpoint telemetry with cloud and network data, enabling analysts to trace multi-stage attacks across hybrid environments in a single query…"
+    "BHIS released a cloud security guide covering IAM misconfigurations, shared responsibility gaps, and logging blind spots — essential reading for teams securing AWS, Azure, or GCP…"
   ],
-  "sources_hash": "4e3b6fcfd8138167"
+  "sources_hash": "dc18448262e9af26"
 }

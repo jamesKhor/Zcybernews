@@ -1,39 +1,39 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "count": 8,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "APT28 (Fancy Bear)",
-    "Mustang Panda",
-    "Silver Dragon"
+    "Deep#Door",
+    "Mustang Panda"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
+    "defense",
     "healthcare",
     "technology",
-    "banking",
-    "critical infrastructure"
+    "banking"
   ],
   "top_regions": [
     "Europe",
+    "Southeast asia",
+    "East asia",
     "Global",
-    "India",
-    "South korea",
-    "Southeast asia"
+    "India"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 8,
     "critical": 2
   },
   "recent_excerpts": [
+    "Deep#Door Python backdoor deploys persistent Windows implant for espionage — uses encrypted C2 channels, file exfiltration, and remote shell. No patch available.",
     "The UK's NCSC reports handling four nationally significant cyber incidents per week, with most now attributed to hostile foreign states like China and Russia, up from two per week…",
-    "A new malware family dubbed 'AgingFly' is stealing authentication data from Chromium browsers and WhatsApp in targeted attacks against Ukrainian local government bodies and hospitals.",
-    "Multiple critical vulnerabilities in Microsoft Windows, Apple iOS, and Cisco networking gear were actively exploited in April 2026, requiring immediate patching."
+    "A new malware family dubbed 'AgingFly' is stealing authentication data from Chromium browsers and WhatsApp in targeted attacks against Ukrainian local government bodies and hospitals."
   ],
-  "sources_hash": "9f94c11c69457c31"
+  "sources_hash": "c0d6348b1673423a"
 }

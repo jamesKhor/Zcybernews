@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "intro": "在4月13日至4月30日期间发布的27篇以上文章追踪了Commercial Surveillance Vendors、GopherWhisper和Handala Hack的活动，其中针对这三个威胁行为者的报道量最大。报道覆盖了全球、亚洲、欧洲、伊朗和北美地区的政府、技术、金融服务、民间社会和关键基础设施领域。严重程度分布包括12篇信息性报告、10篇高风险报告和3篇中等风险报告，反映出情报收集和高严重性事件集中发生的时期。",
-  "sources_hash": "48ec59f1883d8266",
-  "source_intro_hash": "bfe81b2422eb10d4",
+  "intro": "2026年4月13日至5月1日期间，ZCyberNews以威胁情报标签发布了28篇文章，严重程度分布为12篇信息性报告、10篇高危报告和3篇中危报告。报道频率最高的威胁行为体包括Commercial Surveillance Vendors、GopherWhisper和Handala Hack。受影响行业涵盖政府、科技、金融服务、民间社会及关键基础设施，受影响地区则遍及全球、亚洲、欧洲、伊朗和北美。",
+  "sources_hash": "15260054b962f707",
+  "source_intro_hash": "110301e47a95e339",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:31:41.254Z",
+  "generated_at": "2026-05-02T04:12:51.246Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

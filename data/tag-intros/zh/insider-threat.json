@@ -1,0 +1,10 @@
+{
+  "tag": "insider-threat",
+  "locale": "zh",
+  "intro": "在2026年4月下旬集中两周的时间内，ZCyberNews报道了五起内部威胁事件，其中三起被评定为高严重性。威胁行为者BlackCat是最常被观察到的，同时还有BlackCat (ALPHV)。这些案件影响了多个行业，包括加密货币和网络安全服务，受害者遍布美国及全球。报道时间从2026年4月14日持续至5月1日，凸显了内部行为者对全球组织构成的持续风险。",
+  "sources_hash": "db0f29544aefb59e",
+  "source_intro_hash": "0b64e5d0bea19851",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-02T04:12:37.459Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

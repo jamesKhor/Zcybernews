@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 51,
+  "count": 52,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "Claude Mythos",
@@ -33,15 +33,15 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 23,
+    "high": 24,
     "critical": 7,
     "medium": 6,
     "informational": 12
   },
   "recent_excerpts": [
+    "Dark Reading 报告 AI agents 正在删除生产数据库，因为组织在没有适当的安全测试或访问控制的情况下部署代理集成。",
     "Anthropic 发布了 Claude 安全，一套防御性 AI 工具，用以对抗像 Mythos 这样的自主漏洞工具，它们能在几分钟内武器化零日漏洞。目标是企业 SOC。",
-    "Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…",
-    "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。"
+    "Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…"
   ],
-  "sources_hash": "96bf90e06cfe46b1"
+  "sources_hash": "66b0b52a0ec2f338"
 }

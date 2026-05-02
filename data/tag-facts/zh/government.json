@@ -1,0 +1,35 @@
+{
+  "tag": "government",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-05-01"
+  },
+  "top_actors": [
+    "SHADOW-EARTH-053"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "defense",
+    "law enforcement"
+  ],
+  "top_regions": [
+    "United states",
+    "East asia",
+    "Europe",
+    "France",
+    "Mexico"
+  ],
+  "severity_mix": {
+    "medium": 1,
+    "high": 4
+  },
+  "recent_excerpts": [
+    "美国移民和海关执法局（ICE）确认使用了以色列公司 Graphite 的间谍软件，这是一个能够从加密消息应用如 WhatsApp 中提取数据的工具…",
+    "趋势科技追踪SHADOW-EARTH-053针对亚洲和北约对齐的欧洲国家的政府和国防部门。活动使用定制后门和鱼叉式网络钓鱼。",
+    "法国身份证，法国政府身份证明文件机构，确认数据泄露后，威胁行为者提供出售被盗公民信息，包括姓名、地址和护照号码。"
+  ],
+  "sources_hash": "cdcd2f13f9deae55"
+}

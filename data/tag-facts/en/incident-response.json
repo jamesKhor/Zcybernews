@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "count": 11,
+  "count": 13,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-02"
   },
   "top_actors": [],
   "top_cves": [
@@ -18,7 +18,7 @@
     "technology",
     "cloud computing",
     "cybersecurity",
-    "energy"
+    "cybersecurity services"
   ],
   "top_regions": [
     "Europe",
@@ -28,14 +28,15 @@
     "Venezuela"
   ],
   "severity_mix": {
-    "high": 5,
+    "informational": 1,
+    "high": 6,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
-    "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders.",
-    "Black Hills Information Security's SOC replaced tiered ticket queues with a flat team model where analysts solve incidents in real time.",
-    "Black Hills InfoSec SOC team recounts a 14-hour overnight incident response engagement from Wild West Hackin' Fest in Deadwood — real-world triage, containment, and lessons for…"
+    "Elastic Security Labs details how to run live Osquery queries across thousands of endpoints from within Elastic Security to speed DFIR investigations without disk imaging.",
+    "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers.",
+    "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders."
   ],
-  "sources_hash": "e9b12dd966a22b78"
+  "sources_hash": "d8d36397310da245"
 }

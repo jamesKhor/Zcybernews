@@ -1,33 +1,35 @@
 {
   "tag": "npm",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-21",
-    "latest": "2026-04-29"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "CanisterSprawl",
-    "mini Shai-Hulud"
+    "mini Shai-Hulud",
+    "Mini Shai-Hulud"
   ],
   "top_cves": [],
   "top_sectors": [
     "software development",
     "technology",
     "cloud services",
-    "enterprise software"
+    "enterprise software",
+    "software"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 5,
+    "critical": 6,
     "high": 3
   },
   "recent_excerpts": [
+    "Attackers compromised SAP, Lightning, and Intercom npm packages in a supply chain attack affecting 1,800 victims; packages had 10M monthly downloads.",
     "Attackers compromised multiple SAP-related npm packages to deploy credential-stealing malware, targeting SAP BTP and cloud app credentials. Campaign dubbed mini Shai-Hulud.",
-    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…",
-    "Elastic Security Labs researcher Joe Desimone built a proof-of-concept tool in an afternoon that detected a supply chain compromise of the Axios HTTP library, affecting npm…"
+    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…"
   ],
-  "sources_hash": "2e8aadfe793222bd"
+  "sources_hash": "b512bcf1accf5767"
 }

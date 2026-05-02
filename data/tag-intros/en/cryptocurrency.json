@@ -1,9 +1,9 @@
 {
   "tag": "cryptocurrency",
   "locale": "en",
-  "intro": "The cryptocurrency sector faced a concentrated wave of attacks between April 12 and April 28, 2026, with 19 reported incidents affecting financial services and decentralized finance (DeFi) globally, particularly in the United States, Canada, Europe, and North America. The severity mix included 1 medium, 15 high, and 3 critical alerts. Threat actors Lazarus Group, BlueNoroff, and FakeWallet were observed in these operations, while CVE-2023-4863 was the top vulnerability exploited.",
-  "sources_hash": "8f04cc821719d82a",
+  "intro": "The cryptocurrency and decentralized finance sectors faced a concentrated wave of attacks between April 12 and May 1, 2026, with 20 articles documenting 15 high-severity and 4 critical incidents. Threat actors Lazarus Group, BlueNoroff, and FakeWallet were observed targeting organizations globally, with significant impacts across the United States, Europe, North America, and Asia. The known vulnerability CVE-2023-4863 was involved in these campaigns, which primarily affected financial services and DeFi platforms.",
+  "sources_hash": "c9bff4347712593f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:17:46.216Z",
+  "generated_at": "2026-05-02T04:09:52.477Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

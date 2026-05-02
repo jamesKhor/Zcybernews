@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "zh",
-  "count": 23,
+  "count": 24,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "LockBit",
@@ -15,9 +15,9 @@
   "top_sectors": [
     "financial services",
     "government",
+    "cybersecurity services",
     "e-commerce",
-    "gaming",
-    "multiple"
+    "gaming"
   ],
   "top_regions": [
     "Global",
@@ -27,14 +27,14 @@
     "Southeast asia"
   ],
   "severity_mix": {
-    "high": 16,
+    "high": 17,
     "medium": 5,
     "informational": 2
   },
   "recent_excerpts": [
+    "两名滥用客户访问权限部署勒索软件的网络安全事件响应者被判处4年监禁——这是响应者转变为攻击者的罕见案例。",
     "SecurityWeek报道，攻击者现在使用AI在几小时内武器化漏洞，迫使防御者采用自动化。没有特定的CVE或受害者被命名 — 分析文章。",
-    "巴西反DDoS公司的基础设施被用来对竞争对手ISP发起大规模僵尸网络攻击。首席执行官声称竞争对手的入侵导致了滥用。",
-    "瑞士和德国警方逮捕了与尼日利亚有联系的Black Axe网络的10名嫌疑人，包括一名负责监督南欧业务的地区领导人。"
+    "巴西反DDoS公司的基础设施被用来对竞争对手ISP发起大规模僵尸网络攻击。首席执行官声称竞争对手的入侵导致了滥用。"
   ],
-  "sources_hash": "f4512cb7d0fcd5bc"
+  "sources_hash": "2a7400de8b4bbc9a"
 }

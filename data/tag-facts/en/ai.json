@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "en",
-  "count": 30,
+  "count": 31,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-30"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "Bluekit",
@@ -14,27 +14,27 @@
   "top_sectors": [
     "technology",
     "financial services",
+    "all",
     "critical_infrastructure",
-    "email providers",
-    "enterprise software"
+    "email providers"
   ],
   "top_regions": [
     "Global",
+    "United kingdom",
     "United states",
     "Asia",
-    "Australia",
-    "Canada"
+    "Australia"
   ],
   "severity_mix": {
+    "medium": 5,
     "high": 13,
     "informational": 12,
-    "critical": 1,
-    "medium": 4
+    "critical": 1
   },
   "recent_excerpts": [
+    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited.",
     "SecurityWeek reports attackers now weaponize vulnerabilities within hours using AI, forcing defenders to adopt automation. No specific CVE or victim named — analysis piece.",
-    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles.",
-    "Malwarebytes integrated its scam-checking threat intelligence directly into Anthropic's Claude AI assistant — users can now query suspicious links, phone numbers, or email…"
+    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles."
   ],
-  "sources_hash": "019cbd37cc39ca24"
+  "sources_hash": "f40956907f98acb6"
 }

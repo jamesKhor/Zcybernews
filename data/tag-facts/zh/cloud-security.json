@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "zh",
-  "count": 22,
+  "count": 23,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "APT41"
@@ -17,24 +17,24 @@
   ],
   "top_sectors": [
     "technology",
+    "cloud-services",
     "government",
     "healthcare",
-    "cloud services",
-    "cloud-services"
+    "cloud services"
   ],
   "top_regions": [
     "Global",
     "Israel"
   ],
   "severity_mix": {
-    "high": 13,
+    "high": 14,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Dark Reading 报告 AI agents 正在删除生产数据库，因为组织在没有适当的安全测试或访问控制的情况下部署代理集成。",
     "Vercel 在从 Context.ai 被盗的 OAuth 令牌使未授权访问内部系统成为可能后披露了一起入侵事件，通过连接的应用程序。没有客户数据被暴露。",
-    "BHIS 发布了一份云安全指南，涵盖了 IAM 配置错误、共享责任差距和日志盲点 —— 对于保护 AWS、Azure 或 GCP 的团队来说是必读材料…",
-    "Elastic Security XDR 现在将终端遥测与云和网络数据相关联，使分析师能够在单一查询中追踪跨混合环境的多阶段攻击…"
+    "BHIS 发布了一份云安全指南，涵盖了 IAM 配置错误、共享责任差距和日志盲点 —— 对于保护 AWS、Azure 或 GCP 的团队来说是必读材料…"
   ],
-  "sources_hash": "4e3b6fcfd8138167"
+  "sources_hash": "dc18448262e9af26"
 }

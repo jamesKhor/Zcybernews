@@ -1,9 +1,9 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "intro": "Over 27 articles published between April 13 and April 30 tracked activity from Commercial Surveillance Vendors, GopherWhisper, and Handala Hack, with the highest volume of coverage focused on these three threat actors. The reporting spanned government, technology, financial services, civil society, and critical-infrastructure sectors across Global, Asia, Europe, Iran, and North America regions. The severity mix included 12 informational, 10 high, and 3 medium reports, reflecting a concentrated period of intelligence gathering and high-severity incidents.",
-  "sources_hash": "48ec59f1883d8266",
+  "intro": "Between 13 April and 1 May 2026, ZCyberNews published 28 articles under the threat-intelligence tag, with a severity mix of 12 informational, 10 high, and 3 medium reports. The most frequently covered threat actors were Commercial Surveillance Vendors, GopherWhisper, and Handala Hack. Affected sectors included government, technology, financial services, civil society, and critical-infrastructure, while impacted regions spanned Global, Asia, Europe, Iran, and North America.",
+  "sources_hash": "15260054b962f707",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:27:49.780Z",
+  "generated_at": "2026-05-02T04:09:46.545Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,0 +1,9 @@
+{
+  "tag": "remote-code-execution",
+  "locale": "en",
+  "intro": "The technology and software development sectors faced a concentrated wave of remote code execution attacks between April 14 and May 2, 2026, with five articles documenting critical and high-severity vulnerabilities. Among the top CVEs were CVE-2026-41265 and CVE-2026-5760, both carrying a CVSS score of 9.8, alongside CVE-2026-25874 at 9.3 and CVE-2026-3854 at 8.7. The threat landscape was global in scope, with three critical and two high-severity incidents impacting artificial intelligence and research fields.",
+  "sources_hash": "c180effda80661e6",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-02T04:11:59.651Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

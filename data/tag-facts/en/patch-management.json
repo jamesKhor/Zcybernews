@@ -1,10 +1,10 @@
 {
   "tag": "patch-management",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-05-01"
   },
   "top_actors": [],
   "top_cves": [
@@ -25,23 +25,25 @@
     }
   ],
   "top_sectors": [
+    "all",
     "financial services",
     "government",
     "healthcare",
     "technology"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "United kingdom"
   ],
   "severity_mix": {
+    "medium": 3,
     "high": 2,
-    "medium": 2,
     "critical": 1
   },
   "recent_excerpts": [
+    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited.",
     "Anthropic's Claude Mythos Preview identifies vulnerabilities at scale since April 7, but organizations lack the triage and patching capacity to keep pace, researchers warn.",
-    "Qualys data shows enterprises deployed over 8 million Chrome patches in 12 months, but Visual C++ and .NET updates are delayed by 30+ days, leaving critical third-party software exposures.",
-    "The Nginx project has released version 1.30.0, consolidating features from the 1.29.x mainline branch and introducing security fixes, including a patch for a potential HTTP/2 DoS vulnerability."
+    "Qualys data shows enterprises deployed over 8 million Chrome patches in 12 months, but Visual C++ and .NET updates are delayed by 30+ days, leaving critical third-party software exposures."
   ],
-  "sources_hash": "0e30cfa1e9f4a6ef"
+  "sources_hash": "eba52762e3479367"
 }

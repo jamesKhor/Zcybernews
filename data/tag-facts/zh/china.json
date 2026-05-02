@@ -1,0 +1,38 @@
+{
+  "tag": "china",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-23",
+    "latest": "2026-05-01"
+  },
+  "top_actors": [
+    "GopherWhisper",
+    "DRAGONBRIDGE",
+    "SHADOW-EARTH-053"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "defense",
+    "critical infrastructure",
+    "media",
+    "technology"
+  ],
+  "top_regions": [
+    "Mongolia",
+    "United states",
+    "East asia",
+    "Europe",
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "中国公民从意大利引渡至美国，涉嫌针对美国政府、国防承包商和关键基础设施的Silk Typhoon网络间谍活动。",
+    "趋势科技追踪SHADOW-EARTH-053针对亚洲和北约对齐的欧洲国家的政府和国防部门。活动使用定制后门和鱼叉式网络钓鱼。",
+    "谷歌TAG在2025年第一季度破坏了超过1万个DRAGONBRIDGE影响行动——这是被追踪到的最活跃的IO行动者——目标是选举、乌克兰战争叙事和中美关系……"
+  ],
+  "sources_hash": "da8684669b2e962f"
+}

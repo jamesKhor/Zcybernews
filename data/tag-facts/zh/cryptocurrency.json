@@ -1,10 +1,10 @@
 {
   "tag": "cryptocurrency",
   "locale": "zh",
-  "count": 19,
+  "count": 20,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "Lazarus Group",
@@ -26,19 +26,19 @@
   "top_regions": [
     "Global",
     "United states",
-    "Canada",
     "Europe",
-    "North america"
+    "North america",
+    "Asia"
   ],
   "severity_mix": {
     "medium": 1,
     "high": 15,
-    "critical": 3
+    "critical": 4
   },
   "recent_excerpts": [
     "一名加利福尼亚男子因洗钱被判63个月监禁，这些加密货币是由一个网络犯罪团伙盗窃的，该团伙诈骗受害者约2.6亿美元。",
     "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…",
     "苹果从其应用商店移除了45个恶意加密货币应用，这些应用窃取了用户的恢复短语和私钥，模仿了像MetaMask和Coinbase这样的合法钱包。"
   ],
-  "sources_hash": "8f04cc821719d82a"
+  "sources_hash": "c9bff4347712593f"
 }

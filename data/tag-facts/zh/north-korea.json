@@ -1,10 +1,10 @@
 {
   "tag": "north-korea",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-28"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "Lazarus Group",
@@ -15,8 +15,8 @@
   "top_sectors": [
     "cryptocurrency",
     "technology",
-    "finance",
     "financial services",
+    "finance",
     "software development"
   ],
   "top_regions": [
@@ -26,12 +26,13 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 8
+    "high": 8,
+    "critical": 1
   },
   "recent_excerpts": [
     "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…",
-    "BlueNoroff 使用被盗视频、AI 头像和伪造的 Zoom 邀请，将加密高管变成攻击诱饵。",
-    "Lazarus APT 利用 ClickFix 社会工程学来传递 macOS 恶意软件 —— 假的浏览器更新提示诱使高管运行 AppleScript 有效载荷，这些载荷窃取凭证并…"
+    "朝鲜黑客在2026年洗钱了所有被盗加密货币的76% —— 23亿美元 —— 根据Chainalysis的数据。",
+    "BlueNoroff 使用被盗视频、AI 头像和伪造的 Zoom 邀请，将加密高管变成攻击诱饵。"
   ],
-  "sources_hash": "f745ad7a1fabcdd1"
+  "sources_hash": "383320fd83866a49"
 }

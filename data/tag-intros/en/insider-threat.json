@@ -1,0 +1,9 @@
+{
+  "tag": "insider-threat",
+  "locale": "en",
+  "intro": "Over a concentrated two-week period in late April 2026, ZCyberNews covered five insider-threat incidents, with three rated as high severity. The threat actor BlackCat was the most frequently observed, alongside BlackCat (ALPHV). These cases impacted multiple sectors, including cryptocurrency and cybersecurity services, with victims across the United States and globally. The reporting spanned from April 14 to May 1, 2026, highlighting the persistent risk posed by internal actors to organizations worldwide.",
+  "sources_hash": "db0f29544aefb59e",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-02T04:11:47.898Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

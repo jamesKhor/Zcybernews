@@ -1,10 +1,10 @@
 {
   "tag": "cryptocurrency",
   "locale": "zh",
-  "intro": "2026年4月12日至4月28日期间，加密货币领域遭遇了一波集中攻击，共报告19起安全事件，影响全球金融服务及去中心化金融（DeFi），尤其集中于美国、加拿大、欧洲及北美地区。事件严重程度分布为：1起中等、15起高危、3起严重警报。攻击活动中观察到Lazarus Group、BlueNoroff及FakeWallet等威胁行为体，而CVE-2023-4863是遭利用最多的漏洞。",
-  "sources_hash": "8f04cc821719d82a",
-  "source_intro_hash": "9a165ebe9a41892c",
+  "intro": "2026年4月12日至5月1日期间，加密货币与去中心化金融领域遭遇集中攻击浪潮，20篇报道记录了15起高危事件和4起严重事件。威胁行为者Lazarus Group、BlueNoroff和FakeWallet被观测到针对全球范围内的组织，对美国、欧洲、北美及亚洲造成重大影响。已知漏洞CVE-2023-4863被用于这些攻击活动，主要波及金融服务与DeFi平台。",
+  "sources_hash": "c9bff4347712593f",
+  "source_intro_hash": "163e0764821f8ac9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:20:05.526Z",
+  "generated_at": "2026-05-02T04:12:30.145Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

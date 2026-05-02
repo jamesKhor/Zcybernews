@@ -1,10 +1,10 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "count": 23,
+  "count": 24,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "LockBit",
@@ -15,9 +15,9 @@
   "top_sectors": [
     "financial services",
     "government",
+    "cybersecurity services",
     "e-commerce",
-    "gaming",
-    "multiple"
+    "gaming"
   ],
   "top_regions": [
     "Global",
@@ -27,14 +27,14 @@
     "Southeast asia"
   ],
   "severity_mix": {
-    "high": 16,
+    "high": 17,
     "medium": 5,
     "informational": 2
   },
   "recent_excerpts": [
+    "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers.",
     "SecurityWeek reports attackers now weaponize vulnerabilities within hours using AI, forcing defenders to adopt automation. No specific CVE or victim named — analysis piece.",
-    "Brazilian anti-DDoS firm's infrastructure used to launch massive botnet attacks against rival ISPs. CEO claims breach by competitor caused the abuse.",
-    "Swiss and German police arrested 10 suspects tied to the Nigeria-linked Black Axe network, including a regional leader overseeing Southern Europe operations."
+    "Brazilian anti-DDoS firm's infrastructure used to launch massive botnet attacks against rival ISPs. CEO claims breach by competitor caused the abuse."
   ],
-  "sources_hash": "f4512cb7d0fcd5bc"
+  "sources_hash": "2a7400de8b4bbc9a"
 }

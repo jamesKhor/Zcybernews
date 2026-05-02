@@ -1,10 +1,10 @@
 {
   "tag": "elastic-security",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-25",
-    "latest": "2026-04-28"
+    "latest": "2026-05-02"
   },
   "top_actors": [
     "TeamPCP"
@@ -16,13 +16,14 @@
   ],
   "top_regions": [],
   "severity_mix": {
+    "informational": 1,
     "medium": 1,
     "high": 1
   },
   "recent_excerpts": [
+    "Elastic Security Labs details how to run live Osquery queries across thousands of endpoints from within Elastic Security to speed DFIR investigations without disk imaging.",
     "Elastic Security Labs published an open-source CI/CD abuse detection template using signal extraction and LLM reasoning to catch pipeline attacks across GitHub Actions, GitLab CI,…",
-    "Elastic Security Labs publishes part two of Linux rootkit detection series, detailing behavioral detection methods that catch in-memory and kernel-level rootkits static scans miss.",
-    "Elastic Security XDR now correlates endpoint telemetry with cloud and network data, enabling analysts to trace multi-stage attacks across hybrid environments in a single query…"
+    "Elastic Security Labs publishes part two of Linux rootkit detection series, detailing behavioral detection methods that catch in-memory and kernel-level rootkits static scans miss."
   ],
-  "sources_hash": "6f72f584f7cdec69"
+  "sources_hash": "683a4e9af9985b08"
 }

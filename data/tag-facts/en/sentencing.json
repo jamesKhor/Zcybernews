@@ -1,0 +1,33 @@
+{
+  "tag": "sentencing",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-17",
+    "latest": "2026-05-01"
+  },
+  "top_actors": [
+    "BlackCat"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "entertainment",
+    "cryptocurrency",
+    "cybersecurity services",
+    "financial services",
+    "gambling"
+  ],
+  "top_regions": [
+    "United states"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 3
+  },
+  "recent_excerpts": [
+    "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers.",
+    "Two former IR firm employees got 4 years each for laundering $18M+ in BlackCat ransom payments and advising attackers on negotiation tactics.",
+    "A California man received a 63-month prison sentence for laundering cryptocurrency stolen by a cybercriminal ring that defrauded victims of approximately $260 million."
+  ],
+  "sources_hash": "8325df82c51e5850"
+}

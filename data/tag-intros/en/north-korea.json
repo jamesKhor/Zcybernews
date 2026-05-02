@@ -1,9 +1,9 @@
 {
   "tag": "north-korea",
   "locale": "en",
-  "intro": "Cryptocurrency and technology sectors were the primary targets in a series of seven high-severity incidents attributed to North Korean-linked activity between April 13 and April 24, 2026. The Lazarus Group, APT37 (ScarCruft, InkySquid), and Sapphire Sleet were the top threat actors observed, with impacts felt across Global, Asia, Europe, and North America. The finance, software development, and venture capital sectors also faced significant threats during this period.",
-  "sources_hash": "bd7548ea5b22888c",
+  "intro": "Cryptocurrency and technology sectors were the primary targets in a series of attacks linked to North Korea between April 13 and May 1, 2026. The Lazarus Group, APT37 (ScarCruft, InkySquid), and BlueNoroff were observed as the top threat actors, with the activity impacting regions including Asia, Europe, and North America. Among the nine reported incidents, eight were classified as high severity and one as critical, affecting financial services, finance, and software development globally.",
+  "sources_hash": "383320fd83866a49",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:14:02.197Z",
+  "generated_at": "2026-05-02T04:10:43.106Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

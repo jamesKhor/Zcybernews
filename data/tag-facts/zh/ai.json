@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "count": 29,
+  "count": 30,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-30"
+    "latest": "2026-05-01"
   },
   "top_actors": [
     "Bluekit",
@@ -14,27 +14,27 @@
   "top_sectors": [
     "technology",
     "financial services",
+    "all",
     "critical_infrastructure",
-    "email providers",
-    "enterprise software"
+    "email providers"
   ],
   "top_regions": [
     "Global",
+    "United kingdom",
     "United states",
     "Asia",
-    "Australia",
-    "Canada"
+    "Australia"
   ],
   "severity_mix": {
+    "medium": 5,
     "high": 12,
     "informational": 12,
-    "critical": 1,
-    "medium": 4
+    "critical": 1
   },
   "recent_excerpts": [
+    "NCSC 警告组织为紧急补丁的激增做好准备，因为人工智能加速了漏洞发现，提高了利用风险。没有引用具体的 CVE。",
     "SecurityWeek报道，攻击者现在使用AI在几小时内武器化漏洞，迫使防御者采用自动化。没有特定的CVE或受害者被命名 — 分析文章。",
-    "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。",
-    "Malwarebytes 将其反诈骗威胁情报直接集成到 Anthropic 的 Claude AI 助手中 —— 用户现在可以查询可疑链接、电话号码或电子邮件…"
+    "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。"
   ],
-  "sources_hash": "1d1fb695b9df8ad8"
+  "sources_hash": "4b11553b7b7c66d3"
 }

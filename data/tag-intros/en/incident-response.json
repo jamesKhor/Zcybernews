@@ -1,9 +1,9 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "intro": "Government and technology sectors faced significant incident response demands in April 2026, with 11 articles covering events from April 13 to 30. The period included five high-severity and two critical incidents, alongside one medium-severity case. The critical vulnerability CVE-2025-59718, carrying a CVSS score of 9.8, was a key concern. Affected sectors spanned government, technology, cloud computing, cybersecurity, and energy, while impacted regions included Europe, Global, North America, the United States, and Venezuela.",
-  "sources_hash": "e9b12dd966a22b78",
+  "intro": "Government and technology sectors faced significant incident response challenges between April 13 and May 2, 2026, with 13 articles covering a severity mix of one informational, six high, two critical, and one medium event. The most prominent vulnerability was CVE-2025-59718, carrying a CVSS score of 9.8. Affected regions included Europe, North America, the United States, Venezuela, and Global entities, while impacted sectors spanned government, technology, cloud computing, cybersecurity, and cybersecurity services.",
+  "sources_hash": "d8d36397310da245",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:19:05.353Z",
+  "generated_at": "2026-05-02T04:09:59.697Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
