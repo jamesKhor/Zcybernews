@@ -1,0 +1,53 @@
+---
+title: DFIR With Osquery in Elastic Security Cuts Root-Cause Time
+slug: 2026-05-02-dfir-with-osquery-in-elastic-security-cuts-root-cause-time
+date: '2026-05-02'
+excerpt: >-
+  Elastic Security Labs details how to run live Osquery queries across thousands
+  of endpoints from within Elastic Security to speed DFIR investigations without
+  disk imaging.
+category: tools
+tags:
+  - osquery
+  - elastic-security
+  - dfir
+  - incident-response
+  - endpoint-forensics
+  - live-response
+language: en
+source_urls:
+  - 'https://www.elastic.co/security-labs/dfir-osquery-elastic-security'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-02-dfir-with-osquery-in-elastic-security-cuts-root-cause-time
+severity: informational
+---
+## Executive Summary
+
+Elastic Security Labs published a technical walkthrough demonstrating how incident responders can execute distributed, real-time Osquery queries directly from within the Elastic Security platform to perform digital forensics and incident response (DFIR) at scale. The approach eliminates the need for traditional disk imaging by enabling live forensic data collection across thousands of endpoints through a single interface, accelerating root-cause analysis during active incidents.
+
+## Technical Analysis
+
+The methodology detailed by Elastic Security Labs leverages Osquery's SQL-based query engine to collect system-level telemetry — running processes, network connections, file system artifacts, registry keys, and kernel modules — across fleets of endpoints in real time. By integrating Osquery queries into Elastic Security's detection and response workflows, analysts can pivot from an alert to a targeted investigation without switching tools or waiting for disk-image acquisition.
+
+The post walks through a realistic DFIR scenario: an alert fires for a suspicious process creation event. From within Elastic Security, the analyst deploys an Osquery query to the affected host to enumerate parent-child process relationships, active network sockets, and recently modified files. The query results stream back into the same Elastic Security case, allowing the analyst to correlate artifacts with other detection signals and timeline events.
+
+Key technical details include:
+- Queries are executed via Elastic Security's **Response Console**, which supports Osquery's distributed query mode.
+- Results are stored in Elasticsearch indices, enabling historical search and correlation across multiple hosts.
+- The approach supports both **interactive (ad-hoc)** and **scheduled (hunt)** query deployment.
+- No additional agents or infrastructure beyond the existing Elastic Agent with Osquery integration are required.
+
+Elastic Security Labs emphasizes that this live-response method reduces forensic latency — the time between detection and root-cause identification — because analysts can collect volatile data (memory-resident processes, active network connections) before an adversary has time to clean up.
+
+## Mitigations & Recommendations
+
+Organizations using Elastic Security should ensure their Elastic Agents are configured with Osquery enabled and that analysts are trained on Osquery's SQL syntax and schema. The following practices are recommended based on the guide:
+- Pre-build a library of Osquery queries for common investigative scenarios (lateral movement, credential dumping, persistence mechanisms).
+- Integrate Osquery queries into playbooks and automation rules within Elastic Security to trigger collection automatically on specific alert types.
+- Test query performance against production-scale endpoint counts to avoid overwhelming the fleet during an incident.
+- Retain query results in Elasticsearch with appropriate retention policies to support retrospective analysis.
+
+## References
+
+- [DFIR: From alert to root cause using Osquery without leaving Elastic Security](https://www.elastic.co/security-labs/dfir-osquery-elastic-security)

@@ -1,0 +1,54 @@
+---
+title: 使用Osquery在Elastic Security中进行DFIR以缩短根本原因时间
+slug: 2026-05-02-dfir-with-osquery-in-elastic-security-cuts-root-cause-time
+date: '2026-05-02'
+excerpt: >-
+  Elastic Security Labs详细说明了如何在Elastic
+  Security内部运行实时Osquery查询，覆盖成千上万的端点，以加速DFIR调查，无需磁盘映像。
+category: tools
+tags:
+  - osquery
+  - elastic-security
+  - dfir
+  - incident-response
+  - endpoint-forensics
+  - live-response
+language: zh
+source_urls:
+  - 'https://www.elastic.co/security-labs/dfir-osquery-elastic-security'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-02-dfir-with-osquery-in-elastic-security-cuts-root-cause-time
+severity: informational
+---
+## DFIR With Osquery in Elastic Security Cuts Root-Cause Time
+
+## 执行摘要
+
+Elastic Security Labs 发布了一份技术演示，展示了事件响应者如何直接从 Elastic Security 平台内执行分布式、实时的 Osquery 查询，以大规模执行数字取证和事件响应（DFIR）。这种方法通过启用跨数千个端点的实时取证数据收集，消除了传统磁盘映像的需求，加速了活跃事件期间的根本原因分析。
+
+## 技术分析
+
+Elastic Security Labs 详细描述的方法利用 Osquery 的基于 SQL 的查询引擎，实时收集系统级遥测数据——运行中的进程、网络连接、文件系统工件、注册表键和内核模块——横跨大量端点。通过将 Osquery 查询集成到 Elastic Security 的检测和响应工作流程中，分析师可以从警报切换到目标调查，无需切换工具或等待磁盘映像获取。
+
+文章通过一个现实的 DFIR 场景进行讲解：一个可疑进程创建事件的警报触发。在 Elastic Security 内，分析师向受影响的主机部署 Osquery 查询，以枚举父子进程关系、活动的网络套接字和最近修改的文件。查询结果流回同一个 Elastic Security 案例中，允许分析师将工件与其他检测信号和时间线事件相关联。
+
+关键技术细节包括：
+- 通过 Elastic Security 的 **响应控制台** 执行查询，该控制台支持 Osquery 的分布式查询模式。
+- 结果存储在 Elasticsearch 索引中，实现跨多个主机的历史搜索和相关性分析。
+- 该方法支持 **交互式（临时）** 和 **计划性（狩猎）** 查询部署。
+- 除了现有的集成了 Osquery 的 Elastic Agent 之外，不需要额外的代理或基础设施。
+
+Elastic Security Labs 强调，这种实时响应方法减少了取证延迟——即从检测到根本原因识别之间的时间——因为分析师可以在对手有时间清理之前收集易失性数据（内存中的进程、活动的网络连接）。
+
+## 缓解措施与建议
+
+使用 Elastic Security 的组织应确保他们的 Elastic Agents 配置了启用 Osquery，并培训分析师掌握 Osquery 的 SQL 语法和架构。基于指南推荐以下实践：
+- 预构建一个针对常见调查场景（横向移动、凭证转储、持久性机制）的 Osquery 查询库。
+- 将 Osquery 查询集成到 Elastic Security 中的剧本和自动化规则中，以在特定警报类型上自动触发收集。
+- 对生产规模的端点数量进行查询性能测试，以避免在事件期间压垮机群。
+- 在 Elasticsearch 中保留查询结果，并设置适当的保留策略，以支持回顾性分析。
+
+## 参考资料
+
+- [DFIR: From alert to root cause using Osquery without leaving Elastic Security](https://www.elastic.co/security-labs/dfir-osquery-elastic-security)
