@@ -1,0 +1,44 @@
+---
+title: 恶意Ruby Gems和Go模块劫持CI/CD流水线
+slug: 2026-05-02-poisoned-ruby-gems-go-modules-hijack-ci-cd-pipelines
+date: '2026-05-02'
+excerpt: >-
+  BufferZoneCorp账户发布了恶意的Ruby gems和Go模块，这些模块窃取凭证，篡改GitHub
+  Actions，并在CI流水线中建立SSH持久性。
+category: malware
+tags:
+  - supply-chain-attack
+  - ruby-gems
+  - go-modules
+  - ci/cd-security
+  - credential-theft
+  - github-actions
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-02-poisoned-ruby-gems-go-modules-hijack-ci-cd-pipelines
+severity: high
+threat_actor: BufferZoneCorp
+affected_sectors:
+  - software development
+  - technology
+---
+## 执行摘要
+
+根据《黑客新闻》的一份报告，与GitHub账户“BufferZoneCorp”相关的软件供应链活动正在分发被污染的Ruby gems和Go模块，这些模块窃取凭证、篡改GitHub Actions工作流程，并在被入侵的CI/CD管道上建立SSH持久性。攻击利用最初无害的“睡眠者”包，这些包后来接收恶意更新，针对开发环境以收集认证令牌并保持长期访问。
+
+## 技术分析
+
+BufferZoneCorp账户发布了包含Ruby gems和Go模块的一系列存储库，这些存储库乍一看似乎是合法的。恶意有效载荷通过这些包的后续更新来传递——一种被称为“睡眠者”依赖攻击的技术。一旦在CI管道或开发工作站中安装，有效载荷执行针对环境变量、API令牌和存储在常见位置的SSH密钥的凭证盗窃程序。
+
+该活动还修改GitHub Actions配置文件以注入后门工作流程，使攻击者能够在被入侵存储库的上下文中执行任意代码。SSH持久性机制确保即使在初始凭证轮换后也能持续访问。《黑客新闻》的报告没有指明特定的受害者或披露IOCs，将活动归因于BufferZoneCorp账户，但没有将其与已知的国家或犯罪团体联系起来。
+
+## 缓解措施与建议
+
+组织应立即审计从BufferZoneCorp GitHub账户获取的任何依赖项，并审查其软件供应链中Ruby gems和Go模块的近期更改。开发人员应启用依赖锁定文件，强制执行提交的代码签名，并限制GitHub Actions权限至最低必要。监控对CI/CD管道定义的意外修改和SSH密钥添加可以帮助检测类似的入侵。
+
+## 参考资料
+
+- [The Hacker News: Poisoned Ruby Gems and Go Modules Exploit CI Pipelines for Credential Theft](https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html)

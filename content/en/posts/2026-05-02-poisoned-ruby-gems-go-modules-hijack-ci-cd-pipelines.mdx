@@ -1,0 +1,45 @@
+---
+title: 'Poisoned Ruby Gems, Go Modules Hijack CI/CD Pipelines'
+slug: 2026-05-02-poisoned-ruby-gems-go-modules-hijack-ci-cd-pipelines
+date: '2026-05-02'
+excerpt: >-
+  BufferZoneCorp account published malicious Ruby gems and Go modules that steal
+  credentials, tamper with GitHub Actions, and establish SSH persistence in CI
+  pipelines.
+category: malware
+tags:
+  - supply-chain-attack
+  - ruby-gems
+  - go-modules
+  - ci/cd-security
+  - credential-theft
+  - github-actions
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-02-poisoned-ruby-gems-go-modules-hijack-ci-cd-pipelines
+severity: high
+threat_actor: BufferZoneCorp
+affected_sectors:
+  - software development
+  - technology
+---
+## Executive Summary
+
+A software supply chain campaign linked to the GitHub account "BufferZoneCorp" is distributing poisoned Ruby gems and Go modules that steal credentials, tamper with GitHub Actions workflows, and establish SSH persistence on compromised CI/CD pipelines, according to a report from The Hacker News. The attack leverages initially benign "sleeper" packages that later receive malicious updates, targeting developer environments to harvest authentication tokens and maintain long-term access.
+
+## Technical Analysis
+
+The BufferZoneCorp account published a series of repositories containing Ruby gems and Go modules that appear legitimate at first glance. The malicious payloads are delivered through subsequent updates to these packages — a technique known as a "sleeper" dependency attack. Once installed in a CI pipeline or developer workstation, the payloads execute credential theft routines targeting environment variables, API tokens, and SSH keys stored in common locations.
+
+The campaign also modifies GitHub Actions configuration files to inject backdoor workflows, enabling the attackers to execute arbitrary code in the context of the compromised repository. SSH persistence mechanisms ensure continued access even after initial credentials are rotated. The Hacker News report, which did not name a specific victim or disclose IOCs, attributed the activity to the BufferZoneCorp account but did not link it to a known nation-state or criminal group.
+
+## Mitigations & Recommendations
+
+Organizations should immediately audit any dependencies sourced from the BufferZoneCorp GitHub account and review recent changes to Ruby gems and Go modules in their software supply chain. Developers should enable dependency lockfiles, enforce code signing for commits, and restrict GitHub Actions permissions to the minimum necessary. Monitoring for unexpected modifications to CI/CD pipeline definitions and SSH key additions can help detect similar intrusions.
+
+## References
+
+- [The Hacker News: Poisoned Ruby Gems and Go Modules Exploit CI Pipelines for Credential Theft](https://thehackernews.com/2026/05/poisoned-ruby-gems-and-go-modules.html)
