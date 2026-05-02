@@ -1,0 +1,39 @@
+---
+title: Trellix 泄露：源代码库被入侵
+slug: 2026-05-02-trellix-breach-source-code-repository-compromised
+date: '2026-05-02'
+excerpt: Trellix 确认攻击者访问了其源代码库的一部分。该公司聘请了法医专家并通知了执法部门。未披露客户数据影响。
+category: industry
+tags:
+  - trellix
+  - source-code-breach
+  - supply-chain-security
+  - incident-response
+  - forensic-investigation
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/05/trellix-confirms-source-code-breach.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-02-trellix-breach-source-code-repository-compromised
+severity: high
+affected_sectors:
+  - cybersecurity
+---
+## Trellix 泄露：源代码库被入侵
+
+## 执行摘要
+
+Trellix，由 McAfee Enterprise 和 FireEye 合并而成的企业网络安全公司，承认未授权行为者获得了其源代码库的一部分访问权限。该公司表示它“最近识别”了这一入侵行为，并已聘请领先的取证专家同时通知了执法部门。The Hacker News 报道的这一披露没有具体说明入侵的时间线或客户数据是否被暴露。
+
+## 技术分析
+
+根据 Trellix 的公开声明，此次泄露涉及对其源代码库的未授权访问，尽管公司将暴露程度描述为仅限于代码库的“一部分”。该公司没有披露攻击向量、访问持续时间或入侵者是否窃取了代码。Trellix 尚未发布入侵指标（IOCs）或将此事件归因于任何已知的威胁行为者。技术细节的缺乏使得防御者无法获得可操作的情报来评估是否存在下游风险——例如攻击者将窃取的源代码武器化，用于未来针对 Trellix 产品或客户的漏洞利用。
+
+## 缓解措施与建议
+
+在 Trellix 发布根本原因分析和任何相关的 IOCs 之前，使用 Trellix 产品的组织应监控官方安全通告中不寻常的补丁活动或配置更改。防御者还应检查自己的代码库是否有未经授权访问的迹象，特别是如果它们与 Trellix 的软件镜像或集成。这一事件强调了代码库访问日志记录、代码管理平台的多因素认证以及对第三方代码依赖关系的定期审计的重要性。
+
+## 参考资料
+
+- [The Hacker News: Trellix 确认源代码泄露，未经授权访问代码库](https://thehackernews.com/2026/05/trellix-confirms-source-code-breach.html)
