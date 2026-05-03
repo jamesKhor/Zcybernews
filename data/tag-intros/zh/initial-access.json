@@ -1,10 +1,10 @@
 {
   "tag": "initial-access",
   "locale": "zh",
-  "intro": "本档案收录了 8 篇带有「initial-access」标签的文章，发布时间从2026年4月14日至2026年4月25日。其中包含8 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "f4e6102e7daafccd",
-  "source_intro_hash": "baf4c5922459a8f9",
-  "model": "template:sparse",
-  "generated_at": "2026-04-26T04:15:16.028Z",
+  "intro": "根据十份报告，2026年4月14日至4月30日期间，加密货币、金融服务和物流行业遭遇了一波集中的高严重性初始访问攻击。在这些入侵活动中观察到威胁行为者UNC6692，同时普通商业和航运组织也受到影响。严重程度分布包括九起高严重性事件和一起中等严重性事件，凸显了在此期间这些行业持续成为攻击者获取立足点的重点目标。",
+  "sources_hash": "68a32c0bdcbca374",
+  "source_intro_hash": "06f6377cbc5ec12a",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-03T04:24:30.711Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

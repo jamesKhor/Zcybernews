@@ -1,7 +1,7 @@
 {
   "tag": "incident-response",
   "locale": "zh",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-13",
     "latest": "2026-05-02"
@@ -14,9 +14,9 @@
     }
   ],
   "top_sectors": [
+    "cybersecurity",
     "technology",
     "cloud computing",
-    "cybersecurity",
     "cybersecurity services",
     "energy"
   ],
@@ -28,14 +28,14 @@
   ],
   "severity_mix": {
     "informational": 1,
-    "high": 5,
+    "high": 6,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
     "Elastic Security Labs详细说明了如何在Elastic Security内部运行实时Osquery查询，覆盖成千上万的端点，以加速DFIR调查，无需磁盘映像。",
-    "两名滥用客户访问权限部署勒索软件的网络安全事件响应者被判处4年监禁——这是响应者转变为攻击者的罕见案例。",
-    "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。"
+    "Trellix 确认攻击者访问了其源代码库的一部分。该公司聘请了法医专家并通知了执法部门。未披露客户数据影响。",
+    "两名滥用客户访问权限部署勒索软件的网络安全事件响应者被判处4年监禁——这是响应者转变为攻击者的罕见案例。"
   ],
-  "sources_hash": "f9620e5c6dd4a722"
+  "sources_hash": "7816e7edf25a889b"
 }

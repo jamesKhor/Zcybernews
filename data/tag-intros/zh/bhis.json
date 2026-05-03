@@ -1,10 +1,10 @@
 {
   "tag": "bhis",
   "locale": "zh",
-  "intro": "本档案收录了 5 篇带有「bhis」标签的文章，发布时间从2026年4月25日至2026年4月28日。其中包含1 篇高危、1 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "3014f2b775b3a3ba",
-  "source_intro_hash": "3f13cff7c14c9703",
-  "model": "template:sparse",
-  "generated_at": "2026-04-29T04:19:57.517Z",
+  "intro": "北美网络安全行业及多个其他产业在2026年4月25日至4月30日期间遭遇了一波集中活动，共有七篇报道被标记为bhis。在这些事件中观察到威胁行为者Comburglar，其中包括两起高严重性事件和一份信息性报告。该档案涵盖了ZCyberNews为期六天的报道窗口，反映了该行为者对北美各行业目标的关注。",
+  "sources_hash": "d043ba593d813d6c",
+  "source_intro_hash": "6f23465f5da887ad",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-03T04:24:26.867Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

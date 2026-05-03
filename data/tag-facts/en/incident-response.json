@@ -1,7 +1,7 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
     "latest": "2026-05-02"
@@ -14,10 +14,10 @@
     }
   ],
   "top_sectors": [
+    "cybersecurity",
     "government",
     "technology",
     "cloud computing",
-    "cybersecurity",
     "cybersecurity services"
   ],
   "top_regions": [
@@ -29,14 +29,14 @@
   ],
   "severity_mix": {
     "informational": 1,
-    "high": 6,
+    "high": 7,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
     "Elastic Security Labs details how to run live Osquery queries across thousands of endpoints from within Elastic Security to speed DFIR investigations without disk imaging.",
-    "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers.",
-    "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders."
+    "Trellix confirmed attackers accessed a portion of its source code repository. The firm engaged forensic experts and notified law enforcement. No customer data impact disclosed.",
+    "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers."
   ],
-  "sources_hash": "d8d36397310da245"
+  "sources_hash": "e7eb5cd96f4c7919"
 }

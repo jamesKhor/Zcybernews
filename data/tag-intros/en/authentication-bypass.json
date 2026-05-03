@@ -1,0 +1,9 @@
+{
+  "tag": "authentication-bypass",
+  "locale": "en",
+  "intro": "Between April 13 and 29, 2026, ZCyberNews covered seven authentication-bypass incidents, with CVE-2026-41940 (CVSS 9.8) among the most critical. Other notable CVEs included CVE-2026-33413 (CVSS 8.8), CVE-2026-41276 (CVSS 8.1), CVE-2026-24032 (CVSS 7.3), and CVE-2026-1492. The affected sectors spanned technology, critical infrastructure, energy, enterprise IT, and finance, with a global impact. The severity mix comprised four critical, two high, and one medium severity vulnerabilities.",
+  "sources_hash": "daac67d0214f57ab",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-03T04:23:11.591Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}
