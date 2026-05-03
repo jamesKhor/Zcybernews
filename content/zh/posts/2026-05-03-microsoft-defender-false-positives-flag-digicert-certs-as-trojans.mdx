@@ -1,0 +1,45 @@
+---
+title: Microsoft Defender 误报将 DigiCert 证书标记为木马
+slug: 2026-05-03-microsoft-defender-false-positives-flag-digicert-certs-as-trojans
+date: '2026-05-03'
+excerpt: >-
+  Microsoft Defender 将合法的 DigiCert 根证书标记为 Trojan:Win32/Cerdigent.A!dha，触发了
+  Windows 系统上的误报警报和证书移除。
+category: industry
+tags:
+  - microsoft-defender
+  - digicert
+  - false-positive
+  - 'trojan:win32/cerdigent'
+  - certificate-detection
+  - windows-security
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/microsoft-defender-wrongly-flags-digicert-certs-as-trojan-win32-cerdigentadha/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-03-microsoft-defender-false-positives-flag-digicert-certs-as-trojans
+severity: medium
+affected_sectors:
+  - technology
+  - enterprise
+  - government
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+Microsoft Defender for Endpoint 正在广泛地误报合法的 DigiCert 根证书，将其标记为 `Trojan:Win32/Cerdigent.A!dha`。根据 BleepingComputer 的报道，这些错误的警报导致一些系统上自动删除了证书，可能会中断 HTTPS 连接、代码签名以及其他依赖证书的操作。微软已经承认了这个问题，但尚未发布正式的修复。
+
+## 技术分析
+
+误报检测针对的是 DigiCert 根证书——这些是受信任的证书颁发机构（CA）证书，是 Windows 信任链模型的基础。Defender 的基于签名的引擎错误地将这些证书归类为 `Trojan:Win32/Cerdigent.A!dha` 标签下的恶意软件。在 Defender 配置为实时保护自动采取行动的情况下，这些证书可能会被隔离或删除，破坏任何依赖于 DigiCert 发行证书的应用程序或服务的信任链。BleepingComputer 报告称，这个问题似乎影响多个 Windows 版本，尽管微软尚未发布受影响构建或 Defender 签名版本的具体列表。根本原因——无论是不良的签名更新还是启发式引擎缺陷——截至本文撰写时，微软尚未披露。
+
+## 缓解措施与建议
+
+受影响的组织应立即检查 Defender 警报中针对 DigiCert 根证书的 `Trojan:Win32/Cerdigent.A!dha` 检测。如果证书已被删除，管理员可以从已知良好的备份中恢复它们，或从官方 DigiCert 存储库重新安装 DigiCert 根证书。微软建议通过 Microsoft Defender 安全中心门户（https://www.microsoft.com/en-us/wdsi/filesubmission）提交误报报告，以加快签名更新。在微软发布更正的签名或引擎更新之前，组织可能会考虑暂时禁用证书检测的自动补救措施，尽管这本身存在错过真实威胁的风险。尚未提供永久修复的预计时间。
+
+## 参考资料
+
+- [Microsoft Defender wrongly flags DigiCert certs as Trojan:Win32/Cerdigent.A!dha - BleepingComputer](https://www.bleepingcomputer.com/news/security/microsoft-defender-wrongly-flags-digicert-certs-as-trojan-win32-cerdigentadha/)

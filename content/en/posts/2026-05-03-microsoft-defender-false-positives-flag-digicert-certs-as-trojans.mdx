@@ -1,0 +1,46 @@
+---
+title: Microsoft Defender False Positives Flag DigiCert Certs as Trojans
+slug: 2026-05-03-microsoft-defender-false-positives-flag-digicert-certs-as-trojans
+date: '2026-05-03'
+excerpt: >-
+  Microsoft Defender is flagging legitimate DigiCert root certificates as
+  Trojan:Win32/Cerdigent.A!dha, triggering false-positive alerts and certificate
+  removal on Windows systems.
+category: industry
+tags:
+  - microsoft-defender
+  - digicert
+  - false-positive
+  - 'trojan:win32/cerdigent'
+  - certificate-detection
+  - windows-security
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/microsoft-defender-wrongly-flags-digicert-certs-as-trojan-win32-cerdigentadha/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-03-microsoft-defender-false-positives-flag-digicert-certs-as-trojans
+severity: medium
+affected_sectors:
+  - technology
+  - enterprise
+  - government
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+Microsoft Defender for Endpoint is generating widespread false-positive detections of legitimate DigiCert root certificates, flagging them as `Trojan:Win32/Cerdigent.A!dha`. According to BleepingComputer, the erroneous alerts have led to automatic certificate removal on some systems, potentially disrupting HTTPS connections, code signing, and other certificate-dependent operations. Microsoft has acknowledged the issue but has not yet released a formal fix.
+
+## Technical Analysis
+
+The false-positive detection targets DigiCert root certificates — trusted Certificate Authority (CA) certificates that are foundational to Windows' chain-of-trust model. Defender's signature-based engine is misclassifying these certificates as malware under the `Trojan:Win32/Cerdigent.A!dha` label. In cases where Defender's real-time protection is configured to take automatic action, the certificates may be quarantined or deleted, breaking trust chains for any applications or services relying on DigiCert-issued certificates. BleepingComputer reports that the issue appears to affect multiple Windows versions, though Microsoft has not published a specific list of impacted builds or Defender signature versions. The root cause — whether a bad signature update or a heuristic engine flaw — has not been disclosed by Microsoft as of this writing.
+
+## Mitigations & Recommendations
+
+Affected organizations should immediately check Defender alerts for `Trojan:Win32/Cerdigent.A!dha` detections against DigiCert root certificates. If certificates have been removed, administrators can restore them from a known-good backup or reinstall the DigiCert root certificates from the official DigiCert repository. Microsoft recommends submitting false-positive reports through the Microsoft Defender Security Center portal (https://www.microsoft.com/en-us/wdsi/filesubmission) to expedite signature updates. Until Microsoft releases a corrected signature or engine update, organizations may consider temporarily disabling automatic remediation for certificate detections, though this carries its own risk of missing genuine threats. No ETA for a permanent fix has been provided.
+
+## References
+
+- [Microsoft Defender wrongly flags DigiCert certs as Trojan:Win32/Cerdigent.A!dha - BleepingComputer](https://www.bleepingcomputer.com/news/security/microsoft-defender-wrongly-flags-digicert-certs-as-trojan-win32-cerdigentadha/)
