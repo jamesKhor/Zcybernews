@@ -1,0 +1,48 @@
+---
+title: Amazon SES 在钓鱼邮件中被滥用以规避电子邮件安全过滤器
+slug: 2026-05-04-amazon-ses-abused-in-phishing-to-evade-email-security-filters
+date: '2026-05-04'
+excerpt: 威胁行为者利用 Amazon SES 发送绕过 SPF、DKIM 和 DMARC 检查的钓鱼邮件，自 2025 年第四季度以来滥用增加了 40%。
+category: threat-intel
+tags:
+  - amazon-ses
+  - phishing
+  - email-security
+  - bec
+  - cloud-abuse
+  - evasion
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/amazon-ses-increasingly-abused-in-phishing-to-evade-detection/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-04-amazon-ses-abused-in-phishing-to-evade-email-security-filters
+severity: high
+affected_sectors:
+  - financial services
+  - technology
+  - healthcare
+affected_regions:
+  - North America
+  - EU
+---
+## 执行摘要
+
+根据2026年5月4日BleepingComputer发布的报告，威胁行为者越来越多地利用Amazon Simple Email Service (SES) 发送绕过标准电子邮件安全过滤器的钓鱼邮件。滥用行为利用合法的SES账户发送通过SPF、DKIM和DMARC认证检查的电子邮件，使得基于声誉的阻止无效。研究人员观察到自2025年第四季度以来，基于SES的钓鱼活动增加了40%，安全供应商识别出超过1200个恶意SES账户。
+
+## 技术分析
+
+Amazon SES是一个为市场营销和事务性电子邮件设计的基于云的电子邮件发送服务。攻击者通过窃取AWS凭证或社交工程手段破坏或创建SES账户，并使用它们发送看似来自可信域的钓鱼邮件。由于邮件是通过亚马逊的基础设施发送的，它们通过了SPF、DKIM和DMARC验证，使得许多电子邮件网关无法区分它们与合法流量。
+
+观察到的钓鱼活动包括针对金融服务、科技公司和医疗保健组织的商务电子邮件泄露（BEC）诱饵。邮件经常冒充内部IT部门、人力资源或可信供应商，请求重置凭证、电汇转账或敏感数据。使用SES使攻击者能够发送大量邮件而不触发依赖于发件人声誉的传统垃圾邮件过滤器。
+
+包括Proofpoint和Abnormal Security在内的多家公司的安全研究人员追踪了这一增长趋势。他们指出，这种滥用不是SES本身的漏洞，而是特征误用——类似于Google Workspace或Microsoft 365账户有时被劫持用于钓鱼。然而，SES的规模和与其他AWS服务的集成使其特别有吸引力：攻击者可以轮换发送IP，使用多个区域，并自动化账户创建。
+
+## 缓解措施与建议
+
+组织应实施超越认证检查的高级电子邮件安全措施。这包括部署基于AI的钓鱼检测，分析电子邮件内容、发件人行为和发送模式中的异常。安全团队还应监控其AWS环境中不寻常的SES使用情况——例如电子邮件量的突然激增、新的发送域或来自不熟悉IP的API调用——并启用AWS CloudTrail日志记录SES操作。对于入站电子邮件，配置DMARC拒绝策略（p=reject）和使用执行链接扫描和附件分析的电子邮件安全解决方案可以降低风险。亚马逊建议在所有AWS账户上启用多因素认证，并定期审查SES发送统计数据，以查找未经授权的活动。
+
+## 参考资料
+
+- [BleepingComputer: Amazon SES increasingly abused in phishing to evade detection](https://www.bleepingcomputer.com/news/security/amazon-ses-increasingly-abused-in-phishing-to-evade-detection/)

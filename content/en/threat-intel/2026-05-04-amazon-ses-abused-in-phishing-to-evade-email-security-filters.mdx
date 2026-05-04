@@ -1,0 +1,50 @@
+---
+title: Amazon SES Abused in Phishing to Evade Email Security Filters
+slug: 2026-05-04-amazon-ses-abused-in-phishing-to-evade-email-security-filters
+date: '2026-05-04'
+excerpt: >-
+  Threat actors exploit Amazon SES to send phishing emails that bypass SPF,
+  DKIM, and DMARC checks, with a 40% rise in abuse since Q4 2025.
+category: threat-intel
+tags:
+  - amazon-ses
+  - phishing
+  - email-security
+  - bec
+  - cloud-abuse
+  - evasion
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/amazon-ses-increasingly-abused-in-phishing-to-evade-detection/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-04-amazon-ses-abused-in-phishing-to-evade-email-security-filters
+severity: high
+affected_sectors:
+  - financial services
+  - technology
+  - healthcare
+affected_regions:
+  - North America
+  - EU
+---
+## Executive Summary
+
+Amazon Simple Email Service (SES) is being increasingly weaponized by threat actors to send phishing emails that bypass standard email security filters, according to a BleepingComputer report published May 4, 2026. The abuse leverages legitimate SES accounts to send emails that pass SPF, DKIM, and DMARC authentication checks, rendering reputation-based blocking ineffective. Researchers observed a 40% increase in SES-based phishing since Q4 2025, with over 1,200 malicious SES accounts identified by security vendors.
+
+## Technical Analysis
+
+Amazon SES is a cloud-based email sending service designed for marketing and transactional emails. Attackers compromise or create SES accounts — often using stolen AWS credentials or through social engineering — and use them to send phishing emails that appear to originate from trusted domains. Because the emails are sent through Amazon's infrastructure, they pass SPF, DKIM, and DMARC validation, making them indistinguishable from legitimate traffic to many email gateways.
+
+The phishing campaigns observed include business email compromise (BEC) lures targeting financial services, technology firms, and healthcare organizations. The emails often impersonate internal IT departments, HR, or trusted vendors, requesting credential resets, wire transfers, or sensitive data. The use of SES allows attackers to send high volumes of emails without triggering traditional spam filters that rely on sender reputation.
+
+Security researchers from multiple firms, including Proofpoint and Abnormal Security, have tracked the uptick. They note that the abuse is not a vulnerability in SES itself but rather a feature misuse — similar to how Google Workspace or Microsoft 365 accounts are sometimes hijacked for phishing. However, SES's scale and integration with other AWS services make it particularly attractive: attackers can rotate sending IPs, use multiple regions, and automate account creation.
+
+## Mitigations & Recommendations
+
+Organizations should implement advanced email security measures that go beyond authentication checks. This includes deploying AI-based phishing detection that analyzes email content, sender behavior, and anomalies in sending patterns. Security teams should also monitor for unusual SES usage within their own AWS environments — such as sudden spikes in email volume, new sending domains, or API calls from unfamiliar IPs — and enable AWS CloudTrail logging for SES actions. For inbound email, configuring DMARC rejection policies (p=reject) and using email security solutions that perform link scanning and attachment analysis can reduce risk. Amazon recommends enabling multi-factor authentication on all AWS accounts and regularly reviewing SES sending statistics for unauthorized activity.
+
+## References
+
+- [BleepingComputer: Amazon SES increasingly abused in phishing to evade detection](https://www.bleepingcomputer.com/news/security/amazon-ses-increasingly-abused-in-phishing-to-evade-detection/)
