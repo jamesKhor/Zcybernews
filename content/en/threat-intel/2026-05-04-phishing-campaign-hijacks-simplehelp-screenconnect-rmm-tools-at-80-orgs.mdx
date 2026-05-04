@@ -1,0 +1,48 @@
+---
+title: 'Phishing Campaign Hijacks SimpleHelp, ScreenConnect RMM Tools at 80+'
+slug: >-
+  2026-05-04-phishing-campaign-hijacks-simplehelp-screenconnect-rmm-tools-at-80-orgs
+date: '2026-05-04'
+excerpt: >-
+  Securonix tracks VENOMOUS#HELPER phishing campaign using legitimate SimpleHelp
+  and ScreenConnect RMM software for persistent remote access across 80+
+  organizations, mostly in the…
+category: threat-intel
+tags:
+  - phishing
+  - rmm
+  - simplehelp
+  - screenconnect
+  - securonix
+  - venomous#helper
+  - remote-access
+  - persistence
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/05/phishing-campaign-hits-80-orgs-using.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-04-phishing-campaign-hijacks-simplehelp-screenconnect-rmm-tools-at-80-orgs
+severity: high
+threat_actor: VENOMOUS#HELPER
+affected_regions:
+  - United States
+---
+## Executive Summary
+
+A phishing campaign tracked as VENOMOUS#HELPER has compromised over 80 organizations, primarily in the United States, by weaponizing legitimate Remote Monitoring and Management (RMM) software — SimpleHelp and ScreenConnect — to establish persistent remote access to victim networks. According to security firm Securonix, the campaign has been active since at least April 2025, leveraging social engineering to trick users into installing the RMM tools under the guise of technical support or software updates. The use of trusted, signed binaries from reputable vendors allows the attackers to bypass many endpoint detection and response (EDR) controls.
+
+## Technical Analysis
+
+Securonix reports that the VENOMOUS#HELPER campaign relies on phishing emails containing links or attachments that direct victims to download and execute either SimpleHelp or ScreenConnect (formerly ConnectWise Control) remote access clients. Once installed, the attackers gain interactive remote control of the compromised host, enabling lateral movement, credential harvesting, and data exfiltration. The choice of RMM software is deliberate: both tools are signed by their respective vendors and are commonly used by IT support teams, making their execution less likely to trigger alerts.
+
+The campaign shares tactical overlaps with previously observed clusters that abuse legitimate remote access tools for persistence, though Securonix has not publicly attributed VENOMOUS#HELPER to a specific known threat actor group. The attackers appear to target a broad range of sectors, with the majority of victims located in the United States. The exact initial access vector — whether the phishing emails deliver a direct installer or a script that fetches the RMM payload — has not been detailed by Securonix in the available reporting.
+
+## Mitigations & Recommendations
+
+Organizations should restrict the execution of RMM software to authorized IT administration teams through application allowlisting and endpoint detection rules. Security teams should monitor for unexpected installations of SimpleHelp, ScreenConnect, or any remote access tool initiated by non-administrative users. Phishing awareness training should emphasize the risk of installing remote assistance software from unsolicited emails. Additionally, network segmentation and strict firewall rules can limit the ability of attackers to move laterally after gaining initial access via RMM tools.
+
+## References
+
+- [The Hacker News: Phishing Campaign Hits 80+ Orgs Using SimpleHelp and ScreenConnect RMM Tools](https://thehackernews.com/2026/05/phishing-campaign-hits-80-orgs-using.html)

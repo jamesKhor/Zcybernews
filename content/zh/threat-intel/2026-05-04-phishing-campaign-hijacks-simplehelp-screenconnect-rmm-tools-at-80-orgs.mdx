@@ -1,0 +1,47 @@
+---
+title: 钓鱼活动劫持 SimpleHelp、ScreenConnect RMM 工具超过80+
+slug: >-
+  2026-05-04-phishing-campaign-hijacks-simplehelp-screenconnect-rmm-tools-at-80-orgs
+date: '2026-05-04'
+excerpt: >-
+  Securonix 追踪使用合法 SimpleHelp 和 ScreenConnect RMM 软件的 VENOMOUS#HELPER
+  钓鱼活动，以实现对80+组织的持久远程访问，大多数在…
+category: threat-intel
+tags:
+  - phishing
+  - rmm
+  - simplehelp
+  - screenconnect
+  - securonix
+  - venomous#helper
+  - remote-access
+  - persistence
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/05/phishing-campaign-hits-80-orgs-using.html'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-04-phishing-campaign-hijacks-simplehelp-screenconnect-rmm-tools-at-80-orgs
+severity: high
+threat_actor: VENOMOUS#HELPER
+affected_regions:
+  - United States
+---
+## 执行摘要
+
+追踪为VENOMOUS#HELPER的网络钓鱼活动已经破坏了超过80个组织，这些组织主要位于美国，通过武器化合法的远程监控和管理（RMM）软件——SimpleHelp和ScreenConnect——来建立对受害者网络的持久远程访问。根据安全公司Securonix的说法，该活动自2025年4月至少开始活跃，利用社会工程学诱骗用户在技术支持或软件更新的幌子下安装RMM工具。使用来自信誉良好的供应商的可信签名二进制文件，允许攻击者绕过许多端点检测和响应（EDR）控制。
+
+## 技术分析
+
+Securonix报告称，VENOMOUS#HELPER活动依赖于包含链接或附件的网络钓鱼电子邮件，这些链接或附件引导受害者下载并执行SimpleHelp或ScreenConnect（前身为ConnectWise Control）远程访问客户端。一旦安装，攻击者便获得了对被入侵主机的交互式远程控制，从而实现横向移动、凭证收集和数据外泄。选择RMM软件是故意的：这两种工具都由各自的供应商签名，通常由IT支持团队使用，使它们的执行不太可能触发警报。
+
+该活动在战术上与以前观察到的滥用合法远程访问工具以保持持久性的集群有重叠，尽管Securonix尚未公开将VENOMOUS#HELPER归因于特定的已知威胁行为者群体。攻击者似乎针对广泛的行业，大多数受害者位于美国。Securonix在可用报告中没有详细说明确切的初始访问向量——网络钓鱼电子邮件是直接提供安装程序还是获取RMM有效载荷的脚本。
+
+## 缓解措施与建议
+
+组织应通过应用程序允许列表和端点检测规则，将RMM软件的执行限制在授权的IT管理团队。安全团队应监控由非管理员用户发起的SimpleHelp、ScreenConnect或任何远程访问工具的意外安装。网络钓鱼意识培训应强调从不请自来的电子邮件中安装远程协助软件的风险。此外，网络分段和严格的防火墙规则可以限制攻击者在通过RMM工具获得初始访问后横向移动的能力。
+
+## 参考资料
+
+- [The Hacker News: Phishing Campaign Hits 80+ Orgs Using SimpleHelp and ScreenConnect RMM Tools](https://thehackernews.com/2026/05/phishing-campaign-hits-80-orgs-using.html)
