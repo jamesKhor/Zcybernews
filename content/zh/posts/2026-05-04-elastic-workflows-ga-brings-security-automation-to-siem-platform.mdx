@@ -1,0 +1,44 @@
+---
+title: Elastic Workflows GA 将安全自动化带入 SIEM 平台
+slug: 2026-05-04-elastic-workflows-ga-brings-security-automation-to-siem-platform
+date: '2026-05-04'
+excerpt: Elastic Workflows 在 9.4 版本中达到 GA，增加了生产就绪的自动化功能，包括案例管理钩子、人在回路中的审批以及自然语言规则编写，用于…
+category: tools
+tags:
+  - elastic
+  - siem
+  - security-automation
+  - soar
+  - case-management
+  - elastic-security
+language: zh
+source_urls:
+  - 'https://www.elastic.co/security-labs/elastic-workflows-ga-9-4'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-04-elastic-workflows-ga-brings-security-automation-to-siem-platform
+---
+## Elastic Workflows GA 将安全自动化带入 SIEM 平台
+
+## 执行摘要
+
+Elastic Security Labs 宣布 Elastic Stack 版本 9.4 中 Elastic Workflows 的正式发布，将生产级别的安全自动化直接带入 SIEM 平台。这个之前处于测试阶段的功能现在支持更深入的案例管理集成、人工审批环节以及自然语言编写自动化规则。此版本的发布旨在通过允许团队在不离开 Elastic 界面的情况下自动化重复性任务，减少事件响应的操作开销。
+
+## 技术分析
+
+Elastic Workflows 在 Elastic Security 应用内运行，使分析师能够构建由检测规则或手动操作触发的自动化响应序列。9.4 版本的正式发布在测试版的基础上引入了几个关键增强：
+
+- **案例管理集成：** 工作流现在可以在 Elastic Security 内置的案例管理系统中创建、更新或关闭案例，将自动化操作直接链接到事件跟踪。
+- **人工审批环节（HITL）支持：** 关键操作（如隔离主机或阻止 IP）在执行前可能需要手动审批，以减少自动化错误的风险。HITL 步骤会暂停工作流并向指定的响应者发送通知。
+- **自然语言编写：** 分析师可以用简单的英语描述所需的工作流，系统会生成相应的工作流定义。这降低了没有深厚脚本专长的团队的门槛。
+- **预构建的工作流模板：** Elastic 提供了一个包含常见场景的模板库，包括钓鱼响应、恶意软件遏制和凭证泄露初步处理。
+
+自动化引擎运行在 Elastic 的无服务器基础设施上，随着数据量的增加而扩展。工作流被定义为 YAML 配置，并且可以通过 Git 进行版本控制，与基础设施即代码实践保持一致。
+
+## 缓解措施与建议
+
+对于已经使用 Elastic Security 的组织，升级到版本 9.4 可以启用 Workflows GA 功能。防御者应该审查预构建的模板，并将其适应于他们环境的特定工具（例如，防火墙 API、端点响应命令）。团队应该首先在非生产环境中测试工作流，特别是那些涉及自动化遏制操作的工作流。对于任何修改系统状态的工作流，应该启用人工审批环节。Elastic 建议定期审计工作流执行日志，以微调自动化逻辑。
+
+## 参考资料
+
+- [Elastic Workflows GA: 您的安全数据所在之处的自动化](https://www.elastic.co/security-labs/elastic-workflows-ga-9-4)
