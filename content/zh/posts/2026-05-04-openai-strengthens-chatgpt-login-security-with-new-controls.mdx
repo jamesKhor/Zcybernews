@@ -1,0 +1,44 @@
+---
+title: OpenAI 强化 ChatGPT 登录安全 新增控制措施
+slug: 2026-05-04-openai-strengthens-chatgpt-login-security-with-new-controls
+date: '2026-05-04'
+excerpt: OpenAI 推出 ChatGPT 的高级账户安全功能：强制使用密码密钥、缩短会话时间以及账户恢复变更。影响全球所有用户。
+category: industry
+tags:
+  - openai
+  - chatgpt
+  - account-security
+  - passkeys
+  - credential-stuffing
+  - authentication
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/openai-rolls-out-advanced-security-for-chatgpt-accounts/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-04-openai-strengthens-chatgpt-login-security-with-new-controls
+severity: medium
+affected_sectors:
+  - technology
+  - cloud services
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+OpenAI 根据 SecurityWeek 报道的公司公告，为 ChatGPT 账户引入了一套新的安全控制措施，统称为高级账户安全。更新要求基于口令的认证，强制缩短会话时长，并加强账户恢复程序。这些变化出现在针对 AI 服务账户的凭证填充攻击日益增多的情况下，攻击者利用这些攻击来免费获取 API 访问权限或外泄对话历史。
+
+## 技术分析
+
+高级账户安全要求用户在从新设备或浏览器登录之前注册一个口令（FIDO2/WebAuthn）。一旦注册，系统将拒绝这些账户仅使用密码的登录。会话超时已从之前的默认 30 天减少到最多 7 天，用户可以配置更短的时间窗口。账户恢复现在需要电子邮件验证和口令确认，关闭了攻击者仅通过被破坏的电子邮件收件箱重置密码的途径。
+
+OpenAI 还增加了一个选项，允许从模型训练中排除账户数据，对于注册了高级账户安全的账户，默认启用此功能。该功能将逐步向所有 ChatGPT 用户推出，包括免费层、Plus、Team 和 Enterprise 订阅者。公司没有透露这些变化是否由特定事件引发，但自 2026 年初以来，已有多家威胁情报公司记录了针对 AI 平台的凭证填充攻击。
+
+## 缓解措施与建议
+
+ChatGPT 用户应在提示时立即启用高级账户安全。尚未收到此选项的用户应手动在账户设置中配置双因素认证（TOTP 或 SMS）作为临时措施。使用 ChatGPT Enterprise 的组织应审计他们的 SSO 配置，以确保与新的口令要求兼容。用户还应检查活跃会话并撤销任何未识别的登录。
+
+## 参考资料
+
+- [OpenAI Rolls Out Advanced Security for ChatGPT Accounts - SecurityWeek](https://www.securityweek.com/openai-rolls-out-advanced-security-for-chatgpt-accounts/)

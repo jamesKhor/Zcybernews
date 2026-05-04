@@ -1,0 +1,46 @@
+---
+title: OpenAI Strengthens ChatGPT Login Security With New Controls
+slug: 2026-05-04-openai-strengthens-chatgpt-login-security-with-new-controls
+date: '2026-05-04'
+excerpt: >-
+  OpenAI rolls out Advanced Account Security for ChatGPT: mandatory passkeys,
+  shorter sessions, and account recovery changes. Affects all users globally.
+category: industry
+tags:
+  - openai
+  - chatgpt
+  - account-security
+  - passkeys
+  - credential-stuffing
+  - authentication
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/openai-rolls-out-advanced-security-for-chatgpt-accounts/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-04-openai-strengthens-chatgpt-login-security-with-new-controls
+severity: medium
+affected_sectors:
+  - technology
+  - cloud services
+affected_regions:
+  - Global
+---
+## Executive Summary
+
+OpenAI has introduced a new set of security controls for ChatGPT accounts, collectively branded as Advanced Account Security, according to a company announcement reported by SecurityWeek. The update mandates passkey-based authentication, enforces shorter session durations, and tightens account recovery procedures. The changes come amid rising credential-stuffing attacks targeting AI service accounts, which attackers use to gain free API access or exfiltrate conversation histories.
+
+## Technical Analysis
+
+Advanced Account Security requires users to register a passkey (FIDO2/WebAuthn) before they can log in from new devices or browsers. Once enrolled, the system will reject password-only logins for those accounts. Session timeouts have been reduced from the previous default of 30 days to a maximum of 7 days, and users can configure even shorter windows. Account recovery now requires both email verification and passkey confirmation, closing a vector where attackers could reset passwords via compromised email inboxes alone.
+
+OpenAI also added an option to exclude account data from model training, which is toggled on by default for accounts enrolled in Advanced Account Security. The feature is rolling out gradually to all ChatGPT users, including free-tier, Plus, Team, and Enterprise subscribers. The company did not disclose whether the changes were prompted by a specific incident, but credential-stuffing attacks against AI platforms have been documented by multiple threat intelligence firms since early 2026.
+
+## Mitigations & Recommendations
+
+ChatGPT users should enable Advanced Account Security immediately when prompted. Those who have not yet received the option should manually configure two-factor authentication (TOTP or SMS) in their account settings as an interim measure. Organizations using ChatGPT Enterprise should audit their SSO configurations to ensure compatibility with the new passkey requirements. Users should also review active sessions and revoke any unrecognized logins.
+
+## References
+
+- [OpenAI Rolls Out Advanced Security for ChatGPT Accounts - SecurityWeek](https://www.securityweek.com/openai-rolls-out-advanced-security-for-chatgpt-accounts/)
