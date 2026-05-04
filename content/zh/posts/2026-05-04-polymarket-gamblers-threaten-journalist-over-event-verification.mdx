@@ -1,0 +1,42 @@
+---
+title: Polymarket 赌徒因事件验证威胁记者
+slug: 2026-05-04-polymarket-gamblers-threaten-journalist-over-event-verification
+date: '2026-05-04'
+excerpt: Polymarket 赌徒威胁了一名记者，该记者的故事被用来验证用于投注结算的现实世界事件，突显了预测市场预言机操纵的风险…
+category: industry
+tags:
+  - polymarket
+  - oracle-manipulation
+  - prediction-market
+  - journalist-threats
+  - event-verification
+language: zh
+source_urls:
+  - 'https://www.schneier.com/blog/archives/2026/05/hacking-polymarket.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-04-polymarket-gamblers-threaten-journalist-over-event-verification
+severity: high
+affected_sectors:
+  - media
+  - financial services
+affected_regions:
+  - Global
+---
+## 执行摘要
+
+基于区块链的预测市场平台Polymarket上的赌徒威胁了一名记者，该记者的报道被用作验证现实世界事件以解决赌注的来源。这一事件由Bruce Schneier在2026年5月4日报道，突显了去中心化预言机系统的基本安全缺陷：缺乏防篡改、权威的数据源来确定事件结果。这不是孤立的案例——Polymarket依赖于公开可验证的事件，此前因允许对暗杀结果下注而受到批评，但直接威胁记者标志着预言机操纵现实世界后果的升级。
+
+## 技术分析
+
+Polymarket作为一个去中心化的预测市场运作，用户对现实世界事件的结果下注，范围从政治选举到天气模式。该平台依赖于预言机——可信的数据源——来报告某个事件发生与否，这将触发智能合约的支付。根据Schneier的描述，平台上的赌徒威胁了一名记者，因为他的新闻报道被用作某个特定事件结果的验证来源。这创造了一个反常的激励：如果赌徒可以压制、修改或诋毁用于预言机输入的报道，他们可以影响赌注结算对他们有利。
+
+这里的威胁向量不是Polymarket代码库中的软件漏洞，而是社会和程序上的。该平台似乎没有为其预言机输入使用密码学证明或去中心化共识机制——相反，它依赖于公开可访问的媒体报道。这种设计选择使得验证层容易受到胁迫、贿赂或骚扰那些制作这些报告的个人。Schneier指出，Polymarket此前因促进对暗杀事件的赌注而受到批评，引发了关于平台事件选择和验证流程的伦理和安全问题。
+
+## 缓解措施与建议
+
+防御者和平台运营商应考虑以下措施：预测市场应实施去中心化预言机网络（例如，Chainlink, UMA），这些网络从多个独立来源聚合数据，并要求密码学签名或质押机制以防止操纵。对于通过新闻报道验证的事件，平台应采用至少三个独立的、预先注册的媒体来源的法定人数，并进行自动化交叉引用以检测差异。其工作被用作预言机输入的记者应被通知，并提供退出机制或匿名归属。用户应意识到，对通过单一来源人类报道验证的事件下注，存在通过社会工程或威胁操纵结果的高风险。
+
+## 参考资料
+
+- [Schneier on Security: Hacking Polymarket](https://www.schneier.com/blog/archives/2026/05/hacking-polymarket.html)
