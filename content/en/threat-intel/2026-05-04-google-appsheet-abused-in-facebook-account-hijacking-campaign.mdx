@@ -1,0 +1,45 @@
+---
+title: Google AppSheet Abused in Facebook Account Hijacking Campaign
+slug: 2026-05-04-google-appsheet-abused-in-facebook-account-hijacking-campaign
+date: '2026-05-04'
+excerpt: >-
+  Threat actors are using Google AppSheet to send phishing emails that bypass
+  security filters and steal thousands of Facebook accounts. Malwarebytes
+  reports the campaign is ongoing.
+category: threat-intel
+tags:
+  - phishing
+  - facebook
+  - google-appsheet
+  - credential-theft
+  - social-engineering
+language: en
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/news/2026/05/thousands-of-facebook-accounts-stolen-by-phishing-emails-sent-through-google
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-04-google-appsheet-abused-in-facebook-account-hijacking-campaign
+severity: high
+affected_sectors:
+  - social media
+---
+## Executive Summary
+
+An ongoing phishing campaign is hijacking thousands of Facebook accounts by sending credential-harvesting emails through Google AppSheet, a low-code application platform. According to Malwarebytes Labs, the attackers abuse AppSheet's email notification feature to send messages that appear legitimate and bypass common email security filters. The campaign remains active as of early May 2026.
+
+## Technical Analysis
+
+Malwarebytes researchers identified that threat actors are leveraging Google AppSheet's built-in email notification functionality to distribute phishing links. AppSheet, a Google Cloud service that allows users to build applications without coding, can send automated emails from a verified `@appsheet.com` domain. Because the emails originate from a legitimate Google-owned domain, they often evade spam filters and email authentication checks such as SPF, DKIM, and DMARC.
+
+The phishing emails mimic official Facebook security notifications, warning recipients of unauthorized login attempts or account restrictions. The messages contain a link that directs victims to a fake Facebook login page designed to capture credentials. Once the victim enters their username and password, the attackers gain full access to the account, including the ability to change the email address and password, locking the legitimate owner out.
+
+Malwarebytes notes that the campaign has compromised thousands of accounts, though exact numbers were not disclosed. The researchers observed that the attackers are particularly targeting business and advertising accounts, likely to use them for running fraudulent ad campaigns or further phishing operations.
+
+## Mitigations & Recommendations
+
+Facebook users should scrutinize any email claiming to be from Facebook that asks them to click a link and log in. Instead of clicking links in emails, users should navigate directly to facebook.com or use the official mobile app to check account status. Enabling two-factor authentication (2FA) on Facebook accounts adds a critical layer of protection even if credentials are compromised. Organizations using Google AppSheet should monitor for unusual email sending patterns and consider restricting the service's email notification capabilities if not needed. Google has not yet commented on the abuse or announced any specific countermeasures.
+
+## References
+
+- [Malwarebytes Labs: Thousands of Facebook accounts stolen by phishing emails sent through Google](https://www.malwarebytes.com/blog/news/2026/05/thousands-of-facebook-accounts-stolen-by-phishing-emails-sent-through-google)

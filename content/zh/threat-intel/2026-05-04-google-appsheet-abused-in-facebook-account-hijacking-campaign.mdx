@@ -1,0 +1,44 @@
+---
+title: Google AppSheet 在 Facebook 账户劫持活动中被滥用
+slug: 2026-05-04-google-appsheet-abused-in-facebook-account-hijacking-campaign
+date: '2026-05-04'
+excerpt: >-
+  威胁行为者正在使用 Google AppSheet 发送绕过安全过滤器的网络钓鱼邮件，并窃取数千个 Facebook 账户。Malwarebytes
+  报告称该活动仍在进行中。
+category: threat-intel
+tags:
+  - phishing
+  - facebook
+  - google-appsheet
+  - credential-theft
+  - social-engineering
+language: zh
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/news/2026/05/thousands-of-facebook-accounts-stolen-by-phishing-emails-sent-through-google
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-04-google-appsheet-abused-in-facebook-account-hijacking-campaign
+severity: high
+affected_sectors:
+  - social media
+---
+## 执行摘要
+
+一个正在进行的网络钓鱼活动通过发送通过Google AppSheet（一个低代码应用平台）的凭证收集电子邮件，劫持了数千个Facebook账户。根据Malwarebytes Labs的说法，攻击者滥用AppSheet的电子邮件通知功能发送看起来合法且绕过常见电子邮件安全过滤器的消息。截至2026年5月初，该活动仍然活跃。
+
+## 技术分析
+
+Malwarebytes的研究人员发现，威胁行为者正在利用Google AppSheet内置的电子邮件通知功能来分发网络钓鱼链接。AppSheet是一项Google Cloud服务，允许用户无需编码即可构建应用程序，可以从经过验证的`@appsheet.com`域发送自动电子邮件。由于电子邮件来自合法的Google拥有的域，它们通常可以绕过垃圾邮件过滤器和电子邮件认证检查，如SPF、DKIM和DMARC。
+
+网络钓鱼电子邮件模仿官方Facebook安全通知，警告收件人有未经授权的登录尝试或账户限制。这些消息包含一个链接，将受害者引导至一个假的Facebook登录页面，旨在捕获凭证。一旦受害者输入他们的用户名和密码，攻击者就可以完全访问账户，包括更改电子邮件地址和密码的能力，将合法所有者锁定在外。
+
+Malwarebytes指出，该活动已经破坏了数千个账户，尽管确切数字尚未披露。研究人员观察到，攻击者特别针对商业和广告账户，可能使用它们来运行欺诈性广告活动或进一步的网络钓鱼操作。
+
+## 缓解措施与建议
+
+Facebook用户应该仔细审查任何声称来自Facebook并要求他们点击链接并登录的电子邮件。用户不应点击电子邮件中的链接，而应直接导航到facebook.com或使用官方移动应用程序检查账户状态。在Facebook账户上启用双因素认证（2FA）即使凭证被泄露，也增加了一个关键的保护层。使用Google AppSheet的组织应该监控不寻常的电子邮件发送模式，并考虑在不需要时限制服务的电子邮件通知功能。Google尚未就滥用发表评论或宣布任何具体对策。
+
+## 参考资料
+
+- [Malwarebytes Labs: Thousands of Facebook accounts stolen by phishing emails sent through Google](https://www.malwarebytes.com/blog/news/2026/05/thousands-of-facebook-accounts-stolen-by-phishing-emails-sent-through-google)
