@@ -1,0 +1,10 @@
+{
+  "tag": "data-leak",
+  "locale": "zh",
+  "intro": "从2026年4月中下旬起，ZCyberNews报道了五起数据泄露事件，其中威胁行为者0APT出现频率最高。这些泄露事件波及商业服务、电子商务、教育、金融服务及自由职业服务等多个行业，影响范围覆盖全球。事件严重程度分布为一起中等、三起高危及一起严重，反映出该时期严重违规事件高度集中。",
+  "sources_hash": "9992931f655a5d9c",
+  "source_intro_hash": "89b01d50af489020",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-04T04:24:37.886Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

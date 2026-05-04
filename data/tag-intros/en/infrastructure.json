@@ -1,0 +1,9 @@
+{
+  "tag": "infrastructure",
+  "locale": "en",
+  "intro": "From April 13 to April 28, 2026, ZCyberNews published five articles tagged under infrastructure, covering a period of heightened activity with two medium-severity and three high-severity incidents. The top threat actor observed during this timeframe was Triad Nexus, with attacks affecting multiple sectors globally. The coverage reflects a concentrated wave of operations targeting critical systems across diverse industries and regions.",
+  "sources_hash": "e9278bcb0fe008c4",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-04T04:24:19.611Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

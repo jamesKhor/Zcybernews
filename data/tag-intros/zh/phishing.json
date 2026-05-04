@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "intro": "金融服务业和政府机构是ZCyberNews追踪的一波钓鱼攻击的主要目标，在2026年4月8日至5月1日期间共记录到54起事件。威胁行为者Silver Fox、AccountDumpling和Bluekit被观察到利用包括CVE-2023-22515、CVE-2023-34048、CVE-2023-46805、CVE-2023-4966和CVE-2024-21893在内的漏洞。这些攻击活动影响了全球多个地区，其中拉丁美洲、加拿大、加勒比地区和美国受到显著影响。严重程度分布为46起高严重性事件和8起中等严重性事件。",
-  "sources_hash": "cc3ec4f933b1e306",
-  "source_intro_hash": "e60e5c528bfaf0eb",
+  "intro": "金融服务业与政府部门在2026年4月8日至5月3日期间遭受了一场集中式钓鱼攻击的严重冲击，共有55篇相关文章记录了47起高严重性和8起中等严重性事件。威胁行为者Silver Fox、AccountDumpling和Bluekit被观察到利用包括CVE-2023-22515、CVE-2023-34048、CVE-2023-46805、CVE-2023-4966和CVE-2024-21893在内的漏洞，其影响范围覆盖全球目标，以及拉丁美洲、加拿大、加勒比地区和美国。",
+  "sources_hash": "b4f7453f8027fd87",
+  "source_intro_hash": "af5e70f90cc8705a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:12:43.775Z",
+  "generated_at": "2026-05-04T04:24:47.340Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

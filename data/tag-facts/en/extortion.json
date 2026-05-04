@@ -1,10 +1,10 @@
 {
   "tag": "extortion",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-24"
+    "latest": "2026-05-03"
   },
   "top_actors": [
     "ShinyHunters",
@@ -22,13 +22,13 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "medium": 1
   },
   "recent_excerpts": [
+    "ShinyHunters claims to have stolen data from Instructure, the edtech firm behind Canvas LMS. Instructure confirms a breach involving unauthorized access to certain systems and…",
     "ADT confirmed a data breach after ShinyHunters leaked 30,000+ customer records including names, emails, and account details from a compromised Salesforce instance.",
-    "BlackFile extortion group has hit at least 12 retail and hospitality organizations since Feb 2026, using vishing to steal VPN credentials and exfiltrate data before demanding…",
-    "ShinyHunters published data from 13.5 million McGraw Hill accounts — names, emails, institutional affiliations — stolen from a misconfigured Salesforce instance."
+    "BlackFile extortion group has hit at least 12 retail and hospitality organizations since Feb 2026, using vishing to steal VPN credentials and exfiltrate data before demanding…"
   ],
-  "sources_hash": "3664ecbdf1264de6"
+  "sources_hash": "66958b79c0f5d74b"
 }

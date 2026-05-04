@@ -1,0 +1,10 @@
+{
+  "tag": "sentencing",
+  "locale": "zh",
+  "intro": "2026年4月17日至5月1日期间，ZCyberNews在判决标签下发布了五篇文章，其中两篇被评为高严重性，三篇为中等。威胁行为者BlackCat频繁出现，受影响行业包括娱乐、加密货币、网络安全服务、金融服务和赌博。所有事件均影响美国。这些案例凸显了跨行业网络犯罪分子持续面临的法律后果。",
+  "sources_hash": "8325df82c51e5850",
+  "source_intro_hash": "d6bffd4aacd38df7",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-04T04:24:48.860Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

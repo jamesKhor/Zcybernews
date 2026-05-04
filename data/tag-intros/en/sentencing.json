@@ -1,0 +1,9 @@
+{
+  "tag": "sentencing",
+  "locale": "en",
+  "intro": "Between April 17 and May 1, 2026, ZCyberNews published five articles under the sentencing tag, with two rated high severity and three medium. The threat actor BlackCat featured prominently, while affected sectors included entertainment, cryptocurrency, cybersecurity services, financial services, and gambling. All incidents impacted the United States. These cases highlight the ongoing legal consequences for cybercriminals operating across multiple industries.",
+  "sources_hash": "8325df82c51e5850",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-04T04:24:31.158Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

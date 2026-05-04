@@ -1,0 +1,33 @@
+{
+  "tag": "shinyhunters",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-05-03"
+  },
+  "top_actors": [
+    "ShinyHunters"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "consumer services",
+    "education",
+    "entertainment",
+    "gaming",
+    "healthcare"
+  ],
+  "top_regions": [
+    "North america",
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "ShinyHunters 声称从 Instructure，即 Canvas LMS 背后的教育技术公司，窃取了数据。Instructure 确认涉及未经授权访问某些系统的数据泄露，并...",
+    "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。",
+    "ShinyHunters 侵入 ADT，窃取了 550 万名个人数据 —— 名字、电子邮件、电话号码和地址 —— 来自内部系统。没有支付数据被泄露。"
+  ],
+  "sources_hash": "6bbe7686cacb5a77"
+}

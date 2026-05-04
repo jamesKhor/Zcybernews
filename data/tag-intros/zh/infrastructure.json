@@ -1,0 +1,10 @@
+{
+  "tag": "infrastructure",
+  "locale": "zh",
+  "intro": "从2026年4月13日至4月28日，ZCyberNews发布了五篇标记为基础设施的文章，涵盖了一个活动加剧的时期，包括两起中等严重性和三起高严重性事件。在此期间观察到的主要威胁行为者是Triad Nexus，其攻击影响了全球多个行业。这些报道反映了针对不同行业和地区关键系统的一波集中行动。",
+  "sources_hash": "e9278bcb0fe008c4",
+  "source_intro_hash": "6d5f07da2c5f5de1",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-04T04:24:41.118Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,9 +1,9 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "intro": "Financial services and government sectors were the primary targets in a wave of phishing attacks tracked by ZCyberNews, with 54 incidents recorded between April 8 and May 1, 2026. The threat actors Silver Fox, AccountDumpling, and Bluekit were observed exploiting vulnerabilities including CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. The campaigns affected regions globally, with notable impact in Latin America, Canada, the Caribbean, and the United States. The severity mix comprised 46 high-severity and 8 medium-severity incidents.",
-  "sources_hash": "cc3ec4f933b1e306",
+  "intro": "Financial services and government sectors bore the brunt of a concentrated phishing campaign between April 8 and May 3, 2026, with 55 articles cataloging 47 high-severity and 8 medium-severity incidents. Threat actors Silver Fox, AccountDumpling, and Bluekit were observed exploiting vulnerabilities including CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893, with impacts spanning global targets as well as Latin America, Canada, the Caribbean, and the United States.",
+  "sources_hash": "b4f7453f8027fd87",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:09:29.422Z",
+  "generated_at": "2026-05-04T04:22:40.518Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

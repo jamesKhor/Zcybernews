@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "count": 54,
+  "count": 55,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-01"
+    "latest": "2026-05-03"
   },
   "top_actors": [
     "Silver Fox",
@@ -31,8 +31,8 @@
   "top_sectors": [
     "financial services",
     "government",
-    "hospitality",
     "cryptocurrency",
+    "hospitality",
     "finance"
   ],
   "top_regions": [
@@ -43,7 +43,7 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 46,
+    "high": 47,
     "medium": 8
   },
   "recent_excerpts": [
@@ -51,5 +51,5 @@
     "三名男子在多伦多被捕，因为他们操作了一个冒充手机塔的SMS blaster，发送针对银行凭证的钓鱼短信，在数月的活动中进行。",
     "加拿大首起短信爆炸器案件中三名男子被捕 — 设备冒充蜂窝塔发送大规模网络钓鱼信息并干扰多伦多的移动网络。"
   ],
-  "sources_hash": "cc3ec4f933b1e306"
+  "sources_hash": "b4f7453f8027fd87"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 52,
+  "count": 53,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-30"
+    "latest": "2026-05-03"
   },
   "top_actors": [
     "Lazarus Group",
@@ -14,8 +14,8 @@
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
-    "technology",
     "financial services",
+    "technology",
     "financial-services",
     "hospitality"
   ],
@@ -27,7 +27,7 @@
     "Canada"
   ],
   "severity_mix": {
-    "high": 40,
+    "high": 41,
     "medium": 11,
     "informational": 1
   },
@@ -36,5 +36,5 @@
     "Adaptive Security finds 3 seconds of audio enough to clone a voice for fraud; deepfake calls tricked employees into wiring $243K in one case. No detection tool caught the attack.",
     "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months."
   ],
-  "sources_hash": "cb31baa84d911cf0"
+  "sources_hash": "a7d8dfe49f3e9b7c"
 }

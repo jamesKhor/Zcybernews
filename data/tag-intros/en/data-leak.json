@@ -1,0 +1,9 @@
+{
+  "tag": "data-leak",
+  "locale": "en",
+  "intro": "From mid to late April 2026, ZCyberNews covered five data-leak incidents, with the threat actor 0APT appearing as the most frequently observed. The leaks impacted a range of sectors including business services, e-commerce, education, financial-services, and freelance-services, with a global reach. The severity of these incidents was distributed as one medium, three high, and one critical, reflecting a significant concentration of serious breaches during this period.",
+  "sources_hash": "9992931f655a5d9c",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-04T04:24:12.617Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

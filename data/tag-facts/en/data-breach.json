@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 32,
+  "count": 33,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-03"
   },
   "top_actors": [
     "ShinyHunters",
@@ -17,7 +17,7 @@
     "healthcare",
     "retail",
     "technology",
-    "hospitality"
+    "education"
   ],
   "top_regions": [
     "North america",
@@ -27,13 +27,13 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 25,
+    "high": 26,
     "medium": 6
   },
   "recent_excerpts": [
+    "ShinyHunters claims to have stolen data from Instructure, the edtech firm behind Canvas LMS. Instructure confirms a breach involving unauthorized access to certain systems and…",
     "French authorities detained a 15-year-old on April 25 for allegedly hacking ANTS, the national ID agency handling passports and driver's licenses.",
-    "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise.",
-    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data."
+    "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise."
   ],
-  "sources_hash": "991b936eeb32cd0e"
+  "sources_hash": "10fa6f70696e828f"
 }

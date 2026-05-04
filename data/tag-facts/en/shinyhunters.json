@@ -1,18 +1,18 @@
 {
   "tag": "shinyhunters",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-28"
+    "latest": "2026-05-03"
   },
   "top_actors": [
     "ShinyHunters"
   ],
   "top_cves": [],
   "top_sectors": [
-    "consumer services",
     "education",
+    "consumer services",
     "entertainment",
     "gaming",
     "healthcare"
@@ -22,12 +22,12 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "ShinyHunters claims to have stolen data from Instructure, the edtech firm behind Canvas LMS. Instructure confirms a breach involving unauthorized access to certain systems and…",
     "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data.",
-    "ShinyHunters breached ADT, stealing personal data of 5.5 million individuals — names, emails, phone numbers, and addresses — from internal systems. No payment data compromised.",
-    "ADT confirmed a data breach after ShinyHunters leaked 30,000+ customer records including names, emails, and account details from a compromised Salesforce instance."
+    "ShinyHunters breached ADT, stealing personal data of 5.5 million individuals — names, emails, phone numbers, and addresses — from internal systems. No payment data compromised."
   ],
-  "sources_hash": "f1241b086508f32e"
+  "sources_hash": "f53f2b6f09678249"
 }

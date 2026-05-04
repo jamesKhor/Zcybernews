@@ -1,19 +1,19 @@
 {
   "tag": "extortion",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-24"
+    "latest": "2026-05-03"
   },
   "top_actors": [
-    "BlackFile",
-    "ShinyHunters"
+    "ShinyHunters",
+    "BlackFile"
   ],
   "top_cves": [],
   "top_sectors": [
-    "cryptocurrency",
     "education",
+    "cryptocurrency",
     "Education",
     "hospitality",
     "publishing"
@@ -22,13 +22,13 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 1
   },
   "recent_excerpts": [
+    "ShinyHunters 声称从 Instructure，即 Canvas LMS 背后的教育技术公司，窃取了数据。Instructure 确认涉及未经授权访问某些系统的数据泄露，并...",
     "ADT确认数据泄露后，ShinyHunters泄露了30,000+客户记录，包括姓名、电子邮件和账户详情，这些信息来自一个被破坏的Salesforce实例。",
-    "自2026年2月以来，BlackFile 勒索团伙至少攻击了12家零售和酒店组织，使用 vishing 窃取 VPN 凭证并窃取数据，然后才提出要求...",
-    "教育出版商 McGraw-Hill 确认数据泄露暴露了 1350 万用户的个人数据，与配置错误的 Salesforce 环境有关。超过 100GB 的被盗数据已在网上公开分发，此前曾有勒索企图。"
+    "自2026年2月以来，BlackFile 勒索团伙至少攻击了12家零售和酒店组织，使用 vishing 窃取 VPN 凭证并窃取数据，然后才提出要求..."
   ],
-  "sources_hash": "ea6d885fcadbbf25"
+  "sources_hash": "f5245499e7b37fb8"
 }

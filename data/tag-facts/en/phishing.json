@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "count": 54,
+  "count": 55,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-01"
+    "latest": "2026-05-03"
   },
   "top_actors": [
     "Silver Fox",
@@ -31,8 +31,8 @@
   "top_sectors": [
     "financial services",
     "government",
-    "hospitality",
     "cryptocurrency",
+    "hospitality",
     "finance"
   ],
   "top_regions": [
@@ -43,7 +43,7 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 46,
+    "high": 47,
     "medium": 8
   },
   "recent_excerpts": [
@@ -51,5 +51,5 @@
     "Three men arrested in Toronto for operating an SMS blaster that impersonated cell towers to send phishing texts targeting banking credentials in a multi-month campaign.",
     "Three men arrested in Canada's first SMS blaster case — device impersonated cell towers to send mass phishing messages and disrupt mobile networks in Toronto."
   ],
-  "sources_hash": "cc3ec4f933b1e306"
+  "sources_hash": "b4f7453f8027fd87"
 }

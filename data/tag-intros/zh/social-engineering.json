@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "intro": "Lazarus Group、UNC6692和APT37 (ScarCruft, InkySquid)是2026年4月8日至4月30日期间发表的52篇文章中最常被提及的威胁行为体，其中40份报告被评为高严重性。社会工程标签涵盖了主要针对加密货币、技术、金融服务和酒店行业的攻击。受影响地区包括全球、北美、欧洲、美国及加拿大，另有一份信息性报告作为补充报道。",
-  "sources_hash": "cb31baa84d911cf0",
-  "source_intro_hash": "c3120e8af00ebb64",
+  "intro": "在截至2026年5月3日的26天内，ZCyberNews以社会工程学标签发布了53篇文章，其中41篇被归类为高严重性。Lazarus Group、UNC6692和APT37 (ScarCruft, InkySquid) 是最常被观察到的威胁行为体。相关攻击活动主要针对全球、北美、欧洲、美国及加拿大的加密货币、金融服务、科技、金融服务和酒店业。报道覆盖时间为2026年4月8日至5月3日，反映出一个社会工程学活动高度集中的时期。",
+  "sources_hash": "a7d8dfe49f3e9b7c",
+  "source_intro_hash": "3212292c348e3068",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:31:36.554Z",
+  "generated_at": "2026-05-04T04:24:50.964Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

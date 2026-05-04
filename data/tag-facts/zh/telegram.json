@@ -1,10 +1,10 @@
 {
   "tag": "telegram",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-03"
   },
   "top_actors": [
     "Bluekit"
@@ -14,24 +14,24 @@
     "financial services",
     "social media",
     "technology",
-    "e-commerce",
-    "email providers"
+    "cryptocurrency",
+    "e-commerce"
   ],
   "top_regions": [
-    "China",
     "Global",
+    "China",
     "Southeast asia",
     "United kingdom"
   ],
   "severity_mix": {
     "informational": 1,
     "medium": 1,
-    "high": 3
+    "high": 4
   },
   "recent_excerpts": [
     "英国监管机构 Ofcom 对 Telegram 展开正式调查，因为有证据显示 Telegram 分享儿童性虐待材料（CSAM）以及可能违反在线安全法的加密报告规则。",
     "Telegram创始人Pavel Durov声称WhatsApp的默认端到端加密具有误导性，因为未加密的云备份可能会暴露数十亿用户消息。",
-    "一个名为Bluekit的新型钓鱼即服务平台提供超过40个针对银行、社交媒体和电子邮件提供商的模板，以及一个用于起草诱饵的AI助手。"
+    "研究人员揭露了一个欺诈网络，滥用 Telegram Mini Apps 来冒充品牌，窃取加密货币钱包，并推广 Android 恶意软件，如 SpyNote 和 ERMAC。"
   ],
-  "sources_hash": "8f56aba438a825ad"
+  "sources_hash": "0184d8356ac760f7"
 }
