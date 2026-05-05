@@ -5,6 +5,7 @@ import {
   titleSimilarity,
   type Story,
 } from "../utils/dedup.js";
+import { extractThreatActor } from "./post-process.js";
 
 export interface StoryCluster<T extends Story = Story> {
   key: string;
@@ -17,6 +18,41 @@ const DEFAULT_WINDOW_HOURS = 72;
 const MAX_CLUSTER_SIZE = 3;
 const RELATED_TITLE_THRESHOLD = 0.42;
 const KB_RE = /\bKB\d{6,}\b/gi;
+
+const ACTOR_INTEL_KEYWORDS = [
+  "ransomware",
+  "ransom",
+  "extortion",
+  "leak",
+  "leaked",
+  "breach",
+  "breached",
+  "stolen",
+  "steals",
+  "data theft",
+  "dark web",
+  "affiliate",
+  "claims",
+  "claimed",
+  "campaign",
+  "targets",
+  "targeted",
+  "exfiltrat",
+];
+
+const IMPACT_KEYWORDS = [
+  "records",
+  "customers",
+  "users",
+  "accounts",
+  "patients",
+  "employees",
+  "students",
+  "reservations",
+  "credentials",
+  "emails",
+  "database",
+];
 
 function publishedTime(story: Story): number {
   const t = new Date(story.publishedAt).getTime();
@@ -126,6 +162,32 @@ function finalizeCluster<T extends Story>(
   return { ...cluster, stories, sources, latestPublishedAt };
 }
 
+function storyEditorialPriorityScore(story: Story): number {
+  const text = `${story.title} ${story.excerpt} ${story.tags.join(" ")}`;
+  const lower = text.toLowerCase();
+  let score = 0;
+
+  if (extractThreatActor(text)) score += 8;
+  if (ACTOR_INTEL_KEYWORDS.some((word) => lower.includes(word))) score += 5;
+  if (/\b\d[\d,.]*\s*(?:k|m|million|billion)?\b/i.test(text)) score += 2;
+  if (IMPACT_KEYWORDS.some((word) => lower.includes(word))) score += 2;
+  if (extractCVEs(text).length > 0) score += 3;
+  if (
+    ["threat-intel", "malware"].includes(story.sourceCategory ?? "") ||
+    story.tags.some((tag) => ["threat-intel", "malware"].includes(tag))
+  ) {
+    score += 2;
+  }
+
+  return score;
+}
+
+export function clusterEditorialPriorityScore(
+  cluster: StoryCluster<Story>,
+): number {
+  return Math.max(...cluster.stories.map(storyEditorialPriorityScore), 0);
+}
+
 export function clusterStories<T extends Story>(
   stories: T[],
   windowHours = DEFAULT_WINDOW_HOURS,
@@ -154,6 +216,9 @@ export function clusterStories<T extends Story>(
   }
 
   return clusters.map(finalizeCluster).sort((a, b) => {
+    const editorialDelta =
+      clusterEditorialPriorityScore(b) - clusterEditorialPriorityScore(a);
+    if (editorialDelta !== 0) return editorialDelta;
     const multiSourceDelta =
       Number(b.sources.length > 1) - Number(a.sources.length > 1);
     if (multiSourceDelta !== 0) return multiSourceDelta;
