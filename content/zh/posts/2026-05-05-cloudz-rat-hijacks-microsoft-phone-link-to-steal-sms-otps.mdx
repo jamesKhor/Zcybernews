@@ -1,0 +1,54 @@
+---
+title: CloudZ RAT 劫持微软电话链接窃取短信和一次性密码
+slug: 2026-05-05-cloudz-rat-hijacks-microsoft-phone-link-to-steal-sms-otps
+date: '2026-05-05'
+excerpt: 思科 Talos：CloudZ RAT 的新 Pheno 插件滥用 Windows Phone Link 从本地 SQLite 数据库读取短信和一次性密码。
+category: malware
+tags:
+  - cloudz
+  - pheno
+  - microsoft-phone-link
+  - sms-interception
+  - otp-theft
+  - cisco-talos
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/cloudz-malware-abuses-microsoft-phone-link-to-steal-sms-and-otps/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-cloudz-rat-hijacks-microsoft-phone-link-to-steal-sms-otps
+cluster_key: 'topic:cloudz-abuses-microsoft-phone-link'
+source_count: 1
+severity: high
+threat_actor: CloudZ
+threat_actor_origin: Unknown
+affected_sectors:
+  - technology
+  - financial services
+affected_regions:
+  - Global
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## 执行摘要
+
+思科Talos研究人员发现了CloudZ远程访问木马（RAT）的一个新变种，该变种部署了一个以前未记录的插件Pheno，用于劫持Microsoft Phone Link连接。该插件监控Windows 10和11系统上的活跃Phone Link会话，并读取应用程序的本地SQLite数据库，其中可能包含短信消息和一次性密码（OTP）。这种技术允许攻击者在不损害受害者移动设备的情况下拦截敏感代码。根据Talos的说法，自2026年1月以来，这种入侵活动一直在进行。
+
+## 技术分析
+
+感染链始于受害者执行一个假冒的ScreenConnect更新，该更新会释放一个基于Rust的加载器。随后是一个.NET加载器，它安装CloudZ RAT并通过计划任务建立持久性。.NET加载器包括反分析检查，例如基于时间的沙箱规避、检测分析工具（Wireshark、Fiddler、Procmon、Sysmon）以及检查虚拟机和沙箱相关的字符串。
+
+安装完成后，CloudZ RAT可以针对Web浏览器数据、配置主机系统，并执行文件管理（删除、下载、写入）、shell命令执行、屏幕录制、插件管理（加载、移除、保存到磁盘）和终止RAT进程的命令。Pheno插件特别扫描活跃的Microsoft Phone Link会话，并访问受害者机器上应用程序的SQLite数据库文件。思科Talos表示，这“可能会危及基于短信的OTP消息和其他认证应用程序通知消息”。
+
+CloudZ在三个硬编码的用户代理字符串之间轮换，使HTTP流量看起来像是合法的浏览器请求，每个请求都包括反缓存头，以防止代理或内容分发网络缓存命令和控制或暂存服务器的详细信息。研究人员尚未确定初始访问向量。
+
+## 缓解措施与建议
+
+思科Talos建议用户避免使用基于短信的OTP服务，而改用不依赖可能被拦截的推送通知的认证应用程序。对于高度敏感的账户，组织应迁移到抗网络钓鱼的多因素认证解决方案，如硬件安全密钥（例如，FIDO2/WebAuthn）。防御者应监控Talos发布的入侵指标，包括与CloudZ基础设施相关的URL、文件哈希、域名和IP地址。鉴于恶意软件使用假冒的ScreenConnect更新，组织应限制软件安装到批准的来源，并强制执行应用程序允许列表。
+
+## 参考资料
+
+- [BleepingComputer: CloudZ恶意软件滥用Microsoft Phone Link窃取短信和OTP](https://www.bleepingcomputer.com/news/security/cloudz-malware-abuses-microsoft-phone-link-to-steal-sms-and-otps/)
+- [Cisco Talos报告（文章中引用）]

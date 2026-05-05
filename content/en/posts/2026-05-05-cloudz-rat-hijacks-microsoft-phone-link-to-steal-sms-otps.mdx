@@ -1,0 +1,56 @@
+---
+title: 'CloudZ RAT Hijacks Microsoft Phone Link to Steal SMS, OTPs'
+slug: 2026-05-05-cloudz-rat-hijacks-microsoft-phone-link-to-steal-sms-otps
+date: '2026-05-05'
+excerpt: >-
+  Cisco Talos: CloudZ RAT's new Pheno plugin abuses Windows Phone Link to read
+  SMS and OTPs from local SQLite database.
+category: malware
+tags:
+  - cloudz
+  - pheno
+  - microsoft-phone-link
+  - sms-interception
+  - otp-theft
+  - cisco-talos
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/cloudz-malware-abuses-microsoft-phone-link-to-steal-sms-and-otps/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-cloudz-rat-hijacks-microsoft-phone-link-to-steal-sms-otps
+cluster_key: 'topic:cloudz-abuses-microsoft-phone-link'
+source_count: 1
+severity: high
+threat_actor: CloudZ
+threat_actor_origin: Unknown
+affected_sectors:
+  - technology
+  - financial services
+affected_regions:
+  - Global
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## Executive Summary
+
+Cisco Talos researchers have identified a new variant of the CloudZ remote access trojan (RAT) that deploys a previously undocumented plugin called Pheno to hijack Microsoft Phone Link connections. The plugin monitors active Phone Link sessions on Windows 10 and 11 systems and reads the application's local SQLite database, which may contain SMS messages and one-time passwords (OTPs). This technique allows the attacker to intercept sensitive codes without compromising the victim's mobile device. The intrusion has been active since at least January 2026, according to Talos.
+
+## Technical Analysis
+
+The infection chain begins when a victim executes a fake ScreenConnect update, which drops a Rust-based loader. This is followed by a .NET loader that installs the CloudZ RAT and establishes persistence via a scheduled task. The .NET loader includes anti-analysis checks, such as time-based sandbox evasion, detection of analysis tools (Wireshark, Fiddler, Procmon, Sysmon), and checks for virtual machine and sandbox-related strings.
+
+Once installed, CloudZ RAT can target web browser data, profile host systems, and execute commands for file management (delete, download, write), shell command execution, screen recording, plugin management (load, remove, save to disk), and termination of the RAT process. The Pheno plugin specifically scans for active Microsoft Phone Link sessions and accesses the application's SQLite database file on the victim's machine. Cisco Talos states that this "potentially compromising[s] SMS-based OTP messages and other authenticator application notification messages."
+
+CloudZ rotates between three hardcoded user-agent strings to make HTTP traffic appear as legitimate browser requests, and each request includes anti-caching headers to prevent proxies or content delivery networks from caching command-and-control or staging-server details. The initial access vector has not been identified by the researchers.
+
+## Mitigations & Recommendations
+
+Cisco Talos recommends that users avoid SMS-based OTP services and instead use authenticator apps that do not rely on push notifications that could be intercepted. For highly sensitive accounts, organizations should migrate to phishing-resistant multi-factor authentication solutions such as hardware security keys (e.g., FIDO2/WebAuthn). Defenders should monitor for the indicators of compromise published by Talos, including URLs, file hashes, domains, and IP addresses associated with the CloudZ infrastructure. Given the malware's use of fake ScreenConnect updates, organizations should restrict software installation to approved sources and enforce application allowlisting.
+
+## References
+
+- [BleepingComputer: CloudZ malware abuses Microsoft Phone Link to steal SMS and OTPs](https://www.bleepingcomputer.com/news/security/cloudz-malware-abuses-microsoft-phone-link-to-steal-sms-and-otps/)
+- [Cisco Talos Report (referenced in article)]
