@@ -16,6 +16,8 @@ const KIMI_MODEL = "moonshot-v1-32k";
 const MIN_EFFECTIVE_PARAMS_B = 12;
 const MIN_CONTEXT_LENGTH = 32_000;
 const FREE_MODEL_TIMEOUT_MS = 90_000; // 90s per free model attempt
+const PAID_GENERATE_TIMEOUT_MS = 180_000; // 3m per paid article attempt
+const PAID_TRANSLATE_TIMEOUT_MS = 180_000; // 3m per paid translation attempt
 
 // Set to true to attempt OpenRouter free models before paid fallback.
 // Currently DISABLED because:
@@ -287,6 +289,8 @@ export async function generateArticleText(
       prompt,
       maxOutputTokens,
       temperature,
+      maxRetries: 0,
+      timeout: { totalMs: PAID_GENERATE_TIMEOUT_MS },
     });
     const elapsedMs = Date.now() - start;
     console.log(
@@ -351,6 +355,8 @@ export async function translateText(
       prompt,
       maxOutputTokens,
       temperature,
+      maxRetries: 0,
+      timeout: { totalMs: PAID_TRANSLATE_TIMEOUT_MS },
     });
     const elapsedMs = Date.now() - start;
     console.log(
@@ -376,6 +382,8 @@ export async function translateText(
       prompt,
       maxOutputTokens,
       temperature,
+      maxRetries: 0,
+      timeout: { totalMs: PAID_TRANSLATE_TIMEOUT_MS },
     });
     const elapsedMs = Date.now() - start;
     console.log(

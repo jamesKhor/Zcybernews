@@ -49,7 +49,6 @@ export async function fetchArticle(
       signal: controller.signal,
       redirect: "follow",
     });
-    clearTimeout(timer);
 
     if (!res.ok) {
       return {
@@ -73,12 +72,13 @@ export async function fetchArticle(
     const html = await res.text();
     return extractArticle(url, html);
   } catch (err) {
-    clearTimeout(timer);
     const message =
       (err as Error).name === "AbortError"
         ? `timeout after ${timeoutMs}ms`
         : ((err as Error).message ?? "fetch failed");
     return { url, title: url, text: "", error: message };
+  } finally {
+    clearTimeout(timer);
   }
 }
 

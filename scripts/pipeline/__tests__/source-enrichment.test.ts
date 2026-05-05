@@ -3,6 +3,7 @@ import {
   enrichStoriesForGeneration,
   enrichStorySource,
 } from "../source-enrichment";
+import { limit } from "../../utils/rate-limit";
 import type { RoutedStory } from "../routing";
 import type { Story } from "../../utils/dedup";
 
@@ -93,5 +94,35 @@ describe("source enrichment", () => {
 
     expect(enriched.rawText).toContain("CVE-2026-1234");
     expect(enriched.translationDecision).toEqual(routed.translationDecision);
+  });
+
+  it("does not deadlock when called from the article-generation limiter", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => {
+        return new Response(`<article>${articleText}</article>`, {
+          headers: { "content-type": "text/html" },
+        });
+      }),
+    );
+
+    const work = Promise.all(
+      [1, 2, 3].map((i) =>
+        limit(() =>
+          enrichStoriesForGeneration([
+            story({ id: `s-${i}`, title: `Security Story ${i}` }),
+          ]),
+        ),
+      ),
+    );
+
+    const result = await Promise.race([
+      work,
+      new Promise<"timeout">((resolve) =>
+        setTimeout(() => resolve("timeout"), 100),
+      ),
+    ]);
+
+    expect(result).not.toBe("timeout");
   });
 });
