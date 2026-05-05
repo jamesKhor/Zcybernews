@@ -39,6 +39,30 @@ describe("isThinExcerpt — boilerplate-only (SANS Stormcast)", () => {
   });
 });
 
+describe("isThinExcerpt — linked Stormcast digest", () => {
+  it("keeps SANS Stormcast items when the title has topics and excerpt has links", () => {
+    const v = isThinExcerpt({
+      title:
+        "SANS Stormcast Tuesday, May 5th, 2026: Honeypot Update; MOVEit Patches; Apache http2 Vuln;",
+      excerpt:
+        "DShield Honeypot Update https://isc.sans.edu/diary/DShield%20Honeypot%20Update/32948 https://community.progress.com/s/article/MOVEit-Automation-Critical-Security-Alert-Bulletin-April-2026-CVE-2026-4670-CVE-2026-5174 https://seclists.org/oss-sec/2026/q2/387",
+    });
+
+    expect(v.isThin).toBe(false);
+  });
+
+  it("still drops old SANS diary Stormcast items with copyright-only descriptions", () => {
+    const v = isThinExcerpt({
+      title:
+        "ISC Stormcast For Tuesday, May 5th, 2026 https://isc.sans.edu/podcastdetail/9918",
+      excerpt:
+        "(c) SANS Internet Storm Center. https://isc.sans.edu Creative Commons Attribution-Noncommercial 3.0 United States License.",
+    });
+
+    expect(v.isThin).toBe(true);
+  });
+});
+
 describe("isThinExcerpt — empty", () => {
   it("empty string is thin (reason=empty)", () => {
     expect(isThinExcerpt({ title: "t", excerpt: "" })).toEqual({
