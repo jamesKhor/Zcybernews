@@ -330,12 +330,28 @@ jobs:
             # prompt (failed the first Option B deploy attempt). The
             # zcybernews user owns everything in its own home directory,
             # so rm/mv without sudo works fine.
-            # If .next-prev exists from a previous deploy, remove it first.
-            [ -d .next-prev ] && rm -rf .next-prev
+            # If .next-prev exists from a previous deploy, move it aside
+            # before the swap. Runtime image-cache files can have drifted
+            # ownership, so deleting the old rollback directory synchronously
+            # can fail even though the deploy itself is healthy.
+            OLD_ROLLBACK=".next-prev-stale-$(date +%Y%m%d%H%M%S)"
+            if [ -d .next-prev ]; then
+              mv .next-prev "${OLD_ROLLBACK}" || {
+                echo "❌ Could not move existing .next-prev out of the deploy path"
+                exit 1
+              }
+            fi
             # Move current .next to .next-prev (atomic rename on ext4)
             [ -d .next ] && mv .next .next-prev
             # Move staged build to .next (atomic rename)
             mv .next-staging .next
+            # Cleanup should never block deploy. If old cache files have
+            # bad ownership, keep the stale rollback directory for manual
+            # cleanup instead of failing a healthy release.
+            if [ -n "${OLD_ROLLBACK:-}" ] && [ -d "${OLD_ROLLBACK}" ]; then
+              rm -rf "${OLD_ROLLBACK}" 2>/dev/null || echo "⚠️ Deferred cleanup for ${OLD_ROLLBACK}"
+            fi
+            find . -maxdepth 1 -type d -name '.next-prev-stale-*' -mtime +2 -exec rm -rf {} + 2>/dev/null || true
 
             echo "♻️  Rolling PM2 reload (cluster workers cycle one at a time)..."
             if pm2 describe zcybernews > /dev/null 2>&1; then
