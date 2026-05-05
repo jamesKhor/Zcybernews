@@ -111,4 +111,53 @@ describe("story clustering", () => {
       clusterEditorialPriorityScore(clusters[1]),
     );
   });
+
+  it("prioritizes high-search privilege escalation stories", () => {
+    const clusters = clusterStories([
+      story({
+        id: "generic-rce",
+        title: "Enterprise Product Receives Routine Security Update",
+        excerpt:
+          "A vendor patched a moderate issue affecting an enterprise product in the monthly security bulletin.",
+        sourceName: "Vendor Advisory",
+        publishedAt: "2026-05-05T04:00:00.000Z",
+        tags: ["enterprise", "patch"],
+      }),
+      story({
+        id: "linux-lpe",
+        title: "One-Line Linux Privilege Escalation PoC Draws Admin Attention",
+        excerpt:
+          "Researchers published a one-line Linux local privilege escalation exploit affecting common server builds.",
+        sourceName: "Research Source",
+        publishedAt: "2026-05-05T02:00:00.000Z",
+        tags: ["linux", "privilege-escalation", "poc"],
+      }),
+    ]);
+
+    expect(clusters[0].stories[0].id).toBe("linux-lpe");
+  });
+
+  it("prioritizes memorable Microsoft named-incident stories", () => {
+    const clusters = clusterStories([
+      story({
+        id: "routine-cve",
+        title: "Enterprise Product Receives Security Update",
+        excerpt:
+          "A vendor released a security update for a vulnerability in an enterprise product.",
+        sourceName: "Vendor Advisory",
+        publishedAt: "2026-05-05T04:00:00.000Z",
+      }),
+      story({
+        id: "nightmare-eclipse",
+        title: "Microsoft Nightmare Eclipse Bug Sparks Defender Debate",
+        excerpt:
+          "Security teams and researchers are discussing a Microsoft Windows flaw nicknamed Nightmare Eclipse after public exploit analysis.",
+        sourceName: "Research Source",
+        publishedAt: "2026-05-05T02:00:00.000Z",
+        tags: ["microsoft", "windows", "exploit"],
+      }),
+    ]);
+
+    expect(clusters[0].stories[0].id).toBe("nightmare-eclipse");
+  });
 });
