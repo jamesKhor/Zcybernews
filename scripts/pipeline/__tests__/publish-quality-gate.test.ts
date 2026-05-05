@@ -57,12 +57,12 @@ describe("evaluatePublishQuality", () => {
     );
   });
 
-  it("blocks articles with no references section", () => {
+  it("blocks articles with no references section or source URLs", () => {
     const decision = evaluatePublishQuality(
       article({
         body: body(500, "## Key Takeaways\n- Defenders should review logs."),
       }),
-      ["https://example.com"],
+      [],
     );
 
     expect(decision.allowed).toBe(false);

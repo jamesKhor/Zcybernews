@@ -17,7 +17,8 @@
  *   wordCount          — hard number; bucket against category floor
  *   structuredRichness — 0..5 bitmask count (cve_ids, cvss_score,
  *                        threat_actor, iocs, ttp_matrix)
- *   hasReferences      — body contains "## References" heading
+ *   hasReferences      — body contains "## References" heading or frontmatter
+ *                        carries source_urls
  *   tagCount           — 3–6 is healthy; 0–2 is thin, 7+ is keyword-stuffed
  *   hedgingHits        — count of CVE_HEDGING_PATTERNS matches (from
  *                        scripts/pipeline/fact-check.ts). Any > 0 is a
@@ -155,6 +156,17 @@ export function hasReferencesSection(body: string): boolean {
   return /(^|\n)##\s+References\s*(\n|$)/i.test(body);
 }
 
+export function hasReferenceSignal(
+  body: string,
+  frontmatter: ArticleFrontmatter,
+): boolean {
+  return (
+    hasReferencesSection(body) ||
+    (Array.isArray(frontmatter.source_urls) &&
+      frontmatter.source_urls.length > 0)
+  );
+}
+
 /** Count matches of the CVE_HEDGING_PATTERNS in title + excerpt + body. */
 export function findHedgingHits(
   title: string,
@@ -236,7 +248,7 @@ export function scoreArticle(input: ScoreInput): QualityScore {
   const tagCount = Array.isArray(frontmatter.tags)
     ? frontmatter.tags.length
     : 0;
-  const hasRef = hasReferencesSection(body);
+  const hasRef = hasReferenceSignal(body, frontmatter);
   const hedgingHits = findHedgingHits(
     frontmatter.title ?? "",
     frontmatter.excerpt ?? "",
