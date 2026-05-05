@@ -1,0 +1,41 @@
+---
+title: Elastic Security Generates ES|QL Detection Rules from Plain English
+slug: 2026-05-05-elastic-security-generates-es-ql-detection-rules-from-plain-english
+date: '2026-05-05'
+excerpt: >-
+  Elastic Security Labs released a feature that converts plain-English threat
+  descriptions into validated ES|QL detection rules, lowering the barrier for
+  analysts without query…
+category: tools
+tags:
+  - elastic-security
+  - es|ql
+  - detection-engineering
+  - ai
+  - security-analytics
+language: en
+source_urls:
+  - 'https://www.elastic.co/security-labs/ai-esql-detection-rule-creation'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-elastic-security-generates-es-ql-detection-rules-from-plain-english
+---
+## Executive Summary
+
+Elastic Security Labs has introduced a capability that allows security analysts to generate Elasticsearch ES|QL detection rules from plain-English descriptions of threat behaviors. The feature, detailed in a blog post on May 5, 2026, aims to reduce the query-writing burden for defenders who may lack deep ES|QL expertise. The system accepts natural language input and returns a complete, validated detection rule ready for deployment in Elastic Security.
+
+## Technical Analysis
+
+The new functionality is built into Elastic Security's detection rule editor. An analyst describes a threat behavior in plain English — for example, "alert when a process spawned from Microsoft Office creates an outbound network connection" — and the system produces an ES|QL query that matches that pattern. The generated rule includes the query logic, field mappings, and validation checks to ensure it runs without syntax errors.
+
+Elastic Security Labs demonstrated the feature using a scenario involving suspicious child process activity from Office applications. The generated ES|QL rule filters for process creation events where the parent process is `winword.exe`, `excel.exe`, or `powerpnt.exe` and the child process initiates a network connection. The output includes a human-readable description and metadata fields such as rule name, severity, and MITRE ATT&CK mapping.
+
+The feature leverages Elastic's existing machine learning infrastructure to interpret natural language and map it to ES|QL syntax. According to the Elastic Security Labs post, the system validates the generated query against the Elastic Security schema before presenting it to the analyst. The validation step checks for field existence, data type compatibility, and logical consistency — reducing the risk of deploying malformed or ineffective rules.
+
+## Mitigations & Recommendations
+
+Defenders using Elastic Security should evaluate this feature as a means to accelerate detection rule development, particularly for teams with limited ES|QL experience. The generated rules should be reviewed for false positive potential before enabling in production. Elastic recommends testing rules in a non-production environment or using the rule's built-in preview functionality to assess match volume against historical data. Organizations should also maintain a process for tuning generated rules to their specific environment, as default patterns may not account for unique software or configurations.
+
+## References
+
+- [From plain English to production rule: AI-native Elasticsearch ES|QL detection in Elastic Security](https://www.elastic.co/security-labs/ai-esql-detection-rule-creation)

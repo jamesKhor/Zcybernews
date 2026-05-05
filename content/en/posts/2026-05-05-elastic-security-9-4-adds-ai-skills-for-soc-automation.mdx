@@ -1,0 +1,36 @@
+---
+title: Elastic Security 9.4 Adds AI Skills for SOC Automation
+slug: 2026-05-05-elastic-security-9-4-adds-ai-skills-for-soc-automation
+date: '2026-05-05'
+excerpt: >-
+  Elastic Security 9.4 introduces 'skills' — modular AI capabilities that
+  automate detection, investigation, and hunting workflows.
+category: tools
+tags:
+  - elastic-security
+  - ai-agent
+  - soc-automation
+  - security-tools
+  - elastic-security-9.4
+language: en
+source_urls:
+  - 'https://www.elastic.co/security-labs/skills-elastic-security-9-4'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-elastic-security-9-4-adds-ai-skills-for-soc-automation
+---
+## Executive Summary
+
+Elastic Security 9.4, released today, introduces a new feature called "skills" — modular AI capabilities that teach the Elastic AI Agent how to perform specialized security operations tasks such as detection, investigation, and threat hunting. According to Elastic Security Labs, skills allow SOC teams to inject domain expertise on demand, reducing the need for custom scripting or manual workflows. The update targets organizations looking to automate repetitive analyst tasks without sacrificing accuracy.
+
+## Technical Analysis
+
+Skills are pre-built or custom modules that the Elastic AI Agent loads at runtime to execute specific security functions. Elastic Security Labs describes them as "modular AI capabilities that teach the Elastic AI Agent how to detect, investigate, and hunt like a specialist." Each skill encapsulates a defined task — for example, parsing a log source, correlating indicators, or generating a summary of an incident — and can be versioned, shared, and reused across teams. The agent uses a combination of natural language processing and structured query execution to carry out the skill's instructions. Elastic has not disclosed the underlying model architecture or whether skills run locally or in the cloud, but the feature is designed to integrate with existing Elastic Security workflows without requiring changes to the underlying SIEM or endpoint detection rules.
+
+## Mitigations & Recommendations
+
+Defenders evaluating Elastic Security 9.4 should test skills in a staging environment before deploying to production, as AI-driven automation can introduce unexpected behavior in complex detection pipelines. Elastic recommends reviewing skill permissions and audit logs to ensure the agent only accesses data and systems authorized for its role. Organizations should also monitor the Elastic AI Agent's output for false positives, particularly when skills are used for automated triage or enrichment.
+
+## References
+
+- [Elastic Security Labs: One agent, the right skills: Elastic Security 9.4 brings domain expertise on demand to every SOC workflow](https://www.elastic.co/security-labs/skills-elastic-security-9-4)

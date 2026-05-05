@@ -1,0 +1,38 @@
+---
+title: Elastic Security 从普通英语生成 ES|QL 检测规则
+slug: 2026-05-05-elastic-security-generates-es-ql-detection-rules-from-plain-english
+date: '2026-05-05'
+excerpt: Elastic Security Labs 发布了一个功能，可以将普通英语威胁描述转换为经过验证的 ES|QL 检测规则，降低了没有查询的分析师的门槛…
+category: tools
+tags:
+  - elastic-security
+  - es|ql
+  - detection-engineering
+  - ai
+  - security-analytics
+language: zh
+source_urls:
+  - 'https://www.elastic.co/security-labs/ai-esql-detection-rule-creation'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-elastic-security-generates-es-ql-detection-rules-from-plain-english
+---
+## 执行摘要
+
+Elastic Security Labs 引入了一种能力，允许安全分析师从威胁行为的普通英语描述中生成 Elasticsearch ES|QL 检测规则。该功能在 2026 年 5 月 5 日的博客文章中详细说明，旨在减轻可能缺乏深厚 ES|QL 专业知识的防御者的查询编写负担。系统接受自然语言输入，并返回一个完整、经过验证的检测规则，准备在 Elastic Security 中部署。
+
+## 技术分析
+
+这项新功能内置于 Elastic Security 的检测规则编辑器中。分析师用普通英语描述威胁行为 —— 例如，“当从 Microsoft Office 启动的进程创建出站网络连接时发出警报” —— 系统生成一个匹配该模式的 ES|QL 查询。生成的规则包括查询逻辑、字段映射和验证检查，以确保其运行时没有语法错误。
+
+Elastic Security Labs 使用涉及 Office 应用程序可疑子进程活动的情境演示了该功能。生成的 ES|QL 规则过滤进程创建事件，其中父进程是 `winword.exe`、`excel.exe` 或 `powerpnt.exe`，子进程启动网络连接。输出包括人类可读的描述和元数据字段，如规则名称、严重性以及 MITRE ATT&CK 映射。
+
+该功能利用 Elastic 现有的机器学习基础设施来解释自然语言并将其映射到 ES|QL 语法。根据 Elastic Security Labs 的文章，系统在向分析师展示之前，会根据 Elastic Security 架构验证生成的查询。验证步骤检查字段存在性、数据类型兼容性和逻辑一致性 —— 降低部署格式错误或无效规则的风险。
+
+## 缓解措施与建议
+
+使用 Elastic Security 的防御者应该评估这项功能，作为加速检测规则开发的手段，特别是对于 ES|QL 经验有限的团队。在生产环境中启用之前，应该审查生成的规则是否有误报的潜力。Elastic 建议在非生产环境中测试规则，或使用规则内置的预览功能，以评估与历史数据的匹配量。组织还应保持一个调整生成规则以适应其特定环境的流程，因为默认模式可能无法考虑独特的软件或配置。
+
+## 参考资料
+
+- [从普通英语到生产规则：Elastic Security 中的 AI-native Elasticsearch ES|QL 检测](https://www.elastic.co/security-labs/ai-esql-detection-rule-creation)

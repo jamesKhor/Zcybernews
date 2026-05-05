@@ -1,0 +1,36 @@
+---
+title: Elastic Security 9.4 增加 AI 技能以实现 SOC 自动化
+slug: 2026-05-05-elastic-security-9-4-adds-ai-skills-for-soc-automation
+date: '2026-05-05'
+excerpt: Elastic Security 9.4 引入了“技能” —— 模块化的 AI 功能，这些功能可以自动化检测、调查和狩猎工作流程。
+category: tools
+tags:
+  - elastic-security
+  - ai-agent
+  - soc-automation
+  - security-tools
+  - elastic-security-9.4
+language: zh
+source_urls:
+  - 'https://www.elastic.co/security-labs/skills-elastic-security-9-4'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-elastic-security-9-4-adds-ai-skills-for-soc-automation
+---
+## Elastic Security 9.4 增加 AI 技能以实现 SOC 自动化
+
+## 执行摘要
+
+今天发布的 Elastic Security 9.4 引入了一项名为“技能”的新功能——模块化的 AI 能力，它们教会 Elastic AI 代理执行诸如检测、调查和威胁狩猎等专门的安全操作任务。根据 Elastic Security Labs 的说法，技能允许 SOC 团队按需注入领域专业知识，减少对自定义脚本或手动工作流程的需求。此次更新针对的是希望在不牺牲准确性的情况下自动化重复分析师任务的组织。
+
+## 技术分析
+
+技能是 Elastic AI 代理在运行时加载的预构建或自定义模块，用于执行特定的安全功能。Elastic Security Labs 将它们描述为“模块化的 AI 能力，教会 Elastic AI 代理如何像专家一样进行检测、调查和狩猎。”每个技能都封装了一个定义好的任务——例如，解析日志源、关联指标或生成事件摘要——并且可以在团队之间进行版本控制、共享和重用。代理使用自然语言处理和结构化查询执行的组合来执行技能的指令。Elastic 尚未披露底层模型架构或技能是在本地还是云端运行，但该功能旨在与现有的 Elastic Security 工作流程集成，无需更改底层 SIEM 或端点检测规则。
+
+## 缓解措施与建议
+
+评估 Elastic Security 9.4 的防御者应在部署到生产环境之前，在暂存环境中测试技能，因为 AI 驱动的自动化可能会在复杂的检测管道中引入意外行为。Elastic 建议审查技能权限和审计日志，以确保代理仅访问为其角色授权的数据和系统。组织还应监控 Elastic AI 代理的输出，以检查误报，特别是当技能用于自动分类或丰富信息时。
+
+## 参考资料
+
+- [Elastic Security Labs: 一个代理，正确的技能：Elastic Security 9.4 将领域专业知识按需带到每个 SOC 工作流程](https://www.elastic.co/security-labs/skills-elastic-security-9-4)
