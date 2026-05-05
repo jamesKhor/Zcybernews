@@ -391,5 +391,136 @@
         "count": 2
       }
     ]
+  },
+  {
+    "event": "analytics_daily",
+    "timestamp": "2026-05-05T08:27:32.944Z",
+    "totals": {
+      "en_posts": 446,
+      "en_threat_intel": 221,
+      "zh_posts": 442,
+      "zh_threat_intel": 219,
+      "total": 1328
+    },
+    "published_in_last": {
+      "24h": 22,
+      "7d": 116,
+      "30d": 667
+    },
+    "translation_parity": {
+      "missing_zh": 6,
+      "missing_en": 0,
+      "parity_ratio": "0.991"
+    },
+    "top_categories": [
+      {
+        "value": "threat-intel",
+        "count": 223
+      },
+      {
+        "value": "industry",
+        "count": 155
+      },
+      {
+        "value": "vulnerabilities",
+        "count": 129
+      },
+      {
+        "value": "malware",
+        "count": 92
+      },
+      {
+        "value": "tools",
+        "count": 36
+      },
+      {
+        "value": "ai",
+        "count": 32
+      }
+    ],
+    "top_tags": [
+      {
+        "value": "supply-chain",
+        "count": 76
+      },
+      {
+        "value": "phishing",
+        "count": 60
+      },
+      {
+        "value": "social-engineering",
+        "count": 54
+      },
+      {
+        "value": "ai-security",
+        "count": 53
+      },
+      {
+        "value": "ransomware",
+        "count": 44
+      },
+      {
+        "value": "microsoft",
+        "count": 37
+      },
+      {
+        "value": "data-breach",
+        "count": 37
+      },
+      {
+        "value": "ai",
+        "count": 33
+      },
+      {
+        "value": "malware",
+        "count": 33
+      },
+      {
+        "value": "zero-day",
+        "count": 29
+      },
+      {
+        "value": "credential-theft",
+        "count": 29
+      },
+      {
+        "value": "threat-intelligence",
+        "count": 28
+      },
+      {
+        "value": "cybercrime",
+        "count": 24
+      },
+      {
+        "value": "law-enforcement",
+        "count": 24
+      },
+      {
+        "value": "windows",
+        "count": 23
+      }
+    ],
+    "severity_breakdown": [
+      {
+        "value": "high",
+        "count": 376
+      },
+      {
+        "value": "medium",
+        "count": 93
+      },
+      {
+        "value": "informational",
+        "count": 86
+      },
+      {
+        "value": "critical",
+        "count": 75
+      },
+      {
+        "value": "low",
+        "count": 2
+      }
+    ]
   }
 ]
