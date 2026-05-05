@@ -31,6 +31,12 @@ ttp_matrix:
   - tactic: Initial Access
     technique_id: T1566
     technique_name: Phishing
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Threat actors have been actively weaponizing the legitimate n8n workflow automation platform to conduct phishing campaigns and deliver malware since at least October 2025. By abusing n8n's webhook and email automation features, attackers send malicious emails from the platform's own trusted infrastructure, effectively bypassing traditional email security filters that rely on sender reputation. This technique represents a significant evolution in phishing operations, turning a widely-used productivity and AI integration tool into a potent attack vector.

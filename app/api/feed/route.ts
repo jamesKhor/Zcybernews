@@ -1,4 +1,5 @@
 import { getAllPosts } from "@/lib/content";
+import { isPublicArticle } from "@/lib/publication";
 import { NextRequest, NextResponse } from "next/server";
 
 export const revalidate = 600; // 10 min cache — fresher for Feedly
@@ -35,14 +36,18 @@ export async function GET(request: NextRequest) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
   // Merge posts + threat-intel, sort by date, take latest 20
-  const posts = getAllPosts(locale, "posts").map((p) => ({
-    ...p,
-    _type: "posts" as const,
-  }));
-  const ti = getAllPosts(locale, "threat-intel").map((p) => ({
-    ...p,
-    _type: "threat-intel" as const,
-  }));
+  const posts = getAllPosts(locale, "posts")
+    .filter(isPublicArticle)
+    .map((p) => ({
+      ...p,
+      _type: "posts" as const,
+    }));
+  const ti = getAllPosts(locale, "threat-intel")
+    .filter(isPublicArticle)
+    .map((p) => ({
+      ...p,
+      _type: "threat-intel" as const,
+    }));
   const all = [...posts, ...ti]
     .sort(
       (a, b) =>

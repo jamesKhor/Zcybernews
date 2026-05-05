@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getPostBySlug, getRecentSlugs, getRelatedPosts } from "@/lib/content";
+import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/content";
+import { isPublicArticle, isPublicFrontmatter } from "@/lib/publication";
 import { compileMDX } from "@/lib/mdx";
 import { ArticleMeta } from "@/components/articles/ArticleMeta";
 import { TldrCallout } from "@/components/articles/TldrCallout";
@@ -47,7 +48,10 @@ export async function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
 
   for (const locale of locales) {
-    const slugs = getRecentSlugs(locale, "posts", PRERENDER_LIMIT);
+    const slugs = getAllPosts(locale, "posts")
+      .filter(isPublicArticle)
+      .slice(0, PRERENDER_LIMIT)
+      .map((article) => article.frontmatter.slug);
     slugs.forEach((slug) => params.push({ locale, slug }));
   }
 
@@ -110,6 +114,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: frontmatter.excerpt,
       images: image ? [image] : [],
     },
+    ...(!isPublicFrontmatter(frontmatter) && {
+      robots: { index: false, follow: false },
+    }),
   };
 }
 
@@ -127,7 +134,9 @@ export default async function ArticlePage({ params }: Props) {
   const { content: mdxContent, headings } = await compileMDX(content, {
     stripReferences: true,
   });
-  const related = getRelatedPosts(frontmatter, locale, "posts", 3);
+  const related = getRelatedPosts(frontmatter, locale, "posts", 12)
+    .filter(isPublicArticle)
+    .slice(0, 3);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
   const image =
     frontmatter.featured_image ??

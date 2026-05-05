@@ -33,6 +33,11 @@ ttp_matrix:
   - tactic: Defense Evasion
     technique_id: T1027
     technique_name: Obfuscated Files or Information
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A newly documented variant of the PlugX remote access trojan (RAT) is propagating as a USB worm, using DLL sideloading to infect systems across multiple continents. First observed in Papua New Guinea in August 2022 and again in Ghana in January 2023, this campaign represents a significant evolution in PlugX's delivery mechanism, shifting from targeted network intrusions to opportunistic, physical media-based spread. The worm leverages legitimate, signed drivers to sideload malicious DLLs, establishing persistence and deploying secondary payloads, including the Koadic post-exploitation framework.

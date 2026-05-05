@@ -19,6 +19,11 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-agentic-ai-memory-attacks-threat
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 一类新型攻击针对代理型人工智能平台的内存系统，可以在多个用户会话和子代理之间传播被污染的数据，形成一个持久的、低可见度的威胁。思科AI安全研究员Idan Habler披露了这些发现，并详细描述了一种被称为**MemoryTrap**的特定攻击，该攻击针对Anthropic的Claude Code进行了演示。攻击利用了AI代理执行复杂、多步骤任务所使用的共享、持久内存，将核心功能转变为数据腐败和潜在供应链威胁的向量。虽然MemoryTrap已被供应商修复，但潜在的攻击面——**代理型内存**——大部分仍未受到监控和准备，大多数企业安全团队尚未做好准备。

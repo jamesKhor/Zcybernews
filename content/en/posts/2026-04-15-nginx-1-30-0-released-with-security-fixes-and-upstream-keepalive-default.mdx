@@ -22,6 +22,13 @@ draft: false
 locale_pair: >-
   2026-04-15-nginx-1-30-0-released-with-security-fixes-and-upstream-keepalive-default
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 The Nginx project has released version 1.30.0, a stable release that consolidates features and fixes from the preceding 1.29.x mainline development branch. According to the release notes, the update includes security-relevant fixes, most notably for a potential denial-of-service (DoS) vulnerability in the HTTP/2 module. A significant operational change is the new default behavior enabling keepalive connections to upstream backend servers, which can improve performance but may require configuration review for existing deployments.

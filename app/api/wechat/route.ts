@@ -1,4 +1,5 @@
 import { getAllPosts } from "@/lib/content";
+import { isPublicArticle } from "@/lib/publication";
 import { NextResponse, type NextRequest } from "next/server";
 import { absoluteArticleUrl } from "@/lib/article-url";
 
@@ -9,7 +10,9 @@ export async function GET(request: NextRequest) {
   const locale = searchParams.get("locale") === "en" ? "en" : "zh";
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-  const posts = getAllPosts(locale, "posts").slice(0, 10);
+  const posts = getAllPosts(locale, "posts")
+    .filter(isPublicArticle)
+    .slice(0, 10);
 
   const feed = posts.map((p) => ({
     title: p.frontmatter.title,

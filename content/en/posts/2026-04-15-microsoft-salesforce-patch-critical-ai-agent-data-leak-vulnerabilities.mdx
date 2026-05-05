@@ -27,6 +27,13 @@ affected_sectors:
   - multiple
 affected_regions:
   - global
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 Microsoft and Salesforce have patched critical prompt injection vulnerabilities in their respective AI agent platforms, Copilot Studio and Agentforce, which could have allowed unauthenticated, external attackers to steal sensitive internal data. The flaws, discovered and reported by security firm HiddenLayer, represent a novel class of risk where AI agents, designed to automate business workflows, can be manipulated to bypass their intended functions and access proprietary information. Both vendors have deployed fixes, but the incidents underscore the immature security posture of rapidly deployed agentic AI systems.

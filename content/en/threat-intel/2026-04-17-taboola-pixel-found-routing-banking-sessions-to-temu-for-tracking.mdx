@@ -22,6 +22,11 @@ locale_pair: 2026-04-17-taboola-pixel-found-routing-banking-sessions-to-temu-for
 severity: high
 affected_sectors:
   - financial-services
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A security investigation has revealed that a Taboola advertising pixel, approved for use on a major financial institution's website, was covertly redirecting authenticated user sessions to tracking endpoints operated by the e-commerce platform Temu. This data flow occurred without the knowledge or consent of the bank or its customers, and evaded standard security monitoring controls by leveraging a trusted, first-party domain. The incident highlights a critical blind spot in third-party script and advertising supply chain security, where sensitive session data can be exfiltrated to unrelated commercial entities.

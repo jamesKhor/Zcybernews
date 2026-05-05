@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import { adminGuard, isValidLocale, isValidType } from "@/lib/admin-guard";
 import { commitSingleFileToGitHub } from "@/lib/github-commit";
 import { ArticleFrontmatterSchema } from "@/lib/types";
+import { evaluatePublicGate } from "@/lib/publication";
 import { triggerRevalidate } from "@/lib/revalidate-client";
 
 type PublishRequest = {
@@ -39,6 +40,12 @@ function buildMdx(req: PublishRequest): { mdx: string; frontmatter: unknown } {
     fm.source_urls = req.sourceUrls.filter(
       (u): u is string => typeof u === "string" && u.length > 0,
     );
+  }
+  const parsed = ArticleFrontmatterSchema.safeParse(fm);
+  if (parsed.success) {
+    const gate = evaluatePublicGate(parsed.data);
+    fm.publish_tier = gate.tier;
+    if (gate.reasons.length > 0) fm.public_gate_reasons = gate.reasons;
   }
   return { mdx: matter.stringify(req.content, fm), frontmatter: fm };
 }
@@ -108,6 +115,9 @@ export async function POST(req: NextRequest) {
     const pathPrefix = type === "threat-intel" ? "threat-intel" : "articles";
     await Promise.allSettled([
       triggerRevalidate({ path: `/${locale}/${pathPrefix}/${datedSlug}` }),
+      triggerRevalidate({ path: `/${locale}/${pathPrefix}` }),
+      triggerRevalidate({ path: `/${locale}` }),
+      triggerRevalidate({ path: "/sitemap.xml" }),
       triggerRevalidate({ tag: "articles" }),
     ]);
 

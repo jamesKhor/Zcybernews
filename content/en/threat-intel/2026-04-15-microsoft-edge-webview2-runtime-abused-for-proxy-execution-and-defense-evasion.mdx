@@ -30,6 +30,12 @@ ttp_matrix:
   - tactic: Defense Evasion
     technique_id: T1218
     technique_name: System Binary Proxy Execution
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 The Microsoft Edge WebView2 Runtime, a ubiquitous and trusted component pre-installed on most Windows systems, is being actively weaponized for proxy execution and defense evasion. According to research from Black Hills Information Security (BHIS), attackers are exploiting the runtime's architecture to load and execute malicious code under the guise of the legitimate, digitally signed `msedgewebview2.exe` process. This technique bypasses application allowlisting, evades endpoint detection and response (EDR) sensors that trust Microsoft-signed binaries, and provides a stealthy mechanism for post-exploitation activity. The research highlights a systemic weakness in how trusted software dependencies can be repurposed by adversaries.

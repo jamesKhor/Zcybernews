@@ -21,6 +21,13 @@ locale_pair: >-
 severity: medium
 affected_sectors:
   - individuals
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 安全研究人员展示了苹果“查找我的”网络的一个基本缺陷，允许攻击者伪造AirTag报告的位置。通过在互联网上捕获并中继AirTag的蓝牙低功耗（BLE）广告到不同的地理位置，攻击者可以向苹果的众包跟踪系统注入虚假的位置数据。这种概念验证攻击破坏了“查找我的”网络的核心信任假设，可能使制造不在场证明、篡改证据或通过使被跟踪物品看起来在它不在的地方而进行骚扰成为可能。

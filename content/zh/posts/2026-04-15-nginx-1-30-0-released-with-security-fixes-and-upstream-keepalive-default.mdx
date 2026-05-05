@@ -20,6 +20,13 @@ draft: false
 locale_pair: >-
   2026-04-15-nginx-1-30-0-released-with-security-fixes-and-upstream-keepalive-default
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 Nginx 项目发布了 1.30.0 版本，这是一个稳定的版本，整合了之前的 1.29.x 主线开发分支的特性和修复。根据发布说明，更新包括与安全相关的修复，最显著的是针对 HTTP/2 模块中潜在的拒绝服务（DoS）漏洞。一个重大的操作变化是新的默认行为启用了与上游后端服务器的 keepalive 连接，这可以提高性能，但可能需要对现有部署的配置进行审查。

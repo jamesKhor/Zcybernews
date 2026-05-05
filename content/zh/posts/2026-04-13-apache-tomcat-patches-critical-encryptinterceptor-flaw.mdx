@@ -20,6 +20,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-apache-tomcat-patches-critical-encryptinterceptor-flaw
 severity: critical
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 Apache 软件基金会针对 Apache Tomcat 发布了紧急更新，以修复 `EncryptInterceptor` 组件中的一个关键安全漏洞。这个漏洞源于一个补丁错误，可能允许远程攻击者绕过预期的加密保护，并访问 Tomcat 服务器和客户端之间传输的敏感、未加密数据。这个漏洞影响特定版本的 Tomcat 10.1.x、11.0.x 和 9.0.x。管理员必须立即应用提供的补丁，以防止潜在的数据泄露。

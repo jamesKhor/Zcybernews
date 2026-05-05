@@ -23,6 +23,11 @@ locale_pair: 2026-04-13-openai-rotates-macos-certs-after-axios-supply-chain-atta
 severity: medium
 affected_sectors:
   - technology
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 OpenAI has initiated a rotation of its internal macOS code-signing certificates after a recent, widespread Node.js supply chain attack involving the malicious `axios-proxy-builder` package executed within one of the company's GitHub Actions workflows. While OpenAI states there is no evidence of compromise to its systems or customer data, the incident highlights the downstream risks of open-source software supply chain attacks on enterprise development and security processes.

@@ -25,6 +25,13 @@ locale_pair: >-
 severity: medium
 affected_sectors:
   - individuals
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 Security researchers have demonstrated a fundamental flaw in Apple's Find My network that allows an attacker to spoof the reported location of an AirTag. By capturing and relaying an AirTag's Bluetooth Low Energy (BLE) advertisements over the internet to a different geographic location, an attacker can inject false location data into Apple's crowdsourced tracking system. This proof-of-concept attack undermines the core trust assumption of the Find My network, potentially enabling alibi creation, evidence tampering, or harassment by making a tracked item appear to be somewhere it is not.

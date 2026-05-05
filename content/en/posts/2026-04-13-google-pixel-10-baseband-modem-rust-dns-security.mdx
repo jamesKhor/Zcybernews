@@ -21,6 +21,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-google-pixel-10-baseband-modem-rust-dns-security
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 Google is implementing a significant architectural security upgrade for the cellular baseband modem in its upcoming Pixel 10 smartphone. The core change involves rewriting a critical DNS parser component in the memory-safe Rust programming language. This move is a direct effort to eliminate an entire class of memory corruption vulnerabilities in a subsystem that has long been a high-value target for sophisticated attackers due to its privileged position and constant exposure to untrusted network data.

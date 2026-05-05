@@ -24,6 +24,11 @@ locale_pair: >-
 severity: high
 cve_ids:
   - CVE-2026-33825
+publish_tier: brief
+public_gate_reasons:
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Microsoft has patched a zero-day vulnerability, CVE-2026-33825, in its Microsoft Defender Antimalware Platform that could allow a local, authenticated attacker to escalate privileges to the SYSTEM level. The flaw, rated "Important" by Microsoft, was publicly disclosed on April 14, 2026, and addressed in the April 2026 Patch Tuesday updates. Successful exploitation requires an attacker to already have a foothold on a target system, but would grant them the highest level of access, enabling complete system compromise.

@@ -25,6 +25,11 @@ locale_pair: >-
 severity: high
 affected_sectors:
   - software development
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Unknown threat actors compromised the official Checkmarx KICS Docker Hub repository, pushing malicious container images and trojanized Visual Studio Code extensions in a software supply chain attack. The campaign, disclosed by supply chain security firm Socket, stole sensitive developer data including AWS credentials and browser information.

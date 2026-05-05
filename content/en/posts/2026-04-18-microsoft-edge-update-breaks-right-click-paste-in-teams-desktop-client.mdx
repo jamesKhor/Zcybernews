@@ -26,6 +26,12 @@ affected_sectors:
   - cross-sector
 affected_regions:
   - global
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 A recent update to the Microsoft Edge browser has introduced a bug that breaks the right-click paste functionality within the Microsoft Teams desktop client. According to Microsoft, the issue is caused by an update to the WebView2 runtime component, which Teams uses to render its user interface. The bug prevents users from pasting clipboard content via the right-click context menu in Teams chats, forcing reliance on keyboard shortcuts or the ribbon interface.

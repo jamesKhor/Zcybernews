@@ -1,4 +1,5 @@
 import { getAllPosts, getAllTags } from "@/lib/content";
+import { isPublicArticle } from "@/lib/publication";
 import { getTagIntro } from "@/lib/tag-intros";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { TagIntro } from "@/components/tags/TagIntro";
@@ -40,11 +41,11 @@ export async function generateStaticParams() {
 const THIN_TAG_THRESHOLD = 5;
 
 function countArticlesForTag(locale: string, tag: string): number {
-  const posts = getAllPosts(locale, "posts").filter((p) =>
-    p.frontmatter.tags.includes(tag),
+  const posts = getAllPosts(locale, "posts").filter(
+    (p) => isPublicArticle(p) && p.frontmatter.tags.includes(tag),
   ).length;
-  const ti = getAllPosts(locale, "threat-intel").filter((p) =>
-    p.frontmatter.tags.includes(tag),
+  const ti = getAllPosts(locale, "threat-intel").filter(
+    (p) => isPublicArticle(p) && p.frontmatter.tags.includes(tag),
   ).length;
   return posts + ti;
 }
@@ -88,8 +89,8 @@ export default async function TagPage({ params }: Props) {
   const t = await getTranslations({ locale, namespace: "article" });
   const tNav = await getTranslations({ locale, namespace: "nav" });
 
-  const allPosts = getAllPosts(locale, "posts");
-  const tiPosts = getAllPosts(locale, "threat-intel");
+  const allPosts = getAllPosts(locale, "posts").filter(isPublicArticle);
+  const tiPosts = getAllPosts(locale, "threat-intel").filter(isPublicArticle);
   const combined = [...allPosts, ...tiPosts].filter((a) =>
     a.frontmatter.tags.includes(tag),
   );

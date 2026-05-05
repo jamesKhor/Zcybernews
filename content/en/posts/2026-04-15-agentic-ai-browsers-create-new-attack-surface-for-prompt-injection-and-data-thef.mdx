@@ -24,6 +24,12 @@ draft: false
 locale_pair: >-
   2026-04-15-agentic-ai-browsers-create-new-attack-surface-for-prompt-injection-and-data-thef
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Agentic large language model (LLM) browsers, which autonomously interpret user commands and perform complex web-based tasks, are creating a significant new attack surface ripe for exploitation. According to analysis from CyberSecurity News, the fundamental shift from a human-in-the-loop model to an AI agent acting on a user's behalf introduces severe risks, including novel prompt injection vectors, session hijacking, and unauthorized data exfiltration. These vulnerabilities stem from the AI's ability to read page content, interact with forms, and make decisions, effectively granting malicious websites indirect control over a user's browser session and connected services.

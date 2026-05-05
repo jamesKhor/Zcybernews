@@ -22,6 +22,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-12-anthropic-claude-beta-microsoft-word-enterprise-security-analysis
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Anthropic has launched a public beta of its Claude AI assistant as a native sidebar add-in for Microsoft Word, directly integrating generative AI into a core enterprise productivity application. This move, while enhancing workflow capabilities for Team and Enterprise users, significantly expands the potential attack surface for organizations by introducing a new, high-privilege third-party component into the document creation process. The primary security concerns center on the potential for sensitive data exfiltration via AI queries, increased supply chain risk from the add-in's permissions, and the creation of a novel vector for social engineering and prompt injection attacks within a trusted application.

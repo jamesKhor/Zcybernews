@@ -30,6 +30,11 @@ ttp_matrix:
   - tactic: Collection
     technique_id: T1114
     technique_name: Email Collection
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A newly identified malware campaign is delivering two distinct payloads—the Gh0st Remote Access Trojan (RAT) and CloverPlus adware—simultaneously via a single obfuscated loader. This dual-payload strategy provides attackers with both persistent, covert system control and a monetization channel from a single infection event. The campaign's technical sophistication lies in its bundling of a high-severity surveillance tool with financially motivated adware, complicating detection and remediation for defenders.

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getAllPosts, type Article } from "@/lib/content";
-import { CategoryEnum, type Category } from "@/lib/types";
+import { isPublicArticle } from "@/lib/publication";
+import { CategoryEnum } from "@/lib/types";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
@@ -77,8 +78,8 @@ function computePerCategoryStats(
 
 export default async function CategoriesPage({ params }: Props) {
   const { locale } = await params;
-  const posts = getAllPosts(locale, "posts");
-  const tiPosts = getAllPosts(locale, "threat-intel");
+  const posts = getAllPosts(locale, "posts").filter(isPublicArticle);
+  const tiPosts = getAllPosts(locale, "threat-intel").filter(isPublicArticle);
   const stats = computePerCategoryStats(posts, tiPosts);
 
   return <CategoriesContent locale={locale} stats={stats} />;

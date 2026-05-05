@@ -19,6 +19,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-openai-revokes-macos-app-certificate-axios-supply-chain
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - threat_intel_missing_structured_value
+source_count: 1
 ---
 ## 执行摘要
 OpenAI 在软件供应链攻击引入恶意版本的流行 `axios` HTTP 客户端库到其构建过程后，撤销了其官方 macOS 桌面应用程序的开发人员证书。该事件发生在 2026 年 3 月 31 日，当时一个受威胁的 GitHub Actions 工作流程下载了受污染的库。OpenAI 表示，没有用户数据或内部系统受到威胁，但公司撤销了应用程序的证书，作为预防措施，以防止其受信任的开发人员身份的潜在滥用。

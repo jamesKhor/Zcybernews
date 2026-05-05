@@ -22,6 +22,10 @@ severity: high
 cvss_score: 7.8
 cve_ids:
   - CVE-2026-5056
+publish_tier: brief
+public_gate_reasons:
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A critical vulnerability in the GStreamer multimedia framework's QuickTime demuxer (`qtdemux`) component can be exploited to achieve remote code execution (RCE). Tracked as CVE-2026-5056, the stack-based buffer overflow flaw carries a CVSS score of 7.8 and was disclosed by Trend Micro's Zero Day Initiative (ZDI). The vulnerability's impact is broad, as GStreamer is a core component in numerous Linux distributions, media players, and video processing applications, though exploitation requires user interaction, such as opening a malicious media file.

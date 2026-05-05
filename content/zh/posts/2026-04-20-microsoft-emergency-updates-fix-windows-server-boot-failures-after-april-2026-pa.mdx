@@ -19,6 +19,13 @@ draft: false
 locale_pair: >-
   2026-04-20-microsoft-emergency-updates-fix-windows-server-boot-failures-after-april-2026-pa
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 微软发布了紧急非计划内的（OOB）更新，以解决安装了2026年4月补丁星期二安全更新的Windows Server 2019和2022系统的关键启动和认证失败问题。根据微软的说法，这个问题特别影响配置为使用Kerberos密钥分发中心（KDC）代理功能的域控制器和服务器，导致它们无法重新启动或认证用户。公司建议受影响的管理员立即应用OOB更新，这些更新可通过Windows Update、Microsoft Update Catalog和Windows Server Update Services（WSUS）获得。

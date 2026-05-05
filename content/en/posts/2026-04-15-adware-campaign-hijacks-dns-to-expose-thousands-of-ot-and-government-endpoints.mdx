@@ -40,6 +40,12 @@ ttp_matrix:
   - tactic: Command and Control
     technique_id: T1572
     technique_name: Protocol Tunneling
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A widespread adware campaign, operating since at least 2023, has compromised over 25,000 endpoints by hijacking their Domain Name System (DNS) settings to route all internet traffic through attacker-controlled servers. Researchers from BitSight discovered the operation, which leveraged a cheap domain registration to establish a command-and-control (C2) infrastructure capable of intercepting and redirecting traffic from infected systems, including those in sensitive operational technology (OT) and government networks. The adware, which also functioned as a loader, demonstrated capabilities to terminate security software, paving the way for more dangerous secondary payloads.

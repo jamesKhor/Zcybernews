@@ -4,6 +4,7 @@ import { translateWithFallback, getActiveProvider } from "@/lib/ai-provider";
 import { adminGuard, isValidType } from "@/lib/admin-guard";
 import { commitFilesToGitHub } from "@/lib/github-commit";
 import { ArticleFrontmatterSchema } from "@/lib/types";
+import { evaluatePublicGate } from "@/lib/publication";
 import { triggerRevalidate } from "@/lib/revalidate-client";
 
 type TranslatePublishRequest = {
@@ -45,6 +46,12 @@ function buildMdx(
     frontmatter.source_urls.length > 0
   ) {
     fm.source_urls = frontmatter.source_urls;
+  }
+  const parsed = ArticleFrontmatterSchema.safeParse(fm);
+  if (parsed.success) {
+    const gate = evaluatePublicGate(parsed.data);
+    fm.publish_tier = gate.tier;
+    if (gate.reasons.length > 0) fm.public_gate_reasons = gate.reasons;
   }
   // gray-matter handles YAML escaping; also gives us back a parsed version
   // we can validate with Zod.
@@ -204,6 +211,11 @@ ${content}`,
     await Promise.allSettled([
       triggerRevalidate({ path: `/en/${pathPrefix}/${datedSlug}` }),
       triggerRevalidate({ path: `/zh/${pathPrefix}/${datedSlug}` }),
+      triggerRevalidate({ path: `/en/${pathPrefix}` }),
+      triggerRevalidate({ path: `/zh/${pathPrefix}` }),
+      triggerRevalidate({ path: "/en" }),
+      triggerRevalidate({ path: "/zh" }),
+      triggerRevalidate({ path: "/sitemap.xml" }),
       triggerRevalidate({ tag: "articles" }),
     ]);
 

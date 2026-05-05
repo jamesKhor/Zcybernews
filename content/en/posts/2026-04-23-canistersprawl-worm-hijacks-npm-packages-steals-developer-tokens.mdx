@@ -34,6 +34,11 @@ ttp_matrix:
   - tactic: Exfiltration
     technique_id: T1048
     technique_name: Exfiltration Over Alternative Protocol
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A self-propagating supply chain worm, tracked as CanisterSprawl, is compromising npm packages to steal developer authentication tokens and use them to propagate further. Security firms Socket and StepSecurity identified the campaign, which uses a canister on the Internet Computer Protocol (ICP) blockchain to exfiltrate stolen data.

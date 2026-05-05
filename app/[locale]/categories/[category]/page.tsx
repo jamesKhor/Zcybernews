@@ -1,4 +1,5 @@
-import { getAllPosts, getAllCategories } from "@/lib/content";
+import { getAllPosts } from "@/lib/content";
+import { isPublicArticle } from "@/lib/publication";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import {
   VulnCard,
@@ -101,8 +102,8 @@ export default async function CategoryPage({ params }: Props) {
   const t = await getTranslations({ locale, namespace: "categories" });
   const tNav = await getTranslations({ locale, namespace: "nav" });
 
-  const allPosts = getAllPosts(locale, "posts");
-  const tiPosts = getAllPosts(locale, "threat-intel");
+  const allPosts = getAllPosts(locale, "posts").filter(isPublicArticle);
+  const tiPosts = getAllPosts(locale, "threat-intel").filter(isPublicArticle);
   const combined = [...allPosts, ...tiPosts].filter(
     (a) => a.frontmatter.category === category,
   );
@@ -114,8 +115,28 @@ export default async function CategoryPage({ params }: Props) {
   );
 
   const allCategories = [
-    ...getAllCategories(locale, "posts"),
-    ...getAllCategories(locale, "threat-intel"),
+    ...allPosts.reduce(
+      (acc, article) => {
+        const existing = acc.find(
+          (x) => x.category === article.frontmatter.category,
+        );
+        if (existing) existing.count += 1;
+        else acc.push({ category: article.frontmatter.category, count: 1 });
+        return acc;
+      },
+      [] as { category: string; count: number }[],
+    ),
+    ...tiPosts.reduce(
+      (acc, article) => {
+        const existing = acc.find(
+          (x) => x.category === article.frontmatter.category,
+        );
+        if (existing) existing.count += 1;
+        else acc.push({ category: article.frontmatter.category, count: 1 });
+        return acc;
+      },
+      [] as { category: string; count: number }[],
+    ),
   ].reduce(
     (acc, { category: cat, count }) => {
       const existing = acc.find((x) => x.category === cat);

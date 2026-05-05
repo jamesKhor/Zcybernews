@@ -3,6 +3,9 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Search, X, FileText, Shield, Loader2 } from "lucide-react";
 
+const SEARCH_TAG_SEPARATOR = "\u001f";
+const PAGEFIND_PATH = "/pagefind/pagefind.js";
+
 type SearchResult = {
   title: string;
   slug: string;
@@ -13,6 +16,32 @@ type SearchResult = {
   type: "posts" | "threat-intel";
   url: string;
 };
+
+interface PagefindSearchResultData {
+  url: string;
+  meta: {
+    title?: string;
+    excerpt?: string;
+    slug?: string;
+    category?: string;
+    date?: string;
+    tags?: string;
+    type?: string;
+  };
+  excerpt?: string;
+}
+
+interface PagefindSearchResult {
+  data: () => Promise<PagefindSearchResultData>;
+}
+
+interface PagefindModule {
+  init: () => Promise<void>;
+  search: (
+    query: string,
+    options?: { filters?: Record<string, string | string[]> },
+  ) => Promise<{ results: PagefindSearchResult[] }>;
+}
 
 interface Props {
   locale: string;
@@ -25,6 +54,38 @@ interface Props {
    */
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+}
+
+let pagefindPromise: Promise<PagefindModule | null> | null = null;
+
+function loadPagefind() {
+  pagefindPromise ??= (
+    import(/* webpackIgnore: true */ PAGEFIND_PATH) as Promise<PagefindModule>
+  )
+    .then(async (pagefind) => {
+      await pagefind.init();
+      return pagefind;
+    })
+    .catch(() => null);
+  return pagefindPromise;
+}
+
+function normalizeResult(data: PagefindSearchResultData): SearchResult {
+  const type =
+    data.meta.type === "threat-intel" || data.meta.type === "posts"
+      ? data.meta.type
+      : "posts";
+
+  return {
+    title: data.meta.title ?? "",
+    slug: data.meta.slug ?? data.url.split("/").filter(Boolean).at(-1) ?? "",
+    excerpt: data.meta.excerpt ?? data.excerpt ?? "",
+    category: data.meta.category ?? "industry",
+    date: data.meta.date ?? "",
+    tags: data.meta.tags ? data.meta.tags.split(SEARCH_TAG_SEPARATOR) : [],
+    type,
+    url: data.url,
+  };
 }
 
 export function SearchDialog({
@@ -94,7 +155,7 @@ export function SearchDialog({
     }
   };
 
-  // Search via API
+  // Search the static Pagefind index generated at build time.
   useEffect(() => {
     if (!query.trim() || query.trim().length < 2) {
       setResults([]);
@@ -106,12 +167,15 @@ export function SearchDialog({
     const timer = setTimeout(async () => {
       setLoading(true);
       try {
-        const res = await fetch(
-          `/api/search?q=${encodeURIComponent(query)}&locale=${locale}`,
+        const pagefind = await loadPagefind();
+        const search = await pagefind?.search(query, {
+          filters: { locale },
+        });
+        const data = await Promise.all(
+          (search?.results ?? []).slice(0, 10).map((result) => result.data()),
         );
-        const data = (await res.json()) as { results: SearchResult[] };
         if (!cancelled) {
-          setResults(data.results ?? []);
+          setResults(data.map(normalizeResult));
           setActiveIndex(-1);
         }
       } catch {

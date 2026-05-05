@@ -23,6 +23,10 @@ severity: critical
 cvss_score: 8.8
 cve_ids:
   - CVE-2026-22898
+publish_tier: brief
+public_gate_reasons:
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A critical vulnerability in QNAP's TS-453E network-attached storage (NAS) device, specifically within its QVRPro surveillance system software, allows unauthenticated, network-adjacent attackers to execute arbitrary code. Tracked as CVE-2026-22898 and assigned a CVSS v3.1 base score of 8.8 by Trend Micro's Zero Day Initiative (ZDI), the flaw stems from an exposed dangerous method in the `excpostgres` component. Successful exploitation grants an attacker the ability to run commands as the `admin` user on the underlying QTS operating system.

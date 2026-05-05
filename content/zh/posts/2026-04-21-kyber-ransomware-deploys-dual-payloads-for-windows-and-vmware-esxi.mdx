@@ -40,6 +40,11 @@ ttp_matrix:
   - tactic: Impact
     technique_id: T1489
     technique_name: Service Stop
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 根据Rapid7的分析，Kyber勒索软件行动正在部署一种双载荷攻击，旨在同时加密Windows系统和VMware ESXi虚拟机管理程序上的文件。这种跨平台的方法针对核心企业基础设施，使用定制工具删除ESXi快照和虚拟机文件，使恢复工作变得复杂。研究人员观察到的攻击始于远程桌面协议（RDP）凭证的泄露。

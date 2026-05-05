@@ -24,6 +24,11 @@ cve_ids:
   - CVE-2023-4863
 affected_sectors:
   - cryptocurrency
+publish_tier: brief
+public_gate_reasons:
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 一个广泛使用的Android软件开发工具包（SDK）中存在一个关键漏洞，暴露了数百万加密货币钱包用户的私钥，使得攻击者能够完全接管账户。这个漏洞由微软研究人员发现，并被追踪为**CVE-2023-4863**，存在于**EngageLab Push SDK**中。它允许攻击者截获并解密推送通知，一些钱包应用程序使用这些通知传输敏感的种子短语和私钥。微软在2023年12月向EngageLab报告了这个漏洞，并在2024年3月发布了修补后的SDK版本（v3.1.0）。

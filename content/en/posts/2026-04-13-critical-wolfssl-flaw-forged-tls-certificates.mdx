@@ -23,6 +23,11 @@ locale_pair: 2026-04-13-critical-wolfssl-flaw-forged-tls-certificates
 severity: critical
 cve_ids:
   - CVE-2022-39173
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A critical vulnerability in the widely used wolfSSL cryptographic library enables attackers to forge TLS certificates, potentially allowing them to impersonate trusted servers and services. Tracked as **CVE-2022-39173**, the flaw stems from improper verification of ECDSA signatures during certificate validation. Successful exploitation could facilitate man-in-the-middle (MITM) attacks, data interception, and the deployment of malicious software under the guise of legitimate updates. The vulnerability affects wolfSSL versions prior to 5.5.0 and has been patched in the latest release.

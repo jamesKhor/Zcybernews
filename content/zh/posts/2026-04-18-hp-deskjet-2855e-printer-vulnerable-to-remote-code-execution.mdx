@@ -21,6 +21,10 @@ severity: high
 cvss_score: 8.8
 cve_ids:
   - CVE-2026-4682
+publish_tier: brief
+public_gate_reasons:
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 HP DeskJet 2855e 多功能打印机存在一个严重的基于栈的缓冲区溢出漏洞，允许未经身份验证的、网络邻近的攻击者执行任意代码。该漏洞被跟踪为 CVE-2026-4682，由 Zero Day Initiative (ZDI) 披露，漏洞存在于打印机处理 `JobStatusEvent` 消息的方式中，CVSS v3.1 基础得分为 8.8。该漏洞在 2026 年 Pwn2Own Vancouver 竞赛中被发现并演示，突显了消费者和小型企业物联网 (IoT) 设备中持续存在的安全风险。

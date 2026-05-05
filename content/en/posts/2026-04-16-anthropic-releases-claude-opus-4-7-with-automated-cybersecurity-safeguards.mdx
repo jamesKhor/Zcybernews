@@ -26,6 +26,12 @@ ttp_matrix:
   - tactic: Execution
     technique_id: T1059.007
     technique_name: JavaScript
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Anthropic has released Claude Opus 4.7, a major update to its frontier large language model (LLM) that introduces automated, runtime safeguards designed to interrupt AI agents if they begin executing tasks with potentially harmful cybersecurity outcomes. According to Anthropic, the model is engineered for longer, more complex, and less supervised "agentic" workflows, where an AI autonomously plans and executes multi-step tasks. The new safety features aim to provide a critical circuit-breaker for scenarios where an agent, following initial user instructions, might drift into operations like vulnerability scanning, exploit development, or unauthorized network reconnaissance.

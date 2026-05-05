@@ -19,6 +19,12 @@ draft: false
 locale_pair: >-
   2026-04-16-ai-agent-routers-found-vulnerable-to-command-injection-and-data-leakage
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 对大型语言模型（LLM）代理路由层进行全面的安全审查，揭露了系统性漏洞，这些漏洞允许攻击者操纵AI代理行为、泄露敏感数据和执行未经授权的命令。这项研究分析了28个付费和超过400个免费的路由服务，发现这些关键的中间件组件——位于应用程序和AI模型API之间——往往未能验证或清理输入，从而在AI供应链中创造了一个新的普遍存在的攻击面。当路由层可以被颠覆时，整个代理AI工作流程的完整性就会受到损害。

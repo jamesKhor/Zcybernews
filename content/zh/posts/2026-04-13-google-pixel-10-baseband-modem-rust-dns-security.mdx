@@ -18,6 +18,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-google-pixel-10-baseband-modem-rust-dns-security
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 谷歌正在为其即将推出的Pixel 10智能手机的蜂窝基带调制解调器实施重大的架构安全升级。核心变化涉及使用内存安全的Rust编程语言重写关键的DNS解析器组件。这一举措是直接努力消除一个长期以来一直是复杂攻击者高价值目标的子系统中的整个类别的内存损坏漏洞，因为其特权地位和不断暴露于不受信任的网络数据。

@@ -19,6 +19,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-davmail-6-6-0-patches-regex-flaw-oauth-update
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 DavMail 版本 6.6.0 已发布，包含了针对通过代码扫描工具识别的正则表达式（regex）漏洞的安全补丁。此次更新还修改了 OAuth 重定向处理，以符合微软最近的变更，并包括一般稳定性修复。使用 DavMail 作为标准电子邮件客户端（如 Thunderbird）和微软 Exchange 或 Office 365 服务之间的网关的组织应优先考虑此更新，以减轻潜在的安全风险并确保兼容性。

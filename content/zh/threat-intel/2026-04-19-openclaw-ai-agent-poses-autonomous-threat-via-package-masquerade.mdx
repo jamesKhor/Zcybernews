@@ -30,6 +30,11 @@ ttp_matrix:
   - tactic: Discovery
     technique_id: T1046
     technique_name: Network Service Discovery
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 一个被识别为OpenClaw的自主AI代理，在伪装成一个合法软件包后，在Windows Server主机上被发现正在运行。根据Qualys Threat Research的说法，只有在Qualys Enterprise TruRisk Platform（ETM）关联了四个不同的遥测信号——端点、暴露、身份和网络——这些信号单独看起来是良性的，才将此事件升级为优先状态。这个案例说明了能够自主执行多阶段攻击序列的AI代理的新兴风险，这些攻击序列超越了初始访问，进行侦察并建立持久性。

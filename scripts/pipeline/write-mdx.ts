@@ -3,6 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 import type { GeneratedArticle } from "../ai/schemas/article-schema.js";
 import type { TranslatedMeta } from "./translate-article.js";
+import type { ArticleFrontmatter } from "../../lib/types.js";
+import { evaluatePublicGate } from "../../lib/publication.js";
 import {
   findDuplicateOnDisk,
   claimInFlight,
@@ -104,6 +106,7 @@ function buildFrontmatter(
   date: string,
   datedSlug: string,
   sourceUrls: string[],
+  options?: { clusterKey?: string; sourceCount?: number },
   overrides?: Partial<{ title: string; excerpt: string; locale_pair: string }>,
 ): Record<string, unknown> {
   const fm: Record<string, unknown> = {
@@ -120,6 +123,10 @@ function buildFrontmatter(
   };
 
   if (overrides?.locale_pair) fm.locale_pair = overrides.locale_pair;
+  if (options?.clusterKey) fm.cluster_key = options.clusterKey;
+  if (options?.sourceCount && options.sourceCount > 0) {
+    fm.source_count = options.sourceCount;
+  }
   if (article.severity) fm.severity = article.severity;
   if (article.cvss_score !== null) fm.cvss_score = article.cvss_score;
   const validCves = filterValidCVEs(article.cve_ids);
@@ -133,6 +140,12 @@ function buildFrontmatter(
     fm.affected_regions = article.affected_regions;
   if (article.iocs.length) fm.iocs = article.iocs;
   if (article.ttp_matrix.length) fm.ttp_matrix = article.ttp_matrix;
+
+  const gate = evaluatePublicGate(fm as ArticleFrontmatter);
+  fm.publish_tier = gate.tier;
+  if (!gate.pass) {
+    fm.public_gate_reasons = gate.reasons;
+  }
 
   return fm;
 }
@@ -194,6 +207,7 @@ export function writeArticlePair(
   article: GeneratedArticle,
   zhMeta: TranslatedMeta | null,
   sourceUrls: string[] = [],
+  options: { clusterKey?: string; sourceCount?: number } = {},
 ): { en: string; zh: string | null } {
   const date = new Date().toISOString().split("T")[0]!;
   // Add date prefix to slug for unique filenames and consistent naming with manual articles
@@ -231,9 +245,17 @@ export function writeArticlePair(
     }
 
     // English
-    const enFm = buildFrontmatter(article, "en", date, datedSlug, sourceUrls, {
-      locale_pair: zhMeta ? datedSlug : undefined,
-    });
+    const enFm = buildFrontmatter(
+      article,
+      "en",
+      date,
+      datedSlug,
+      sourceUrls,
+      options,
+      {
+        locale_pair: zhMeta ? datedSlug : undefined,
+      },
+    );
     const enPath = writeMdx("en", type, datedSlug, enFm, article.body);
 
     // Chinese (if translation succeeded)
@@ -245,6 +267,7 @@ export function writeArticlePair(
         date,
         datedSlug,
         sourceUrls,
+        options,
         {
           title: zhMeta.title,
           excerpt: zhMeta.excerpt,

@@ -25,6 +25,11 @@ affected_sectors:
   - consumer
 affected_regions:
   - global
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Threat actors are exploiting Apple's legitimate account change notification system to deliver highly convincing phishing emails directly from Apple's servers. The scam, which impersonates an iPhone purchase confirmation, leverages Apple's own `noreply@email.apple.com` address and trusted domain infrastructure to bypass email security filters and trick users into calling a fake support number to steal financial information.

@@ -21,6 +21,11 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-20-threat-actors-abuse-qemu-emulator-to-evade-security-software
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Threat actors are actively exploiting the legitimate QEMU machine emulator to bypass security controls and deploy malware. Security researchers have identified at least two separate campaigns where attackers used QEMU to load and execute ransomware and remote access trojan (RAT) payloads directly in memory, a technique that leverages the emulator's trusted status to evade endpoint detection and response (EDR) tools.

@@ -20,6 +20,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-15-microsoft-fixes-bug-causing-unplanned-windows-server-2025-upgrades
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 Microsoft has resolved a configuration bug that caused Windows Server 2019 and 2022 systems to automatically and unexpectedly upgrade to Windows Server 2025. The issue, which Microsoft documented as a known problem in late March 2026, stemmed from a flawed update channel configuration that incorrectly identified eligible devices. The fix, delivered via the Windows Update service, prevents further unplanned upgrades but does not automatically roll back systems that have already been updated.

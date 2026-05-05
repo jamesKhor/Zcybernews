@@ -17,6 +17,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-12-openai-macos-chatgpt-app-update-supply-chain-compromise
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - threat_intel_missing_structured_value
+source_count: 1
 ---
 ## 执行摘要
 OpenAI 针对其 ChatGPT 桌面应用程序的 macOS 用户发布了紧急警告，要求立即更新软件。这一行动源于一起涉及第三方 JavaScript 库 Axios 被入侵的软件供应链攻击，该攻击于 2026 年 3 月 31 日被发现。尽管 OpenAI 表示没有用户数据、API 密钥或内部系统被直接入侵，但通过被污染的库引入的漏洞可能允许桌面应用程序将对话数据泄露给外部服务器。主要风险在于尚未更新应用程序的用户，因为他们使用的是分发的易受攻击版本。

@@ -54,6 +54,8 @@ export const SeverityEnum = z.enum([
   "informational",
 ]);
 
+export const PublishTierEnum = z.enum(["private", "brief", "public", "report"]);
+
 export const ArticleFrontmatterSchema = z.object({
   title: z.string(),
   slug: z.string(),
@@ -69,6 +71,12 @@ export const ArticleFrontmatterSchema = z.object({
   featured_image: z.string().optional(),
   featured_image_alt: z.string().optional(),
   draft: z.boolean().default(false),
+  // Missing tier means legacy public content. New pipeline/admin writes set
+  // this explicitly via the publication gate in lib/publication.ts.
+  publish_tier: PublishTierEnum.optional(),
+  public_gate_reasons: z.array(z.string()).optional(),
+  cluster_key: z.string().optional(),
+  source_count: z.number().int().positive().optional(),
   scheduled_publish: z.string().optional(),
   /**
    * 1-2 sentence ultra-condensed summary (B-022, 2026-04-23). Optional
@@ -106,6 +114,7 @@ export interface Article {
 
 export type Category = z.infer<typeof CategoryEnum>;
 export type Severity = z.infer<typeof SeverityEnum>;
+export type PublishTier = z.infer<typeof PublishTierEnum>;
 
 export const CATEGORY_DEFAULT_IMAGES: Record<Category, string> = {
   "threat-intel": "/images/defaults/threat-intel.png",

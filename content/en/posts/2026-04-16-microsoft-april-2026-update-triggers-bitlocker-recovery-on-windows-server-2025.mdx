@@ -22,6 +22,13 @@ draft: false
 locale_pair: >-
   2026-04-16-microsoft-april-2026-update-triggers-bitlocker-recovery-on-windows-server-2025
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 Microsoft has confirmed that its April 2026 security update, specifically KB5082063, is causing a subset of Windows Server 2025 installations to enter BitLocker recovery mode upon reboot. The issue, which Microsoft states is limited to a "small subset" of devices, requires administrators to input a 48-digit recovery key to regain access to the system. The company is investigating the root cause and has not yet provided a timeline for a fix.

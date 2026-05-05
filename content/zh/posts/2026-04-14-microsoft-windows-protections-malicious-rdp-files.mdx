@@ -24,6 +24,12 @@ ttp_matrix:
   - tactic: Initial Access
     technique_id: T1566
     technique_name: Phishing
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 Microsoft 在 Windows 中实施了新的安全特性，以减轻滥用远程桌面协议（RDP）连接文件的持续钓鱼技术。更新在最近的 Microsoft 安全博客文章中详细说明，引入了明确的用户警告，并默认禁用了打开来自不受信任来源的 `.rdp` 文件时的风险资源共享选项。这一变化直接针对威胁行为者分发恶意 RDP 文件以收集凭证或建立对受害者系统的初始访问权限的活动。

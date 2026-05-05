@@ -19,6 +19,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-15-microsoft-fixes-bug-causing-unplanned-windows-server-2025-upgrades
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 微软已经解决了一个配置错误，该错误导致Windows Server 2019和2022系统自动且意外地升级到Windows Server 2025。这个问题，微软在2026年3月底记录为已知问题，源于一个有缺陷的更新通道配置，错误地识别了符合条件的设备。通过Windows Update服务提供的修复阻止了进一步的意外升级，但不会自动回滚已经更新的系统。

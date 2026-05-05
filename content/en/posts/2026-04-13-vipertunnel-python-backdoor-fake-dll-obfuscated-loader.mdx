@@ -29,6 +29,12 @@ ttp_matrix:
   - tactic: Command and Control
     technique_id: T1572
     technique_name: Protocol Tunneling
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A newly documented malware campaign is deploying a Python-based backdoor named **VIPERTUNNEL** using a sophisticated delivery chain involving a fake Dynamic Link Library (DLL) and multiple layers of obfuscated loaders. The primary objective is to establish a persistent, stealthy **SOCKS5 proxy tunnel** from a compromised host to a remote command-and-control (C2) server, granting attackers long-term access to internal networks. The use of legitimate system tools and heavy obfuscation presents a significant detection challenge for traditional security software.

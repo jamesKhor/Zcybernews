@@ -33,6 +33,12 @@ ttp_matrix:
   - tactic: Initial Access
     technique_id: T1133
     technique_name: External Remote Services
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Unknown attackers have executed a software supply chain attack against the commercial Smart Slider 3 Pro plugin for WordPress and Joomla. By compromising the plugin developer Nextend's update distribution servers, the threat actors pushed a malicious update, version `3.5.1.35`, containing a backdoor. This backdoor grants attackers administrative access to affected WordPress sites, enabling complete compromise. The incident was first identified and reported by WordPress security firm Patchstack. The scale of the compromise and the number of sites that applied the poisoned update remain unclear at this time.
