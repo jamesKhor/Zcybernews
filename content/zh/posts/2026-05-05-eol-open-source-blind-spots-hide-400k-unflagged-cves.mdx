@@ -1,0 +1,63 @@
+---
+title: EOL 开源盲点隐藏 40 万+ 未标记 CVEs
+slug: 2026-05-05-eol-open-source-blind-spots-hide-400k-unflagged-cves
+date: '2026-05-05'
+excerpt: >-
+  HeroDevs 分析：npm、PyPI、Maven 上有 540 万 EOL 软件包版本避开 SCA 扫描器；约 80% 的 CVEs
+  影响支持版本，也影响未列出的 EOL 发布。提供免费扫描。
+category: industry
+tags:
+  - open-source-security
+  - eol-software
+  - sca-tools
+  - supply-chain-security
+  - cve-blind-spots
+  - herodevs
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/the-eol-blind-spot-in-your-cve-feed-what-sca-tools-dont-check/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-eol-open-source-blind-spots-hide-400k-unflagged-cves
+cluster_key: 'topic:blind-spot-your-feed-what'
+source_count: 1
+severity: high
+cvss_score: 9.1
+cve_ids:
+  - CVE-2026-22732
+affected_sectors:
+  - software development
+  - enterprise IT
+iocs:
+  - type: domain
+    value: crates.io
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+根据HeroDevs在2026年5月5日发布的最新研究，依赖于标准软件成分分析（SCA）工具和CVE信息源的安全团队，系统性地忽视了生命周期结束（EOL）开源依赖项中的漏洞。分析基于Sonatype的2026年软件供应链状态报告，揭示了在主要注册表（npm、PyPI、Maven、NuGet、RubyGems、Go、Packagist、crates.io）中，有540万个软件包版本是EOL，但行业最全面的公共EOL跟踪器endoflife.date仅涵盖了其中约7,000个。HeroDevs估计，在EOL版本中可能存在超过400,000个CVE，没有任何扫描器标记，因为CVE维护者几乎从不调查他们支持的发布范围之外的版本。该公司报告称，大约80%在支持版本上披露的CVE也影响了从未正式调查过的EOL版本。一个具体的例子：CVE-2026-22732，一个关键的Spring Security漏洞（CVSS 9.1），在2026年3月披露，官方影响Spring Security 5.7.x至7.0.x —— 但Spring Security 6.2.x，于2025年12月达到EOL，并未列出，尽管HeroDevs确认它也是易受攻击的。
+
+## 技术分析
+
+核心发现是CVE生态系统中存在结构性差距。当维护者发现一个漏洞时，他们会为CVE记录定义一个受影响的版本范围。每个SCA工具、SBOM分析器和漏洞信息源都会摄取这个范围。范围之外的版本 —— 包括EOL版本 —— 不管实际风险如何，都不会收到任何警报。HeroDevs的首席产品经理Isaac Wuest在BleepingComputer赞助的帖子中解释说，这是一个规模问题：根据Sonatype的报告，全球CVE数量在五年内翻了一番，而未评分的CVE增加了37倍。维护者缺乏调查旧版本线的带宽。
+
+Sonatype的研究明确指出“EOL版本从咨询中省略”是虚假安全信心的驱动因素，导致2025年仅就出现了167,286个假阴性 —— 完全未标记的可利用组件。HeroDevs确认了超过81,000个EOL软件包版本，已知有CVE且没有可用的修复路径。鉴于支持版本上的CVE与未调查的EOL版本之间80%的重叠率，HeroDevs估计受影响的EOL CVE的真实数量可能超过400,000，涵盖所有注册表。
+
+### CVE-2026-22732案例研究
+
+CVE-2026-22732于2026年3月披露，CVSS得分为9.1，影响servlet应用程序配置中的Spring Security。该漏洞导致安全响应头 —— 包括Cache-Control、X-Frame-Options、Strict-Transport-Security和Content-Security-Policy —— 被默默丢弃。官方受影响范围涵盖Spring Security 5.7.x至7.0.x。Spring Security 6.2.x未列出。它在2025年12月达到了EOL。Spring Boot 3.2与Spring Security 6.2一起发货。任何运行Boot 3.2的组织都不会收到这个漏洞的扫描器信号。HeroDevs确认Spring Security 6.2.x受到影响，并为其Never-Ending-Support（NES）客户回溯了一个修复，但上游CVE记录并未反映这一点。
+
+### 盲点的规模
+
+HeroDevs分析了1200万个软件包版本的生命周期状态。按生态系统细分：npm软件包版本中大约25%是EOL；NuGet约18%；Cargo约13%；PyPI约11%；Maven Central约10%。Sonatype报告发现，企业依赖图组件中有5-15%是EOL，这表明即使团队认为他们只使用支持的顶级库，也存在暴露。传递依赖关系承载了这种隐藏暴露的大部分。
+
+## 缓解措施与建议
+
+标准SCA工具无法检测EOL版本，因为它们依赖于排除它们的CVE范围数据。防御者应该清点所有依赖项 —— 包括传递的 —— 并使用HeroDevs的EOL DS（跟踪1200万+软件包版本）或endoflife.date等工具与EOL状态交叉参考，以覆盖它所涵盖的有限项目集。对于任何已知CVE的EOL依赖项，组织应该要么升级到支持的版本，要么应用供应商回溯（如果通过扩展支持计划可用），或者实施补偿控制措施，如网络分割或WAF规则。HeroDevs提供的免费EOL扫描（上传SBOM或运行CLI）可以识别SCA工具遗漏的EOL依赖项。团队还应该监控CVE披露的模式，其中受影响范围可能排除最近EOL版本 —— 如Spring Security 6.2.x —— 并手动验证。
+
+## 参考资料
+
+- [您的CVE信息源中的EOL盲点：SCA工具不检查的内容 —— BleepingComputer（由HeroDevs赞助）](https://www.bleepingcomputer.com/news/security/the-eol-blind-spot-in-your-cve-feed-what-sca-tools-dont-check/)

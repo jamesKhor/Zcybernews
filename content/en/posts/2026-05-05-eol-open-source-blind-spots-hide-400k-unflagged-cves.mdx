@@ -1,0 +1,66 @@
+---
+title: EOL Open Source Blind Spots Hide 400K+ Unflagged CVEs
+slug: 2026-05-05-eol-open-source-blind-spots-hide-400k-unflagged-cves
+date: '2026-05-05'
+excerpt: >-
+  HeroDevs analysis: 5.4M EOL package versions across npm, PyPI, Maven evade SCA
+  scanners; ~80% of CVEs on supported versions also affect unlisted EOL
+  releases. Free scan offered.
+category: industry
+tags:
+  - open-source-security
+  - eol-software
+  - sca-tools
+  - supply-chain-security
+  - cve-blind-spots
+  - herodevs
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/the-eol-blind-spot-in-your-cve-feed-what-sca-tools-dont-check/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-eol-open-source-blind-spots-hide-400k-unflagged-cves
+cluster_key: 'topic:blind-spot-your-feed-what'
+source_count: 1
+severity: high
+cvss_score: 9.1
+cve_ids:
+  - CVE-2026-22732
+affected_sectors:
+  - software development
+  - enterprise IT
+iocs:
+  - type: domain
+    value: crates.io
+    confidence: medium
+    description: Extracted from source material
+publish_tier: brief
+public_gate_reasons:
+  - excerpt_too_long
+---
+## Executive Summary
+
+Security teams relying on standard Software Composition Analysis (SCA) tools and CVE feeds are systematically blind to vulnerabilities in end-of-life (EOL) open source dependencies, according to new research from HeroDevs published May 5, 2026. The analysis, drawing on Sonatype's 2026 State of the Software Supply Chain report, reveals that 5.4 million package versions across major registries (npm, PyPI, Maven, NuGet, RubyGems, Go, Packagist, crates.io) are EOL — yet the industry's most comprehensive public EOL tracker, endoflife.date, covers only ~7,000 of them. HeroDevs estimates that more than 400,000 CVEs may exist across EOL versions that no scanner flags, because CVE maintainers almost never investigate versions outside their supported release range. The company reported that approximately 80% of CVEs disclosed on supported versions also affect EOL versions that were never officially investigated. A concrete example: CVE-2026-22732, a critical Spring Security vulnerability (CVSS 9.1) disclosed in March 2026, officially affects Spring Security 5.7.x through 7.0.x — but Spring Security 6.2.x, which reached EOL in December 2025, is not listed, even though HeroDevs confirmed it is vulnerable.
+
+## Technical Analysis
+
+The core finding is a structural gap in the CVE ecosystem. When maintainers discover a vulnerability, they define an affected version range for the CVE record. Every SCA tool, SBOM analyzer, and vulnerability feed ingests that range. Versions outside it — including EOL releases — receive no alert, regardless of actual risk. HeroDevs' Principal Product Manager Isaac Wuest, writing in a BleepingComputer-sponsored post, explained that this is a scale problem: global CVE count doubled in five years while unscored CVEs increased 37x, according to Sonatype's report. Maintainers lack bandwidth to investigate older release lines.
+
+Sonatype's research explicitly identified "EOL versions omitted from advisories" as a driver of false security confidence, contributing to 167,286 false negatives — exploitable components that went entirely unflagged — in 2025 alone. HeroDevs confirmed more than 81,000 EOL package versions with known CVEs and no available fix path. Given the 80% overlap rate between CVEs on supported versions and uninvestigated EOL versions, HeroDevs estimates the true number of affected EOL CVEs may exceed 400,000 across all registries.
+
+### CVE-2026-22732 Case Study
+
+CVE-2026-22732, disclosed March 2026 with a CVSS score of 9.1, affects Spring Security in servlet application configurations. The vulnerability causes security response headers — including Cache-Control, X-Frame-Options, Strict-Transport-Security, and Content-Security-Policy — to be silently dropped. The official affected range covers Spring Security 5.7.x through 7.0.x. Spring Security 6.2.x is not listed. It reached EOL in December 2025. Spring Boot 3.2 ships with Spring Security 6.2. Any organization running Boot 3.2 receives no scanner signal for this vulnerability. HeroDevs confirmed Spring Security 6.2.x is affected and has backported a fix for its Never-Ending-Support (NES) customers, but the upstream CVE record does not reflect this.
+
+### Scale of the Blind Spot
+
+HeroDevs analyzed lifecycle status across 12 million package versions. Breakdown by ecosystem: approximately 25% of npm package versions are EOL; NuGet ~18%; Cargo ~13%; PyPI ~11%; Maven Central ~10%. The Sonatype report found that 5–15% of components in enterprise dependency graphs are EOL, indicating exposure even when teams believe they are using only supported top-level libraries. Transitive dependencies carry the majority of this hidden exposure.
+
+## Mitigations & Recommendations
+
+Standard SCA tools cannot detect EOL versions because they rely on CVE range data that excludes them. Defenders should inventory all dependencies — including transitive ones — and cross-reference against EOL status using tools like HeroDevs' EOL DS (which tracks 12M+ package versions) or endoflife.date for the limited set of projects it covers. For any EOL dependency with known CVEs, organizations should either upgrade to a supported version, apply vendor backports (if available through extended support programs), or implement compensating controls such as network segmentation or WAF rules. The free EOL scan offered by HeroDevs (upload SBOM or run CLI) can identify EOL dependencies that SCA tools miss. Teams should also monitor CVE disclosures for patterns where the affected range may exclude recently EOL versions — as with Spring Security 6.2.x — and manually verify.
+
+## References
+
+- [The EOL Blind Spot in Your CVE Feed: What SCA Tools Don't Check — BleepingComputer (sponsored by HeroDevs)](https://www.bleepingcomputer.com/news/security/the-eol-blind-spot-in-your-cve-feed-what-sca-tools-dont-check/)

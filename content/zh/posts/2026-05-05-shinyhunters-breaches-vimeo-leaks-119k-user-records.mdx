@@ -1,0 +1,58 @@
+---
+title: ShinyHunters 侵入 Vimeo，泄露 119K 用户记录
+slug: 2026-05-05-shinyhunters-breaches-vimeo-leaks-119k-user-records
+date: '2026-05-05'
+excerpt: >-
+  ShinyHunters 在侵入 Anodot 后泄露了一个 106GB 的 Vimeo 数据档案，暴露了 119,200
+  名用户的电子邮件和姓名。没有泄露任何凭证或支付信息。
+category: industry
+tags:
+  - shinyhunters
+  - vimeo
+  - anodot
+  - data-breach
+  - extortion
+  - saas
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/vimeo-data-breach-exposes-personal-information-of-119-000-people/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-shinyhunters-breaches-vimeo-leaks-119k-user-records
+cluster_key: 'topic:vimeo-data-breach-personal-information'
+source_count: 1
+severity: high
+threat_actor: ShinyHunters
+threat_actor_origin: Unknown
+affected_sectors:
+  - technology
+  - media
+affected_regions:
+  - Global
+iocs:
+  - type: domain
+    value: Anodot.com
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+ShinyHunters 敲诈团伙通过破坏数据异常检测公司 Anodot 的认证令牌，入侵视频平台 Vimeo，窃取超过 119,000 人的个人信息。根据数据泄露通知服务 Have I Been Pwned (HIBP)，Vimeo 没有支付赎金后，该团伙在其暗网泄露网站上泄露了一个 106GB 的存档。Vimeo 在 4 月 27 日披露了这一事件，声明没有视频内容、登录凭证或支付卡数据被访问。
+
+## 技术分析
+
+Vimeo 是一个公开交易的视频托管平台，拥有超过 3 亿注册用户和 4.17 亿美元的 FY2024 收入，于 4 月 27 日透露，未经授权的访问是通过 Anodot 发生的，Anodot 是一家集成到其系统中的数据异常检测公司。正如 ShinyHunters 在他们的泄露网站上所说，攻击者使用 Anodot 认证令牌访问 Vimeo 的 Snowflake 和 BigQuery 数据库：“感谢 Anodot.com，您的 Snowflake 和 Bigquery 实例数据已被破坏。”
+
+Vimeo 的初步调查结果表明，被访问的数据库包含“技术数据、视频标题和元数据，以及在某些情况下，客户电子邮件地址。” HIBP 分析了泄露的数据，并确认了 119,200 条暴露的记录，主要是电子邮件地址和姓名。Vimeo 表示，凭证和财务信息仍然安全。检测到后，Vimeo 禁用了所有 Anodot 凭证，移除了集成，聘请了第三方安全专家，并通知了执法部门。
+
+ShinyHunters 告诉 BleepingComputer，他们使用 Anodot 令牌从数十家公司窃取数据。他们还试图入侵 Salesforce 实例，但被基于 AI 的检测阻止。该团伙已被链接到一个针对 Microsoft Entra、Okta 和 Google SSO 账户的广泛 vishing 活动，以窃取连接的 SaaS 应用程序的数据，包括 Salesforce、SAP、Slack、Adobe、Atlassian、Zendesk、Dropbox、Microsoft 365 和 Google Workspace。
+
+## 缓解措施与建议
+
+使用第三方数据分析或监控集成的组织应审计基于令牌的访问，并强制执行严格的令牌生命周期管理。Vimeo 的反应 —— 立即禁用受损凭证并移除集成 —— 是一个基本的反应性措施。防御者应监控集成的 SaaS 到 SaaS 连接的异常访问模式，特别是那些涉及数据聚合平台如 Anodot 的连接。ShinyHunters 从单一受损令牌转向多个下游数据库的能力，突显了在集成服务之间需要网络分段和最小权限访问控制。
+
+## 参考资料
+
+- [BleepingComputer: Vimeo 数据泄露暴露了 119,000 人的个人信息](https://www.bleepingcomputer.com/news/security/vimeo-data-breach-exposes-personal-information-of-119-000-people/)

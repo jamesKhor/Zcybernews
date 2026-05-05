@@ -1,0 +1,61 @@
+---
+title: 'ShinyHunters Breaches Vimeo, Leaks 119K User Records'
+slug: 2026-05-05-shinyhunters-breaches-vimeo-leaks-119k-user-records
+date: '2026-05-05'
+excerpt: >-
+  ShinyHunters leaked a 106GB archive of Vimeo data after breaching Anodot,
+  exposing emails and names of 119,200 users. No credentials or payment info
+  compromised.
+category: industry
+tags:
+  - shinyhunters
+  - vimeo
+  - anodot
+  - data-breach
+  - extortion
+  - saas
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/vimeo-data-breach-exposes-personal-information-of-119-000-people/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-05-shinyhunters-breaches-vimeo-leaks-119k-user-records
+cluster_key: 'topic:vimeo-data-breach-personal-information'
+source_count: 1
+severity: high
+threat_actor: ShinyHunters
+threat_actor_origin: Unknown
+affected_sectors:
+  - technology
+  - media
+affected_regions:
+  - Global
+iocs:
+  - type: domain
+    value: Anodot.com
+    confidence: medium
+    description: Extracted from source material
+publish_tier: brief
+public_gate_reasons:
+  - excerpt_too_long
+---
+## Executive Summary
+
+The ShinyHunters extortion group breached video platform Vimeo by compromising authentication tokens from Anodot, a data anomaly detection firm, stealing personal information of over 119,000 individuals. The gang leaked a 106GB archive on its dark web leak site after Vimeo did not pay a ransom, according to data breach notification service Have I Been Pwned (HIBP). Vimeo disclosed the incident on April 27, stating that no video content, login credentials, or payment card data were accessed.
+
+## Technical Analysis
+
+Vimeo, a publicly traded video hosting platform with over 300 million registered users and $417 million in FY2024 revenue, revealed on April 27 that unauthorized access occurred via Anodot, a data anomaly detection company integrated into its systems. The attackers used Anodot authentication tokens to access Vimeo's Snowflake and BigQuery databases, as stated by ShinyHunters on their leak site: "Your Snowflake and Bigquery instances data was compromised thanks to Anodot.com."
+
+Vimeo's initial findings indicate that accessed databases contained "technical data, video titles and metadata, and, in some cases, customer email addresses." HIBP analyzed the leaked data and confirmed 119,200 exposed records, primarily email addresses and names. Vimeo stated that credentials and financial information remain secure. Upon detection, Vimeo disabled all Anodot credentials, removed the integration, engaged third-party security experts, and notified law enforcement.
+
+ShinyHunters told BleepingComputer they stole data from dozens of companies using Anodot tokens. They also attempted to breach Salesforce instances but were blocked by AI-based detection. The group has been linked to a widespread vishing campaign targeting Microsoft Entra, Okta, and Google SSO accounts to steal data from connected SaaS applications including Salesforce, SAP, Slack, Adobe, Atlassian, Zendesk, Dropbox, Microsoft 365, and Google Workspace.
+
+## Mitigations & Recommendations
+
+Organizations using third-party data analytics or monitoring integrations should audit token-based access and enforce strict token lifecycle management. Vimeo's response — immediately disabling compromised credentials and removing the integration — is a baseline reactive measure. Defenders should monitor for anomalous access patterns from integrated SaaS-to-SaaS connections, particularly those involving data aggregation platforms like Anodot. ShinyHunters' demonstrated ability to pivot from a single compromised token to multiple downstream databases underscores the need for network segmentation and least-privilege access controls between integrated services.
+
+## References
+
+- [BleepingComputer: Vimeo data breach exposes personal information of 119,000 people](https://www.bleepingcomputer.com/news/security/vimeo-data-breach-exposes-personal-information-of-119-000-people/)
