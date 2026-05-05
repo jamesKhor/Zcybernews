@@ -1,0 +1,56 @@
+---
+title: 学生黑客入侵台湾高速铁路TETRA系统，触发
+slug: >-
+  2026-05-05-student-hacked-taiwan-high-speed-rail-tetra-system-triggered-emergency-brakes
+date: '2026-05-05'
+excerpt: 一名23岁的学生使用SDR设备克隆TETRA无线电参数，发送了一个'General Alarm'信号，导致4列THSR列车停运48分钟。
+category: industry
+tags:
+  - tetra
+  - critical-infrastructure
+  - sdr
+  - taiwan
+  - radio-hacking
+  - scada
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/student-hacked-taiwan-high-speed-rail-to-trigger-emergency-brakes/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-05-student-hacked-taiwan-high-speed-rail-tetra-system-triggered-emergency-brakes
+cluster_key: 'topic:student-hacked-taiwan-highspeed-rail'
+source_count: 1
+severity: high
+affected_sectors:
+  - transportation
+affected_regions:
+  - Taiwan
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+**文章标题：台湾高速铁路TETRA系统被学生黑客入侵，引发紧急制动**
+
+**文章正文：**
+
+## 执行摘要
+
+据BleepingComputer引用当地媒体报道，台湾一名23岁大学生因黑客攻击台湾高速铁路（THSR）使用的TETRA（Trans-European Trunked Radio）通信系统而被捕。嫌疑人林某使用软件定义无线电（SDR）设备截获并解码TETRA无线电参数，然后编程手持无线电冒充合法信标。2026年4月5日，他传输了一个高优先级的“通用警报”信号，导致四列火车紧急制动，服务中断48分钟。此次攻击利用了19年来未更换的TETRA参数，使林某能够绕过七层验证。
+
+## 技术分析
+
+林某在线获取了SDR设备，并用它来截获并解码THSR信号系统使用的TETRA无线电参数。TETRA是一种数字集群无线电标准，通常由公共安全和关键基础设施组织用于语音和数据通信。根据报告，该系统已运行19年而未更换参数，意味着加密密钥或认证令牌在这段时间内保持不变。这使得林某在截获参数后能够克隆一个合法的无线电信标。
+
+一名21岁的同伙向林某提供了“关键THSR参数”，使攻击成为可能，尽管这些参数的具体性质尚未公开披露。事件发生后，THSR审查了日志并确定紧急信号来自当天未分配值班的无线电信标。由于物理设备并未丢失，调查人员得出结论信标已被克隆。警方将CCTV录像与TETRA网络日志进行交叉比对，追踪到林某的住所，在那里他们缴获了11台手持无线电、一个SDR设备和一台笔记本电脑。
+
+攻击者根据台湾刑法第184条面临指控，该条款的刑罚可高达10年监禁。林某以新台币100,000元（约合3,280美元）获得保释。他的律师声称传输是偶然的，但防御当局认为这一说法没有说服力。
+
+## 缓解措施与建议
+
+使用TETRA或类似无线电通信系统的关键基础设施运营商应强制执行加密密钥和认证参数的定期轮换——理想情况下，与NIST SP 800-57或同等指南保持一致的时间表。这起事件中19年的静态参数窗口代表了密码卫生的根本失败。组织还应实施物理层监控，以检测未经授权的信标传输或克隆尝试，并维护所有活跃无线电设备分配的日志，以便快速进行取证关联。
+
+## 参考资料
+
+- [BleepingComputer: 学生黑客攻击台湾高速铁路以触发紧急制动](https://www.bleepingcomputer.com/news/security/student-hacked-taiwan-high-speed-rail-to-trigger-emergency-brakes/)
