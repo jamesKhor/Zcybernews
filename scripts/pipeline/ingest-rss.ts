@@ -9,6 +9,7 @@ import {
   extractCVEs,
   SIMILARITY_THRESHOLD,
   PUBLISHED_LOOKBACK_DAYS,
+  sharesIncidentSignature,
   type Story,
   storyIdentityKey,
 } from "../utils/dedup.js";
@@ -349,6 +350,12 @@ export async function ingestFeeds(maxStories = 20): Promise<Story[]> {
       }
       if (shareSlugPrefix(story.title, pub.title)) {
         reason = `slug-prefix vs "${pub.title}"`;
+        return true;
+      }
+      if (
+        sharesIncidentSignature(`${story.title} ${story.excerpt}`, pub.text)
+      ) {
+        reason = `incident-signature vs "${pub.title}"`;
         return true;
       }
       if (storyCVEs.length > 0 && pub.cves.length > 0) {

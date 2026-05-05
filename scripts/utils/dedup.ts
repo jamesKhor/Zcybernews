@@ -198,6 +198,93 @@ export function extractCVEs(text: string): string[] {
   return matches ? [...new Set(matches.map((m) => m.toUpperCase()))] : [];
 }
 
+const INCIDENT_GENERIC_WORDS = new Set([
+  "breach",
+  "breaches",
+  "breached",
+  "data",
+  "exposes",
+  "exposed",
+  "exposure",
+  "leak",
+  "leaks",
+  "leaked",
+  "personal",
+  "information",
+  "records",
+  "record",
+  "users",
+  "user",
+  "people",
+  "customers",
+  "customer",
+  "accounts",
+  "account",
+  "stolen",
+  "steals",
+  "theft",
+]);
+
+const INCIDENT_CONTEXT_WORDS = [
+  "breach",
+  "breached",
+  "extortion",
+  "leak",
+  "leaked",
+  "ransomware",
+  "stolen",
+  "records",
+];
+
+function normalizeIncidentCounts(text: string): string[] {
+  const counts = new Set<string>();
+  const re = /\b(\d[\d,.]*)(?:\s*(k|m|b|million|billion))?\b/gi;
+  let match;
+  while ((match = re.exec(text)) !== null) {
+    const raw = match[1].replace(/,/g, "");
+    const n = Number(raw);
+    if (!Number.isFinite(n)) continue;
+    const suffix = (match[2] ?? "").toLowerCase();
+    if (!suffix && n >= 1900 && n <= 2099) continue;
+    if (!suffix && n < 100) continue;
+    const multiplier =
+      suffix === "k"
+        ? 1_000
+        : suffix === "m" || suffix === "million"
+          ? 1_000_000
+          : suffix === "b" || suffix === "billion"
+            ? 1_000_000_000
+            : 1;
+    counts.add(String(Math.round(n * multiplier)));
+  }
+  return [...counts];
+}
+
+function incidentAnchors(text: string): string[] {
+  return meaningfulWords(text).filter(
+    (word) => word.length >= 4 && !INCIDENT_GENERIC_WORDS.has(word),
+  );
+}
+
+export function sharesIncidentSignature(a: string, b: string): boolean {
+  const aLower = a.toLowerCase();
+  const bLower = b.toLowerCase();
+  if (!INCIDENT_CONTEXT_WORDS.some((word) => aLower.includes(word))) {
+    return false;
+  }
+  if (!INCIDENT_CONTEXT_WORDS.some((word) => bLower.includes(word))) {
+    return false;
+  }
+
+  const aCounts = normalizeIncidentCounts(a);
+  const bCounts = normalizeIncidentCounts(b);
+  if (aCounts.length === 0 || bCounts.length === 0) return false;
+  if (!aCounts.some((count) => bCounts.includes(count))) return false;
+
+  const bAnchors = new Set(incidentAnchors(b));
+  return incidentAnchors(a).some((anchor) => bAnchors.has(anchor));
+}
+
 /**
  * Check if two stories share any CVE IDs (strong duplicate signal).
  */
@@ -226,7 +313,11 @@ export function deduplicate(
         (seenKey !== "" && storyKey !== "" && seenKey === storyKey) ||
         titleSimilarity(s.title, story.title) >= similarityThreshold ||
         shareSlugPrefix(s.title, story.title) ||
-        sharesCVE(s, story)
+        sharesCVE(s, story) ||
+        sharesIncidentSignature(
+          `${s.title} ${s.excerpt}`,
+          `${story.title} ${story.excerpt}`,
+        )
       );
     });
     if (!isDuplicate) seen.push(story);
@@ -240,6 +331,7 @@ export type PublishedArticle = {
   slug: string;
   cves: string[];
   date: string; // ISO YYYY-MM-DD
+  text: string;
 };
 
 /**
@@ -361,6 +453,7 @@ function readAllPublishedFromDisk(): PublishedArticle[] {
           slug,
           cves: extractCVEs(`${title} ${parsed.content}`),
           date,
+          text: `${title} ${String(fm.excerpt ?? "")} ${parsed.content}`,
         });
       } catch {
         // skip unreadable / unparseable files
@@ -438,7 +531,12 @@ export function _clearInFlight(): void {
 // ─── SHIFT-RIGHT: post-generation duplicate detection ───────────────────────
 
 export type DuplicateMatch = {
-  matchType: "title-similarity" | "slug-prefix" | "shared-cve" | "exact-slug";
+  matchType:
+    | "title-similarity"
+    | "slug-prefix"
+    | "shared-cve"
+    | "exact-slug"
+    | "incident-signature";
   matchedTitle: string;
   matchedSlug: string;
   matchedDate: string;
@@ -476,6 +574,7 @@ export function findDuplicateOnDisk(args: {
     similarityThreshold = SIMILARITY_THRESHOLD,
   } = args;
   const cves = body ? extractCVEs(`${title} ${body}`) : extractCVEs(title);
+  const candidateText = body ? `${title} ${body}` : title;
   const published = loadAllPublished();
   const slugPrefixCutoff =
     Date.now() - SLUG_PREFIX_LOOKBACK_DAYS * 24 * 60 * 60 * 1000;
@@ -500,6 +599,15 @@ export function findDuplicateOnDisk(args: {
         matchedSlug: pub.slug,
         matchedDate: pub.date,
         similarity: sim,
+      };
+    }
+
+    if (sharesIncidentSignature(candidateText, pub.text)) {
+      return {
+        matchType: "incident-signature",
+        matchedTitle: pub.title,
+        matchedSlug: pub.slug,
+        matchedDate: pub.date,
       };
     }
 

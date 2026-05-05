@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { clusterStories, storyClusterKey } from "../story-clustering";
+import {
+  clusterEditorialPriorityScore,
+  clusterStories,
+  storyClusterKey,
+} from "../story-clustering";
 import type { Story } from "../../utils/dedup";
 
 function story(overrides: Partial<Story>): Story {
@@ -73,5 +77,38 @@ describe("story clustering", () => {
     ]);
 
     expect(clusters[0].sources.length).toBeGreaterThan(1);
+  });
+
+  it("prioritizes named actor breach/extortion stories over generic coverage", () => {
+    const clusters = clusterStories([
+      story({
+        id: "generic-a",
+        title: "Security Vendor Releases New Product Feature",
+        excerpt: "A security vendor released a product feature.",
+        sourceName: "Vendor A",
+        publishedAt: "2026-05-05T04:00:00.000Z",
+      }),
+      story({
+        id: "generic-b",
+        title: "Security Vendor Adds Product Feature for SOC Teams",
+        excerpt: "A security vendor added a product feature for analysts.",
+        sourceName: "Vendor B",
+        publishedAt: "2026-05-05T03:00:00.000Z",
+      }),
+      story({
+        id: "shinyhunters",
+        title: "ShinyHunters Breaches Vimeo, Leaks 119K User Records",
+        excerpt:
+          "ShinyHunters leaked 119,000 Vimeo user records after claiming a data theft incident.",
+        sourceName: "Breach Source",
+        publishedAt: "2026-05-05T02:00:00.000Z",
+        tags: ["data-breach", "extortion", "shinyhunters"],
+      }),
+    ]);
+
+    expect(clusters[0].stories[0].id).toBe("shinyhunters");
+    expect(clusterEditorialPriorityScore(clusters[0])).toBeGreaterThan(
+      clusterEditorialPriorityScore(clusters[1]),
+    );
   });
 });
