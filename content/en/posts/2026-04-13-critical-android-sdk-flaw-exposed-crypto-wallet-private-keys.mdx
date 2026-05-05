@@ -25,6 +25,11 @@ cve_ids:
   - CVE-2023-4863
 affected_sectors:
   - cryptocurrency
+publish_tier: brief
+public_gate_reasons:
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A critical vulnerability in a widely used Android software development kit (SDK) exposed the private keys of millions of cryptocurrency wallet users, enabling complete account takeover. The flaw, identified by Microsoft researchers and tracked as **CVE-2023-4863**, resided in the **EngageLab Push SDK**. It allowed attackers to intercept and decrypt push notifications, which some wallet applications used to transmit sensitive seed phrases and private keys. Microsoft reported the vulnerability to EngageLab in December 2023, and a patched SDK version (v3.1.0) was released in March 2024.

@@ -33,6 +33,12 @@ ttp_matrix:
   - tactic: Command and Control
     technique_id: T1105
     technique_name: Ingress Tool Transfer
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A newly observed variant of the **GlassWorm** campaign is leveraging a custom **Zig**-based dropper embedded in a malicious Open VSX extension called `specstudio.code-wakatime-activity-tracker`. The extension pretends to be the legitimate WakaTime activity tracker for Visual Studio Code and other IDEs. Once installed, the dropper silently injects a payload into multiple development environments on the host, giving the adversary persistent code‑execution capability on developer workstations.

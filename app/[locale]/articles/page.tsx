@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/content";
+import { isPublicArticle } from "@/lib/publication";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { InFeedAd } from "@/components/ads/AdSense";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import { useTranslations } from "next-intl";
 
 const PAGE_SIZE = 12;
+
+export const revalidate = 3600;
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -49,7 +52,7 @@ export default async function ArticlesPage({ params, searchParams }: Props) {
   const { page: pageParam, category, tag } = await searchParams;
 
   const page = Math.max(1, parseInt(pageParam ?? "1", 10) || 1);
-  const allPosts = getAllPosts(locale, "posts");
+  const allPosts = getAllPosts(locale, "posts").filter(isPublicArticle);
 
   const filtered = allPosts.filter((a) => {
     if (category && a.frontmatter.category !== category) return false;

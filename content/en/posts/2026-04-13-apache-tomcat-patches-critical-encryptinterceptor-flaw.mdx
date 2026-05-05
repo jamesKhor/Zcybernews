@@ -21,6 +21,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-13-apache-tomcat-patches-critical-encryptinterceptor-flaw
 severity: critical
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 The Apache Software Foundation has issued urgent updates for Apache Tomcat to remediate a critical security flaw in the `EncryptInterceptor` component. This vulnerability, stemming from a patching error, could allow a remote attacker to bypass intended encryption protections and access sensitive, unencrypted data transmitted between a Tomcat server and a client. The flaw affects specific versions of Tomcat 10.1.x, 11.0.x, and 9.0.x. Administrators must apply the provided patches immediately to prevent potential data exposure.

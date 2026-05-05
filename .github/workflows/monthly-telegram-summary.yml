@@ -1,0 +1,62 @@
+name: Monthly Telegram Intelligence Brief
+
+on:
+  schedule:
+    # First day of each month at 09:17 SGT.
+    - cron: "17 1 1 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print output without sending Telegram"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: monthly-telegram-summary
+  cancel-in-progress: false
+
+jobs:
+  summary:
+    name: Send monthly brief
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          HUSKY: 0
+
+      - name: Send monthly Telegram intelligence brief
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          ARGS="--cadence=monthly --window-hours=720"
+          [ "${{ inputs.dry_run }}" = "true" ] && ARGS="$ARGS --dry-run"
+          npx tsx scripts/telegram-summary.ts $ARGS
+
+      - name: Notify Telegram — monthly brief failed
+        if: ${{ failure() }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          [ -z "$TELEGRAM_BOT_TOKEN" ] && exit 0
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          MESSAGE="❌ <b>Monthly Telegram brief failed</b>"$'\n\n'"Run: ${RUN_URL}"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode parse_mode="HTML" \
+            --data-urlencode disable_web_page_preview="true" \
+            --data-urlencode text="$MESSAGE" > /dev/null || true

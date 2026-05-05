@@ -22,6 +22,11 @@ ttp_matrix:
   - tactic: Persistence
     technique_id: T1574
     technique_name: Hijack Execution Flow
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 A significant flaw in Anthropic's quota management system for its Claude API allowed customers on the "Pro Max" plan to exhaust their entire monthly usage allowance in approximately 1.5 hours under normal operating conditions. The bug, which has since been patched, resulted in unexpected overage charges for affected users and exposed a critical weakness in the API's consumption tracking and alerting mechanisms. The incident highlights systemic risks in cloud service billing and monitoring architectures.

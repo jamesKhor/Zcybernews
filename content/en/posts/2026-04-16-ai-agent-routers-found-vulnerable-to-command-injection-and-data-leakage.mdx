@@ -22,6 +22,12 @@ draft: false
 locale_pair: >-
   2026-04-16-ai-agent-routers-found-vulnerable-to-command-injection-and-data-leakage
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A comprehensive security review of Large Language Model (LLM) agent routing layers has uncovered systemic vulnerabilities that allow attackers to manipulate AI agent behavior, leak sensitive data, and execute unauthorized commands. The study, which analyzed 28 paid and over 400 free routing services, found that these critical middleware components—which sit between applications and AI model APIs—often fail to validate or sanitize inputs, creating a new and pervasive attack surface in AI supply chains. The integrity of the entire agentic AI workflow is compromised when the routing layer can be subverted.

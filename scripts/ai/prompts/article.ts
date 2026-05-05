@@ -1,4 +1,5 @@
 import type { Story } from "../../utils/dedup.js";
+import { formatStoryForPrompt } from "../../pipeline/source-corpus.js";
 
 export interface BuildArticlePromptOptions {
   /**
@@ -20,7 +21,7 @@ export function buildArticlePrompt(
   const sourceContext = stories
     .map(
       (s, i) =>
-        `SOURCE ${i + 1}: "${s.title}" (from ${s.sourceName})\nURL: ${s.url}\n${s.excerpt}`,
+        `SOURCE ${i + 1}: "${s.title}" (from ${s.sourceName})\n${formatStoryForPrompt(s)}`,
     )
     .join("\n\n---\n\n");
 

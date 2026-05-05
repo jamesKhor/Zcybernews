@@ -41,6 +41,11 @@ ttp_matrix:
   - tactic: Defense Evasion
     technique_id: T1218
     technique_name: System Binary Proxy Execution
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A newly documented malware campaign is delivering the legitimate ConnectWise ScreenConnect remote access tool via a sophisticated loader that impersonates an Adobe Acrobat Reader installer. The attack chain, reported by CyberSecurity News, relies on social engineering to initiate a multi-stage process that executes the final ScreenConnect payload entirely in memory, leaving minimal forensic artifacts on disk. This technique allows threat actors to establish persistent remote access while evading traditional signature-based detection.

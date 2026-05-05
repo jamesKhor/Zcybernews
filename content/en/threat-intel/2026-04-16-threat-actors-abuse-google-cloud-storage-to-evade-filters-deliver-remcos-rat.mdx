@@ -26,6 +26,12 @@ ttp_matrix:
   - tactic: Initial Access
     technique_id: T1566.002
     technique_name: Spearphishing Link
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Threat actors are actively exploiting the inherent trust in Google Cloud Storage to host malicious phishing pages, effectively bypassing standard email security filters and delivering the Remcos remote access trojan. This technique, documented by researchers in early 2026, leverages Google's legitimate infrastructure to lend credibility to attack campaigns, complicating detection based on domain reputation alone. The primary infection vector is phishing emails containing links to these hosted pages, which then trick users into downloading malicious payloads.

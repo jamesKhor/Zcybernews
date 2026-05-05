@@ -20,6 +20,11 @@ locale_pair: 2026-04-13-critical-wolfssl-flaw-forged-tls-certificates
 severity: critical
 cve_ids:
   - CVE-2022-39173
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 广泛使用的wolfSSL加密库中存在一个关键漏洞，允许攻击者伪造TLS证书，可能使他们能够冒充受信任的服务器和服务。这个漏洞被追踪为**CVE-2022-39173**，源于在证书验证过程中对ECDSA签名的不当验证。成功利用可能导致中间人（MITM）攻击、数据拦截以及在合法更新的幌子下部署恶意软件。该漏洞影响wolfSSL 5.5.0之前的版本，并已在最新版本中修复。

@@ -21,6 +21,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-google-rust-dns-parser-pixel-phones-memory-safety
 severity: informational
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 Google has begun deploying a new DNS (Domain Name System) client resolver, written in the memory-safe Rust programming language, to its Pixel smartphones. This architectural change, first reported by SecurityWeek, is a proactive engineering effort designed to eliminate an entire class of memory corruption vulnerabilities within a critical, low-level component of the Android networking stack. The move directly addresses the long-standing security risk posed by memory-unsafe languages like C/C++ in systems code.

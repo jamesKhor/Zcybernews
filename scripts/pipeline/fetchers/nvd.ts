@@ -149,6 +149,7 @@ export function mapNvdToStories(
       id: `nvd-${cve.id}`,
       title,
       url,
+      identityKey: `nvd-${cve.id}`,
       excerpt,
       sourceName: source.name,
       publishedAt: new Date(publishedAt).toISOString(),
@@ -161,6 +162,9 @@ export function mapNvdToStories(
       fetchedAt: now,
       qualityScore: source.qualityScore ?? 1.0,
       isVendor: false,
+      sourceLanguage: source.sourceLanguage ?? "en",
+      seoIntent: source.seoIntent ?? "rank-en",
+      sourceType: source.type,
     });
   }
 

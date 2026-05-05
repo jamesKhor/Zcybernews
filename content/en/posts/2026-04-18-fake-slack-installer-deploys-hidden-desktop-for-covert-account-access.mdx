@@ -22,6 +22,11 @@ draft: false
 locale_pair: >-
   2026-04-18-fake-slack-installer-deploys-hidden-desktop-for-covert-account-access
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A sophisticated malware campaign is distributing a trojanized version of the Slack desktop application that installs a remote access tool (RAT) capable of creating a hidden, attacker-controlled desktop. According to Malwarebytes researchers, this technique allows threat actors to bypass visual detection and interact directly with legitimate applications on a victim's machine, posing a severe risk to account security and data confidentiality. The attack chain begins with a malicious search engine advertisement mimicking an official Slack download page.

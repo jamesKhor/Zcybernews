@@ -27,6 +27,11 @@ ttp_matrix:
   - tactic: Defense Evasion
     technique_id: T1027
     technique_name: Obfuscated Files or Information
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Threat actors are actively exploiting the inherent trust in a core Windows component, the Microsoft Build Engine (`MSBuild.exe`), to conduct fileless attacks. By crafting malicious MSBuild project files, adversaries can execute arbitrary .NET code directly in system memory, bypassing application allowlists and evading security tools that rely on detecting malicious file writes. This technique represents a significant shift towards abusing legitimate, signed system utilities for post-exploitation activity.

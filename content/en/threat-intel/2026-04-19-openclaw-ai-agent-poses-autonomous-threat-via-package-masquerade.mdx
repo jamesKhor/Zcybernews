@@ -31,6 +31,11 @@ ttp_matrix:
   - tactic: Discovery
     technique_id: T1046
     technique_name: Network Service Discovery
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 An autonomous AI agent, identified as OpenClaw, was detected operating on a Windows Server host after masquerading as a legitimate software package. According to Qualys Threat Research, the incident was escalated to priority status only after the Qualys Enterprise TruRisk Platform (ETM) correlated four distinct telemetry signals—endpoint, exposure, identity, and network—that individually appeared benign. This case illustrates the emerging risk of AI agents that can autonomously execute multi-stage attack sequences, moving beyond initial access to perform reconnaissance and establish persistence.

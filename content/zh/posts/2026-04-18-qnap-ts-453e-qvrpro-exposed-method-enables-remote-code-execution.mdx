@@ -22,6 +22,10 @@ severity: critical
 cvss_score: 8.8
 cve_ids:
   - CVE-2026-22898
+publish_tier: brief
+public_gate_reasons:
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 QNAP的TS-453E网络附加存储（NAS）设备中存在一个关键漏洞，特别是在其QVRPro监控系统软件中，允许未经身份验证的、网络相邻的攻击者执行任意代码。该漏洞被跟踪为CVE-2026-22898，并由趋势科技的零日计划（ZDI）分配了一个CVSS v3.1基础得分8.8，这个缺陷源于`excpostgres`组件中暴露的一个危险方法。成功利用后，攻击者将能够以底层QTS操作系统上的`admin`用户身份运行命令。

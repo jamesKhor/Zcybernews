@@ -24,6 +24,11 @@ ttp_matrix:
   - tactic: Defense Evasion
     technique_id: T1562.001
     technique_name: Disable or Modify Tools
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Ransomware threat actors are systematically deploying a broader range of tools designed to disable Endpoint Detection and Response (EDR) software, a critical step preceding file encryption. According to ESET Research, this evolution now includes the use of maliciously signed but legitimate kernel-mode drivers to terminate security processes, moving beyond the earlier, more publicized reliance on exploiting known vulnerabilities in legitimate drivers. This shift represents a significant escalation in operational security, making detection more difficult and increasing the likelihood of successful ransomware deployment.

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/content";
+import { isPublicArticle } from "@/lib/publication";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { InFeedAd } from "@/components/ads/AdSense";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
@@ -8,6 +9,8 @@ import { useTranslations } from "next-intl";
 interface Props {
   params: Promise<{ locale: string }>;
 }
+
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -46,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ThreatIntelPage({ params }: Props) {
   const { locale } = await params;
-  const posts = getAllPosts(locale, "threat-intel");
+  const posts = getAllPosts(locale, "threat-intel").filter(isPublicArticle);
 
   return <ThreatIntelContent locale={locale} posts={posts} />;
 }

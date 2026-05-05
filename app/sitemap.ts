@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts, getAllTags } from "@/lib/content";
 import { CategoryEnum } from "@/lib/types";
 import { absoluteArticleUrl } from "@/lib/article-url";
+import { isPublicArticle } from "@/lib/publication";
 
 // ISR: generate on first request, cache for 1 hour, regenerate on demand.
 //
@@ -145,11 +146,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const tiTags = getAllTags(locale, "threat-intel");
     const allTags = [...new Set([...postTags, ...tiTags])];
     for (const tag of allTags) {
-      const postCount = getAllPosts(locale, "posts").filter((p) =>
-        p.frontmatter.tags.includes(tag),
+      const postCount = getAllPosts(locale, "posts").filter(
+        (p) => isPublicArticle(p) && p.frontmatter.tags.includes(tag),
       ).length;
-      const tiCount = getAllPosts(locale, "threat-intel").filter((p) =>
-        p.frontmatter.tags.includes(tag),
+      const tiCount = getAllPosts(locale, "threat-intel").filter(
+        (p) => isPublicArticle(p) && p.frontmatter.tags.includes(tag),
       ).length;
       if (postCount + tiCount < 5) continue;
       entries.push({
@@ -167,7 +168,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     // Article pages
-    const posts = getAllPosts(locale, "posts");
+    const posts = getAllPosts(locale, "posts").filter(isPublicArticle);
     for (const post of posts) {
       // hreflang alternates (B-008 fix 2026-04-22). Previously both
       // `en` and `zh-Hans` alternates used `locale_pair ?? slug`,
@@ -202,7 +203,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     // Threat intel pages
-    const tiPosts = getAllPosts(locale, "threat-intel");
+    const tiPosts = getAllPosts(locale, "threat-intel").filter(isPublicArticle);
     for (const post of tiPosts) {
       // Same hreflang pattern as the articles block above (B-008).
       const slug = post.frontmatter.slug;

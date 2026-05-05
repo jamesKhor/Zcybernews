@@ -22,6 +22,13 @@ draft: false
 locale_pair: >-
   2026-04-20-microsoft-emergency-updates-fix-windows-server-boot-failures-after-april-2026-pa
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 Microsoft has issued emergency out-of-band (OOB) updates to resolve critical boot and authentication failures affecting Windows Server 2019 and 2022 systems that installed the April 2026 Patch Tuesday security updates. According to Microsoft, the issue specifically impacts domain controllers and servers configured to use the Kerberos Key Distribution Center (KDC) proxy feature, causing them to fail to restart or authenticate users. The company advises affected administrators to apply the OOB updates immediately, which are available through Windows Update, the Microsoft Update Catalog, and Windows Server Update Services (WSUS).

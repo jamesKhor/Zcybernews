@@ -22,6 +22,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-15-openssl-4-0-0-release-deprecations-post-quantum
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 The OpenSSL Project has released version 4.0.0, a major update that enforces the final removal of several long-deprecated and insecure cryptographic protocols and features, including SSLv3. According to the project's announcement, this release represents a significant breaking change; applications linked against older OpenSSL libraries will require code updates and recompilation to function with the new version. The update also introduces support for post-quantum cryptography and Encrypted Client Hello (ECH), marking a foundational shift towards quantum-resistant and more private TLS connections.

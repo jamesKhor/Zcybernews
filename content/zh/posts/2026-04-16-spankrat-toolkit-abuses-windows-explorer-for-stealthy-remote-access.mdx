@@ -19,6 +19,11 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-16-spankrat-toolkit-abuses-windows-explorer-for-stealthy-remote-access
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 新发现的双组件远程访问木马（RAT）工具包，被称为SpankRAT，被威胁行为者部署以建立对Windows系统的隐蔽、持久访问。根据ANY.RUN的研究人员称，基于Rust的恶意软件滥用合法的Windows Explorer（`explorer.exe`）进程来执行其有效载荷，这是一种帮助它绕过基于声誉的安全控制并在公共扫描平台上实现极低检测率的技术。

@@ -30,6 +30,12 @@ ttp_matrix:
   - tactic: Persistence
     technique_id: T1574
     technique_name: Hijack Execution Flow
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Orange Business, the enterprise division of the French telecommunications giant Orange, is integrating generative artificial intelligence (GenAI) capabilities directly into its core voice communication platforms. This strategic shift, which includes features like AI-powered meeting assistants and conversational analytics, fundamentally alters the security model for enterprise telephony. The primary risk is the expansion of the **attack surface** by introducing new AI processing pipelines and data aggregation points within a critical business service. While specific technical details of the implementation's security are not publicly disclosed, the integration creates potential new vectors for data exfiltration, privacy violations, and supply-chain attacks targeting the AI components themselves.

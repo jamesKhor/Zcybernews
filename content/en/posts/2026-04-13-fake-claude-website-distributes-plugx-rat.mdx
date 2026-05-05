@@ -27,6 +27,10 @@ ttp_matrix:
   - tactic: Defense Evasion
     technique_id: T1036
     technique_name: Masquerading
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+source_count: 1
 ---
 ## Executive Summary
 A malicious website impersonating the legitimate Anthropic Claude AI service is distributing a self-contained installer that deploys the PlugX remote access trojan (RAT). The attack chain relies on **DLL sideloading** to execute the final payload and is designed to delete all traces of the initial infection vector, complicating forensic analysis. The campaign highlights the continued weaponization of trusted software brands and AI tools in software supply-chain attacks.

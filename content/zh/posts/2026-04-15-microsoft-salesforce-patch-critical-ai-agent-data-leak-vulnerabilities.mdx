@@ -26,6 +26,13 @@ affected_sectors:
   - multiple
 affected_regions:
   - global
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 Microsoft 和 Salesforce 已经修补了他们各自的 AI 代理平台 Copilot Studio 和 Agentforce 中的关键提示注入漏洞，这些漏洞可能允许未经身份验证的外部攻击者窃取敏感的内部数据。这些漏洞由安全公司 HiddenLayer 发现并报告，代表了一类新型风险，即设计用于自动化业务工作流程的 AI 代理可以被操纵以绕过其预期功能并访问专有信息。两家供应商都已部署了修复程序，但这些事件突显了快速部署的代理 AI 系统的不成熟安全姿态。

@@ -6,6 +6,7 @@ import {
 } from "../ai/schemas/article-schema.js";
 import { withRetry } from "../utils/rate-limit.js";
 import type { Story } from "../utils/dedup.js";
+import { storySourceText } from "./source-corpus.js";
 
 /**
  * Classify "source richness" → target article length.
@@ -70,7 +71,7 @@ const MD5_SHA_REGEX = /\b[a-fA-F0-9]{32,64}\b/g;
 function countInfoTokens(stories: Story[]): number {
   let tokens = 0;
   for (const s of stories) {
-    const text = `${s.title ?? ""} ${s.excerpt ?? ""}`;
+    const text = storySourceText(s);
     tokens += (text.match(CVE_REGEX) ?? []).length;
     tokens += (text.match(CVSS_REGEX) ?? []).length;
     tokens += (text.match(MD5_SHA_REGEX) ?? []).length;

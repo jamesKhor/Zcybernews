@@ -27,6 +27,12 @@ ttp_matrix:
   - tactic: Command and Control
     technique_id: T1572
     technique_name: Protocol Tunneling
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Check Point Research has uncovered a command-and-control (C2) server for the SystemBC proxy malware, revealing a botnet of more than 1,570 compromised systems. The infrastructure is linked to the ransomware-as-a-service (RaaS) operation known as The Gentlemen, which uses SystemBC to establish stealthy SOCKS5 network tunnels for post-compromise activity.

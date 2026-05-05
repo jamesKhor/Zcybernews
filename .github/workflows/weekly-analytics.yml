@@ -70,6 +70,15 @@ jobs:
           [ "${{ inputs.dry_run }}" = "true" ] && ARGS="--dry-run"
           npx tsx scripts/agent-kpi-tracker.ts $ARGS
 
+      - name: Send weekly Telegram intelligence brief
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          ARGS="--cadence=weekly --window-hours=168"
+          [ "${{ inputs.dry_run }}" = "true" ] && ARGS="$ARGS --dry-run"
+          npx tsx scripts/telegram-summary.ts $ARGS
+
       - name: Commit snapshots
         if: ${{ inputs.dry_run != 'true' }}
         run: |

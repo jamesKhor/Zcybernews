@@ -9,7 +9,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Breaking breach news, ransomware leaks, and malware analysis — fast wire coverage.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "krebsonsecurity",
@@ -21,7 +23,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Brian Krebs' original investigative security reporting — the gold standard for attribution and follow-the-money analysis.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "thehackernews",
@@ -33,7 +37,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "High-volume daily security news aggregator covering CVEs, breaches, and disclosures.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "darkreading",
@@ -45,7 +51,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Enterprise-focused security analysis aimed at CISOs and SOC leaders.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "cybersecuritynews",
@@ -70,7 +78,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Major independent cybersecurity outlet covering breaches, vulnerabilities, and policy.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "helpnetsecurity",
@@ -95,7 +105,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Bruce Schneier's long-running blog on cryptography, security policy, and privacy — essential for big-picture analysis.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "blackhillsinfosec",
@@ -107,7 +119,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Practitioner-level pentest, threat hunting, and active defense content from the BHIS team.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "hackernews",
@@ -132,7 +146,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Official U.S. CISA cybersecurity alerts and advisories — authoritative primary source.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "cisa-kev",
@@ -144,7 +160,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "CISA's KEV catalog — the authoritative list of actively exploited vulnerabilities requiring immediate remediation.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "sans-isc",
@@ -156,7 +174,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Daily threat analysis and incident diaries from SANS ISC handlers — strong practitioner signal.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "ncsc-uk",
@@ -168,7 +188,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "UK National Cyber Security Centre advisories and threat reports — authoritative national-CERT primary source.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "talos",
@@ -192,7 +214,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Vendor research arm publishing malware analysis and campaign reports.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "mandiant",
@@ -216,7 +240,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Google's TAG on government-backed attacks and zero-day tracking — authoritative primary research.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "project-zero",
@@ -228,7 +254,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Elite vulnerability research team publishing deep technical zero-day write-ups.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "msrc",
@@ -278,7 +306,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "SentinelLabs research on malware families, threat actors, and exploitation.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "unit42",
@@ -290,7 +320,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "In-depth APT, ransomware, cloud, and IoT research — one of the most cited vendor research outlets.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "sophos",
@@ -314,7 +346,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Kaspersky GReAT team's APT and crimeware research — widely cited primary source.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "malwarebytes",
@@ -326,7 +360,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Threat intelligence on malware, scams, and enterprise threats.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "welivesecurity",
@@ -338,7 +374,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "ESET research on APT campaigns and Eastern European threats.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "rapid7",
@@ -350,7 +388,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Emergent threat analysis and Metasploit-adjacent vulnerability research.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "qualys",
@@ -375,7 +415,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Trend Micro's ZDI advisories from their bug-bounty program — primary-source vulnerability disclosures.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "fortinet",
@@ -413,7 +455,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Malware analysis, detection engineering, and threat hunting techniques.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "recorded-future",
@@ -425,7 +469,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Nation-state threat research and geopolitical cyber risk analysis.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "the-record",
@@ -437,7 +483,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Independent cybersecurity journalism covering nation-state operations, ransomware, and policy — staffed by career security reporters.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "volexity",
@@ -449,7 +497,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "Small independent research shop with a consistent track record of zero-day discoveries (Ivanti, Atlassian, Exchange).",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "censys",
@@ -461,7 +511,9 @@
     "enabled": true,
     "tier": "standard",
     "description": "Internet-scan-based research on exposed infrastructure, IOC enrichment, and attack-surface trends.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "nvd-recent",
@@ -473,7 +525,9 @@
     "enabled": true,
     "tier": "trusted",
     "description": "NIST NVD recent-CVE JSON feed — authoritative source-of-truth for the vulnerabilities category's CVE hard-gate. Parser landed 2026-04-22.",
-    "lastReviewed": "2026-04-22"
+    "lastReviewed": "2026-04-22",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
   },
   {
     "id": "freebuf",

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run search:index && npm run feed:index && next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
@@ -12,6 +12,9 @@
     "test:watch": "vitest",
     "qa": "npm run typecheck && npm run test && npm run build",
     "qa:fast": "npm run typecheck && npm run test",
+    "feed:index": "tsx scripts/build-feed-index.ts",
+    "search:index": "tsx scripts/build-search-index.ts",
+    "telegram:summary": "tsx scripts/telegram-summary.ts",
     "quality:audit": "tsx scripts/audit-published-quality.ts",
     "quality:audit:7d": "tsx scripts/audit-published-quality.ts --since=7d",
     "quality:audit:all": "tsx scripts/audit-published-quality.ts --all",

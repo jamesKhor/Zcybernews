@@ -33,6 +33,11 @@ ttp_matrix:
   - tactic: Exfiltration
     technique_id: T1048
     technique_name: Exfiltration Over Alternative Protocol
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 一种自传播的供应链蠕虫，被追踪为CanisterSprawl，正在破坏npm包以窃取开发者的身份验证令牌，并使用它们进一步传播。安全公司Socket和StepSecurity识别了这个活动，它使用Internet Computer Protocol（ICP）区块链上的一个容器来外泄被盗数据。

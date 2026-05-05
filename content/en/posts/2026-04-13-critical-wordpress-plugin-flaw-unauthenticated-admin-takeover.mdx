@@ -29,6 +29,11 @@ ttp_matrix:
   - tactic: Initial Access
     technique_id: T1190
     technique_name: Exploit Public-Facing Application
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A critical authentication bypass vulnerability in the popular **User Registration & Membership** plugin for WordPress grants unauthenticated attackers full administrative control of affected websites. Tracked as **CVE-2026-1492**, the flaw allows complete circumvention of the login process, requiring no credentials or prior access. The plugin's widespread use places thousands of WordPress sites at immediate risk of compromise. This analysis is based on a report from CyberSecurity News.

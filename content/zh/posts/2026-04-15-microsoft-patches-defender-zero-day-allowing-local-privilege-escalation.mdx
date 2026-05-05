@@ -22,6 +22,11 @@ locale_pair: >-
 severity: high
 cve_ids:
   - CVE-2026-33825
+publish_tier: brief
+public_gate_reasons:
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 微软修补了其Microsoft Defender Antimalware Platform中的一个零日漏洞CVE-2026-33825，该漏洞可能允许本地认证攻击者将权限提升到SYSTEM级别。微软将这个漏洞评为“重要”，并于2026年4月14日公开披露，并在2026年4月的Patch Tuesday更新中进行了修复。成功利用此漏洞需要攻击者已经在目标系统上拥有立足点，但将授予他们最高级别的访问权限，使他们能够完全控制系统。

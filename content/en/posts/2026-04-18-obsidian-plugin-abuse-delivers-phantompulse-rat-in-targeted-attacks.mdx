@@ -35,6 +35,11 @@ ttp_matrix:
   - tactic: Collection
     technique_id: T1005
     technique_name: Data from Local System
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A novel social engineering campaign is abusing the extensibility of the popular Obsidian note-taking application to deliver a previously undocumented Windows remote access trojan (RAT) dubbed PHANTOMPULSE. According to Elastic Security Labs, which tracks the activity as REF6598, attackers are distributing malicious Obsidian plugins to gain initial access, primarily targeting individuals within the financial and cryptocurrency sectors. The campaign represents a significant evolution in initial access techniques, leveraging trusted developer tools and software supply chains to bypass traditional security controls.

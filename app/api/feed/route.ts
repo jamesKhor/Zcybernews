@@ -1,7 +1,20 @@
-import { getAllPosts } from "@/lib/content";
+import fs from "node:fs";
+import path from "node:path";
+import { articleUrl, type ArticleLocale } from "@/lib/article-url";
+import {
+  selectFeedArticles,
+  type FeedIndex,
+  type FeedIndexArticle,
+} from "@/lib/feed-index";
 import { NextRequest, NextResponse } from "next/server";
 
 export const revalidate = 600; // 10 min cache — fresher for Feedly
+
+const FEED_INDEX_PATH = path.join(process.cwd(), "data", "feed-index.json");
+
+function loadFeedIndex(): FeedIndex {
+  return JSON.parse(fs.readFileSync(FEED_INDEX_PATH, "utf-8")) as FeedIndex;
+}
 
 function escapeXml(str: string): string {
   return str
@@ -29,48 +42,44 @@ function buildPubDate(dateStr: string, index: number): string {
   return base.toUTCString();
 }
 
+function buildItem(
+  article: FeedIndexArticle,
+  locale: ArticleLocale,
+  siteUrl: string,
+  indexForDate: number,
+): string {
+  const url = `${siteUrl}${articleUrl(
+    { slug: article.slug },
+    locale,
+    article.section,
+  )}`;
+
+  return `
+    <item>
+      <title><![CDATA[${escapeCdata(article.title)}]]></title>
+      <link>${escapeXml(url)}</link>
+      <guid isPermaLink="true">${escapeXml(url)}</guid>
+      <description><![CDATA[${escapeCdata(article.excerpt)}]]></description>
+      <pubDate>${buildPubDate(article.date, indexForDate)}</pubDate>
+      <category>${escapeXml(article.category)}</category>
+    </item>`;
+}
+
 export async function GET(request: NextRequest) {
   const locale =
     request.nextUrl.searchParams.get("locale") === "zh" ? "zh" : "en";
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
-  // Merge posts + threat-intel, sort by date, take latest 20
-  const posts = getAllPosts(locale, "posts").map((p) => ({
-    ...p,
-    _type: "posts" as const,
-  }));
-  const ti = getAllPosts(locale, "threat-intel").map((p) => ({
-    ...p,
-    _type: "threat-intel" as const,
-  }));
-  const all = [...posts, ...ti]
-    .sort(
-      (a, b) =>
-        new Date(b.frontmatter.date).getTime() -
-        new Date(a.frontmatter.date).getTime(),
-    )
-    .slice(0, 20);
+  const all = selectFeedArticles(loadFeedIndex().articles, locale, 20);
 
   // Group articles by date so staggering resets per day
   const dateGroups = new Map<string, number>();
 
   const items = all
-    .map((p) => {
-      const section = p._type === "threat-intel" ? "threat-intel" : "articles";
-      const url = `${siteUrl}/${locale}/${section}/${p.frontmatter.slug}`;
-      const date = p.frontmatter.date;
-      const idx = dateGroups.get(date) ?? 0;
-      dateGroups.set(date, idx + 1);
-
-      return `
-    <item>
-      <title><![CDATA[${escapeCdata(p.frontmatter.title)}]]></title>
-      <link>${escapeXml(url)}</link>
-      <guid isPermaLink="true">${escapeXml(url)}</guid>
-      <description><![CDATA[${escapeCdata(p.frontmatter.excerpt)}]]></description>
-      <pubDate>${buildPubDate(date, idx)}</pubDate>
-      <category>${escapeXml(p.frontmatter.category)}</category>
-    </item>`;
+    .map((article) => {
+      const idx = dateGroups.get(article.date) ?? 0;
+      dateGroups.set(article.date, idx + 1);
+      return buildItem(article, locale, siteUrl, idx);
     })
     .join("");
 

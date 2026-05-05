@@ -130,18 +130,11 @@ export function getPostBySlug(
   const localesToTry = locale === "en" ? ["en"] : [locale, "en"];
 
   for (const l of localesToTry) {
-    const dir = getContentDir(l, type);
-    if (!fs.existsSync(dir)) continue;
-
-    const files = fs
-      .readdirSync(dir)
-      .filter((f) => f.endsWith(".mdx") || f.endsWith(".md"));
-
-    for (const file of files) {
-      const article = parseArticleFile(path.join(dir, file));
-      if (article && article.frontmatter.slug === slug) {
-        return article;
-      }
+    const article = getAllPosts(l, type).find(
+      (post) => post.frontmatter.slug === slug,
+    );
+    if (article) {
+      return article;
     }
   }
 

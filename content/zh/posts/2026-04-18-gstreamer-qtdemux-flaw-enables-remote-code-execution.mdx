@@ -21,6 +21,10 @@ severity: high
 cvss_score: 7.8
 cve_ids:
   - CVE-2026-5056
+publish_tier: brief
+public_gate_reasons:
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 GStreamer多媒体框架的QuickTime解复用器（`qtdemux`）组件中存在一个严重的漏洞，可以被利用来实现远程代码执行（RCE）。这个跟踪为CVE-2026-5056的基于栈的缓冲区溢出漏洞CVSS得分为7.8，由趋势科技的零日计划（ZDI）披露。该漏洞的影响范围广泛，因为GStreamer是许多Linux发行版、媒体播放器和视频处理应用程序的核心组件，尽管利用需要用户交互，例如打开恶意媒体文件。

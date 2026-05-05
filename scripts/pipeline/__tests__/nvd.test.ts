@@ -15,6 +15,8 @@ const NVD_SOURCE: FeedSource = {
   type: "nvd-json",
   enabled: true,
   qualityScore: 1.0,
+  sourceLanguage: "en",
+  seoIntent: "rank-both",
 };
 
 const NOW = "2026-04-22T00:00:00.000Z";
@@ -164,6 +166,10 @@ describe("mapNvdToStories", () => {
     expect(stories[0].fetchedAt).toBe(NOW);
     expect(stories[0].isVendor).toBe(false);
     expect(stories[0].qualityScore).toBe(1.0);
+    expect(stories[0].identityKey).toBe("nvd-CVE-2026-1234");
+    expect(stories[0].sourceLanguage).toBe("en");
+    expect(stories[0].seoIntent).toBe("rank-both");
+    expect(stories[0].sourceType).toBe("nvd-json");
   });
 
   it("returns empty array on empty payload", () => {

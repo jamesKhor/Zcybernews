@@ -20,6 +20,11 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-16-spankrat-toolkit-abuses-windows-explorer-for-stealthy-remote-access
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A newly identified two-component Remote Access Trojan (RAT) toolkit, dubbed SpankRAT, is being deployed by threat actors to establish stealthy, persistent access to Windows systems. According to researchers at ANY.RUN, the Rust-based malware abuses legitimate Windows Explorer (`explorer.exe`) processes to execute its payload, a technique that helps it bypass reputation-based security controls and achieve a remarkably low detection rate on public scanning platforms.

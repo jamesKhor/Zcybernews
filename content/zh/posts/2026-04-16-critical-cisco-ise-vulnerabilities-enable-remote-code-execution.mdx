@@ -26,6 +26,12 @@ ttp_matrix:
   - tactic: Discovery
     technique_id: T1083
     technique_name: File and Directory Discovery
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 思科针对其身份服务引擎（ISE）和ISE被动身份连接器（ISE-PIC）中的多个关键漏洞发布了紧急安全通告。根据2026年4月15日发布的通告，这些缺陷可能允许经过身份验证的远程攻击者在受影响的设备上执行任意命令。这些漏洞还包括一个路径遍历缺陷，可能导致未经授权的文件访问。思科已经发布了软件更新来解决这些问题，但截至通告日期，没有证据表明在野外有活跃的利用。

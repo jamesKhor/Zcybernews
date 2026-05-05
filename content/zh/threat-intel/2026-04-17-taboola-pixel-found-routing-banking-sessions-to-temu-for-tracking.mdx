@@ -20,6 +20,11 @@ locale_pair: 2026-04-17-taboola-pixel-found-routing-banking-sessions-to-temu-for
 severity: high
 affected_sectors:
   - financial-services
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 一项安全调查揭示，一个被批准用于一家主要金融机构网站的Taboola广告像素，秘密地将经过身份验证的用户会话重定向到由电子商务平台Temu运营的跟踪端点。这一数据流动是在银行或其客户不知情或未经同意的情况下发生的，并且通过利用一个受信任的、第一方域名，规避了标准的安全监控控制。此事件突出了第三方脚本和广告供应链安全中的一个重要盲点，其中敏感的会话数据可以被泄露给无关的商业实体。

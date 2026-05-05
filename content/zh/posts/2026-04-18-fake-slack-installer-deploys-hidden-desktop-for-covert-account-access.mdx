@@ -19,6 +19,11 @@ draft: false
 locale_pair: >-
   2026-04-18-fake-slack-installer-deploys-hidden-desktop-for-covert-account-access
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 一个复杂的恶意软件活动正在分发Slack桌面应用的木马化版本，该版本安装了一个远程访问工具（RAT），能够创建一个隐藏的、由攻击者控制的桌面。根据Malwarebytes研究人员的说法，这种技术允许威胁行为者绕过视觉检测，并直接与受害者机器上的合法应用程序进行交互，对账户安全和数据保密性构成严重风险。攻击链始于一个恶意搜索引擎广告，模仿官方Slack下载页面。

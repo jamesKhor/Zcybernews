@@ -17,6 +17,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-12-anthropic-claude-beta-microsoft-word-enterprise-security-analysis
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## 执行摘要
 Anthropic 为其 Claude AI 助手推出了一个公开测试版，作为一个原生侧边栏插件集成到 Microsoft Word 中，直接将生成性 AI 集成到核心企业生产力应用程序中。这一举措在增强团队和企业用户的工作效率能力的同时，通过引入一个新的、高权限的第三方组件到文档创建过程中，显著扩大了组织的潜在攻击面。主要的安全问题集中在通过 AI 查询可能的敏感数据外流、插件权限增加的供应链风险，以及在受信任应用程序中创建社交工程和提示注入攻击的新向量。

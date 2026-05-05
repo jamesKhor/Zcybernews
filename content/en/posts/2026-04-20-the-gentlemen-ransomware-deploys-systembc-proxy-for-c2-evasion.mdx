@@ -21,6 +21,11 @@ draft: false
 locale_pair: 2026-04-20-the-gentlemen-ransomware-deploys-systembc-proxy-for-c2-evasion
 severity: high
 threat_actor: The Gentlemen
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 The Gentlemen, a ransomware-as-a-service (RaaS) operation active since mid-2025, is equipping its affiliates with the SystemBC tool to establish a covert SOCKS5 proxy for hiding malicious command-and-control (C2) traffic. According to a DFIR report from Check Point Research, this tactic allows the ransomware to communicate with its operators through an encrypted tunnel, complicating network-based detection and blocking efforts.

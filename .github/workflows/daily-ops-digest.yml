@@ -73,6 +73,19 @@ jobs:
           fi
           npx tsx scripts/daily-ops-digest.ts $ARGS
 
+      - name: Send Telegram intelligence brief
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WINDOW: ${{ inputs.window_hours || '24' }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          ARGS="--cadence=daily --window-hours=${WINDOW}"
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          npx tsx scripts/telegram-summary.ts $ARGS
+
       - name: Notify Telegram — digest itself failed
         # If the digest script crashed, THAT is its own incident. Send a
         # minimal failure alert so the operator notices that their morning

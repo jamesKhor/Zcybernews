@@ -41,6 +41,11 @@ ttp_matrix:
   - tactic: Impact
     technique_id: T1489
     technique_name: Service Stop
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 The Kyber ransomware operation is deploying a dual-payload attack designed to simultaneously encrypt files on Windows systems and VMware ESXi hypervisors, according to an analysis by Rapid7. This cross-platform approach targets core enterprise infrastructure, using a custom tool to delete ESXi snapshots and virtual machine files to complicate recovery efforts. The attacks observed by researchers begin with the compromise of Remote Desktop Protocol (RDP) credentials.

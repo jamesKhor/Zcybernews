@@ -32,6 +32,10 @@ ttp_matrix:
   - tactic: Privilege Escalation
     technique_id: T1068
     technique_name: Exploitation for Privilege Escalation
+publish_tier: brief
+public_gate_reasons:
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A critical vulnerability in the Trend Micro Apex One security management console allows unauthenticated remote attackers to execute arbitrary code on affected systems. Tracked as CVE-2025-54987 and assigned a CVSS v3.1 base score of 9.8 by the Zero Day Initiative (ZDI), the flaw stems from a lack of proper validation of user-supplied path traversal sequences. Successful exploitation grants an attacker SYSTEM-level privileges on the Apex One server, enabling complete compromise of the enterprise endpoint security management platform.

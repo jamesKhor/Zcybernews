@@ -17,6 +17,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import type { SeoIntent, SourceLanguage } from "../contracts/schemas.js";
 
 export type Story = {
   id: string;
@@ -69,6 +70,30 @@ export type Story = {
   // CONSUMED today by: ingest-rss.ts drop logic (when
   // VENDOR_PR_ENFORCE=true); log line. A2.3 filter populates it
   // in enforce + log-only modes alike.
+  identityKey?: string;
+  // CONSUMED today by: ingest-rss.ts and pipeline/index.ts processed-cache
+  // checks. Structured feeds often expose many distinct records behind one
+  // landing URL (CISA KEV catalog, NVD advisories). `identityKey` lets those
+  // records dedup/cache by stable record identity without corrupting the
+  // human-readable source URL written to frontmatter.
+  sourceLanguage?: SourceLanguage;
+  seoIntent?: SeoIntent;
+  // CONSUMED today by: scripts/pipeline/routing.ts, which enforces the
+  // translation-direction matrix before generation spends tokens.
+  sourceType?: string;
+  // CONSUMED today by: scripts/pipeline/source-enrichment.ts to decide
+  // whether a URL should be fetched as HTML (`rss`) or treated as already
+  // structured (`cisa-kev`, `nvd-json`).
+  rawText?: string;
+  // CONSUMED today by: prompts, post-process, and fact-check via
+  // scripts/pipeline/source-corpus.ts. Populated best-effort from the
+  // source URL before generation so the pipeline is grounded in more than
+  // RSS snippets.
+  clusterKey?: string;
+  // CONSUMED today by: scripts/pipeline/story-clustering.ts and write-mdx.ts.
+  // Groups related stories into one generation batch so repeated source
+  // coverage becomes one richer article candidate instead of several thin
+  // posts.
 };
 
 // ────────────────────────────── Tunable thresholds ──────────────────────────
@@ -183,6 +208,10 @@ function sharesCVE(a: Story, b: Story): boolean {
   return cvesA.some((cve) => cvesB.includes(cve));
 }
 
+export function storyIdentityKey(story: Story): string {
+  return story.identityKey ?? story.url;
+}
+
 export function deduplicate(
   stories: Story[],
   similarityThreshold = SIMILARITY_THRESHOLD,
@@ -190,13 +219,16 @@ export function deduplicate(
   const seen: Story[] = [];
 
   for (const story of stories) {
-    const isDuplicate = seen.some(
-      (s) =>
-        s.url === story.url ||
+    const storyKey = storyIdentityKey(story);
+    const isDuplicate = seen.some((s) => {
+      const seenKey = storyIdentityKey(s);
+      return (
+        (seenKey !== "" && storyKey !== "" && seenKey === storyKey) ||
         titleSimilarity(s.title, story.title) >= similarityThreshold ||
         shareSlugPrefix(s.title, story.title) ||
-        sharesCVE(s, story),
-    );
+        sharesCVE(s, story)
+      );
+    });
     if (!isDuplicate) seen.push(story);
   }
 

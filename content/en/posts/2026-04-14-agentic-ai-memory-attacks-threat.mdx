@@ -20,6 +20,11 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-agentic-ai-memory-attacks-threat
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A novel class of attacks targeting the memory systems of agentic AI platforms can propagate poisoned data across multiple user sessions and subagents, creating a persistent, low-visibility threat. Cisco AI Security Researcher Idan Habler disclosed these findings, detailing a specific attack dubbed **MemoryTrap** that was demonstrated against Anthropic's Claude Code. The attack exploits the shared, persistent memory used by AI agents to perform complex, multi-step tasks, turning a core functionality into a vector for data corruption and potential supply chain compromise. While MemoryTrap has been remediated by the vendor, the underlying attack surface—**agentic memory**—remains largely unmonitored and unprepared for by most enterprise security teams.

@@ -1,0 +1,939 @@
+{
+  "generatedAt": "2026-05-04T00:00:00.000Z",
+  "articles": [
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Infrastructure Breach: Hackers Steal Student Data from Canvas Platform",
+      "slug": "2026-05-04-infrastructure-breach-hackers-steal-student-data-from-canvas-platform",
+      "excerpt": "Infrastructure confirmed hackers accessed Canvas user data — names, emails, student IDs, messages — from educational institutions.",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "infrastructure",
+        "canvas",
+        "data-breach",
+        "education",
+        "student-data",
+        "cyber-incident"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Instructure Breach: Student Data Stolen, Services Disrupted",
+      "slug": "2026-05-04-instructure-breach-student-data-stolen-services-disrupted",
+      "excerpt": "Instructure disclosed a breach where hackers stole names, emails, student IDs, and messages, and disrupted Canvas platform services. Data leak threats follow.",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "instructure",
+        "canvas",
+        "data-breach",
+        "student-data",
+        "education-sector"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "CISA, FBI Warn of LummaC2 Infostealer Targeting Orgs",
+      "slug": "2026-04-30-cisa-fbi-warn-of-lummac2-infostealer-targeting-orgs",
+      "excerpt": "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
+      "date": "2026-04-30",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "lummac2",
+        "infostealer",
+        "cisa",
+        "fbi",
+        "threat-intel",
+        "credential-theft"
+      ],
+      "severity": "high",
+      "threat_actor": "LummaC2"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "CISA, USCG Detail Cyber Hygiene Gaps Found in Critical Infrastructure",
+      "slug": "2026-04-30-cisa-uscg-detail-cyber-hygiene-gaps-found-in-critical-infrastructure-hunt",
+      "excerpt": "CISA and USCG found persistent weak configurations, unpatched systems, and credential reuse during a proactive threat hunt at a US critical infrastructure org.",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "cisa",
+        "us-coast-guard",
+        "critical-infrastructure",
+        "threat-hunting",
+        "cyber-hygiene"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "SMS Blaster Busts, OpenEMR Flaws, 600K Roblox Hacks in ThreatsDay",
+      "slug": "2026-04-30-sms-blaster-busts-openemr-flaws-600k-roblox-hacks-in-threatsday-roundup",
+      "excerpt": "Fake cell towers blast scam texts; OpenEMR flaws expose patient data; 600,000 Roblox accounts hacked via credential stuffing. A busy week in cyber threats.",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "sms-blaster",
+        "openemr",
+        "roblox",
+        "credential-stuffing",
+        "fake-cell-towers",
+        "threat-roundup"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "cPanel & WHM Authentication Bypass CVE-2026-41940: CVSS 9.8",
+      "slug": "2026-04-29-cpanel-whm-authentication-bypass-cve-2026-41940-cvss-9-8",
+      "excerpt": "CVE-2026-41940: Unauthenticated remote attackers can bypass authentication in cPanel & WHM and WP Squared. CVSS 9.8. Patch released April 28, 2026.",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "cpanel",
+        "whm",
+        "authentication-bypass",
+        "cve-2026-41940",
+        "rapid7",
+        "critical-vulnerability"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "CVE-2026-25874: Unpatched RCE Flaw in Hugging Face LeRobot",
+      "slug": "2026-04-29-cve-2026-25874-unpatched-rce-flaw-in-hugging-face-lerobot",
+      "excerpt": "CVE-2026-25874 (CVSS 9.3) in Hugging Face LeRobot enables unauthenticated RCE via unsafe deserialization.",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "hugging-face",
+        "lerobot",
+        "cve-2026-25874",
+        "remote-code-execution",
+        "deserialization",
+        "open-source"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "EU Accuses Meta of Breaching DSA Child Safety Rules",
+      "slug": "2026-04-29-eu-accuses-meta-of-breaching-dsa-child-safety-rules",
+      "excerpt": "European Commission finds Meta violated Digital Services Act by failing to protect minors under 13 on Facebook and Instagram — risks not assessed or mitigated.",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "meta",
+        "digital-services-act",
+        "child-safety",
+        "eu-regulation",
+        "facebook",
+        "instagram"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Flowise Auth Bypass CVE-2026-41276 Lets Attackers Reset Passwords",
+      "slug": "2026-04-28-flowise-auth-bypass-cve-2026-41276-lets-attackers-reset-passwords",
+      "excerpt": "CVE-2026-41276 (CVSS 8.1) in Flowise AccountService resetPassword lets unauthenticated attackers bypass authentication. ZDI advisory warns no auth required.",
+      "date": "2026-04-28",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "flowise",
+        "cve-2026-41276",
+        "authentication-bypass",
+        "zdi",
+        "cvss-8.1"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Foxit PDF Reader CVE-2026-5943 Use-After-Free RCE Exploited via",
+      "slug": "2026-04-28-foxit-pdf-reader-cve-2026-5943-use-after-free-rce-exploited-via-malicious-pdfs",
+      "excerpt": "CVE-2026-5943: A use-after-free in Foxit PDF Reader's AcroForm annotation handling allows unauthenticated RCE (CVSS 7.8). Requires user to open a malicious PDF.",
+      "date": "2026-04-28",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "foxit",
+        "pdf-reader",
+        "cve-2026-5943",
+        "use-after-free",
+        "rce",
+        "zdi"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Foxit PDF Reader Use-After-Free Leaks Memory via AcroForm Signatures",
+      "slug": "2026-04-28-foxit-pdf-reader-use-after-free-leaks-memory-via-acroform-signatures",
+      "excerpt": "CVE-2026-5942: A use-after-free in Foxit PDF Reader's AcroForm signature handling lets attackers read process memory. CVSS 3.3. User must open a malicious file.",
+      "date": "2026-04-28",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "foxit",
+        "pdf-reader",
+        "use-after-free",
+        "information-disclosure",
+        "cve-2026-5942",
+        "zdi"
+      ],
+      "severity": "low",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Vimeo Breach Tied to Anodot Vendor Hack, No Video Data Exposed",
+      "slug": "2026-04-28-vimeo-breach-tied-to-anodot-vendor-hack-no-video-data-exposed",
+      "excerpt": "Vimeo attributed a security incident to a breach at analytics vendor Anodot; hackers accessed internal systems but not video content, logins, or payment data.",
+      "date": "2026-04-28",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "vimeo",
+        "anodot",
+        "vendor-breach",
+        "supply-chain",
+        "data-breach"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "73 Fake VS Code Extensions Deliver GlassWorm v2 Info-Stealer",
+      "slug": "2026-04-27-73-fake-vs-code-extensions-deliver-glassworm-v2-info-stealer",
+      "excerpt": "Researchers found 73 cloned VS Code extensions on Open VSX, with 6 confirmed malicious, delivering the GlassWorm v2 info-stealer.",
+      "date": "2026-04-27",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "glassworm",
+        "vs-code",
+        "supply-chain-attack",
+        "info-stealer",
+        "open-vsx",
+        "typosquatting"
+      ],
+      "severity": "high",
+      "threat_actor": "GlassWorm"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Firefox CVE-2026-6770 Patched After Tor User Fingerprinting Risk",
+      "slug": "2026-04-27-firefox-cve-2026-6770-patched-after-tor-user-fingerprinting-risk",
+      "excerpt": "CVE-2026-6770 in Firefox allowed fingerprinting of Tor users via a timing side-channel. Mozilla patched the flaw in Firefox 150 and Tor 15.0.10.",
+      "date": "2026-04-27",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "firefox",
+        "tor",
+        "cve-2026-6770",
+        "fingerprinting",
+        "mozilla",
+        "timing-side-channel"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Itron Breach: Utility Firm Discloses Internal IT Network Intrusion",
+      "slug": "2026-04-26-itron-breach-utility-firm-discloses-internal-it-network-intrusion",
+      "excerpt": "Itron disclosed a cybersecurity incident in an SEC 8-K filing: an unauthorized third party accessed internal IT systems.",
+      "date": "2026-04-26",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "itron",
+        "sec-filing",
+        "critical-infrastructure",
+        "supply-chain",
+        "breach-disclosure",
+        "utility-sector"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Checkmarx KICS Supply-Chain Breach Hits Docker, VS Code",
+      "slug": "2026-04-23-checkmarx-kics-supply-chain-breach-hits-docker-vs-code",
+      "excerpt": "Attackers compromised Checkmarx KICS Docker images and VS Code extensions to steal cloud credentials, API keys, and source code from developer environments.",
+      "date": "2026-04-23",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "supply-chain",
+        "checkmarx",
+        "kics",
+        "docker",
+        "vs-code",
+        "credential-theft"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Google TAG Details Q1 2025 Influence Operations Takedowns",
+      "slug": "2026-04-30-google-tag-details-q1-2025-influence-operations-takedowns",
+      "excerpt": "Google TAG terminated 12 YouTube channels and multiple ad accounts linked to state-backed influence campaigns from Russia, China, Iran, and Israel in Q1 2025.",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "google-tag",
+        "influence-operations",
+        "state-backed-disinformation",
+        "youtube-takedowns",
+        "q1-2025"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Russian GRU Targets Western Logistics, Tech Firms in Ukraine Aid",
+      "slug": "2026-04-30-russian-gru-targets-western-logistics-tech-firms-in-ukraine-aid-campaign",
+      "excerpt": "CISA warns Russian GRU hackers target Western logistics and tech firms supporting Ukraine aid since 2022.",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "gru",
+        "russian-state-sponsored",
+        "logistics",
+        "ukraine",
+        "cisa",
+        "spear-phishing",
+        "supply-chain"
+      ],
+      "severity": "high",
+      "threat_actor": "GRU"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "BlueNoroff Fakes Zoom Calls to Lure Crypto Execs",
+      "slug": "2026-04-28-bluenoroff-fakes-zoom-calls-to-lure-crypto-execs",
+      "excerpt": "BlueNoroff uses stolen video, AI avatars, and fake Zoom invites to turn crypto executives into attack lures.",
+      "date": "2026-04-28",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "bluenoroff",
+        "north-korea",
+        "cryptocurrency",
+        "social-engineering",
+        "ai-avatars",
+        "zoom"
+      ],
+      "severity": "high",
+      "threat_actor": "BlueNoroff"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Recorded Future Maps Latin America's Maturing Cybercrime Ecosystem",
+      "slug": "2026-04-26-recorded-future-maps-latin-americas-maturing-cybercrime-ecosystem",
+      "excerpt": "Insikt Group report details how LAC cybercrime evolved in 2025: RaaS adoption, crypto fraud, and phishing-as-a-service expand across the region.",
+      "date": "2026-04-26",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "latin-america",
+        "cybercrime",
+        "raas",
+        "phishing",
+        "crypto-fraud",
+        "insikt-group"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "GopherWhisper APT Targets Mongolian Government in Espionage Campaign",
+      "slug": "2026-04-24-gopherwhisper-apt-targets-mongolian-government-in-espionage-campaign",
+      "excerpt": "ESET discovered China-aligned APT GopherWhisper targeting Mongolian government institutions with custom Go-based malware, leveraging legitimate services for C2.",
+      "date": "2026-04-24",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "gopherwhisper",
+        "apt",
+        "china",
+        "mongolia",
+        "go-malware",
+        "eset"
+      ],
+      "severity": "high",
+      "threat_actor": "GopherWhisper"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "North Korean Fake Job Scams Spread Malware via 'Contagious Interview'",
+      "slug": "2026-04-22-north-korean-fake-job-scams-spread-malware-via-contagious-interview",
+      "excerpt": "North Korean operatives use a 'contagious interview' tactic, where a compromised developer's GitHub repo spreads RATs to other job seekers.",
+      "date": "2026-04-22",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "north-korea",
+        "social-engineering",
+        "github",
+        "remote-access-trojan",
+        "cryptocurrency",
+        "supply-chain"
+      ],
+      "severity": "high",
+      "threat_actor": "Lazarus Group"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Basic-Fit Data Breach Exposes 1 Million Member Records",
+      "slug": "2026-04-13-basic-fit-data-breach-exposes-member-records",
+      "excerpt": "Hackers breached European gym chain Basic-Fit, accessing personal data of approximately one million members, including names, birthdates, and email addresses.",
+      "date": "2026-04-13",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "data-breach",
+        "fitness-industry",
+        "personal-data",
+        "ransomware"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Booking.com Confirms Data Breach Exposing Reservation and User Data",
+      "slug": "2026-04-13-booking-com-data-breach-reservation-pin-resets",
+      "excerpt": "Booking.com confirms a data breach exposing sensitive reservation and user data, forcing PIN resets for affected customers.",
+      "date": "2026-04-13",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": ["data-breach", "booking.com", "hospitality", "phishing"],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "基础设施入侵：黑客从Canvas平台窃取学生数据",
+      "slug": "2026-05-04-infrastructure-breach-hackers-steal-student-data-from-canvas-platform",
+      "excerpt": "基础设施确认黑客访问了Canvas用户数据 —— 名字、电子邮件、学生ID、消息 —— 来自教育机构。",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "infrastructure",
+        "canvas",
+        "data-breach",
+        "education",
+        "student-data",
+        "cyber-incident"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Instructure 泄露：学生数据被盗，服务中断",
+      "slug": "2026-05-04-instructure-breach-student-data-stolen-services-disrupted",
+      "excerpt": "Instructure 披露了一起泄露事件，黑客窃取了姓名、电子邮件、学生ID和消息，并中断了 Canvas 平台服务。数据泄露威胁随之而来。",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "instructure",
+        "canvas",
+        "data-breach",
+        "student-data",
+        "education-sector"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "CISA, FBI 警告 LummaC2 信息窃取者针对组织",
+      "slug": "2026-04-30-cisa-fbi-warn-of-lummac2-infostealer-targeting-orgs",
+      "excerpt": "CISA 和 FBI 联合咨询详细描述了 LummaC2 信息窃取者的 TTPs 和 IOCs：恶意软件从被入侵的网络中窃取凭证、加密钱包和会话数据。",
+      "date": "2026-04-30",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "lummac2",
+        "infostealer",
+        "cisa",
+        "fbi",
+        "threat-intel",
+        "credential-theft"
+      ],
+      "severity": "high",
+      "threat_actor": "LummaC2"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "CISA, USCG 详述在关键基础设施中发现的网络卫生差距",
+      "slug": "2026-04-30-cisa-uscg-detail-cyber-hygiene-gaps-found-in-critical-infrastructure-hunt",
+      "excerpt": "CISA 和 USCG 在美国关键基础设施组织的一次主动威胁狩猎中发现持续的弱配置、未修补的系统和凭证重用。",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "cisa",
+        "us-coast-guard",
+        "critical-infrastructure",
+        "threat-hunting",
+        "cyber-hygiene"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "短信轰炸机被破获，OpenEMR漏洞，600K Roblox黑客攻击在ThreatsDay",
+      "slug": "2026-04-30-sms-blaster-busts-openemr-flaws-600k-roblox-hacks-in-threatsday-roundup",
+      "excerpt": "假基站发送诈骗短信；OpenEMR漏洞暴露患者数据；600,000个Roblox账户通过凭证填充被黑客攻击。网络威胁的繁忙一周。",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "sms-blaster",
+        "openemr",
+        "roblox",
+        "credential-stuffing",
+        "fake-cell-towers",
+        "threat-roundup"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "cPanel & WHM 认证绕过 CVE-2026-41940：CVSS 9.8",
+      "slug": "2026-04-29-cpanel-whm-authentication-bypass-cve-2026-41940-cvss-9-8",
+      "excerpt": "CVE-2026-41940：未经认证的远程攻击者可以绕过 cPanel & WHM 和 WP Squared 的认证。CVSS 9.8。补丁于 2026 年 4 月 28 日发布。",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "cpanel",
+        "whm",
+        "authentication-bypass",
+        "cve-2026-41940",
+        "rapid7",
+        "critical-vulnerability"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "CVE-2026-25874: 未修补的 Hugging Face LeRobot RCE 漏洞",
+      "slug": "2026-04-29-cve-2026-25874-unpatched-rce-flaw-in-hugging-face-lerobot",
+      "excerpt": "CVE-2026-25874 (CVSS 9.3) 在 Hugging Face LeRobot 中通过不安全的反序列化启用未经认证的 RCE。",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "hugging-face",
+        "lerobot",
+        "cve-2026-25874",
+        "remote-code-execution",
+        "deserialization",
+        "open-source"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "欧盟指控Meta违反DSA儿童安全规则",
+      "slug": "2026-04-29-eu-accuses-meta-of-breaching-dsa-child-safety-rules",
+      "excerpt": "欧洲委员会发现Meta违反了数字服务法案，未能保护Facebook和Instagram上13岁以下的未成年人 —— 风险未被评估或减轻。",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "meta",
+        "digital-services-act",
+        "child-safety",
+        "eu-regulation",
+        "facebook",
+        "instagram"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Flowise Auth Bypass CVE-2026-41276 允许攻击者重置密码",
+      "slug": "2026-04-28-flowise-auth-bypass-cve-2026-41276-lets-attackers-reset-passwords",
+      "excerpt": "CVE-2026-41276（CVSS 8.1）在 Flowise AccountService resetPassword 中允许未经身份验证的攻击者绕过认证。ZDI 咨询警告无需认证。",
+      "date": "2026-04-28",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "flowise",
+        "cve-2026-41276",
+        "authentication-bypass",
+        "zdi",
+        "cvss-8.1"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Foxit PDF Reader CVE-2026-5943 利用后释放 RCE 漏洞被利用",
+      "slug": "2026-04-28-foxit-pdf-reader-cve-2026-5943-use-after-free-rce-exploited-via-malicious-pdfs",
+      "excerpt": "CVE-2026-5943：Foxit PDF Reader 的 AcroForm 注释处理中存在利用后释放漏洞，允许未经身份验证的 RCE（CVSS 7.8）。需要用户打开恶意 PDF。",
+      "date": "2026-04-28",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "foxit",
+        "pdf-reader",
+        "cve-2026-5943",
+        "use-after-free",
+        "rce",
+        "zdi"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Foxit PDF Reader 通过 AcroForm 签名泄露内存",
+      "slug": "2026-04-28-foxit-pdf-reader-use-after-free-leaks-memory-via-acroform-signatures",
+      "excerpt": "CVE-2026-5942: Foxit PDF Reader 的 AcroForm 签名处理中的 use-after-free 允许攻击者读取进程内存。CVSS 3.3。用户必须打开恶意文件。",
+      "date": "2026-04-28",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "foxit",
+        "pdf-reader",
+        "use-after-free",
+        "information-disclosure",
+        "cve-2026-5942",
+        "zdi"
+      ],
+      "severity": "low",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Vimeo 泄露与 Anodot 供应商黑客入侵有关，未暴露视频数据",
+      "slug": "2026-04-28-vimeo-breach-tied-to-anodot-vendor-hack-no-video-data-exposed",
+      "excerpt": "Vimeo 将一起安全事件归因于分析供应商 Anodot 的泄露；黑客访问了内部系统，但未访问视频内容、登录信息或支付数据。",
+      "date": "2026-04-28",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "vimeo",
+        "anodot",
+        "vendor-breach",
+        "supply-chain",
+        "data-breach"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "73 个假冒 VS Code 扩展传递 GlassWorm v2 信息窃取器",
+      "slug": "2026-04-27-73-fake-vs-code-extensions-deliver-glassworm-v2-info-stealer",
+      "excerpt": "研究人员在 Open VSX 上发现了 73 个克隆的 VS Code 扩展，其中 6 个被确认为恶意，传递 GlassWorm v2 信息窃取器。",
+      "date": "2026-04-27",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "glassworm",
+        "vs-code",
+        "supply-chain-attack",
+        "info-stealer",
+        "open-vsx",
+        "typosquatting"
+      ],
+      "severity": "high",
+      "threat_actor": "GlassWorm"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Firefox CVE-2026-6770 补丁修复了Tor用户指纹识别风险",
+      "slug": "2026-04-27-firefox-cve-2026-6770-patched-after-tor-user-fingerprinting-risk",
+      "excerpt": "Firefox中的CVE-2026-6770允许通过一个定时侧信道对Tor用户进行指纹识别。Mozilla在Firefox 150和Tor 15.0.10中修复了这个漏洞。",
+      "date": "2026-04-27",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "firefox",
+        "tor",
+        "cve-2026-6770",
+        "fingerprinting",
+        "mozilla",
+        "timing-side-channel"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Itron 泄露：公用事业公司披露内部IT网络入侵",
+      "slug": "2026-04-26-itron-breach-utility-firm-discloses-internal-it-network-intrusion",
+      "excerpt": "Itron 在 SEC 8-K 文件中披露了一起网络安全事件：未经授权的第三方访问了内部IT系统。",
+      "date": "2026-04-26",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "itron",
+        "sec-filing",
+        "critical-infrastructure",
+        "supply-chain",
+        "breach-disclosure",
+        "utility-sector"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Checkmarx KICS 供应链泄露影响 Docker 和 VS Code",
+      "slug": "2026-04-23-checkmarx-kics-supply-chain-breach-hits-docker-vs-code",
+      "excerpt": "攻击者破坏了 Checkmarx KICS 的 Docker 镜像和 VS Code 扩展，以窃取开发者环境中的云凭证、API 密钥和源代码。",
+      "date": "2026-04-23",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "supply-chain",
+        "checkmarx",
+        "kics",
+        "docker",
+        "vs-code",
+        "credential-theft"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Google TAG 2025年第一季度影响行动拆除详情",
+      "slug": "2026-04-30-google-tag-details-q1-2025-influence-operations-takedowns",
+      "excerpt": "Google TAG 在2025年第一季度终止了12个YouTube频道和多个与俄罗斯、中国、伊朗和以色列国家支持的影响活动相关的广告账户。",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "google-tag",
+        "influence-operations",
+        "state-backed-disinformation",
+        "youtube-takedowns",
+        "q1-2025"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "俄罗斯GRU针对支持乌克兰援助的西方物流、科技公司",
+      "slug": "2026-04-30-russian-gru-targets-western-logistics-tech-firms-in-ukraine-aid-campaign",
+      "excerpt": "CISA警告称，自2022年以来，俄罗斯GRU黑客针对支持乌克兰援助的西方物流和科技公司。",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "gru",
+        "russian-state-sponsored",
+        "logistics",
+        "ukraine",
+        "cisa",
+        "spear-phishing",
+        "supply-chain"
+      ],
+      "severity": "high",
+      "threat_actor": "GRU"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "BlueNoroff 伪造 Zoom 通话以引诱加密高管",
+      "slug": "2026-04-28-bluenoroff-fakes-zoom-calls-to-lure-crypto-execs",
+      "excerpt": "BlueNoroff 使用被盗视频、AI 头像和伪造的 Zoom 邀请，将加密高管变成攻击诱饵。",
+      "date": "2026-04-28",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "bluenoroff",
+        "north-korea",
+        "cryptocurrency",
+        "social-engineering",
+        "ai-avatars",
+        "zoom"
+      ],
+      "severity": "high",
+      "threat_actor": "BlueNoroff"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Recorded Future 描绘拉丁美洲成熟的网络犯罪生态系统",
+      "slug": "2026-04-26-recorded-future-maps-latin-americas-maturing-cybercrime-ecosystem",
+      "excerpt": "Insikt Group 报告详细说明了2025年LAC网络犯罪的演变：RaaS采用、加密货币欺诈和钓鱼即服务在该地区扩展。",
+      "date": "2026-04-26",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "latin-america",
+        "cybercrime",
+        "raas",
+        "phishing",
+        "crypto-fraud",
+        "insikt-group"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "GopherWhisper APT 针对蒙古政府进行间谍活动",
+      "slug": "2026-04-24-gopherwhisper-apt-targets-mongolian-government-in-espionage-campaign",
+      "excerpt": "ESET 发现与中国对齐的 APT GopherWhisper 针对蒙古政府机构使用基于 Go 的定制恶意软件，利用合法服务进行 C2。",
+      "date": "2026-04-24",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "gopherwhisper",
+        "apt",
+        "china",
+        "mongolia",
+        "go-malware",
+        "eset"
+      ],
+      "severity": "high",
+      "threat_actor": "GopherWhisper"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "朝鲜假工作诈骗通过'传染式面试'传播恶意软件",
+      "slug": "2026-04-22-north-korean-fake-job-scams-spread-malware-via-contagious-interview",
+      "excerpt": "朝鲜特工使用一种'传染式面试'策略，其中被入侵开发者的GitHub仓库将RATs传播给其他求职者。",
+      "date": "2026-04-22",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "north-korea",
+        "social-engineering",
+        "github",
+        "remote-access-trojan",
+        "cryptocurrency",
+        "supply-chain"
+      ],
+      "severity": "high",
+      "threat_actor": "Lazarus Group"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Basic-Fit 数据泄露暴露了100万会员记录",
+      "slug": "2026-04-13-basic-fit-data-breach-exposes-member-records",
+      "excerpt": "黑客入侵了欧洲健身房连锁 Basic-Fit，获取了大约一百万名会员的个人数据，包括姓名、出生日期和电子邮件地址。",
+      "date": "2026-04-13",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "data-breach",
+        "fitness-industry",
+        "personal-data",
+        "ransomware"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Booking.com 确认数据泄露暴露预订和用户数据",
+      "slug": "2026-04-13-booking-com-data-breach-reservation-pin-resets",
+      "excerpt": "Booking.com 确认数据泄露暴露敏感的预订和用户数据，迫使受影响的客户重置 PIN。",
+      "date": "2026-04-13",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": ["data-breach", "booking.com", "hospitality", "phishing"],
+      "severity": "high",
+      "threat_actor": null
+    }
+  ]
+}

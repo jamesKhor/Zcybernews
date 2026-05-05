@@ -18,6 +18,13 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-google-rust-dns-parser-pixel-phones-memory-safety
 severity: informational
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## 执行摘要
 Google已开始在其Pixel智能手机上部署一个新的DNS（域名系统）客户端解析器，该解析器使用内存安全的Rust编程语言编写。这一架构变更首次由SecurityWeek报道，是一项旨在消除Android网络堆栈中一个关键的低级组件内存损坏漏洞类别的主动工程努力。此举直接应对了C/C++等内存不安全语言在系统代码中长期存在的安全风险。

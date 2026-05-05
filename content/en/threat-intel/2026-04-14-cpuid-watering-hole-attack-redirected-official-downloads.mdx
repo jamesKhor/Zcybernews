@@ -25,6 +25,12 @@ severity: high
 affected_sectors:
   - software
   - technology
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 On April 9, 2026, the official website for CPU-Z, a widely used system information utility, was compromised and transformed into a watering hole attack. Threat actors manipulated the domain's API to silently redirect legitimate download requests for the software to attacker-controlled infrastructure, serving malware instead of the genuine installer. The campaign was active for approximately 19 hours before being mitigated. The attack was autonomously detected and blocked by SentinelOne's AI-powered Endpoint Detection and Response (EDR) platform, which observed the malicious activity on a customer's endpoint.

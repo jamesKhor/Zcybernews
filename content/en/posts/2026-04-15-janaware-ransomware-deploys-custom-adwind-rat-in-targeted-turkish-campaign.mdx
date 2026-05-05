@@ -24,6 +24,12 @@ locale_pair: >-
 severity: high
 affected_regions:
   - Turkey
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 A new ransomware operation, dubbed JanaWare, is conducting targeted attacks against users in Turkey. The campaign's primary distinguishing feature is its use of a heavily customized version of the cross-platform Adwind remote access trojan (RAT) as a precursor payload. This RAT facilitates initial compromise, credential theft, and data exfiltration before the ransomware payload is deployed to encrypt files. The threat actors have tailored the attack chain, including decoy documents and ransom notes, specifically for a Turkish-speaking audience, indicating a focused regional operation.

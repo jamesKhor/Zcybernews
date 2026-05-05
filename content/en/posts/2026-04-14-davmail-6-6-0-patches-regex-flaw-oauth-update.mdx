@@ -20,6 +20,12 @@ author: ZCyberNews
 draft: false
 locale_pair: 2026-04-14-davmail-6-6-0-patches-regex-flaw-oauth-update
 severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - excerpt_too_long
+  - vulnerability_missing_cve
+source_count: 1
 ---
 ## Executive Summary
 DavMail version 6.6.0 has been released, containing a security patch for a regex vulnerability identified through code-scanning tools. The update also modifies OAuth redirect handling to comply with a recent Microsoft change and includes general stability fixes. Organizations using DavMail as a gateway between standard email clients (like Thunderbird) and Microsoft Exchange or Office 365 services should prioritize this update to mitigate potential security risks and ensure compatibility.

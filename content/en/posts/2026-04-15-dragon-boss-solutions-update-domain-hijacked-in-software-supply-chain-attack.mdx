@@ -22,6 +22,12 @@ draft: false
 locale_pair: >-
   2026-04-15-dragon-boss-solutions-update-domain-hijacked-in-software-supply-chain-attack
 severity: high
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+  - title_too_long
+  - excerpt_too_long
+source_count: 1
 ---
 ## Executive Summary
 Threat actors compromised the software update infrastructure of Dragon Boss Solutions LLC, a legitimate but low-profile software publisher, to deliver malicious payloads to more than 25,000 endpoints. The attack, first detected on March 22, 2026, began with digitally signed adware installers that subsequently fetched a malicious update from a hijacked domain. The final payloads included credential stealers and cryptocurrency miners, demonstrating a sophisticated software supply chain attack that leveraged a trusted vendor's distribution channel.

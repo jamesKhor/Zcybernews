@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/content";
+import { isPublicArticle } from "@/lib/publication";
 import sources from "@/data/rss-sources.json";
 import { HomeJsonLd } from "@/components/seo/JsonLd";
 import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
@@ -78,8 +79,10 @@ export default async function HomePage({ params }: Props) {
   const { locale: rawLocale } = await params;
   const locale = (rawLocale === "zh" ? "zh" : "en") as "en" | "zh";
 
-  const postsArticles = getAllPosts(locale, "posts");
-  const tiArticles = getAllPosts(locale, "threat-intel");
+  const postsArticles = getAllPosts(locale, "posts").filter(isPublicArticle);
+  const tiArticles = getAllPosts(locale, "threat-intel").filter(
+    isPublicArticle,
+  );
 
   // Tag each article with its source directory so URLs resolve correctly
   // (posts/ → /articles/, threat-intel/ → /threat-intel/).
