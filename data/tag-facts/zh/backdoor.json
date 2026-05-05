@@ -1,23 +1,23 @@
 {
   "tag": "backdoor",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-04"
   },
   "top_actors": [
+    "Silver Fox",
     "APT41",
-    "Harvester",
-    "Mustang Panda"
+    "Harvester"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
+    "financial services",
     "technology",
     "banking",
-    "cloud-services",
-    "financial services"
+    "cloud-services"
   ],
   "top_regions": [
     "Global",
@@ -27,12 +27,12 @@
     "South korea"
   ],
   "severity_mix": {
-    "high": 10
+    "high": 11
   },
   "recent_excerpts": [
     "据卡巴斯基称，Silver Fox 团伙冒充税务机关，向俄罗斯和印度的组织分发 ValleyRAT 和新的 ABCDoor 后门。",
     "Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。",
     "Harvester 威胁行为者部署了其 GoGra 后门的新 Linux 版本，使用 Microsoft Graph API 和 Outlook 邮箱进行隐蔽的 C2 通信，在针对...的攻击中。"
   ],
-  "sources_hash": "112ea2de5fd55497"
+  "sources_hash": "d4ef56c5e3f0c3c7"
 }

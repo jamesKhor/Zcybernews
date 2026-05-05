@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "en",
-  "count": 31,
+  "count": 33,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-01"
+    "latest": "2026-05-05"
   },
   "top_actors": [
     "Bluekit",
@@ -26,15 +26,15 @@
     "Australia"
   ],
   "severity_mix": {
+    "informational": 13,
     "medium": 5,
     "high": 13,
-    "informational": 12,
     "critical": 1
   },
   "recent_excerpts": [
-    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited.",
-    "SecurityWeek reports attackers now weaponize vulnerabilities within hours using AI, forcing defenders to adopt automation. No specific CVE or victim named — analysis piece.",
-    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles."
+    "Elastic Security Labs released Conversational Entity Analytics, embedding inline entity data and Canvas previews into Agent Builder for faster threat hunting without leaving chat…",
+    "Elastic Security Labs released a feature that converts plain-English threat descriptions into validated ES|QL detection rules, lowering the barrier for analysts without query…",
+    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited."
   ],
-  "sources_hash": "f40956907f98acb6"
+  "sources_hash": "0f0f2b0da8bb60c4"
 }

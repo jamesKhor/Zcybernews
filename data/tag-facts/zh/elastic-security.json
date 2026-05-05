@@ -1,10 +1,10 @@
 {
   "tag": "elastic-security",
   "locale": "zh",
-  "count": 6,
+  "count": 9,
   "date_range": {
     "first": "2026-04-25",
-    "latest": "2026-05-02"
+    "latest": "2026-05-05"
   },
   "top_actors": [
     "TeamPCP"
@@ -21,9 +21,9 @@
     "high": 1
   },
   "recent_excerpts": [
-    "Elastic Security Labs详细说明了如何在Elastic Security内部运行实时Osquery查询，覆盖成千上万的端点，以加速DFIR调查，无需磁盘映像。",
-    "Elastic Security Labs 发布了一个开源的 CI/CD 滥用检测模板，使用信号提取和 LLM 推理来捕捉 GitHub Actions、GitLab CI 等跨平台的流水线攻击…",
-    "Elastic Security Labs 发布 Linux 根工具检测系列的第二部分，详细描述了行为检测方法，这些方法能够捕捉到静态扫描遗漏的内存中和内核级别的根工具。"
+    "Elastic Security 9.4 引入了“技能” —— 模块化的 AI 功能，这些功能可以自动化检测、调查和狩猎工作流程。",
+    "Elastic Security Labs 发布了一个功能，可以将普通英语威胁描述转换为经过验证的 ES|QL 检测规则，降低了没有查询的分析师的门槛…",
+    "Elastic Workflows 在 9.4 版本中达到 GA，增加了生产就绪的自动化功能，包括案例管理钩子、人在回路中的审批以及自然语言规则编写，用于…"
   ],
-  "sources_hash": "683a4e9af9985b08"
+  "sources_hash": "dca1d72091c30b46"
 }

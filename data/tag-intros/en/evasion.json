@@ -1,9 +1,9 @@
 {
   "tag": "evasion",
   "locale": "en",
-  "intro": "Between April 12 and April 21, 2026, ZCyberNews published eight reports on evasion techniques. The activity, which was predominantly high in severity, involved the distinct threat actors Payouts King and The Gentlemen. Their operations impacted multiple sectors, with a notable concentration of incidents affecting the Czech republic. This collection of coverage details the specific methods used to bypass security measures during this period.",
-  "sources_hash": "ab793ab5646c939c",
+  "intro": "Over the past three weeks, ZCyberNews has published 10 articles tagged with evasion, covering incidents from April 12 to May 4, 2026. The coverage includes 8 high-severity and 2 medium-severity events. Threat actors Payouts King and The Gentlemen were observed in these reports. Affected sectors include financial services, healthcare, multiple, and technology, while impacted regions are the Czech Republic, the EU, and North America.",
+  "sources_hash": "1ab7e3131e375448",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:08:38.405Z",
+  "generated_at": "2026-05-05T04:08:06.754Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

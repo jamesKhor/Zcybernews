@@ -1,10 +1,10 @@
 {
   "tag": "evasion",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Payouts King",
@@ -12,13 +12,18 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "multiple"
+    "financial services",
+    "healthcare",
+    "multiple",
+    "technology"
   ],
   "top_regions": [
-    "Czech republic"
+    "Czech republic",
+    "EU",
+    "North america"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 8,
     "medium": 2
   },
   "recent_excerpts": [
@@ -26,5 +31,5 @@
     "The Gentlemen ransomware-as-a-service group uses the SystemBC SOCKS5 proxy tool to hide command-and-control traffic, according to a Check Point DFIR report analyzing a recent affiliate attack.",
     "The Payouts King ransomware group is deploying the open-source QEMU emulator to create hidden virtual machines on compromised hosts, establishing a persistent reverse SSH backdoor that evades conventi"
   ],
-  "sources_hash": "4fa4941eab0de6b2"
+  "sources_hash": "1ab7e3131e375448"
 }

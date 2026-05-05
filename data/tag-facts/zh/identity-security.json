@@ -1,30 +1,31 @@
 {
   "tag": "identity-security",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-28"
+    "latest": "2026-05-04"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "all",
     "financial services",
-    "healthcare",
-    "technology"
+    "healthcare"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "North america"
   ],
   "severity_mix": {
     "high": 3,
     "informational": 1
   },
   "recent_excerpts": [
+    "思科宣布计划收购Astrix Security以应对人工智能和机器工作负载中的非人类身份风险。这笔交易扩大了思科的身份安全产品组合。",
     "Black Hills InfoSec 展示了攻击者如何滥用 Microsoft SSPR 绕过 MFA 并通过社会工程学重置凭证。现实世界的测试场景揭示了检测漏洞。",
-    "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…",
-    "Elastic Security Labs 在 2026 年第一季度发布了九个新的集成，用于云、端点、电子邮件、身份和 SIEM 用例，扩展了对 AWS、Azure 和 Google 的检测覆盖范围..."
+    "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…"
   ],
-  "sources_hash": "8977ef918f434a71"
+  "sources_hash": "a0b3fbe66bb149f2"
 }

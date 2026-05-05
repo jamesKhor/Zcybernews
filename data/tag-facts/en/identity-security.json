@@ -1,30 +1,31 @@
 {
   "tag": "identity-security",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-28"
+    "latest": "2026-05-04"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
+    "technology",
     "all",
     "financial services",
-    "healthcare",
-    "technology"
+    "healthcare"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "North america"
   ],
   "severity_mix": {
     "high": 3,
     "informational": 1
   },
   "recent_excerpts": [
+    "Cisco announced plans to acquire Astrix Security to address non-human identity risks in AI and machine workloads. The deal expands Cisco's identity security portfolio.",
     "Black Hills InfoSec demonstrates how attackers abuse Microsoft SSPR to bypass MFA and reset credentials via social engineering. Real-world test scenario reveals detection gaps.",
-    "Autonomous AI agents with file and service access are forcing organizations to rethink identity controls, data boundaries, and monitoring — Krebs reports on shifting attack…",
-    "Elastic Security Labs released nine new integrations for cloud, endpoint, email, identity, and SIEM use cases in Q1 2026, expanding detection coverage for AWS, Azure, and Google…"
+    "Autonomous AI agents with file and service access are forcing organizations to rethink identity controls, data boundaries, and monitoring — Krebs reports on shifting attack…"
   ],
-  "sources_hash": "8977ef918f434a71"
+  "sources_hash": "a0b3fbe66bb149f2"
 }

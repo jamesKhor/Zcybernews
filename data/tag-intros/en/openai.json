@@ -1,9 +1,9 @@
 {
   "tag": "openai",
   "locale": "en",
-  "intro": "This archive collects seven reports from April 12–16, 2026, covering activity linked to the Lazarus Group. The severity of these incidents ranged from informational to high, with a focus on the global technology, artificial-intelligence, and cybersecurity sectors. The featured analyses detail the methods and impacts of these operations, providing a concentrated view of threats targeting foundational AI and security infrastructure during this period.",
-  "sources_hash": "c2f40609cb615bad",
+  "intro": "Over the past three weeks, ZCyberNews has published eight articles under the openai tag, with Lazarus Group emerging as the most frequently referenced threat actor. The coverage, spanning from April 12 to May 4, 2026, primarily affected the technology, artificial-intelligence, cloud services, and cybersecurity sectors on a global scale. The severity mix includes four medium-severity incidents, two informational reports, and two high-severity events, reflecting a varied landscape of activity without a single dominant vulnerability.",
+  "sources_hash": "8c5b6398cc263b66",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:18:55.165Z",
+  "generated_at": "2026-05-05T04:08:40.075Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

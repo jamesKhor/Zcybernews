@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-16"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Lazarus Group"
@@ -13,20 +13,21 @@
   "top_sectors": [
     "technology",
     "artificial-intelligence",
+    "cloud services",
     "cybersecurity"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "medium": 4,
     "informational": 2,
-    "medium": 3,
     "high": 2
   },
   "recent_excerpts": [
+    "OpenAI 推出 ChatGPT 的高级账户安全功能：强制使用密码密钥、缩短会话时间以及账户恢复变更。影响全球所有用户。",
     "OpenAI 正在扩大其 GPT-5.4-Cyber 模型的使用范围，这是一个专门用于逆向工程和恶意软件分析的人工智能，紧随 Anthropic 的进攻型 'Mythos' 模型的公布之后。此举旨在降低合法安全研究的障碍。",
-    "OpenAI 正在扩展其信任访问网络（TAC）项目，为经过审查的安全研究人员和团队提供优先访问 GPT-5.4-Cyber 模型的权限，用于逆向工程和漏洞发现。",
-    "OpenAI 已从 ChatGPT 中移除了未记录的“学习模式”，该功能禁用了网络搜索和文件上传，突显了对静默功能变更和自动化工作流程潜在安全影响的担忧。"
+    "OpenAI 正在扩展其信任访问网络（TAC）项目，为经过审查的安全研究人员和团队提供优先访问 GPT-5.4-Cyber 模型的权限，用于逆向工程和漏洞发现。"
   ],
-  "sources_hash": "c2f40609cb615bad"
+  "sources_hash": "8c5b6398cc263b66"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Interlock",
@@ -27,13 +27,13 @@
     "Netherlands"
   ],
   "severity_mix": {
-    "medium": 1,
-    "high": 8
+    "high": 9,
+    "medium": 1
   },
   "recent_excerpts": [
+    "Medtronic reported unauthorized access to its corporate IT systems in a cyberattack, with no impact on medical devices or patient care operations. Data was compromised.",
     "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise.",
-    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data.",
-    "CISA and FBI released a joint advisory on Interlock ransomware, detailing TTPs, IOCs, and a shift from double extortion to data-theft-only attacks targeting healthcare and…"
+    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data."
   ],
-  "sources_hash": "93ac63ddb62ad987"
+  "sources_hash": "e1685f4602248dbb"
 }

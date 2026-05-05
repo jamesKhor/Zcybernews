@@ -1,10 +1,10 @@
 {
   "tag": "financial-fraud",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "NGate"
@@ -19,16 +19,17 @@
   ],
   "top_regions": [
     "Brazil",
+    "North america",
     "United states"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "Flare details how fraudsters bypass credit union loan verification using stolen identities and synthetic SSNs, costing institutions millions in chargebacks.",
     "A malicious website impersonating a TradingView AI agent deploys malware that hands attackers full control of victims' browsers, enabling account theft and financial data…",
-    "NGate malware, using AI-generated code, has infected the legitimate HandyPay NFC app to steal payment card data and PINs from over 220,000 Android users in Brazil, according to ESET.",
-    "A sophisticated email scam impersonating the 'Credit Resources Vault' uses urgency and official-looking documents to trick financially distressed individuals into paying recurring fees for worthless c"
+    "NGate malware, using AI-generated code, has infected the legitimate HandyPay NFC app to steal payment card data and PINs from over 220,000 Android users in Brazil, according to ESET."
   ],
-  "sources_hash": "ef2c782733785e86"
+  "sources_hash": "2f5d98b3db99730b"
 }

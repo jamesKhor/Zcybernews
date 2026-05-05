@@ -1,9 +1,9 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "intro": "Technology and government sectors bore the brunt of 28 zero-day exploits documented between April 12 and April 30, 2026, with 12 critical and 15 high-severity vulnerabilities identified. Threat actors APT29, Chaotic Eclipse, and Claude Mythos were observed in these campaigns, which targeted global regions and Southeast Asia. Key vulnerabilities included CVE-2026-34621 (CVSS 8.6), CVE-2026-3502 (CVSS 7.8), CVE-2026-32183 (CVSS 7.5), CVE-2026-32201 (CVSS 6.5), and CVE-2024-20662, affecting critical infrastructure, telecommunications, and enterprise environments.",
-  "sources_hash": "6145b4bfae4f34e8",
+  "intro": "Technology, government, and critical infrastructure sectors were the primary targets of zero-day exploitation between April 12 and May 4, 2026, according to 29 articles. Threat actors APT29, Chaotic Eclipse, and Claude Mythos were observed leveraging vulnerabilities including CVE-2026-22679 (CVSS 9.8), CVE-2026-34621 (CVSS 8.6), CVE-2026-3502 (CVSS 7.8), CVE-2026-32183 (CVSS 7.5), and CVE-2026-32201 (CVSS 6.5). The coverage spanned 13 critical, 15 high, and 1 medium severity issues, with global impact extending across Asia, China, and Southeast Asia.",
+  "sources_hash": "f33db1a0f0d83bb0",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:27:47.590Z",
+  "generated_at": "2026-05-05T04:07:46.605Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1204,5 +1204,137 @@
     "locale": "en",
     "lastError": "word count 38 outside 60-140 (en)",
     "at": "2026-05-04T04:24:35.436Z"
+  },
+  {
+    "tag": "data-breach",
+    "locale": "en",
+    "lastError": "word count 56 outside 60-140 (en)",
+    "at": "2026-05-05T04:07:39.275Z"
+  },
+  {
+    "tag": "supply-chain-attack",
+    "locale": "en",
+    "lastError": "word count 43 outside 60-140 (en)",
+    "at": "2026-05-05T04:07:54.171Z"
+  },
+  {
+    "tag": "backdoor",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-05-05T04:07:59.620Z"
+  },
+  {
+    "tag": "rat",
+    "locale": "en",
+    "lastError": "word count 49 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:04.526Z"
+  },
+  {
+    "tag": "healthcare",
+    "locale": "en",
+    "lastError": "word count 56 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:12.453Z"
+  },
+  {
+    "tag": "unit-42",
+    "locale": "en",
+    "lastError": "word count 48 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:17.726Z"
+  },
+  {
+    "tag": "elastic-security",
+    "locale": "en",
+    "lastError": "word count 43 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:22.490Z"
+  },
+  {
+    "tag": "infostealer",
+    "locale": "en",
+    "lastError": "word count 48 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:27.367Z"
+  },
+  {
+    "tag": "iran",
+    "locale": "en",
+    "lastError": "word count 53 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:32.779Z"
+  },
+  {
+    "tag": "npm",
+    "locale": "en",
+    "lastError": "word count 42 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:37.822Z"
+  },
+  {
+    "tag": "data-exfiltration",
+    "locale": "en",
+    "lastError": "word count 56 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:48.061Z"
+  },
+  {
+    "tag": "extortion",
+    "locale": "en",
+    "lastError": "word count 39 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:53.195Z"
+  },
+  {
+    "tag": "persistence",
+    "locale": "en",
+    "lastError": "word count 43 outside 60-140 (en)",
+    "at": "2026-05-05T04:08:58.350Z"
+  },
+  {
+    "tag": "china",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-05-05T04:09:03.882Z"
+  },
+  {
+    "tag": "infrastructure",
+    "locale": "en",
+    "lastError": "word count 45 outside 60-140 (en)",
+    "at": "2026-05-05T04:09:12.089Z"
+  },
+  {
+    "tag": "remote-access-trojan",
+    "locale": "en",
+    "lastError": "word count 43 outside 60-140 (en)",
+    "at": "2026-05-05T04:09:16.823Z"
+  },
+  {
+    "tag": "telegram",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-05-05T04:09:23.817Z"
+  },
+  {
+    "tag": "command-injection",
+    "locale": "en",
+    "lastError": "word count 53 outside 60-140 (en)",
+    "at": "2026-05-05T04:09:29.641Z"
+  },
+  {
+    "tag": "government",
+    "locale": "en",
+    "lastError": "word count 54 outside 60-140 (en)",
+    "at": "2026-05-05T04:09:34.984Z"
+  },
+  {
+    "tag": "meta",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-05-05T04:09:40.386Z"
+  },
+  {
+    "tag": "raas",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-05-05T04:09:45.422Z"
+  },
+  {
+    "tag": "vishing",
+    "locale": "en",
+    "lastError": "word count 37 outside 60-140 (en)",
+    "at": "2026-05-05T04:09:50.000Z"
   }
 ]

@@ -1,9 +1,9 @@
 {
   "tag": "email-security",
   "locale": "en",
-  "intro": "This archive collects 11 articles tagged `email-security` published between April 12, 2026 and April 25, 2026. Coverage includes 5 high, 3 medium, and 2 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "6038b8fec7bc6e39",
+  "intro": "This archive collects 12 articles tagged `email-security` published between April 12, 2026 and May 4, 2026. Coverage includes 6 high, 3 medium, and 2 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "425b80cb63cd48c3",
   "model": "template:sparse",
-  "generated_at": "2026-04-26T04:13:31.826Z",
+  "generated_at": "2026-05-05T04:07:59.628Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

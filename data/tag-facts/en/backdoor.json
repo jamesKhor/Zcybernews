@@ -1,23 +1,23 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-04"
   },
   "top_actors": [
+    "Silver Fox",
     "APT41",
-    "Harvester",
-    "Mustang Panda"
+    "Harvester"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
+    "financial services",
     "technology",
     "banking",
-    "cloud-services",
-    "financial services"
+    "cloud-services"
   ],
   "top_regions": [
     "Global",
@@ -27,7 +27,7 @@
     "South korea"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "critical": 1
   },
   "recent_excerpts": [
@@ -35,5 +35,5 @@
     "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
     "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…"
   ],
-  "sources_hash": "112ea2de5fd55497"
+  "sources_hash": "d4ef56c5e3f0c3c7"
 }

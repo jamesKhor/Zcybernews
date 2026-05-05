@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "count": 27,
+  "count": 28,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "APT29",
@@ -12,6 +12,10 @@
     "Claude Mythos"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-22679",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-34621",
       "cvss": 8.6
@@ -27,9 +31,6 @@
     {
       "id": "CVE-2026-32201",
       "cvss": 6.5
-    },
-    {
-      "id": "CVE-2024-20662"
     }
   ],
   "top_sectors": [
@@ -41,17 +42,19 @@
   ],
   "top_regions": [
     "Global",
+    "Asia",
+    "China",
     "Southeast asia"
   ],
   "severity_mix": {
-    "critical": 11,
+    "critical": 12,
     "high": 15,
     "medium": 1
   },
   "recent_excerpts": [
+    "Weaver E-cology OA 中的 CVE-2026-22679（CVSS 9.8）自2026年3月中旬以来在野外被利用。攻击者在利用后运行发现命令。尚无补丁可用。",
     "Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…",
-    "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。",
-    "Check Point Research 发现了 CVE-2026-3502，这是一个 7.8-CVSS 权限提升漏洞，存在于 TrueConf 客户端中，自…以来被用于针对东南亚政府实体的定向攻击。"
+    "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。"
   ],
-  "sources_hash": "b25332ec08e8bfa9"
+  "sources_hash": "54fcdcecb27b3a1e"
 }

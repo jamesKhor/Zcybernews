@@ -1,23 +1,23 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 32,
+  "count": 36,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-03"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "ShinyHunters",
-    "RansomHub",
-    "Rhysida"
+    "LockBit",
+    "RansomHub"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "healthcare",
     "retail",
-    "technology",
-    "hospitality"
+    "education",
+    "technology"
   ],
   "top_regions": [
     "North america",
@@ -27,13 +27,13 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 25,
+    "high": 29,
     "medium": 6
   },
   "recent_excerpts": [
-    "ShinyHunters 声称从 Instructure，即 Canvas LMS 背后的教育技术公司，窃取了数据。Instructure 确认涉及未经授权访问某些系统的数据泄露，并...",
-    "法国当局于4月25日拘留了一名15岁的少年，他涉嫌入侵ANTS，这是一个负责处理护照和驾驶执照的国家身份证明机构。",
-    "摩尔多瓦国家健康保险公司报告了一起可能暴露其系统有限个人数据的网络攻击，这是在最初被入侵几周后发生的。"
+    "基础设施确认黑客访问了Canvas用户数据 —— 名字、电子邮件、学生ID、消息 —— 来自教育机构。",
+    "Instructure 披露了一起泄露事件，黑客窃取了姓名、电子邮件、学生ID和消息，并中断了 Canvas 平台服务。数据泄露威胁随之而来。",
+    "美敦力报告称其企业IT系统在网络攻击中遭到未经授权的访问，对医疗设备或患者护理操作没有影响。数据遭到泄露。"
   ],
-  "sources_hash": "0021cc62e65ed214"
+  "sources_hash": "a93372c794f9e1a5"
 }

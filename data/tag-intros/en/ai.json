@@ -1,9 +1,9 @@
 {
   "tag": "ai",
   "locale": "en",
-  "intro": "Between April 8 and May 1, 2026, ZCyberNews published 31 articles under the ai tag, covering threat actors Bluekit and Pushpaganda. The top affected sectors included technology, financial services, critical infrastructure, and email providers, with impacts reported across Global, the United Kingdom, the United States, Asia, and Australia. The severity mix comprised 5 medium, 13 high, 12 informational, and 1 critical incident.",
-  "sources_hash": "f40956907f98acb6",
+  "intro": "Over the past month, ZCyberNews has tracked 33 articles tagged with ai, covering activity from 8 April to 5 May 2026. The threat actors Bluekit and Pushpaganda were the most frequently reported, with high-severity incidents dominating the severity mix alongside one critical alert. The technology and financial services sectors were the most affected, while the global region, along with the United Kingdom, United States, Asia, and Australia, saw the greatest impact.",
+  "sources_hash": "0f0f2b0da8bb60c4",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:09:40.995Z",
+  "generated_at": "2026-05-05T04:07:41.317Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

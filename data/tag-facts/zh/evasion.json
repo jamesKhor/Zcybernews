@@ -1,10 +1,10 @@
 {
   "tag": "evasion",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Payouts King",
@@ -12,13 +12,18 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "multiple"
+    "financial services",
+    "healthcare",
+    "multiple",
+    "technology"
   ],
   "top_regions": [
-    "Czech republic"
+    "Czech republic",
+    "EU",
+    "North america"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 8,
     "medium": 2
   },
   "recent_excerpts": [
@@ -26,5 +31,5 @@
     "根据 Check Point DFIR 报告分析最近的一次关联攻击，The Gentlemen 勒索软件即服务组织使用 SystemBC SOCKS5 代理工具来隐藏命令和控制流量。",
     "Payouts King 勒索软件团伙正在部署开源 QEMU 模拟器，在被入侵的主机上创建隐藏的虚拟机，建立持久的反向 SSH 后门，以规避传统的端点检测。"
   ],
-  "sources_hash": "4fa4941eab0de6b2"
+  "sources_hash": "1ab7e3131e375448"
 }

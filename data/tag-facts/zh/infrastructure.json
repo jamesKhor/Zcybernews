@@ -1,29 +1,31 @@
 {
   "tag": "infrastructure",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-28"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Triad Nexus"
   ],
   "top_cves": [],
   "top_sectors": [
+    "education",
     "multiple"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "North america"
   ],
   "severity_mix": {
-    "medium": 2,
-    "high": 3
+    "high": 4,
+    "medium": 2
   },
   "recent_excerpts": [
+    "基础设施确认黑客访问了Canvas用户数据 —— 名字、电子邮件、学生ID、消息 —— 来自教育机构。",
     "Flare详细说明了威胁行为者现在如何分发带有分层基础设施、身份分离和长期规避战术的OPSEC剧本，以避免被防御者检测到。",
-    "ProxySmart，一个在白俄罗斯明斯克运营的平台，为17个国家的94个地点提供SIM农场代理网络，为网络犯罪分子提供用于欺诈和凭证填充的住宅IP地址。",
-    "为期三个月的调查已识别出超过1250个活跃的命令与控制服务器在165个俄罗斯托管提供商中运行，形成了一个用于恶意软件和勒索软件操作的弹性基础设施。"
+    "ProxySmart，一个在白俄罗斯明斯克运营的平台，为17个国家的94个地点提供SIM农场代理网络，为网络犯罪分子提供用于欺诈和凭证填充的住宅IP地址。"
   ],
-  "sources_hash": "e9278bcb0fe008c4"
+  "sources_hash": "823fce27090b0e4a"
 }

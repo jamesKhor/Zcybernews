@@ -1,0 +1,9 @@
+{
+  "tag": "shinyhunters",
+  "locale": "en",
+  "intro": "ShinyHunters dominated the six high-severity incidents reported between April 13 and May 3, 2026. The threat actor’s activity impacted sectors including education, consumer services, entertainment, gaming, and healthcare, with victims located in North America and globally. Each of the six articles covered a distinct breach attributed to ShinyHunters, reflecting a concentrated campaign of data theft and extortion across multiple industries.",
+  "sources_hash": "f53f2b6f09678249",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-05T04:09:18.654Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

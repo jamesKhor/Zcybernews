@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 74,
+  "count": 76,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Lazarus Group",
@@ -42,15 +42,15 @@
     "Arctic"
   ],
   "severity_mix": {
+    "critical": 13,
+    "medium": 13,
     "high": 45,
-    "critical": 12,
-    "medium": 12,
     "informational": 4
   },
   "recent_excerpts": [
-    "FBI warns cargo theft losses hit $725M in US and Canada in 2025, driven by cybercriminals exploiting logistics IT systems to intercept shipments and redirect loads.",
-    "Threat actors pushed malicious PyTorch Lightning versions 2.6.2 and 2.6.3 to PyPI on April 30, 2026, stealing credentials via a typosquatted dependency — Aikido Security, Socket,…",
-    "Vimeo attributed a security incident to a breach at analytics vendor Anodot; hackers accessed internal systems but not video content, logins, or payment data."
+    "Malicious PyTorch Lightning on PyPI (v2.5.0-post1) exfiltrates browser cookies, cloud tokens, and env vars via a credential-stealing payload. Affects ML pipelines.",
+    "Malwarebytes Lock and Code podcast: Eva Velasquez details how small business cyberattacks create a 'cyber tax' that raises prices for all consumers — no sector immune.",
+    "FBI warns cargo theft losses hit $725M in US and Canada in 2025, driven by cybercriminals exploiting logistics IT systems to intercept shipments and redirect loads."
   ],
-  "sources_hash": "571ba86104a00fa1"
+  "sources_hash": "ded1dc38a40eab86"
 }

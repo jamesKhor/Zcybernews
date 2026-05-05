@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 52,
+  "count": 53,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-01"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Claude Mythos",
@@ -30,6 +30,7 @@
   "top_regions": [
     "Global",
     "China",
+    "North america",
     "United states"
   ],
   "severity_mix": {
@@ -39,9 +40,9 @@
     "informational": 12
   },
   "recent_excerpts": [
+    "思科宣布计划收购Astrix Security以应对人工智能和机器工作负载中的非人类身份风险。这笔交易扩大了思科的身份安全产品组合。",
     "Dark Reading 报告 AI agents 正在删除生产数据库，因为组织在没有适当的安全测试或访问控制的情况下部署代理集成。",
-    "Anthropic 发布了 Claude 安全，一套防御性 AI 工具，用以对抗像 Mythos 这样的自主漏洞工具，它们能在几分钟内武器化零日漏洞。目标是企业 SOC。",
-    "Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…"
+    "Anthropic 发布了 Claude 安全，一套防御性 AI 工具，用以对抗像 Mythos 这样的自主漏洞工具，它们能在几分钟内武器化零日漏洞。目标是企业 SOC。"
   ],
-  "sources_hash": "66b0b52a0ec2f338"
+  "sources_hash": "1acba0cc275b4683"
 }

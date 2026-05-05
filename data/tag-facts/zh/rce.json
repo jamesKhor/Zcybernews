@@ -1,10 +1,10 @@
 {
   "tag": "rce",
   "locale": "zh",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "PhantomCore"
@@ -12,6 +12,10 @@
   "top_cves": [
     {
       "id": "CVE-2025-54987",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-22679",
       "cvss": 9.8
     },
     {
@@ -25,30 +29,28 @@
     {
       "id": "CVE-2026-22898",
       "cvss": 8.8
-    },
-    {
-      "id": "CVE-2026-4682",
-      "cvss": 8.8
     }
   ],
   "top_sectors": [
+    "government",
+    "manufacturing",
     "academia",
     "enterprise",
-    "general",
-    "government",
-    "healthcare"
+    "enterprise software"
   ],
   "top_regions": [
+    "Asia",
+    "China",
     "Russia"
   ],
   "severity_mix": {
-    "high": 8,
-    "critical": 12
+    "critical": 13,
+    "high": 8
   },
   "recent_excerpts": [
+    "Weaver E-cology OA 中的 CVE-2026-22679（CVSS 9.8）自2026年3月中旬以来在野外被利用。攻击者在利用后运行发现命令。尚无补丁可用。",
     "CVE-2026-5943：Foxit PDF Reader 的 AcroForm 注释处理中存在利用后释放漏洞，允许未经身份验证的 RCE（CVSS 7.8）。需要用户打开恶意 PDF。",
-    "CVE-2026-5726: Delta Electronics ASDA-Soft PAR 文件解析中的基于栈的缓冲区溢出得分7.8 CVSS，并可通过精心制作的PAR文件实现远程代码执行。",
-    "Flowise AI平台和其他使用Anthropic的模型上下文协议（MCP）的框架中存在一个关键漏洞，使得远程代码执行成为可能。OX安全研究人员警告说，这个缺陷可能会影响到数百万用户，因为它允许攻击者在服务器上运行任意命令。"
+    "CVE-2026-5726: Delta Electronics ASDA-Soft PAR 文件解析中的基于栈的缓冲区溢出得分7.8 CVSS，并可通过精心制作的PAR文件实现远程代码执行。"
   ],
-  "sources_hash": "f531f649368999ee"
+  "sources_hash": "73b8c856e9db3169"
 }

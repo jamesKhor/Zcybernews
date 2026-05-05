@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-16"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Lazarus Group"
@@ -13,20 +13,21 @@
   "top_sectors": [
     "technology",
     "artificial-intelligence",
+    "cloud services",
     "cybersecurity"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "medium": 4,
     "informational": 2,
-    "medium": 3,
     "high": 2
   },
   "recent_excerpts": [
+    "OpenAI rolls out Advanced Account Security for ChatGPT: mandatory passkeys, shorter sessions, and account recovery changes. Affects all users globally.",
     "OpenAI is expanding access to its GPT-5.4-Cyber model, a specialized AI for reverse engineering and malware analysis, following the reveal of Anthropic's offensive-capable 'Mythos' model.",
-    "OpenAI is scaling its Trusted Access for Cyber (TAC) program, providing vetted security researchers and teams with prioritized access to the GPT-5.4-Cyber model for reverse engineering and vulnerabili",
-    "OpenAI has removed the undocumented 'Study Mode' from ChatGPT, a feature that disabled web search and file uploads, highlighting concerns over silent feature changes and potential security implication"
+    "OpenAI is scaling its Trusted Access for Cyber (TAC) program, providing vetted security researchers and teams with prioritized access to the GPT-5.4-Cyber model for reverse engineering and vulnerabili"
   ],
-  "sources_hash": "c2f40609cb615bad"
+  "sources_hash": "8c5b6398cc263b66"
 }

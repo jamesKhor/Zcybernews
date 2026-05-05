@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月12日至16日期间的七份报告，内容涉及与Lazarus Group相关的活动。这些事件的严重程度从信息性到高级不等，重点关注全球技术、人工智能及网络安全领域。报告中的分析详细阐述了这些行动的手法与影响，集中呈现了在此期间针对基础人工智能与安全基础设施所面临的威胁。",
-  "sources_hash": "c2f40609cb615bad",
-  "source_intro_hash": "13f4f7cade0b835e",
+  "intro": "过去三周内，ZCyberNews以openai标签发布了八篇文章，其中Lazarus Group成为被提及频率最高的威胁行为者。这些报道覆盖2026年4月12日至5月4日，主要影响全球范围内的技术、人工智能、云服务和网络安全行业。严重程度分布包括四起中等严重性事件、两篇信息性报告和两起高严重性事件，反映出活动形态多样，且无单一主导漏洞。",
+  "sources_hash": "8c5b6398cc263b66",
+  "source_intro_hash": "965708887be00d35",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:21:46.901Z",
+  "generated_at": "2026-05-05T04:10:09.008Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

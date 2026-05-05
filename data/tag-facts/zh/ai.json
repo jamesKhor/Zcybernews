@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "count": 30,
+  "count": 32,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-01"
+    "latest": "2026-05-05"
   },
   "top_actors": [
     "Bluekit",
@@ -26,15 +26,15 @@
     "Australia"
   ],
   "severity_mix": {
+    "informational": 13,
     "medium": 5,
     "high": 12,
-    "informational": 12,
     "critical": 1
   },
   "recent_excerpts": [
-    "NCSC 警告组织为紧急补丁的激增做好准备，因为人工智能加速了漏洞发现，提高了利用风险。没有引用具体的 CVE。",
-    "SecurityWeek报道，攻击者现在使用AI在几小时内武器化漏洞，迫使防御者采用自动化。没有特定的CVE或受害者被命名 — 分析文章。",
-    "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。"
+    "Elastic Security Labs 发布了 Conversational Entity Analytics，将内嵌实体数据和 Canvas 预览嵌入到 Agent Builder 中，以便在不离开聊天的情况下更快地进行威胁狩猎…",
+    "Elastic Security Labs 发布了一个功能，可以将普通英语威胁描述转换为经过验证的 ES|QL 检测规则，降低了没有查询的分析师的门槛…",
+    "NCSC 警告组织为紧急补丁的激增做好准备，因为人工智能加速了漏洞发现，提高了利用风险。没有引用具体的 CVE。"
   ],
-  "sources_hash": "4b11553b7b7c66d3"
+  "sources_hash": "19b76da2323fe6e2"
 }

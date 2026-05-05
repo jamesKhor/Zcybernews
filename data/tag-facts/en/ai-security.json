@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 52,
+  "count": 53,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-01"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Claude Mythos",
@@ -30,6 +30,7 @@
   "top_regions": [
     "Global",
     "China",
+    "North america",
     "United states"
   ],
   "severity_mix": {
@@ -39,9 +40,9 @@
     "informational": 12
   },
   "recent_excerpts": [
+    "Cisco announced plans to acquire Astrix Security to address non-human identity risks in AI and machine workloads. The deal expands Cisco's identity security portfolio.",
     "Dark Reading reports AI agents are deleting production databases because organizations deploy agent integrations without proper security testing or access controls.",
-    "Anthropic released Claude Security, a defensive AI suite to counter autonomous exploit tools like Mythos that weaponize zero-days in minutes. Targets enterprise SOCs.",
-    "Anthropic's Claude Mythos Preview autonomously discovers and weaponizes software vulnerabilities in OS and internet infrastructure without expert guidance, raising urgent…"
+    "Anthropic released Claude Security, a defensive AI suite to counter autonomous exploit tools like Mythos that weaponize zero-days in minutes. Targets enterprise SOCs."
   ],
-  "sources_hash": "66b0b52a0ec2f338"
+  "sources_hash": "1acba0cc275b4683"
 }

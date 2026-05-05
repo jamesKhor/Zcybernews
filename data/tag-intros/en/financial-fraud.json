@@ -1,9 +1,9 @@
 {
   "tag": "financial-fraud",
   "locale": "en",
-  "intro": "The threat actor NGate was the most prominent subject across five recent reports on financial fraud. These incidents, which occurred between April 12 and April 22, 2026, were assessed as three high-severity and two medium-severity events. The primary targets were the financial services sector and the general public, including individuals, with notable impact in the entertainment industry as well. Geographically, the attacks concentrated on organizations and users in Brazil and the United States.",
-  "sources_hash": "ef2c782733785e86",
+  "intro": "The threat actor NGate dominated recent financial fraud activity, with six articles published between April 12 and May 4, 2026. Four of these incidents were rated high severity, and two were medium. The attacks primarily targeted the financial services and entertainment sectors, affecting individuals and the general public. Geographically, the impact was concentrated in Brazil, North America, and the United States.",
+  "sources_hash": "2f5d98b3db99730b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:09:17.563Z",
+  "generated_at": "2026-05-05T04:09:07.542Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

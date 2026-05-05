@@ -1,10 +1,10 @@
 {
   "tag": "security-operations",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-29"
+    "latest": "2026-05-05"
   },
   "top_actors": [],
   "top_cves": [],
@@ -13,12 +13,12 @@
   ],
   "top_regions": [],
   "severity_mix": {
-    "informational": 5
+    "informational": 6
   },
   "recent_excerpts": [
+    "Elastic Security Labs 发布了 Conversational Entity Analytics，将内嵌实体数据和 Canvas 预览嵌入到 Agent Builder 中，以便在不离开聊天的情况下更快地进行威胁狩猎…",
     "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。",
-    "Rapid7 认为，大多数泄露源于资产、身份和攻击路径覆盖的可见性差距，而不是复杂的漏洞利用。",
-    "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。"
+    "Rapid7 认为，大多数泄露源于资产、身份和攻击路径覆盖的可见性差距，而不是复杂的漏洞利用。"
   ],
-  "sources_hash": "282c9d1b5f4c4df8"
+  "sources_hash": "96f47e41eb0c79a0"
 }

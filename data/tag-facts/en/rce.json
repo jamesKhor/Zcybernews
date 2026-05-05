@@ -1,10 +1,10 @@
 {
   "tag": "rce",
   "locale": "en",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-28"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "PhantomCore"
@@ -12,6 +12,10 @@
   "top_cves": [
     {
       "id": "CVE-2025-54987",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-22679",
       "cvss": 9.8
     },
     {
@@ -25,30 +29,28 @@
     {
       "id": "CVE-2026-22898",
       "cvss": 8.8
-    },
-    {
-      "id": "CVE-2026-4682",
-      "cvss": 8.8
     }
   ],
   "top_sectors": [
+    "government",
+    "manufacturing",
     "academia",
     "enterprise",
-    "general",
-    "government",
-    "healthcare"
+    "enterprise software"
   ],
   "top_regions": [
+    "Asia",
+    "China",
     "Russia"
   ],
   "severity_mix": {
-    "high": 8,
-    "critical": 12
+    "critical": 13,
+    "high": 8
   },
   "recent_excerpts": [
+    "CVE-2026-22679 (CVSS 9.8) in Weaver E-cology OA has been exploited in the wild since mid-March 2026. Attackers run discovery commands post-exploit. No patch available.",
     "CVE-2026-5943: A use-after-free in Foxit PDF Reader's AcroForm annotation handling allows unauthenticated RCE (CVSS 7.8). Requires user to open a malicious PDF.",
-    "CVE-2026-5726: A stack-based buffer overflow in Delta Electronics ASDA-Soft PAR file parsing scores 7.8 CVSS and enables remote code execution via crafted PAR files.",
-    "A critical vulnerability in the Flowise AI platform and other frameworks using Anthropic's Model Context Protocol (MCP) enables remote code execution."
+    "CVE-2026-5726: A stack-based buffer overflow in Delta Electronics ASDA-Soft PAR file parsing scores 7.8 CVSS and enables remote code execution via crafted PAR files."
   ],
-  "sources_hash": "f531f649368999ee"
+  "sources_hash": "73b8c856e9db3169"
 }

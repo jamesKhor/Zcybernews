@@ -1,10 +1,10 @@
 {
   "tag": "financial-fraud",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-22"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "NGate"
@@ -19,16 +19,17 @@
   ],
   "top_regions": [
     "Brazil",
+    "North america",
     "United states"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "Flare 详细说明了欺诈者如何使用被盗身份和合成社会安全号码绕过信用合作社贷款验证，导致机构承担数百万美元的退款费用。",
     "一个冒充TradingView AI代理的恶意网站部署了恶意软件，该软件赋予攻击者对受害者浏览器的完全控制权，使得账户盗窃和金融数据泄露成为可能…",
-    "根据 ESET 的说法，NGate 恶意软件使用 AI 生成的代码感染了合法的 HandyPay NFC 应用，从巴西超过 220,000 名 Android 用户那里窃取支付卡数据和 PIN 码。",
-    "一个复杂的电子邮件诈骗冒充 'Credit Resources Vault'，利用紧迫感和看似官方的文件欺骗财务困难的个人支付重复费用，以获取毫无价值的信用修复服务。"
+    "根据 ESET 的说法，NGate 恶意软件使用 AI 生成的代码感染了合法的 HandyPay NFC 应用，从巴西超过 220,000 名 Android 用户那里窃取支付卡数据和 PIN 码。"
   ],
-  "sources_hash": "ef2c782733785e86"
+  "sources_hash": "2f5d98b3db99730b"
 }

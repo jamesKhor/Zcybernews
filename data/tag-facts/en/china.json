@@ -1,10 +1,10 @@
 {
   "tag": "china",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-23",
-    "latest": "2026-05-01"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "GopherWhisper",
@@ -16,8 +16,8 @@
     "government",
     "defense",
     "critical infrastructure",
-    "media",
-    "technology"
+    "financial services",
+    "media"
   ],
   "top_regions": [
     "Mongolia",
@@ -27,12 +27,12 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
     "Chinese national extradited from Italy to US for alleged Silk Typhoon cyberespionage targeting US govt, defense contractors, and critical infrastructure.",
-    "Trend Micro tracks SHADOW-EARTH-053 targeting government and defense sectors across Asia and one NATO-aligned European state. Campaign uses custom backdoors and spear-phishing.",
-    "Google TAG disrupted over 10,000 DRAGONBRIDGE influence operations in Q1 2025 — the most prolific IO actor tracked — targeting elections, Ukraine war narratives, and US-China…"
+    "China-linked Silver Fox group targets Indian and Russian organizations with ABCDoor backdoor via tax-themed phishing emails in December 2025 campaign.",
+    "Trend Micro tracks SHADOW-EARTH-053 targeting government and defense sectors across Asia and one NATO-aligned European state. Campaign uses custom backdoors and spear-phishing."
   ],
-  "sources_hash": "da8684669b2e962f"
+  "sources_hash": "1d108c14f13f9326"
 }

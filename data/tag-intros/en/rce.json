@@ -1,9 +1,9 @@
 {
   "tag": "rce",
   "locale": "en",
-  "intro": "Russia is the primary region affected by remote code execution attacks tracked under the rce tag, with 20 articles published between April 12 and April 28, 2026. The threat actor PhantomCore was observed in these incidents. The severity mix includes 8 high and 12 critical vulnerabilities, with top CVEs including CVE-2025-54987 (CVSS 9.8), CVE-2025-0520 (CVSS 9.4), CVE-2026-39987 (CVSS 9.3), CVE-2026-22898 (CVSS 8.8), and CVE-2026-4682 (CVSS 8.8). Affected sectors are academia, enterprise, general, government, and healthcare.",
-  "sources_hash": "f531f649368999ee",
+  "intro": "Government and manufacturing sectors bore the brunt of 21 remote code execution incidents between April 12 and May 4, 2026, with 13 critical and eight high-severity vulnerabilities reported. Threat actor PhantomCore was observed in these attacks, which exploited several high-profile CVEs including CVE-2025-54987, CVE-2026-22679, CVE-2025-0520, CVE-2026-39987, and CVE-2026-22898. The affected regions spanned Asia, China, and Russia, with academia, enterprise, and enterprise software also among the top impacted sectors.",
+  "sources_hash": "73b8c856e9db3169",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-28T04:20:40.308Z",
+  "generated_at": "2026-05-05T04:07:49.052Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

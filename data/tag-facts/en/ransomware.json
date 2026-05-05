@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 43,
+  "count": 44,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-01"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "The Gentlemen",
@@ -36,15 +36,15 @@
     "Turkey"
   ],
   "severity_mix": {
-    "high": 34,
+    "high": 35,
     "critical": 4,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "Ransomware group claims breach of Mediaworks, a pro-Orbán Hungarian media conglomerate. The firm confirmed unauthorized access and potential data exfiltration on Friday.",
     "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers.",
-    "Two former IR firm employees got 4 years each for laundering $18M+ in BlackCat ransom payments and advising attackers on negotiation tactics.",
-    "Inc Ransom group breached Sandhills Medical in 2025; the South Carolina healthcare provider took nearly a year to disclose the incident, affecting 170,000 patients."
+    "Two former IR firm employees got 4 years each for laundering $18M+ in BlackCat ransom payments and advising attackers on negotiation tactics."
   ],
-  "sources_hash": "cb1cb32069412380"
+  "sources_hash": "ce9edb9a53cee811"
 }

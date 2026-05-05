@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "The Gentlemen、Interlock和Kyber是2026年4月12日至5月1日期间发布的43篇文章中最活跃的勒索软件威胁行为者。该档案涵盖34起高严重性事件和4起关键事件，其中CVE-2026-1731（CVSS 9.8）和CVE-2026-34197（CVSS 8.8）为最突出的漏洞。受影响的行业包括医疗、制造业、技术和关键基础设施，相关报告覆盖美国、欧洲、北美和土耳其。",
-  "sources_hash": "cb1cb32069412380",
-  "source_intro_hash": "ae28ccbfeeff0df4",
+  "intro": "The Gentlemen、Interlock和Kyber是2026年4月12日至5月4日期间发布的44篇文章中最活跃的勒索软件威胁行为者，高严重性事件在报道中占据主导地位。两个关键漏洞CVE-2026-1731（CVSS 9.8）和CVE-2026-34197（CVSS 8.8）被频繁提及，相关攻击影响了医疗、制造、技术和关键基础设施等多个行业。勒索软件活动在全球范围内被观察到，具体报告来自美国、欧洲、北美和土耳其。",
+  "sources_hash": "ce9edb9a53cee811",
+  "source_intro_hash": "30a6170f27b5f96a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:12:45.868Z",
+  "generated_at": "2026-05-05T04:10:13.939Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

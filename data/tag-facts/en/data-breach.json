@@ -1,23 +1,23 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 33,
+  "count": 37,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-03"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "ShinyHunters",
-    "RansomHub",
-    "Rhysida"
+    "LockBit",
+    "RansomHub"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "healthcare",
+    "education",
     "retail",
-    "technology",
-    "education"
+    "technology"
   ],
   "top_regions": [
     "North america",
@@ -27,13 +27,13 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 26,
+    "high": 30,
     "medium": 6
   },
   "recent_excerpts": [
-    "ShinyHunters claims to have stolen data from Instructure, the edtech firm behind Canvas LMS. Instructure confirms a breach involving unauthorized access to certain systems and…",
-    "French authorities detained a 15-year-old on April 25 for allegedly hacking ANTS, the national ID agency handling passports and driver's licenses.",
-    "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise."
+    "Infrastructure confirmed hackers accessed Canvas user data — names, emails, student IDs, messages — from educational institutions.",
+    "Instructure disclosed a breach where hackers stole names, emails, student IDs, and messages, and disrupted Canvas platform services. Data leak threats follow.",
+    "Medtronic reported unauthorized access to its corporate IT systems in a cyberattack, with no impact on medical devices or patient care operations. Data was compromised."
   ],
-  "sources_hash": "10fa6f70696e828f"
+  "sources_hash": "2aca47dbc6b29548"
 }

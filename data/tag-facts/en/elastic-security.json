@@ -1,10 +1,10 @@
 {
   "tag": "elastic-security",
   "locale": "en",
-  "count": 6,
+  "count": 9,
   "date_range": {
     "first": "2026-04-25",
-    "latest": "2026-05-02"
+    "latest": "2026-05-05"
   },
   "top_actors": [
     "TeamPCP"
@@ -21,9 +21,9 @@
     "high": 1
   },
   "recent_excerpts": [
-    "Elastic Security Labs details how to run live Osquery queries across thousands of endpoints from within Elastic Security to speed DFIR investigations without disk imaging.",
-    "Elastic Security Labs published an open-source CI/CD abuse detection template using signal extraction and LLM reasoning to catch pipeline attacks across GitHub Actions, GitLab CI,…",
-    "Elastic Security Labs publishes part two of Linux rootkit detection series, detailing behavioral detection methods that catch in-memory and kernel-level rootkits static scans miss."
+    "Elastic Security 9.4 introduces 'skills' — modular AI capabilities that automate detection, investigation, and hunting workflows.",
+    "Elastic Security Labs released a feature that converts plain-English threat descriptions into validated ES|QL detection rules, lowering the barrier for analysts without query…",
+    "Elastic Workflows reaches GA in version 9.4, adding production-ready automation with case management hooks, human-in-the-loop approvals, and natural language rule authoring for…"
   ],
-  "sources_hash": "683a4e9af9985b08"
+  "sources_hash": "dca1d72091c30b46"
 }

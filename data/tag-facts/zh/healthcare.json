@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Interlock",
@@ -27,13 +27,13 @@
     "Netherlands"
   ],
   "severity_mix": {
-    "medium": 1,
-    "high": 8
+    "high": 9,
+    "medium": 1
   },
   "recent_excerpts": [
+    "美敦力报告称其企业IT系统在网络攻击中遭到未经授权的访问，对医疗设备或患者护理操作没有影响。数据遭到泄露。",
     "摩尔多瓦国家健康保险公司报告了一起可能暴露其系统有限个人数据的网络攻击，这是在最初被入侵几周后发生的。",
-    "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。",
-    "CISA 和 FBI 发布了关于 Interlock 勒索软件的联合咨询，详细说明了 TTPs, IOCs，以及从双重勒索转向仅针对医疗保健的数据盗窃攻击的转变..."
+    "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。"
   ],
-  "sources_hash": "93ac63ddb62ad987"
+  "sources_hash": "e1685f4602248dbb"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 74,
+  "count": 76,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-04"
   },
   "top_actors": [
     "Lazarus Group",
@@ -42,15 +42,15 @@
     "Arctic"
   ],
   "severity_mix": {
+    "critical": 13,
+    "medium": 13,
     "high": 45,
-    "critical": 12,
-    "medium": 12,
     "informational": 4
   },
   "recent_excerpts": [
-    "FBI 警告称，2025 年美国和加拿大的货物盗窃损失达到 7.25 亿美元，由网络犯罪分子利用物流 IT 系统拦截货物并重新定向货物所驱动。",
-    "威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到 PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。",
-    "Vimeo 将一起安全事件归因于分析供应商 Anodot 的泄露；黑客访问了内部系统，但未访问视频内容、登录信息或支付数据。"
+    "恶意的PyTorch Lightning在PyPI（v2.5.0-post1）通过一个凭证窃取有效载荷外泄浏览器cookies、云令牌和环境变量。影响机器学习管道。",
+    "Malwarebytes Lock 和 Code 播客：Eva Velasquez 详细说明了小型企业网络攻击如何造成一个'cyber tax'，提高所有消费者的价格——没有哪个行业能免疫。",
+    "FBI 警告称，2025 年美国和加拿大的货物盗窃损失达到 7.25 亿美元，由网络犯罪分子利用物流 IT 系统拦截货物并重新定向货物所驱动。"
   ],
-  "sources_hash": "571ba86104a00fa1"
+  "sources_hash": "ded1dc38a40eab86"
 }
