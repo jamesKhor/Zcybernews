@@ -16,6 +16,7 @@
  */
 import type { GeneratedArticle } from "../ai/schemas/article-schema.js";
 import type { Story } from "../utils/dedup.js";
+import { buildSourceCorpus } from "./source-corpus.js";
 
 // ── Registry ──────────────────────────────────────────────────────────────
 
@@ -204,14 +205,6 @@ function uniqueMatches(str: string, re: RegExp): string[] {
   return Array.from(new Set(m));
 }
 
-/** Build combined source text (title + excerpt + any available body). */
-function buildSourceCorpus(sources: Story[]): string {
-  return sources
-    .map((s) => `${s.title} ${s.excerpt ?? ""}`)
-    .join("\n")
-    .toLowerCase();
-}
-
 /**
  * HEAD-check a URL with a short timeout. Returns true only on 2xx.
  * Network errors, 404s, 5xx all count as unreachable.
@@ -261,7 +254,7 @@ export async function factCheckArticle(
 ): Promise<FactCheckResult> {
   const { checkUrls = true } = options;
   const issues: FactCheckIssue[] = [];
-  const sourceText = buildSourceCorpus(sources);
+  const sourceText = buildSourceCorpus(sources).toLowerCase();
 
   // ── 0. Frontmatter SEO gates ───────────────────────────────────────────
   // Defense-in-depth — post-process truncates titles/excerpts and derives

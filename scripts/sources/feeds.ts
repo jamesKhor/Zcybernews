@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import type { SeoIntent, SourceLanguage } from "../contracts/schemas.js";
 
 export type FeedSource = {
   id: string;
@@ -19,6 +20,8 @@ export type FeedSource = {
   // data/rss-sources.json when present; `qualityScore` defaults to
   // 1.0 at fetch time when absent.
   qualityScore?: number;
+  sourceLanguage?: SourceLanguage;
+  seoIntent?: SeoIntent;
 };
 
 // Single source of truth: data/rss-sources.json

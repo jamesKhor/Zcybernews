@@ -367,6 +367,13 @@ export interface ExtractIocsInput {
    * positive rates after the post-2026-04-23 IP octet validation).
    */
   includeDomains?: boolean;
+  /**
+   * Preserve existing file_path / registry_key entries even though this
+   * extractor cannot independently rediscover them. Defaults true for
+   * backfill/manual-curation workflows. The live generation pipeline sets
+   * this false so LLM-only non-regex IOC types are stripped before publish.
+   */
+  preserveUnverifiedExisting?: boolean;
 }
 
 /**
@@ -376,7 +383,11 @@ export interface ExtractIocsInput {
  * normalized value.
  */
 export function extractIocs(input: ExtractIocsInput): IOCEntry[] {
-  const { existing = [], includeDomains = false } = input;
+  const {
+    existing = [],
+    includeDomains = false,
+    preserveUnverifiedExisting = true,
+  } = input;
   // CRITICAL: strip the References section from body BEFORE extraction.
   // The References block is markdown links to citations; those domains
   // are sources, not IOCs. Without this strip we'd flood frontmatter
@@ -479,11 +490,13 @@ export function extractIocs(input: ExtractIocsInput): IOCEntry[] {
     }
   }
 
-  // Preserve pre-existing IOCs of types we don't regex (file_path,
-  // registry_key). Dedup by type+value.
-  for (const prior of existing) {
-    if (prior.type === "file_path" || prior.type === "registry_key") {
-      push(prior);
+  if (preserveUnverifiedExisting) {
+    // Preserve pre-existing IOCs of types we don't regex (file_path,
+    // registry_key). Dedup by type+value.
+    for (const prior of existing) {
+      if (prior.type === "file_path" || prior.type === "registry_key") {
+        push(prior);
+      }
     }
   }
 

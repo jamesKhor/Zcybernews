@@ -18,8 +18,13 @@ import { writeArticlePair, DuplicateArticleError } from "./write-mdx.js";
 import { postProcessArticle } from "./post-process.js";
 import { factCheckArticle, formatFactCheckLog } from "./fact-check.js";
 import { notifyDiscord } from "./notify-discord.js";
-import { markProcessedBatch } from "../utils/cache.js";
+import { flushProcessedCache, markProcessedBatch } from "../utils/cache.js";
 import { limit } from "../utils/rate-limit.js";
+import { storyIdentityKey } from "../utils/dedup.js";
+import { routeStoriesForGeneration, type RoutedStory } from "./routing.js";
+import { enrichStoriesForGeneration } from "./source-enrichment.js";
+import { evaluatePublishQuality } from "./publish-quality-gate.js";
+import { clusterStories } from "./story-clustering.js";
 
 // ── Recent titles loader (for prompt dedup context) ────────────────────────
 
@@ -133,15 +138,6 @@ const MAX_ARTICLES = parseInt(
 );
 const DRY_RUN = args.includes("--dry-run");
 
-// ── Validation ────────────────────────────────────────────────────────────────
-
-function assertEnv(key: string) {
-  if (!process.env[key]) {
-    console.error(`[pipeline] ❌ Missing required env var: ${key}`);
-    process.exit(1);
-  }
-}
-
 if (!DRY_RUN) {
   // Need at least one AI provider — OpenRouter (free) or DeepSeek/Kimi (paid)
   if (
@@ -171,21 +167,47 @@ async function main() {
     return;
   }
 
-  // 2. Group stories into batches of 1-3 per article
-  //    (single high-value stories get their own article; related ones get merged)
-  const batches: (typeof stories)[] = [];
-  const remaining = [...stories];
-  while (remaining.length > 0 && batches.length < MAX_ARTICLES) {
-    // Take 1 story per article for now (safest for quality)
-    batches.push([remaining.shift()!]);
+  const routed = routeStoriesForGeneration(stories);
+  for (const skip of routed.skipped) {
+    console.log(
+      `[routing] skip ${skip.story.sourceId ?? skip.story.sourceName} ` +
+        `(${skip.reason}): "${skip.story.title.slice(0, 100)}"`,
+    );
   }
+  if (routed.skipped.length > 0) {
+    console.log(
+      `[routing] Skipped ${routed.skipped.length}/${stories.length} story/stories before generation`,
+    );
+  }
+  const publishableStories: RoutedStory[] = routed.publishable;
+
+  if (publishableStories.length === 0) {
+    console.log("[pipeline] No publishable stories after routing. Exiting.");
+    return;
+  }
+
+  // 2. Group related stories into batches of 1-3 per article.
+  // Multi-source clusters get priority so public candidates start with
+  // better source depth instead of single-source thin summaries.
+  const clusters = clusterStories(publishableStories);
+  const batches: Array<Array<RoutedStory & { clusterKey: string }>> = clusters
+    .slice(0, MAX_ARTICLES)
+    .map((cluster) =>
+      cluster.stories.map((story) => ({
+        ...story,
+        clusterKey: cluster.key,
+      })),
+    );
 
   console.log(`[pipeline] Will generate ${batches.length} articles\n`);
 
   if (DRY_RUN) {
     console.log("[pipeline] Dry run — stories that would be processed:");
     batches.forEach((batch, i) => {
-      console.log(`  ${i + 1}. ${batch[0]?.title} (${batch[0]?.sourceName})`);
+      const sources = [...new Set(batch.map((s) => s.sourceName))].join(", ");
+      console.log(
+        `  ${i + 1}. [${batch[0]?.clusterKey}] ${batch[0]?.title} (${sources})`,
+      );
     });
     return;
   }
@@ -194,6 +216,7 @@ async function main() {
   let skippedOffTopic = 0;
   let skippedDuplicate = 0;
   let skippedFactCheck = 0;
+  let skippedQuality = 0;
   let translationWarnings = 0;
   // Sub-categories for the `failed` bucket — makes the daily digest
   // actionable instead of opaque. Previously "Per-article failures: 28"
@@ -225,13 +248,18 @@ async function main() {
         // of disappearing into the undifferentiated `failed` bucket.
         // Returns null on failure to keep `succeeded` counting correct.
         try {
-          const storyUrls = batch.map((s) => s.url).filter(Boolean);
+          const sourceBatch = await enrichStoriesForGeneration(batch);
+          const storyUrls = sourceBatch.map((s) => s.url).filter(Boolean);
+          const clusterKey = sourceBatch[0]?.clusterKey;
+          const storyProcessedKeys = sourceBatch
+            .map((s) => storyIdentityKey(s))
+            .filter(Boolean);
           const startTime = Date.now();
           console.log(`[pipeline] Generating: "${batch[0]?.title}"…`);
 
           // Generate EN article — pass recent titles so the AI can self-reject
           // stories that are off-topic or already covered (prompt-level guard).
-          const result = await generateArticle(batch, recentTitles);
+          const result = await generateArticle(sourceBatch, recentTitles);
           if (result === null) {
             console.warn("[pipeline] ⚠️  Generation failed, skipping.");
             failedGeneration++;
@@ -248,7 +276,7 @@ async function main() {
           if (result === "reject") {
             // AI determined off-topic or already covered — counts as off-topic
             skippedOffTopic++;
-            markProcessedBatch(storyUrls);
+            markProcessedBatch(storyProcessedKeys);
             return null;
           }
           const article = result;
@@ -260,7 +288,7 @@ async function main() {
               `[pipeline] ⚠️  Off-topic article rejected: "${article.title}" (category: ${article.category})`,
             );
             skippedOffTopic++;
-            markProcessedBatch(storyUrls); // Still mark as processed to avoid retrying
+            markProcessedBatch(storyProcessedKeys); // Still mark as processed to avoid retrying
             return null;
           }
 
@@ -268,26 +296,72 @@ async function main() {
           // (slug, date, cve_ids, iocs). Script-derived = deterministic = no
           // hallucination possible on these fields. "LLM writes prose, script
           // extracts structured data."
-          postProcessArticle(article, batch);
+          postProcessArticle(article, sourceBatch);
 
           // Fact-check — regex-based cross-validation of claims against source
           // material. HIGH severity issues block publish. MEDIUM/LOW logged
           // but allowed through. Runs after post-process because post-process
           // may have fixed some issues by filtering invented CVEs.
-          const fc = await factCheckArticle(article, batch);
+          const fc = await factCheckArticle(article, sourceBatch);
           console.log(`[pipeline] ${formatFactCheckLog(fc)}`);
           if (!fc.passed) {
             console.warn(
               `[pipeline] ❌ Fact-check rejected "${article.title}" — ${fc.issues.filter((i) => i.severity === "high").length} high-severity issues`,
             );
             skippedFactCheck++;
-            markProcessedBatch(storyUrls);
+            markProcessedBatch(storyProcessedKeys);
             return null;
           }
 
-          // Translate to ZH
-          console.log(`[pipeline] Translating: "${article.title}"…`);
-          let zhMeta = await translateArticle(article);
+          // Publish quality gate — deterministic scorer, shared with the
+          // daily audit and digest guard. This blocks articles that are
+          // technically valid but would damage reader trust if published:
+          // serious flags, no References section, or threat-intel/vuln
+          // pieces with thin structured fields.
+          const qualityDecision = evaluatePublishQuality(article, storyUrls);
+          if (!qualityDecision.allowed) {
+            const blockingCodes = qualityDecision.blockingFlags.map(
+              (f) => f.code,
+            );
+            console.warn(
+              `[pipeline] ❌ Quality gate rejected "${article.title}" — ${blockingCodes.join(", ")}`,
+            );
+            console.log(
+              JSON.stringify({
+                event: "article_blocked_quality",
+                slug: article.slug,
+                title: article.title,
+                category: article.category,
+                headline_score: qualityDecision.score.headlineScore,
+                word_count: qualityDecision.score.wordCount,
+                structured_richness: qualityDecision.score.structuredRichness,
+                blocking_flags: blockingCodes,
+                all_flags: qualityDecision.score.flags.map((f) => ({
+                  code: f.code,
+                  severity: f.severity,
+                })),
+                source_title: batch[0]?.title,
+                source_url: batch[0]?.url,
+              }),
+            );
+            skippedQuality++;
+            markProcessedBatch(storyProcessedKeys);
+            return null;
+          }
+
+          const translationDecision = sourceBatch[0]?.translationDecision;
+          const shouldTranslate =
+            translationDecision?.action === "translate-and-publish-both";
+          let zhMeta = null;
+          if (shouldTranslate) {
+            // Translate to ZH
+            console.log(`[pipeline] Translating: "${article.title}"…`);
+            zhMeta = await translateArticle(article);
+          } else {
+            console.log(
+              `[pipeline] Translation skipped by routing (${translationDecision?.action ?? "unknown"})`,
+            );
+          }
 
           // Translation quality gate
           if (zhMeta) {
@@ -307,7 +381,10 @@ async function main() {
           // Write MDX files (with shift-right duplicate check)
           let paths: { en: string; zh: string | null };
           try {
-            paths = writeArticlePair(article, zhMeta, storyUrls);
+            paths = writeArticlePair(article, zhMeta, storyUrls, {
+              clusterKey,
+              sourceCount: storyUrls.length,
+            });
           } catch (err) {
             if (err instanceof DuplicateArticleError) {
               // SHIFT-RIGHT TRIPPED: article passed RSS-side dedup but the
@@ -329,7 +406,7 @@ async function main() {
                 }),
               );
               skippedDuplicate++;
-              markProcessedBatch(storyUrls);
+              markProcessedBatch(storyProcessedKeys);
               return null;
             }
             throw err;
@@ -374,7 +451,7 @@ async function main() {
           }
 
           // Mark source URLs as processed
-          markProcessedBatch(storyUrls);
+          markProcessedBatch(storyProcessedKeys);
 
           return { article, paths };
         } catch (err) {
@@ -417,12 +494,13 @@ async function main() {
       skippedOffTopic -
       skippedDuplicate -
       skippedFactCheck -
+      skippedQuality -
       classifiedFailed,
   );
   const failed = classifiedFailed + unclassifiedFailed;
 
   console.log(
-    `\n📊 Pipeline complete: ${succeeded} written, ${skippedDuplicate} duplicates blocked, ${skippedOffTopic} off-topic rejected, ${skippedFactCheck} fact-check rejected, ${translationWarnings} translation warnings, ${failed} failed (gen=${failedGeneration} exc=${failedException} unk=${unclassifiedFailed})\n`,
+    `\n📊 Pipeline complete: ${succeeded} written, ${skippedDuplicate} duplicates blocked, ${skippedOffTopic} off-topic rejected, ${skippedFactCheck} fact-check rejected, ${skippedQuality} quality rejected, ${translationWarnings} translation warnings, ${failed} failed (gen=${failedGeneration} exc=${failedException} unk=${unclassifiedFailed})\n`,
   );
 
   // Write run summary as JSON
@@ -436,6 +514,7 @@ async function main() {
       duplicates_blocked: skippedDuplicate,
       off_topic_rejected: skippedOffTopic,
       fact_check_rejected: skippedFactCheck,
+      quality_rejected: skippedQuality,
       translation_warnings: translationWarnings,
       failed,
       // Sub-category breakdown — surfaced in daily digest for debugging.
@@ -445,11 +524,31 @@ async function main() {
     }),
   );
 
+  flushProcessedCache();
   if (failed > 0) process.exit(1);
 }
 
+function flushBeforeExit() {
+  try {
+    flushProcessedCache();
+  } catch (err) {
+    console.error("[pipeline] Failed to flush processed cache:", err);
+  }
+}
+
+process.once("SIGINT", () => {
+  flushBeforeExit();
+  process.exit(130);
+});
+
+process.once("SIGTERM", () => {
+  flushBeforeExit();
+  process.exit(143);
+});
+
 main()
   .then(() => {
+    flushBeforeExit();
     // Force exit even if pending async handles (e.g., undici keep-alive
     // sockets from failed OpenRouter retries) would otherwise keep the
     // Node event loop alive. Without this, the pipeline process hangs
@@ -460,5 +559,6 @@ main()
   })
   .catch((err) => {
     console.error("[pipeline] Fatal error:", err);
+    flushBeforeExit();
     process.exit(1);
   });

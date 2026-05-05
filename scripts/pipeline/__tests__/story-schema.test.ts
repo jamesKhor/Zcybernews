@@ -1,8 +1,9 @@
 /**
  * Story schema regression tests — Phase B A2.2.
  *
- * The Story type gained 5 optional fields on 2026-04-22 (sourceId,
- * sourceCategory, fetchedAt, qualityScore, isVendor). These tests pin
+ * The Story type gained optional pipeline contract fields after 2026-04-22
+ * (sourceId, sourceCategory, fetchedAt, qualityScore, isVendor, etc.).
+ * These tests pin
  * the shape invariants so a future edit can't silently break the
  * contract:
  *
@@ -51,10 +52,20 @@ describe("Story type — A2.2 additive fields carry expected types", () => {
       fetchedAt: "2026-04-22T00:00:00.000Z",
       qualityScore: 1.0,
       isVendor: false,
+      identityKey: "cisa-kev-CVE-2026-1234",
+      sourceLanguage: "en",
+      seoIntent: "rank-both",
+      sourceType: "rss",
+      rawText: "Full fetched article text",
     };
     expect(full.sourceId).toBe("krebs");
     expect(full.qualityScore).toBe(1.0);
     expect(full.isVendor).toBe(false);
+    expect(full.identityKey).toBe("cisa-kev-CVE-2026-1234");
+    expect(full.sourceLanguage).toBe("en");
+    expect(full.seoIntent).toBe("rank-both");
+    expect(full.sourceType).toBe("rss");
+    expect(full.rawText).toBe("Full fetched article text");
   });
 
   it("leaves new fields undefined when not populated (no default coercion)", () => {
@@ -75,5 +86,10 @@ describe("Story type — A2.2 additive fields carry expected types", () => {
     expect(partial.sourceId).toBeUndefined();
     expect(partial.fetchedAt).toBeUndefined();
     expect(partial.qualityScore).toBeUndefined();
+    expect(partial.identityKey).toBeUndefined();
+    expect(partial.sourceLanguage).toBeUndefined();
+    expect(partial.seoIntent).toBeUndefined();
+    expect(partial.sourceType).toBeUndefined();
+    expect(partial.rawText).toBeUndefined();
   });
 });

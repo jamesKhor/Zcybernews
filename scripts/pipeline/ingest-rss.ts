@@ -10,6 +10,7 @@ import {
   SIMILARITY_THRESHOLD,
   PUBLISHED_LOOKBACK_DAYS,
   type Story,
+  storyIdentityKey,
 } from "../utils/dedup.js";
 import { isProcessed } from "../utils/cache.js";
 import { limit, withRetry } from "../utils/rate-limit.js";
@@ -71,10 +72,13 @@ async function fetchRss(source: FeedSource): Promise<Story[]> {
     fetchedAt,
     qualityScore: source.qualityScore ?? 1.0,
     isVendor: false,
+    sourceLanguage: source.sourceLanguage ?? "en",
+    seoIntent: source.seoIntent ?? "rank-en",
+    sourceType: source.type,
   }));
 }
 
-type CisaKevEntry = {
+export type CisaKevEntry = {
   cveID: string;
   vulnerabilityName: string;
   shortDescription: string;
@@ -85,18 +89,16 @@ type CisaKevEntry = {
   product: string;
 };
 
-async function fetchCisaKev(source: FeedSource): Promise<Story[]> {
-  const res = await fetch(source.url, {
-    headers: { "User-Agent": "ZCyberNews/1.0 Pipeline" },
-    signal: AbortSignal.timeout(15000),
-  });
-  if (!res.ok) throw new Error(`CISA KEV HTTP ${res.status}`);
-  const data = (await res.json()) as { vulnerabilities: CisaKevEntry[] };
-  const fetchedAt = new Date().toISOString();
-  return (data.vulnerabilities ?? []).slice(0, 20).map((v) => ({
+export function mapCisaKevToStories(
+  entries: CisaKevEntry[],
+  source: FeedSource,
+  fetchedAt: string,
+): Story[] {
+  return (entries ?? []).slice(0, 20).map((v) => ({
     id: `cisa-kev-${v.cveID}`,
     title: `[${v.cveID}] ${v.vulnerabilityName}`,
     url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+    identityKey: `cisa-kev-${v.cveID}`,
     excerpt: `${v.shortDescription} Required action: ${v.requiredAction} Due: ${v.dueDate}`,
     sourceName: source.name,
     publishedAt: new Date(v.dateAdded).toISOString(),
@@ -107,7 +109,21 @@ async function fetchCisaKev(source: FeedSource): Promise<Story[]> {
     fetchedAt,
     qualityScore: source.qualityScore ?? 1.0,
     isVendor: false,
+    sourceLanguage: source.sourceLanguage ?? "en",
+    seoIntent: source.seoIntent ?? "rank-en",
+    sourceType: source.type,
   }));
+}
+
+async function fetchCisaKev(source: FeedSource): Promise<Story[]> {
+  const res = await fetch(source.url, {
+    headers: { "User-Agent": "ZCyberNews/1.0 Pipeline" },
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!res.ok) throw new Error(`CISA KEV HTTP ${res.status}`);
+  const data = (await res.json()) as { vulnerabilities: CisaKevEntry[] };
+  const fetchedAt = new Date().toISOString();
+  return mapCisaKevToStories(data.vulnerabilities ?? [], source, fetchedAt);
 }
 
 /** Fetch all enabled feeds, deduplicate, filter already-processed URLs. */
@@ -245,7 +261,10 @@ export async function ingestFeeds(maxStories = 20): Promise<Story[]> {
   console.log(`[ingest] After dedup: ${deduped.length} stories`);
 
   // Filter already processed URLs
-  const fresh = deduped.filter((s) => s.url && !isProcessed(s.url));
+  const fresh = deduped.filter((s) => {
+    const key = storyIdentityKey(s);
+    return key && !isProcessed(key);
+  });
   console.log(`[ingest] Fresh (not yet processed): ${fresh.length} stories`);
 
   // Filter stories too similar to articles published in the last N days.

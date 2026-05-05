@@ -231,6 +231,28 @@ describe("extractIocs — preserves existing types we don't regex", () => {
     expect(out.some((i) => i.type === "registry_key")).toBe(true);
   });
 
+  it("strips file_path + registry_key when preservation is disabled", () => {
+    const existing = [
+      {
+        type: "file_path" as const,
+        value: "C:\\Windows\\System32\\evil.dll",
+        confidence: "high" as const,
+      },
+      {
+        type: "registry_key" as const,
+        value: "HKLM\\SOFTWARE\\Evil",
+        confidence: "high" as const,
+      },
+    ];
+    const out = extractIocs({
+      body: "",
+      sourceText: "",
+      existing,
+      preserveUnverifiedExisting: false,
+    });
+    expect(out).toHaveLength(0);
+  });
+
   it("DOES NOT preserve existing hash/IP/domain entries (they must re-pass cross-check)", () => {
     const existing = [
       {
