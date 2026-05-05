@@ -54,6 +54,37 @@ const IMPACT_KEYWORDS = [
   "database",
 ];
 
+const TRAFFIC_PULL_KEYWORDS = [
+  "privilege escalation",
+  "local privilege",
+  "lpe",
+  "remote code execution",
+  "rce",
+  "zero-day",
+  "0-day",
+  "actively exploited",
+  "exploited",
+  "exploit released",
+  "proof-of-concept",
+  "poc",
+  "kernel",
+  "linux",
+  "sudo",
+  "microsoft",
+  "windows",
+  "office",
+  "exchange",
+  "sharepoint",
+  "android",
+  "chrome",
+  "github",
+  "docker",
+  "kubernetes",
+];
+
+const NAMED_INCIDENT_RE =
+  /\b(?:badsuccessor|bad-successor|blast-radius|citrixbleed|dirty\s+pipe|eclipse|ingressnightmare|log4shell|nightmare|printnightmare|proxyshell|regresshion|spring4shell|storm|tool\s*shell|typhoon|zerologon)\b/i;
+
 function publishedTime(story: Story): number {
   const t = new Date(story.publishedAt).getTime();
   return Number.isFinite(t) ? t : 0;
@@ -169,6 +200,16 @@ function storyEditorialPriorityScore(story: Story): number {
 
   if (extractThreatActor(text)) score += 8;
   if (ACTOR_INTEL_KEYWORDS.some((word) => lower.includes(word))) score += 5;
+  if (NAMED_INCIDENT_RE.test(text)) score += 6;
+  if (TRAFFIC_PULL_KEYWORDS.some((word) => lower.includes(word))) score += 4;
+  if (
+    /(?:linux|kernel|sudo|windows|microsoft)/i.test(text) &&
+    /(?:privilege escalation|local privilege|rce|remote code execution|exploit|vulnerability|flaw|bug|cve-\d{4}-\d{4,})/i.test(
+      text,
+    )
+  ) {
+    score += 4;
+  }
   if (/\b\d[\d,.]*\s*(?:k|m|million|billion)?\b/i.test(text)) score += 2;
   if (IMPACT_KEYWORDS.some((word) => lower.includes(word))) score += 2;
   if (extractCVEs(text).length > 0) score += 3;
