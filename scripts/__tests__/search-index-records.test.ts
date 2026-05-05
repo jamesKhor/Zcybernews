@@ -48,4 +48,26 @@ describe("buildSearchIndexRecord", () => {
     });
     expect(record.content).toContain("token replay");
   });
+
+  it("keeps legacy visible articles searchable without publish_tier", () => {
+    const record = buildSearchIndexRecord({
+      frontmatter: {
+        ...frontmatter,
+        title: "GPT-5 Release: Security Implications for Enterprise Defenders",
+        slug: "gpt5-security-implications-enterprise",
+        excerpt: "OpenAI's GPT-5 raises the bar for AI-assisted cyberattacks.",
+        category: "ai",
+        tags: ["ai", "llm", "gpt-5"],
+      },
+      content: "OpenAI released GPT-5 with defensive security implications.",
+      locale: "en",
+      section: "posts",
+    });
+
+    expect(record.url).toBe(
+      "/en/articles/gpt5-security-implications-enterprise",
+    );
+    expect(record.content.toLowerCase()).toContain("gpt-5");
+    expect(record.filters?.tags).toContain("gpt-5");
+  });
 });

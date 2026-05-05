@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Pipeline cache — generated diagnostics and third-party artifacts
+    ".pipeline-cache/**",
     // Pagefind compiled output — third-party, do not lint
     "public/pagefind/**",
   ]),

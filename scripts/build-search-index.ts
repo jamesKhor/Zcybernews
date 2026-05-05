@@ -6,7 +6,6 @@ import {
   ArticleFrontmatterSchema,
   type ArticleFrontmatter,
 } from "../lib/types.js";
-import { isPublicFrontmatter } from "../lib/publication.js";
 import { buildSearchIndexRecord } from "./search-index-records.js";
 import type { ArticleLocale, ArticleSection } from "../lib/article-url.js";
 
@@ -56,10 +55,7 @@ function loadArticles(): LoadedArticle[] {
             continue;
           }
 
-          if (
-            !isPublishedNow(result.data) ||
-            !isPublicFrontmatter(result.data)
-          ) {
+          if (!isPublishedNow(result.data)) {
             continue;
           }
 
