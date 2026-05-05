@@ -1,9 +1,10 @@
 import { fetchArticle } from "../../lib/article-fetcher.js";
 import type { Story } from "../utils/dedup.js";
-import { limit } from "../utils/rate-limit.js";
+import pLimit from "p-limit";
 
 const FETCH_TIMEOUT_MS = 8_000;
 const MIN_USEFUL_TEXT_CHARS = 300;
+const sourceFetchLimit = pLimit(3);
 
 function shouldFetchSource(story: Story): boolean {
   const type = story.sourceType ?? "rss";
@@ -46,7 +47,7 @@ export async function enrichStoriesForGeneration<T extends Story>(
 ): Promise<T[]> {
   return Promise.all(
     stories.map((story) =>
-      limit(async () => {
+      sourceFetchLimit(async () => {
         const enriched = await enrichStorySource(story);
         return { ...story, ...enriched } as T;
       }),
