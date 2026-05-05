@@ -13,6 +13,8 @@
     "qa": "npm run typecheck && npm run test && npm run build",
     "qa:fast": "npm run typecheck && npm run test",
     "feed:index": "tsx scripts/build-feed-index.ts",
+    "sources:audit": "tsx scripts/audit-feed-sources.ts",
+    "sources:audit:strict": "tsx scripts/audit-feed-sources.ts --strict",
     "search:index": "tsx scripts/build-search-index.ts",
     "telegram:summary": "tsx scripts/telegram-summary.ts",
     "quality:audit": "tsx scripts/audit-published-quality.ts",

@@ -301,7 +301,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: zcybernews
           key: ${{ secrets.VPS_SSH_KEY }}
-          command_timeout: 5m
+          command_timeout: 10m
           script: |
             set -e
             cd /home/zcybernews/zcybernews
@@ -356,11 +356,21 @@ jobs:
 
             echo "🏥 Health check..."
             sleep 5
-            curl -sf http://localhost:3000 > /dev/null || {
-              echo "❌ Health check failed — recent logs:"
-              pm2 logs zcybernews --lines 20 --nostream
-              exit 1
-            }
+            for attempt in 1 2 3; do
+              if curl --connect-timeout 5 --max-time 20 -fsS http://127.0.0.1:3000/en > /dev/null; then
+                echo "✅ Local health check passed on attempt ${attempt}"
+                break
+              fi
+
+              if [ "${attempt}" = "3" ]; then
+                echo "❌ Health check failed after 3 attempts — recent logs:"
+                pm2 logs zcybernews --lines 20 --nostream
+                exit 1
+              fi
+
+              echo "⏳ Local health check attempt ${attempt} failed; retrying..."
+              sleep 5
+            done
 
             echo "✅ Deployed $(git rev-parse --short HEAD) at $(TZ='Asia/Singapore' date '+%Y-%m-%d %H:%M:%S SGT')"
 

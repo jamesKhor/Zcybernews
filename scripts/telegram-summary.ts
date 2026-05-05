@@ -216,11 +216,24 @@ type FeedHealthFile = Record<
   string,
   { lastSuccess?: string; consecutiveFailures?: number }
 >;
+type FeedSourceFile = Array<{ id?: string; enabled?: boolean }>;
+
+function loadEnabledSourceIds(): Set<string> | null {
+  const sources = readJson<FeedSourceFile>("data/rss-sources.json");
+  if (!Array.isArray(sources)) return null;
+  return new Set(
+    sources
+      .filter((source) => source.enabled !== false && source.id)
+      .map((source) => String(source.id)),
+  );
+}
 
 function loadFeedProblems(now = Date.now()): string[] {
   const health = readJson<FeedHealthFile>("data/feed-health.json");
   if (!health) return [];
+  const enabledSourceIds = loadEnabledSourceIds();
   return Object.entries(health)
+    .filter(([name]) => !enabledSourceIds || enabledSourceIds.has(name))
     .flatMap(([name, item]) => {
       const failures = item.consecutiveFailures ?? 0;
       const lastSuccessMs = item.lastSuccess

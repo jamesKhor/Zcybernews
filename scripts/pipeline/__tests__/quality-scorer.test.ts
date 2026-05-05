@@ -9,6 +9,7 @@
 import { describe, it, expect } from "vitest";
 import {
   countWords,
+  hasReferenceSignal,
   hasReferencesSection,
   findHedgingHits,
   scoreArticle,
@@ -127,6 +128,23 @@ describe("hasReferencesSection", () => {
   });
 });
 
+describe("hasReferenceSignal", () => {
+  it("accepts source_urls frontmatter as a citation signal", () => {
+    expect(hasReferenceSignal("No markdown reference heading.", fm())).toBe(
+      true,
+    );
+  });
+
+  it("returns false when neither body nor frontmatter has references", () => {
+    expect(
+      hasReferenceSignal(
+        "No markdown reference heading.",
+        fm({ source_urls: [] }),
+      ),
+    ).toBe(false);
+  });
+});
+
 describe("findHedgingHits", () => {
   it("catches hedging phrases in body", () => {
     const hits = findHedgingHits(
@@ -221,7 +239,7 @@ describe("scoreArticle — WARN flags", () => {
       slug: "x",
       locale: "en",
       section: "posts",
-      frontmatter: fm(),
+      frontmatter: fm({ source_urls: [] }),
       body: "## Executive Summary\n\nSome content here without references.",
     });
     expect(s.flags.some((f) => f.code === "missing_references")).toBe(true);

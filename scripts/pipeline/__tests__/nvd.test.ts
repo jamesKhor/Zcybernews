@@ -4,7 +4,11 @@
  * is unhelpful).
  */
 import { describe, it, expect } from "vitest";
-import { mapNvdToStories, type NvdFeedPayload } from "../fetchers/nvd";
+import {
+  buildNvdApiUrl,
+  mapNvdToStories,
+  type NvdFeedPayload,
+} from "../fetchers/nvd";
 import type { FeedSource } from "../../sources/feeds";
 
 const NVD_SOURCE: FeedSource = {
@@ -221,5 +225,26 @@ describe("mapNvdToStories", () => {
     };
     const stories = mapNvdToStories(many, NVD_SOURCE, NOW);
     expect(stories.length).toBeLessThanOrEqual(20);
+  });
+});
+
+describe("buildNvdApiUrl", () => {
+  it("builds an NVD 2.0 API URL for the recent publication window", () => {
+    const url = new URL(
+      buildNvdApiUrl(
+        "https://services.nvd.nist.gov/rest/json/cves/2.0",
+        new Date("2026-05-05T12:00:00.000Z"),
+        8,
+      ),
+    );
+
+    expect(`${url.origin}${url.pathname}`).toBe(
+      "https://services.nvd.nist.gov/rest/json/cves/2.0",
+    );
+    expect(url.searchParams.get("pubStartDate")).toBe(
+      "2026-04-27T12:00:00.000",
+    );
+    expect(url.searchParams.get("pubEndDate")).toBe("2026-05-05T12:00:00.000");
+    expect(url.searchParams.get("resultsPerPage")).toBe("200");
   });
 });

@@ -42,6 +42,7 @@ const BOILERPLATE_PATTERNS: RegExp[] = [
   /Read\s+(?:more|the\s+full\s+story)[^.]*?\./gi,
   /Source:\s+[A-Z][^.]*?\./g,
   /\[Read\s+More\]/gi,
+  /https?:\/\/\S+/gi,
   // Common tracking / analytics residue
   /feedburner\.(?:com|google)\S*/gi,
   /feedproxy\.google\.com\S*/gi,
@@ -50,6 +51,7 @@ const BOILERPLATE_PATTERNS: RegExp[] = [
 
 /** Minimum substantive chars required for a feed item to pass. */
 const MIN_SUBSTANTIVE_CHARS = 120;
+const URL_RE = /https?:\/\/\S+/gi;
 
 export interface ThinExcerptInput {
   title: string;
@@ -79,6 +81,16 @@ function substantiveCharCount(excerpt: string): number {
   return cleaned.length;
 }
 
+function isLinkedStormcastDigest(title: string, excerpt: string): boolean {
+  const urlCount = excerpt.match(URL_RE)?.length ?? 0;
+  return (
+    /^SANS\s+Stormcast\b/i.test(title) &&
+    title.includes(":") &&
+    title.split(";").length >= 3 &&
+    urlCount >= 2
+  );
+}
+
 /**
  * Decide whether a feed item's excerpt carries enough substance to
  * be worth generating against.
@@ -100,6 +112,12 @@ export function isThinExcerpt(input: ThinExcerptInput): ThinExcerptVerdict {
   if (excerpt.length === 0) {
     return { isThin: true, substantiveChars: 0, reason: "empty" };
   }
+  if (isLinkedStormcastDigest(input.title ?? "", excerpt)) {
+    return {
+      isThin: false,
+      substantiveChars: substantiveCharCount(excerpt),
+    };
+  }
   const substantiveChars = substantiveCharCount(excerpt);
   if (substantiveChars === 0) {
     return { isThin: true, substantiveChars: 0, reason: "boilerplate-only" };
@@ -115,4 +133,5 @@ export const THIN_EXCERPT_INTERNALS = {
   BOILERPLATE_PATTERNS,
   MIN_SUBSTANTIVE_CHARS,
   substantiveCharCount,
+  isLinkedStormcastDigest,
 };

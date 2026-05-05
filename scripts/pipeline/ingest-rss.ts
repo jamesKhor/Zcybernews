@@ -35,6 +35,11 @@ const parser = new Parser({
 function stripHtml(html: string): string {
   return html
     .replace(/<[^>]*>/g, "")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -76,6 +81,70 @@ async function fetchRss(source: FeedSource): Promise<Story[]> {
     seoIntent: source.seoIntent ?? "rank-en",
     sourceType: source.type,
   }));
+}
+
+type WordPressPost = {
+  id?: number;
+  link?: string;
+  date?: string;
+  date_gmt?: string;
+  title?: { rendered?: string };
+  excerpt?: { rendered?: string };
+};
+
+export function mapWordPressPostsToStories(
+  posts: WordPressPost[],
+  source: FeedSource,
+  fetchedAt: string,
+): Story[] {
+  return posts.slice(0, 25).flatMap((post, i) => {
+    const title = stripHtml(post.title?.rendered ?? "").trim();
+    const url = post.link ?? "";
+    if (!title || !url) return [];
+
+    const publishedAt = post.date_gmt
+      ? `${post.date_gmt}Z`
+      : (post.date ?? fetchedAt);
+
+    return {
+      id: `${source.id}-${post.id ?? url ?? i}`,
+      title,
+      url,
+      excerpt: stripHtml(post.excerpt?.rendered ?? "").slice(0, 400),
+      sourceName: source.name,
+      publishedAt: new Date(publishedAt).toISOString(),
+      tags: [],
+      sourceId: source.id,
+      sourceCategory: source.category,
+      fetchedAt,
+      qualityScore: source.qualityScore ?? 1.0,
+      isVendor: false,
+      sourceLanguage: source.sourceLanguage ?? "en",
+      seoIntent: source.seoIntent ?? "rank-en",
+      sourceType: source.type,
+    };
+  });
+}
+
+async function fetchWordPressJson(source: FeedSource): Promise<Story[]> {
+  const res = await fetch(source.url, {
+    headers: {
+      "User-Agent": "ZCyberNews/1.0 Pipeline (+https://zcybernews.com)",
+      Accept: "application/json",
+    },
+    signal: AbortSignal.timeout(FEED_WALL_CLOCK_MS),
+  });
+  if (!res.ok) throw new Error(`WordPress JSON HTTP ${res.status}`);
+  const posts = (await res.json()) as WordPressPost[];
+  const fetchedAt = new Date().toISOString();
+  return mapWordPressPostsToStories(posts, source, fetchedAt);
+}
+
+export function fetchSourceStories(source: FeedSource): Promise<Story[]> {
+  if (source.type === "cisa-kev") return fetchCisaKev(source);
+  if (source.type === "nvd-json") return fetchNvd(source);
+  if (source.type === "wordpress-json") return fetchWordPressJson(source);
+  return fetchRss(source);
 }
 
 export type CisaKevEntry = {
@@ -138,9 +207,7 @@ export async function ingestFeeds(maxStories = 20): Promise<Story[]> {
           // the authoritative vulnerabilities primary source. Any
           // unknown type falls through to RSS (rss-parser handles
           // most feeds robustly).
-          if (source.type === "cisa-kev") return fetchCisaKev(source);
-          if (source.type === "nvd-json") return fetchNvd(source);
-          return fetchRss(source);
+          return fetchSourceStories(source);
         }),
       ),
     ),

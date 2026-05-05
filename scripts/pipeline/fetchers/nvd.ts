@@ -23,6 +23,7 @@ import type { Story } from "../../utils/dedup.js";
 
 const NVD_WALL_CLOCK_MS = 25_000;
 const MAX_STORIES_PER_FETCH = 20;
+const RECENT_WINDOW_DAYS = 2;
 
 // ─── NVD 2.0 shape (narrow projection — only fields we consume) ───────
 // Full schema: https://nvd.nist.gov/developers/vulnerabilities
@@ -178,12 +179,30 @@ export function mapNvdToStories(
 
 // ─── IO wrapper ───────────────────────────────────────────────────────
 
+function formatNvdDate(value: Date): string {
+  return value.toISOString().replace(/Z$/, "");
+}
+
+export function buildNvdApiUrl(
+  sourceUrl: string,
+  now = new Date(),
+  windowDays = RECENT_WINDOW_DAYS,
+): string {
+  const end = now;
+  const start = new Date(end.getTime() - windowDays * 24 * 60 * 60 * 1000);
+  const url = new URL(sourceUrl);
+  url.searchParams.set("pubStartDate", formatNvdDate(start));
+  url.searchParams.set("pubEndDate", formatNvdDate(end));
+  url.searchParams.set("resultsPerPage", "200");
+  return url.toString();
+}
+
 /**
  * Fetch NVD recent feed + map. Called by ingest-rss.ts when
  * source.type === "nvd-json".
  */
 export async function fetchNvd(source: FeedSource): Promise<Story[]> {
-  const res = await fetch(source.url, {
+  const res = await fetch(buildNvdApiUrl(source.url), {
     headers: {
       "User-Agent": "ZCyberNews/1.0 Pipeline (+https://zcybernews.com)",
       Accept: "application/json",
