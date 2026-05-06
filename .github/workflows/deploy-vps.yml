@@ -379,7 +379,6 @@ jobs:
             pm2 start npm --name zcybernews \
               --cwd /home/zcybernews/zcybernews \
               -i 2 \
-              --exec-mode cluster \
               --max-memory-restart 750M \
               -- start
             pm2 save
