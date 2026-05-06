@@ -1,6 +1,7 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { type NextRequest, NextResponse } from "next/server";
+import { canonicalPathForSeoVariant } from "./lib/seo-url-normalization";
 
 const intlMiddleware = createMiddleware({ ...routing });
 
@@ -58,7 +59,23 @@ export default function proxy(request: NextRequest) {
     return NextResponse.redirect(apexUrl, 308);
   }
 
-  // ── 2) Locale-less paths → default locale (permanent) ─────────────────────
+  // ── 2) Stale GSC URL hygiene variants → canonical public path ────────────
+  // Search Console examples include `/zh/tags/Windows`, tag slugs with spaces,
+  // and truncated article slugs ending in `-`. Redirect before rendering so
+  // Google sees one permanent canonical target instead of indexing 404 or soft
+  // 404 variants.
+  const canonicalSeoPath = canonicalPathForSeoVariant(
+    pathname,
+    routing.defaultLocale,
+  );
+  if (canonicalSeoPath) {
+    const canonicalUrl = request.nextUrl.clone();
+    canonicalUrl.pathname = canonicalSeoPath;
+    canonicalUrl.search = search;
+    return NextResponse.redirect(canonicalUrl, 308);
+  }
+
+  // ── 3) Locale-less paths → default locale (permanent) ─────────────────────
   // Root `/` is skipped — next-intl legitimately content-negotiates it via
   // Accept-Language (and root 307 is a standards-correct negotiation response).
   // For every other path that has no /en or /zh prefix, issue a 308 so Google
