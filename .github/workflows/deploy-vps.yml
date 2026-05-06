@@ -58,6 +58,18 @@ jobs:
             exit 0
           fi
 
+          # Deploy runtime changes must exercise the full deploy path. These
+          # files decide how the production Next.js process is rebuilt,
+          # swapped, and restarted; treating them as content-only can let a
+          # "successful" run leave production serving an old runtime.
+          if echo "$CHANGED" | grep -q -E '^(\.github/workflows/deploy-vps\.yml|scripts/ops/)'; then
+            echo "needs_rebuild=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::Deploy runtime change detected — full rebuild needed"
+            echo "Files triggering rebuild:"
+            echo "$CHANGED" | grep -E '^(\.github/workflows/deploy-vps\.yml|scripts/ops/)' || true
+            exit 0
+          fi
+
           # Paths that DON'T require a VPS rebuild — strip them out of the
           # change list; if nothing remains, it's a no-rebuild change.
           #
@@ -73,7 +85,8 @@ jobs:
           #     data/                       → subscribers.json, rss-sources.json
           #
           #   CI/CD configuration (runs on GitHub's runners, not the VPS):
-          #     .github/workflows/          → workflow YAML files
+          #     .github/workflows/          → workflow YAML files, except
+          #                                    deploy-vps.yml above
           #     .github/actions/            → custom composite actions
           #     .github/ISSUE_TEMPLATE/     → issue templates
           #     .github/dependabot.yml, .github/FUNDING.yml, etc. (see root match)
@@ -86,7 +99,8 @@ jobs:
           #
           #   Scripts (run on GitHub Actions OR as separate PM2 processes —
           #   none of them are loaded by the zcybernews Next.js process):
-          #     scripts/                    → pipeline, AI provider, telegram bot
+          #     scripts/                    → pipeline, AI provider, telegram bot,
+          #                                    except scripts/ops/ above
           #     NOTE: scripts/telegram/bot.mjs is a separate PM2 process
           #     (tg-claude); changes there need manual 'pm2 restart tg-claude'
           #     on the VPS. Not handled by this workflow.
