@@ -133,7 +133,17 @@ jobs:
             cd /home/zcybernews/zcybernews
 
             echo "⬇️  Pulling latest content..."
-            git fetch origin main
+            for attempt in 1 2 3; do
+              if git fetch origin main; then
+                break
+              fi
+              if [ "$attempt" = "3" ]; then
+                echo "::error::git fetch failed after 3 attempts"
+                exit 1
+              fi
+              echo "::warning::git fetch attempt $attempt failed; retrying in $((attempt * 5))s"
+              sleep $((attempt * 5))
+            done
             git reset --hard origin/main
 
             echo "🔎 Regenerating public discovery artifacts..."
@@ -324,11 +334,33 @@ jobs:
             cd /home/zcybernews/zcybernews
 
             echo "⬇️  Syncing source code (for server-side reads — content/, app/, lib/, scripts/)..."
-            git fetch origin main
+            OLD_LOCK_HASH=""
+            if [ -f package-lock.json ]; then
+              OLD_LOCK_HASH=$(sha256sum package-lock.json | awk '{print $1}')
+            fi
+            for attempt in 1 2 3; do
+              if git fetch origin main; then
+                break
+              fi
+              if [ "$attempt" = "3" ]; then
+                echo "::error::git fetch failed after 3 attempts"
+                exit 1
+              fi
+              echo "::warning::git fetch attempt $attempt failed; retrying in $((attempt * 5))s"
+              sleep $((attempt * 5))
+            done
             git reset --hard origin/main
 
-            echo "📦 Installing dependencies (server-side deps still needed)..."
-            HUSKY=0 npm ci --production=false --silent
+            NEW_LOCK_HASH=""
+            if [ -f package-lock.json ]; then
+              NEW_LOCK_HASH=$(sha256sum package-lock.json | awk '{print $1}')
+            fi
+            if [ ! -d node_modules ] || [ "$OLD_LOCK_HASH" != "$NEW_LOCK_HASH" ]; then
+              echo "📦 Installing dependencies (package lock changed or node_modules missing)..."
+              HUSKY=0 npm ci --production=false --silent
+            else
+              echo "📦 Dependencies unchanged; skipping npm ci on VPS"
+            fi
 
             echo "🔎 Regenerating public discovery artifacts..."
             npm run feed:index
