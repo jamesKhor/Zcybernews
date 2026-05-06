@@ -34,16 +34,16 @@ export const TTPEntrySchema = z.object({
  * through to silent post-process truncation — operator never knew.
  */
 export const GeneratedArticleSchema = z.object({
-  // title: 30-80 chars. Hard reject if shorter (broken generation) or longer
+  // title: 30-70 chars. Hard reject if shorter (broken generation) or longer
   // (post-process truncation hides the LLM's failure to follow length rule).
-  title: z.string().min(30).max(80),
+  title: z.string().min(30).max(70),
   slug: z
     .string()
     .regex(/^[a-z0-9-]+$/)
     .min(8)
     .max(80),
-  // excerpt: 100-200 chars. Aligns with fact-check gates (rejects >200, <100).
-  excerpt: z.string().min(100).max(200),
+  // excerpt: 100-180 chars. Aligns with SERP-safe quality gates.
+  excerpt: z.string().min(100).max(180),
   category: z.enum([
     "threat-intel",
     "vulnerabilities",
@@ -76,7 +76,7 @@ export const GeneratedArticleSchema = z.object({
   affected_regions: z.array(z.string()),
   iocs: z.array(IOCEntrySchema),
   ttp_matrix: z.array(TTPEntrySchema),
-  // body: minimum 400 chars. Even "advisory" tier targets 400-700 words
+  // body: minimum 400 chars. Even "advisory" tier targets 650-900 words
   // (~2400-4200 chars). <400 chars = broken generation, force regen.
   // Cap at 25000 chars (~3500 words) — beyond that is padding/hedging.
   body: z.string().min(400).max(25000),

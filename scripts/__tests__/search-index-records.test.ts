@@ -3,6 +3,7 @@ import {
   buildSearchIndexRecord,
   SEARCH_TAG_SEPARATOR,
 } from "../search-index-records";
+import { isSearchIndexableFrontmatter } from "../build-search-index";
 import type { ArticleFrontmatter } from "../../lib/types";
 
 const frontmatter: ArticleFrontmatter = {
@@ -69,5 +70,14 @@ describe("buildSearchIndexRecord", () => {
     );
     expect(record.content.toLowerCase()).toContain("gpt-5");
     expect(record.filters?.tags).toContain("gpt-5");
+  });
+
+  it("excludes brief articles from the generated Pagefind index", () => {
+    expect(
+      isSearchIndexableFrontmatter({ ...frontmatter, publish_tier: "brief" }),
+    ).toBe(false);
+    expect(
+      isSearchIndexableFrontmatter({ ...frontmatter, publish_tier: "public" }),
+    ).toBe(true);
   });
 });

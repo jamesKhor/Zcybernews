@@ -1,0 +1,125 @@
+name: Critical Vendor Watch
+
+on:
+  schedule:
+    - cron: "15 * * * *"
+  workflow_dispatch:
+    inputs:
+      max_articles:
+        description: "Max articles to generate"
+        required: false
+        default: "3"
+      dry_run:
+        description: "Dry run — fetch feeds but do not generate or write"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: critical-vendor-watch
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate Critical Vendor Articles
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          HUSKY: 0
+
+      - name: Restore pipeline cache
+        uses: actions/cache@v4
+        with:
+          path: .pipeline-cache
+          key: critical-vendor-cache-v1-${{ github.run_id }}
+          restore-keys: |
+            critical-vendor-cache-v1-
+            critical-vendor-cache-
+
+      - name: Run critical vendor pipeline
+        id: pipeline
+        env:
+          MAX_ARTICLES: ${{ inputs.max_articles || '3' }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          CRITICAL_ONLY: "true"
+          SOURCE_IDS: "fortinet-psirt,ivanti-advisory,unit42,checkpoint-research,volexity"
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          MAX_ARTICLES=$(echo "$MAX_ARTICLES" | grep -oE '^[0-9]+$' || echo 3)
+          ARGS="--max-articles=$MAX_ARTICLES --critical-only"
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          set +e
+          npx tsx scripts/pipeline/index.ts $ARGS
+          PIPELINE_EXIT=$?
+          set -e
+          echo "pipeline_exit=$PIPELINE_EXIT" >> "$GITHUB_OUTPUT"
+          if [ "$PIPELINE_EXIT" -ne 0 ]; then
+            echo "::warning::Critical vendor pipeline exited with code $PIPELINE_EXIT"
+          fi
+
+      - name: Detect new content
+        id: detect
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          NEW_FILES=$(git status --short content/ public/images/articles/ .pipeline-cache/ 2>/dev/null | wc -l | tr -d ' ')
+          echo "new_files=$NEW_FILES" >> "$GITHUB_OUTPUT"
+          echo "📂 $NEW_FILES new or modified file(s)"
+
+      - name: Commit generated content
+        if: ${{ inputs.dry_run != 'true' && steps.detect.outputs.new_files != '0' }}
+        run: |
+          set -e
+          git config user.name "zcybernews-bot"
+          git config user.email "bot@zcybernews.com"
+          for p in content public/images/articles data; do
+            if [ -e "$p" ]; then
+              git add "$p" 2>/dev/null || true
+            fi
+          done
+          if git diff --staged --quiet; then
+            echo "::notice::Nothing to commit — skipping push"
+            exit 0
+          fi
+          git commit -m "chore: critical vendor pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          if git push origin main; then
+            echo "✅ Pushed successfully"
+          else
+            echo "::error::Failed to push critical vendor content"
+            exit 1
+          fi
+
+      - name: Trigger deploy-vps
+        if: ${{ inputs.dry_run != 'true' && steps.detect.outputs.new_files != '0' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh workflow run deploy-vps.yml --ref main; then
+            echo "✅ Dispatched deploy-vps.yml"
+          else
+            echo "::error::Failed to dispatch deploy-vps. Critical vendor articles were committed but may not reach the VPS."
+            exit 1
+          fi

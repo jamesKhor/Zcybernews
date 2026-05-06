@@ -1,6 +1,307 @@
 {
-  "generatedAt": "2026-05-04T00:00:00.000Z",
+  "generatedAt": "2026-05-06T00:00:00.000Z",
   "articles": [
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "APT37 Targets Ethnic Koreans in China With Android BirdCall Malware",
+      "slug": "2026-05-06-apt37-targets-ethnic-koreans-in-china-with-android-birdcall-malware",
+      "excerpt": "ESET says APT37 compromised Sqgame card game platform to deliver BirdCall backdoor to Android devices, stealing SMS, call logs, and private keys from ethnic Koreans in Yanbian.",
+      "date": "2026-05-06",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "apt37",
+        "birdcall",
+        "android-malware",
+        "supply-chain-attack",
+        "north-korea",
+        "espionage"
+      ],
+      "severity": "high",
+      "threat_actor": "APT37"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "MOVEit Automation CVE-2026-5174 Raises Patch Urgency After Cl0p History",
+      "slug": "2026-05-06-moveit-automation-cve-2026-5174-cl0p-history-patch-urgency",
+      "excerpt": "CVE-2026-5174 is a high-severity MOVEit Automation privilege-escalation flaw. No APT or Cl0p exploitation is confirmed, but the 2023 MOVEit compromise history makes rapid patching urgent.",
+      "date": "2026-05-06",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "moveit",
+        "moveit-automation",
+        "progress-software",
+        "cve-2026-5174",
+        "cl0p",
+        "ta505",
+        "apt-risk",
+        "privilege-escalation"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Palo Alto PAN-OS CVE-2026-0300 Attacked via Captive Portal",
+      "slug": "2026-05-06-palo-alto-pan-os-cve-2026-0300-attacked-via-captive-portal",
+      "excerpt": "CVE-2026-0300 is a critical PAN-OS buffer overflow in the User-ID Authentication Portal. Fixed builds are upcoming, so disable or restrict the portal immediately.",
+      "date": "2026-05-06",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "palo-alto-networks",
+        "pan-os",
+        "cve-2026-0300",
+        "buffer-overflow",
+        "remote-code-execution",
+        "active-exploitation"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "USB Drop Attack That Defined Social Engineering Turns 20",
+      "slug": "2026-05-06-usb-drop-attack-that-defined-social-engineering-turns-20",
+      "excerpt": "Steve Stasiukonis's 2006 USB drop test at a credit union — 15 of 20 drives plugged in by employees — became the blueprint for physical social engineering assessments still used…",
+      "date": "2026-05-06",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "social-engineering",
+        "usb-drop-attack",
+        "physical-security",
+        "penetration-testing",
+        "history"
+      ],
+      "severity": "informational",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Apache Patches Critical HTTP/2 Double-Free Flaw CVE-2026-23918",
+      "slug": "2026-05-05-apache-patches-critical-http-2-double-free-flaw-cve-2026-23918",
+      "excerpt": "Apache HTTP Server CVE-2026-23918 (CVSS 8.8) enables DoS and potential RCE via double-free in HTTP/2 handling. Affects all mod_http2 users. Patch now.",
+      "date": "2026-05-05",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "apache",
+        "http-server",
+        "cve-2026-23918",
+        "http2",
+        "remote-code-execution",
+        "denial-of-service"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "CloudZ RAT Hijacks Microsoft Phone Link to Steal SMS, OTPs",
+      "slug": "2026-05-05-cloudz-rat-hijacks-microsoft-phone-link-to-steal-sms-otps",
+      "excerpt": "Cisco Talos: CloudZ RAT's new Pheno plugin abuses Windows Phone Link to read SMS and OTPs from local SQLite database.",
+      "date": "2026-05-05",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "cloudz",
+        "pheno",
+        "microsoft-phone-link",
+        "sms-interception",
+        "otp-theft",
+        "cisco-talos"
+      ],
+      "severity": "high",
+      "threat_actor": "CloudZ"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Critical Ollama Bug CVE-2026-7482 Exposes 300K Deployments",
+      "slug": "2026-05-05-critical-ollama-bug-cve-2026-7482-exposes-300k-deployments",
+      "excerpt": "Cyera discloses CVE-2026-7482 (CVSS 9.3) — a heap out-of-bounds read in Ollama's GGUF model loader that leaks prompts, API keys, and secrets via three unauthenticated API calls.",
+      "date": "2026-05-05",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "ollama",
+        "cve-2026-7482",
+        "bleeding-llama",
+        "llm-security",
+        "heap-out-of-bounds",
+        "cyera"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "EOL Open Source Blind Spots Hide 400K+ Unflagged CVEs",
+      "slug": "2026-05-05-eol-open-source-blind-spots-hide-400k-unflagged-cves",
+      "excerpt": "HeroDevs analysis: 5.4M EOL package versions across npm, PyPI, Maven evade SCA scanners; ~80% of CVEs on supported versions also affect unlisted EOL releases. Free scan offered.",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "open-source-security",
+        "eol-software",
+        "sca-tools",
+        "supply-chain-security",
+        "cve-blind-spots",
+        "herodevs"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Persistent OAuth Tokens: The Back Door Attackers Exploit",
+      "slug": "2026-05-05-persistent-oauth-tokens-the-back-door-attackers-exploit",
+      "excerpt": "OAuth tokens with no expiration persist in Google and Microsoft tenants — attackers bypass MFA and perimeter controls.",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "oauth",
+        "token-security",
+        "identity-threats",
+        "cloud-security",
+        "attack-surface"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "ShinyHunters Breaches Vimeo, Leaks 119K User Records",
+      "slug": "2026-05-05-shinyhunters-breaches-vimeo-leaks-119k-user-records",
+      "excerpt": "ShinyHunters leaked a 106GB archive of Vimeo data after breaching Anodot, exposing emails and names of 119,200 users. No credentials or payment info compromised.",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "shinyhunters",
+        "vimeo",
+        "anodot",
+        "data-breach",
+        "extortion",
+        "saas"
+      ],
+      "severity": "high",
+      "threat_actor": "ShinyHunters"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Student Hacked Taiwan High-Speed Rail TETRA System, Triggered",
+      "slug": "2026-05-05-student-hacked-taiwan-high-speed-rail-tetra-system-triggered-emergency-brakes",
+      "excerpt": "A 23-year-old student used SDR gear to clone TETRA radio parameters, sending a 'General Alarm' signal that halted 4 THSR trains for 48 minutes.",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "tetra",
+        "critical-infrastructure",
+        "sdr",
+        "taiwan",
+        "radio-hacking",
+        "scada"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Trellix Source Code Breach Exposes Security Product Internals",
+      "slug": "2026-05-05-trellix-source-code-breach-exposes-security-product-internals",
+      "excerpt": "Attackers stole source code from Trellix, exposing detection logic and control locations in its security products. The breach amplifies supply chain risks for enterprise customers.",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "trellix",
+        "source-code-breach",
+        "supply-chain-attack",
+        "security-products",
+        "intellectual-property-theft"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Cisco Acquires Astrix Security for Non-Human Identity Protection",
+      "slug": "2026-05-04-cisco-acquires-astrix-security-for-non-human-identity-protection",
+      "excerpt": "Cisco announced plans to acquire Astrix Security to address non-human identity risks in AI and machine workloads. The deal expands Cisco's identity security portfolio.",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "cisco",
+        "astrix-security",
+        "identity-security",
+        "non-human-identities",
+        "acquisition",
+        "ai-security"
+      ],
+      "severity": null,
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Cyber Tax Raises Consumer Prices After Breaches, Podcast Warns",
+      "slug": "2026-05-04-cyber-tax-raises-consumer-prices-after-breaches-podcast-warns",
+      "excerpt": "Malwarebytes Lock and Code podcast: Eva Velasquez details how small business cyberattacks create a 'cyber tax' that raises prices for all consumers — no sector immune.",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "cyber-tax",
+        "small-business",
+        "supply-chain",
+        "consumer-impact",
+        "malwarebytes",
+        "lock-and-code"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Cybersecurity M&A Roundup: 33 Deals Announced in April 2026",
+      "slug": "2026-05-04-cybersecurity-m-a-roundup-33-deals-announced-in-april-2026",
+      "excerpt": "SecurityWeek reports 33 cybersecurity M&A deals in April 2026, including acquisitions by Airbus, Cyera, Fortra, Palo Alto Networks, Silverfort, and Socket.",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "mergers-and-acquisitions",
+        "cybersecurity-industry",
+        "airbus",
+        "cyera",
+        "fortra",
+        "palo-alto-networks",
+        "silverfort",
+        "socket"
+      ],
+      "severity": null,
+      "threat_actor": null
+    },
     {
       "locale": "en",
       "section": "posts",
@@ -36,6 +337,439 @@
         "data-breach",
         "student-data",
         "education-sector"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Loan Fraud Rings Exploit Credit Union Verification Gaps",
+      "slug": "2026-05-04-loan-fraud-rings-exploit-credit-union-verification-gaps",
+      "excerpt": "Flare details how fraudsters bypass credit union loan verification using stolen identities and synthetic SSNs, costing institutions millions in chargebacks.",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "credit-unions",
+        "loan-fraud",
+        "synthetic-identity",
+        "stolen-identities",
+        "financial-fraud",
+        "flare"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Medtronic Discloses Cyberattack on Corporate IT Systems",
+      "slug": "2026-05-04-medtronic-discloses-cyberattack-on-corporate-it-systems",
+      "excerpt": "Medtronic reported unauthorized access to its corporate IT systems in a cyberattack, with no impact on medical devices or patient care operations. Data was compromised.",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "medtronic",
+        "healthcare",
+        "data-breach",
+        "cyberattack",
+        "corporate-it"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "OpenAI Strengthens ChatGPT Login Security With New Controls",
+      "slug": "2026-05-04-openai-strengthens-chatgpt-login-security-with-new-controls",
+      "excerpt": "OpenAI rolls out Advanced Account Security for ChatGPT: mandatory passkeys, shorter sessions, and account recovery changes. Affects all users globally.",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "openai",
+        "chatgpt",
+        "account-security",
+        "passkeys",
+        "credential-stuffing",
+        "authentication"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Polymarket Gamblers Threaten Journalist Over Event Verification",
+      "slug": "2026-05-04-polymarket-gamblers-threaten-journalist-over-event-verification",
+      "excerpt": "Polymarket gamblers threatened a journalist whose story was used to verify a real-world event for betting settlements, highlighting oracle manipulation risks on the prediction…",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "polymarket",
+        "oracle-manipulation",
+        "prediction-market",
+        "journalist-threats",
+        "event-verification"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Pro-Orbán Media Firm Mediaworks Breached by Ransomware Group",
+      "slug": "2026-05-04-pro-orbn-media-firm-mediaworks-breached-by-ransomware-group",
+      "excerpt": "Ransomware group claims breach of Mediaworks, a pro-Orbán Hungarian media conglomerate. The firm confirmed unauthorized access and potential data exfiltration on Friday.",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ransomware",
+        "mediaworks",
+        "hungary",
+        "data-breach",
+        "pro-orbán-media"
+      ],
+      "severity": "high",
+      "threat_actor": "LockBit"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Weaver E-cology Zero-Day CVE-2026-22679 Exploited Since March",
+      "slug": "2026-05-04-weaver-e-cology-zero-day-cve-2026-22679-exploited-since-march",
+      "excerpt": "CVE-2026-22679 (CVSS 9.8) in Weaver E-cology OA has been exploited in the wild since mid-March 2026. Attackers run discovery commands post-exploit. No patch available.",
+      "date": "2026-05-04",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "weaver",
+        "e-cology",
+        "cve-2026-22679",
+        "rce",
+        "zero-day",
+        "active-exploitation"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Instructure Data Breach: ShinyHunters Claims Theft",
+      "slug": "2026-05-03-instructure-data-breach-shinyhunters-claims-theft",
+      "excerpt": "ShinyHunters claims to have stolen data from Instructure, the edtech firm behind Canvas LMS. Instructure confirms a breach involving unauthorized access to certain systems and…",
+      "date": "2026-05-03",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "instructure",
+        "shinyhunters",
+        "data-breach",
+        "canvas",
+        "edtech",
+        "extortion"
+      ],
+      "severity": "high",
+      "threat_actor": "ShinyHunters"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Microsoft Defender False Positives Flag DigiCert Certs as Trojans",
+      "slug": "2026-05-03-microsoft-defender-false-positives-flag-digicert-certs-as-trojans",
+      "excerpt": "Microsoft Defender is flagging legitimate DigiCert root certificates as Trojan:Win32/Cerdigent.A!dha, triggering false-positive alerts and certificate removal on Windows systems.",
+      "date": "2026-05-03",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "microsoft-defender",
+        "digicert",
+        "false-positive",
+        "trojan:win32/cerdigent",
+        "certificate-detection",
+        "windows-security"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Flowise RCE Vulnerability CVE-2026-41265 Carries CVSS 9.8",
+      "slug": "2026-05-02-flowise-rce-vulnerability-cve-2026-41265-carries-cvss-9-8",
+      "excerpt": "CVE-2026-41265 in Flowise Airtable_Agent allows unauthenticated remote code execution with CVSS 9.8. ZDI advisory details code injection in default installations.",
+      "date": "2026-05-02",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "flowise",
+        "cve-2026-41265",
+        "remote-code-execution",
+        "zdi",
+        "code-injection",
+        "ai-tools"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Instructure Probes Cyber Incident Impacting Canvas Platform",
+      "slug": "2026-05-02-instructure-probes-cyber-incident-impacting-canvas-platform",
+      "excerpt": "Instructure, maker of the Canvas LMS used by over 30 million students, disclosed a cybersecurity incident and is investigating potential data exposure across its infrastructure.",
+      "date": "2026-05-02",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "instructure",
+        "canvas",
+        "edtech-breach",
+        "cyber-incident",
+        "learning-management-system"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Poisoned Ruby Gems, Go Modules Hijack CI/CD Pipelines",
+      "slug": "2026-05-02-poisoned-ruby-gems-go-modules-hijack-ci-cd-pipelines",
+      "excerpt": "BufferZoneCorp account published malicious Ruby gems and Go modules that steal credentials, tamper with GitHub Actions, and establish SSH persistence in CI pipelines.",
+      "date": "2026-05-02",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "supply-chain-attack",
+        "ruby-gems",
+        "go-modules",
+        "ci/cd-security",
+        "credential-theft",
+        "github-actions"
+      ],
+      "severity": "high",
+      "threat_actor": "BufferZoneCorp"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Trellix Breach: Source Code Repository Compromised",
+      "slug": "2026-05-02-trellix-breach-source-code-repository-compromised",
+      "excerpt": "Trellix confirmed attackers accessed a portion of its source code repository. The firm engaged forensic experts and notified law enforcement. No customer data impact disclosed.",
+      "date": "2026-05-02",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "trellix",
+        "source-code-breach",
+        "supply-chain-security",
+        "incident-response",
+        "forensic-investigation"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "AI Agents Wreck Production Databases Due to Poor Access Controls",
+      "slug": "2026-05-01-ai-agents-wreck-production-databases-due-to-poor-access-controls",
+      "excerpt": "Dark Reading reports AI agents are deleting production databases because organizations deploy agent integrations without proper security testing or access controls.",
+      "date": "2026-05-01",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ai-security",
+        "access-control",
+        "database-security",
+        "cloud-security",
+        "agent-integrations"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Deep#Door Python Backdoor Targets Windows Systems for Espionage",
+      "slug": "2026-05-01-deep-door-python-backdoor-targets-windows-systems-for-espionage",
+      "excerpt": "Deep#Door Python backdoor deploys persistent Windows implant for espionage — uses encrypted C2 channels, file exfiltration, and remote shell. No patch available.",
+      "date": "2026-05-01",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "deep#door",
+        "python-backdoor",
+        "windows-implant",
+        "espionage",
+        "persistent-access",
+        "c2"
+      ],
+      "severity": "high",
+      "threat_actor": "Deep#Door"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Ex-Incident Responders Sentenced to 4 Years for Ransomware Attacks",
+      "slug": "2026-05-01-ex-incident-responders-sentenced-to-4-years-for-ransomware-attacks",
+      "excerpt": "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers.",
+      "date": "2026-05-01",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ransomware",
+        "incident-response",
+        "insider-threat",
+        "sentencing",
+        "cybercrime"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Ex-Ransomware Negotiators Sentenced to 4 Years for BlackCat Attacks",
+      "slug": "2026-05-01-ex-ransomware-negotiators-sentenced-to-4-years-for-blackcat-attacks",
+      "excerpt": "Two former IR firm employees got 4 years each for laundering $18M+ in BlackCat ransom payments and advising attackers on negotiation tactics.",
+      "date": "2026-05-01",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "blackcat",
+        "alphv",
+        "ransomware",
+        "sentencing",
+        "money-laundering",
+        "insider-threat"
+      ],
+      "severity": "high",
+      "threat_actor": "BlackCat"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Mini Shai-Hulud Attack Hijacks SAP, Lightning, Intercom Packages",
+      "slug": "2026-05-01-mini-shai-hulud-attack-hijacks-sap-lightning-intercom-packages",
+      "excerpt": "Attackers compromised SAP, Lightning, and Intercom npm packages in a supply chain attack affecting 1,800 victims; packages had 10M monthly downloads.",
+      "date": "2026-05-01",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "supply-chain-attack",
+        "npm",
+        "sap",
+        "lightning",
+        "intercom",
+        "shai-hulud"
+      ],
+      "severity": "critical",
+      "threat_actor": "Mini Shai-Hulud"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "UK Cyber Agency Warns AI Will Trigger 'Patch Wave' of Urgent Fixes",
+      "slug": "2026-05-01-uk-cyber-agency-warns-ai-will-trigger-patch-wave-of-urgent-fixes",
+      "excerpt": "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited.",
+      "date": "2026-05-01",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ncsc",
+        "ai",
+        "patch-management",
+        "vulnerability-discovery",
+        "uk-government"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Anthropic Launches Claude Security for AI-Driven Exploit Defense",
+      "slug": "2026-04-30-anthropic-launches-claude-security-for-ai-driven-exploit-defense",
+      "excerpt": "Anthropic released Claude Security, a defensive AI suite to counter autonomous exploit tools like Mythos that weaponize zero-days in minutes. Targets enterprise SOCs.",
+      "date": "2026-04-30",
+      "category": "tools",
+      "author": "ZCyberNews",
+      "tags": [
+        "anthropic",
+        "claude-security",
+        "mythos",
+        "ai-security",
+        "autonomous-exploits",
+        "enterprise-defense"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "BHIS Pentest Data: Same Top Flaws Plague Orgs in 2025",
+      "slug": "2026-04-30-bhis-pentest-data-same-top-flaws-plague-orgs-in-2025",
+      "excerpt": "Black Hills InfoSec's 2025 pentest analysis of 15 months of data shows the same top 10 vulnerabilities as 2022 — weak passwords, unpatched RDP, and misconfigured MFA remain…",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "penetration-testing",
+        "bhis",
+        "vulnerability-trends",
+        "weak-passwords",
+        "rdp",
+        "mfa",
+        "privilege-escalation"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Brazilian DDoS Firm Behind Botnet Attacks on ISPs",
+      "slug": "2026-04-30-brazilian-ddos-firm-behind-botnet-attacks-on-isps",
+      "excerpt": "Brazilian anti-DDoS firm's infrastructure used to launch massive botnet attacks against rival ISPs. CEO claims breach by competitor caused the abuse.",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ddos",
+        "botnet",
+        "brazil",
+        "krebsonsecurity",
+        "isp-attacks",
+        "cybercrime"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "CISA Details FCEB Agency Breach Response Lessons Learned",
+      "slug": "2026-04-30-cisa-details-fceb-agency-breach-response-lessons-learned",
+      "excerpt": "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders.",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "cisa",
+        "fceb",
+        "incident-response",
+        "edr",
+        "federal-government",
+        "lessons-learned"
       ],
       "severity": "high",
       "threat_actor": null
@@ -82,6 +816,164 @@
     {
       "locale": "en",
       "section": "posts",
+      "title": "DEEP#DOOR Python Backdoor Steals Browser, Cloud Credentials",
+      "slug": "2026-04-30-deep-door-python-backdoor-steals-browser-cloud-credentials",
+      "excerpt": "DEEP#DOOR Python backdoor uses tunneling service for C2, disables Windows security via batch script, and harvests browser cookies and cloud tokens from infected hosts.",
+      "date": "2026-04-30",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "deep#door",
+        "python-backdoor",
+        "credential-theft",
+        "tunneling-service",
+        "windows-security-bypass",
+        "cloud-credential-harvesting"
+      ],
+      "severity": "high",
+      "threat_actor": "DEEP#DOOR"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "FBI Warns Cybercriminals Driving $725M Cargo Theft Surge",
+      "slug": "2026-04-30-fbi-warns-cybercriminals-driving-725m-cargo-theft-surge",
+      "excerpt": "FBI warns cargo theft losses hit $725M in US and Canada in 2025, driven by cybercriminals exploiting logistics IT systems to intercept shipments and redirect loads.",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "fbi",
+        "cargo-theft",
+        "transportation",
+        "logistics",
+        "cyber-enabled-crime",
+        "supply-chain"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "French Police Arrest 15-Year-Old in ANTS Data Breach Probe",
+      "slug": "2026-04-30-french-police-arrest-15-year-old-in-ants-data-breach-probe",
+      "excerpt": "French authorities detained a 15-year-old on April 25 for allegedly hacking ANTS, the national ID agency handling passports and driver's licenses.",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "data-breach",
+        "france",
+        "ants",
+        "teen-hacker",
+        "national-id",
+        "law-enforcement"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Inc Ransom Breach at Sandhills Medical Exposes 170K Records",
+      "slug": "2026-04-30-inc-ransom-breach-at-sandhills-medical-exposes-170k-records",
+      "excerpt": "Inc Ransom group breached Sandhills Medical in 2025; the South Carolina healthcare provider took nearly a year to disclose the incident, affecting 170,000 patients.",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "inc-ransom",
+        "ransomware",
+        "healthcare-breach",
+        "sandhills-medical",
+        "data-exfiltration"
+      ],
+      "severity": "high",
+      "threat_actor": "Inc Ransom"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Linux 'Copy Fail' LPE CVE-2026-31431 Lets Local Users Gain Root",
+      "slug": "2026-04-30-linux-copy-fail-lpe-cve-2026-31431-lets-local-users-gain-root",
+      "excerpt": "CVE-2026-31431 (CVSS 7.8) dubbed 'Copy Fail' lets unprivileged local users write four controlled bytes to any readable file's page cache, enabling root on major Linux…",
+      "date": "2026-04-30",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "cve-2026-31431",
+        "linux",
+        "privilege-escalation",
+        "kernel-vulnerability",
+        "copy-fail"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Moldova Health Agency Breach: Possible Data Theft Confirmed",
+      "slug": "2026-04-30-moldova-health-agency-breach-possible-data-theft-confirmed",
+      "excerpt": "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise.",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "moldova",
+        "healthcare",
+        "data-breach",
+        "cyberattack",
+        "government-agency"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "PyTorch Lightning Compromised in PyPI Supply Chain Attack",
+      "slug": "2026-04-30-pytorch-lightning-compromised-in-pypi-supply-chain-attack",
+      "excerpt": "Threat actors pushed malicious PyTorch Lightning versions 2.6.2 and 2.6.3 to PyPI on April 30, 2026, stealing credentials via a typosquatted dependency — Aikido Security, Socket,…",
+      "date": "2026-04-30",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "pypi",
+        "supply-chain",
+        "credential-theft",
+        "pytorch-lightning",
+        "python",
+        "open-source"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Silver Fox Targets Russia, India With ABCDoor Backdoor",
+      "slug": "2026-04-30-silver-fox-targets-russia-india-with-abcdoor-backdoor",
+      "excerpt": "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky.",
+      "date": "2026-04-30",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "silver-fox",
+        "abcdoor",
+        "valleyrat",
+        "backdoor",
+        "phishing",
+        "russia",
+        "india"
+      ],
+      "severity": "high",
+      "threat_actor": "Silver Fox"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
       "title": "SMS Blaster Busts, OpenEMR Flaws, 600K Roblox Hacks in ThreatsDay",
       "slug": "2026-04-30-sms-blaster-busts-openemr-flaws-600k-roblox-hacks-in-threatsday-roundup",
       "excerpt": "Fake cell towers blast scam texts; OpenEMR flaws expose patient data; 600,000 Roblox accounts hacked via credential stuffing. A busy week in cyber threats.",
@@ -95,6 +987,65 @@
         "credential-stuffing",
         "fake-cell-towers",
         "threat-roundup"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Trump Cyber Ambassador Nominee Advances to Senate Vote",
+      "slug": "2026-04-30-trump-cyber-ambassador-nominee-advances-to-senate-vote",
+      "excerpt": "Adam Cassady, Trump's pick to lead the State Department's Bureau of Cyberspace and Digital Policy, cleared a Senate committee vote 17-5 and now heads to a full floor vote.",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "state-department",
+        "cyber-diplomacy",
+        "adam-cassady",
+        "senate-confirmation",
+        "bureau-of-cyberspace-and-digital-policy"
+      ],
+      "severity": "informational",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Chrome 147, Firefox 150 Patch Critical Code Execution Flaws",
+      "slug": "2026-04-29-chrome-147-firefox-150-patch-critical-code-execution-flaws",
+      "excerpt": "Google and Mozilla ship Chrome 147 and Firefox 150 to fix critical and high-severity vulnerabilities enabling arbitrary code execution. Users urged to update immediately.",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "chrome",
+        "firefox",
+        "browser-security",
+        "critical-vulnerabilities",
+        "arbitrary-code-execution"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "CISA Adds Actively Exploited ConnectWise, Windows Flaws to KEV",
+      "slug": "2026-04-29-cisa-adds-actively-exploited-connectwise-windows-flaws-to-kev",
+      "excerpt": "CISA added CVE-2024-1708 (ConnectWise ScreenConnect path traversal, CVSS 8.4) and an unnamed Windows flaw to its KEV catalog based on confirmed active exploitation.",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "cisa",
+        "kev",
+        "connectwise",
+        "screenconnect",
+        "windows",
+        "active-exploitation",
+        "path-traversal"
       ],
       "severity": "high",
       "threat_actor": null
@@ -158,6 +1109,124 @@
       ],
       "severity": "high",
       "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "GitHub CVE-2026-3854 RCE Flaw Exploitable via Single Git Push",
+      "slug": "2026-04-29-github-cve-2026-3854-rce-flaw-exploitable-via-single-git-push",
+      "excerpt": "CVE-2026-3854 (CVSS 8.7) lets authenticated users with push access achieve remote code execution on GitHub.com and GitHub Enterprise Server via a crafted git push command.",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "cve-2026-3854",
+        "github",
+        "remote-code-execution",
+        "command-injection",
+        "github-enterprise-server"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Oracle VirtualBox Race Condition Lets Attackers Escalate Privileges",
+      "slug": "2026-04-29-oracle-virtualbox-race-condition-lets-attackers-escalate-privileges",
+      "excerpt": "CVE-2026-35230: A race condition in VirtualBox's SoundBlaster 16 emulation allows local attackers with high-privileged guest access to escalate privileges. CVSS 7.5.",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "oracle",
+        "virtualbox",
+        "privilege-escalation",
+        "race-condition",
+        "cve-2026-35230",
+        "zdi"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Project Zero Dusts Off 2017 VirtualBox Escape Draft With",
+      "slug": "2026-04-29-project-zero-dusts-off-2017-virtualbox-escape-draft-with-cve-2017-3558-details",
+      "excerpt": "Google Project Zero published a 2017 draft detailing CVE-2017-3558, a VirtualBox VM escape allowing host userspace compromise. No new exploit code released.",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "virtualbox",
+        "project-zero",
+        "cve-2017-3558",
+        "vm-escape",
+        "vulnerability-disclosure"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "SAP npm Packages Hijacked in Credential-Stealing Supply Chain Attack",
+      "slug": "2026-04-29-sap-npm-packages-hijacked-in-credential-stealing-supply-chain-attack",
+      "excerpt": "Attackers compromised multiple SAP-related npm packages to deploy credential-stealing malware, targeting SAP BTP and cloud app credentials. Campaign dubbed mini Shai-Hulud.",
+      "date": "2026-04-29",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "supply-chain-attack",
+        "npm",
+        "sap",
+        "credential-theft",
+        "malware",
+        "open-source-security"
+      ],
+      "severity": "critical",
+      "threat_actor": "mini Shai-Hulud"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Swiss Police Arrest 10 Suspected Black Axe Cybercrime Members",
+      "slug": "2026-04-29-swiss-police-arrest-10-suspected-black-axe-cybercrime-members",
+      "excerpt": "Swiss and German police arrested 10 suspects tied to the Nigeria-linked Black Axe network, including a regional leader overseeing Southern Europe operations.",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "black-axe",
+        "law-enforcement",
+        "cybercrime",
+        "nigeria",
+        "switzerland",
+        "germany"
+      ],
+      "severity": "high",
+      "threat_actor": "Black Axe"
+    },
+    {
+      "locale": "en",
+      "section": "posts",
+      "title": "Zero-Window Era: NDR Playbooks for Post-Mythos Exploits",
+      "slug": "2026-04-29-zero-window-era-ndr-playbooks-for-post-mythos-exploits",
+      "excerpt": "Claude Mythos and Project Glasswing shrink exploit windows to near-zero. The Hacker News details NDR playbooks to contain AI-driven attacks before patching is possible.",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ai-security",
+        "zero-day",
+        "ndr",
+        "claude-mythos",
+        "project-glasswing",
+        "anthropic"
+      ],
+      "severity": "high",
+      "threat_actor": "Claude Mythos"
     },
     {
       "locale": "en",
@@ -320,6 +1389,331 @@
     {
       "locale": "en",
       "section": "threat-intel",
+      "title": "2026 World Cup Scam Economy Targets Fans With Fake Visas, Tickets",
+      "slug": "2026-05-04-2026-world-cup-scam-economy-targets-fans-with-fake-visas-tickets",
+      "excerpt": "Malwarebytes documents a four-part scam economy around the 2026 World Cup: fake visas, counterfeit tickets, phishing sites, and worthless crypto tokens targeting fans ahead of the…",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "world-cup-2026",
+        "scam-economy",
+        "phishing",
+        "crypto-scams",
+        "brand-impersonation",
+        "malwarebytes"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "AI-Assisted Attacks Reshape Cyber Threat Landscape in 2026",
+      "slug": "2026-05-04-ai-assisted-attacks-reshape-cyber-threat-landscape-in-2026",
+      "excerpt": "Japan teen arrested for stealing 7M Kaikatsu Club records to buy Pokémon cards — one example of how AI tools are lowering the barrier for cybercrime in 2026, per The Hacker News…",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "ai-assisted-attacks",
+        "cybercrime-trends",
+        "japan",
+        "kaikatsu-club",
+        "threat-landscape",
+        "2026"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Amazon SES Abused in Phishing to Evade Email Security Filters",
+      "slug": "2026-05-04-amazon-ses-abused-in-phishing-to-evade-email-security-filters",
+      "excerpt": "Threat actors exploit Amazon SES to send phishing emails that bypass SPF, DKIM, and DMARC checks, with a 40% rise in abuse since Q4 2025.",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "amazon-ses",
+        "phishing",
+        "email-security",
+        "bec",
+        "cloud-abuse",
+        "evasion"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Phishing Campaign Hijacks SimpleHelp, ScreenConnect RMM Tools at 80+",
+      "slug": "2026-05-04-phishing-campaign-hijacks-simplehelp-screenconnect-rmm-tools-at-80-orgs",
+      "excerpt": "Securonix tracks VENOMOUS#HELPER phishing campaign using legitimate SimpleHelp and ScreenConnect RMM software for persistent remote access across 80+ organizations, mostly in the…",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "phishing",
+        "rmm",
+        "simplehelp",
+        "screenconnect",
+        "securonix",
+        "venomous#helper",
+        "remote-access",
+        "persistence"
+      ],
+      "severity": "high",
+      "threat_actor": "VENOMOUS#HELPER"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Silver Fox Deploys ABCDoor Malware via Tax-Themed Phishing",
+      "slug": "2026-05-04-silver-fox-deploys-abcdoor-malware-via-tax-themed-phishing",
+      "excerpt": "China-linked Silver Fox group targets Indian and Russian organizations with ABCDoor backdoor via tax-themed phishing emails in December 2025 campaign.",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "silver-fox",
+        "abcdoor",
+        "phishing",
+        "china",
+        "india",
+        "russia",
+        "backdoor"
+      ],
+      "severity": "high",
+      "threat_actor": "Silver Fox"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Telegram Mini Apps Fuel Crypto Scams, Android Malware Campaign",
+      "slug": "2026-05-03-telegram-mini-apps-fuel-crypto-scams-android-malware-campaign",
+      "excerpt": "Researchers uncovered a fraud network abusing Telegram Mini Apps to impersonate brands, steal crypto wallets, and push Android malware like SpyNote and ERMAC.",
+      "date": "2026-05-03",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "telegram",
+        "crypto-scam",
+        "android-malware",
+        "spynote",
+        "ermac",
+        "phishing",
+        "social-engineering"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "China-Linked SHADOW-EARTH-053 Hits Asian Govts, NATO State",
+      "slug": "2026-05-01-china-linked-shadow-earth-053-hits-asian-govts-nato-state",
+      "excerpt": "Trend Micro tracks SHADOW-EARTH-053 targeting government and defense sectors across Asia and one NATO-aligned European state. Campaign uses custom backdoors and spear-phishing.",
+      "date": "2026-05-01",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "shadow-earth-053",
+        "china",
+        "espionage",
+        "government",
+        "nato",
+        "trend-micro"
+      ],
+      "severity": "high",
+      "threat_actor": "SHADOW-EARTH-053"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Cordial Spider, Snarky Spider Use Vishing, SSO Abuse for SaaS",
+      "slug": "2026-05-01-cordial-spider-snarky-spider-use-vishing-sso-abuse-for-saas-extortion",
+      "excerpt": "Two cybercrime groups — Cordial Spider and Snarky Spider — are conducting rapid SaaS extortion attacks using vishing and SSO abuse to steal data within hours, researchers warn.",
+      "date": "2026-05-01",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "cordial-spider",
+        "snarky-spider",
+        "saas-extortion",
+        "vishing",
+        "sso-abuse",
+        "data-theft"
+      ],
+      "severity": "high",
+      "threat_actor": "Cordial Spider"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "North Korea Laundered 76% of All Stolen Crypto in 2026",
+      "slug": "2026-05-01-north-korea-laundered-76-of-all-stolen-crypto-in-2026",
+      "excerpt": "North Korean hackers laundered 76% of all stolen cryptocurrency in 2026 — $2.3 billion — per Chainalysis.",
+      "date": "2026-05-01",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "north-korea",
+        "cryptocurrency",
+        "lazarus-group",
+        "chainalysis",
+        "money-laundering",
+        "bluenoroff"
+      ],
+      "severity": "critical",
+      "threat_actor": "Lazarus Group"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Vietnamese Phishers Hijack 30K Facebook Accounts via Google AppSheet",
+      "slug": "2026-05-01-vietnamese-phishers-hijack-30k-facebook-accounts-via-google-appsheet",
+      "excerpt": "Guardio tracks AccountDumpling campaign using Google AppSheet as phishing relay to steal 30,000 Facebook accounts, resold via illicit storefront.",
+      "date": "2026-05-01",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "phishing",
+        "facebook",
+        "google-appsheet",
+        "accountdumpling",
+        "vietnamese-threat-actors",
+        "credential-theft"
+      ],
+      "severity": "high",
+      "threat_actor": "AccountDumpling"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "AI Browser Extensions Steal Emails, Passwords via Prompt Injection",
+      "slug": "2026-04-30-ai-browser-extensions-steal-emails-passwords-via-prompt-injection",
+      "excerpt": "Unit 42 finds 30+ malicious AI browser extensions exfiltrating email content, credentials, and API keys via prompt injection and DOM scraping. Affects Chrome, Edge users.",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "ai-extensions",
+        "browser-security",
+        "data-exfiltration",
+        "prompt-injection",
+        "unit-42",
+        "supply-chain-attack"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "APT29, Intellexa, NSO Share Identical Exploit Chains",
+      "slug": "2026-04-30-apt29-intellexa-nso-share-identical-exploit-chains",
+      "excerpt": "Google TAG finds APT29 using exploit chains identical to those deployed by Intellexa and NSO Group, suggesting shared access to zero-day suppliers or exploit resale.",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "apt29",
+        "nso-group",
+        "intellexa",
+        "exploit-chains",
+        "zero-day",
+        "google-tag",
+        "commercial-surveillance"
+      ],
+      "severity": "high",
+      "threat_actor": "APT29"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Bluekit Phishing Service Offers AI Assistant, 40 Templates",
+      "slug": "2026-04-30-bluekit-phishing-service-offers-ai-assistant-40-templates",
+      "excerpt": "A new phishing-as-a-service platform called Bluekit provides over 40 templates targeting banks, social media, and email providers, plus an AI assistant for drafting lures.",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "phishing",
+        "phishing-as-a-service",
+        "ai",
+        "bluekit",
+        "credential-theft",
+        "telegram"
+      ],
+      "severity": "high",
+      "threat_actor": "Bluekit"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "CISA Details Interlock Ransomware TTPs, IOCs in Joint Advisory",
+      "slug": "2026-04-30-cisa-details-interlock-ransomware-ttps-iocs-in-joint-advisory",
+      "excerpt": "CISA and FBI released a joint advisory on Interlock ransomware, detailing TTPs, IOCs, and a shift from double extortion to data-theft-only attacks targeting healthcare and…",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "interlock",
+        "ransomware",
+        "cisa",
+        "fbi",
+        "data-extortion",
+        "healthcare",
+        "critical-infrastructure"
+      ],
+      "severity": "high",
+      "threat_actor": "Interlock"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Fake Roblox Enhancements Steal Hundreds of Thousands of Accounts",
+      "slug": "2026-04-30-fake-roblox-enhancements-steal-hundreds-of-thousands-of-accounts",
+      "excerpt": "Malwarebytes reports hackers used fake Roblox game enhancements to steal login credentials from hundreds of thousands of players, reselling accounts for profit.",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "roblox",
+        "credential-theft",
+        "account-takeover",
+        "gaming",
+        "social-engineering"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Google TAG: 97 Zero-Days Exploited in Wild During 2023",
+      "slug": "2026-04-30-google-tag-97-zero-days-exploited-in-wild-during-2023",
+      "excerpt": "Google TAG reports 97 zero-days were exploited in the wild in 2023, up from 62 in 2022. Commercial surveillance vendors drove 80% of targeted exploits. Full report released.",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "zero-day",
+        "google-tag",
+        "in-the-wild-exploits",
+        "commercial-surveillance",
+        "2023-review",
+        "vulnerability-trends"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
       "title": "Google TAG Details Q1 2025 Influence Operations Takedowns",
       "slug": "2026-04-30-google-tag-details-q1-2025-influence-operations-takedowns",
       "excerpt": "Google TAG terminated 12 YouTube channels and multiple ad accounts linked to state-backed influence campaigns from Russia, China, Iran, and Israel in Q1 2025.",
@@ -335,6 +1729,46 @@
       ],
       "severity": "medium",
       "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Google TAG Disrupted 10K DRAGONBRIDGE Influence Ops in Q1 2025",
+      "slug": "2026-04-30-google-tag-disrupted-10k-dragonbridge-influence-ops-in-q1-2025",
+      "excerpt": "Google TAG disrupted over 10,000 DRAGONBRIDGE influence operations in Q1 2025 — the most prolific IO actor tracked — targeting elections, Ukraine war narratives, and US-China…",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "dragonbridge",
+        "google-tag",
+        "influence-operations",
+        "china",
+        "disinformation",
+        "election-interference"
+      ],
+      "severity": "high",
+      "threat_actor": "DRAGONBRIDGE"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Google TAG Report Details Commercial Surveillance Vendor Industry",
+      "slug": "2026-04-30-google-tag-report-details-commercial-surveillance-vendor-industry",
+      "excerpt": "Google TAG's 2026 report maps 50+ commercial surveillance vendors selling spyware to governments — targeting journalists, activists, and lawyers.",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "commercial-surveillance",
+        "google-tag",
+        "spyware",
+        "government-surveillance",
+        "threat-intelligence",
+        "civil-society"
+      ],
+      "severity": "high",
+      "threat_actor": "Commercial Surveillance Vendors"
     },
     {
       "locale": "en",
@@ -356,6 +1790,46 @@
       ],
       "severity": "high",
       "threat_actor": "GRU"
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Fake CAPTCHA Scam Racks Up International SMS Charges",
+      "slug": "2026-04-29-fake-captcha-scam-racks-up-international-sms-charges",
+      "excerpt": "Malwarebytes reports scammers using fake CAPTCHA pages to trigger premium-rate international SMS charges, billing victims up to $15 per message via a Keitaro traffic distribution…",
+      "date": "2026-04-29",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "fake-captcha",
+        "sms-fraud",
+        "keitaro",
+        "malvertising",
+        "phone-billing-scam",
+        "malwarebytes"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "en",
+      "section": "threat-intel",
+      "title": "Handala Group Targets US Troops in Bahrain via WhatsApp Threats",
+      "slug": "2026-04-29-handala-group-targets-us-troops-in-bahrain-via-whatsapp-threats",
+      "excerpt": "Iran-aligned Handala group sent WhatsApp messages to US service members in Bahrain threatening drone and missile attacks, escalating psychological warfare against military…",
+      "date": "2026-04-29",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "handala",
+        "iran",
+        "bahrain",
+        "whatsapp",
+        "psychological-warfare",
+        "us-military"
+      ],
+      "severity": "high",
+      "threat_actor": "Handala"
     },
     {
       "locale": "en",
@@ -471,6 +1945,307 @@
     {
       "locale": "zh",
       "section": "posts",
+      "title": "APT37 针对中国境内朝鲜族人使用 Android BirdCall 恶意软件",
+      "slug": "2026-05-06-apt37-targets-ethnic-koreans-in-china-with-android-birdcall-malware",
+      "excerpt": "ESET 表示 APT37 破坏了 Sqgame 纸牌游戏平台，向 Android 设备传递 BirdCall 后门，窃取延边朝鲜族人的短信、通话记录和私钥。",
+      "date": "2026-05-06",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "apt37",
+        "birdcall",
+        "android-malware",
+        "supply-chain-attack",
+        "north-korea",
+        "espionage"
+      ],
+      "severity": "high",
+      "threat_actor": "APT37"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "MOVEit Automation CVE-2026-5174 因 Cl0p 历史需紧急修补",
+      "slug": "2026-05-06-moveit-automation-cve-2026-5174-cl0p-history-patch-urgency",
+      "excerpt": "CVE-2026-5174 是 MOVEit Automation 中的高危权限提升漏洞。当前尚无 APT 或 Cl0p 利用确认，但 2023 年 MOVEit 入侵历史使快速修补尤为紧迫。",
+      "date": "2026-05-06",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "moveit",
+        "moveit-automation",
+        "progress-software",
+        "cve-2026-5174",
+        "cl0p",
+        "ta505",
+        "apt-risk",
+        "privilege-escalation"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Palo Alto PAN-OS CVE-2026-0300 通过 Captive Portal 遭攻击",
+      "slug": "2026-05-06-palo-alto-pan-os-cve-2026-0300-attacked-via-captive-portal",
+      "excerpt": "CVE-2026-0300 是 PAN-OS User-ID Authentication Portal 中的关键缓冲区溢出漏洞。修复版本尚属后续发布，应立即禁用或限制该门户。",
+      "date": "2026-05-06",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "palo-alto-networks",
+        "pan-os",
+        "cve-2026-0300",
+        "buffer-overflow",
+        "remote-code-execution",
+        "active-exploitation"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "USB 投掷攻击定义了社交工程学已20年",
+      "slug": "2026-05-06-usb-drop-attack-that-defined-social-engineering-turns-20",
+      "excerpt": "Steve Stasiukonis 在2006年对一家信用合作社进行的USB投掷测试 —— 员工插入的20个驱动器中有15个 —— 成为了至今仍被使用的物理社交工程评估的蓝图...",
+      "date": "2026-05-06",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "social-engineering",
+        "usb-drop-attack",
+        "physical-security",
+        "penetration-testing",
+        "history"
+      ],
+      "severity": "informational",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Apache 修补关键 HTTP/2 双重释放漏洞 CVE-2026-23918",
+      "slug": "2026-05-05-apache-patches-critical-http-2-double-free-flaw-cve-2026-23918",
+      "excerpt": "Apache HTTP Server CVE-2026-23918（CVSS 8.8）通过 HTTP/2 处理中的双重释放启用 DoS 和潜在 RCE。影响所有 mod_http2 用户。立即修补。",
+      "date": "2026-05-05",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "apache",
+        "http-server",
+        "cve-2026-23918",
+        "http2",
+        "remote-code-execution",
+        "denial-of-service"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "CloudZ RAT 劫持微软电话链接窃取短信和一次性密码",
+      "slug": "2026-05-05-cloudz-rat-hijacks-microsoft-phone-link-to-steal-sms-otps",
+      "excerpt": "思科 Talos：CloudZ RAT 的新 Pheno 插件滥用 Windows Phone Link 从本地 SQLite 数据库读取短信和一次性密码。",
+      "date": "2026-05-05",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "cloudz",
+        "pheno",
+        "microsoft-phone-link",
+        "sms-interception",
+        "otp-theft",
+        "cisco-talos"
+      ],
+      "severity": "high",
+      "threat_actor": "CloudZ"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "严重Ollama漏洞CVE-2026-7482暴露30万部署",
+      "slug": "2026-05-05-critical-ollama-bug-cve-2026-7482-exposes-300k-deployments",
+      "excerpt": "Cyera披露CVE-2026-7482（CVSS 9.3）— Ollama的GGUF模型加载器中的堆越界读取，通过三个未经身份验证的API调用泄露提示、API密钥和秘密。",
+      "date": "2026-05-05",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "ollama",
+        "cve-2026-7482",
+        "bleeding-llama",
+        "llm-security",
+        "heap-out-of-bounds",
+        "cyera"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "EOL 开源盲点隐藏 40 万+ 未标记 CVEs",
+      "slug": "2026-05-05-eol-open-source-blind-spots-hide-400k-unflagged-cves",
+      "excerpt": "HeroDevs 分析：npm、PyPI、Maven 上有 540 万 EOL 软件包版本避开 SCA 扫描器；约 80% 的 CVEs 影响支持版本，也影响未列出的 EOL 发布。提供免费扫描。",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "open-source-security",
+        "eol-software",
+        "sca-tools",
+        "supply-chain-security",
+        "cve-blind-spots",
+        "herodevs"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Persistent OAuth Tokens: 攻击者利用的后门",
+      "slug": "2026-05-05-persistent-oauth-tokens-the-back-door-attackers-exploit",
+      "excerpt": "没有过期的OAuth令牌在Google和Microsoft租户中持续存在 —— 攻击者绕过MFA和边界控制。",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "oauth",
+        "token-security",
+        "identity-threats",
+        "cloud-security",
+        "attack-surface"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "ShinyHunters 侵入 Vimeo，泄露 119K 用户记录",
+      "slug": "2026-05-05-shinyhunters-breaches-vimeo-leaks-119k-user-records",
+      "excerpt": "ShinyHunters 在侵入 Anodot 后泄露了一个 106GB 的 Vimeo 数据档案，暴露了 119,200 名用户的电子邮件和姓名。没有泄露任何凭证或支付信息。",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "shinyhunters",
+        "vimeo",
+        "anodot",
+        "data-breach",
+        "extortion",
+        "saas"
+      ],
+      "severity": "high",
+      "threat_actor": "ShinyHunters"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "学生黑客入侵台湾高速铁路TETRA系统，触发",
+      "slug": "2026-05-05-student-hacked-taiwan-high-speed-rail-tetra-system-triggered-emergency-brakes",
+      "excerpt": "一名23岁的学生使用SDR设备克隆TETRA无线电参数，发送了一个'General Alarm'信号，导致4列THSR列车停运48分钟。",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "tetra",
+        "critical-infrastructure",
+        "sdr",
+        "taiwan",
+        "radio-hacking",
+        "scada"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Trellix 源代码泄露暴露安全产品内部",
+      "slug": "2026-05-05-trellix-source-code-breach-exposes-security-product-internals",
+      "excerpt": "攻击者从Trellix窃取源代码，暴露了其安全产品中的检测逻辑和控制位置。此次泄露增加了企业客户的供应链风险。",
+      "date": "2026-05-05",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "trellix",
+        "source-code-breach",
+        "supply-chain-attack",
+        "security-products",
+        "intellectual-property-theft"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "思科收购Astrix Security以保护非人类身份",
+      "slug": "2026-05-04-cisco-acquires-astrix-security-for-non-human-identity-protection",
+      "excerpt": "思科宣布计划收购Astrix Security以应对人工智能和机器工作负载中的非人类身份风险。这笔交易扩大了思科的身份安全产品组合。",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "cisco",
+        "astrix-security",
+        "identity-security",
+        "non-human-identities",
+        "acquisition",
+        "ai-security"
+      ],
+      "severity": null,
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Cyber Tax Raises Consumer Prices After Breaches, Podcast Warns",
+      "slug": "2026-05-04-cyber-tax-raises-consumer-prices-after-breaches-podcast-warns",
+      "excerpt": "Malwarebytes Lock 和 Code 播客：Eva Velasquez 详细说明了小型企业网络攻击如何造成一个'cyber tax'，提高所有消费者的价格——没有哪个行业能免疫。",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "cyber-tax",
+        "small-business",
+        "supply-chain",
+        "consumer-impact",
+        "malwarebytes",
+        "lock-and-code"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "网络安全并购综述：2026年4月宣布33笔交易",
+      "slug": "2026-05-04-cybersecurity-m-a-roundup-33-deals-announced-in-april-2026",
+      "excerpt": "SecurityWeek 报道了2026年4月的33笔网络安全并购交易，包括Airbus、Cyera、Fortra、Palo Alto Networks、Silverfort和Socket的收购。",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "mergers-and-acquisitions",
+        "cybersecurity-industry",
+        "airbus",
+        "cyera",
+        "fortra",
+        "palo-alto-networks",
+        "silverfort",
+        "socket"
+      ],
+      "severity": null,
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
       "title": "基础设施入侵：黑客从Canvas平台窃取学生数据",
       "slug": "2026-05-04-infrastructure-breach-hackers-steal-student-data-from-canvas-platform",
       "excerpt": "基础设施确认黑客访问了Canvas用户数据 —— 名字、电子邮件、学生ID、消息 —— 来自教育机构。",
@@ -503,6 +2278,419 @@
         "data-breach",
         "student-data",
         "education-sector"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "贷款欺诈团伙利用信用合作社验证漏洞",
+      "slug": "2026-05-04-loan-fraud-rings-exploit-credit-union-verification-gaps",
+      "excerpt": "Flare 详细说明了欺诈者如何使用被盗身份和合成社会安全号码绕过信用合作社贷款验证，导致机构承担数百万美元的退款费用。",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "credit-unions",
+        "loan-fraud",
+        "synthetic-identity",
+        "stolen-identities",
+        "financial-fraud",
+        "flare"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "美敦力披露针对企业IT系统的网络攻击",
+      "slug": "2026-05-04-medtronic-discloses-cyberattack-on-corporate-it-systems",
+      "excerpt": "美敦力报告称其企业IT系统在网络攻击中遭到未经授权的访问，对医疗设备或患者护理操作没有影响。数据遭到泄露。",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "medtronic",
+        "healthcare",
+        "data-breach",
+        "cyberattack",
+        "corporate-it"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "OpenAI 强化 ChatGPT 登录安全 新增控制措施",
+      "slug": "2026-05-04-openai-strengthens-chatgpt-login-security-with-new-controls",
+      "excerpt": "OpenAI 推出 ChatGPT 的高级账户安全功能：强制使用密码密钥、缩短会话时间以及账户恢复变更。影响全球所有用户。",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "openai",
+        "chatgpt",
+        "account-security",
+        "passkeys",
+        "credential-stuffing",
+        "authentication"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Polymarket 赌徒因事件验证威胁记者",
+      "slug": "2026-05-04-polymarket-gamblers-threaten-journalist-over-event-verification",
+      "excerpt": "Polymarket 赌徒威胁了一名记者，该记者的故事被用来验证用于投注结算的现实世界事件，突显了预测市场预言机操纵的风险…",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "polymarket",
+        "oracle-manipulation",
+        "prediction-market",
+        "journalist-threats",
+        "event-verification"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "亲奥尔班媒体公司Mediaworks被勒索软件集团入侵",
+      "slug": "2026-05-04-pro-orbn-media-firm-mediaworks-breached-by-ransomware-group",
+      "excerpt": "勒索软件集团声称入侵了亲奥尔班的匈牙利媒体集团Mediaworks。该公司周五确认了未经授权的访问和潜在的数据泄露。",
+      "date": "2026-05-04",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ransomware",
+        "mediaworks",
+        "hungary",
+        "data-breach",
+        "pro-orbán-media"
+      ],
+      "severity": "high",
+      "threat_actor": "LockBit"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Weaver E-cology 零日漏洞 CVE-2026-22679 自三月以来被利用",
+      "slug": "2026-05-04-weaver-e-cology-zero-day-cve-2026-22679-exploited-since-march",
+      "excerpt": "Weaver E-cology OA 中的 CVE-2026-22679（CVSS 9.8）自2026年3月中旬以来在野外被利用。攻击者在利用后运行发现命令。尚无补丁可用。",
+      "date": "2026-05-04",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "weaver",
+        "e-cology",
+        "cve-2026-22679",
+        "rce",
+        "zero-day",
+        "active-exploitation"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Instructure 数据泄露：ShinyHunters 声称盗窃",
+      "slug": "2026-05-03-instructure-data-breach-shinyhunters-claims-theft",
+      "excerpt": "ShinyHunters 声称从 Instructure，即 Canvas LMS 背后的教育技术公司，窃取了数据。Instructure 确认涉及未经授权访问某些系统的数据泄露，并...",
+      "date": "2026-05-03",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "instructure",
+        "shinyhunters",
+        "data-breach",
+        "canvas",
+        "edtech",
+        "extortion"
+      ],
+      "severity": "high",
+      "threat_actor": "ShinyHunters"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Microsoft Defender 误报将 DigiCert 证书标记为木马",
+      "slug": "2026-05-03-microsoft-defender-false-positives-flag-digicert-certs-as-trojans",
+      "excerpt": "Microsoft Defender 将合法的 DigiCert 根证书标记为 Trojan:Win32/Cerdigent.A!dha，触发了 Windows 系统上的误报警报和证书移除。",
+      "date": "2026-05-03",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "microsoft-defender",
+        "digicert",
+        "false-positive",
+        "trojan:win32/cerdigent",
+        "certificate-detection",
+        "windows-security"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Flowise RCE 漏洞 CVE-2026-41265 具有 CVSS 9.8",
+      "slug": "2026-05-02-flowise-rce-vulnerability-cve-2026-41265-carries-cvss-9-8",
+      "excerpt": "Flowise Airtable_Agent 中的 CVE-2026-41265 允许未经身份验证的远程代码执行，CVSS 评分为 9.8。ZDI 咨询详细说明了默认安装中的代码注入问题。",
+      "date": "2026-05-02",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "flowise",
+        "cve-2026-41265",
+        "remote-code-execution",
+        "zdi",
+        "code-injection",
+        "ai-tools"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Instructure 探测影响 Canvas 平台的网络事件",
+      "slug": "2026-05-02-instructure-probes-cyber-incident-impacting-canvas-platform",
+      "excerpt": "Instructure，Canvas LMS 的制造商，该平台被超过3000万学生使用，披露了一起网络安全事件，并正在调查其基础设施中潜在的数据暴露。",
+      "date": "2026-05-02",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "instructure",
+        "canvas",
+        "edtech-breach",
+        "cyber-incident",
+        "learning-management-system"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "恶意Ruby Gems和Go模块劫持CI/CD流水线",
+      "slug": "2026-05-02-poisoned-ruby-gems-go-modules-hijack-ci-cd-pipelines",
+      "excerpt": "BufferZoneCorp账户发布了恶意的Ruby gems和Go模块，这些模块窃取凭证，篡改GitHub Actions，并在CI流水线中建立SSH持久性。",
+      "date": "2026-05-02",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "supply-chain-attack",
+        "ruby-gems",
+        "go-modules",
+        "ci/cd-security",
+        "credential-theft",
+        "github-actions"
+      ],
+      "severity": "high",
+      "threat_actor": "BufferZoneCorp"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Trellix 泄露：源代码库被入侵",
+      "slug": "2026-05-02-trellix-breach-source-code-repository-compromised",
+      "excerpt": "Trellix 确认攻击者访问了其源代码库的一部分。该公司聘请了法医专家并通知了执法部门。未披露客户数据影响。",
+      "date": "2026-05-02",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "trellix",
+        "source-code-breach",
+        "supply-chain-security",
+        "incident-response",
+        "forensic-investigation"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "AI Agents 破坏生产数据库由于访问控制不当",
+      "slug": "2026-05-01-ai-agents-wreck-production-databases-due-to-poor-access-controls",
+      "excerpt": "Dark Reading 报告 AI agents 正在删除生产数据库，因为组织在没有适当的安全测试或访问控制的情况下部署代理集成。",
+      "date": "2026-05-01",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ai-security",
+        "access-control",
+        "database-security",
+        "cloud-security",
+        "agent-integrations"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Deep#Door Python 后门针对 Windows 系统进行间谍活动",
+      "slug": "2026-05-01-deep-door-python-backdoor-targets-windows-systems-for-espionage",
+      "excerpt": "Deep#Door Python 后门部署持久的 Windows 植入程序进行间谍活动 — 使用加密的 C2 通道、文件外泄和远程 shell。没有可用的补丁。",
+      "date": "2026-05-01",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "deep#door",
+        "python-backdoor",
+        "windows-implant",
+        "espionage",
+        "persistent-access",
+        "c2"
+      ],
+      "severity": "high",
+      "threat_actor": "Deep#Door"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "前事件响应者因勒索软件攻击被判处4年",
+      "slug": "2026-05-01-ex-incident-responders-sentenced-to-4-years-for-ransomware-attacks",
+      "excerpt": "两名滥用客户访问权限部署勒索软件的网络安全事件响应者被判处4年监禁——这是响应者转变为攻击者的罕见案例。",
+      "date": "2026-05-01",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ransomware",
+        "incident-response",
+        "insider-threat",
+        "sentencing",
+        "cybercrime"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "前勒索软件谈判代表因BlackCat攻击被判4年",
+      "slug": "2026-05-01-ex-ransomware-negotiators-sentenced-to-4-years-for-blackcat-attacks",
+      "excerpt": "两名前IR公司员工因洗钱超过1800万美元的BlackCat勒索赎金并为攻击者提供谈判策略建议，各自被判4年。",
+      "date": "2026-05-01",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "blackcat",
+        "alphv",
+        "ransomware",
+        "sentencing",
+        "money-laundering",
+        "insider-threat"
+      ],
+      "severity": "high",
+      "threat_actor": "BlackCat"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Mini Shai-Hulud 攻击劫持 SAP、Lightning、Intercom 包",
+      "slug": "2026-05-01-mini-shai-hulud-attack-hijacks-sap-lightning-intercom-packages",
+      "excerpt": "攻击者在供应链攻击中破坏了 SAP、Lightning 和 Intercom npm 包，影响了 1800 名受害者；包每月下载量达 1000 万。",
+      "date": "2026-05-01",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "supply-chain-attack",
+        "npm",
+        "sap",
+        "lightning",
+        "intercom",
+        "shai-hulud"
+      ],
+      "severity": "critical",
+      "threat_actor": "Mini Shai-Hulud"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "英国网络机构警告人工智能将引发'补丁浪潮'紧急修复",
+      "slug": "2026-05-01-uk-cyber-agency-warns-ai-will-trigger-patch-wave-of-urgent-fixes",
+      "excerpt": "NCSC 警告组织为紧急补丁的激增做好准备，因为人工智能加速了漏洞发现，提高了利用风险。没有引用具体的 CVE。",
+      "date": "2026-05-01",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ncsc",
+        "ai",
+        "patch-management",
+        "vulnerability-discovery",
+        "uk-government"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Anthropic 发布 Claude 安全，用于 AI 驱动的漏洞防御",
+      "slug": "2026-04-30-anthropic-launches-claude-security-for-ai-driven-exploit-defense",
+      "excerpt": "Anthropic 发布了 Claude 安全，一套防御性 AI 工具，用以对抗像 Mythos 这样的自主漏洞工具，它们能在几分钟内武器化零日漏洞。目标是企业 SOC。",
+      "date": "2026-04-30",
+      "category": "tools",
+      "author": "ZCyberNews",
+      "tags": [
+        "anthropic",
+        "claude-security",
+        "mythos",
+        "ai-security",
+        "autonomous-exploits",
+        "enterprise-defense"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "BHIS 渗透测试数据：2025年组织仍受相同顶级漏洞困扰",
+      "slug": "2026-04-30-bhis-pentest-data-same-top-flaws-plague-orgs-in-2025",
+      "excerpt": "Black Hills InfoSec 对2025年15个月数据的渗透测试分析显示，与2022年相同的前10个漏洞——弱密码、未修补的RDP和配置错误的MFA仍然存在…",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "penetration-testing",
+        "bhis",
+        "vulnerability-trends",
+        "weak-passwords",
+        "rdp",
+        "mfa",
+        "privilege-escalation"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "巴西DDoS公司背后的僵尸网络攻击ISP",
+      "slug": "2026-04-30-brazilian-ddos-firm-behind-botnet-attacks-on-isps",
+      "excerpt": "巴西反DDoS公司的基础设施被用来对竞争对手ISP发起大规模僵尸网络攻击。首席执行官声称竞争对手的入侵导致了滥用。",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ddos",
+        "botnet",
+        "brazil",
+        "krebsonsecurity",
+        "isp-attacks",
+        "cybercrime"
       ],
       "severity": "high",
       "threat_actor": null
@@ -549,6 +2737,164 @@
     {
       "locale": "zh",
       "section": "posts",
+      "title": "DEEP#DOOR Python 后门窃取浏览器、云凭证",
+      "slug": "2026-04-30-deep-door-python-backdoor-steals-browser-cloud-credentials",
+      "excerpt": "DEEP#DOOR Python 后门使用隧道服务进行 C2 通信，通过批处理脚本禁用 Windows 安全功能，并从受感染的主机中收集浏览器 Cookie 和云令牌。",
+      "date": "2026-04-30",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "deep#door",
+        "python-backdoor",
+        "credential-theft",
+        "tunneling-service",
+        "windows-security-bypass",
+        "cloud-credential-harvesting"
+      ],
+      "severity": "high",
+      "threat_actor": "DEEP#DOOR"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "FBI 警告网络犯罪分子导致 7.25 亿美元货物盗窃激增",
+      "slug": "2026-04-30-fbi-warns-cybercriminals-driving-725m-cargo-theft-surge",
+      "excerpt": "FBI 警告称，2025 年美国和加拿大的货物盗窃损失达到 7.25 亿美元，由网络犯罪分子利用物流 IT 系统拦截货物并重新定向货物所驱动。",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "fbi",
+        "cargo-theft",
+        "transportation",
+        "logistics",
+        "cyber-enabled-crime",
+        "supply-chain"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "法国警方逮捕15岁少年，调查ANTS数据泄露事件",
+      "slug": "2026-04-30-french-police-arrest-15-year-old-in-ants-data-breach-probe",
+      "excerpt": "法国当局于4月25日拘留了一名15岁的少年，他涉嫌入侵ANTS，这是一个负责处理护照和驾驶执照的国家身份证明机构。",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "data-breach",
+        "france",
+        "ants",
+        "teen-hacker",
+        "national-id",
+        "law-enforcement"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Sandhills Medical 遭遇 Inc Ransom 勒索软件攻击，暴露了 17 万条记录",
+      "slug": "2026-04-30-inc-ransom-breach-at-sandhills-medical-exposes-170k-records",
+      "excerpt": "2025年，Inc Ransom 集团入侵了南卡罗来纳州的医疗保健提供商 Sandhills Medical；该事件影响了 17 万名患者，直到近一年后才披露。",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "inc-ransom",
+        "ransomware",
+        "healthcare-breach",
+        "sandhills-medical",
+        "data-exfiltration"
+      ],
+      "severity": "high",
+      "threat_actor": "Inc Ransom"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Linux 'Copy Fail' LPE CVE-2026-31431 允许本地用户获得 Root 权限",
+      "slug": "2026-04-30-linux-copy-fail-lpe-cve-2026-31431-lets-local-users-gain-root",
+      "excerpt": "CVE-2026-31431（CVSS 7.8）被称为 'Copy Fail'，允许无特权的本地用户向任何可读文件的页面缓存写入四个受控字节，从而在主要的 Linux 系统上启用 root 权限...",
+      "date": "2026-04-30",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "cve-2026-31431",
+        "linux",
+        "privilege-escalation",
+        "kernel-vulnerability",
+        "copy-fail"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "摩尔多瓦卫生机构遭入侵：确认可能的数据泄露",
+      "slug": "2026-04-30-moldova-health-agency-breach-possible-data-theft-confirmed",
+      "excerpt": "摩尔多瓦国家健康保险公司报告了一起可能暴露其系统有限个人数据的网络攻击，这是在最初被入侵几周后发生的。",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "moldova",
+        "healthcare",
+        "data-breach",
+        "cyberattack",
+        "government-agency"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "PyTorch Lightning 在 PyPI 供应链攻击中被入侵",
+      "slug": "2026-04-30-pytorch-lightning-compromised-in-pypi-supply-chain-attack",
+      "excerpt": "威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到 PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。",
+      "date": "2026-04-30",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "pypi",
+        "supply-chain",
+        "credential-theft",
+        "pytorch-lightning",
+        "python",
+        "open-source"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Silver Fox 针对俄罗斯、印度发动 ABCDoor 后门攻击",
+      "slug": "2026-04-30-silver-fox-targets-russia-india-with-abcdoor-backdoor",
+      "excerpt": "据卡巴斯基称，Silver Fox 团伙冒充税务机关，向俄罗斯和印度的组织分发 ValleyRAT 和新的 ABCDoor 后门。",
+      "date": "2026-04-30",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "silver-fox",
+        "abcdoor",
+        "valleyrat",
+        "backdoor",
+        "phishing",
+        "russia",
+        "india"
+      ],
+      "severity": "high",
+      "threat_actor": "Silver Fox"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
       "title": "短信轰炸机被破获，OpenEMR漏洞，600K Roblox黑客攻击在ThreatsDay",
       "slug": "2026-04-30-sms-blaster-busts-openemr-flaws-600k-roblox-hacks-in-threatsday-roundup",
       "excerpt": "假基站发送诈骗短信；OpenEMR漏洞暴露患者数据；600,000个Roblox账户通过凭证填充被黑客攻击。网络威胁的繁忙一周。",
@@ -562,6 +2908,65 @@
         "credential-stuffing",
         "fake-cell-towers",
         "threat-roundup"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "特朗普网络大使提名人进入参议院投票",
+      "slug": "2026-04-30-trump-cyber-ambassador-nominee-advances-to-senate-vote",
+      "excerpt": "亚当·卡萨迪，特朗普选择领导国务院网络和数字政策局的人选，以17-5的票数通过了参议院委员会投票，现在将进行全体投票。",
+      "date": "2026-04-30",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "state-department",
+        "cyber-diplomacy",
+        "adam-cassady",
+        "senate-confirmation",
+        "bureau-of-cyberspace-and-digital-policy"
+      ],
+      "severity": "informational",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Chrome 147, Firefox 150 修补关键代码执行漏洞",
+      "slug": "2026-04-29-chrome-147-firefox-150-patch-critical-code-execution-flaws",
+      "excerpt": "谷歌和Mozilla发布Chrome 147和Firefox 150以修复关键和高严重性的漏洞，这些漏洞允许任意代码执行。用户被敦促立即更新。",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "chrome",
+        "firefox",
+        "browser-security",
+        "critical-vulnerabilities",
+        "arbitrary-code-execution"
+      ],
+      "severity": "critical",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "CISA 将正在被积极利用的 ConnectWise、Windows 漏洞添加到 KEV",
+      "slug": "2026-04-29-cisa-adds-actively-exploited-connectwise-windows-flaws-to-kev",
+      "excerpt": "CISA 将 CVE-2024-1708（ConnectWise ScreenConnect 路径遍历，CVSS 8.4）和一个未命名的 Windows 漏洞添加到其 KEV 目录，基于确认的积极利用。",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "cisa",
+        "kev",
+        "connectwise",
+        "screenconnect",
+        "windows",
+        "active-exploitation",
+        "path-traversal"
       ],
       "severity": "high",
       "threat_actor": null
@@ -625,6 +3030,124 @@
       ],
       "severity": "high",
       "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "GitHub CVE-2026-3854 RCE漏洞可通过单个Git推送利用",
+      "slug": "2026-04-29-github-cve-2026-3854-rce-flaw-exploitable-via-single-git-push",
+      "excerpt": "CVE-2026-3854（CVSS 8.7）允许具有推送权限的认证用户通过精心制作的git推送命令在GitHub.com和GitHub Enterprise Server上实现远程代码执行。",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "cve-2026-3854",
+        "github",
+        "remote-code-execution",
+        "command-injection",
+        "github-enterprise-server"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Oracle VirtualBox 竞态条件允许攻击者提升权限",
+      "slug": "2026-04-29-oracle-virtualbox-race-condition-lets-attackers-escalate-privileges",
+      "excerpt": "CVE-2026-35230: VirtualBox 的 SoundBlaster 16 模拟中存在竞态条件，允许具有高权限的本地攻击者提升权限。CVSS 7.5。",
+      "date": "2026-04-29",
+      "category": "vulnerabilities",
+      "author": "ZCyberNews",
+      "tags": [
+        "oracle",
+        "virtualbox",
+        "privilege-escalation",
+        "race-condition",
+        "cve-2026-35230",
+        "zdi"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "Project Zero 重新审视2017年VirtualBox逃逸草案",
+      "slug": "2026-04-29-project-zero-dusts-off-2017-virtualbox-escape-draft-with-cve-2017-3558-details",
+      "excerpt": "谷歌Project Zero发布了一份2017年的草案，详细描述了CVE-2017-3558，这是一个VirtualBox VM逃逸漏洞，允许主机用户空间被破坏。没有发布新的漏洞代码。",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "virtualbox",
+        "project-zero",
+        "cve-2017-3558",
+        "vm-escape",
+        "vulnerability-disclosure"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "SAP npm 包被劫持在窃取凭证的供应链攻击中",
+      "slug": "2026-04-29-sap-npm-packages-hijacked-in-credential-stealing-supply-chain-attack",
+      "excerpt": "攻击者破坏了多个与SAP相关的npm包，部署窃取凭证的恶意软件，针对SAP BTP和云应用凭证。活动被称为迷你Shai-Hulud。",
+      "date": "2026-04-29",
+      "category": "malware",
+      "author": "ZCyberNews",
+      "tags": [
+        "supply-chain-attack",
+        "npm",
+        "sap",
+        "credential-theft",
+        "malware",
+        "open-source-security"
+      ],
+      "severity": "critical",
+      "threat_actor": "mini Shai-Hulud"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "瑞士警方逮捕10名疑似Black Axe网络犯罪团伙成员",
+      "slug": "2026-04-29-swiss-police-arrest-10-suspected-black-axe-cybercrime-members",
+      "excerpt": "瑞士和德国警方逮捕了与尼日利亚有联系的Black Axe网络的10名嫌疑人，包括一名负责监督南欧业务的地区领导人。",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "black-axe",
+        "law-enforcement",
+        "cybercrime",
+        "nigeria",
+        "switzerland",
+        "germany"
+      ],
+      "severity": "high",
+      "threat_actor": "Black Axe"
+    },
+    {
+      "locale": "zh",
+      "section": "posts",
+      "title": "零窗口时代：后神话漏洞利用的NDR剧本",
+      "slug": "2026-04-29-zero-window-era-ndr-playbooks-for-post-mythos-exploits",
+      "excerpt": "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。",
+      "date": "2026-04-29",
+      "category": "industry",
+      "author": "ZCyberNews",
+      "tags": [
+        "ai-security",
+        "zero-day",
+        "ndr",
+        "claude-mythos",
+        "project-glasswing",
+        "anthropic"
+      ],
+      "severity": "high",
+      "threat_actor": "Claude Mythos"
     },
     {
       "locale": "zh",
@@ -787,6 +3310,331 @@
     {
       "locale": "zh",
       "section": "threat-intel",
+      "title": "2026世界杯诈骗经济针对球迷的假签证、门票",
+      "slug": "2026-05-04-2026-world-cup-scam-economy-targets-fans-with-fake-visas-tickets",
+      "excerpt": "Malwarebytes 记录了围绕2026世界杯的四部分诈骗经济：假签证、伪造门票、钓鱼网站和针对球迷的无价值加密代币，这些诈骗行为发生在……",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "world-cup-2026",
+        "scam-economy",
+        "phishing",
+        "crypto-scams",
+        "brand-impersonation",
+        "malwarebytes"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "AI辅助攻击重塑2026年网络威胁格局",
+      "slug": "2026-05-04-ai-assisted-attacks-reshape-cyber-threat-landscape-in-2026",
+      "excerpt": "日本少年因窃取700万Kaikatsu Club记录以购买宝可梦卡片而被捕 —— 这是AI工具如何降低2026年网络犯罪门槛的一个例子，据The Hacker News报道…",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "ai-assisted-attacks",
+        "cybercrime-trends",
+        "japan",
+        "kaikatsu-club",
+        "threat-landscape",
+        "2026"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Amazon SES 在钓鱼邮件中被滥用以规避电子邮件安全过滤器",
+      "slug": "2026-05-04-amazon-ses-abused-in-phishing-to-evade-email-security-filters",
+      "excerpt": "威胁行为者利用 Amazon SES 发送绕过 SPF、DKIM 和 DMARC 检查的钓鱼邮件，自 2025 年第四季度以来滥用增加了 40%。",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "amazon-ses",
+        "phishing",
+        "email-security",
+        "bec",
+        "cloud-abuse",
+        "evasion"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "钓鱼活动劫持 SimpleHelp、ScreenConnect RMM 工具超过80+",
+      "slug": "2026-05-04-phishing-campaign-hijacks-simplehelp-screenconnect-rmm-tools-at-80-orgs",
+      "excerpt": "Securonix 追踪使用合法 SimpleHelp 和 ScreenConnect RMM 软件的 VENOMOUS#HELPER 钓鱼活动，以实现对80+组织的持久远程访问，大多数在…",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "phishing",
+        "rmm",
+        "simplehelp",
+        "screenconnect",
+        "securonix",
+        "venomous#helper",
+        "remote-access",
+        "persistence"
+      ],
+      "severity": "high",
+      "threat_actor": "VENOMOUS#HELPER"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "银狐通过税务主题钓鱼部署ABCDoor恶意软件",
+      "slug": "2026-05-04-silver-fox-deploys-abcdoor-malware-via-tax-themed-phishing",
+      "excerpt": "与中国有关的银狐组织针对印度和俄罗斯组织，通过税务主题的钓鱼邮件在2025年12月的活动中部署ABCDoor后门。",
+      "date": "2026-05-04",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "silver-fox",
+        "abcdoor",
+        "phishing",
+        "china",
+        "india",
+        "russia",
+        "backdoor"
+      ],
+      "severity": "high",
+      "threat_actor": "Silver Fox"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Telegram Mini Apps 助长加密货币诈骗，Android 恶意软件活动",
+      "slug": "2026-05-03-telegram-mini-apps-fuel-crypto-scams-android-malware-campaign",
+      "excerpt": "研究人员揭露了一个欺诈网络，滥用 Telegram Mini Apps 来冒充品牌，窃取加密货币钱包，并推广 Android 恶意软件，如 SpyNote 和 ERMAC。",
+      "date": "2026-05-03",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "telegram",
+        "crypto-scam",
+        "android-malware",
+        "spynote",
+        "ermac",
+        "phishing",
+        "social-engineering"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "中国关联的SHADOW-EARTH-053攻击亚洲政府和北约国家",
+      "slug": "2026-05-01-china-linked-shadow-earth-053-hits-asian-govts-nato-state",
+      "excerpt": "趋势科技追踪SHADOW-EARTH-053针对亚洲和北约对齐的欧洲国家的政府和国防部门。活动使用定制后门和鱼叉式网络钓鱼。",
+      "date": "2026-05-01",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "shadow-earth-053",
+        "china",
+        "espionage",
+        "government",
+        "nato",
+        "trend-micro"
+      ],
+      "severity": "high",
+      "threat_actor": "SHADOW-EARTH-053"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Cordial Spider，Snarky Spider 使用 Vishing，SSO 滥用针对 SaaS",
+      "slug": "2026-05-01-cordial-spider-snarky-spider-use-vishing-sso-abuse-for-saas-extortion",
+      "excerpt": "两个网络犯罪团伙 —— Cordial Spider 和 Snarky Spider —— 正在通过 vishing 和 SSO 滥用进行快速 SaaS 勒索攻击，研究人员警告说，他们能在几小时内窃取数据。",
+      "date": "2026-05-01",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "cordial-spider",
+        "snarky-spider",
+        "saas-extortion",
+        "vishing",
+        "sso-abuse",
+        "data-theft"
+      ],
+      "severity": "high",
+      "threat_actor": "Cordial Spider"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "朝鲜洗钱2026年被盗加密货币的76%",
+      "slug": "2026-05-01-north-korea-laundered-76-of-all-stolen-crypto-in-2026",
+      "excerpt": "朝鲜黑客在2026年洗钱了所有被盗加密货币的76% —— 23亿美元 —— 根据Chainalysis的数据。",
+      "date": "2026-05-01",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "north-korea",
+        "cryptocurrency",
+        "lazarus-group",
+        "chainalysis",
+        "money-laundering",
+        "bluenoroff"
+      ],
+      "severity": "critical",
+      "threat_actor": "Lazarus Group"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "越南网络钓鱼者通过Google AppSheet劫持3万Facebook账户",
+      "slug": "2026-05-01-vietnamese-phishers-hijack-30k-facebook-accounts-via-google-appsheet",
+      "excerpt": "Guardio追踪使用Google AppSheet作为网络钓鱼中继的AccountDumpling活动，窃取3万个Facebook账户，通过非法商店转售。",
+      "date": "2026-05-01",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "phishing",
+        "facebook",
+        "google-appsheet",
+        "accountdumpling",
+        "vietnamese-threat-actors",
+        "credential-theft"
+      ],
+      "severity": "high",
+      "threat_actor": "AccountDumpling"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "AI 浏览器扩展通过提示注入窃取电子邮件、密码",
+      "slug": "2026-04-30-ai-browser-extensions-steal-emails-passwords-via-prompt-injection",
+      "excerpt": "Unit 42 发现 30+ 恶意 AI 浏览器扩展通过提示注入和 DOM 抓取外泄电子邮件内容、凭据和 API 密钥。影响 Chrome、Edge 用户。",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "ai-extensions",
+        "browser-security",
+        "data-exfiltration",
+        "prompt-injection",
+        "unit-42",
+        "supply-chain-attack"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "APT29, Intellexa, NSO 共享相同的漏洞链",
+      "slug": "2026-04-30-apt29-intellexa-nso-share-identical-exploit-chains",
+      "excerpt": "Google TAG 发现 APT29 使用的漏洞链与 Intellexa 和 NSO Group 部署的漏洞链相同，暗示共享零日供应商或漏洞转售。",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "apt29",
+        "nso-group",
+        "intellexa",
+        "exploit-chains",
+        "zero-day",
+        "google-tag",
+        "commercial-surveillance"
+      ],
+      "severity": "high",
+      "threat_actor": "APT29"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Bluekit 钓鱼服务提供AI助手，40个模板",
+      "slug": "2026-04-30-bluekit-phishing-service-offers-ai-assistant-40-templates",
+      "excerpt": "一个名为Bluekit的新型钓鱼即服务平台提供超过40个针对银行、社交媒体和电子邮件提供商的模板，以及一个用于起草诱饵的AI助手。",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "phishing",
+        "phishing-as-a-service",
+        "ai",
+        "bluekit",
+        "credential-theft",
+        "telegram"
+      ],
+      "severity": "high",
+      "threat_actor": "Bluekit"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "CISA 详细说明 Interlock 勒索软件 TTPs, IOCs 在联合咨询中",
+      "slug": "2026-04-30-cisa-details-interlock-ransomware-ttps-iocs-in-joint-advisory",
+      "excerpt": "CISA 和 FBI 发布了关于 Interlock 勒索软件的联合咨询，详细说明了 TTPs, IOCs，以及从双重勒索转向仅针对医疗保健的数据盗窃攻击的转变...",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "interlock",
+        "ransomware",
+        "cisa",
+        "fbi",
+        "data-extortion",
+        "healthcare",
+        "critical-infrastructure"
+      ],
+      "severity": "high",
+      "threat_actor": "Interlock"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "假Roblox增强功能窃取数十万账户",
+      "slug": "2026-04-30-fake-roblox-enhancements-steal-hundreds-of-thousands-of-accounts",
+      "excerpt": "Malwarebytes报告称黑客利用假Roblox游戏增强功能窃取了数十万玩家的登录凭证，并将账户转售以获利。",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "roblox",
+        "credential-theft",
+        "account-takeover",
+        "gaming",
+        "social-engineering"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Google TAG: 2023年野外利用的97个零日漏洞",
+      "slug": "2026-04-30-google-tag-97-zero-days-exploited-in-wild-during-2023",
+      "excerpt": "Google TAG报告称，2023年野外利用的零日漏洞数量从2022年的62个增加到了97个。商业监控供应商推动了80%的目标漏洞利用。完整报告已发布。",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "zero-day",
+        "google-tag",
+        "in-the-wild-exploits",
+        "commercial-surveillance",
+        "2023-review",
+        "vulnerability-trends"
+      ],
+      "severity": "high",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
       "title": "Google TAG 2025年第一季度影响行动拆除详情",
       "slug": "2026-04-30-google-tag-details-q1-2025-influence-operations-takedowns",
       "excerpt": "Google TAG 在2025年第一季度终止了12个YouTube频道和多个与俄罗斯、中国、伊朗和以色列国家支持的影响活动相关的广告账户。",
@@ -802,6 +3650,46 @@
       ],
       "severity": "medium",
       "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "谷歌TAG在2025年第一季度破坏了1万个DRAGONBRIDGE影响行动",
+      "slug": "2026-04-30-google-tag-disrupted-10k-dragonbridge-influence-ops-in-q1-2025",
+      "excerpt": "谷歌TAG在2025年第一季度破坏了超过1万个DRAGONBRIDGE影响行动——这是被追踪到的最活跃的IO行动者——目标是选举、乌克兰战争叙事和中美关系……",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "dragonbridge",
+        "google-tag",
+        "influence-operations",
+        "china",
+        "disinformation",
+        "election-interference"
+      ],
+      "severity": "high",
+      "threat_actor": "DRAGONBRIDGE"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Google TAG 报告详细描述商业监控供应商行业",
+      "slug": "2026-04-30-google-tag-report-details-commercial-surveillance-vendor-industry",
+      "excerpt": "Google TAG的2026年报告绘制了50多家向政府出售间谍软件的商业监控供应商地图 —— 针对记者、活动家和律师。",
+      "date": "2026-04-30",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "commercial-surveillance",
+        "google-tag",
+        "spyware",
+        "government-surveillance",
+        "threat-intelligence",
+        "civil-society"
+      ],
+      "severity": "high",
+      "threat_actor": "Commercial Surveillance Vendors"
     },
     {
       "locale": "zh",
@@ -823,6 +3711,46 @@
       ],
       "severity": "high",
       "threat_actor": "GRU"
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "假冒 CAPTCHA 骗局导致国际短信费用",
+      "slug": "2026-04-29-fake-captcha-scam-racks-up-international-sms-charges",
+      "excerpt": "Malwarebytes 报告称骗子使用假冒 CAPTCHA 页面触发高额国际短信费用，通过 Keitaro 流量分发向受害者收取每条短信高达 15 美元的费用…",
+      "date": "2026-04-29",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "fake-captcha",
+        "sms-fraud",
+        "keitaro",
+        "malvertising",
+        "phone-billing-scam",
+        "malwarebytes"
+      ],
+      "severity": "medium",
+      "threat_actor": null
+    },
+    {
+      "locale": "zh",
+      "section": "threat-intel",
+      "title": "Handala Group 针对驻巴林美军通过WhatsApp威胁",
+      "slug": "2026-04-29-handala-group-targets-us-troops-in-bahrain-via-whatsapp-threats",
+      "excerpt": "与伊朗结盟的Handala集团向驻巴林的美国军人发送WhatsApp消息，威胁进行无人机和导弹攻击，加剧了对军队的心理战...",
+      "date": "2026-04-29",
+      "category": "threat-intel",
+      "author": "ZCyberNews",
+      "tags": [
+        "handala",
+        "iran",
+        "bahrain",
+        "whatsapp",
+        "psychological-warfare",
+        "us-military"
+      ],
+      "severity": "high",
+      "threat_actor": "Handala"
     },
     {
       "locale": "zh",

@@ -137,6 +137,12 @@ const MAX_ARTICLES = parseInt(
   10,
 );
 const DRY_RUN = args.includes("--dry-run");
+const CRITICAL_ONLY =
+  args.includes("--critical-only") || process.env.CRITICAL_ONLY === "true";
+const SOURCE_IDS = (process.env.SOURCE_IDS ?? "")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
 
 if (!DRY_RUN) {
   // Need at least one AI provider — OpenRouter (free) or DeepSeek/Kimi (paid)
@@ -156,18 +162,28 @@ if (!DRY_RUN) {
 
 async function main() {
   console.log(
-    `\n🚀 ZCyberNews AI Pipeline — max=${MAX_ARTICLES}${DRY_RUN ? " [DRY RUN]" : ""}\n`,
+    `\n🚀 ZCyberNews AI Pipeline — max=${MAX_ARTICLES}${DRY_RUN ? " [DRY RUN]" : ""}${CRITICAL_ONLY ? " [CRITICAL ONLY]" : ""}${SOURCE_IDS.length ? ` [sources=${SOURCE_IDS.join(",")}]` : ""}\n`,
   );
 
   // 1. Ingest fresh stories from RSS
   const stories = await ingestFeeds(MAX_ARTICLES * 3);
+  const selectedStories =
+    SOURCE_IDS.length > 0
+      ? stories.filter((s) => SOURCE_IDS.includes(s.sourceId ?? ""))
+      : stories;
 
-  if (stories.length === 0) {
+  if (SOURCE_IDS.length > 0) {
+    console.log(
+      `[pipeline] Source filter enabled: ${SOURCE_IDS.join(", ")} → ${selectedStories.length}/${stories.length} stories`,
+    );
+  }
+
+  if (selectedStories.length === 0) {
     console.log("[pipeline] No new stories to process. Exiting.");
     return;
   }
 
-  const routed = routeStoriesForGeneration(stories);
+  const routed = routeStoriesForGeneration(selectedStories);
   for (const skip of routed.skipped) {
     console.log(
       `[routing] skip ${skip.story.sourceId ?? skip.story.sourceName} ` +
@@ -176,7 +192,7 @@ async function main() {
   }
   if (routed.skipped.length > 0) {
     console.log(
-      `[routing] Skipped ${routed.skipped.length}/${stories.length} story/stories before generation`,
+      `[routing] Skipped ${routed.skipped.length}/${selectedStories.length} story/stories before generation`,
     );
   }
   const publishableStories: RoutedStory[] = routed.publishable;
@@ -309,6 +325,15 @@ async function main() {
               `[pipeline] ❌ Fact-check rejected "${article.title}" — ${fc.issues.filter((i) => i.severity === "high").length} high-severity issues`,
             );
             skippedFactCheck++;
+            markProcessedBatch(storyProcessedKeys);
+            return null;
+          }
+
+          if (CRITICAL_ONLY && article.severity !== "critical") {
+            console.log(
+              `[pipeline] Skipping non-critical article in critical-only mode: "${article.title}" (severity=${article.severity ?? "unset"})`,
+            );
+            skippedQuality++;
             markProcessedBatch(storyProcessedKeys);
             return null;
           }

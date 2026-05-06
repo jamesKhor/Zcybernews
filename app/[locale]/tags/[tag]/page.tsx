@@ -11,6 +11,7 @@ import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 import { Tag } from "lucide-react";
 import { canonicalSlugForSeoVariant } from "@/lib/seo-url-normalization";
+import { getTagArticleCount, PUBLIC_TAG_THRESHOLD } from "@/lib/public-tags";
 
 interface Props {
   params: Promise<{ locale: string; tag: string }>;
@@ -39,22 +40,10 @@ export async function generateStaticParams() {
   return params;
 }
 
-const THIN_TAG_THRESHOLD = 5;
-
-function countArticlesForTag(locale: string, tag: string): number {
-  const posts = getAllPosts(locale, "posts").filter(
-    (p) => isPublicArticle(p) && p.frontmatter.tags.includes(tag),
-  ).length;
-  const ti = getAllPosts(locale, "threat-intel").filter(
-    (p) => isPublicArticle(p) && p.frontmatter.tags.includes(tag),
-  ).length;
-  return posts + ti;
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, tag } = await params;
   const isZh = locale === "zh";
-  const isThin = countArticlesForTag(locale, tag) < THIN_TAG_THRESHOLD;
+  const isThin = getTagArticleCount(locale, tag) < PUBLIC_TAG_THRESHOLD;
   return {
     title: `#${tag}`,
     description: isZh

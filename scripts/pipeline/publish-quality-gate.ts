@@ -12,7 +12,13 @@ export interface PublishQualityDecision {
   blockingFlags: QualityFlag[];
 }
 
-const BLOCKING_WARN_CODES = new Set(["missing_references"]);
+const BLOCKING_WARN_CODES = new Set([
+  "missing_references",
+  "title_too_short",
+  "title_too_long",
+  "excerpt_too_short",
+  "excerpt_too_long",
+]);
 const STRUCTURED_THIN_BLOCK_CATEGORIES = new Set([
   "threat-intel",
   "vulnerabilities",

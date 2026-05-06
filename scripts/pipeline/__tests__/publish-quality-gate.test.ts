@@ -29,7 +29,7 @@ function article(partial: Partial<GeneratedArticle> = {}): GeneratedArticle {
       },
     ],
     ttp_matrix: [],
-    body: body(500),
+    body: body(700),
     ...partial,
   };
 }
@@ -60,7 +60,7 @@ describe("evaluatePublishQuality", () => {
   it("blocks articles with no references section or source URLs", () => {
     const decision = evaluatePublishQuality(
       article({
-        body: body(500, "## Key Takeaways\n- Defenders should review logs."),
+        body: body(700, "## Key Takeaways\n- Defenders should review logs."),
       }),
       [],
     );
@@ -68,6 +68,21 @@ describe("evaluatePublishQuality", () => {
     expect(decision.allowed).toBe(false);
     expect(decision.blockingFlags.map((f) => f.code)).toContain(
       "missing_references",
+    );
+  });
+
+  it("blocks articles whose title or excerpt would make weak search snippets", () => {
+    const decision = evaluatePublishQuality(
+      article({
+        title: "Weak Headline",
+        excerpt: "Too short for a useful search result.",
+      }),
+      ["https://example.com"],
+    );
+
+    expect(decision.allowed).toBe(false);
+    expect(decision.blockingFlags.map((f) => f.code)).toEqual(
+      expect.arrayContaining(["title_too_short", "excerpt_too_short"]),
     );
   });
 
@@ -96,7 +111,7 @@ describe("evaluatePublishQuality", () => {
         affected_sectors: [],
         affected_regions: [],
         iocs: [],
-        body: body(500),
+        body: body(700),
       }),
       ["https://example.com"],
     );
@@ -105,5 +120,23 @@ describe("evaluatePublishQuality", () => {
       "structured_fields_thin",
     );
     expect(decision.allowed).toBe(true);
+  });
+
+  it("allows moderately short articles while preserving the warning", () => {
+    const decision = evaluatePublishQuality(
+      article({
+        category: "industry",
+        body: body(500),
+      }),
+      ["https://example.com"],
+    );
+
+    expect(decision.allowed).toBe(true);
+    expect(decision.score.flags.map((f) => f.code)).toContain(
+      "word_count_below_floor",
+    );
+    expect(decision.blockingFlags.map((f) => f.code)).not.toContain(
+      "word_count_below_floor",
+    );
   });
 });

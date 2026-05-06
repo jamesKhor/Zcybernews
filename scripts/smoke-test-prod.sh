@@ -82,6 +82,69 @@ check() {
   echo "✓ ${label}  ${status} ${ct%%;*} ${size}B"
 }
 
+check_status_no_follow() {
+  local label="$1" url="$2" expect_status="$3"
+  TOTAL=$((TOTAL + 1))
+  local response status location
+  response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nLOCATION=%{redirect_url}" --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "HTTP=000")
+  status=$(echo "${response}" | grep "^HTTP=" | cut -d= -f2)
+  location=$(echo "${response}" | grep "^LOCATION=" | cut -d= -f2-)
+  if [ "${status}" != "${expect_status}" ]; then
+    echo "✗ ${label}  status=${status} expected=${expect_status}  url=${url}"
+    FAILURES=$((FAILURES + 1))
+    return
+  fi
+  echo "✓ ${label}  ${status} location=${location}"
+}
+
+check_redirect_or_streamed_redirect() {
+  local label="$1" url="$2" target_pattern="$3"
+  TOTAL=$((TOTAL + 1))
+  local response status location
+  response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nLOCATION=%{redirect_url}" --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "HTTP=000")
+  status=$(echo "${response}" | grep "^HTTP=" | cut -d= -f2)
+  location=$(echo "${response}" | grep "^LOCATION=" | cut -d= -f2-)
+
+  if [ "${status}" = "308" ] || [ "${status}" = "307" ] || [ "${status}" = "301" ] || [ "${status}" = "302" ]; then
+    if echo "${location}" | grep -qE "${target_pattern}"; then
+      echo "✓ ${label}  ${status} location=${location}"
+      return
+    fi
+    echo "✗ ${label}  redirect location=${location} missing pattern=${target_pattern}  url=${url}"
+    FAILURES=$((FAILURES + 1))
+    return
+  fi
+
+  # Next App Router can emit redirects after streaming has started as a
+  # 200 response containing a NEXT_REDIRECT digest/meta refresh. That is
+  # still a valid wrong-section guard; assert the target is present.
+  if [ "${status}" = "200" ] && grep -qE "NEXT_REDIRECT|__next-page-redirect|http-equiv=\"refresh\"" /tmp/smoke-body && grep -qE "${target_pattern}" /tmp/smoke-body; then
+    echo "✓ ${label}  streamed redirect target matched pattern=${target_pattern}"
+    return
+  fi
+
+  echo "✗ ${label}  status=${status} no redirect target pattern=${target_pattern}  url=${url}"
+  FAILURES=$((FAILURES + 1))
+}
+
+check_body_contains() {
+  local label="$1" url="$2" pattern="$3"
+  TOTAL=$((TOTAL + 1))
+  local status
+  status=$(curl -s -o /tmp/smoke-body -w "%{http_code}" -L --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "000")
+  if [ "${status}" != "200" ]; then
+    echo "✗ ${label}  status=${status} expected=200  url=${url}"
+    FAILURES=$((FAILURES + 1))
+    return
+  fi
+  if ! grep -qE "${pattern}" /tmp/smoke-body; then
+    echo "✗ ${label}  body missing pattern=${pattern}  url=${url}"
+    FAILURES=$((FAILURES + 1))
+    return
+  fi
+  echo "✓ ${label}  body matched pattern=${pattern}"
+}
+
 echo "Smoke test: ${BASE_URL}"
 echo "----------------------------------------"
 
@@ -96,6 +159,11 @@ check "GET /zh/salary"               "${BASE_URL}/zh/salary"             200 "te
 # Article detail — the SEV3 class that kept hitting 500 before
 # transpilePackages fix. Pick a known-stable article slug.
 check "GET /en/articles (listing)"   "${BASE_URL}/en/articles"           200 "text/html"
+STABLE_ARTICLE="2026-05-04-infrastructure-breach-hackers-steal-student-data-from-canvas-platform"
+check "GET stable article"           "${BASE_URL}/en/articles/${STABLE_ARTICLE}" 200 "text/html"
+check_body_contains "article canonical" "${BASE_URL}/en/articles/${STABLE_ARTICLE}" "rel=\"canonical\".*${STABLE_ARTICLE}"
+check_body_contains "article JSON-LD" "${BASE_URL}/en/articles/${STABLE_ARTICLE}" "application/ld\\+json"
+check_redirect_or_streamed_redirect "wrong-section redirects" "${BASE_URL}/en/threat-intel/${STABLE_ARTICLE}" "/en/articles/${STABLE_ARTICLE}"
 
 # Category + tag pages — NYT-style listings added today.
 check "GET /en/categories/vulnerabilities" "${BASE_URL}/en/categories/vulnerabilities" 200 "text/html"
@@ -103,6 +171,8 @@ check "GET /en/categories/vulnerabilities" "${BASE_URL}/en/categories/vulnerabil
 # Sitemap / robots — must be reachable and correct MIME.
 check "GET /sitemap.xml"             "${BASE_URL}/sitemap.xml"           200 "(xml|text)"
 check "GET /robots.txt"              "${BASE_URL}/robots.txt"            200 "text"
+check "GET /api/feed"                "${BASE_URL}/api/feed"              200 "application/rss\\+xml"
+check_body_contains "feed absolute URLs" "${BASE_URL}/api/feed" "${BASE_URL}/en/"
 
 # Favicon / icon — 2026-04-18 had proxy.ts matcher issue causing 308s.
 # Must return 200 image/png (not a redirect).

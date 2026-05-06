@@ -107,7 +107,7 @@ describe("digest quality-guard — articles that must NOT be dropped", () => {
   });
 
   it("does NOT drop merely WARN-level articles (below floor but not <60%)", () => {
-    // threat-intel floor = 700; 500 is WARN not SERIOUS
+    // threat-intel floor = 900; 650 is WARN not SERIOUS
     const s = scoreArticle({
       slug: "x",
       locale: "en",
@@ -115,7 +115,7 @@ describe("digest quality-guard — articles that must NOT be dropped", () => {
       frontmatter: fm({ category: "threat-intel" }),
       body:
         "## Executive Summary\n\n" +
-        Array(500).fill("word").join(" ") +
+        Array(650).fill("word").join(" ") +
         "\n\n## References\n- https://example.com",
     });
     expect(hasSerious(s.flags)).toBe(false);

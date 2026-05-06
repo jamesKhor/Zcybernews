@@ -141,6 +141,17 @@ export function getPostBySlug(
   return null;
 }
 
+export function getPostBySlugExact(
+  locale: string,
+  type: ContentType,
+  slug: string,
+): Article | null {
+  return (
+    getAllPosts(locale, type).find((post) => post.frontmatter.slug === slug) ??
+    null
+  );
+}
+
 export function getRelatedPosts(
   current: ArticleFrontmatter,
   locale: string,

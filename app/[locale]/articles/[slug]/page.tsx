@@ -1,6 +1,10 @@
 import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
-import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/content";
+import {
+  getAllPosts,
+  getPostBySlugExact,
+  getRelatedPosts,
+} from "@/lib/content";
 import { isPublicArticle, isPublicFrontmatter } from "@/lib/publication";
 import { compileMDX } from "@/lib/mdx";
 import { ArticleMeta } from "@/components/articles/ArticleMeta";
@@ -25,6 +29,8 @@ import {
   type ArticleLocale,
 } from "@/lib/article-url";
 import { canonicalSlugForSeoVariant } from "@/lib/seo-url-normalization";
+import { getSiteUrl } from "@/lib/site-url";
+import { isPublicTag } from "@/lib/public-tags";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -67,7 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Props shape, so we coerce explicitly. Non-"zh" → "en" mirrors the
   // existing fallback behavior used elsewhere in the codebase.
   const locale: ArticleLocale = rawLocale === "zh" ? "zh" : "en";
-  const article = getPostBySlug(locale, "posts", slug);
+  const article = getPostBySlugExact(locale, "posts", slug);
   if (!article) return {};
 
   const { frontmatter } = article;
@@ -116,7 +122,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: image ? [image] : [],
     },
     ...(!isPublicFrontmatter(frontmatter) && {
-      robots: { index: false, follow: false },
+      robots: { index: false, follow: true },
     }),
   };
 }
@@ -130,8 +136,23 @@ export default async function ArticlePage({ params }: Props) {
     permanentRedirect(articleUrl({ slug: canonicalSlug }, locale, "posts"));
   }
 
-  const article = getPostBySlug(locale, "posts", slug);
-  if (!article) notFound();
+  const article = getPostBySlugExact(locale, "posts", slug);
+  if (!article) {
+    if (locale === "zh" && getPostBySlugExact("en", "posts", slug)) {
+      permanentRedirect(articleUrl({ slug }, "en", "posts"));
+    }
+
+    const threatIntelArticle = getPostBySlugExact(locale, "threat-intel", slug);
+    if (threatIntelArticle) {
+      permanentRedirect(articleUrl({ slug }, locale, "threat-intel"));
+    }
+
+    if (locale === "zh" && getPostBySlugExact("en", "threat-intel", slug)) {
+      permanentRedirect(articleUrl({ slug }, "en", "threat-intel"));
+    }
+
+    notFound();
+  }
 
   const { frontmatter, content, readingTime } = article;
   // stripReferences: ## References list is for internal admin review only,
@@ -143,7 +164,10 @@ export default async function ArticlePage({ params }: Props) {
   const related = getRelatedPosts(frontmatter, locale, "posts", 12)
     .filter(isPublicArticle)
     .slice(0, 3);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
+  const publicTagSet = new Set(
+    frontmatter.tags.filter((tag) => isPublicTag(locale, tag)),
+  );
+  const siteUrl = getSiteUrl();
   const image =
     frontmatter.featured_image ??
     CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
@@ -159,6 +183,8 @@ export default async function ArticlePage({ params }: Props) {
         url={absoluteArticleUrl({ slug }, locale, "posts", siteUrl)}
         image={image ? `${siteUrl}${image}` : undefined}
         keywords={frontmatter.tags}
+        articleSection={frontmatter.category}
+        sourceUrls={frontmatter.source_urls}
       />
       <BreadcrumbJsonLd
         items={[
@@ -179,6 +205,7 @@ export default async function ArticlePage({ params }: Props) {
         readingTime={readingTime}
         related={related}
         locale={locale}
+        publicTagSet={publicTagSet}
       />
     </>
   );
@@ -191,6 +218,7 @@ function ArticlePageContent({
   readingTime,
   related,
   locale,
+  publicTagSet,
 }: {
   frontmatter: import("@/lib/types").ArticleFrontmatter;
   mdxContent: React.ReactElement;
@@ -198,6 +226,7 @@ function ArticlePageContent({
   readingTime: number;
   related: import("@/lib/content").Article[];
   locale: string;
+  publicTagSet: Set<string>;
 }) {
   const t = useTranslations("article");
   const featuredImage =
@@ -290,6 +319,7 @@ function ArticlePageContent({
                 <NextLink
                   key={tag}
                   href={`/${locale}/tags/${encodeURIComponent(tag)}`}
+                  rel={publicTagSet.has(tag) ? undefined : "nofollow"}
                   className="inline-block mr-2 mb-1 text-sm rounded-full bg-secondary hover:bg-secondary/80 px-3 py-1 transition-colors"
                 >
                   #{tag}

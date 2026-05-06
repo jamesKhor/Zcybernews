@@ -6,6 +6,7 @@ import {
   type FeedIndex,
   type FeedIndexArticle,
 } from "@/lib/feed-index";
+import { getSiteUrl } from "@/lib/site-url";
 import { NextRequest, NextResponse } from "next/server";
 
 export const revalidate = 600; // 10 min cache — fresher for Feedly
@@ -68,7 +69,7 @@ function buildItem(
 export async function GET(request: NextRequest) {
   const locale =
     request.nextUrl.searchParams.get("locale") === "zh" ? "zh" : "en";
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const siteUrl = getSiteUrl();
 
   const all = selectFeedArticles(loadFeedIndex().articles, locale, 20);
 

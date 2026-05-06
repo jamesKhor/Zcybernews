@@ -86,6 +86,7 @@ const nextConfig: NextConfig = {
 
     // Cache-Control values
     const cacheHour = "public, s-maxage=3600, stale-while-revalidate=86400";
+    const cacheTenMin = "public, s-maxage=600, stale-while-revalidate=3600";
     const cacheSixHour = "public, s-maxage=21600, stale-while-revalidate=86400";
     const cacheStaticAsset = "public, max-age=31536000, immutable";
     const cacheAdminPrivate = "private, no-cache, no-store, must-revalidate";
@@ -150,14 +151,20 @@ const nextConfig: NextConfig = {
         headers: [{ key: "Cache-Control", value: cacheHour }],
       },
 
-      // ── Public feeds: 1-hour edge cache ─────────────────────────────
+      // ── Public feeds/search: 10-minute edge cache ───────────────────
+      // These artifacts are regenerated on content-only deploys and are
+      // discovery surfaces, so keep them fresher than article HTML.
       {
         source: "/api/feed",
-        headers: [{ key: "Cache-Control", value: cacheHour }],
+        headers: [{ key: "Cache-Control", value: cacheTenMin }],
       },
       {
         source: "/api/wechat",
-        headers: [{ key: "Cache-Control", value: cacheHour }],
+        headers: [{ key: "Cache-Control", value: cacheTenMin }],
+      },
+      {
+        source: "/pagefind/:path*",
+        headers: [{ key: "Cache-Control", value: cacheTenMin }],
       },
 
       // ── Next.js static assets: immutable 1-year cache ───────────────

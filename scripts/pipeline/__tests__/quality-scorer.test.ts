@@ -21,10 +21,11 @@ import type { ArticleFrontmatter } from "../../../lib/types";
 
 function fm(partial: Partial<ArticleFrontmatter> = {}): ArticleFrontmatter {
   return {
-    title: "Test Article",
+    title: "Security Teams Block Credential Theft Campaign",
     slug: "test-article",
     date: "2026-04-22",
-    excerpt: "A test excerpt.",
+    excerpt:
+      "Security teams blocked a credential theft campaign targeting enterprise accounts with phishing infrastructure and token replay.",
     category: "industry",
     tags: ["security", "test", "news"],
     language: "en",
@@ -208,7 +209,7 @@ describe("scoreArticle — SERIOUS flags", () => {
       slug: "x",
       locale: "en",
       section: "posts",
-      frontmatter: fm({ category: "threat-intel" }), // floor 700
+      frontmatter: fm({ category: "threat-intel" }), // floor 900
       body: longBody(300),
     });
     expect(s.flags.some((f) => f.code === "word_count_way_below_floor")).toBe(
@@ -225,8 +226,8 @@ describe("scoreArticle — WARN flags", () => {
       slug: "x",
       locale: "en",
       section: "posts",
-      frontmatter: fm({ category: "threat-intel" }), // floor 700
-      body: longBody(500), // 71% of floor → WARN not SERIOUS
+      frontmatter: fm({ category: "threat-intel" }), // floor 900
+      body: longBody(650), // 72% of floor → WARN not SERIOUS
     });
     expect(s.flags.some((f) => f.code === "word_count_below_floor")).toBe(true);
     expect(s.flags.some((f) => f.code === "word_count_way_below_floor")).toBe(
@@ -265,6 +266,52 @@ describe("scoreArticle — WARN flags", () => {
       body: longBody(800, "## References\n- https://example.com"),
     });
     expect(s.flags.some((f) => f.code === "tags_too_many")).toBe(true);
+  });
+
+  it("flags titles outside SERP-safe bounds", () => {
+    const short = scoreArticle({
+      slug: "x",
+      locale: "en",
+      section: "posts",
+      frontmatter: fm({ title: "Short Title" }),
+      body: longBody(800, "## References\n- https://example.com"),
+    });
+    expect(short.flags.some((f) => f.code === "title_too_short")).toBe(true);
+
+    const long = scoreArticle({
+      slug: "x",
+      locale: "en",
+      section: "posts",
+      frontmatter: fm({
+        title:
+          "Microsoft Patches Critical SharePoint Zero-Day Exploited in Active Attacks Against Agencies",
+      }),
+      body: longBody(800, "## References\n- https://example.com"),
+    });
+    expect(long.flags.some((f) => f.code === "title_too_long")).toBe(true);
+  });
+
+  it("flags excerpts outside SERP-safe bounds", () => {
+    const short = scoreArticle({
+      slug: "x",
+      locale: "en",
+      section: "posts",
+      frontmatter: fm({ excerpt: "Too little detail." }),
+      body: longBody(800, "## References\n- https://example.com"),
+    });
+    expect(short.flags.some((f) => f.code === "excerpt_too_short")).toBe(true);
+
+    const long = scoreArticle({
+      slug: "x",
+      locale: "en",
+      section: "posts",
+      frontmatter: fm({
+        excerpt:
+          "Microsoft patched a critical SharePoint zero-day after attackers exploited it against public-sector agencies, exposing unpatched servers, identity tokens, and internal collaboration data across several high-value environments.",
+      }),
+      body: longBody(800, "## References\n- https://example.com"),
+    });
+    expect(long.flags.some((f) => f.code === "excerpt_too_long")).toBe(true);
   });
 });
 

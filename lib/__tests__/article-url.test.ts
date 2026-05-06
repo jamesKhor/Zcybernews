@@ -117,6 +117,13 @@ describe("absoluteArticleUrl", () => {
     );
   });
 
+  it("normalizes www production host to canonical apex", () => {
+    process.env.NEXT_PUBLIC_SITE_URL = "https://www.zcybernews.com";
+    expect(absoluteArticleUrl({ slug: "foo" }, "en", "posts")).toBe(
+      "https://zcybernews.com/en/articles/foo",
+    );
+  });
+
   it("explicit baseUrl overrides env", () => {
     process.env.NEXT_PUBLIC_SITE_URL = "https://staging.zcybernews.com";
     expect(

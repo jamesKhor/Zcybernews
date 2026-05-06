@@ -6,6 +6,7 @@ import {
   ArticleFrontmatterSchema,
   type ArticleFrontmatter,
 } from "../lib/types.js";
+import { isPublicFrontmatter } from "../lib/publication.js";
 import { buildSearchIndexRecord } from "./search-index-records.js";
 import type { ArticleLocale, ArticleSection } from "../lib/article-url.js";
 
@@ -29,6 +30,12 @@ function isPublishedNow(frontmatter: ArticleFrontmatter): boolean {
     return new Date(frontmatter.scheduled_publish) <= new Date();
   }
   return true;
+}
+
+export function isSearchIndexableFrontmatter(
+  frontmatter: ArticleFrontmatter,
+): boolean {
+  return isPublishedNow(frontmatter) && isPublicFrontmatter(frontmatter);
 }
 
 function loadArticles(): LoadedArticle[] {
@@ -55,7 +62,7 @@ function loadArticles(): LoadedArticle[] {
             continue;
           }
 
-          if (!isPublishedNow(result.data)) {
+          if (!isSearchIndexableFrontmatter(result.data)) {
             continue;
           }
 
@@ -117,8 +124,12 @@ async function main() {
   console.log(`[search-index] indexed ${indexed} articles into ${OUTPUT_DIR}`);
 }
 
-main().catch(async (err) => {
-  await pagefindModule?.close().catch(() => null);
-  console.error(err);
-  process.exit(1);
-});
+if (
+  process.argv[1]?.replace(/\\/g, "/").endsWith("scripts/build-search-index.ts")
+) {
+  main().catch(async (err) => {
+    await pagefindModule?.close().catch(() => null);
+    console.error(err);
+    process.exit(1);
+  });
+}

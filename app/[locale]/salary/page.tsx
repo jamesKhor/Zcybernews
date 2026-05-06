@@ -47,6 +47,7 @@ import {
   WebPageJsonLd,
 } from "@/components/seo/JsonLd";
 import { SalaryFAQ } from "./SalaryFAQ";
+import { getSiteUrl } from "@/lib/site-url";
 
 // ISR — daily refresh. Salary data doesn't change hourly.
 export const revalidate = 86400;
@@ -56,7 +57,7 @@ export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "zh" }];
 }
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
+const SITE_URL = getSiteUrl();
 
 // Sources cited in methodology + JSON-LD (kept in code so they stay in sync)
 const PRIMARY_SOURCES = [

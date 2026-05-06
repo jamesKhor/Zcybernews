@@ -31,6 +31,7 @@
  * This module is PURE: no fs, network, console, process.env reads
  * beyond the explicit opt-in `absoluteArticleUrl()` baseUrl default.
  */
+import { getSiteUrl } from "./site-url";
 
 // ─── Types ────────────────────────────────────────────────────────────
 
@@ -66,8 +67,6 @@ export const SECTION_TO_SEGMENT: Record<ArticleSection, string> = {
   "threat-intel": "threat-intel",
 };
 
-const DEFAULT_BASE_URL = "https://zcybernews.com";
-
 // ─── Helpers (internal) ───────────────────────────────────────────────
 
 function normalizeSlug(slug: string): string {
@@ -89,10 +88,6 @@ function normalizeSlug(slug: string): string {
     );
   }
   return trimmed;
-}
-
-function stripTrailingSlash(url: string): string {
-  return url.replace(/\/+$/, "");
 }
 
 // ─── Public API ───────────────────────────────────────────────────────
@@ -150,8 +145,6 @@ export function absoluteArticleUrl(
   section: ArticleSection,
   baseUrl?: string,
 ): string {
-  const base = stripTrailingSlash(
-    baseUrl ?? process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_BASE_URL,
-  );
+  const base = getSiteUrl(baseUrl);
   return `${base}${articleUrl(article, locale, section)}`;
 }

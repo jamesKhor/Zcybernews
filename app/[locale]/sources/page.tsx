@@ -32,6 +32,7 @@ import Link from "next/link";
 import { Rss, ExternalLink, Mail } from "lucide-react";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
+import { getSiteUrl } from "@/lib/site-url";
 import sourcesDataRaw from "@/data/rss-sources.json";
 
 export const revalidate = 86400;
@@ -40,7 +41,7 @@ export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "zh" }];
 }
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
+const SITE_URL = getSiteUrl();
 
 type Tier = "trusted" | "standard" | "under-review" | "excluded";
 

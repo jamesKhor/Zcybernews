@@ -1,5 +1,6 @@
 import { absoluteArticleUrl, type ArticleLocale } from "@/lib/article-url";
 import { selectFeedArticles, type FeedIndex } from "@/lib/feed-index";
+import { getSiteUrl } from "@/lib/site-url";
 import fs from "node:fs";
 import path from "node:path";
 import { NextResponse, type NextRequest } from "next/server";
@@ -17,7 +18,7 @@ export async function GET(request: NextRequest) {
   const locale: ArticleLocale =
     searchParams.get("locale") === "en" ? "en" : "zh";
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const siteUrl = getSiteUrl();
   const posts = selectFeedArticles(loadFeedIndex().articles, locale)
     .filter((article) => article.section === "posts")
     .slice(0, 10);

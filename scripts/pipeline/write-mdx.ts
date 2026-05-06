@@ -5,6 +5,7 @@ import type { GeneratedArticle } from "../ai/schemas/article-schema.js";
 import type { TranslatedMeta } from "./translate-article.js";
 import type { ArticleFrontmatter } from "../../lib/types.js";
 import { evaluatePublicGate } from "../../lib/publication.js";
+import { scoreArticle } from "./quality-scorer.js";
 import {
   findDuplicateOnDisk,
   claimInFlight,
@@ -106,6 +107,7 @@ function buildFrontmatter(
   date: string,
   datedSlug: string,
   sourceUrls: string[],
+  body: string,
   options?: { clusterKey?: string; sourceCount?: number },
   overrides?: Partial<{ title: string; excerpt: string; locale_pair: string }>,
 ): Record<string, unknown> {
@@ -141,7 +143,21 @@ function buildFrontmatter(
   if (article.iocs.length) fm.iocs = article.iocs;
   if (article.ttp_matrix.length) fm.ttp_matrix = article.ttp_matrix;
 
-  const gate = evaluatePublicGate(fm as ArticleFrontmatter);
+  const section =
+    article.category === "threat-intel" ? "threat-intel" : "posts";
+  const score = scoreArticle({
+    slug: datedSlug,
+    locale,
+    section,
+    frontmatter: fm as ArticleFrontmatter,
+    body,
+  });
+  const gate = evaluatePublicGate(fm as ArticleFrontmatter, {
+    wordCount: score.wordCount,
+    wordCountFloor: score.wordCountFloor,
+    hasReferences: score.hasReferences,
+    hedgingHits: score.hedgingHits,
+  });
   fm.publish_tier = gate.tier;
   if (!gate.pass) {
     fm.public_gate_reasons = gate.reasons;
@@ -251,6 +267,7 @@ export function writeArticlePair(
       date,
       datedSlug,
       sourceUrls,
+      article.body,
       options,
       {
         locale_pair: zhMeta ? datedSlug : undefined,
@@ -267,6 +284,7 @@ export function writeArticlePair(
         date,
         datedSlug,
         sourceUrls,
+        zhMeta.body,
         options,
         {
           title: zhMeta.title,

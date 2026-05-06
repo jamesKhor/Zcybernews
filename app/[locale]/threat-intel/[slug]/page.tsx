@@ -1,6 +1,10 @@
 import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
-import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/content";
+import {
+  getAllPosts,
+  getPostBySlugExact,
+  getRelatedPosts,
+} from "@/lib/content";
 import { isPublicArticle, isPublicFrontmatter } from "@/lib/publication";
 import { compileMDX } from "@/lib/mdx";
 import { ArticleMeta } from "@/components/articles/ArticleMeta";
@@ -23,6 +27,7 @@ import {
   type ArticleLocale,
 } from "@/lib/article-url";
 import { canonicalSlugForSeoVariant } from "@/lib/seo-url-normalization";
+import { getSiteUrl } from "@/lib/site-url";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -52,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Narrow once for the URL helper — same pattern as the articles
   // detail page. See articles/[slug]/page.tsx for rationale.
   const locale: ArticleLocale = rawLocale === "zh" ? "zh" : "en";
-  const article = getPostBySlug(locale, "threat-intel", slug);
+  const article = getPostBySlugExact(locale, "threat-intel", slug);
   if (!article) return {};
   const { frontmatter } = article;
   const image =
@@ -100,7 +105,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: image ? [image] : [],
     },
     ...(!isPublicFrontmatter(frontmatter) && {
-      robots: { index: false, follow: false },
+      robots: { index: false, follow: true },
     }),
   };
 }
@@ -116,8 +121,23 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
     );
   }
 
-  const article = getPostBySlug(locale, "threat-intel", slug);
-  if (!article) notFound();
+  const article = getPostBySlugExact(locale, "threat-intel", slug);
+  if (!article) {
+    if (locale === "zh" && getPostBySlugExact("en", "threat-intel", slug)) {
+      permanentRedirect(articleUrl({ slug }, "en", "threat-intel"));
+    }
+
+    const postArticle = getPostBySlugExact(locale, "posts", slug);
+    if (postArticle) {
+      permanentRedirect(articleUrl({ slug }, locale, "posts"));
+    }
+
+    if (locale === "zh" && getPostBySlugExact("en", "posts", slug)) {
+      permanentRedirect(articleUrl({ slug }, "en", "posts"));
+    }
+
+    notFound();
+  }
 
   const { frontmatter, content, readingTime } = article;
   // stripReferences: ## References list is for internal admin review only,
@@ -129,7 +149,7 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
   const related = getRelatedPosts(frontmatter, locale, "threat-intel", 12)
     .filter(isPublicArticle)
     .slice(0, 3);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
+  const siteUrl = getSiteUrl();
   const image =
     frontmatter.featured_image ??
     CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
@@ -145,6 +165,8 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
         url={absoluteArticleUrl({ slug }, locale, "threat-intel", siteUrl)}
         image={image ? `${siteUrl}${image}` : undefined}
         keywords={frontmatter.tags}
+        articleSection={frontmatter.category}
+        sourceUrls={frontmatter.source_urls}
       />
       <BreadcrumbJsonLd
         items={[

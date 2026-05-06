@@ -1,4 +1,6 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
+import { getSiteUrl } from "@/lib/site-url";
+
+const SITE_URL = getSiteUrl();
 const PUBLISHER_NAME = "ZCyberNews";
 const PUBLISHER_LOGO = `${SITE_URL}/opengraph-image`;
 
@@ -18,6 +20,8 @@ interface NewsArticleJsonLdProps {
   url: string;
   image?: string;
   keywords?: string[];
+  articleSection?: string;
+  sourceUrls?: string[];
 }
 
 export function NewsArticleJsonLd({
@@ -29,6 +33,8 @@ export function NewsArticleJsonLd({
   url,
   image,
   keywords = [],
+  articleSection,
+  sourceUrls = [],
 }: NewsArticleJsonLdProps) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -52,10 +58,22 @@ export function NewsArticleJsonLd({
     },
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    isAccessibleForFree: true,
+    ...(articleSection && { articleSection }),
     ...(image && {
       image: { "@type": "ImageObject", url: image, width: 1200, height: 630 },
     }),
     ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
+    ...(sourceUrls.length > 0 && {
+      citation: sourceUrls.map((sourceUrl) => ({
+        "@type": "CreativeWork",
+        url: sourceUrl,
+      })),
+      isBasedOn: sourceUrls.map((sourceUrl) => ({
+        "@type": "CreativeWork",
+        url: sourceUrl,
+      })),
+    }),
     inLanguage: url.includes("/zh/") ? "zh-Hans" : "en",
   };
 

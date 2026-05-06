@@ -6,11 +6,21 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 <!-- END:nextjs-agent-rules -->
 
-# Context7 — Always use official docs
+# Official Docs — No Context7 requirement
 
-This project has **Context7 MCP** installed. Before writing any code that uses a library from the tech stack, you MUST use Context7 to fetch the latest official documentation for that library.
+Do not require Context7 for this project. Before writing code that uses a
+library from the tech stack, check official documentation directly.
 
-**Tech stack libraries requiring Context7 lookup:**
+Preferred lookup order:
+
+1. Use local installed docs when they exist, especially
+   `node_modules/next/dist/docs/` for Next.js.
+2. If local docs are missing or insufficient, browse the library's official
+   documentation site or official repository.
+3. Cite or summarize the relevant docs in the handoff when the behavior is
+   version-sensitive.
+
+**Tech stack libraries requiring official-doc lookup:**
 
 - `next` — Next.js 16 (breaking changes from 15, always check docs)
 - `next-auth` — Auth.js v5 beta (API differs significantly from v4)
@@ -20,4 +30,5 @@ This project has **Context7 MCP** installed. Before writing any code that uses a
 - `pagefind` — static search indexing
 - `rss-parser` — feed parsing
 
-**Rule:** Do not rely on training data for any of the above. Call Context7 first, then write code.
+**Rule:** Do not rely on training data for any of the above. Use installed
+package docs or official vendor docs first, then write code.

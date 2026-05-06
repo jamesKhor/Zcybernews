@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
+import { getAllTags } from "@/lib/content";
+import { isPublicTag } from "@/lib/public-tags";
+import { CategoryEnum } from "@/lib/types";
 
 /**
  * Secret-guarded revalidation endpoint.
@@ -34,22 +37,74 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const path = url.searchParams.get("path");
+  const requestedPaths = url.searchParams.getAll("path");
   const tag = url.searchParams.get("tag");
+  const requestedTags = url.searchParams.getAll("contentTag");
+  const requestedCategories = url.searchParams.getAll("category");
 
-  if (!path && !tag) {
+  if (requestedPaths.length === 0 && !tag) {
     return NextResponse.json(
       { error: "Provide ?path= and/or ?tag= query param" },
       { status: 400 },
     );
   }
 
+  const locales = ["en", "zh"] as const;
+  const categoryPaths = locales.flatMap((locale) => [
+    ...CategoryEnum.options.map(
+      (category) => `/${locale}/categories/${category}`,
+    ),
+    ...requestedCategories.map(
+      (category) => `/${locale}/categories/${encodeURIComponent(category)}`,
+    ),
+  ]);
+  const publicTagPaths = locales.flatMap((locale) =>
+    [
+      ...new Set([
+        ...getAllTags(locale, "posts"),
+        ...getAllTags(locale, "threat-intel"),
+        ...requestedTags,
+      ]),
+    ]
+      .filter(
+        (contentTag) =>
+          requestedTags.includes(contentTag) || isPublicTag(locale, contentTag),
+      )
+      .map((contentTag) => `/${locale}/tags/${encodeURIComponent(contentTag)}`),
+  );
+
+  const paths = [
+    ...new Set([
+      ...requestedPaths,
+      "/en",
+      "/zh",
+      "/en/articles",
+      "/zh/articles",
+      "/en/threat-intel",
+      "/zh/threat-intel",
+      "/en/categories",
+      "/zh/categories",
+      "/api/feed",
+      "/api/feed?locale=zh",
+      "/api/wechat",
+      "/api/wechat?locale=en",
+      "/pagefind/pagefind.js",
+      "/pagefind/pagefind-entry.json",
+      "/pagefind/pagefind-ui.js",
+      "/pagefind/pagefind-ui.css",
+      "/pagefind/pagefind-worker.js",
+      "/sitemap.xml",
+      ...categoryPaths,
+      ...publicTagPaths,
+    ]),
+  ];
+
   const revalidated: { paths: string[]; tags: string[] } = {
     paths: [],
     tags: [],
   };
 
-  if (path) {
+  for (const path of paths) {
     // Revalidate the page AND any layouts that wrap it so listing pages update too
     revalidatePath(path);
     revalidated.paths.push(path);
@@ -78,7 +133,7 @@ export async function POST(req: NextRequest) {
   //   CLOUDFLARE_API_TOKEN — fine-grained: Zone.Cache Purge permission
   //   CLOUDFLARE_ZONE_ID   — from Cloudflare dashboard (zone overview)
   //   NEXT_PUBLIC_SITE_URL — already set (https://zcybernews.com)
-  const cfPurged = await maybePurgeCloudflare(path);
+  const cfPurged = await maybePurgeCloudflare(paths);
   const out: Record<string, unknown> = {
     revalidated,
     now: new Date().toISOString(),
@@ -94,15 +149,15 @@ export async function POST(req: NextRequest) {
  *   true   — purge API returned success
  *   false  — purge API returned error (logged; does not fail the request)
  */
-async function maybePurgeCloudflare(
-  path: string | null,
-): Promise<boolean | null> {
+async function maybePurgeCloudflare(paths: string[]): Promise<boolean | null> {
   const token = process.env.CLOUDFLARE_API_TOKEN;
   const zoneId = process.env.CLOUDFLARE_ZONE_ID;
-  if (!token || !zoneId || !path) return null;
+  if (!token || !zoneId || paths.length === 0) return null;
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
-  const fullUrl = path.startsWith("http") ? path : `${siteUrl}${path}`;
+  const files = paths.map((path) =>
+    path.startsWith("http") ? path : `${siteUrl}${path}`,
+  );
 
   try {
     const res = await fetch(
@@ -113,18 +168,18 @@ async function maybePurgeCloudflare(
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ files: [fullUrl] }),
+        body: JSON.stringify({ files }),
         signal: AbortSignal.timeout(5000),
       },
     );
     if (res.ok) return true;
     console.warn(
-      `[revalidate] CF purge failed for ${fullUrl}: ${res.status} ${res.statusText}`,
+      `[revalidate] CF purge failed for ${files.join(", ")}: ${res.status} ${res.statusText}`,
     );
     return false;
   } catch (err) {
     console.warn(
-      `[revalidate] CF purge error for ${fullUrl}:`,
+      `[revalidate] CF purge error for ${files.join(", ")}:`,
       err instanceof Error ? err.message : err,
     );
     return false;

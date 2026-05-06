@@ -54,6 +54,37 @@ describe("publication gate", () => {
     expect(decision.reasons).toContain("source_depth");
   });
 
+  it("allows concrete single-source reporting when structured evidence is present", () => {
+    const decision = evaluatePublicGate(
+      frontmatter({
+        source_urls: ["https://example.com/story"],
+        affected_sectors: ["education"],
+        affected_regions: ["North America"],
+      }),
+    );
+
+    expect(decision).toEqual({ pass: true, tier: "public", reasons: [] });
+  });
+
+  it("keeps articles in brief tier when scorer body signals are unsafe", () => {
+    const decision = evaluatePublicGate(frontmatter(), {
+      wordCount: 250,
+      wordCountFloor: 800,
+      hasReferences: false,
+      hedgingHits: ["CVE ID not yet assigned"],
+    });
+
+    expect(decision.pass).toBe(false);
+    expect(decision.tier).toBe("brief");
+    expect(decision.reasons).toEqual(
+      expect.arrayContaining([
+        "body_too_thin",
+        "missing_references",
+        "hedging_phrase",
+      ]),
+    );
+  });
+
   it("requires CVE IDs for vulnerability articles", () => {
     const decision = evaluatePublicGate(
       frontmatter({
@@ -64,5 +95,43 @@ describe("publication gate", () => {
 
     expect(decision.pass).toBe(false);
     expect(decision.reasons).toContain("vulnerability_missing_cve");
+  });
+
+  it("does not demote sourced articles for SERP length warnings", () => {
+    const decision = evaluatePublicGate(
+      frontmatter({
+        title:
+          "CVE-2026-12345 Exploited in Enterprise VPN Appliances After Emergency Vendor Advisory",
+        excerpt:
+          "CVE-2026-12345 is being exploited against enterprise VPN appliances after public proof-of-concept code appeared, forcing administrators to apply the vendor emergency update immediately.",
+      }),
+    );
+
+    expect(decision).toEqual({ pass: true, tier: "public", reasons: [] });
+  });
+
+  it("allows single-source articles with concrete structured evidence", () => {
+    const decision = evaluatePublicGate(
+      frontmatter({
+        source_urls: ["https://example.com/story"],
+        cvss_score: 9.8,
+      }),
+    );
+
+    expect(decision.reasons).not.toContain("source_depth");
+    expect(decision.tier).toBe("public");
+  });
+
+  it("keeps scorer-backed thin articles out of the public tier", () => {
+    const decision = evaluatePublicGate(frontmatter(), {
+      wordCount: 250,
+      wordCountFloor: 800,
+      hasReferences: true,
+      hedgingHits: [],
+    });
+
+    expect(decision.pass).toBe(false);
+    expect(decision.tier).toBe("brief");
+    expect(decision.reasons).toContain("body_too_thin");
   });
 });

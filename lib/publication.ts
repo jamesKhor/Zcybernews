@@ -27,6 +27,15 @@ export interface PublicGateResult {
   reasons: string[];
 }
 
+export interface PublicGateOptions {
+  wordCount?: number;
+  wordCountFloor?: number;
+  hasReferences?: boolean;
+  hedgingHits?: string[];
+}
+
+const MIN_INDEXABLE_WORD_RATIO = 0.6;
+
 function normalizeHost(url: string): string | null {
   try {
     return new URL(url).hostname.replace(/^(www|m)\./, "").toLowerCase();
@@ -78,6 +87,20 @@ function hasThreatIntelStructuredValue(
   );
 }
 
+function hasStrongSingleSourceEvidence(
+  frontmatter: ArticleFrontmatter,
+): boolean {
+  return Boolean(
+    (frontmatter.cve_ids?.length ?? 0) > 0 ||
+    typeof frontmatter.cvss_score === "number" ||
+    frontmatter.threat_actor ||
+    (frontmatter.iocs?.length ?? 0) > 0 ||
+    (frontmatter.ttp_matrix?.length ?? 0) > 0 ||
+    ((frontmatter.affected_sectors?.length ?? 0) > 0 &&
+      (frontmatter.affected_regions?.length ?? 0) > 0),
+  );
+}
+
 export function getPublishTier(frontmatter: ArticleFrontmatter): PublishTier {
   return frontmatter.publish_tier ?? "brief";
 }
@@ -92,19 +115,35 @@ export function isPublicArticle(article: Article): boolean {
 
 export function evaluatePublicGate(
   frontmatter: ArticleFrontmatter,
+  options: PublicGateOptions = {},
 ): PublicGateResult {
   const reasons: string[] = [];
   const sourceUrls = frontmatter.source_urls ?? [];
 
   if (
     !hasTwoIndependentSources(sourceUrls) &&
-    !sourceUrls.some(isPrimaryAuthorityUrl)
+    !sourceUrls.some(isPrimaryAuthorityUrl) &&
+    !hasStrongSingleSourceEvidence(frontmatter)
   ) {
     reasons.push("source_depth");
   }
 
-  if (frontmatter.title.length > 70) reasons.push("title_too_long");
-  if (frontmatter.excerpt.length > 160) reasons.push("excerpt_too_long");
+  if (
+    typeof options.wordCount === "number" &&
+    typeof options.wordCountFloor === "number" &&
+    options.wordCount < options.wordCountFloor * MIN_INDEXABLE_WORD_RATIO
+  ) {
+    reasons.push("body_too_thin");
+  }
+
+  if (options.hasReferences === false) {
+    reasons.push("missing_references");
+  }
+
+  if ((options.hedgingHits?.length ?? 0) > 0) {
+    reasons.push("hedging_phrase");
+  }
+
   if (!hasConcreteExcerptSignal(frontmatter)) {
     reasons.push("excerpt_lacks_concrete_signal");
   }

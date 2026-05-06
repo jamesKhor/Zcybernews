@@ -433,6 +433,20 @@
     "lastReviewed": "2026-04-22"
   },
   {
+    "id": "fortinet-psirt",
+    "name": "Fortinet PSIRT Advisories",
+    "homepage": "https://fortiguard.fortinet.com/psirt",
+    "url": "https://fortiguard.com/rss/ir.xml",
+    "category": "vulnerabilities",
+    "type": "rss",
+    "enabled": true,
+    "tier": "trusted",
+    "description": "Official Fortinet PSIRT advisory feed for vulnerability disclosures and remediation guidance.",
+    "lastReviewed": "2026-05-06",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
+  },
+  {
     "id": "proofpoint",
     "name": "Proofpoint Threat Insight",
     "homepage": "https://www.proofpoint.com/us/blog",
@@ -498,6 +512,20 @@
     "tier": "trusted",
     "description": "Small independent research shop with a consistent track record of zero-day discoveries (Ivanti, Atlassian, Exchange).",
     "lastReviewed": "2026-05-05",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
+  },
+  {
+    "id": "ivanti-advisory",
+    "name": "Ivanti Security Advisories",
+    "homepage": "https://www.ivanti.com/blog/topics/security-advisory",
+    "url": "https://www.ivanti.com/blog/topics/security-advisory/rss",
+    "category": "vulnerabilities",
+    "type": "rss",
+    "enabled": true,
+    "tier": "trusted",
+    "description": "Official Ivanti security advisory feed with vulnerability disclosures and mitigation guidance.",
+    "lastReviewed": "2026-05-06",
     "seoIntent": "rank-both",
     "sourceLanguage": "en"
   },

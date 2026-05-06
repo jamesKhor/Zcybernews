@@ -5,8 +5,8 @@ export interface BuildArticlePromptOptions {
   /**
    * Target word range injected into WRITING RULES. Adaptive per
    * source richness (see scripts/pipeline/generate-article.ts →
-   * classifySourceRichness). Examples: "800-1200 words", "1500-2200
-   * words", "2000-3000 words". Defaults to 1500-2200 which matches
+   * classifySourceRichness). Examples: "650-900 words", "1000-1400
+   * words", "1800-2600 words". Defaults to 1400-2000 which matches
    * the majority-case "long" tier.
    */
   targetRange?: string;
@@ -17,7 +17,7 @@ export function buildArticlePrompt(
   recentTitles: string[] = [],
   options: BuildArticlePromptOptions = {},
 ): string {
-  const targetRange = options.targetRange ?? "1500-2200 words";
+  const targetRange = options.targetRange ?? "1400-2000 words";
   const sourceContext = stories
     .map(
       (s, i) =>
@@ -122,10 +122,11 @@ Technical Analysis → IOCs → TTPs → Threat Actor Context → Mitigations
 
 WRITING RULES:
 - Do NOT copy sentences verbatim — rewrite entirely in your own words
-- Target length: ${targetRange} total. This target is calibrated to the
-  amount of source material provided below. DO NOT pad to hit the
+- Target length: ${targetRange} total. Google has no preferred word count;
+  this target is calibrated to satisfy the reader's likely search intent and
+  the amount of source material provided below. DO NOT pad to hit the
   upper bound if the source material does not genuinely support that
-  depth — a tight 1200-word article is better than a bloated 2000-word
+  depth — a tight 1000-word article is better than a bloated 2000-word
   one with filler.
 - ANTI-FILLER RULES (CRITICAL — quality gate):
   * Every paragraph must add a NEW fact, analysis, or technical detail
@@ -149,9 +150,9 @@ WRITING RULES:
     evolve". These are filler. End the article with the References
     section, not a wrap-up paragraph.
   * If total source material is thin and you cannot meet the lower
-    bound of the target range without padding, it is ACCEPTABLE to
-    write a shorter honest article. The target is a ceiling discipline,
-    not a floor obligation.
+    bound of the target range without padding, REJECT with reason
+    "too-thin" instead of writing a short index-quality article. The target is
+    a helpfulness floor and a ceiling discipline, not permission to pad.
 - Use markdown (## headings, **bold** for key terms, \`code\` for CVE IDs/hashes/commands)
 - Start Executive Summary with the most important finding
 - References section: list all source URLs as markdown links

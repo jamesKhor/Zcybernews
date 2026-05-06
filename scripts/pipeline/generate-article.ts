@@ -16,16 +16,6 @@ import { storySourceText } from "./source-corpus.js";
  * it demand 600 words wastes depth when sources have pages of detail.
  * Adapt target to what the source actually supports.
  *
- * Signal: total chars of RSS title + excerpt across the batch.
- *   < 800 chars  → thin source  → medium article (800-1200)
- *   < 2500 chars → normal       → long (1500-2200)
- *   ≥ 2500 chars → rich source  → extended (2000-3000)
- *
- * Multi-source batches get more headroom because combined material
- * justifies more detail. Bands chosen from analysis of our 326-article
- * corpus: median source excerpt = ~1400 chars.
- */
-/**
  * Classify source richness by INFO DENSITY, not char length (2026-04-21
  * rewrite after Fortinet quality incident). Char-length was the wrong
  * signal — a 2500-char vendor advisory can have ZERO substantive info
@@ -38,11 +28,11 @@ import { storySourceText } from "./source-corpus.js";
  *   • CVSS scores
  *   • IOC hashes / IPs
  *   • Named threat actors (cross-referenced with known-actors list)
- * If 0 tokens present → "advisory" mode (400-700 words, reframe away
+ * If 0 tokens present → "advisory" mode (650-900 words, reframe away
  *   from specific-vulnerability framing).
- * 1-2 tokens → medium (800-1200 words).
- * 3+ tokens → long (1500-2200 words).
- * 5+ tokens AND ≥2 sources → extended (2000-3000 words).
+ * 1-2 tokens → medium (1000-1400 words).
+ * 3+ tokens → long (1400-2000 words).
+ * 5+ tokens AND ≥2 sources → extended (1800-2600 words).
  */
 const CVE_REGEX = /CVE-\d{4}-\d{4,}/gi;
 // CVSS regex (updated 2026-04-22, B-010 fix).
@@ -98,30 +88,30 @@ export function classifySourceRichness(stories: Story[]): {
     // means LLM can't pad with hedging phrases to meet length.
     return {
       label: "advisory",
-      targetRange: "400-700 words",
-      maxOutputTokens: 1800,
+      targetRange: "650-900 words",
+      maxOutputTokens: 2200,
       infoTokens,
     };
   }
   if (infoTokens <= 2) {
     return {
       label: "medium",
-      targetRange: "800-1200 words",
-      maxOutputTokens: 2500,
+      targetRange: "1000-1400 words",
+      maxOutputTokens: 3000,
       infoTokens,
     };
   }
   if (infoTokens <= 5 || !multiSource) {
     return {
       label: "long",
-      targetRange: "1500-2200 words",
+      targetRange: "1400-2000 words",
       maxOutputTokens: 3500,
       infoTokens,
     };
   }
   return {
     label: "extended",
-    targetRange: "2000-3000 words",
+    targetRange: "1800-2600 words",
     maxOutputTokens: 4500,
     infoTokens,
   };

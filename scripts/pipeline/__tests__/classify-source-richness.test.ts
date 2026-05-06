@@ -7,15 +7,15 @@
  *
  * Why coverage matters: tuning any threshold silently changes which
  * tier hundreds of generated articles land in. An article that should
- * be 400-700 words (advisory) could get pushed to 2000-3000 (extended)
+ * be 650-900 words (advisory) could get pushed to 1800-2600 (extended)
  * and the LLM will pad with hedging phrases to hit the higher bound —
  * which is the exact failure mode this classifier was built to prevent.
  *
  * Tier boundaries (as of 2026-04-22):
- *   infoTokens === 0                       → advisory  (400-700 words,  1800 maxTok)
- *   infoTokens 1-2                         → medium    (800-1200 words, 2500 maxTok)
- *   infoTokens 3-5 OR <2 sources (long)    → long      (1500-2200 words,3500 maxTok)
- *   infoTokens 6+ AND ≥2 sources           → extended  (2000-3000 words,4500 maxTok)
+ *   infoTokens === 0                       → advisory  (650-900 words,  2200 maxTok)
+ *   infoTokens 1-2                         → medium    (1000-1400 words,3000 maxTok)
+ *   infoTokens 3-5 OR <2 sources (long)    → long      (1400-2000 words,3500 maxTok)
+ *   infoTokens 6+ AND ≥2 sources           → extended  (1800-2600 words,4500 maxTok)
  */
 import { describe, it, expect, vi } from "vitest";
 
@@ -51,43 +51,43 @@ function makeStory(title: string, excerpt: string): Story {
 }
 
 describe("classifySourceRichness — tier boundaries", () => {
-  it("0 info tokens → advisory (400-700 words)", () => {
+  it("0 info tokens → advisory (650-900 words)", () => {
     const story = makeStory(
       "Generic advisory about patch updates",
       "The vendor has released an update. Customers should apply it.",
     );
     const r = classifySourceRichness([story]);
     expect(r.label).toBe("advisory");
-    expect(r.targetRange).toBe("400-700 words");
-    expect(r.maxOutputTokens).toBe(1800);
+    expect(r.targetRange).toBe("650-900 words");
+    expect(r.maxOutputTokens).toBe(2200);
     expect(r.infoTokens).toBe(0);
   });
 
-  it("1 CVE ID → medium (800-1200 words)", () => {
+  it("1 CVE ID → medium (1000-1400 words)", () => {
     const story = makeStory(
       "Critical vulnerability in FooProduct",
       "CVE-2026-1234 affects all versions prior to 3.2.1.",
     );
     const r = classifySourceRichness([story]);
     expect(r.label).toBe("medium");
-    expect(r.targetRange).toBe("800-1200 words");
+    expect(r.targetRange).toBe("1000-1400 words");
     expect(r.infoTokens).toBeGreaterThanOrEqual(1);
     expect(r.infoTokens).toBeLessThanOrEqual(2);
   });
 
-  it("3 CVEs + single source → long (1500-2200 words, single-source clause)", () => {
+  it("3 CVEs + single source → long (1400-2000 words, single-source clause)", () => {
     const story = makeStory(
       "Patch Tuesday roundup",
       "Fixes for CVE-2026-1111, CVE-2026-2222, and CVE-2026-3333 were issued.",
     );
     const r = classifySourceRichness([story]);
     expect(r.label).toBe("long");
-    expect(r.targetRange).toBe("1500-2200 words");
+    expect(r.targetRange).toBe("1400-2000 words");
     expect(r.maxOutputTokens).toBe(3500);
     expect(r.infoTokens).toBeGreaterThanOrEqual(3);
   });
 
-  it("6+ info tokens AND ≥2 sources → extended (2000-3000 words)", () => {
+  it("6+ info tokens AND ≥2 sources → extended (1800-2600 words)", () => {
     // 6 CVEs spread across 2 sources.
     const a = makeStory(
       "Multiple flaws patched",
@@ -99,7 +99,7 @@ describe("classifySourceRichness — tier boundaries", () => {
     );
     const r = classifySourceRichness([a, b]);
     expect(r.label).toBe("extended");
-    expect(r.targetRange).toBe("2000-3000 words");
+    expect(r.targetRange).toBe("1800-2600 words");
     expect(r.maxOutputTokens).toBe(4500);
     expect(r.infoTokens).toBeGreaterThanOrEqual(6);
   });

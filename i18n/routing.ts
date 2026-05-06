@@ -4,6 +4,11 @@ export const routing = defineRouting({
   locales: ["en", "zh"],
   defaultLocale: "en",
   localePrefix: "always",
+  // Page metadata already emits canonical + hreflang links with the exact
+  // section-aware URL helpers. The middleware-level HTTP Link header only
+  // sees locale templates and has produced stale locale-less x-default URLs
+  // such as /articles/<slug>, which splits Google signals.
+  alternateLinks: false,
   // Disable the NEXT_LOCALE cookie.
   //
   // Why: (2026-04-18 P0 CF cache fix) next-intl sets `NEXT_LOCALE` as a

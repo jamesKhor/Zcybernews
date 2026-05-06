@@ -45,12 +45,12 @@ import type { ArticleFrontmatter } from "../../lib/types.js";
  * 25th percentile observed in a sample-of-50 spot audit on 2026-04-22.
  */
 const WORD_COUNT_FLOOR: Record<string, number> = {
-  "threat-intel": 700,
-  vulnerabilities: 600,
-  malware: 600,
-  industry: 400,
-  tools: 400,
-  ai: 400,
+  "threat-intel": 900,
+  vulnerabilities: 800,
+  malware: 800,
+  industry: 650,
+  tools: 650,
+  ai: 650,
 };
 
 /**
@@ -62,6 +62,10 @@ const STRUCTURED_REQUIRED_CATEGORIES = new Set(["vulnerabilities"]);
 
 const TAG_MIN = 3;
 const TAG_MAX = 6;
+const TITLE_MIN = 30;
+const TITLE_MAX = 70;
+const EXCERPT_MIN = 100;
+const EXCERPT_MAX = 180;
 
 // ─── Types ────────────────────────────────────────────────────────────
 
@@ -96,6 +100,8 @@ export interface QualityScore {
   };
 
   tagCount: number;
+  titleLength: number;
+  excerptLength: number;
   hasReferences: boolean;
   hedgingHits: string[]; // the matched phrases, for triage
 
@@ -213,6 +219,15 @@ function computeHeadlineScore(
   s -= (5 - partial.structuredRichness) * 0.5;
   // Tags out of range: -1
   if (partial.tagCount < TAG_MIN || partial.tagCount > TAG_MAX) s -= 1;
+  // Title/excerpt outside SERP-safe bounds: -1 each
+  if (partial.titleLength < TITLE_MIN || partial.titleLength > TITLE_MAX)
+    s -= 1;
+  if (
+    partial.excerptLength < EXCERPT_MIN ||
+    partial.excerptLength > EXCERPT_MAX
+  ) {
+    s -= 1;
+  }
   // No references: -1
   if (!partial.hasReferences) s -= 1;
   // Hedging phrases: -3 per hit (cap the damage at the whole score)
@@ -248,6 +263,8 @@ export function scoreArticle(input: ScoreInput): QualityScore {
   const tagCount = Array.isArray(frontmatter.tags)
     ? frontmatter.tags.length
     : 0;
+  const titleLength = (frontmatter.title ?? "").length;
+  const excerptLength = (frontmatter.excerpt ?? "").length;
   const hasRef = hasReferenceSignal(body, frontmatter);
   const hedgingHits = findHedgingHits(
     frontmatter.title ?? "",
@@ -317,6 +334,34 @@ export function scoreArticle(input: ScoreInput): QualityScore {
       message: `Tag count ${tagCount} > ${TAG_MAX}. Keyword-stuffing signal risk.`,
     });
   }
+  if (titleLength < TITLE_MIN) {
+    flags.push({
+      severity: "warn",
+      code: "title_too_short",
+      message: `Title length ${titleLength} < ${TITLE_MIN}. Lead with the searched entity and concrete action so Google and readers can identify the page.`,
+    });
+  }
+  if (titleLength > TITLE_MAX) {
+    flags.push({
+      severity: "warn",
+      code: "title_too_long",
+      message: `Title length ${titleLength} > ${TITLE_MAX}. Search title links may truncate before the query anchor or outcome.`,
+    });
+  }
+  if (excerptLength < EXCERPT_MIN) {
+    flags.push({
+      severity: "warn",
+      code: "excerpt_too_short",
+      message: `Excerpt length ${excerptLength} < ${EXCERPT_MIN}. Meta descriptions should give enough concrete context to earn the click.`,
+    });
+  }
+  if (excerptLength > EXCERPT_MAX) {
+    flags.push({
+      severity: "warn",
+      code: "excerpt_too_long",
+      message: `Excerpt length ${excerptLength} > ${EXCERPT_MAX}. The SERP snippet is likely to clip the strongest detail.`,
+    });
+  }
   if (!hasRef) {
     flags.push({
       severity: "warn",
@@ -344,6 +389,8 @@ export function scoreArticle(input: ScoreInput): QualityScore {
     structuredRichness,
     structuredFields,
     tagCount,
+    titleLength,
+    excerptLength,
     hasReferences: hasRef,
     hedgingHits,
   };

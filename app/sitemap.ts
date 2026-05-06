@@ -3,6 +3,8 @@ import { getAllPosts, getAllTags } from "@/lib/content";
 import { CategoryEnum } from "@/lib/types";
 import { absoluteArticleUrl } from "@/lib/article-url";
 import { isPublicArticle } from "@/lib/publication";
+import { getSiteUrl } from "@/lib/site-url";
+import { isPublicTag } from "@/lib/public-tags";
 
 // ISR: generate on first request, cache for 1 hour, regenerate on demand.
 //
@@ -19,7 +21,7 @@ import { isPublicArticle } from "@/lib/publication";
 // refresh within seconds.
 export const revalidate = 3600;
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com";
+const BASE_URL = getSiteUrl();
 const LOCALES = ["en", "zh"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -146,13 +148,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const tiTags = getAllTags(locale, "threat-intel");
     const allTags = [...new Set([...postTags, ...tiTags])];
     for (const tag of allTags) {
-      const postCount = getAllPosts(locale, "posts").filter(
-        (p) => isPublicArticle(p) && p.frontmatter.tags.includes(tag),
-      ).length;
-      const tiCount = getAllPosts(locale, "threat-intel").filter(
-        (p) => isPublicArticle(p) && p.frontmatter.tags.includes(tag),
-      ).length;
-      if (postCount + tiCount < 5) continue;
+      if (!isPublicTag(locale, tag)) continue;
       entries.push({
         url: `${BASE_URL}/${locale}/tags/${tag}`,
         lastModified: new Date(),

@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { getSiteUrl } from "@/lib/site-url";
 import Script from "next/script";
 import "./globals.css";
 
@@ -93,9 +94,7 @@ export const metadata: Metadata = {
   },
   description:
     "Professional cybersecurity and tech intelligence — threat analysis, vulnerability research, and security news for defenders.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com",
-  ),
+  metadataBase: new URL(getSiteUrl()),
   keywords: [
     "cybersecurity",
     "threat intelligence",

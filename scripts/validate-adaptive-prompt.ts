@@ -58,13 +58,24 @@ const COUNT = Number(
   args.find((a) => a.startsWith("--count="))?.split("=")[1] ?? "6",
 );
 
-function classifyRichness(batch: Story[]): "medium" | "long" | "extended" {
-  const chars = batch.reduce(
-    (n, s) => n + (s.title?.length ?? 0) + (s.excerpt?.length ?? 0),
-    0,
-  );
-  if (chars < 800) return "medium";
-  if (chars < 2500) return "long";
+function classifyRichness(
+  batch: Story[],
+): "advisory" | "medium" | "long" | "extended" {
+  const haystack = batch
+    .map((s) => `${s.title ?? ""} ${s.excerpt ?? ""}`)
+    .join("\n");
+  const infoTokens =
+    (haystack.match(/CVE-\d{4}-\d{4,}/gi) ?? []).length +
+    (
+      haystack.match(
+        /CVSS(?:\s*v?[234]\.?[01]?)?\s*(?:(?:base\s+)?score(?:\s+of)?|of)?\s*[:=]?\s*\d+(?:\.\d+)?/gi,
+      ) ?? []
+    ).length +
+    (haystack.match(/\b[a-fA-F0-9]{32,64}\b/g) ?? []).length +
+    (haystack.match(/\b(?:APT|FIN|TA)\d{1,3}\b/g) ?? []).length;
+  if (infoTokens === 0) return "advisory";
+  if (infoTokens <= 2) return "medium";
+  if (infoTokens <= 5 || batch.length < 2) return "long";
   return "extended";
 }
 
@@ -158,7 +169,7 @@ async function main() {
     idx: number;
     title: string;
     sourceChars: number;
-    richness: "medium" | "long" | "extended";
+    richness: "advisory" | "medium" | "long" | "extended";
     expectedRange: string;
     actualWords: number;
     factCheckPass: boolean | null;
@@ -173,9 +184,10 @@ async function main() {
 
   const results: Row[] = [];
   const EXPECTED_BY_TIER = {
-    medium: "800-1200 words",
-    long: "1500-2200 words",
-    extended: "2000-3000 words",
+    advisory: "650-900 words",
+    medium: "1000-1400 words",
+    long: "1400-2000 words",
+    extended: "1800-2600 words",
   };
 
   for (let i = 0; i < batches.length; i++) {

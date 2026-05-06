@@ -136,6 +136,10 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
 
+            echo "🔎 Regenerating public discovery artifacts..."
+            npm run feed:index
+            npm run search:index
+
             echo "🔄 Triggering ISR revalidation..."
             SECRET=$(grep '^REVALIDATE_SECRET=' .env.local | cut -d= -f2-)
             if [ -z "$SECRET" ]; then
@@ -321,6 +325,10 @@ jobs:
 
             echo "📦 Installing dependencies (server-side deps still needed)..."
             HUSKY=0 npm ci --production=false --silent
+
+            echo "🔎 Regenerating public discovery artifacts..."
+            npm run feed:index
+            npm run search:index
 
             # Verify the staged build that rsync just uploaded
             test -f .next-staging/prerender-manifest.json \
