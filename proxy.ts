@@ -37,6 +37,63 @@ function hasLocalePrefix(pathname: string): boolean {
   );
 }
 
+function normalizeTagSlug(tag: string): string {
+  let decoded = tag;
+  try {
+    decoded = decodeURIComponent(tag);
+  } catch {
+    // Keep the raw segment if it is malformed; the cleanup below is still safe.
+  }
+
+  return decoded
+    .trim()
+    .toLowerCase()
+    .replace(/[_\s]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function canonicalTagPath(pathname: string): string | null {
+  const segments = pathname.split("/").filter(Boolean);
+  const first = segments[0];
+  const hasLocale = routing.locales.includes(first as "en" | "zh");
+  const locale = hasLocale ? first : routing.defaultLocale;
+  const tagIndex = hasLocale ? 1 : 0;
+
+  if (segments[tagIndex] !== "tags" || segments.length !== tagIndex + 2) {
+    return null;
+  }
+
+  const rawTag = segments[tagIndex + 1];
+  const normalized = normalizeTagSlug(rawTag);
+  if (!normalized) return null;
+
+  const canonical = `/${locale}/tags/${encodeURIComponent(normalized)}`;
+  return canonical === pathname ? null : canonical;
+}
+
+function canonicalLegacyArticlePath(pathname: string): string | null {
+  const segments = pathname.split("/").filter(Boolean);
+  const first = segments[0];
+  const hasLocale = routing.locales.includes(first as "en" | "zh");
+  const locale = hasLocale ? first : routing.defaultLocale;
+  const sectionIndex = hasLocale ? 1 : 0;
+  const section = segments[sectionIndex];
+
+  if (
+    (section !== "articles" && section !== "threat-intel") ||
+    segments.length !== sectionIndex + 2
+  ) {
+    return null;
+  }
+
+  const rawSlug = segments[sectionIndex + 1];
+  const cleanSlug = rawSlug.replace(/^-+|-+$/g, "");
+  if (!cleanSlug || cleanSlug === rawSlug) return null;
+
+  return `/${locale}/${section}/${cleanSlug}`;
+}
+
 export default function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
   const host = request.headers.get("host") ?? "";
@@ -58,7 +115,28 @@ export default function proxy(request: NextRequest) {
     return NextResponse.redirect(apexUrl, 308);
   }
 
-  // ── 2) Locale-less paths → default locale (permanent) ─────────────────────
+  // ── 2) Canonicalize tag URLs (permanent) ──────────────────────────────────
+  // GSC samples included legacy/manual tag URLs like:
+  //   /zh/tags/Windows
+  //   /zh/tags/authentication%20security
+  // Current tags are normalized lowercase slugs. Redirect these malformed
+  // variants instead of letting them become 404s.
+  const tagPath = canonicalTagPath(pathname);
+  if (tagPath) {
+    const tagUrl = new URL(`${tagPath}${search}`, request.url);
+    return NextResponse.redirect(tagUrl, 308);
+  }
+
+  // ── 3) Clean legacy article slugs (permanent) ─────────────────────────────
+  // Earlier pipeline/admin bugs produced some URLs with trailing hyphens.
+  // Redirect them before the dynamic article route renders a not-found page.
+  const articlePath = canonicalLegacyArticlePath(pathname);
+  if (articlePath) {
+    const articleUrl = new URL(`${articlePath}${search}`, request.url);
+    return NextResponse.redirect(articleUrl, 308);
+  }
+
+  // ── 4) Locale-less paths → default locale (permanent) ─────────────────────
   // Root `/` is skipped — next-intl legitimately content-negotiates it via
   // Accept-Language (and root 307 is a standards-correct negotiation response).
   // For every other path that has no /en or /zh prefix, issue a 308 so Google
@@ -70,7 +148,7 @@ export default function proxy(request: NextRequest) {
     return NextResponse.redirect(localeUrl, 308);
   }
 
-  // ── WeChat detection ──────────────────────────────────────────────────────
+  // ── 5) WeChat detection ───────────────────────────────────────────────────
   const userAgent = request.headers.get("user-agent") ?? "";
   const isWechat =
     userAgent.includes("MicroMessenger") || userAgent.includes("WeChat");
