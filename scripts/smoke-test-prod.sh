@@ -102,7 +102,7 @@ check_status_no_follow() {
   echo "✓ ${label}  ${status} location=${location}"
 }
 
-check_redirect_or_streamed_redirect() {
+check_hard_redirect() {
   local label="$1" url="$2" target_pattern="$3"
   TOTAL=$((TOTAL + 1))
   local response status location
@@ -126,15 +126,7 @@ check_redirect_or_streamed_redirect() {
     return
   fi
 
-  # Next App Router can emit redirects after streaming has started as a
-  # 200 response containing a NEXT_REDIRECT digest/meta refresh. That is
-  # still a valid wrong-section guard; assert the target is present.
-  if [ "${status}" = "200" ] && grep -qE "NEXT_REDIRECT|__next-page-redirect|http-equiv=\"refresh\"" /tmp/smoke-body && grep -qE "${target_pattern}" /tmp/smoke-body; then
-    echo "✓ ${label}  streamed redirect target matched pattern=${target_pattern}"
-    return
-  fi
-
-  echo "✗ ${label}  status=${status} no redirect target pattern=${target_pattern}  url=${url}"
+  echo "✗ ${label}  status=${status} expected hard redirect target pattern=${target_pattern}  url=${url}"
   FAILURES=$((FAILURES + 1))
 }
 
@@ -179,7 +171,7 @@ STABLE_ARTICLE="2026-05-04-infrastructure-breach-hackers-steal-student-data-from
 check "GET stable article"           "${BASE_URL}/en/articles/${STABLE_ARTICLE}" 200 "text/html"
 check_body_contains "article canonical" "${BASE_URL}/en/articles/${STABLE_ARTICLE}" "rel=\"canonical\".*${STABLE_ARTICLE}"
 check_body_contains "article JSON-LD" "${BASE_URL}/en/articles/${STABLE_ARTICLE}" "application/ld\\+json"
-check_redirect_or_streamed_redirect "wrong-section redirects" "${BASE_URL}/en/threat-intel/${STABLE_ARTICLE}" "/en/articles/${STABLE_ARTICLE}"
+check_hard_redirect "wrong-section redirects" "${BASE_URL}/en/threat-intel/${STABLE_ARTICLE}" "/en/articles/${STABLE_ARTICLE}"
 
 # Category + tag pages — NYT-style listings added today.
 check "GET /en/categories/vulnerabilities" "${BASE_URL}/en/categories/vulnerabilities" 200 "text/html"

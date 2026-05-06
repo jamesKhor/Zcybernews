@@ -1,9 +1,14 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import { buildSectionRedirects } from "./lib/section-redirects";
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return buildSectionRedirects();
+  },
+
   // ── Turbopack externalization fix (P0 SEV3, 2026-04-18) ──────────────
   // Root cause: Next.js 16.2.3 + Turbopack produced a build where
   // `next-mdx-remote/rsc` was externalized with a hashed alias (e.g.
