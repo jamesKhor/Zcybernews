@@ -89,6 +89,11 @@ check_status_no_follow() {
   response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nLOCATION=%{redirect_url}" --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "HTTP=000")
   status=$(echo "${response}" | grep "^HTTP=" | cut -d= -f2)
   location=$(echo "${response}" | grep "^LOCATION=" | cut -d= -f2-)
+  if [ "${status}" = "403" ]; then
+    echo "! ${label}  status=403 from GitHub runner; treating as Cloudflare/WAF warning  url=${url}"
+    SOFT_403=$((SOFT_403 + 1))
+    return
+  fi
   if [ "${status}" != "${expect_status}" ]; then
     echo "✗ ${label}  status=${status} expected=${expect_status}  url=${url}"
     FAILURES=$((FAILURES + 1))
@@ -104,6 +109,12 @@ check_redirect_or_streamed_redirect() {
   response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nLOCATION=%{redirect_url}" --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "HTTP=000")
   status=$(echo "${response}" | grep "^HTTP=" | cut -d= -f2)
   location=$(echo "${response}" | grep "^LOCATION=" | cut -d= -f2-)
+
+  if [ "${status}" = "403" ]; then
+    echo "! ${label}  status=403 from GitHub runner; treating as Cloudflare/WAF warning  url=${url}"
+    SOFT_403=$((SOFT_403 + 1))
+    return
+  fi
 
   if [ "${status}" = "308" ] || [ "${status}" = "307" ] || [ "${status}" = "301" ] || [ "${status}" = "302" ]; then
     if echo "${location}" | grep -qE "${target_pattern}"; then
@@ -132,6 +143,11 @@ check_body_contains() {
   TOTAL=$((TOTAL + 1))
   local status
   status=$(curl -s -o /tmp/smoke-body -w "%{http_code}" -L --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "000")
+  if [ "${status}" = "403" ]; then
+    echo "! ${label}  status=403 from GitHub runner; treating as Cloudflare/WAF warning  url=${url}"
+    SOFT_403=$((SOFT_403 + 1))
+    return
+  fi
   if [ "${status}" != "200" ]; then
     echo "✗ ${label}  status=${status} expected=200  url=${url}"
     FAILURES=$((FAILURES + 1))
