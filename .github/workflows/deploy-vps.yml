@@ -422,17 +422,17 @@ jobs:
             # Recreate on full code deploy so the runtime path is deterministic.
             pm2 delete zcybernews >/dev/null 2>&1 || true
             # Defensive cleanup: if a previous failed deploy left an orphaned
-            # Next.js listener on port 3000, the new PM2 parent can look online
-            # while traffic still goes to the old child process.
-            # Use port owners only. Do not use broad `pkill -f` here: the
-            # remote shell command contains the same strings and can kill
-            # its own SSH session.
+            # Next.js listener on port 3000, the new process cannot bind and
+            # traffic keeps hitting stale HTML. Use port owners only. Do not
+            # use broad `pkill -f` here: the remote shell command contains the
+            # same strings and can kill its own SSH session.
             PORT_PIDS=""
             if command -v lsof >/dev/null 2>&1; then
               PORT_PIDS="$PORT_PIDS $(lsof -ti tcp:3000 2>/dev/null || true)"
             fi
             if command -v fuser >/dev/null 2>&1; then
               PORT_PIDS="$PORT_PIDS $(fuser 3000/tcp 2>/dev/null || true)"
+              PORT_PIDS="$PORT_PIDS $(fuser -n tcp 3000 2>/dev/null || true)"
             fi
             PORT_PIDS=$(echo "$PORT_PIDS" | tr ' ' '\n' | grep -E '^[0-9]+$' | sort -u || true)
             if [ -n "$PORT_PIDS" ]; then
@@ -443,18 +443,31 @@ jobs:
               sleep 1
             fi
 
+            if command -v fuser >/dev/null 2>&1; then
+              fuser -k 3000/tcp 2>/dev/null || true
+              fuser -n tcp -k 3000 2>/dev/null || true
+              sleep 2
+            fi
+
             echo "Runtime process snapshot before start:"
             (ss -ltnp 2>/dev/null || netstat -ltnp 2>/dev/null || true) | grep ':3000' || true
             ps -fu "$(whoami)" | grep -E 'next|npm|node' | grep -v grep || true
 
-            # Next.js docs for 16.x recommend one standard `next start`
-            # process for full feature fidelity. Run it through npm in fork
-            # mode only; PM2 cluster mode around npm caused stale child
-            # listeners and divergent local cache.
-            pm2 start npm --name zcybernews \
+            if (ss -ltn 2>/dev/null || netstat -ltn 2>/dev/null || true) | grep -q ':3000'; then
+              echo "❌ Port 3000 is still occupied after cleanup; refusing to start a divergent runtime"
+              (ss -ltnp 2>/dev/null || netstat -ltnp 2>/dev/null || true) | grep ':3000' || true
+              ps -fu "$(whoami)" | grep -E 'next|npm|node' | grep -v grep || true
+              exit 1
+            fi
+
+            chmod +x scripts/ops/start-next-prod.sh
+            # Next.js 16.x docs recommend a single `next start` process for
+            # full feature fidelity. The wrapper execs Next directly so PM2
+            # tracks the real server instead of an npm parent process.
+            pm2 start scripts/ops/start-next-prod.sh --name zcybernews \
               --cwd /home/zcybernews/zcybernews \
-              --max-memory-restart 750M \
-              -- start -- -p 3000
+              --interpreter bash \
+              --max-memory-restart 750M
             pm2 save
 
             echo "🏥 Health check..."
