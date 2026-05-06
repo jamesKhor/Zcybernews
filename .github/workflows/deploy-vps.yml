@@ -421,15 +421,12 @@ jobs:
             # serving that old build even after this deploy swaps .next here.
             # Recreate on full code deploy so the runtime path is deterministic.
             pm2 delete zcybernews >/dev/null 2>&1 || true
-            # Kill orphaned Next children from earlier failed PM2 starts.
-            # PM2 can delete the parent process while a spawned Next server
-            # keeps port 3000 open; that was the hidden stale-runtime failure.
-            pkill -u "$(id -u)" -f "/home/zcybernews/zcybernews/node_modules/next/dist/bin/next" 2>/dev/null || true
-            pkill -u "$(id -u)" -f "next-server" 2>/dev/null || true
-            sleep 2
             # Defensive cleanup: if a previous failed deploy left an orphaned
             # Next.js listener on port 3000, the new PM2 parent can look online
             # while traffic still goes to the old child process.
+            # Use port owners only. Do not use broad `pkill -f` here: the
+            # remote shell command contains the same strings and can kill
+            # its own SSH session.
             PORT_PIDS=""
             if command -v lsof >/dev/null 2>&1; then
               PORT_PIDS="$PORT_PIDS $(lsof -ti tcp:3000 2>/dev/null || true)"
