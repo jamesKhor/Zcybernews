@@ -370,21 +370,18 @@ jobs:
             fi
             find . -maxdepth 1 -type d -name '.next-prev-stale-*' -mtime +2 -exec rm -rf {} + 2>/dev/null || true
 
-            echo "♻️  Rolling PM2 reload (cluster workers cycle one at a time)..."
-            if pm2 describe zcybernews > /dev/null 2>&1; then
-              # RELOAD, not restart. In cluster mode, this cycles workers
-              # one at a time — zero requests dropped.
-              pm2 reload zcybernews --update-env
-            else
-              # First-time start: cluster mode with 2 workers. Once this
-              # lands, future 'pm2 restart' will preserve cluster mode.
-              # max-memory-restart protects the 2GB VPS from OOM spirals.
-              pm2 start npm --name zcybernews \
-                -i 2 \
-                --exec-mode cluster \
-                --max-memory-restart 750M \
-                -- start
-            fi
+            echo "♻️  Recreating PM2 process with explicit cwd..."
+            # PM2 persists the original cwd from the first start. If the app
+            # was ever started from an older directory, `pm2 reload` can keep
+            # serving that old build even after this deploy swaps .next here.
+            # Recreate on full code deploy so the runtime path is deterministic.
+            pm2 delete zcybernews >/dev/null 2>&1 || true
+            pm2 start npm --name zcybernews \
+              --cwd /home/zcybernews/zcybernews \
+              -i 2 \
+              --exec-mode cluster \
+              --max-memory-restart 750M \
+              -- start
             pm2 save
 
             echo "🏥 Health check..."
