@@ -156,12 +156,21 @@ jobs:
               # sit stale for up to 1h until the next ISR refresh. The
               # revalidate endpoint itself is idempotent — calling it
               # multiple times in a row is safe.
+              #
+              # Keep this in sync with the admin publish route:
+              #   - section listings so readers see the article immediately
+              #   - /sitemap.xml so Google Search Console sees fresh URLs
+              #   - tag=articles for any tagged reads that opt into cache tags
               REVALIDATED=false
               for attempt in 1 2 3; do
-                if curl -sf -X POST \
-                  -H "x-revalidate-secret: $SECRET" \
-                  "http://localhost:3000/api/revalidate?tag=articles&path=/en/articles&path=/zh/articles" \
-                  > /dev/null; then
+                if curl -sf -X POST -H "x-revalidate-secret: $SECRET" \
+                    "http://localhost:3000/api/revalidate?tag=articles" > /dev/null \
+                  && curl -sf -X POST -H "x-revalidate-secret: $SECRET" \
+                    "http://localhost:3000/api/revalidate?path=/en/articles" > /dev/null \
+                  && curl -sf -X POST -H "x-revalidate-secret: $SECRET" \
+                    "http://localhost:3000/api/revalidate?path=/zh/articles" > /dev/null \
+                  && curl -sf -X POST -H "x-revalidate-secret: $SECRET" \
+                    "http://localhost:3000/api/revalidate?path=/sitemap.xml" > /dev/null; then
                   echo "✅ Revalidated on attempt $attempt"
                   REVALIDATED=true
                   break
