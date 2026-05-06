@@ -2,8 +2,12 @@ import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { type NextRequest, NextResponse } from "next/server";
 import { canonicalPathForSeoVariant } from "./lib/seo-url-normalization";
+import { buildSectionRedirects } from "./lib/section-redirects";
 
 const intlMiddleware = createMiddleware({ ...routing });
+const SECTION_REDIRECTS = new Map(
+  buildSectionRedirects().map((rule) => [rule.source, rule.destination]),
+);
 
 // /admin/** is excluded from the matcher below so this proxy never runs for
 // admin routes — next-intl cannot add a locale prefix to them.
@@ -75,7 +79,19 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(canonicalUrl, 308);
   }
 
-  // ── 3) Locale-less paths → default locale (permanent) ─────────────────────
+  // ── 3) Wrong-section article URLs → canonical section (permanent) ─────────
+  // next.config redirects should catch these before Proxy, but keep a
+  // request-time fallback here because self-hosted production served an
+  // App Router 200/noindex shell for a stale wrong-section URL on 2026-05-06.
+  const sectionRedirect = SECTION_REDIRECTS.get(pathname);
+  if (sectionRedirect) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = sectionRedirect;
+    redirectUrl.search = search;
+    return NextResponse.redirect(redirectUrl, 308);
+  }
+
+  // ── 4) Locale-less paths → default locale (permanent) ─────────────────────
   // Root `/` is skipped — next-intl legitimately content-negotiates it via
   // Accept-Language (and root 307 is a standards-correct negotiation response).
   // For every other path that has no /en or /zh prefix, issue a 308 so Google
