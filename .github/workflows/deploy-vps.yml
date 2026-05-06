@@ -405,6 +405,17 @@ jobs:
               sleep 5
             done
 
+            echo "🧹 Revalidating public discovery pages after full rebuild..."
+            SECRET=$(grep '^REVALIDATE_SECRET=' .env.local | cut -d= -f2- || true)
+            if [ -z "$SECRET" ]; then
+              echo "⚠️ REVALIDATE_SECRET missing; public pages may keep serving stale cached HTML until TTL expiry"
+            else
+              curl -fsS -X POST -H "x-revalidate-secret: $SECRET" \
+                "http://localhost:3000/api/revalidate?tag=articles&path=/en/sources&path=/zh/sources" \
+                > /dev/null \
+                || echo "⚠️ Post-rebuild revalidate failed; deploy is live but cache may expire naturally"
+            fi
+
             echo "✅ Deployed $(git rev-parse --short HEAD) at $(TZ='Asia/Singapore' date '+%Y-%m-%d %H:%M:%S SGT')"
 
       - name: Post-deploy smoke test — prod URL sweep

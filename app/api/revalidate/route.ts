@@ -84,6 +84,8 @@ export async function POST(req: NextRequest) {
       "/zh/threat-intel",
       "/en/categories",
       "/zh/categories",
+      "/en/sources",
+      "/zh/sources",
       "/api/feed",
       "/api/feed?locale=zh",
       "/api/wechat",
