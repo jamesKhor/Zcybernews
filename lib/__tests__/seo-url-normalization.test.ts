@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { canonicalPathForSeoVariant } from "../seo-url-normalization";
+import {
+  canonicalPathForSeoVariant,
+  canonicalSlugForSeoVariant,
+} from "../seo-url-normalization";
 
 describe("canonicalPathForSeoVariant", () => {
   it("adds the default locale while normalizing locale-less tag paths", () => {
@@ -45,5 +48,19 @@ describe("canonicalPathForSeoVariant", () => {
     expect(
       canonicalPathForSeoVariant("/en/categories/vulnerability"),
     ).toBeNull();
+  });
+});
+
+describe("canonicalSlugForSeoVariant", () => {
+  it("returns canonical slugs for page-level redirects", () => {
+    expect(canonicalSlugForSeoVariant("Windows")).toBe("windows");
+    expect(canonicalSlugForSeoVariant("authentication%20security")).toBe(
+      "authentication-security",
+    );
+    expect(canonicalSlugForSeoVariant("article-slug-")).toBe("article-slug");
+  });
+
+  it("ignores already-canonical slugs", () => {
+    expect(canonicalSlugForSeoVariant("authentication-security")).toBeNull();
   });
 });

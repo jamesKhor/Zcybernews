@@ -38,7 +38,7 @@ function hasLocalePrefix(pathname: string): boolean {
   );
 }
 
-export default function proxy(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
   const host = request.headers.get("host") ?? "";
 

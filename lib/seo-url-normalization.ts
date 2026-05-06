@@ -21,6 +21,12 @@ function normalizeSlugSegment(segment: string): string | null {
   return normalized || null;
 }
 
+export function canonicalSlugForSeoVariant(segment: string): string | null {
+  const normalized = normalizeSlugSegment(segment);
+  if (!normalized || normalized === segment) return null;
+  return normalized;
+}
+
 /**
  * Search Console has old crawl paths that differ only by URL hygiene:
  * locale-less paths, uppercase tags, `%20` spaces, or trailing hyphens from

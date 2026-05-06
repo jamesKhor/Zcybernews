@@ -3,13 +3,14 @@ import { isPublicArticle } from "@/lib/publication";
 import { getTagIntro } from "@/lib/tag-intros";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { TagIntro } from "@/components/tags/TagIntro";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
-import { ArrowLeft, Tag } from "lucide-react";
+import { Tag } from "lucide-react";
+import { canonicalSlugForSeoVariant } from "@/lib/seo-url-normalization";
 
 interface Props {
   params: Promise<{ locale: string; tag: string }>;
@@ -85,6 +86,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TagPage({ params }: Props) {
   const { locale, tag } = await params;
+  const canonicalTag = canonicalSlugForSeoVariant(tag);
+  if (canonicalTag) permanentRedirect(`/${locale}/tags/${canonicalTag}`);
 
   const t = await getTranslations({ locale, namespace: "article" });
   const tNav = await getTranslations({ locale, namespace: "nav" });

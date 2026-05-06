@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/content";
 import { isPublicArticle, isPublicFrontmatter } from "@/lib/publication";
@@ -22,6 +22,7 @@ import {
   absoluteArticleUrl,
   type ArticleLocale,
 } from "@/lib/article-url";
+import { canonicalSlugForSeoVariant } from "@/lib/seo-url-normalization";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -108,6 +109,13 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
   const { locale: rawLocale, slug } = await params;
   // Same narrowing pattern as generateMetadata above.
   const locale: ArticleLocale = rawLocale === "zh" ? "zh" : "en";
+  const canonicalSlug = canonicalSlugForSeoVariant(slug);
+  if (canonicalSlug) {
+    permanentRedirect(
+      articleUrl({ slug: canonicalSlug }, locale, "threat-intel"),
+    );
+  }
+
   const article = getPostBySlug(locale, "threat-intel", slug);
   if (!article) notFound();
 
