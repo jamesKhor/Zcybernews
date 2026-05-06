@@ -148,8 +148,9 @@ export default async function HomePage({ params }: Props) {
                 {locale === "zh" ? (
                   <>
                     <span className="italic">
-                      我们每天阅读 {sources.length}+
-                      个网络安全信息源——只发布真正值得关注的内容。
+                      由网络安全从业者打造，写给真正做安全工作的人。每天阅读{" "}
+                      {sources.length}+
+                      个网络安全信息源，过滤噪音，只发布真正重要的内容。
                     </span>{" "}
                     <Link
                       href={`/${locale}/sources`}
@@ -161,8 +162,9 @@ export default async function HomePage({ params }: Props) {
                 ) : (
                   <>
                     <span className="italic">
-                      We read {sources.length}+ cybersecurity feeds every day —
-                      and publish only what matters.
+                      Built by a cybersecurity professional, for people who work
+                      in security. We read {sources.length}+ cyber sources
+                      daily, filter the noise, and publish only what matters.
                     </span>{" "}
                     <Link
                       href={`/${locale}/sources`}

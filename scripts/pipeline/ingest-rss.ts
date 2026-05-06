@@ -84,6 +84,68 @@ async function fetchRss(source: FeedSource): Promise<Story[]> {
   }));
 }
 
+type RssItem = Awaited<ReturnType<typeof parser.parseURL>>["items"][number];
+
+function paloAltoExcerptFromTitle(title: string): string {
+  const severity = title.match(/\(Severity:\s*([^)]+)\)/i)?.[1]?.trim();
+  const cve = title.match(/\bCVE-\d{4}-\d{4,}\b/i)?.[0];
+  const cleaned = title.replace(/\s*\(Severity:\s*[^)]+\)\s*$/i, "").trim();
+  const [productPart, vulnerabilityPart] = cleaned.includes(":")
+    ? cleaned.split(/:\s*/, 2)
+    : ["Palo Alto Networks product", cleaned];
+  const product = productPart.replace(/^CVE-\d{4}-\d{4,}\s*/i, "").trim();
+  const advisoryId = cve ? `${cve} ` : "";
+  const severityText = severity ? `${severity.toLowerCase()} severity ` : "";
+
+  return `${advisoryId}is a ${severityText}Palo Alto Networks advisory affecting ${product}. ${vulnerabilityPart} Review the vendor advisory and apply the listed mitigation or fixed release.`;
+}
+
+export function mapPaloAltoAdvisoryItemsToStories(
+  items: RssItem[],
+  source: FeedSource,
+  fetchedAt: string,
+): Story[] {
+  return (items ?? []).slice(0, 25).flatMap((item, i) => {
+    const title = item.title?.trim() ?? "";
+    const url = item.link ?? "";
+    if (!title || !url) return [];
+
+    const severity = title.match(/\(Severity:\s*([^)]+)\)/i)?.[1]?.trim();
+    return {
+      id: `${source.id}-${item.guid ?? url ?? i}`,
+      title,
+      url,
+      excerpt: paloAltoExcerptFromTitle(title).slice(0, 400),
+      sourceName: source.name,
+      publishedAt: item.pubDate ?? item.isoDate ?? fetchedAt,
+      tags: ["Palo Alto Networks", severity, ...extractCVEs(title)].filter(
+        (tag): tag is string => Boolean(tag),
+      ),
+      sourceId: source.id,
+      sourceCategory: source.category,
+      fetchedAt,
+      qualityScore: source.qualityScore ?? 1.0,
+      isVendor: true,
+      sourceLanguage: source.sourceLanguage ?? "en",
+      seoIntent: source.seoIntent ?? "rank-en",
+      sourceType: source.type,
+    };
+  });
+}
+
+async function fetchPaloAltoAdvisoryRss(source: FeedSource): Promise<Story[]> {
+  const feed = await withWallClockTimeout(
+    parser.parseURL(source.url),
+    FEED_WALL_CLOCK_MS,
+    `palo alto advisory rss ${source.id}`,
+  );
+  return mapPaloAltoAdvisoryItemsToStories(
+    feed.items ?? [],
+    source,
+    new Date().toISOString(),
+  );
+}
+
 type WordPressPost = {
   id?: number;
   link?: string;
@@ -144,6 +206,9 @@ async function fetchWordPressJson(source: FeedSource): Promise<Story[]> {
 export function fetchSourceStories(source: FeedSource): Promise<Story[]> {
   if (source.type === "cisa-kev") return fetchCisaKev(source);
   if (source.type === "nvd-json") return fetchNvd(source);
+  if (source.type === "palo-alto-advisory-rss") {
+    return fetchPaloAltoAdvisoryRss(source);
+  }
   if (source.type === "wordpress-json") return fetchWordPressJson(source);
   return fetchRss(source);
 }

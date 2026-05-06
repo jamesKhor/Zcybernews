@@ -25,6 +25,9 @@ export function Footer({ locale }: Props) {
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t("description")}
             </p>
+            <p className="mt-3 text-xs text-muted-foreground/90 leading-relaxed">
+              {t("descriptionSecondary")}
+            </p>
           </div>
 
           {/* Quick links — moved from top nav to footer as part of the

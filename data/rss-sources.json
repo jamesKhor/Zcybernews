@@ -325,6 +325,20 @@
     "sourceLanguage": "en"
   },
   {
+    "id": "palo-alto-advisories",
+    "name": "Palo Alto Networks Security Advisories",
+    "homepage": "https://security.paloaltonetworks.com/",
+    "url": "https://security.paloaltonetworks.com/rss.xml",
+    "category": "vulnerabilities",
+    "type": "palo-alto-advisory-rss",
+    "enabled": true,
+    "tier": "trusted",
+    "description": "Official Palo Alto Networks security advisory RSS feed for PAN-OS, Prisma, Cortex, and related product vulnerability disclosures.",
+    "lastReviewed": "2026-05-06",
+    "seoIntent": "rank-both",
+    "sourceLanguage": "en"
+  },
+  {
     "id": "sophos",
     "name": "Sophos News",
     "homepage": "https://news.sophos.com/",
@@ -471,6 +485,34 @@
     "description": "Malware analysis, detection engineering, and threat hunting techniques.",
     "lastReviewed": "2026-04-22",
     "seoIntent": "rank-both",
+    "sourceLanguage": "en"
+  },
+  {
+    "id": "progress-moveit-advisories",
+    "name": "Progress MOVEit Security Advisories",
+    "homepage": "https://community.progress.com/s/global-search/%40uri#q=MOVEit%20security%20advisory",
+    "url": "https://community.progress.com/s/global-search/%40uri#q=MOVEit%20security%20advisory",
+    "category": "vulnerabilities",
+    "type": "web-advisory",
+    "enabled": false,
+    "tier": "under-review",
+    "description": "Official Progress community advisories for MOVEit Transfer, MOVEit Cloud, and MOVEit Automation vulnerability bulletins.",
+    "whyDrop": "No stable public RSS endpoint confirmed yet; keep visible for transparency while coverage is cross-checked through NVD, CISA KEV, and vendor bulletin URLs.",
+    "lastReviewed": "2026-05-06",
+    "sourceLanguage": "en"
+  },
+  {
+    "id": "f5-advisories",
+    "name": "F5 Security Advisories",
+    "homepage": "https://my.f5.com/manage/s/new-updated-articles",
+    "url": "https://my.f5.com/manage/s/new-updated-articles",
+    "category": "vulnerabilities",
+    "type": "web-advisory",
+    "enabled": false,
+    "tier": "under-review",
+    "description": "Official MyF5 security advisory surface for BIG-IP, BIG-IQ, NGINX, and related F5 product vulnerability disclosures.",
+    "whyDrop": "F5 advisories require MyF5/custom RSS handling; keep under review until we confirm a stable machine-readable feed that does not produce empty or dirty results.",
+    "lastReviewed": "2026-05-06",
     "sourceLanguage": "en"
   },
   {

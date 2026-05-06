@@ -136,7 +136,7 @@ function SourceRow({ s, t }: { s: SourceRecord; t: (k: string) => string }) {
           <ExternalLink className="h-3.5 w-3.5 shrink-0 opacity-60" />
         </a>
         <TierBadge tier={tier} label={t(`tier.${tier}`)} />
-        {s.type === "rss" && s.url ? (
+        {s.type.includes("rss") && s.url ? (
           <a
             href={s.url}
             target="_blank"
