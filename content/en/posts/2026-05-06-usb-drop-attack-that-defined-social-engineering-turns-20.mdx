@@ -1,0 +1,50 @@
+---
+title: USB Drop Attack That Defined Social Engineering Turns 20
+slug: 2026-05-06-usb-drop-attack-that-defined-social-engineering-turns-20
+date: '2026-05-06'
+excerpt: >-
+  Steve Stasiukonis's 2006 USB drop test at a credit union — 15 of 20 drives
+  plugged in by employees — became the blueprint for physical social engineering
+  assessments still used…
+category: industry
+tags:
+  - social-engineering
+  - usb-drop-attack
+  - physical-security
+  - penetration-testing
+  - history
+language: en
+source_urls:
+  - >-
+    https://www.darkreading.com/cyberattacks-data-breaches/how-story-usb-penetration-test-went-viral
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-06-usb-drop-attack-that-defined-social-engineering-turns-20
+cluster_key: 'topic:story-penetration-test-went-viral'
+source_count: 1
+severity: informational
+affected_sectors:
+  - financial services
+affected_regions:
+  - North America
+publish_tier: brief
+public_gate_reasons:
+  - excerpt_too_long
+---
+## Executive Summary
+
+Two decades ago, penetration tester Steve Stasiukonis conducted what would become the archetypal USB drop social engineering test. By scattering rigged thumb drives in the parking lot of a credit union — and then tracking what employees did with them — he demonstrated that curiosity and trust routinely override security policy. The test, originally reported by Dark Reading, found that 15 of 20 planted drives were plugged into internal systems within hours. That 75% engagement rate has proven remarkably durable: modern assessments by firms such as Coalfire and Mandiant consistently report similar or higher rates, according to industry surveys cited in the retrospective.
+
+## Technical Analysis
+
+Stasiukonis's method was technically simple but operationally sophisticated. He loaded USB drives with a custom autorun script (an approach that still worked on Windows XP at the time) that, when the drive was inserted, executed a payload that beaconed back to a listener he controlled. The drives were labeled with innocuous but enticing text — "Confidential" or "Executive Bonus Info" — to trigger curiosity. Crucially, he also embedded a small radio-frequency transmitter in each drive so he could physically track which machines they were inserted into, a technique that predated modern endpoint detection and response (EDR) telemetry.
+
+The test revealed a critical gap in security awareness: employees who would never knowingly give a password to a stranger would enthusiastically plug an unknown USB drive into a corporate workstation. The credit union had no technical controls — such as Group Policy disabling autorun or endpoint protection blocking unknown USB devices — to prevent the behavior. Stasiukonis noted that the same vulnerability persists today, though modern defenses include device control policies, USB kill cords, and EDR alerts on new USB device insertion.
+
+## Mitigations & Recommendations
+
+Organizations should treat USB drop attacks as a persistent, testable risk. Defenders can implement a layered approach: disable autorun via Group Policy; enforce endpoint device control policies that require administrator approval for new USB devices; deploy EDR solutions that alert on USB insertion events and subsequent process execution; and conduct periodic physical social engineering tests to measure employee compliance. The 20-year persistence of the 75% engagement rate suggests that awareness training alone is insufficient without technical enforcement.
+
+## References
+
+- [How the Story of a USB Penetration Test Went Viral — Dark Reading](https://www.darkreading.com/cyberattacks-data-breaches/how-story-usb-penetration-test-went-viral)

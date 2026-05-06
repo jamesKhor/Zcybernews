@@ -1,0 +1,49 @@
+---
+title: USB 投掷攻击定义了社交工程学已20年
+slug: 2026-05-06-usb-drop-attack-that-defined-social-engineering-turns-20
+date: '2026-05-06'
+excerpt: >-
+  Steve Stasiukonis 在2006年对一家信用合作社进行的USB投掷测试 —— 员工插入的20个驱动器中有15个 ——
+  成为了至今仍被使用的物理社交工程评估的蓝图...
+category: industry
+tags:
+  - social-engineering
+  - usb-drop-attack
+  - physical-security
+  - penetration-testing
+  - history
+language: zh
+source_urls:
+  - >-
+    https://www.darkreading.com/cyberattacks-data-breaches/how-story-usb-penetration-test-went-viral
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-06-usb-drop-attack-that-defined-social-engineering-turns-20
+cluster_key: 'topic:story-penetration-test-went-viral'
+source_count: 1
+severity: informational
+affected_sectors:
+  - financial services
+affected_regions:
+  - North America
+publish_tier: public
+---
+## USB Drop Attack That Defined Social Engineering Turns 20
+
+## 执行摘要
+
+二十年前，渗透测试员Steve Stasiukonis进行了一项后来成为典型的USB掉落社交工程测试。通过在一家信用合作社的停车场散布被操纵的U盘——然后跟踪员工对它们做了什么——他证明了好奇心和信任经常凌驾于安全政策之上。这项最初由Dark Reading报道的测试发现，在20个被放置的驱动器中，有15个在几小时内被插入到内部系统中。这个75%的参与率已经被证明是相当持久的：根据行业调查中引用的Coalfire和Mandiant等公司进行的现代评估，一致报告了类似或更高的比率。
+
+## 技术分析
+
+Stasiukonis的方法在技术上很简单，但在操作上很复杂。他将USB驱动器加载了一个自定义的自动运行脚本（当时在Windows XP上仍然有效的方法），当驱动器被插入时，执行一个向他控制的监听器发出信标的负载。驱动器被标记为无害但诱人的文本——“机密”或“高管奖金信息”——以触发好奇心。至关重要的是，他还在每个驱动器中嵌入了一个小型无线电频率发射器，以便他能够物理跟踪它们被插入哪些机器，这项技术早于现代端点检测和响应（EDR）遥测。
+
+测试揭示了一个关键的安全意识差距：那些永远不会故意将密码告诉陌生人的员工会热情地将一个未知的USB驱动器插入到公司工作站上。信用合作社没有任何技术控制——例如通过组策略禁用自动运行或端点保护阻止未知USB设备——以防止这种行为。Stasiukonis指出，尽管现代防御措施包括设备控制策略、USB杀手线和EDR对新USB设备插入的警报，但这种脆弱性今天仍然存在。
+
+## 缓解措施与建议
+
+组织应将USB掉落攻击视为一个持久的、可测试的风险。防御者可以实施分层方法：通过组策略禁用自动运行；执行端点设备控制策略，要求管理员批准新的USB设备；部署EDR解决方案，对USB插入事件和随后的进程执行发出警报；并定期进行物理社交工程测试以衡量员工的合规性。75%的参与率持续了20年，这表明仅靠意识培训是不够的，除非有技术执行。
+
+## 参考资料
+
+- [How the Story of a USB Penetration Test Went Viral — Dark Reading](https://www.darkreading.com/cyberattacks-data-breaches/how-story-usb-penetration-test-went-viral)
