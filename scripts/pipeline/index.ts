@@ -25,6 +25,13 @@ import { routeStoriesForGeneration, type RoutedStory } from "./routing.js";
 import { enrichStoriesForGeneration } from "./source-enrichment.js";
 import { evaluatePublishQuality } from "./publish-quality-gate.js";
 import { clusterStories } from "./story-clustering.js";
+import {
+  summarizeDecisionMatrix,
+  writeDecisionMatrix,
+  type DecisionGate,
+  type DecisionMatrixEntry,
+} from "./decision-matrix.js";
+import type { GeneratedArticle } from "../ai/schemas/article-schema.js";
 
 // ── Recent titles loader (for prompt dedup context) ────────────────────────
 
@@ -144,6 +151,47 @@ const SOURCE_IDS = (process.env.SOURCE_IDS ?? "")
   .map((s) => s.trim())
   .filter(Boolean);
 
+const decisionEntries: DecisionMatrixEntry[] = [];
+let decisionMatrixWritten = false;
+
+function flushDecisionMatrix() {
+  try {
+    const matrix = writeDecisionMatrix(decisionEntries);
+    if (!decisionMatrixWritten) {
+      console.log(
+        `[pipeline] Decision matrix: ${matrix.summary.published} published, ${matrix.summary.notPublished} not published`,
+      );
+    }
+    decisionMatrixWritten = true;
+  } catch (err) {
+    console.error("[pipeline] Failed to write decision matrix:", err);
+  }
+}
+
+function gate(
+  gateName: string,
+  outcome: DecisionGate["outcome"],
+  detail?: string,
+): DecisionGate {
+  return detail
+    ? { gate: gateName, outcome, detail }
+    : { gate: gateName, outcome };
+}
+
+function compactReasonList(reasons: string[], fallback: string): string {
+  return reasons.length > 0 ? reasons.join(", ") : fallback;
+}
+
+function articleDecisionFields(article: GeneratedArticle | null) {
+  if (!article) return {};
+  return {
+    articleTitle: article.title,
+    slug: article.slug,
+    category: article.category,
+    severity: article.severity ?? null,
+  };
+}
+
 if (!DRY_RUN) {
   // Need at least one AI provider — OpenRouter (free) or DeepSeek/Kimi (paid)
   if (
@@ -183,12 +231,30 @@ async function main() {
     return;
   }
 
+  const storyOrder = new Map(
+    selectedStories.map((story, index) => [story, index] as const),
+  );
   const routed = routeStoriesForGeneration(selectedStories);
   for (const skip of routed.skipped) {
     console.log(
       `[routing] skip ${skip.story.sourceId ?? skip.story.sourceName} ` +
         `(${skip.reason}): "${skip.story.title.slice(0, 100)}"`,
     );
+    decisionEntries.push({
+      index: storyOrder.get(skip.story) ?? decisionEntries.length,
+      outcome: "not_published",
+      sourceTitle: skip.story.title,
+      sourceName: skip.story.sourceName,
+      sourceUrl: skip.story.url,
+      stage: "routing",
+      decision: "not published",
+      reasons: [skip.reason],
+      gates: [
+        gate("routing", "block", skip.reason),
+        gate("translation", "skip", skip.decision.action),
+      ],
+      locale: skip.decision.action,
+    });
   }
   if (routed.skipped.length > 0) {
     console.log(
@@ -256,8 +322,47 @@ async function main() {
   );
 
   const results = await Promise.allSettled(
-    batches.map((batch) =>
+    batches.map((batch, batchIndex) =>
       limit(async () => {
+        const primaryStory = batch[0];
+        const baseIndex =
+          (primaryStory ? storyOrder.get(primaryStory) : undefined) ??
+          selectedStories.length + batchIndex;
+        const sourceTitle = primaryStory?.title ?? "Untitled source story";
+        const sourceName = primaryStory?.sourceName;
+        const sourceUrl = primaryStory?.url;
+        const translationDecision = primaryStory?.translationDecision;
+        const decisionGates: DecisionGate[] = [
+          gate("routing", "pass", translationDecision?.action ?? "unknown"),
+        ];
+        let decisionArticle: GeneratedArticle | null = null;
+        let sourceCount = batch.length;
+
+        function recordDecision(
+          outcome: DecisionMatrixEntry["outcome"],
+          stage: string,
+          decision: string,
+          reasons: string[],
+          finalGate: DecisionGate,
+          extraGates: DecisionGate[] = [],
+          locale?: string,
+        ) {
+          decisionEntries.push({
+            index: baseIndex,
+            outcome,
+            sourceTitle,
+            sourceName,
+            sourceUrl,
+            ...articleDecisionFields(decisionArticle),
+            stage,
+            decision,
+            reasons,
+            gates: [...decisionGates, ...extraGates, finalGate],
+            sourceCount,
+            locale,
+          });
+        }
+
         // Outer try/catch so any uncaught exception in the article pipeline
         // (post-process crash, non-duplicate write error, translate crash,
         // Zod reject on the AI output) counts as `failedException` instead
@@ -265,6 +370,14 @@ async function main() {
         // Returns null on failure to keep `succeeded` counting correct.
         try {
           const sourceBatch = await enrichStoriesForGeneration(batch);
+          sourceCount = sourceBatch.length;
+          decisionGates.push(
+            gate(
+              "source-depth",
+              sourceCount > 1 ? "pass" : "warn",
+              `${sourceCount} source${sourceCount === 1 ? "" : "s"}`,
+            ),
+          );
           const storyUrls = sourceBatch.map((s) => s.url).filter(Boolean);
           const clusterKey = sourceBatch[0]?.clusterKey;
           const storyProcessedKeys = sourceBatch
@@ -279,6 +392,13 @@ async function main() {
           if (result === null) {
             console.warn("[pipeline] ⚠️  Generation failed, skipping.");
             failedGeneration++;
+            recordDecision(
+              "not_published",
+              "generation",
+              "not published",
+              ["generation_null"],
+              gate("generation", "fail", "LLM returned no article"),
+            );
             console.log(
               JSON.stringify({
                 event: "article_failed",
@@ -292,10 +412,29 @@ async function main() {
           if (result === "reject") {
             // AI determined off-topic or already covered — counts as off-topic
             skippedOffTopic++;
+            recordDecision(
+              "not_published",
+              "generation",
+              "not published",
+              ["ai_reject_off_topic_or_already_covered"],
+              gate(
+                "generation",
+                "block",
+                "AI rejected as off-topic or already covered",
+              ),
+            );
             markProcessedBatch(storyProcessedKeys);
             return null;
           }
           const article = result;
+          decisionArticle = article;
+          decisionGates.push(
+            gate(
+              "generation",
+              "pass",
+              `${article.category}/${article.severity ?? "unset"}`,
+            ),
+          );
 
           // Post-generation content relevance filter — belt-and-suspenders check
           // in case the AI didn't reject but still produced off-topic output.
@@ -304,9 +443,21 @@ async function main() {
               `[pipeline] ⚠️  Off-topic article rejected: "${article.title}" (category: ${article.category})`,
             );
             skippedOffTopic++;
+            recordDecision(
+              "not_published",
+              "relevance",
+              "not published",
+              ["not_cybersecurity_relevant"],
+              gate(
+                "relevance",
+                "block",
+                `title/category failed relevance check (${article.category})`,
+              ),
+            );
             markProcessedBatch(storyProcessedKeys); // Still mark as processed to avoid retrying
             return null;
           }
+          decisionGates.push(gate("relevance", "pass"));
 
           // Post-process — script overrides LLM output for structured fields
           // (slug, date, cve_ids, iocs). Script-derived = deterministic = no
@@ -321,22 +472,60 @@ async function main() {
           const fc = await factCheckArticle(article, sourceBatch);
           console.log(`[pipeline] ${formatFactCheckLog(fc)}`);
           if (!fc.passed) {
+            const highIssueTypes = fc.issues
+              .filter((i) => i.severity === "high")
+              .map((i) => i.type);
             console.warn(
-              `[pipeline] ❌ Fact-check rejected "${article.title}" — ${fc.issues.filter((i) => i.severity === "high").length} high-severity issues`,
+              `[pipeline] ❌ Fact-check rejected "${article.title}" — ${highIssueTypes.length} high-severity issues`,
             );
             skippedFactCheck++;
+            recordDecision(
+              "not_published",
+              "fact-check",
+              "not published",
+              highIssueTypes.length > 0
+                ? highIssueTypes
+                : ["fact_check_failed"],
+              gate(
+                "fact-check",
+                "block",
+                compactReasonList(highIssueTypes, "high-severity issue"),
+              ),
+            );
             markProcessedBatch(storyProcessedKeys);
             return null;
           }
+          const fcWarnings = fc.issues.filter((i) => i.severity !== "high");
+          decisionGates.push(
+            gate(
+              "fact-check",
+              fcWarnings.length > 0 ? "warn" : "pass",
+              fcWarnings.length > 0
+                ? `${fcWarnings.length} non-blocking issue(s)`
+                : undefined,
+            ),
+          );
 
           if (CRITICAL_ONLY && article.severity !== "critical") {
             console.log(
               `[pipeline] Skipping non-critical article in critical-only mode: "${article.title}" (severity=${article.severity ?? "unset"})`,
             );
             skippedQuality++;
+            recordDecision(
+              "not_published",
+              "critical-only",
+              "not published",
+              [`severity_${article.severity ?? "unset"}`],
+              gate(
+                "critical-only",
+                "block",
+                `severity=${article.severity ?? "unset"}`,
+              ),
+            );
             markProcessedBatch(storyProcessedKeys);
             return null;
           }
+          if (CRITICAL_ONLY) decisionGates.push(gate("critical-only", "pass"));
 
           // Publish quality gate — deterministic scorer, shared with the
           // daily audit and digest guard. This blocks articles that are
@@ -370,11 +559,44 @@ async function main() {
               }),
             );
             skippedQuality++;
+            recordDecision(
+              "not_published",
+              "quality",
+              "not published",
+              blockingCodes,
+              gate(
+                "quality",
+                "block",
+                compactReasonList(blockingCodes, "blocking quality flag"),
+              ),
+            );
             markProcessedBatch(storyProcessedKeys);
             return null;
           }
+          const qualityWarnings = qualityDecision.score.flags
+            .filter(
+              (flag) =>
+                !qualityDecision.blockingFlags.some(
+                  (blocking) => blocking.code === flag.code,
+                ),
+            )
+            .map((flag) => flag.code);
+          decisionGates.push(
+            gate(
+              "quality",
+              qualityWarnings.length > 0 ? "warn" : "pass",
+              [
+                `headline=${qualityDecision.score.headlineScore}`,
+                `words=${qualityDecision.score.wordCount}`,
+                qualityWarnings.length > 0
+                  ? `warnings=${qualityWarnings.slice(0, 3).join(",")}`
+                  : "",
+              ]
+                .filter(Boolean)
+                .join(" "),
+            ),
+          );
 
-          const translationDecision = sourceBatch[0]?.translationDecision;
           const shouldTranslate =
             translationDecision?.action === "translate-and-publish-both";
           let zhMeta = null;
@@ -400,7 +622,25 @@ async function main() {
               );
               zhMeta = null;
               translationWarnings++;
+              decisionGates.push(
+                gate(
+                  "translation",
+                  "warn",
+                  `downgraded to EN only (ratio=${bodyRatio.toFixed(2)})`,
+                ),
+              );
             }
+          }
+          if (zhMeta) {
+            decisionGates.push(gate("translation", "pass", "en+zh"));
+          } else if (!shouldTranslate) {
+            decisionGates.push(
+              gate(
+                "translation",
+                "skip",
+                translationDecision?.action ?? "unknown",
+              ),
+            );
           }
 
           // Write MDX files (with shift-right duplicate check)
@@ -431,6 +671,17 @@ async function main() {
                 }),
               );
               skippedDuplicate++;
+              recordDecision(
+                "not_published",
+                "duplicate",
+                "not published",
+                [`duplicate_${err.duplicate.matchType}`],
+                gate(
+                  "duplicate",
+                  "block",
+                  `${err.duplicate.matchType} match: ${err.duplicate.matchedTitle}`,
+                ),
+              );
               markProcessedBatch(storyProcessedKeys);
               return null;
             }
@@ -453,6 +704,15 @@ async function main() {
 
           console.log(`[pipeline] ✅  Written: ${paths.en} (${duration}s)`);
           if (paths.zh) console.log(`[pipeline] ✅  Written: ${paths.zh}`);
+          recordDecision(
+            "published",
+            "write",
+            "published",
+            ["passed publish gates"],
+            gate("write", "pass", zhMeta && paths.zh ? "en+zh" : "en"),
+            [gate("duplicate", "pass", "no duplicate found")],
+            zhMeta && paths.zh ? "en+zh" : "en",
+          );
 
           // Discord notification — fire-and-forget. Posts to #en-news-feed
           // (and #zh-news-feed if ZH translation shipped). Silent skip if
@@ -487,6 +747,17 @@ async function main() {
           // cause instead of a mystery "failed" count.
           failedException++;
           console.error("[pipeline] ❌ Unhandled article error:", err);
+          recordDecision(
+            "not_published",
+            "exception",
+            "not published",
+            [err instanceof Error ? err.message : String(err)],
+            gate(
+              "exception",
+              "fail",
+              err instanceof Error ? err.message : String(err),
+            ),
+          );
           console.log(
             JSON.stringify({
               event: "article_failed",
@@ -528,6 +799,8 @@ async function main() {
     `\n📊 Pipeline complete: ${succeeded} written, ${skippedDuplicate} duplicates blocked, ${skippedOffTopic} off-topic rejected, ${skippedFactCheck} fact-check rejected, ${skippedQuality} quality rejected, ${translationWarnings} translation warnings, ${failed} failed (gen=${failedGeneration} exc=${failedException} unk=${unclassifiedFailed})\n`,
   );
 
+  const decisionSummary = summarizeDecisionMatrix(decisionEntries);
+
   // Write run summary as JSON
   console.log(
     JSON.stringify({
@@ -546,14 +819,17 @@ async function main() {
       failed_generation: failedGeneration,
       failed_exception: failedException,
       failed_unclassified: unclassifiedFailed,
+      decision_matrix: decisionSummary,
     }),
   );
 
+  flushDecisionMatrix();
   flushProcessedCache();
   if (failed > 0) process.exit(1);
 }
 
 function flushBeforeExit() {
+  flushDecisionMatrix();
   try {
     flushProcessedCache();
   } catch (err) {

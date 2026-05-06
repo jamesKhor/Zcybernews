@@ -101,6 +101,32 @@ jobs:
             echo "::warning::Pipeline exited with code $PIPELINE_EXIT (partial failures possible; still committing whatever succeeded)"
           fi
 
+      - name: Collect pipeline decision matrix
+        id: decisions
+        if: ${{ always() }}
+        run: |
+          MATRIX_FILE=".pipeline-cache/decision-matrix.telegram.txt"
+          JSON_FILE=".pipeline-cache/decision-matrix.json"
+          if [ -s "$MATRIX_FILE" ]; then
+            {
+              echo 'matrix<<EOF'
+              cat "$MATRIX_FILE"
+              echo 'EOF'
+            } >> "$GITHUB_OUTPUT"
+            echo "has_matrix=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "matrix=" >> "$GITHUB_OUTPUT"
+            echo "has_matrix=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          PUBLISHED=$(node -e "const fs=require('fs');try{const d=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(d.summary?.published??0));}catch{process.stdout.write('0')}" "$JSON_FILE")
+          NOT_PUBLISHED=$(node -e "const fs=require('fs');try{const d=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(d.summary?.notPublished??0));}catch{process.stdout.write('0')}" "$JSON_FILE")
+          TOTAL=$(node -e "const fs=require('fs');try{const d=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(d.summary?.total??0));}catch{process.stdout.write('0')}" "$JSON_FILE")
+          echo "published_count=$PUBLISHED" >> "$GITHUB_OUTPUT"
+          echo "not_published_count=$NOT_PUBLISHED" >> "$GITHUB_OUTPUT"
+          echo "total_count=$TOTAL" >> "$GITHUB_OUTPUT"
+          echo "Decision matrix: published=$PUBLISHED not_published=$NOT_PUBLISHED total=$TOTAL"
+
       - name: Detect new content
         id: detect
         if: ${{ inputs.dry_run != 'true' }}
@@ -270,6 +296,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           COUNT: ${{ steps.titles.outputs.count }}
           TITLES: ${{ steps.titles.outputs.titles }}
+          MATRIX: ${{ steps.decisions.outputs.matrix }}
         run: |
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
             echo "::notice::Telegram secrets not configured — skipping notification"
@@ -286,6 +313,9 @@ jobs:
           MESSAGE="✅ <b>ZCyberNews Published ${COUNT} article(s)</b>"
           MESSAGE+=$'\n'"Time: ${TIME}"
           MESSAGE+=$'\n\n'"${TITLES}"
+          if [ -n "$MATRIX" ]; then
+            MESSAGE+=$'\n\n'"${MATRIX}"
+          fi
           MESSAGE+=$'\n'"🔗 https://zcybernews.com"
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             --data-urlencode chat_id="${TELEGRAM_CHAT_ID}" \
@@ -295,15 +325,38 @@ jobs:
             > /dev/null || true
 
       - name: Notify Telegram — no new articles
-        if: ${{ success() && inputs.dry_run != 'true' && steps.detect.outputs.new_files == '0' }}
+        if: ${{ success() && inputs.dry_run != 'true' && steps.detect.outputs.new_files == '0' && steps.decisions.outputs.not_published_count == '0' }}
         run: |
           echo "::notice::No new articles this run (all stories already processed) — no notification sent."
+
+      - name: Notify Telegram — decision matrix only
+        if: ${{ success() && inputs.dry_run != 'true' && steps.detect.outputs.new_files == '0' && steps.decisions.outputs.not_published_count != '0' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MATRIX: ${{ steps.decisions.outputs.matrix }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ] || [ -z "$MATRIX" ]; then
+            exit 0
+          fi
+          TIME=$(TZ='Asia/Singapore' date '+%H:%M SGT')
+          MESSAGE="🧭 <b>ZCyberNews Pipeline Decision Matrix</b>"
+          MESSAGE+=$'\n'"Time: ${TIME}"
+          MESSAGE+=$'\n'"No articles were published in this run."
+          MESSAGE+=$'\n\n'"${MATRIX}"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode parse_mode="HTML" \
+            --data-urlencode disable_web_page_preview="true" \
+            --data-urlencode text="$MESSAGE" \
+            > /dev/null || true
 
       - name: Notify Telegram — failure
         if: ${{ failure() }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MATRIX: ${{ steps.decisions.outputs.matrix }}
         run: |
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
             exit 0
@@ -311,6 +364,9 @@ jobs:
           RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           FAIL_MESSAGE="❌ <b>ZCyberNews Pipeline failed</b>"
           FAIL_MESSAGE+=$'\n\n'"Run: ${RUN_URL}"
+          if [ -n "$MATRIX" ]; then
+            FAIL_MESSAGE+=$'\n\n'"${MATRIX}"
+          fi
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             --data-urlencode chat_id="${TELEGRAM_CHAT_ID}" \
             --data-urlencode parse_mode="HTML" \
