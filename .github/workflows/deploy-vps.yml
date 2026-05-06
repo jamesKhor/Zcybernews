@@ -376,6 +376,16 @@ jobs:
             # serving that old build even after this deploy swaps .next here.
             # Recreate on full code deploy so the runtime path is deterministic.
             pm2 delete zcybernews >/dev/null 2>&1 || true
+            # Defensive cleanup: if a previous failed deploy left an orphaned
+            # Next.js listener on port 3000, the new PM2 parent can look online
+            # while traffic still goes to the old child process.
+            if command -v lsof >/dev/null 2>&1; then
+              lsof -ti tcp:3000 | xargs -r kill || true
+              sleep 2
+            elif command -v fuser >/dev/null 2>&1; then
+              fuser -k 3000/tcp || true
+              sleep 2
+            fi
             pm2 start npm --name zcybernews \
               --cwd /home/zcybernews/zcybernews \
               -i 2 \
@@ -386,18 +396,20 @@ jobs:
             echo "🏥 Health check..."
             sleep 5
             for attempt in 1 2 3; do
-              if curl --connect-timeout 5 --max-time 20 -fsS http://127.0.0.1:3000/en > /dev/null; then
+              HTML=$(curl --connect-timeout 5 --max-time 20 -fsS http://127.0.0.1:3000/en || true)
+              if echo "$HTML" | grep -q "Built by a cybersecurity professional"; then
                 echo "✅ Local health check passed on attempt ${attempt}"
                 break
               fi
 
               if [ "${attempt}" = "3" ]; then
-                echo "❌ Health check failed after 3 attempts — recent logs:"
+                echo "❌ Health/content check failed after 3 attempts — recent logs:"
+                echo "Expected deployed homepage copy was not found in localhost HTML."
                 pm2 logs zcybernews --lines 20 --nostream
                 exit 1
               fi
 
-              echo "⏳ Local health check attempt ${attempt} failed; retrying..."
+              echo "⏳ Local health/content check attempt ${attempt} failed; retrying..."
               sleep 5
             done
 
