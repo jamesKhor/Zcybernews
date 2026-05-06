@@ -280,6 +280,10 @@ jobs:
             || (echo "❌ Build missing prerender-manifest.json"; exit 1)
           test -d .next/server \
             || (echo "❌ Build missing .next/server/"; exit 1)
+          grep -R "Built by a cybersecurity professional" .next/server .next/static >/dev/null \
+            || (echo "❌ Build artifact missing expected homepage copy"; exit 1)
+          grep -R "Palo Alto Networks Security Advisories" .next/server .next/static >/dev/null \
+            || (echo "❌ Build artifact missing expected vendor source copy"; exit 1)
           echo "✅ Build artifacts look valid"
           du -sh .next
 
@@ -362,6 +366,10 @@ jobs:
             [ -d .next ] && mv .next .next-prev
             # Move staged build to .next (atomic rename)
             mv .next-staging .next
+            grep -R "Built by a cybersecurity professional" .next/server .next/static >/dev/null \
+              || (echo "❌ Live .next missing expected homepage copy after swap"; exit 1)
+            grep -R "Palo Alto Networks Security Advisories" .next/server .next/static >/dev/null \
+              || (echo "❌ Live .next missing expected vendor source copy after swap"; exit 1)
             # Cleanup should never block deploy. If old cache files have
             # bad ownership, keep the stale rollback directory for manual
             # cleanup instead of failing a healthy release.
@@ -379,18 +387,34 @@ jobs:
             # Defensive cleanup: if a previous failed deploy left an orphaned
             # Next.js listener on port 3000, the new PM2 parent can look online
             # while traffic still goes to the old child process.
+            PORT_PIDS=""
             if command -v lsof >/dev/null 2>&1; then
-              lsof -ti tcp:3000 | xargs -r kill || true
-              sleep 2
-            elif command -v fuser >/dev/null 2>&1; then
-              fuser -k 3000/tcp || true
-              sleep 2
+              PORT_PIDS="$PORT_PIDS $(lsof -ti tcp:3000 2>/dev/null || true)"
             fi
-            pm2 start npm --name zcybernews \
+            if command -v fuser >/dev/null 2>&1; then
+              PORT_PIDS="$PORT_PIDS $(fuser 3000/tcp 2>/dev/null || true)"
+            fi
+            PORT_PIDS=$(echo "$PORT_PIDS" | tr ' ' '\n' | grep -E '^[0-9]+$' | sort -u || true)
+            if [ -n "$PORT_PIDS" ]; then
+              echo "⚠️ Killing stale port 3000 listener(s): $PORT_PIDS"
+              echo "$PORT_PIDS" | xargs -r kill || true
+              sleep 2
+              echo "$PORT_PIDS" | xargs -r kill -9 2>/dev/null || true
+              sleep 1
+            fi
+
+            echo "Runtime process snapshot before start:"
+            (ss -ltnp 2>/dev/null || netstat -ltnp 2>/dev/null || true) | grep ':3000' || true
+            ps -fu "$(whoami)" | grep -E 'next|npm|node' | grep -v grep || true
+
+            # Next.js docs for 16.x recommend one standard `next start`
+            # process for full feature fidelity. Avoid PM2's cluster wrapper
+            # around `npm start`: it obscured logs and could leave a stale
+            # child serving port 3000 while PM2 showed the parent as online.
+            pm2 start ./node_modules/next/dist/bin/next --name zcybernews \
               --cwd /home/zcybernews/zcybernews \
-              -i 2 \
               --max-memory-restart 750M \
-              -- start
+              -- start -p 3000
             pm2 save
 
             echo "🏥 Health check..."
@@ -405,7 +429,15 @@ jobs:
               if [ "${attempt}" = "3" ]; then
                 echo "❌ Health/content check failed after 3 attempts — recent logs:"
                 echo "Expected deployed homepage copy was not found in localhost HTML."
-                pm2 logs zcybernews --lines 20 --nostream
+                echo "Git HEAD: $(git rev-parse --short HEAD)"
+                echo "Matching old/new strings on disk:"
+                grep -R "Built by a cybersecurity professional" app components messages .next/server .next/static 2>/dev/null | head -20 || true
+                grep -R "cybersecurity feeds every day" app components messages .next/server .next/static 2>/dev/null | head -20 || true
+                echo "Port/process snapshot:"
+                (ss -ltnp 2>/dev/null || netstat -ltnp 2>/dev/null || true) | grep ':3000' || true
+                ps -fu "$(whoami)" | grep -E 'next|npm|node' | grep -v grep || true
+                pm2 describe zcybernews || true
+                pm2 logs zcybernews --lines 80 --nostream
                 exit 1
               fi
 
