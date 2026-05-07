@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
   evaluatePublicGate,
+  getEffectivePublishTier,
+  isIndexableFrontmatter,
   getPublishTier,
   isPublicFrontmatter,
 } from "../publication";
@@ -27,9 +29,40 @@ function frontmatter(
 }
 
 describe("publication gate", () => {
-  it("treats missing publish_tier as brief after corpus migration", () => {
+  it("stores missing publish_tier as brief but promotes it when the current gate passes", () => {
     expect(getPublishTier(frontmatter())).toBe("brief");
-    expect(isPublicFrontmatter(frontmatter())).toBe(false);
+    expect(getEffectivePublishTier(frontmatter())).toBe("public");
+    expect(isPublicFrontmatter(frontmatter())).toBe(true);
+    expect(isIndexableFrontmatter(frontmatter())).toBe(true);
+  });
+
+  it("keeps stored brief articles out of public promotion when the current gate fails", () => {
+    const weak = frontmatter({
+      title: "brief vendor note",
+      excerpt: "A vendor shared a brief update with customers.",
+      category: "industry",
+      source_urls: ["https://example.com/story"],
+      cve_ids: undefined,
+    });
+
+    expect(getPublishTier(weak)).toBe("brief");
+    expect(getEffectivePublishTier(weak)).toBe("brief");
+    expect(isPublicFrontmatter(weak)).toBe(false);
+    expect(isIndexableFrontmatter(weak)).toBe(true);
+  });
+
+  it("keeps private, draft, and future scheduled articles out of the index", () => {
+    expect(
+      isIndexableFrontmatter(frontmatter({ publish_tier: "private" })),
+    ).toBe(false);
+    expect(isIndexableFrontmatter(frontmatter({ draft: true }))).toBe(false);
+    expect(
+      isIndexableFrontmatter(
+        frontmatter({
+          scheduled_publish: new Date(Date.now() + 86400000).toISOString(),
+        }),
+      ),
+    ).toBe(false);
   });
 
   it("marks sourced vulnerability coverage as public", () => {

@@ -1,6 +1,11 @@
 import type { Article, ArticleFrontmatter, PublishTier } from "./types";
 
 export const PUBLIC_PUBLISH_TIERS = new Set<PublishTier>(["public", "report"]);
+export const INDEXABLE_PUBLISH_TIERS = new Set<PublishTier>([
+  "brief",
+  "public",
+  "report",
+]);
 
 const PRIMARY_AUTHORITY_HOSTS = new Set([
   "cisa.gov",
@@ -105,8 +110,42 @@ export function getPublishTier(frontmatter: ArticleFrontmatter): PublishTier {
   return frontmatter.publish_tier ?? "brief";
 }
 
+export function getEffectivePublishTier(
+  frontmatter: ArticleFrontmatter,
+): PublishTier {
+  const storedTier = getPublishTier(frontmatter);
+  if (storedTier === "brief" && evaluatePublicGate(frontmatter).pass) {
+    return "public";
+  }
+  return storedTier;
+}
+
 export function isPublicFrontmatter(frontmatter: ArticleFrontmatter): boolean {
-  return PUBLIC_PUBLISH_TIERS.has(getPublishTier(frontmatter));
+  return PUBLIC_PUBLISH_TIERS.has(getEffectivePublishTier(frontmatter));
+}
+
+function isFutureScheduled(frontmatter: ArticleFrontmatter): boolean {
+  if (!frontmatter.scheduled_publish) return false;
+  const scheduled = new Date(frontmatter.scheduled_publish).getTime();
+  return Number.isFinite(scheduled) && scheduled > Date.now();
+}
+
+/**
+ * Page-level indexability is wider than public promotion.
+ *
+ * `brief` pages are intentionally omitted from high-signal surfaces like the
+ * sitemap, feed, and search index, but they should not emit `noindex` once
+ * Google already knows their URLs. Only private, draft, and future-scheduled
+ * content is explicitly blocked from indexing.
+ */
+export function isIndexableFrontmatter(
+  frontmatter: ArticleFrontmatter,
+): boolean {
+  return (
+    !frontmatter.draft &&
+    !isFutureScheduled(frontmatter) &&
+    INDEXABLE_PUBLISH_TIERS.has(getPublishTier(frontmatter))
+  );
 }
 
 export function isPublicArticle(article: Article): boolean {

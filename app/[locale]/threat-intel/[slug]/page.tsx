@@ -5,7 +5,7 @@ import {
   getPostBySlugExact,
   getRelatedPosts,
 } from "@/lib/content";
-import { isPublicArticle, isPublicFrontmatter } from "@/lib/publication";
+import { isIndexableFrontmatter, isPublicArticle } from "@/lib/publication";
 import { compileMDX } from "@/lib/mdx";
 import { ArticleMeta } from "@/components/articles/ArticleMeta";
 import { TldrCallout } from "@/components/articles/TldrCallout";
@@ -104,7 +104,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: frontmatter.excerpt,
       images: image ? [image] : [],
     },
-    ...(!isPublicFrontmatter(frontmatter) && {
+    ...(!isIndexableFrontmatter(frontmatter) && {
       robots: { index: false, follow: true },
     }),
   };

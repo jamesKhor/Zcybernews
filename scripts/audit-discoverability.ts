@@ -14,8 +14,8 @@ import matter from "gray-matter";
 import { articleUrl, type ArticleSection } from "../lib/article-url.js";
 import {
   evaluatePublicGate,
+  isIndexableFrontmatter,
   getPublishTier,
-  isPublicFrontmatter,
 } from "../lib/publication.js";
 import {
   ArticleFrontmatterSchema,
@@ -169,8 +169,7 @@ function loadArticle(filePath: string): AuditArticle | null {
   const currentTier = getPublishTier(frontmatter);
   const gate = evaluatePublicGate(frontmatter);
   const scheduledFuture = isFutureScheduled(frontmatter);
-  const indexable =
-    !frontmatter.draft && !scheduledFuture && isPublicFrontmatter(frontmatter);
+  const indexable = isIndexableFrontmatter(frontmatter);
 
   return {
     filePath,

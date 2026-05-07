@@ -3,10 +3,19 @@ import createNextIntlPlugin from "next-intl/plugin";
 import { buildSectionRedirects } from "./lib/section-redirects";
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+const CANONICAL_HOST = "zcybernews.com";
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return buildSectionRedirects();
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: `www.${CANONICAL_HOST}` }],
+        destination: `https://${CANONICAL_HOST}/:path*`,
+        permanent: true,
+      },
+      ...buildSectionRedirects(),
+    ];
   },
 
   // ── Turbopack externalization fix (P0 SEV3, 2026-04-18) ──────────────
