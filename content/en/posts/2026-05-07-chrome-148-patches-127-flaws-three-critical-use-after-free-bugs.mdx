@@ -1,0 +1,69 @@
+---
+title: 'Chrome 148 Patches 127 Flaws, Three Critical Use-After-Free Bugs'
+slug: 2026-05-07-chrome-148-patches-127-flaws-three-critical-use-after-free-bugs
+date: '2026-05-07'
+excerpt: >-
+  Google's Chrome 148 fixes 127 vulnerabilities including three
+  critical-severity bugs (CVE-2026-7896, CVE-2026-7897, CVE-2026-7898) — integer
+  overflow in Blink and use-after-free...
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - use-after-free
+  - integer-overflow
+  - browser-security
+  - cve-2026-7896
+language: en
+source_urls:
+  - 'https://www.securityweek.com/chrome-148-rolls-out-with-127-security-fixes/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-07-chrome-148-patches-127-flaws-three-critical-use-after-free-bugs
+cluster_key: 'topic:chrome-rolls-fixes-chrome'
+source_count: 1
+severity: critical
+cve_ids:
+  - CVE-2026-7896
+  - CVE-2026-7897
+  - CVE-2026-7898
+affected_sectors:
+  - technology
+  - all
+affected_regions:
+  - global
+publish_tier: public
+---
+## Executive Summary
+
+Google released Chrome 148 to the stable channel on Wednesday, bundling 127 security fixes that include three critical-severity vulnerabilities, according to the company's advisory. The most severe of the trio, CVE-2026-7896, is an integer overflow in the Blink rendering engine that could enable remote code execution through heap corruption via a crafted HTML page. Google paid a $43,000 bug bounty to the external researcher who reported the flaw in mid-March. The two other critical bugs — CVE-2026-7897 and CVE-2026-7898 — are use-after-free weaknesses affecting the Mobile and Chromoting components, both discovered internally by Google's security team. The update also patches more than 30 high-severity vulnerabilities spanning ANGLE, V8, Skia, ServiceWorker, and other subsystems. Chrome 148 is now rolling out as version 148.0.7778.96 for Linux and versions 148.0.7778.96/97 for Windows and macOS.
+
+## Technical Analysis
+
+The three critical-severity vulnerabilities patched in Chrome 148 each present distinct exploitation vectors. CVE-2026-7896, an integer overflow in Blink — the browser engine responsible for layout and rendering — can be triggered by an attacker who convinces a user to visit a specially crafted HTML page. The overflow leads to heap memory corruption, potentially allowing arbitrary code execution within the browser's sandbox. Google's advisory notes that the flaw was reported by an external researcher who received a $43,000 bounty.
+
+CVE-2026-7897 and CVE-2026-7898 are use-after-free vulnerabilities in the Mobile and Chromoting components, respectively. Use-after-free bugs occur when a program continues to use a memory pointer after the referenced memory has been freed, often leading to code execution or denial of service. Both were discovered by Google's internal security team; no bounty amounts were disclosed for internally found issues.
+
+Beyond the critical flaws, Chrome 148 addresses over 30 high-severity vulnerabilities. The highest bug bounty paid — $55,000 — went to a researcher identified as Project WhatForLunch for reporting an out-of-bounds read and write issue in the V8 JavaScript engine. Other high-severity fixes include:
+
+- Heap buffer overflow in ANGLE (graphics abstraction layer)
+- Out-of-bounds memory access in V8
+- Out-of-bounds read in Fonts
+- Integer overflows in ANGLE and GPU
+- Insufficient validation of untrusted input in Media
+- Inappropriate implementation in ServiceWorker
+- Insufficient policy enforcement in DevTools
+- Type confusions in Accessibility and Runtime
+- Insufficient data validation issues in DevTools and InterestGroups
+- Out-of-bounds write in Skia
+- Uninitialized use in Dawn
+
+More than 60 medium-severity flaws and the remaining low-severity bugs round out the 127 total fixes. Google reported paying $138,000 in bug bounties to external researchers for this release, though the final figure may be higher as many bounty amounts have not yet been disclosed, per SecurityWeek.
+
+## Mitigations & Recommendations
+
+Users and administrators should update Chrome to version 148.0.7778.96 on Linux and versions 148.0.7778.96/97 on Windows and macOS as soon as possible. Chrome typically auto-updates on restart, but manual verification via chrome://settings/help ensures the latest build is applied. Enterprise environments using Chrome Browser Cloud Management should enforce the update through group policies. Given the critical nature of CVE-2026-7896, which can be triggered by simply visiting a malicious page, delaying the update exposes users to remote code execution risk. No workarounds beyond updating have been published.
+
+## References
+
+- [Chrome 148 Rolls Out With 127 Security Fixes — SecurityWeek](https://www.securityweek.com/chrome-148-rolls-out-with-127-security-fixes/)

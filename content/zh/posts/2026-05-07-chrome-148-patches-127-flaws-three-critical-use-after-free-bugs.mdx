@@ -1,0 +1,68 @@
+---
+title: Chrome 148 修复了127个漏洞，包括三个严重级别的使用后释放错误
+slug: 2026-05-07-chrome-148-patches-127-flaws-three-critical-use-after-free-bugs
+date: '2026-05-07'
+excerpt: >-
+  谷歌的Chrome 148修复了127个漏洞，包括三个严重级别的错误（CVE-2026-7896, CVE-2026-7897,
+  CVE-2026-7898）——Blink中的整数溢出和使用后释放...
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - use-after-free
+  - integer-overflow
+  - browser-security
+  - cve-2026-7896
+language: zh
+source_urls:
+  - 'https://www.securityweek.com/chrome-148-rolls-out-with-127-security-fixes/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-07-chrome-148-patches-127-flaws-three-critical-use-after-free-bugs
+cluster_key: 'topic:chrome-rolls-fixes-chrome'
+source_count: 1
+severity: critical
+cve_ids:
+  - CVE-2026-7896
+  - CVE-2026-7897
+  - CVE-2026-7898
+affected_sectors:
+  - technology
+  - all
+affected_regions:
+  - global
+publish_tier: public
+---
+## 执行摘要
+
+谷歌于周三发布了Chrome 148版本，该版本包含127个安全修复，其中包括三个严重级别的漏洞，根据公司的公告。其中最严重的是CVE-2026-7896，这是Blink渲染引擎中的一个整数溢出，可能通过精心制作的HTML页面通过堆破坏启用远程代码执行。谷歌向在3月中旬报告该漏洞的外部研究人员支付了43,000美元的漏洞赏金。另外两个关键漏洞——CVE-2026-7897和CVE-2026-7898——分别是影响Mobile和Chromoting组件的使用后释放漏洞，都是由谷歌的安全团队内部发现的。更新还修补了涉及ANGLE、V8、Skia、ServiceWorker等子系统的30多个高严重性漏洞。Chrome 148现在作为版本148.0.7778.96为Linux推出，以及版本148.0.7778.96/97为Windows和macOS推出。
+
+## 技术分析
+
+Chrome 148中修补的三个严重级别漏洞各自呈现不同的利用向量。CVE-2026-7896，Blink中的一个整数溢出——负责布局和渲染的浏览器引擎——可以通过攻击者说服用户访问一个特别制作的HTML页面来触发。溢出导致堆内存损坏，可能允许在浏览器的沙箱内执行任意代码。谷歌的公告指出，该漏洞是由外部研究人员报告的，他收到了43,000美元的赏金。
+
+CVE-2026-7897和CVE-2026-7898分别是Mobile和Chromoting组件中的使用后释放漏洞。使用后释放漏洞发生在程序在引用的内存被释放后继续使用内存指针时，通常导致代码执行或拒绝服务。两者都是由谷歌的内部安全团队发现的；没有披露内部发现问题的赏金金额。
+
+除了关键漏洞之外，Chrome 148还解决了30多个高严重性漏洞。支付的最高漏洞赏金——55,000美元——是给一个被识别为Project WhatForLunch的研究人员，他报告了V8 JavaScript引擎中的越界读取和写入问题。其他高严重性修复包括：
+
+- ANGLE（图形抽象层）中的堆缓冲区溢出
+- V8中的越界内存访问
+- 字体中的越界读取
+- ANGLE和GPU中的整数溢出
+- 媒体中不受信任输入的验证不足
+- ServiceWorker中的不当实现
+- DevTools中的政策执行不足
+- 辅助功能和运行时中的类型混淆
+- DevTools和InterestGroups中的数据验证不足问题
+- Skia中的越界写入
+- Dawn中的未初始化使用
+
+超过60个中等严重性的漏洞和剩余的低严重性漏洞构成了总共127个修复。谷歌报告说，为这个版本向外部研究人员支付了138,000美元的漏洞赏金，但最终数字可能更高，因为许多赏金金额尚未披露，据SecurityWeek报道。
+
+## 缓解措施与建议
+
+用户和管理员应尽快将Chrome更新到Linux上的148.0.7778.96版本，以及Windows和macOS上的148.0.7778.96/97版本。Chrome通常在重启时自动更新，但通过chrome://settings/help手动验证确保应用了最新版本。使用Chrome浏览器云管理的企业环境应通过组策略强制更新。鉴于CVE-2026-7896的关键性质，可以通过简单地访问恶意页面来触发，延迟更新会使用户面临远程代码执行风险。除了更新之外，没有发布任何变通方法。
+
+## 参考资料
+
+- [Chrome 148 Rolls Out With 127 Security Fixes — SecurityWeek](https://www.securityweek.com/chrome-148-rolls-out-with-127-security-fixes/)
