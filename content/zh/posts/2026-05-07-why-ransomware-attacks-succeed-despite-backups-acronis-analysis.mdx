@@ -1,0 +1,62 @@
+---
+title: 为什么即使有备份，勒索软件攻击仍然成功 — Acronis 分析
+slug: 2026-05-07-why-ransomware-attacks-succeed-despite-backups-acronis-analysis
+date: '2026-05-07'
+excerpt: Acronis 分析显示 2025 年勒索软件激增 50%；攻击者在加密前系统性地破坏备份。不可变存储和身份分离是关键的防御措施。
+category: industry
+tags:
+  - ransomware
+  - backup
+  - acronis
+  - immutable-storage
+  - incident-response
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/why-ransomware-attacks-succeed-even-when-backups-exist/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-07-why-ransomware-attacks-succeed-despite-backups-acronis-analysis
+cluster_key: 'topic:ransomware-succeed-even-when-backups'
+source_count: 1
+severity: high
+affected_sectors:
+  - managed service providers
+  - enterprise IT
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## 执行摘要
+
+根据 Acronis Cyberthreats Report H2 2025，2025年勒索软件攻击增加了50%，但恢复失败的主要原因并非缺少备份——而是攻击者在部署加密之前系统性地破坏了备份基础设施。Acronis 高级经理 Subramani Raom 在 2026年5月6日的分析中详细描述了攻击序列和常见故障点。报告强调，备份系统很少是隔离的，通常与生产环境共享凭证，并且缺乏不可变性，使它们在事件中成为单一故障点。
+
+## 技术分析
+
+现代勒索软件操作遵循一个可预测的序列：初始访问、凭证盗窃、横向移动、备份发现、备份破坏，最后是勒索软件部署。攻击者枚举备份服务器和存储库，通过被盗凭证访问备份控制台，删除或加密备份文件和快照，禁用备份代理和计划作业，并修改保留策略以消除恢复点。
+
+常见技术包括在 Windows 系统上删除卷影副本（VSS），使用合法的管理员工具（本地生活技术），针对虚拟环境中的虚拟机快照，以及利用 API 访问云备份存储。到勒索软件执行时，恢复路径已经消失。
+
+Acronis 识别出五个反复出现的弱点，解释了为什么备份策略在勒索软件事件中失败：
+
+- **生产和备份之间没有隔离：** 备份系统通常位于同一域中，使用相同的凭证，并且可以从被入侵的主机访问。
+- **弱访问控制：** 共享管理员凭证、缺乏多因素认证（MFA）和过度特权的服务帐户使攻击者容易进入备份基础设施。
+- **没有不可变性：** 如果备份可以被修改或删除，攻击者将移除它们。没有不可变性的传统备份提供很少的抵抗力。
+- **未经测试的恢复过程：** 组织经常在事件中发现备份不完整、损坏或恢复速度太慢。
+- **孤立的安全和备份工具：** 备份系统通常独立于安全监控运行，因此对备份基础设施的攻击未被检测到。
+
+## 缓解措施与建议
+
+Acronis 推荐五个关键做法来保护备份免受勒索软件侵害：
+
+1. **执行身份分离：** 对备份系统使用专用凭证和 MFA，与生产环境凭证不同。
+2. **隔离备份环境：** 分割网络并限制对备份基础设施的访问，确保它无法从被入侵的主机访问。
+3. **使用不可变备份：** 实施一次性写入、多次读取（WORM）存储，并在存储层强制执行基于时间的保留锁定，而不仅仅是在软件中。即使攻击者获得完全的管理员访问权限，不可变备份仍然完好无损。
+4. **监控备份活动：** 检测异常行为，如意外的删除、保留策略变更或备份代理禁用。
+5. **定期测试恢复：** 确保在事件发生之前可以大规模恢复备份。
+
+如果备份在攻击期间已经被破坏，组织应该识别出较旧的未触及的备份副本，利用异地或基于云的不可变存储，从干净的基线重建系统，并进行取证分析以确定最后已知的良好状态。
+
+## 参考资料
+
+- [即使存在备份，勒索软件攻击为何仍然成功 — BleepingComputer](https://www.bleepingcomputer.com/news/security/why-ransomware-attacks-succeed-even-when-backups-exist/)

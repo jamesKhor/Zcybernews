@@ -1,0 +1,65 @@
+---
+title: Why Ransomware Attacks Succeed Despite Backups — Acronis Analysis
+slug: 2026-05-07-why-ransomware-attacks-succeed-despite-backups-acronis-analysis
+date: '2026-05-07'
+excerpt: >-
+  Acronis analysis shows 50% ransomware surge in 2025; attackers systematically
+  destroy backups before encryption. Immutable storage and identity separation
+  are critical defenses.
+category: industry
+tags:
+  - ransomware
+  - backup
+  - acronis
+  - immutable-storage
+  - incident-response
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/why-ransomware-attacks-succeed-even-when-backups-exist/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-07-why-ransomware-attacks-succeed-despite-backups-acronis-analysis
+cluster_key: 'topic:ransomware-succeed-even-when-backups'
+source_count: 1
+severity: high
+affected_sectors:
+  - managed service providers
+  - enterprise IT
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## Executive Summary
+
+Ransomware attacks rose 50% in 2025, according to the Acronis Cyberthreats Report H2 2025, but the primary reason recovery fails is not missing backups — it is that attackers systematically destroy backup infrastructure before deploying encryption. Acronis senior manager Subramani Raom detailed the attack sequence and common failure points in a May 6, 2026 analysis. The report emphasizes that backup systems are rarely isolated, often share credentials with production environments, and lack immutability, making them a single point of failure during incidents.
+
+## Technical Analysis
+
+Modern ransomware operations follow a predictable sequence: initial access, credential theft, lateral movement, backup discovery, backup destruction, and finally ransomware deployment. Attackers enumerate backup servers and storage repositories, access backup consoles via stolen credentials, delete or encrypt backup files and snapshots, disable backup agents and scheduled jobs, and modify retention policies to eliminate recovery points.
+
+Common techniques include deleting Volume Shadow Copies (VSS) on Windows systems, using legitimate admin tools (living-off-the-land techniques), targeting hypervisor snapshots in virtual environments, and exploiting API access to cloud backup storage. By the time ransomware executes, recovery paths are already gone.
+
+Acronis identifies five recurring weaknesses that explain why backup strategies fail in ransomware incidents:
+
+- **No isolation between production and backup:** Backup systems often reside in the same domain, use the same credentials, and are reachable from compromised hosts.
+- **Weak access controls:** Shared admin credentials, lack of multifactor authentication (MFA), and overprivileged service accounts give attackers easy entry into backup infrastructure.
+- **No immutability:** If backups can be modified or deleted, attackers will remove them. Traditional backups without immutability offer little resistance.
+- **Untested recovery processes:** Organizations frequently discover during an incident that backups are incomplete, corrupted, or too slow to restore at scale.
+- **Siloed security and backup tools:** Backup systems often operate independently of security monitoring, so attacks on backup infrastructure go undetected.
+
+## Mitigations & Recommendations
+
+Acronis recommends five key practices to protect backups from ransomware:
+
+1. **Enforce identity separation:** Use dedicated credentials and MFA for backup systems, distinct from production environment credentials.
+2. **Isolate backup environments:** Segment networks and limit access to backup infrastructure, ensuring it is not reachable from compromised hosts.
+3. **Use immutable backups:** Implement write-once, read-many (WORM) storage with time-based retention locks enforced at the storage layer, not just in software. Even if attackers gain full administrative access, immutable backups remain intact.
+4. **Monitor backup activity:** Detect abnormal behavior such as unexpected deletions, retention policy changes, or backup agent disablement.
+5. **Test recovery regularly:** Ensure backups can be restored at scale before an incident occurs.
+
+If backups are already compromised during an attack, organizations should identify older untouched backup copies, leverage off-site or cloud-based immutable storage, rebuild systems from clean baselines, and perform forensic analysis to determine the last known good state.
+
+## References
+
+- [Why ransomware attacks succeed even when backups exist — BleepingComputer](https://www.bleepingcomputer.com/news/security/why-ransomware-attacks-succeed-even-when-backups-exist/)
