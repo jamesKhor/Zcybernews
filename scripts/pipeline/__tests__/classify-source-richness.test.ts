@@ -12,10 +12,10 @@
  * which is the exact failure mode this classifier was built to prevent.
  *
  * Tier boundaries (as of 2026-04-22):
- *   infoTokens === 0                       → advisory  (650-900 words,  2200 maxTok)
- *   infoTokens 1-2                         → medium    (1000-1400 words,3000 maxTok)
- *   infoTokens 3-5 OR <2 sources (long)    → long      (1400-2000 words,3500 maxTok)
- *   infoTokens 6+ AND ≥2 sources           → extended  (1800-2600 words,4500 maxTok)
+ *   infoTokens === 0                       → advisory  (650-900 words,  3000 maxTok)
+ *   infoTokens 1-2                         → medium    (1000-1400 words,3400 maxTok)
+ *   infoTokens 3-5 OR <2 sources (long)    → long      (1400-2000 words,4000 maxTok)
+ *   infoTokens 6+ AND ≥2 sources           → extended  (1800-2600 words,5000 maxTok)
  */
 import { describe, it, expect, vi } from "vitest";
 
@@ -59,7 +59,7 @@ describe("classifySourceRichness — tier boundaries", () => {
     const r = classifySourceRichness([story]);
     expect(r.label).toBe("advisory");
     expect(r.targetRange).toBe("650-900 words");
-    expect(r.maxOutputTokens).toBe(2200);
+    expect(r.maxOutputTokens).toBe(3000);
     expect(r.infoTokens).toBe(0);
   });
 
@@ -83,7 +83,7 @@ describe("classifySourceRichness — tier boundaries", () => {
     const r = classifySourceRichness([story]);
     expect(r.label).toBe("long");
     expect(r.targetRange).toBe("1400-2000 words");
-    expect(r.maxOutputTokens).toBe(3500);
+    expect(r.maxOutputTokens).toBe(4000);
     expect(r.infoTokens).toBeGreaterThanOrEqual(3);
   });
 
@@ -100,7 +100,7 @@ describe("classifySourceRichness — tier boundaries", () => {
     const r = classifySourceRichness([a, b]);
     expect(r.label).toBe("extended");
     expect(r.targetRange).toBe("1800-2600 words");
-    expect(r.maxOutputTokens).toBe(4500);
+    expect(r.maxOutputTokens).toBe(5000);
     expect(r.infoTokens).toBeGreaterThanOrEqual(6);
   });
 

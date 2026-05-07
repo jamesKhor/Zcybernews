@@ -114,7 +114,7 @@ export function classifySourceRichness(stories: Story[]): {
     return {
       label: "advisory",
       targetRange: "650-900 words",
-      maxOutputTokens: 2200,
+      maxOutputTokens: 3000,
       infoTokens,
     };
   }
@@ -122,7 +122,7 @@ export function classifySourceRichness(stories: Story[]): {
     return {
       label: "medium",
       targetRange: "1000-1400 words",
-      maxOutputTokens: 3000,
+      maxOutputTokens: 3400,
       infoTokens,
     };
   }
@@ -130,14 +130,14 @@ export function classifySourceRichness(stories: Story[]): {
     return {
       label: "long",
       targetRange: "1400-2000 words",
-      maxOutputTokens: 3500,
+      maxOutputTokens: 4000,
       infoTokens,
     };
   }
   return {
     label: "extended",
     targetRange: "1800-2600 words",
-    maxOutputTokens: 4500,
+    maxOutputTokens: 5000,
     infoTokens,
   };
 }
@@ -163,7 +163,15 @@ function truncateExcerpt(excerpt: string): string {
     return cut.slice(0, lastSentenceEnd + 1).trim();
   }
   cut = cut.replace(/\s+\S*$/, "").trim();
-  return /[.!?]$/.test(cut) ? cut : `${cut}...`;
+  if (/[.!?]$/.test(cut)) return cut.slice(0, EXCERPT_MAX);
+
+  const suffix = "...";
+  const base = cut
+    .slice(0, EXCERPT_MAX - suffix.length)
+    .replace(/\s+\S*$/, "")
+    .trim();
+  const fallback = excerpt.slice(0, EXCERPT_MAX - suffix.length).trim();
+  return `${base || fallback}${suffix}`.slice(0, EXCERPT_MAX);
 }
 
 function normalizeIocType(
