@@ -1,0 +1,50 @@
+---
+title: Elastic Security 自动化 Cloudflare IP 阻止 Traefik 探测
+slug: >-
+  2026-05-07-elastic-security-automates-cloudflare-ip-blocking-for-traefik-probing
+date: '2026-05-07'
+excerpt: >-
+  Elastic Security ES|QL 规则检测 Traefik 日志中的 Web 服务器模糊测试并自动通过 Cloudflare API 阻止攻击
+  IP，扩展到 SQLi 和文件包含警报。
+category: tools
+tags:
+  - elastic-security
+  - traefik
+  - cloudflare
+  - es|ql
+  - web-server-fuzzing
+  - automated-blocking
+language: zh
+source_urls:
+  - >-
+    https://www.elastic.co/security-labs/detecting-web-server-probing-and-fuzzing
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-07-elastic-security-automates-cloudflare-ip-blocking-for-traefik-probing
+cluster_key: 'topic:detecting-server-probing-fuzzing-traefik'
+source_count: 1
+severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## 执行摘要
+
+Elastic Security Labs 在 2026-05-08 发布了一份技术指南，展示了如何使用定制的 ES|QL 检测规则在 Traefik 反向代理日志中检测到对 Web 服务器的探测和模糊测试活动，然后通过 Cloudflare API 自动阻止冒犯的源 IP。这种方法由 Elastic 工程师 Erik-Jan de Kruijf 撰写，将常规的访问日志监控转变为可以扩展到其他检测规则（例如 SQL 注入或文件包含尝试）的主动边界防御。设置依赖于将 Traefik 日志摄入 Elastic Security，应用自定义摄入管道以规范化 `host.name` 字段，并调整统计阈值以最小化误报，同时捕获自动化侦察。
+
+## 技术分析
+
+检测策略从基于签名的字符串匹配转向统计阈值分析。ES|QL 规则监控按源 IP 聚合的 HTTP 403 和 404 响应代码，仅当单个 IP 在轮询窗口内产生超过 500 个错误跨 250 个不同的 URI 路径时触发警报。这种双层阈值旨在过滤掉客户端的损坏资产，同时识别自动化目录模糊测试脚本。De Kruijf 指出，在较小的家用实验室环境中，这些默认设置过于宽松；他将灵敏度调整为 `event_count > 100` 和 `url_original_count_distinct > 50` 以捕获更隐蔽的侦察。`where source.ip not in (...)` 过滤器排除授权的安全工具，以防止意外阻止。
+
+文章详细说明了完整的管道：通过官方 Traefik 集成使用 Elastic Agent 摄入 Traefik 访问日志，写入 `logs-traefik.access-default` 数据流。自定义摄入管道修补了即插即用 Elastic Security 检测规则所需的缺失 `host.name` 字段。一旦规则触发，自动化工作流程调用 Cloudflare API 在边缘丢弃来自冒犯 IP 的流量，节省本地带宽并完全让扫描器远离家庭网络。作者强调这种响应管道是可重用的 —— 相同的阻止操作可以附加到任何 Elastic 规则，提供单窗格监控解决方案。
+
+De Kruijf 观察到来自相同 IP 的频繁 HTTP 404 响应，目标路径包括 `/wp-includes/mani.`、`/wp-content/plugins/all-in-one-wp-security-and-firewall/templates.php`、`/archive.php` 和 `/wp-admin/includes/header.php` —— 表明自动化探测 WordPress 和其他常见 Web 应用程序不在他网络上。
+
+## 缓解措施与建议
+
+在 Cloudflare 后面运行 Traefik 的防御者应考虑将访问日志摄入具有自动响应能力的 SIEM。关键调整参数 —— 错误计数阈值和不同 URI 路径计数 —— 应根据基线流量量进行调整，以避免误报。对于具有更高合法错误率的生产环境，操作员可以追加一个 ES|QL `where not` 子句以排除已知的损坏链接。作者建议维护一个授权漏洞扫描器和安全工具的允许列表，以防止自我阻止。没有 Elastic Security 的组织可以将相同的统计检测逻辑适应到其他支持 API 驱动阻止在 CDN 或 WAF 层的 SIEM 平台。
+
+## 参考资料
+
+- [Detecting Web Server Probing & Fuzzing in Traefik with Automated Cloudflare Response — Elastic Security Labs](https://www.elastic.co/security-labs/detecting-web-server-probing-and-fuzzing)

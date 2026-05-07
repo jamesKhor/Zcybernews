@@ -1,0 +1,51 @@
+---
+title: Elastic Security Automates Cloudflare IP Blocking for Traefik Probing
+slug: >-
+  2026-05-07-elastic-security-automates-cloudflare-ip-blocking-for-traefik-probing
+date: '2026-05-07'
+excerpt: >-
+  Elastic Security ES|QL rule detects web server fuzzing in Traefik logs and
+  automatically blocks attacking IPs via Cloudflare API, scaling to SQLi and
+  file inclusion alerts.
+category: tools
+tags:
+  - elastic-security
+  - traefik
+  - cloudflare
+  - es|ql
+  - web-server-fuzzing
+  - automated-blocking
+language: en
+source_urls:
+  - >-
+    https://www.elastic.co/security-labs/detecting-web-server-probing-and-fuzzing
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-07-elastic-security-automates-cloudflare-ip-blocking-for-traefik-probing
+cluster_key: 'topic:detecting-server-probing-fuzzing-traefik'
+source_count: 1
+severity: medium
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## Executive Summary
+
+Elastic Security Labs published a technical guide on 2026-05-08 demonstrating how to detect web server probing and fuzzing activity in Traefik reverse proxy logs using a customized ES|QL detection rule, then automatically block the offending source IP via the Cloudflare API. The approach, authored by Elastic engineer Erik-Jan de Kruijf, transforms routine access log monitoring into an active perimeter defense that can be extended to other detection rules, such as those for SQL injection or file inclusion attempts. The setup relies on ingesting Traefik logs into Elastic Security, applying a custom ingest pipeline to normalize the `host.name` field, and tuning statistical thresholds to minimize false positives while catching automated reconnaissance.
+
+## Technical Analysis
+
+The detection strategy shifts away from signature-based string matching to statistical threshold analysis. The ES|QL rule monitors HTTP 403 and 404 response codes aggregated by source IP, triggering an alert only when a single IP generates more than 500 errors across 250 distinct URI paths within the polling window. This dual-layered threshold is designed to filter out broken client-side assets while identifying automated directory-fuzzing scripts. De Kruijf notes that in smaller homelab environments, these defaults are too permissive; he adjusted the sensitivity to `event_count > 100` and `url_original_count_distinct > 50` to catch stealthier reconnaissance. A `where source.ip not in (...)` filter excludes authorized security tools from accidental blocking.
+
+The article details the full pipeline: Traefik access logs are ingested via the Elastic Agent using the official Traefik integration, which writes to the `logs-traefik.access-default` datastream. A custom ingest pipeline patches the missing `host.name` field required by the out-of-the-box Elastic Security detection rule. Once the rule fires, an automated workflow calls the Cloudflare API to drop traffic from the offending IP at the edge, conserving local bandwidth and keeping scanners off the home network entirely. The author emphasizes that this response plumbing is reusable — the same block action can be attached to any Elastic rule, providing a single-pane-of-glass monitoring solution.
+
+De Kruijf observed frequent HTTP 404 responses from the same IPs targeting paths such as `/wp-includes/mani.`, `/wp-content/plugins/all-in-one-wp-security-and-firewall/templates.php`, `/archive.php`, and `/wp-admin/includes/header.php` — indicating automated probing for WordPress and other common web applications not present on his network.
+
+## Mitigations & Recommendations
+
+Defenders running Traefik behind Cloudflare should consider ingesting access logs into a SIEM with automated response capabilities. The key tuning parameters — error count threshold and distinct URI path count — should be adjusted based on baseline traffic volumes to avoid false positives. For production environments with higher legitimate error rates, operators can append an ES|QL `where not` clause to exclude known broken links. The author recommends maintaining an allowlist for authorized vulnerability scanners and security tools to prevent self-blocking. Organizations without Elastic Security can adapt the same statistical detection logic to other SIEM platforms that support API-driven blocking at the CDN or WAF layer.
+
+## References
+
+- [Detecting Web Server Probing & Fuzzing in Traefik with Automated Cloudflare Response — Elastic Security Labs](https://www.elastic.co/security-labs/detecting-web-server-probing-and-fuzzing)
