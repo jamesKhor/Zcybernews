@@ -22,7 +22,10 @@
  * pipeline so this can be wired into a GitHub Actions eval later).
  */
 import { ingestFeeds } from "./pipeline/ingest-rss.js";
-import { generateArticle } from "./pipeline/generate-article.js";
+import {
+  generateArticle,
+  isGenerationFailure,
+} from "./pipeline/generate-article.js";
 import { factCheckArticle } from "./pipeline/fact-check.js";
 import { postProcessArticle } from "./pipeline/post-process.js";
 import type { Story } from "./utils/dedup.js";
@@ -219,10 +222,10 @@ async function main() {
     };
 
     const gen = await generateArticle(batch, []);
-    if (gen === null) {
+    if (isGenerationFailure(gen)) {
       row.generationFailed = true;
       results.push(row);
-      console.log(`   ❌ generation failed`);
+      console.log(`   ❌ generation failed: ${gen.reason}`);
       continue;
     }
     if (gen === "reject") {

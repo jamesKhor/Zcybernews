@@ -12,7 +12,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { ingestFeeds } from "./ingest-rss.js";
-import { generateArticle } from "./generate-article.js";
+import { generateArticle, isGenerationFailure } from "./generate-article.js";
 import { translateArticle } from "./translate-article.js";
 import { writeArticlePair, DuplicateArticleError } from "./write-mdx.js";
 import { postProcessArticle } from "./post-process.js";
@@ -305,8 +305,9 @@ async function main() {
   // told us nothing about whether to tune the prompt, retry the API,
   // or fix the writer. Now we know.
   //
-  //   failedGeneration: LLM returned null (timeout, 5xx, JSON parse,
-  //                     schema reject in the output parser)
+  //   failedGeneration: generation produced no publishable article because
+  //                     of provider error, empty output, JSON parse failure,
+  //                     or schema reject in the output parser
   //   failedException:  anything else thrown in the article promise —
   //                     post-process bug, non-duplicate write error,
   //                     translate call crash
@@ -389,22 +390,27 @@ async function main() {
           // Generate EN article — pass recent titles so the AI can self-reject
           // stories that are off-topic or already covered (prompt-level guard).
           const result = await generateArticle(sourceBatch, recentTitles);
-          if (result === null) {
+          if (isGenerationFailure(result)) {
             console.warn("[pipeline] ⚠️  Generation failed, skipping.");
             failedGeneration++;
+            const detail = result.detail
+              ? `${result.reason}: ${result.detail}`
+              : result.reason;
             recordDecision(
               "not_published",
               "generation",
               "not published",
-              ["generation_null"],
-              gate("generation", "fail", "LLM returned no article"),
+              [result.reason],
+              gate("generation", "fail", detail),
             );
             console.log(
               JSON.stringify({
                 event: "article_failed",
-                reason: "generation_null",
+                reason: result.reason,
                 source_title: batch[0]?.title,
                 source_url: batch[0]?.url,
+                detail: result.detail,
+                field_errors: result.fieldErrors,
               }),
             );
             return null;

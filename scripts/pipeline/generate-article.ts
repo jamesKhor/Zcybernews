@@ -8,6 +8,31 @@ import { withRetry } from "../utils/rate-limit.js";
 import type { Story } from "../utils/dedup.js";
 import { storySourceText } from "./source-corpus.js";
 
+export type GenerationFailureReason =
+  | "empty_output"
+  | "json_parse_failed"
+  | "provider_error"
+  | "schema_validation_failed";
+
+export type GenerationFailure = {
+  kind: "generation_failure";
+  reason: GenerationFailureReason;
+  detail: string;
+  fieldErrors?: Record<string, string[]>;
+  rawPreview?: string;
+};
+
+export function isGenerationFailure(
+  result: GeneratedArticle | "reject" | GenerationFailure,
+): result is GenerationFailure {
+  return (
+    typeof result === "object" &&
+    result !== null &&
+    "kind" in result &&
+    result.kind === "generation_failure"
+  );
+}
+
 /**
  * Classify "source richness" → target article length.
  *
@@ -117,18 +142,193 @@ export function classifySourceRichness(stories: Story[]): {
   };
 }
 
+const TITLE_MAX = 70;
+const EXCERPT_MAX = 180;
+
+function truncateTitle(title: string): string {
+  if (title.length <= TITLE_MAX) return title;
+  const cut = title.slice(0, TITLE_MAX).replace(/\s+\S*$/, "");
+  return (cut || title.slice(0, TITLE_MAX)).trim();
+}
+
+function truncateExcerpt(excerpt: string): string {
+  if (excerpt.length <= EXCERPT_MAX) return excerpt;
+  let cut = excerpt.slice(0, EXCERPT_MAX);
+  const lastSentenceEnd = Math.max(
+    cut.lastIndexOf(". "),
+    cut.lastIndexOf("! "),
+    cut.lastIndexOf("? "),
+  );
+  if (lastSentenceEnd > 100) {
+    return cut.slice(0, lastSentenceEnd + 1).trim();
+  }
+  cut = cut.replace(/\s+\S*$/, "").trim();
+  return /[.!?]$/.test(cut) ? cut : `${cut}...`;
+}
+
+function normalizeIocType(
+  type: unknown,
+): GeneratedArticle["iocs"][number]["type"] | null {
+  if (typeof type !== "string") return null;
+  const key = type
+    .toLowerCase()
+    .trim()
+    .replace(/[\s-]+/g, "_");
+  const aliases: Record<string, GeneratedArticle["iocs"][number]["type"]> = {
+    ip: "ip",
+    ipv4: "ip",
+    ipv6: "ip",
+    ip_address: "ip",
+    domain: "domain",
+    hostname: "domain",
+    host: "domain",
+    md5: "hash_md5",
+    hash_md5: "hash_md5",
+    sha1: "hash_sha1",
+    hash_sha1: "hash_sha1",
+    sha_1: "hash_sha1",
+    sha256: "hash_sha256",
+    hash_sha256: "hash_sha256",
+    sha_256: "hash_sha256",
+    url: "url",
+    uri: "url",
+    email: "email",
+    email_address: "email",
+    registry: "registry_key",
+    registry_key: "registry_key",
+    file: "file_path",
+    filepath: "file_path",
+    file_path: "file_path",
+    path: "file_path",
+  };
+  return aliases[key] ?? null;
+}
+
+function stringValue(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : null;
+}
+
+function normalizeIocEntry(
+  value: unknown,
+): GeneratedArticle["iocs"][number] | null {
+  if (typeof value !== "object" || value === null) return null;
+  const rec = value as Record<string, unknown>;
+  const type = normalizeIocType(rec.type);
+  const iocValue = stringValue(rec.value ?? rec.indicator ?? rec.ioc);
+  if (!type || !iocValue) return null;
+
+  const confidence = stringValue(rec.confidence);
+  return {
+    type,
+    value: iocValue,
+    ...(stringValue(rec.description)
+      ? { description: stringValue(rec.description)! }
+      : {}),
+    ...(confidence === "high" || confidence === "medium" || confidence === "low"
+      ? { confidence }
+      : {}),
+    ...(stringValue(rec.first_seen)
+      ? { first_seen: stringValue(rec.first_seen)! }
+      : {}),
+  };
+}
+
+function normalizeTtpEntry(
+  value: unknown,
+): GeneratedArticle["ttp_matrix"][number] | null {
+  if (typeof value !== "object" || value === null) return null;
+  const rec = value as Record<string, unknown>;
+  const tactic = stringValue(rec.tactic);
+  const techniqueId =
+    stringValue(rec.technique_id) ??
+    stringValue(rec.techniqueId) ??
+    stringValue(rec.id);
+  const techniqueName =
+    stringValue(rec.technique_name) ??
+    stringValue(rec.techniqueName) ??
+    stringValue(rec.name);
+
+  if (!tactic || !techniqueId || !techniqueName) return null;
+  return {
+    tactic,
+    technique_id: techniqueId,
+    technique_name: techniqueName,
+    ...(stringValue(rec.description)
+      ? { description: stringValue(rec.description)! }
+      : {}),
+  };
+}
+
+function normalizeGeneratedArticleCandidate(parsed: unknown): unknown {
+  if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+    return parsed;
+  }
+  const candidate = { ...(parsed as Record<string, unknown>) };
+
+  if (typeof candidate.title === "string") {
+    candidate.title = truncateTitle(candidate.title.trim());
+  }
+  if (typeof candidate.excerpt === "string") {
+    candidate.excerpt = truncateExcerpt(candidate.excerpt.trim());
+  }
+  if (Array.isArray(candidate.iocs)) {
+    candidate.iocs = candidate.iocs
+      .map(normalizeIocEntry)
+      .filter((entry): entry is GeneratedArticle["iocs"][number] => !!entry);
+  }
+  if (Array.isArray(candidate.ttp_matrix)) {
+    candidate.ttp_matrix = candidate.ttp_matrix
+      .map(normalizeTtpEntry)
+      .filter(
+        (entry): entry is GeneratedArticle["ttp_matrix"][number] => !!entry,
+      );
+  }
+
+  return candidate;
+}
+
+function cleanModelJson(text: string): string {
+  return text
+    .replace(/^\uFEFF/, "")
+    .replace(/^```(?:json)?\s*/i, "")
+    .replace(/\s*```\s*$/, "")
+    .trim();
+}
+
+function parseModelJson(text: string): { parsed?: unknown; error?: Error } {
+  const cleaned = cleanModelJson(text);
+  try {
+    return { parsed: JSON.parse(cleaned) };
+  } catch (err) {
+    const firstBrace = cleaned.indexOf("{");
+    const lastBrace = cleaned.lastIndexOf("}");
+    if (firstBrace >= 0 && lastBrace > firstBrace) {
+      try {
+        return { parsed: JSON.parse(cleaned.slice(firstBrace, lastBrace + 1)) };
+      } catch {
+        // Return the original parse error; it points at the actual model output.
+      }
+    }
+    return {
+      error: err instanceof Error ? err : new Error(String(err)),
+    };
+  }
+}
+
 /**
  * Generate a single article from 1-5 source stories.
  *
  * Returns:
  *   GeneratedArticle — success
  *   "reject"         — AI determined the story is off-topic or already covered
- *   null             — generation or parse failure
+ *   GenerationFailure — parse/schema failure
  */
 export async function generateArticle(
   stories: Story[],
   recentTitles: string[] = [],
-): Promise<GeneratedArticle | "reject" | null> {
+): Promise<GeneratedArticle | "reject" | GenerationFailure> {
   const richness = classifySourceRichness(stories);
   console.log(
     `[generate] Source richness: ${richness.label} (${richness.infoTokens} info tokens) → target ${richness.targetRange} (maxTokens=${richness.maxOutputTokens})`,
@@ -137,32 +337,51 @@ export async function generateArticle(
     targetRange: richness.targetRange,
   });
 
-  const { text, modelUsed, paid } = await withRetry(() =>
-    generateArticleText(prompt, {
-      maxOutputTokens: richness.maxOutputTokens,
-      temperature: 0.55,
-    }),
-  );
+  let generated: Awaited<ReturnType<typeof generateArticleText>>;
+  try {
+    generated = await withRetry(() =>
+      generateArticleText(prompt, {
+        maxOutputTokens: richness.maxOutputTokens,
+        temperature: 0.55,
+      }),
+    );
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err);
+    console.error("[generate] Provider failed:", detail);
+    return {
+      kind: "generation_failure",
+      reason: "provider_error",
+      detail,
+    };
+  }
+
+  const { text, modelUsed, paid } = generated;
 
   console.log(
     `[generate] Article generated by ${modelUsed}${paid ? " (PAID)" : " (FREE)"}`,
   );
 
-  // Strip potential markdown code fences around JSON
-  const cleaned = text
-    .replace(/^```(?:json)?\s*/i, "")
-    .replace(/\s*```\s*$/, "")
-    .trim();
+  if (!text.trim()) {
+    console.error("[generate] Empty model output.");
+    return {
+      kind: "generation_failure",
+      reason: "empty_output",
+      detail: "LLM returned an empty response",
+    };
+  }
 
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(cleaned);
-  } catch {
+  const { parsed, error } = parseModelJson(text);
+  if (error) {
     console.error(
       "[generate] JSON parse failed. Raw output:\n",
       text.slice(0, 500),
     );
-    return null;
+    return {
+      kind: "generation_failure",
+      reason: "json_parse_failed",
+      detail: error.message,
+      rawPreview: text.slice(0, 500),
+    };
   }
 
   // Handle AI-level reject signal — off-topic or already-covered story
@@ -176,13 +395,25 @@ export async function generateArticle(
     return "reject";
   }
 
-  const result = GeneratedArticleSchema.safeParse(parsed);
+  const normalized = normalizeGeneratedArticleCandidate(parsed);
+  const result = GeneratedArticleSchema.safeParse(normalized);
   if (!result.success) {
-    console.error(
-      "[generate] Schema validation failed:",
-      result.error.flatten(),
-    );
-    return null;
+    const flattened = result.error.flatten();
+    console.error("[generate] Schema validation failed:", flattened);
+    return {
+      kind: "generation_failure",
+      reason: "schema_validation_failed",
+      detail: Object.entries(flattened.fieldErrors)
+        .map(([field, errors]) => `${field}: ${errors?.join("; ")}`)
+        .join(" | "),
+      fieldErrors: Object.fromEntries(
+        Object.entries(flattened.fieldErrors).map(([field, errors]) => [
+          field,
+          errors ?? [],
+        ]),
+      ),
+      rawPreview: text.slice(0, 500),
+    };
   }
 
   return result.data;

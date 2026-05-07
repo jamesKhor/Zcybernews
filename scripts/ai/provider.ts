@@ -409,9 +409,7 @@ export const articleModel = process.env.OPENROUTER_API_KEY
   ? makeOpenRouterClient()("openai/gpt-oss-120b:free")
   : process.env.DEEPSEEK_API_KEY
     ? makeDeepSeekClient()(DEEPSEEK_MODEL)
-    : (() => {
-        throw new Error("No AI provider configured");
-      })();
+    : null;
 
 /** @deprecated Use translateText() instead */
 export const translationModel = process.env.OPENROUTER_API_KEY
@@ -420,6 +418,4 @@ export const translationModel = process.env.OPENROUTER_API_KEY
     ? makeKimiClient()(KIMI_MODEL)
     : process.env.DEEPSEEK_API_KEY
       ? makeDeepSeekClient()(DEEPSEEK_MODEL)
-      : (() => {
-          throw new Error("No AI provider configured");
-        })();
+      : null;

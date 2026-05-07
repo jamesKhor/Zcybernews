@@ -238,14 +238,43 @@ Think of these fields as a scorecard for your article's research quality.
 An article with 4 of 5 filled is stronger than 1 of 5. Populate everything
 sources support — don't play it safe by leaving fields null when evidence exists.
 
-OUTPUT FORMAT — respond with ONLY valid JSON, no markdown fences:
+OUTPUT FORMAT — respond with ONLY valid JSON, no markdown fences.
+Do not include comments inside the JSON object.
+Field requirements:
+- title: 50-60 chars preferred, 70 chars maximum.
+- excerpt: 140-160 chars preferred, 180 chars maximum.
+- tags: at least 3 tags, ideally 4-6, never more than 8.
+- tldr: set to null when it does not add value beyond the Executive Summary.
+
+{
+  "title": "Query-first headline. Lead with the most-searched term: CVE ID, KB number, named actor, named victim, or product name.",
+  "slug": "lowercase-hyphenated-slug-no-date",
+  "excerpt": "SERP meta description that starts with the named actor, named victim, CVE, KB, or product identifier and includes one concrete number.",
+  "tldr": "Optional 1-2 sentence bottom-line summary, or null.",
+  "category": "one of: threat-intel | vulnerabilities | malware | industry | tools | ai",
+  "tags": ["tag1", "tag2", "tag3"],
+  "severity": "one of: critical | high | medium | low | informational | null",
+  "cvss_score": null,
+  "cve_ids": [],
+  "threat_actor": null,
+  "threat_actor_origin": null,
+  "affected_sectors": [],
+  "affected_regions": [],
+  "iocs": [],
+  "ttp_matrix": [],
+  "body": "full markdown article body"
+}
+
+Detailed field rules:
+Apply these rules to the generated values. Do not copy the rule text below as
+literal field values.
 {
   "title": "Query-first headline. Lead with the most-searched term: CVE ID, KB number, named actor, named victim, or product name. **HARD LIMIT: 50-60 chars; NEVER exceed 70 chars** — Google SERP truncates at 60-65 and pipeline AUTO-TRUNCATES at 70 (you lose the end of your headline if you overshoot). Count carefully. No 'Month YYYY'. Weak verbs BANNED: bolsters, addresses, highlights, emerges, enables, impacts, constrains. Use STRONG verbs: breaches, leaks, exploits, patches, blocks, hijacks, steals, escalates.",
   "slug": "lowercase-hyphenated-slug-no-date",
   "excerpt": "**HARD LIMIT: 140-160 chars; NEVER exceed 180 chars** — Google SERP shows ~155-160 of meta description and pipeline AUTO-TRUNCATES at 180 (your closing point gets clipped if you overshoot). Count carefully. This is the meta description that sells the click. MUST start with the named actor OR named victim OR CVE/KB/product identifier — whichever a reader would type into Google. MUST include one concrete number (record count, CVE ID, CVSS, dollars, version, build). MUST name at least one specific stakeholder (company, sector, product version). BANNED phrases: 'addresses vulnerabilities', 'patch immediately', 'a new threat', 'multiple vulnerabilities', 'significant', 'robust', 'emerges'. GOOD EXAMPLE (high-CTR, 155 chars): 'ShinyHunters published data from 13.5 million McGraw Hill accounts — names, emails, institutional affiliations — stolen from a misconfigured Salesforce instance.' BAD EXAMPLE (reject, vague + over-length): 'Multiple vulnerabilities in Orthanc DICOM server enable DoS, info disclosure, and RCE attacks. Patch immediately.'",
   "tldr": "OPTIONAL — 1-2 sentences (max 280 chars), an in-page editorial summary that complements (NOT duplicates) the excerpt. The excerpt is for Google SERP and sells the click; the tldr is for skim-readers who already landed and want the bottom-line in 5 seconds. Lead with the OUTCOME / SO-WHAT (not the actor or product name — those are already in the title). Include the same anchor metadata (CVE ID, CVSS, victim count) but structured as a 'what defenders should know' sentence. EXAMPLE: 'A 9.8-CVSS RCE in Cohere AI Terrarium lets attackers escape JS sandboxes; affects all installations on shared infra. No patch yet — disable Terrarium or isolate at network layer.' Omit this field entirely (set to null) if the article is a brief incident report or industry update where Executive Summary already serves the role.",
   "category": "one of: threat-intel | vulnerabilities | malware | industry | tools | ai",
-  "tags": ["tag1", "tag2", "tag3"],  // **REQUIRED: at least 3 tags; ideally 4-6.** Empty tags break tag-page rank flow + JSON-LD keywords.
+  "tags": ["tag1", "tag2", "tag3"],
   "severity": "one of: critical | high | medium | low | informational | null",
   "cvss_score": null,
   "cve_ids": [],

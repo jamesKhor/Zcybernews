@@ -32,3 +32,21 @@ Preferred lookup order:
 
 **Rule:** Do not rely on training data for any of the above. Use installed
 package docs or official vendor docs first, then write code.
+
+# Pipeline validation rule
+
+After changing the RSS/AI publishing pipeline, provider routing, parser/schema
+handling, publish gates, Telegram/decision-matrix output, or related docs, run a
+pipeline dry run before handoff:
+
+```bash
+npx tsx scripts/pipeline/index.ts --max-articles=3 --dry-run
+```
+
+Confirm the command exits successfully and inspect the selected story clusters
+and summary output for obviously wrong routing, duplicate handling, broken
+provider imports, noisy operator messages, or funny-looking decision text. If
+the change can affect generated article shape, also run the smallest relevant
+parser/schema/quality tests and mention both the dry-run result and any output
+sanity findings in the handoff. Revert or exclude dry-run-only artifacts such as
+`data/feed-health.json` unless the task explicitly asks to update them.
