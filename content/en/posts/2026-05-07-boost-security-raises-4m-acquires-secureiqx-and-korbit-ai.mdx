@@ -1,0 +1,59 @@
+---
+title: 'Boost Security Raises $4M, Acquires SecureIQx and Korbit.ai'
+slug: 2026-05-07-boost-security-raises-4m-acquires-secureiqx-and-korbit-ai
+date: '2026-05-07'
+excerpt: >-
+  Boost Security raised $4M to expand its AI-native SDLC defense platform,
+  acquiring SecureIQx for reachability analysis and Korbit.ai for code review.
+category: industry
+tags:
+  - boost-security
+  - sdlc-security
+  - funding
+  - acquisition
+  - secureiqx
+  - korbit.ai
+  - supply-chain-security
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/boost-security-raises-4-million-for-sdlc-defense-platform/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-07-boost-security-raises-4m-acquires-secureiqx-and-korbit-ai
+cluster_key: 'topic:boost-raises-million-sdlc-defense'
+source_count: 1
+affected_sectors:
+  - software development
+  - technology
+affected_regions:
+  - North America
+  - Canada
+iocs:
+  - type: domain
+    value: Korbit.ai
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Boost Security, a Montreal-based startup focused on securing the software development lifecycle (SDLC), has closed a $4 million funding round and simultaneously acquired two companies — SecureIQx and Korbit.ai — to add reachability analysis and AI-driven code review to its platform. The funding brings Boost's total raised to $16 million, according to a company announcement reported by SecurityWeek. The moves come as organizations grapple with an explosion of AI-generated code and increasingly sophisticated supply chain attacks.
+
+## Technical Analysis
+
+Boost Security's platform is described as an AI-native SDLC defense system that monitors developer endpoints, scans the software supply chain, and automatically remediates code vulnerabilities before they are committed. The company claims its solution can block supply chain threats and secure AI tooling within the development pipeline.
+
+The acquisition of SecureIQx, an MIT-founded startup, adds a Software Composition Analysis (SCA) reachability engine that analyzes code across more than a dozen programming languages. Reachability analysis determines whether a known vulnerable dependency is actually invoked at runtime, reducing false positives in vulnerability management. Korbit.ai, also based in Montreal, provides a code-review and engineering-insights platform that identifies security, performance, and code-quality flaws. Together, these acquisitions extend Boost's ability to detect and prioritize vulnerabilities in both proprietary and open-source code.
+
+CEO Zaid Al Hamami framed the expansion as a response to the scale of modern code production: "By some estimates, 15 times more code was produced in 2025 than in 2024, and most of it wasn't written or reviewed by humans. At the same time, supply chain attacks are becoming more frequent and more sophisticated." The statement aligns with industry data showing a sharp rise in software supply chain incidents, including recent attacks on the Daemon Tools installer and malicious PyPI packages.
+
+The $4 million investment came from White Star Capital, Amiral Ventures, Accelia Capital, and Sorensen Capital. Boost was founded in 2022 by Al Hamami and has not publicly disclosed its customer base or revenue figures.
+
+## Mitigations & Recommendations
+
+For development teams evaluating SDLC security platforms, the combination of SCA reachability analysis and automated code review can reduce the noise from dependency scanners by filtering out vulnerabilities in code paths that are never executed. Organizations should assess whether their current toolchain includes reachability analysis, as many SCA tools flag all known CVEs in a dependency tree regardless of actual usage. The addition of AI-driven code review also addresses risks from AI-generated code, which may introduce logic flaws or backdoors that traditional static analysis tools miss. Defenders should monitor for supply chain attacks targeting build pipelines and consider runtime dependency monitoring as a complementary layer.
+
+## References
+
+* [SecurityWeek: Boost Security Raises $4 Million for SDLC Defense Platform](https://www.securityweek.com/boost-security-raises-4-million-for-sdlc-defense-platform/)

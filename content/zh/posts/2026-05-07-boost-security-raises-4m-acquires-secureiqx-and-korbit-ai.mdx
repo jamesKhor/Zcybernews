@@ -1,0 +1,59 @@
+---
+title: Boost Security 融资400万美元，收购 SecureIQx 和 Korbit.ai
+slug: 2026-05-07-boost-security-raises-4m-acquires-secureiqx-and-korbit-ai
+date: '2026-05-07'
+excerpt: >-
+  Boost Security 筹集了400万美元以扩展其 AI 原生的 SDLC 防御平台，收购 SecureIQx 用于可达性分析和 Korbit.ai
+  用于代码审查。
+category: industry
+tags:
+  - boost-security
+  - sdlc-security
+  - funding
+  - acquisition
+  - secureiqx
+  - korbit.ai
+  - supply-chain-security
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/boost-security-raises-4-million-for-sdlc-defense-platform/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-07-boost-security-raises-4m-acquires-secureiqx-and-korbit-ai
+cluster_key: 'topic:boost-raises-million-sdlc-defense'
+source_count: 1
+affected_sectors:
+  - software development
+  - technology
+affected_regions:
+  - North America
+  - Canada
+iocs:
+  - type: domain
+    value: Korbit.ai
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+总部位于蒙特利尔的初创公司Boost Security专注于保护软件开发生命周期（SDLC），已完成400万美元的融资轮次，并同时收购了两家公司——SecureIQx和Korbit.ai——以在其平台上增加可达性分析和AI驱动的代码审查。根据SecurityWeek报道的公司公告，这笔资金使Boost的总融资额达到1600万美元。这些举措是在组织应对AI生成代码的激增和日益复杂的供应链攻击之际进行的。
+
+## 技术分析
+
+Boost Security的平台被描述为一个AI原生的SDLC防御系统，监控开发人员端点，扫描软件供应链，并在代码提交之前自动修复代码漏洞。公司声称其解决方案可以阻止供应链威胁并保护开发流程中的AI工具。
+
+收购SecureIQx，这是一家由麻省理工学院创立的初创公司，增加了一个软件成分分析（SCA）可达性引擎，分析超过十几种编程语言的代码。可达性分析确定一个已知的易受攻击的依赖项是否在运行时被实际调用，减少漏洞管理中的误报。同样位于蒙特利尔的Korbit.ai提供了一个代码审查和工程洞察平台，识别安全、性能和代码质量缺陷。这些收购扩展了Boost检测和优先处理专有和开源代码中漏洞的能力。
+
+首席执行官Zaid Al Hamami将扩张描述为对现代代码生产规模的回应：“据估计，2025年生产的代码比2024年多了15倍，而且其中大部分不是由人类编写或审查的。与此同时，供应链攻击正变得越来越频繁和复杂。”这一声明与行业数据显示软件供应链事件急剧上升相一致，包括最近对Daemon Tools安装程序和恶意PyPI软件包的攻击。
+
+400万美元的投资来自White Star Capital、Amiral Ventures、Accelia Capital和Sorensen Capital。Boost成立于2022年，由Al Hamami创立，尚未公开披露其客户基础或收入数据。
+
+## 缓解措施与建议
+
+对于评估SDLC安全平台的开发团队，SCA可达性分析和自动化代码审查的结合可以通过过滤掉从未执行的代码路径中的漏洞来减少依赖扫描器的噪音。组织应评估他们当前的工具链是否包括可达性分析，因为许多SCA工具会标记依赖树中所有已知的CVE，而不考虑实际使用情况。AI驱动的代码审查的增加还解决了AI生成代码的风险，这些代码可能会引入传统静态分析工具遗漏的逻辑缺陷或后门。防御者应监控针对构建管道的供应链攻击，并考虑运行时依赖监控作为补充层。
+
+## 参考资料
+
+* [SecurityWeek: Boost Security Raises $4 Million for SDLC Defense Platform](https://www.securityweek.com/boost-security-raises-4-million-for-sdlc-defense-platform/)
