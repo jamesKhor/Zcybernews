@@ -1,0 +1,62 @@
+---
+title: 'TCLBANKER Trojan Targets 59 Banks, Spreads via WhatsApp and Outlook'
+slug: 2026-05-08-tclbanker-trojan-targets-59-banks-spreads-via-whatsapp-and-outlook
+date: '2026-05-08'
+excerpt: >-
+  Elastic Security Labs tracks REF3076 — a Brazilian banking trojan called
+  TCLBANKER that targets 59 financial platforms and spreads via WhatsApp worms
+  and Outlook email propagation.
+category: malware
+tags:
+  - tclbanker
+  - brazilian-banking-trojan
+  - ref3076
+  - whatsapp-worm
+  - maverick
+  - sorvepotel
+  - elastic-security-labs
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/05/tclbanker-banking-trojan-targets.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-tclbanker-trojan-targets-59-banks-spreads-via-whatsapp-and-outlook
+cluster_key: 'topic:tclbanker-banking-trojan-targets-financial'
+source_count: 1
+severity: high
+threat_actor: TCLBANKER
+threat_actor_origin: Brazil
+affected_sectors:
+  - financial services
+  - fintech
+  - cryptocurrency
+affected_regions:
+  - Brazil
+  - Latin America
+publish_tier: public
+---
+## Executive Summary
+
+Elastic Security Labs has identified a previously undocumented Brazilian banking trojan, tracked as **REF3076** and dubbed **TCLBANKER**, that targets 59 banking, fintech, and cryptocurrency platforms. The malware is assessed to be a major evolution of the **Maverick** banking trojan family and incorporates a worm component called **SORVEPOTEL** to propagate via WhatsApp and Microsoft Outlook. Elastic Security Labs published its findings on May 7, 2026, detailing the trojan's credential theft and session hijacking capabilities.
+
+## Technical Analysis
+
+TCLBANKER is a modular Windows-based trojan written primarily in Delphi, with some components in C++. It employs **man-in-the-browser (MitB)** techniques to intercept and modify web traffic from infected machines, specifically targeting login pages and transaction forms for 59 distinct financial platforms, including major Brazilian banks, fintech apps, and cryptocurrency exchanges, according to Elastic Security Labs.
+
+The trojan spreads through a worm component named **SORVEPOTEL**, which propagates via two primary vectors: WhatsApp Web and Microsoft Outlook. On WhatsApp, the worm sends malicious links or attachments to the victim's contacts using the web interface. On Outlook, it harvests email addresses from the infected machine and sends phishing emails with the trojan payload attached. This dual-propagation mechanism mirrors tactics seen in earlier Brazilian malware families like **Bancos** and **Grandoreiro**, but with improved evasion.
+
+Once executed, TCLBANKER establishes persistence through registry run keys and scheduled tasks. It uses **keylogging**, **screen scraping**, and **clipboard monitoring** to capture credentials and one-time passwords (OTPs). The malware also injects malicious JavaScript into targeted banking pages to modify transaction details in real time, a classic MitB technique. Elastic Security Labs noted that TCLBANKER communicates with its command-and-control (C2) servers over HTTPS, using JSON-encoded messages to exfiltrate stolen data and receive configuration updates.
+
+The malware includes anti-analysis features: it checks for debuggers, virtual machines, and sandbox environments. If detected, it terminates execution or displays decoy content. Elastic Security Labs reported that TCLBANKER also uses **code obfuscation** and **string encryption** to hinder static analysis.
+
+## Tactics, Techniques & Procedures
+
+TCLBANKER's operational flow aligns with several MITRE ATT&CK techniques. Initial access relies on **Phishing (T1566)** via the SORVEPOTEL worm. Execution depends on **User Execution (T1204)** when victims open malicious attachments or links. Persistence is achieved through **Boot or Logon Autostart Execution (T1547)** via registry keys. Credential theft employs **Input Capture (T1056)** for keylogging and **Clipboard Data (T1115)** for OTP theft. C2 communication uses **Application Layer Protocol (T1071)** over HTTPS.
+
+## Mitigations & Recommendations
+
+Elastic Security Labs recommends that financial institutions monitor for unusual outbound HTTPS connections from endpoints to unfamiliar domains, particularly those using JSON-encoded payloads. Organizations should block execution of Delphi-compiled binaries from untrusted sources, especially those that attempt to access WhatsApp Web or Outlook programmatically. User awareness training should emphasize the risk of clicking links sent via WhatsApp from known contacts, as the worm hijacks legitimate accounts. Endpoint detection and response (EDR) solutions should flag processes that inject code into browser memory or modify web page content in real time.
+
+## References
+
+* [TCLBANKER Banking Trojan Targets Financial Platforms via WhatsApp and Outlook Worms — The Hacker News](https://thehackernews.com/2026/05/tclbanker-banking-trojan-targets.html)

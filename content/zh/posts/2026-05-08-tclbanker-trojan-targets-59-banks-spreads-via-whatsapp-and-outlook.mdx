@@ -1,0 +1,63 @@
+---
+title: TCLBANKER 木马针对 59 家银行，通过 WhatsApp 和 Outlook 传播
+slug: 2026-05-08-tclbanker-trojan-targets-59-banks-spreads-via-whatsapp-and-outlook
+date: '2026-05-08'
+excerpt: >-
+  Elastic Security Labs 追踪 REF3076 —— 一个名为 TCLBANKER 的巴西银行木马，它针对 59 个金融平台，并通过
+  WhatsApp 蠕虫和 Outlook 电子邮件传播。
+category: malware
+tags:
+  - tclbanker
+  - brazilian-banking-trojan
+  - ref3076
+  - whatsapp-worm
+  - maverick
+  - sorvepotel
+  - elastic-security-labs
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/05/tclbanker-banking-trojan-targets.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-tclbanker-trojan-targets-59-banks-spreads-via-whatsapp-and-outlook
+cluster_key: 'topic:tclbanker-banking-trojan-targets-financial'
+source_count: 1
+severity: high
+threat_actor: TCLBANKER
+threat_actor_origin: Brazil
+affected_sectors:
+  - financial services
+  - fintech
+  - cryptocurrency
+affected_regions:
+  - Brazil
+  - Latin America
+publish_tier: public
+---
+## TCLBANKER 木马针对 59 家银行，通过 WhatsApp 和 Outlook 传播
+
+## 执行摘要
+
+Elastic Security Labs 发现了一个先前未记录的巴西银行木马，被追踪为 **REF3076** 并被称为 **TCLBANKER**，它针对 59 家银行、金融科技和加密货币平台。该恶意软件被认为是 **Maverick** 银行木马家族的一个重大演变，并包含了一个名为 **SORVEPOTEL** 的蠕虫组件，通过 WhatsApp 和 Microsoft Outlook 传播。Elastic Security Labs 在 2026 年 5 月 7 日公布了其发现，详细说明了木马的凭证盗窃和会话劫持能力。
+
+## 技术分析
+
+TCLBANKER 是一个基于 Windows 的模块化木马，主要用 Delphi 编写，部分组件用 C++ 编写。它采用 **浏览器中间人（MitB）** 技术来拦截和修改受感染机器的网络流量，特别针对 59 个不同金融平台的登录页面和交易表单，包括主要的巴西银行、金融科技应用和加密货币交易所，根据 Elastic Security Labs 的说法。
+
+木马通过名为 **SORVEPOTEL** 的蠕虫组件传播，该组件通过两个主要途径传播：WhatsApp Web 和 Microsoft Outlook。在 WhatsApp 上，蠕虫使用网络界面向受害者的联系人发送恶意链接或附件。在 Outlook 上，它从受感染的机器上收集电子邮件地址，并发送带有木马有效载荷的网络钓鱼电子邮件。这种双重传播机制模仿了早期巴西恶意软件家族如 **Bancos** 和 **Grandoreiro** 中看到的策略，但具有改进的规避措施。
+
+一旦执行，TCLBANKER 通过注册表运行键和计划任务建立持久性。它使用 **键盘记录**、**屏幕抓取** 和 **剪贴板监控** 来捕获凭证和一次性密码（OTP）。该恶意软件还向目标银行页面注入恶意 JavaScript，以实时修改交易详情，这是一种经典的 MitB 技术。Elastic Security Labs 指出，TCLBANKER 通过 HTTPS 与其命令和控制（C2）服务器通信，使用 JSON 编码的消息来外泄被盗数据并接收配置更新。
+
+恶意软件包括反分析功能：它检查调试器、虚拟机和沙箱环境。如果检测到，它会终止执行或显示诱饵内容。Elastic Security Labs 报告说，TCLBANKER 还使用 **代码混淆** 和 **字符串加密** 来阻碍静态分析。
+
+## 战术、技术与程序
+
+TCLBANKER 的操作流程与多个 MITRE ATT&CK 技术一致。初始访问依赖于 **网络钓鱼（T1566）** 通过 SORVEPOTEL 蠕虫。执行依赖于 **用户执行（T1204）** 当受害者打开恶意附件或链接时。持久性通过 **启动或登录自动启动执行（T1547）** 通过注册表键实现。凭证盗窃采用 **输入捕获（T1056）** 用于键盘记录和 **剪贴板数据（T1115）** 用于 OTP 盗窃。C2 通信使用 **应用层协议（T1071）** 通过 HTTPS。
+
+## 缓解措施与建议
+
+Elastic Security Labs 建议金融机构监控来自端点到不熟悉域名的异常 HTTPS 连接，特别是那些使用 JSON 编码有效载荷的域名。组织应阻止从不受信任的来源执行 Delphi 编译的二进制文件，特别是那些尝试以程序方式访问 WhatsApp Web 或 Outlook 的文件。用户意识培训应强调点击通过 WhatsApp 从已知联系人发送的链接的风险，因为蠕虫劫持了合法账户。端点检测和响应（EDR）解决方案应标记注入代码到浏览器内存或实时修改网页内容的过程。
+
+## 参考资料
+
+* [TCLBANKER 银行木马通过 WhatsApp 和 Outlook 蠕虫针对金融平台 — The Hacker News](https://thehackernews.com/2026/05/tclbanker-banking-trojan-targets.html)
