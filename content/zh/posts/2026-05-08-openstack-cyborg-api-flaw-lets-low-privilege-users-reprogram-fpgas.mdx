@@ -1,0 +1,53 @@
+---
+title: OpenStack Cyborg API漏洞允许低权限用户重新编程FPGA
+slug: 2026-05-08-openstack-cyborg-api-flaw-lets-low-privilege-users-reprogram-fpgas
+date: '2026-05-08'
+excerpt: >-
+  CVE-2026-40213 (CVSS 7.4) 在16.0.1之前的OpenStack
+  Cyborg中使用默认策略rule:allow，允许任何经过身份验证的Keystone令牌持有者重新编程FPGA比特流...
+category: vulnerabilities
+tags:
+  - openstack
+  - cyborg
+  - cve-2026-40213
+  - fpga
+  - api-authorization
+  - cloud-infrastructure
+language: zh
+source_urls:
+  - 'https://bugs.launchpad.net/openstack-cyborg/+bug/2143263'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-openstack-cyborg-api-flaw-lets-low-privilege-users-reprogram-fpgas
+cluster_key: 'cve:CVE-2026-40213'
+source_count: 1
+severity: high
+cvss_score: 7.4
+cve_ids:
+  - CVE-2026-40213
+affected_sectors:
+  - cloud computing
+  - telecommunications
+  - research
+publish_tier: public
+---
+## 执行摘要
+
+OpenStack Cyborg —— 该项目的硬件加速管理服务 —— 中默认策略配置错误允许任何持有有效 Keystone 令牌的已认证用户执行特权操作，包括在任意计算节点上重新编程 FPGA 比特流。这个漏洞被追踪为 **CVE-2026-40213**，CVSS 评分为 7.4（高），源自于多个 API 端点默认授权策略使用 `rule:allow`（check_str='@'）。根据在 Launchpad 上提交的错误报告（错误 #2143263），Cyborg 16.0.1 之前的版本无条件授权携带有效 Keystone 令牌的请求，忽视角色分配、项目成员资格和范围。这实际上赋予任何已认证用户 —— 即使是那些没有任何角色分配的用户 —— 通过代理 RPC 调用 FPGA 比特流重新编程等操作的能力。
+
+## 技术分析
+
+该漏洞存在于 Cyborg 的策略执行层。OpenStack 服务通常使用策略文件（例如 `policy.yaml`）来定义 API 操作的访问控制，将角色和项目范围映射到特定权限。在 Cyborg 16.0.1 之前的版本中，默认策略设置为 `rule:allow`，其评估为 `check_str='@'`。OpenStack 策略引擎中的 `@` 检查意味着“任何已认证用户” —— 它仅验证请求携带有效 Keystone 令牌，而不是令牌用户具有任何特定角色或属于任何特定项目。
+
+攻击者如果获得了任何有效的 Keystone 令牌 —— 例如，通过泄露的凭证、泄露的令牌，或在多租户部署中注册为用户 —— 可以利用这一点向 Cyborg 端点发送 API 调用，这些端点原本应该是受限的。错误报告特别指出，通过代理 RPC 在任意计算节点上重新编程 FPGA 比特流等操作是可访问的。在 Cyborg 管理 FPGA 加速器用于 NFV、AI 推理或信号处理等工作负载的 OpenStack 环境中，这可能允许攻击者破坏硬件配置，导致服务拒绝，或可能引入恶意比特流，改变硬件行为。
+
+该问题通过 OpenStack 漏洞管理流程披露，并在 Cyborg 16.0.1 中修复。修复涉及用需要特定角色（例如 `admin` 或 `project_member`）和项目范围的策略替换 `rule:allow`。错误报告没有提供在野外利用的详细时间线，截至本文撰写时，没有公开的概念验证或事件报告与 CVE-2026-40213 相关联。
+
+## 缓解措施与建议
+
+运行 OpenStack Cyborg 的运营商应立即升级到 16.0.1 或更高版本。对于那些无法升级的，推荐的变通办法是手动编辑 Cyborg 策略文件（`/etc/cyborg/policy.yaml`）以替换 `rule:allow` 条目为明确的基于角色的规则。例如，修改 FPGA 配置的操作应要求 `admin` 角色，并针对目标项目进行范围限定。管理员还应该审计 Keystone 令牌发放，并审查活跃令牌是否有泄露迹象，尽管漏洞不要求特权令牌 —— 任何有效令牌即可。建议监控 Cyborg API 日志，以检测来自低权限用户的意外 FPGA 重新编程请求，作为一种检测措施。
+
+## 参考资料
+
+- [Launchpad Bug #2143263 — OpenStack Cyborg 策略漏洞](https://bugs.launchpad.net/openstack-cyborg/+bug/2143263)
+- [NVD 条目 CVE-2026-40213](https://nvd.nist.gov/vuln/detail/CVE-2026-40213)

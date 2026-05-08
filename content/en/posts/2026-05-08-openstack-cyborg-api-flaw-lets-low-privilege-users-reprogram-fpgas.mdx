@@ -1,0 +1,54 @@
+---
+title: OpenStack Cyborg API Flaw Lets Low-Privilege Users Reprogram FPGAs
+slug: 2026-05-08-openstack-cyborg-api-flaw-lets-low-privilege-users-reprogram-fpgas
+date: '2026-05-08'
+excerpt: >-
+  CVE-2026-40213 (CVSS 7.4) in OpenStack Cyborg before 16.0.1 uses rule:allow as
+  default policy, letting any authenticated Keystone token holder reprogram FPGA
+  bitstreams on...
+category: vulnerabilities
+tags:
+  - openstack
+  - cyborg
+  - cve-2026-40213
+  - fpga
+  - api-authorization
+  - cloud-infrastructure
+language: en
+source_urls:
+  - 'https://bugs.launchpad.net/openstack-cyborg/+bug/2143263'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-openstack-cyborg-api-flaw-lets-low-privilege-users-reprogram-fpgas
+cluster_key: 'cve:CVE-2026-40213'
+source_count: 1
+severity: high
+cvss_score: 7.4
+cve_ids:
+  - CVE-2026-40213
+affected_sectors:
+  - cloud computing
+  - telecommunications
+  - research
+publish_tier: public
+---
+## Executive Summary
+
+A default policy misconfiguration in OpenStack Cyborg — the project's hardware acceleration management service — allows any authenticated user with a valid Keystone token to perform privileged operations, including reprogramming FPGA bitstreams on arbitrary compute nodes. The flaw, tracked as **CVE-2026-40213** and carrying a CVSS score of 7.4 (High), stems from the use of `rule:allow` (check_str='@') as the default authorization policy for multiple API endpoints. According to the bug report filed on Launchpad (bug #2143263), Cyborg versions prior to 16.0.1 unconditionally authorize requests bearing a valid Keystone token, ignoring role assignments, project membership, and scope. This effectively grants any authenticated user — even those with zero role assignments — the ability to invoke actions such as FPGA bitstream reprogramming via agent RPC.
+
+## Technical Analysis
+
+The vulnerability resides in Cyborg's policy enforcement layer. OpenStack services typically use policy files (e.g., `policy.yaml`) to define access controls for API actions, mapping roles and project scopes to specific permissions. In Cyborg before version 16.0.1, the default policy for multiple endpoints is set to `rule:allow`, which evaluates to `check_str='@'`. The `@` check in OpenStack's policy engine means "any authenticated user" — it verifies only that the request carries a valid Keystone token, not that the token's user has any particular role or belongs to any specific project.
+
+An attacker who has obtained any valid Keystone token — for instance, through compromised credentials, a leaked token, or by registering as a user in a multi-tenant deployment — can exploit this to send API calls to Cyborg endpoints that were intended to be restricted. The bug report specifically notes that actions such as reprogramming FPGA bitstreams on arbitrary compute nodes via agent RPC are accessible. In OpenStack environments where Cyborg manages FPGA accelerators for workloads like NFV, AI inference, or signal processing, this could allow an attacker to corrupt hardware configurations, cause denial of service, or potentially introduce malicious bitstreams that alter hardware behavior.
+
+The issue was disclosed through the OpenStack vulnerability management process and fixed in Cyborg 16.0.1. The fix involves replacing `rule:allow` with role- and scope-aware policies that require specific roles (e.g., `admin` or `project_member`) and project scoping. The bug report does not provide a detailed timeline of exploitation in the wild, and as of this writing, no public proof-of-concept or incident reports have been linked to CVE-2026-40213.
+
+## Mitigations & Recommendations
+
+Operators running OpenStack Cyborg should upgrade to version 16.0.1 or later immediately. For those unable to upgrade, the recommended workaround is to manually edit the Cyborg policy file (`/etc/cyborg/policy.yaml`) to replace `rule:allow` entries with explicit role-based rules. For example, actions that modify FPGA configurations should require the `admin` role and be scoped to the target project. Administrators should also audit Keystone token issuance and review active tokens for signs of compromise, though the vulnerability does not require a privileged token — any valid token suffices. Monitoring Cyborg API logs for unexpected FPGA reprogramming requests from low-privilege users is advisable as a detection measure.
+
+## References
+
+- [Launchpad Bug #2143263 — OpenStack Cyborg policy flaw](https://bugs.launchpad.net/openstack-cyborg/+bug/2143263)
+- [NVD Entry for CVE-2026-40213](https://nvd.nist.gov/vuln/detail/CVE-2026-40213)
