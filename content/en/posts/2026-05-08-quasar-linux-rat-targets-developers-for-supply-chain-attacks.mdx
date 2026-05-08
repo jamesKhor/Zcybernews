@@ -1,0 +1,61 @@
+---
+title: Quasar Linux RAT Targets Developers for Supply Chain Attacks
+slug: 2026-05-08-quasar-linux-rat-targets-developers-for-supply-chain-attacks
+date: '2026-05-08'
+excerpt: >-
+  A new Linux implant codenamed QLNX steals developer credentials, keystrokes,
+  and clipboard data. Targets DevOps environments for software supply chain
+  compromise.
+category: malware
+tags:
+  - quasar-linux-rat
+  - supply-chain-attack
+  - credential-theft
+  - linux-malware
+  - devops-security
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-quasar-linux-rat-targets-developers-for-supply-chain-attacks
+cluster_key: 'topic:quasar-linux-steals-developer-credentials'
+source_count: 1
+severity: high
+threat_actor: Quasar Linux RAT
+affected_sectors:
+  - software development
+  - technology
+publish_tier: public
+---
+## Executive Summary
+
+Security researchers have identified a previously undocumented Linux implant, dubbed **Quasar Linux RAT (QLNX)**, that specifically targets developer and DevOps credentials to enable software supply chain compromise. According to a report from The Hacker News, QLNX provides attackers with persistent access to compromised systems and supports credential harvesting, keylogging, file manipulation, clipboard monitoring, and network tunneling. The malware is designed to establish a silent foothold on developer workstations, from which it can steal authentication tokens, SSH keys, and API credentials used to access source code repositories, CI/CD pipelines, and cloud infrastructure.
+
+## Technical Analysis
+
+QLNX is a Linux-based remote access trojan that appears to be a new variant or derivative of the Quasar RAT family, which historically targeted Windows environments. The Linux implant is compiled as a native ELF binary and employs standard persistence mechanisms such as cron jobs or systemd services, according to the researchers who analyzed the sample. Once executed, QLNX establishes encrypted communication with a command-and-control (C2) server, allowing the operator to issue commands remotely.
+
+The malware's feature set is tailored for supply chain infiltration:
+
+- **Credential harvesting**: QLNX monitors and extracts credentials stored in browsers, SSH private keys, cloud provider CLI tokens (AWS, GCP, Azure), and Git credential helpers.
+- **Keylogging and clipboard monitoring**: Captures keystrokes and clipboard content, which may include passwords, API keys, or sensitive code snippets.
+- **File manipulation**: Uploads, downloads, deletes, or modifies files on the infected host, enabling exfiltration of source code, configuration files, and build artifacts.
+- **Network tunneling**: Establishes reverse tunnels or proxies, giving the attacker access to internal networks and resources reachable from the developer's machine, such as staging servers or internal package registries.
+
+The report states that QLNX is specifically engineered to evade detection by security tools, though the exact evasion techniques were not detailed in the source material. The malware does not appear to be widely distributed yet, but its targeting of developer credentials signals a deliberate focus on software supply chain operations.
+
+## Mitigations & Recommendations
+
+Organizations with developer workstations should treat QLNX as a credible threat to software supply chain integrity. Defenders are advised to implement the following measures:
+
+- **Restrict outbound connections** from developer machines to unknown or unexpected IP addresses, especially over non-standard ports.
+- **Enforce multi-factor authentication** for all source code repositories, CI/CD systems, and cloud provider consoles to limit the impact of credential theft.
+- **Monitor for unusual process execution** — specifically ELF binaries launched from non-standard paths (e.g., /tmp, /dev/shm) or with suspicious parent processes.
+- **Audit SSH authorized_keys files** and cloud provider IAM roles for unauthorized additions or modifications.
+- **Deploy endpoint detection and response (EDR) agents** on Linux developer workstations with behavioral detection rules for keylogging, clipboard access, and credential dumping.
+- **Segment developer networks** from production environments to contain a potential breach.
+
+## References
+
+- [The Hacker News: Quasar Linux RAT Steals Developer Credentials for Software Supply Chain Compromise](https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html)

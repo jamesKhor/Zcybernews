@@ -1,0 +1,58 @@
+---
+title: Quasar Linux RAT 针对开发者进行供应链攻击
+slug: 2026-05-08-quasar-linux-rat-targets-developers-for-supply-chain-attacks
+date: '2026-05-08'
+excerpt: 一种新的 Linux 植入代码，代号 QLNX，窃取开发者的凭证、按键和剪贴板数据。针对 DevOps 环境，以破坏软件供应链。
+category: malware
+tags:
+  - quasar-linux-rat
+  - supply-chain-attack
+  - credential-theft
+  - linux-malware
+  - devops-security
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-quasar-linux-rat-targets-developers-for-supply-chain-attacks
+cluster_key: 'topic:quasar-linux-steals-developer-credentials'
+source_count: 1
+severity: high
+threat_actor: Quasar Linux RAT
+affected_sectors:
+  - software development
+  - technology
+publish_tier: public
+---
+## 执行摘要
+
+安全研究人员发现了一种以前未记录的Linux植入程序，被称为**Quasar Linux RAT (QLNX)**，它专门针对开发者和DevOps的凭证，以实现软件供应链的破坏。根据The Hacker News的一份报告，QLNX为攻击者提供了对被破坏系统的持久访问，并支持凭证收集、键盘记录、文件操作、剪贴板监控和网络隧道。这种恶意软件旨在在开发者工作站上建立一个沉默的立足点，从中它可以窃取用于访问源代码库、CI/CD管道和云基础设施的身份验证令牌、SSH密钥和API凭证。
+
+## 技术分析
+
+QLNX是一个基于Linux的远程访问木马，似乎是历史上针对Windows环境的Quasar RAT家族的新变种或衍生品。根据分析样本的研究人员的说法，Linux植入程序被编译为本地ELF二进制文件，并使用标准持久性机制，如cron作业或systemd服务。一旦执行，QLNX就与命令和控制（C2）服务器建立加密通信，允许操作者远程发出命令。
+
+恶意软件的功能集针对供应链渗透进行了定制：
+
+- **凭证收集**：QLNX监控并提取存储在浏览器中的凭证、SSH私钥、云提供商CLI令牌（AWS、GCP、Azure）和Git凭证助手。
+- **键盘记录和剪贴板监控**：捕获按键和剪贴板内容，可能包括密码、API密钥或敏感代码片段。
+- **文件操作**：在被感染的主机上上传、下载、删除或修改文件，使源代码、配置文件和构建工件的外泄成为可能。
+- **网络隧道**：建立反向隧道或代理，使攻击者能够访问从开发者机器可达的内部网络和资源，如暂存服务器或内部包注册表。
+
+报告指出，QLNX专门设计以规避安全工具的检测，尽管源材料中没有详细说明确切的规避技术。恶意软件似乎尚未广泛传播，但其针对开发者凭证的攻击表明了对软件供应链操作的有意关注。
+
+## 缓解措施与建议
+
+拥有开发者工作站的组织应将QLNX视为对软件供应链完整性的可信威胁。建议防御者实施以下措施：
+
+- **限制**开发者机器到未知或意外的IP地址的**出站连接**，特别是通过非标准端口。
+- **强制执行**所有源代码库、CI/CD系统和云提供商控制台的**多因素认证**，以限制凭证盗窃的影响。
+- **监控**不寻常的进程执行——特别是从非标准路径（例如/tmp、/dev/shm）启动的ELF二进制文件或具有可疑父进程。
+- **审计**SSH authorized_keys文件和云提供商IAM角色，以查找未经授权的添加或修改。
+- **部署**Linux开发者工作站上的**端点检测和响应（EDR）代理**，具有针对键盘记录、剪贴板访问和凭证转储的行为检测规则。
+- **将**开发者网络与生产环境**隔离**，以限制潜在的违规行为。
+
+## 参考资料
+
+- [The Hacker News: Quasar Linux RAT Steals Developer Credentials for Software Supply Chain Compromise](https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html)

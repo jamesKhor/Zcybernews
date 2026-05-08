@@ -1,0 +1,52 @@
+---
+title: 'Braintrust Breach Exposes AI Provider API Keys, Urges Rotation'
+slug: 2026-05-08-braintrust-breach-exposes-ai-provider-api-keys-urges-rotation
+date: '2026-05-08'
+excerpt: >-
+  Braintrust disclosed a breach on May 4 where attackers accessed an AWS
+  account, compromising AI provider API keys for firms like Box and Stripe. At
+  least one customer affected.
+category: industry
+tags:
+  - braintrust
+  - api-key-breach
+  - supply-chain-risk
+  - aws-compromise
+  - ai-security
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/ai-firm-braintrust-prompts-api-key-rotation-after-data-breach/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-braintrust-breach-exposes-ai-provider-api-keys-urges-rotation
+cluster_key: 'topic:firm-braintrust-prompts-rotation-data'
+source_count: 1
+severity: high
+affected_sectors:
+  - technology
+  - SaaS
+  - AI
+publish_tier: public
+---
+## Executive Summary
+
+AI evaluation and observability platform Braintrust disclosed a data breach on May 4, 2026, after attackers gained access to one of its internal AWS accounts, potentially compromising API keys used by customers to access third-party AI models. The company notified customers via email on May 5 and urged all org-level administrators to rotate any stored AI provider secrets. According to Braintrust's incident notice, at least one customer has been directly affected, and three others reported anomalous spikes in AI provider usage. The incident underscores the growing supply-chain risk posed by AI infrastructure tools that aggregate credentials for multiple downstream services.
+
+## Technical Analysis
+
+Braintrust detected the breach on May 4 after receiving a report of suspicious activity within its environment, according to the company's statement to SecurityWeek. The compromised AWS account, used internally by Braintrust's systems, likely provided the attackers with access to organization-level API keys that customers had stored to connect to AI model providers. Braintrust immediately locked down the compromised account, audited related systems, rotated internal secrets, and launched an investigation.
+
+The company's advisory recommends that all org admins visit their org-level settings page, delete or revoke existing secrets, configure new ones, and verify rotation by checking timestamps. Braintrust stated it has not identified broader customer exposure beyond the confirmed case, but the investigation remains ongoing.
+
+Jaime Blasco, CTO of Nudge Security, told SecurityWeek that the blast radius extends beyond Braintrust itself. The exposed API keys were likely stored for AI-forward companies including Box, Cloudflare, Dropbox, Notion, Ramp, and Stripe. "The blast radius isn't Braintrust, it's every downstream customer's AI stack, and a single SaaS compromise fans out across dozens of LLM provider accounts," Blasco said. He characterized AI evaluation, observability, and gateway tools as "credential warehouses" that have become "a tier-one target" for attackers.
+
+## Mitigations & Recommendations
+
+Braintrust has provided specific remediation steps for affected customers: navigate to org-level settings, revoke existing AI provider secrets, generate new keys, and confirm the rotation via timestamp verification. The company also shared indicators of compromise and remediation steps in its customer email, though those IOCs were not publicly detailed.
+
+Defenders should audit any third-party AI tools that store aggregated API credentials and consider implementing short-lived tokens or just-in-time access where possible. Organizations using Braintrust or similar platforms should monitor for unusual spikes in AI provider API usage, as Braintrust reported three customers observed such anomalies. The incident highlights the need for credential isolation and continuous monitoring of credential stores in the AI supply chain.
+
+## References
+
+- [SecurityWeek: AI Firm Braintrust Prompts API Key Rotation After Data Breach](https://www.securityweek.com/ai-firm-braintrust-prompts-api-key-rotation-after-data-breach/)

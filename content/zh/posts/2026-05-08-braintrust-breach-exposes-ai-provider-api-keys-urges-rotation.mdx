@@ -1,0 +1,51 @@
+---
+title: Braintrust 泄露暴露 AI 供应商 API 密钥，敦促轮换
+slug: 2026-05-08-braintrust-breach-exposes-ai-provider-api-keys-urges-rotation
+date: '2026-05-08'
+excerpt: >-
+  Braintrust 在 5 月 4 日披露了一起泄露事件，攻击者访问了一个 AWS 账户，泄露了 Box 和 Stripe 等公司 AI 供应商的 API
+  密钥。至少有一名客户受到影响。
+category: industry
+tags:
+  - braintrust
+  - api-key-breach
+  - supply-chain-risk
+  - aws-compromise
+  - ai-security
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/ai-firm-braintrust-prompts-api-key-rotation-after-data-breach/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-braintrust-breach-exposes-ai-provider-api-keys-urges-rotation
+cluster_key: 'topic:firm-braintrust-prompts-rotation-data'
+source_count: 1
+severity: high
+affected_sectors:
+  - technology
+  - SaaS
+  - AI
+publish_tier: public
+---
+## 执行摘要
+
+AI评估和可观测性平台Braintrust在2026年5月4日披露了一起数据泄露事件，此前攻击者获得了其内部AWS账户的访问权限，可能泄露了客户用于访问第三方AI模型的API密钥。公司在5月5日通过电子邮件通知客户，并敦促所有组织级管理员轮换任何存储的AI提供商机密。根据Braintrust的事件通知，至少有一个客户直接受到影响，另外三个客户报告了AI提供商使用量的异常激增。该事件突显了聚合多个下游服务凭证的AI基础设施工具所带来的日益增长的供应链风险。
+
+## 技术分析
+
+Braintrust在5月4日检测到违规行为后，根据公司向SecurityWeek的声明，在其环境中收到了可疑活动的报告。被泄露的AWS账户由Braintrust系统内部使用，可能为攻击者提供了访问组织级API密钥的权限，这些密钥是客户存储用于连接AI模型提供商的。Braintrust立即封锁了被泄露的账户，审计了相关系统，轮换了内部机密，并启动了调查。
+
+公司的咨询建议所有组织管理员访问他们的组织级设置页面，删除或撤销现有机密，配置新的机密，并通过对时间戳的检查来验证轮换。Braintrust表示尚未识别出超出已确认案例的更广泛的客户暴露，但调查仍在进行中。
+
+Nudge Security的CTO Jaime Blasco告诉SecurityWeek，爆炸半径超出了Braintrust本身。暴露的API密钥可能为包括Box、Cloudflare、Dropbox、Notion、Ramp和Stripe在内的AI公司存储。“爆炸半径不是Braintrust，而是每个下游客户的AI堆栈，单一SaaS泄露会扩散到数十个LLM提供商账户，”Blasco说。他将AI评估、可观测性和网关工具描述为“凭证仓库”，已经成为攻击者的“一级目标”。
+
+## 缓解措施与建议
+
+Braintrust为受影响客户提供了具体的补救步骤：导航到组织级设置，撤销现有的AI提供商机密，生成新的密钥，并通过时间戳验证来确认轮换。公司还在其客户电子邮件中分享了入侵指标和补救步骤，尽管这些IOC没有公开详细说明。
+
+防御者应该审计任何存储聚合API凭证的第三方AI工具，并考虑实施短命令牌或在可能的情况下实施即时访问。使用Braintrust或类似平台的组织应该监控AI提供商API使用的异常激增，正如Braintrust报告的三个客户观察到的异常。该事件突出了在AI供应链中对凭证隔离和持续监控凭证存储的需求。
+
+## 参考资料
+
+- [SecurityWeek: AI Firm Braintrust Prompts API Key Rotation After Data Breach](https://www.securityweek.com/ai-firm-braintrust-prompts-api-key-rotation-after-data-breach/)
