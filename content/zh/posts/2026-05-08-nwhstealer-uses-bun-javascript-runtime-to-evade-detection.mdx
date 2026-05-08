@@ -1,0 +1,57 @@
+---
+title: NWHStealer 使用 Bun JavaScript 运行时来逃避检测
+slug: 2026-05-08-nwhstealer-uses-bun-javascript-runtime-to-evade-detection
+date: '2026-05-08'
+excerpt: >-
+  攻击者重新利用 Bun JavaScript 运行时来分发 NWHStealer，这是一个基于 Rust 的信息窃取器，针对浏览器、加密钱包和 FTP
+  应用程序，通过游戏诱饵和假冒软件进行传播。
+category: malware
+tags:
+  - nwhstealer
+  - bun
+  - infostealer
+  - javascript-runtime
+  - rust
+  - malware-distribution
+language: zh
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/threat-intel/2026/05/attackers-adopt-javascript-runtime-bun-to-spread-nwhstealer
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-nwhstealer-uses-bun-javascript-runtime-to-evade-detection
+cluster_key: 'topic:attackers-adopt-javascript-runtime-spread'
+source_count: 1
+severity: high
+threat_actor: NWHStealer
+affected_sectors:
+  - technology
+  - gaming
+iocs:
+  - type: domain
+    value: Itch.io
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+根据Malwarebytes Labs在2026年5月8日发布的分析报告，追踪为NWHStealer的Windows信息窃取者背后的攻击者采用了合法的JavaScript运行时Bun来打包和分发他们的恶意软件。Bun是一个一体化的JavaScript和TypeScript工具包，设计为Node.js的高性能替代品，允许威胁行为者将恶意代码捆绑到更大型的可执行文件中，这些文件不太可能被防病毒引擎标记。基于Rust的NWHStealer窃取器，针对浏览器凭证、加密货币钱包、FTP应用程序和消息应用程序，并可以注入额外的有效载荷，如XMRig加密货币矿机。恶意软件通过包括GitHub、GitLab、MediaFire、Itch.io和SourceForge在内的平台上托管的存档分发，使用游戏训练器和破解软件等诱饵。
+
+## 技术分析
+
+根据Malwarebytes的说法，新的分发方法利用Bun的JavaScript运行时来执行混淆代码。感染链始于包含一个嵌入了Bun运行时捆绑的JavaScript代码的`Installer.exe`文件的ZIP存档。存档还包括一个包含名为`dw.exe`的单独加载器的`DW`文件夹，如果主基于Bun的加载器的命令和控制（C2）服务器无法访问，则作为备用。`Readme.txt`文件指示用户在主可执行文件失败时手动启动`dw.exe`。
+
+基于Bun的JavaScript加载器分为两个组件：`sysreq.js`，使用评分系统执行反虚拟化检查；以及`memload.js`，与C2服务器通信，解密有效载荷，并加载下一阶段。恶意JavaScript代码存储在可执行文件的`.bun`部分，并进行了混淆以阻碍分析。加载器执行PowerShell CIM（通用信息模型）和WMI（Windows管理工具）命令以检测虚拟环境，这表明操作者旨在避免沙箱分析。
+
+Malwarebytes识别了最近活动中使用的多个ZIP文件名，包括与游戏相关的诱饵，如`MOUSE_PI_Trainer_v1.0.zip`、`FiveM Mod.zip`、`VampireCrawlers_Trainer_v1.0.zip`和`MagicalPrincess_Trainer_v1.0.zip`，以及软件诱饵，如`TradingView-Activation-Script-0.9.zip`、`AutoTune 2026.zip`和`Autodesk.zip`。这种诱饵的广泛性表明了一个广泛的目标策略，旨在针对游戏玩家和专业人士。
+
+NWHStealer的功能包括收集系统信息（操作系统、硬件、安全软件、用户数据、连接设备），从浏览器、浏览器扩展和加密货币钱包中窃取数据，从FTP应用程序（FileZilla、CoreFTP）和消息应用程序（Steam、Discord）中泄露凭证，将恶意代码注入浏览器进程，运行额外的有效载荷（例如，XMRig），尝试绕过用户帐户控制（UAC），通过计划任务实现持久性，并从Telegram检索新的C2地址。
+
+## 缓解措施与建议
+
+防御者应对来自非官方或社区托管平台的任何软件下载，特别是GitHub、GitLab、SourceForge、MediaFire和Itch.io，进行高度审查。用户应在执行下载的文件之前验证发布者的声誉和个人资料的年龄。检查存档结构的一致性（例如，不匹配的文件名，可疑的README文件）和检查文件发布者签名可以帮助识别恶意捆绑包。组织应监控在Bun未合法部署的环境中执行Bun运行时二进制文件（`bun.exe`），因为这可能表明恶意软件活动。阻止从用户可写目录执行未签名或不受信任的可执行文件，特别是那些来自下载文件夹的，可以降低感染风险。端点检测和响应（EDR）系统应调整以标记生成PowerShell或WMI查询以检测虚拟化的过程，这是一种常见的反分析技术。
+
+## 参考资料
+
+- [Malwarebytes Labs: Attackers adopt JavaScript runtime Bun to spread NWHStealer](https://www.malwarebytes.com/blog/threat-intel/2026/05/attackers-adopt-javascript-runtime-bun-to-spread-nwhstealer)

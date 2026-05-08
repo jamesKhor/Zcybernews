@@ -1,0 +1,58 @@
+---
+title: NWHStealer Uses Bun JavaScript Runtime to Evade Detection
+slug: 2026-05-08-nwhstealer-uses-bun-javascript-runtime-to-evade-detection
+date: '2026-05-08'
+excerpt: >-
+  Attackers repurpose the Bun JavaScript runtime to distribute NWHStealer, a
+  Rust-based infostealer targeting browsers, crypto wallets, and FTP apps via
+  game lures and fake software.
+category: malware
+tags:
+  - nwhstealer
+  - bun
+  - infostealer
+  - javascript-runtime
+  - rust
+  - malware-distribution
+language: en
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/threat-intel/2026/05/attackers-adopt-javascript-runtime-bun-to-spread-nwhstealer
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-08-nwhstealer-uses-bun-javascript-runtime-to-evade-detection
+cluster_key: 'topic:attackers-adopt-javascript-runtime-spread'
+source_count: 1
+severity: high
+threat_actor: NWHStealer
+affected_sectors:
+  - technology
+  - gaming
+iocs:
+  - type: domain
+    value: Itch.io
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Attackers behind the Windows infostealer tracked as NWHStealer have adopted the legitimate JavaScript runtime Bun to package and distribute their malware, according to analysis published by Malwarebytes Labs on May 8, 2026. Bun, an all-in-one JavaScript and TypeScript toolkit designed as a high-performance replacement for Node.js, allows the threat actors to bundle malicious code into larger executables that are less likely to be flagged by antivirus engines. NWHStealer, a Rust-based stealer, targets browser credentials, cryptocurrency wallets, FTP applications, and messaging apps, and can inject additional payloads such as the XMRig cryptocurrency miner. The malware is distributed through archives hosted on platforms including GitHub, GitLab, MediaFire, Itch.io, and SourceForge, using lures such as game trainers and cracked software.
+
+## Technical Analysis
+
+According to Malwarebytes, the new distribution method leverages Bun's JavaScript runtime to execute obfuscated code. The infection chain begins with a ZIP archive containing an `Installer.exe` file that embeds JavaScript code bundled with the Bun runtime. The archive also includes a `DW` folder containing a separate loader called `dw.exe`, which functions as a fallback if the primary Bun-based loader's command-and-control (C2) server is unreachable. A `Readme.txt` file instructs the user to manually launch `dw.exe` if the main executable fails.
+
+The Bun-based JavaScript loader is split into two components: `sysreq.js`, which performs anti-virtualization checks using a scoring system, and `memload.js`, which communicates with the C2 server, decrypts payloads, and loads the next stage. The malicious JavaScript code is stored in the `.bun` section of the executable and is obfuscated to hinder analysis. The loader executes PowerShell CIM (Common Information Model) and WMI (Windows Management Instrumentation) commands to detect virtual environments, suggesting the operators aim to avoid sandbox analysis.
+
+Malwarebytes identified several ZIP filenames used in recent campaigns, including game-related lures such as `MOUSE_PI_Trainer_v1.0.zip`, `FiveM Mod.zip`, `VampireCrawlers_Trainer_v1.0.zip`, and `MagicalPrincess_Trainer_v1.0.zip`, as well as software lures like `TradingView-Activation-Script-0.9.zip`, `AutoTune 2026.zip`, and `Autodesk.zip`. This breadth of lures indicates a wide targeting strategy aimed at both gamers and professionals.
+
+NWHStealer's capabilities include collecting system information (OS, hardware, security software, user data, connected devices), stealing data from browsers, browser extensions, and cryptocurrency wallets, exfiltrating credentials from FTP applications (FileZilla, CoreFTP) and messaging apps (Steam, Discord), injecting malicious code into browser processes, running additional payloads (e.g., XMRig), attempting to bypass User Account Control (UAC), achieving persistence via scheduled tasks, and retrieving new C2 addresses from Telegram.
+
+## Mitigations & Recommendations
+
+Defenders should treat any software download from unofficial or community-hosted platforms—particularly GitHub, GitLab, SourceForge, MediaFire, and Itch.io—with heightened scrutiny. Users should verify the publisher's reputation and the age of the profile before executing downloaded files. Checking archive structure for consistency (e.g., mismatched filenames, suspicious README files) and examining file publisher signatures can help identify malicious bundles. Organizations should monitor for execution of Bun runtime binaries (`bun.exe`) in environments where Bun is not legitimately deployed, as this may indicate malware activity. Blocking execution of unsigned or untrusted executables from user-writable directories, especially those originating from download folders, can reduce infection risk. Endpoint detection and response (EDR) systems should be tuned to flag processes that spawn PowerShell or WMI queries for virtualization detection, a common anti-analysis technique.
+
+## References
+
+- [Malwarebytes Labs: Attackers adopt JavaScript runtime Bun to spread NWHStealer](https://www.malwarebytes.com/blog/threat-intel/2026/05/attackers-adopt-javascript-runtime-bun-to-spread-nwhstealer)
