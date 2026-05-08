@@ -1,0 +1,55 @@
+---
+title: GitHub Enterprise Server SSRF Lets Attackers Reach Internal Services
+slug: >-
+  2026-05-08-github-enterprise-server-ssrf-lets-attackers-reach-internal-services
+date: '2026-05-08'
+excerpt: >-
+  CVE-2026-8034: A server-side request forgery flaw in GitHub Enterprise Server
+  notebook viewer exploits URL parser confusion, letting attackers access
+  internal services.
+category: vulnerabilities
+tags:
+  - github-enterprise-server
+  - ssrf
+  - cve-2026-8034
+  - url-parser-confusion
+  - server-side-request-forgery
+language: en
+source_urls:
+  - >-
+    https://docs.github.com/en/enterprise-server@3.16/admin/release-notes#3.16.18
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-08-github-enterprise-server-ssrf-lets-attackers-reach-internal-services
+cluster_key: 'cve:CVE-2026-8034'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2026-8034
+affected_sectors:
+  - software development
+  - technology
+publish_tier: public
+---
+## Executive Summary
+
+GitHub Enterprise Server (GHES) versions prior to 3.16.18 contain a server-side request forgery (SSRF) vulnerability, tracked as CVE-2026-8034, in the notebook viewer component. The flaw stems from a URL parser mismatch between the hostname validation layer and the underlying HTTP request library, allowing an attacker to craft a URL that passes validation but directs the server to make requests to internal services. GitHub released a fix in GHES 3.16.18 on or around May 6, 2026, according to the official release notes. No CVSS score has been published by GitHub as of this writing, but the vulnerability's ability to probe internal infrastructure warrants prompt patching for self-hosted instances.
+
+## Technical Analysis
+
+The SSRF vulnerability resides in the notebook viewer, a feature that renders Jupyter notebook files (.ipynb) within the GHES web interface. According to GitHub's advisory, the issue arises because the hostname validation routine and the HTTP request library used by the notebook viewer employ different URL parsers. An attacker can supply a specially crafted URL that satisfies the validation parser's checks — for example, by embedding a legitimate-looking hostname — but that the request library interprets differently, directing the HTTP request to an internal IP address or service.
+
+This class of parser-confusion SSRF is well-documented in web security research. When two components parse the same URL string with different grammars or edge-case handling, an attacker can construct a URL that one component accepts as safe and the other resolves to a malicious destination. In this case, the notebook viewer's validation layer might accept a URL like `http://attacker-controlled.com@192.168.1.1`, where the `@` symbol causes the request library to ignore the hostname and route the request to the internal IP `192.168.1.1`. GitHub's release notes did not specify the exact parsing vectors, but the pattern matches known SSRF bypass techniques.
+
+An authenticated attacker with access to the notebook viewer — typically any user who can create or view notebooks — could exploit this to scan internal network services, access cloud metadata endpoints (e.g., AWS `169.254.169.254`), or interact with other internal GHES components such as the Redis cache or database. The impact depends on the network segmentation of the GHES instance; a server with broad access to internal resources presents a higher risk.
+
+GitHub addressed the flaw in GHES 3.16.18, which was listed in the release notes published on May 6, 2026. The patch likely harmonizes the URL parsers or adds a deny list for private IP ranges. GitHub did not disclose whether the vulnerability was reported through its bug bounty program or discovered internally.
+
+## Mitigations & Recommendations
+
+Administrators of self-hosted GitHub Enterprise Server instances should upgrade to version 3.16.18 or later immediately. GitHub Cloud (github.com) instances are not affected, as the vulnerability is specific to the self-hosted appliance. For organizations unable to patch immediately, restricting access to the notebook viewer feature via IP allowlisting or disabling notebook rendering entirely can reduce exposure. Network-level controls, such as egress filtering that blocks outbound requests to private IP ranges from the GHES server, provide a compensating control but may not prevent SSRF to internal services on the same subnet. Monitor GHES server logs for unexpected outbound HTTP requests originating from the notebook viewer process, particularly to internal IP addresses or cloud metadata endpoints.
+
+## References
+
+- [GitHub Enterprise Server 3.16.18 Release Notes](https://docs.github.com/en/enterprise-server@3.16/admin/release-notes#3.16.18)

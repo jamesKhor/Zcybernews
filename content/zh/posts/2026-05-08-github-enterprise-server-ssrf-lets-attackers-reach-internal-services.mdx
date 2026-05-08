@@ -1,0 +1,54 @@
+---
+title: GitHub Enterprise Server SSRF 允许攻击者访问内部服务
+slug: >-
+  2026-05-08-github-enterprise-server-ssrf-lets-attackers-reach-internal-services
+date: '2026-05-08'
+excerpt: >-
+  CVE-2026-8034: GitHub Enterprise Server 笔记本查看器中的服务器端请求伪造漏洞利用 URL
+  解析器混淆，让攻击者访问内部服务。
+category: vulnerabilities
+tags:
+  - github-enterprise-server
+  - ssrf
+  - cve-2026-8034
+  - url-parser-confusion
+  - server-side-request-forgery
+language: zh
+source_urls:
+  - >-
+    https://docs.github.com/en/enterprise-server@3.16/admin/release-notes#3.16.18
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-08-github-enterprise-server-ssrf-lets-attackers-reach-internal-services
+cluster_key: 'cve:CVE-2026-8034'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2026-8034
+affected_sectors:
+  - software development
+  - technology
+publish_tier: public
+---
+## 执行摘要
+
+GitHub Enterprise Server (GHES) 3.16.18之前的版本中存在一个服务器端请求伪造（SSRF）漏洞，跟踪编号为CVE-2026-8034，位于笔记本查看器组件中。这个缺陷源于笔记本查看器使用的主机名验证层和底层HTTP请求库之间的URL解析器不匹配，允许攻击者构造一个通过验证但导致服务器向内部服务发出请求的URL。GitHub在2026年5月6日左右发布的GHES 3.16.18中修复了此问题，根据官方发布说明。截至目前，GitHub尚未发布CVSS评分，但该漏洞能够探测内部基础设施，需要及时修补自托管实例。
+
+## 技术分析
+
+SSRF漏洞位于笔记本查看器中，这是一个在GHES Web界面内渲染Jupyter笔记本文件（.ipynb）的功能。根据GitHub的咨询，问题出现的原因是笔记本查看器使用的主机名验证程序和HTTP请求库采用了不同的URL解析器。攻击者可以提供一个特别制作的URL，满足验证解析器的检查——例如，通过嵌入一个看似合法的主机名——但请求库以不同的方式解释，将HTTP请求指向内部IP地址或服务。
+
+这种解析器混淆的SSRF在Web安全研究中已有详细记录。当两个组件使用不同的语法或边缘情况处理解析相同的URL字符串时，攻击者可以构造一个组件接受为安全，另一个解析为恶意目的地的URL。在这种情况下，笔记本查看器的验证层可能接受像`http://attacker-controlled.com@192.168.1.1`这样的URL，其中`@`符号导致请求库忽略主机名，并将请求路由到内部IP`192.168.1.1`。GitHub的发布说明没有指定确切的解析向量，但模式匹配已知的SSRF绕过技术。
+
+经过身份验证的攻击者，如果能够访问笔记本查看器——通常是任何可以创建或查看笔记本的用户——可以利用这一点来扫描内部网络服务，访问云元数据端点（例如，AWS `169.254.169.254`），或与Redis缓存或数据库等其他内部GHES组件交互。影响取决于GHES实例的网络分段；一个对内部资源有广泛访问权限的服务器存在更高的风险。
+
+GitHub在GHES 3.16.18中解决了这个缺陷，该版本在2026年5月6日发布的发布说明中列出。补丁可能会协调URL解析器或为私有IP范围添加拒绝列表。GitHub没有披露这个漏洞是通过其漏洞赏金计划报告的，还是内部发现的。
+
+## 缓解措施与建议
+
+自托管GitHub Enterprise Server实例的管理员应立即升级到3.16.18或更高版本。GitHub Cloud (github.com)实例不受影响，因为漏洞特定于自托管设备。对于无法立即修补的组织，通过IP允许列表限制对笔记本查看器功能的访问或完全禁用笔记本渲染可以减少暴露。网络级控制，如阻止GHES服务器向外发出请求到私有IP范围的出站过滤，提供了补偿控制，但可能无法阻止同一子网上内部服务的SSRF。监控GHES服务器日志，寻找来自笔记本查看器进程的意外出站HTTP请求，特别是针对内部IP地址或云元数据端点的请求。
+
+## 参考资料
+
+- [GitHub Enterprise Server 3.16.18 Release Notes](https://docs.github.com/en/enterprise-server@3.16/admin/release-notes#3.16.18)
