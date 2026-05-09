@@ -1,0 +1,62 @@
+---
+title: DrayTek Vigor 2960 OS Command Injection Flaw Allows Unauthenticated
+slug: 2026-05-09-draytek-vigor-2960-os-command-injection-flaw-allows-unauthenticated
+date: '2026-05-09'
+excerpt: >-
+  CVE-2022-50994 (CVSS 8.1): Unauthenticated attackers can inject shell commands
+  via the formpassword parameter in the CGI login handler of DrayTek Vigor 2960
+  routers running...
+category: vulnerabilities
+tags:
+  - draytek
+  - vigor-2960
+  - os-command-injection
+  - cve-2022-50994
+  - remote-code-execution
+language: en
+source_urls:
+  - >-
+    https://www.draytek.co.uk/support/downloads/vigor-2960/older-firmware/firmware-1514?task=download.send&id=2597:readme-v2960-1514&catid=1251
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-draytek-vigor-2960-os-command-injection-flaw-allows-unauthenticated
+cluster_key: 'cve:CVE-2022-50994'
+source_count: 1
+severity: high
+cvss_score: 8.1
+cve_ids:
+  - CVE-2022-50994
+affected_sectors:
+  - telecommunications
+  - small and medium business
+affected_regions:
+  - Global
+iocs:
+  - type: ip
+    value: 1.5.1.4
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+DrayTek has released firmware version 1.5.1.4 for the Vigor 2960 router to address CVE-2022-50994, an unauthenticated OS command injection vulnerability in the device's CGI login handler. The flaw, assigned a CVSS score of 8.1 (High), allows remote attackers to execute arbitrary commands on the underlying operating system by injecting shell metacharacters into the `formpassword` parameter of the login page. According to the vendor's advisory, the vulnerable input is passed unsanitized to the `otp_check.sh` script, enabling command execution with the privileges of the web server process. No public proof-of-concept exploit has been confirmed at the time of writing, but the attack surface — unauthenticated access to the login interface — makes this a high-priority patch for any organization using the Vigor 2960 as an edge router or VPN gateway.
+
+## Technical Analysis
+
+The vulnerability resides in the CGI binary that handles HTTP POST requests to the router's login endpoint. Specifically, the `formpassword` field is incorporated into a shell command executed by `otp_check.sh` without proper sanitization or escaping. An attacker who can reach the router's management interface (typically on TCP port 80 or 443) can inject shell metacharacters such as semicolons, backticks, or pipe symbols to append arbitrary commands.
+
+DrayTek's advisory states that the issue affects all Vigor 2960 firmware versions prior to 1.5.1.4. The router is commonly deployed in small-to-medium business environments and branch offices as a multi-WAN VPN router. The management interface is often exposed to the local LAN, but in misconfigured deployments may be accessible from the WAN side, dramatically increasing the risk of exploitation.
+
+Successful exploitation yields remote code execution with the privileges of the web server — typically `root` on embedded Linux firmware, as many router vendors run the web interface with elevated permissions. From that foothold, an attacker could install persistent backdoors, pivot to internal networks, intercept VPN traffic, or modify routing tables.
+
+This vulnerability was originally disclosed in 2022 but has only recently been fully documented in the NVD with a CVSS v3.1 base score of 8.1. The vector string (AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H) confirms that exploitation requires no authentication, no user interaction, and no special access conditions — only network reachability to the router's web interface.
+
+## Mitigations & Recommendations
+
+Organizations using DrayTek Vigor 2960 routers should upgrade to firmware version 1.5.1.4 or later immediately. The firmware is available from DrayTek's support download page. If immediate patching is not possible, administrators should restrict access to the router's web management interface to trusted IP addresses only, using firewall rules or access control lists. Disabling remote management (WAN-side access) is strongly advised unless absolutely necessary. Network segmentation should ensure that the router's management interface is not reachable from untrusted networks, including guest Wi-Fi segments. Monitoring logs for unusual shell metacharacters in login attempts may provide early detection of scanning or exploitation attempts.
+
+## References
+
+- [DrayTek Vigor 2960 Firmware 1.5.1.4 Release Notes](https://www.draytek.co.uk/support/downloads/vigor-2960/older-firmware/firmware-1514?task=download.send&id=2597:readme-v2960-1514&catid=1251)
+- [NVD Entry for CVE-2022-50994](https://nvd.nist.gov/vuln/detail/CVE-2022-50994)

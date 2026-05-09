@@ -1,0 +1,61 @@
+---
+title: DrayTek Vigor 2960 操作系统命令注入漏洞允许未经认证
+slug: 2026-05-09-draytek-vigor-2960-os-command-injection-flaw-allows-unauthenticated
+date: '2026-05-09'
+excerpt: >-
+  CVE-2022-50994 (CVSS 8.1): 未经认证的攻击者可以通过运行DrayTek Vigor
+  2960路由器的CGI登录处理器中的formpassword参数注入shell命令...
+category: vulnerabilities
+tags:
+  - draytek
+  - vigor-2960
+  - os-command-injection
+  - cve-2022-50994
+  - remote-code-execution
+language: zh
+source_urls:
+  - >-
+    https://www.draytek.co.uk/support/downloads/vigor-2960/older-firmware/firmware-1514?task=download.send&id=2597:readme-v2960-1514&catid=1251
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-draytek-vigor-2960-os-command-injection-flaw-allows-unauthenticated
+cluster_key: 'cve:CVE-2022-50994'
+source_count: 1
+severity: high
+cvss_score: 8.1
+cve_ids:
+  - CVE-2022-50994
+affected_sectors:
+  - telecommunications
+  - small and medium business
+affected_regions:
+  - Global
+iocs:
+  - type: ip
+    value: 1.5.1.4
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+DrayTek 发布了 Vigor 2960 路由器的固件版本 1.5.1.4，以解决 CVE-2022-50994，这是设备 CGI 登录处理器中的一个未经身份验证的操作系统命令注入漏洞。这个漏洞被分配了一个 CVSS 评分 8.1（高），允许远程攻击者通过在登录页面的 `formpassword` 参数中注入 shell 元字符来执行底层操作系统上的任意命令。根据供应商的咨询，易受攻击的输入未经清理直接传递给 `otp_check.sh` 脚本，从而使用 web 服务器进程的权限执行命令。截至撰写本文时，尚未确认任何公开的概念验证漏洞，但攻击面——未经身份验证即可访问登录界面——使得任何使用 Vigor 2960 作为边缘路由器或 VPN 网关的组织都需要优先修补此问题。
+
+## 技术分析
+
+漏洞存在于处理路由器登录端点的 HTTP POST 请求的 CGI 二进制文件中。具体来说，`formpassword` 字段被纳入由 `otp_check.sh` 执行的 shell 命令中，而没有适当的清理或转义。能够到达路由器管理界面（通常在 TCP 端口 80 或 443 上）的攻击者可以注入分号、反引号或管道符号等 shell 元字符来附加任意命令。
+
+DrayTek 的咨询声明，此问题影响所有 Vigor 2960 固件版本 1.5.1.4 之前的版本。路由器通常部署在中小型企业环境和分支机构中，作为多 WAN VPN 路由器。管理界面通常暴露在本地局域网中，但在配置错误的部署中可能可以从 WAN 侧访问，大大增加了被利用的风险。
+
+成功利用可以获得 web 服务器权限的远程代码执行——通常是嵌入式 Linux 固件上的 `root`，因为许多路由器供应商以提升的权限运行 web 界面。从那个立足点，攻击者可以安装持久的后门，转向内部网络，拦截 VPN 流量，或修改路由表。
+
+这个漏洞最初在 2022 年被披露，但直到最近才在 NVD 中被完整记录，CVSS v3.1 基础评分为 8.1。向量字符串（AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H）确认利用不需要身份验证，不需要用户交互，也不需要特殊的访问条件——只需要网络可达性到路由器的 web 界面。
+
+## 缓解措施与建议
+
+使用 DrayTek Vigor 2960 路由器的组织应立即升级到固件版本 1.5.1.4 或更高版本。固件可在 DrayTek 的支持下载页面获得。如果无法立即修补，管理员应限制对路由器 web 管理界面的访问，仅限于受信任的 IP 地址，使用防火墙规则或访问控制列表。强烈建议禁用远程管理（WAN 侧访问），除非绝对必要。网络分段应确保路由器的管理界面不可达不信任的网络，包括来宾 Wi-Fi 段。监控日志中登录尝试中不寻常的 shell 元字符可能提供扫描或利用尝试的早期检测。
+
+## 参考资料
+
+- [DrayTek Vigor 2960 Firmware 1.5.1.4 Release Notes](https://www.draytek.co.uk/support/downloads/vigor-2960/older-firmware/firmware-1514?task=download.send&id=2597:readme-v2960-1514&catid=1251)
+- [NVD Entry for CVE-2022-50994](https://nvd.nist.gov/vuln/detail/CVE-2022-50994)

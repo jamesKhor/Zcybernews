@@ -1,0 +1,57 @@
+---
+title: CashDro 3 ATM 面板弱PINs使暴力破解访问成为可能
+slug: 2026-05-09-cashdro-3-atm-panel-weak-pins-enable-brute-force-access
+date: '2026-05-09'
+excerpt: >-
+  CVE-2026-8076: CashDro 3 ATM
+  管理面板（v24.01.00.26）接受数字PIN进行身份验证，使得可以进行暴力破解攻击，可能会危及现金分配器控制。
+category: vulnerabilities
+tags:
+  - cashdro
+  - atm
+  - brute-force
+  - weak-credentials
+  - cve-2026-8076
+language: zh
+source_urls:
+  - >-
+    https://labs.itresit.es/2026/05/07/cashdro-vulnerabilities-from-pentest-to-stealing-money/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-cashdro-3-atm-panel-weak-pins-enable-brute-force-access
+cluster_key: 'cve:CVE-2026-8076'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2026-8076
+affected_sectors:
+  - financial services
+  - retail
+affected_regions:
+  - Europe
+publish_tier: public
+---
+## 执行摘要
+
+CashDro 3 自动取款机（ATM）的网络管理面板存在一个漏洞，允许攻击者通过暴力破解用户认证，因为系统接受数字个人识别码（PIN）作为凭证。这个漏洞被追踪为 **CVE-2026-8076**，影响 CashDro 3 版本 24.01.00.26，源于平台对基于 PIN 的认证的持续支持，这种认证最初是为 2012 年的 POS 软件集成设计的。ItResIT 的研究人员在 2026 年 5 月 7 日披露了这个问题，警告说，如果攻击者能够访问管理面板，可能会潜在地分发现金或修改设备配置。截至本文撰写时，尚未发布 CVSS 评分，但如果管理界面暴露在外，则该弱点在网络上很容易被利用。
+
+## 技术分析
+
+CashDro 是一家欧洲的现金管理系统制造商，包括银行和零售商使用的自助 ATM 和循环机。通过本地网络上的浏览器可访问的 CashDro 3 网络管理面板，使用用户名和密码对用户进行认证。根据 ItResIT 的公告，面板允许密码完全由数字组成 —— 实际上是一个 PIN —— 且没有最低复杂性要求。这种设计选择是为了保持与自 2012 年以来部署的旧版 POS 软件集成的兼容性。
+
+能够访问管理面板（通常在 TCP 端口 443 或 8080 上，具体取决于部署）的攻击者可以使用自动化工具尝试猜测凭证。由于 PIN 仅限于数字字符，通常较短（公告指出系统支持基于 PIN 的凭证，但没有指定最小长度），因此有效的密钥空间比同等长度的字母数字密码要小得多。例如，一个 4 位数字的 PIN 只有 10,000 种可能的组合 —— 几分钟内就可以轻易枚举。
+
+公告没有指明面板是否实现了速率限制、账户锁定或 CAPTCHA 机制。如果这些机制缺失，暴力破解攻击变得非常实用。一旦认证成功，攻击者将获得完整的管理界面访问权限，其中包括控制现金分发、卡带库存、设备配置和审计日志。
+
+ItResIT 没有披露这个漏洞是在委托的渗透测试中发现的，还是通过独立研究发现的。研究人员没有提供概念验证代码或 IOC，只是声明该问题已报告给 CashDro，修复时间表尚不清楚。
+
+## 缓解措施与建议
+
+使用 CashDro 3 ATM 的组织应立即将网络管理面板与不受信任的网络隔离。面板永远不应暴露在互联网上，应限制在只有授权管理员才能访问的专用管理 VLAN 中。如果需要远程访问，请部署 VPN 或跳转盒子，并使用多因素认证。
+
+防御者应审计现有的管理员账户，查找基于 PIN 的弱密码，并强制使用至少 12 个字符的字母数字凭证。一旦固件更新可用，请及时应用。监控认证日志中来自单个 IP 地址的重复失败登录尝试，这可能表明正在进行暴力破解活动。
+
+## 参考资料
+
+- [ItResIT Advisory: CashDro Vulnerabilities — From Pentest to Stealing Money](https://labs.itresit.es/2026/05/07/cashdro-vulnerabilities-from-pentest-to-stealing-money/)
+- [NVD Entry for CVE-2026-8076](https://nvd.nist.gov/vuln/detail/CVE-2026-8076)

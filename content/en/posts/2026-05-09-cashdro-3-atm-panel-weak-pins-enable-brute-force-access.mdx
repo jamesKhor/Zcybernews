@@ -1,0 +1,58 @@
+---
+title: CashDro 3 ATM Panel Weak PINs Enable Brute-Force Access
+slug: 2026-05-09-cashdro-3-atm-panel-weak-pins-enable-brute-force-access
+date: '2026-05-09'
+excerpt: >-
+  CVE-2026-8076: CashDro 3 ATM admin panel (v24.01.00.26) accepts numeric PINs
+  for authentication, enabling brute-force attacks that can compromise cash
+  dispenser controls.
+category: vulnerabilities
+tags:
+  - cashdro
+  - atm
+  - brute-force
+  - weak-credentials
+  - cve-2026-8076
+language: en
+source_urls:
+  - >-
+    https://labs.itresit.es/2026/05/07/cashdro-vulnerabilities-from-pentest-to-stealing-money/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-cashdro-3-atm-panel-weak-pins-enable-brute-force-access
+cluster_key: 'cve:CVE-2026-8076'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2026-8076
+affected_sectors:
+  - financial services
+  - retail
+affected_regions:
+  - Europe
+publish_tier: public
+---
+## Executive Summary
+
+A vulnerability in the CashDro 3 automated teller machine (ATM) web administration panel allows attackers to brute-force user authentication because the system accepts numeric PINs as credentials. Tracked as **CVE-2026-8076**, the flaw affects CashDro 3 version 24.01.00.26 and stems from the platform's continued support for PIN-based authentication originally designed for POS software integrations dating back to 2012. Researchers at ItResIT disclosed the issue on May 7, 2026, warning that an attacker who gains access to the admin panel could potentially dispense cash or modify device configuration. No CVSS score has been published as of this writing, but the weakness is trivially exploitable over the network if the admin interface is exposed.
+
+## Technical Analysis
+
+CashDro is a European manufacturer of cash management systems, including self-service ATMs and recyclers used by banks and retailers. The CashDro 3 web administration panel, accessible via a browser on the local network, authenticates users with a username and password. According to the advisory from ItResIT, the panel permits passwords composed entirely of numeric digits — effectively a PIN — with no minimum complexity requirements. This design choice was made to maintain compatibility with legacy POS software integrations deployed since 2012.
+
+An attacker who can reach the admin panel (typically on TCP port 443 or 8080, depending on deployment) can attempt to guess credentials using automated tools. Because PINs are limited to numeric characters and often short (the advisory notes the system supports PIN-based credentials without specifying a minimum length), the effective keyspace is drastically smaller than an alphanumeric password of equivalent length. A 4-digit PIN, for example, has only 10,000 possible combinations — trivially enumerable in minutes.
+
+The advisory does not specify whether the panel implements rate limiting, account lockout, or CAPTCHA mechanisms. If absent, brute-force attacks become highly practical. Once authenticated, an attacker gains access to the full administrative interface, which includes controls for cash dispensing, cassette inventory, device configuration, and audit logs.
+
+ItResIT did not disclose whether the vulnerability was discovered during a commissioned penetration test or through independent research. The researchers provided no proof-of-concept code or IOCs, stating only that the issue was reported to CashDro and that a fix timeline is unclear.
+
+## Mitigations & Recommendations
+
+Organizations using CashDro 3 ATMs should immediately isolate the web administration panel from untrusted networks. The panel should never be exposed to the internet and should be restricted to a dedicated management VLAN accessible only by authorized administrators. If remote access is required, deploy a VPN or jump box with multi-factor authentication.
+
+Defenders should audit existing admin accounts for weak PIN-based passwords and enforce alphanumeric credentials with a minimum length of 12 characters. Where firmware updates become available, apply them promptly. Monitor authentication logs for repeated failed login attempts from single IP addresses, which may indicate brute-force activity.
+
+## References
+
+- [ItResIT Advisory: CashDro Vulnerabilities — From Pentest to Stealing Money](https://labs.itresit.es/2026/05/07/cashdro-vulnerabilities-from-pentest-to-stealing-money/)
+- [NVD Entry for CVE-2026-8076](https://nvd.nist.gov/vuln/detail/CVE-2026-8076)
