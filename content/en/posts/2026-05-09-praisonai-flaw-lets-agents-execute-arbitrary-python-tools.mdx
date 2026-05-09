@@ -1,0 +1,62 @@
+---
+title: PraisonAI Flaw Lets Agents Execute Arbitrary Python Tools
+slug: 2026-05-09-praisonai-flaw-lets-agents-execute-arbitrary-python-tools
+date: '2026-05-09'
+excerpt: >-
+  CVE-2026-44339 (CVSS 8.6) in PraisonAI multi-agent framework lets agents
+  resolve undeclared tool names against module globals, enabling arbitrary
+  Python execution.
+category: vulnerabilities
+tags:
+  - praisonai
+  - cve-2026-44339
+  - ai-security
+  - agent-framework
+  - rce
+  - python
+language: en
+source_urls:
+  - >-
+    https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-gmjg-hv98-qggq
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-praisonai-flaw-lets-agents-execute-arbitrary-python-tools
+cluster_key: 'cve:CVE-2026-44339'
+source_count: 1
+severity: high
+cvss_score: 8.6
+cve_ids:
+  - CVE-2026-44339
+affected_sectors:
+  - technology
+  - AI development
+publish_tier: public
+---
+## Executive Summary
+
+A high-severity vulnerability in the PraisonAI multi-agent framework, tracked as CVE-2026-44339 with a CVSS score of 8.6, allows agents to execute arbitrary Python code by resolving undeclared tool names against module globals and the `__main__` namespace. The flaw affects all installations of PraisonAI prior to version 4.6.37 and the PraisonAI Agents package prior to version 1.6.37. According to the advisory published by maintainer MervinPraison on GitHub, the issue stems from how the agent framework resolves tool names when a requested tool is not found in the declared tool list or the internal registry.
+
+## Technical Analysis
+
+PraisonAI is a Python-based framework for orchestrating multi-agent teams. Agents are configured with a list of permitted tools, and a permission gate (`_perm_allow`) is intended to restrict which tools an agent can invoke. However, in versions prior to the patched releases, when an agent requests a tool name that does not match any entry in the declared tool list or the registry, the framework falls back to resolving the name against Python's `module globals` and the `__main__` namespace.
+
+This means an attacker — or a compromised agent — can call any Python function or class that is accessible in the global scope, including built-in functions like `exec()`, `eval()`, `__import__()`, or any custom function defined in the main module. The advisory notes that with the default agent configuration, `_perm_allow` is set to `None`, so undeclared but non-dangerous tool names are not rejected by the permission gate. The gate only blocks tools explicitly marked as dangerous, but the fallback resolution bypasses this check entirely for undeclared names.
+
+An attacker who can control the tool name string passed to an agent — for example, through a crafted user prompt, a malicious plugin, or a compromised upstream data source — can force the agent to execute arbitrary Python code. This could lead to full remote code execution (RCE) on the host running the PraisonAI agent, data exfiltration, or lateral movement within the environment.
+
+The vulnerability was reported through GitHub's private vulnerability disclosure process and assigned CVE-2026-44339. The advisory does not name the original reporter.
+
+## Mitigations & Recommendations
+
+Organizations running PraisonAI should immediately upgrade to version 4.6.37 or later, and the PraisonAI Agents package to version 1.6.37 or later. These releases implement proper validation of tool names against the declared tool list and registry, and reject undeclared names rather than falling back to module globals resolution.
+
+For environments where immediate patching is not feasible, defenders should:
+- Review agent configurations and ensure `_perm_allow` is explicitly set to a restrictive list of permitted tools, rather than left as `None`.
+- Monitor agent logs for unexpected tool name resolution attempts or errors related to undeclared tool names.
+- Isolate PraisonAI agents in network segments with limited egress, and restrict the host's Python environment to prevent access to sensitive modules.
+- Audit any custom plugins or integrations that supply tool name strings to agents, as these are potential injection vectors.
+
+## References
+
+- [GitHub Security Advisory GHSA-gmjg-hv98-qggq](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-gmjg-hv98-qggq)
+- [NVD Entry for CVE-2026-44339](https://nvd.nist.gov/vuln/detail/CVE-2026-44339)

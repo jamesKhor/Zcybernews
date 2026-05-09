@@ -1,0 +1,63 @@
+---
+title: PraisonAI 漏洞允许代理执行任意 Python 工具
+slug: 2026-05-09-praisonai-flaw-lets-agents-execute-arbitrary-python-tools
+date: '2026-05-09'
+excerpt: >-
+  CVE-2026-44339 (CVSS 8.6) 在 PraisonAI 多代理框架中允许代理解析未声明的工具名称与模块全局变量，从而实现任意
+  Python 执行。
+category: vulnerabilities
+tags:
+  - praisonai
+  - cve-2026-44339
+  - ai-security
+  - agent-framework
+  - rce
+  - python
+language: zh
+source_urls:
+  - >-
+    https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-gmjg-hv98-qggq
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-praisonai-flaw-lets-agents-execute-arbitrary-python-tools
+cluster_key: 'cve:CVE-2026-44339'
+source_count: 1
+severity: high
+cvss_score: 8.6
+cve_ids:
+  - CVE-2026-44339
+affected_sectors:
+  - technology
+  - AI development
+publish_tier: brief
+public_gate_reasons:
+  - body_too_thin
+---
+## 执行摘要
+
+PraisonAI 多代理框架中存在一个高严重性的漏洞，跟踪编号为 CVE-2026-44339，CVSS 评分为 8.6，该漏洞允许代理通过解决未声明的工具名称与模块全局和 `__main__` 命名空间来执行任意 Python 代码。此漏洞影响所有 PraisonAI 4.6.37 版本之前以及 PraisonAI Agents 包 1.6.37 版本之前的安装。根据维护者 MervinPraison 在 GitHub 上发布的公告，问题源于代理框架在请求的工具未在声明的工具列表或内部注册表中找到时，如何解决工具名称。
+
+## 技术分析
+
+PraisonAI 是一个基于 Python 的框架，用于协调多代理团队。代理配置有允许使用的工具列表，并且权限门 (`_perm_allow`) 旨在限制代理可以调用的工具。然而，在修补版本之前的版本中，当代理请求的工具名称与声明的工具列表或注册表中的任何条目都不匹配时，框架会回退到使用 Python 的 `module globals` 和 `__main__` 命名空间解析名称。
+
+这意味着攻击者或被破坏的代理可以调用任何在全局范围内可访问的 Python 函数或类，包括内置函数如 `exec()`、`eval()`、`__import__()` 或主模块中定义的任何自定义函数。公告指出，默认代理配置下，`_perm_allow` 设置为 `None`，因此未声明但非危险的工具名称不会被权限门拒绝。该门只阻止明确标记为危险的工具，但回退解析完全绕过了对未声明名称的此检查。
+
+能够控制传递给代理的工具名称字符串的攻击者——例如，通过精心设计的用户提示、恶意插件或被破坏的上游数据源——可以迫使代理执行任意 Python 代码。这可能导致在运行 PraisonAI 代理的主机上完全远程代码执行（RCE）、数据泄露或在环境中的水平移动。
+
+该漏洞是通过 GitHub 的私有漏洞披露流程报告的，并分配了 CVE-2026-44339。公告没有提及原始报告者。
+
+## 缓解措施与建议
+
+运行 PraisonAI 的组织应立即升级到 4.6.37 或更高版本，以及将 PraisonAI Agents 包升级到 1.6.37 或更高版本。这些版本实现了对声明的工具列表和注册表中工具名称的正确验证，并拒绝未声明的名称，而不是回退到模块全局解析。
+
+对于无法立即修补的环境，防御者应：
+- 审查代理配置，确保 `_perm_allow` 明确设置为限制性允许的工具列表，而不是保留为 `None`。
+- 监控代理日志，寻找与未声明工具名称相关的意外工具名称解析尝试或错误。
+- 在具有有限出站流量的网络段中隔离 PraisonAI 代理，并限制主机的 Python 环境，以防止访问敏感模块。
+- 审计任何提供工具名称字符串的自定义插件或集成，因为这些是潜在的注入向量。
+
+## 参考资料
+
+- [GitHub 安全公告 GHSA-gmjg-hv98-qggq](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-gmjg-hv98-qggq)
+- [NVD 条目 CVE-2026-44339](https://nvd.nist.gov/vuln/detail/CVE-2026-44339)

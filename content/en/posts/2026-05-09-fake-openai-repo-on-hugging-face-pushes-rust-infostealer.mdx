@@ -1,0 +1,74 @@
+---
+title: Fake OpenAI Repo on Hugging Face Pushes Rust Infostealer
+slug: 2026-05-09-fake-openai-repo-on-hugging-face-pushes-rust-infostealer
+date: '2026-05-09'
+excerpt: >-
+  A typosquatted OpenAI repository reached #1 on Hugging Face with 244,000
+  downloads, delivering a Rust-based infostealer that targets browser
+  credentials, crypto wallets, and VPN...
+category: malware
+tags:
+  - hugging-face
+  - openai
+  - infostealer
+  - supply-chain
+  - hiddenlayer
+  - rust-malware
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-fake-openai-repo-on-hugging-face-pushes-rust-infostealer
+cluster_key: 'topic:fake-openai-repository-hugging-face'
+source_count: 1
+severity: high
+threat_actor: Winos 4.0
+affected_sectors:
+  - technology
+  - software development
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+A malicious repository on Hugging Face impersonating OpenAI's legitimate "Privacy Filter" project briefly reached #1 on the platform's trending list and accumulated 244,000 downloads before being removed, according to researchers at HiddenLayer. The repository, named `Open-OSS/privacy-filter`, delivered a Rust-based infostealer targeting browser credentials, cryptocurrency wallets, VPN configurations, and Discord tokens on Windows systems. HiddenLayer discovered the campaign on May 7, 2026, and reported it to Hugging Face, which subsequently took down the repository.
+
+## Technical Analysis
+
+The malicious repository typosquatted OpenAI's official Privacy Filter release, copying its model card nearly verbatim, HiddenLayer researchers reported. The repository shipped a `loader.py` Python script that contained fake AI-related code to appear benign. In the background, the script disabled SSL certificate verification, decoded a base64-encoded URL pointing to an external resource, and fetched a JSON payload containing a PowerShell command.
+
+The PowerShell command executed in an invisible window, downloading a batch file (`start.bat`) that performed privilege escalation, downloaded the final payload (named `sefirah`), added it to Microsoft Defender's exclusion list, and executed it. The final payload is a Rust-based infostealer that collects:
+
+- Browser data from Chromium- and Gecko-based browsers (cookies, saved passwords, encryption keys, browsing data, session tokens)
+- Discord tokens, local databases, and master keys
+- Cryptocurrency wallets and browser wallet extensions
+- SSH, FTP, and VPN credentials, including FileZilla configuration files
+- Sensitive local files and wallet seeds/keys
+- System information
+- Multi-monitor screenshots
+
+Stolen data is compressed and exfiltrated to a command-and-control (C2) server at `recargapopular[.]com`. HiddenLayer highlighted the malware's extensive anti-analysis features, including checks for virtual machines, sandboxes, debuggers, and analysis tools, all designed to evade detection in analysis environments.
+
+HiddenLayer noted that the vast majority of the 667 accounts that liked the repository appear to be auto-generated, and the 244,000 download count may have been artificially inflated. Further investigation by the researchers uncovered other repositories using the same malicious loader infrastructure, as well as overlaps with an npm typosquatting campaign distributing the WinOS 4.0 implant.
+
+## Indicators of Compromise
+
+- **C2 Domain:** `recargapopular[.]com` — used for data exfiltration
+- **Malicious Repository:** `hxxps://huggingface[.]co/Open-OSS/privacy-filter` (removed)
+- **Payload Name:** `sefirah` — Rust-based infostealer
+
+## Tactics, Techniques & Procedures
+
+The attack chain follows a multi-stage supply chain compromise. Initial access (T1195) is achieved by hosting a typosquatted repository on Hugging Face. Execution (T1059) uses a Python loader that fetches a PowerShell command, which in turn downloads a batch file for privilege escalation. Defense evasion (T1562) includes disabling SSL verification in the loader and adding the payload to Microsoft Defender's exclusion list. The malware also employs virtualization/sandbox evasion (T1497) through checks for VMs, debuggers, and analysis tools. Credential access (T1555) targets browser password stores, and collection (T1115) captures clipboard data for cryptocurrency wallet seeds. Exfiltration (T1041) sends compressed stolen data to the C2 server.
+
+## Mitigations & Recommendations
+
+Users who downloaded files from the malicious repository should immediately reimage the affected machine, rotate all stored credentials, replace cryptocurrency wallets and seed phrases, and invalidate browser sessions and tokens. Organizations using Hugging Face should implement repository vetting processes, including automated scanning for typosquatted names and suspicious loader scripts. Monitoring for connections to `recargapopular[.]com` or execution of `sefirah` processes may aid in detection. HiddenLayer's full report provides additional indicators and detection rules.
+
+## References
+
+- [BleepingComputer: Fake OpenAI repository on Hugging Face pushes infostealer malware](https://www.bleepingcomputer.com/news/security/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/)
+- [HiddenLayer Research Report](https://hiddenlayer.com/research/open-oss-privacy-filter-malicious-repo/)

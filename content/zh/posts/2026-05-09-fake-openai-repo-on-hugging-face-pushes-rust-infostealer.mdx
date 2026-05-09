@@ -1,0 +1,73 @@
+---
+title: 假的 OpenAI 仓库在 Hugging Face 上推广 Rust 信息窃取器
+slug: 2026-05-09-fake-openai-repo-on-hugging-face-pushes-rust-infostealer
+date: '2026-05-09'
+excerpt: >-
+  一个被恶意抢注的 OpenAI 仓库在 Hugging Face 上达到了第一名，下载量达到 244,000 次，分发了一个基于 Rust
+  的信息窃取器，该窃取器针对浏览器凭证、加密钱包和 VPN...
+category: malware
+tags:
+  - hugging-face
+  - openai
+  - infostealer
+  - supply-chain
+  - hiddenlayer
+  - rust-malware
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-fake-openai-repo-on-hugging-face-pushes-rust-infostealer
+cluster_key: 'topic:fake-openai-repository-hugging-face'
+source_count: 1
+severity: high
+threat_actor: Winos 4.0
+affected_sectors:
+  - technology
+  - software development
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+根据HiddenLayer的研究人员称，一个冒充OpenAI合法“隐私过滤器”项目的恶意代码库在Hugging Face平台上短暂地达到了趋势列表的第一名，并在被移除前累积了244,000次下载。该代码库名为`Open-OSS/privacy-filter`，它分发了一个基于Rust的信息窃取器，针对Windows系统上的浏览器凭据、加密货币钱包、VPN配置和Discord令牌。HiddenLayer在2026年5月7日发现了这一活动，并报告给了Hugging Face，随后该代码库被取缔。
+
+## 技术分析
+
+恶意代码库通过复制OpenAI官方隐私过滤器的模型卡片，几乎逐字复制，HiddenLayer的研究人员报告称。该代码库附带了一个名为`loader.py`的Python脚本，其中包含假的AI相关代码以显得无害。在后台，该脚本禁用了SSL证书验证，解码了一个指向外部资源的base64编码URL，并获取了一个包含PowerShell命令的JSON有效载荷。
+
+在不可见窗口中执行的PowerShell命令下载了一个批处理文件（`start.bat`），该文件执行了权限提升，下载了最终的有效载荷（命名为`sefirah`），将其添加到Microsoft Defender的排除列表中，并执行了它。最终的有效载荷是一个基于Rust的信息窃取器，收集以下信息：
+
+- 基于Chromium和Gecko的浏览器数据（cookies、保存的密码、加密密钥、浏览数据、会话令牌）
+- Discord令牌、本地数据库和主密钥
+- 加密货币钱包和浏览器钱包扩展
+- SSH、FTP和VPN凭据，包括FileZilla配置文件
+- 敏感本地文件和钱包种子/密钥
+- 系统信息
+- 多显示器屏幕截图
+
+被盗数据被压缩并传输到`recargapopular[.]com`的命令与控制（C2）服务器。HiddenLayer强调了恶意软件广泛的反分析特性，包括检查虚拟机、沙箱、调试器和分析工具，所有这些都是为了在分析环境中逃避检测。
+
+HiddenLayer指出，喜欢该代码库的667个账户中绝大多数似乎是自动生成的，244,000的下载量可能被人为夸大。研究人员的进一步调查发现了使用相同恶意加载器基础设施的其他代码库，以及与分发WinOS 4.0植入物的npm typosquatting活动重叠。
+
+## 入侵指标
+
+- **C2域名：** `recargapopular[.]com` — 用于数据外泄
+- **恶意代码库：** `hxxps://huggingface[.]co/Open-OSS/privacy-filter`（已移除）
+- **有效载荷名称：** `sefirah` — 基于Rust的信息窃取器
+
+## 战术、技术与程序
+
+攻击链遵循多阶段供应链破坏。通过在Hugging Face上托管一个typosquatted代码库来实现初始访问（T1195）。执行（T1059）使用一个Python加载器来获取PowerShell命令，该命令反过来下载一个批处理文件以提升权限。防御规避（T1562）包括在加载器中禁用SSL验证，并将有效载荷添加到Microsoft Defender的排除列表中。恶意软件还采用了虚拟化/沙箱规避（T1497）通过检查VMs、调试器和分析工具。凭证访问（T1555）针对浏览器密码存储，并收集（T1115）捕获剪贴板数据以获取加密货币钱包种子。外泄（T1041）将压缩的被盗数据发送到C2服务器。
+
+## 缓解措施与建议
+
+从恶意代码库下载文件的用户应立即重新镜像受影响的机器，轮换所有存储的凭证，替换加密货币钱包和种子短语，并使浏览器会话和令牌失效。使用Hugging Face的组织应实施代码库审查流程，包括自动扫描typosquatted名称和可疑加载器脚本。监控连接到`recargapopular[.]com`或执行`sefirah`进程可能有助于检测。HiddenLayer的完整报告提供了额外的指标和检测规则。
+
+## 参考资料
+
+- [BleepingComputer: Fake OpenAI repository on Hugging Face pushes infostealer malware](https://www.bleepingcomputer.com/news/security/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/)
+- [HiddenLayer Research Report](https://hiddenlayer.com/research/open-oss-privacy-filter-malicious-repo/)
