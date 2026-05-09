@@ -1,0 +1,66 @@
+---
+title: Acer PredatorSense LPE Lets Local Users Gain SYSTEM Privileges
+slug: 2026-05-09-acer-predatorsense-lpe-lets-local-users-gain-system-privileges
+date: '2026-05-09'
+excerpt: >-
+  CVE-2026-8069: Acer PredatorSense versions 3.00.3136 to 3.00.3196 expose a
+  misconfigured named pipe, letting any authenticated local user execute code as
+  SYSTEM and delete...
+category: vulnerabilities
+tags:
+  - cve-2026-8069
+  - acer
+  - predatorsense
+  - local-privilege-escalation
+  - named-pipe
+  - windows
+language: en
+source_urls:
+  - 'https://community.acer.com/en/kb/articles/19652'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-acer-predatorsense-lpe-lets-local-users-gain-system-privileges
+cluster_key: 'cve:CVE-2026-8069'
+source_count: 1
+severity: high
+cvss_score: 7.8
+cve_ids:
+  - CVE-2026-8069
+affected_sectors:
+  - consumer electronics
+  - gaming
+publish_tier: public
+---
+## Executive Summary
+
+Acer's PredatorSense utility — the system monitoring and overclocking tool bundled with Predator gaming laptops and desktops — contains a local privilege escalation (LPE) vulnerability that lets any authenticated Windows user execute arbitrary code with `NT AUTHORITY\SYSTEM` privileges. Tracked as **CVE-2026-8069**, the flaw resides in a misconfigured Windows Named Pipe exposed by the software. An attacker who already has a foothold on the machine (e.g., via malware, a compromised user account, or physical access) can leverage this pipe to escalate to the highest Windows integrity level and delete arbitrary system files. Acer has released patched versions of PredatorSense; users should update immediately.
+
+## Technical Analysis
+
+According to the advisory published by Acer on their community knowledge base, PredatorSense versions **3.00.3136 through 3.00.3196** are affected. The application creates a Windows Named Pipe that uses a custom protocol to invoke internal functions — likely for inter-process communication between its GUI components and privileged background services. However, the Named Pipe's access control list (ACL) is misconfigured, permitting any authenticated local user to connect and send crafted messages.
+
+A successful exploitation allows two distinct actions at the SYSTEM integrity level:
+
+1. **Arbitrary code execution** — An attacker can invoke functions exposed through the pipe to execute arbitrary commands or binaries with SYSTEM privileges, bypassing User Account Control (UAC) and standard user-level restrictions.
+2. **Arbitrary file deletion** — The pipe also exposes an operation that deletes files with SYSTEM privileges. This capability could be used to remove security software binaries, event logs, or critical system files to impair defenses or cause denial of service.
+
+The vulnerability is classified as a **CWE-269: Improper Privilege Management** issue. The Common Vulnerability Scoring System (CVSS) v3.1 base score is **7.8 (High)**, reflecting the low attack complexity (local access, no user interaction beyond having the vulnerable software installed) and the high impact on confidentiality, integrity, and availability.
+
+No evidence of active exploitation in the wild has been reported as of publication. However, the attack surface is significant: PredatorSense is pre-installed on a wide range of Acer gaming products, and any malware that achieves user-level code execution could use this flaw to gain persistence at the kernel or SYSTEM level.
+
+## Mitigations & Recommendations
+
+Acer has released patched versions of PredatorSense that correct the Named Pipe ACL. Users should:
+
+- **Update PredatorSense** to the latest version available via the official Acer support website or the Windows Update catalog. The advisory (linked in References) lists the patched build numbers.
+- **Verify the installed version** by launching PredatorSense, navigating to Settings > About, and comparing the version string against the advisory's fixed versions.
+- **Restrict local access** on shared or multi-user systems — any user with an interactive session can exploit this flaw. In enterprise environments, consider blocking the PredatorSense executable via application control policies if the software is not required.
+- **Monitor for unusual SYSTEM-level process creation** or unexpected file deletion events originating from the PredatorSense process tree. SIEM rules should flag `PredatorSense.exe` spawning `cmd.exe`, `powershell.exe`, or other interpreters.
+
+No workaround exists that preserves full functionality; patching is the only reliable mitigation.
+
+## References
+
+- [Acer Community KB Article — CVE-2026-8069](https://community.acer.com/en/kb/articles/19652)
+- [NVD Entry for CVE-2026-8069](https://nvd.nist.gov/vuln/detail/CVE-2026-8069)
+- [CWE-269: Improper Privilege Management](https://cwe.mitre.org/data/definitions/269.html)

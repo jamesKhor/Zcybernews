@@ -1,0 +1,67 @@
+---
+title: Acer PredatorSense LPE 允许本地用户获得SYSTEM权限
+slug: 2026-05-09-acer-predatorsense-lpe-lets-local-users-gain-system-privileges
+date: '2026-05-09'
+excerpt: >-
+  CVE-2026-8069: Acer PredatorSense 版本 3.00.3136 至 3.00.3196
+  暴露了一个配置错误的命名管道，允许任何经过身份验证的本地用户以SYSTEM身份执行代码并删除...
+category: vulnerabilities
+tags:
+  - cve-2026-8069
+  - acer
+  - predatorsense
+  - local-privilege-escalation
+  - named-pipe
+  - windows
+language: zh
+source_urls:
+  - 'https://community.acer.com/en/kb/articles/19652'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-09-acer-predatorsense-lpe-lets-local-users-gain-system-privileges
+cluster_key: 'cve:CVE-2026-8069'
+source_count: 1
+severity: high
+cvss_score: 7.8
+cve_ids:
+  - CVE-2026-8069
+affected_sectors:
+  - consumer electronics
+  - gaming
+publish_tier: public
+---
+## Acer PredatorSense LPE Lets Local Users Gain SYSTEM Privileges
+
+## 执行摘要
+
+宏碁的PredatorSense实用程序——与Predator游戏笔记本电脑和台式机捆绑的系统监控和超频工具——包含一个本地权限提升（LPE）漏洞，允许任何经过身份验证的Windows用户以`NT AUTHORITY\SYSTEM`权限执行任意代码。该漏洞被追踪为**CVE-2026-8069**，存在于软件暴露的一个配置错误的Windows命名管道中。已经获得机器访问权限的攻击者（例如，通过恶意软件、被泄露的用户账户或物理访问）可以利用这个管道提升到最高的Windows完整性级别并删除任意系统文件。宏碁已经发布了PredatorSense的修补版本；用户应立即更新。
+
+## 技术分析
+
+根据宏碁在其社区知识库上发布的公告，**3.00.3136至3.00.3196**版本的PredatorSense受到影响。该应用程序创建了一个使用自定义协议调用内部功能的Windows命名管道——可能是为了其GUI组件和特权后台服务之间的进程间通信。然而，命名管道的访问控制列表（ACL）配置错误，允许任何经过身份验证的本地用户连接并发送精心构造的消息。
+
+成功利用允许在SYSTEM完整性级别执行两个不同的操作：
+
+1. **任意代码执行** — 攻击者可以通过管道调用暴露的函数，以SYSTEM权限执行任意命令或二进制文件，绕过用户账户控制（UAC）和标准用户级限制。
+2. **任意文件删除** — 该管道还暴露了一个以SYSTEM权限删除文件的操作。这种能力可以用来移除安全软件二进制文件、事件日志或关键系统文件，以削弱防御或导致拒绝服务。
+
+该漏洞被归类为**CWE-269: 不当权限管理**问题。通用漏洞评分系统（CVSS）v3.1基础得分为**7.8（高）**，反映了攻击复杂度低（本地访问，除了安装了易受攻击的软件外不需要用户交互）和对机密性、完整性和可用性影响高。
+
+截至发布时，尚未报告有在野外积极利用的证据。然而，攻击面很大：PredatorSense预装在广泛的宏碁游戏产品上，任何实现用户级代码执行的恶意软件都可以利用这个漏洞在内核或SYSTEM级别获得持久性。
+
+## 缓解措施与建议
+
+宏碁已经发布了修正命名管道ACL的PredatorSense修补版本。用户应该：
+
+- **更新PredatorSense** 到官方宏碁支持网站或Windows更新目录上可用的最新版本。公告（在参考资料中链接）列出了修补的构建编号。
+- **验证已安装的版本** 通过启动PredatorSense，导航到设置>关于，并与公告中修复的版本进行比较。
+- **限制共享或多用户系统上的本地访问** — 任何拥有交互式会话的用户都可以利用这个漏洞。在企业环境中，如果不需要该软件，可以考虑通过应用程序控制策略阻止PredatorSense可执行文件。
+- **监控来自PredatorSense进程树的不寻常SYSTEM级进程创建** 或意外的文件删除事件。SIEM规则应该标记`PredatorSense.exe`生成`cmd.exe`、`powershell.exe`或其他解释器。
+
+没有保留完整功能的替代方案；修补是唯一的可靠缓解措施。
+
+## 参考资料
+
+- [宏碁社区KB文章 — CVE-2026-8069](https://community.acer.com/en/kb/articles/19652)
+- [NVD条目CVE-2026-8069](https://nvd.nist.gov/vuln/detail/CVE-2026-8069)
+- [CWE-269: 不当权限管理](https://cwe.mitre.org/data/definitions/269.html)
