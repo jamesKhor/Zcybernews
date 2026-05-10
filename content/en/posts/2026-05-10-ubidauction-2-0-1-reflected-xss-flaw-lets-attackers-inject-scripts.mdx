@@ -1,0 +1,55 @@
+---
+title: uBidAuction 2.0.1 Reflected XSS Flaw Lets Attackers Inject Scripts
+slug: 2026-05-10-ubidauction-2-0-1-reflected-xss-flaw-lets-attackers-inject-scripts
+date: '2026-05-10'
+excerpt: >-
+  CVE-2022-50966 (CVSS 6.1): uBidAuction 2.0.1 reflected XSS in the news/manage
+  module allows remote attackers to inject scripts via unsanitized GET
+  parameters date_created,...
+category: vulnerabilities
+tags:
+  - ubidauction
+  - reflected-xss
+  - cve-2022-50966
+  - web-application-security
+  - cross-site-scripting
+language: en
+source_urls:
+  - >-
+    https://www.apphp.com/codemarket/items/48/ubidauction-php-classic-and-bid-auctions-script
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-ubidauction-2-0-1-reflected-xss-flaw-lets-attackers-inject-scripts
+cluster_key: 'cve:CVE-2022-50966'
+source_count: 1
+severity: medium
+cvss_score: 6.1
+cve_ids:
+  - CVE-2022-50966
+affected_sectors:
+  - e-commerce
+  - auction services
+publish_tier: public
+---
+## Executive Summary
+
+A reflected cross-site scripting (XSS) vulnerability in uBidAuction 2.0.1, tracked as CVE-2022-50966 with a CVSS score of 6.1, allows remote attackers to inject arbitrary JavaScript into victims' browsers via unsanitized GET parameters in the news/manage module. The flaw resides in the filter functionality, where the `date_created`, `date_from`, `date_to`, and `created_at` parameters are not properly sanitized before being reflected in the response. According to the National Vulnerability Database (NVD), this enables attackers to craft malicious links that execute scripts in the context of the victim's session, potentially leading to session hijacking, credential theft, or defacement. No proof-of-concept exploit has been publicly disclosed as of this writing, but the vulnerability is trivially exploitable via crafted GET requests.
+
+## Technical Analysis
+
+uBidAuction 2.0.1 is a PHP-based auction script marketed to small businesses and independent auctioneers for managing online bids, listings, and user accounts. The vulnerable module, `news/manage`, provides administrative filtering of news or auction entries by date ranges. The parameters `date_created`, `date_from`, `date_to`, and `created_at` are accepted via GET requests and reflected directly into the HTML output without encoding or sanitization.
+
+Reflected XSS of this nature does not require authentication to trigger — the attacker simply crafts a URL containing a malicious payload in one of the vulnerable parameters and lures a victim (typically an administrator) into clicking the link. Because the script executes in the context of the uBidAuction application's origin, it can access cookies, session tokens, and perform actions on behalf of the logged-in user. The CVSS 6.1 rating reflects the medium severity due to the requirement for user interaction (the victim must click the link) and the need for the application to be accessed over a network.
+
+The NVD entry for CVE-2022-50966 notes that the issue was discovered and reported through the NVD's automated CVE ingestion pipeline, but no vendor response or patch timeline has been published. The product's vendor, Apphp, lists uBidAuction as an active product on their marketplace, but the specific version 2.0.1 may no longer be supported. Defenders should assume that all installations of uBidAuction 2.0.1 are vulnerable unless a patch is confirmed.
+
+## Mitigations & Recommendations
+
+Administrators of uBidAuction 2.0.1 should immediately apply input validation and output encoding to the `date_created`, `date_from`, `date_to`, and `created_at` parameters in the `news/manage` module. Specifically, all reflected GET parameters should be HTML-entity-encoded before inclusion in the page response. If a vendor-supplied patch becomes available, it should be tested and deployed promptly.
+
+In the absence of a patch, defenders can mitigate the risk by implementing a web application firewall (WAF) rule that blocks GET requests containing common XSS payloads (e.g., `<script>`, `onerror=`, `javascript:`) in the vulnerable parameters. Additionally, administrators should avoid clicking untrusted links while logged into the uBidAuction admin panel and consider using Content Security Policy (CSP) headers to restrict script execution. For organizations running uBidAuction in a production environment, upgrading to a supported, actively maintained auction platform is the recommended long-term remediation.
+
+## References
+
+- [NVD Entry for CVE-2022-50966](https://nvd.nist.gov/vuln/detail/CVE-2022-50966)
+- [uBidAuction Product Page on Apphp](https://www.apphp.com/codemarket/items/48/ubidauction-php-classic-and-bid-auctions-script)

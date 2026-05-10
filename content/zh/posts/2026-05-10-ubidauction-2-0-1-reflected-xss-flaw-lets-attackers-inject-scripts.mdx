@@ -1,0 +1,56 @@
+---
+title: uBidAuction 2.0.1 反射型 XSS 漏洞允许攻击者注入脚本
+slug: 2026-05-10-ubidauction-2-0-1-reflected-xss-flaw-lets-attackers-inject-scripts
+date: '2026-05-10'
+excerpt: >-
+  CVE-2022-50966 (CVSS 6.1): uBidAuction 2.0.1 在新闻/管理模块中的反射型 XSS 允许远程攻击者通过未净化的
+  GET 参数 date_created 等注入脚本...
+category: vulnerabilities
+tags:
+  - ubidauction
+  - reflected-xss
+  - cve-2022-50966
+  - web-application-security
+  - cross-site-scripting
+language: zh
+source_urls:
+  - >-
+    https://www.apphp.com/codemarket/items/48/ubidauction-php-classic-and-bid-auctions-script
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-ubidauction-2-0-1-reflected-xss-flaw-lets-attackers-inject-scripts
+cluster_key: 'cve:CVE-2022-50966'
+source_count: 1
+severity: medium
+cvss_score: 6.1
+cve_ids:
+  - CVE-2022-50966
+affected_sectors:
+  - e-commerce
+  - auction services
+publish_tier: brief
+public_gate_reasons:
+  - body_too_thin
+---
+## 执行摘要
+
+uBidAuction 2.0.1 中存在一个反射型跨站脚本（XSS）漏洞，跟踪编号为 CVE-2022-50966，CVSS 评分为 6.1，允许远程攻击者通过新闻/管理模块中的未过滤 GET 参数注入任意 JavaScript 到受害者的浏览器中。该漏洞存在于过滤功能中，`date_created`、`date_from`、`date_to` 和 `created_at` 参数在响应中反射之前没有得到适当的过滤。根据国家漏洞数据库（NVD），这使得攻击者能够制作恶意链接，在受害者会话的上下文中执行脚本，可能导致会话劫持、凭证盗窃或网站篡改。截至目前，尚未公开披露任何概念验证漏洞利用代码，但该漏洞可以通过精心设计的 GET 请求轻易利用。
+
+## 技术分析
+
+uBidAuction 2.0.1 是一个基于 PHP 的拍卖脚本，面向小型企业和独立拍卖商，用于管理在线出价、列表和用户账户。易受攻击的模块 `news/manage` 提供了按日期范围过滤新闻或拍卖条目的管理功能。`date_created`、`date_from`、`date_to` 和 `created_at` 参数通过 GET 请求接收，并直接反射到 HTML 输出中，没有进行编码或过滤。
+
+这种反射型 XSS 不需要认证即可触发——攻击者只需制作一个包含恶意负载的 URL，并诱使受害者（通常是管理员）点击链接。由于脚本在 uBidAuction 应用程序的上下文中执行，它可以访问 cookie、会话令牌，并代表登录用户执行操作。CVSS 6.1 的评分反映了中等严重性，因为需要用户交互（受害者必须点击链接）以及需要通过网络访问应用程序。
+
+NVD 中的 CVE-2022-50966 条目指出，该问题是通过 NVD 的自动化 CVE 摄取管道发现并报告的，但尚未发布供应商响应或补丁时间表。产品供应商 Apphp 将其 uBidAuction 列为市场上的活跃产品，但特定版本 2.0.1 可能不再受支持。防御者应假定所有 uBidAuction 2.0.1 的安装都易受攻击，除非确认有补丁。
+
+## 缓解措施与建议
+
+uBidAuction 2.0.1 的管理员应立即对 `news/manage` 模块中的 `date_created`、`date_from`、`date_to` 和 `created_at` 参数应用输入验证和输出编码。具体来说，所有反射的 GET 参数应在包含在页面响应中之前进行 HTML 实体编码。如果供应商提供补丁，应立即测试并部署。
+
+如果没有补丁，防御者可以通过实施一个网络应用防火墙（WAF）规则来减轻风险，该规则阻止包含常见 XSS 负载（例如 `<script>`、`onerror=`、`javascript:`）的 GET 请求在易受攻击的参数中。此外，管理员在登录 uBidAuction 管理面板时应避免点击不可信的链接，并考虑使用内容安全策略（CSP）头来限制脚本执行。对于在生产环境中运行 uBidAuction 的组织，建议长期补救措施是升级到一个受支持、积极维护的拍卖平台。
+
+## 参考资料
+
+- [NVD Entry for CVE-2022-50966](https://nvd.nist.gov/vuln/detail/CVE-2022-50966)
+- [uBidAuction Product Page on Apphp](https://www.apphp.com/codemarket/items/48/ubidauction-php-classic-and-bid-auctions-script)
