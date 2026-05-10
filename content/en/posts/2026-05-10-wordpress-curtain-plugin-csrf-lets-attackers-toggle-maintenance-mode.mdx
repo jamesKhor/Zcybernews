@@ -1,0 +1,55 @@
+---
+title: WordPress Curtain Plugin CSRF Lets Attackers Toggle Maintenance Mode
+slug: >-
+  2026-05-10-wordpress-curtain-plugin-csrf-lets-attackers-toggle-maintenance-mode
+date: '2026-05-10'
+excerpt: >-
+  CVE-2022-50955: WordPress Curtain 1.0.2 CSRF flaw lets attackers trick admins
+  into toggling site maintenance mode via forged requests without nonce
+  validation.
+category: vulnerabilities
+tags:
+  - wordpress
+  - csrf
+  - curtain
+  - cve-2022-50955
+  - maintenance-mode
+language: en
+source_urls:
+  - 'https://wordpress.org/plugins/curtain/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-10-wordpress-curtain-plugin-csrf-lets-attackers-toggle-maintenance-mode
+cluster_key: 'cve:CVE-2022-50955'
+source_count: 1
+severity: medium
+cvss_score: 3
+cve_ids:
+  - CVE-2022-50955
+publish_tier: public
+---
+## Executive Summary
+
+A cross-site request forgery (CSRF) vulnerability in the WordPress Curtain plugin version 1.0.2 allows unauthenticated attackers to remotely activate or deactivate a site's maintenance mode by tricking an authenticated administrator into submitting a forged HTTP request. Tracked as CVE-2022-50955 with a CVSS base score of 4.3 (medium severity), the flaw resides in the plugin's failure to validate nonce tokens on the `options-general.php` page when processing `curtain` parameters. An attacker who successfully exploits this vulnerability can disrupt site availability by placing the site into maintenance mode or disable an active maintenance mode, potentially causing confusion or service interruption. The plugin's developer has not yet released a patched version as of this writing.
+
+## Technical Analysis
+
+The Curtain plugin, developed by the WordPress plugin repository contributor, provides a simple toggle for site administrators to enable or disable maintenance mode from the WordPress admin dashboard. According to the National Vulnerability Database (NVD) entry for CVE-2022-50955, the plugin's settings page at `/wp-admin/options-general.php` accepts `curtain` GET or POST parameters to change the maintenance mode state. The plugin fails to include or verify a WordPress nonce — a security token that ensures the request originated from the legitimate admin interface — before executing the state change.
+
+An attacker can craft a malicious link or embed a hidden form on an external site that, when visited by an authenticated WordPress administrator, sends a request to `https://victim-site.com/wp-admin/options-general.php?curtain=1` (to enable maintenance mode) or `curtain=0` (to disable it). Because the request appears to come from the admin's browser session, WordPress processes the parameter change without any CSRF protection. The attack requires no prior authentication on the attacker's part — only that a logged-in administrator triggers the forged request.
+
+The CVSS 4.3 score reflects the low complexity of the attack (network-based, no privileges required, user interaction required) and the limited impact on confidentiality and integrity (none), but a non-zero availability impact: enabling maintenance mode blocks all front-end access to the site, effectively taking it offline for visitors. Disabling maintenance mode could expose a site that an admin intentionally took down for updates or repairs.
+
+No proof-of-concept exploit code has been publicly disclosed in the NVD entry or the plugin's support forum as of May 10, 2026. The vulnerability was reported to the WordPress plugin repository by an anonymous researcher; the NVD published the CVE on an unspecified date prior to this report.
+
+## Mitigations & Recommendations
+
+Site administrators running Curtain version 1.0.2 should immediately disable the plugin until a patched version is released. As a temporary workaround, administrators can implement a web application firewall (WAF) rule that blocks requests to `options-general.php` containing the `curtain` parameter unless the request also includes a valid WordPress nonce (`_wpnonce`). However, because nonce values change per user session and are not predictable, this is difficult to enforce at the WAF level. The most reliable mitigation is to remove the plugin entirely and use an alternative maintenance mode plugin that properly implements CSRF nonce validation, such as the widely used "Maintenance" plugin by Fruitful Code, which has no known CSRF vulnerabilities in its current version.
+
+Administrators should also educate users with admin-level access about the risks of clicking untrusted links while logged into WordPress, and consider enforcing short session timeouts to reduce the window of opportunity for CSRF attacks.
+
+## References
+
+- National Vulnerability Database: [CVE-2022-50955 Detail](https://nvd.nist.gov/vuln/detail/CVE-2022-50955)
+- WordPress Plugin Repository: [Curtain Plugin Page](https://wordpress.org/plugins/curtain/)

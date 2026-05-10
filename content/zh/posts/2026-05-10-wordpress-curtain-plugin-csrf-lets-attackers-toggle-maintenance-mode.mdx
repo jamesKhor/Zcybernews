@@ -1,0 +1,56 @@
+---
+title: WordPress Curtain 插件 CSRF 允许攻击者切换维护模式
+slug: >-
+  2026-05-10-wordpress-curtain-plugin-csrf-lets-attackers-toggle-maintenance-mode
+date: '2026-05-10'
+excerpt: >-
+  CVE-2022-50955: WordPress Curtain 1.0.2 CSRF 漏洞允许攻击者通过伪造请求在没有 nonce
+  验证的情况下欺骗管理员切换网站维护模式。
+category: vulnerabilities
+tags:
+  - wordpress
+  - csrf
+  - curtain
+  - cve-2022-50955
+  - maintenance-mode
+language: zh
+source_urls:
+  - 'https://wordpress.org/plugins/curtain/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-10-wordpress-curtain-plugin-csrf-lets-attackers-toggle-maintenance-mode
+cluster_key: 'cve:CVE-2022-50955'
+source_count: 1
+severity: medium
+cvss_score: 3
+cve_ids:
+  - CVE-2022-50955
+publish_tier: public
+---
+## WordPress Curtain 插件 CSRF 漏洞允许攻击者切换维护模式
+
+## 执行摘要
+
+WordPress Curtain 插件版本 1.0.2 中存在一个跨站请求伪造（CSRF）漏洞，允许未经身份验证的攻击者通过诱骗已认证的管理员提交伪造的 HTTP 请求，远程激活或停用网站的维护模式。该漏洞被追踪为 CVE-2022-50955，CVSS 基础得分为 4.3（中等严重性），漏洞存在于插件在处理 `options-general.php` 页面上的 `curtain` 参数时未能验证 nonce 令牌。成功利用此漏洞的攻击者可以通过将网站置于维护模式来中断网站可用性，或禁用活跃的维护模式，可能导致混乱或服务中断。截至本文撰写时，插件开发者尚未发布修补版本。
+
+## 技术分析
+
+Curtain 插件由 WordPress 插件库贡献者开发，为网站管理员提供了一个简单的切换开关，以便在 WordPress 管理仪表板中启用或禁用维护模式。根据国家漏洞数据库（NVD）针对 CVE-2022-50955 的条目，插件的设置页面 `/wp-admin/options-general.php` 接受 `curtain` GET 或 POST 参数来更改维护模式状态。插件在执行状态更改之前未能包含或验证 WordPress nonce —— 一种安全令牌，确保请求源自合法的管理界面。
+
+攻击者可以制作恶意链接或在外部网站上嵌入隐藏表单，当经过 WordPress 认证的管理员访问时，向 `https://victim-site.com/wp-admin/options-general.php?curtain=1`（启用维护模式）或 `curtain=0`（禁用它）发送请求。由于请求看起来像是来自管理员的浏览器会话，WordPress 在没有任何 CSRF 保护的情况下处理参数更改。攻击不需要攻击者事先进行身份验证 —— 只需要登录的管理员触发伪造的请求。
+
+CVSS 4.3 分数反映了攻击的低复杂性（基于网络，无需权限，需要用户交互）以及对机密性和完整性（无）的有限影响，但可用性影响非零：启用维护模式会阻止所有前端访问网站，实际上使网站对访客下线。禁用维护模式可能会暴露管理员有意为更新或维修而下线的网站。
+
+截至 2026 年 5 月 10 日，NVD 条目或插件支持论坛中尚未公开披露概念验证漏洞代码。该漏洞由匿名研究人员报告给 WordPress 插件库；NVD 在本报告发布前的一个未指定日期发布了 CVE。
+
+## 缓解措施与建议
+
+运行 Curtain 版本 1.0.2 的网站管理员应立即禁用该插件，直到发布修补版本。作为临时解决方案，管理员可以实施一个 Web 应用程序防火墙（WAF）规则，阻止包含 `curtain` 参数的请求到 `options-general.php`，除非请求也包含一个有效的 WordPress nonce（`_wpnonce`）。然而，由于 nonce 值会根据用户会话变化且不可预测，这在 WAF 层面难以执行。最可靠的缓解措施是完全移除插件，并使用正确实现 CSRF nonce 验证的替代维护模式插件，例如广泛使用的 Fruitful Code 的 "Maintenance" 插件，其当前版本中没有已知的 CSRF 漏洞。
+
+管理员还应教育具有管理员级别访问权限的用户，了解在登录 WordPress 时点击不可信链接的风险，并考虑强制执行短暂的会话超时，以减少 CSRF 攻击的机会窗口。
+
+## 参考资料
+
+- 国家漏洞数据库：[CVE-2022-50955 详细信息](https://nvd.nist.gov/vuln/detail/CVE-2022-50955)
+- WordPress 插件库：[Curtain 插件页面](https://wordpress.org/plugins/curtain/)
