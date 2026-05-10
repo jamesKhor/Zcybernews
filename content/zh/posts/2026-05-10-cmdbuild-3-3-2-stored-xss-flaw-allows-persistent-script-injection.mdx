@@ -1,0 +1,69 @@
+---
+title: CMDBuild 3.3.2 存储型 XSS 漏洞允许持久脚本注入
+slug: 2026-05-10-cmdbuild-3-3-2-stored-xss-flaw-allows-persistent-script-injection
+date: '2026-05-10'
+excerpt: >-
+  CVE-2021-47925 (CVSS 6.4): 经过身份验证的攻击者可以通过 CMDBuild 3.3.2 中的员工卡参数或 SVG 文件附件注入持久
+  XSS 有效载荷，影响所有用户...
+category: vulnerabilities
+tags:
+  - cmdbuild
+  - xss
+  - cve-2021-47925
+  - stored-cross-site-scripting
+  - asset-management
+language: zh
+source_urls:
+  - 'https://www.cmdbuild.org'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-cmdbuild-3-3-2-stored-xss-flaw-allows-persistent-script-injection
+cluster_key: 'cve:CVE-2021-47925'
+source_count: 1
+severity: medium
+cvss_score: 6.4
+cve_ids:
+  - CVE-2021-47925
+affected_sectors:
+  - government
+  - enterprise
+  - telecommunications
+publish_tier: public
+---
+## 执行摘要
+
+CMDBuild 版本 3.3.2 存在一个存储型跨站脚本（XSS）漏洞，跟踪编号为 **CVE-2021-47925**，CVSS 基础得分为 6.4（中等），允许经过身份验证的攻击者将任意 Web 脚本或 HTML 注入到应用程序中。该漏洞存在于卡片创建和文件上传端点，攻击者可以通过员工卡片参数或 SVG 文件附件嵌入有效载荷。当其他用户查看受影响的记录或预览附件时，注入的脚本在他们的浏览器会话中执行，可能使攻击者能够进行会话劫持、数据泄露或在资产管理平台内进一步横向移动。该漏洞通过国家漏洞数据库（NVD）披露，并影响使用 CMDBuild 进行 IT 基础设施配置管理的组织。
+
+## 技术分析
+
+CVE-2021-47925 是开源配置管理数据库（CMDB）应用程序 CMDBuild 的存储型 XSS 漏洞，特别影响版本 3.3.2。根据 NVD 条目，问题在两个不同的向量中表现出来：
+
+1. **员工卡片参数注入**：经过身份验证的攻击者可以在员工卡片创建或编辑表单中制作恶意输入。在存储之前未正确清理的参数，稍后在 Web 界面中渲染时允许注入任意 JavaScript 或 HTML。当有权限的用户或管理员导航到受影响的卡片时，脚本在他们的会话上下文中执行。
+
+2. **SVG 文件附件注入**：类端点的文件上传功能接受 SVG 图像，但没有充分验证其内容。SVG 文件可以通过 `<script>` 标签或事件处理器（例如 `onload`、`onmouseover`）包含嵌入式 JavaScript。当其他用户预览或下载附件时，浏览器解析 SVG 并执行嵌入式脚本。
+
+利用该漏洞需要身份验证——攻击者必须拥有一个有效的 CMDBuild 账户，并具有创建或编辑卡片和上传附件的权限。然而，一旦存储了有效载荷，任何查看受污染记录或附件的用户都会触发 XSS，包括管理员。这使得在多租户或共享 CMDBuild 部署中，低权限用户可以污染高权限人员查看的记录，使漏洞特别危险。
+
+CVSS 6.4 分数反映了中等严重性，因为需要身份验证，但对机密性、完整性和可用性的影响分别被评为部分。攻击复杂度低（除了身份验证之外不需要特殊条件），范围保持不变（受影响的应用程序是唯一受影响的组件）。
+
+CMDBuild 被企业、政府机构和电信提供商广泛用于管理 IT 资产、网络配置和服务关系。在这样的系统中，存储型 XSS 可能允许攻击者窃取会话 cookie、通过键盘记录器捕获按键、代表受害者执行操作，或通过利用受害者的浏览器信任来转移到内部系统。
+
+截至本文撰写时，尚未公开发布 CVE-2021-47925 的概念验证漏洞代码，但攻击向量已被充分理解，任何熟悉 XSS 技术的安全性研究人员都可以轻易复现。该漏洞最初报告给 CMDBuild 项目维护者，并在随后的版本中包含了修复。
+
+## 缓解措施与建议
+
+运行 CMDBuild 3.3.2 的组织应立即升级到最新的修补版本。CMDBuild 项目在后续版本中解决了 CVE-2021-47925；用户应查阅官方 CMDBuild 更新日志或联系他们的供应商支持，以获取包含修复的具体版本。
+
+对于无法立即升级的部署，防御者应实施以下补偿控制：
+
+- **输入验证**：在卡片创建和文件上传表单中强制执行严格的服务器端清理所有用户输入。拒绝或编码 HTML 标签、JavaScript 事件处理器和 SVG 脚本元素。
+- **内容安全策略（CSP）**：部署一个严格的 CSP 标头，阻止内联脚本并限制脚本来源到受信任的起源。即使存储了有效载荷，这也可以在一定程度上缓解 XSS 执行。
+- **文件上传限制**：如果不涉及业务关键，完全禁用 SVG 文件上传，或者通过使用专用的 SVG 清理库剥离脚本元素和事件处理器来验证上传的 SVG 文件。
+- **访问控制**：审查并最小化具有卡片创建和文件上传权限的用户数量。应用最小权限原则以减少攻击面。
+- **监控**：启用 Web 应用程序防火墙（WAF）规则，检测并阻止请求参数和文件上传中常见的 XSS 有效载荷模式。监控日志以查找异常脚本执行或重复的验证失败尝试。
+
+## 参考资料
+
+- [NVD Entry for CVE-2021-47925](https://nvd.nist.gov/vuln/detail/CVE-2021-47925)
+- [CMDBuild 官方网站](https://www.cmdbuild.org)
+- [CMDBuild 文档和更新日志](https://www.cmdbuild.org/en/documentation)

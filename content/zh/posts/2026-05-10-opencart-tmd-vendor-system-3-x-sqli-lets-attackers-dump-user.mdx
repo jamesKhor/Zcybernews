@@ -1,0 +1,60 @@
+---
+title: Opencart TMD Vendor System 3.x SQLi 允许攻击者转储用户信息
+slug: 2026-05-10-opencart-tmd-vendor-system-3-x-sqli-lets-attackers-dump-user
+date: '2026-05-10'
+excerpt: >-
+  CVE-2021-47928 (CVSS 8.2): Opencart TMD Vendor System 3.x
+  中的未认证盲SQL注入允许攻击者提取用户名、电子邮件和密码重置代码从...
+category: vulnerabilities
+tags:
+  - opencart
+  - tmd-vendor-system
+  - sql-injection
+  - cve-2021-47928
+  - blind-sqli
+  - credential-theft
+language: zh
+source_urls:
+  - 'https://www.exploit-db.com/exploits/50493'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-opencart-tmd-vendor-system-3-x-sqli-lets-attackers-dump-user
+cluster_key: 'cve:CVE-2021-47928'
+source_count: 1
+severity: high
+cvss_score: 8.2
+cve_ids:
+  - CVE-2021-47928
+affected_sectors:
+  - e-commerce
+  - retail
+publish_tier: public
+---
+## 执行摘要
+
+Opencart TMD Vendor System 扩展程序版本 3.x 中存在一个盲 SQL 注入漏洞，允许未经身份验证的攻击者提取敏感数据库记录，包括用户名、电子邮件地址和密码重置令牌。该漏洞被指定为 CVE-2021-47928，CVSS 评分为 8.2（高），漏洞位于 `product_id` 参数中，可以通过基于时间或基于内容的盲注入技术进行利用。截至本文撰写时，供应商尚未发布公开补丁，使得运行该扩展的站点面临凭证盗窃和账户接管的风险。
+
+## 技术分析
+
+根据 Exploit-DB 上发布的一个漏洞利用（ID 50493），该漏洞影响 Opencart 3.x 的 TMD Vendor System 模块。该模块未能在将用户输入传递给 `product_id` 参数并纳入 SQL 查询之前对其进行清理。攻击者可以在未经身份验证的情况下注入恶意 SQL 有效载荷，使用基于时间的（例如，`SLEEP()` 函数）或基于内容的（布尔推理）盲注入方法逐个字符地泄露数据。
+
+该漏洞利用针对存储用户凭证和密码重置代码的 `oc_user` 表。通过枚举列，攻击者可以检索哈希密码、电子邮件地址以及可能允许账户劫持的明文或哈希重置令牌。与基于错误的 SQLi 相比，盲注入方法使得检测更加困难，因为数据库不会向攻击者返回错误消息 —— 相反，攻击者从响应时间或页面内容的细微差异中推断出正确的猜测。
+
+到达易受攻击端点不需要身份验证，这意味着任何具有对 Opencart 商店网络访问权限的远程攻击者都可以发起攻击。该模块与供应商管理工作流程的集成可能在未经身份验证的产品列表或搜索页面中暴露了 `product_id` 参数。
+
+CVE 条目已发布在国家漏洞数据库中，尽管披露时间线表明该问题在 2022 年之前就被报告了。漏洞利用代码是公开可用的，降低了攻击者的技能门槛。
+
+## 缓解措施与建议
+
+使用 Opencart TMD Vendor System 3.x 的站点所有者应立即评估扩展程序是否在其商店前台激活。如果该模块不是必须的，完全移除它将消除攻击面。对于需要该功能的人，建议采取以下步骤：
+
+- 对 `product_id` 参数应用输入验证和参数化查询。如果源代码访问可用，请修改受影响的控制器或模型文件，使用准备语句或 ORM 来转义输入。
+- 部署一个带有规则的 Web 应用程序防火墙（WAF），以阻止常见的 SQL 注入模式，包括基于时间的有效载荷（例如，`SLEEP`，`BENCHMARK`）和布尔推理技术。
+- 监控数据库查询日志中的异常模式，例如带有 `OR 1=1`、`UNION SELECT` 或时间延迟函数的重复查询。
+- 轮换所有用户凭证，并使 `oc_user` 表中存储的现有密码重置令牌失效，因为它们可能已经被泄露。
+- 如果供应商无法提供补丁，考虑迁移到具有积极安全维护的替代供应商管理插件。
+
+## 参考资料
+
+- [Exploit-DB: Opencart TMD Vendor System 3.x Blind SQL Injection](https://www.exploit-db.com/exploits/50493)
+- [NVD Entry for CVE-2021-47928](https://nvd.nist.gov/vuln/detail/CVE-2021-47928)

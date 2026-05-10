@@ -1,0 +1,61 @@
+---
+title: Opencart TMD Vendor System 3.x SQLi Lets Attackers Dump User
+slug: 2026-05-10-opencart-tmd-vendor-system-3-x-sqli-lets-attackers-dump-user
+date: '2026-05-10'
+excerpt: >-
+  CVE-2021-47928 (CVSS 8.2): Unauthenticated blind SQL injection in Opencart TMD
+  Vendor System 3.x lets attackers extract usernames, emails, and password reset
+  codes from the...
+category: vulnerabilities
+tags:
+  - opencart
+  - tmd-vendor-system
+  - sql-injection
+  - cve-2021-47928
+  - blind-sqli
+  - credential-theft
+language: en
+source_urls:
+  - 'https://www.exploit-db.com/exploits/50493'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-opencart-tmd-vendor-system-3-x-sqli-lets-attackers-dump-user
+cluster_key: 'cve:CVE-2021-47928'
+source_count: 1
+severity: high
+cvss_score: 8.2
+cve_ids:
+  - CVE-2021-47928
+affected_sectors:
+  - e-commerce
+  - retail
+publish_tier: public
+---
+## Executive Summary
+
+A blind SQL injection vulnerability in the Opencart TMD Vendor System extension, version 3.x, allows unauthenticated attackers to extract sensitive database records, including usernames, email addresses, and password reset tokens. Designated as CVE-2021-47928 with a CVSS score of 8.2 (High), the flaw resides in the `product_id` parameter and can be exploited through time-based or content-based blind injection techniques. The vendor has not released a public patch as of this writing, leaving sites running the extension exposed to credential theft and account takeover.
+
+## Technical Analysis
+
+According to an exploit published on Exploit-DB (ID 50493), the vulnerability affects the TMD Vendor System module for Opencart 3.x. The module fails to sanitize user-supplied input passed to the `product_id` parameter before incorporating it into SQL queries. An attacker can inject malicious SQL payloads without authentication, using either time-based (e.g., `SLEEP()` functions) or content-based (boolean inference) blind injection methods to exfiltrate data character by character.
+
+The exploit targets the `oc_user` table, which stores user credentials and password reset codes. By enumerating columns, an attacker can retrieve hashed passwords, email addresses, and the plaintext or hashed reset tokens that could allow account hijacking. The blind injection approach makes detection harder than error-based SQLi, as the database does not return error messages to the attacker — instead, the attacker infers correct guesses from response timing or subtle differences in page content.
+
+No authentication is required to reach the vulnerable endpoint, meaning any remote attacker with network access to the Opencart store can initiate the attack. The module's integration with vendor management workflows likely exposes the `product_id` parameter in unauthenticated product listing or search pages.
+
+The CVE entry was published in the National Vulnerability Database, though the disclosure timeline suggests the issue was reported prior to 2022. The exploit code is publicly available, lowering the skill barrier for attackers.
+
+## Mitigations & Recommendations
+
+Site owners using the Opencart TMD Vendor System 3.x should immediately assess whether the extension is active on their storefront. If the module is not essential, removing it entirely eliminates the attack surface. For those who require the functionality, the following steps are advised:
+
+- Apply input validation and parameterized queries to the `product_id` parameter. If source code access is available, modify the affected controller or model file to use prepared statements or an ORM that escapes inputs.
+- Deploy a web application firewall (WAF) with rules to block common SQL injection patterns, including time-based payloads (e.g., `SLEEP`, `BENCHMARK`) and boolean inference techniques.
+- Monitor database query logs for anomalous patterns, such as repeated queries with `OR 1=1`, `UNION SELECT`, or time-delay functions.
+- Rotate all user credentials and invalidate existing password reset tokens stored in the `oc_user` table, as they may already be compromised.
+- If the vendor cannot provide a patch, consider migrating to an alternative vendor management plugin with active security maintenance.
+
+## References
+
+- [Exploit-DB: Opencart TMD Vendor System 3.x Blind SQL Injection](https://www.exploit-db.com/exploits/50493)
+- [NVD Entry for CVE-2021-47928](https://nvd.nist.gov/vuln/detail/CVE-2021-47928)

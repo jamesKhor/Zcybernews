@@ -1,0 +1,70 @@
+---
+title: CMDBuild 3.3.2 Stored XSS Flaw Allows Persistent Script Injection
+slug: 2026-05-10-cmdbuild-3-3-2-stored-xss-flaw-allows-persistent-script-injection
+date: '2026-05-10'
+excerpt: >-
+  CVE-2021-47925 (CVSS 6.4): Authenticated attackers can inject persistent XSS
+  payloads via Employee card parameters or SVG file attachments in CMDBuild
+  3.3.2, affecting all users...
+category: vulnerabilities
+tags:
+  - cmdbuild
+  - xss
+  - cve-2021-47925
+  - stored-cross-site-scripting
+  - asset-management
+language: en
+source_urls:
+  - 'https://www.cmdbuild.org'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-cmdbuild-3-3-2-stored-xss-flaw-allows-persistent-script-injection
+cluster_key: 'cve:CVE-2021-47925'
+source_count: 1
+severity: medium
+cvss_score: 6.4
+cve_ids:
+  - CVE-2021-47925
+affected_sectors:
+  - government
+  - enterprise
+  - telecommunications
+publish_tier: public
+---
+## Executive Summary
+
+CMDBuild version 3.3.2 carries a stored cross-site scripting (XSS) vulnerability, tracked as **CVE-2021-47925** with a CVSS base score of 6.4 (Medium), that allows authenticated attackers to inject arbitrary web script or HTML into the application. The flaw resides in card creation and file upload endpoints, where payloads can be embedded through Employee card parameters or SVG file attachments. When other users view the affected records or preview attachments, the injected scripts execute in their browser sessions, potentially enabling session hijacking, data exfiltration, or further lateral movement within the asset management platform. The vulnerability was disclosed via the National Vulnerability Database (NVD) and affects organizations using CMDBuild for IT infrastructure configuration management.
+
+## Technical Analysis
+
+CVE-2021-47925 is a stored XSS vulnerability in the open-source configuration management database (CMDB) application CMDBuild, specifically version 3.3.2. According to the NVD entry, the issue manifests in two distinct vectors:
+
+1. **Employee card parameter injection**: An authenticated attacker can craft malicious input within the Employee card creation or editing forms. Parameters that are not properly sanitized before being stored and later rendered in the web interface allow the injection of arbitrary JavaScript or HTML. When a privileged user or administrator navigates to the affected card, the script executes in the context of their session.
+
+2. **SVG file attachment injection**: The file upload functionality for the classes endpoint accepts SVG images without adequate validation of their content. SVG files can contain embedded JavaScript through `<script>` tags or event handlers (e.g., `onload`, `onmouseover`). When another user previews or downloads the attachment, the browser parses the SVG and executes the embedded script.
+
+The vulnerability requires authentication to exploit — an attacker must have a valid CMDBuild account with permissions to create or edit cards and upload attachments. However, once the payload is stored, any user who views the compromised record or attachment triggers the XSS, including administrators. This makes the flaw particularly dangerous in multi-tenant or shared CMDBuild deployments where lower-privilege users can poison records viewed by higher-privilege personnel.
+
+The CVSS 6.4 score reflects the medium severity due to the authentication requirement, but the impact on confidentiality, integrity, and availability is rated as partial for each. The attack complexity is low (no special conditions required beyond authentication), and the scope remains unchanged (the vulnerable application is the only affected component).
+
+CMDBuild is used extensively by enterprises, government agencies, and telecommunications providers to manage IT assets, network configurations, and service relationships. A stored XSS in such a system could allow an attacker to steal session cookies, capture keystrokes via keyloggers, perform actions on behalf of the victim, or pivot to internal systems by leveraging the victim's browser trust.
+
+No proof-of-concept exploit code has been publicly released for CVE-2021-47925 as of this writing, but the attack vectors are well-understood and trivially reproducible by any security researcher familiar with XSS techniques. The vulnerability was originally reported to the CMDBuild project maintainers, and a fix was incorporated in subsequent releases.
+
+## Mitigations & Recommendations
+
+Organizations running CMDBuild 3.3.2 should upgrade to the latest patched version immediately. The CMDBuild project addressed CVE-2021-47925 in a later release; users should consult the official CMDBuild changelog or contact their vendor support for the specific version that includes the fix.
+
+For deployments that cannot upgrade immediately, defenders should implement the following compensating controls:
+
+- **Input validation**: Enforce strict server-side sanitization of all user-supplied input in card creation and file upload forms. Reject or encode HTML tags, JavaScript event handlers, and SVG script elements.
+- **Content Security Policy (CSP)**: Deploy a strict CSP header that blocks inline scripts and restricts script sources to trusted origins. This can mitigate XSS execution even if a payload is stored.
+- **File upload restrictions**: Disable SVG file uploads entirely if not business-critical, or validate uploaded SVG files by stripping script elements and event handlers using a dedicated SVG sanitizer library.
+- **Access control**: Review and minimize the number of users with card creation and file upload permissions. Apply the principle of least privilege to reduce the attack surface.
+- **Monitoring**: Enable web application firewall (WAF) rules that detect and block common XSS payload patterns in request parameters and file uploads. Monitor logs for anomalous script execution or repeated failed validation attempts.
+
+## References
+
+- [NVD Entry for CVE-2021-47925](https://nvd.nist.gov/vuln/detail/CVE-2021-47925)
+- [CMDBuild Official Website](https://www.cmdbuild.org)
+- [CMDBuild Documentation and Changelog](https://www.cmdbuild.org/en/documentation)
