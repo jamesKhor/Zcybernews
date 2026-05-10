@@ -1,0 +1,53 @@
+---
+title: Aero CMS 0.0.1 PHP Code Injection Flaw Lets Authenticated Attackers
+slug: 2026-05-10-aero-cms-0-0-1-php-code-injection-flaw-lets-authenticated-attackers
+date: '2026-05-10'
+excerpt: >-
+  CVE-2022-50944 (CVSS 8.8): Authenticated attackers can upload malicious PHP
+  files via the image parameter in Aero CMS 0.0.1, achieving remote code
+  execution on the server.
+category: vulnerabilities
+tags:
+  - aero-cms
+  - php-code-injection
+  - cve-2022-50944
+  - remote-code-execution
+  - content-management-system
+language: en
+source_urls:
+  - 'https://github.com/MegaTKC/AeroCMS'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-aero-cms-0-0-1-php-code-injection-flaw-lets-authenticated-attackers
+cluster_key: 'cve:CVE-2022-50944'
+source_count: 1
+severity: high
+cvss_score: 8.8
+cve_ids:
+  - CVE-2022-50944
+affected_sectors:
+  - web publishing
+publish_tier: public
+---
+## Executive Summary
+
+A critical PHP code injection vulnerability, tracked as CVE-2022-50944 (CVSS 8.8), in Aero CMS version 0.0.1 allows authenticated attackers to upload arbitrary PHP files and achieve remote code execution on the underlying server. The flaw resides in the image upload functionality accessed through the `admin/posts.php` endpoint with the `source=add_post` parameter. According to the disclosure published on the project's GitHub repository, an attacker with valid credentials can bypass intended file-type restrictions and inject PHP code that is subsequently executed by the server. No patch has been released as of this writing.
+
+## Technical Analysis
+
+Aero CMS 0.0.1, a lightweight content management system, exposes an image upload mechanism via the `admin/posts.php?source=add_post` endpoint. The vulnerability, reported to the National Vulnerability Database, stems from insufficient validation of the `image` parameter during file upload. An authenticated attacker can craft a file containing embedded PHP code — for example, renaming a `.php` shell to appear as an image file — and submit it through the upload form. The application fails to verify the file's MIME type or content against expected image formats, allowing arbitrary file extensions to pass through.
+
+Once uploaded, the malicious file resides in a web-accessible directory. When the attacker accesses the file via a browser, the PHP interpreter executes the embedded code server-side, granting the attacker the same privileges as the web server user. This enables a range of post-exploitation activities, including data exfiltration, lateral movement, and persistent backdoor installation.
+
+The vulnerability requires authentication, which limits the attack surface to users who already possess CMS credentials. However, in many deployments, default or weak credentials are common, and the attacker could also combine this flaw with other vulnerabilities to escalate privileges or bypass authentication entirely. The CVSS v3.1 base score of 8.8 reflects the high impact on confidentiality, integrity, and availability, tempered only by the authentication requirement and low attack complexity.
+
+No proof-of-concept exploit code has been published publicly at this time, but the technical details in the NVD entry provide sufficient information for a skilled attacker to reproduce the issue. The Aero CMS project appears to be inactive — the last commit to the GitHub repository was in 2021 — meaning no official patch is forthcoming.
+
+## Mitigations & Recommendations
+
+Defenders running Aero CMS 0.0.1 should immediately restrict access to the `admin/posts.php` endpoint to trusted IP addresses or implement multi-factor authentication for all administrative accounts. If the CMS is not critical to operations, the safest course is to take it offline and migrate to a supported alternative. Organizations that must continue using the software should deploy a web application firewall (WAF) with rules to block file uploads containing PHP code or non-image MIME types. Additionally, file upload directories should be configured to disallow script execution — for example, by placing a `.htaccess` file with `php_flag engine off` in the uploads folder on Apache servers. Regular monitoring of web server access logs for unexpected PHP file requests is also advised.
+
+## References
+
+- [NVD Entry for CVE-2022-50944](https://nvd.nist.gov/vuln/detail/CVE-2022-50944)
+- [Aero CMS GitHub Repository](https://github.com/MegaTKC/AeroCMS)

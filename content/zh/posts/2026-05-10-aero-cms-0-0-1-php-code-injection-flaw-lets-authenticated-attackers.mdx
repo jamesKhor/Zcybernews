@@ -1,0 +1,52 @@
+---
+title: Aero CMS 0.0.1 PHP代码注入漏洞允许认证攻击者
+slug: 2026-05-10-aero-cms-0-0-1-php-code-injection-flaw-lets-authenticated-attackers
+date: '2026-05-10'
+excerpt: >-
+  CVE-2022-50944 (CVSS 8.8): 认证攻击者可以通过Aero CMS
+  0.0.1中的图像参数上传恶意PHP文件，实现服务器上的远程代码执行。
+category: vulnerabilities
+tags:
+  - aero-cms
+  - php-code-injection
+  - cve-2022-50944
+  - remote-code-execution
+  - content-management-system
+language: zh
+source_urls:
+  - 'https://github.com/MegaTKC/AeroCMS'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-aero-cms-0-0-1-php-code-injection-flaw-lets-authenticated-attackers
+cluster_key: 'cve:CVE-2022-50944'
+source_count: 1
+severity: high
+cvss_score: 8.8
+cve_ids:
+  - CVE-2022-50944
+affected_sectors:
+  - web publishing
+publish_tier: public
+---
+## 执行摘要
+
+Aero CMS 版本 0.0.1 中存在一个严重的 PHP 代码注入漏洞，跟踪编号为 CVE-2022-50944（CVSS 8.8），允许经过身份验证的攻击者上传任意 PHP 文件，并在底层服务器上实现远程代码执行。该漏洞存在于通过 `admin/posts.php` 端点访问的图像上传功能中，使用 `source=add_post` 参数。根据在项目 GitHub 仓库上发布的披露信息，拥有有效凭证的攻击者可以绕过预期的文件类型限制，并注入随后由服务器执行的 PHP 代码。截至本文撰写时，尚未发布补丁。
+
+## 技术分析
+
+Aero CMS 0.0.1，一个轻量级的内容管理系统，通过 `admin/posts.php?source=add_post` 端点暴露了一个图像上传机制。该漏洞报告给国家漏洞数据库，源于文件上传过程中对 `image` 参数的验证不足。经过身份验证的攻击者可以制作一个包含嵌入式 PHP 代码的文件——例如，将 `.php` 外壳重命名为看起来像图像文件——并通过上传表单提交。应用程序未能验证文件的 MIME 类型或内容是否符合预期的图像格式，允许任意文件扩展名通过。
+
+一旦上传，恶意文件就位于一个可通过 Web 访问的目录中。当攻击者通过浏览器访问文件时，PHP 解释器在服务器端执行嵌入式代码，授予攻击者与 Web 服务器用户相同的权限。这使得攻击者能够进行一系列后续利用活动，包括数据泄露、横向移动和持久后门安装。
+
+该漏洞需要身份验证，这限制了攻击面到已经拥有 CMS 凭证的用户。然而，在许多部署中，常见默认或弱凭证，攻击者还可以将此漏洞与其他漏洞结合使用，以提升权限或完全绕过身份验证。CVSS v3.1 基础得分为 8.8，反映了对机密性、完整性和可用性的高影响，仅因身份验证要求和低攻击复杂性而有所降低。
+
+目前尚未公开发布概念验证漏洞代码，但 NVD 条目中的技术细节为熟练攻击者重现问题提供了足够的信息。Aero CMS 项目似乎是不活跃的——最后一次提交到 GitHub 仓库是在 2021 年——这意味着不会有官方补丁。
+
+## 缓解措施与建议
+
+运行 Aero CMS 0.0.1 的防御者应立即限制对 `admin/posts.php` 端点的访问，仅限于受信任的 IP 地址，或为所有管理账户实施多因素身份验证。如果 CMS 对操作不是关键的，最安全的方法是将其下线并迁移到支持的替代方案。必须继续使用该软件的组织应部署一个带有规则的 Web 应用程序防火墙（WAF），以阻止包含 PHP 代码或非图像 MIME 类型的文件上传。此外，应配置文件上传目录以禁止脚本执行——例如，在 Apache 服务器的上传文件夹中放置一个带有 `php_flag engine off` 的 `.htaccess` 文件。还建议定期监控 Web 服务器访问日志，以查找意外的 PHP 文件请求。
+
+## 参考资料
+
+- [NVD Entry for CVE-2022-50944](https://nvd.nist.gov/vuln/detail/CVE-2022-50944)
+- [Aero CMS GitHub Repository](https://github.com/MegaTKC/AeroCMS)
