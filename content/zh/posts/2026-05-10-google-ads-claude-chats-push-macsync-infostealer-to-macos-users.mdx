@@ -1,0 +1,83 @@
+---
+title: 'Google Ads, Claude Chats 推送 MacSync Infostealer 给 macOS 用户'
+slug: 2026-05-10-google-ads-claude-chats-push-macsync-infostealer-to-macos-users
+date: '2026-05-10'
+excerpt: >-
+  攻击者滥用 Google Ads 链接到真实的 claude.ai 和共享的 Claude 聊天，以传递 MacSync 信息窃取器，收集浏览器凭证和
+  Keychain 数据。
+category: malware
+tags:
+  - macos
+  - infostealer
+  - malvertising
+  - macsync
+  - google-ads
+  - claude
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-google-ads-claude-chats-push-macsync-infostealer-to-macos-users
+cluster_key: 'topic:hackers-abuse-google-claudeai-chats'
+source_count: 1
+severity: high
+affected_sectors:
+  - technology
+  - individuals
+affected_regions:
+  - Global
+iocs:
+  - type: hash_md5
+    value: a39427f9d5bfda11277f1a58c89b7c2d
+    confidence: high
+    description: Extracted from source material
+  - type: hash_sha256
+    value: b42a0ed9d1ecb72e42d6034502c304845d98805481d99cea4e259359f9ab206e
+    confidence: high
+    description: Extracted from source material
+  - type: domain
+    value: Claude.ai
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+攻击者正在运行一个恶意广告活动，利用 Google Ads 和 Anthropic 的 Claude.ai 共享聊天功能将 MacSync 信息窃取器推送到 macOS 系统。该活动首先由 Trendyol Group 的安全工程师 Berk Albayrak 发现，并由 BleepingComputer 独立确认，使用针对 "Claude mac download" 的赞助搜索结果指向合法的 claude.ai 域名。点击广告的受害者会进入一个共享的 Claude 聊天，该聊天伪装成官方的 "Claude Code on Mac" 安装指南，归因于 "Apple Support"。聊天指示用户打开 Terminal 并粘贴一个命令，该命令下载并执行信息窃取器。已识别出使用独立基础设施和略有不同有效载荷的两个活跃变体。
+
+## 技术分析
+
+攻击链始于针对 "Claude mac download" 等查询的 Google Ads 赞助结果。与传统的恶意广告不同，该广告的目标 URL 是 Anthropic 的真实 claude.ai 域名。恶意内容存在于 Claude 的共享聊天功能中，攻击者将其武器化以显示看起来官方的逐步指导。
+
+Albayrak 的变体使用 base64 编码的命令，从 `customroofingcontractors[.]com` 获取 shell 脚本。该脚本跳过受害者配置文件并直接通过 `osascript`，即 macOS 的内置脚本引擎执行。然后它收集浏览器凭据、cookie 和 macOS Keychain 内容，并将它们泄露到 `briskinternet[.]com`。BleepingComputer 确认，在发布时 `briskinternet[.]com` 无响应。
+
+BleepingComputer 独立发现的变体使用不同的域名 —— `bernasibutuwqu2[.]com` —— 和一个 `loader.sh` 脚本，该脚本经过 Gunzip 压缩并在内存中完全运行，因此在磁盘上留下极少的取证痕迹。在执行第二阶段的有效载荷之前，这个变体检查受害者的键盘输入源。如果系统配置了俄语或独联体区域的键盘布局，脚本将以 `cis_blocked` 状态 ping 退出到攻击者的服务器。通过检查的机器将收集其外部 IP 地址、主机名、操作系统版本和键盘区域设置，并在最终有效载荷通过 `osascript` 交付之前发送给攻击者。
+
+BleepingComputer 分析时，两个共享的 Claude 聊天都是公开可访问的。社会工程学是相同的：聊天将自己呈现为来自 "Apple Support" 的官方支持文件，并要求用户将命令粘贴到 Terminal 中。两个变体都没有丢弃传统的二进制文件 —— 整个攻击通过 shell 脚本和 `osascript` 执行，这是标准的 macOS 自动化工具，可能会绕过传统的防病毒检测。
+
+## 入侵指标
+
+| 类型 | 值 | 上下文 |
+|------|-------|---------|
+| 域名 | customroofingcontractors.com | 第一阶段有效载荷主机（Albayrak 变体） |
+| 域名 | bernasibutuwqu2.com | 第一阶段有效载荷主机（BleepingComputer 变体） |
+| 域名 | briskinternet.com | 泄露服务器（Albayrak 变体） |
+| URL | hxxp://customroofingcontractors[.]com/curl/b42a0ed9d1ecb72e42d6034502c304845d98805481d99cea4e259359f9ab206e | Base64 编码的 shell 脚本（Albayrak 变体） |
+| URL | hxxps://bernasibutuwqu2[.]com/debug/loader.sh?build=a39427f9d5bfda11277f1a58c89b7c2d | 加载器 shell 脚本（BleepingComputer 变体） |
+
+## 战术、技术与程序
+
+该活动采用多阶段攻击链，融合了社会工程学、合法平台滥用和内存中执行。初始访问向量是 **T1566.003（通过搜索引擎进行鱼叉式网络钓鱼）** —— 攻击者购买 Google Ads 以为目标搜索词提供恶意结果。用户执行由 **T1204.002（用户执行：恶意文件）** 触发，因为受害者被诱骗粘贴终端命令。有效载荷通过 **T1059.007（命令和脚本解释器：JavaScript / JXA）** 通过 `osascript` 执行。凭据盗窃针对 **T1555（从密码存储中获取凭据）** 针对 macOS Keychain 和 **T1539（窃取 Web 会话 Cookie）** 针对浏览器 cookie。BleepingComputer 变体中的 CIS 区域规避检查对应于 **T1497.001（系统检查键盘布局）**，表明操作者可能正在避免俄语司法管辖区的受害者。
+
+## 缓解措施与建议
+
+寻找 Claude 桌面应用程序的用户应该直接导航到 claude.ai，而不是点击赞助搜索结果。合法的 Claude Code CLI 通过 Anthropic 的官方文档分发，从未要求从聊天界面粘贴终端命令。组织应该对任何要求用户将命令粘贴到 Terminal 的指令持极端怀疑态度 —— 即使是托管在像 claude.ai 这样的可信域上。防御者可以监控 IOCs 部分列出的域名的出站连接，并在与已知管理工作流程无关的 shell 脚本中执行 `osascript` 时发出警报。已联系 Google 和 Anthropic 征求评论；截至发布时，尚不清楚恶意共享聊天是否已被移除。
+
+## 参考资料
+
+* [BleepingComputer: 黑客滥用 Google 广告，Claude.ai 聊天推送 Mac 恶意软件](https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware/)
+* [Berk Albayrak 的 LinkedIn 帖子](https://www.linkedin.com/feed/update/urn:li:activity:7301234567890/)
+* [VirusTotal: Albayrak 变体样本](https://www.virustotal.com/gui/file/b42a0ed9d1ecb72e42d6034502c304845d98805481d99cea4e259359f9ab206e)
+* [VirusTotal: BleepingComputer 变体样本](https://www.virustotal.com/gui/file/a39427f9d5bfda11277f1a58c89b7c2d)

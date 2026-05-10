@@ -1,0 +1,75 @@
+---
+title: CyberPanel 2.1 漏洞允许已认证攻击者执行远程代码
+slug: >-
+  2026-05-10-cyberpanel-2-1-flaw-lets-authenticated-attackers-execute-remote-code
+date: '2026-05-10'
+excerpt: >-
+  CVE-2021-47949 (CVSS 8.8) 在 CyberPanel 2.1
+  中允许已认证攻击者通过文件管理器控制器端点的符号链接攻击读取任意文件并执行代码。
+category: vulnerabilities
+tags:
+  - cyberpanel
+  - cve-2021-47949
+  - rce
+  - command-injection
+  - symlink-attack
+  - web-hosting
+language: zh
+source_urls:
+  - 'https://cyberpanel.net/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-10-cyberpanel-2-1-flaw-lets-authenticated-attackers-execute-remote-code
+cluster_key: 'cve:CVE-2021-47949'
+source_count: 1
+severity: high
+cvss_score: 8.8
+cve_ids:
+  - CVE-2021-47949
+affected_sectors:
+  - web hosting
+  - software development
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
+  - tactic: Collection
+    technique_id: T1005
+    technique_name: Data from Local System
+publish_tier: public
+---
+## 执行摘要
+
+CyberPanel 版本 2.1 中存在一个命令执行漏洞，跟踪编号为 CVE-2021-47949，CVSS 评分为 8.8，允许经过身份验证的攻击者通过文件管理器控制器端点利用符号链接攻击读取任意文件并执行远程代码。该漏洞位于 `completeStartingPath` 参数中，该参数由 `/filemanager/controller` POST 处理器处理，允许攻击者创建指向敏感系统文件（包括数据库凭证）的符号链接，并随后在底层服务器上执行任意命令。该漏洞已通过国家漏洞数据库（NVD）披露，但根据当前 CyberPanel 更新日志，截至 2026 年 5 月仍未修补。
+
+## 技术分析
+
+该漏洞存在于 CyberPanel 2.1 的文件管理系统子系统中。`/filemanager/controller` 端点接受一个 `completeStartingPath` POST 参数，应用程序在没有足够的清理或验证的情况下使用该参数解析文件路径。经过身份验证的攻击者可以提供一个包含符号链接（symlink）组件的路径，指向文件系统上的任意文件。
+
+根据 NVD 描述，攻击流程如下：攻击者对 CyberPanel 管理界面进行身份验证，然后向 `/filemanager/controller` 发送一个精心制作的 POST 请求，其中包含包含符号链接遍历元素的 `completeStartingPath` 值。这允许攻击者读取敏感文件，如 `/etc/shadow`、包含凭证的数据库配置文件或 SSH 私钥。更关键的是，相同的机制允许创建符号链接，当与文件管理器的写操作结合时，可以启用远程代码执行 —— 可能通过覆盖可执行文件或将 PHP 代码注入到可通过 Web 访问的目录中。
+
+CVSS 8.8 评分反映了对机密性、完整性和可用性的高影响，尽管攻击需要事先进行身份验证。攻击复杂性低，除了初始身份验证外，不需要用户交互。范围保持不变，意味着被破坏的组件和受影响的资源是相同的。
+
+CyberPanel 是一个广泛使用的开源 Web 托管控制面板，特别受托管提供商和在 Linux 服务器上管理多个网站的开发者欢迎。文件管理器功能是一个核心功能，暴露给管理用户，这使得对于已经获得面板凭证的攻击者来说，这是一个高价值目标 —— 无论是通过网络钓鱼、凭证填充还是之前的违规行为。
+
+## 缓解措施与建议
+
+截至本文撰写时，CyberPanel 尚未发布解决 CVE-2021-47949 的修补版本。防御者应采取以下步骤：
+
+- **限制对 CyberPanel 管理界面的访问**：将面板置于 VPN 或防火墙规则后面，限制只有受信任的 IP 地址可以访问。不要直接将管理登录页面暴露给互联网。
+- **实施强身份验证**：要求所有 CyberPanel 管理账户使用多因素身份验证（MFA）。这提高了攻击者需要有效凭证来利用漏洞的门槛。
+- **监控文件管理器控制器日志**：审计 `/filemanager/controller` 端点的访问日志，特别是包含符号链接模式（`../`、`/proc/`、`/etc/`、`/root/`）的异常 `completeStartingPath` 值。
+- **应用文件系统限制**：使用 Linux 文件系统 ACL 或强制访问控制（SELinux、AppArmor）限制 CyberPanel 进程读取或写入其预期工作目录之外的能力。
+- **考虑临时解决方案**：如果文件管理器功能不是必需的，可以通过修改 Web 服务器配置，使 `/filemanager/controller` 返回 403 来禁用或移除端点。
+
+运行 CyberPanel 的组织应监控项目的 GitHub 存储库和官方网站以获取修补公告。鉴于 CVSS 8.8 的严重性和漏洞利用细节的可用性，应在发布修复程序后优先解决此漏洞。
+
+## 参考资料
+
+- NVD 条目 CVE-2021-47949：https://nvd.nist.gov/vuln/detail/CVE-2021-47949
+- CyberPanel 官方网站：https://cyberpanel.net/
+- CyberPanel GitHub 存储库：https://github.com/usmannasir/cyberpanel

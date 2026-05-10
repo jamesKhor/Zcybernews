@@ -1,0 +1,76 @@
+---
+title: CyberPanel 2.1 Flaw Lets Authenticated Attackers Execute Remote Code
+slug: >-
+  2026-05-10-cyberpanel-2-1-flaw-lets-authenticated-attackers-execute-remote-code
+date: '2026-05-10'
+excerpt: >-
+  CVE-2021-47949 (CVSS 8.8) in CyberPanel 2.1 lets authenticated attackers read
+  arbitrary files and execute code via symlink attacks through the filemanager
+  controller endpoint.
+category: vulnerabilities
+tags:
+  - cyberpanel
+  - cve-2021-47949
+  - rce
+  - command-injection
+  - symlink-attack
+  - web-hosting
+language: en
+source_urls:
+  - 'https://cyberpanel.net/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-10-cyberpanel-2-1-flaw-lets-authenticated-attackers-execute-remote-code
+cluster_key: 'cve:CVE-2021-47949'
+source_count: 1
+severity: high
+cvss_score: 8.8
+cve_ids:
+  - CVE-2021-47949
+affected_sectors:
+  - web hosting
+  - software development
+ttp_matrix:
+  - tactic: Execution
+    technique_id: T1059
+    technique_name: Command and Scripting Interpreter
+  - tactic: Execution
+    technique_id: T1204
+    technique_name: User Execution
+  - tactic: Collection
+    technique_id: T1005
+    technique_name: Data from Local System
+publish_tier: public
+---
+## Executive Summary
+
+A command execution vulnerability in CyberPanel version 2.1, tracked as CVE-2021-47949 with a CVSS score of 8.8, allows authenticated attackers to read arbitrary files and execute remote code by exploiting symlink attacks through the filemanager controller endpoint. The flaw resides in the `completeStartingPath` parameter processed by the `/filemanager/controller` POST handler, enabling attackers to create symbolic links to sensitive system files — including database credentials — and subsequently execute arbitrary commands on the underlying server. The vulnerability was disclosed via the National Vulnerability Database (NVD) but remains unpatched as of May 2026, according to the current CyberPanel changelog.
+
+## Technical Analysis
+
+The vulnerability exists in CyberPanel 2.1's file management subsystem. The `/filemanager/controller` endpoint accepts a `completeStartingPath` POST parameter that the application uses to resolve file paths without adequate sanitization or validation. An authenticated attacker can supply a path containing symbolic link (symlink) components that point to arbitrary files on the filesystem.
+
+According to the NVD description, the attack flow proceeds as follows: an attacker authenticates to the CyberPanel administrative interface, then sends a crafted POST request to `/filemanager/controller` with a `completeStartingPath` value that includes symlink traversal elements. This allows the attacker to read sensitive files such as `/etc/shadow`, database configuration files containing credentials, or SSH private keys. More critically, the same mechanism permits the creation of symlinks that, when combined with the filemanager's write operations, enable remote code execution — likely by overwriting executable files or injecting PHP code into web-accessible directories.
+
+The CVSS 8.8 rating reflects the high impact on confidentiality, integrity, and availability, though the attack requires prior authentication. The attack complexity is low, and no user interaction beyond the initial authentication is needed. The scope is unchanged, meaning the compromised component and the affected resource are the same.
+
+CyberPanel is a widely used open-source web hosting control panel, particularly popular among hosting providers and developers managing multiple websites on Linux servers. The filemanager functionality is a core feature exposed to administrative users, making this a high-value target for attackers who have already obtained panel credentials — whether through phishing, credential stuffing, or previous breaches.
+
+## Mitigations & Recommendations
+
+As of this writing, CyberPanel has not released a patched version addressing CVE-2021-47949. Defenders should take the following steps:
+
+- **Restrict access to the CyberPanel admin interface**: Place the panel behind a VPN or firewall rule limiting access to trusted IP addresses only. Do not expose the admin login page directly to the internet.
+- **Enforce strong authentication**: Require multi-factor authentication (MFA) for all CyberPanel administrative accounts. This raises the bar for attackers who need valid credentials to exploit the flaw.
+- **Monitor filemanager controller logs**: Audit access logs for the `/filemanager/controller` endpoint, particularly for anomalous `completeStartingPath` values containing symlink patterns (`../`, `/proc/`, `/etc/`, `/root/`).
+- **Apply filesystem restrictions**: Use Linux filesystem ACLs or mandatory access control (SELinux, AppArmor) to limit the CyberPanel process's ability to read or write outside its intended working directories.
+- **Consider temporary workaround**: If the filemanager functionality is not essential, disable or remove the endpoint by modifying the web server configuration to return 403 for `/filemanager/controller`.
+
+Organizations running CyberPanel should monitor the project's GitHub repository and official website for patch announcements. Given the CVSS 8.8 severity and the availability of exploit details, this vulnerability should be prioritized for remediation as soon as a fix is released.
+
+## References
+
+- NVD Entry for CVE-2021-47949: https://nvd.nist.gov/vuln/detail/CVE-2021-47949
+- CyberPanel Official Website: https://cyberpanel.net/
+- CyberPanel GitHub Repository: https://github.com/usmannasir/cyberpanel

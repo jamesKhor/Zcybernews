@@ -1,0 +1,57 @@
+---
+title: WordPress 3dady 统计插件存储型 XSS 允许攻击者劫持会话
+slug: >-
+  2026-05-10-wordpress-3dady-stats-plugin-stored-xss-lets-attackers-hijack-sessions
+date: '2026-05-10'
+excerpt: >-
+  CVE-2022-50945 (CVSS 6.4): WordPress 3dady 实时网络统计插件 1.0 中的存储型 XSS
+  允许经过身份验证的攻击者通过未经过清理的输入字段注入 JavaScript，使得...
+category: vulnerabilities
+tags:
+  - wordpress
+  - stored-xss
+  - cve-2022-50945
+  - plugin-vulnerability
+  - cross-site-scripting
+language: zh
+source_urls:
+  - 'https://profiles.wordpress.org/3dady/'
+  - 'https://wordpress.org/plugins/picture-gallery/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-10-wordpress-3dady-stats-plugin-stored-xss-lets-attackers-hijack-sessions
+cluster_key: 'cve:CVE-2022-50945'
+source_count: 2
+severity: medium
+cvss_score: 6.4
+cve_ids:
+  - CVE-2022-50945
+affected_sectors:
+  - technology
+publish_tier: public
+---
+## WordPress 3dady Stats Plugin Stored XSS Lets Attackers Hijack Sessions
+
+## 执行摘要
+
+WordPress 3dady 实时网站统计插件版本 1.0 存在存储型跨站脚本（XSS）漏洞，跟踪编号为 **CVE-2022-50945**，CVSS 评分为 6.4（中等严重性）。该漏洞允许经过身份验证的攻击者——包括订阅者等低权限用户——通过插件选项面板中未进行清理的输入字段注入持久的 JavaScript 有效载荷。当管理员或其他用户查看受影响页面时，注入的脚本在受害者浏览器的上下文中执行，从而实现会话劫持、凭证盗窃或进一步的管理员操作。该漏洞通过国家漏洞数据库（NVD）披露，并影响所有运行未打最新补丁插件的网站。
+
+## 技术分析
+
+该漏洞存在于插件处理两个输入字段：`dady_input_text` 和 `dady2_input_text`。根据 NVD 记录，插件在将用户输入存储到 WordPress 数据库之前，未能对其进行清理或转义。有权限访问插件设置页面的经过身份验证的攻击者可以通过这些字段提交任意 JavaScript 代码。当插件渲染存储的值——可能在仪表板小部件或前端统计显示中——浏览器执行注入的脚本。
+
+这种类型的存储 XSS 特别危险，因为有效载荷会跨会话持续存在，并可能影响每个加载被破坏页面的用户。与需要精心制作的链接的反射 XSS 不同，存储 XSS 可以自我传播，如果注入的脚本代表受害者执行操作。在这种情况下，攻击者可以使用注入的 JavaScript 窃取会话 cookie、捕获按键或伪造请求以创建新的管理员账户。
+
+CVSS 6.4 分数反映了中等严重性影响，攻击复杂度低，所需权限低。攻击向量基于网络，范围已更改——意味着漏洞可能影响超出易受攻击组件的资源。机密性和完整性影响被评为低，但可用性影响为无。然而，在实践中，熟练的攻击者可以通过将此 XSS 与其他插件或主题漏洞链式组合来升级影响。
+
+截至本文撰写时，尚未公开发布概念验证漏洞利用代码，但技术细节足够直接，以至于一个有决心的攻击者可以制作一个。插件的开发者 3dady 尚未就补丁时间表发表公开声明。
+
+## 缓解措施与建议
+
+网站管理员应立即更新 3dady 实时网站统计插件到最新可用版本，如果已发布补丁。如果不存在修补版本，最安全的方法是完全禁用并移除插件，直到开发者解决输入清理问题。作为补偿控制，管理员可以实施 Web 应用程序防火墙（WAF）规则，以阻止 POST 请求中插件设置端点的常见 XSS 有效载荷模式。此外，执行最小权限原则——确保只有受信任的用户才能访问插件设置——可以减少攻击面。定期对安装的插件进行安全审计和自动扫描已知 CVEs 可以帮助在利用之前识别类似的漏洞。
+
+## 参考资料
+
+- 国家漏洞数据库：[CVE-2022-50945 详细信息](https://nvd.nist.gov/vuln/detail/CVE-2022-50945)
+- WordPress 插件目录：[3dady 实时网站统计](https://profiles.wordpress.org/3dady/)

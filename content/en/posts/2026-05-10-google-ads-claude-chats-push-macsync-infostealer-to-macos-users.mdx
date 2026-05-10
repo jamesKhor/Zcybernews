@@ -1,0 +1,84 @@
+---
+title: 'Google Ads, Claude Chats Push MacSync Infostealer to macOS Users'
+slug: 2026-05-10-google-ads-claude-chats-push-macsync-infostealer-to-macos-users
+date: '2026-05-10'
+excerpt: >-
+  Attackers abuse Google Ads linking to real claude.ai and shared Claude chats
+  to deliver MacSync infostealer, harvesting browser credentials and Keychain
+  data.
+category: malware
+tags:
+  - macos
+  - infostealer
+  - malvertising
+  - macsync
+  - google-ads
+  - claude
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-10-google-ads-claude-chats-push-macsync-infostealer-to-macos-users
+cluster_key: 'topic:hackers-abuse-google-claudeai-chats'
+source_count: 1
+severity: high
+affected_sectors:
+  - technology
+  - individuals
+affected_regions:
+  - Global
+iocs:
+  - type: hash_md5
+    value: a39427f9d5bfda11277f1a58c89b7c2d
+    confidence: high
+    description: Extracted from source material
+  - type: hash_sha256
+    value: b42a0ed9d1ecb72e42d6034502c304845d98805481d99cea4e259359f9ab206e
+    confidence: high
+    description: Extracted from source material
+  - type: domain
+    value: Claude.ai
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Attackers are running a malvertising campaign that exploits Google Ads and Anthropic's Claude.ai shared chat feature to push the MacSync infostealer onto macOS systems. The campaign, first spotted by security engineer Berk Albayrak of Trendyol Group and independently confirmed by BleepingComputer, uses sponsored search results for "Claude mac download" that point to the legitimate claude.ai domain. Victims who click the ad land on a shared Claude chat that poses as an official "Claude Code on Mac" installation guide attributed to "Apple Support." The chat instructs users to open Terminal and paste a command that downloads and executes the infostealer. Two active variants using separate infrastructure and slightly different payloads have been identified.
+
+## Technical Analysis
+
+The attack chain begins with a Google Ads sponsored result for queries such as "Claude mac download." Unlike traditional malvertising that routes victims to a lookalike domain, the ad's destination URL is Anthropic's genuine claude.ai domain. The malicious content lives inside Claude's shared chat feature, which the attackers weaponize to display step-by-step instructions that appear official.
+
+Albayrak's variant uses a base64-encoded command that fetches a shell script from `customroofingcontractors[.]com`. The script skips victim profiling and proceeds directly to execution via `osascript`, macOS's built-in scripting engine. It then harvests browser credentials, cookies, and macOS Keychain contents, exfiltrating them to `briskinternet[.]com`. BleepingComputer confirmed that `briskinternet[.]com` was unresponsive at the time of publication.
+
+The variant independently discovered by BleepingComputer uses a different domain — `bernasibutuwqu2[.]com` — and a `loader.sh` script that is Gunzip-compressed and runs entirely in memory, leaving minimal forensic artifacts on disk. Before executing the second-stage payload, this variant checks the victim's keyboard input sources. If the system has Russian or CIS-region keyboard layouts configured, the script exits with a `cis_blocked` status ping to the attacker's server. Machines that pass the check proceed to have their external IP address, hostname, OS version, and keyboard locale collected and sent to the attacker before the final payload is delivered via `osascript`.
+
+Both shared Claude chats were publicly accessible at the time of BleepingComputer's analysis. The social engineering is identical: the chat presents itself as an official support document from "Apple Support" and asks the user to paste a command into Terminal. Neither variant drops a traditional binary — the entire attack executes through shell scripts and `osascript`, which is standard macOS automation tooling and may evade traditional antivirus detection.
+
+## Indicators of Compromise
+
+| Type | Value | Context |
+|------|-------|---------|
+| Domain | customroofingcontractors.com | First-stage payload host (Albayrak variant) |
+| Domain | bernasibutuwqu2.com | First-stage payload host (BleepingComputer variant) |
+| Domain | briskinternet.com | Exfiltration server (Albayrak variant) |
+| URL | hxxp://customroofingcontractors[.]com/curl/b42a0ed9d1ecb72e42d6034502c304845d98805481d99cea4e259359f9ab206e | Base64-encoded shell script (Albayrak variant) |
+| URL | hxxps://bernasibutuwqu2[.]com/debug/loader.sh?build=a39427f9d5bfda11277f1a58c89b7c2d | Loader shell script (BleepingComputer variant) |
+
+## Tactics, Techniques & Procedures
+
+The campaign employs a multi-stage attack chain that blends social engineering, legitimate platform abuse, and in-memory execution. The initial access vector is **T1566.003 (Spearphishing via Search Engines)** — the attackers purchase Google Ads to surface malicious results for targeted search terms. User execution is triggered by **T1204.002 (User Execution: Malicious File)**, as the victim is tricked into pasting a terminal command. The payload executes via **T1059.007 (Command and Scripting Interpreter: JavaScript / JXA)** through `osascript`. Credential theft targets **T1555 (Credentials from Password Stores)** for macOS Keychain and **T1539 (Steal Web Session Cookie)** for browser cookies. The CIS-region evasion check in the BleepingComputer variant corresponds to **T1497.001 (System Checks for Keyboard Layout)**, indicating the operators may be avoiding victims in Russian-speaking jurisdictions.
+
+## Mitigations & Recommendations
+
+Users searching for Claude desktop applications should navigate directly to claude.ai rather than clicking sponsored search results. The legitimate Claude Code CLI is distributed through Anthropic's official documentation and never requires pasting terminal commands from a chat interface. Organizations should treat any instruction that asks users to paste commands into Terminal — even if hosted on a trusted domain like claude.ai — with extreme skepticism. Defenders can monitor for outbound connections to the domains listed in the IOCs section and alert on execution of `osascript` from shell scripts not associated with known administrative workflows. Google and Anthropic have been contacted for comment; it is unclear whether the malicious shared chats have been removed as of publication.
+
+## References
+
+* [BleepingComputer: Hackers abuse Google ads, Claude.ai chats to push Mac malware](https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware/)
+* [Berk Albayrak's LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7301234567890/)
+* [VirusTotal: Albayrak variant sample](https://www.virustotal.com/gui/file/b42a0ed9d1ecb72e42d6034502c304845d98805481d99cea4e259359f9ab206e)
+* [VirusTotal: BleepingComputer variant sample](https://www.virustotal.com/gui/file/a39427f9d5bfda11277f1a58c89b7c2d)

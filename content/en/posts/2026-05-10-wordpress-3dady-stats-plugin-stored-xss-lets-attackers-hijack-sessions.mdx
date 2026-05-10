@@ -1,0 +1,56 @@
+---
+title: WordPress 3dady Stats Plugin Stored XSS Lets Attackers Hijack Sessions
+slug: >-
+  2026-05-10-wordpress-3dady-stats-plugin-stored-xss-lets-attackers-hijack-sessions
+date: '2026-05-10'
+excerpt: >-
+  CVE-2022-50945 (CVSS 6.4): Stored XSS in WordPress 3dady real-time web stats
+  plugin 1.0 lets authenticated attackers inject JavaScript via unsanitized
+  input fields, enabling...
+category: vulnerabilities
+tags:
+  - wordpress
+  - stored-xss
+  - cve-2022-50945
+  - plugin-vulnerability
+  - cross-site-scripting
+language: en
+source_urls:
+  - 'https://profiles.wordpress.org/3dady/'
+  - 'https://wordpress.org/plugins/picture-gallery/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-10-wordpress-3dady-stats-plugin-stored-xss-lets-attackers-hijack-sessions
+cluster_key: 'cve:CVE-2022-50945'
+source_count: 2
+severity: medium
+cvss_score: 6.4
+cve_ids:
+  - CVE-2022-50945
+affected_sectors:
+  - technology
+publish_tier: public
+---
+## Executive Summary
+
+The WordPress 3dady real-time web stats plugin version 1.0 carries a stored cross-site scripting (XSS) vulnerability, tracked as **CVE-2022-50945** with a CVSS score of 6.4 (medium severity). The flaw allows authenticated attackers — including low-privilege users such as subscribers — to inject persistent JavaScript payloads via unsanitized input fields in the plugin's options panel. When an administrator or other user views the affected page, the injected script executes in the context of the victim's browser, enabling session hijacking, credential theft, or further administrative actions. The vulnerability was disclosed via the National Vulnerability Database (NVD) and affects all sites running the plugin without the latest patch.
+
+## Technical Analysis
+
+The vulnerability resides in the plugin's handling of two input fields: `dady_input_text` and `dady2_input_text`. According to NVD records, the plugin fails to sanitize or escape user-supplied input before storing it in the WordPress database. An authenticated attacker with access to the plugin's settings page can submit arbitrary JavaScript code through these fields. When the plugin renders the stored values — likely in a dashboard widget or front-end stats display — the browser executes the injected script.
+
+Stored XSS of this nature is particularly dangerous because the payload persists across sessions and can affect every user who loads the compromised page. Unlike reflected XSS, which requires a crafted link, stored XSS can self-propagate if the injected script performs actions on behalf of the victim. In this case, an attacker could use the injected JavaScript to steal session cookies, capture keystrokes, or forge requests to create new administrator accounts.
+
+The CVSS 6.4 score reflects a medium-severity impact with a low attack complexity and low privileges required. The attack vector is network-based, and the scope is changed — meaning the vulnerability can affect resources beyond the vulnerable component. The confidentiality and integrity impacts are rated as low, but the availability impact is none. However, in practice, a skilled attacker could escalate the impact by chaining this XSS with other plugin or theme vulnerabilities.
+
+No proof-of-concept exploit code has been published publicly as of this writing, but the technical details are straightforward enough that a determined attacker could craft one. The plugin's developer, 3dady, has not issued a public statement regarding a patch timeline.
+
+## Mitigations & Recommendations
+
+Site administrators should immediately update the 3dady real-time web stats plugin to the latest available version if a patch has been released. If no patched version exists, the safest course is to disable and remove the plugin entirely until the developer addresses the input sanitization issue. As a compensating control, administrators can implement a Web Application Firewall (WAF) rule to block common XSS payload patterns in POST requests to the plugin's settings endpoint. Additionally, enforcing the principle of least privilege — ensuring that only trusted users have access to plugin settings — reduces the attack surface. Regular security audits of installed plugins and automated scanning for known CVEs can help identify similar vulnerabilities before exploitation.
+
+## References
+
+- National Vulnerability Database: [CVE-2022-50945 Detail](https://nvd.nist.gov/vuln/detail/CVE-2022-50945)
+- WordPress Plugin Directory: [3dady real-time web stats](https://profiles.wordpress.org/3dady/)
