@@ -1,0 +1,55 @@
+---
+title: Stored XSS in pgAdmin 4 Lets Attackers Execute JS via Database Object
+slug: >-
+  2026-05-11-stored-xss-in-pgadmin-4-lets-attackers-execute-js-via-database-object
+date: '2026-05-11'
+excerpt: >-
+  CVE-2026-7814 (CVSS 4.8): pgAdmin 4 fails to sanitize user-controlled
+  PostgreSQL object names, enabling stored XSS via the Browser Tree and Explain
+  Visualizer modules.
+category: vulnerabilities
+tags:
+  - pgadmin
+  - stored-xss
+  - cve-2026-7814
+  - postgresql
+  - cross-site-scripting
+language: en
+source_urls:
+  - 'https://github.com/pgadmin-org/pgadmin4/pull/9865'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-11-stored-xss-in-pgadmin-4-lets-attackers-execute-js-via-database-object
+cluster_key: 'cve:CVE-2026-7814'
+source_count: 1
+severity: medium
+cvss_score: 4.8
+cve_ids:
+  - CVE-2026-7814
+publish_tier: public
+---
+## Executive Summary
+
+A stored cross-site scripting (XSS) vulnerability in pgAdmin 4, tracked as **CVE-2026-7814** with a CVSS score of 4.8, allows attackers to execute arbitrary JavaScript in the browser of any pgAdmin user who navigates to or runs EXPLAIN on a database object with a crafted name. The flaw resides in the Browser Tree and Explain Visualizer modules, where user-controlled PostgreSQL object names (database, schema, table, column) are assigned to DOM elements via `innerHTML` without sanitization. An attacker with the ability to create or rename database objects can inject HTML markup that executes when a victim views the object in the pgAdmin interface. The vulnerability was disclosed via a pull request on the pgAdmin GitHub repository.
+
+## Technical Analysis
+
+According to the NVD entry and the GitHub pull request (PR #9865), the root cause is the use of `innerHTML` to insert user-controlled PostgreSQL object names into the DOM. Specifically, when pgAdmin 4 populates the Browser Tree or renders EXPLAIN output in the Visualizer, it takes the names of database objects — such as database names, schema names, table names, or column names — and assigns them directly to HTML elements via the `innerHTML` property. This bypasses the browser's built-in HTML encoding that would normally occur if `textContent` or `innerText` were used.
+
+An attacker who can create or rename a PostgreSQL object (e.g., via SQL `CREATE TABLE` or `ALTER TABLE RENAME`) can embed arbitrary HTML tags, including `<script>` or `<img onerror>`, within the object name. For example, a table named `<img src=x onerror=alert(1)>` would, when rendered in the Browser Tree, execute the JavaScript payload in the context of the pgAdmin session. The attack is stored because the malicious object name persists in the database and triggers every time a user views the object.
+
+The vulnerability is classified as stored XSS (CWE-79) with a CVSS v3.1 base score of 4.8 (Medium). The vector string is AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N, indicating a network-exploitable flaw requiring low privileges and user interaction, with a scope change (the injected script can affect resources beyond the vulnerable component). The attack complexity is low, and the privileges required are low — the attacker only needs the ability to create or rename database objects, which is a standard capability for many PostgreSQL users.
+
+The GitHub PR #9865, which addresses the vulnerability, was authored by a pgAdmin contributor and includes changes that replace `innerHTML` assignments with safe DOM manipulation methods (likely `textContent` or `createTextNode`). The fix also introduces input sanitization for object names displayed in the UI. The PR has been merged into the pgAdmin 4 codebase as of the disclosure date.
+
+## Mitigations & Recommendations
+
+Defenders should update pgAdmin 4 to the latest patched version that includes the fix from PR #9865. The pgAdmin development team has not yet released a formal version number for the patch, but the fix is available in the `master` branch of the GitHub repository. Users running pgAdmin 4 in production should monitor the official pgAdmin release notes for a stable release containing the fix.
+
+In the interim, organizations can reduce exposure by restricting database object creation and rename privileges to trusted users only. PostgreSQL administrators should audit existing object names for suspicious HTML content, particularly in shared development environments. Network-level controls, such as web application firewalls (WAFs) that filter XSS payloads in request parameters, may provide partial mitigation but are not a substitute for patching, as the attack vector involves stored data rather than request payloads.
+
+## References
+
+- [NVD Entry for CVE-2026-7814](https://nvd.nist.gov/vuln/detail/CVE-2026-7814)
+- [pgAdmin GitHub Pull Request #9865](https://github.com/pgadmin-org/pgadmin4/pull/9865)

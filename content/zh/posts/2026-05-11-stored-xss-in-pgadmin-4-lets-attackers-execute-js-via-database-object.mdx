@@ -1,0 +1,54 @@
+---
+title: pgAdmin 4 中的存储型 XSS 允许攻击者通过数据库对象执行 JS
+slug: >-
+  2026-05-11-stored-xss-in-pgadmin-4-lets-attackers-execute-js-via-database-object
+date: '2026-05-11'
+excerpt: >-
+  CVE-2026-7814 (CVSS 4.8): pgAdmin 4 未能清理用户控制的 PostgreSQL 对象名称，从而通过 Browser
+  Tree 和 Explain Visualizer 模块实现存储型 XSS。
+category: vulnerabilities
+tags:
+  - pgadmin
+  - stored-xss
+  - cve-2026-7814
+  - postgresql
+  - cross-site-scripting
+language: zh
+source_urls:
+  - 'https://github.com/pgadmin-org/pgadmin4/pull/9865'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-11-stored-xss-in-pgadmin-4-lets-attackers-execute-js-via-database-object
+cluster_key: 'cve:CVE-2026-7814'
+source_count: 1
+severity: medium
+cvss_score: 4.8
+cve_ids:
+  - CVE-2026-7814
+publish_tier: public
+---
+## 执行摘要
+
+pgAdmin 4中存在一个存储型跨站脚本（XSS）漏洞，跟踪编号为**CVE-2026-7814**，CVSS评分为4.8，允许攻击者在任何浏览或运行EXPLAIN数据库对象的pgAdmin用户的浏览器中执行任意JavaScript。该漏洞存在于Browser Tree和Explain Visualizer模块中，用户控制的PostgreSQL对象名称（数据库、模式、表、列）通过`innerHTML`分配给DOM元素，而没有进行消毒处理。能够创建或重命名数据库对象的攻击者可以注入HTML标记，当受害者在pgAdmin界面中查看对象时执行。该漏洞通过pgAdmin GitHub仓库的拉取请求披露。
+
+## 技术分析
+
+根据NVD条目和GitHub拉取请求（PR #9865），根本原因是使用`innerHTML`将用户控制的PostgreSQL对象名称插入到DOM中。具体来说，当pgAdmin 4填充Browser Tree或在Visualizer中渲染EXPLAIN输出时，它会获取数据库对象的名称——例如数据库名称、模式名称、表名称或列名称——并直接通过`innerHTML`属性分配给HTML元素。这绕过了浏览器内置的HTML编码，如果使用`textContent`或`innerText`通常会发生。
+
+能够创建或重命名PostgreSQL对象（例如，通过SQL `CREATE TABLE`或`ALTER TABLE RENAME`）的攻击者可以在对象名称中嵌入任意HTML标签，包括`<script>`或`<img onerror>`。例如，一个名为`<img src=x onerror=alert(1)>`的表，在Browser Tree中渲染时，将在pgAdmin会话的上下文中执行JavaScript有效载荷。攻击是存储型的，因为恶意对象名称持续存在于数据库中，并且每次用户查看对象时都会触发。
+
+该漏洞被归类为存储型XSS（CWE-79），CVSS v3.1基础得分为4.8（中等）。向量字符串是AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N，表明这是一个需要低权限和用户交互的网络可利用漏洞，具有范围变化（注入的脚本可以影响超出易受攻击组件的资源）。攻击复杂度低，所需权限低——攻击者只需要创建或重命名数据库对象的能力，这是许多PostgreSQL用户的标凈能力。
+
+解决漏洞的GitHub PR #9865由pgAdmin贡献者编写，包括替换`innerHTML`分配为安全的DOM操作方法（可能是`textContent`或`createTextNode`）。修复还引入了UI中显示的对象名称的输入消毒。截至披露日期，PR已合并到pgAdmin 4代码库中。
+
+## 缓解措施与建议
+
+防御者应更新pgAdmin 4到包含PR #9865修复的最新修补版本。pgAdmin开发团队尚未发布修补程序的正式版本号，但修复程序可在GitHub仓库的`master`分支中获得。在生产环境中运行pgAdmin 4的用户应监控官方pgAdmin发布说明，以获取包含修复的稳定版本。
+
+在此期间，组织可以通过限制数据库对象创建和重命名权限，仅限于受信任的用户来减少暴露。PostgreSQL管理员应审计现有对象名称中的可疑HTML内容，特别是在共享开发环境中。网络级控制，如过滤请求参数中XSS有效载荷的Web应用程序防火墙（WAF），可能提供部分缓解，但不是修补的替代品，因为攻击向量涉及存储数据而不是请求有效载荷。
+
+## 参考资料
+
+- [NVD Entry for CVE-2026-7814](https://nvd.nist.gov/vuln/detail/CVE-2026-7814)
+- [pgAdmin GitHub Pull Request #9865](https://github.com/pgadmin-org/pgadmin4/pull/9865)
