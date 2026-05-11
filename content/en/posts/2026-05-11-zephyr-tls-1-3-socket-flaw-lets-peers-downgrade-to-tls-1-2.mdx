@@ -1,0 +1,63 @@
+---
+title: Zephyr TLS 1.3 Socket Flaw Lets Peers Downgrade to TLS 1.2
+slug: 2026-05-11-zephyr-tls-1-3-socket-flaw-lets-peers-downgrade-to-tls-1-2
+date: '2026-05-11'
+excerpt: >-
+  CVE-2026-1677 (CVSS 5.3): Zephyr RTOS sockets using IPPROTO_TLS_1_3 can
+  negotiate TLS 1.2 when both versions are enabled, breaking application
+  security assumptions.
+category: vulnerabilities
+tags:
+  - zephyr
+  - tls-downgrade
+  - cve-2026-1677
+  - mbedtls
+  - rtos
+  - protocol-enforcement
+language: en
+source_urls:
+  - >-
+    https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-23r2-m5wx-4rvq
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-11-zephyr-tls-1-3-socket-flaw-lets-peers-downgrade-to-tls-1-2
+cluster_key: 'cve:CVE-2026-1677'
+source_count: 1
+severity: medium
+cvss_score: 5.3
+cve_ids:
+  - CVE-2026-1677
+affected_sectors:
+  - industrial control systems
+  - IoT
+  - embedded systems
+publish_tier: public
+---
+## Executive Summary
+
+The Zephyr real-time operating system (RTOS) contains a vulnerability in its TLS socket implementation that allows a remote peer to downgrade a connection from TLS 1.3 to TLS 1.2, even when the application explicitly requests `IPPROTO_TLS_1_3`. Tracked as **CVE-2026-1677** with a CVSS score of 5.3 (medium), the flaw stems from a failure to propagate the socket-level protocol selection to the underlying mbedTLS library. Applications that assume `IPPROTO_TLS_1_3` enforces TLS 1.3 may silently accept weaker cryptographic parameters, undermining security guarantees in constrained IoT and industrial deployments.
+
+## Technical Analysis
+
+According to the advisory published by the Zephyr project on GitHub Security Advisories (GHSA-23r2-m5wx-4rvq), the vulnerability resides in how Zephyr's socket layer interacts with mbedTLS when both `CONFIG_TLS1_3` and `CONFIG_TLS1_2` are enabled in the Kconfig build system. When an application creates a socket with `IPPROTO_TLS_1_3`, the intent is to restrict the connection to TLS 1.3 only. However, the socket-level protocol selection is not passed to mbedTLS via functions such as `mbedtls_ssl_conf_min_tls_version`. As a result, the ClientHello message advertises both TLS 1.3 and TLS 1.2 as supported versions. A malicious or misconfigured peer can then negotiate TLS 1.2, bypassing the application's intended protocol restriction.
+
+The advisory notes that this is not a cryptographic break of TLS 1.3 itself, but a logic error in protocol enforcement. The downgrade exposes the connection to known weaknesses in TLS 1.2, including weaker cipher suites (e.g., those using CBC-mode ciphers or RC4) and potential exposure to attacks like POODLE, Lucky13, or BEAST if the server supports vulnerable configurations. The CVSS 5.3 score reflects the medium severity due to the requirement that both TLS versions be enabled in Kconfig and that the attacker be in a position to control the server-side negotiation (network adjacent or man-in-the-middle).
+
+Zephyr is widely used in resource-constrained devices, including industrial controllers, sensor networks, and consumer IoT products. The flaw is particularly concerning for applications that rely on TLS 1.3's forward secrecy and improved handshake latency for secure firmware updates or telemetry.
+
+## Mitigations & Recommendations
+
+The Zephyr project recommends that developers explicitly set the minimum TLS version in mbedTLS configuration within their application code. Specifically, calling `mbedtls_ssl_conf_min_tls_version()` with the desired protocol version (e.g., `MBEDTLS_SSL_VERSION_TLS1_3`) before establishing the connection will override the default behavior and prevent downgrade. This mitigation does not require a kernel patch but does require application-level changes.
+
+For defenders operating Zephyr-based devices in production:
+- Audit all socket creation calls that use `IPPROTO_TLS_1_3` to ensure mbedTLS configuration is explicitly set.
+- If possible, disable `CONFIG_TLS1_2` in the Kconfig build to eliminate the downgrade path entirely, though this may break compatibility with legacy servers.
+- Monitor network traffic for unexpected TLS 1.2 handshakes from devices expected to use TLS 1.3 only.
+- Consider network segmentation to limit man-in-the-middle attack surface for devices that cannot be patched immediately.
+
+No upstream patch for the kernel socket layer has been released as of the advisory date (May 2026). The project's advisory notes that a fix would involve propagating the socket-level protocol selection to mbedTLS, but this has not yet been implemented.
+
+## References
+
+- [Zephyr Security Advisory GHSA-23r2-m5wx-4rvq](https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-23r2-m5wx-4rvq)
+- [NVD Entry for CVE-2026-1677](https://nvd.nist.gov/vuln/detail/CVE-2026-1677)

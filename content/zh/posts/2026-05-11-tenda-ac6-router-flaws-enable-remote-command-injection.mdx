@@ -1,0 +1,74 @@
+---
+title: Tenda AC6 路由器漏洞使远程命令注入成为可能
+slug: 2026-05-11-tenda-ac6-router-flaws-enable-remote-command-injection
+date: '2026-05-11'
+excerpt: >-
+  Tenda
+  AC6固件15.03.06.23中存在两个命令注入漏洞，允许远程攻击者通过getLogFile和formWifiApScan函数执行任意操作系统命令。
+category: vulnerabilities
+tags:
+  - tenda
+  - ac6
+  - command-injection
+  - router
+  - iot
+  - cve-2026-8265
+  - cve-2026-8264
+language: zh
+source_urls:
+  - >-
+    https://github.com/dxz0069/WAVLINK-WN530H4-Command-Injection-in-set_add_routing/blob/main/Tenda%20AC6V2%20get_log_file%20Command%20Injection%20via%20wans.flag.md
+  - >-
+    https://github.com/dxz0069/WAVLINK-WN530H4-Command-Injection-in-set_add_routing/blob/main/Tenda%20AC6V2%20formWifiApScan%20Command%20Injection%20via%20country%20parameter.md
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-11-tenda-ac6-router-flaws-enable-remote-command-injection
+cluster_key: 'cve:CVE-2026-8265'
+source_count: 2
+severity: high
+cvss_score: 6.5
+cve_ids:
+  - CVE-2026-8265
+  - CVE-2026-8264
+affected_sectors:
+  - consumer electronics
+  - small office/home office
+publish_tier: public
+---
+## 执行摘要
+
+Tenda AC6 无线路由器的固件版本 15.03.06.23 中公开披露了两个命令注入漏洞。这两个漏洞分别被追踪为 CVE-2026-8265（CVSS 5.8）和 CVE-2026-8264（CVSS 6.5），都存在于路由器的 httpd 组件中，允许未经身份验证的远程攻击者执行任意操作系统命令。针对这两个漏洞的公开漏洞利用代码已经发布，增加了对暴露设备的大规模利用风险。截至出版日期，Tenda 尚未发布固件更新。
+
+## 技术分析
+
+研究员 dxz0069 在 GitHub 上发布了这两个漏洞的详细漏洞利用说明，展示了攻击者如何在未经身份验证的情况下实现远程代码执行。
+
+**CVE-2026-8265 — getLogFile 命令注入**
+
+这个漏洞影响 `/goform/getLogFile` 端点内的 `get_log_file` 函数。httpd 组件在将 `wans.flag` 参数传递给系统 shell 之前未能进行清理。通过向该端点发送一个特别构造的 HTTP 请求，并在 `wans.flag` 参数中注入命令，攻击者可以执行任意 OS 命令，这些命令具有 httpd 进程的权限，该进程通常在嵌入式路由器固件上以 root 身份运行。
+
+CVSS 5.8 分数反映了该漏洞的远程可利用性（AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L），尽管考虑到 root 级别的执行环境，实际影响可能更高。
+
+**CVE-2026-8264 — formWifiApScan 命令注入**
+
+第二个漏洞位于可通过 `/goform/WifiApScan` 端点访问的 `formWifiApScan` 函数中。易受攻击的参数是 `wl2g.public.country` 和 `wl5g.public.country`，它们控制 Wi-Fi 扫描操作的国家代码。与 CVE-2026-8265 类似，这些参数在用于构建 shell 命令之前没有得到适当的清理，允许攻击者注入任意命令。
+
+CVSS 6.5 分数（AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L）表明严重性略高，尽管这两个漏洞具有相同的攻击向量和影响概况。
+
+两个漏洞在同一天发布，表明研究员对 Tenda AC6 的 Web 界面进行了系统性的审计。路由器的 httpd 组件处理所有基于 Web 的管理功能，默认情况下在本地网络上暴露。如果启用了路由器的远程管理功能 —— 这是许多家庭和小型企业网络的常见配置 —— 这些漏洞就可以从互联网上被利用。
+
+## 缓解措施与建议
+
+在 Tenda 发布修补固件版本之前，用户应采取以下步骤以减少暴露：
+
+- 在 Tenda AC6 路由器上禁用远程管理（WAN 侧访问）。这可以防止攻击者从互联网上利用这些漏洞。
+- 如果需要远程管理，请仅允许受信任的 IP 地址访问，使用路由器的访问控制列表功能。
+- 监控 Tenda 支持门户以获取固件更新。截至 2026 年 5 月 11 日，尚未发布补丁。
+- 如果供应商没有及时发布修复程序，考虑用支持的路由器型号替换 Tenda AC6，因为这些设备通常在几年后会被遗弃。
+- 网络分割可以限制影响范围：将路由器等 IoT 设备放置在与敏感系统不同的 VLAN 上。
+- 检查路由器日志，寻找指向 `/goform/getLogFile` 或 `/goform/WifiApScan` 端点的异常 HTTP 请求，这可能表明扫描或利用尝试。
+
+## 参考资料
+
+- [CVE-2026-8265 漏洞利用说明 — getLogFile 命令注入](https://github.com/dxz0069/WAVLINK-WN530H4-Command-Injection-in-set_add_routing/blob/main/Tenda%20AC6V2%20get_log_file%20Command%20Injection%20via%20wans.flag.md)
+- [CVE-2026-8264 漏洞利用说明 — formWifiApScan 命令注入](https://github.com/dxz0069/WAVLINK-WN530H4-Command-Injection-in-set_add_routing/blob/main/Tenda%20AC6V2%20formWifiApScan%20Command%20Injection%20via%20country%20parameter.md)

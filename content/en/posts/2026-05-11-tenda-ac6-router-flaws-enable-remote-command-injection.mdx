@@ -1,0 +1,75 @@
+---
+title: Tenda AC6 Router Flaws Enable Remote Command Injection
+slug: 2026-05-11-tenda-ac6-router-flaws-enable-remote-command-injection
+date: '2026-05-11'
+excerpt: >-
+  Two command injection vulnerabilities in Tenda AC6 firmware 15.03.06.23 let
+  remote attackers execute arbitrary OS commands via the getLogFile and
+  formWifiApScan functions.
+category: vulnerabilities
+tags:
+  - tenda
+  - ac6
+  - command-injection
+  - router
+  - iot
+  - cve-2026-8265
+  - cve-2026-8264
+language: en
+source_urls:
+  - >-
+    https://github.com/dxz0069/WAVLINK-WN530H4-Command-Injection-in-set_add_routing/blob/main/Tenda%20AC6V2%20get_log_file%20Command%20Injection%20via%20wans.flag.md
+  - >-
+    https://github.com/dxz0069/WAVLINK-WN530H4-Command-Injection-in-set_add_routing/blob/main/Tenda%20AC6V2%20formWifiApScan%20Command%20Injection%20via%20country%20parameter.md
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-11-tenda-ac6-router-flaws-enable-remote-command-injection
+cluster_key: 'cve:CVE-2026-8265'
+source_count: 2
+severity: high
+cvss_score: 6.5
+cve_ids:
+  - CVE-2026-8265
+  - CVE-2026-8264
+affected_sectors:
+  - consumer electronics
+  - small office/home office
+publish_tier: public
+---
+## Executive Summary
+
+Two command injection vulnerabilities have been publicly disclosed in the Tenda AC6 wireless router, firmware version 15.03.06.23. Tracked as CVE-2026-8265 (CVSS 5.8) and CVE-2026-8264 (CVSS 6.5), both flaws reside in the router's httpd component and allow unauthenticated remote attackers to execute arbitrary operating system commands. Public exploit code has been released for both vulnerabilities, increasing the risk of mass exploitation against exposed devices. Tenda has not yet released a firmware update as of the publication date.
+
+## Technical Analysis
+
+Researcher dxz0069 published detailed exploit writeups for both vulnerabilities on GitHub, demonstrating how an attacker can achieve remote code execution without authentication.
+
+**CVE-2026-8265 — getLogFile Command Injection**
+
+This vulnerability affects the `get_log_file` function within the `/goform/getLogFile` endpoint. The httpd component fails to sanitize the `wans.flag` parameter before passing it to a system shell. By crafting a specially formed HTTP request to this endpoint with an injected command in the `wans.flag` argument, an attacker can execute arbitrary OS commands with the privileges of the httpd process, which typically runs as root on embedded router firmware.
+
+The CVSS 5.8 score reflects the remotely exploitable nature of the flaw (AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L), though the actual impact may be higher in practice given the root-level execution context.
+
+**CVE-2026-8264 — formWifiApScan Command Injection**
+
+The second vulnerability is located in the `formWifiApScan` function, accessible via the `/goform/WifiApScan` endpoint. The vulnerable parameters are `wl2g.public.country` and `wl5g.public.country`, which control the country code for Wi-Fi scanning operations. Similar to CVE-2026-8265, these parameters are not properly sanitized before being used in shell command construction, allowing an attacker to inject arbitrary commands.
+
+The CVSS 6.5 score (AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L) indicates a slightly higher severity, though both vulnerabilities share the same attack vector and impact profile.
+
+Both exploits were published on the same date, suggesting the researcher conducted a systematic audit of the Tenda AC6's web interface. The router's httpd component handles all web-based management functions and is exposed on the local network by default. If the router's remote management feature is enabled — a common configuration on many home and small office networks — these vulnerabilities become exploitable from the internet.
+
+## Mitigations & Recommendations
+
+Until Tenda releases a patched firmware version, users should take the following steps to reduce exposure:
+
+- Disable remote management (WAN-side access) on the Tenda AC6 router. This prevents attackers from exploiting the flaws from the internet.
+- If remote management is required, restrict access to trusted IP addresses only, using the router's access control list feature.
+- Monitor the Tenda support portal for firmware updates. As of May 11, 2026, no patch has been released.
+- Consider replacing the Tenda AC6 with a supported router model if the vendor does not issue a timely fix, as these devices are often abandoned after a few years.
+- Network segmentation can limit the blast radius: place IoT devices like routers on a separate VLAN from sensitive systems.
+- Review router logs for unusual HTTP requests to `/goform/getLogFile` or `/goform/WifiApScan` endpoints, which may indicate scanning or exploitation attempts.
+
+## References
+
+- [CVE-2026-8265 exploit writeup — getLogFile command injection](https://github.com/dxz0069/WAVLINK-WN530H4-Command-Injection-in-set_add_routing/blob/main/Tenda%20AC6V2%20get_log_file%20Command%20Injection%20via%20wans.flag.md)
+- [CVE-2026-8264 exploit writeup — formWifiApScan command injection](https://github.com/dxz0069/WAVLINK-WN530H4-Command-Injection-in-set_add_routing/blob/main/Tenda%20AC6V2%20formWifiApScan%20Command%20Injection%20via%20country%20parameter.md)

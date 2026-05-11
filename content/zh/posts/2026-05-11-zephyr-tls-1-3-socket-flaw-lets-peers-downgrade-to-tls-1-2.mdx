@@ -1,0 +1,62 @@
+---
+title: Zephyr TLS 1.3 套接字缺陷允许对等降级到 TLS 1.2
+slug: 2026-05-11-zephyr-tls-1-3-socket-flaw-lets-peers-downgrade-to-tls-1-2
+date: '2026-05-11'
+excerpt: >-
+  CVE-2026-1677 (CVSS 5.3): 使用 IPPROTO_TLS_1_3 的 Zephyr RTOS 套接字可以在两个版本都启用时协商
+  TLS 1.2，破坏应用程序的安全假设。
+category: vulnerabilities
+tags:
+  - zephyr
+  - tls-downgrade
+  - cve-2026-1677
+  - mbedtls
+  - rtos
+  - protocol-enforcement
+language: zh
+source_urls:
+  - >-
+    https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-23r2-m5wx-4rvq
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-11-zephyr-tls-1-3-socket-flaw-lets-peers-downgrade-to-tls-1-2
+cluster_key: 'cve:CVE-2026-1677'
+source_count: 1
+severity: medium
+cvss_score: 5.3
+cve_ids:
+  - CVE-2026-1677
+affected_sectors:
+  - industrial control systems
+  - IoT
+  - embedded systems
+publish_tier: public
+---
+## 执行摘要
+
+Zephyr 实时操作系统（RTOS）在其 TLS 套接字实现中包含一个漏洞，允许远程对等方将连接从 TLS 1.3 降级到 TLS 1.2，即使应用程序明确请求 `IPPROTO_TLS_1_3`。该漏洞被跟踪为 **CVE-2026-1677**，CVSS 评分为 5.3（中等），漏洞源于未能将套接字级协议选择传播到底层的 mbedTLS 库。假设 `IPPROTO_TLS_1_3` 强制执行 TLS 1.3 的应用程序可能会默默地接受较弱的加密参数，破坏了在受限的 IoT 和工业部署中的安全保证。
+
+## 技术分析
+
+根据 Zephyr 项目在 GitHub Security Advisories 上发布的通告（GHSA-23r2-m5wx-4rvq），漏洞存在于 Zephyr 的套接字层与 mbedTLS 交互时，当 Kconfig 构建系统中同时启用了 `CONFIG_TLS1_3` 和 `CONFIG_TLS1_2`。当应用程序使用 `IPPROTO_TLS_1_3` 创建套接字时，意图是将连接限制为仅 TLS 1.3。然而，套接字级协议选择并未通过 `mbedtls_ssl_conf_min_tls_version` 等函数传递给 mbedTLS。结果，ClientHello 消息宣布支持 TLS 1.3 和 TLS 1.2。恶意或配置错误的对等方随后可以协商 TLS 1.2，绕过应用程序的预期协议限制。
+
+通告指出，这不是 TLS 1.3 本身的加密破解，而是协议执行中的逻辑错误。降级使连接暴露于 TLS 1.2 中已知的弱点，包括较弱的密码套件（例如，使用 CBC 模式密码或 RC4 的那些）以及可能暴露于 POODLE、Lucky13 或 BEAST 等攻击，如果服务器支持易受攻击的配置。CVSS 5.3 分数反映了中等严重性，因为需要在 Kconfig 中启用两个 TLS 版本，并且攻击者必须能够控制服务器端协商（网络相邻或中间人）。
+
+Zephyr 在资源受限的设备中广泛使用，包括工业控制器、传感器网络和消费 IoT 产品。对于依赖 TLS 1.3 的前向保密性和改进的握手延迟以进行安全固件更新或遥测的应用程序来说，这个漏洞尤其令人关注。
+
+## 缓解措施与建议
+
+Zephyr 项目建议开发人员在应用程序代码中显式设置 mbedTLS 配置中的最低 TLS 版本。具体来说，在建立连接之前调用 `mbedtls_ssl_conf_min_tls_version()` 并使用所需的协议版本（例如，`MBEDTLS_SSL_VERSION_TLS1_3`）将覆盖默认行为并防止降级。这种缓解措施不需要内核补丁，但需要应用程序级别的更改。
+
+对于在生产中运行基于 Zephyr 的设备的防御者：
+- 审核所有使用 `IPPROTO_TLS_1_3` 的套接字创建调用，以确保显式设置 mbedTLS 配置。
+- 如果可能，禁用 Kconfig 构建中的 `CONFIG_TLS1_2` 以完全消除降级路径，尽管这可能会破坏与旧服务器的兼容性。
+- 监控网络流量，以寻找预期仅使用 TLS 1.3 的设备中意外的 TLS 1.2 握手。
+- 考虑网络分段，以限制无法立即修补的设备的中间人攻击表面。
+
+截至通告日期（2026年5月），尚未发布内核套接字层的上游补丁。项目的通告指出，修复将涉及将套接字级协议选择传播到 mbedTLS，但尚未实施。
+
+## 参考资料
+
+- [Zephyr 安全通告 GHSA-23r2-m5wx-4rvq](https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-23r2-m5wx-4rvq)
+- [CVE-2026-1677 的 NVD 条目](https://nvd.nist.gov/vuln/detail/CVE-2026-1677)
