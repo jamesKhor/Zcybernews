@@ -1,0 +1,49 @@
+---
+title: SailPoint Discloses GitHub Repo Breach via Third-Party App
+slug: 2026-05-11-sailpoint-discloses-github-repo-breach-via-third-party-app
+date: '2026-05-11'
+excerpt: >-
+  SailPoint reported to the SEC that attackers accessed a subset of its GitHub
+  repositories on April 20 via a third-party app vulnerability.
+category: industry
+tags:
+  - sailpoint
+  - github
+  - supply-chain
+  - third-party-risk
+  - sec-filing
+language: en
+source_urls:
+  - 'https://www.securityweek.com/sailpoint-discloses-github-repository-hack/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-11-sailpoint-discloses-github-repo-breach-via-third-party-app
+cluster_key: 'topic:sailpoint-discloses-github-repository-hack'
+source_count: 1
+severity: high
+affected_sectors:
+  - identity-management
+  - software
+affected_regions:
+  - North America
+publish_tier: public
+---
+## Executive Summary
+
+SailPoint Technologies, an identity governance and administration provider, disclosed in a Securities and Exchange Commission (SEC) filing that attackers gained unauthorized access to a subset of its GitHub repositories on April 20, 2026. The breach was enabled by a vulnerability in a third-party application, which SailPoint says has since been remediated. The company’s incident response team terminated the unauthorized activity the same day. SailPoint stated that no customer data from production or staging environments was accessed, and no service interruption occurred. The company has not identified the threat actor or disclosed what data, if any, was exfiltrated from the compromised repositories.
+
+## Technical Analysis
+
+According to the SEC filing, the intrusion was detected on April 20, 2026, when SailPoint observed anomalous activity in a subset of its GitHub repositories. The company’s incident response team terminated the unauthorized access and contained the incident without disruption to customer-facing services. SailPoint attributed the compromise to a vulnerability in a third-party application — a common vector in software supply-chain attacks — but did not name the application or provide a CVE identifier. A third-party cybersecurity firm assisted with the investigation.
+
+SailPoint told the SEC that it found no evidence that customer data in its production or staging environments was accessed. The company directly notified customers whose information may have been stored in the affected repositories and informed the broader customer base that no additional action is required. SailPoint has not disclosed the type of data that may have been exposed, nor whether source code, credentials, build pipelines, or internal documentation were among the contents of the compromised repositories.
+
+SecurityWeek notes that the incident has not been linked to the recent spate of software supply-chain attacks claimed by the hacking group TeamPCP, which has targeted CI/CD tools and repository infrastructure. The TeamPCP group has been tied to compromises of Checkmarx Jenkins AST Plugin, Daemon Tools, and other development tools. Whether SailPoint’s breach shares any common infrastructure or TTPs with those campaigns remains unclear; SailPoint has not named any suspected actor.
+
+## Mitigations & Recommendations
+
+While SailPoint has addressed the third-party vulnerability that enabled the breach, organizations that use SailPoint’s identity governance products should monitor for any subsequent advisories from the company regarding repository contents or credential rotation. Defenders should review any GitHub personal access tokens, SSH keys, or CI/CD secrets that may have been stored in the affected repositories and rotate them if there is any indication of exposure. Organizations that integrate SailPoint products into their own software supply chains should verify the integrity of any code or artifacts pulled from SailPoint’s public or private repositories since April 20. The incident underscores the importance of restricting third-party application permissions in GitHub organizations and auditing repository access logs for anomalous patterns.
+
+## References
+
+- [SecurityWeek: SailPoint Discloses GitHub Repository Hack](https://www.securityweek.com/sailpoint-discloses-github-repository-hack/)

@@ -1,0 +1,49 @@
+---
+title: SailPoint 披露通过第三方应用程序 GitHub 仓库遭入侵
+slug: 2026-05-11-sailpoint-discloses-github-repo-breach-via-third-party-app
+date: '2026-05-11'
+excerpt: SailPoint 向 SEC 报告称，攻击者于 4 月 20 日通过第三方应用程序漏洞访问了其 GitHub 仓库的一个子集。
+category: industry
+tags:
+  - sailpoint
+  - github
+  - supply-chain
+  - third-party-risk
+  - sec-filing
+language: zh
+source_urls:
+  - 'https://www.securityweek.com/sailpoint-discloses-github-repository-hack/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-11-sailpoint-discloses-github-repo-breach-via-third-party-app
+cluster_key: 'topic:sailpoint-discloses-github-repository-hack'
+source_count: 1
+severity: high
+affected_sectors:
+  - identity-management
+  - software
+affected_regions:
+  - North America
+publish_tier: public
+---
+## SailPoint Discloses GitHub Repo Breach via Third-Party App
+
+## 执行摘要
+
+身份治理和管理提供商SailPoint Technologies在证券交易委员会（SEC）的文件中披露，攻击者在2026年4月20日未经授权访问了其GitHub代码库的一个子集。该漏洞是由第三方应用程序中的一个漏洞造成的，SailPoint表示该漏洞已经被修复。公司的应急响应团队在同一天终止了未经授权的活动。SailPoint声明，没有从生产或暂存环境中访问任何客户数据，也没有发生服务中断。该公司尚未确定威胁行为者或披露从被破坏的代码库中窃取了哪些数据（如果有的话）。
+
+## 技术分析
+
+根据SEC文件，SailPoint在2026年4月20日检测到其GitHub代码库的一个子集中的异常活动，从而发现了入侵。公司的应急响应团队终止了未经授权的访问，并在不影响面向客户的服务的情况下控制了事件。SailPoint将此次破坏归因于第三方应用程序中的一个漏洞——这是软件供应链攻击中的一个常见向量——但没有命名该应用程序或提供CVE标识符。一家第三方网络安全公司协助进行了调查。
+
+SailPoint告诉SEC，它没有发现任何证据表明其生产或暂存环境中的客户数据被访问。该公司直接通知了可能存储在受影响代码库中的信息的客户，并告知更广泛的客户基础不需要采取任何额外行动。SailPoint没有披露可能暴露的数据类型，也没有说明源代码、凭证、构建管道或内部文档是否包含在被破坏的代码库中。
+
+SecurityWeek指出，该事件尚未与黑客组织TeamPCP声称的最近一系列软件供应链攻击联系起来，该组织已针对CI/CD工具和代码库基础设施。TeamPCP组织已与Checkmarx Jenkins AST插件、Daemon Tools和其他开发工具的破坏联系在一起。SailPoint的违规是否与这些活动共享任何共同的基础设施或TTP尚不清楚；SailPoint没有命名任何可疑的行为者。
+
+## 缓解措施与建议
+
+虽然SailPoint已经解决了使违规成为可能的第三方漏洞，但使用SailPoint身份治理产品的组织应监控该公司关于代码库内容或凭证轮换的任何后续咨询。防御者应审查可能存储在受影响代码库中的任何GitHub个人访问令牌、SSH密钥或CI/CD密钥，并在有任何暴露迹象时轮换它们。将SailPoint产品集成到自己的软件供应链中的组织应验证自4月20日以来从SailPoint的公共或私有代码库中提取的任何代码或工件的完整性。该事件强调了限制GitHub组织中第三方应用程序权限的重要性，并审计代码库访问日志以寻找异常模式。
+
+## 参考资料
+
+- [SecurityWeek: SailPoint Discloses GitHub Repository Hack](https://www.securityweek.com/sailpoint-discloses-github-repository-hack/)
