@@ -1,0 +1,59 @@
+---
+title: Devs Palace ERP 在线 XSS 漏洞允许远程脚本注入
+slug: 2026-05-11-devs-palace-erp-online-xss-flaws-allow-remote-script-injection
+date: '2026-05-11'
+excerpt: >-
+  Devs Palace ERP 在线版本 4.0.0 及以下存在两个存储型 XSS 漏洞，允许远程攻击者通过
+  /inventory/add_new_customer 和 /inventory/sales_save 注入脚本。
+category: vulnerabilities
+tags:
+  - devs-palace
+  - erp-online
+  - xss
+  - cve-2026-8255
+  - cve-2026-8254
+  - stored-cross-site-scripting
+language: zh
+source_urls:
+  - 'https://olografix.org/acme/_poc/ERP_Online-POC1.gif'
+  - 'https://olografix.org/acme/_poc/ERP_Online-POC1.gif'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-11-devs-palace-erp-online-xss-flaws-allow-remote-script-injection
+cluster_key: 'cve:CVE-2026-8255'
+source_count: 2
+severity: medium
+cvss_score: 3
+cve_ids:
+  - CVE-2026-8255
+  - CVE-2026-8254
+affected_sectors:
+  - enterprise software
+  - business services
+publish_tier: brief
+public_gate_reasons:
+  - body_too_thin
+---
+## 执行摘要
+
+Devs Palace ERP Online，一个基于网络的企业资源规划平台，已公开披露存在两个跨站脚本（XSS）漏洞。这两个漏洞被追踪为CVE-2026-8255和CVE-2026-8254，CVSS v3.1基础得分均为3.3，影响包括4.0.0在内的所有版本。这些漏洞分别存在于`/inventory/add_new_customer`和`/inventory/sales_save`端点，允许远程攻击者注入任意脚本。已公开概念验证（PoC）漏洞利用代码，根据NVD条目，供应商未对披露尝试做出响应。运行未修补版本的Devs Palace ERP Online的组织应立即应用缓解措施，以应对这些漏洞。
+
+## 技术分析
+
+这两个漏洞都是Devs Palace ERP Online库存管理模块中的存储型XSS（CWE-79）问题。CVE-2026-8255影响`/inventory/add_new_customer`端点，而CVE-2026-8254影响`/inventory/sales_save`。NVD条目将漏洞描述为对各自文件未知部分的操纵，导致跨站脚本。由于注入是存储型的，攻击者可以通过精心构造的HTTP请求向易受攻击的表单字段提交恶意负载。然后负载被保存在服务器上，并在任何随后查看受影响页面的用户浏览器中执行——包括具有提升权限的管理员用户。
+
+根据披露，攻击可以在不需要认证的情况下远程发起，尽管CVSS向量字符串（未在源材料中发布）可能反映了反射或存储型XSS对机密性和完整性的低影响，通常影响范围有限。CVSS 3.3得分表明在标准评分标准下是一个低严重性发现，但公共PoC代码的可用性提高了实际风险，特别是在ERP系统处理敏感业务数据（如客户记录、定价和库存水平）的环境中。
+
+漏洞已被公开，NVD指出供应商在披露早期就被联系，但没有任何回应。这种供应商参与的缺失意味着截至发布日期，没有官方补丁或咨询存在。
+
+## 缓解措施与建议
+
+由于Devs Palace未对披露做出响应且没有补丁可用，防御者必须依赖补偿控制。最有效的即时措施是限制对ERP Online网络界面的网络访问，仅允许受信任的内部网络或VPN连接用户访问。可以配置Web应用程序防火墙（WAF）规则，以阻止`add_new_customer`和`sales_save`端点中的常见XSS负载模式，如`<script>`标签、事件处理属性（例如`onload`、`onerror`）和编码的JavaScript URI。
+
+如果组织能够访问源代码或可以部署一个清理响应的反向代理，还应实施应用层的输入验证和输出编码。鉴于公共漏洞利用代码的可用性，建议监控Web服务器日志中对两个易受攻击端点的异常POST请求。任何成功的利用都应作为潜在的账户接管或数据泄露事件进行调查。
+
+## 参考资料
+
+- [NVD Entry for CVE-2026-8255](https://nvd.nist.gov/vuln/detail/CVE-2026-8255)
+- [NVD Entry for CVE-2026-8254](https://nvd.nist.gov/vuln/detail/CVE-2026-8254)
+- [Public PoC Exploit](https://olografix.org/acme/_poc/ERP_Online-POC1.gif)

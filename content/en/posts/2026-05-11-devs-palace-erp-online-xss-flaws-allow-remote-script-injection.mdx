@@ -1,0 +1,58 @@
+---
+title: Devs Palace ERP Online XSS Flaws Allow Remote Script Injection
+slug: 2026-05-11-devs-palace-erp-online-xss-flaws-allow-remote-script-injection
+date: '2026-05-11'
+excerpt: >-
+  Two stored XSS vulnerabilities in Devs Palace ERP Online up to 4.0.0 let
+  remote attackers inject scripts via /inventory/add_new_customer and
+  /inventory/sales_save.
+category: vulnerabilities
+tags:
+  - devs-palace
+  - erp-online
+  - xss
+  - cve-2026-8255
+  - cve-2026-8254
+  - stored-cross-site-scripting
+language: en
+source_urls:
+  - 'https://olografix.org/acme/_poc/ERP_Online-POC1.gif'
+  - 'https://olografix.org/acme/_poc/ERP_Online-POC1.gif'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-11-devs-palace-erp-online-xss-flaws-allow-remote-script-injection
+cluster_key: 'cve:CVE-2026-8255'
+source_count: 2
+severity: medium
+cvss_score: 3
+cve_ids:
+  - CVE-2026-8255
+  - CVE-2026-8254
+affected_sectors:
+  - enterprise software
+  - business services
+publish_tier: public
+---
+## Executive Summary
+
+Two cross-site scripting (XSS) vulnerabilities have been publicly disclosed in Devs Palace ERP Online, a web-based enterprise resource planning platform. Tracked as CVE-2026-8255 and CVE-2026-8254, both flaws carry a CVSS v3.1 base score of 3.3 and affect versions up to and including 4.0.0. The vulnerabilities reside in the `/inventory/add_new_customer` and `/inventory/sales_save` endpoints, respectively, and allow remote attackers to inject arbitrary scripts. Public proof-of-concept (PoC) exploit code has been released, and the vendor has not responded to disclosure attempts, according to the NVD entry. Organizations running unpatched instances of Devs Palace ERP Online should treat these flaws as exploitable and apply mitigations immediately.
+
+## Technical Analysis
+
+Both vulnerabilities are stored XSS (CWE-79) issues in the inventory management module of Devs Palace ERP Online. CVE-2026-8255 affects the `/inventory/add_new_customer` endpoint, while CVE-2026-8254 affects `/inventory/sales_save`. The NVD entries describe the flaw as a manipulation of an unknown part of the respective files that leads to cross-site scripting. Because the injection is stored, an attacker can submit a malicious payload through a crafted HTTP request to the vulnerable form fields. The payload is then persisted on the server and executed in the browser of any user who subsequently views the affected page — including administrative users with elevated privileges.
+
+According to the disclosure, the attack can be launched remotely without authentication, though the CVSS vector string (not published in the source material) likely reflects the low impact to confidentiality and integrity typical of reflected or stored XSS with limited scope. The CVSS 3.3 score indicates a low-severity finding under the standard scoring rubric, but the availability of public PoC code raises the practical risk, especially in environments where ERP systems handle sensitive business data such as customer records, pricing, and inventory levels.
+
+The exploit has been made available to the public, and the NVD notes that the vendor was contacted early about this disclosure but did not respond in any way. This lack of vendor engagement means no official patch or advisory exists as of the publication date.
+
+## Mitigations & Recommendations
+
+Because Devs Palace has not responded to the disclosure and no patch is available, defenders must rely on compensating controls. The most effective immediate measure is to restrict network access to the ERP Online web interface, limiting exposure to trusted internal networks or VPN-connected users only. Web application firewall (WAF) rules can be configured to block common XSS payload patterns in the `add_new_customer` and `sales_save` endpoints, such as `<script>` tags, event handler attributes (e.g., `onload`, `onerror`), and encoded JavaScript URIs.
+
+Organizations should also implement input validation and output encoding at the application layer if they have access to the source code or can deploy a reverse proxy that sanitizes responses. Given the public exploit availability, monitoring web server logs for anomalous POST requests to the two vulnerable endpoints is advised. Any successful exploitation should be investigated as a potential account takeover or data exfiltration event.
+
+## References
+
+- [NVD Entry for CVE-2026-8255](https://nvd.nist.gov/vuln/detail/CVE-2026-8255)
+- [NVD Entry for CVE-2026-8254](https://nvd.nist.gov/vuln/detail/CVE-2026-8254)
+- [Public PoC Exploit](https://olografix.org/acme/_poc/ERP_Online-POC1.gif)
