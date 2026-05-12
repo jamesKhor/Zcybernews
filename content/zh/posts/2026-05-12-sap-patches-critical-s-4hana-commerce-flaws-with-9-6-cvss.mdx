@@ -1,0 +1,66 @@
+---
+title: SAP 修补关键 S/4HANA 和 Commerce 漏洞，CVSS 评分为 9.6
+slug: 2026-05-12-sap-patches-critical-s-4hana-commerce-flaws-with-9-6-cvss
+date: '2026-05-12'
+excerpt: >-
+  SAP 在 2026 年 5 月发布了 15 个安全通告，修复了 S/4HANA (CVE-2026-34260) 和 Commerce
+  (CVE-2026-34263) 中的两个关键代码注入漏洞，两者的 CVSS 评分均为 9.6，以及一个...
+category: vulnerabilities
+tags:
+  - sap
+  - s/4hana
+  - sap-commerce
+  - cve-2026-34260
+  - cve-2026-34263
+  - sql-injection
+  - code-injection
+  - patch-tuesday
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/sap-patches-critical-s-4hana-commerce-vulnerabilities/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-sap-patches-critical-s-4hana-commerce-flaws-with-9-6-cvss
+cluster_key: 'topic:patches-s4hana-commerce'
+source_count: 1
+severity: critical
+cvss_score: 9.6
+cve_ids:
+  - CVE-2026-34260
+  - CVE-2026-34263
+  - CVE-2026-34259
+affected_sectors:
+  - enterprise software
+  - manufacturing
+  - retail
+  - financial services
+publish_tier: public
+---
+## 执行摘要
+
+SAP 在 2026 年 5 月 12 日发布了 15 个安全通告，作为其每月安全补丁日的一部分，解决了 S/4HANA 和 SAP Commerce 中的两个关键漏洞，这两个漏洞的 CVSS 评分均为 9.6。这些漏洞 —— CVE-2026-34260（S/4HANA 中的 SQL 注入）和 CVE-2026-34263（Commerce 中缺少身份验证检查）—— 可能允许经过身份验证和未经身份验证的攻击者分别泄露数据或执行任意代码。同时修补了 Forecasting & Replenishment 中的第三个高严重性的操作系统命令注入漏洞（CVE-2026-34259）。SAP 声明这些漏洞尚未在野外被利用，但根据 SecurityWeek 的报道，SAP 敦促客户尽快应用补丁。
+
+## 技术分析
+
+**CVE-2026-34260 — S/4HANA SQL 注入（CVSS 9.6）**
+
+S/4HANA 中最严重的漏洞源于缺少输入验证和清理，允许经过身份验证的攻击者注入恶意 SQL 语句，据 SecurityWeek 引用的 SAP 安全公司 Onapsis 称。易受攻击的代码路径仅允许对数据进行读取访问，这意味着成功的利用将破坏应用程序的机密性和可用性，但不会影响完整性。9.6 的 CVSS 评分反映了利用的容易程度和在受影响的 S/4HANA 部署中广泛数据暴露的潜力。
+
+**CVE-2026-34263 — SAP Commerce 缺少身份验证检查（CVSS 9.6）**
+
+SAP Commerce 的云配置组件包含一个由于过于宽松的安全配置和不当规则排序导致的身份验证检查缺失，Onapsis 解释说。未经身份验证的攻击者可以利用这一点执行恶意配置上传和代码注入，导致任意服务器端代码执行。这尤其危险，因为 Commerce 平台通常处理面向客户的电子商务运营、支付处理和个人数据。
+
+**CVE-2026-34259 — Forecasting & Replenishment 操作系统命令注入（高严重性）**
+
+这个漏洞允许经过身份验证的攻击者在底层服务器上执行任意操作系统命令。虽然源材料中没有明确提供 CVSS 评分，但 SAP 将其归类为高严重性。Forecasting & Replenishment 模块用于供应链规划，使其成为企业网络内横向移动的潜在途径。
+
+其余 12 个安全通告涉及 SAP 产品系列中的中低严重性问题：NetWeaver、S/4HANA、Business Server Pages 应用程序、BusinessObjects、Strategic Enterprise Management、Commerce Cloud、SAPUI5、Financial Consolidation、Incentive 和 Commission Management，以及 HANA 部署基础设施（HDI）部署库。这些较低严重性漏洞的具体技术细节在源材料中没有披露。
+
+## 缓解措施与建议
+
+由于 CVE-2026-34260 和 CVE-2026-34263 的关键严重性和远程代码执行或数据泄露的潜力，SAP 客户应优先应用这些补丁。补丁可通过 SAP 的安全补丁日通告获得。运行 S/4HANA 的组织还应审查数据库访问控制，并监控可能表明利用尝试的异常 SQL 查询。对于 SAP Commerce 部署，在补丁推出期间，网络分段和 Web 应用程序防火墙规则可以帮助减轻对云配置端点的未经身份验证的访问。Forecasting & Replenishment 模块补丁（CVE-2026-34259）应紧随其后，特别是在经过身份验证的用户可能具有提升权限的环境中。SAP 尚未报告活跃的利用情况，但鉴于这些产品在企业资源规划和电子商务中的广泛使用，攻击面是显著的。
+
+## 参考资料
+
+- [SecurityWeek: SAP Patches Critical S/4HANA, Commerce Vulnerabilities](https://www.securityweek.com/sap-patches-critical-s-4hana-commerce-vulnerabilities/)

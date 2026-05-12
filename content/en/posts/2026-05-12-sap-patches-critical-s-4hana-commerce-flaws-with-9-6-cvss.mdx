@@ -1,0 +1,67 @@
+---
+title: 'SAP Patches Critical S/4HANA, Commerce Flaws with 9.6 CVSS'
+slug: 2026-05-12-sap-patches-critical-s-4hana-commerce-flaws-with-9-6-cvss
+date: '2026-05-12'
+excerpt: >-
+  SAP released 15 security notes for May 2026, fixing two critical code
+  injection flaws in S/4HANA (CVE-2026-34260) and Commerce (CVE-2026-34263),
+  both rated 9.6 CVSS, and a...
+category: vulnerabilities
+tags:
+  - sap
+  - s/4hana
+  - sap-commerce
+  - cve-2026-34260
+  - cve-2026-34263
+  - sql-injection
+  - code-injection
+  - patch-tuesday
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/sap-patches-critical-s-4hana-commerce-vulnerabilities/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-sap-patches-critical-s-4hana-commerce-flaws-with-9-6-cvss
+cluster_key: 'topic:patches-s4hana-commerce'
+source_count: 1
+severity: critical
+cvss_score: 9.6
+cve_ids:
+  - CVE-2026-34260
+  - CVE-2026-34263
+  - CVE-2026-34259
+affected_sectors:
+  - enterprise software
+  - manufacturing
+  - retail
+  - financial services
+publish_tier: public
+---
+## Executive Summary
+
+SAP released 15 security notes on May 12, 2026, as part of its monthly Security Patch Day, addressing two critical vulnerabilities in S/4HANA and SAP Commerce, both carrying a CVSS score of 9.6. The flaws — CVE-2026-34260 (SQL injection in S/4HANA) and CVE-2026-34263 (missing authentication check in Commerce) — could allow authenticated and unauthenticated attackers, respectively, to leak data or execute arbitrary code. A third high-severity OS command injection bug (CVE-2026-34259) in Forecasting & Replenishment was also patched. SAP stated none of the vulnerabilities have been exploited in the wild, but urged customers to apply patches promptly, according to SecurityWeek.
+
+## Technical Analysis
+
+**CVE-2026-34260 — S/4HANA SQL Injection (CVSS 9.6)**
+
+The most critical flaw in S/4HANA stems from missing input validation and sanitization, allowing an authenticated attacker to inject malicious SQL statements, according to Onapsis, an SAP security firm cited by SecurityWeek. The vulnerable code path only permits read access to data, meaning a successful exploit would compromise application confidentiality and availability but not integrity. The 9.6 CVSS score reflects the ease of exploitation and potential for widespread data exposure across affected S/4HANA deployments.
+
+**CVE-2026-34263 — SAP Commerce Missing Authentication Check (CVSS 9.6)**
+
+SAP Commerce's cloud configuration component contains a missing authentication check caused by an overly permissive security configuration with improper rule ordering, Onapsis explained. An unauthenticated attacker can exploit this to perform malicious configuration uploads and code injection, resulting in arbitrary server-side code execution. This is particularly dangerous because Commerce platforms often handle customer-facing e-commerce operations, payment processing, and personal data.
+
+**CVE-2026-34259 — Forecasting & Replenishment OS Command Injection (High Severity)**
+
+This flaw allows authenticated attackers to execute arbitrary operating system commands on the underlying server. While the CVSS score was not explicitly provided in the source, SAP classified it as high severity. The Forecasting & Replenishment module is used for supply chain planning, making this a potential vector for lateral movement within enterprise networks.
+
+The remaining 12 security notes address medium- and low-severity issues across a broad range of SAP products: NetWeaver, S/4HANA, Business Server Pages Application, BusinessObjects, Strategic Enterprise Management, Commerce Cloud, SAPUI5, Financial Consolidation, Incentive and Commission Management, and the HANA Deployment Infrastructure (HDI) deploy library. Specific technical details for these lower-severity bugs were not disclosed in the source material.
+
+## Mitigations & Recommendations
+
+SAP customers should prioritize applying the patches for CVE-2026-34260 and CVE-2026-34263 due to their critical severity and potential for remote code execution or data exfiltration. The patches are available via SAP's Security Patch Day notes. Organizations running S/4HANA should also review database access controls and monitor for anomalous SQL queries that may indicate exploitation attempts. For SAP Commerce deployments, network segmentation and web application firewall rules can help mitigate unauthenticated access to cloud configuration endpoints while patches are being rolled out. The Forecasting & Replenishment module patch (CVE-2026-34259) should follow, particularly for environments where authenticated users may have elevated privileges. SAP has not reported active exploitation, but the attack surface is significant given the widespread use of these products in enterprise resource planning and e-commerce.
+
+## References
+
+- [SecurityWeek: SAP Patches Critical S/4HANA, Commerce Vulnerabilities](https://www.securityweek.com/sap-patches-critical-s-4hana-commerce-vulnerabilities/)
