@@ -1,0 +1,63 @@
+---
+title: Microsoft Patches 120 Flaws in May 2026 Patch Tuesday Update
+slug: 2026-05-12-microsoft-patches-120-flaws-in-may-2026-patch-tuesday-update
+date: '2026-05-12'
+excerpt: >-
+  Microsoft's May 2026 Patch Tuesday fixes 120 vulnerabilities across Windows 11
+  25H2, 24H2, and 23H2. KB5089549 and KB5087420 include security fixes, Xbox
+  mode, and batch file...
+category: industry
+tags:
+  - microsoft
+  - patch-tuesday
+  - windows-11
+  - kb5089549
+  - kb5087420
+  - security-updates
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5089549-and-kb5087420-cumulative-updates-released/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-microsoft-patches-120-flaws-in-may-2026-patch-tuesday-update
+cluster_key: 'kb:KB5087420+KB5089549'
+source_count: 1
+severity: high
+affected_sectors:
+  - technology
+  - enterprise
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+Microsoft released its May 2026 Patch Tuesday cumulative updates for Windows 11, addressing 120 vulnerabilities across supported versions. The updates, KB5089549 for Windows 11 25H2 and 24H2 and KB5087420 for 23H2, are mandatory security releases that also introduce new features including Xbox mode, expanded archive format support in File Explorer, and a new batch file execution hardening capability for administrators. The updates are available via Windows Update and the Microsoft Update Catalog.
+
+## Technical Analysis
+
+According to Microsoft's release notes published May 12, 2026, the cumulative updates patch 120 vulnerabilities discovered in previous months. The specific CVEs addressed were not enumerated in the public release notes at time of writing, which is consistent with Microsoft's typical Patch Tuesday disclosure cadence — individual CVE details often appear on the Security Update Guide portal later in the day.
+
+KB5089549 applies to Windows 11 version 25H2 (build 26200.8457) and version 24H2 (build 26100.8457). KB5087420 updates Windows 11 version 23H2 to build 22631.7079. Both updates contain identical security fixes, with no version-exclusive patches.
+
+Beyond security fixes, the updates introduce several functional changes:
+
+- **Xbox mode**: A new desktop mode that emulates an Xbox console experience on PC.
+- **Expanded archive support**: File Explorer now handles uu, cpio, xar, and NuGet Package (nupkg) formats natively.
+- **Batch file hardening**: Administrators can enable a new registry key (`LockBatchFilesWhenInUse` under `HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor`) that prevents batch files from being modified during execution. This can also be enforced via Application Control for Business policy.
+- **Haptic feedback**: Support for haptic signals on compatible input devices, including Surface Slim Pen 2, ASUS Pen 3.0, and MSI Pen 2, with future support for mice like Logitech MX Master 4.
+- **FAT32 formatting limit increase**: The command-line limit for formatting FAT32 volumes has been raised from 32GB to 2TB.
+- **Windows Hello reliability**: Improvements to Face and Fingerprint authentication persistence across upgrades.
+- **Delivery Optimization memory fix**: A fix reduces excessive memory consumption by the update delivery component.
+- **Printer Protected Print Mode icon**: A new icon in print settings indicates printer support for Windows Protected Print Mode.
+
+Microsoft also addressed several non-security bugs: a white flash in dark mode File Explorer, taskbar system tray loading reliability, keyboard navigation for emoji panels, and Fluid Dictation setting persistence. The updates fix Microsoft Store download errors 0x80070057, 0x80240008, and 0x80073d28.
+
+## Mitigations & Recommendations
+
+Organizations should deploy KB5089549 and KB5087420 through their standard patch management workflows. Given the 120 vulnerability fixes, delay in applying these updates increases exposure to known exploits. Administrators should review the batch file hardening registry key (`LockBatchFilesWhenInUse`) for potential deployment in environments where script integrity is a concern. The FAT32 formatting change and archive format expansion require no user action but may affect storage workflows. Monitor the Microsoft Security Update Guide for individual CVE disclosures as they are published.
+
+## References
+
+- BleepingComputer: [Windows 11 KB5089549 & KB5087420 cumulative updates released](https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5089549-and-kb5087420-cumulative-updates-released/)

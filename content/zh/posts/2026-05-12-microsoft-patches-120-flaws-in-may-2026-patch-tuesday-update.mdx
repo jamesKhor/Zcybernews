@@ -1,0 +1,65 @@
+---
+title: 微软在2026年5月补丁星期二更新中修补了120个漏洞
+slug: 2026-05-12-microsoft-patches-120-flaws-in-may-2026-patch-tuesday-update
+date: '2026-05-12'
+excerpt: >-
+  微软2026年5月补丁星期二修复了Windows 11
+  25H2、24H2和23H2中的120个漏洞。KB5089549和KB5087420包括安全修复、Xbox模式和批量文件...
+category: industry
+tags:
+  - microsoft
+  - patch-tuesday
+  - windows-11
+  - kb5089549
+  - kb5087420
+  - security-updates
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5089549-and-kb5087420-cumulative-updates-released/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-microsoft-patches-120-flaws-in-may-2026-patch-tuesday-update
+cluster_key: 'kb:KB5087420+KB5089549'
+source_count: 1
+severity: high
+affected_sectors:
+  - technology
+  - enterprise
+affected_regions:
+  - Global
+publish_tier: public
+---
+ARTICLE TITLE: 微软在2026年5月补丁星期二更新中修补了120个漏洞
+
+ARTICLE BODY:
+## 执行摘要
+
+微软发布了2026年5月补丁星期二针对Windows 11的累积更新，解决了支持版本中的120个漏洞。更新包括KB5089549用于Windows 11 25H2和24H2，以及KB5087420用于23H2，这些强制性的安全发布还引入了新功能，包括Xbox模式、文件资源管理器中扩展的归档格式支持，以及为管理员提供的新批处理文件执行硬化功能。这些更新可通过Windows Update和Microsoft Update目录获得。
+
+## 技术分析
+
+根据微软在2026年5月12日发布的发布说明，累积更新修补了前几个月发现的120个漏洞。在撰写本文时，公共发布说明中没有列出具体的CVE，这与微软典型的补丁星期二披露节奏一致——个别CVE详情通常在当天晚些时候出现在安全更新指南门户上。
+
+KB5089549适用于Windows 11版本25H2（构建26200.8457）和版本24H2（构建26100.8457）。KB5087420将Windows 11版本23H2更新至构建22631.7079。两个更新包含相同的安全修复，没有版本独有的补丁。
+
+除了安全修复外，更新还引入了几个功能性变化：
+
+- **Xbox模式**：一种新的桌面模式，模拟PC上的Xbox游戏机体验。
+- **扩展归档支持**：文件资源管理器现在可以原生处理uu、cpio、xar和NuGet包（nupkg）格式。
+- **批处理文件硬化**：管理员可以启用一个新的注册表键（在`HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor`下的`LockBatchFilesWhenInUse`），防止在执行期间修改批处理文件。这也可以通过业务应用程序控制策略强制执行。
+- **触觉反馈**：支持兼容输入设备的触觉信号，包括Surface Slim Pen 2、ASUS Pen 3.0和MSI Pen 2，未来还将支持Logitech MX Master 4等鼠标。
+- **FAT32格式化限制增加**：格式化FAT32卷的命令行限制已从32GB提高到2TB。
+- **Windows Hello可靠性**：改进了在升级过程中面部和指纹识别认证的持久性。
+- **交付优化内存修复**：修复减少了更新交付组件的过度内存消耗。
+- **打印机受保护打印模式图标**：打印设置中的新图标表示打印机支持Windows受保护打印模式。
+
+微软还解决了几个非安全漏洞：暗色模式文件资源管理器中的白色闪烁、任务栏系统托盘加载可靠性、表情面板的键盘导航，以及流体听写设置的持久性。更新修复了Microsoft Store下载错误0x80070057、0x80240008和0x80073d28。
+
+## 缓解措施与建议
+
+组织应通过其标准补丁管理流程部署KB5089549和KB5087420。鉴于修复了120个漏洞，延迟应用这些更新会增加对已知漏洞的暴露。管理员应审查批处理文件硬化注册表键（`LockBatchFilesWhenInUse`），以确定是否在脚本完整性受到关注的环境下部署。FAT32格式化变更和归档格式扩展不需要用户操作，但可能会影响存储工作流。监控Microsoft安全更新指南，以获取发布的个别CVE披露。
+
+## 参考资料
+
+- BleepingComputer: [Windows 11 KB5089549 & KB5087420累积更新发布](https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5089549-and-kb5087420-cumulative-updates-released/)
