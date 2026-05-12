@@ -1,0 +1,60 @@
+---
+title: Ivanti 修补 Secure Access Client、EPM、Xtraction、VTM 中的漏洞
+slug: 2026-05-12-ivanti-patches-flaws-in-secure-access-client-epm-xtraction-vtm
+date: '2026-05-12'
+excerpt: >-
+  Ivanti 披露了 Secure Access Client、Endpoint Manager、Xtraction 和 Virtual Traffic
+  Manager 中的漏洞。没有证据表明这些漏洞被利用。
+category: industry
+tags:
+  - ivanti
+  - patch-advisory
+  - secure-access-client
+  - endpoint-manager
+  - xtraction
+  - virtual-traffic-manager
+language: zh
+source_urls:
+  - 'https://www.ivanti.com/blog/may-2026-security-update'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-ivanti-patches-flaws-in-secure-access-client-epm-xtraction-vtm
+cluster_key: 'topic:2026-update-advisory'
+source_count: 1
+severity: high
+affected_sectors:
+  - enterprise
+  - government
+  - healthcare
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+Ivanti 在 2026 年 5 月 12 日发布了其月度安全补丁，披露了四个产品中的漏洞：Ivanti Secure Access Client、Ivanti Xtraction、Ivanti Virtual Traffic Manager 和 Ivanti Endpoint Manager (EPM)。公司声明没有证据表明这些漏洞在野外被利用。值得注意的是，Ivanti 将其中一些漏洞的发现归功于一个内部项目，该项目将高级 LLM 模型整合到其产品安全测试流程中——供应商表示这种方法识别出了传统 SAST 和 DAST 工具遗漏的漏洞。
+
+## 技术分析
+
+根据 Ivanti 发布的咨询报告，漏洞影响以下产品：
+
+- **Ivanti Secure Access Client** — 公告中没有列举具体漏洞的详细信息；Ivanti 指导客户查看每个产品的单独安全咨询。
+- **Ivanti Xtraction** — 类似地，除了产品名称外，博客文章中没有提供技术细节。
+- **Ivanti Virtual Traffic Manager** — 摘要中没有披露 CVE ID 或 CVSS 评分。
+- **Ivanti Endpoint Manager (EPM)** — 摘要中没有披露 CVE ID 或 CVSS 评分。
+
+Ivanti 没有在博客文章中发布 CVE 标识符、CVSS 评分或漏洞类型（例如，RCE、SQLi、XSS）。公司反而链接到每个产品的单独安全咨询页面，这些页面可能包含这些细节。博客文章强调这些漏洞不影响任何其他 Ivanti 解决方案。
+
+Ivanti 披露其产品安全团队最近开始将多个高级 LLM 模型整合到其工程和红队流程中。公司声称这个项目已经识别出传统静态和动态分析工具遗漏的漏洞，包括今天修补的一些漏洞。Ivanti 表示，随着这些 AI 辅助工具的完善和进一步整合，预计漏洞披露将增加。
+
+## 缓解措施与建议
+
+Ivanti 建议客户为每个受影响的产品应用相关的安全更新。详细的补救说明可在博客文章中链接的产品特定安全咨询中找到。Ivanti 建议客户通过 Ivanti Innovators Hub 订阅警报，并关注安全博客以获取未来的披露。使用这四种受影响产品的组织应根据其部署的风险概况优先进行修补，尽管尚未报告任何活跃利用。
+
+## 参考资料
+
+- [Ivanti May 2026 Security Update](https://www.ivanti.com/blog/may-2026-security-update)
+- [Ivanti Secure Access Client Advisory](https://www.ivanti.com/blog/topics/security-advisory) (linked from blog)
+- [Ivanti Xtraction Advisory](https://www.ivanti.com/blog/topics/security-advisory) (linked from blog)
+- [Ivanti Virtual Traffic Manager Advisory](https://www.ivanti.com/blog/topics/security-advisory) (linked from blog)
+- [Ivanti Endpoint Manager Advisory](https://www.ivanti.com/blog/topics/security-advisory) (linked from blog)

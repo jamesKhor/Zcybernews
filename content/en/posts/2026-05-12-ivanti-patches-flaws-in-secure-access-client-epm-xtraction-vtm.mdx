@@ -1,0 +1,60 @@
+---
+title: 'Ivanti Patches Flaws in Secure Access Client, EPM, Xtraction, VTM'
+slug: 2026-05-12-ivanti-patches-flaws-in-secure-access-client-epm-xtraction-vtm
+date: '2026-05-12'
+excerpt: >-
+  Ivanti disclosed vulnerabilities in Secure Access Client, Endpoint Manager,
+  Xtraction, and Virtual Traffic Manager. No evidence of exploitation.
+category: industry
+tags:
+  - ivanti
+  - patch-advisory
+  - secure-access-client
+  - endpoint-manager
+  - xtraction
+  - virtual-traffic-manager
+language: en
+source_urls:
+  - 'https://www.ivanti.com/blog/may-2026-security-update'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-ivanti-patches-flaws-in-secure-access-client-epm-xtraction-vtm
+cluster_key: 'topic:2026-update-advisory'
+source_count: 1
+severity: high
+affected_sectors:
+  - enterprise
+  - government
+  - healthcare
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+Ivanti released its monthly security patches on May 12, 2026, disclosing vulnerabilities across four products: Ivanti Secure Access Client, Ivanti Xtraction, Ivanti Virtual Traffic Manager, and Ivanti Endpoint Manager (EPM). The company stated it has no evidence of any of these flaws being exploited in the wild. Notably, Ivanti attributed the discovery of some of these vulnerabilities to an internal project integrating advanced LLM models into its product security testing pipeline — an approach the vendor says identified flaws that traditional SAST and DAST tools missed.
+
+## Technical Analysis
+
+According to the advisory published by Ivanti, the vulnerabilities affect the following products:
+
+- **Ivanti Secure Access Client** — details of the specific flaw(s) were not enumerated in the announcement; Ivanti directs customers to the individual security advisory for each product.
+- **Ivanti Xtraction** — similarly, no technical specifics were provided in the blog post beyond the product name.
+- **Ivanti Virtual Traffic Manager** — no CVE IDs or CVSS scores were disclosed in the summary.
+- **Ivanti Endpoint Manager (EPM)** — no CVE IDs or CVSS scores were disclosed in the summary.
+
+Ivanti did not publish CVE identifiers, CVSS scores, or vulnerability types (e.g., RCE, SQLi, XSS) in the blog post. The company instead linked to separate security advisory pages for each product, which may contain that detail. The blog post emphasized that the vulnerabilities do not impact any other Ivanti solutions.
+
+Ivanti disclosed that its product security team recently began integrating multiple advanced LLM models into its engineering and red-team processes. The company claims this project has already identified vulnerabilities that traditional static and dynamic analysis tools missed, including some of those patched today. Ivanti stated it expects an increase in vulnerability disclosures as these AI-assisted tools are refined and further integrated.
+
+## Mitigations & Recommendations
+
+Ivanti advises customers to apply the relevant security updates for each affected product. Detailed remediation instructions are available in the product-specific security advisories linked from the blog post. Ivanti recommends that customers subscribe to alerts through the Ivanti Innovators Hub and follow the security blog for future disclosures. Organizations using any of the four affected products should prioritize patching based on the risk profile of their deployment, even though no active exploitation has been reported.
+
+## References
+
+- [Ivanti May 2026 Security Update](https://www.ivanti.com/blog/may-2026-security-update)
+- [Ivanti Secure Access Client Advisory](https://www.ivanti.com/blog/topics/security-advisory) (linked from blog)
+- [Ivanti Xtraction Advisory](https://www.ivanti.com/blog/topics/security-advisory) (linked from blog)
+- [Ivanti Virtual Traffic Manager Advisory](https://www.ivanti.com/blog/topics/security-advisory) (linked from blog)
+- [Ivanti Endpoint Manager Advisory](https://www.ivanti.com/blog/topics/security-advisory) (linked from blog)
