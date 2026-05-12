@@ -1,0 +1,53 @@
+---
+title: 'West Pharma Hit by Ransomware, Systems Disrupted Globally'
+slug: 2026-05-12-west-pharma-hit-by-ransomware-systems-disrupted-globally
+date: '2026-05-12'
+excerpt: >-
+  West Pharmaceutical Services took systems offline globally after a May 4
+  ransomware attack with data exfiltration. Unit 42 is investigating; ransom may
+  have been paid.
+category: industry
+tags:
+  - ransomware
+  - west-pharmaceutical-services
+  - unit-42
+  - sec-filing
+  - healthcare
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-west-pharma-hit-by-ransomware-systems-disrupted-globally
+cluster_key: 'topic:west-pharmaceutical-services-disruptive-ransomware'
+source_count: 1
+severity: high
+threat_actor: LockBit
+affected_sectors:
+  - pharmaceutical
+  - healthcare
+affected_regions:
+  - North America
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+West Pharmaceutical Services, a Pennsylvania-based manufacturer of injectable pharmaceutical packaging and delivery systems, disclosed a ransomware attack that began on May 4, 2026. The company proactively shut down and isolated affected on-premise infrastructure globally, disrupting business operations. Attackers exfiltrated data before deploying file-encrypting ransomware, according to a Monday filing with the U.S. Securities and Exchange Commission (SEC). West has retained Palo Alto Networks' Unit 42 for incident response and notified law enforcement. No ransomware group has publicly claimed responsibility, and the company's statement that it "has taken steps intended to mitigate the risk of dissemination of the exfiltrated data" suggests a ransom may have been negotiated or paid, SecurityWeek reported.
+
+## Technical Analysis
+
+According to the SEC filing, the incident was detected on May 4, prompting an immediate "proactive shutdown and isolation of affected on-premise infrastructure." West also restricted access to enterprise systems and activated crisis management protocols. The company has not disclosed the initial access vector, the ransomware variant used, or whether the attackers leveraged compromised credentials, phishing, or an unpatched vulnerability.
+
+Unit 42 is assisting with containment, system restoration, and forensic investigation. As of the filing date, West reported that core enterprise systems and critical processes for shipping, receiving, and manufacturing had restarted at some sites, with restoration of remaining sites in progress. The timeline for full restoration has not been finalized.
+
+The company has not disclosed the type or volume of data exfiltrated, nor whether personal information of employees, customers, or patients was involved. No ransomware group has posted a leak site entry claiming responsibility, which SecurityWeek notes is unusual and may indicate a ransom was paid to prevent data publication.
+
+## Mitigations & Recommendations
+
+Defenders in the pharmaceutical and healthcare sectors should treat this incident as a reminder that ransomware groups continue to target critical manufacturing infrastructure with data exfiltration before encryption. Organizations should ensure that offline, immutable backups are maintained and tested regularly. Network segmentation should be reviewed to limit lateral movement from internet-facing systems to sensitive manufacturing and data storage environments. Given the lack of public attribution, monitoring for any future leak site postings by groups such as BlackCat, LockBit, or Akira may provide additional indicators. West has not released specific IoCs, but defenders should watch for any subsequent disclosures from Unit 42.
+
+## References
+
+- [SecurityWeek: West Pharmaceutical Services Hit by Disruptive Ransomware Attack](https://www.securityweek.com/west-pharmaceutical-services-hit-by-disruptive-ransomware-attack/)
