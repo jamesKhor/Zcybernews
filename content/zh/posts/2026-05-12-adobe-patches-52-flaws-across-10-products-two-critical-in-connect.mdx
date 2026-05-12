@@ -1,0 +1,70 @@
+---
+title: Adobe 修补了10个产品中的52个漏洞，Connect中的两个关键漏洞
+slug: 2026-05-12-adobe-patches-52-flaws-across-10-products-two-critical-in-connect
+date: '2026-05-12'
+excerpt: >-
+  Adobe的2026年5月补丁批次修复了10个产品中的52个CVE；Adobe Connect获得了两个关键错误（CVE-2026-34659，9.6
+  CVSS用于RCE；CVE-2026-34660，9.3 CVSS用于权限...
+category: vulnerabilities
+tags:
+  - adobe
+  - adobe-connect
+  - adobe-commerce
+  - cve-2026-34659
+  - cve-2026-34660
+  - arbitrary-code-execution
+  - privilege-escalation
+  - patch-tuesday
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/adobe-patches-52-vulnerabilities-in-10-products/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-adobe-patches-52-flaws-across-10-products-two-critical-in-connect
+cluster_key: 'topic:adobe-patches-products-adobe-patch'
+source_count: 1
+severity: critical
+cvss_score: 9.6
+cve_ids:
+  - CVE-2026-34659
+  - CVE-2026-34660
+affected_sectors:
+  - software
+  - media
+  - e-commerce
+publish_tier: public
+---
+## 执行摘要
+
+Adobe 在 2026 年 5 月 12 日发布了针对 10 个产品的 52 个安全漏洞的补丁，根据公司 PSIRT 咨询和 SecurityWeek 的报道。Adobe Connect 中的两个严重漏洞 —— CVE-2026-34659（CVSS 9.6）用于任意代码执行和 CVE-2026-34660（CVSS 9.3）用于权限提升 —— 是本月批次中最严重的问题。超过一半的总补丁漏洞可能导致任意代码执行。Adobe 表示，它不知道这些漏洞是否在野外被利用，尽管公司将 Adobe Commerce 更新的优先级定为 2，因为该产品以前在攻击中被针对过。所有其他更新的优先级定为 3。
+
+## 技术分析
+
+**Adobe Connect** —— 这个网络会议平台中的两个关键漏洞是发布中最高严重性项目。CVE-2026-34659 携带 CVSS 评分 9.6，可以启用远程代码执行。CVE-2026-34660（CVSS 9.3）可能允许攻击者在受影响的系统上提升权限。根据 Adobe 的咨询，两个漏洞都不需要认证就可以利用，尽管在公共摘要中没有详细说明具体的攻击向量。
+
+**Adobe Commerce** —— 电子商务平台接收了最大的补丁量：十个高严重性和五个中等严重性修复。这些漏洞可能被利用来绕过安全功能，导致拒绝服务条件，或执行任意代码。Adobe 对 Commerce 的优先级评分为 2，反映了该产品在过去的活动中是已知的目标，尽管没有观察到这些特定 CVEs 的活跃利用。
+
+**内容真实性 SDK** —— 这个 SDK 接收了 14 个漏洞的补丁，所有这些都可能导致应用程序拒绝服务。一个被评为高严重性；其余的 13 个是中等严重性。SDK 用于嵌入内容来源元数据，DoS 条件可能会干扰验证工作流程。
+
+**Creative Cloud 应用程序** —— 解决了高严重性代码执行漏洞：
+- After Effects：4 个漏洞
+- Premiere Pro：3 个漏洞
+- Media Encoder：2 个漏洞
+- Substance 3D Painter：2 个漏洞
+- Substance 3D Sampler：1 个漏洞
+
+**Illustrator** —— 补丁解决了两个高严重性代码执行缺陷和两个导致 DoS 和内存暴露的中等严重性问题。
+
+**Substance 3D Designer** —— 修补了五个中等严重性弱点。四个可能导致代码执行；一个可以允许任意文件系统读取。
+
+在所有产品中，应用程序拒绝服务是仅次于任意代码执行的第二常见影响类型。Adobe 没有披露任何漏洞是内部发现的还是通过外部研究人员报告的，也没有提供 CVSS 向量或超出基础分数的攻击复杂性细节。
+
+## 缓解措施与建议
+
+Adobe 已经发布了所有 10 个受影响产品的补丁。运行 Adobe Commerce 的组织应该优先部署，鉴于该产品被针对的历史 —— Adobe 的优先级评分为 2，表明风险增加。对于 Adobe Connect，两个关键的 CVE（CVE-2026-34659，CVE-2026-34660）需要在任何平台暴露给不受信任用户的任何环境中立即打补丁。所有其他产品的优先级评分为 3，表明较低的利用风险，但防御者仍应通过标准补丁周期应用更新。没有为任何漏洞发布任何变通方法。Adobe 的 Creative Cloud 应用程序更新机制通常在软件启动并连接到互联网时自动应用补丁；管理企业部署的管理员应验证更新是否已传播。
+
+## 参考资料
+
+- [SecurityWeek: Adobe Patches 52 Vulnerabilities in 10 Products](https://www.securityweek.com/adobe-patches-52-vulnerabilities-in-10-products/)
+- [Adobe PSIRT Security Bulletins](https://helpx.adobe.com/security.html)

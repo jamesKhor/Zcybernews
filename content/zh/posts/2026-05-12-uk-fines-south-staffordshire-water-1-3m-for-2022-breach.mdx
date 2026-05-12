@@ -1,0 +1,60 @@
+---
+title: 英国对南斯塔福德郡水务公司因2022年数据泄露罚款130万美元
+slug: 2026-05-12-uk-fines-south-staffordshire-water-1-3m-for-2022-breach
+date: '2026-05-12'
+excerpt: >-
+  信息专员办公室（ICO）对南斯塔福德郡水务公司罚款963,900英镑，因为Cl0p勒索软件团伙泄露了663,887名客户的数据 ——
+  钓鱼攻击未被检测到长达20个月。
+category: industry
+tags:
+  - ico
+  - south-staffordshire-water
+  - cl0p
+  - ransomware
+  - data-breach
+  - uk
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/uk-fines-water-supplier-13m-for-exposing-data-of-664k-customers/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-uk-fines-south-staffordshire-water-1-3m-for-2022-breach
+cluster_key: 'topic:fines-water-supplier-exposing-data'
+source_count: 1
+severity: high
+threat_actor: Cl0p
+threat_actor_origin: Russia
+affected_sectors:
+  - water utility
+affected_regions:
+  - UK
+publish_tier: public
+---
+## 执行摘要
+
+英国信息专员办公室（ICO）因一起网络攻击事件，导致663,887名客户和员工的个人数据暴露，对南斯塔福德郡水务公司（South Staffordshire Water Plc）及其母公司南斯塔福德郡公司（South Staffordshire Plc）处以£963,900（$1.3百万）罚款。此次违规行为归因于Cl0p勒索软件团伙，始于2020年9月的一次钓鱼攻击，并在20个月后的2022年7月被发现。ICO的调查发现多个安全漏洞，包括仅覆盖5% IT环境的监控，以及使用Windows Server 2003等过时软件。
+
+## 技术分析
+
+根据ICO在2026年5月12日发布的公告，攻击源自一封钓鱼邮件，使攻击者能够在南斯塔福德郡的系统上安装恶意软件。恶意软件在20个月内未被检测到，从2020年9月持续到2022年7月。在2022年5月至7月之间，攻击者在企业网络中提升了权限，最终获得了域管理员访问权限。
+
+违规行为仅在IT性能问题触发内部调查后被发现。Cl0p勒索软件团伙在暗网上发布的泄露数据包括全名、实际地址、电子邮件地址、电话号码、出生日期、客户账户凭证、银行账户详情以及员工HR数据，如国家保险号码。
+
+ICO确定了以下具体的安全漏洞：
+- 防止权限提升的控制不足
+- 仅覆盖约5% IT环境的监控
+- 使用过时软件，包括Windows Server 2003
+- 漏洞管理和安全补丁缺失
+- 缺乏定期的内部和外部安全扫描
+
+南斯塔福德郡水务每天向160万消费者提供3.3亿升饮用水。该公司最初在2022年对Cl0p声称的违规行为不予理睬，因为该团伙错误地识别了他们的受害者，但后来泄露的数据样本看起来是真实的，根据ICO的调查结果。
+
+## 缓解措施与建议
+
+关键基础设施部门的防御者应确保全面的网络监控覆盖——ICO指出南斯塔福德郡仅监控了其IT环境的5%。组织还应实施严格的权限提升控制，维护最新的补丁管理程序，并进行定期的内部和外部安全扫描。应消除或隔离使用Windows Server 2003等生命周期结束的操作系统，并采取补偿控制措施。及早发现钓鱼攻击和快速事件响应对于防止长时间内侵至关重要。
+
+## 参考资料
+
+- [BleepingComputer: UK fines water supplier $1.3M for exposing data of 664k customers](https://www.bleepingcomputer.com/news/security/uk-fines-water-supplier-13m-for-exposing-data-of-664k-customers/)
+- [ICO announcement](https://ico.org.uk/action-weve-taken/enforcement/south-staffordshire-plc-and-south-staffordshire-water-plc/)

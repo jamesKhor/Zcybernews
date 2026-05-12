@@ -1,0 +1,60 @@
+---
+title: UK Fines South Staffordshire Water $1.3M for 2022 Breach
+slug: 2026-05-12-uk-fines-south-staffordshire-water-1-3m-for-2022-breach
+date: '2026-05-12'
+excerpt: >-
+  ICO fined South Staffordshire Water £963,900 after Cl0p ransomware gang leaked
+  data of 663,887 customers — phishing attack went undetected for 20 months.
+category: industry
+tags:
+  - ico
+  - south-staffordshire-water
+  - cl0p
+  - ransomware
+  - data-breach
+  - uk
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/uk-fines-water-supplier-13m-for-exposing-data-of-664k-customers/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-uk-fines-south-staffordshire-water-1-3m-for-2022-breach
+cluster_key: 'topic:fines-water-supplier-exposing-data'
+source_count: 1
+severity: high
+threat_actor: Cl0p
+threat_actor_origin: Russia
+affected_sectors:
+  - water utility
+affected_regions:
+  - UK
+publish_tier: public
+---
+## Executive Summary
+
+The UK Information Commissioner's Office (ICO) has fined South Staffordshire Water Plc and its parent company South Staffordshire Plc £963,900 ($1.3 million) following a cyberattack that exposed the personal data of 663,887 customers and employees. The breach, attributed to the Cl0p ransomware gang, began with a phishing attack in September 2020 and went undetected for 20 months before being discovered in July 2022. The ICO's investigation found multiple security failures, including monitoring that covered only 5% of the IT environment and the use of obsolete software such as Windows Server 2003.
+
+## Technical Analysis
+
+According to the ICO's announcement published May 12, 2026, the attack originated from a phishing email that allowed attackers to install malware on South Staffordshire's systems. The malware remained undetected for 20 months, from September 2020 until July 2022. Between May and July 2022, the attackers escalated privileges across the corporate network, ultimately gaining domain administrator access.
+
+The breach was discovered only after IT performance problems triggered an internal investigation. The leaked data, published on the dark web by the Cl0p ransomware gang, included full names, physical addresses, email addresses, phone numbers, dates of birth, customer account credentials, bank account details, and employee HR data such as National Insurance numbers.
+
+The ICO identified the following specific security failures:
+- Insufficient controls to prevent privilege escalation
+- Monitoring that covered only about 5% of the IT environment
+- Use of obsolete software, including Windows Server 2003
+- Poor vulnerability management and missing security patches
+- Lack of regular internal and external security scans
+
+South Staffordshire Water supplies 330 million liters of drinking water to 1.6 million consumers daily. The company initially dismissed Cl0p's claims of the breach in 2022 after the gang misidentified their victim, but leaked data samples later appeared genuine, according to the ICO's findings.
+
+## Mitigations & Recommendations
+
+Defenders in critical infrastructure sectors should ensure comprehensive network monitoring coverage — the ICO noted that South Staffordshire monitored only 5% of its IT environment. Organizations should also enforce strict privilege escalation controls, maintain up-to-date patch management programs, and conduct regular internal and external security scans. The use of end-of-life operating systems like Windows Server 2003 should be eliminated or isolated with compensating controls. Early detection of phishing attacks and rapid incident response remain essential to prevent long-dwell-time intrusions.
+
+## References
+
+- [BleepingComputer: UK fines water supplier $1.3M for exposing data of 664k customers](https://www.bleepingcomputer.com/news/security/uk-fines-water-supplier-13m-for-exposing-data-of-664k-customers/)
+- [ICO announcement](https://ico.org.uk/action-weve-taken/enforcement/south-staffordshire-plc-and-south-staffordshire-water-plc/)

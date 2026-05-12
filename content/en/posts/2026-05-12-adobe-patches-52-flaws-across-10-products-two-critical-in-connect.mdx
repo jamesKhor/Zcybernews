@@ -1,0 +1,71 @@
+---
+title: 'Adobe Patches 52 Flaws Across 10 Products, Two Critical in Connect'
+slug: 2026-05-12-adobe-patches-52-flaws-across-10-products-two-critical-in-connect
+date: '2026-05-12'
+excerpt: >-
+  Adobe's May 2026 patch batch fixes 52 CVEs across 10 products; Adobe Connect
+  gets two critical bugs (CVE-2026-34659, 9.6 CVSS for RCE; CVE-2026-34660, 9.3
+  CVSS for privilege...
+category: vulnerabilities
+tags:
+  - adobe
+  - adobe-connect
+  - adobe-commerce
+  - cve-2026-34659
+  - cve-2026-34660
+  - arbitrary-code-execution
+  - privilege-escalation
+  - patch-tuesday
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/adobe-patches-52-vulnerabilities-in-10-products/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-adobe-patches-52-flaws-across-10-products-two-critical-in-connect
+cluster_key: 'topic:adobe-patches-products-adobe-patch'
+source_count: 1
+severity: critical
+cvss_score: 9.6
+cve_ids:
+  - CVE-2026-34659
+  - CVE-2026-34660
+affected_sectors:
+  - software
+  - media
+  - e-commerce
+publish_tier: public
+---
+## Executive Summary
+
+Adobe released patches for 52 security vulnerabilities across 10 products on May 12, 2026, according to the company's PSIRT advisory and reporting by SecurityWeek. Two critical-severity flaws in Adobe Connect — CVE-2026-34659 (CVSS 9.6) for arbitrary code execution and CVE-2026-34660 (CVSS 9.3) for privilege escalation — represent the most severe issues in this month's batch. More than half of the total patched vulnerabilities could lead to arbitrary code execution. Adobe stated it is not aware of any of these flaws being exploited in the wild, though the company assigned a priority rating of 2 to the Adobe Commerce update because that product has previously been targeted in attacks. All other updates received a priority rating of 3.
+
+## Technical Analysis
+
+**Adobe Connect** — The two critical bugs in the web conferencing platform are the highest-severity items in the release. CVE-2026-34659 carries a CVSS score of 9.6 and could enable remote code execution. CVE-2026-34660 (CVSS 9.3) could allow an attacker to escalate privileges on an affected system. Both flaws require no authentication for exploitation, per Adobe's advisory, though specific attack vectors were not detailed in the public summary.
+
+**Adobe Commerce** — The e-commerce platform received the largest patch volume: ten high-severity and five medium-severity fixes. These vulnerabilities could be exploited to bypass security features, cause denial-of-service conditions, or execute arbitrary code. Adobe's priority rating of 2 for Commerce reflects that the product has been a known target in past campaigns, though no active exploitation of these specific CVEs has been observed.
+
+**Content Authenticity SDK** — This SDK received patches for 14 flaws, all of which could lead to application denial-of-service. One is rated high-severity; the remaining 13 are medium-severity. The SDK is used to embed content provenance metadata, and DoS conditions could disrupt verification workflows.
+
+**Creative Cloud applications** — High-severity code execution vulnerabilities were resolved in:
+- After Effects: 4 flaws
+- Premiere Pro: 3 flaws
+- Media Encoder: 2 flaws
+- Substance 3D Painter: 2 flaws
+- Substance 3D Sampler: 1 flaw
+
+**Illustrator** — Patches address two high-severity code execution defects and two medium-severity issues leading to DoS and memory exposure.
+
+**Substance 3D Designer** — Five medium-severity weaknesses were patched. Four could lead to code execution; one could permit arbitrary file system reads.
+
+Across all products, application denial-of-service was the second most common impact type after arbitrary code execution. Adobe did not disclose whether any of the vulnerabilities were discovered internally or reported through external researchers, nor did it provide CVSS vectors or attack complexity details beyond the base scores.
+
+## Mitigations & Recommendations
+
+Adobe has released patches for all 10 affected products. Organizations running Adobe Commerce should prioritize deployment given the product's history of being targeted — Adobe's priority rating of 2 signals elevated risk. For Adobe Connect, the two critical CVEs (CVE-2026-34659, CVE-2026-34660) warrant immediate patching in any environment where the platform is exposed to untrusted users. All other products carry a priority rating of 3, indicating lower exploitation risk, but defenders should still apply updates through standard patch cycles. No workarounds were published for any of the flaws. Adobe's update mechanism for Creative Cloud applications typically auto-applies patches when the software is launched and connected to the internet; administrators managing enterprise deployments should verify that updates have propagated.
+
+## References
+
+- [SecurityWeek: Adobe Patches 52 Vulnerabilities in 10 Products](https://www.securityweek.com/adobe-patches-52-vulnerabilities-in-10-products/)
+- [Adobe PSIRT Security Bulletins](https://helpx.adobe.com/security.html)
