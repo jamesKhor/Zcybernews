@@ -1,0 +1,61 @@
+---
+title: Unauthenticated SQL Injection in MuuCMF T6 Allows Database Takeover
+slug: 2026-05-12-unauthenticated-sql-injection-in-muucmf-t6-allows-database-takeover
+date: '2026-05-12'
+excerpt: >-
+  CVE-2026-36962: Unauthenticated SQL injection in MuuCMF T6 v1.9.4.20260115
+  lets attackers dump databases, gain admin access, and achieve RCE via file
+  writes.
+category: vulnerabilities
+tags:
+  - muucmf
+  - sql-injection
+  - cve-2026-36962
+  - unauthenticated-rce
+  - cms
+language: en
+source_urls:
+  - 'https://gitee.com/dameng100/muucmf'
+author: ZCyberNews
+draft: false
+cluster_key: 'cve:CVE-2026-36962'
+source_count: 1
+severity: critical
+cvss_score: 9.8
+cve_ids:
+  - CVE-2026-36962
+affected_sectors:
+  - web hosting
+  - content management
+publish_tier: public
+---
+## Executive Summary
+
+A critical unauthenticated SQL injection vulnerability, tracked as **CVE-2026-36962**, has been disclosed in MuuCMF T6 version 1.9.4.20260115. The flaw, which carries a CVSS v3.1 base score of 9.8, allows remote attackers with no authentication to compromise the entire backend database, escalate privileges to administrative level, and potentially execute arbitrary code on the server by writing malicious files. The vulnerability resides in the `/index/controller/Search.php` endpoint, specifically in how the application handles the `keyword` parameter. As of publication, no official patch has been released by the maintainer, according to the disclosure filed with the National Vulnerability Database (NVD).
+
+## Technical Analysis
+
+MuuCMF T6 is a PHP-based content management framework used primarily in Chinese-language web deployments. The vulnerability was discovered in the `Search.php` controller, which fails to sanitize user-supplied input passed through the `keyword` GET parameter before incorporating it into SQL queries. An attacker can inject arbitrary SQL statements by crafting a malicious `keyword` value, bypassing authentication entirely because the vulnerable endpoint is accessible without a session.
+
+The NVD entry for CVE-2026-36962 describes the impact as follows: "allows an unauthenticated attacker to compromise the entire database, achieve unauthorized administrative access, and potentially gain remote code execution by writing malicious files to the server's file system." The mechanism for achieving RCE is well-documented in similar SQL injection-to-RCE chains: once an attacker gains write access to the database, they can leverage MySQL's `INTO OUTFILE` or `INTO DUMPFILE` directives to write a PHP web shell to the server's web root, provided the database user has `FILE` privileges and the target directory is writable.
+
+Because MuuCMF T6 is a PHP application, a web shell written to the `public` or `uploads` directory can be accessed directly via HTTP, giving the attacker interactive command execution on the server. The attacker can then pivot to internal network resources, exfiltrate data, or deploy additional malware.
+
+The vulnerability is classified under **CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')**. The attack complexity is low, requires no privileges, and can be executed remotely over the network. The only prerequisite is that the target MuuCMF instance is exposed to the internet.
+
+## Mitigations & Recommendations
+
+Until the MuuCMF maintainer releases a patched version, administrators of MuuCMF T6 v1.9.4.20260115 should take the following immediate steps:
+
+- **Disable the search functionality** by removing or renaming the `/index/controller/Search.php` file, or by blocking access to the endpoint via web server configuration (e.g., adding a rewrite rule in `.htaccess` or Nginx config to return 403 for requests to that path).
+- **Restrict database user privileges** — ensure the MySQL user account used by MuuCMF does not have `FILE` privilege, which would prevent attackers from writing files to the filesystem even if SQL injection is successful.
+- **Deploy a Web Application Firewall (WAF)** with rules that block common SQL injection patterns in the `keyword` parameter. ModSecurity with the OWASP Core Rule Set can provide effective protection.
+- **Monitor database logs** for unexpected `SELECT`, `UNION`, or `INTO OUTFILE` queries originating from the web application user.
+- **Isolate the CMS** on a segmented network segment with restricted outbound access to limit lateral movement in the event of a compromise.
+
+Organizations that rely on MuuCMF for production sites should evaluate migrating to an actively maintained CMS or framework until a security update is confirmed.
+
+## References
+
+- NVD Entry for CVE-2026-36962: https://nvd.nist.gov/vuln/detail/CVE-2026-36962
+- MuuCMF Source Repository (Gitee): https://gitee.com/dameng100/muucmf
