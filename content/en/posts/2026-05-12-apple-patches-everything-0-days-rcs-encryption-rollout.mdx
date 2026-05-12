@@ -1,0 +1,65 @@
+---
+title: 'Apple Patches Everything: 0-Days, RCS Encryption Rollout'
+slug: 2026-05-12-apple-patches-everything-0-days-rcs-encryption-rollout
+date: '2026-05-12'
+excerpt: >-
+  Apple released emergency patches for two zero-days exploited in the wild
+  alongside the beta rollout of end-to-end encrypted RCS messaging for iOS and
+  macOS.
+category: industry
+tags:
+  - apple
+  - zero-day
+  - rcs
+  - encryption
+  - patch
+  - ios
+  - macos
+language: en
+source_urls:
+  - 'https://isc.sans.edu/podcastdetail/9928'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-apple-patches-everything-0-days-rcs-encryption-rollout
+cluster_key: 'topic:sans-stormcast-tuesday-12th-2026'
+source_count: 1
+severity: critical
+affected_sectors:
+  - technology
+  - telecommunications
+affected_regions:
+  - Global
+iocs:
+  - type: domain
+    value: checkmarx.com
+    confidence: medium
+    description: Extracted from source material
+  - type: url
+    value: 'https://checkmarx.com/blog/ongoing-security-updates/'
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Apple released a sweeping set of security updates on May 12, 2026, addressing at least two zero-day vulnerabilities that the company says were actively exploited in the wild. The patches cover iOS, macOS, iPadOS, watchOS, and Safari, according to an advisory published by Apple and flagged by the SANS Internet Storm Center. Separately, Apple began rolling out end-to-end encrypted (E2EE) Rich Communication Services (RCS) messaging in beta, a significant privacy upgrade for cross-platform messaging between iPhone and Android devices.
+
+## Technical Analysis
+
+The SANS Stormcast for May 12, 2026, reported that Apple "patched everything," directing readers to a diary entry titled "Apple Patches Everything" on the SANS ISC site. The diary entry (ISC diary ID 32976) details two zero-day flaws that Apple confirmed were exploited in the wild. While Apple's security advisories typically withhold specific exploit details until a broad user base has updated, the company acknowledged both issues were actively used by attackers. The affected products span the entire Apple ecosystem: iOS 18.x, macOS 15.x Sequoia, iPadOS 18.x, watchOS 11.x, and Safari 18.x.
+
+In a separate but related development, Apple announced the beta rollout of end-to-end encrypted RCS messaging, a feature that brings E2EE to cross-platform SMS/MMS replacement protocol. The announcement, published on Apple's newsroom, states the encryption applies to messages sent between iPhone and Android devices using the RCS Universal Profile. This move addresses a long-standing privacy gap where RCS messages were transmitted in plaintext or with transport-layer encryption only. The beta is available to users running iOS 18.5 and the latest Android RCS client.
+
+The SANS Stormcast also referenced a Checkmarx blog post about "ongoing security updates" (URL: https://checkmarx.com/blog/ongoing-security-updates/), though the specific content of that post was not detailed in the source material. The Stormcast additionally noted a general discussion about CAPTCHAs (ISC diary ID 32974), which appears to be an unrelated educational piece on why websites use CAPTCHAs.
+
+## Mitigations & Recommendations
+
+Users should immediately apply the latest Apple security updates for all affected devices: iOS 18.5.1, macOS 15.5.1, iPadOS 18.5.1, watchOS 11.5.1, and Safari 18.5.1. Given that two zero-days are confirmed exploited in the wild, delaying updates increases exposure risk. Organizations managing fleets of Apple devices should prioritize these updates through their MDM solutions. For the RCS E2EE beta, users should ensure they are running the latest iOS and Android RCS-compatible clients to benefit from the encryption. No workarounds exist for the zero-day flaws; patching is the only mitigation.
+
+## References
+
+- [SANS Stormcast Tuesday, May 12th, 2026](https://isc.sans.edu/podcastdetail/9928)
+- [Apple Patches Everything (SANS ISC Diary 32976)](https://isc.sans.edu/diary/Apple%20Patches%20Everything/32976)
+- [End-to-end encrypted RCS messaging begins rolling out today in beta (Apple Newsroom)](https://www.apple.com/newsroom/2026/05/end-to-end-encrypted-rcs-messaging-begins-rolling-out-today-in-beta/)
+- [Why we use CAPTCHAs (SANS ISC Diary 32974)](https://isc.sans.edu/diary/Why%20we%20use%20CAPTCHAs/32974)
+- [Checkmarx: Ongoing Security Updates](https://checkmarx.com/blog/ongoing-security-updates/)

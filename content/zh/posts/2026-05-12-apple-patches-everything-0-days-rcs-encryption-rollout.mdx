@@ -1,0 +1,62 @@
+---
+title: 苹果修补一切：0-Days，RCS加密推出
+slug: 2026-05-12-apple-patches-everything-0-days-rcs-encryption-rollout
+date: '2026-05-12'
+excerpt: 苹果发布了针对两个在野外被利用的零日漏洞的紧急补丁，同时推出了iOS和macOS端到端加密RCS消息的测试版。
+category: industry
+tags:
+  - apple
+  - zero-day
+  - rcs
+  - encryption
+  - patch
+  - ios
+  - macos
+language: zh
+source_urls:
+  - 'https://isc.sans.edu/podcastdetail/9928'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-apple-patches-everything-0-days-rcs-encryption-rollout
+cluster_key: 'topic:sans-stormcast-tuesday-12th-2026'
+source_count: 1
+severity: critical
+affected_sectors:
+  - technology
+  - telecommunications
+affected_regions:
+  - Global
+iocs:
+  - type: domain
+    value: checkmarx.com
+    confidence: medium
+    description: Extracted from source material
+  - type: url
+    value: 'https://checkmarx.com/blog/ongoing-security-updates/'
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+苹果公司在2026年5月12日发布了一系列全面的安全更新，解决了至少两个零日漏洞，该公司表示这些漏洞在野外被积极利用。根据苹果发布的公告以及SANS互联网风暴中心的标记，这些补丁涵盖了iOS、macOS、iPadOS、watchOS和Safari。另外，苹果开始在测试版中推出端到端加密（E2EE）的富通信服务（RCS）消息，这是iPhone和Android设备之间跨平台消息传递的重要隐私升级。
+
+## 技术分析
+
+2026年5月12日的SANS Stormcast报道称，苹果“修补了一切”，并引导读者前往SANS ISC网站上标题为“苹果修补了一切”的日记条目。日记条目（ISC日记ID 32976）详细描述了苹果确认在野外被利用的两个零日漏洞。虽然苹果的安全公告通常会在广泛的用户基础更新后才提供具体的漏洞细节，但该公司承认这两个问题都被攻击者积极使用。受影响的产品涵盖了整个苹果生态系统：iOS 18.x、macOS 15.x Sequoia、iPadOS 18.x、watchOS 11.x和Safari 18.x。
+
+在另一个相关的发展中，苹果宣布了端到端加密RCS消息的测试版推出，这是一个将E2EE带到跨平台SMS/MMS替代协议的特性。公告发表在苹果的新闻室，声明加密适用于使用RCS通用配置文件在iPhone和Android设备之间发送的消息。这一举措解决了一个长期存在的隐私缺口，即RCS消息仅以纯文本或仅传输层加密传输。测试版适用于运行iOS 18.5和最新Android RCS客户端的用户。
+
+SANS Stormcast还提到了Checkmarx博客文章关于“持续安全更新”的内容（URL：https://checkmarx.com/blog/ongoing-security-updates/），尽管源材料中没有详细说明该帖子的具体内容。Stormcast还提到了关于CAPTCHAs的一般讨论（ISC日记ID 32974），这似乎是一篇关于网站为何使用CAPTCHAs的无关教育性文章。
+
+## 缓解措施与建议
+
+用户应立即为所有受影响的设备应用最新的苹果安全更新：iOS 18.5.1、macOS 15.5.1、iPadOS 18.5.1、watchOS 11.5.1和Safari 18.5.1。鉴于两个零日漏洞已被确认在野外被利用，延迟更新会增加暴露风险。管理苹果设备群的组织应通过其MDM解决方案优先考虑这些更新。对于RCS E2EE测试版，用户应确保他们正在运行最新的iOS和Android RCS兼容客户端以从加密中受益。零日漏洞没有替代解决方案；修补是唯一的缓解措施。
+
+## 参考资料
+
+- [SANS Stormcast Tuesday, May 12th, 2026](https://isc.sans.edu/podcastdetail/9928)
+- [Apple Patches Everything (SANS ISC Diary 32976)](https://isc.sans.edu/diary/Apple%20Patches%20Everything/32976)
+- [End-to-end encrypted RCS messaging begins rolling out today in beta (Apple Newsroom)](https://www.apple.com/newsroom/2026/05/end-to-end-encrypted-rcs-messaging-begins-rolling-out-today-in-beta/)
+- [Why we use CAPTCHAs (SANS ISC Diary 32974)](https://isc.sans.edu/diary/Why%20we%20use%20CAPTCHAs/32974)
+- [Checkmarx: Ongoing Security Updates](https://checkmarx.com/blog/ongoing-security-updates/)
