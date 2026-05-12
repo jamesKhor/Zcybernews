@@ -1,0 +1,45 @@
+---
+title: Rapid7 发布 Cyber GRC 平台以连接合规性和 SecOps
+slug: 2026-05-12-rapid7-launches-cyber-grc-platform-to-bridge-compliance-and-secops
+date: '2026-05-12'
+excerpt: Rapid7 的新 Cyber GRC 平台旨在缩小安全运营和合规性之间的差距，解决 IBM 2025 报告中识别的 241 天平均违规生命周期问题。
+category: tools
+tags:
+  - grc
+  - rapid7
+  - compliance
+  - security-operations
+  - breach-response
+language: zh
+source_urls:
+  - >-
+    https://www.rapid7.com/blog/post/so-cyber-grc-how-rapid7-brings-compliance-to-security-operations
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-rapid7-launches-cyber-grc-platform-to-bridge-compliance-and-secops
+cluster_key: 'topic:what-cyber-rapid7-bringing-compliance'
+source_count: 1
+severity: informational
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## 执行摘要
+
+Rapid7 推出了一个新的 Cyber GRC（治理、风险和合规）平台，旨在将合规工作流程直接整合到安全运营中。该公告于 2026 年 5 月 12 日通过公司博客文章发布，将该工具定位为对安全团队日益增加的运营负担的响应，引用了 IBM 的《2025 年数据泄露成本报告》，该报告发现识别和控制泄露的平均时间现在为 241 天。该平台旨在通过将合规检查嵌入现有的 SecOps 流程中，而不是将它们视为一个单独的功能，从而减少检测、补救和审计性之间的摩擦。
+
+## 技术分析
+
+正如 Rapid7 全球政府事务和公共政策副总裁 Sabeen Malik 所描述的，Cyber GRC 平台专注于连接三个核心安全工作流程：团队检测到的内容、他们修复的内容以及他们可以向审计师或监管机构证明的内容。该平台不是作为一个独立的合规门户运行，而是与 Rapid7 现有的 InsightIDR 和 InsightVM 产品集成，从端点检测和响应（EDR）和漏洞管理工具中提取遥测数据，自动将发现映射到 PCI DSS、HIPAA 和 SOC 2 等监管框架。
+
+从技术角度来看，该平台似乎作为一个策略引擎运行，将安全事件与特定的合规控制相关联。例如，如果 InsightVM 检测到处理信用卡数据的系统上缺少补丁，Cyber GRC 平台可以将其标记为 PCI DSS 控制失败，并生成一个审计就绪的证据链。这消除了将漏洞数据导出到单独的 GRC 工具并与合规要求进行协调的手动步骤——这个过程通常引入了延迟和错误。
+
+该平台还包括自动化的证据收集，用于需要连续监控证明的控制，例如日志保留和访问审查周期。Rapid7 声称这减少了安全团队在审计准备上花费的时间，尽管该公司在公告中没有提供具体的效率提升指标。
+
+## 缓解措施与建议
+
+对于已经使用 Rapid7 安全运营工具的组织，Cyber GRC 平台提供了一条简化合规报告的路径，而无需引入新的供应商或数据孤岛。防御者应在迁移合规工作流程之前评估平台的框架映射是否符合其特定的监管义务。不使用 Rapid7 产品的组织将无法从集成中受益，并应继续评估适合其现有技术栈的 GRC 工具。与任何新平台一样，建议在生产部署之前在暂存环境中进行彻底测试，以确保策略映射和证据收集按预期工作。
+
+## 参考资料
+
+- [Rapid7 博客：什么是 Cyber GRC？Rapid7 如何将合规性更接近安全运营](https://www.rapid7.com/blog/post/so-cyber-grc-how-rapid7-brings-compliance-to-security-operations)
