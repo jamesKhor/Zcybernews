@@ -1,0 +1,60 @@
+---
+title: 'TrickMo Android Trojan Uses TON Blockchain for C2, SOCKS5 Pivots'
+slug: 2026-05-12-trickmo-android-trojan-uses-ton-blockchain-for-c2-socks5-pivots
+date: '2026-05-12'
+excerpt: >-
+  ThreatFabric tracked a TrickMo variant using The Open Network (TON) for C2 and
+  SOCKS5 proxies to pivot into victim networks, targeting banking and crypto
+  users in France, Italy,...
+category: malware
+tags:
+  - trickmo
+  - android
+  - ton
+  - banking-trojan
+  - socks5
+  - threatfabric
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/05/new-trickmo-variant-uses-ton-c2-and.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-trickmo-android-trojan-uses-ton-blockchain-for-c2-socks5-pivots
+cluster_key: 'topic:trickmo-variant-uses-socks5-create'
+source_count: 1
+severity: high
+threat_actor: TrickMo
+affected_sectors:
+  - financial services
+  - cryptocurrency
+affected_regions:
+  - France
+  - Italy
+  - Austria
+publish_tier: public
+---
+## Executive Summary
+
+Security researchers at ThreatFabric have documented a new variant of the TrickMo Android banking trojan that leverages The Open Network (TON) blockchain for command-and-control (C2) communication and embeds a SOCKS5 proxy to enable network pivoting from infected devices. The variant, observed between January and February 2026, targets users of banking and cryptocurrency wallet applications in France, Italy, and Austria, according to a report published by the Dutch firm on May 12, 2026.
+
+## Technical Analysis
+
+TrickMo, a well-known Android banking trojan family first documented in 2020, has historically relied on conventional HTTP-based C2 infrastructure. The new variant marks a significant evolution by adopting TON — a decentralized blockchain platform originally developed by Telegram — to encode C2 commands within smart contracts. This approach makes takedown of C2 infrastructure substantially harder because commands are broadcast across a distributed ledger rather than hosted on a centralized server.
+
+ThreatFabric analysts report that the malware's core payload is delivered as a runtime-loaded APK component (dex.module), a technique that evades static analysis by many antivirus engines. Once installed, the trojan establishes a SOCKS5 proxy tunnel from the compromised Android device, effectively turning the phone into a pivot point into the victim's local network. This allows attackers to scan for additional vulnerable hosts, exfiltrate data, or move laterally into enterprise resources if the device is connected to a corporate Wi-Fi or VPN.
+
+The trojan's overlay attack mechanism — displaying fake login screens over legitimate banking and crypto apps — remains functionally similar to earlier TrickMo versions. However, the combination of blockchain-based C2 and SOCKS5 tunneling represents a material escalation in capability for the Android malware ecosystem.
+
+ThreatFabric did not disclose the specific distribution vector in its public report, but previous TrickMo campaigns have relied on SMS phishing (smishing) and malicious sideloaded apps. The researchers noted that the variant was actively targeting users in France, Italy, and Austria, though the geographic scope may expand as the operators iterate.
+
+## Tactics, Techniques & Procedures
+
+The malware employs a multi-stage infection chain. Initial access likely occurs via social engineering, after which the dex.module payload is fetched and executed. The TON blockchain C2 mechanism (T1095: Non-Application Layer Protocol) uses smart contract transactions to relay commands such as "start overlay," "collect SMS," or "enable SOCKS5 tunnel." The SOCKS5 proxy (T1572: Protocol Tunneling) allows the attacker to route traffic through the device, bypassing network egress controls that might block direct outbound connections from the phone. The runtime-loaded APK technique (T1406: Obfuscated Files or Information) complicates signature-based detection.
+
+## Mitigations & Recommendations
+
+Defenders should treat Android devices with access to corporate networks as potential pivot points. Organizations with users in the affected regions — particularly those handling financial transactions or cryptocurrency — should enforce application installation policies that block sideloading and require Google Play Protect to be enabled. Network monitoring teams should watch for anomalous SOCKS5 traffic originating from mobile devices, as well as connections to TON blockchain endpoints (ton.org, toncenter.com, or associated API endpoints). SMS-based phishing awareness training for mobile users remains a critical control, as smishing is the most likely initial infection vector. ThreatFabric has not released a specific detection signature publicly as of this writing.
+
+## References
+
+- [New TrickMo Variant Uses TON C2 and SOCKS5 to Create Android Network Pivots](https://thehackernews.com/2026/05/new-trickmo-variant-uses-ton-c2-and.html)

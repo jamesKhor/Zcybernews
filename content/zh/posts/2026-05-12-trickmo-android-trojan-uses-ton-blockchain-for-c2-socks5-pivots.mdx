@@ -1,0 +1,59 @@
+---
+title: TrickMo 安卓木马使用 TON 区块链进行 C2，SOCKS5 跳板
+slug: 2026-05-12-trickmo-android-trojan-uses-ton-blockchain-for-c2-socks5-pivots
+date: '2026-05-12'
+excerpt: >-
+  ThreatFabric 追踪到一个 TrickMo 变种，使用 The Open Network (TON) 进行 C2 和 SOCKS5
+  代理跳板进入受害者网络，目标是法国、意大利的银行和加密货币用户，...
+category: malware
+tags:
+  - trickmo
+  - android
+  - ton
+  - banking-trojan
+  - socks5
+  - threatfabric
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/05/new-trickmo-variant-uses-ton-c2-and.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-trickmo-android-trojan-uses-ton-blockchain-for-c2-socks5-pivots
+cluster_key: 'topic:trickmo-variant-uses-socks5-create'
+source_count: 1
+severity: high
+threat_actor: TrickMo
+affected_sectors:
+  - financial services
+  - cryptocurrency
+affected_regions:
+  - France
+  - Italy
+  - Austria
+publish_tier: public
+---
+## 执行摘要
+
+ThreatFabric的安全研究人员记录了TrickMo Android银行木马的一个新变种，该变种利用The Open Network (TON)区块链进行命令与控制（C2）通信，并嵌入了一个SOCKS5代理，以便从受感染的设备进行网络跃点。根据荷兰公司于2026年5月12日发布的报告，这个变种在2026年1月至2月间被观察到，目标是法国、意大利和奥地利的银行和加密货币钱包应用程序用户。
+
+## 技术分析
+
+TrickMo是一个知名的Android银行木马家族，最早于2020年被记录，历史上一直依赖于传统的基于HTTP的C2基础设施。这个新变种标志着一个重大的演变，通过采用TON——一个最初由Telegram开发的去中心化区块链平台——在智能合约中编码C2命令。这种方法使得C2基础设施的拆除变得更加困难，因为命令是在分布式账本上广播，而不是托管在集中式服务器上。
+
+ThreatFabric分析师报告称，恶意软件的核心有效载荷作为运行时加载的APK组件（dex.module）交付，这种技术可以逃避许多防病毒引擎的静态分析。一旦安装，木马就在受损的Android设备上建立一个SOCKS5代理隧道，有效地将手机变成进入受害者本地网络的跃点。这允许攻击者扫描其他易受攻击的主机，外泄数据，或者如果设备连接到企业Wi-Fi或VPN，则横向移动到企业资源。
+
+木马的叠加攻击机制——在合法银行和加密应用上显示假登录屏幕——在功能上与早期的TrickMo版本相似。然而，基于区块链的C2和SOCKS5隧道的结合代表了Android恶意软件生态系统能力的实质性升级。
+
+ThreatFabric在其公开报告中没有披露具体的分发向量，但以前的TrickMo活动依赖于短信钓鱼（smishing）和恶意侧载应用。研究人员指出，该变种正在积极针对法国、意大利和奥地利的用户，尽管随着运营商迭代，地理范围可能会扩大。
+
+## 战术、技术与程序
+
+恶意软件采用多阶段感染链。初始访问可能通过社会工程学发生，之后获取并执行dex.module有效载荷。TON区块链C2机制（T1095:非应用层协议）使用智能合约交易来中继命令，如“启动叠加”、“收集短信”或“启用SOCKS5隧道”。SOCKS5代理（T1572:协议隧道）允许攻击者通过设备路由流量，绕过可能阻止手机直接外发连接的网络出口控制。运行时加载的APK技术（T1406:混淆文件或信息）使基于签名的检测变得复杂。
+
+## 缓解措施与建议
+
+防御者应将能够访问企业网络的Android设备视为潜在的跃点。在受影响地区拥有用户的组织——特别是那些处理金融交易或加密货币的组织——应强制执行应用程序安装政策，阻止侧载并要求启用Google Play Protect。网络监控团队应监视来自移动设备的异常SOCKS5流量，以及连接到TON区块链端点（ton.org、toncenter.com或相关API端点）。针对移动用户的基于短信的钓鱼意识培训仍然是一个关键的控制措施，因为smishing是最可能的初始感染向量。截至本文撰写时，ThreatFabric尚未公开发布特定的检测签名。
+
+## 参考资料
+
+- [New TrickMo Variant Uses TON C2 and SOCKS5 to Create Android Network Pivots](https://thehackernews.com/2026/05/new-trickmo-variant-uses-ton-c2-and.html)
