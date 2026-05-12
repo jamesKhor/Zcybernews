@@ -1,0 +1,50 @@
+---
+title: Instructure Pays ShinyHunters to Halt 3.65TB Canvas Data Leak
+slug: 2026-05-12-instructure-pays-shinyhunters-to-halt-3-65tb-canvas-data-leak
+date: '2026-05-12'
+excerpt: >-
+  ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure
+  paid an undisclosed ransom. The breach affects thousands of schools and
+  universities worldwide.
+category: industry
+tags:
+  - shinyhunters
+  - instructure
+  - canvas
+  - ransomware
+  - data-breach
+  - education
+  - extortion
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:instructure-reaches-ransom-agreement-shinyhunters'
+source_count: 1
+severity: high
+threat_actor: ShinyHunters
+affected_sectors:
+  - education
+affected_regions:
+  - North America
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+Educational technology provider Instructure, the Utah-based parent company of the widely used Canvas learning management system, disclosed Monday that it reached a financial agreement with the cybercrime group ShinyHunters after the group breached its network and threatened to release 3.65 terabytes of stolen data. The breach, which Instructure first disclosed on May 8, 2026, exposed data from thousands of schools and universities that rely on Canvas for course management, grading, and student records. Instructure stated in a Monday update that it "reached an agreement with the unauthorized actor involved" and that the group has since deleted the stolen data, according to a report by The Hacker News. The company did not disclose the ransom amount paid.
+
+## Technical Analysis
+
+ShinyHunters, a decentralized extortion group known for targeting educational institutions and tech companies, claimed responsibility for the intrusion. The group has a track record of exfiltrating large datasets and demanding payment under threat of public release. In this incident, the attackers accessed Instructure's network and extracted 3.65TB of data, which included student records, course materials, and administrative credentials. Instructure did not specify the initial access vector — whether via compromised credentials, a vulnerable web application, or a third-party service — but the scale of the exfiltration suggests the attackers maintained persistent access for an extended period.
+
+The company's decision to pay the ransom marks a departure from the standard law enforcement recommendation against negotiating with cybercriminals. Instructure stated that the agreement included a commitment from ShinyHunters to delete the stolen data, and the company has not observed any subsequent leaks. However, as with any extortion payment, there is no technical guarantee that the attackers did not retain copies or sell the data to other parties before deletion. Instructure has not shared forensic evidence, such as cryptographic proof of deletion, that would independently verify the group's claim.
+
+## Mitigations & Recommendations
+
+Defenders in the education sector should assume that data from this breach may have been copied before the deletion agreement. Institutions using Canvas should enforce multi-factor authentication on all administrative and instructor accounts, audit access logs for unusual activity dating back to early 2026, and rotate any shared credentials used for API integrations or third-party tools. Students and faculty should be notified of the increased risk of targeted phishing campaigns that may leverage exposed personal information. Instructure has not indicated whether it will offer credit monitoring or identity theft protection to affected individuals.
+
+## References
+
+- [The Hacker News: Instructure Reaches Ransom Agreement with ShinyHunters to Stop 3.65TB Canvas Leak](https://thehackernews.com/2026/05/instructure-reaches-ransom-agreement.html)
