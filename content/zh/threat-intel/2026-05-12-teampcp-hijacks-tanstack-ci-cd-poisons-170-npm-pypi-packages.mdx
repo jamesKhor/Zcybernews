@@ -1,0 +1,79 @@
+---
+title: TeamPCP 劫持 TanStack CI/CD，污染 170+ NPM/PyPI 包
+slug: 2026-05-12-teampcp-hijacks-tanstack-ci-cd-poisons-170-npm-pypi-packages
+date: '2026-05-12'
+excerpt: TeamPCP 利用三个 GitHub Actions 漏洞劫持 TanStack 的 CI/CD，发布了 42 个包中的 84 个恶意构件。
+category: threat-intel
+tags:
+  - teampcp
+  - supply-chain
+  - npm
+  - pypi
+  - github-actions
+  - oidc
+  - credential-stealer
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-teampcp-hijacks-tanstack-ci-cd-poisons-170-npm-pypi-packages
+cluster_key: 'topic:tanstack-mistral-uipath-fresh-supply'
+source_count: 1
+severity: critical
+threat_actor: TeamPCP
+affected_sectors:
+  - software development
+  - AI
+  - automation
+affected_regions:
+  - global
+iocs:
+  - type: domain
+    value: getsession.org
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+TeamPCP，这个黑客组织是近期多起开源供应链攻击的幕后黑手，在一个名为Mini Shai-Hulud的协调行动中，入侵了超过170个NPM和PyPI包。攻击链利用了三个GitHub Actions的安全漏洞来劫持TanStack的CI/CD流水线，以一个可信的身份在42个TanStack包下发布了84个恶意工件。受害者包括TanStack、Mistral AI、UiPath、OpenSearch JavaScript客户端、Guardrails AI和Squawk。根据Wiz、StepSecurity、Socket和Snyk的分析，这种蠕虫窃取了开发者凭证、API密钥、云密钥、加密货币钱包和AI工具密钥，并通过去中心化的Session网络通道外泄数据，该通道能够抵抗被关闭。
+
+## 技术分析
+
+TanStack的入侵始于攻击者创建了一个TanStack/router仓库的分支，重命名为`zblgg/configuration`并发起了一个拉取请求。这触发了`pull_request_target`工作流——一个已知的“Pwn Request”配置错误——在上游仓库的上下文中执行了攻击者控制的代码，Wiz报告称。代码污染了GitHub Actions缓存。当合法的维护者PR后来合并时，发布工作流恢复了被污染的缓存，允许攻击者二进制文件直接从Actions运行器的进程内存中提取OIDC令牌。
+
+有了被盗的OIDC令牌，攻击者通过Sigstore的SLS证明系统铸造了一个有效的NPM发布令牌。这产生了带有加密证书的恶意包，验证它们是从可信源构建的——使它们与合法发布无法区分，Snyk指出。每个42个TanStack包都发布了两个恶意版本。
+
+有效载荷是一个2.3 MB的混淆单行JavaScript文件，名为`router_init.js`，执行多阶段凭证收集。Socket的分析发现它对操作系统、CI平台和JavaScript运行时进行指纹识别，然后扫描环境变量并对主要的秘密平面进行主动API调用。对于Linux和macOS，它打包了不同的凭证路径。被盗数据通过三个渠道外泄：`https://git-tanstack[.]com`、Session网络（加密的、去中心化的、抗关闭的）和使用被盗令牌创建的Dune主题GitHub仓库。
+
+针对Guardrails AI和Mistral AI PyPI包的Python变体包含了13行代码，从`git-tanstack[.]com`获取模块化凭证窃取器。这个变体只在Linux上执行，还针对包括1Password和Bitwarden在内的密码管理器。Wiz指出，在具有以色列或伊朗区域设置的系统上，恶意软件试图以最大音量播放MP3文件并删除文件。
+
+## 入侵指标
+
+- 外泄域名：`https://git-tanstack[.]com`
+- Session网络外泄：`*.getsession.org`
+- 有效载荷文件名：`router_init.js`（在撰写本文时，SHA256未公开披露）
+- 死信提交分支名称引用了弗兰克·赫伯特的《沙丘》传奇
+- 恶意仓库被描述为“Shai-Hulud：我们再次出发”
+
+## 战术、技术与程序
+
+TeamPCP的攻击链映射到多个MITRE ATT&CK技术。初始访问利用供应链妥协（T1195.001）通过利用`pull_request_target`配置错误。当下游用户安装恶意包时发生执行（T1204.002）。蠕虫从环境变量、云API和密码管理器中收集凭证（T1555）。外泄使用了三个渠道：HTTPS（T1041）、Session网络（去中心化的P2P）和GitHub仓库。通过每分钟轮询GitHub检查令牌吊销的守护进程实现了持久性（T1543.003）。
+
+## 威胁行为者背景
+
+TeamPCP，这个组织是此次行动的幕后黑手，在过去几个月中在NPM、PyPI和其他生态系统中策划了多次供应链攻击。Mini Shai-Hulud活动名称和《沙丘》主题仓库描述与他们之前的运营安全模式一致。Wiz指出，该组织使用Session网络进行外泄是新颖的，比传统的C2基础设施更难被破坏。
+
+## 缓解措施与建议
+
+组织应立即审计他们的NPM和PyPI依赖项，检查TanStack、Mistral AI、UiPath、Guardrails AI、Squawk或OpenSearch JavaScript客户端在2026年5月11日或前后发布的任何包。通过与官方发布说明比较哈希值来审查包的完整性。对于维护者，StepSecurity建议除非绝对必要，否则禁用`pull_request_target`工作流，如果使用，确保它们不会从分支中检出或执行代码。实施OIDC令牌访问控制，限制哪些工作流可以铸造令牌，并监控GitHub Actions缓存使用情况，以查找意外的修改。防御者还应监控对外连接到`git-tanstack[.]com`或Session网络端点的情况。
+
+## 参考资料
+
+- [SecurityWeek: TanStack, Mistral AI, UiPath Hit in Fresh Supply Chain Attack](https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/)
+- [Wiz Analysis of Mini Shai-Hulud](https://www.wiz.io/blog)
+- [StepSecurity TanStack Post-Mortem](https://www.stepsecurity.io)
+- [Socket Research on router_init.js](https://socket.dev)
+- [Snyk on SLSA Provenance Abuse](https://snyk.io)

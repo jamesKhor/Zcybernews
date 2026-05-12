@@ -1,0 +1,81 @@
+---
+title: 'TeamPCP Hijacks TanStack CI/CD, Poisons 170+ NPM/PyPI Packages'
+slug: 2026-05-12-teampcp-hijacks-tanstack-ci-cd-poisons-170-npm-pypi-packages
+date: '2026-05-12'
+excerpt: >-
+  TeamPCP chained three GitHub Actions flaws to hijack TanStack's CI/CD,
+  publishing 84 malicious artifacts across 42 packages.
+category: threat-intel
+tags:
+  - teampcp
+  - supply-chain
+  - npm
+  - pypi
+  - github-actions
+  - oidc
+  - credential-stealer
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-teampcp-hijacks-tanstack-ci-cd-poisons-170-npm-pypi-packages
+cluster_key: 'topic:tanstack-mistral-uipath-fresh-supply'
+source_count: 1
+severity: critical
+threat_actor: TeamPCP
+affected_sectors:
+  - software development
+  - AI
+  - automation
+affected_regions:
+  - global
+iocs:
+  - type: domain
+    value: getsession.org
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+TeamPCP, the hacking group behind multiple recent open-source supply chain attacks, compromised over 170 NPM and PyPI packages in a coordinated campaign dubbed Mini Shai-Hulud. The attack chain exploited three GitHub Actions security weaknesses to hijack TanStack's CI/CD pipeline, publishing 84 malicious artifacts across 42 TanStack packages under a trusted identity. Victims include TanStack, Mistral AI, UiPath, the OpenSearch JavaScript client, Guardrails AI, and Squawk. The worm steals developer credentials, API keys, cloud secrets, cryptocurrency wallets, and AI-tool secrets, exfiltrating data via a decentralized Session network channel that resists takedown, according to analyses from Wiz, StepSecurity, Socket, and Snyk.
+
+## Technical Analysis
+
+The TanStack compromise began when attackers created a fork of the TanStack/router repository renamed to `zblgg/configuration` and opened a pull request. This triggered the `pull_request_target` workflow — a known "Pwn Request" misconfiguration — which executed attacker-controlled code in the context of the upstream repository, Wiz reported. The code poisoned the GitHub Actions cache. When legitimate maintainer PRs were later merged, the release workflow restored the poisoned cache, allowing attacker binaries to extract the OIDC token directly from the Actions runner's process memory.
+
+With the stolen OIDC token, the attackers minted a valid NPM publish token via Sigstore's SLSA provenance system. This produced malicious packages with cryptographic certificates verifying they were built from a trusted source — making them indistinguishable from legitimate releases, Snyk noted. Two malicious versions of each of the 42 TanStack packages were published.
+
+The payload, a 2.3 MB obfuscated single-line JavaScript file named `router_init.js`, performs multi-stage credential harvesting. Socket's analysis found it fingerprints the OS, CI platform, and JavaScript runtime, then sweeps environment variables and makes active API calls to major secrets planes. For Linux and macOS, it packs different credential paths. Stolen data is exfiltrated via three channels: `https://git-tanstack[.]com`, the Session network (encrypted, decentralized, takedown-resistant), and Dune-themed GitHub repositories created using stolen tokens.
+
+The Python variant targeting Guardrails AI and Mistral AI PyPI packages contained 13 lines of code fetching a modular credential stealer from `git-tanstack[.]com`. This variant, executing only on Linux, also targets password managers including 1Password and Bitwarden. Wiz noted that on systems with Israel or Iran locales, the malware attempts to play an MP3 file at full volume and delete files.
+
+## Indicators of Compromise
+
+- Exfiltration domain: `https://git-tanstack[.]com`
+- Session network exfiltration: `*.getsession.org`
+- Payload filename: `router_init.js` (SHA256 not publicly disclosed at time of writing)
+- Dead-drop commit branch names reference Frank Herbert's Dune saga
+- Malicious repositories described as "Shai-Hulud: Here We Go Again"
+
+## Tactics, Techniques & Procedures
+
+TeamPCP's attack chain maps to multiple MITRE ATT&CK techniques. Initial access leveraged supply chain compromise (T1195.001) by exploiting a `pull_request_target` misconfiguration. Execution occurred when downstream users installed malicious packages (T1204.002). The worm harvested credentials (T1555) from environment variables, cloud APIs, and password managers. Exfiltration used three channels: HTTPS (T1041), the Session network (decentralized P2P), and GitHub repositories. Persistence was achieved via a daemon polling GitHub every minute to check token revocation (T1543.003).
+
+## Threat Actor Context
+
+TeamPCP, the group behind this campaign, has orchestrated multiple supply chain attacks across NPM, PyPI, and other ecosystems over recent months. The Mini Shai-Hulud campaign name and Dune-themed repository descriptions are consistent with their previous operational security patterns. Wiz noted the group's use of the Session network for exfiltration is novel and significantly harder to disrupt than traditional C2 infrastructure.
+
+## Mitigations & Recommendations
+
+Organizations should immediately audit their NPM and PyPI dependencies for any packages published by TanStack, Mistral AI, UiPath, Guardrails AI, Squawk, or the OpenSearch JavaScript client on or around May 11, 2026. Review package integrity by comparing hashes against official release notes. For maintainers, StepSecurity recommends disabling `pull_request_target` workflows unless absolutely necessary, and if used, ensuring they do not check out or execute code from forks. Implement OIDC token access controls to limit which workflows can mint tokens, and monitor GitHub Actions cache usage for unexpected modifications. Defenders should also monitor for outbound connections to `git-tanstack[.]com` or Session network endpoints.
+
+## References
+
+- [SecurityWeek: TanStack, Mistral AI, UiPath Hit in Fresh Supply Chain Attack](https://www.securityweek.com/tanstack-mistral-ai-uipath-hit-in-fresh-supply-chain-attack/)
+- [Wiz Analysis of Mini Shai-Hulud](https://www.wiz.io/blog)
+- [StepSecurity TanStack Post-Mortem](https://www.stepsecurity.io)
+- [Socket Research on router_init.js](https://socket.dev)
+- [Snyk on SLSA Provenance Abuse](https://snyk.io)
