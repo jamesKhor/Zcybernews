@@ -1,0 +1,67 @@
+---
+title: 'Microsoft Patches 137 Flaws, SSO Plugin Bug Rated Critical'
+slug: 2026-05-12-microsoft-patches-137-flaws-sso-plugin-bug-rated-critical
+date: '2026-05-12'
+excerpt: >-
+  CVE-2026-41103 in Microsoft SSO Plugin for Jira & Confluence allows privilege
+  escalation via flawed authentication.
+category: vulnerabilities
+tags:
+  - microsoft
+  - patch-tuesday
+  - cve-2026-41103
+  - cve-2026-40364
+  - cve-2026-40361
+  - sso-plugin
+  - word-rce
+  - privilege-escalation
+language: en
+source_urls:
+  - 'https://www.securityweek.com/microsoft-patches-137-vulnerabilities/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-microsoft-patches-137-flaws-sso-plugin-bug-rated-critical
+cluster_key: 'topic:microsoft-patches-microsoft-patch-tuesday'
+source_count: 1
+severity: critical
+cvss_score: 8.4
+cve_ids:
+  - CVE-2026-41103
+  - CVE-2026-40364
+  - CVE-2026-40361
+affected_sectors:
+  - technology
+  - enterprise software
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+Microsoft released 137 security patches in its May 2026 Patch Tuesday update, addressing vulnerabilities across Windows, Azure, Office, Dynamics 365, and other product lines. None of the flaws have been publicly exploited in the wild as of the release date, according to Microsoft's advisory. The most critical item is CVE-2026-41103, a privilege escalation bug in the Microsoft SSO Plugin for Jira & Confluence with a CVSS score of 9.8, stemming from an incorrect authentication algorithm implementation. Two high-severity remote code execution flaws in Microsoft Word (CVE-2026-40364 and CVE-2026-40361, both CVSS 8.4) are notable because exploitation can occur simply by viewing a malicious document in the Preview Pane, without needing to open the file. Roughly a dozen of the patched vulnerabilities carry an exploitability rating of 'exploitation more likely,' per Microsoft's assessment.
+
+## Technical Analysis
+
+**CVE-2026-41103 — SSO Plugin Privilege Escalation**
+
+The most severe vulnerability patched this month is CVE-2026-41103, a critical-severity flaw in the Microsoft SSO Plugin for Jira & Confluence. The bug is rooted in an incorrect implementation of the authentication algorithm, which could allow an unauthenticated attacker to elevate privileges on affected systems. Tenable senior staff research engineer Satnam Narang noted that the SSO plugin's integration with widely used Atlassian products makes this a high-value target for organizations using federated identity in enterprise environments. Microsoft assigned a CVSS score of 9.8 to this vulnerability, though the company did not disclose whether proof-of-concept code has been published.
+
+**CVE-2026-40364 and CVE-2026-40361 — Word Remote Code Execution**
+
+Two high-severity RCE flaws in Microsoft Word stand out due to their exploitation vector. CVE-2026-40364 is a type confusion issue, while CVE-2026-40361 is a use-after-free bug. Both carry a CVSS score of 8.4. The critical detail, as highlighted by Narang, is that exploitation does not require the target to open the malicious document. Simply viewing the document in the Preview Pane is sufficient to trigger the exploit. This attack surface is particularly dangerous because Preview Pane is enabled by default in many Outlook configurations and file explorer views, meaning a user could be compromised by merely selecting a malicious .docx file in an email or folder. Microsoft rates both bugs as 'more likely to be exploited.'
+
+**Other Notable Patches**
+
+Microsoft also resolved critical-severity vulnerabilities in Dynamics 365 (on-premises), Azure Logic Apps, Windows DNS, Windows Netlogon, Windows Hyper-V, and Azure SDK. High-severity flaws were patched in Copilot, .NET, Azure services, Windows kernel and kernel-mode drivers, Win32K, LDAP, SQL Server, Edge, Visual Studio Code, and various Windows components including Remote Desktop, Common Log File System Driver, Kernel, Azure AI Foundry, Ancillary Function Driver for WinSock, TCP/IP, and Cloud Files Mini Filter Driver. In total, more than two dozen vulnerabilities were resolved in the Office suite alone.
+
+**Adobe Patches**
+
+Concurrently, Adobe released patches for 52 vulnerabilities across 10 products, including two critical-severity code execution flaws. The Adobe updates were not detailed in the source material beyond this summary.
+
+## Mitigations & Recommendations
+
+Organizations should prioritize deploying the Microsoft May 2026 Patch Tuesday updates across all affected systems, with particular urgency for CVE-2026-41103 in the SSO Plugin for Jira & Confluence and the two Word RCE flaws (CVE-2026-40364, CVE-2026-40361). For the Word vulnerabilities, defenders can temporarily mitigate risk by disabling the Preview Pane in Outlook and Windows File Explorer until patches are applied, though patching remains the most reliable defense. Given that roughly a dozen bugs are rated 'exploitation more likely,' security teams should treat this update with higher priority than a typical Patch Tuesday cycle. No workarounds have been published by Microsoft for the SSO plugin flaw, making patching the sole mitigation.
+
+## References
+
+- [SecurityWeek: Microsoft Patches 137 Vulnerabilities](https://www.securityweek.com/microsoft-patches-137-vulnerabilities/)

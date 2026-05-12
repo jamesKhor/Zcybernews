@@ -1,0 +1,65 @@
+---
+title: 微软修补137个漏洞，SSO插件漏洞被评为严重
+slug: 2026-05-12-microsoft-patches-137-flaws-sso-plugin-bug-rated-critical
+date: '2026-05-12'
+excerpt: CVE-2026-41103在微软SSO插件用于Jira和Confluence中允许通过有缺陷的认证提升权限。
+category: vulnerabilities
+tags:
+  - microsoft
+  - patch-tuesday
+  - cve-2026-41103
+  - cve-2026-40364
+  - cve-2026-40361
+  - sso-plugin
+  - word-rce
+  - privilege-escalation
+language: zh
+source_urls:
+  - 'https://www.securityweek.com/microsoft-patches-137-vulnerabilities/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-12-microsoft-patches-137-flaws-sso-plugin-bug-rated-critical
+cluster_key: 'topic:microsoft-patches-microsoft-patch-tuesday'
+source_count: 1
+severity: critical
+cvss_score: 8.4
+cve_ids:
+  - CVE-2026-41103
+  - CVE-2026-40364
+  - CVE-2026-40361
+affected_sectors:
+  - technology
+  - enterprise software
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+微软在2026年5月的补丁星期二更新中发布了137个安全补丁，涉及Windows、Azure、Office、Dynamics 365等产品线的漏洞。根据微软的公告，截至发布日期，这些漏洞尚未在野外被公开利用。最严重的项目是CVE-2026-41103，这是微软SSO插件用于Jira和Confluence的一个权限提升漏洞，CVSS得分为9.8，源于不正确的身份验证算法实现。两个高严重性的远程代码执行漏洞在Microsoft Word中（CVE-2026-40364和CVE-2026-40361，均为CVSS 8.4）值得注意，因为仅通过在预览窗格中查看恶意文档即可发生利用，无需打开文件。大约有十几个修补的漏洞根据微软的评估具有“更可能被利用”的可利用性评级。
+
+## 技术分析
+
+**CVE-2026-41103 — SSO插件权限提升**
+
+本月修补的最严重的漏洞是CVE-2026-41103，这是微软SSO插件用于Jira和Confluence的一个关键严重性漏洞。该漏洞源于身份验证算法的错误实现，可能允许未经身份验证的攻击者提升受影响系统上的权限。Tenable高级员工研究工程师Satnam Narang指出，SSO插件与广泛使用的Atlassian产品的集成使得这成为使用企业环境中联合身份的组织的一个高价值目标。微软为这个漏洞分配了9.8的CVSS得分，尽管公司没有披露是否已经发布了概念验证代码。
+
+**CVE-2026-40364和CVE-2026-40361 — Word远程代码执行**
+
+由于它们的利用向量，Microsoft Word中的两个高严重性RCE漏洞脱颖而出。CVE-2026-40364是一个类型混淆问题，而CVE-2026-40361是一个使用后释放错误。两者的CVSS得分均为8.4。Narang强调的关键细节是，利用不需要目标打开恶意文档。仅在预览窗格中查看文档就足以触发漏洞。这个攻击面特别危险，因为预览窗格在许多Outlook配置和文件资源管理器视图中默认启用，这意味着用户可能仅通过在电子邮件或文件夹中选择恶意.docx文件就被破坏。微软将这两个错误评为“更可能被利用”。
+
+**其他值得注意的补丁**
+
+微软还解决了Dynamics 365（本地）、Azure Logic Apps、Windows DNS、Windows Netlogon、Windows Hyper-V和Azure SDK中的关键严重性漏洞。在Copilot、.NET、Azure服务、Windows内核和内核模式驱动程序、Win32K、LDAP、SQL Server、Edge、Visual Studio Code以及包括远程桌面、Common Log File System Driver、Kernel、Azure AI Foundry、Ancillary Function Driver for WinSock、TCP/IP和Cloud Files Mini Filter Driver在内的各种Windows组件中修补了高严重性漏洞。仅Office套件就解决了超过两打的漏洞。
+
+**Adobe补丁**
+
+同时，Adobe发布了针对10个产品的52个漏洞的补丁，包括两个关键严重性的代码执行漏洞。Adobe更新的详细信息没有在源材料中提供，超出了这个摘要。
+
+## 缓解措施与建议
+
+组织应优先在所有受影响的系统上部署微软2026年5月补丁星期二更新，特别是SSO插件用于Jira和Confluence的CVE-2026-41103和两个Word RCE漏洞（CVE-2026-40364，CVE-2026-40361）。对于Word漏洞，防御者可以通过在补丁应用之前在Outlook和Windows文件资源管理器中禁用预览窗格来临时缓解风险，尽管补丁仍然是最可靠的防御。鉴于大约有十几个错误被评为“更可能被利用”，安全团队应将此更新视为比典型的补丁星期二周期更高的优先级。微软尚未发布SSO插件漏洞的替代解决方案，因此补丁是唯一的缓解措施。
+
+## 参考资料
+
+- [SecurityWeek: 微软修补137个漏洞](https://www.securityweek.com/microsoft-patches-137-vulnerabilities/)
