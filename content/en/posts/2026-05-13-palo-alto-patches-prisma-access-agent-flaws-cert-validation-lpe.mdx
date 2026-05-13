@@ -1,0 +1,58 @@
+---
+title: 'Palo Alto Patches Prisma Access Agent Flaws: Cert Validation, LPE'
+slug: 2026-05-13-palo-alto-patches-prisma-access-agent-flaws-cert-validation-lpe
+date: '2026-05-13'
+excerpt: >-
+  Palo Alto Networks released patches for two medium-severity flaws in Prisma
+  Access Agent — CVE-2026-0248 (improper certificate validation) and
+  CVE-2026-0246 (local privilege...
+category: vulnerabilities
+tags:
+  - palo-alto-networks
+  - prisma-access-agent
+  - cve-2026-0248
+  - cve-2026-0246
+  - certificate-validation
+  - privilege-escalation
+language: en
+source_urls:
+  - 'https://security.paloaltonetworks.com/CVE-2026-0248'
+  - 'https://security.paloaltonetworks.com/CVE-2026-0246'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-13-palo-alto-patches-prisma-access-agent-flaws-cert-validation-lpe
+cluster_key: 'cve:CVE-2026-0248'
+source_count: 2
+severity: medium
+cve_ids:
+  - CVE-2026-0248
+  - CVE-2026-0246
+affected_sectors:
+  - enterprise
+  - technology
+publish_tier: public
+---
+## Executive Summary
+
+Palo Alto Networks published advisories for two medium-severity vulnerabilities in its Prisma Access Agent software on May 13, 2026. The flaws — CVE-2026-0248, an improper certificate validation weakness, and CVE-2026-0246, a local privilege escalation bug — affect the client component used to connect remote users to Prisma Access SASE services. Palo Alto has released fixed versions and recommends updating as soon as possible. No active exploitation or public proof-of-concept has been reported as of the advisory date, according to the vendor.
+
+## Technical Analysis
+
+**CVE-2026-0248 — Improper Certificate Validation**
+
+This vulnerability resides in the certificate validation logic of Prisma Access Agent. An attacker who can intercept or control network traffic between the agent and Prisma Access cloud services could potentially present a forged certificate that the agent would accept, according to Palo Alto Networks' advisory. The flaw is classified as medium severity. The advisory does not specify a CVSS score. The attack vector is network-based and requires the attacker to be positioned on the same network segment as the affected endpoint or to have compromised upstream routing. Successful exploitation could allow man-in-the-middle attacks, enabling the attacker to decrypt, read, or modify traffic intended for the Prisma Access service.
+
+**CVE-2026-0246 — Local Privilege Escalation**
+
+CVE-2026-0246 is a local privilege escalation vulnerability in the same Prisma Access Agent software. An authenticated attacker with local access to a system running the agent could exploit this flaw to elevate their privileges to a higher level, potentially gaining SYSTEM or root-level access, depending on the operating system. Palo Alto's advisory characterizes this as a medium-severity issue. The exact mechanism — whether it involves a named pipe, a service misconfiguration, or an insecure file permission — is not detailed in the public advisory. The attacker must already have a foothold on the endpoint, limiting the blast radius compared to a remote exploit. The combination of these two vulnerabilities, if chained, could be more serious: an attacker who achieves remote code execution via another vector could use CVE-2026-0246 to escalate privileges and then use CVE-2026-0248 to maintain persistence or pivot to other systems.
+
+Both flaws were discovered internally by Palo Alto Networks, according to the advisories. No external researcher credit is listed, suggesting the issues were found during internal security testing or code review.
+
+## Mitigations & Recommendations
+
+Palo Alto Networks has released fixed versions of Prisma Access Agent. The vendor advisory directs customers to update to the latest available version of the agent, which can be obtained through the Palo Alto Networks support portal. Because the vulnerabilities affect the client-side agent, organizations should prioritize updating remote endpoints, including laptops and virtual desktops used by teleworkers. For CVE-2026-0248, network-level controls such as certificate pinning and strict TLS inspection policies can provide defense in depth, though the advisory does not explicitly recommend these. For CVE-2026-0246, restricting local administrative access to endpoints and implementing application whitelisting can reduce the risk of exploitation. No workarounds are listed in the advisories. Defenders should monitor Palo Alto Networks' security advisory page for any updates, including potential proof-of-concept releases or reports of active exploitation.
+
+## References
+
+- Palo Alto Networks Security Advisory for CVE-2026-0248: [https://security.paloaltonetworks.com/CVE-2026-0248](https://security.paloaltonetworks.com/CVE-2026-0248)
+- Palo Alto Networks Security Advisory for CVE-2026-0246: [https://security.paloaltonetworks.com/CVE-2026-0246](https://security.paloaltonetworks.com/CVE-2026-0246)

@@ -1,0 +1,57 @@
+---
+title: Palo Alto 修复 Prisma Access Agent 漏洞：证书验证，LPE
+slug: 2026-05-13-palo-alto-patches-prisma-access-agent-flaws-cert-validation-lpe
+date: '2026-05-13'
+excerpt: >-
+  Palo Alto Networks 发布了针对 Prisma Access Agent 中两个中等严重漏洞的补丁 —
+  CVE-2026-0248（不当证书验证）和 CVE-2026-0246（本地权限提升）...
+category: vulnerabilities
+tags:
+  - palo-alto-networks
+  - prisma-access-agent
+  - cve-2026-0248
+  - cve-2026-0246
+  - certificate-validation
+  - privilege-escalation
+language: zh
+source_urls:
+  - 'https://security.paloaltonetworks.com/CVE-2026-0248'
+  - 'https://security.paloaltonetworks.com/CVE-2026-0246'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-13-palo-alto-patches-prisma-access-agent-flaws-cert-validation-lpe
+cluster_key: 'cve:CVE-2026-0248'
+source_count: 2
+severity: medium
+cve_ids:
+  - CVE-2026-0248
+  - CVE-2026-0246
+affected_sectors:
+  - enterprise
+  - technology
+publish_tier: public
+---
+## 执行摘要
+
+Palo Alto Networks 在 2026 年 5 月 13 日发布了关于其 Prisma Access Agent 软件中两个中等严重性漏洞的通告。这些漏洞 —— CVE-2026-0248，一个不当的证书验证弱点，以及 CVE-2026-0246，一个本地权限提升错误 —— 影响用于将远程用户连接到 Prisma Access SASE 服务的客户端组件。Palo Alto 已经发布了修复版本，并建议尽快更新。根据供应商的说法，截至通告日期，没有报告任何活跃的利用或公开的概念验证。
+
+## 技术分析
+
+**CVE-2026-0248 — 不当证书验证**
+
+这个漏洞存在于 Prisma Access Agent 的证书验证逻辑中。根据 Palo Alto Networks 的通告，能够拦截或控制代理和 Prisma Access 云服务之间网络流量的攻击者可能会呈现一个代理会接受的伪造证书。这个漏洞被分类为中等严重性。通告没有指定 CVSS 评分。攻击向量基于网络，需要攻击者位于与受影响端点相同的网络段上，或者已经破坏了上游路由。成功利用可能允许中间人攻击，使攻击者能够解密、读取或修改旨在用于 Prisma Access 服务的流量。
+
+**CVE-2026-0246 — 本地权限提升**
+
+CVE-2026-0246 是 Prisma Access Agent 软件中的一个本地权限提升漏洞。一个经过身份验证的攻击者，如果能够本地访问运行代理的系统，可以利用这个漏洞提升他们的权限到更高的级别，可能获得 SYSTEM 或 root 级别的访问权限，具体取决于操作系统。Palo Alto 的通告将此描述为中等严重性问题。确切的机制 —— 是否涉及命名管道、服务配置错误或不安全的文件权限 —— 在公开通告中没有详细说明。攻击者必须已经在端点上有一个立足点，这限制了与远程利用相比的影响范围。如果将这两个漏洞串联起来，可能会更加严重：通过另一个向量实现远程代码执行的攻击者可以使用 CVE-2026-0246 提升权限，然后使用 CVE-2026-0248 来维持持久性或转移到其他系统。
+
+根据通告，这两个漏洞都是由 Palo Alto Networks 内部发现的。没有列出外部研究人员的信用，这表明这些问题是在内部安全测试或代码审查中发现的。
+
+## 缓解措施与建议
+
+Palo Alto Networks 已经发布了 Prisma Access Agent 的修复版本。供应商通告指导客户更新到代理的最新可用版本，该版本可以通过 Palo Alto Networks 支持门户获得。由于漏洞影响客户端代理，组织应该优先更新远程端点，包括远程工作人员使用的笔记本电脑和虚拟桌面。对于 CVE-2026-0248，网络级控制措施，如证书固定和严格的 TLS 检查策略，可以提供深度防御，尽管通告没有明确推荐这些措施。对于 CVE-2026-0246，限制对端点的本地管理访问权限和实施应用程序白名单可以降低被利用的风险。通告中没有列出任何变通方法。防御者应该监控 Palo Alto Networks 的安全通告页面，以获取任何更新，包括潜在的概念验证发布或活跃利用的报告。
+
+## 参考资料
+
+- Palo Alto Networks 安全通告 CVE-2026-0248: [https://security.paloaltonetworks.com/CVE-2026-0248](https://security.paloaltonetworks.com/CVE-2026-0248)
+- Palo Alto Networks 安全通告 CVE-2026-0246: [https://security.paloaltonetworks.com/CVE-2026-0246](https://security.paloaltonetworks.com/CVE-2026-0246)
