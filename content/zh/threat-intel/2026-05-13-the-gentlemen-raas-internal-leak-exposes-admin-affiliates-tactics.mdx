@@ -1,0 +1,60 @@
+---
+title: The Gentlemen RaaS 内部泄露暴露管理员、合作伙伴、战术
+slug: 2026-05-13-the-gentlemen-raas-internal-leak-exposes-admin-affiliates-tactics
+date: '2026-05-13'
+excerpt: >-
+  从 The Gentlemen RaaS 操作泄露的后端数据库揭示了9个账户，管理员 TOX ID，通过 Fortinet/Cisco
+  边缘漏洞的初始访问，以及190,000美元的赎金支付。
+category: threat-intel
+tags:
+  - the-gentlemen
+  - raas
+  - ransomware
+  - leak
+  - check-point-research
+  - fortinet
+  - cisco
+  - ntlm-relay
+language: zh
+source_urls:
+  - 'https://research.checkpoint.com/2026/thus-spoke-the-gentlemen/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-13-the-gentlemen-raas-internal-leak-exposes-admin-affiliates-tactics
+cluster_key: 'topic:thus-spokethe-gentlemen-check-point'
+source_count: 1
+severity: critical
+cve_ids:
+  - CVE-2024-55591
+  - CVE-2025-32433
+  - CVE-2025-33073
+threat_actor: The Gentlemen
+affected_sectors:
+  - software consultancy
+  - various
+affected_regions:
+  - UK
+  - Turkey
+publish_tier: public
+---
+## 执行摘要
+
+2026年5月4日，The Gentlemen 勒索软件即服务（RaaS）项目的管理员在地下论坛上承认，一个内部后端数据库“Rocket”被泄露。Check Point Research（CPR）获取并分析了这次泄露，暴露了包括被称为“zeta88”（也称为“hastalamuerte”）的管理员在内的九个账户，该管理员负责管理基础设施，构建锁定器和RaaS面板，处理支付，并有效地运行整个操作。泄露的内部聊天记录提供了该组织操作的前所未有的端到端视图：它们详细说明了初始访问向量（Fortinet和Cisco边缘设备，NTLM中继，OWA/M365凭证日志），角色划分，共享工具包，以及对特定CVE的积极跟踪，包括CVE-2024-55591，CVE-2025-32433和CVE-2025-33073。勒索谈判的截图显示，与最初的25万美元要求相比，成功支付了19万美元。进一步的聊天记录表明，从英国软件咨询公司窃取的数据后来被用来向土耳其公司施压，要求支付，使用双重勒索叙述，将英国公司描绘成“访问经纪人”。CPR收集了八个不同的联盟TOX ID，包括管理员的，这表明管理员不仅管理RaaS，还积极参与某些感染。The Gentlemen在2026年的前五个月在其数据泄露网站上公布了大约332名受害者，使其成为该时期第二大公开列出的RaaS操作。
+
+## 技术分析
+
+The Gentlemen RaaS大约在2025年中出现，其管理员积极在地下论坛上招募联盟成员，使用账户“Zeta88”。利润分享模型是积极的：联盟成员90%，运营商10%。管理员后来以“绅士”为名发布，并始终使用相同的TOX ID（F8E24C7F5B12CD69C44C73F438F65E9BF560ADF35EBBDF92CF9A9B84079F8F04060FF98D098E）进行招聘帖子、洋葱数据泄露网站和内部通信，使CPR能够高度确信地将泄露的数据库与管理员联系起来。
+
+泄露的数据库包含内部聊天频道（INFO、general、TOOLS、PODBOR），联盟成员和管理员在这里协调入侵，交换EDR-kill包，讨论基础设施（Rocket数据库、NAS存储），并审查CVE和利用路径。CPR报告称，该组织积极跟踪和评估CVE-2024-55591（Fortinet FortiOS/FortiProxy认证绕过）、CVE-2025-32433（可能影响边缘设备——CPR在公共摘要中未指定供应商）和CVE-2025-33073（也未指定，但在初始访问的背景下进行了讨论）。聊天记录还详细说明了使用NTLM中继攻击和从OWA/M365日志中收集凭证作为主要初始访问方法。
+
+泄露中揭示的一个值得注意的策略是该组织使用双重压力勒索。在一个案例中，从英国软件咨询公司窃取的数据被用来向土耳其公司施压。管理员告诉土耳其受害者，英国公司充当“访问经纪人”，并鼓励土耳其公司对咨询公司采取法律行动，同时施加压力并试图转移责任。这种方法模仿了其他勒索软件组织中看到的社交工程技术，但很少用直接的聊天记录来记录。
+
+CPR从收集的勒索软件样本中识别出八个不同的联盟TOX ID，包括管理员的。这表明管理员不仅管理RaaS平台，还直接参与或执行一些感染，模糊了运营商和联盟成员之间的界限。
+
+## 缓解措施与建议
+
+防御者应优先对The Gentlemen跟踪的CVE（CVE-2024-55591、CVE-2025-32433、CVE-2025-33073）进行Fortinet和Cisco边缘设备的补丁修复。应通过启用SMB签名、禁用NTLMv1以及在Exchange和OWA服务器上强制执行扩展保护来缓解NTLM中继攻击。使用OWA或M365的组织应审计凭证日志中的异常认证模式，并为所有面向外部的服务启用多因素认证（MFA）。泄露证实The Gentlemen积极针对这些向量；加强它们可以减少针对此和类似RaaS操作的攻击面。此外，组织应在任何勒索通信中监控TOX ID F8E24C7F5B12CD69C44C73F438F65E9BF560ADF35EBBDF92CF9A9B84079F8F04060FF98D098E，作为The Gentlemen参与的潜在指标。
+
+## 参考资料
+
+- Check Point Research: [Thus Spoke…The Gentlemen](https://research.checkpoint.com/2026/thus-spoke-the-gentlemen/)

@@ -1,0 +1,61 @@
+---
+title: 'The Gentlemen RaaS Internal Leak Exposes Admin, Affiliates, Tactics'
+slug: 2026-05-13-the-gentlemen-raas-internal-leak-exposes-admin-affiliates-tactics
+date: '2026-05-13'
+excerpt: >-
+  A leaked backend database from The Gentlemen RaaS operation reveals 9
+  accounts, admin TOX ID, initial access via Fortinet/Cisco edge flaws, and a
+  190,000 USD ransom payout.
+category: threat-intel
+tags:
+  - the-gentlemen
+  - raas
+  - ransomware
+  - leak
+  - check-point-research
+  - fortinet
+  - cisco
+  - ntlm-relay
+language: en
+source_urls:
+  - 'https://research.checkpoint.com/2026/thus-spoke-the-gentlemen/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-13-the-gentlemen-raas-internal-leak-exposes-admin-affiliates-tactics
+cluster_key: 'topic:thus-spokethe-gentlemen-check-point'
+source_count: 1
+severity: critical
+cve_ids:
+  - CVE-2024-55591
+  - CVE-2025-32433
+  - CVE-2025-33073
+threat_actor: The Gentlemen
+affected_sectors:
+  - software consultancy
+  - various
+affected_regions:
+  - UK
+  - Turkey
+publish_tier: public
+---
+## Executive Summary
+
+On May 4, 2026, the administrator of The Gentlemen ransomware-as-a-service (RaaS) program acknowledged on underground forums that an internal backend database, codenamed "Rocket," had been leaked. The leak, obtained and analyzed by Check Point Research (CPR), exposed nine accounts, including that of the administrator known as "zeta88" (also "hastalamuerte"), who manages infrastructure, builds the locker and RaaS panel, processes payouts, and effectively runs the operation. The leaked internal chats provide an unprecedented end-to-end view of the group's operations: they detail initial access vectors (Fortinet and Cisco edge appliances, NTLM relay, OWA/M365 credential logs), role divisions, shared toolkits, and active tracking of specific CVEs including CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Screenshots from ransom negotiations show a successful payout of 190,000 USD against an initial demand of 250,000 USD. Further chats indicate that stolen data from a UK software consultancy was later reused to pressure a Turkish company into paying, using a dual-extortion narrative that framed the UK firm as the "access broker." CPR collected eight distinct affiliate TOX IDs, including the administrator's, suggesting the admin not only manages the RaaS but also actively participates in some infections. The Gentlemen has published approximately 332 victims on its data leak site in the first five months of 2026, making it the second most productive publicly-listing RaaS operation in that period.
+
+## Technical Analysis
+
+The Gentlemen RaaS emerged around mid-2025, with its administrator actively recruiting affiliates on underground forums using the account "Zeta88." The profit-sharing model was aggressive: 90% for affiliates, 10% for the operator. The administrator later posted under the handle "The Gentlemen" and consistently used the same TOX ID (F8E24C7F5B12CD69C44C73F438F65E9BF560ADF35EBBDF92CF9A9B84079F8F04060FF98D098E) across recruitment posts, the onion data leak site, and internal communications, enabling CPR to tie the leaked database to the admin with high confidence.
+
+The leaked database contained internal chat channels (INFO, general, TOOLS, PODBOR) where affiliates and the admin coordinated intrusions, exchanged EDR-kill packages, discussed infrastructure (Rocket database, NAS storage), and reviewed CVEs and exploit paths. CPR reports that the group actively tracked and evaluated CVE-2024-55591 (Fortinet FortiOS/FortiProxy authentication bypass), CVE-2025-32433 (likely affecting edge appliances — CPR did not specify vendor in the public summary), and CVE-2025-33073 (also unspecified but discussed in context of initial access). The chats also detailed use of NTLM relay attacks and credential harvesting from OWA/M365 logs as primary initial access methods.
+
+A notable tactic revealed in the leak is the group's use of dual-pressure extortion. In one case, data stolen from a UK software consultancy was used to pressure a Turkish company. The admin told the Turkish victim that the UK firm acted as an "access broker" and encouraged the Turkish company to pursue legal action against the consultancy, simultaneously applying pressure and attempting to deflect blame. This approach mirrors social engineering techniques seen in other ransomware groups but is rarely documented with direct chat evidence.
+
+CPR identified eight distinct affiliate TOX IDs from collected ransomware samples, including the admin's. This indicates that the admin not only manages the RaaS platform but also directly participates in or carries out some infections, blurring the line between operator and affiliate.
+
+## Mitigations & Recommendations
+
+Defenders should prioritize patching Fortinet and Cisco edge appliances against the CVEs tracked by The Gentlemen (CVE-2024-55591, CVE-2025-32433, CVE-2025-33073). NTLM relay attacks should be mitigated by enabling SMB signing, disabling NTLMv1, and enforcing Extended Protection for Authentication on Exchange and OWA servers. Organizations using OWA or M365 should audit credential logs for anomalous authentication patterns and enable multi-factor authentication (MFA) for all external-facing services. The leak confirms that The Gentlemen actively targets these vectors; hardening them reduces the attack surface for this and similar RaaS operations. Additionally, organizations should monitor for the TOX ID F8E24C7F5B12CD69C44C73F438F65E9BF560ADF35EBBDF92CF9A9B84079F8F04060FF98D098E in any ransom communications as a potential indicator of The Gentlemen involvement.
+
+## References
+
+- Check Point Research: [Thus Spoke…The Gentlemen](https://research.checkpoint.com/2026/thus-spoke-the-gentlemen/)
