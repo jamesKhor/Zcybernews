@@ -1,0 +1,46 @@
+---
+title: AI驱动攻击在73秒内破坏系统，超越补丁速度
+slug: >-
+  2026-05-13-ai-driven-attacks-compromise-systems-in-73-seconds-outpacing-patching
+date: '2026-05-13'
+excerpt: Picus Security分析显示，AI驱动的攻击者利用CVEs大约需要10小时，而破坏系统仅需73秒，而补丁仍然需要24小时。
+category: industry
+tags:
+  - ai-driven-attacks
+  - autonomous-validation
+  - picus-security
+  - mythos
+  - cve-exploitation
+  - defense-agility
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/73-seconds-to-breach-24-hours-to-patch-the-case-for-autonomous-validation/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-13-ai-driven-attacks-compromise-systems-in-73-seconds-outpacing-patching
+cluster_key: 'topic:seconds-breach-hours-patch-case'
+source_count: 1
+severity: high
+publish_tier: public
+---
+## 执行摘要
+
+根据Picus Security的最新分析，利用AI的攻击者可以在短短73秒内破坏系统，而防御者仍需要平均24小时来修补相同的漏洞。报告于2026年5月13日发布，突出了由AI驱动的攻击能力推动的日益扩大的敏捷性差距，包括Anthropic最近限制的Mythos模型，在测试的前14天内自主编写了181个有效的Firefox漏洞利用代码。从CVE发布到野外工作的漏洞利用的中位时间已缩短至大约10小时，从2024年的56天下降，使得传统的漏洞管理假设过时。
+
+## 技术分析
+
+Picus Security研究工程师Sila Ozeren Hacioglu撰写了这项分析，利用了来自AWS威胁情报、CISA KEV、VulnCheck KEV和公共漏洞数据库的数据。报告描述了2026年2月AWS对由单一低技能操作员使用AI进行的FortiGate活动的事后分析：该活动并行打击了106个国家的2,516个设备，利用已知的CVE和配置错误，而不需要零日漏洞。操作员从未触摸过键盘——AI以机器速度执行了整个操作。
+
+报告对比了攻击者的时间线和防御者的工作流程。AI驱动的破坏在73秒内展开：脚本启动在第二零秒，CVE漏洞利用在第五秒，MFA绕过在第二十秒，web shell在第三十秒，凭据转储在第四十五秒。与此同时，典型的防御者响应始于一分钟的SIEM警报（攻击者已经完成），一级分析师在五分钟内接手，手动SOAR剧本触发在十五分钟，Jira票务在一小时，IT运维队列到达在四小时，补丁部署在24小时。报告强调，瓶颈不是单个工具的速度——EDR、SIEM和漏洞扫描器都表现良好——而是团队和系统之间数据的“意大利面式交接”（Slack消息、复制粘贴的哈希值、通过电子邮件发送的PDF报告、票务批准）。
+
+Anthropic的Mythos模型于2026年4月发布，向十二个合作伙伴提供了限制预览，进一步说明了威胁。在沙箱内14天，Mythos编写了181个有效的Firefox漏洞利用代码——之前的最先进AI模型管理了两个。它在主要操作系统和浏览器中发现了数千个零日漏洞，包括OpenBSD中一个27岁的错误。报告指出，截至发布时，超过99%的Mythos发现在生产中仍未修补。
+
+## 缓解措施与建议
+
+报告提出了AI时代的三个网络弹性支柱：识别、保护和验证。识别需要在网络、端点、云和身份之间进行全面的暴露可见性，通过积极的攻击面管理消除盲点（孤儿远程访问、缺失的分段、MFA差距）。保护涉及有效的网络和端点控制，正确调整，检测重点放在凭证访问、横向移动和权限提升上。第三个支柱，自主验证，被视为关键的区别因素：不断测试现有控制是否真的阻止了AI现在可以执行的攻击，而不是依赖于季度渗透测试或合规性清单。报告建议安全团队采用基于证据的防御计划，董事会可以直接管理，因为AI驱动的网络风险已经从技术问题转变为存在的治理问题。
+
+## 参考资料
+
+- [73秒内被破坏，24小时内修补：自主验证的案例](https://www.bleepingcomputer.com/news/security/73-seconds-to-breach-24-hours-to-patch-the-case-for-autonomous-validation/)

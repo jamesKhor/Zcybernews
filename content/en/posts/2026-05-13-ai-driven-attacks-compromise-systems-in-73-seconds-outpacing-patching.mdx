@@ -1,0 +1,48 @@
+---
+title: 'AI-Driven Attacks Compromise Systems in 73 Seconds, Outpacing Patching'
+slug: >-
+  2026-05-13-ai-driven-attacks-compromise-systems-in-73-seconds-outpacing-patching
+date: '2026-05-13'
+excerpt: >-
+  Picus Security analysis shows AI-powered attackers exploit CVEs in ~10 hours
+  and breach systems in 73 seconds, while patching still takes 24 hours.
+category: industry
+tags:
+  - ai-driven-attacks
+  - autonomous-validation
+  - picus-security
+  - mythos
+  - cve-exploitation
+  - defense-agility
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/73-seconds-to-breach-24-hours-to-patch-the-case-for-autonomous-validation/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-13-ai-driven-attacks-compromise-systems-in-73-seconds-outpacing-patching
+cluster_key: 'topic:seconds-breach-hours-patch-case'
+source_count: 1
+severity: high
+publish_tier: public
+---
+## Executive Summary
+
+Attackers leveraging AI can compromise systems in as little as 73 seconds, while defenders still require an average of 24 hours to patch the same vulnerabilities, according to a new analysis from Picus Security. The report, published May 13, 2026, highlights a widening agility gap driven by AI-powered offensive capabilities, including Anthropic's recently gated Mythos model, which autonomously wrote 181 working Firefox exploits in its first 14 days of testing. The median time from CVE publication to working exploit in the wild has collapsed to roughly 10 hours, down from 56 days in 2024, rendering traditional vulnerability management assumptions obsolete.
+
+## Technical Analysis
+
+Picus Security Research Engineer Sila Ozeren Hacioglu authored the analysis, drawing on data from AWS Threat Intelligence, CISA KEV, VulnCheck KEV, and public exploit databases. The report describes a February 2026 AWS postmortem of a FortiGate campaign conducted by a single low-skill operator using AI: the campaign hit 2,516 devices across 106 countries in parallel, exploiting known CVEs and misconfigurations without requiring zero-days. The operator never touched a keyboard — the AI executed the entire operation at machine speed.
+
+The report contrasts attacker timelines with defender workflows. An AI-driven compromise unfolds in 73 seconds: script launch at second zero, CVE exploitation by second five, MFA bypass by second twenty, web shell drop by second thirty, credential dump by second forty-five. Meanwhile, a typical defender response begins with a SIEM alert at one minute (after the attacker is already done), a Tier 1 analyst pick-up at five minutes, manual SOAR playbook trigger at fifteen minutes, Jira ticket filing at one hour, IT ops queue arrival at four hours, and patch deployment at 24 hours. The report emphasizes that the bottleneck is not individual tool speed — EDR, SIEM, and vulnerability scanners all perform well — but the "spaghetti handoff" of data between teams and systems (Slack messages, copy-pasted hashes, emailed PDF reports, ticket approvals).
+
+Anthropic's Mythos model, released in April 2026 to twelve partners under a gated preview, further illustrates the threat. In 14 days inside a sandbox, Mythos wrote 181 working Firefox exploits — the previous state-of-the-art AI model managed two. It surfaced thousands of zero-days across major operating systems and browsers, including a 27-year-old bug in OpenBSD. The report states that over 99% of Mythos' findings remain unpatched in production as of publication.
+
+## Mitigations & Recommendations
+
+The report proposes three pillars of cyber resilience in the AI era: Identify, Protect, and Validate. Identify requires comprehensive exposure visibility across network, endpoint, cloud, and identity, with aggressive attack surface management to eliminate blind spots (orphaned remote access, missing segmentation, MFA gaps). Protect involves effective network and endpoint controls, properly tuned, with detection focused on credential access, lateral movement, and privilege escalation. The third pillar, autonomous validation, is positioned as the critical differentiator: continuously testing whether existing controls actually block the attacks that AI can now execute, rather than relying on quarterly pentests or compliance checklists. The report recommends that security teams adopt evidence-based defense plans that boards can govern directly, given that AI-driven cyber risk has moved from a technical problem to an existential governance concern.
+
+## References
+
+- [73 Seconds to Breach, 24 Hours to Patch: The Case for Autonomous Validation](https://www.bleepingcomputer.com/news/security/73-seconds-to-breach-24-hours-to-patch-the-case-for-autonomous-validation/)
