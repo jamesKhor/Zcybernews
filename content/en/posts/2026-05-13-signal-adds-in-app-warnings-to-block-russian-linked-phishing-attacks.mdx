@@ -1,0 +1,61 @@
+---
+title: Signal Adds In-App Warnings to Block Russian-Linked Phishing Attacks
+slug: >-
+  2026-05-13-signal-adds-in-app-warnings-to-block-russian-linked-phishing-attacks
+date: '2026-05-13'
+excerpt: >-
+  Signal introduced new in-app confirmations and warnings to counter phishing
+  attacks linked to Russian state hackers who abused the Linked Device feature
+  to hijack high-profile...
+category: tools
+tags:
+  - signal
+  - phishing
+  - social-engineering
+  - russian-state-hackers
+  - linked-device-abuse
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/signal-adds-security-warnings-for-social-engineering-phishing-attacks/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-13-signal-adds-in-app-warnings-to-block-russian-linked-phishing-attacks
+cluster_key: 'topic:signal-adds-warnings-social-engineering'
+source_count: 1
+severity: high
+threat_actor: Russian state-sponsored hackers
+threat_actor_origin: Russia
+affected_sectors:
+  - government
+  - high-profile individuals
+affected_regions:
+  - Netherlands
+  - Germany
+  - United States
+publish_tier: public
+---
+## Executive Summary
+
+Signal has deployed new in-app security warnings and confirmation prompts designed to thwart phishing and social engineering attacks that have recently targeted high-profile users, according to a May 12 announcement from the encrypted messaging provider. The feature update follows a coordinated campaign attributed to Russian state-sponsored hackers who exploited Signal's Linked Device feature to gain persistent access to victim accounts, chats, and contact lists. The FBI, the Dutch government, and German authorities have all issued warnings about these attacks, which rely on tricking targets into scanning fraudulent QR codes or sharing one-time verification codes.
+
+## Technical Analysis
+
+The attack technique, documented by multiple national security agencies, involves threat actors posing as "Signal Support" in unsolicited messages. Victims are instructed to scan a QR code or provide a one-time registration code under the pretext of verifying their account against suspicious activity. In reality, this action links the attacker's device to the victim's Signal account, granting full access to all communications and contact lists.
+
+Signal's new defenses introduce friction at several points in the user experience:
+
+- **Unverified contact warnings**: When a contact initiates a direct message, Signal now displays a "Name not verified" label and a "No groups in common" indicator, highlighting the absence of any prior association.
+- **Confirmation prompts**: When a new message request arrives, Signal prompts the user to explicitly confirm acceptance while displaying a reminder that Signal will never ask for a registration code, PIN, or recovery key.
+- **Enhanced safety tips**: The in-app safety tips section has been expanded with new entries, including specific reminders to ignore any chat that claims to be from Signal Support.
+
+The vendor stated that these measures are designed to introduce "enough friction that users get the time to evaluate the safety of an external request." The changes are server-side and do not require a client update, meaning all users should see the new warnings immediately.
+
+## Mitigations & Recommendations
+
+Signal users should verify any unexpected message requests by checking for the "Name not verified" and "No groups in common" labels before responding. Users should never scan QR codes or share registration codes, PINs, or recovery keys in response to unsolicited requests, regardless of how official the sender appears. Additionally, users should regularly review their linked devices in Signal settings (Settings > Linked Devices) and remove any entries they do not recognize. Organizations with high-risk users — particularly government officials, journalists, and activists — should reinforce these behaviors through targeted security awareness training.
+
+## References
+
+- [Signal adds security warnings for social engineering, phishing attacks - BleepingComputer](https://www.bleepingcomputer.com/news/security/signal-adds-security-warnings-for-social-engineering-phishing-attacks/)

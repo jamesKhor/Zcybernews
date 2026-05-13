@@ -1,0 +1,58 @@
+---
+title: Signal 添加应用内警告以阻止与俄罗斯有关的网络钓鱼攻击
+slug: >-
+  2026-05-13-signal-adds-in-app-warnings-to-block-russian-linked-phishing-attacks
+date: '2026-05-13'
+excerpt: Signal 引入了新的应用内确认和警告，以对抗与俄罗斯国家黑客有关的网络钓鱼攻击，这些黑客滥用了 Linked Device 功能来劫持高知名度的...
+category: tools
+tags:
+  - signal
+  - phishing
+  - social-engineering
+  - russian-state-hackers
+  - linked-device-abuse
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/signal-adds-security-warnings-for-social-engineering-phishing-attacks/
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-05-13-signal-adds-in-app-warnings-to-block-russian-linked-phishing-attacks
+cluster_key: 'topic:signal-adds-warnings-social-engineering'
+source_count: 1
+severity: high
+threat_actor: Russian state-sponsored hackers
+threat_actor_origin: Russia
+affected_sectors:
+  - government
+  - high-profile individuals
+affected_regions:
+  - Netherlands
+  - Germany
+  - United States
+publish_tier: public
+---
+## 执行摘要
+
+根据加密消息提供商5月12日的公告，Signal部署了新的应用内安全警告和确认提示，旨在阻止最近针对高调用户的网络钓鱼和社会工程攻击。此次功能更新是针对归因于俄罗斯国家资助黑客的协调行动，他们利用Signal的Linked Device功能获得对受害者账户、聊天记录和联系人列表的持续访问权限。FBI、荷兰政府和德国当局都对这些攻击发出了警告，这些攻击依赖于诱使目标扫描欺诈性二维码或分享一次性验证码。
+
+## 技术分析
+
+这种攻击技术由多个国家安全机构记录，涉及威胁行为者在未经请求的消息中冒充“Signal Support”。受害者被指示扫描一个二维码或提供一次性注册码，以验证他们的账户是否涉及可疑活动。实际上，这一行动将攻击者的设备与受害者的Signal账户关联起来，授予对所有通信和联系人列表的完全访问权限。
+
+Signal的新防御措施在用户体验的几个点引入了摩擦：
+
+- **未验证联系人警告**：当一个联系人发起直接消息时，Signal现在会显示一个“名称未验证”标签和一个“没有共同群组”的指示器，突出显示没有任何先前的关联。
+- **确认提示**：当新的信息请求到达时，Signal提示用户明确确认接受，同时显示一个提醒，Signal永远不会要求注册码、PIN或恢复密钥。
+- **增强的安全提示**：应用内安全提示部分已扩展，包括新的条目，特别提醒忽略任何声称来自Signal Support的聊天。
+
+供应商表示，这些措施旨在引入“足够的摩擦，让用户有时间评估外部请求的安全性。”这些更改是服务器端的，不需要客户端更新，这意味着所有用户应立即看到新的警告。
+
+## 缓解措施与建议
+
+Signal用户应该在回应之前通过检查“名称未验证”和“没有共同群组”的标签来验证任何意外的信息请求。用户不应扫描二维码或分享注册码、PIN或恢复密钥，以回应未经请求的请求，无论发送者看起来多么官方。此外，用户应定期查看Signal设置中的关联设备（设置 > 关联设备）并移除他们不认识的任何条目。对于高风险用户——特别是政府官员、记者和活动家——的组织应通过有针对性的安全意识培训来加强这些行为。
+
+## 参考资料
+
+- [Signal adds security warnings for social engineering, phishing attacks - BleepingComputer](https://www.bleepingcomputer.com/news/security/signal-adds-security-warnings-for-social-engineering-phishing-attacks/)
