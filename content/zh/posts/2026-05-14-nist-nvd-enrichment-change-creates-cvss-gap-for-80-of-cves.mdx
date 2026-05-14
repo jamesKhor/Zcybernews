@@ -1,0 +1,54 @@
+---
+title: NIST NVD 增强变更为 80% 的 CVEs 造成 CVSS 差距
+slug: 2026-05-14-nist-nvd-enrichment-change-creates-cvss-gap-for-80-of-cves
+date: '2026-05-14'
+excerpt: 根据 2026 年 4 月的新政策，NIST 现在只增强 15-20% 的 CVEs，剩下 80% 没有 CVSS 分数或产品映射。
+category: industry
+tags:
+  - nist
+  - nvd
+  - cvss
+  - vulnerability-management
+  - recorded-future
+  - risk-scoring
+  - cisa-kev
+language: zh
+source_urls:
+  - 'https://www.recordedfuture.com/blog/nist-nvd-enrichment'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-nist-nvd-enrichment-change-creates-cvss-gap-for-80-of-cves
+cluster_key: 'topic:nist-enrichment-policy-change-prioritizing'
+source_count: 1
+severity: medium
+affected_sectors:
+  - technology
+  - government
+  - financial services
+  - healthcare
+affected_regions:
+  - North America
+  - EU
+publish_tier: public
+---
+## 执行摘要
+
+截至2026年4月15日，美国国家标准与技术研究院（NIST）大幅缩减了其国家漏洞数据库（NVD）的充实计划，现在仅对出现在CISA已知被利用漏洞（KEV）目录中的CVE、影响联邦政府软件的CVE，或根据行政命令14028指定的关键软件的CVE进行评分和分类。根据Recorded Future的Insikt Group的说法，这一政策变化意味着NVD将只充实预计CVE数量的15-20%，留下绝大多数漏洞没有CVSS分数、受影响产品映射或弱点分类。对于依赖NVD作为主要优先级信号的安全团队来说，这造成了一个重大的操作缺口。
+
+## 技术分析
+
+NIST在2025年充实了大约42,000个CVE，根据Recorded Future的数据，2026年初的提交量比去年同期高出约三分之一。根据新政策，不符合三个优先级标准的CVE将获得“最低优先级”状态——意味着没有CVSS分数，没有CPE映射，没有CWE分类。这实际上使NVD成为大多数已发布漏洞的全面漏洞情报来源变得过时。
+
+Recorded Future的分析发表在Insikt Group的博客文章中，认为这个缺口在实践中已经存在。CVSS旨在描述技术属性——攻击向量、复杂性、所需权限——而不是推动补丁优先级。该公司指出，漏洞代码经常出现在GitHub上，概念验证开发在攻击性安全论坛上讨论，勒索软件运营商在NVD充实之前评估CVE以部署他们的管道。当从业者在他们的扫描仪中看到CVSS分数时，风险可能已经显现。
+
+Recorded Future的替代风险评分模型，是其漏洞情报产品的一部分，将CVE映射到“漏洞武器化生命周期”。该模型权衡了包括通过恶意软件样本观察到的积极利用、Insikt分析师验证的勒索软件操作、概念验证可用性（区分已验证和未验证）以及NVD充实之前关于CVE的网络报告等信号。确认的利用活动无论CVSS分数如何都具有最大的权重。
+
+CVSS分数仍然从多个来源纳入。许多CVE编号机构（CNAs）在提交时提供分数，即使NVD的独立充实范围缩小，2025年发布的CVE的CVSS覆盖率仍保持在90%以上。然而，Recorded Future承认CNA提供的分数与NVD的不可互换——过去十年中对双分数CVE的学术分析记录了超过50%的分歧率，2023年达到70%，有时分歧足够大，可以将漏洞移动到严重性层级。对于NVD或CNA都没有提供评分的CVE，Recorded Future通过自己的分析独立分配分数。
+
+## 缓解措施与建议
+
+安全团队应该审计他们的优先级信号来源。完全或主要依赖NVD CVSS分数的组织将面临来自现有未充实CVE的积压和新政策下进入生态系统的每个新CVE的风险。防御者应该用跟踪现实世界攻击者行为的情报源补充NVD数据——漏洞存储库、地下论坛讨论、恶意软件分析管道和勒索软件部署模式。Recorded Future的方法表明，来自攻击者社区的信号可以比处理CVE的机构数据库提前几周或几个月提供更早、更相关的风险评估。团队还应该在可能的情况下，对CNA提供的CVSS分数进行独立分析验证，鉴于记录的分歧率。
+
+## 参考资料
+
+- [Recorded Future: NIST NVD Enrichment Policy Change](https://www.recordedfuture.com/blog/nist-nvd-enrichment)

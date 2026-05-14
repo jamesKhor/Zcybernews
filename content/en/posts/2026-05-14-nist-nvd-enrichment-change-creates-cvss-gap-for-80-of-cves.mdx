@@ -1,0 +1,56 @@
+---
+title: NIST NVD Enrichment Change Creates CVSS Gap for 80% of CVEs
+slug: 2026-05-14-nist-nvd-enrichment-change-creates-cvss-gap-for-80-of-cves
+date: '2026-05-14'
+excerpt: >-
+  NIST now enriches only 15-20% of CVEs under new policy as of April 2026,
+  leaving 80% without CVSS scores or product mappings.
+category: industry
+tags:
+  - nist
+  - nvd
+  - cvss
+  - vulnerability-management
+  - recorded-future
+  - risk-scoring
+  - cisa-kev
+language: en
+source_urls:
+  - 'https://www.recordedfuture.com/blog/nist-nvd-enrichment'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-nist-nvd-enrichment-change-creates-cvss-gap-for-80-of-cves
+cluster_key: 'topic:nist-enrichment-policy-change-prioritizing'
+source_count: 1
+severity: medium
+affected_sectors:
+  - technology
+  - government
+  - financial services
+  - healthcare
+affected_regions:
+  - North America
+  - EU
+publish_tier: public
+---
+## Executive Summary
+
+As of April 15, 2026, the U.S. National Institute of Standards and Technology (NIST) has sharply curtailed its National Vulnerability Database (NVD) enrichment program, now scoring and classifying only CVEs that appear in the CISA Known Exploited Vulnerabilities (KEV) catalog, affect federal government software, or impact software designated critical under Executive Order 14028. According to Recorded Future's Insikt Group, this policy change means NVD will enrich an estimated 15–20% of anticipated CVE volume going forward, leaving the vast majority of vulnerabilities without CVSS scores, affected product mappings, or weakness classifications. For security teams that rely on NVD as their primary prioritization signal, this creates a significant operational gap.
+
+## Technical Analysis
+
+NIST enriched roughly 42,000 CVEs in 2025, and submissions in early 2026 are running about a third higher year-over-year, per Recorded Future. Under the new policy, CVEs not meeting the three prioritization criteria receive a "Lowest Priority" status — meaning no CVSS score, no CPE mappings, no CWE classification. This effectively deprecates NVD as a comprehensive vulnerability intelligence source for the majority of published flaws.
+
+Recorded Future's analysis, published in a blog post by Insikt Group, argues that the gap was already present in practice. CVSS was designed to characterize technical properties — attack vector, complexity, privileges required — not to drive patch prioritization. The firm notes that exploit code often surfaces on GitHub, proof-of-concept development is discussed in offensive security forums, and ransomware operators evaluate CVEs for their deployment pipelines well before NVD enrichment occurs. By the time a practitioner sees a CVSS score in their scanner, the risk may have already materialized.
+
+Recorded Future's alternative risk scoring model, part of its Vulnerability Intelligence offering, maps CVEs against a "vulnerability weaponization lifecycle." The model weighs signals including active exploitation observed via malware samples, ransomware operations validated by Insikt analysts, proof-of-concept availability (distinguishing verified from unverified), and web reporting about a CVE before NVD enrichment. Confirmed exploitation activity carries the most weight, regardless of CVSS score.
+
+CVSS scores are still incorporated from multiple sources. Many CVE Numbering Authorities (CNAs) supply scores at submission, and CVSS coverage across published CVEs remained above 90% in 2025 even as NVD's independent enrichment narrowed. However, Recorded Future acknowledges that CNA-supplied scores are not interchangeable with NVD's — academic analyses of dual-scored CVEs have documented divergence rates above 50% over the past decade, reaching 70% in 2023, with disagreements sometimes large enough to move a vulnerability across severity tiers. For CVEs where neither NVD nor a CNA has provided scoring, Recorded Future independently assigns scores through its own analysis.
+
+## Mitigations & Recommendations
+
+Security teams should audit where their prioritization signals originate. Organizations relying entirely or primarily on NVD CVSS scores face exposure from both the existing backlog of unenriched CVEs and every new CVE entering the ecosystem under the new policy. Defenders should supplement NVD data with intelligence feeds that track real-world attacker behavior — exploit repositories, underground forum discussions, malware analysis pipelines, and ransomware deployment patterns. Recorded Future's approach demonstrates that signals from attacker communities can provide earlier and more operationally relevant risk assessment than institutional databases processing CVEs weeks or months post-assignment. Teams should also validate CNA-supplied CVSS scores against independent analysis where possible, given documented divergence rates.
+
+## References
+
+- [Recorded Future: NIST NVD Enrichment Policy Change](https://www.recordedfuture.com/blog/nist-nvd-enrichment)
