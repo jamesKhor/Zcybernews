@@ -1,0 +1,53 @@
+---
+title: DPU-Based Security Eliminates Host Agent Performance Tradeoff
+slug: 2026-05-14-dpu-based-security-eliminates-host-agent-performance-tradeoff
+date: '2026-05-14'
+excerpt: >-
+  Armis CTO argues DPU-based security replaces host agents in AI data centers,
+  citing 2025 VMware ESXi zero-days and 2023 ESXiArgs as proof hypervisor blind
+  spots persist.
+category: industry
+tags:
+  - data-center-security
+  - dpu
+  - armis
+  - vmware-esxi
+  - zero-trust
+  - hardware-isolation
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/enhancing-data-center-security-without-sacrificing-performance/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-dpu-based-security-eliminates-host-agent-performance-tradeoff
+cluster_key: 'topic:enhancing-data-center-without-sacrificing'
+source_count: 1
+affected_sectors:
+  - data centers
+  - AI infrastructure
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## Executive Summary
+
+A new architectural approach to data center security — shifting host-based agents to data processing units (DPUs) — promises to eliminate the longstanding tradeoff between security coverage and compute performance, particularly in AI data centers where GPU cycles are at a premium. Armis CTO Nadir Izrael, writing in a SecurityWeek contributed article, argues that DPU-based security, which runs inspection and policy enforcement on dedicated silicon independent of the host CPU, can detect and block threats at line speed without consuming host resources. Izrael points to the March 2025 Broadcom-patched VMware ESXi zero-days that allowed VM sandbox escape and the 2023 ESXiArgs ransomware campaign that encrypted an estimated 3,800 servers as evidence that host-based agents cannot protect against hypervisor-level attacks. The piece is a vendor-advocacy argument, not a report of a new incident or vulnerability.
+
+## Technical Analysis
+
+Izrael frames the core problem as an "impossible equation": host-based security agents consume CPU cycles that high-performance computing workloads — especially AI training and inference — cannot spare. In AI data centers, a single GPU cluster can represent millions of dollars in hardware, and every percentage point of efficiency translates directly into competitive advantage. The result, he claims, is that some operators quietly disable security on critical compute nodes and rely on perimeter defenses that have no visibility into east-west lateral movement.
+
+The proposed solution places the entire security stack on a DPU — a dedicated processor installed on each server that sits between the host and the network. The DPU is invisible and inaccessible to attackers because it operates independently from the host OS, Izrael writes. It performs deep packet inspection, telemetry collection, and policy enforcement at the endpoint, eliminating bottlenecks to external security appliances. Critically, the DPU treats both the host and the network with zero trust: every packet, access request, and process is subject to inspection regardless of origin.
+
+Izrael claims the DPU architecture enables continuous real-time monitoring across both north-south (external) and east-west (internal) traffic, addressing the blind spot that perimeter defenses leave open. He notes that in data centers, the majority of traffic is east-west — lateral movement between VMs — where dwell time accumulates and privilege escalation occurs. For AI data centers specifically, transient network flows may exist for minutes or hours before disappearing, and VMs and containers are created and terminated dynamically, making periodic scans ineffective.
+
+Privacy protections are built into the design, Izrael states: information is extracted only from kernel-level structures and system metadata, not from user data or application-layer content. This aims to provide comprehensive visibility without exposing sensitive data.
+
+## Mitigations & Recommendations
+
+For organizations operating AI data centers or high-performance computing environments where host-based agents are impractical or disabled, evaluating DPU-based security architectures may close visibility gaps without degrading workload performance. Defenders should assess whether their current security stack provides continuous east-west traffic inspection and hypervisor-level protection independent of the host OS. Organizations that rely solely on perimeter firewalls and host agents should prioritize testing DPU or similar hardware-isolated security solutions, particularly for GPU clusters and transient container workloads where traditional agents cannot be deployed effectively. No specific patches or configuration changes are offered; the recommendation is architectural.
+
+## References
+
+- [Enhancing Data Center Security Without Sacrificing Performance — SecurityWeek](https://www.securityweek.com/enhancing-data-center-security-without-sacrificing-performance/)

@@ -1,0 +1,54 @@
+---
+title: 基于DPU的安全消除了主机代理性能权衡
+slug: 2026-05-14-dpu-based-security-eliminates-host-agent-performance-tradeoff
+date: '2026-05-14'
+excerpt: >-
+  Armis CTO认为基于DPU的安全取代了AI数据中心中的主机代理，引用2025年VMware
+  ESXi零日漏洞和2023年ESXiArgs作为证明，虚拟机监视器盲点仍然存在。
+category: industry
+tags:
+  - data-center-security
+  - dpu
+  - armis
+  - vmware-esxi
+  - zero-trust
+  - hardware-isolation
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/enhancing-data-center-security-without-sacrificing-performance/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-dpu-based-security-eliminates-host-agent-performance-tradeoff
+cluster_key: 'topic:enhancing-data-center-without-sacrificing'
+source_count: 1
+affected_sectors:
+  - data centers
+  - AI infrastructure
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## DPU基础安全消除主机代理性能权衡
+
+## 执行摘要
+
+一种新的数据中心安全架构方法——将基于主机的代理转移到数据处理单元（DPU）——承诺消除长期以来安全覆盖和计算性能之间的权衡，特别是在GPU周期非常宝贵的AI数据中心。Armis首席技术官Nadir Izrael在一篇为SecurityWeek撰写的文章中辩称，基于DPU的安全可以在独立于主机CPU的专用硅片上运行检查和策略执行，能够在线路速度下检测和阻止威胁，而不会消耗主机资源。Izrael提到了2025年3月Broadcom修补的VMware ESXi零日漏洞，这些漏洞允许VM沙箱逃逸，以及2023年ESXiArgs勒索软件活动，该活动加密了大约3800台服务器，作为证据表明基于主机的代理无法防御虚拟机监视器级别的攻击。这篇文章是供应商倡导的论点，而不是关于新事件或漏洞的报告。
+
+## 技术分析
+
+Izrael将核心问题框架化为一个“不可能的方程”：基于主机的安全代理消耗高性能计算工作负载——特别是AI训练和推理——无法节省的CPU周期。在AI数据中心，一个单一的GPU集群可以代表数百万美元的硬件，每一个百分点的效率直接转化为竞争优势。他声称，结果是，一些运营商悄悄地在关键计算节点上禁用安全，并依赖于没有对东西向横向移动的可见性的周边防御。
+
+提出的解决方案将整个安全堆栈放置在DPU上——一个安装在每个服务器上的专用处理器，位于主机和网络之间。DPU对攻击者来说是不可见且无法访问的，因为它独立于主机操作系统运行，Izrael写道。它在端点执行深度数据包检查、遥测收集和策略执行，消除了对外部安全设备的瓶颈。至关重要的是，DPU对主机和网络都采取零信任态度：每个数据包、访问请求和进程无论来源如何都要接受检查。
+
+Izrael声称，DPU架构实现了对南北（外部）和东西（内部）流量的持续实时监控，解决了周边防御留下的盲点。他指出，在数据中心，大部分流量是东西向的——虚拟机之间的横向移动——在那里停留时间累积和权限升级发生。对于AI数据中心特别来说，瞬态网络流可能存在几分钟或几小时然后消失，虚拟机和容器动态创建和终止，使得定期扫描无效。
+
+Izrael表示，隐私保护内置于设计中：信息仅从内核级结构和系统元数据中提取，而不是从用户数据或应用层内容中提取。这旨在在不暴露敏感数据的情况下提供全面的可见性。
+
+## 缓解措施与建议
+
+对于在AI数据中心或高性能计算环境中运营的组织，其中基于主机的代理不切实际或被禁用，评估基于DPU的安全架构可能会在不降低工作负载性能的情况下填补可见性空白。防御者应该评估他们当前的安全堆栈是否提供持续的东西向流量检查和独立于主机操作系统的虚拟机监视器级别的保护。仅依赖周边防火墙和主机代理的组织应该优先测试DPU或类似的硬件隔离安全解决方案，特别是对于GPU集群和瞬态容器工作负载，其中传统代理无法有效部署。没有提供具体的补丁或配置更改；建议是架构性的。
+
+## 参考资料
+
+- [增强数据中心安全而不牺牲性能 — SecurityWeek](https://www.securityweek.com/enhancing-data-center-security-without-sacrificing-performance/)
