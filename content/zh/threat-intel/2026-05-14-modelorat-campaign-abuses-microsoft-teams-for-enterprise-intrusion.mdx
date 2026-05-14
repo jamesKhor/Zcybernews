@@ -1,0 +1,74 @@
+---
+title: ModeloRAT 活动滥用 Microsoft Teams 进行企业入侵
+slug: 2026-05-14-modelorat-campaign-abuses-microsoft-teams-for-enterprise-intrusion
+date: '2026-05-14'
+excerpt: >-
+  Rapid7 分析了 2026 年 4 月的一次入侵事件，其中一条假冒的 IT 支持 Teams 消息通过 Dropbox 传递了
+  ModeloRAT，导致权限提升、凭证盗窃和横向移动...
+category: threat-intel
+tags:
+  - modelorat
+  - microsoft-teams
+  - social-engineering
+  - cve-2023-36036
+  - rapid7
+  - kongtuke
+  - living-off-the-land
+language: zh
+source_urls:
+  - >-
+    https://www.rapid7.com/blog/post/tr-it-support-dissecting-modelorat-campaign-microsoft-teams-compromise
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-modelorat-campaign-abuses-microsoft-teams-for-enterprise-intrusion
+cluster_key: 'topic:when-support-calls-dissecting-modelorat'
+source_count: 1
+severity: critical
+cve_ids:
+  - CVE-2023-36036
+threat_actor: KongTuke
+affected_sectors:
+  - enterprise
+publish_tier: public
+---
+**文章标题：ModeloRAT 活动滥用 Microsoft Teams 进行企业入侵**
+
+**文章正文：**
+
+## 执行摘要
+
+2026年4月，Rapid7 对一起企业入侵事件做出了响应，该事件始于一条来自假冒“IT支持”账户的 Microsoft Teams 消息，并在几小时内升级为完整的域控制，根据该公司在2026年5月14日发布的技术分析。攻击者利用 Teams 的外部访问功能——许多租户默认启用的功能——与员工发起聊天，然后传递了一个托管在 Dropbox 上的基于 Python 的有效载荷。被识别为 **ModeloRAT** 的恶意软件建立了命令与控制，部署了多个后门，并利用已知的 Windows 漏洞（CVE-2023-36036）使攻击者能够升级权限至 SYSTEM，然后通过假冒的 Windows 锁定屏幕收集域凭证。入侵以向第二台主机的横向移动和系统内存转储的外泄结束。Rapid7 将此次活动归因于之前与基于浏览器扩展的攻击相关的 **KongTuke** 组织。
+
+## 技术分析
+
+攻击链在几个不同的阶段展开，每个阶段都利用了受信任的企业工具来规避检测。
+
+**通过 Teams 外部滥用获取初始访问**
+
+攻击者在 `UCICasociacion.onmicrosoft[.]com` 域下创建了一个新的 Microsoft 365 租户，并使用它向受害者发送直接聊天，冒充 IT 支持。Rapid7 指出，这种技术模仿了 Octo Tempest（Scattered Spider）的战术，这是一个以财务为动机的组织，以帮助台冒充和 SIM 交换而闻名。默认在某些配置中允许跨租户消息传递的 Teams 外部访问功能是关键的使能器。
+
+**阶段性和有效载荷传递**
+
+在 Teams 交互后的几分钟内，PowerShell 命令在受害者的机器上执行。阶段性程序从一个 Dropbox URL (`www.dropbox[.]com/scl/fi/[REDACTED]/vuzggemyofftzpk6.zip`) 下载了一个 ZIP 归档文件（`Winp.zip`）到用户的 `AppData` 目录。归档被提取后立即删除，以减少取证痕迹。有效载荷包含一个便携式 **WinPython** 环境，攻击者用它来运行两个 Python 脚本：
+- `collector.py` — 侦察
+- `Pmanager.py` — 主要 C2 代理（ModeloRAT）
+
+执行是通过 `pythonw.exe` 处理的，它运行脚本而不显示终端窗口。
+
+**权限提升和凭证盗窃**
+
+在建立立足点后，攻击者利用 **CVE-2023-36036**，一个在 2023 年 11 月由 Microsoft 修补的 Windows 权限提升漏洞，提升至 SYSTEM。Rapid7 没有指定确切的漏洞利用方法，但指出该漏洞在野外被武器化。有了 SYSTEM 权限，攻击者部署了一个旨在在受害者尝试解锁工作站时捕获用户域密码的假冒 Windows 锁定屏幕。
+
+**横向移动和外泄**
+
+一旦获得了有效的域凭证，入侵就从端点入侵转变为基于身份的横向移动。攻击者移动到第二台主机，并使用 **DumpIt**，一个合法的内存获取工具，来收集系统内存——可能包含额外的凭证或敏感数据。Rapid7 报告称，内存转储通过一个匿名文件共享服务被外泄。
+
+**恶意软件归因**
+
+Rapid7 的分析将 Python 有效载荷与 **ModeloRAT** 联系起来，这是一个远程访问木马框架，在之前的浏览器扩展活动中有所记录。该框架已被多个安全供应商与 **KongTuke** 威胁行为者组织联系起来，尽管 Rapid7 指出，这种归因是基于代码相似性和基础设施重叠，而不是确定性的运营情报。
+
+## 缓解措施与建议
+
+Rapid7 建议组织将协作平台视为攻击面的一部分。具体行动包括：
+- **限制 Teams 外部访问** 仅限于批准的域，或在业务不需要时禁用跨租户消息传递。
+- **及时应用安全补丁** — CVE-2023-36036 已在两年前修补；其在此活动中的使用强调了未修补系统的风

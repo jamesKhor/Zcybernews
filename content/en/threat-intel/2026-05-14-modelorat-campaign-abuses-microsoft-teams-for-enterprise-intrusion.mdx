@@ -1,0 +1,79 @@
+---
+title: ModeloRAT Campaign Abuses Microsoft Teams for Enterprise Intrusion
+slug: 2026-05-14-modelorat-campaign-abuses-microsoft-teams-for-enterprise-intrusion
+date: '2026-05-14'
+excerpt: >-
+  Rapid7 dissects an April 2026 intrusion where a fake IT Support Teams message
+  delivered ModeloRAT via Dropbox, leading to privilege escalation, credential
+  theft, and lateral...
+category: threat-intel
+tags:
+  - modelorat
+  - microsoft-teams
+  - social-engineering
+  - cve-2023-36036
+  - rapid7
+  - kongtuke
+  - living-off-the-land
+language: en
+source_urls:
+  - >-
+    https://www.rapid7.com/blog/post/tr-it-support-dissecting-modelorat-campaign-microsoft-teams-compromise
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-modelorat-campaign-abuses-microsoft-teams-for-enterprise-intrusion
+cluster_key: 'topic:when-support-calls-dissecting-modelorat'
+source_count: 1
+severity: critical
+cve_ids:
+  - CVE-2023-36036
+threat_actor: KongTuke
+affected_sectors:
+  - enterprise
+publish_tier: public
+---
+## Executive Summary
+
+In April 2026, Rapid7 responded to an enterprise intrusion that began with a single Microsoft Teams message from a fake "IT Support" account and escalated within hours to full domain compromise, according to a technical analysis published by the firm on May 14, 2026. The attacker used Teams external access — a feature enabled by default in many tenants — to initiate a chat with an employee, then delivered a Python-based payload hosted on Dropbox. The malware, identified as **ModeloRAT**, established command-and-control, deployed multiple backdoors, and enabled the attacker to escalate privileges to SYSTEM using a known Windows vulnerability (CVE-2023-36036) before harvesting domain credentials via a fake Windows lock screen. The intrusion concluded with lateral movement to a second host and exfiltration of system memory dumps. Rapid7 attributed the campaign to the **KongTuke** group, previously associated with browser extension-based attacks.
+
+## Technical Analysis
+
+The attack chain unfolded in several distinct stages, each leveraging trusted enterprise tools to evade detection.
+
+**Initial Access via Teams External Abuse**
+
+The attacker created a new Microsoft 365 tenant under the domain `UCICasociacion.onmicrosoft[.]com` and used it to send a direct chat to the victim, impersonating IT support. Rapid7 notes this technique mirrors tactics used by Octo Tempest (Scattered Spider), a financially motivated group known for helpdesk impersonation and SIM swapping. The Teams external access feature, which permits cross-tenant messaging by default in some configurations, was the critical enabler.
+
+**Stager and Payload Delivery**
+
+Within minutes of the Teams interaction, a PowerShell command executed on the victim's machine. The stager downloaded a ZIP archive (`Winp.zip`) from a Dropbox URL (`www.dropbox[.]com/scl/fi/[REDACTED]/vuzggemyofftzpk6.zip`) into the user's `AppData` directory. The archive was extracted and immediately deleted to reduce forensic artifacts. The payload contained a portable **WinPython** environment, which the attacker used to run two Python scripts:
+- `collector.py` — reconnaissance
+- `Pmanager.py` — primary C2 agent (ModeloRAT)
+
+Execution was handled via `pythonw.exe`, which runs scripts without displaying a terminal window.
+
+**Privilege Escalation and Credential Theft**
+
+After establishing a foothold, the attacker exploited **CVE-2023-36036**, a Windows privilege escalation vulnerability patched by Microsoft in November 2023, to elevate to SYSTEM. Rapid7 does not specify the exact exploit method but notes the vulnerability was weaponized in the wild. With SYSTEM privileges, the attacker deployed a fake Windows lock screen designed to capture the user's domain password when the victim attempted to unlock their workstation.
+
+**Lateral Movement and Exfiltration**
+
+Once valid domain credentials were obtained, the intrusion shifted from endpoint compromise to identity-driven lateral movement. The attacker moved to a second host and used **DumpIt**, a legitimate memory acquisition tool, to collect system memory — likely containing additional credentials or sensitive data. The memory dump was exfiltrated via an anonymous file-sharing service, Rapid7 reports.
+
+**Malware Attribution**
+
+Rapid7's analysis linked the Python payload to **ModeloRAT**, a remote access trojan framework previously documented in browser extension campaigns. The framework has been associated with the **KongTuke** threat actor group by multiple security vendors, though Rapid7 notes the attribution is based on code similarity and infrastructure overlaps rather than definitive operational intelligence.
+
+## Mitigations & Recommendations
+
+Rapid7 recommends organizations treat collaboration platforms as part of the attack surface. Specific actions include:
+- **Restrict Teams external access** to approved domains only, or disable cross-tenant messaging where not business-required.
+- **Apply security patches promptly** — CVE-2023-36036 was patched over two years ago; its use in this campaign underscores the risk of unpatched systems.
+- **Monitor PowerShell execution** for anomalous downloads from cloud storage services (Dropbox, Google Drive, etc.) and execution of portable Python environments.
+- **Deploy application control policies** to block execution of `pythonw.exe` and other scripting engines from user-writable directories unless explicitly authorized.
+- **Implement identity threat detection** focused on unusual authentication patterns, especially after initial endpoint compromise.
+- **Review Teams audit logs** for external tenant interactions, particularly those involving IT-related display names.
+
+## References
+
+- [Rapid7 Blog: When IT Support Calls: Dissecting a ModeloRAT Campaign from Teams to Domain Compromise](https://www.rapid7.com/blog/post/tr-it-support-dissecting-modelorat-campaign-microsoft-teams-compromise)
