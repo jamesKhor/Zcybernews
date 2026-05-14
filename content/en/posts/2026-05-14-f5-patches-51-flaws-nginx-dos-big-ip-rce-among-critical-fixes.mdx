@@ -1,0 +1,75 @@
+---
+title: 'F5 Patches 51 Flaws: NGINX DoS, BIG-IP RCE Among Critical Fixes'
+slug: 2026-05-14-f5-patches-51-flaws-nginx-dos-big-ip-rce-among-critical-fixes
+date: '2026-05-14'
+excerpt: >-
+  F5 fixed 19 high-severity and 32 medium-severity bugs across BIG-IP, BIG-IQ,
+  and NGINX. The most severe, CVE-2026-42945 (CVSS 9.2), enables heap overflow
+  DoS in NGINX rewrite...
+category: vulnerabilities
+tags:
+  - f5
+  - big-ip
+  - nginx
+  - cve-2026-42945
+  - denial-of-service
+  - remote-code-execution
+language: en
+source_urls:
+  - 'https://www.securityweek.com/f5-patches-over-50-vulnerabilities/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-f5-patches-51-flaws-nginx-dos-big-ip-rce-among-critical-fixes
+cluster_key: 'topic:patches-over-patches'
+source_count: 1
+severity: critical
+cvss_score: 9.2
+cve_ids:
+  - CVE-2026-42945
+  - CVE-2026-41225
+  - CVE-2026-41957
+  - CVE-2026-34176
+  - CVE-2026-39459
+affected_sectors:
+  - technology
+  - financial services
+  - telecommunications
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+F5 released its quarterly security advisory on Wednesday, disclosing 51 vulnerabilities across BIG-IP, BIG-IQ, and NGINX product lines. Of these, 19 are rated high-severity and 32 medium-severity based on CVSS scores. The most critical flaw, CVE-2026-42945 (CVSS v4.0 9.2), resides in NGINX's `ngx_http_rewrite_module` and allows unauthenticated attackers to trigger a heap buffer overflow leading to denial-of-service (DoS) or, under specific conditions, remote code execution. A second high-impact vulnerability, CVE-2026-41225 (CVSS v4.0 8.6), affects iControl REST and enables authenticated attackers with Manager permissions to execute arbitrary commands and bypass Appliance mode restrictions. F5 also patched three additional high-severity remote code execution (RCE) and remote command injection flaws (CVE-2026-41957, CVE-2026-34176, CVE-2026-39459) in BIG-IP that require authentication. The company stated that none of these vulnerabilities have been observed exploited in the wild as of the advisory date.
+
+## Technical Analysis
+
+**CVE-2026-42945 — NGINX Rewrite Module Heap Overflow**
+
+The highest-scoring vulnerability, CVE-2026-42945 (CVSS v4.0 9.2), is a heap buffer overflow in the `ngx_http_rewrite_module` of NGINX. According to F5's advisory, an unauthenticated attacker can send crafted HTTP requests that, when combined with certain conditions beyond the attacker's control, cause a heap overflow and force the NGINX worker process to restart, resulting in a DoS condition. Critically, if Address Space Layout Randomization (ASLR) is disabled on the target system — a configuration sometimes used in performance-tuned deployments — the flaw becomes exploitable for arbitrary code execution. The advisory does not specify the exact conditions required, but the dependency on external factors likely reduces the reliability of exploitation in default configurations.
+
+**CVE-2026-41225 — iControl REST Privilege Escalation**
+
+CVE-2026-41225 (CVSS v4.0 8.6) affects the iControl REST API on BIG-IP systems. An authenticated attacker with at least Manager-level permissions can create specially crafted configuration objects that, when processed, lead to command execution. F5's advisory notes that the vulnerability is limited to the control plane — there is no data plane exposure. In Appliance mode deployments, a successful exploit allows the attacker to cross security boundaries and escalate privileges beyond intended restrictions. The attack vector requires network access to the management port or self IP addresses of the affected BIG-IP device.
+
+**Additional High-Severity BIG-IP Flaws**
+
+Three more high-severity vulnerabilities were patched in BIG-IP:
+- CVE-2026-41957 — remote code execution requiring authentication
+- CVE-2026-34176 — remote code execution requiring authentication
+- CVE-2026-39459 — remote command injection requiring authentication
+
+F5 did not disclose technical details for these individual CVEs beyond their classification as RCE and command injection. All three require prior authentication, limiting their exploitability to scenarios where an attacker already has valid credentials.
+
+**Other High-Severity Issues**
+
+Among the remaining high-severity flaws, one enables restriction bypass, another allows arbitrary file tampering, and 12 cause DoS conditions — primarily by terminating the Traffic Management Microkernel (TMM). The medium-severity issues span a range of impacts: security protection bypass, privilege escalation, information disclosure, arbitrary system command execution, DoS, code injection, and arbitrary local file tampering. F5 did not assign individual CVE IDs to each of these 32 medium-severity bugs in the SecurityWeek report, but the company's full quarterly security notification (linked in References) contains the complete list.
+
+## Mitigations & Recommendations
+
+F5 has released software updates for all affected products. Administrators should prioritize applying patches for CVE-2026-42945 and CVE-2026-41225 due to their high CVSS scores and potential for code execution. For NGINX deployments, ensure ASLR is enabled on the host operating system — this raises the bar for exploitation from DoS to code execution. For iControl REST, restrict network access to the management port and self IP addresses to only trusted administrative workstations. Review user accounts with Manager-level permissions and enforce least-privilege principles. F5's advisory notes no workarounds are available; patching is the only remediation. Monitor F5's security notification page for updates on any future exploitation reports.
+
+## References
+
+- [SecurityWeek: F5 Patches Over 50 Vulnerabilities](https://www.securityweek.com/f5-patches-over-50-vulnerabilities/)
+- [F5 Quarterly Security Notification](https://support.f5.com/csp/article/K000139413) (link inferred; exact URL not provided in source)

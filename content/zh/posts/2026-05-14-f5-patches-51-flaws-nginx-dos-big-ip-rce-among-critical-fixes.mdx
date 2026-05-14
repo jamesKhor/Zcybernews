@@ -1,0 +1,74 @@
+---
+title: F5 修补了51个漏洞：NGINX DoS，BIG-IP RCE在关键修复中
+slug: 2026-05-14-f5-patches-51-flaws-nginx-dos-big-ip-rce-among-critical-fixes
+date: '2026-05-14'
+excerpt: >-
+  F5修复了BIG-IP、BIG-IQ和NGINX中的19个高严重性和32个中等严重性的漏洞。最严重的是CVE-2026-42945（CVSS
+  9.2），它使得NGINX重写中的堆溢出DoS成为可能...
+category: vulnerabilities
+tags:
+  - f5
+  - big-ip
+  - nginx
+  - cve-2026-42945
+  - denial-of-service
+  - remote-code-execution
+language: zh
+source_urls:
+  - 'https://www.securityweek.com/f5-patches-over-50-vulnerabilities/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-f5-patches-51-flaws-nginx-dos-big-ip-rce-among-critical-fixes
+cluster_key: 'topic:patches-over-patches'
+source_count: 1
+severity: critical
+cvss_score: 9.2
+cve_ids:
+  - CVE-2026-42945
+  - CVE-2026-41225
+  - CVE-2026-41957
+  - CVE-2026-34176
+  - CVE-2026-39459
+affected_sectors:
+  - technology
+  - financial services
+  - telecommunications
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+F5在周三发布了其季度安全公告，披露了BIG-IP、BIG-IQ和NGINX产品线中的51个漏洞。其中，19个被评为高严重性，32个被评为中等严重性，基于CVSS评分。最关键的漏洞，CVE-2026-42945（CVSS v4.0 9.2），存在于NGINX的`ngx_http_rewrite_module`中，允许未经身份验证的攻击者触发堆缓冲区溢出，导致拒绝服务（DoS）或在特定条件下远程代码执行。第二个高影响漏洞，CVE-2026-41225（CVSS v4.0 8.6），影响iControl REST，并使具有管理权限的认证攻击者能够执行任意命令并绕过设备模式限制。F5还修补了BIG-IP中的三个额外的高严重性远程代码执行（RCE）和远程命令注入漏洞（CVE-2026-41957、CVE-2026-34176、CVE-2026-39459），这些都需要认证。该公司表示，截至公告日期，这些漏洞都没有被观察到在野外被利用。
+
+## 技术分析
+
+**CVE-2026-42945 — NGINX Rewrite Module Heap Overflow**
+
+得分最高的漏洞，CVE-2026-42945（CVSS v4.0 9.2），是NGINX中`ngx_http_rewrite_module`的堆缓冲区溢出。根据F5的公告，未经身份验证的攻击者可以发送精心设计的HTTP请求，当与攻击者无法控制的某些条件结合时，会导致堆溢出并强制NGINX工作进程重启，导致DoS条件。至关重要的是，如果目标系统上禁用了地址空间布局随机化（ASLR）——有时用于性能调整部署的配置——该漏洞可以被利用进行任意代码执行。公告没有指定所需的确切条件，但对外部因素的依赖可能降低了默认配置下利用的可靠性。
+
+**CVE-2026-41225 — iControl REST Privilege Escalation**
+
+CVE-2026-41225（CVSS v4.0 8.6）影响BIG-IP系统上的iControl REST API。具有至少管理级别权限的认证攻击者可以创建特别制作的配置对象，当处理时，会导致命令执行。F5的公告指出，该漏洞仅限于控制平面——没有数据平面暴露。在设备模式部署中，成功的利用允许攻击者跨越安全边界并提升权限，超出预期限制。攻击向量需要对受影响的BIG-IP设备的管理端口或自IP地址的网络访问。
+
+**Additional High-Severity BIG-IP Flaws**
+
+BIG-IP中还修补了三个更多的高严重性漏洞：
+- CVE-2026-41957 — 需要认证的远程代码执行
+- CVE-2026-34176 — 需要认证的远程代码执行
+- CVE-2026-39459 — 需要认证的远程命令注入
+
+F5没有披露这些个别CVE的技术细节，除了它们的分类为RCE和命令注入。所有三个都需要先前认证，限制了它们的可利用性到攻击者已经拥有有效凭证的场景。
+
+**Other High-Severity Issues**
+
+在剩余的高严重性漏洞中，一个使限制绕过，另一个允许任意文件篡改，12个导致DoS条件——主要是通过终止流量管理微内核（TMM）。中等严重性问题涉及一系列影响：安全保护绕过、权限提升、信息披露、任意系统命令执行、DoS、代码注入和任意本地文件篡改。F5没有在SecurityWeek报告中为这32个中等严重性错误分配个别CVE ID，但公司的完整季度安全通知（链接在参考资料中）包含完整列表。
+
+## 缓解措施与建议
+
+F5已经发布了所有受影响产品的软件更新。管理员应优先应用CVE-2026-42945和CVE-2026-41225的补丁，因为它们的高CVSS评分和潜在的代码执行能力。对于NGINX部署，请确保在宿主操作系统上启用ASLR——这提高了从DoS到代码执行的利用门槛。对于iControl REST，限制对管理端口和自IP地址的网络访问，仅限于受信任的管理工作站。审查具有管理级别权限的用户帐户，并执行最小权限原则。F5的公告指出没有可用的变通方法；修补是唯一的补救措施。监控F5的安全通知页面，了解任何未来利用报告的更新。
+
+## 参考资料
+
+- [SecurityWeek: F5 Patches Over 50 Vulnerabilities](https://www.securityweek.com/f5-patches-over-50-vulnerabilities/)
+- [F5 Quarterly Security Notification](https://support.f5.com/csp/article/K000139413) （链接推断；源中未提供确切URL）
