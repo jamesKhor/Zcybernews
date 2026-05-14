@@ -1,0 +1,55 @@
+---
+title: OpenAI 在 TanStack 供应链攻击中被入侵
+slug: 2026-05-14-openai-breached-in-tanstack-supply-chain-attack
+date: '2026-05-14'
+excerpt: >-
+  OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和
+  Android 上的代码签名证书进行轮换。
+category: industry
+tags:
+  - openai
+  - teampcp
+  - tanstack
+  - supply-chain-attack
+  - mini-shai-hulud
+  - npm
+  - pypi
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-openai-breached-in-tanstack-supply-chain-attack
+cluster_key: 'topic:openai-confirms-breach-tanstack-supply'
+source_count: 1
+severity: high
+threat_actor: TeamPCP
+affected_sectors:
+  - technology
+  - software development
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+OpenAI 今天证实，根据公司发布的安全通告，两名员工的设备在 TeamPCP 勒索团伙策划的正在进行的 TanStack 供应链攻击中被入侵。此次入侵与“Mini Shai-Hulud”活动有关，暴露了有限的内部源代码库，并迫使 OpenAI 在其 macOS、Windows、iOS 和 Android 应用程序中轮换代码签名证书。公司声明客户数据、生产系统、知识产权和部署的软件没有受到影响。
+
+## 技术分析
+
+OpenAI 的通告，由 BleepingComputer 报道，描述了与 Mini Shai-Hulud 恶意软件公开记录的行为一致的攻击者活动，包括未经授权的访问和从两名被入侵员工可以访问的有限内部源代码库中窃取凭证。只有有限的凭证被盗，根据公司的说法，OpenAI 没有发现它们被用于后续攻击的证据。
+
+该事件起源于更广泛的 TeamPCP 活动，最初入侵了 TanStack 和 Mistral AI 包，然后传播到包括 UiPath、Guardrails AI 和 OpenSearch 在内的项目。来自 Socket 和 Aikido 的研究人员追踪了数百个通过合法包存储库分发的被入侵的 npm 和 PyPI 包。TanStack 的事后分析显示，攻击者滥用了 GitHub Actions 工作流和 CI/CD 配置中的弱点，以执行恶意代码，从内存中提取令牌，并通过 TanStack 的正常发布管道发布恶意包版本。
+
+Mini Shai-Hulud 恶意软件针对开发者和云凭证，包括 GitHub 令牌、npm 发布令牌、AWS 凭证、Kubernetes 密钥、SSH 密钥和 .env 文件。它通过修改 Claude Code 钩子和 VS Code 自动运行任务来建立持久性，即使在包被移除后也能存活。恶意软件使用被盗凭证传播到其他项目，破坏维护者账户，将恶意有效载荷注入包 tarballs，并发布木马化的包版本。Microsoft Threat Intelligence 报告称，该恶意软件还启动了一个针对运行俄语软件的 Linux 系统的信息窃取工具，并包含一个破坏性破坏组件，该组件会在以色列或伊朗系统上随机执行递归擦除命令。
+
+OpenAI 隔离了受影响的系统和账户，撤销了会话，轮换了受影响存储库的凭证，并暂时限制了部署工作流。第三方事件响应公司进行了取证调查。OpenAI 产品在 macOS、Windows、iOS 和 Android 上的代码签名证书被暴露，尽管 OpenAI 没有发现它们的滥用迹象来签署恶意软件。作为一种预防措施，公司正在轮换这些证书。
+
+## 缓解措施与建议
+
+macOS 用户必须在 2026 年 6 月 12 日之前更新他们的 OpenAI 桌面应用程序，因为使用旧证书签名的应用程序可能因苹果的公证过程而无法启动或接收更新。Windows 和 iOS 用户不受影响，无需采取任何行动。依赖 OpenAI 桌面工具的组织应优先考虑这个更新窗口。更广泛地说，防御者应该审计 CI/CD 管道配置，限制令牌范围，并监控对内部源代码库的未经授权的访问，因为 Mini Shai-Hulud 活动展示了供应链入侵如何跨互联生态系统传播。
+
+## 参考资料
+
+- [OpenAI 确认在 TanStack 供应链攻击中发生安全漏洞 - BleepingComputer](https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/)

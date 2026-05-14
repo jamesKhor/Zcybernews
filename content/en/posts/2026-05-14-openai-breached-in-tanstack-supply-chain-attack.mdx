@@ -1,0 +1,56 @@
+---
+title: OpenAI Breached in TanStack Supply Chain Attack
+slug: 2026-05-14-openai-breached-in-tanstack-supply-chain-attack
+date: '2026-05-14'
+excerpt: >-
+  OpenAI says two employees' devices were compromised in the TeamPCP Mini
+  Shai-Hulud campaign, forcing rotation of code-signing certificates across
+  macOS, Windows, iOS, and Android.
+category: industry
+tags:
+  - openai
+  - teampcp
+  - tanstack
+  - supply-chain-attack
+  - mini-shai-hulud
+  - npm
+  - pypi
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-openai-breached-in-tanstack-supply-chain-attack
+cluster_key: 'topic:openai-confirms-breach-tanstack-supply'
+source_count: 1
+severity: high
+threat_actor: TeamPCP
+affected_sectors:
+  - technology
+  - software development
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+OpenAI confirmed today that two employees' devices were breached as part of the ongoing TanStack supply-chain attack orchestrated by the TeamPCP extortion group, according to a security advisory published by the company. The breach, tied to the "Mini Shai-Hulud" campaign, exposed limited internal source code repositories and forced OpenAI to rotate code-signing certificates across its macOS, Windows, iOS, and Android applications. The company stated that customer data, production systems, intellectual property, and deployed software were not impacted.
+
+## Technical Analysis
+
+OpenAI's advisory, reported by BleepingComputer, describes attacker activity consistent with the Mini Shai-Hulud malware's publicly documented behavior, including unauthorized access and credential-focused exfiltration from a limited subset of internal source code repositories accessible to the two compromised employees. Only limited credentials were stolen, and OpenAI found no evidence they were used in subsequent attacks, according to the company.
+
+The incident originated from the broader TeamPCP campaign that initially compromised TanStack and Mistral AI packages before spreading to projects including UiPath, Guardrails AI, and OpenSearch. Researchers from Socket and Aikido tracked hundreds of compromised npm and PyPI packages distributed through legitimate package repositories. TanStack's post-mortem revealed that attackers abused weaknesses in GitHub Actions workflows and CI/CD configurations to execute malicious code, extract tokens from memory, and publish malicious package versions through TanStack's normal release pipeline.
+
+The Mini Shai-Hulud malware targets developer and cloud credentials including GitHub tokens, npm publish tokens, AWS credentials, Kubernetes secrets, SSH keys, and .env files. It establishes persistence by modifying Claude Code hooks and VS Code auto-run tasks, surviving package removal. The malware spreads to other projects using stolen credentials to compromise maintainer accounts, inject malicious payloads into package tarballs, and publish trojanized package versions. Microsoft Threat Intelligence reported the malware also launched a Linux information-stealing tool targeting systems running Russian-language software, and contained a destructive sabotage component that would randomly execute a recursive wipe command on Israeli or Iranian systems.
+
+OpenAI isolated affected systems and accounts, revoked sessions, rotated credentials across affected repositories, and temporarily restricted deployment workflows. A third-party incident response firm conducted forensic investigation. Code-signing certificates for OpenAI products on macOS, Windows, iOS, and Android were exposed, though OpenAI detected no evidence of their abuse to sign malicious software. As a precaution, the company is rotating these certificates.
+
+## Mitigations & Recommendations
+
+macOS users must update their OpenAI desktop applications before June 12, 2026, as applications signed with the older certificates may fail to launch or receive updates due to Apple's notarization process. Windows and iOS users are not impacted and require no action. Organizations relying on OpenAI's desktop tools should prioritize this update window. More broadly, defenders should audit CI/CD pipeline configurations, restrict token scopes, and monitor for unauthorized access to internal source code repositories, as the Mini Shai-Hulud campaign demonstrates how supply-chain compromises can propagate across interconnected ecosystems.
+
+## References
+
+- [OpenAI confirms security breach in TanStack supply chain attack - BleepingComputer](https://www.bleepingcomputer.com/news/security/openai-confirms-security-breach-in-tanstack-supply-chain-attack/)
