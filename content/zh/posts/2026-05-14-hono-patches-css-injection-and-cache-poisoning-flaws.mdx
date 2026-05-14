@@ -1,0 +1,73 @@
+---
+title: Hono 修复 CSS 注入和缓存投毒漏洞
+slug: 2026-05-14-hono-patches-css-injection-and-cache-poisoning-flaws
+date: '2026-05-14'
+excerpt: >-
+  Hono 4.12.18 修复 CVE-2026-44458（JSX 渲染器中的 CSS 注入，CVSS 4.3）和 CVE-2026-44457（通过
+  Vary 头绕过缓存投毒，CVSS 5.3）。
+category: vulnerabilities
+tags:
+  - hono
+  - css-injection
+  - cache-poisoning
+  - cve-2026-44458
+  - cve-2026-44457
+language: zh
+source_urls:
+  - 'https://github.com/honojs/hono/security/advisories/GHSA-qp7p-654g-cw7p'
+  - 'https://github.com/honojs/hono/security/advisories/GHSA-p77w-8qqv-26rm'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-hono-patches-css-injection-and-cache-poisoning-flaws
+cluster_key: 'cve:CVE-2026-44458'
+source_count: 2
+severity: medium
+cvss_score: 5.3
+cve_ids:
+  - CVE-2026-44457
+  - CVE-2026-44458
+affected_sectors:
+  - technology
+  - software development
+publish_tier: public
+---
+## 执行摘要
+
+Hono，一个流行的支持多种JavaScript运行时环境（Deno、Bun、Node.js、Cloudflare Workers）的Web应用框架，在2026年5月13日发布了4.12.18版本，修复了两个安全漏洞。其中更严重的一个，**CVE-2026-44457**（CVSS 5.3），是框架的缓存中间件中的一个缓存投毒漏洞，可能导致针对一个经过身份验证的用户生成的响应被提供给后续无关的请求。第二个漏洞，**CVE-2026-44458**（CVSS 4.3），允许攻击者通过JSX样式对象中的不受信任输入，将任意CSS声明注入到渲染的样式属性中。这两个漏洞都不许可JavaScript执行或HTML注入，但都对处理敏感用户数据或依赖严格内容安全策略的应用程序构成风险。
+
+## 技术分析
+
+### CVE-2026-44457：缓存中间件Vary头部绕过
+
+在4.12.18版本之前的Hono的缓存中间件未能在决定是否缓存响应时尊重`Vary: Authorization`和`Vary: Cookie`响应头部。根据在Hono GitHub仓库上发布的公告，中间件没有跳过缓存那些通过这些头部声明每个用户差异的响应。因此，为一个经过身份验证的用户缓存的响应——比如个性化仪表板、账户设置页面，或包含用户特定数据的API响应——可能会被提供给后续来自不同用户的请求，这些用户共享相同的URL。
+
+`Vary`头部是一个标准的HTTP机制，告诉缓存根据指定请求头部的值区分响应。当设置`Vary: Authorization`时，缓存应该将具有不同`Authorization`头部的请求视为不同的资源。Hono的缓存中间件忽略了这一指令，实际上将所有对相同URL的请求视为可缓存的，而没有用户区分。
+
+这个漏洞在多租户应用程序或任何包含用户特定数据的经过身份验证的响应的服务中尤其危险。能够观察或预测经过身份验证的端点的URL模式的攻击者可能会收到另一个用户的缓存响应，导致个人信息、会话令牌或内部应用程序状态的信息泄露。
+
+### CVE-2026-44458：通过JSX样式对象的CSS注入
+
+在4.12.18版本之前的Hono的JSX渲染器为HTML上下文转义样式属性对象值，但未能为CSS上下文转义它们。当开发者将不受信任的输入作为样式对象值或属性名传递时，攻击者可以将额外的CSS声明注入到HTML元素的渲染`style`属性中。
+
+例如，如果一个应用程序将用户提供的数据渲染到样式对象中，如`{ color: userInput }`，JSX渲染器将产生`<div style="color: userInput">`。然而，如果`userInput`包含CSS语法，如`red; background-image: url(malicious-site.com)`，渲染器不会阻止额外CSS属性的注入。公告指出，影响仅限于CSS操纵——不可能执行JavaScript或HTML注入——但注入任意CSS的能力仍可能被滥用于网络钓鱼（通过叠加假登录表单）、通过基于CSS的跟踪技术进行数据泄露或破坏。
+
+4.12.18版本的修复确保了样式对象值在CSS上下文中被正确转义，防止了额外声明的注入。
+
+## 缓解措施与建议
+
+所有Hono用户应立即升级到4.12.18版本或更高版本。这些修复是向后兼容的，除了更新依赖版本外，不需要代码更改。对于使用包管理器的团队：
+
+- **npm**：`npm install hono@4.12.18`
+- **yarn**：`yarn add hono@4.12.18`
+- **deno**：更新导入映射以引用`jsr:@hono/hono@4.12.18`
+
+对于不能立即升级的应用程序，管理员应考虑以下变通方法：
+
+- **CVE-2026-44457**：对于返回用户特定数据的任何路由，禁用缓存中间件。或者，实现一个自定义中间件，在包含`Vary: Authorization`或`Vary: Cookie`头部的响应上设置`Cache-Control: no-store`。
+- **CVE-2026-44458**：在将用户输入传递给样式对象之前进行清理，或者完全避免使用带有不受信任数据的动态样式对象。带有`style-src 'self'`的内容安全策略（CSP）头部可以限制CSS注入的影响，但不能完全阻止它。
+
+## 参考资料
+
+- [Hono Security Advisory for CVE-2026-44457 (Cache Poisoning)](https://github.com/honojs/hono/security/advisories/GHSA-p77w-8qqv-26rm)
+- [Hono Security Advisory for CVE-2026-44458 (CSS Injection)](https://github.com/honojs/hono/security/advisories/GHSA-qp7p-654g-cw7p)
+- [Hono Releases Page](https://github.com/honojs/hono/releases)

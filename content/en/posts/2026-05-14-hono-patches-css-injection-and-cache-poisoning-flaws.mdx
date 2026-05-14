@@ -1,0 +1,73 @@
+---
+title: Hono Patches CSS Injection and Cache Poisoning Flaws
+slug: 2026-05-14-hono-patches-css-injection-and-cache-poisoning-flaws
+date: '2026-05-14'
+excerpt: >-
+  Hono 4.12.18 fixes CVE-2026-44458 (CSS injection in JSX renderer, CVSS 4.3)
+  and CVE-2026-44457 (cache poisoning via Vary header bypass, CVSS 5.3).
+category: vulnerabilities
+tags:
+  - hono
+  - css-injection
+  - cache-poisoning
+  - cve-2026-44458
+  - cve-2026-44457
+language: en
+source_urls:
+  - 'https://github.com/honojs/hono/security/advisories/GHSA-qp7p-654g-cw7p'
+  - 'https://github.com/honojs/hono/security/advisories/GHSA-p77w-8qqv-26rm'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-hono-patches-css-injection-and-cache-poisoning-flaws
+cluster_key: 'cve:CVE-2026-44458'
+source_count: 2
+severity: medium
+cvss_score: 5.3
+cve_ids:
+  - CVE-2026-44457
+  - CVE-2026-44458
+affected_sectors:
+  - technology
+  - software development
+publish_tier: public
+---
+## Executive Summary
+
+Hono, a popular web application framework supporting multiple JavaScript runtimes (Deno, Bun, Node.js, Cloudflare Workers), released version 4.12.18 on May 13, 2026, addressing two security vulnerabilities. The more serious of the two, **CVE-2026-44457** (CVSS 5.3), is a cache poisoning flaw in the framework's Cache Middleware that can cause responses intended for one authenticated user to be served to subsequent, unrelated requests. The second flaw, **CVE-2026-44458** (CVSS 4.3), allows an attacker to inject arbitrary CSS declarations into rendered style attributes via untrusted input in JSX style objects. Neither vulnerability permits JavaScript execution or HTML injection, but both pose risks to applications handling sensitive user data or relying on strict content security policies.
+
+## Technical Analysis
+
+### CVE-2026-44457: Cache Middleware Vary Header Bypass
+
+The Cache Middleware in Hono versions prior to 4.12.18 fails to respect the `Vary: Authorization` and `Vary: Cookie` response headers when deciding whether to cache a response. According to the advisory published on the Hono GitHub repository, the middleware does not skip caching for responses that declare per-user variance via these headers. As a result, a response cached for one authenticated user—such as a personalized dashboard, account settings page, or API response containing user-specific data—may be served to subsequent requests from different users who share the same URL.
+
+The `Vary` header is a standard HTTP mechanism that tells caches to differentiate responses based on the value of specified request headers. When `Vary: Authorization` is set, a cache should treat requests with different `Authorization` headers as distinct resources. Hono's Cache Middleware ignored this directive, effectively treating all requests to the same URL as cacheable without user differentiation.
+
+This vulnerability is particularly dangerous in multi-tenant applications or any service where authenticated responses contain user-specific data. An attacker who can observe or predict the URL pattern of authenticated endpoints could potentially receive another user's cached response, leading to information disclosure of personal data, session tokens, or internal application state.
+
+### CVE-2026-44458: CSS Injection via JSX Style Objects
+
+The JSX renderer in Hono prior to 4.12.18 escapes style attribute object values for HTML context but fails to escape them for CSS context. When a developer passes untrusted input as a style object value or property name, an attacker can inject additional CSS declarations into the rendered `style` attribute of HTML elements.
+
+For example, if an application renders user-supplied data into a style object like `{ color: userInput }`, the JSX renderer would produce `<div style="color: userInput">`. However, if `userInput` contains CSS syntax such as `red; background-image: url(malicious-site.com)`, the renderer does not prevent the injection of additional CSS properties. The advisory notes that the impact is limited to CSS manipulation—no JavaScript execution or HTML injection is possible—but the ability to inject arbitrary CSS can still be abused for phishing (by overlaying fake login forms), data exfiltration via CSS-based tracking techniques, or defacement.
+
+The fix in version 4.12.18 ensures that style object values are properly escaped for the CSS context, preventing the injection of additional declarations.
+
+## Mitigations & Recommendations
+
+All Hono users should upgrade to version 4.12.18 or later immediately. The fixes are backward-compatible and require no code changes beyond updating the dependency version. For teams using package managers:
+
+- **npm**: `npm install hono@4.12.18`
+- **yarn**: `yarn add hono@4.12.18`
+- **deno**: Update import map to reference `jsr:@hono/hono@4.12.18`
+
+For applications that cannot upgrade immediately, administrators should consider the following workarounds:
+
+- **CVE-2026-44457**: Disable the Cache Middleware for any route that returns user-specific data. Alternatively, implement a custom middleware that sets `Cache-Control: no-store` on responses that include `Vary: Authorization` or `Vary: Cookie` headers.
+- **CVE-2026-44458**: Sanitize user input before passing it to style objects, or avoid using dynamic style objects with untrusted data altogether. Content Security Policy (CSP) headers with `style-src 'self'` can limit the impact of CSS injection but do not prevent it entirely.
+
+## References
+
+- [Hono Security Advisory for CVE-2026-44457 (Cache Poisoning)](https://github.com/honojs/hono/security/advisories/GHSA-p77w-8qqv-26rm)
+- [Hono Security Advisory for CVE-2026-44458 (CSS Injection)](https://github.com/honojs/hono/security/advisories/GHSA-qp7p-654g-cw7p)
+- [Hono Releases Page](https://github.com/honojs/hono/releases)
