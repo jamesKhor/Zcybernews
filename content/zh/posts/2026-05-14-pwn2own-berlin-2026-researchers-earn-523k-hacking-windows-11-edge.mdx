@@ -1,0 +1,62 @@
+---
+title: 'Pwn2Own Berlin 2026: 研究人员通过黑客攻击Windows 11和Edge赚取52.3万美元'
+slug: 2026-05-14-pwn2own-berlin-2026-researchers-earn-523k-hacking-windows-11-edge
+date: '2026-05-14'
+excerpt: >-
+  在Pwn2Own Berlin 2026的第一天，研究人员为24个零日漏洞收集了52.3万美元，包括Orange
+  Tsai通过Edge沙箱逃逸获得的17.5万美元，以及三个Windows 11权限...
+category: industry
+tags:
+  - pwn2own
+  - zero-day
+  - microsoft-edge
+  - windows-11
+  - nvidia
+  - ai-security
+  - bug-bounty
+language: zh
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/windows-11-and-microsoft-edge-hacked-on-first-day-of-pwn2own-berlin-2026/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-pwn2own-berlin-2026-researchers-earn-523k-hacking-windows-11-edge
+cluster_key: 'topic:windows-microsoft-edge-hacked-pwn2own'
+source_count: 1
+severity: critical
+affected_sectors:
+  - technology
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+在2026年5月14日举行的OffensiveCon会议上，Pwn2Own Berlin 2026的第一天，安全研究人员展示了24个针对企业和AI产品的独特的零日漏洞，赢得了523,000美元的现金奖励，据BleepingComputer的报告。最大的单笔奖金——175,000美元——授予了研究人员Orange Tsai，他通过链接四个逻辑漏洞实现了Microsoft Edge中的沙箱逃逸。Windows 11通过权限提升漏洞被三次不同地攻破，多个针对AI的产品，包括LiteLLM、Chroma和LM Studio，也败给了漏洞链。
+
+## 技术分析
+
+由趋势科技的零日计划（ZDI）组织的这场比赛，针对的是运行最新操作系统版本的完全修补的产品。所有参赛作品必须实现任意代码执行才有资格获得奖金。
+
+**Microsoft Edge沙箱逃逸** —— Orange Tsai因链接四个逻辑漏洞绕过浏览器的渲染器和操作系统沙箱保护，获得了175,000美元。这是当天最高的单笔奖励。
+
+**Windows 11权限提升** —— 三个不同的团队各自赢得了30,000美元，他们展示了针对Windows 11的新本地权限提升零日漏洞：Angelboy和TwinkleStar03（DEVCORE实习项目），Marcin Wiązowski，以及GMO Cybersecurity的Kentaro Kawane。
+
+**Red Hat Linux和NVIDIA Container Toolkit** —— IBM X-Force进攻性研究（XOR）的Valentina Palmiotti（chompie）因root Red Hat Enterprise Linux for Workstations获得了20,000美元，另外因利用NVIDIA Container Toolkit中的零日漏洞获得了50,000美元。
+
+**AI产品漏洞** —— 几个以AI为重点的目标被成功攻破：
+- k3vg3n链接三个漏洞击败了LiteLLM（40,000美元）
+- Satoki Tsuji和haehae利用了NVIDIA Megatron Bridge零日漏洞（20,000美元）
+- Compass Security和Doyensec的maitai黑客攻击了OpenAI的Codex编码代理（各获得40,000美元）
+- haehae投放了一个Chroma零日漏洞（20,000美元）
+- STARLabs SG展示了一个LM Studio零日漏洞（40,000美元）
+
+根据ZDI的规则，供应商有90天的时间从披露到发布针对被利用漏洞的安全修复。
+
+## 缓解措施与建议
+
+防御者应在未来90天内监控来自Microsoft、NVIDIA、Red Hat和受影响AI平台供应商的供应商通告。披露的零日漏洞尚未公开详细说明CVE标识符或技术文档，但运行任何目标产品的组织——特别是Microsoft Edge、Windows 11、NVIDIA Container Toolkit和AI推理平台——应在修复发布后优先修补。在此之前，限制管理员访问，并考虑在这些产品部署的地方对AI开发环境进行沙箱化或隔离。
+
+## 参考资料
+
+- [Windows 11和Microsoft Edge在Pwn2Own Berlin 2026被黑客攻击](https://www.bleepingcomputer.com/news/security/windows-11-and-microsoft-edge-hacked-on-first-day-of-pwn2own-berlin-2026/)

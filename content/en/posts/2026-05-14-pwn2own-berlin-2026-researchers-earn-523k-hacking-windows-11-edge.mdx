@@ -1,0 +1,63 @@
+---
+title: 'Pwn2Own Berlin 2026: Researchers Earn $523K Hacking Windows 11, Edge'
+slug: 2026-05-14-pwn2own-berlin-2026-researchers-earn-523k-hacking-windows-11-edge
+date: '2026-05-14'
+excerpt: >-
+  On day one of Pwn2Own Berlin 2026, researchers collected $523,000 for 24
+  zero-days, including a $175,000 Edge sandbox escape by Orange Tsai and three
+  Windows 11 privilege...
+category: industry
+tags:
+  - pwn2own
+  - zero-day
+  - microsoft-edge
+  - windows-11
+  - nvidia
+  - ai-security
+  - bug-bounty
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/windows-11-and-microsoft-edge-hacked-on-first-day-of-pwn2own-berlin-2026/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-14-pwn2own-berlin-2026-researchers-earn-523k-hacking-windows-11-edge
+cluster_key: 'topic:windows-microsoft-edge-hacked-pwn2own'
+source_count: 1
+severity: critical
+affected_sectors:
+  - technology
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+On the first day of Pwn2Own Berlin 2026, held at the OffensiveCon conference on May 14, security researchers demonstrated 24 unique zero-day exploits across enterprise and AI products, earning $523,000 in cash awards, according to a report from BleepingComputer. The most significant single payout — $175,000 — went to researcher Orange Tsai for chaining four logic bugs to achieve a sandbox escape in Microsoft Edge. Windows 11 was compromised three separate times via privilege escalation vulnerabilities, and multiple AI-targeted products including LiteLLM, Chroma, and LM Studio fell to exploit chains.
+
+## Technical Analysis
+
+The competition, organized by Trend Micro's Zero Day Initiative (ZDI), targets fully patched products running the latest operating system versions. All entries must achieve arbitrary code execution to qualify for a payout.
+
+**Microsoft Edge sandbox escape** — Orange Tsai received $175,000 for chaining four logic bugs that bypassed the browser's renderer and OS sandbox protections. This was the highest single reward of the day.
+
+**Windows 11 privilege escalation** — Three separate teams each earned $30,000 for demonstrating new local privilege escalation zero-days against Windows 11: Angelboy and TwinkleStar03 (DEVCORE Internship Program), Marcin Wiązowski, and Kentaro Kawane of GMO Cybersecurity.
+
+**Red Hat Linux and NVIDIA Container Toolkit** — Valentina Palmiotti (chompie) of IBM X-Force Offensive Research (XOR) collected $20,000 for rooting Red Hat Enterprise Linux for Workstations and an additional $50,000 for exploiting a zero-day in the NVIDIA Container Toolkit.
+
+**AI product exploits** — Several AI-focused targets were successfully compromised:
+- k3vg3n chained three bugs to take down LiteLLM ($40,000)
+- Satoki Tsuji and haehae exploited NVIDIA Megatron Bridge zero-days ($20,000)
+- Compass Security and maitai of Doyensec hacked OpenAI's Codex coding agent (each earning $40,000)
+- haehae dropped a Chroma zero-day ($20,000)
+- STARLabs SG demonstrated an LM Studio zero-day ($40,000)
+
+According to ZDI's rules, vendors have 90 days from disclosure to release security fixes for the exploited vulnerabilities.
+
+## Mitigations & Recommendations
+
+Defenders should monitor vendor advisories from Microsoft, NVIDIA, Red Hat, and the affected AI platform providers over the next 90 days. The disclosed zero-days are not yet publicly detailed with CVE identifiers or technical writeups, but organizations running any of the targeted products — particularly Microsoft Edge, Windows 11, NVIDIA Container Toolkit, and the AI inference platforms — should prioritize patching once fixes are released. Until then, restrict administrative access and consider sandboxing or isolating AI development environments where these products are deployed.
+
+## References
+
+- [Windows 11 and Microsoft Edge hacked at Pwn2Own Berlin 2026](https://www.bleepingcomputer.com/news/security/windows-11-and-microsoft-edge-hacked-on-first-day-of-pwn2own-berlin-2026/)
