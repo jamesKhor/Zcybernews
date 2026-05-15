@@ -1,0 +1,87 @@
+---
+title: Gremlin Stealer 进化：加密剪贴，会话劫持，打包
+slug: 2026-05-15-gremlin-stealer-evolves-crypto-clipping-session-hijacking-packed
+date: '2026-05-15'
+excerpt: >-
+  Unit 42 详细描述了一种新的 Gremlin stealer 变种，使用 XOR 加密的资源部分，加密剪贴器，WebSocket
+  会话劫持，以及一个商业打包器，带有指令...
+category: malware
+tags:
+  - gremlin-stealer
+  - infostealer
+  - crypto-clipper
+  - session-hijacking
+  - unit-42
+  - obfuscation
+  - packer
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/gremlin-stealer-evolution/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-15-gremlin-stealer-evolves-crypto-clipping-session-hijacking-packed
+cluster_key: 'topic:gremlin-stealers-evolved-tactics-hiding'
+source_count: 1
+severity: high
+threat_actor: Gremlin Stealer
+affected_sectors:
+  - financial services
+  - cryptocurrency
+  - technology
+iocs:
+  - type: hash_sha256
+    value: 2172dae9a5a695e00e0e4609e7db0207d8566d225f7e815fada246ae995c0f9b
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+Palo Alto Networks Unit 42记录了Gremlin窃取恶意软件的一个新变种，该变种引入了重大的反分析升级，并扩展了其数据窃取能力。最新的样本首次观察于2026年5月，使用XOR编码将其恶意有效载荷隐藏在.NET资源部分内——这是一种由Agent Tesla、GuLoader、LokiBot和Quasar RAT共享的技术。除了凭据收集之外，该变种现在还包括一个实时替换剪贴板上钱包地址的加密货币剪贴器，一个基于WebSocket的会话劫持模块，该模块绕过现代cookie保护，以及一个专用的Discord令牌提取模块。恶意软件进一步受到商业打包工具的保护，该工具采用指令虚拟化，将原始代码转换为由私有虚拟机执行的自定义字节码。Unit 42研究人员识别了C2基础设施在IP地址194.87.92.109，发现时在VirusTotal上没有检测到。
+
+## 技术分析
+
+Unit 42的分析（发布于2026年5月15日）比较了旧的和新的Gremlin窃取构建。旧样本缺乏混淆，保留了函数导出和内部符号。当前迭代实现了分阶段加载机制：每个关键功能仅在需要时从.NET资源部分解密并映射到内存，迫使分析师依赖动态调试来观察有意义的程序行为。
+
+对资源部分应用单字节XOR解密例程可以恢复纯文本配置，揭示硬编码的C2 URL和外泄路径。恶意软件将被盗物品捆绑在一起——浏览器cookie、会话令牌、剪贴板内容、加密货币钱包数据、FTP和VPN凭据——打包成一个以受害者的公共IP地址命名的ZIP存档，然后上传到攻击者控制的服务器hxxp://194.87.92.109。
+
+Unit 42识别出的关键架构升级包括：
+
+- **扩大目标范围**：专用的Discord令牌提取模块表明转向数字身份盗窃和社交工程。
+- **活跃的金融欺诈**：加密货币剪贴器持续监控系统剪贴板，寻找匹配加密货币钱包模式的字符串。一旦检测到，恶意软件会实时将受害者的地址替换为攻击者的钱包，转移交易中的资金。
+- **高级持久性**：基于WebSocket的会话劫持模块直接从运行的浏览器进程请求会话数据，绕过现代cookie保护，如`SameSite`和`HttpOnly`标志。
+
+Unit 42还发现了一个样本（SHA256：`2172dae9a5a695e00e0e4609e7db0207d8566d225f7e815fada246ae995c0f9b`），使用商业打包工具打包。打包器采用标识符重命名——用不透明的标签替换有意义的函数和变量名——和指令虚拟化，将原始的x86/x64代码转换为由解包存根中的私有虚拟机执行的自定义、非标准字节码。这种技术显著提高了静态分析和自动解包的难度。
+
+## 入侵指标
+
+Unit 42在发布时识别了一个C2基础设施节点：
+
+| 类型 | 值 | 上下文 |
+|------|-------|---------|
+| IP   | 194.87.92.109 | 托管新的Gremlin数据发布站点；发现时VirusTotal上零检测 |
+
+恶意软件以受害者的公共IP地址命名外泄的ZIP存档，这可能有助于防御者关联被入侵的主机。
+
+## 战术、技术与程序
+
+Gremlin窃取器的TTPs跨越多个MITRE ATT&CK阶段。恶意软件通过用户与打包的可执行文件交互实现初始执行（T1204.002）。防御规避依赖于通过.NET资源部分的XOR编码混淆文件或信息（T1027.013）和通过分阶段加载进行进程注入（T1055.001）。收集技术包括监控剪贴板中的加密货币钱包地址（T1056.001）和基于WebSocket的会话cookie盗窃（T1539）。外泄通过C2通道以压缩存档的形式发生（T1041）。凭据访问目标浏览器密码存储（T1555.003）和Discord令牌。
+
+## 威胁行为者背景
+
+Gremlin窃取器是一种最初记录于2025年初的信息窃取恶意软件家族。它作为一种商品凭据收集器在Telegram频道和地下论坛上出售。最新变种的演变——增加加密货币剪贴、会话劫持和Discord令牌盗窃——表明开发者正在响应市场对更多样化工具的需求，这些工具能够货币化传统凭据和加密货币资产。Unit 42以适度的信心评估，鉴于基础设施设置和模块化有效载荷设计，恶意软件作为恶意软件即服务（MaaS）产品提供。
+
+## 缓解措施与建议
+
+Palo Alto Networks客户通过Cortex XDR和XSIAM、Advanced WildFire、Advanced Threat Prevention、Advanced URL Filtering和Advanced DNS Security受到保护。对于没有这些产品的组织，Unit 42推荐以下措施：
+
+- 启用应用程序级控制，阻止从不受信任的来源执行打包或混淆的二进制文件。
+- 部署端点检测和响应（EDR）解决方案，监控进程注入和异常资源部分访问。
+- 限制不受信任应用程序的剪贴板访问，特别是那些处理加密货币钱包地址的应用程序。
+- 实施WebSocket流量检查，以检测未经授权的会话劫持尝试。
+- 阻止到已知C2基础设施的出站连接，包括194.87.92.109。
+- 教育用户执行未经请求的附件的风险，特别是那些触发分阶段加载行为的附件。
+
+## 参考资料
+
+- [Unit 42: Gremlin Stealer's Evolved Tactics: Hiding in Plain Sight With Resource Files](https://unit42.paloaltonetworks.com/gremlin-stealer-evolution/)

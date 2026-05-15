@@ -1,0 +1,88 @@
+---
+title: 'Gremlin Stealer Evolves: Crypto Clipping, Session Hijacking, Packed'
+slug: 2026-05-15-gremlin-stealer-evolves-crypto-clipping-session-hijacking-packed
+date: '2026-05-15'
+excerpt: >-
+  Unit 42 details a new Gremlin stealer variant using XOR-encrypted resource
+  sections, crypto clipper, WebSocket session hijacking, and a commercial packer
+  with instruction...
+category: malware
+tags:
+  - gremlin-stealer
+  - infostealer
+  - crypto-clipper
+  - session-hijacking
+  - unit-42
+  - obfuscation
+  - packer
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/gremlin-stealer-evolution/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-15-gremlin-stealer-evolves-crypto-clipping-session-hijacking-packed
+cluster_key: 'topic:gremlin-stealers-evolved-tactics-hiding'
+source_count: 1
+severity: high
+threat_actor: Gremlin Stealer
+affected_sectors:
+  - financial services
+  - cryptocurrency
+  - technology
+iocs:
+  - type: hash_sha256
+    value: 2172dae9a5a695e00e0e4609e7db0207d8566d225f7e815fada246ae995c0f9b
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Palo Alto Networks Unit 42 has documented a new variant of the Gremlin stealer malware that introduces significant anti-analysis upgrades and expands its data-theft capabilities. The latest sample, first observed in May 2026, conceals its malicious payload inside the .NET resource section using XOR encoding — a technique shared by Agent Tesla, GuLoader, LokiBot, and Quasar RAT. Beyond credential harvesting, the variant now includes a cryptocurrency clipper that replaces wallet addresses on the clipboard in real time, a WebSocket-based session hijacking module that bypasses modern cookie protections, and a dedicated Discord token extraction module. The malware is further protected by a commercial packing utility that employs instruction virtualization, converting original code into custom bytecode executed by a private virtual machine. Unit 42 researchers identified the C2 infrastructure at IP address 194.87.92.109, which at the time of discovery had zero detections on VirusTotal.
+
+## Technical Analysis
+
+Unit 42's analysis (published May 15, 2026) compares older and newer Gremlin stealer builds. Legacy samples lacked obfuscation, leaving function exports and internal symbols intact. The current iteration implements a staged loading mechanism: each critical function is decrypted and mapped into memory from the .NET resource section only when needed, forcing analysts to rely on dynamic debugging to observe meaningful program behavior.
+
+Applying a single-byte XOR decryption routine to the resource section recovers plain-text configuration, revealing hard-coded C2 URLs and exfiltration paths. The malware bundles stolen artifacts — browser cookies, session tokens, clipboard contents, cryptocurrency wallet data, FTP and VPN credentials — into a ZIP archive named after the victim's public IP address, then uploads it to the attacker-controlled server at hxxp://194.87.92.109.
+
+Key architectural upgrades identified by Unit 42 include:
+
+- **Expanded target scope**: A dedicated Discord token extraction module signals a pivot toward digital identity theft and social engineering.
+- **Active financial fraud**: The crypto clipper continuously monitors the system clipboard for strings matching cryptocurrency wallet patterns. When detected, the malware replaces the victim's address with the attacker's wallet in real time, diverting funds during transactions.
+- **Advanced persistence**: The WebSocket-based session hijacking module requests session data directly from the running browser process, bypassing modern cookie protections such as `SameSite` and `HttpOnly` flags.
+
+Unit 42 also uncovered a sample (SHA256: `2172dae9a5a695e00e0e4609e7db0207d8566d225f7e815fada246ae995c0f9b`) packed using a commercial packing utility. The packer employs identifier renaming — replacing meaningful function and variable names with opaque labels — and instruction virtualization, which transforms original x86/x64 code into a custom, non-standard bytecode executed by a private virtual machine embedded in the unpacking stub. This technique significantly raises the bar for static analysis and automated unpacking.
+
+## Indicators of Compromise
+
+Unit 42 identified one C2 infrastructure node at the time of publication:
+
+| Type | Value | Context |
+|------|-------|---------|
+| IP   | 194.87.92.109 | Hosts the new Gremlin data-publishing site; zero VirusTotal detections at discovery |
+
+The malware names exfiltrated ZIP archives using the victim's public IP address, which may aid defenders in correlating compromised hosts.
+
+## Tactics, Techniques & Procedures
+
+Gremlin stealer's TTPs span multiple MITRE ATT&CK phases. The malware achieves initial execution via user interaction with a packed executable (T1204.002). Defense evasion relies on obfuscated files or information via XOR encoding in the .NET resource section (T1027.013) and process injection through staged loading (T1055.001). Collection techniques include clipboard monitoring for crypto wallet addresses (T1056.001) and WebSocket-based session cookie theft (T1539). Exfiltration occurs over the C2 channel as a compressed archive (T1041). Credential access targets browser password stores (T1555.003) and Discord tokens.
+
+## Threat Actor Context
+
+Gremlin stealer is an infostealer malware family first documented in early 2025. It operates as a commodity credential harvester sold on Telegram channels and underground forums. The latest variant's evolution — adding crypto clipping, session hijacking, and Discord token theft — suggests the developers are responding to market demand for more versatile tools capable of monetizing both traditional credentials and cryptocurrency assets. Unit 42 assesses with moderate confidence that the malware is offered as a malware-as-a-service (MaaS) product, given the infrastructure setup and modular payload design.
+
+## Mitigations & Recommendations
+
+Palo Alto Networks customers are protected through Cortex XDR and XSIAM, Advanced WildFire, Advanced Threat Prevention, Advanced URL Filtering, and Advanced DNS Security. For organizations without these products, Unit 42 recommends the following:
+
+- Enable application-level controls to block execution of packed or obfuscated binaries from untrusted sources.
+- Deploy endpoint detection and response (EDR) solutions that monitor for process injection and anomalous resource section access.
+- Restrict clipboard access for untrusted applications, particularly those handling cryptocurrency wallet addresses.
+- Implement WebSocket traffic inspection to detect unauthorized session hijacking attempts.
+- Block outbound connections to known C2 infrastructure, including 194.87.92.109.
+- Educate users on the risks of executing unsolicited attachments, especially those that trigger staged loading behavior.
+
+## References
+
+- [Unit 42: Gremlin Stealer's Evolved Tactics: Hiding in Plain Sight With Resource Files](https://unit42.paloaltonetworks.com/gremlin-stealer-evolution/)
