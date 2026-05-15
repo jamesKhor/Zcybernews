@@ -1,0 +1,63 @@
+---
+title: Palo Alto GlobalProtect 漏洞让攻击者拦截加密流量
+slug: 2026-05-15-palo-alto-globalprotect-flaws-let-attackers-intercept-encrypted
+date: '2026-05-15'
+excerpt: >-
+  CVE-2026-0249: Palo Alto Networks GlobalProtect
+  应用程序中存在多个不当证书验证漏洞，让本地或同一子网的攻击者拦截加密流量并安装...
+category: vulnerabilities
+tags:
+  - palo-alto-networks
+  - globalprotect
+  - cve-2026-0249
+  - certificate-validation
+  - mitm
+  - vpn-security
+language: zh
+source_urls:
+  - 'https://security.paloaltonetworks.com/CVE-2026-0249'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-15-palo-alto-globalprotect-flaws-let-attackers-intercept-encrypted
+cluster_key: 'cve:CVE-2026-0249'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2026-0249
+affected_sectors:
+  - enterprise
+  - government
+  - healthcare
+  - financial services
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+Palo Alto Networks 披露了其 GlobalProtect 应用程序中的一系列不当证书验证漏洞，跟踪编号为 **CVE-2026-0249**，这些漏洞允许同一子网或本地非管理员用户拦截加密通信，并可能在终端安装恶意软件。通过 Palo Alto 的安全门户发布的咨询报告，目前尚未分配 CVSS 评分，但攻击面——涉及流量拦截和任意代码安装——将此问题定位为企业部署中的高严重性范围，其中 GlobalProtect 用于远程访问和网络分段。运行受影响版本的组织应优先考虑修补，特别是在终端与不受信任设备共享网络段的环境中。
+
+## 技术分析
+
+根据 Palo Alto Networks 的咨询报告，CVE-2026-0249 包括 GlobalProtect 应用程序中的多个不当证书验证缺陷。这些漏洞使得两种主要攻击场景成为可能：
+
+1. **通过证书欺骗实现本地权限提升**：同一终端上的非管理员用户可以利用有缺陷的证书验证，将 GlobalProtect 流量重定向到攻击者控制的服务器，拦截加密通信，并可能传递恶意有效载荷。
+
+2. **基于网络的中间人攻击（MITM）**：与目标在同一子网的攻击者可以通过呈现伪造证书来冒充合法的 GlobalProtect 网关，客户端未能正确验证该证书。这允许攻击者解密、检查和修改通过 VPN 隧道的流量，以及推送软件更新或配置更改以安装恶意软件。
+
+咨询报告指出，该漏洞影响多个操作系统上的 GlobalProtect 应用程序，尽管 Palo Alto 尚未发布受影响版本的完整列表。公司归功于内部安全研究人员的发现，并指出截至咨询日期尚未报告任何活跃利用。
+
+VPN 客户端中的证书验证弱点是历史上危险的一类漏洞。其他企业 VPN 产品中的类似缺陷——例如 2019 年多个 VPN 客户端中的 TunnelCrack 漏洞——已经证明，针对未经适当验证的 TLS 连接的 MITM 攻击可以完全绕过加密。GlobalProtect 的漏洞特别令人关注，因为它可以被本地无特权用户触发，这意味着在管理终端上被破坏的低完整性账户可以用来转向高价值网络资源。
+
+## 缓解措施与建议
+
+Palo Alto Networks 已发布软件更新以解决 CVE-2026-0249。管理员应参考公司安全咨询中提供的 URL，了解对应其 GlobalProtect 部署的具体修复版本。在应用补丁之前，组织应考虑以下补偿控制措施：
+
+- 限制对运行 GlobalProtect 的终端的物理和网络访问，特别是在共享或公共子网环境中。
+- 监控 GlobalProtect 客户端出现的意外证书验证错误或连接警告。
+- 强制执行应用程序白名单，以防止通过 MITM 向量传递的未经授权的软件安装。
+- 将 VPN 客户端子网与关键内部资产隔离，以限制在终端被破坏的情况下的横向移动。
+
+## 参考资料
+
+- [Palo Alto Networks 安全咨询 CVE-2026-0249](https://security.paloaltonetworks.com/CVE-2026-0249)

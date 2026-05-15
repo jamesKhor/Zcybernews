@@ -1,0 +1,56 @@
+---
+title: Chrome 148 修复了79个漏洞，包括14个高危漏洞，例如堆溢出
+slug: 2026-05-15-chrome-148-patches-79-flaws-14-critical-including-heap-overflow
+date: '2026-05-15'
+excerpt: >-
+  谷歌的Chrome 148更新修复了79个漏洞，其中14个是高危漏洞 —— 包括堆缓冲区溢出
+  CVE-2026-8509（奖金43K美元）和Skia中的整数溢出 CVE-2026-8510（奖金25K美元...
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - browser-security
+  - cve-2026-8509
+  - cve-2026-8510
+  - use-after-free
+  - heap-buffer-overflow
+language: zh
+source_urls:
+  - >-
+    https://www.securityweek.com/chrome-148-update-patches-critical-vulnerabilities/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-15-chrome-148-patches-79-flaws-14-critical-including-heap-overflow
+cluster_key: 'topic:chrome-update-patches-chrome'
+source_count: 1
+severity: critical
+cve_ids:
+  - CVE-2026-8509
+  - CVE-2026-8510
+affected_sectors:
+  - technology
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+Google 在 2026 年 5 月 15 日发布了 Chrome 148（版本号为 Linux 的 148.0.7778.167 和 Windows 以及 macOS 的 148.0.7778.167/168），修复了 79 个安全漏洞，其中 14 个被评为严重级别。在这些严重漏洞中，包括 WebML 中的一个堆缓冲区溢出（CVE-2026-8509，奖金 $43,000）和 Skia 中的一个整数溢出（CVE-2026-8510，奖金 $25,000）。剩下的 12 个严重漏洞是由 Google 内部发现的，包括 UI、FileSystem、Input、Aura、HID、Blink、Tab Groups 和 Downloads 组件中的八个使用后释放漏洞，以及 DataTransfer 中对不受信任输入的验证不足、WebShare 中的对象生命周期问题、ANGLE 中的整数溢出和 Payments 中的竞争条件。Google 尚未确认这些漏洞是否在野外被利用。此次更新还解决了 37 个高严重性漏洞，涵盖了使用后释放、越界写入、堆缓冲区溢出、验证不足、整数溢出、策略执行不足、越界读取和类型混淆缺陷，其中四个披露了 $44,000 的奖金。
+
+## 技术分析
+
+CVE-2026-8509 是 WebML 组件中的一个堆缓冲区溢出，该模块使浏览器能够进行机器学习推理。Google 为这一发现支付了 $43,000 的漏洞奖金——这是这批补丁中最高的单次奖励——并且没有披露技术细节。根据 SecurityWeek 的报道，严重性评级和奖金金额表明，该漏洞可以在浏览器沙箱上下文中被利用进行远程代码执行。浏览器渲染引擎中的堆缓冲区溢出历史上曾被用于沙箱逃逸链，当与单独的渲染器妥协结合时。
+
+CVE-2026-8510 是 Skia 中的一个整数溢出，Skia 是 Google 的 2D 图形库，用于渲染文本、几何形状和图像。图形库中的整数溢出可能导致越界写入或读取，潜在地启用代码执行。$25,000 的奖金与严重性评级相符。
+
+12 个内部发现的严重漏洞包括 UI、FileSystem、Input、Aura（窗口系统）、HID（人机接口设备处理）、Blink（渲染引擎）、Tab Groups 和 Downloads 中的八个使用后释放漏洞。这些组件中的使用后释放缺陷可能允许攻击者解引用已释放的内存，导致代码执行或信息泄露。剩下的四个内部发现的严重问题包括：DataTransfer（剪贴板和拖放 API）中对不受信任输入的验证不足、WebShare（Web Share API）中的对象生命周期问题、ANGLE（OpenGL ES 到 DirectX 转换层）中的整数溢出和 Payments（Payment Request API）中的竞争条件。支付处理中的竞争条件可能允许双重消费或交易操纵，尽管 Google 尚未提供可利用性细节。
+
+在 37 个高严重性修复中，解决了多个使用后释放、越界写入、堆缓冲区溢出、验证不足、整数溢出、策略执行不足、越界读取和类型混淆缺陷。Google 为这四个高严重性漏洞支付了 $44,000 的漏洞奖金，最高奖金为 $25,000 和 $10,000。该公司尚未披露其他几个问题的奖金金额，因此总支付金额可能更高。
+
+## 缓解措施与建议
+
+Chrome 用户应尽快更新到版本 148.0.7778.167（Linux）或 148.0.7778.167/168（Windows，macOS）。更新将通过 Chrome 内置的更新程序自动推出，但用户可以通过导航至 chrome://settings/help 手动触发更新。企业管理员应通过他们的浏览器管理策略部署更新，并在受管设备上验证推出状态。鉴于没有已知的野外利用，防御者可以将此更新作为标准的关键补丁周期而不是紧急响应来优先考虑。然而，14 个严重性修复——特别是 WebML 中的堆缓冲区溢出和 Skia 中的整数溢出——值得任何将 Chrome 作为主要浏览器的组织立即关注。
+
+## 参考资料
+
+- [Chrome 148 Update Patches Critical Vulnerabilities - SecurityWeek](https://www.securityweek.com/chrome-148-update-patches-critical-vulnerabilities/)

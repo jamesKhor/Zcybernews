@@ -1,0 +1,57 @@
+---
+title: 'Chrome 148 Patches 79 Flaws, 14 Critical Including Heap Overflow'
+slug: 2026-05-15-chrome-148-patches-79-flaws-14-critical-including-heap-overflow
+date: '2026-05-15'
+excerpt: >-
+  Google's Chrome 148 update fixes 79 vulnerabilities, 14 critical — including
+  heap buffer overflow CVE-2026-8509 ($43K bounty) and integer overflow
+  CVE-2026-8510 in Skia ($25K...
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - browser-security
+  - cve-2026-8509
+  - cve-2026-8510
+  - use-after-free
+  - heap-buffer-overflow
+language: en
+source_urls:
+  - >-
+    https://www.securityweek.com/chrome-148-update-patches-critical-vulnerabilities/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-15-chrome-148-patches-79-flaws-14-critical-including-heap-overflow
+cluster_key: 'topic:chrome-update-patches-chrome'
+source_count: 1
+severity: critical
+cve_ids:
+  - CVE-2026-8509
+  - CVE-2026-8510
+affected_sectors:
+  - technology
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+Google released Chrome 148 (versions 148.0.7778.167 for Linux and 148.0.7778.167/168 for Windows and macOS) on May 15, 2026, patching 79 security vulnerabilities, 14 of which are rated critical. Among the critical flaws are a heap buffer overflow in WebML (CVE-2026-8509, $43,000 bounty) and an integer overflow in Skia (CVE-2026-8510, $25,000 reward). The remaining 12 critical bugs were internally discovered by Google and include eight use-after-free vulnerabilities across UI, FileSystem, Input, Aura, HID, Blink, Tab Groups, and Downloads components, plus an insufficient validation of untrusted input in DataTransfer, an object lifecycle issue in WebShare, an integer overflow in ANGLE, and a race condition in Payments. Google has not confirmed any of these issues being exploited in the wild. The update also addresses 37 high-severity flaws spanning use-after-free, out-of-bounds write, heap buffer overflow, insufficient validation, integer overflow, insufficient policy enforcement, out-of-bounds read, and type confusion defects, with $44,000 in disclosed bounties for four of them.
+
+## Technical Analysis
+
+CVE-2026-8509 is a heap buffer overflow in the WebML component, a module that enables machine learning inference in the browser. Google paid a $43,000 bug bounty for this finding — the highest single reward in this patch batch — and has not disclosed technical details. The severity rating and bounty amount, as reported by SecurityWeek, suggest the flaw is exploitable for remote code execution in the browser sandbox context. Heap buffer overflows in browser rendering engines have historically been leveraged for sandbox escape chains when combined with a separate renderer compromise.
+
+CVE-2026-8510 is an integer overflow in Skia, Google's 2D graphics library used for rendering text, geometries, and images. Integer overflows in graphics libraries can lead to out-of-bounds writes or reads, potentially enabling code execution. The $25,000 bounty aligns with the severity rating.
+
+The 12 internally discovered critical bugs include eight use-after-free vulnerabilities spread across UI, FileSystem, Input, Aura (the windowing system), HID (human interface device handling), Blink (the rendering engine), Tab Groups, and Downloads. Use-after-free flaws in these components can allow an attacker to dereference freed memory, leading to code execution or information disclosure. The remaining four internally found critical issues are: insufficient validation of untrusted input in DataTransfer (clipboard and drag-and-drop API), an object lifecycle issue in WebShare (Web Share API), an integer overflow in ANGLE (OpenGL ES to DirectX translation layer), and a race condition in Payments (Payment Request API). Race conditions in payment handling could potentially allow double-spending or transaction manipulation, though Google has not provided exploitability details.
+
+Among the 37 high-severity fixes, multiple use-after-free, out-of-bounds write, heap buffer overflow, insufficient validation, integer overflow, insufficient policy enforcement, out-of-bounds read, and type confusion defects were resolved. Google paid $44,000 in bug bounty rewards for four of these high-severity flaws, with top rewards of $25,000 and $10,000. The company has not yet disclosed bounty amounts for several other issues, so the total payout may be higher.
+
+## Mitigations & Recommendations
+
+Chrome users should update to version 148.0.7778.167 (Linux) or 148.0.7778.167/168 (Windows, macOS) as soon as possible. The update is rolling out automatically via Chrome's built-in updater, but users can manually trigger an update by navigating to chrome://settings/help. Enterprise administrators should deploy the update through their browser management policies and verify rollout status across managed devices. Given the absence of known in-the-wild exploitation, defenders can prioritize this update as a standard critical patch cycle rather than an emergency response. However, the 14 critical-severity fixes — particularly the heap buffer overflow in WebML and the Skia integer overflow — warrant prompt attention for any organization using Chrome as a primary browser.
+
+## References
+
+- [Chrome 148 Update Patches Critical Vulnerabilities - SecurityWeek](https://www.securityweek.com/chrome-148-update-patches-critical-vulnerabilities/)
