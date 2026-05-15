@@ -153,6 +153,29 @@ check_body_contains() {
   echo "✓ ${label}  body matched pattern=${pattern}"
 }
 
+check_body_not_contains() {
+  local label="$1" url="$2" pattern="$3"
+  TOTAL=$((TOTAL + 1))
+  local status
+  status=$(curl -s -o /tmp/smoke-body -w "%{http_code}" -L --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "000")
+  if [ "${status}" = "403" ]; then
+    echo "! ${label}  status=403 from GitHub runner; treating as Cloudflare/WAF warning  url=${url}"
+    SOFT_403=$((SOFT_403 + 1))
+    return
+  fi
+  if [ "${status}" != "200" ]; then
+    echo "✗ ${label}  status=${status} expected=200  url=${url}"
+    FAILURES=$((FAILURES + 1))
+    return
+  fi
+  if grep -qE "${pattern}" /tmp/smoke-body; then
+    echo "✗ ${label}  body unexpectedly matched pattern=${pattern}  url=${url}"
+    FAILURES=$((FAILURES + 1))
+    return
+  fi
+  echo "✓ ${label}  body did not match pattern=${pattern}"
+}
+
 echo "Smoke test: ${BASE_URL}"
 echo "----------------------------------------"
 
@@ -173,12 +196,24 @@ check_body_contains "article canonical" "${BASE_URL}/en/articles/${STABLE_ARTICL
 check_body_contains "article JSON-LD" "${BASE_URL}/en/articles/${STABLE_ARTICLE}" "application/ld\\+json"
 check_hard_redirect "wrong-section redirects" "${BASE_URL}/en/threat-intel/${STABLE_ARTICLE}" "/en/articles/${STABLE_ARTICLE}"
 
+# Search Console recovery guards — these pin the failure classes that caused
+# the May 2026 indexability drop: known-GSC URLs must be indexable, brief pages
+# must not emit noindex, and stale URL variants must hard-redirect.
+GSC_PUBLIC_ARTICLE="2026-04-14-cisa-warns-exploited-windows-adobe-acrobat-vulnerabilities"
+GSC_BRIEF_ARTICLE="2026-04-12-ai-powered-threat-actor-breaches-mexican-government"
+check_body_contains "GSC article indexable" "${BASE_URL}/en/articles/${GSC_PUBLIC_ARTICLE}" "rel=\"canonical\".*${GSC_PUBLIC_ARTICLE}"
+check_body_not_contains "GSC article not noindex" "${BASE_URL}/en/articles/${GSC_PUBLIC_ARTICLE}" "name=\"robots\"[^>]*content=\"[^\"]*noindex"
+check_body_not_contains "brief article not noindex" "${BASE_URL}/en/threat-intel/${GSC_BRIEF_ARTICLE}" "name=\"robots\"[^>]*content=\"[^\"]*noindex"
+check_hard_redirect "legacy unlocalized article redirects" "${BASE_URL}/articles/${GSC_PUBLIC_ARTICLE}" "/en/articles/${GSC_PUBLIC_ARTICLE}"
+check_hard_redirect "legacy www host redirects" "https://www.zcybernews.com/en/categories/vulnerabilities" "https://zcybernews.com/en/categories/vulnerabilities"
+
 # Category + tag pages — NYT-style listings added today.
 check "GET /en/categories/vulnerabilities" "${BASE_URL}/en/categories/vulnerabilities" 200 "text/html"
 
 # Sitemap / robots — must be reachable and correct MIME.
 check "GET /sitemap.xml"             "${BASE_URL}/sitemap.xml"           200 "(xml|text)"
 check "GET /robots.txt"              "${BASE_URL}/robots.txt"            200 "text"
+check_body_contains "sitemap has fresh articles" "${BASE_URL}/sitemap.xml" "2026-05-14-"
 check "GET /api/feed"                "${BASE_URL}/api/feed"              200 "application/rss\\+xml"
 check_body_contains "feed absolute URLs" "${BASE_URL}/api/feed" "${BASE_URL}/en/"
 
