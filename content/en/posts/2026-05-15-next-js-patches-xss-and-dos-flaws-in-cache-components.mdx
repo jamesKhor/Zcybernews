@@ -1,0 +1,54 @@
+---
+title: Next.js Patches XSS and DoS Flaws in Cache Components
+slug: 2026-05-15-next-js-patches-xss-and-dos-flaws-in-cache-components
+date: '2026-05-15'
+excerpt: >-
+  CVE-2026-44580 (CVSS 6.1) enables XSS via beforeInteractive scripts;
+  CVE-2026-44579 (CVSS 7.5) triggers connection exhaustion in Partial
+  Prerendering.
+category: vulnerabilities
+tags:
+  - next.js
+  - xss
+  - dos
+  - cve-2026-44580
+  - cve-2026-44579
+  - partial-prerendering
+language: en
+source_urls:
+  - 'https://github.com/vercel/next.js/security/advisories/GHSA-gx5p-jg67-6x7h'
+  - 'https://github.com/vercel/next.js/security/advisories/GHSA-mg66-mrh9-m8jx'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-15-next-js-patches-xss-and-dos-flaws-in-cache-components
+cluster_key: 'cve:CVE-2026-44580'
+source_count: 2
+severity: high
+cvss_score: 7.5
+cve_ids:
+  - CVE-2026-44580
+  - CVE-2026-44579
+publish_tier: public
+---
+## Executive Summary
+
+Vercel has released security patches for Next.js, the popular React-based web framework, addressing two vulnerabilities that affect applications using specific rendering features. The first flaw, tracked as **CVE-2026-44580** (CVSS 6.1), is a cross-site scripting (XSS) vulnerability in applications that use `beforeInteractive` scripts with untrusted content. The second, **CVE-2026-44579** (CVSS 7.5), is a denial-of-service (DoS) condition affecting the Partial Prerendering (PPR) feature via crafted POST requests to server actions. Both vulnerabilities impact Next.js versions from 13.0.0 up to, but not including, 15.5.16 and 16.2.5. Users running these versions should update immediately.
+
+## Technical Analysis
+
+**CVE-2026-44580 — XSS via beforeInteractive Scripts**
+
+According to the advisory published by Vercel on GitHub (GHSA-gx5p-jg67-6x7h), the vulnerability arises from improper escaping of serialized script content when embedding `beforeInteractive` scripts into the document. The `beforeInteractive` strategy loads scripts before the page becomes interactive, often used for critical third-party integrations. When untrusted content is passed to these scripts, the framework fails to escape the serialized payload before injecting it into the HTML. An attacker who can control input that ends up in a `beforeInteractive` script can inject arbitrary JavaScript, executing in the context of the victim's session. The advisory notes that the flaw affects all Next.js versions from 13.0.0 to before 15.5.16 and 16.2.5. The CVSS 6.1 rating reflects the need for user interaction or specific preconditions, but the impact is amplified on multi-tenant or content-heavy sites where attacker-controlled data is routinely embedded.
+
+**CVE-2026-44579 — DoS via Partial Prerendering Connection Exhaustion**
+
+CVE-2026-44579 (GHSA-mg66-mrh9-m8jx) targets Next.js's Partial Prerendering (PPR) feature, specifically the Cache Components functionality. The advisory explains that a crafted POST request to a server action can trigger a deadlock in request-body handling, leaving connections open indefinitely. This connection exhaustion can rapidly consume server resources, effectively denying service to legitimate users. The vulnerability is rated CVSS 7.5 (high) due to the low complexity of exploitation and the potential for significant availability impact. PPR is a relatively new feature introduced to improve performance by prerendering static parts of a page while streaming dynamic content. The deadlock occurs during the processing of POST request bodies when the server action interacts with the cache component lifecycle. The flaw affects the same version range as CVE-2026-44580, from 13.0.0 to before 15.5.16 and 16.2.5.
+
+## Mitigations & Recommendations
+
+Vercel has addressed both vulnerabilities in Next.js versions 15.5.16 and 16.2.5. Users running any version from 13.0.0 to 15.5.15 or 16.2.4 should upgrade to the latest patched release. For applications that cannot immediately upgrade, administrators should review any use of `beforeInteractive` scripts that incorporate user-supplied data and sanitize inputs at the application layer. For the Partial Prerendering DoS, disabling the Cache Components feature or implementing rate limiting on server actions may reduce exposure, though these are temporary workarounds. Organizations should prioritize patching given the public disclosure of both vulnerabilities and the availability of exploit details in the GitHub advisories.
+
+## References
+
+- [CVE-2026-44580 Advisory (GHSA-gx5p-jg67-6x7h)](https://github.com/vercel/next.js/security/advisories/GHSA-gx5p-jg67-6x7h)
+- [CVE-2026-44579 Advisory (GHSA-mg66-mrh9-m8jx)](https://github.com/vercel/next.js/security/advisories/GHSA-mg66-mrh9-m8jx)

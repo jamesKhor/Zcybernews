@@ -1,0 +1,53 @@
+---
+title: Next.js 修补缓存组件中的 XSS 和 DoS 缺陷
+slug: 2026-05-15-next-js-patches-xss-and-dos-flaws-in-cache-components
+date: '2026-05-15'
+excerpt: >-
+  CVE-2026-44580 (CVSS 6.1) 通过 beforeInteractive 脚本启用 XSS；CVE-2026-44579 (CVSS
+  7.5) 触发部分预渲染中的连接耗尽。
+category: vulnerabilities
+tags:
+  - next.js
+  - xss
+  - dos
+  - cve-2026-44580
+  - cve-2026-44579
+  - partial-prerendering
+language: zh
+source_urls:
+  - 'https://github.com/vercel/next.js/security/advisories/GHSA-gx5p-jg67-6x7h'
+  - 'https://github.com/vercel/next.js/security/advisories/GHSA-mg66-mrh9-m8jx'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-15-next-js-patches-xss-and-dos-flaws-in-cache-components
+cluster_key: 'cve:CVE-2026-44580'
+source_count: 2
+severity: high
+cvss_score: 7.5
+cve_ids:
+  - CVE-2026-44580
+  - CVE-2026-44579
+publish_tier: public
+---
+## 执行摘要
+
+Vercel 发布了针对 Next.js 的安全补丁，Next.js 是流行的基于 React 的 Web 框架，解决了影响使用特定渲染功能的应用程序的两个漏洞。第一个漏洞，跟踪为 **CVE-2026-44580**（CVSS 6.1），是使用 `beforeInteractive` 脚本和不受信任内容的应用程序中的跨站脚本（XSS）漏洞。第二个，**CVE-2026-44579**（CVSS 7.5），是影响通过服务器动作的精心制作的 POST 请求到部分预渲染（PPR）功能的拒绝服务（DoS）条件。这两个漏洞影响从 13.0.0 到但不包括 15.5.16 和 16.2.5 的 Next.js 版本。运行这些版本的用户应立即更新。
+
+## 技术分析
+
+**CVE-2026-44580 — 通过 beforeInteractive 脚本的 XSS**
+
+根据 Vercel 在 GitHub（GHSA-gx5p-jg67-6x7h）上发布的咨询，漏洞源于在将 `beforeInteractive` 脚本嵌入文档时，对序列化脚本内容的不当转义。`beforeInteractive` 策略在页面变得交互式之前加载脚本，通常用于关键的第三方集成。当不受信任的内容传递给这些脚本时，框架未能在将序列化的有效载荷注入 HTML 之前对其进行转义。能够控制输入最终进入 `beforeInteractive` 脚本的攻击者可以注入任意 JavaScript，在受害者会话的上下文中执行。咨询指出，该漏洞影响从 13.0.0 到 15.5.16 和 16.2.5 之前的所有 Next.js 版本。CVSS 6.1 评级反映了需要用户交互或特定前提条件，但在多租户或内容密集型站点上，攻击者控制的数据通常被嵌入，影响被放大。
+
+**CVE-2026-44579 — 通过部分预渲染连接耗尽的 DoS**
+
+CVE-2026-44579（GHSA-mg66-mrh9-m8jx）针对 Next.js 的部分预渲染（PPR）功能，特别是缓存组件功能。咨询解释说，对服务器动作的精心制作的 POST 请求可以触发请求体处理中的死锁，使连接无限期地保持打开状态。这种连接耗尽可以迅速消耗服务器资源，有效地拒绝对合法用户的服务。由于利用的复杂性低和对可用性的潜在重大影响，漏洞被评为 CVSS 7.5（高）。PPR 是为了通过预渲染页面的静态部分同时流式传输动态内容而引入的相对较新的特性。当服务器动作与缓存组件生命周期交互时，在处理 POST 请求体时会发生死锁。漏洞影响与 CVE-2026-44580 相同的版本范围，从 13.0.0 到 15.5.16 和 16.2.5 之前。
+
+## 缓解措施与建议
+
+Vercel 已在 Next.js 版本 15.5.16 和 16.2.5 中解决了这两个漏洞。运行从 13.0.0 到 15.5.15 或 16.2.4 的任何版本的用户应升级到最新的修补版本。对于不能立即升级的应用程序，管理员应该审查任何使用包含用户提供的数据的 `beforeInteractive` 脚本，并在应用程序层对输入进行消毒。对于部分预渲染 DoS，禁用缓存组件功能或在服务器动作上实施速率限制可能减少暴露，尽管这些是临时的解决方案。鉴于两个漏洞的公开披露以及 GitHub 咨询中提供的漏洞利用细节的可用性，组织应优先考虑修补。
+
+## 参考资料
+
+- [CVE-2026-44580 咨询（GHSA-gx5p-jg67-6x7h）](https://github.com/vercel/next.js/security/advisories/GHSA-gx5p-jg67-6x7h)
+- [CVE-2026-44579 咨询（GHSA-mg66-mrh9-m8jx）](https://github.com/vercel/next.js/security/advisories/GHSA-mg66-mrh9-m8jx)
