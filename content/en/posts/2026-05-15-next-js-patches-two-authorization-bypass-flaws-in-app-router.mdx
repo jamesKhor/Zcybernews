@@ -1,0 +1,65 @@
+---
+title: Next.js Patches Two Authorization Bypass Flaws in App Router
+slug: 2026-05-15-next-js-patches-two-authorization-bypass-flaws-in-app-router
+date: '2026-05-15'
+excerpt: >-
+  CVE-2026-44574 (CVSS 8.1) and CVE-2026-44575 (CVSS 7.5) let attackers bypass
+  middleware-based auth checks in Next.js App Router via crafted .rsc URLs and
+  query parameter...
+category: vulnerabilities
+tags:
+  - next.js
+  - vercel
+  - authorization-bypass
+  - app-router
+  - cve-2026-44574
+  - cve-2026-44575
+language: en
+source_urls:
+  - 'https://github.com/vercel/next.js/security/advisories/GHSA-267c-6grr-h53f'
+  - 'https://github.com/vercel/next.js/security/advisories/GHSA-492v-c6pp-mqqv'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-15-next-js-patches-two-authorization-bypass-flaws-in-app-router
+cluster_key: 'cve:CVE-2026-44575'
+source_count: 2
+severity: high
+cvss_score: 8.1
+cve_ids:
+  - CVE-2026-44574
+  - CVE-2026-44575
+affected_sectors:
+  - software development
+  - technology
+publish_tier: public
+---
+## Executive Summary
+
+Vercel has released security updates for Next.js, the widely used React framework, to close two authorization bypass vulnerabilities in the App Router. The flaws — tracked as **CVE-2026-44574** (CVSS 8.1, High) and **CVE-2026-44575** (CVSS 7.5, High) — allow unauthenticated attackers to access protected routes by exploiting how the framework handles prefetch requests and dynamic route parameters. Applications that rely on middleware or proxy-based access controls for route protection are affected. Patched versions are 15.5.16 and 16.2.5.
+
+## Technical Analysis
+
+Both vulnerabilities reside in the App Router middleware layer, which developers commonly use to enforce authentication and authorization checks before page content is served. The advisory, published via GitHub Security Advisories, details two distinct bypass mechanisms.
+
+**CVE-2026-44574** (CVSS 8.1) affects Next.js versions 15.4.0 through 15.5.15 and 16.0.0 through 16.2.4. The flaw stems from how the framework processes query parameters in dynamic routes. In affected configurations, specially crafted query parameters can alter the dynamic route segment value seen by the page component while leaving the visible URL path unchanged in the browser. This discrepancy allows an attacker to pass middleware authorization checks intended for one route while the page renders content from a different, potentially protected, route. The advisory notes that applications using middleware to guard dynamic routes — for example, `/dashboard/[user]` — are vulnerable if the middleware inspects only the pathname without validating query parameters.
+
+**CVE-2026-44575** (CVSS 7.5) affects versions 15.2.0 through 15.5.15 and 16.0.0 through 16.2.4. This vulnerability exploits transport-specific route variants used for segment prefetching. Next.js App Router uses `.rsc` (React Server Component) URLs and segment-prefetch URLs to preload page data for faster navigation. In affected configurations, these specially crafted URLs can resolve to the same route as a standard request but bypass middleware authorization checks entirely. The advisory explains that middleware or proxy-based authorization logic that examines the request path may not account for these prefetch-specific URL variants, allowing unauthorized access to protected content.
+
+Both vulnerabilities require that the application uses the App Router (not the older Pages Router) and relies on middleware or a reverse proxy for authorization decisions. Applications that enforce authorization at the application layer — within page components or server actions — are not affected by these specific bypasses.
+
+## Mitigations & Recommendations
+
+Organizations running Next.js with App Router should upgrade to version **15.5.16** (for the 15.x branch) or **16.2.5** (for the 16.x branch) immediately. The patches are available via the standard npm update workflow:
+
+```bash
+npm install next@15.5.16
+# or
+npm install next@16.2.5
+```
+
+For teams unable to patch immediately, Vercel recommends reviewing middleware authorization logic to ensure it validates both the request pathname and any query parameters that could influence route resolution. Additionally, developers should audit any proxy-level access controls to confirm they account for `.rsc` and segment-prefetch URL patterns. As a defense-in-depth measure, authorization checks should be repeated at the page component or server action level rather than relying solely on middleware.
+
+## References
+
+- [CVE-2026-44574 Advisory — GitHub Security Advisory GHSA-492v-c6pp-mqqv](https://github.com/vercel/next.js/security/advisories/GHSA-492v-c6pp-mqqv)
+- [CVE-2026-44575 Advisory — GitHub Security Advisory GHSA-267c-6grr-h53f](https://github.com/vercel/next.js/security/advisories/GHSA-267c-6grr-h53f)

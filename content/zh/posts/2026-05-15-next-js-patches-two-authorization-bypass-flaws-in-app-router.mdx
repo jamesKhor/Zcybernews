@@ -1,0 +1,64 @@
+---
+title: Next.js 修补应用路由器中的两个授权绕过漏洞
+slug: 2026-05-15-next-js-patches-two-authorization-bypass-flaws-in-app-router
+date: '2026-05-15'
+excerpt: >-
+  CVE-2026-44574（CVSS 8.1）和 CVE-2026-44575（CVSS 7.5）允许攻击者通过精心制作的.rsc
+  URL和查询参数绕过Next.js应用路由器中的基于中间件的认证检查...
+category: vulnerabilities
+tags:
+  - next.js
+  - vercel
+  - authorization-bypass
+  - app-router
+  - cve-2026-44574
+  - cve-2026-44575
+language: zh
+source_urls:
+  - 'https://github.com/vercel/next.js/security/advisories/GHSA-267c-6grr-h53f'
+  - 'https://github.com/vercel/next.js/security/advisories/GHSA-492v-c6pp-mqqv'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-15-next-js-patches-two-authorization-bypass-flaws-in-app-router
+cluster_key: 'cve:CVE-2026-44575'
+source_count: 2
+severity: high
+cvss_score: 8.1
+cve_ids:
+  - CVE-2026-44574
+  - CVE-2026-44575
+affected_sectors:
+  - software development
+  - technology
+publish_tier: public
+---
+## 执行摘要
+
+Vercel 发布了 Next.js 的安全更新，这是一个广泛使用的 React 框架，旨在修补 App Router 中的两个授权绕过漏洞。这些漏洞 —— 被追踪为 **CVE-2026-44574**（CVSS 8.1，高）和 **CVE-2026-44575**（CVSS 7.5，高）—— 允许未经身份验证的攻击者通过利用框架如何处理预取请求和动态路由参数来访问受保护的路由。依赖于中间件或基于代理的访问控制来保护路由的应用程序受到影响。修补后的版本是 15.5.16 和 16.2.5。
+
+## 技术分析
+
+这两个漏洞都存在于 App Router 的中间件层，开发者通常使用它在页面内容服务之前执行身份验证和授权检查。通过 GitHub Security Advisories 发布的公告详细说明了两种不同的绕过机制。
+
+**CVE-2026-44574**（CVSS 8.1）影响 Next.js 版本 15.4.0 至 15.5.15 和 16.0.0 至 16.2.4。这个漏洞源于框架如何处理动态路由中的查询参数。在受影响的配置中，特别制作的查询参数可以改变页面组件看到的动态路由段值，同时在浏览器中保持可见的 URL 路径不变。这种差异允许攻击者绕过针对一个路由的中间件授权检查，而页面则渲染来自不同、可能是受保护的路由的内容。公告指出，如果中间件仅检查路径名而不验证查询参数，那么使用中间件保护动态路由的应用程序 —— 例如 `/dashboard/[user]` —— 将容易受到攻击。
+
+**CVE-2026-44575**（CVSS 7.5）影响版本 15.2.0 至 15.5.15 和 16.0.0 至 16.2.4。这个漏洞利用了用于分段预取的特定于传输的路由变体。Next.js App Router 使用 `.rsc`（React Server Component）URL 和分段预取 URL 来预加载页面数据，以便更快地导航。在受影响的配置中，这些特别制作的 URL 可以解析为与标准请求相同的路由，但完全绕过中间件授权检查。公告解释说，检查请求路径的中间件或基于代理的授权逻辑可能没有考虑到这些预取特定的 URL 变体，允许未经授权的访问受保护的内容。
+
+这两个漏洞都要求应用程序使用 App Router（而不是旧的 Pages Router），并且依赖于中间件或反向代理来进行授权决策。在应用程序层 —— 在页面组件或服务器操作中 —— 强制执行授权的应用程序不受这些特定绕过的影响。
+
+## 缓解措施与建议
+
+使用 App Router 的 Next.js 的组织应立即升级到版本 **15.5.16**（对于 15.x 分支）或 **16.2.5**（对于 16.x 分支）。补丁可以通过标准的 npm 更新工作流程获得：
+
+```bash
+npm install next@15.5.16
+# 或
+npm install next@16.2.5
+```
+
+对于无法立即修补的团队，Vercel 建议审查中间件授权逻辑，以确保它验证请求的路径名和可能影响路由解析的任何查询参数。此外，开发人员应审计任何代理级别的访问控制，以确认它们考虑了 `.rsc` 和分段预取 URL 模式。作为一种深度防御措施，应在页面组件或服务器操作级别重复授权检查，而不是仅依赖中间件。
+
+## 参考资料
+
+- [CVE-2026-44574 Advisory — GitHub Security Advisory GHSA-492v-c6pp-mqqv](https://github.com/vercel/next.js/security/advisories/GHSA-492v-c6pp-mqqv)
+- [CVE-2026-44575 Advisory — GitHub Security Advisory GHSA-267c-6grr-h53f](https://github.com/vercel/next.js/security/advisories/GHSA-267c-6grr-h53f)
