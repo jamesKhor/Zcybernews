@@ -1,0 +1,57 @@
+---
+title: Silicon Labs SixG301xxx DPA 反制措施缺陷削弱加密密钥
+slug: 2026-05-16-silicon-labs-sixg301xxx-dpa-countermeasure-flaw-weakens-crypto-keys
+date: '2026-05-16'
+excerpt: >-
+  CVE-2025-14972: Silicon Labs SixG301xxx 设备在 SYMCRYPTO 引擎中使用非随机 DPA
+  反制措施，使得密钥恢复成为可能。影响 KSU 密钥。
+category: vulnerabilities
+tags:
+  - silicon-labs
+  - sixg301xxx
+  - dpa
+  - crypto-key-recovery
+  - hardware-security
+language: zh
+source_urls:
+  - 'https://community.silabs.com/068Vm00000M3cAX'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-silicon-labs-sixg301xxx-dpa-countermeasure-flaw-weakens-crypto-keys
+cluster_key: 'cve:CVE-2025-14972'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2025-14972
+affected_sectors:
+  - telecommunications
+  - semiconductors
+publish_tier: public
+---
+## 执行摘要
+
+Silicon Labs 披露了 SixG301xxx 系列设备中使用的 SYMCRYPTO 引擎的一个漏洞，该漏洞破坏了差分功耗分析（DPA）对策的随机性。该漏洞被追踪为 CVE-2025-14972，导致 DPA 对策在有限的操作次数后重复，使它们变得可预测。具有对设备物理访问权限的攻击者可以利用这种可预测性来恢复加密密钥，包括依赖于 SYMCRYPTO 引擎的 KSU 密钥。该通告发布在 Silicon Labs 社区论坛上，但截至本文撰写时，尚未提供 CVSS 评分或补丁时间表。
+
+## 技术分析
+
+SixG301xxx 系列是一系列为蜂窝物联网和无线基础设施设计的系统级芯片（SoC）设备，集成了一个专用的 SYMCRYPTO 硬件块，用于对称密钥操作。DPA 对策旨在在加密操作期间随机化功耗追踪，防止攻击者将测量到的功耗波动与密钥比特关联起来。根据通告，SYMCRYPTO 中的对策实现“不够随机，最终会重复。”这种重复行为破坏了对策的目的：一旦功耗随机化模式循环，具有物理访问权限的对手可以通过平均多个追踪来过滤噪声并恢复底层密钥材料。
+
+通告特别指出，“使用 SYMCRYPTO 的 KSU 密钥将受到此漏洞的影响。”KSU（密钥存储单元）密钥通常用于安全启动、固件认证和加密存储。如果攻击者能够恢复 KSU 密钥，他们可以伪造签名固件、解密静态敏感数据或在网络认证协议中冒充设备。攻击需要物理接近和仪器——通常是示波器和电流探头——在加密操作期间捕获功耗追踪。这将威胁归类为侧信道攻击，这些攻击在缺乏强大 DPA 抵抗力的嵌入式设备中已有详细记录。
+
+Silicon Labs 尚未披露受影响设备变体的确切数量或包含易受攻击 SYMCRYPTO 引擎的具体固件版本。通告引用 SixG301xxx 作为一个产品系列，暗示漏洞可能跨越该系列中的多个 SKU。缺乏 CVSS 评分使得严重性评估不精确，但在硬件安全模块中密钥恢复的潜力通常被视为在嵌入式环境中高或关键。
+
+## 缓解措施与建议
+
+截至通告日期，Silicon Labs 尚未发布 CVE-2025-14972 的补丁或固件更新。在安全敏感角色中使用 SixG301xxx 设备的组织——特别是那些依赖于 KSU 密钥进行设备身份验证或安全启动的组织——应考虑以下措施：
+
+- **物理访问控制：**由于攻击需要物理接近，限制生产环境中对设备的访问。如果可行，部署防篡改检测机制。
+- **密钥轮换：**如果正在使用 KSU 密钥，计划在修复可用后进行轮换。当前密钥可能已经被已经捕获追踪的攻击者恢复。
+- **监控 Silicon Labs 通告：**订阅 Silicon Labs 安全通知，以获取有关固件补丁或变通方法的更新。
+- **替代加密引擎：**在可能的情况下，将敏感的加密操作卸载到具有独立验证 DPA 抵抗力的单独安全元件上，直到 SYMCRYPTO 引擎被修复。
+
+防御者应将此漏洞视为潜在的物理层风险，而不是远程可利用的漏洞。主要的缓解措施是防止在加密操作期间对设备的物理访问。
+
+## 参考资料
+
+- [Silicon Labs Community Advisory for CVE-2025-14972](https://community.silabs.com/068Vm00000M3cAX)
+- [NVD Entry for CVE-2025-14972](https://nvd.nist.gov/vuln/detail/CVE-2025-14972)

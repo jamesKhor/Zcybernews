@@ -1,0 +1,58 @@
+---
+title: Silicon Labs SixG301xxx DPA Countermeasure Flaw Weakens Crypto Keys
+slug: 2026-05-16-silicon-labs-sixg301xxx-dpa-countermeasure-flaw-weakens-crypto-keys
+date: '2026-05-16'
+excerpt: >-
+  CVE-2025-14972: Silicon Labs SixG301xxx devices use non-random DPA
+  countermeasures in the SYMCRYPTO engine, enabling key recovery. Affects KSU
+  keys.
+category: vulnerabilities
+tags:
+  - silicon-labs
+  - sixg301xxx
+  - dpa
+  - crypto-key-recovery
+  - hardware-security
+language: en
+source_urls:
+  - 'https://community.silabs.com/068Vm00000M3cAX'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-silicon-labs-sixg301xxx-dpa-countermeasure-flaw-weakens-crypto-keys
+cluster_key: 'cve:CVE-2025-14972'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2025-14972
+affected_sectors:
+  - telecommunications
+  - semiconductors
+publish_tier: public
+---
+## Executive Summary
+
+Silicon Labs has disclosed a vulnerability in the SYMCRYPTO engine used in SixG301xxx series devices that undermines the randomness of differential power analysis (DPA) countermeasures. Tracked as CVE-2025-14972, the flaw causes the DPA countermeasures to repeat after a finite number of operations, making them predictable. An attacker with physical access to a device could exploit this predictability to recover cryptographic keys, including KSU keys that rely on the SYMCRYPTO engine. The advisory was published on the Silicon Labs community forum, though no CVSS score or patch timeline has been provided as of this writing.
+
+## Technical Analysis
+
+The SixG301xxx family is a series of system-on-chip (SoC) devices designed for cellular IoT and wireless infrastructure, integrating a dedicated SYMCRYPTO hardware block for symmetric-key operations. DPA countermeasures are intended to randomize power consumption traces during cryptographic operations, preventing an attacker from correlating measured power fluctuations with secret key bits. According to the advisory, the countermeasure implementation in SYMCRYPTO "are not sufficiently random and will eventually repeat." This repetition defeats the purpose of the countermeasure: once the pattern of power consumption randomization cycles, an adversary with physical access can average multiple traces to filter out the noise and recover the underlying key material.
+
+The advisory specifically notes that "KSU keys using SYMCRYPTO will be impacted by this vulnerability." KSU (Key Storage Unit) keys are typically used for secure boot, firmware authentication, and encrypted storage. If an attacker can recover a KSU key, they could forge signed firmware, decrypt sensitive data at rest, or impersonate the device in network authentication protocols. The attack requires physical proximity and instrumentation — typically an oscilloscope and a current probe — to capture power traces during cryptographic operations. This places the threat in the category of side-channel attacks, which are well-documented against embedded devices lacking robust DPA resistance.
+
+Silicon Labs has not disclosed the exact number of affected device variants or the specific firmware versions that incorporate the vulnerable SYMCRYPTO engine. The advisory references SixG301xxx as a product family, suggesting the flaw may span multiple SKUs within that line. The lack of a CVSS score makes severity assessment imprecise, but the potential for key recovery in a hardware security module is generally treated as high or critical in embedded contexts.
+
+## Mitigations & Recommendations
+
+Silicon Labs has not released a patch or firmware update for CVE-2025-14972 as of the advisory date. Organizations using SixG301xxx devices in security-sensitive roles — particularly those relying on KSU keys for device identity or secure boot — should consider the following:
+
+- **Physical access controls:** Since the attack requires physical proximity, restrict access to devices in production environments. Deploy tamper-detection mechanisms if feasible.
+- **Key rotation:** If KSU keys are in use, plan for rotation once a fix becomes available. The current keys may be recoverable by an attacker who has already captured traces.
+- **Monitor Silicon Labs advisories:** Subscribe to Silicon Labs security notifications for updates on firmware patches or workarounds.
+- **Alternative cryptographic engines:** Where possible, offload sensitive cryptographic operations to a separate secure element with independently validated DPA resistance, until the SYMCRYPTO engine is fixed.
+
+Defenders should treat this vulnerability as a latent physical-layer risk rather than a remotely exploitable flaw. The primary mitigation is preventing physical access to the device during cryptographic operations.
+
+## References
+
+- [Silicon Labs Community Advisory for CVE-2025-14972](https://community.silabs.com/068Vm00000M3cAX)
+- [NVD Entry for CVE-2025-14972](https://nvd.nist.gov/vuln/detail/CVE-2025-14972)
