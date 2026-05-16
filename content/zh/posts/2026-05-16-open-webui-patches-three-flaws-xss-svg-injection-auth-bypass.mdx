@@ -1,0 +1,100 @@
+---
+title: Open WebUI 修补三个漏洞：XSS、SVG注入、认证绕过
+slug: 2026-05-16-open-webui-patches-three-flaws-xss-svg-injection-auth-bypass
+date: '2026-05-16'
+excerpt: >-
+  Open WebUI 修复了 CVE-2026-45314（SVG XSS）、CVE-2026-45303（iframe脚本注入）和
+  CVE-2026-44567（待定角色认证绕过）——全部在自托管的AI平台上。
+category: vulnerabilities
+tags:
+  - open-webui
+  - xss
+  - authentication-bypass
+  - svg-injection
+  - ai-security
+  - cve-2026-45314
+  - cve-2026-45303
+  - cve-2026-44567
+language: zh
+source_urls:
+  - >-
+    https://github.com/open-webui/open-webui/security/advisories/GHSA-3856-3vxq-m6fc
+  - >-
+    https://github.com/open-webui/open-webui/security/advisories/GHSA-4vrc-m9ch-6m3r
+  - >-
+    https://github.com/open-webui/open-webui/security/advisories/GHSA-4vg5-rp28-gvjf
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-open-webui-patches-three-flaws-xss-svg-injection-auth-bypass
+cluster_key: 'cve:CVE-2026-45314'
+source_count: 3
+severity: high
+cvss_score: 7.7
+cve_ids:
+  - CVE-2026-45314
+  - CVE-2026-45303
+  - CVE-2026-44567
+affected_sectors:
+  - technology
+ttp_matrix:
+  - tactic: execution
+    technique_id: T1059.007
+    technique_name: 'Command and Scripting Interpreter: JavaScript'
+  - tactic: execution
+    technique_id: T1204.001
+    technique_name: 'User Execution: Malicious Link'
+  - tactic: initial-access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: privilege-escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
+publish_tier: public
+---
+## 执行摘要
+
+**Open WebUI**的维护者发布了补丁，解决了三个不同的安全漏洞，这些漏洞共同暴露了部署在跨站脚本（XSS）、权限提升和潜在账户接管的风险。这些漏洞分别被追踪为**CVE-2026-45314**（通过webhook个人资料图片的SVG基础XSS）、**CVE-2026-45303**（聊天HTML iFrames中的脚本注入）和**CVE-2026-44567**（待审用户的授权绕过）—根据项目维护者在GitHub上发布的安全通告，这些漏洞影响0.9.3、0.6.5和0.1.124之前的版本。
+
+在这三个漏洞中，技术上最有趣的是CVE-2026-45314，它允许攻击者在作为用户个人资料图片的SVG图片中嵌入任意JavaScript。三个漏洞中最高的CVSS得分是**7.7**（高），分配给CVE-2026-45303，反映了通过平台内置的HTML渲染视图的易利用性。CVE-2026-44567的CVSS得分为**7.3**，对于多租户部署来说是最危险的，因为它允许未经批准的用户从`pending`角色升级到完全授权的`user`角色，无需管理员干预。
+
+## 技术分析
+
+### CVE-2026-45314: SVG个人资料图片XSS（影响版本<0.9.3）
+
+根据在Open WebUI GitHub仓库（GHSA-3856-3vxq-m6fc）上发布的通告，该漏洞存在于频道webhook的创建和更新流程中。端点接受任意的`profile_image_url`值，包括`data:image/svg+xml;base64,...` URIs。当个人资料图片端点随后解码并以MIME类型`image/svg+xml`提供此SVG内容时，没有应用内容安全策略（CSP）或清理。这允许攻击者制作包含`onload`或`onclick`等事件处理程序的SVG，这些处理程序在Open WebUI域的上下文中执行任意JavaScript。
+
+通告指出，攻击面扩展到任何查看攻击者个人资料或频道的用户—SVG在浏览器中内联渲染，脚本自动执行。由于Open WebUI旨在完全离线运行，并且通常部署在内部网络上，影响可能被低估；然而，内部AI平台上的XSS可能导致会话历史、API密钥或会话令牌的外泄。
+
+### CVE-2026-45303: iFrame脚本注入（影响版本<0.6.5）
+
+在通告GHSA-4vrc-m9ch-6m3r中跟踪，这个漏洞利用了平台的HTML渲染视图，允许用户将聊天内容可视化为渲染的HTML。前端将此内容嵌入到带有沙箱指令`allow-scripts allow-forms allow-same-origin`的iFrame中。关键的是，包含了`allow-same-origin`标志，这意味着运行在iFrame内的脚本可以访问父窗口的DOM和cookies。能够将任意HTML注入到聊天消息中的攻击者—例如，通过`<script>`标签或事件处理程序—可以执行代码，窃取会话数据或代表受害者执行操作。
+
+通告指出，修复措施从沙箱属性中移除了`allow-same-origin`标志，有效地将渲染的HTML与应用程序的其余部分隔离开来。7.7的CVSS得分反映了低攻击复杂性（在公共频道中注入不需要认证）和完全破坏受害者会话的潜力。
+
+### CVE-2026-44567: 待审用户的授权绕过（影响版本<0.1.124）
+
+通告GHSA-4vg5-rp28-gvjf描述了API中的服务器端授权漏洞。当Open WebUI配置为启用新用户注册时，默认的新注册账户角色是`pending`。在此状态下，管理员必须手动批准账户，用户才能访问平台功能。然而，通告解释说，API没有正确验证请求用户是否具有授权的`user`角色，就授予对受保护端点的访问权限。拥有`pending`账户的攻击者可以直接调用期望经过身份验证的`user`角色的API端点，有效地绕过了审批工作流程。
+
+对于依赖待审批准机制来控制访问的任何部署来说，影响是重大的：未经批准的用户可以列出用户，读取对话，并可能修改配置。通告没有指定哪些确切的端点不受保护，但这个漏洞类别是经典的服务器端路由处理程序上缺失的授权检查。
+
+## 缓解措施与建议
+
+运行Open WebUI的防御者应立即更新到以下修补版本或更高版本：
+
+- **对于CVE-2026-45314**：升级到版本**0.9.3**或更新版本。
+- **对于CVE-2026-45303**：升级到版本**0.6.5**或更新版本。
+- **对于CVE-2026-44567**：升级到版本**0.1.124**或更新版本。
+
+由于Open WebUI是自托管的，并且经常部署在隔离或离线环境中，管理员应该通过应用程序设置中的版本字符串或通过API的`/api/version`端点来验证版本。对于不能立即升级的部署，以下补偿控制措施可以降低风险：
+
+- **对于CVE-2026-45314**：配置反向代理（例如nginx、Caddy）以剥离或拒绝`profile_image_url`参数中的`data:` URIs。或者，在代理级别阻止个人资料图片端点的`image/svg+xml`MIME类型。
+- **对于CVE-2026-45303**：如果HTML渲染视图对操作不是必需的，可以禁用该功能。这通常可以通过平台的功能标志或删除相关的前端路由来完成。
+- **对于CVE-2026-44567**：完全禁用自我注册并手动创建账户。如果需要自我注册，请频繁监控`pending`用户列表，并审计API访问日志以查找未经授权的端点调用。
+
+截至出版日期，公共威胁情报源中尚未报告这些漏洞的活跃利用。然而，鉴于自托管AI平台的普及和XSS漏洞的相对易利用性，管理员应将这些补丁视为时间敏感。
+
+## 参考资料
+
+- [GHSA-3856-3vxq-m6fc: Open WebUI SVG个人资料图片XSS](https://github.com/open-webui/open-webui/security/advisories/GHSA-3856-3vxq-m6fc)
+- [GHSA-4vrc-m9ch-6m3r: Open WebUI iFrame脚本注入](https://github.com/open-webui/open-webui/security/advisories/GHSA-4vrc-m9ch-6m3r)
+- [GHSA-4vg5-rp28-gvjf: Open WebUI授权绕过](https://github.com/open-webui/open-webui/security/advisories/GHSA-4vg5-rp28-gvjf)

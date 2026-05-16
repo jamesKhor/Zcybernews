@@ -1,0 +1,101 @@
+---
+title: 'Open WebUI Patches Three Flaws: XSS, SVG Injection, Auth Bypass'
+slug: 2026-05-16-open-webui-patches-three-flaws-xss-svg-injection-auth-bypass
+date: '2026-05-16'
+excerpt: >-
+  Open WebUI fixes CVE-2026-45314 (SVG XSS), CVE-2026-45303 (iframe script
+  injection), and CVE-2026-44567 (pending role auth bypass) — all in self-hosted
+  AI platform.
+category: vulnerabilities
+tags:
+  - open-webui
+  - xss
+  - authentication-bypass
+  - svg-injection
+  - ai-security
+  - cve-2026-45314
+  - cve-2026-45303
+  - cve-2026-44567
+language: en
+source_urls:
+  - >-
+    https://github.com/open-webui/open-webui/security/advisories/GHSA-3856-3vxq-m6fc
+  - >-
+    https://github.com/open-webui/open-webui/security/advisories/GHSA-4vrc-m9ch-6m3r
+  - >-
+    https://github.com/open-webui/open-webui/security/advisories/GHSA-4vg5-rp28-gvjf
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-open-webui-patches-three-flaws-xss-svg-injection-auth-bypass
+cluster_key: 'cve:CVE-2026-45314'
+source_count: 3
+severity: high
+cvss_score: 7.7
+cve_ids:
+  - CVE-2026-45314
+  - CVE-2026-45303
+  - CVE-2026-44567
+affected_sectors:
+  - technology
+ttp_matrix:
+  - tactic: execution
+    technique_id: T1059.007
+    technique_name: 'Command and Scripting Interpreter: JavaScript'
+  - tactic: execution
+    technique_id: T1204.001
+    technique_name: 'User Execution: Malicious Link'
+  - tactic: initial-access
+    technique_id: T1190
+    technique_name: Exploit Public-Facing Application
+  - tactic: privilege-escalation
+    technique_id: T1068
+    technique_name: Exploitation for Privilege Escalation
+publish_tier: public
+---
+## Executive Summary
+
+The maintainers of **Open WebUI**, a self-hosted AI platform designed for offline operation, have released patches addressing three distinct security vulnerabilities that collectively expose deployments to cross-site scripting (XSS), privilege escalation, and potential account takeover. The flaws — tracked as **CVE-2026-45314** (SVG-based XSS via webhook profile images), **CVE-2026-45303** (script injection in chat HTML iFrames), and **CVE-2026-44567** (authorization bypass for pending users) — affect versions prior to 0.9.3, 0.6.5, and 0.1.124 respectively, according to GitHub security advisories published by the project maintainers.
+
+Of the three, the most technically interesting is CVE-2026-45314, which allows an attacker to embed arbitrary JavaScript in an SVG image served as a user's profile picture. The highest CVSS score among the trio is **7.7** (high) assigned to CVE-2026-45303, reflecting the ease of exploitation through the platform's built-in HTML rendering view. CVE-2026-44567 carries a CVSS score of **7.3** and is the most operationally dangerous for multi-tenant deployments, as it lets unapproved users escalate from a `pending` role to a fully authorized `user` role without administrator intervention.
+
+## Technical Analysis
+
+### CVE-2026-45314: SVG Profile Image XSS (Affects versions < 0.9.3)
+
+According to the advisory published on the Open WebUI GitHub repository (GHSA-3856-3vxq-m6fc), the vulnerability resides in the channel webhook creation and update flow. The endpoint accepts arbitrary `profile_image_url` values, including `data:image/svg+xml;base64,...` URIs. When the profile image endpoint subsequently decodes and serves this SVG content with the MIME type `image/svg+xml`, no Content Security Policy (CSP) or sanitization is applied. This allows an attacker to craft an SVG containing event handlers such as `onload` or `onclick` that execute arbitrary JavaScript in the context of the Open WebUI domain.
+
+The advisory notes that the attack surface extends to any user who views the attacker's profile or channel — the SVG renders inline in the browser, and the script executes automatically. Because Open WebUI is designed to operate entirely offline and is often deployed on internal networks, the impact may be underestimated; however, an XSS in an internal AI platform can lead to exfiltration of conversation history, API keys, or session tokens.
+
+### CVE-2026-45303: iFrame Script Injection (Affects versions < 0.6.5)
+
+Tracked in advisory GHSA-4vrc-m9ch-6m3r, this flaw exploits the platform's HTML rendering view, which allows users to visualize chat content as rendered HTML. The frontend embeds this content in an iFrame with the sandbox directive `allow-scripts allow-forms allow-same-origin`. Critically, the `allow-same-origin` flag is included, which means that scripts running inside the iFrame can access the parent window's DOM and cookies. An attacker who can inject arbitrary HTML into a chat message — for example, via a `<script>` tag or an event handler — can execute code that steals session data or performs actions on behalf of the victim.
+
+The advisory states that the fix removes the `allow-same-origin` flag from the sandbox attribute, effectively isolating the rendered HTML from the rest of the application. The CVSS score of 7.7 reflects the low attack complexity (no authentication required for injection in public channels) and the potential for complete compromise of the victim's session.
+
+### CVE-2026-44567: Authorization Bypass for Pending Users (Affects versions < 0.1.124)
+
+Advisory GHSA-4vg5-rp28-gvjf describes a server-side authorization flaw in the API. When Open WebUI is configured with new user sign-ups enabled, the default role for newly registered accounts is `pending`. In this state, an administrator must manually approve the account before the user can access platform features. However, the advisory explains that the API does not properly validate that the requesting user has an authorized role of `user` before granting access to protected endpoints. An attacker with a `pending` account can directly call API endpoints that expect an authenticated `user` role, effectively bypassing the approval workflow.
+
+The impact is significant for any deployment that relies on the pending-approval mechanism to gate access: an unapproved user can list users, read conversations, and potentially modify configurations. The advisory does not specify which exact endpoints are unprotected, but the vulnerability class is a classic missing authorization check on server-side route handlers.
+
+## Mitigations & Recommendations
+
+Defenders running Open WebUI should immediately update to the following patched versions or later:
+
+- **For CVE-2026-45314**: Upgrade to version **0.9.3** or newer.
+- **For CVE-2026-45303**: Upgrade to version **0.6.5** or newer.
+- **For CVE-2026-44567**: Upgrade to version **0.1.124** or newer.
+
+Because Open WebUI is self-hosted and often deployed in air-gapped or offline environments, administrators should verify the version string in the application's settings or via the API's `/api/version` endpoint. For deployments that cannot immediately upgrade, the following compensating controls may reduce risk:
+
+- **For CVE-2026-45314**: Configure a reverse proxy (e.g., nginx, Caddy) to strip or reject `data:` URIs in the `profile_image_url` parameter. Alternatively, block the `image/svg+xml` MIME type at the proxy level for the profile image endpoint.
+- **For CVE-2026-45303**: Disable the HTML rendering view feature if it is not essential to operations. This can typically be done via the platform's feature flags or by removing the relevant frontend route.
+- **For CVE-2026-44567**: Disable self-registration entirely and create accounts manually. If self-registration is required, monitor the `pending` user list frequently and audit API access logs for unauthorized endpoint calls.
+
+As of the publication date, no active exploitation of these vulnerabilities has been reported in public threat intelligence feeds. However, given the popularity of self-hosted AI platforms and the relative ease of exploitation for the XSS flaws, administrators should treat these patches as time-sensitive.
+
+## References
+
+- [GHSA-3856-3vxq-m6fc: Open WebUI SVG Profile Image XSS](https://github.com/open-webui/open-webui/security/advisories/GHSA-3856-3vxq-m6fc)
+- [GHSA-4vrc-m9ch-6m3r: Open WebUI iFrame Script Injection](https://github.com/open-webui/open-webui/security/advisories/GHSA-4vrc-m9ch-6m3r)
+- [GHSA-4vg5-rp28-gvjf: Open WebUI Authorization Bypass](https://github.com/open-webui/open-webui/security/advisories/GHSA-4vg5-rp28-gvjf)
