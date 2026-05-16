@@ -1,0 +1,65 @@
+---
+title: 'Chrome 148 Patches ANGLE Data Leak, Google Lens UAF'
+slug: 2026-05-16-chrome-148-patches-angle-data-leak-google-lens-uaf
+date: '2026-05-16'
+excerpt: >-
+  Google fixed CVE-2026-8556 (ANGLE cross-origin leak) and CVE-2026-8550 (Google
+  Lens use-after-free) in Chrome 148.0.7778.168 for Windows. Both flaws require
+  a compromised renderer.
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - angle
+  - google-lens
+  - use-after-free
+  - cross-origin
+  - cve-2026-8556
+  - cve-2026-8550
+language: en
+source_urls:
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-chrome-148-patches-angle-data-leak-google-lens-uaf
+cluster_key: 'cve:CVE-2026-8556'
+source_count: 2
+severity: high
+cvss_score: 6.5
+cve_ids:
+  - CVE-2026-8556
+  - CVE-2026-8550
+affected_sectors:
+  - technology
+affected_regions:
+  - global
+publish_tier: public
+---
+## Executive Summary
+
+Google released Chrome 148.0.7778.168 for Windows on May 12, 2026, patching two high-severity vulnerabilities that could allow attackers to leak sensitive data from the browser. CVE-2026-8556, an inappropriate implementation in the ANGLE graphics abstraction layer, enables cross-origin data leakage via a crafted HTML page. CVE-2026-8550, a use-after-free in Google Lens, exposes process memory to an attacker who has already compromised the renderer. Both flaws carry a Chromium security severity rating of High, with CVE-2026-8550 assigned a CVSS v3.1 base score of 6.5 by NVD. Google's advisory notes that exploitation of either vulnerability requires the attacker to first compromise the renderer process, raising the practical bar for attack but not eliminating the risk for sandbox-escape scenarios.
+
+## Technical Analysis
+
+CVE-2026-8556 resides in ANGLE (Almost Native Graphics Layer Engine), Google's translation layer that converts OpenGL ES calls to DirectX, Vulkan, or Metal APIs on Windows. The vulnerability is described by Google as an "inappropriate implementation" that allows a remote attacker who has compromised the renderer process to leak cross-origin data. The flaw was reported by an anonymous researcher and affects Chrome on Windows prior to version 148.0.7778.168. The Chromium security team assigned the issue a High severity rating, though NVD has not yet published a CVSS score for this specific CVE as of this writing.
+
+CVE-2026-8550 is a use-after-free (UAF) vulnerability in the Google Lens feature, which provides visual search capabilities within Chrome. The flaw allows a remote attacker who has compromised the renderer process to obtain potentially sensitive information from process memory via a crafted HTML page. NVD assigned this CVE a CVSS v3.1 base score of 6.5 (Medium severity under the CVSS rating system, but High per Chromium's internal classification). The vulnerability was reported by security researcher @j0nathanleek on March 18, 2026, according to the Chromium bug tracker.
+
+Both vulnerabilities share a critical prerequisite: the attacker must first compromise the Chrome renderer process. This is typically achieved through another exploit — such as a separate memory corruption bug in the renderer — meaning these flaws are most dangerous in multi-stage attack chains. Once an attacker controls the renderer, CVE-2026-8556 enables exfiltration of cross-origin data that should be isolated by the browser's same-origin policy, while CVE-2026-8550 allows reading of arbitrary process memory, potentially leaking credentials, tokens, or other sensitive data from other tabs or extensions.
+
+Google's Chrome release notes do not indicate whether either vulnerability is being exploited in the wild. The company's standard disclosure policy withholds exploitation status for most bugs unless confirmed by internal threat intelligence. As of May 16, 2026, no public exploit code or proof-of-concept has been published for either CVE.
+
+## Mitigations & Recommendations
+
+Google automatically updates Chrome for most users through the Stable channel update mechanism. Users running Chrome 148.0.7778.168 or later are protected. To verify the installed version, navigate to chrome://settings/help — Chrome will check for updates and apply any pending patches. Organizations managing Chrome via Group Policy or MDM should ensure the update is deployed to all endpoints, particularly those running Windows systems where both vulnerabilities apply.
+
+Because both flaws require a compromised renderer, defenders should prioritize patching the entire browser rather than treating these as standalone risks. A sandbox escape chain that leverages CVE-2026-8556 or CVE-2026-8550 would typically begin with a renderer exploit — meaning a full Chrome update closes the entire attack surface. Enterprise security teams should monitor for unusual renderer crashes or unexpected cross-origin data flows as potential indicators of post-exploitation activity, though no specific IOCs are available from Google.
+
+## References
+
+- [Chrome Releases: Stable Channel Update for Desktop (May 12, 2026)](https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html)
+- [NVD Entry for CVE-2026-8556](https://nvd.nist.gov/vuln/detail/CVE-2026-8556)
+- [NVD Entry for CVE-2026-8550](https://nvd.nist.gov/vuln/detail/CVE-2026-8550)

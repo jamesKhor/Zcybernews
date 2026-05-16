@@ -1,0 +1,64 @@
+---
+title: Chrome 148 修复 ANGLE 数据泄露，Google Lens UAF
+slug: 2026-05-16-chrome-148-patches-angle-data-leak-google-lens-uaf
+date: '2026-05-16'
+excerpt: >-
+  Google 在 Chrome 148.0.7778.168 for Windows 中修复了 CVE-2026-8556（ANGLE 跨源泄露）和
+  CVE-2026-8550（Google Lens 用后释放）这两个漏洞。这两个缺陷都需要一个被破坏的渲染器。
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - angle
+  - google-lens
+  - use-after-free
+  - cross-origin
+  - cve-2026-8556
+  - cve-2026-8550
+language: zh
+source_urls:
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-chrome-148-patches-angle-data-leak-google-lens-uaf
+cluster_key: 'cve:CVE-2026-8556'
+source_count: 2
+severity: high
+cvss_score: 6.5
+cve_ids:
+  - CVE-2026-8556
+  - CVE-2026-8550
+affected_sectors:
+  - technology
+affected_regions:
+  - global
+publish_tier: public
+---
+## 执行摘要
+
+Google于2026年5月12日发布了针对Windows系统的Chrome 148.0.7778.168版本，修补了两个高严重性的漏洞，这些漏洞可能允许攻击者从浏览器中泄露敏感数据。CVE-2026-8556，ANGLE图形抽象层中的不当实现，通过精心制作的HTML页面实现跨源数据泄露。CVE-2026-8550，Google Lens中的一个use-after-free漏洞，暴露了进程内存给已经破坏渲染器的攻击者。这两个缺陷都获得了Chromium安全严重性评级为High，CVE-2026-8550被NVD分配了一个CVSS v3.1基础分数为6.5。Google的咨询指出，利用这两个漏洞都需要攻击者首先破坏渲染器进程，这提高了攻击的实际门槛，但并未消除沙箱逃逸场景的风险。
+
+## 技术分析
+
+CVE-2026-8556存在于ANGLE（Almost Native Graphics Layer Engine）中，这是Google的转换层，它将OpenGL ES调用转换为Windows上的DirectX、Vulkan或Metal API。Google将这个漏洞描述为“不当实现”，允许远程攻击者在破坏渲染器进程后泄露跨源数据。这个漏洞是由匿名研究人员报告的，影响Windows上Chrome的版本低于148.0.7778.168。Chromium安全团队将这个问题评为High严重性，尽管NVD尚未为这个特定的CVE发布CVSS分数。
+
+CVE-2026-8550是Google Lens功能的use-after-free（UAF）漏洞，该功能在Chrome中提供视觉搜索能力。这个漏洞允许远程攻击者在破坏渲染器进程后，通过精心制作的HTML页面从进程内存中获取潜在的敏感信息。NVD为这个CVE分配了一个CVSS v3.1基础分数为6.5（在CVSS评级系统中属于中等严重性，但根据Chromium的内部分类为High）。这个漏洞是由安全研究员@j0nathanleek在2026年3月18日报告的，根据Chromium的bug跟踪器。
+
+这两个漏洞共享一个关键前提：攻击者必须首先破坏Chrome渲染器进程。这通常是通过另一个漏洞实现的——例如渲染器中的独立内存损坏错误——这意味着这些缺陷在多阶段攻击链中最危险。一旦攻击者控制了渲染器，CVE-2026-8556使得应该由浏览器的同源策略隔离的跨源数据外流成为可能，而CVE-2026-8550允许读取任意进程内存，可能泄露来自其他标签页或扩展的凭证、令牌或其他敏感数据。
+
+Google的Chrome发布说明并未指明这两个漏洞是否正在野外被利用。该公司的标准披露政策对大多数漏洞的利用状态保密，除非内部威胁情报确认。截至2026年5月16日，尚未发布针对这两个CVE的公开漏洞代码或概念验证。
+
+## 缓解措施与建议
+
+Google通过稳定频道更新机制为大多数用户自动更新Chrome。运行Chrome 148.0.7778.168或更高版本的用户受到保护。要验证安装的版本，请导航至chrome://settings/help — Chrome将检查更新并应用任何待处理的补丁。通过组策略或MDM管理Chrome的组织应确保更新部署到所有端点，特别是那些运行Windows系统的地方，这两个漏洞都适用。
+
+由于这两个缺陷都需要破坏渲染器，防御者应优先修补整个浏览器，而不是将这些视为单独的风险。利用CVE-2026-8556或CVE-2026-8550的沙箱逃逸链通常以渲染器漏洞开始——这意味着完整的Chrome更新关闭了整个攻击面。企业安全团队应监控不寻常的渲染器崩溃或意外的跨源数据流作为后期利用活动的潜在指标，尽管Google没有提供具体的IOC。
+
+## 参考资料
+
+- [Chrome Releases: Stable Channel Update for Desktop (May 12, 2026)](https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html)
+- [NVD Entry for CVE-2026-8556](https://nvd.nist.gov/vuln/detail/CVE-2026-8556)
+- [NVD Entry for CVE-2026-8550](https://nvd.nist.gov/vuln/detail/CVE-2026-8550)
