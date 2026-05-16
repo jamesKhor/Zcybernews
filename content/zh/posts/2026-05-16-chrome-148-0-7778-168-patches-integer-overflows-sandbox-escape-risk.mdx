@@ -1,0 +1,66 @@
+---
+title: Chrome 148.0.7778.168 修复整数溢出，沙箱逃逸风险
+slug: 2026-05-16-chrome-148-0-7778-168-patches-integer-overflows-sandbox-escape-risk
+date: '2026-05-16'
+excerpt: >-
+  在 Windows 上的 Chrome 148 中的 CVE-2026-8573 (CVSS 8.3) 和 CVE-2026-8577 (CVSS 8.8)
+  允许通过精心制作的视屏或 HTML 页面进行沙箱逃逸和 RCE。立即更新。
+category: vulnerabilities
+tags:
+  - google-chrome
+  - integer-overflow
+  - sandbox-escape
+  - remote-code-execution
+  - cve-2026-8573
+  - cve-2026-8577
+  - browser-security
+language: zh
+source_urls:
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-chrome-148-0-7778-168-patches-integer-overflows-sandbox-escape-risk
+cluster_key: 'cve:CVE-2026-8577'
+source_count: 2
+severity: high
+cvss_score: 8.8
+cve_ids:
+  - CVE-2026-8577
+  - CVE-2026-8573
+affected_sectors:
+  - technology
+  - all sectors using Chrome
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+Google 在 2026 年 5 月 12 日发布了适用于 Windows、Mac 和 Linux 的 Chrome 148.0.7778.168，修复了两个整数溢出漏洞，这些漏洞如果被串联起来，可能允许远程攻击者逃离浏览器的沙箱并在主机系统上执行任意代码。更严重的漏洞是 **CVE-2026-8577**（CVSS 8.8），存在于 Chrome 的字体组件中，可以通过精心制作的 HTML 页面在沙箱内执行代码。第二个漏洞，**CVE-2026-8573**（CVSS 8.3），仅影响 Windows 上的 Codecs 组件，并通过精心制作的视频文件允许沙箱逃逸。Google 内部对这两个漏洞的严重性评级为中等，但是沙箱内的 RCE 与沙箱逃逸向量的结合提高了在用户可能遇到恶意网络内容的企业环境中的实际风险。
+
+## 技术分析
+
+这两个漏洞都是整数溢出条件——一类内存损坏错误，其中对缓冲区大小或索引的算术运算超出了数据类型所能表示的最大值，导致分配不足或越界写入。
+
+**CVE-2026-8577**（CVSS 8.8）是 Chromium 字体渲染引擎中的一个整数溢出。该漏洞存在于处理嵌入式网络字体或页面引用的系统字体的字体元数据的代码路径中。攻击者如果诱使用户访问精心制作的 HTML 页面，可以触发溢出，以一种允许任意代码执行的方式损坏堆内存。由于 Chrome 的沙箱限制了渲染进程可以执行的操作，因此仅此漏洞仅限于沙箱内的操作——读取浏览器内存、窃取 Cookie 或注入到其他渲染进程，但不能直接写入文件系统或启动系统可执行文件。Google 的 Chromium 安全团队将此分类为中等严重性，与需要单独沙箱逃逸才能实现完整系统入侵的沙箱内 RCE 一致。
+
+**CVE-2026-8573**（CVSS 8.3）是 Codecs 组件中的一个整数溢出，该组件处理音频和视频解码。该漏洞是 Windows 特有的，表明问题可能在于特定于平台的编解码器集成或 DirectX 视频管道处理。攻击者可以通过提供精心制作的视频文件来触发溢出——无论是嵌入在网页中还是通过媒体流上下文传递。成功的利用允许攻击者“可能执行沙箱逃逸”，根据 Google 的咨询。CVSS 得分 8.3 反映了高影响（完全失去机密性、完整性和可用性）和低攻击复杂性的组合，尽管攻击向量仍然是基于网络的，需要用户交互（访问页面或播放视频）。
+
+两个 CVE 共享相同的修复版本（148.0.7778.168），并于 5 月 12 日在同一 Chrome 发布博客文章中披露。尽管 Google 没有明确声明这些漏洞在野外被链式利用，但安全研究人员通常会将沙箱内的 RCE 与沙箱逃逸漏洞配对，以实现完整的远程代码执行。在单个更新中提供两者表明，防御者应将此补丁作为组合威胁优先考虑。
+
+根据 Google 的咨询，截至发布日期，这两个 CVE 都没有被报告在野外被利用。Chromium 项目并不总是立即披露活跃的利用，但是没有“已知漏洞”标志是一个积极的信号。
+
+## 缓解措施与建议
+
+企业管理员应将 Chrome 148.0.7778.168 作为高优先级更新部署到所有 Windows 端点。虽然 Codecs 漏洞（CVE-2026-8573）仅适用于 Windows，但字体漏洞（CVE-2026-8577）影响所有平台，因此 Mac 和 Linux 系统也应更新。Chrome 通常在消费者设备上自动更新，但使用组策略或 MDM 工具的管理环境应立即推动更新，以关闭潜在链式利用的窗口。
+
+防御者应监控 Chrome 遥测中不寻常的渲染进程崩溃或沙箱违规行为，因为整数溢出漏洞通常在可靠利用实现之前产生独特的崩溃签名。对于有高风险用户（例如，处理敏感数据或访问关键系统的用户）的组织，考虑在验证部署补丁之前，暂时禁用 Chrome 设置中的自动视频播放。对于底层编解码器或字体解析代码路径，没有替代解决方案——补丁是唯一的完整缓解措施。
+
+## 参考资料
+
+- [Chrome Releases: Stable Channel Update for Desktop (May 12, 2026)](https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html)
+- [NVD Entry for CVE-2026-8577](https://nvd.nist.gov/vuln/detail/CVE-2026-8577)
+- [NVD Entry for CVE-2026-8573](https://nvd.nist.gov/vuln/detail/CVE-2026-8573)

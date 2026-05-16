@@ -1,0 +1,66 @@
+---
+title: 'Chrome 148.0.7778.168 Patches Integer Overflows, Sandbox Escape Risk'
+slug: 2026-05-16-chrome-148-0-7778-168-patches-integer-overflows-sandbox-escape-risk
+date: '2026-05-16'
+excerpt: >-
+  CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows
+  allow sandbox escape and RCE via crafted video or HTML pages. Update now.
+category: vulnerabilities
+tags:
+  - google-chrome
+  - integer-overflow
+  - sandbox-escape
+  - remote-code-execution
+  - cve-2026-8573
+  - cve-2026-8577
+  - browser-security
+language: en
+source_urls:
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-chrome-148-0-7778-168-patches-integer-overflows-sandbox-escape-risk
+cluster_key: 'cve:CVE-2026-8577'
+source_count: 2
+severity: high
+cvss_score: 8.8
+cve_ids:
+  - CVE-2026-8577
+  - CVE-2026-8573
+affected_sectors:
+  - technology
+  - all sectors using Chrome
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+Google released Chrome 148.0.7778.168 for Windows, Mac, and Linux on May 12, 2026, addressing two integer overflow vulnerabilities that, when chained, could allow a remote attacker to escape the browser's sandbox and execute arbitrary code on the host system. The more severe flaw, **CVE-2026-8577** (CVSS 8.8), resides in Chrome's Fonts component and enables code execution within the sandbox via a crafted HTML page. The second, **CVE-2026-8573** (CVSS 8.3), affects the Codecs component on Windows only and permits a sandbox escape through a crafted video file. Google's internal severity rating for both is Medium, but the combination of an in-sandbox RCE with a sandbox-escape vector elevates the practical risk for enterprise environments where users may encounter malicious web content.
+
+## Technical Analysis
+
+Both vulnerabilities are integer overflow conditions — a class of memory corruption bug where arithmetic operations on buffer sizes or indices exceed the maximum value representable by the data type, leading to undersized allocations or out-of-bounds writes.
+
+**CVE-2026-8577** (CVSS 8.8) is an integer overflow in the Fonts rendering engine of Chromium. The flaw exists in code paths that process font metadata from embedded web fonts or system fonts referenced by a page. An attacker who convinces a user to visit a crafted HTML page can trigger the overflow, corrupting heap memory in a way that allows arbitrary code execution. Because Chrome's sandbox restricts what a renderer process can do, this exploit alone is limited to actions within the sandbox — reading browser memory, stealing cookies, or injecting into other renderer processes, but not directly writing to the filesystem or launching system executables. Google's Chromium security team classified this as Medium severity, consistent with in-sandbox RCEs that require a separate sandbox escape to achieve full system compromise.
+
+**CVE-2026-8573** (CVSS 8.3) is an integer overflow in the Codecs component, which handles audio and video decoding. The vulnerability is Windows-specific, suggesting the issue lies in platform-specific codec integration or DirectX video pipeline handling. An attacker can trigger the overflow by serving a crafted video file — either embedded in a webpage or delivered through a media-streaming context. Successful exploitation allows the attacker to "potentially perform a sandbox escape," per Google's advisory. The CVSS score of 8.3 reflects the combination of high impact (complete loss of confidentiality, integrity, and availability) and a low attack complexity, though the attack vector remains network-based and requires user interaction (visiting a page or playing a video).
+
+The two CVEs share the same fixed version (148.0.7778.168) and were disclosed in the same Chrome release blog post on May 12. While Google did not explicitly state that the flaws are chained in the wild, security researchers commonly pair an in-sandbox RCE with a sandbox-escape bug to achieve full remote code execution. The availability of both in a single update suggests that defenders should prioritize this patch as a combined threat.
+
+Neither CVE has been reported as exploited in the wild as of the publication date, according to Google's advisory. The Chromium project does not always disclose active exploitation immediately, but the absence of a "known exploits" flag is a positive signal.
+
+## Mitigations & Recommendations
+
+Enterprise administrators should deploy Chrome 148.0.7778.168 across all Windows endpoints as a high-priority update. While the Codecs flaw (CVE-2026-8573) is Windows-only, the Fonts flaw (CVE-2026-8577) affects all platforms, so Mac and Linux systems should also be updated. Chrome typically auto-updates on consumer devices, but managed environments using Group Policy or MDM tools should push the update immediately to close the window for potential chained exploitation.
+
+Defenders should monitor for unusual renderer process crashes or sandbox violations in Chrome telemetry, as integer overflow exploits often produce distinctive crash signatures before reliable exploitation is achieved. For organizations with high-risk users (e.g., those handling sensitive data or with access to critical systems), consider temporarily disabling automatic video playback in Chrome settings until the patch is verified deployed. No workaround exists for the underlying codec or font parsing code paths — patching is the only complete mitigation.
+
+## References
+
+- [Chrome Releases: Stable Channel Update for Desktop (May 12, 2026)](https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html)
+- [NVD Entry for CVE-2026-8577](https://nvd.nist.gov/vuln/detail/CVE-2026-8577)
+- [NVD Entry for CVE-2026-8573](https://nvd.nist.gov/vuln/detail/CVE-2026-8573)
