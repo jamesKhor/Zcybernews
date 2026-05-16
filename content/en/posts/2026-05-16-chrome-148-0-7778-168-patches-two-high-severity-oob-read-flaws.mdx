@@ -1,0 +1,73 @@
+---
+title: Chrome 148.0.7778.168 Patches Two High-Severity OOB Read Flaws
+slug: 2026-05-16-chrome-148-0-7778-168-patches-two-high-severity-oob-read-flaws
+date: '2026-05-16'
+excerpt: >-
+  Google Chrome 148.0.7778.168 fixes CVE-2026-8543 and CVE-2026-8541 — two
+  high-severity out-of-bounds read vulnerabilities in FileSystem and UI
+  components on Mac and all platforms.
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - out-of-bounds-read
+  - cve-2026-8543
+  - cve-2026-8541
+  - memory-leak
+language: en
+source_urls:
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-chrome-148-0-7778-168-patches-two-high-severity-oob-read-flaws
+cluster_key: 'cve:CVE-2026-8543'
+source_count: 2
+severity: high
+cvss_score: 5.3
+cve_ids:
+  - CVE-2026-8543
+  - CVE-2026-8541
+ttp_matrix:
+  - tactic: Reconnaissance
+    technique_id: T1592.002
+    technique_name: 'Gather Victim Host Information: Software'
+    description: >-
+      An attacker could craft an HTML page to probe Chrome's process memory for
+      sensitive data after exploitation.
+publish_tier: public
+---
+## Executive Summary
+
+Google released Chrome 148.0.7778.168 for Mac, Windows, and Linux on May 12, 2026, addressing two high-severity out-of-bounds (OOB) read vulnerabilities that could leak sensitive process memory to attackers. The flaws — tracked as CVE-2026-8543 and CVE-2026-8541 — affect the FileSystem component on macOS and the UI component across all platforms, respectively. Both carry a CVSS score of 5.3 (medium) but are rated High in Chromium's internal severity scale. Google's security advisory, published via the Chrome Releases blog, did not indicate active exploitation in the wild as of the update date. Users and administrators should prioritize applying the update to mitigate potential information disclosure risks.
+
+## Technical Analysis
+
+**CVE-2026-8543: FileSystem OOB Read (Mac-specific)**
+
+This vulnerability resides in Chrome's FileSystem implementation on macOS. An OOB read condition in the FileSystem component prior to version 148.0.7778.168 allows a remote attacker, after convincing a user to perform specific UI gestures, to read potentially sensitive information from process memory. The attack vector is a crafted HTML page that triggers the OOB access. The CVSS 5.3 score reflects the need for user interaction and the fact that the vulnerability primarily enables information disclosure rather than code execution. According to the Chromium security team, the flaw was reported by an external researcher whose identity has not been disclosed.
+
+**CVE-2026-8541: UI OOB Read (All platforms)**
+
+CVE-2026-8541 is an OOB read in Chrome's UI subsystem that affects all desktop platforms — Windows, macOS, and Linux. The vulnerability is exploitable by an attacker who has already compromised the renderer process, meaning it is a post-compromise information disclosure flaw. An attacker controlling a renderer can craft an HTML page that, when rendered, triggers the OOB read in the UI process, leaking process memory that could contain credentials, tokens, or other sensitive data. The CVSS score is also 5.3, with the attack complexity rated as low, but the privilege requirement (compromised renderer) raises the bar for exploitation in isolation.
+
+Both vulnerabilities were fixed in Chrome 148.0.7778.168, which was promoted to the stable channel on May 12, 2026. The update includes additional security fixes beyond these two CVEs, though Google did not enumerate all patches in the public advisory. The Chromium project's standard disclosure policy — typically 90 days after a fix is shipped — applies, so full technical details may not be available until August 2026.
+
+## Mitigations & Recommendations
+
+Google Chrome updates automatically on most installations, but users and administrators should verify that the browser has updated to version 148.0.7778.168 or later. To check the current version, navigate to chrome://settings/help. If the update has not been applied, restart the browser to trigger the update process. Enterprise administrators managing Chrome via Group Policy or MDM should push the update through their software distribution channels immediately.
+
+For organizations with high-security requirements, consider the following additional measures:
+- Restrict the execution of untrusted JavaScript and HTML in sandboxed environments, particularly on macOS systems where CVE-2026-8543 is exploitable via user gestures.
+- Monitor for anomalous Chrome process memory access patterns using endpoint detection and response (EDR) tools, though no active exploitation has been reported.
+- Apply the principle of least privilege to browser processes; Chrome's sandbox already limits renderer access, but CVE-2026-8541 demonstrates that even sandboxed renderers can leak information to the UI process.
+
+No workarounds are available beyond updating. The vulnerabilities are not known to be exploited in the wild as of this writing, but the technical details are straightforward enough that proof-of-concept code could emerge once the 90-day disclosure window closes.
+
+## References
+
+- [Chrome Releases Blog: Stable Channel Update for Desktop (May 12, 2026)](https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html)
+- [NVD Entry for CVE-2026-8543](https://nvd.nist.gov/vuln/detail/CVE-2026-8543)
+- [NVD Entry for CVE-2026-8541](https://nvd.nist.gov/vuln/detail/CVE-2026-8541)

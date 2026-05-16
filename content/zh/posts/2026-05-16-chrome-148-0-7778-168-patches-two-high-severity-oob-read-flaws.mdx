@@ -1,0 +1,72 @@
+---
+title: Chrome 148.0.7778.168 修补了两个高危的 OOB 读取缺陷
+slug: 2026-05-16-chrome-148-0-7778-168-patches-two-high-severity-oob-read-flaws
+date: '2026-05-16'
+excerpt: >-
+  Google Chrome 148.0.7778.168 修复了 CVE-2026-8543 和 CVE-2026-8541 ——
+  这两个高危的越界读取漏洞存在于 Mac 和所有平台上的 FileSystem 和 UI 组件中。
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - out-of-bounds-read
+  - cve-2026-8543
+  - cve-2026-8541
+  - memory-leak
+language: zh
+source_urls:
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-chrome-148-0-7778-168-patches-two-high-severity-oob-read-flaws
+cluster_key: 'cve:CVE-2026-8543'
+source_count: 2
+severity: high
+cvss_score: 5.3
+cve_ids:
+  - CVE-2026-8543
+  - CVE-2026-8541
+ttp_matrix:
+  - tactic: Reconnaissance
+    technique_id: T1592.002
+    technique_name: 'Gather Victim Host Information: Software'
+    description: >-
+      An attacker could craft an HTML page to probe Chrome's process memory for
+      sensitive data after exploitation.
+publish_tier: public
+---
+## 执行摘要
+
+Google 在 2026 年 5 月 12 日发布了适用于 Mac、Windows 和 Linux 的 Chrome 148.0.7778.168，修复了两个高严重性的越界（OOB）读取漏洞，这些漏洞可能会将敏感进程内存泄露给攻击者。这些漏洞 —— 被追踪为 CVE-2026-8543 和 CVE-2026-8541 —— 分别影响 macOS 上的 FileSystem 组件和所有平台上的 UI 组件。两者的 CVSS 评分均为 5.3（中等），但在 Chromium 的内部严重性等级中被评为高。Google 通过 Chrome Releases 博客发布的安全公告并未表明截至更新日期，这些漏洞在野外被积极利用。用户和管理员应优先应用更新，以减轻潜在的信息泄露风险。
+
+## 技术分析
+
+**CVE-2026-8543: FileSystem OOB 读取（仅限 Mac）**
+
+这个漏洞存在于 macOS 上 Chrome 的 FileSystem 实现中。在版本 148.0.7778.168 之前的 FileSystem 组件中的 OOB 读取条件允许远程攻击者，在说服用户执行特定的 UI 手势后，从进程内存中读取潜在的敏感信息。攻击载体是一个精心制作的 HTML 页面，触发 OOB 访问。CVSS 5.3 评分反映了需要用户交互以及该漏洞主要使信息泄露而非代码执行成为可能。根据 Chromium 安全团队的说法，这个漏洞是由一个身份未公开的外部研究人员报告的。
+
+**CVE-2026-8541: UI OOB 读取（所有平台）**
+
+CVE-2026-8541 是 Chrome 的 UI 子系统中的一个 OOB 读取，影响所有桌面平台 —— Windows、macOS 和 Linux。该漏洞可以被已经破坏渲染进程的攻击者利用，这意味着它是一个后破坏信息泄露漏洞。控制渲染器的攻击者可以制作一个 HTML 页面，当渲染时，触发 UI 进程中的 OOB 读取，泄露可能包含凭证、令牌或其他敏感数据的进程内存。CVSS 评分也是 5.3，攻击复杂性被评为低，但特权要求（破坏的渲染器）提高了单独利用的门槛。
+
+这两个漏洞都在 Chrome 148.0.7778.168 中被修复，该版本于 2026 年 5 月 12 日被提升到稳定频道。更新包括这两个 CVE 之外的其他安全修复，尽管 Google 并未在公共公告中列举所有补丁。Chromium 项目的标凈披露政策 —— 通常在修复发布后 90 天 —— 适用，因此完整的技术细节可能要到 2026 年 8 月才会可用。
+
+## 缓解措施与建议
+
+Google Chrome 在大多数安装中会自动更新，但用户和管理员应验证浏览器是否已更新到版本 148.0.7778.168 或更高版本。要检查当前版本，请导航至 chrome://settings/help。如果尚未应用更新，请重启浏览器以触发更新过程。通过组策略或 MDM 管理 Chrome 的企业管理员应立即通过他们的软件分发渠道推送更新。
+
+对于有高安全要求的组织，请考虑以下额外措施：
+- 在沙箱环境中限制执行不受信任的 JavaScript 和 HTML，特别是在 macOS 系统上，CVE-2026-8543 可以通过用户手势被利用。
+- 使用端点检测和响应（EDR）工具监控异常的 Chrome 进程内存访问模式，尽管尚未报告活跃的利用。
+- 对浏览器进程应用最小权限原则；Chrome 的沙箱已经限制了渲染器访问，但 CVE-2026-8541 表明即使是沙箱化的渲染器也可以将信息泄露给 UI 进程。
+
+除了更新之外，没有其他变通方法。截至本文撰写时，这些漏洞尚未被知道在野外被利用，但技术细节足够简单，一旦 90 天的披露窗口关闭，可能会出现概念验证代码。
+
+## 参考资料
+
+- [Chrome Releases Blog: Stable Channel Update for Desktop (May 12, 2026)](https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html)
+- [NVD Entry for CVE-2026-8543](https://nvd.nist.gov/vuln/detail/CVE-2026-8543)
+- [NVD Entry for CVE-2026-8541](https://nvd.nist.gov/vuln/detail/CVE-2026-8541)
