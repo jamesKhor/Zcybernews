@@ -1,0 +1,57 @@
+---
+title: Fleet Patches API Rate-Limiting Bypass via IP Spoofing
+slug: 2026-05-16-fleet-patches-api-rate-limiting-bypass-via-ip-spoofing
+date: '2026-05-16'
+excerpt: >-
+  CVE-2026-46356: Unauthenticated attackers can bypass Fleet's API rate limiting
+  by spoofing True-Client-IP headers, enabling brute-force login attempts on
+  exposed instances.
+category: vulnerabilities
+tags:
+  - fleet
+  - api-rate-limiting
+  - ip-spoofing
+  - cve-2026-46356
+  - device-management
+language: en
+source_urls:
+  - 'https://github.com/fleetdm/fleet/releases/tag/fleet-v4.80.1'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-fleet-patches-api-rate-limiting-bypass-via-ip-spoofing
+cluster_key: 'cve:CVE-2026-46356'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2026-46356
+affected_sectors:
+  - technology
+  - enterprise software
+publish_tier: public
+---
+## Executive Summary
+
+Fleet, an open-source device management platform, has released version 4.80.1 to patch CVE-2026-46356, a vulnerability in its IP extraction logic that allows unauthenticated attackers to bypass API rate limiting by spoofing client IP headers. The flaw, disclosed in the project's GitHub release notes, enables brute-force login attempts or other abusive requests against Fleet instances exposed to the public internet. No CVSS score has been assigned by NVD as of publication, but the attack surface is significant: any Fleet deployment reachable from the internet without a reverse proxy performing header sanitization is vulnerable.
+
+## Technical Analysis
+
+According to the Fleet development team, the software extracts client IP addresses from HTTP request headers — specifically `True-Client-IP`, `X-Forwarded-For`, and `X-Real-IP` — to enforce per-IP rate limits on API endpoints such as login and authentication routes. Prior to version 4.80.1, the code did not validate whether these headers could be forged by an attacker. An unauthenticated remote attacker can inject arbitrary IP addresses into these headers, causing Fleet to attribute each request to a different spoofed source. This defeats the rate-limiting mechanism entirely, allowing an attacker to send an unbounded number of requests without triggering throttling.
+
+The practical impact is most acute for login endpoints: an attacker can mount credential-stuffing or brute-force attacks against Fleet user accounts without being blocked. Fleet's release notes explicitly warn that "this may allow brute-force login attempts or other abuse against Fleet instances exposed to the public internet." The vulnerability does not require authentication to exploit — any host that can reach the Fleet API can spoof headers.
+
+The fix in version 4.80.1 changes how Fleet resolves the client IP. Instead of trusting forwarded headers directly, the software now uses the immediate socket-level IP address (the IP of the direct TCP connection) for rate-limiting purposes. This is the standard defense: reverse proxies (nginx, HAProxy, Cloudflare) should be the ones to strip or overwrite untrusted forwarded headers before passing requests to the backend. Fleet's documentation recommends deploying behind a reverse proxy that terminates TLS and sanitizes headers, but the software itself now enforces socket-IP binding as a defense-in-depth measure.
+
+## Mitigations & Recommendations
+
+Fleet users should upgrade to version 4.80.1 or later immediately. For deployments that cannot upgrade promptly, the primary mitigation is to ensure Fleet is not directly exposed to the public internet. Place Fleet behind a reverse proxy (nginx, HAProxy, or a cloud load balancer) that:
+
+- Terminates TLS at the proxy layer.
+- Strips or overwrites `True-Client-IP`, `X-Forwarded-For`, and `X-Real-IP` headers from incoming requests before forwarding to the Fleet backend.
+- Enforces its own rate limiting at the proxy level.
+
+Organizations should also audit Fleet API access logs for patterns of rapid requests from varied spoofed IPs, which would indicate exploitation attempts. The Fleet team has noted that the vulnerability is trivially exploitable and that public-facing instances without a reverse proxy are at highest risk.
+
+## References
+
+- [Fleet release v4.80.1 — GitHub](https://github.com/fleetdm/fleet/releases/tag/fleet-v4.80.1)
+- [NVD entry for CVE-2026-46356](https://nvd.nist.gov/vuln/detail/CVE-2026-46356)

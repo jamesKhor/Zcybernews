@@ -1,0 +1,56 @@
+---
+title: Fleet 通过 IP 欺骗绕过 API 速率限制
+slug: 2026-05-16-fleet-patches-api-rate-limiting-bypass-via-ip-spoofing
+date: '2026-05-16'
+excerpt: >-
+  CVE-2026-46356：未经身份验证的攻击者可以通过伪造 True-Client-IP 头来绕过 Fleet 的 API
+  速率限制，从而在暴露的实例上启用暴力破解登录尝试。
+category: vulnerabilities
+tags:
+  - fleet
+  - api-rate-limiting
+  - ip-spoofing
+  - cve-2026-46356
+  - device-management
+language: zh
+source_urls:
+  - 'https://github.com/fleetdm/fleet/releases/tag/fleet-v4.80.1'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-fleet-patches-api-rate-limiting-bypass-via-ip-spoofing
+cluster_key: 'cve:CVE-2026-46356'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2026-46356
+affected_sectors:
+  - technology
+  - enterprise software
+publish_tier: public
+---
+## 执行摘要
+
+Fleet，一个开源的设备管理平台，发布了4.80.1版本来修补CVE-2026-46356，这是一个在其IP提取逻辑中的漏洞，允许未经认证的攻击者通过伪造客户端IP头来绕过API速率限制。这个漏洞在项目的GitHub发布说明中被披露，它使得针对暴露于公共互联网的Fleet实例的暴力登录尝试或其他滥用请求成为可能。截至出版时，NVD尚未分配CVSS分数，但攻击面很大：任何从互联网可达且没有执行头信息清理的反向代理的Fleet部署都是易受攻击的。
+
+## 技术分析
+
+根据Fleet开发团队的说法，该软件从HTTP请求头中提取客户端IP地址——特别是`True-Client-IP`、`X-Forwarded-For`和`X-Real-IP`——以在登录和认证路由等API端点上执行每个IP的速率限制。在4.80.1版本之前，代码没有验证这些头信息是否可以被攻击者伪造。未经认证的远程攻击者可以将任意IP地址注入到这些头信息中，导致Fleet将每个请求归因于不同的伪造源。这完全破坏了速率限制机制，允许攻击者发送无限数量的请求而不触发节流。
+
+实际影响最严重的是登录端点：攻击者可以对Fleet用户账户发起凭证填充或暴力攻击而不会被阻止。Fleet的发布说明明确警告说，“这可能允许对暴露于公共互联网的Fleet实例进行暴力登录尝试或其他滥用。”这个漏洞不需要认证就可以被利用——任何可以到达Fleet API的主机都可以伪造头信息。
+
+4.80.1版本的修复改变了Fleet解析客户端IP的方式。软件不再直接信任转发的头信息，而是现在使用即时的套接字级IP地址（直接TCP连接的IP）用于速率限制目的。这是标准的防御措施：反向代理（nginx、HAProxy、Cloudflare）应该是在将请求传递给后端之前剥离或覆盖不可信的转发头信息的人。Fleet的文档建议在终止TLS并清理头信息的反向代理后部署，但软件本身现在执行套接字IP绑定作为深度防御措施。
+
+## 缓解措施与建议
+
+Fleet用户应立即升级到4.80.1或更高版本。对于不能立即升级的部署，主要的缓解措施是确保Fleet不直接暴露于公共互联网。将Fleet放置在反向代理（nginx、HAProxy或云负载均衡器）后面：
+
+- 在代理层终止TLS。
+- 在转发到Fleet后端之前，剥离或覆盖入站请求中的`True-Client-IP`、`X-Forwarded-For`和`X-Real-IP`头信息。
+- 在代理级别执行自己的速率限制。
+
+组织还应该审计Fleet API访问日志，寻找来自不同伪造IP的快速请求模式，这将表明有利用尝试。Fleet团队已经指出，这个漏洞很容易被利用，没有反向代理的面向公共的实例风险最高。
+
+## 参考资料
+
+- [Fleet release v4.80.1 — GitHub](https://github.com/fleetdm/fleet/releases/tag/fleet-v4.80.1)
+- [NVD entry for CVE-2026-46356](https://nvd.nist.gov/vuln/detail/CVE-2026-46356)
