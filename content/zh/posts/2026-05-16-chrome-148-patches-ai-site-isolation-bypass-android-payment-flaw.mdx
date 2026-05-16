@@ -1,0 +1,66 @@
+---
+title: Chrome 148 修复 AI 站点隔离绕过，Android 支付漏洞
+slug: 2026-05-16-chrome-148-patches-ai-site-isolation-bypass-android-payment-flaw
+date: '2026-05-16'
+excerpt: >-
+  CVE-2026-8568 (CVSS 3.1) 允许攻击者在渲染器被破坏后通过 AI 功能绕过 Chrome 站点隔离；CVE-2026-8566
+  (CVSS 4.3) 针对 Android 支付。
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - site-isolation
+  - android
+  - cve-2026-8568
+  - cve-2026-8566
+language: zh
+source_urls:
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-chrome-148-patches-ai-site-isolation-bypass-android-payment-flaw
+cluster_key: 'cve:CVE-2026-8568'
+source_count: 2
+severity: high
+cvss_score: 3
+cve_ids:
+  - CVE-2026-8568
+  - CVE-2026-8566
+affected_sectors:
+  - technology
+publish_tier: public
+---
+## 执行摘要
+
+Google 在 2026 年 5 月 12 日发布了 Chrome 148.0.7778.168 版本，适用于 Windows、macOS 和 Linux，修复了两个中等严重性的漏洞，这些漏洞使得攻击者能够提升权限和绕过访问控制。CVE-2026-8568（CVSS 3.1）允许已经攻陷渲染进程的远程攻击者通过精心设计的 HTML 页面绕过站点隔离保护，这些页面滥用 Chrome 的 AI 功能中的政策执行不足。CVE-2026-8566（CVSS 4.3）针对 Android 上的 Chrome，允许远程攻击者通过精心设计的 HTML 页面绕过支付子系统中的自由访问控制。这两个漏洞都是由外部研究人员报告，并在最新的稳定频道更新中得到解决。
+
+## 技术分析
+
+**CVE-2026-8568 — AI 站点隔离绕过**
+
+站点隔离是 Chrome 的一个关键安全架构，它在不同的进程中渲染来自不同来源的页面，防止一个被攻陷的渲染器访问另一个网站的资料。根据 Google 的公告，CVE-2026-8568 源于 Chrome 的 AI 功能中政策执行不足。已经获得渲染器进程控制权的攻击者可以通过提供精心设计的 HTML 页面来利用这个漏洞，导致浏览器绕过站点隔离边界。
+
+Chromium 安全团队将这个漏洞评为中等严重性，CVSS v3.1 基础得分为 3.1。相对较低的得分反映了前提条件：攻击者必须首先通过另一个漏洞攻陷渲染器进程。然而，在高级持续性威胁操作中常见的多阶段利用链中，这个漏洞可以在初始渲染器被攻陷后作为一个可靠的升级步骤。
+
+Google 没有透露受影响的具体 AI 子系统，或者绕过是否依赖于特定的 API、模型推理管道或浏览器端 AI 功能。公告感谢了外部研究人员，但在标准披露时间线之前保留了归属细节。
+
+**CVE-2026-8566 — Android 支付访问控制绕过**
+
+CVE-2026-8566 特别影响 Android 上的 Chrome，存在于支付子系统中。Google 将这个问题描述为政策执行不足，允许远程攻击者通过精心设计的 HTML 页面绕过自由访问控制。CVSS v4.0 得分为 4.3，将其置于中等严重性。
+
+这个漏洞可能涉及 Chrome 的支付处理 API 和 Android 的意图系统之间的交互，恶意页面可能会触发超出预期权限边界的支付流程。在 Android 上，Chrome 与操作系统的支付框架深度集成，政策执行中的漏洞可能允许攻击者启动未经授权的支付交易或访问敏感的支付凭证数据。
+
+这两个漏洞都在 Chrome 148.0.7778.168 中被修复，该版本于 2026 年 5 月 12 日开始向稳定频道推出。Google 的公告指出，更新包括这两个 CVE 之外的其他安全修复，尽管公司在最初的公告中没有列举它们。
+
+## 缓解措施与建议
+
+所有平台上的 Chrome 用户应立即更新到版本 148.0.7778.168。浏览器通常在重启后自动应用更新，但用户可以通过导航到 chrome://settings/help 强制更新。管理 Chrome 浏览器云管理的企业管理员应验证最新版本是否已部署在管理设备上，并考虑通过组策略强制自动更新。
+
+对于担心站点隔离绕过（CVE-2026-8568）的组织，请注意，利用需要先前的渲染器被攻陷。防御者应优先修补已知的渲染器级漏洞，并启用站点隔离作为深度防御措施 —— 它在桌面平台上默认启用。在 Android 上，用户应确保通过 Google Play 商店更新 Chrome 应用，并避免在用于支付交易的设备上访问不受信任的网站，直到确认更新。
+
+## 参考资料
+
+* [Chrome Releases: Stable Channel Update for Desktop (May 12, 2026)](https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html)

@@ -1,0 +1,67 @@
+---
+title: 'Chrome 148 Patches AI Site Isolation Bypass, Android Payment Flaw'
+slug: 2026-05-16-chrome-148-patches-ai-site-isolation-bypass-android-payment-flaw
+date: '2026-05-16'
+excerpt: >-
+  CVE-2026-8568 (CVSS 3.1) lets attackers bypass Chrome Site Isolation via AI
+  features after renderer compromise; CVE-2026-8566 (CVSS 4.3) targets Android
+  Payments.
+category: vulnerabilities
+tags:
+  - chrome
+  - google
+  - site-isolation
+  - android
+  - cve-2026-8568
+  - cve-2026-8566
+language: en
+source_urls:
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+  - >-
+    https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-16-chrome-148-patches-ai-site-isolation-bypass-android-payment-flaw
+cluster_key: 'cve:CVE-2026-8568'
+source_count: 2
+severity: high
+cvss_score: 3
+cve_ids:
+  - CVE-2026-8568
+  - CVE-2026-8566
+affected_sectors:
+  - technology
+publish_tier: public
+---
+## Executive Summary
+
+Google released Chrome 148.0.7778.168 for Windows, macOS, and Linux on May 12, 2026, patching two medium-severity vulnerabilities that enable privilege escalation and access control bypass. CVE-2026-8568 (CVSS 3.1) allows a remote attacker who has already compromised the renderer process to bypass Site Isolation protections through crafted HTML pages that abuse insufficient policy enforcement in Chrome's AI features. CVE-2026-8566 (CVSS 4.3) targets Chrome on Android, letting a remote attacker bypass discretionary access control in the Payments subsystem via a crafted HTML page. Both flaws were reported by external researchers and addressed in the latest stable channel update.
+
+## Technical Analysis
+
+**CVE-2026-8568 — AI Site Isolation Bypass**
+
+Site Isolation is a critical Chrome security architecture that renders pages from different origins in separate processes, preventing one compromised renderer from accessing data from another site. According to Google's advisory, CVE-2026-8568 stems from insufficient policy enforcement in Chrome's AI features. An attacker who has already gained control of a renderer process can exploit this flaw by serving a crafted HTML page that causes the browser to bypass Site Isolation boundaries.
+
+The Chromium security team rated this vulnerability as Medium severity, with a CVSS v3.1 base score of 3.1. The relatively low score reflects the prerequisite condition: the attacker must first compromise the renderer process through another vulnerability. However, in multi-stage exploit chains common in advanced persistent threat operations, this flaw could serve as a reliable escalation step after an initial renderer compromise.
+
+Google did not disclose the specific AI subsystem affected or whether the bypass relies on a particular API, model inference pipeline, or browser-side AI feature. The advisory credits an external researcher but withholds attribution details pending the standard disclosure timeline.
+
+**CVE-2026-8566 — Android Payments Access Control Bypass**
+
+CVE-2026-8566 affects Chrome on Android specifically, residing in the Payments subsystem. Google describes the issue as insufficient policy enforcement that allows a remote attacker to bypass discretionary access control via a crafted HTML page. The CVSS v4.0 score of 4.3 places it at Medium severity.
+
+The vulnerability likely involves the interaction between Chrome's payment handler API and Android's intent system, where a malicious page could trigger payment flows that escape the expected permission boundaries. On Android, Chrome integrates deeply with the operating system's payment framework, and a flaw in policy enforcement could allow an attacker to initiate unauthorized payment transactions or access sensitive payment credential data.
+
+Both vulnerabilities were fixed in Chrome 148.0.7778.168, which began rolling out to the Stable channel on May 12, 2026. Google's advisory notes that the update includes additional security fixes beyond these two CVEs, though the company did not enumerate them in the initial announcement.
+
+## Mitigations & Recommendations
+
+Chrome users on all platforms should update to version 148.0.7778.168 immediately. The browser typically applies updates automatically upon restart, but users can force an update by navigating to chrome://settings/help. Enterprise administrators managing Chrome Browser Cloud Management should verify that the latest version is deployed across managed devices and consider enforcing automatic updates via group policy.
+
+For organizations concerned about the Site Isolation bypass (CVE-2026-8568), note that the exploit requires a prior renderer compromise. Defenders should prioritize patching known renderer-level vulnerabilities and enable Site Isolation as a defense-in-depth measure — it remains enabled by default on desktop platforms. On Android, users should ensure the Chrome app is updated through the Google Play Store and avoid visiting untrusted websites on devices used for payment transactions until the update is confirmed.
+
+## References
+
+* [Chrome Releases: Stable Channel Update for Desktop (May 12, 2026)](https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html)
