@@ -86,6 +86,7 @@ jobs:
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}
+          NODE_OPTIONS: --use-system-ca
         run: |
           MAX_ARTICLES=$(echo "$MAX_ARTICLES" | grep -oE '^[0-9]+$' || echo 3)
           ARGS="--max-articles=$MAX_ARTICLES"
