@@ -1,0 +1,49 @@
+---
+title: Grafana GitHub Token Breach Lets Attacker Download Full Codebase
+slug: 2026-05-17-grafana-github-token-breach-lets-attacker-download-full-codebase
+date: '2026-05-17'
+excerpt: >-
+  An attacker used a compromised GitHub token to download Grafana's entire
+  private codebase. The company says no customer data was accessed and the
+  incident involved an extortion...
+category: industry
+tags:
+  - grafana
+  - github
+  - token-theft
+  - supply-chain
+  - extortion
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/05/grafana-github-token-breach-led-to.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-17-grafana-github-token-breach-lets-attacker-download-full-codebase
+cluster_key: 'topic:grafana-github-token-breach-codebase'
+source_count: 1
+severity: high
+affected_sectors:
+  - software development
+publish_tier: public
+---
+## Executive Summary
+
+Grafana disclosed this week that an unauthorized party obtained a GitHub token with read access to the company's private repositories, enabling the attacker to download Grafana's entire codebase. The breach, which the company described as an extortion attempt, did not expose customer data or compromise customer systems, according to Grafana's incident report. The incident underscores the persistent risk of credential leakage in software supply chains, particularly when tokens carry broad repository access.
+
+## Technical Analysis
+
+According to Grafana's disclosure, the attacker used a compromised GitHub personal access token (PAT) to authenticate against the company's GitHub organization. The token had read-level permissions on private repositories, which was sufficient to clone the full source code of Grafana's products, including proprietary components and internal tooling. Grafana did not specify how the token was initially compromised, but common vectors include accidental exposure in public commits, phishing, or credential stuffing against developer accounts.
+
+The company stated that its investigation found no evidence that the attacker modified any code, injected backdoors, or tampered with build pipelines. The incident was detected through GitHub's audit logging, which alerted Grafana's security team to anomalous repository cloning activity. Grafana revoked the compromised token and rotated all associated credentials. The attacker subsequently contacted Grafana with an extortion demand, which the company did not pay, according to the disclosure.
+
+Grafana emphasized that customer data and operational systems remained isolated from the GitHub environment. The company hosts its SaaS offering on separate infrastructure, and the codebase download did not grant access to production databases, customer dashboards, or API keys. This architectural separation likely limited the blast radius of the breach.
+
+The incident shares similarities with the 2022 CircleCI breach, where an attacker used a stolen OAuth token to access private repositories, and the 2024 Dropbox Sign breach, where a compromised service account exposed customer data. In Grafana's case, the token's scope was read-only, which constrained the attacker to exfiltration rather than code injection.
+
+## Mitigations & Recommendations
+
+Organizations using GitHub PATs should enforce the principle of least privilege by scoping tokens to the minimum necessary repositories and permissions. GitHub's fine-grained PATs, introduced in 2022, allow repository-level scoping and expiration dates. Grafana's incident also highlights the value of audit logging: teams should monitor for anomalous cloning patterns, such as a single token cloning many repositories in a short window. Rotating tokens regularly and using short-lived tokens with automated rotation can reduce the window of exposure. For critical codebases, consider requiring approval workflows for repository access and enabling branch protection rules that prevent direct pushes.
+
+## References
+
+* [The Hacker News: Grafana GitHub Token Breach Led to Codebase Download and Extortion Attempt](https://thehackernews.com/2026/05/grafana-github-token-breach-led-to.html)

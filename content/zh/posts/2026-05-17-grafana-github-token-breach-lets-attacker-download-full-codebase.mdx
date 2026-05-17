@@ -1,0 +1,46 @@
+---
+title: Grafana GitHub Token Breach Lets Attacker Download Full Codebase
+slug: 2026-05-17-grafana-github-token-breach-lets-attacker-download-full-codebase
+date: '2026-05-17'
+excerpt: 一名攻击者使用被泄露的GitHub令牌下载了Grafana的整个私有代码库。公司表示没有客户数据被访问，该事件涉及勒索...
+category: industry
+tags:
+  - grafana
+  - github
+  - token-theft
+  - supply-chain
+  - extortion
+language: zh
+source_urls:
+  - 'https://thehackernews.com/2026/05/grafana-github-token-breach-led-to.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-17-grafana-github-token-breach-lets-attacker-download-full-codebase
+cluster_key: 'topic:grafana-github-token-breach-codebase'
+source_count: 1
+severity: high
+affected_sectors:
+  - software development
+publish_tier: public
+---
+## 执行摘要
+
+Grafana本周披露，一个未经授权的第三方获取了一个GitHub令牌，该令牌具有读取公司私有仓库的权限，使攻击者能够下载Grafana的整个代码库。根据Grafana的事件报告，此次违规被公司描述为敲诈企图，并未暴露客户数据或危及客户系统。该事件突显了在软件供应链中凭证泄露的持续风险，特别是当令牌具有广泛的仓库访问权限时。
+
+## 技术分析
+
+根据Grafana的披露，攻击者使用了一个被泄露的GitHub个人访问令牌（PAT）来验证对公司GitHub组织的访问。该令牌具有私有仓库的读取级权限，足以克隆Grafana产品的完整源代码，包括专有组件和内部工具。Grafana没有具体说明令牌最初是如何被泄露的，但常见的途径包括在公共提交中意外暴露、网络钓鱼或针对开发人员账户的凭证填充。
+
+公司表示，其调查没有发现攻击者修改任何代码、注入后门或篡改构建管道的证据。该事件是通过GitHub的审计日志检测到的，它提醒Grafana的安全团队注意异常的仓库克隆活动。Grafana撤销了被泄露的令牌，并轮换了所有相关的凭证。根据披露，攻击者随后联系Grafana提出了敲诈要求，但公司并未支付。
+
+Grafana强调，客户数据和运营系统与GitHub环境保持隔离。公司在其SaaS产品上托管在单独的基础设施上，代码库下载并未授予对生产数据库、客户仪表板或API密钥的访问权限。这种架构分离可能限制了违规的影响范围。
+
+该事件与2022年CircleCI违规事件相似，其中攻击者使用被盗的OAuth令牌访问私有仓库，以及2024年Dropbox Sign违规事件，其中被泄露的服务账户暴露了客户数据。在Grafana的案例中，令牌的范围仅限于读取，这限制了攻击者只能进行数据外泄而不是代码注入。
+
+## 缓解措施与建议
+
+使用GitHub PATs的组织应通过将令牌限定在最小必要的仓库和权限范围内来执行最小权限原则。GitHub在2022年引入的细粒度PATs允许仓库级别的限定和到期日期。Grafana的事件也突出了审计日志的价值：团队应监控异常的克隆模式，例如单个令牌在短时间内克隆许多仓库。定期轮换令牌并使用具有自动轮换的短命令牌可以减少暴露窗口。对于关键代码库，考虑要求对仓库访问进行审批工作流程，并启用分支保护规则以防止直接推送。
+
+## 参考资料
+
+* [The Hacker News: Grafana GitHub Token Breach Led to Codebase Download and Extortion Attempt](https://thehackernews.com/2026/05/grafana-github-token-breach-led-to.html)
