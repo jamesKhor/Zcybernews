@@ -32,6 +32,11 @@ import {
   type DecisionMatrixEntry,
 } from "./decision-matrix.js";
 import type { GeneratedArticle } from "../ai/schemas/article-schema.js";
+import {
+  selectEditorialCandidates,
+  type EditorialSelection,
+} from "./editorial-selector.js";
+import { buildSeoBrief, type SeoBrief } from "./seo-brief.js";
 
 // ── Recent titles loader (for prompt dedup context) ────────────────────────
 
@@ -192,6 +197,22 @@ function articleDecisionFields(article: GeneratedArticle | null) {
   };
 }
 
+function editorialDecisionFields(selection?: EditorialSelection) {
+  if (!selection) return {};
+  return {
+    editorial: {
+      lane: selection.lane,
+      score: selection.score,
+      evidenceScore: selection.evidenceScore,
+      trustScore: selection.trustScore,
+      demandScore: selection.demandScore,
+      freshnessScore: selection.freshnessScore,
+      differentiationScore: selection.differentiationScore,
+      portfolioScore: selection.portfolioScore,
+    },
+  };
+}
+
 if (!DRY_RUN) {
   // Need at least one AI provider — OpenRouter (free) or DeepSeek/Kimi (paid)
   if (
@@ -214,7 +235,8 @@ async function main() {
   );
 
   // 1. Ingest fresh stories from RSS
-  const stories = await ingestFeeds(MAX_ARTICLES * 3);
+  const candidatePoolSize = Math.max(MAX_ARTICLES * 20, MAX_ARTICLES + 20);
+  const stories = await ingestFeeds(candidatePoolSize);
   const selectedStories =
     SOURCE_IDS.length > 0
       ? stories.filter((s) => SOURCE_IDS.includes(s.sourceId ?? ""))
@@ -272,23 +294,66 @@ async function main() {
   // Multi-source clusters get priority so public candidates start with
   // better source depth instead of single-source thin summaries.
   const clusters = clusterStories(publishableStories);
-  const batches: Array<Array<RoutedStory & { clusterKey: string }>> = clusters
-    .slice(0, MAX_ARTICLES)
-    .map((cluster) =>
-      cluster.stories.map((story) => ({
-        ...story,
+  const editorial = selectEditorialCandidates(clusters, {
+    maxArticles: MAX_ARTICLES,
+  });
+  const batches: Array<{
+    stories: Array<RoutedStory & { clusterKey: string }>;
+    selection: EditorialSelection;
+    seoBrief: SeoBrief;
+  }> = editorial.publishable.map(({ cluster, selection }) => {
+    const stories = cluster.stories.map((story) => ({
+      ...story,
+      clusterKey: cluster.key,
+    }));
+    return {
+      stories,
+      selection,
+      seoBrief: buildSeoBrief(stories, {
         clusterKey: cluster.key,
-      })),
-    );
+        lane: selection.lane,
+      }),
+    };
+  });
+
+  for (const selection of editorial.decisions) {
+    if (selection.decision === "publish-now") continue;
+    const cluster = clusters.find((item) => item.key === selection.clusterKey);
+    const story = cluster?.stories[0];
+    decisionEntries.push({
+      index: story
+        ? (storyOrder.get(story) ?? decisionEntries.length)
+        : decisionEntries.length,
+      outcome: "not_published",
+      sourceTitle: story?.title ?? selection.clusterKey,
+      sourceName: story?.sourceName,
+      sourceUrl: story?.url,
+      stage: "editorial-selection",
+      decision: selection.decision,
+      reasons: selection.reasons,
+      gates: [
+        gate(
+          "editorial-selection",
+          selection.decision === "reject" ? "block" : "skip",
+          `score=${selection.score} lane=${selection.lane}`,
+        ),
+      ],
+      sourceCount: cluster?.sources.length ?? 0,
+      ...editorialDecisionFields(selection),
+    });
+  }
 
   console.log(`[pipeline] Will generate ${batches.length} articles\n`);
 
   if (DRY_RUN) {
     console.log("[pipeline] Dry run — stories that would be processed:");
     batches.forEach((batch, i) => {
-      const sources = [...new Set(batch.map((s) => s.sourceName))].join(", ");
+      const sources = [...new Set(batch.stories.map((s) => s.sourceName))].join(
+        ", ",
+      );
       console.log(
-        `  ${i + 1}. [${batch[0]?.clusterKey}] ${batch[0]?.title} (${sources})`,
+        `  ${i + 1}. [${batch.stories[0]?.clusterKey}] ${batch.stories[0]?.title} (${sources}) ` +
+          `lane=${batch.selection.lane} score=${batch.selection.score} target=${batch.seoBrief.primaryQueryTarget}`,
       );
     });
     return;
@@ -323,8 +388,11 @@ async function main() {
   );
 
   const results = await Promise.allSettled(
-    batches.map((batch, batchIndex) =>
+    batches.map((candidate, batchIndex) =>
       limit(async () => {
+        const batch = candidate.stories;
+        const selection = candidate.selection;
+        const seoBrief = candidate.seoBrief;
         const primaryStory = batch[0];
         const baseIndex =
           (primaryStory ? storyOrder.get(primaryStory) : undefined) ??
@@ -361,6 +429,8 @@ async function main() {
             gates: [...decisionGates, ...extraGates, finalGate],
             sourceCount,
             locale,
+            ...editorialDecisionFields(selection),
+            seoQueryTarget: seoBrief.primaryQueryTarget,
           });
         }
 
@@ -389,7 +459,9 @@ async function main() {
 
           // Generate EN article — pass recent titles so the AI can self-reject
           // stories that are off-topic or already covered (prompt-level guard).
-          const result = await generateArticle(sourceBatch, recentTitles);
+          const result = await generateArticle(sourceBatch, recentTitles, {
+            seoBrief,
+          });
           if (isGenerationFailure(result)) {
             console.warn("[pipeline] ⚠️  Generation failed, skipping.");
             failedGeneration++;
@@ -655,6 +727,7 @@ async function main() {
             paths = writeArticlePair(article, zhMeta, storyUrls, {
               clusterKey,
               sourceCount: storyUrls.length,
+              seoBrief,
             });
           } catch (err) {
             if (err instanceof DuplicateArticleError) {

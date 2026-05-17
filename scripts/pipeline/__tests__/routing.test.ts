@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { routeStoriesForGeneration } from "../routing";
 import type { Story } from "../../utils/dedup";
 
@@ -18,6 +18,10 @@ function story(overrides: Partial<Story>): Story {
 }
 
 describe("routeStoriesForGeneration", () => {
+  afterEach(() => {
+    delete process.env.SEO_RECOVERY_EN_ONLY;
+  });
+
   it("skips explicit ingest-only stories before generation", () => {
     const result = routeStoriesForGeneration([
       story({
@@ -68,5 +72,29 @@ describe("routeStoriesForGeneration", () => {
 
     expect(result.publishable).toHaveLength(0);
     expect(result.skipped[0].decision.action).toBe("soft-block");
+  });
+
+  it("skips translation during English-only SEO recovery mode", () => {
+    process.env.SEO_RECOVERY_EN_ONLY = "true";
+
+    const result = routeStoriesForGeneration([
+      story({
+        sourceId: "trusted-en",
+        sourceLanguage: "en",
+        seoIntent: "rank-both",
+      }),
+      story({
+        sourceId: "zh-source",
+        sourceLanguage: "zh",
+        seoIntent: "rank-both",
+      }),
+    ]);
+
+    expect(result.publishable[0].translationDecision).toEqual({
+      action: "publish-en-only",
+    });
+    expect(result.skipped[0].reason).toBe(
+      "translation skipped: seo recovery en only",
+    );
   });
 });

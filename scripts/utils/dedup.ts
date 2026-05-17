@@ -18,6 +18,11 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import type { SeoIntent, SourceLanguage } from "../contracts/schemas.js";
+import type {
+  NoiseRisk,
+  SourceClass,
+  VerificationRole,
+} from "../pipeline/source-trust.js";
 
 export type Story = {
   id: string;
@@ -94,6 +99,14 @@ export type Story = {
   // Groups related stories into one generation batch so repeated source
   // coverage becomes one richer article candidate instead of several thin
   // posts.
+  sourceClass?: SourceClass;
+  authorityScore?: number;
+  originalityScore?: number;
+  noiseRisk?: NoiseRisk;
+  verificationRole?: VerificationRole;
+  // CONSUMED by: source-trust.ts and editorial-selector.ts. These fields
+  // make trust explicit before generation so source quality affects the
+  // publish decision instead of only post-generation quality gates.
 };
 
 // ────────────────────────────── Tunable thresholds ──────────────────────────

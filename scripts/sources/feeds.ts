@@ -1,6 +1,11 @@
 import fs from "fs";
 import path from "path";
 import type { SeoIntent, SourceLanguage } from "../contracts/schemas.js";
+import type {
+  NoiseRisk,
+  SourceClass,
+  VerificationRole,
+} from "../pipeline/source-trust.js";
 
 export type FeedSource = {
   id: string;
@@ -22,6 +27,11 @@ export type FeedSource = {
   qualityScore?: number;
   sourceLanguage?: SourceLanguage;
   seoIntent?: SeoIntent;
+  sourceClass?: SourceClass;
+  authorityScore?: number;
+  originalityScore?: number;
+  noiseRisk?: NoiseRisk;
+  verificationRole?: VerificationRole;
 };
 
 // Single source of truth: data/rss-sources.json

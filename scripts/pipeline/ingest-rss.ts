@@ -24,6 +24,7 @@ import {
   updateFeedHealth,
   type FeedRunResult,
 } from "./feed-health.js";
+import { inferSourceTrust } from "./source-trust.js";
 
 const parser = new Parser({
   timeout: 15000,
@@ -62,6 +63,7 @@ async function fetchRss(source: FeedSource): Promise<Story[]> {
     `rss ${source.id}`,
   );
   const fetchedAt = new Date().toISOString();
+  const trust = inferSourceTrust(source);
   return (feed.items ?? []).slice(0, 25).map((item, i) => ({
     id: `${source.id}-${item.guid ?? item.link ?? i}`,
     title: item.title ?? "Untitled",
@@ -81,6 +83,7 @@ async function fetchRss(source: FeedSource): Promise<Story[]> {
     sourceLanguage: source.sourceLanguage ?? "en",
     seoIntent: source.seoIntent ?? "rank-en",
     sourceType: source.type,
+    ...trust,
   }));
 }
 
@@ -105,6 +108,7 @@ export function mapPaloAltoAdvisoryItemsToStories(
   source: FeedSource,
   fetchedAt: string,
 ): Story[] {
+  const trust = inferSourceTrust(source);
   return (items ?? []).slice(0, 25).flatMap((item, i) => {
     const title = item.title?.trim() ?? "";
     const url = item.link ?? "";
@@ -129,6 +133,7 @@ export function mapPaloAltoAdvisoryItemsToStories(
       sourceLanguage: source.sourceLanguage ?? "en",
       seoIntent: source.seoIntent ?? "rank-en",
       sourceType: source.type,
+      ...trust,
     };
   });
 }
@@ -160,6 +165,7 @@ export function mapWordPressPostsToStories(
   source: FeedSource,
   fetchedAt: string,
 ): Story[] {
+  const trust = inferSourceTrust(source);
   return posts.slice(0, 25).flatMap((post, i) => {
     const title = stripHtml(post.title?.rendered ?? "").trim();
     const url = post.link ?? "";
@@ -185,6 +191,7 @@ export function mapWordPressPostsToStories(
       sourceLanguage: source.sourceLanguage ?? "en",
       seoIntent: source.seoIntent ?? "rank-en",
       sourceType: source.type,
+      ...trust,
     };
   });
 }
@@ -229,6 +236,7 @@ export function mapCisaKevToStories(
   source: FeedSource,
   fetchedAt: string,
 ): Story[] {
+  const trust = inferSourceTrust(source);
   return (entries ?? []).slice(0, 20).map((v) => ({
     id: `cisa-kev-${v.cveID}`,
     title: `[${v.cveID}] ${v.vulnerabilityName}`,
@@ -247,6 +255,7 @@ export function mapCisaKevToStories(
     sourceLanguage: source.sourceLanguage ?? "en",
     seoIntent: source.seoIntent ?? "rank-en",
     sourceType: source.type,
+    ...trust,
   }));
 }
 

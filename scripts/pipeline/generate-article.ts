@@ -7,6 +7,7 @@ import {
 import { withRetry } from "../utils/rate-limit.js";
 import type { Story } from "../utils/dedup.js";
 import { storySourceText } from "./source-corpus.js";
+import type { SeoBrief } from "./seo-brief.js";
 
 export type GenerationFailureReason =
   | "empty_output"
@@ -328,6 +329,7 @@ function parseModelJson(text: string): { parsed?: unknown; error?: Error } {
 export async function generateArticle(
   stories: Story[],
   recentTitles: string[] = [],
+  options: { seoBrief?: SeoBrief } = {},
 ): Promise<GeneratedArticle | "reject" | GenerationFailure> {
   const richness = classifySourceRichness(stories);
   console.log(
@@ -335,6 +337,7 @@ export async function generateArticle(
   );
   const prompt = buildArticlePrompt(stories, recentTitles, {
     targetRange: richness.targetRange,
+    seoBrief: options.seoBrief,
   });
 
   let generated: Awaited<ReturnType<typeof generateArticleText>>;

@@ -1,5 +1,9 @@
 import type { Story } from "../../utils/dedup.js";
 import { formatStoryForPrompt } from "../../pipeline/source-corpus.js";
+import {
+  formatSeoBriefForPrompt,
+  type SeoBrief,
+} from "../../pipeline/seo-brief.js";
 
 export interface BuildArticlePromptOptions {
   /**
@@ -10,6 +14,7 @@ export interface BuildArticlePromptOptions {
    * the majority-case "long" tier.
    */
   targetRange?: string;
+  seoBrief?: SeoBrief;
 }
 
 export function buildArticlePrompt(
@@ -29,6 +34,9 @@ export function buildArticlePrompt(
     recentTitles.length > 0
       ? `\nRECENTLY PUBLISHED (last 48h — do NOT cover the same story again):\n${recentTitles.map((t) => `- ${t}`).join("\n")}\n`
       : "";
+  const seoBriefBlock = options.seoBrief
+    ? `\n${formatSeoBriefForPrompt(options.seoBrief)}\n`
+    : "";
 
   return `You are a senior cybersecurity analyst and technical writer for ZCyberNews.
 Write at the level of Krebs on Security — accurate, technically precise, no marketing language.
@@ -86,6 +94,7 @@ If ANY of the following apply, respond with ONLY this JSON and nothing else:
    under the correct category with cve_ids: []. Use reason "category-
    mismatch-unresolvable" ONLY when none of those categories fit either.
 ${recentBlock}
+${seoBriefBlock}
 ══════════════════════════════════════════
 ARTICLE RULES (only if not rejected)
 ══════════════════════════════════════════

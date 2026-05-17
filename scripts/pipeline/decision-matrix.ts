@@ -26,6 +26,17 @@ export interface DecisionMatrixEntry {
   gates: DecisionGate[];
   sourceCount?: number;
   locale?: string;
+  editorial?: {
+    lane?: string;
+    score?: number;
+    evidenceScore?: number;
+    trustScore?: number;
+    demandScore?: number;
+    freshnessScore?: number;
+    differentiationScore?: number;
+    portfolioScore?: number;
+  };
+  seoQueryTarget?: string;
 }
 
 export interface DecisionMatrixSummary {
@@ -114,8 +125,11 @@ function formatEntry(entry: DecisionMatrixEntry): string {
   const source = entry.sourceName ? ` [${entry.sourceName}]` : "";
   const severity = entry.severity ? ` sev=${entry.severity}` : "";
   const category = entry.category ? ` cat=${entry.category}` : "";
+  const editorial = entry.editorial?.lane
+    ? ` lane=${entry.editorial.lane} score=${entry.editorial.score ?? "n/a"}`
+    : "";
   const gateSummary = formatGateSummary(entry);
-  return `- ${truncate(title)}${source}${category}${severity}\n  ${entry.decision}: ${gateSummary}`;
+  return `- ${truncate(title)}${source}${category}${severity}${editorial}\n  ${entry.decision}: ${gateSummary}`;
 }
 
 function topReasons(summary: DecisionMatrixSummary, limit = 5): string {

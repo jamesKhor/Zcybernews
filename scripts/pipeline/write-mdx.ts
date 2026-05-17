@@ -12,6 +12,7 @@ import {
   releaseInFlight,
   type DuplicateMatch,
 } from "../utils/dedup.js";
+import type { SeoBrief } from "./seo-brief.js";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -108,7 +109,7 @@ function buildFrontmatter(
   datedSlug: string,
   sourceUrls: string[],
   body: string,
-  options?: { clusterKey?: string; sourceCount?: number },
+  options?: { clusterKey?: string; sourceCount?: number; seoBrief?: SeoBrief },
   overrides?: Partial<{ title: string; excerpt: string; locale_pair: string }>,
 ): Record<string, unknown> {
   const fm: Record<string, unknown> = {
@@ -128,6 +129,11 @@ function buildFrontmatter(
   if (options?.clusterKey) fm.cluster_key = options.clusterKey;
   if (options?.sourceCount && options.sourceCount > 0) {
     fm.source_count = options.sourceCount;
+  }
+  if (options?.seoBrief) {
+    fm.seo_query_target = options.seoBrief.primaryQueryTarget;
+    fm.seo_intent = options.seoBrief.searchIntent;
+    if (options.seoBrief.targetHub) fm.target_hub = options.seoBrief.targetHub;
   }
   if (article.severity) fm.severity = article.severity;
   if (article.cvss_score !== null) fm.cvss_score = article.cvss_score;
@@ -223,7 +229,11 @@ export function writeArticlePair(
   article: GeneratedArticle,
   zhMeta: TranslatedMeta | null,
   sourceUrls: string[] = [],
-  options: { clusterKey?: string; sourceCount?: number } = {},
+  options: {
+    clusterKey?: string;
+    sourceCount?: number;
+    seoBrief?: SeoBrief;
+  } = {},
 ): { en: string; zh: string | null } {
   const date = new Date().toISOString().split("T")[0]!;
   // Add date prefix to slug for unique filenames and consistent naming with manual articles
