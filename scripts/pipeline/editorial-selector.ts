@@ -37,6 +37,9 @@ export interface EditorialSelectorResult<T extends Story = Story> {
   decisions: EditorialSelection[];
 }
 
+const CVE_STYLE_DAILY_CAP_REASON = "cve-style daily cap";
+const ARTICLE_DAILY_LIMIT_REASON = "daily article limit";
+
 function clamp01(value: number): number {
   return Math.max(0, Math.min(1, Math.round(value * 100) / 100));
 }
@@ -102,6 +105,24 @@ function portfolioScore(lane: TopicLane): number {
   return 0.65;
 }
 
+function clusterText(cluster: StoryCluster<Story>): string {
+  return cluster.stories
+    .flatMap((story) => [
+      story.title,
+      story.excerpt,
+      story.rawText,
+      ...(story.tags ?? []),
+    ])
+    .filter(Boolean)
+    .join(" ");
+}
+
+function hasLowOrMediumSeverityLabel(cluster: StoryCluster<Story>): boolean {
+  return /\bseverity\s*:\s*(?:low|medium)\b|\b(?:low|medium)[-\s]+severity\b/i.test(
+    clusterText(cluster),
+  );
+}
+
 function staleVulnerabilityPenalty(
   lane: TopicLane,
   packet: ReturnType<typeof buildEvidencePacket>,
@@ -148,6 +169,16 @@ function decide(
     highestCvss < 9
   ) {
     return "digest-only";
+  }
+  if (
+    lane === "vulnerabilities" &&
+    packet.entities.cves.length > 0 &&
+    packet.facts.exploitStatus !== "exploited"
+  ) {
+    if (highestCvss > 0 && highestCvss < 9) return "digest-only";
+    if (highestCvss === 0 && hasLowOrMediumSeverityLabel(cluster)) {
+      return "digest-only";
+    }
   }
   if (score >= 0.5 && evidence >= 0.38 && demand >= 0.28) return "publish-now";
   if (score >= 0.46) return "research-more";
@@ -234,6 +265,7 @@ export function selectEditorialCandidates<T extends Story>(
   );
   const publishable: Array<(typeof sorted)[number] & { clusterKey: string }> =
     [];
+  const cappedReasons = new Map<string, string>();
   let cveStyleCount = 0;
   for (const item of sorted.filter(
     (candidate) => candidate.selection.decision === "publish-now",
@@ -243,7 +275,10 @@ export function selectEditorialCandidates<T extends Story>(
       item.cluster.stories.some((story) =>
         /\bCVE-\d{4}-\d{4,}\b/i.test(story.title),
       );
-    if (cveStyle && cveStyleCount >= 1) continue;
+    if (cveStyle && cveStyleCount >= 1) {
+      cappedReasons.set(item.cluster.key, CVE_STYLE_DAILY_CAP_REASON);
+      continue;
+    }
     publishable.push({ ...item, clusterKey: item.cluster.key });
     if (cveStyle) cveStyleCount++;
     if (publishable.length >= options.maxArticles) break;
@@ -256,7 +291,10 @@ export function selectEditorialCandidates<T extends Story>(
         ? {
             ...item.selection,
             decision: "digest-only" as const,
-            reasons: [...item.selection.reasons, "daily article limit"],
+            reasons: [
+              ...item.selection.reasons,
+              cappedReasons.get(item.cluster.key) ?? ARTICLE_DAILY_LIMIT_REASON,
+            ],
           }
         : item.selection,
   );

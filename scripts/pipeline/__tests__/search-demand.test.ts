@@ -32,4 +32,16 @@ describe("search demand scoring", () => {
       }),
     ).toBe("apt-state-actors");
   });
+
+  it("keeps CVEs in AI-named products in the vulnerability lane", () => {
+    expect(
+      classifyTopicLane({
+        title:
+          "CVE-2026-8719 AI Engine WordPress plugin flaw receives CVSS 8.8",
+        excerpt:
+          "NVD published a vulnerability record for the AI Engine WordPress plugin.",
+        tags: ["CVE-2026-8719", "NVD"],
+      }),
+    ).toBe("vulnerabilities");
+  });
 });

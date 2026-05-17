@@ -137,7 +137,7 @@ On 2GB VPS, 2 workers is tight (~200-400MB each). If OOM, fall back to 1 cluster
 | Schema validation             | Zod v4                                                |
 | Script runner                 | tsx                                                   |
 | Locale middleware             | `proxy.ts` (Next.js 16 renamed middleware → proxy)    |
-| Deploy                        | Cloudflare Pages via `cloudflare/wrangler-action`     |
+| Deploy                        | Malaysia VPS via `.github/workflows/deploy-vps.yml`   |
 
 ---
 

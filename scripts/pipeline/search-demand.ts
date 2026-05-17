@@ -54,17 +54,31 @@ const DEFAULT_HINTS: Required<DemandHints> = {
   },
 };
 
+const SEARCH_DEMAND_HINTS_PATH = path.join(
+  process.cwd(),
+  "data",
+  "search-demand-hints.json",
+);
+const GSC_DEMAND_HINTS_PATH = path.join(
+  process.cwd(),
+  "data",
+  "gsc-demand-hints.json",
+);
+
 function clamp01(value: number): number {
   return Math.max(0, Math.min(1, Math.round(value * 100) / 100));
 }
 
-export function loadDemandHints(
-  filePath = path.join(process.cwd(), "data", "gsc-demand-hints.json"),
-): Required<DemandHints> {
-  if (!fs.existsSync(filePath)) return DEFAULT_HINTS;
+export function loadDemandHints(filePath?: string): Required<DemandHints> {
+  const resolvedPath =
+    filePath ??
+    (fs.existsSync(GSC_DEMAND_HINTS_PATH)
+      ? GSC_DEMAND_HINTS_PATH
+      : SEARCH_DEMAND_HINTS_PATH);
+  if (!fs.existsSync(resolvedPath)) return DEFAULT_HINTS;
   try {
     const parsed = JSON.parse(
-      fs.readFileSync(filePath, "utf-8"),
+      fs.readFileSync(resolvedPath, "utf-8"),
     ) as DemandHints;
     return {
       entities: { ...DEFAULT_HINTS.entities, ...(parsed.entities ?? {}) },
@@ -141,11 +155,11 @@ export function classifyTopicLane(input: {
   if (/\bmalware|trojan|backdoor|loader|infostealer|rat\b/.test(text)) {
     return "malware";
   }
-  if (/\bai|llm|agentic|model|prompt injection\b/.test(text)) {
-    return "ai-security";
-  }
   if (/\bcve-\d{4}-\d{4,}|vulnerability|zero-day|patch|cvss\b/.test(text)) {
     return "vulnerabilities";
+  }
+  if (/\bai|llm|agentic|model|prompt injection\b/.test(text)) {
+    return "ai-security";
   }
   if (/\bpolicy|regulation|law|government|court|fine\b/.test(text)) {
     return "policy";

@@ -117,6 +117,29 @@ describe("selectEditorialCandidates", () => {
     expect(result.decisions[0].decision).toBe("digest-only");
   });
 
+  it("does not publish medium single-source vendor CVEs as full articles", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("cve:CVE-2026-0251", [
+          story({
+            title:
+              "CVE-2026-0251 GlobalProtect App: Local Privilege Escalation Vulnerabilities (Severity: MEDIUM)",
+            excerpt:
+              "Palo Alto Networks published an advisory for local privilege escalation vulnerabilities in GlobalProtect App.",
+            sourceName: "Palo Alto Networks Security Advisories",
+            sourceClass: "primary",
+            verificationRole: "primary-evidence",
+            tags: ["CVE-2026-0251", "Palo Alto"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable).toHaveLength(0);
+    expect(result.decisions[0].decision).toBe("digest-only");
+  });
+
   it("caps CVE-style candidates so one run does not become all vulnerability notes", () => {
     const result = selectEditorialCandidates(
       [
@@ -168,5 +191,9 @@ describe("selectEditorialCandidates", () => {
     expect(result.publishable.map((item) => item.clusterKey)).toContain(
       "topic:apt29-diplomats",
     );
+    expect(
+      result.decisions.find((item) => item.clusterKey === "cve:CVE-2026-9002")
+        ?.reasons,
+    ).toContain("cve-style daily cap");
   });
 });
