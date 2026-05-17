@@ -1,0 +1,56 @@
+---
+title: Pixel 10 VPU Driver Bug Lets Userspace Map Kernel Memory
+slug: 2026-05-17-pixel-10-vpu-driver-bug-lets-userspace-map-kernel-memory
+date: '2026-05-17'
+excerpt: >-
+  Google Project Zero found a Pixel 10 VPU driver flaw allowing userspace to map
+  arbitrary physical memory, including the kernel image. Exploit required 5
+  lines of code.
+category: vulnerabilities
+tags:
+  - pixel-10
+  - google-project-zero
+  - vpu-driver
+  - kernel-exploit
+  - android
+  - tensor-g5
+language: en
+source_urls:
+  - 'https://projectzero.google/2026/05/pixel-10-exploit.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-17-pixel-10-vpu-driver-bug-lets-userspace-map-kernel-memory
+cluster_key: 'topic:0click-exploit-chain-pixel-when'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2025-54957
+affected_sectors:
+  - consumer electronics
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+Google Project Zero disclosed a critical vulnerability in the Pixel 10's VPU (Video Processing Unit) driver that allows any userspace process to map arbitrary physical memory, including the kernel image, into its virtual address space. The bug, patched in the February 2026 Pixel security bulletin, was discovered during an effort to port a zero-click-to-root exploit chain from the Pixel 9 to the Pixel 10. According to the Project Zero researcher, the exploit required only five lines of code and less than a day to develop. The driver, which interfaces with the Chips&Media Wave677DV silicon on the Tensor G5 chip, does not bound the size of memory mappings requested via mmap, enabling an attacker to read and write kernel memory directly.
+
+## Technical Analysis
+
+The vulnerability resides in the `vpu_mmap` handler within the VPU driver, which is responsible for mapping the MMIO register region of the VPU hardware into userspace. The handler calls `remap_pfn_range` based purely on the size of the VMA (Virtual Memory Area) without any bounds checking against the actual register region size. As the Project Zero researcher wrote in the disclosure, "by specifying a size larger than the register region in an mmap syscall, the caller can map as much physical memory as they want into userland, starting at the physical address of the VPU register region."
+
+The kernel image — including `.text` and `.data` sections — resides at a higher physical address than the VPU register region. Because the kernel is always loaded at the same physical address on Pixel devices, the offset between the VPU memory region and the kernel is a known constant. This eliminates the need for memory scanning; an attacker can directly calculate the address of any kernel function or data structure.
+
+Once arbitrary read-write access to kernel memory is achieved, an attacker can overwrite any kernel function to gain kernel code execution. The researcher noted that "achieving arbitrary read-write on the kernel with this vulnerability required 5 lines of code and writing a full exploit for this issue required less than a day of effort."
+
+The VPU driver replaces the BigWave driver used in earlier Pixel models, which was the target of a previous Project Zero exploit chain for the Pixel 9. Unlike the upstream Linux driver for the older WAVE521C chip, which integrates with the V4L2 (Video for Linux API) framework, the Pixel 10 driver directly exposes the chip's hardware interface to userspace, including allowing userspace to map the chip's MMIO register interface. This architectural decision significantly reduces the security boundary between hardware and userspace.
+
+The vulnerability was reported on November 24, 2025, and the Android VRP initially rated it as High severity — an improvement over the BigWave bug used for privilege escalation on the Pixel 9, which was rated Moderate despite having identical security impact. The fix was shipped 71 days after the initial report, which the researcher noted as "notably fast given that this is the first time that an Android driver bug I reported was patched within 90 days of the vendor first learning about the vulnerability."
+
+## Mitigations & Recommendations
+
+Users should ensure their Pixel 10 devices have installed the February 2026 security patch level (SPL) or later. Devices running SPL December 2025 or earlier are vulnerable to the full exploit chain. The VPU driver vulnerability itself is patched; however, the researcher noted that the Dolby audio decoder vulnerability (CVE-2025-54957) used for the initial zero-click vector was patched in January 2026. Organizations managing fleets of Pixel devices should verify patch compliance through their MDM solutions and prioritize devices that may be delayed in receiving over-the-air updates.
+
+## References
+
+- [Google Project Zero: Pixel 10 Exploit Chain Disclosure](https://projectzero.google/2026/05/pixel-10-exploit.html)

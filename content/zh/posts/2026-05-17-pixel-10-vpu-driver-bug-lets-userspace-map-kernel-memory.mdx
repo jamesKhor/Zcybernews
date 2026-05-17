@@ -1,0 +1,55 @@
+---
+title: Pixel 10 VPU 驱动程序漏洞允许用户空间映射内核内存
+slug: 2026-05-17-pixel-10-vpu-driver-bug-lets-userspace-map-kernel-memory
+date: '2026-05-17'
+excerpt: >-
+  Google Project Zero 发现了一个 Pixel 10 VPU 驱动程序缺陷，允许用户空间映射任意物理内存，包括内核映像。利用需要 5
+  行代码。
+category: vulnerabilities
+tags:
+  - pixel-10
+  - google-project-zero
+  - vpu-driver
+  - kernel-exploit
+  - android
+  - tensor-g5
+language: zh
+source_urls:
+  - 'https://projectzero.google/2026/05/pixel-10-exploit.html'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-17-pixel-10-vpu-driver-bug-lets-userspace-map-kernel-memory
+cluster_key: 'topic:0click-exploit-chain-pixel-when'
+source_count: 1
+severity: high
+cve_ids:
+  - CVE-2025-54957
+affected_sectors:
+  - consumer electronics
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+Google Project Zero 披露了 Pixel 10 的 VPU（视频处理单元）驱动程序中的一个重要漏洞，该漏洞允许任何用户空间进程将任意物理内存（包括内核映像）映射到其虚拟地址空间。这个在 2026 年 2 月 Pixel 安全公告中修补的漏洞是在尝试将零点击至 root 的漏洞链从 Pixel 9 移植到 Pixel 10 时发现的。根据 Project Zero 研究人员的说法，这个漏洞只需要五行代码，不到一天的时间就可以开发出来。该驱动程序与 Tensor G5 芯片上的 Chips&Media Wave677DV 硅片交互，不限制通过 mmap 请求的内存映射大小，使攻击者能够直接读取和写入内核内存。
+
+## 技术分析
+
+漏洞位于 VPU 驱动程序中的 `vpu_mmap` 处理程序，该处理程序负责将 VPU 硬件的 MMIO 寄存器区域映射到用户空间。该处理程序仅基于 VMA（虚拟内存区域）的大小调用 `remap_pfn_range`，而没有对实际寄存器区域大小进行边界检查。正如 Project Zero 研究人员在披露中所写，“通过在 mmap 系统调用中指定大于寄存器区域的大小，调用者可以将任意多的物理内存映射到用户空间，从 VPU 寄存器区域的物理地址开始。”
+
+内核映像——包括 `.text` 和 `.data` 部分——位于比 VPU 寄存器区域更高的物理地址。由于内核在 Pixel 设备上始终加载在相同的物理地址，VPU 内存区域和内核之间的偏移是一个已知的常数。这消除了内存扫描的需要；攻击者可以直接计算任何内核函数或数据结构的地址。
+
+一旦实现了对内核内存的任意读写访问，攻击者就可以覆盖任何内核函数以获得内核代码执行。研究人员指出，“利用这个漏洞实现对内核的任意读写需要 5 行代码，编写这个问题的完整漏洞利用需要不到一天的努力。”
+
+VPU 驱动程序取代了早期 Pixel 模型中使用的 BigWave 驱动程序，后者是 Pixel 9 的 Project Zero 漏洞链的目标。与集成到 V4L2（Video for Linux API）框架中的旧 WAVE521C 芯片的上游 Linux 驱动程序不同，Pixel 10 驱动程序直接将芯片的硬件接口暴露给用户空间，包括允许用户空间映射芯片的 MMIO 寄存器接口。这个架构决策显著降低了硬件和用户空间之间的安全边界。
+
+该漏洞于 2025 年 11 月 24 日报告，Android VRP 最初将其评为高严重性——比用于 Pixel 9 上权限提升的 BigWave 漏洞有所改进，后者被评为中等，尽管具有相同的安全影响。修复在初次报告后的 71 天内发货，研究人员指出，“鉴于这是我报告的 Android 驱动程序漏洞第一次在供应商首次了解漏洞后的 90 天内修补，这个速度相当快。”
+
+## 缓解措施与建议
+
+用户应确保他们的 Pixel 10 设备安装了 2026 年 2 月的安全补丁级别（SPL）或更高版本。运行 2025 年 12 月 SPL 或更早版本的设备容易受到完整漏洞链的攻击。VPU 驱动程序漏洞本身已被修补；然而，研究人员指出，用于初始零点击向量的 Dolby 音频解码器漏洞（CVE-2025-54957）在 2026 年 1 月被修补。管理 Pixel 设备车队的组织应通过他们的 MDM 解决方案验证补丁合规性，并优先考虑可能延迟接收空中更新的设备。
+
+## 参考资料
+
+- [Google Project Zero: Pixel 10 Exploit Chain Disclosure](https://projectzero.google/2026/05/pixel-10-exploit.html)
