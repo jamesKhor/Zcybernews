@@ -230,7 +230,14 @@ corresponding JSON fields whenever the sources contain them:
 
 - "cvss_score": number 0.0-10.0. Look for "CVSS 9.8", "CVSSv3.1: 9.8", "base
   score of 9.8", "severity 9.8". If multiple candidates, use the highest from a
-  credible source. If genuinely absent from sources, leave as null.
+  credible source. If genuinely absent from sources, leave as null. NEVER infer
+  a CVSS score or range from exploit status, CISA KEV inclusion, RCE potential,
+  or your own severity judgment.
+- "severity": use the source-stated severity or derive from a source-stated
+  CVSS score: critical >= 9.0, high >= 7.0, medium >= 4.0, low > 0. CISA KEV
+  means "known exploited"; it does NOT automatically mean "critical". If the
+  source does not state severity or CVSS, set severity to null rather than
+  guessing.
 - "cve_ids": list every CVE ID that appears in sources (format CVE-YYYY-NNNNN).
   Do not invent — but DO include every real one. A vuln article without cve_ids
   should be rare.

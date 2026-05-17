@@ -37,7 +37,9 @@ describe("source health configuration", () => {
     const fortinet = sources.find((item) => item.id === "fortinet-psirt");
 
     expect(fortinet?.enabled).toBe(true);
-    expect(fortinet?.url).toBe("https://fortiguard.com/rss/ir.xml");
+    expect(fortinet?.url).toBe(
+      "https://filestore.fortinet.com/fortiguard/rss/ir.xml",
+    );
     expect(readWorkflow("ai-content-pipeline.yml")).toContain(
       "NODE_OPTIONS: --use-system-ca",
     );

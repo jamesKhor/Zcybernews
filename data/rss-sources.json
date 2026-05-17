@@ -450,7 +450,7 @@
     "id": "fortinet-psirt",
     "name": "Fortinet PSIRT Advisories",
     "homepage": "https://fortiguard.fortinet.com/psirt",
-    "url": "https://fortiguard.com/rss/ir.xml",
+    "url": "https://filestore.fortinet.com/fortiguard/rss/ir.xml",
     "category": "vulnerabilities",
     "type": "rss",
     "enabled": true,
