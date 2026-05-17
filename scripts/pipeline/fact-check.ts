@@ -145,7 +145,9 @@ export type FactCheckIssue = {
     | "excerpt_too_short"
     | "tags_empty"
     | "source_urls_empty"
-    | "cve_hedging_language";
+    | "cve_hedging_language"
+    | "severity_not_in_source"
+    | "cvss_not_in_source";
   message: string;
   value?: string;
 };
@@ -189,6 +191,10 @@ const IPV4_REGEX =
 // Numbers > 10 with optional suffix (K, M, B, %, etc.) — used for stat checks
 const LARGE_NUMBER_REGEX =
   /\b(\d{2,}(?:,\d{3})*(?:\.\d+)?)\s*(?:million|billion|thousand|K|M|B|%)?\b/gi;
+const CVSS_SCORE_REGEX =
+  /\bCVSS(?:\s*v?[234]\.?[01]?)?(?:\s*(?:base\s+)?score)?\s*[:=]?\s*(10(?:\.0)?|[0-9](?:\.[0-9])?)\b/gi;
+const CVSS_RANGE_REGEX =
+  /\bCVSS\s*(10(?:\.0)?|[0-9](?:\.[0-9])?)\s*[-–]\s*(10(?:\.0)?|[0-9](?:\.[0-9])?)\b/gi;
 
 // ── Helpers ───────────────────────────────────────────────────────────────
 
@@ -203,6 +209,42 @@ function normalizedIncludes(haystack: string, needle: string): boolean {
 function uniqueMatches(str: string, re: RegExp): string[] {
   const m = str.match(re) ?? [];
   return Array.from(new Set(m));
+}
+
+function extractCvssScores(text: string): number[] {
+  const scores = [
+    ...text.matchAll(CVSS_SCORE_REGEX),
+    ...text.matchAll(CVSS_RANGE_REGEX).flatMap((match) => [match[1], match[2]]),
+  ]
+    .map((match) => (Array.isArray(match) ? match[1] : match))
+    .map((value) => Number(value))
+    .filter((score) => Number.isFinite(score) && score >= 0 && score <= 10);
+  return Array.from(new Set(scores));
+}
+
+function severityFromCvss(score: number): GeneratedArticle["severity"] {
+  if (score >= 9) return "critical";
+  if (score >= 7) return "high";
+  if (score >= 4) return "medium";
+  if (score > 0) return "low";
+  return null;
+}
+
+function sourceSupportsSeverity(
+  severity: GeneratedArticle["severity"],
+  sourceText: string,
+): boolean {
+  if (!severity || severity === "informational") return true;
+  if (
+    new RegExp(
+      `\\bseverity\\s*:?\\s*${severity}\\b|\\b${severity}[-\\s]+severity\\b`,
+      "i",
+    ).test(sourceText)
+  ) {
+    return true;
+  }
+  const sourceScores = extractCvssScores(sourceText);
+  return sourceScores.some((score) => severityFromCvss(score) === severity);
 }
 
 /**
@@ -389,6 +431,37 @@ export async function factCheckArticle(
         type: "cve_not_in_source",
         message: `Frontmatter cve_ids contains ${cve} but it does not appear in source material`,
         value: cve,
+      });
+    }
+  }
+
+  // ── 1c. Severity and CVSS claims must be source-grounded ───────────────
+  // KEV means "known exploited"; it does not automatically mean CVSS
+  // critical. Block articles that upgrade severity or invent CVSS ranges
+  // beyond what the source corpus states.
+  const sourceCvssScores = extractCvssScores(sourceText);
+  const articleCvssScores = extractCvssScores(
+    [article.body ?? "", article.excerpt ?? "", article.title ?? ""].join("\n"),
+  );
+  if (
+    article.severity === "critical" &&
+    !sourceSupportsSeverity("critical", sourceText)
+  ) {
+    issues.push({
+      severity: "high",
+      type: "severity_not_in_source",
+      message:
+        "Article marks severity as critical, but sources do not state critical severity or CVSS >= 9. KEV/active exploitation alone is not a critical rating.",
+      value: article.severity,
+    });
+  }
+  for (const score of articleCvssScores) {
+    if (!sourceCvssScores.includes(score)) {
+      issues.push({
+        severity: "high",
+        type: "cvss_not_in_source",
+        message: `Article claims CVSS ${score}, but that score does not appear in source material.`,
+        value: String(score),
       });
     }
   }
