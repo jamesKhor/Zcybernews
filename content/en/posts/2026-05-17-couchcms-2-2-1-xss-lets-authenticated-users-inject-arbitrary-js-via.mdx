@@ -1,0 +1,51 @@
+---
+title: CouchCMS 2.2.1 XSS Lets Authenticated Users Inject Arbitrary JS via
+slug: 2026-05-17-couchcms-2-2-1-xss-lets-authenticated-users-inject-arbitrary-js-via
+date: '2026-05-17'
+excerpt: >-
+  CVE-2021-47955 (CVSS 5.4): CouchCMS 2.2.1 contains a stored XSS flaw allowing
+  authenticated attackers to execute arbitrary JavaScript by uploading malicious
+  SVG files via...
+category: vulnerabilities
+tags:
+  - couchcms
+  - cross-site-scripting
+  - cve-2021-47955
+  - svg-upload
+  - content-management-system
+language: en
+source_urls:
+  - 'https://github.com/CouchCMS/CouchCMS'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-17-couchcms-2-2-1-xss-lets-authenticated-users-inject-arbitrary-js-via
+cluster_key: 'cve:CVE-2021-47955'
+source_count: 1
+severity: medium
+cvss_score: 5.4
+cve_ids:
+  - CVE-2021-47955
+publish_tier: public
+---
+## Executive Summary
+
+CouchCMS version 2.2.1 carries a stored cross-site scripting (XSS) vulnerability, tracked as CVE-2021-47955 and assigned a CVSS base score of 5.4, that enables authenticated attackers to inject arbitrary JavaScript into the application. The flaw resides in the file upload functionality, specifically through the `browse.php` endpoint, where attackers can upload SVG files containing embedded script tags. When other users — including administrators — access or preview the uploaded SVG file, the injected script executes in their browser. The vulnerability was disclosed via the NVD and the project's GitHub repository; a patched version has been available since the disclosure.
+
+## Technical Analysis
+
+CVE-2021-47955 is a stored XSS vulnerability in CouchCMS 2.2.1, an open-source content management system written in PHP. The issue arises because the file upload handler at `browse.php` does not sanitize or validate the content type or embedded markup of uploaded SVG files. SVG (Scalable Vector Graphics) files are XML-based and can contain `<script>` elements or event handlers such as `onload`. When CouchCMS serves the uploaded SVG to a browser, the browser interprets the embedded script as part of the document context, executing it within the application's origin.
+
+An attacker with valid credentials to a CouchCMS instance can upload a crafted SVG file through the standard file upload interface. The file is stored on the server and made accessible via the media browser or content preview features. When a victim — including higher-privileged users such as editors or administrators — navigates to the uploaded SVG's URL or views it through the CMS interface, the JavaScript payload executes. This can be used to steal session cookies, perform actions on behalf of the victim, deface pages, or redirect users to malicious sites.
+
+The CVSS 5.4 score reflects the requirement for authentication (privileges required: low) and the need for user interaction (the victim must access the SVG). The attack complexity is low, and the impact on confidentiality and integrity is rated as partial. No CVSS vector string was published in the NVD entry as of this writing, but the base metrics align with a typical stored XSS requiring authenticated upload.
+
+CouchCMS 2.2.1 is the only version explicitly named as vulnerable. The project maintainers have not published a separate advisory, but the issue is documented in the NVD and the GitHub repository's issue tracker. According to the repository history, a fix was committed that filters or sanitizes SVG uploads — likely by stripping script elements or rejecting SVG files entirely from the upload path.
+
+## Mitigations & Recommendations
+
+Administrators running CouchCMS 2.2.1 should upgrade to the latest available version immediately. The patched version removes the ability to upload SVG files with embedded scripts, either by sanitizing the file content or by restricting the file types allowed through `browse.php`. If an upgrade is not immediately feasible, administrators can implement a web application firewall (WAF) rule that blocks uploads of files with `.svg` extension or inspects SVG content for `<script>` tags. Additionally, restricting file upload permissions to only trusted users reduces the attack surface, though this is a compensating control and not a fix.
+
+## References
+
+- NVD Entry for CVE-2021-47955: https://nvd.nist.gov/vuln/detail/CVE-2021-47955
+- CouchCMS GitHub Repository: https://github.com/CouchCMS/CouchCMS

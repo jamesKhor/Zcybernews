@@ -1,0 +1,50 @@
+---
+title: CouchCMS 2.2.1 XSS 允许认证用户通过
+slug: 2026-05-17-couchcms-2-2-1-xss-lets-authenticated-users-inject-arbitrary-js-via
+date: '2026-05-17'
+excerpt: >-
+  CVE-2021-47955 (CVSS 5.4): CouchCMS 2.2.1 包含一个存储型 XSS 漏洞，允许认证攻击者通过上传恶意 SVG
+  文件来执行任意 JavaScript，通过...
+category: vulnerabilities
+tags:
+  - couchcms
+  - cross-site-scripting
+  - cve-2021-47955
+  - svg-upload
+  - content-management-system
+language: zh
+source_urls:
+  - 'https://github.com/CouchCMS/CouchCMS'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-17-couchcms-2-2-1-xss-lets-authenticated-users-inject-arbitrary-js-via
+cluster_key: 'cve:CVE-2021-47955'
+source_count: 1
+severity: medium
+cvss_score: 5.4
+cve_ids:
+  - CVE-2021-47955
+publish_tier: public
+---
+## 执行摘要
+
+CouchCMS 版本 2.2.1 存在一个存储型跨站脚本（XSS）漏洞，跟踪编号为 CVE-2021-47955，CVSS 基础得分为 5.4，允许经过身份验证的攻击者向应用程序注入任意 JavaScript。该漏洞存在于文件上传功能中，特别是通过 `browse.php` 端点，攻击者可以上传包含嵌入脚本标签的 SVG 文件。当其他用户（包括管理员）访问或预览上传的 SVG 文件时，注入的脚本在他们的浏览器中执行。该漏洞通过 NVD 和项目的 GitHub 仓库披露；披露后已有修补版本可用。
+
+## 技术分析
+
+CVE-2021-47955 是 CouchCMS 2.2.1 中的一个存储型 XSS 漏洞，CouchCMS 是一个用 PHP 编写的开源内容管理系统。问题出现是因为 `browse.php` 的文件上传处理器没有对上传的 SVG 文件的内容类型或嵌入的标记进行清理或验证。SVG（可缩放矢量图形）文件基于 XML，可以包含 `<script>` 元素或事件处理程序，如 `onload`。当 CouchCMS 将上传的 SVG 服务到浏览器时，浏览器将嵌入的脚本解释为文档上下文的一部分，并在应用程序的源点内执行。
+
+拥有有效凭证的攻击者可以通过标准文件上传界面上传一个精心制作的 SVG 文件。文件存储在服务器上，并通过媒体浏览器或内容预览功能提供访问。当受害者（包括具有较高权限的用户，如编辑或管理员）导航到上传的 SVG 的 URL 或通过 CMS 界面查看它时，JavaScript 有效载荷执行。这可以用来窃取会话 cookie、代表受害者执行操作、篡改页面或将用户重定向到恶意网站。
+
+CVSS 5.4 分数反映了需要身份验证（所需权限：低）和需要用户交互（受害者必须访问 SVG）。攻击复杂度低，对机密性和完整性的影响被评为部分。截至本文撰写时，NVD 条目中没有发布 CVSS 向量字符串，但基础指标与典型的需要经过身份验证上传的存储型 XSS 一致。
+
+CouchCMS 2.2.1 是唯一被明确命名的易受攻击版本。项目维护者没有发布单独的咨询，但该问题在 NVD 和 GitHub 仓库的问题跟踪器中有记录。根据仓库历史记录，已提交了一个修复，该修复通过剥离脚本元素或完全拒绝 SVG 文件从上传路径过滤或清理 SVG 上传。
+
+## 缓解措施与建议
+
+运行 CouchCMS 2.2.1 的管理员应立即升级到最新可用版本。修补版本通过清理文件内容或通过 `browse.php` 限制允许的文件类型，移除了上传带有嵌入脚本的 SVG 文件的能力。如果无法立即升级，管理员可以实施一个网络应用防火墙（WAF）规则，阻止上传带有 `.svg` 扩展名的文件或检查 SVG 内容中的 `<script>` 标签。此外，限制文件上传权限仅对可信用户开放可以减少攻击面，尽管这是一种补偿控制而不是修复。
+
+## 参考资料
+
+- NVD 条目 CVE-2021-47955：https://nvd.nist.gov/vuln/detail/CVE-2021-47955
+- CouchCMS GitHub 仓库：https://github.com/CouchCMS/CouchCMS

