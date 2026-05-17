@@ -40,6 +40,7 @@ export const SOFT_BLOCK_REASONS = {
   RANK_EN_REQUIRES_EN_SOURCE: "rank-en requires EN source",
   RANK_BOTH_ZH_NOT_SUPPORTED:
     "ZH→EN translation not supported until Cycle 2 — set seoIntent=rank-zh or wait",
+  SEO_RECOVERY_EN_ONLY: "translation skipped: seo recovery en only",
 } as const;
 
 export function getTranslationDirection(
@@ -51,6 +52,14 @@ export function getTranslationDirection(
 
   if (intent === "ingest-only") {
     return { action: "ingest-signal-only" };
+  }
+
+  if (process.env.SEO_RECOVERY_EN_ONLY === "true") {
+    if (lang === "en") return { action: "publish-en-only" };
+    return {
+      action: "soft-block",
+      reason: SOFT_BLOCK_REASONS.SEO_RECOVERY_EN_ONLY,
+    };
   }
 
   if (intent === "rank-en") {

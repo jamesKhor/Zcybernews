@@ -20,6 +20,7 @@
  */
 import type { FeedSource } from "../../sources/feeds.js";
 import type { Story } from "../../utils/dedup.js";
+import { inferSourceTrust } from "../source-trust.js";
 
 const NVD_WALL_CLOCK_MS = 25_000;
 const MAX_STORIES_PER_FETCH = 20;
@@ -98,6 +99,7 @@ export function mapNvdToStories(
 ): Story[] {
   const vulns = data.vulnerabilities ?? [];
   const out: Story[] = [];
+  const trust = inferSourceTrust(source);
 
   for (const entry of vulns) {
     const cve = entry.cve;
@@ -166,6 +168,7 @@ export function mapNvdToStories(
       sourceLanguage: source.sourceLanguage ?? "en",
       seoIntent: source.seoIntent ?? "rank-en",
       sourceType: source.type,
+      ...trust,
     });
   }
 
