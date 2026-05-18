@@ -160,12 +160,13 @@ export async function translateOne(
   }
 
   const sourceIntroHash = sha(enRecord.intro);
+  const zhSheet = loadFactSheet(enRecord.tag, "zh") ?? sheet;
   const existingZh = loadZhIntro(enRecord.tag);
   if (
     !opts.force &&
     existingZh &&
     existingZh.source_intro_hash === sourceIntroHash &&
-    existingZh.sources_hash === enRecord.sources_hash
+    existingZh.sources_hash === zhSheet.sources_hash
   ) {
     console.log(`[translate] ${enRecord.tag}: up-to-date — skip`);
     return { status: "skipped", record: existingZh };
@@ -175,14 +176,13 @@ export async function translateOne(
   // deterministic ZH template directly. Saves API cost and avoids the
   // risk of the translator propagating hallucinated tokens that somehow
   // made it past EN fact-check.
-  const zhSheet = loadFactSheet(enRecord.tag, "zh") ?? sheet;
   if (isSparse(zhSheet)) {
     const intro = buildSparseIntroZh(zhSheet);
     const record: TagIntroRecord = {
       tag: enRecord.tag,
       locale: "zh",
       intro,
-      sources_hash: enRecord.sources_hash,
+      sources_hash: zhSheet.sources_hash,
       source_intro_hash: sourceIntroHash,
       model: "template:sparse",
       generated_at: new Date().toISOString(),
@@ -222,7 +222,7 @@ export async function translateOne(
       }
 
       // Guard 2: word-count sanity (CJK band)
-      const check = checkTagIntro(zh, sheet, { locale: "zh" });
+      const check = checkTagIntro(zh, zhSheet, { locale: "zh" });
       if (!check.passed) {
         lastError = check.issues.map((i) => i.message).join("; ");
         console.warn(
@@ -235,7 +235,7 @@ export async function translateOne(
         tag: enRecord.tag,
         locale: "zh",
         intro: zh,
-        sources_hash: enRecord.sources_hash,
+        sources_hash: zhSheet.sources_hash,
         source_intro_hash: sourceIntroHash,
         model: result.modelUsed,
         generated_at: new Date().toISOString(),
@@ -262,7 +262,7 @@ export async function translateOne(
       tag: enRecord.tag,
       locale: "zh",
       intro: fallbackIntro,
-      sources_hash: enRecord.sources_hash,
+      sources_hash: zhSheet.sources_hash,
       source_intro_hash: sourceIntroHash,
       model: "template:fallback",
       generated_at: new Date().toISOString(),
