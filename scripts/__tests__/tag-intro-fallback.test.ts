@@ -45,6 +45,20 @@ describe("tag intro fallback templates", () => {
     expect(intro).toContain("CVE-2024-57728");
     expect(intro).toContain("LockBit");
   });
+
+  it("keeps ZH fallback intros scoped to the ZH fact sheet when locale facts differ", () => {
+    const zhSheet: TagFactSheet = {
+      ...sheet,
+      locale: "zh",
+      top_cves: [{ id: "CVE-2025-2749" }],
+    };
+    const intro = buildFallbackIntroZh(zhSheet);
+    const check = checkTagIntro(intro, zhSheet, { locale: "zh" });
+
+    expect(check.passed).toBe(true);
+    expect(intro).toContain("CVE-2025-2749");
+    expect(intro).not.toContain("CVE-2024-57728");
+  });
 });
 
 describe("tag fact sources hash", () => {
