@@ -119,16 +119,29 @@ function topCvesByCvss(articles: Article[], n: number): TagCve[] {
     .slice(0, n);
 }
 
-function buildSourcesHash(articles: Article[]): string {
-  const sorted = articles.map((a) => a.frontmatter.slug).sort();
-  const latest =
-    articles
-      .map((a) => a.frontmatter.updated ?? a.frontmatter.date)
-      .sort()
-      .pop() ?? "";
+export function buildSourcesHash(articles: Article[]): string {
+  const fingerprint = articles
+    .map((a) => {
+      const fm = a.frontmatter;
+      return {
+        slug: fm.slug,
+        date: fm.date,
+        updated: fm.updated ?? "",
+        threat_actor: fm.threat_actor ?? "",
+        cve_ids: [...(fm.cve_ids ?? [])].map((id) => id.toUpperCase()).sort(),
+        cvss_score: fm.cvss_score ?? null,
+        affected_sectors: [...(fm.affected_sectors ?? [])].sort(),
+        affected_regions: [...(fm.affected_regions ?? [])]
+          .map(normalizeRegion)
+          .sort(),
+        severity: fm.severity ?? "",
+        excerpt: firstSentences(fm.excerpt ?? a.content, 200),
+      };
+    })
+    .sort((a, b) => a.slug.localeCompare(b.slug));
   return crypto
     .createHash("sha256")
-    .update(JSON.stringify({ slugs: sorted, latest }))
+    .update(JSON.stringify(fingerprint))
     .digest("hex")
     .slice(0, 16);
 }

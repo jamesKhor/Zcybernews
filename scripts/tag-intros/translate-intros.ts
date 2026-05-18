@@ -20,7 +20,11 @@ import {
   TAG_INTRO_PROMPT_VERSION,
 } from "../ai/prompts/tag-intro.js";
 import { checkTagIntro, formatCheckLog } from "./fact-check.js";
-import { isSparse, buildSparseIntroZh } from "./sparse-template.js";
+import {
+  isSparse,
+  buildFallbackIntroZh,
+  buildSparseIntroZh,
+} from "./sparse-template.js";
 import type { TagFactSheet, TagIntroRecord } from "./types.js";
 
 const MAX_RETRIES = 2;
@@ -251,7 +255,28 @@ export async function translateOne(
   }
 
   appendRejected({ tag: enRecord.tag, locale: "zh", lastError });
-  console.error(`[translate] ${enRecord.tag}: REJECTED — ${lastError}`);
+  const fallbackIntro = buildFallbackIntroZh(zhSheet);
+  const fallbackCheck = checkTagIntro(fallbackIntro, zhSheet, { locale: "zh" });
+  if (fallbackCheck.passed) {
+    const record: TagIntroRecord = {
+      tag: enRecord.tag,
+      locale: "zh",
+      intro: fallbackIntro,
+      sources_hash: enRecord.sources_hash,
+      source_intro_hash: sourceIntroHash,
+      model: "template:fallback",
+      generated_at: new Date().toISOString(),
+      prompt_version: TAG_INTRO_PROMPT_VERSION,
+    };
+    const file = writeRecord(record);
+    console.warn(
+      `[translate] ${enRecord.tag}: fallback template after failed translation (${lastError.slice(0, 160)}) → ${file}`,
+    );
+    return { status: "written", record };
+  }
+
+  const checkError = fallbackCheck.issues.map((i) => i.message).join("; ");
+  console.error(`[translate] ${enRecord.tag}: REJECTED — ${checkError}`);
   return { status: "rejected" };
 }
 
