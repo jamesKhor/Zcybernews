@@ -1,0 +1,9 @@
+{
+  "tag": "cisco",
+  "locale": "en",
+  "intro": "In the past month, ZCyberNews has covered seven Cisco-related stories, with Interlock and The Gentlemen among the top threat actors observed. Two critical vulnerabilities, CVE-2026-20127 and CVE-2026-20182, each with a CVSS score of 10, were highlighted alongside CVE-2022-20653, CVE-2024-20401, and CVE-2024-55591. The coverage spans enterprise networking, telecommunications, service providers, software consultancy, and technology sectors, with impacts reported globally, in North America, Turkey, and the UK. The severity mix includes four critical and two high-severity incidents.",
+  "sources_hash": "1372240b05719a25",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:03:34.319Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

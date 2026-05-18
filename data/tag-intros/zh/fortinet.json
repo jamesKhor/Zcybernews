@@ -1,10 +1,10 @@
 {
   "tag": "fortinet",
   "locale": "zh",
-  "intro": "2026年4月14日至25日期间，ZCyberNews在Fortinet标签下发布了六篇文章。报道重点提及了两个关键漏洞：CVE-2025-59718（CVSS评分为9.8）和CVE-2026-39808。其中四篇文章被归类为严重等级，两篇为高等级。受影响行业包括金融服务、政府及科技领域，主要波及地区为欧洲和北美。",
-  "sources_hash": "4857dc4d42100910",
-  "source_intro_hash": "fe13b7a9ec763f2c",
+  "intro": "本档案收录了2026年4月14日至5月13日期间七篇聚焦Fortinet的文章。在这些事件中观察到威胁行为者The Gentlemen。关键漏洞包括CVE-2025-59718、CVE-2026-21643、CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。受影响行业涵盖金融服务、政府、软件咨询、技术及其他多个领域，相关报告来自欧洲、北美、土耳其和英国。这些文章中的严重程度分布为五篇严重、两篇高危。",
+  "sources_hash": "35ab8453e78b0d6c",
+  "source_intro_hash": "3191c69aeb0cf625",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:21:38.517Z",
+  "generated_at": "2026-05-18T10:08:43.413Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

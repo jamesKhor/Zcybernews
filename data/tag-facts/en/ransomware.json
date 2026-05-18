@@ -1,15 +1,15 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 44,
+  "count": 51,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-13"
   },
   "top_actors": [
     "The Gentlemen",
-    "Interlock",
-    "Kyber"
+    "LockBit",
+    "ShinyHunters"
   ],
   "top_cves": [
     {
@@ -19,6 +19,15 @@
     {
       "id": "CVE-2026-34197",
       "cvss": 8.8
+    },
+    {
+      "id": "CVE-2024-55591"
+    },
+    {
+      "id": "CVE-2025-32433"
+    },
+    {
+      "id": "CVE-2025-33073"
     }
   ],
   "top_sectors": [
@@ -30,21 +39,21 @@
   ],
   "top_regions": [
     "Global",
+    "North america",
     "United states",
     "Europe",
-    "North america",
     "Turkey"
   ],
   "severity_mix": {
-    "high": 35,
-    "critical": 4,
+    "high": 40,
+    "critical": 6,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
-    "Ransomware group claims breach of Mediaworks, a pro-Orbán Hungarian media conglomerate. The firm confirmed unauthorized access and potential data exfiltration on Friday.",
-    "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers.",
-    "Two former IR firm employees got 4 years each for laundering $18M+ in BlackCat ransom payments and advising attackers on negotiation tactics."
+    "Nitrogen ransomware gang claims 8TB of stolen data from Foxconn's North American factories, including technical files from major tech clients.",
+    "Instructure paid ShinyHunters after two Canvas intrusions stole data from 9,000 institutions. Congress launched an investigation into the ed-tech vendor's incident response.",
+    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide."
   ],
-  "sources_hash": "ce9edb9a53cee811"
+  "sources_hash": "e8ed1bff3e754eeb"
 }

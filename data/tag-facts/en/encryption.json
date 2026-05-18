@@ -1,21 +1,21 @@
 {
   "tag": "encryption",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-26"
+    "latest": "2026-05-12"
   },
   "top_actors": [
     "Kyber"
   ],
   "top_cves": [],
   "top_sectors": [
-    "government",
     "technology",
+    "government",
+    "telecommunications",
     "all",
-    "critical infrastructure",
-    "defense"
+    "critical infrastructure"
   ],
   "top_regions": [
     "Global",
@@ -25,15 +25,15 @@
     "United states"
   ],
   "severity_mix": {
+    "critical": 2,
     "medium": 3,
     "high": 3,
-    "informational": 4,
-    "critical": 1
+    "informational": 4
   },
   "recent_excerpts": [
+    "Apple released emergency patches for two zero-days exploited in the wild alongside the beta rollout of end-to-end encrypted RCS messaging for iOS and macOS.",
     "U.S. Immigration and Customs Enforcement (ICE) confirmed using spyware from Israeli firm Graphite, a tool capable of extracting data from encrypted messaging apps like WhatsApp…",
-    "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis.",
-    "UK regulator Ofcom launches a formal investigation into Telegram over evidence of child sexual abuse material (CSAM) sharing and potential breaches of the Online Safety Act's encryption reporting rule"
+    "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis."
   ],
-  "sources_hash": "988821345ceeb409"
+  "sources_hash": "7d58f736f19870e3"
 }

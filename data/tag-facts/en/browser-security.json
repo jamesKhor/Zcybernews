@@ -1,18 +1,37 @@
 {
   "tag": "browser-security",
   "locale": "en",
-  "count": 9,
+  "count": 13,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-04-30"
+    "latest": "2026-05-16"
   },
   "top_actors": [
     "Pushpaganda"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-8573",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-8577",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-7896"
+    },
+    {
+      "id": "CVE-2026-7897"
+    },
+    {
+      "id": "CVE-2026-7898"
+    }
+  ],
   "top_sectors": [
     "technology",
     "all",
+    "email services",
     "enterprise"
   ],
   "top_regions": [
@@ -23,15 +42,15 @@
     "United kingdom"
   ],
   "severity_mix": {
-    "critical": 2,
-    "high": 3,
-    "informational": 1,
-    "medium": 2
+    "high": 4,
+    "critical": 4,
+    "medium": 3,
+    "informational": 1
   },
   "recent_excerpts": [
-    "Google and Mozilla ship Chrome 147 and Firefox 150 to fix critical and high-severity vulnerabilities enabling arbitrary code execution. Users urged to update immediately.",
-    "Socket identified 108 malicious Chrome extensions that infected 20,000 users, stealing Google and Telegram session cookies and injecting ads via a shared command-and-control server.",
-    "Malwarebytes Browser Guard 4.0 introduces a new Access Control module, allowing users to centrally manage and block website requests for sensitive permissions like camera, microphone, and location to"
+    "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now.",
+    "Google's Chrome 148 update fixes 79 vulnerabilities, 14 critical — including heap buffer overflow CVE-2026-8509 ($43K bounty) and integer overflow CVE-2026-8510 in Skia ($25K...",
+    "Malwarebytes blocks background connections from Yahoo Mail to domains like cook.howduhtable.com — third-party infrastructure with poor reputation and opaque redirect chains."
   ],
-  "sources_hash": "fe70c243c2aead43"
+  "sources_hash": "38b90391237edfaa"
 }

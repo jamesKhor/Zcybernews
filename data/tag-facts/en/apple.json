@@ -1,0 +1,36 @@
+{
+  "tag": "apple",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-05-12"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-28950"
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "individuals",
+    "consumer",
+    "government",
+    "legal"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "critical": 1,
+    "high": 2,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "Apple released emergency patches for two zero-days exploited in the wild alongside the beta rollout of end-to-end encrypted RCS messaging for iOS and macOS.",
+    "CVE-2026-28950 in iOS Notification Services retained deleted Signal messages on device, accessible via forensic tools. Apple fixed the logging flaw in iOS 18.4.1 and iPadOS 18.4.1.",
+    "Security researchers have demonstrated a method to spoof Apple AirTag locations by relaying Bluetooth signals over the internet, potentially misleading the Find My network into reporting false locatio"
+  ],
+  "sources_hash": "c02634464ccc4b7a"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "intro": "Interlock、Rhysida和ShinyHunters是在2026年4月12日至4月30日期间报告的九起高严重性事件中，针对医疗行业的主要威胁行为者。这些攻击影响了关键基础设施、政府和研究领域，受害者遍布美国、全球、伊利诺伊州、摩尔多瓦和荷兰。严重性分布包括一起中等严重性和八起高严重性事件，凸显了在此期间医疗组织面临的集中风险。",
-  "sources_hash": "93ac63ddb62ad987",
-  "source_intro_hash": "cd452fa7f736b5db",
+  "intro": "过去一个月，ZCyberNews追踪了11篇标记为医疗保健领域的文章，其中10篇被评为高严重性。威胁行为者Interlock、LockBit和Rhysida被观察到在全球范围内针对医疗保健、关键基础设施、政府及制药行业，涉及美国、伊利诺伊州、摩尔多瓦和荷兰。这些文章的时间跨度为2026年4月12日至5月12日，其中包含一篇中等严重性的报告。",
+  "sources_hash": "c05b57ce6dae48ac",
+  "source_intro_hash": "72f94a0fc0ae73d1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:31:12.348Z",
+  "generated_at": "2026-05-18T10:08:54.806Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

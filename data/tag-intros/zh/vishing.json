@@ -1,0 +1,10 @@
+{
+  "tag": "vishing",
+  "locale": "zh",
+  "intro": "此档案收录了2026年4月16日至2026年5月1日期间发布的5篇标记为`vishing`的文章，为安全团队提供了该话题在ZCyberNews报道中的聚焦视角。观察到的威胁行为体引用包括BlackFile和Cordial Spider，仅在底层文章元数据支持归因的情况下呈现。受影响范围信号强调北美和欧洲的金融服务、企业及医疗行业，帮助读者在不超过档案数据范围的前提下比较暴露模式。严重程度覆盖包括5篇高危报告。",
+  "sources_hash": "6c812580d6760a9b",
+  "source_intro_hash": "3988cefd762ad985",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:11:16.546Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

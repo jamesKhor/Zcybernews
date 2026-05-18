@@ -1,10 +1,10 @@
 {
   "tag": "evasion",
   "locale": "zh",
-  "intro": "过去三周内，ZCyberNews发布了10篇标注为“规避”的文章，涵盖2026年4月12日至5月4日期间的事件。报道涉及8起高严重性和2起中严重性事件。威胁行为者Payouts King和The Gentlemen出现在这些报告中。受影响行业包括金融服务、医疗保健、多个行业及技术领域，受影响地区为捷克共和国、欧盟和北美。",
-  "sources_hash": "1ab7e3131e375448",
-  "source_intro_hash": "fae4efe0a85aef59",
+  "intro": "本档案收录了2026年4月12日至2026年5月4日期间发布的10篇标记为`evasion`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的聚焦视角。观察到的行为者提及包括Payouts King和The Gentlemen，仅在底层文章元数据支持归因的情况下呈现。受影响范围信号强调金融服务、医疗保健以及捷克共和国、欧盟和北美多个地区，帮助读者比较暴露模式，而不添加超出档案数据的主张。严重程度覆盖包括8篇高严重性和2篇中等严重性报告。",
+  "sources_hash": "3eb106e08c92a96e",
+  "source_intro_hash": "d4486b9561295cb0",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-05T04:10:05.536Z",
+  "generated_at": "2026-05-18T10:08:29.934Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

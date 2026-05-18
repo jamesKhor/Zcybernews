@@ -1,0 +1,30 @@
+{
+  "tag": "windows-11",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "enterprise"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "critical": 1,
+    "high": 1,
+    "informational": 1,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "On day one of Pwn2Own Berlin 2026, researchers collected $523,000 for 24 zero-days, including a $175,000 Edge sandbox escape by Orange Tsai and three Windows 11 privilege...",
+    "Microsoft's May 2026 Patch Tuesday fixes 120 vulnerabilities across Windows 11 25H2, 24H2, and 23H2. KB5089549 and KB5087420 include security fixes, Xbox mode, and batch file...",
+    "Microsoft's Windows 11 Dev Build 26300.8170 adds a dedicated Secure Boot monitoring panel to the Windows Security app, providing administrators with a single-pane view of the firmware security feature"
+  ],
+  "sources_hash": "b68278a8927a76f5"
+}

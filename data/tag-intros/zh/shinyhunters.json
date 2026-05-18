@@ -1,10 +1,10 @@
 {
   "tag": "shinyhunters",
   "locale": "zh",
-  "intro": "ShinyHunters主导了2026年4月13日至5月3日期间报告的六起高严重性事件。该威胁行为者的活动影响了教育、消费者服务、娱乐、游戏和医疗保健等行业，受害者遍布北美及全球。这六篇文章分别报道了归因于ShinyHunters的不同入侵事件，反映出其针对多个行业开展的数据窃取与勒索集中行动。",
-  "sources_hash": "f53f2b6f09678249",
-  "source_intro_hash": "73f3e2c87f27f10c",
+  "intro": "过去一个月，ZCyberNews追踪了与ShinyHunters相关的九起事件，时间跨度从2026年4月13日至5月12日。该威胁行为者被观察到针对教育、消费者服务、娱乐、游戏和医疗保健等行业，受影响地区包括北美及全球。严重程度分布为一份危急报告和八份高危报告，反映出该单一行为者在一段集中时期内的活跃态势。",
+  "sources_hash": "9ac7a8acd9c7d0a2",
+  "source_intro_hash": "9f748d8bfd630443",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-05T04:10:18.220Z",
+  "generated_at": "2026-05-18T10:10:48.114Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

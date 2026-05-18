@@ -1,0 +1,9 @@
+{
+  "tag": "use-after-free",
+  "locale": "en",
+  "intro": "Six articles published between 28 April and 16 May 2026 examine use-after-free vulnerabilities, with a severity mix of two high, three critical, and one low. The top CVEs include CVE-2026-45185 (CVSS 9.8), CVE-2026-5943 (CVSS 7.8), CVE-2026-8550 (CVSS 6.5), CVE-2026-8556 (CVSS 6.5), and CVE-2026-5942 (CVSS 3.3). Affected sectors span technology, all, email services, general, and software, with a global regional impact.",
+  "sources_hash": "d88f3f8230a6cc45",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:05:13.109Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

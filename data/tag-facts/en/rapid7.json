@@ -1,15 +1,24 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "count": 10,
+  "count": 15,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-29"
+    "latest": "2026-05-15"
   },
   "top_actors": [
+    "KongTuke",
     "Kyber"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-20127",
+      "cvss": 10
+    },
+    {
+      "id": "CVE-2026-20182",
+      "cvss": 10
+    },
     {
       "id": "CVE-2025-59718",
       "cvss": 9.8
@@ -17,29 +26,32 @@
     {
       "id": "CVE-2026-41940",
       "cvss": 9.8
+    },
+    {
+      "id": "CVE-2023-30253"
     }
   ],
   "top_sectors": [
+    "enterprise",
     "enterprise IT",
+    "enterprise networking",
     "financial services",
-    "government",
-    "managed services",
-    "technology"
+    "government"
   ],
   "top_regions": [
-    "Europe",
     "Global",
+    "Europe",
     "North america"
   ],
   "severity_mix": {
-    "critical": 2,
-    "high": 2,
-    "informational": 4
+    "high": 3,
+    "critical": 4,
+    "informational": 5
   },
   "recent_excerpts": [
-    "CVE-2026-41940: Unauthenticated remote attackers can bypass authentication in cPanel & WHM and WP Squared. CVSS 9.8. Patch released April 28, 2026.",
-    "Rapid7 VP Christiaan Beek warns attackers are exploiting weak credentials and known flaws faster than defenders can patch — pace, not technique, is the 2026 differentiator.",
-    "Rapid7 argues most breaches result from visibility gaps in asset, identity, and attack path coverage rather than sophisticated exploits."
+    "Rapid7's Metasploit Framework adds Vim plugin persistence, exploits for CVE-2025-6793 (Marvell QConvergeConsole), CVE-2024-48760 (GestioIP), and CVE-2023-30253 (Dolibarr).",
+    "Rapid7 discovered CVE-2026-20182, a 10.0-CVSS authentication bypass in Cisco Catalyst SD-WAN Controller. Unauthenticated attackers can inject SSH keys and issue NETCONF commands.",
+    "Rapid7's new Cyber GRC platform aims to close the gap between security operations and compliance, addressing the 241-day mean breach lifecycle identified in IBM's 2025 report."
   ],
-  "sources_hash": "31dee5091419afca"
+  "sources_hash": "329ea1f6727b1345"
 }

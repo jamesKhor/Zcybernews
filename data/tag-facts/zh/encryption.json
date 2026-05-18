@@ -1,21 +1,21 @@
 {
   "tag": "encryption",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-26"
+    "latest": "2026-05-12"
   },
   "top_actors": [
     "Kyber"
   ],
   "top_cves": [],
   "top_sectors": [
-    "government",
     "technology",
+    "government",
+    "telecommunications",
     "all",
-    "critical infrastructure",
-    "defense"
+    "critical infrastructure"
   ],
   "top_regions": [
     "Global",
@@ -25,15 +25,15 @@
     "United states"
   ],
   "severity_mix": {
+    "critical": 2,
     "medium": 3,
     "high": 3,
-    "informational": 4,
-    "critical": 1
+    "informational": 4
   },
   "recent_excerpts": [
+    "苹果发布了针对两个在野外被利用的零日漏洞的紧急补丁，同时推出了iOS和macOS端到端加密RCS消息的测试版。",
     "美国移民和海关执法局（ICE）确认使用了以色列公司 Graphite 的间谍软件，这是一个能够从加密消息应用如 WhatsApp 中提取数据的工具…",
-    "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。",
-    "英国监管机构 Ofcom 对 Telegram 展开正式调查，因为有证据显示 Telegram 分享儿童性虐待材料（CSAM）以及可能违反在线安全法的加密报告规则。"
+    "根据 BleepingComputer 的分析，Kyber 勒索软件团伙正在使用一个变种，该变种实现了 Kyber1024 后量子加密，以针对 Windows 和 VMware ESXi 系统。"
   ],
-  "sources_hash": "988821345ceeb409"
+  "sources_hash": "00ae474520684099"
 }

@@ -1,0 +1,39 @@
+{
+  "tag": "living-off-the-land",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [
+    "GopherWhisper",
+    "KongTuke",
+    "Operation PhantomCLR"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2023-36036"
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "energy",
+    "enterprise"
+  ],
+  "top_regions": [
+    "Asia",
+    "Central america",
+    "South america"
+  ],
+  "severity_mix": {
+    "critical": 1,
+    "high": 4
+  },
+  "recent_excerpts": [
+    "Rapid7 分析了 2026 年 4 月的一次入侵事件，其中一条假冒的 IT 支持 Teams 消息通过 Dropbox 传递了 ModeloRAT，导致权限提升、凭证盗窃和横向移动...",
+    "Palo Alto Unit 42 报告称 TGR-STA-1030 在中南美洲保持活跃，针对政府和能源部门使用定制恶意软件和本地存活技术。",
+    "GopherWhisper，一个新的国家支持的 APT，针对政府实体使用基于 Go 的工具包滥用 Outlook、Slack 和 Discord 进行 C2。"
+  ],
+  "sources_hash": "df718a777b7a26e6"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "extortion",
   "locale": "zh",
-  "intro": "ShinyHunters和BlackFile是ZCyberNews近期追踪的一批勒索事件中观察到的主要威胁行为者。2026年4月14日至4月24日期间，共有六篇文章记录了这些攻击活动，主要影响北美地区的教育、加密货币、酒店和出版行业。严重程度分布包括五起高风险事件和一起中等风险事件，反映出这一时期的集中活跃态势。",
-  "sources_hash": "3664ecbdf1264de6",
-  "source_intro_hash": "2b6d0fbde841eb7e",
+  "intro": "ShinyHunters和BlackFile是ZCyberNews在2026年4月14日至5月17日期间报道的一系列勒索事件中最主要的威胁行为者。在十篇文章中，教育、加密货币、酒店和媒体行业成为最频繁的攻击目标，影响范围覆盖北美及全球。十篇报道中有九篇被归类为高严重性，一篇被评为中等严重性。",
+  "sources_hash": "ac417e63d1ab5ce8",
+  "source_intro_hash": "cc009cd1ee7e9fd8",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:15:16.026Z",
+  "generated_at": "2026-05-18T10:08:36.034Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

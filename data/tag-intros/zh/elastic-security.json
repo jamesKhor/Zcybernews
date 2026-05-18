@@ -1,0 +1,10 @@
+{
+  "tag": "elastic-security",
+  "locale": "zh",
+  "intro": "本档案收录了2026年4月25日至2026年5月7日期间发布的10篇标记为`elastic-security`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的聚焦视角。观察到的行为者引用包括TeamPCP，仅在底层文章元数据支持归因的情况下呈现。受影响范围信号强调云基础设施和技术，帮助读者比较暴露模式，而不添加超出档案数据的主张。严重程度覆盖包括1篇高危、2篇中危和1篇信息性报告。",
+  "sources_hash": "819dbdd4dcb716f3",
+  "source_intro_hash": "d3d07dc53afc9c2f",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:08:17.566Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

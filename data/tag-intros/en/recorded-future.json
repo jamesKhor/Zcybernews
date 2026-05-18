@@ -1,9 +1,9 @@
 {
   "tag": "recorded-future",
   "locale": "en",
-  "intro": "Between 22 and 30 April 2026, six articles were published under the recorded-future tag. The coverage highlighted Cobalt Strike and LockBit as top threat actors, with affected sectors including financial services, e-commerce, enterprise, government, and retail. Regions impacted were the Caribbean, China, Global, Latin America, and Southeast Asia. The severity mix comprised one informational, three high, and one medium severity report.",
-  "sources_hash": "8118f183ca4d0f78",
+  "intro": "Over eight articles published between April 22 and May 14, 2026, ZCyberNews coverage of the recorded-future tag highlighted activity from threat actors Cobalt Strike and LockBit. These actors were observed targeting financial services, government, e-commerce, enterprise, and healthcare sectors. Affected regions included the Caribbean, China, the EU, global, and Latin America. The severity mix across these reports comprised two medium, one informational, and three high severity assessments.",
+  "sources_hash": "f144d872a272c461",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:11:19.860Z",
+  "generated_at": "2026-05-18T10:03:22.562Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

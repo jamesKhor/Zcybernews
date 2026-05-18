@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "count": 28,
+  "count": 32,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-15"
   },
   "top_actors": [
     "APT29",
@@ -36,25 +36,26 @@
   "top_sectors": [
     "technology",
     "government",
-    "critical infrastructure",
     "telecommunications",
+    "critical infrastructure",
     "enterprise"
   ],
   "top_regions": [
     "Global",
     "Asia",
     "China",
-    "Southeast asia"
+    "Europe",
+    "North america"
   ],
   "severity_mix": {
-    "critical": 12,
-    "high": 15,
+    "high": 17,
+    "critical": 14,
     "medium": 1
   },
   "recent_excerpts": [
-    "Weaver E-cology OA 中的 CVE-2026-22679（CVSS 9.8）自2026年3月中旬以来在野外被利用。攻击者在利用后运行发现命令。尚无补丁可用。",
-    "Anthropic的 Claude Mythos 预览版能够自动发现并武器化操作系统和互联网基础设施中的软件漏洞，无需专家指导，引发了紧迫的…",
-    "Claude Mythos 和 Project Glasswing 将漏洞窗口缩小到接近零。The Hacker News 详细说明了在打补丁之前如何使用NDR剧本来遏制AI驱动的攻击。"
+    "CVE-2026-42897是一个高严重性的Exchange Server欺骗漏洞，在野外被利用，通过Outlook网页版实现基于XSS的代码执行。",
+    "在Pwn2Own Berlin 2026的第一天，研究人员为24个零日漏洞收集了52.3万美元，包括Orange Tsai通过Edge沙箱逃逸获得的17.5万美元，以及三个Windows 11权限...",
+    "苹果发布了针对两个在野外被利用的零日漏洞的紧急补丁，同时推出了iOS和macOS端到端加密RCS消息的测试版。"
   ],
-  "sources_hash": "54fcdcecb27b3a1e"
+  "sources_hash": "55dc170a6b6e7e78"
 }

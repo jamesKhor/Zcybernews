@@ -1,0 +1,9 @@
+{
+  "tag": "education",
+  "locale": "en",
+  "intro": "This archive collects 6 articles tagged `education` published between April 14, 2026 and May 12, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include ShinyHunters, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize education, Education, and publishing across North america and Global, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, 4 high, and 1 medium reports.",
+  "sources_hash": "21837562040d4aa4",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:04:36.880Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

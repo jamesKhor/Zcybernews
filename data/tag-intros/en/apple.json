@@ -1,0 +1,9 @@
+{
+  "tag": "apple",
+  "locale": "en",
+  "intro": "Technology, consumer, and government sectors faced a concentrated threat landscape in Apple-related coverage from April 16 to May 12, 2026, with five articles detailing one critical and two high-severity vulnerabilities. The top CVE, CVE-2026-28950, was a focus of reporting. The global impact spanned individuals, legal, and enterprise environments, with a severity mix of one critical, two high, and two medium issues.",
+  "sources_hash": "c02634464ccc4b7a",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:05:20.315Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

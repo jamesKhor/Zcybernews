@@ -1,9 +1,9 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "intro": "Over the past two weeks, from April 13 to April 26, 2026, ZCyberNews has published 10 articles tagged with backdoor. The coverage includes nine high-severity incidents and one critical event. Threat actors APT41, Harvester, and Mustang Panda were observed in these campaigns. Affected sectors include government, technology, banking, cloud-services, and software development, with reported impacts across Global, India, South Asia, South Korea, and the United States.",
-  "sources_hash": "7a03266841dc922e",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:13:33.805Z",
+  "intro": "This archive collects 13 articles tagged `backdoor` published between April 13, 2026 and May 14, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Silver Fox, APT41, and Harvester, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize government, technology, and financial services across Global, India, and Russia, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 critical, and 11 high reports.",
+  "sources_hash": "725024b46ca83f5f",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:00:50.519Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,14 +1,16 @@
 {
   "tag": "automation",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-01"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": [],
+  "top_sectors": [
+    "cybersecurity"
+  ],
   "top_regions": [],
   "severity_mix": {
     "high": 2,
@@ -16,9 +18,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "一个Radiant Security网络研讨会探讨了为什么WAF、DLP、OT/IoT、暗网和供应链警报经常被SOC团队忽略——以及自动化如何缩小这一差距。",
     "Criminal IP 和 Securonix ThreatQ 的合作将基于暴露的威胁情报嵌入到自动化工作流程中，减少了SOC团队的手动分类工作。",
-    "SecurityWeek报道，攻击者现在使用AI在几小时内武器化漏洞，迫使防御者采用自动化。没有特定的CVE或受害者被命名 — 分析文章。",
-    "Rapid7 的开源 MCP 服务器和 Agent Skill 将其 Insight 平台连接到像 Claude 这样的 AI 助手，使安全团队能够查询 150 万条漏洞记录，并通过自然语言自动化工作流程。"
+    "SecurityWeek报道，攻击者现在使用AI在几小时内武器化漏洞，迫使防御者采用自动化。没有特定的CVE或受害者被命名 — 分析文章。"
   ],
-  "sources_hash": "9c488a496779f2ad"
+  "sources_hash": "4932b999d165b8b7"
 }

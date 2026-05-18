@@ -1,31 +1,42 @@
 {
   "tag": "session-hijacking",
   "locale": "en",
-  "count": 6,
+  "count": 9,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-04-22"
+    "latest": "2026-05-15"
   },
   "top_actors": [
+    "Gremlin Stealer",
     "Storm-2755"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2022-23961",
+      "cvss": 6.1
+    },
+    {
+      "id": "CVE-2026-5084"
+    }
+  ],
   "top_sectors": [
+    "cryptocurrency",
     "finance",
+    "financial services",
     "hr",
-    "payroll"
+    "information technology"
   ],
   "top_regions": [
     "Canada"
   ],
   "severity_mix": {
-    "high": 4,
-    "medium": 1
+    "high": 6,
+    "medium": 2
   },
   "recent_excerpts": [
-    "Socket identified 108 malicious Chrome extensions that infected 20,000 users, stealing Google and Telegram session cookies and injecting ads via a shared command-and-control server.",
-    "Ivanti patches two medium-severity flaws in its Neurons for ITSM platform that could allow authenticated attackers to hijack user sessions or retain unauthorized access to the system.",
-    "The new 'Storm' infostealer exfiltrates encrypted browser data for server-side decryption, enabling session hijacking and bypassing MFA. Analysis by Varonis details the technique."
+    "Unit 42 details a new Gremlin stealer variant using XOR-encrypted resource sections, crypto clipper, WebSocket session hijacking, and a commercial packer with instruction...",
+    "CVE-2026-5084: WebDyne::Session through 2.075 for Perl generates session IDs from an MD5 hash seeded with rand(), enabling session prediction and hijacking.",
+    "CVE-2022-23961 (CVSS 6.1) in Thruk Monitoring through 2.46.3 enables unauthenticated reflected XSS via the login field, risking session theft for admins."
   ],
-  "sources_hash": "9a59229e3731a4f2"
+  "sources_hash": "92eea7bce1a28f4e"
 }

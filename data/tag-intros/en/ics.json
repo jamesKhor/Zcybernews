@@ -1,9 +1,9 @@
 {
   "tag": "ics",
   "locale": "en",
-  "intro": "Over the past two weeks, ZCyberNews has tracked nine articles on ICS security, with a high-severity focus: seven high, one critical, and one medium. The most prominent vulnerability is CVE-2026-5726, carrying a CVSS score of 7.8. Coverage has concentrated on threats to critical infrastructure, energy, manufacturing, industrial, and utilities sectors, with global implications, particularly in the United States and North America.",
-  "sources_hash": "a58a20b4baee58e6",
+  "intro": "Over the past two weeks, ZCyberNews has tracked nine articles focused on industrial control systems, with seven rated high severity and one critical. The most prominent vulnerability is CVE-2026-5726, carrying a CVSS score of 7.8. Coverage has concentrated on threats to critical infrastructure, energy, manufacturing, industrial, and utilities sectors, with reports spanning the United States, North America, and globally. The reporting period, from April 12 to April 25, 2026, also includes one medium-severity issue among the tracked CVEs.",
+  "sources_hash": "7c4f504cc5ccb1c0",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-25T04:02:30.181Z",
+  "generated_at": "2026-05-18T10:02:38.827Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

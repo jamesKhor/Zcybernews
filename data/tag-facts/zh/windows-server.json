@@ -26,5 +26,5 @@
     "微软确认2026年4月KB5082063安全更新导致部分Windows Server 2025设备启动进入BitLocker恢复，需要恢复密钥才能重新获得访问权限。",
     "微软解决了一个已知问题，该问题导致Windows Server 2019和2022系统自动且意外地升级到Windows Server 2025，这个问题与有缺陷的更新通道配置有关。"
   ],
-  "sources_hash": "ac477477de94b2f3"
+  "sources_hash": "c4c6b0d204faea8a"
 }

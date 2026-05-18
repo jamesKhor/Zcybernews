@@ -1,0 +1,39 @@
+{
+  "tag": "cryptography",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-05-09"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2022-39173"
+    },
+    {
+      "id": "CVE-2026-8149"
+    }
+  ],
+  "top_sectors": [
+    "all",
+    "Critical Infrastructure",
+    "Energy",
+    "financial services",
+    "government"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 2,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "在 Bouncy Castle BC-FJA 2.1.0–2.1.2 中的 CVE-2026-8149 通过 AVX-512f 优化的 gcm128w/gcm512w 例程的侧信道泄露 AES-GCM 认证密钥。",
+    "密码学专家警告说，迁移到后量子密码学将需要数年时间，敦促组织现在就开始量子风险管理，以保护加密数据免受未来'Q-Day'收获现在，解密稍后攻击。",
+    "OpenSSL 项目发布了版本 4.0.0，这是一个重大更新，永久移除了已弃用的 SSL 协议，并引入了对后量子密码学和 Encrypted Client Hello 的支持。"
+  ],
+  "sources_hash": "1eb030cb7f7c3ce3"
+}

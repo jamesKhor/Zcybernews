@@ -1,9 +1,9 @@
 {
   "tag": "patch-management",
   "locale": "en",
-  "intro": "The global financial services, government, healthcare, and small business sectors faced significant risks from vulnerabilities between April 12 and May 3, 2026, with a severity mix of four medium, two high, and one critical issue. Key CVEs observed during this period include CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. The United Kingdom was a notable region of concern alongside the global landscape.",
-  "sources_hash": "2341158c63dae50f",
+  "intro": "Financial services, government, and healthcare organisations globally, with a particular focus in the United Kingdom, are the primary targets in our patch-management coverage from 12 April to 3 May 2026. Seven articles examine a severity mix of four medium, two high, and one critical vulnerability, including CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. Small businesses are also among the affected sectors.",
+  "sources_hash": "9bbbdae2ab40718b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-04T04:23:39.255Z",
+  "generated_at": "2026-05-18T10:04:00.900Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

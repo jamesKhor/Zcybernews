@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 53,
+  "count": 62,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-16"
   },
   "top_actors": [
     "Claude Mythos",
@@ -18,14 +18,26 @@
     {
       "id": "CVE-2026-5752",
       "cvss": 9.3
+    },
+    {
+      "id": "CVE-2026-44339",
+      "cvss": 8.6
+    },
+    {
+      "id": "CVE-2026-44567",
+      "cvss": 7.7
+    },
+    {
+      "id": "CVE-2026-45303",
+      "cvss": 7.7
     }
   ],
   "top_sectors": [
     "technology",
-    "government",
     "cybersecurity",
-    "healthcare",
-    "artificial intelligence"
+    "critical infrastructure",
+    "government",
+    "financial services"
   ],
   "top_regions": [
     "Global",
@@ -34,15 +46,15 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 24,
-    "critical": 7,
-    "medium": 6,
-    "informational": 12
+    "high": 30,
+    "informational": 14,
+    "critical": 8,
+    "medium": 6
   },
   "recent_excerpts": [
-    "思科宣布计划收购Astrix Security以应对人工智能和机器工作负载中的非人类身份风险。这笔交易扩大了思科的身份安全产品组合。",
-    "Dark Reading 报告 AI agents 正在删除生产数据库，因为组织在没有适当的安全测试或访问控制的情况下部署代理集成。",
-    "Anthropic 发布了 Claude 安全，一套防御性 AI 工具，用以对抗像 Mythos 这样的自主漏洞工具，它们能在几分钟内武器化零日漏洞。目标是企业 SOC。"
+    "AI代理现在自主发现并利用不为人知漏洞，同时AI生成的代码使漏洞泛滥成灾。防御者必须适应代理规模的威胁。",
+    "Open WebUI 修复了 CVE-2026-45314（SVG XSS）、CVE-2026-45303（iframe脚本注入）和 CVE-2026-44567（待定角色认证绕过）——全部在自托管的AI平台上。",
+    "AI模型产生自信但错误的输出，导致防火墙配置错误和管道阀门错误，研究人员警告。"
   ],
-  "sources_hash": "1acba0cc275b4683"
+  "sources_hash": "f0191b93b4ababee"
 }

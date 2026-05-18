@@ -1,9 +1,9 @@
 {
   "tag": "threat-detection",
   "locale": "en",
-  "intro": "This archive collects 9 articles tagged `threat-detection` published between April 13, 2026 and April 20, 2026. Coverage includes 1 critical, 1 high, and 7 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "13ef788170c01142",
+  "intro": "This archive collects 10 articles tagged `threat-detection` published between April 13, 2026 and May 8, 2026. Coverage includes 1 critical, 1 high, 1 medium, and 7 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "15ffcd2cc0d47727",
   "model": "template:sparse",
-  "generated_at": "2026-04-21T04:07:40.143Z",
+  "generated_at": "2026-05-18T10:02:25.011Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

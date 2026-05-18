@@ -1,29 +1,53 @@
 {
   "tag": "wordpress",
   "locale": "zh",
-  "count": 5,
+  "count": 12,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-17"
+    "latest": "2026-05-17"
   },
   "top_actors": [],
   "top_cves": [
     {
-      "id": "CVE-2026-1492"
+      "id": "CVE-2026-6433",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2021-47926",
+      "cvss": 6.4
+    },
+    {
+      "id": "CVE-2021-47927",
+      "cvss": 6.4
+    },
+    {
+      "id": "CVE-2021-47929",
+      "cvss": 6.4
+    },
+    {
+      "id": "CVE-2021-47957",
+      "cvss": 6.4
     }
   ],
-  "top_sectors": [],
+  "top_sectors": [
+    "e-commerce",
+    "web hosting",
+    "digital media",
+    "publishing",
+    "technology"
+  ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 3,
-    "critical": 1
+    "medium": 5,
+    "high": 4,
+    "critical": 2
   },
   "recent_excerpts": [
-    "一名恶意买家利用 Flippa 市场收购了一家插件开发商，向安装量达数十万的 30 多款 WordPress 插件中注入后门，以部署隐藏的 SEO 垃圾内容。",
-    "包含超过30个流行WordPress插件的EssentialPlugin套件已被入侵，以注入后门，使攻击者能够获得对数千个网站的管理员访问权限。供应链攻击正在被积极利用。",
-    "User Registration & Membership WordPress插件中存在一个严重漏洞（CVE-2026-1492），允许未经认证的攻击者绕过登录并获得完整的管理员访问权限，影响数千个站点。"
+    "CVE-2021-47957 (CVSS 6.4) 在 Cookie Law Bar 1.2.1 中允许经过身份验证的攻击者通过 Bar Message 字段注入持久性脚本，影响所有 WordPress 网站访问者。",
+    "Avada Builder（超过100万安装量）中的 CVE-2026-4782 和 CVE-2026-4798 允许攻击者读取 wp-config.php 并提取数据库哈希值。请更新至版本 3.15.3。",
+    "CVE-2026-6433: Custom css-js-php 插件 ≤2.0.7 中存在未经认证的 SQL 注入漏洞，允许攻击者通过 eval() 执行任意 PHP 代码。目前没有补丁可用。"
   ],
-  "sources_hash": "aa0bd7dd803246b2"
+  "sources_hash": "43faed2de36757b3"
 }

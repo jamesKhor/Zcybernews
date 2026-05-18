@@ -1,10 +1,10 @@
 {
   "tag": "google-tag",
   "locale": "zh",
-  "intro": "政府、技术和媒体部门是2026年4月30日谷歌标签下追踪的五起高严重性事件的主要目标。威胁行为者APT29、Commercial Surveillance Vendors和DRAGONBRIDGE被观察到在影响中国、伊朗、以色列和俄罗斯组织的活动中出现。该活动被评估为四起高严重性和一起中等严重性事件，同时也影响了全球的电信和民间社会实体。",
-  "sources_hash": "d94af2ee398a4e78",
-  "source_intro_hash": "6cb34db7e12ab342",
+  "intro": "2026年4月30日，政府、科技、媒体、电信及民间社会领域面临高度严峻的威胁态势，全球、中国、伊朗、以色列和俄罗斯地区共报告了四起高危事件和一起中危事件。APT29、Commercial Surveillance Vendors 和 DRAGONBRIDGE 被观测为最主要的威胁行为体。标记为 google-tag 的五篇文章涵盖了这一集中活动，但源数据中未提供具体的 CVE 编号。",
+  "sources_hash": "9e7a48b629e66603",
+  "source_intro_hash": "df63955e6feef211",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:31:10.521Z",
+  "generated_at": "2026-05-18T10:08:49.152Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

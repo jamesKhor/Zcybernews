@@ -31,5 +31,5 @@
     "根据 Check Point DFIR 报告分析最近的一次关联攻击，The Gentlemen 勒索软件即服务组织使用 SystemBC SOCKS5 代理工具来隐藏命令和控制流量。",
     "Payouts King 勒索软件团伙正在部署开源 QEMU 模拟器，在被入侵的主机上创建隐藏的虚拟机，建立持久的反向 SSH 后门，以规避传统的端点检测。"
   ],
-  "sources_hash": "1ab7e3131e375448"
+  "sources_hash": "3eb106e08c92a96e"
 }

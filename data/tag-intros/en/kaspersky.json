@@ -1,9 +1,9 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "intro": "Between April 16 and 26, 2026, Kaspersky published six reports covering threat actors CrystalX and Lotus Wiper. These articles detailed high-severity and critical incidents affecting energy, building automation, cryptocurrency, engineering, and finance sectors globally, with specific focus on Latin America and Venezuela. The coverage included five high-severity and one critical-severity event, highlighting risks to operational technology and digital financial systems across these regions.",
-  "sources_hash": "261c6b02c7b74412",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-04T04:23:48.886Z",
+  "intro": "This archive collects 8 articles tagged `kaspersky` published between April 16, 2026 and May 8, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include CrystalX, Lotus Wiper, and OceanLotus, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize energy, finance, and technology across Global, Latin america, and Venezuela, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, and 7 high reports.",
+  "sources_hash": "575153a3c9a75702",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:03:11.117Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

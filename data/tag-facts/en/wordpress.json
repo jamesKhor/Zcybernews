@@ -1,29 +1,53 @@
 {
   "tag": "wordpress",
   "locale": "en",
-  "count": 5,
+  "count": 12,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-17"
+    "latest": "2026-05-17"
   },
   "top_actors": [],
   "top_cves": [
     {
-      "id": "CVE-2026-1492"
+      "id": "CVE-2026-6433",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2021-47926",
+      "cvss": 6.4
+    },
+    {
+      "id": "CVE-2021-47927",
+      "cvss": 6.4
+    },
+    {
+      "id": "CVE-2021-47929",
+      "cvss": 6.4
+    },
+    {
+      "id": "CVE-2021-47957",
+      "cvss": 6.4
     }
   ],
-  "top_sectors": [],
+  "top_sectors": [
+    "e-commerce",
+    "web hosting",
+    "digital media",
+    "publishing",
+    "technology"
+  ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 2,
-    "high": 3
+    "medium": 5,
+    "high": 4,
+    "critical": 3
   },
   "recent_excerpts": [
-    "A malicious buyer used the Flippa marketplace to acquire a plugin developer, injecting a backdoor into over 30 WordPress plugins with hundreds of thousands of installations to deploy hidden SEO spam.",
-    "The EssentialPlugin suite, comprising over 30 popular WordPress plugins, has been compromised to inject a backdoor granting attackers administrative access to thousands of websites.",
-    "A critical flaw (CVE-2026-1492) in the User Registration & Membership WordPress plugin allows unauthenticated attackers to bypass login and gain full administrator access, impacting thousands of sites"
+    "CVE-2021-47957 (CVSS 6.4) in Cookie Law Bar 1.2.1 lets authenticated attackers inject persistent scripts via the Bar Message field, affecting all WordPress site visitors.",
+    "CVE-2026-4782 and CVE-2026-4798 in Avada Builder (1M+ installs) let attackers read wp-config.php and extract database hashes. Patch to version 3.15.3.",
+    "CVE-2026-6433: Unauthenticated SQL injection in Custom css-js-php plugin ≤2.0.7 lets attackers execute arbitrary PHP via eval(). No patch available."
   ],
-  "sources_hash": "aa0bd7dd803246b2"
+  "sources_hash": "c94f8016a71f663d"
 }

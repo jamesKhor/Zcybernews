@@ -1,15 +1,15 @@
 {
   "tag": "espionage",
   "locale": "zh",
-  "count": 9,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-01"
+    "latest": "2026-05-16"
   },
   "top_actors": [
     "APT28 (Fancy Bear)",
-    "Deep#Door",
-    "Mustang Panda"
+    "APT37",
+    "Deep#Door"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -21,19 +21,19 @@
   ],
   "top_regions": [
     "Europe",
+    "South korea",
     "Southeast asia",
-    "East asia",
-    "Global",
-    "India"
+    "Ukraine",
+    "Asia"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 10,
     "critical": 1
   },
   "recent_excerpts": [
-    "Deep#Door Python 后门部署持久的 Windows 植入程序进行间谍活动 — 使用加密的 C2 通道、文件外泄和远程 shell。没有可用的补丁。",
-    "英国NCSC报告称每周处理四起具有全国意义的网络事件，其中大部分现在归因于像中国和俄罗斯这样的敌对外国，从每周两起增加...",
-    "一种名为 'AgingFly' 的新恶意软件家族正在从 Chromium 浏览器和 WhatsApp 窃取认证数据，在针对乌克兰地方政府机构和医院的定向攻击中。"
+    "秘密暴雪将Kazuar发展为具有150个配置选项的模块化P2P僵尸网络，绕过AMSI/ETW，并拥有静音模式节点。微软详细介绍了三模块架构。",
+    "ESET 表示 APT37 破坏了 Sqgame 纸牌游戏平台，向 Android 设备传递 BirdCall 后门，窃取延边朝鲜族人的短信、通话记录和私钥。",
+    "Deep#Door Python 后门部署持久的 Windows 植入程序进行间谍活动 — 使用加密的 C2 通道、文件外泄和远程 shell。没有可用的补丁。"
   ],
-  "sources_hash": "a97b28e0ce5e2e74"
+  "sources_hash": "b1be194e67c85946"
 }

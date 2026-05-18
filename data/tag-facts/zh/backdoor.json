@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "zh",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-04"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Silver Fox",
@@ -14,10 +14,10 @@
   "top_cves": [],
   "top_sectors": [
     "government",
-    "financial services",
     "technology",
-    "banking",
-    "cloud-services"
+    "financial services",
+    "software development",
+    "banking"
   ],
   "top_regions": [
     "Global",
@@ -27,12 +27,13 @@
     "South korea"
   ],
   "severity_mix": {
+    "critical": 1,
     "high": 11
   },
   "recent_excerpts": [
+    "Socket 和 StepSecurity 发现后门化的 node-ipc 版本 9.1.6、9.2.3 和 12.0.1 从开发者机器中窃取 SSH 密钥、AWS 凭证和 env 文件。",
     "据卡巴斯基称，Silver Fox 团伙冒充税务机关，向俄罗斯和印度的组织分发 ValleyRAT 和新的 ABCDoor 后门。",
-    "Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。",
-    "Harvester 威胁行为者部署了其 GoGra 后门的新 Linux 版本，使用 Microsoft Graph API 和 Outlook 邮箱进行隐蔽的 C2 通信，在针对...的攻击中。"
+    "Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。"
   ],
-  "sources_hash": "d4ef56c5e3f0c3c7"
+  "sources_hash": "b0589f5e13990c8d"
 }

@@ -1,47 +1,53 @@
 {
   "tag": "command-injection",
   "locale": "zh",
-  "count": 5,
+  "count": 10,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-29"
+    "latest": "2026-05-11"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-31246",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2021-47949",
+      "cvss": 8.8
+    },
     {
       "id": "CVE-2026-3854",
       "cvss": 8.7
     },
     {
-      "id": "CVE-2023-33538"
+      "id": "CVE-2026-8264",
+      "cvss": 6.5
     },
     {
-      "id": "CVE-2026-39808"
-    },
-    {
-      "id": "CVE-2026-40176"
-    },
-    {
-      "id": "CVE-2026-40177"
+      "id": "CVE-2026-8265",
+      "cvss": 6.5
     }
   ],
   "top_sectors": [
-    "residential",
     "software development",
     "technology",
-    "telecommunications"
+    "telecommunications",
+    "conference centers",
+    "consumer"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 2,
-    "critical": 3
+    "critical": 4,
+    "high": 5,
+    "medium": 1
   },
   "recent_excerpts": [
-    "CVE-2026-3854（CVSS 8.7）允许具有推送权限的认证用户通过精心制作的git推送命令在GitHub.com和GitHub Enterprise Server上实现远程代码执行。",
-    "针对CVE-2026-39808的PoC漏洞利用代码已经发布，这是一个Fortinet FortiSandbox中的关键命令注入漏洞。该漏洞允许未经身份验证的攻击者以root身份执行任意操作系统命令。",
-    "Fortinet 披露了 FortiSandbox 中的两个关键漏洞（CVSS 9.1），使未经认证的攻击者能够执行任意命令并绕过认证。补丁已可用。"
+    "CVE-2026-31246（CVSS 9.8）在 GPT-Pilot 的 Executor.run() 中将未经验证的用户输入传递给 asyncio.create_subprocess_shell()，使得在项目...期间可以进行任意命令注入",
+    "CVE-2026-8263 (CVSS 5.8) 在 Tenda AC6 固件 15.03.06.49_multi_TDE01 中允许未经认证的远程操作系统命令注入，通过 /goform/WifiExtraSet 端点。",
+    "Tenda AC6固件15.03.06.23中存在两个命令注入漏洞，允许远程攻击者通过getLogFile和formWifiApScan函数执行任意操作系统命令。"
   ],
-  "sources_hash": "ce51e0e6fe124cec"
+  "sources_hash": "a6f56a0c1c14b077"
 }

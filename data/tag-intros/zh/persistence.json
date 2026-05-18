@@ -1,10 +1,10 @@
 {
   "tag": "persistence",
   "locale": "zh",
-  "intro": "Comburglar和VoidLink是与2026年4月13日至4月28日期间报告的六起高严重性事件中持久性标签相关的主要威胁行为者。这些攻击主要针对全球政府、技术及多个行业领域。每个行为者均在独立活动中被观测到，报告中未提供其关联性或来源信息。相关报道聚焦于维持未授权访问的技术手段，反映出这六篇均被评定为高严重性的文章所涵盖的集中活动期。",
-  "sources_hash": "e3374f4a69bd5a92",
-  "source_intro_hash": "a4af0a473b23267e",
+  "intro": "2026年4月至5月期间，ZCyberNews发布了九篇关于持久性威胁的文章，Comburglar、VENOMOUS#HELPER和VoidLink成为最突出的威胁行为者。报道重点提及了CVE-2023-30253、CVE-2024-48760和CVE-2025-6793等漏洞，这些漏洞影响了政府、企业、金融服务、多个行业及技术领域。该威胁被评估为高严重性，具有全球影响，并特别关注美国地区。",
+  "sources_hash": "a2725ac4354c7e76",
+  "source_intro_hash": "867dd3be9ea78c5a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:31:22.347Z",
+  "generated_at": "2026-05-18T10:10:10.152Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

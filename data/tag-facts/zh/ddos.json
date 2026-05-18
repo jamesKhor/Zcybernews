@@ -44,5 +44,5 @@
     "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。",
     "Mirai 僵尸网络操作者利用 CVE-2025-29635，这是一个 CVSS 8.8 命令注入漏洞，存在于生命周期结束的 D-Link DIR-823X 路由器中，以部署恶意软件并发起 DDoS 攻击。"
   ],
-  "sources_hash": "8879fe70e00ae2f0"
+  "sources_hash": "a016b7ba920752aa"
 }

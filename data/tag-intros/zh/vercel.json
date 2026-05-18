@@ -1,10 +1,10 @@
 {
   "tag": "vercel",
   "locale": "zh",
-  "intro": "本档案收录了 5 篇带有「vercel」标签的文章，发布时间从2026年4月19日至2026年4月28日。其中包含4 篇高危、1 篇中危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "9fe1ebd2acba9ab2",
-  "source_intro_hash": "410f87020d53869e",
-  "model": "template:sparse",
-  "generated_at": "2026-04-29T04:20:22.462Z",
+  "intro": "近几周，技术和云计算领域面临重大风险，全球共报告五起高严重性和一起中等严重性事件。两个关键漏洞CVE-2026-44574和CVE-2026-44575，各自CVSS评分为8.1，被认定为最受关注的问题。根据归档于Vercel标签下的六篇文章，这些问题在2026年4月19日至5月15日期间影响了云服务和软件开发环境。",
+  "sources_hash": "455c5fa6aaa4e5b4",
+  "source_intro_hash": "43cd205da7e995c6",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:11:14.491Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

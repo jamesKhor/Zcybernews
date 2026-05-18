@@ -1,9 +1,9 @@
 {
   "tag": "encryption",
   "locale": "en",
-  "intro": "Over 11 articles published between April 12 and April 26, 2026, the tag encryption covers a mix of three medium, three high, four informational, and one critical severity report. The threat actor Kyber was observed, with the most affected sectors including government, technology, all, critical infrastructure, and defense. Regions impacted globally span Iran, the Middle East, the United Kingdom, and the United States.",
-  "sources_hash": "988821345ceeb409",
+  "intro": "In the 30 days from 12 April to 12 May 2026, ZCyberNews published 12 articles under the encryption tag. The coverage included two critical and three high-severity incidents, with the threat actor Kyber observed across multiple campaigns. Affected sectors spanned technology, government, telecommunications, and critical infrastructure, while regions impacted included Iran, the Middle East, the United Kingdom, and the United States. The reporting also covered four informational pieces, reflecting a broad focus on encryption-related developments globally.",
+  "sources_hash": "7d58f736f19870e3",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:18:18.053Z",
+  "generated_at": "2026-05-18T10:01:09.193Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

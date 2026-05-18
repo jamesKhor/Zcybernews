@@ -1,26 +1,33 @@
 {
   "tag": "nvd",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-20"
+    "latest": "2026-05-14"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
-    "all"
+    "all",
+    "financial services",
+    "government",
+    "healthcare",
+    "technology"
   ],
   "top_regions": [
-    "Global"
+    "EU",
+    "Global",
+    "North america"
   ],
   "severity_mix": {
+    "medium": 1,
     "informational": 5
   },
   "recent_excerpts": [
+    "NIST now enriches only 15-20% of CVEs under new policy as of April 2026, leaving 80% without CVSS scores or product mappings.",
     "NIST will no longer analyze all 263,000+ annual CVE submissions, shifting to a risk-based model to prioritize high-impact flaws as submissions surge 263% since 2020.",
-    "NIST will no longer fully analyze all CVEs submitted to the National Vulnerability Database, citing a 263% increase in submissions that has overwhelmed its enrichment process, leaving security teams w",
-    "The U.S. National Institute of Standards and Technology has significantly reduced its enrichment of CVE data in the National Vulnerability Database, forcing security teams to manually process thousand"
+    "NIST will no longer fully analyze all CVEs submitted to the National Vulnerability Database, citing a 263% increase in submissions that has overwhelmed its enrichment process, leaving security teams w"
   ],
-  "sources_hash": "21c750e1b15a749f"
+  "sources_hash": "4fd8b8401b5f2c55"
 }

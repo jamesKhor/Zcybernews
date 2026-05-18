@@ -1,0 +1,53 @@
+{
+  "tag": "integer-overflow",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-05-07",
+    "latest": "2026-05-16"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-43908",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-8573",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-8577",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-44636",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-43996",
+      "cvss": 5.5
+    }
+  ],
+  "top_sectors": [
+    "animation",
+    "media and entertainment",
+    "technology",
+    "visual effects",
+    "all"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "medium": 1,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "在 Windows 上的 Chrome 148 中的 CVE-2026-8573 (CVSS 8.3) 和 CVE-2026-8577 (CVSS 8.8) 允许通过精心制作的视屏或 HTML 页面进行沙箱逃逸和 RCE。立即更新。",
+    "CVE-2026-44636 (CVSS 7.8): 在 libsixel 1.8.7-r1 及更早版本中存在一个有符号整数溢出，允许攻击者通过精心制作的 SIXEL 图像触发堆缓冲区溢出，从而可能...",
+    "CVE-2026-43908 (CVSS 8.8): 在 OpenImageIO 的 ConvertCbYCrYToRGB() 中存在一个有符号的 32 位整数溢出，导致越界写入，可能在 VFX 管线中引起崩溃或代码执行。"
+  ],
+  "sources_hash": "48cfcf064cf13338"
+}

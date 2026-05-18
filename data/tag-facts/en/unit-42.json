@@ -1,14 +1,15 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 10,
+  "count": 12,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-05-01"
+    "latest": "2026-05-15"
   },
   "top_actors": [
-    "TeamPCP",
-    "TGR-STA-1030"
+    "Gremlin Stealer",
+    "LockBit",
+    "TeamPCP"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -21,16 +22,17 @@
   "top_regions": [
     "Global",
     "Central america",
+    "North america",
     "South america"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 9,
     "critical": 1
   },
   "recent_excerpts": [
-    "Palo Alto Unit 42 argues endpoint-only detection misses attacks in cloud, network, and identity layers. Report details essential data sources for each zone.",
-    "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
-    "Palo Alto Unit 42 outlines defensive strategies for frontier AI threats — model poisoning, prompt injection, and data leakage — in response to top customer queries."
+    "Unit 42 details a new Gremlin stealer variant using XOR-encrypted resource sections, crypto clipper, WebSocket session hijacking, and a commercial packer with instruction...",
+    "West Pharmaceutical Services took systems offline globally after a May 4 ransomware attack with data exfiltration. Unit 42 is investigating; ransom may have been paid.",
+    "Palo Alto Unit 42 argues endpoint-only detection misses attacks in cloud, network, and identity layers. Report details essential data sources for each zone."
   ],
-  "sources_hash": "e8a734b76c6fe322"
+  "sources_hash": "3e9d470a2ab340a0"
 }

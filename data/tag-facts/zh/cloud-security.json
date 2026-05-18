@@ -1,40 +1,55 @@
 {
   "tag": "cloud-security",
   "locale": "zh",
-  "count": 23,
+  "count": 25,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-01"
+    "latest": "2026-05-07"
   },
   "top_actors": [
-    "APT41"
+    "APT41",
+    "PCPJack"
   ],
   "top_cves": [
     {
       "id": "CVE-2026-33413",
       "cvss": 8.8
+    },
+    {
+      "id": "CVE-2025-29927"
+    },
+    {
+      "id": "CVE-2025-48703"
+    },
+    {
+      "id": "CVE-2025-55182"
+    },
+    {
+      "id": "CVE-2025-9501"
     }
   ],
   "top_sectors": [
     "technology",
-    "cloud-services",
     "government",
     "healthcare",
-    "cloud services"
+    "cloud-services",
+    "financial services"
   ],
   "top_regions": [
     "Global",
-    "Israel"
+    "EU",
+    "Israel",
+    "North america"
   ],
   "severity_mix": {
-    "high": 14,
+    "high": 16,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
-    "Dark Reading 报告 AI agents 正在删除生产数据库，因为组织在没有适当的安全测试或访问控制的情况下部署代理集成。",
-    "Vercel 在从 Context.ai 被盗的 OAuth 令牌使未授权访问内部系统成为可能后披露了一起入侵事件，通过连接的应用程序。没有客户数据被暴露。",
-    "BHIS 发布了一份云安全指南，涵盖了 IAM 配置错误、共享责任差距和日志盲点 —— 对于保护 AWS、Azure 或 GCP 的团队来说是必读材料…"
+    "SentinelLabs 发现 PCPJack，这是一个针对 Docker、Kubernetes、Redis 和 MongoDB 的凭证窃取蠕虫，它积极地从被入侵的云中移除竞争对手 TeamPCP 的访问权限...",
+    "没有过期的OAuth令牌在Google和Microsoft租户中持续存在 —— 攻击者绕过MFA和边界控制。",
+    "Dark Reading 报告 AI agents 正在删除生产数据库，因为组织在没有适当的安全测试或访问控制的情况下部署代理集成。"
   ],
-  "sources_hash": "dc18448262e9af26"
+  "sources_hash": "d6216f942aaa67bd"
 }

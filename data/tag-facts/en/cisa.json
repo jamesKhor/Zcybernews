@@ -17,6 +17,10 @@
       "cvss": 9.9
     },
     {
+      "id": "CVE-2026-21643",
+      "cvss": 9.1
+    },
+    {
       "id": "CVE-2026-34197",
       "cvss": 8.8
     },
@@ -26,9 +30,6 @@
     },
     {
       "id": "CVE-2024-20662"
-    },
-    {
-      "id": "CVE-2024-21412"
     }
   ],
   "top_sectors": [
@@ -53,5 +54,5 @@
     "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
     "CISA and USCG found persistent weak configurations, unpatched systems, and credential reuse during a proactive threat hunt at a US critical infrastructure org."
   ],
-  "sources_hash": "1a8ce2a03cef6b3b"
+  "sources_hash": "9567a177857e5607"
 }

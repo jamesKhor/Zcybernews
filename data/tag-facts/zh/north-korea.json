@@ -1,15 +1,15 @@
 {
   "tag": "north-korea",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-01"
+    "latest": "2026-05-06"
   },
   "top_actors": [
     "Lazarus Group",
-    "APT37 (ScarCruft, InkySquid)",
-    "BlueNoroff"
+    "APT37",
+    "APT37 (ScarCruft, InkySquid)"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -17,22 +17,23 @@
     "technology",
     "financial services",
     "finance",
-    "software development"
+    "government"
   ],
   "top_regions": [
     "Global",
     "Asia",
     "Europe",
-    "North america"
+    "North america",
+    "China"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 9,
     "critical": 1
   },
   "recent_excerpts": [
+    "ESET 表示 APT37 破坏了 Sqgame 纸牌游戏平台，向 Android 设备传递 BirdCall 后门，窃取延边朝鲜族人的短信、通话记录和私钥。",
     "朝鲜黑客在2026年第一季度使用木马化的交易应用程序如CoinStats和TradingView AI Agent窃取了超过1200万美元的加密货币，以窃取恢复短语和…",
-    "朝鲜黑客在2026年洗钱了所有被盗加密货币的76% —— 23亿美元 —— 根据Chainalysis的数据。",
-    "BlueNoroff 使用被盗视频、AI 头像和伪造的 Zoom 邀请，将加密高管变成攻击诱饵。"
+    "朝鲜黑客在2026年洗钱了所有被盗加密货币的76% —— 23亿美元 —— 根据Chainalysis的数据。"
   ],
-  "sources_hash": "383320fd83866a49"
+  "sources_hash": "a266af4757217cf8"
 }

@@ -1,24 +1,26 @@
 {
   "tag": "security-operations",
   "locale": "zh",
-  "count": 9,
+  "count": 12,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-05"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
-    "cybersecurity"
+    "cybersecurity",
+    "enterprise"
   ],
   "top_regions": [],
   "severity_mix": {
-    "informational": 6
+    "informational": 7,
+    "medium": 1
   },
   "recent_excerpts": [
-    "Elastic Security Labs 发布了 Conversational Entity Analytics，将内嵌实体数据和 Canvas 预览嵌入到 Agent Builder 中，以便在不离开聊天的情况下更快地进行威胁狩猎…",
-    "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。",
-    "Rapid7 认为，大多数泄露源于资产、身份和攻击路径覆盖的可见性差距，而不是复杂的漏洞利用。"
+    "一个Radiant Security网络研讨会探讨了为什么WAF、DLP、OT/IoT、暗网和供应链警报经常被SOC团队忽略——以及自动化如何缩小这一差距。",
+    "Rapid7 的新 Cyber GRC 平台旨在缩小安全运营和合规性之间的差距，解决 IBM 2025 报告中识别的 241 天平均违规生命周期问题。",
+    "对企业环境中2500万个安全警报的分析显示，防御者系统性地忽视低严重性事件，平均每星期错过一次真正的威胁。"
   ],
-  "sources_hash": "96f47e41eb0c79a0"
+  "sources_hash": "a0ed44ddb83de575"
 }

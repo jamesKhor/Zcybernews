@@ -1,24 +1,26 @@
 {
   "tag": "soc",
   "locale": "en",
-  "count": 10,
+  "count": 13,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-01"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
-    "cybersecurity"
+    "cybersecurity",
+    "enterprise"
   ],
   "top_regions": [],
   "severity_mix": {
+    "medium": 1,
     "informational": 7
   },
   "recent_excerpts": [
-    "Criminal IP and Securonix ThreatQ partnership embeds exposure-based threat intel into automated workflows, reducing manual triage for SOC teams.",
-    "Black Hills Information Security's SOC replaced tiered ticket queues with a flat team model where analysts solve incidents in real time.",
-    "Black Hills InfoSec SOC team recounts a 14-hour overnight incident response engagement from Wild West Hackin' Fest in Deadwood — real-world triage, containment, and lessons for…"
+    "A Radiant Security webinar examines why WAF, DLP, OT/IoT, dark web, and supply chain alerts are routinely ignored by SOC teams — and how automation can close the gap.",
+    "Analysis of 25 million security alerts across enterprise environments shows defenders systematically ignore low-severity events, missing an average of one genuine threat per week.",
+    "Rapid7's 2026 Global Cybersecurity Summit agenda shifts focus from threat volume to earlier detection, exposure management, and AI-assisted decision-making across two tracks."
   ],
-  "sources_hash": "f0efd140c9f2b660"
+  "sources_hash": "d385e79f1493dc9d"
 }

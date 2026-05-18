@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "zh",
-  "intro": "2026年4月13日至5月1日期间，ZCyberNews共发布23篇关于云安全的文章。报道追踪了APT41的活动及严重级别漏洞CVE-2026-33413（CVSS评分为8.8）。报道涵盖高严重性和严重性事件，记录了14起高严重性事件和2起严重性事件。受影响行业包括技术、云服务、政府、医疗保健及云服务，观察到的地区为全球和以色列。",
-  "sources_hash": "dc18448262e9af26",
-  "source_intro_hash": "88d83c102dbf444c",
+  "intro": "在2026年4月13日至5月7日期间发布的25篇文章中，云安全报道重点关注了APT41和PCPJack的活动，并涉及五个关键CVE编号，包括CVE-2026-33413（CVSS 8.8）、CVE-2025-29927、CVE-2025-48703、CVE-2025-55182和CVE-2025-9501。这16份高危、3份信息性及2份严重等级的报告覆盖了技术、政府、医疗、云服务和金融服务行业，影响范围遍及欧盟、以色列和北美地区。",
+  "sources_hash": "d6216f942aaa67bd",
+  "source_intro_hash": "c79fd9baf7f3cf06",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:12:26.365Z",
+  "generated_at": "2026-05-18T10:07:42.317Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

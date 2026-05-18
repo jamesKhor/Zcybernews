@@ -1,10 +1,10 @@
 {
   "tag": "remote-access-trojan",
   "locale": "zh",
-  "intro": "2026年4月13日至22日期间，ZCyberNews发布了五份报告，详细介绍了高严重性的远程访问木马攻击活动。Lazarus Group被确认为主要威胁行为者，其攻击目标集中在加密货币、软件开发和科技行业。这些攻击活动具有全球影响范围，其中拉丁美洲地区出现了显著活跃迹象。所有五起事件均被评估为高严重性，凸显了在此期间此类入侵工具所构成的持续且重大的风险。",
-  "sources_hash": "5b6d2e525c8a0ce3",
-  "source_intro_hash": "efeb7929d4c79c14",
+  "intro": "本档案收录了6篇标记为`remote-access-trojan`的文章，发布日期介于2026年4月13日至2026年4月30日之间，为安全团队提供了关于该主题在ZCyberNews报道中出现情况的聚焦视角。观察到的行为者提及包括Lazarus Group，仅在底层文章元数据支持该归因时予以呈现。受影响范围信号强调技术、加密货币及企业软件，覆盖全球和拉丁美洲地区，帮助读者比较暴露模式，且不添加超出档案数据范围的主张。严重程度覆盖包括6篇高危报告。",
+  "sources_hash": "d510f79783c9e8c8",
+  "source_intro_hash": "aaac8d2866749300",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:11:38.813Z",
+  "generated_at": "2026-05-18T10:10:38.879Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

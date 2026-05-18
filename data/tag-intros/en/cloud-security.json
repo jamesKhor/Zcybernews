@@ -1,9 +1,9 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "intro": "Between 13 April and 1 May 2026, ZCyberNews published 23 articles on cloud security. Coverage tracked APT41 activity and the critical-severity vulnerability CVE-2026-33413, which carries a CVSS score of 8.8. The reporting spanned high and critical severity incidents, with 14 high-severity and 2 critical-severity events documented. Affected sectors included technology, cloud-services, government, healthcare, and cloud services, while observed regions were Global and Israel.",
-  "sources_hash": "dc18448262e9af26",
+  "intro": "Over the 25 articles published between April 13 and May 7, 2026, cloud-security coverage focused on activity from APT41 and PCPJack, with five key CVEs including CVE-2026-33413 (CVSS 8.8), CVE-2025-29927, CVE-2025-48703, CVE-2025-55182, and CVE-2025-9501. The 16 high, 3 informational, and 2 critical severity reports spanned the technology, government, healthcare, cloud-services, and financial services sectors, with impacts observed globally across the EU, Israel, and North America.",
+  "sources_hash": "9a03cbc37a8e4a60",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:09:50.472Z",
+  "generated_at": "2026-05-18T09:59:32.321Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "espionage",
   "locale": "zh",
-  "intro": "2026年4月12日至5月1日期间，ZCyberNews共报道了十篇以间谍活动为重点的文章，其中APT28 (Fancy Bear) 是出现频率最高的威胁行为体。其他值得关注的行为体包括Deep#Door和Mustang Panda。相关报道记录了八起高严重性和两起严重性事件，影响范围涵盖政府、国防、医疗、技术和银行领域。目标区域遍及欧洲、东南亚、东亚、印度及全球利益相关地区。",
-  "sources_hash": "c0d6348b1673423a",
-  "source_intro_hash": "7270041550ee12e2",
+  "intro": "本档案收录了2026年4月12日至2026年5月16日期间发布的12篇标记为`espionage`的文章，为安全团队提供了该话题在ZCyberNews报道中出现的聚焦视角。观察到的行为体引用包括APT28 (Fancy Bear)、APT37和Deep#Door，仅在底层文章元数据支持归因时呈现。受影响范围信号强调欧洲、韩国及东南亚地区的政府、国防与医疗领域，帮助读者在不超出档案数据添加论断的前提下比较暴露模式。严重程度覆盖包括2篇严重和10篇高危报告。",
+  "sources_hash": "b1be194e67c85946",
+  "source_intro_hash": "eb28d895835dc1f6",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:12:33.954Z",
+  "generated_at": "2026-05-18T10:08:27.829Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

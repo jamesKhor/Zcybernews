@@ -1,28 +1,42 @@
 {
   "tag": "raas",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-20",
-    "latest": "2026-04-28"
+    "latest": "2026-05-13"
   },
   "top_actors": [
     "The Gentlemen",
     "LockBit",
     "VECT Ransomware"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2024-55591"
+    },
+    {
+      "id": "CVE-2025-32433"
+    },
+    {
+      "id": "CVE-2025-33073"
+    }
+  ],
   "top_sectors": [
     "financial services",
     "government",
-    "retail"
+    "retail",
+    "software consultancy",
+    "various"
   ],
   "top_regions": [
     "Caribbean",
-    "Latin america"
+    "Latin america",
+    "Turkey",
+    "UK"
   ],
   "severity_mix": {
-    "critical": 1,
+    "critical": 2,
     "high": 3,
     "medium": 1
   },
@@ -31,5 +45,5 @@
     "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent",
     "The Gentlemen ransomware-as-a-service group uses the SystemBC SOCKS5 proxy tool to hide command-and-control traffic, according to a Check Point DFIR report analyzing a recent affiliate attack."
   ],
-  "sources_hash": "2db4464d8c2726cb"
+  "sources_hash": "964c2d09fddb41cf"
 }

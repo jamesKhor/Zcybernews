@@ -1,35 +1,45 @@
 {
   "tag": "npm",
   "locale": "en",
-  "count": 9,
+  "count": 13,
   "date_range": {
     "first": "2026-04-21",
-    "latest": "2026-05-01"
+    "latest": "2026-05-15"
   },
   "top_actors": [
+    "TeamPCP",
     "CanisterSprawl",
-    "mini Shai-Hulud",
-    "Mini Shai-Hulud"
+    "mini Shai-Hulud"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-41650",
+      "cvss": 6.1
+    },
+    {
+      "id": "CVE-2026-44664",
+      "cvss": 6.1
+    }
+  ],
   "top_sectors": [
     "software development",
     "technology",
-    "cloud services",
-    "enterprise software",
-    "software"
+    "AI",
+    "automation",
+    "cloud services"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 6,
-    "high": 3
+    "medium": 1,
+    "critical": 8,
+    "high": 4
   },
   "recent_excerpts": [
-    "Attackers compromised SAP, Lightning, and Intercom npm packages in a supply chain attack affecting 1,800 victims; packages had 10M monthly downloads.",
-    "Attackers compromised multiple SAP-related npm packages to deploy credential-stealing malware, targeting SAP BTP and cloud app credentials. Campaign dubbed mini Shai-Hulud.",
-    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…"
+    "CVE-2026-44664 (CVSS 6.1) in fast-xml-builder lets attackers break out of XML comments and inject arbitrary content via triple-dash sequences; fixed in version 1.1.6.",
+    "Socket and StepSecurity found backdoored node-ipc versions 9.1.6, 9.2.3, and 12.0.1 exfiltrate SSH keys, AWS credentials, and env files from developer machines.",
+    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android."
   ],
-  "sources_hash": "b512bcf1accf5767"
+  "sources_hash": "620d26d1b5a3b104"
 }

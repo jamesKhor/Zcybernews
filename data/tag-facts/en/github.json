@@ -1,0 +1,43 @@
+{
+  "tag": "github",
+  "locale": "en",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-21",
+    "latest": "2026-05-17"
+  },
+  "top_actors": [
+    "Lazarus Group"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-45033",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-3854",
+      "cvss": 8.7
+    }
+  ],
+  "top_sectors": [
+    "software development",
+    "technology",
+    "cryptocurrency",
+    "enterprise software",
+    "identity-management"
+  ],
+  "top_regions": [
+    "Global",
+    "North america"
+  ],
+  "severity_mix": {
+    "high": 6,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "An attacker used a compromised GitHub token to download Grafana's entire private codebase. The company says no customer data was accessed and the incident involved an extortion...",
+    "CVE-2026-45033 (CVSS 9.8) in GitHub Copilot CLI before 1.0.43 lets attackers achieve remote code execution by embedding a malicious bare git repository in a project directory.",
+    "SailPoint reported to the SEC that attackers accessed a subset of its GitHub repositories on April 20 via a third-party app vulnerability."
+  ],
+  "sources_hash": "14832a6af5996bf7"
+}

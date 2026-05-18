@@ -1,9 +1,9 @@
 {
   "tag": "persistence",
   "locale": "en",
-  "intro": "Comburglar and VoidLink were the primary threat actors associated with the persistence tag across six high-severity incidents reported between April 13 and April 28, 2026. The attacks primarily targeted the government, technology, and multiple sectors globally. Each of these distinct actors was observed in separate campaigns, with no affiliations or origins provided in the reporting. The coverage focused on the technical methods used to maintain unauthorized access, reflecting a concentrated period of activity with all six articles rated as high severity.",
-  "sources_hash": "e3374f4a69bd5a92",
+  "intro": "Between April and May 2026, ZCyberNews published nine articles on persistence, with Comburglar, VENOMOUS#HELPER, and VoidLink emerging as the top threat actors. The coverage highlighted vulnerabilities including CVE-2023-30253, CVE-2024-48760, and CVE-2025-6793, affecting sectors such as government, enterprise, financial services, multiple, and technology. The threat was assessed as high severity, with a global impact and specific focus on the United States.",
+  "sources_hash": "670a23b4e17d1182",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:29:43.126Z",
+  "generated_at": "2026-05-18T10:02:48.925Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

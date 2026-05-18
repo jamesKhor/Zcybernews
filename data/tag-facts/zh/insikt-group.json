@@ -1,0 +1,32 @@
+{
+  "tag": "insikt-group",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-25",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [
+    "Cobalt Strike"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "retail"
+  ],
+  "top_regions": [
+    "Caribbean",
+    "Latin america"
+  ],
+  "severity_mix": {
+    "informational": 1,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "Recorded Future 的 Insikt Group 认为，AI 对攻击者 TTPs 和防御者暴露数据的推理创造了持续的风险评估，缩小了...",
+    "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。",
+    "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。"
+  ],
+  "sources_hash": "ac1461253faa9778"
+}

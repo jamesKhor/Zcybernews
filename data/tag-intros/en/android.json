@@ -1,9 +1,9 @@
 {
   "tag": "android",
   "locale": "en",
-  "intro": "Over the past two weeks, ZCyberNews has tracked 12 articles concerning Android, with the threat actors Mirax and NGate appearing prominently. The coverage spans from April 12 to April 26, 2026, and includes a severity mix of one medium, six high, three informational, and two critical reports. The most frequently cited vulnerability is CVE-2023-4863. Affected sectors include cryptocurrency, technology, consumer, financial services, and individuals, while impacted regions span Europe, Global, Brazil, Latin America, and Spain.",
-  "sources_hash": "eaef9be75eee1fdf",
+  "intro": "Mirax, NGate, and TrickMo are the top threat actors in the fifteen articles on Android published between April 12 and May 17, 2026. Key vulnerabilities include CVE-2026-8566, CVE-2026-8568, CVE-2023-4863, and CVE-2025-54957, affecting sectors such as cryptocurrency, technology, and financial services globally, with specific incidents in Europe, Austria, Brazil, and France. The coverage comprises nine high-severity, one medium, three informational, and two critical reports.",
+  "sources_hash": "c9088f56bb1cb02f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-28T04:20:51.599Z",
+  "generated_at": "2026-05-18T10:00:20.555Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,0 +1,49 @@
+{
+  "tag": "check-point-research",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-26",
+    "latest": "2026-05-13"
+  },
+  "top_actors": [
+    "Handala Hack",
+    "Silver Dragon",
+    "The Gentlemen"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2024-55591"
+    },
+    {
+      "id": "CVE-2025-32433"
+    },
+    {
+      "id": "CVE-2025-33073"
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "critical infrastructure",
+    "software consultancy",
+    "telecommunications",
+    "various"
+  ],
+  "top_regions": [
+    "Europe",
+    "Israel",
+    "Middle east",
+    "Southeast asia",
+    "Turkey"
+  ],
+  "severity_mix": {
+    "critical": 2,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying.",
+    "A leaked backend database from The Gentlemen RaaS operation reveals 9 accounts, admin TOX ID, initial access via Fortinet/Cisco edge flaws, and a 190,000 USD ransom payout.",
+    "Check Point Research tracks Silver Dragon, a Chinese-aligned APT group operationally linked to APT41, targeting government and telecom entities in Southeast Asia and Europe with…"
+  ],
+  "sources_hash": "91025bee5f111472"
+}

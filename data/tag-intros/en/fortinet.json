@@ -1,9 +1,9 @@
 {
   "tag": "fortinet",
   "locale": "en",
-  "intro": "Between 14 and 25 April 2026, ZCyberNews published six articles under the Fortinet tag. The coverage highlighted two critical vulnerabilities: CVE-2025-59718, carrying a CVSS score of 9.8, and CVE-2026-39808. Four of the articles were classified as critical severity and two as high. The affected sectors included financial services, government, and technology, with the primary regions impacted being Europe and North America.",
-  "sources_hash": "4857dc4d42100910",
+  "intro": "This archive covers seven articles from April 14 to May 13, 2026, focusing on Fortinet. The threat actor The Gentlemen was observed in these incidents. Key vulnerabilities include CVE-2025-59718, CVE-2026-21643, CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. The affected sectors are financial services, government, software consultancy, technology, and various others, with reports coming from Europe, North America, Turkey, and the UK. The severity mix across these articles is five critical and two high.",
+  "sources_hash": "9523cb3ac841c26a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:20:25.433Z",
+  "generated_at": "2026-05-18T10:03:45.170Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,32 +1,54 @@
 {
   "tag": "google",
   "locale": "zh",
-  "count": 9,
+  "count": 14,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-05-16"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-8550",
+      "cvss": 6.5
+    },
+    {
+      "id": "CVE-2026-8556",
+      "cvss": 6.5
+    },
+    {
+      "id": "CVE-2026-8541",
+      "cvss": 5.3
+    },
+    {
+      "id": "CVE-2026-8543",
+      "cvss": 5.3
+    },
+    {
+      "id": "CVE-2026-8566",
+      "cvss": 3
+    }
+  ],
   "top_sectors": [
     "technology",
+    "all",
     "creators",
     "enterprise software",
-    "media",
-    "telecommunications"
+    "media"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 6,
+    "critical": 2,
     "informational": 5,
     "medium": 1
   },
   "recent_excerpts": [
-    "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。",
-    "Google 的 Android 17 Beta 4 版本引入了对 TLS 中后量子混合密钥协商的支持，并对应用程序施加了新的内存限制，这标志着在操作系统最终稳定版本发布之前的重要安全增强。",
-    "Google 宣布新的 Android 17 隐私政策限制了接触和位置数据访问，而其2025年广告安全报告详细说明了拦截83亿违反政策的广告和2490万广告商账户的暂停。"
+    "Google Chrome 148.0.7778.168 修复了 CVE-2026-8543 和 CVE-2026-8541 —— 这两个高危的越界读取漏洞存在于 Mac 和所有平台上的 FileSystem 和 UI 组件中。",
+    "CVE-2026-8568 (CVSS 3.1) 允许攻击者在渲染器被破坏后通过 AI 功能绕过 Chrome 站点隔离；CVE-2026-8566 (CVSS 4.3) 针对 Android 支付。",
+    "Google 在 Chrome 148.0.7778.168 for Windows 中修复了 CVE-2026-8556（ANGLE 跨源泄露）和 CVE-2026-8550（Google Lens 用后释放）这两个漏洞。这两个缺陷都需要一个被破坏的渲染器。"
   ],
-  "sources_hash": "81b3aa32c457e5db"
+  "sources_hash": "d76f8077d2c2c480"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "zh",
-  "intro": "2026年4月16日至26日期间，卡巴斯基发布了六份报告，涉及威胁行为者CrystalX和Lotus Wiper。这些文章详细描述了影响全球能源、楼宇自动化、加密货币、工程和金融行业的高严重性和关键性事件，重点关注拉丁美洲和委内瑞拉。报道涵盖了五起高严重性事件和一起关键严重性事件，突显了这些地区运营技术和数字金融系统面临的风险。",
-  "sources_hash": "261c6b02c7b74412",
-  "source_intro_hash": "7f02101ddabaab55",
+  "intro": "本档案收录了2026年4月16日至2026年5月8日期间发布的8篇标记为`kaspersky`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的聚焦视角。观察到的行为体提及包括CrystalX、Lotus Wiper和OceanLotus，仅在底层文章元数据支持归因时予以呈现。受影响范围信号强调全球、拉丁美洲和委内瑞拉地区的能源、金融与科技领域，帮助读者在不超过档案数据范围的前提下对比暴露模式。严重程度覆盖包括1篇严重报告和7篇高危报告。",
+  "sources_hash": "3905f5b29bd24dc3",
+  "source_intro_hash": "b83e718902524695",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-04T04:24:42.883Z",
+  "generated_at": "2026-05-18T10:09:20.516Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

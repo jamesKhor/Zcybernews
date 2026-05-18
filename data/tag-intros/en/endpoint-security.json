@@ -1,9 +1,9 @@
 {
   "tag": "endpoint-security",
   "locale": "en",
-  "intro": "Over a twelve-day period in April 2026, ZCyberNews published six articles on endpoint security, covering two high-severity vulnerabilities and two medium-severity issues, alongside two informational pieces. The most prominent vulnerabilities were CVE-2026-5490, carrying a CVSS score of 8.8, and CVE-2026-5492, with a CVSS score of 6.5. These security concerns primarily affected the education, government, healthcare, and utilities sectors, highlighting the broad risk landscape for organizations relying on endpoint defenses during this period.",
-  "sources_hash": "f9ac5e726a2a81ad",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:14:14.080Z",
+  "intro": "This archive collects 6 articles tagged `endpoint-security` published between April 15, 2026 and April 26, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2026-5490 and CVE-2026-5492, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize education, government, and healthcare, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 high, 2 medium, and 2 informational reports.",
+  "sources_hash": "886f673afbc73183",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:04:42.659Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

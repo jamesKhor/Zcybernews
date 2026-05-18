@@ -1,9 +1,9 @@
 {
   "tag": "infostealer",
   "locale": "en",
-  "intro": "This archive collects reporting on the infostealer malware landscape from April 10 to April 21, 2026. The seven articles detail a series of high-severity incidents, with six assessed as high risk. The threat actor Omnistealer features prominently in this coverage. The reported campaigns primarily targeted entities within the government and healthcare sectors. Geographically, the affected organizations were concentrated in Ukraine.",
-  "sources_hash": "7a81777c04c36980",
+  "intro": "Over the past month, ZCyberNews has tracked 13 articles on infostealer threats, with 11 rated high severity and one critical. The most frequently observed threat actors were Gremlin Stealer, LummaC2, and NWHStealer. These campaigns primarily targeted the technology, software development, cryptocurrency, financial services, and gaming sectors, with impacts noted globally and in Ukraine. The coverage spanned from April 10 to May 15, 2026, reflecting a concentrated period of infostealer activity across these industries and regions.",
+  "sources_hash": "01d0340ed5403081",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:07:23.422Z",
+  "generated_at": "2026-05-18T10:00:59.323Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

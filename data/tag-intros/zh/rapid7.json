@@ -1,10 +1,10 @@
 {
   "tag": "rapid7",
   "locale": "zh",
-  "intro": "在2026年4月13日至29日的16天里，ZCyberNews发布了10篇标记为rapid7的文章，涵盖了两起严重级别和两起高严重性事件，以及四份信息性报告。威胁行为者Kyber被观察到针对欧洲、全球和北美地区的企业IT、金融服务、政府、托管服务及技术行业。关键漏洞包括CVE-2025-59718和CVE-2026-41940，两者CVSS评分均为9.8。",
-  "sources_hash": "31dee5091419afca",
-  "source_intro_hash": "63a49c64d01c2cff",
+  "intro": "从2026年4月13日至5月15日期间，超过15篇文章涵盖了Rapid7对威胁行为者KongTuke和Kyber的报道。重点提及了关键漏洞CVE-2026-20127和CVE-2026-20182（两者CVSS评分均为10分），以及CVE-2025-59718和CVE-2026-41940。报道范围覆盖全球、欧洲和北美地区的企业、企业IT、企业网络、金融服务及政府行业，严重程度分布为三篇高危、四篇严重及五篇信息性报告。",
+  "sources_hash": "f6469948c3f935de",
+  "source_intro_hash": "16d6a96209d79d58",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:21:54.307Z",
+  "generated_at": "2026-05-18T10:10:29.977Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,0 +1,10 @@
+{
+  "tag": "malvertising",
+  "locale": "zh",
+  "intro": "本档案收录了2026年4月15日至2026年5月10日期间发布的5篇标记为`malvertising`的文章，为安全团队提供了该话题在ZCyberNews报道中的聚焦视角。观察到的行为者提及包括Mirax和Pushpaganda，仅当底层文章元数据支持该归因时予以呈现。受影响范围信号强调澳大利亚、加拿大和欧洲的普通消费者、个人及技术领域，帮助读者在不超过档案数据范围的前提下比较暴露模式。严重程度覆盖包括2篇高危和3篇中危报告。",
+  "sources_hash": "2ba11fd2d6c487e3",
+  "source_intro_hash": "b26894a1e2886a9f",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:09:36.586Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "windows",
   "locale": "en",
-  "count": 23,
+  "count": 24,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-29"
+    "latest": "2026-05-09"
   },
   "top_actors": [
     "Kyber",
@@ -21,18 +21,21 @@
       "cvss": 7.8
     },
     {
+      "id": "CVE-2026-8069",
+      "cvss": 7.8
+    },
+    {
       "id": "CVE-2026-26179",
       "cvss": 7.5
     },
     {
       "id": "CVE-2026-32183",
       "cvss": 7.5
-    },
-    {
-      "id": "CVE-2024-20662"
     }
   ],
   "top_sectors": [
+    "consumer electronics",
+    "gaming",
     "government",
     "IT",
     "managed service providers"
@@ -41,14 +44,14 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 17,
+    "high": 18,
     "critical": 2,
     "medium": 4
   },
   "recent_excerpts": [
+    "CVE-2026-8069: Acer PredatorSense versions 3.00.3136 to 3.00.3196 expose a misconfigured named pipe, letting any authenticated local user execute code as SYSTEM and delete...",
     "CISA added CVE-2024-1708 (ConnectWise ScreenConnect path traversal, CVSS 8.4) and an unnamed Windows flaw to its KEV catalog based on confirmed active exploitation.",
-    "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying.",
-    "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis."
+    "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying."
   ],
-  "sources_hash": "f540b87b967040dd"
+  "sources_hash": "e2d061f6dc84a80a"
 }

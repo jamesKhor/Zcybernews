@@ -1336,5 +1336,251 @@
     "locale": "en",
     "lastError": "word count 37 outside 60-140 (en)",
     "at": "2026-05-05T04:09:50.000Z"
+  },
+  {
+    "tag": "supply-chain-attack",
+    "locale": "en",
+    "lastError": "word count 45 outside 60-140 (en)",
+    "at": "2026-05-18T09:59:43.694Z"
+  },
+  {
+    "tag": "vulnerability-management",
+    "locale": "en",
+    "lastError": "word count 56 outside 60-140 (en)",
+    "at": "2026-05-18T10:00:04.836Z"
+  },
+  {
+    "tag": "apt",
+    "locale": "en",
+    "lastError": "word count 54 outside 60-140 (en)",
+    "at": "2026-05-18T10:00:29.448Z"
+  },
+  {
+    "tag": "open-source",
+    "locale": "en",
+    "lastError": "word count 54 outside 60-140 (en)",
+    "at": "2026-05-18T10:00:45.174Z"
+  },
+  {
+    "tag": "backdoor",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-05-18T10:00:50.518Z"
+  },
+  {
+    "tag": "espionage",
+    "locale": "en",
+    "lastError": "word count 53 outside 60-140 (en)",
+    "at": "2026-05-18T10:01:15.226Z"
+  },
+  {
+    "tag": "unit-42",
+    "locale": "en",
+    "lastError": "word count 54 outside 60-140 (en)",
+    "at": "2026-05-18T10:01:23.435Z"
+  },
+  {
+    "tag": "rat",
+    "locale": "en",
+    "lastError": "word count 49 outside 60-140 (en)",
+    "at": "2026-05-18T10:01:37.923Z"
+  },
+  {
+    "tag": "elastic-security",
+    "locale": "en",
+    "lastError": "word count 41 outside 60-140 (en)",
+    "at": "2026-05-18T10:02:00.174Z"
+  },
+  {
+    "tag": "evasion",
+    "locale": "en",
+    "lastError": "word count 48 outside 60-140 (en)",
+    "at": "2026-05-18T10:02:06.085Z"
+  },
+  {
+    "tag": "north-korea",
+    "locale": "en",
+    "lastError": "word count 56 outside 60-140 (en)",
+    "at": "2026-05-18T10:02:19.238Z"
+  },
+  {
+    "tag": "openai",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-05-18T10:02:25.010Z"
+  },
+  {
+    "tag": "denial-of-service",
+    "locale": "en",
+    "lastError": "word count 56 outside 60-140 (en)",
+    "at": "2026-05-18T10:02:33.646Z"
+  },
+  {
+    "tag": "iran",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-05-18T10:02:44.385Z"
+  },
+  {
+    "tag": "adobe",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-05-18T10:03:05.471Z"
+  },
+  {
+    "tag": "kaspersky",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-05-18T10:03:11.116Z"
+  },
+  {
+    "tag": "mfa-bypass",
+    "locale": "en",
+    "lastError": "word count 44 outside 60-140 (en)",
+    "at": "2026-05-18T10:03:16.626Z"
+  },
+  {
+    "tag": "bhis",
+    "locale": "en",
+    "lastError": "word count 53 outside 60-140 (en)",
+    "at": "2026-05-18T10:03:28.809Z"
+  },
+  {
+    "tag": "data-exfiltration",
+    "locale": "en",
+    "lastError": "word count 58 outside 60-140 (en)",
+    "at": "2026-05-18T10:03:42.426Z"
+  },
+  {
+    "tag": "latin-america",
+    "locale": "en",
+    "lastError": "word count 55 outside 60-140 (en)",
+    "at": "2026-05-18T10:03:53.720Z"
+  },
+  {
+    "tag": "pypi",
+    "locale": "en",
+    "lastError": "word count 47 outside 60-140 (en)",
+    "at": "2026-05-18T10:04:06.192Z"
+  },
+  {
+    "tag": "axios",
+    "locale": "en",
+    "lastError": "word count 53 outside 60-140 (en)",
+    "at": "2026-05-18T10:04:19.517Z"
+  },
+  {
+    "tag": "canvas",
+    "locale": "en",
+    "lastError": "word count 36 outside 60-140 (en)",
+    "at": "2026-05-18T10:04:25.037Z"
+  },
+  {
+    "tag": "china",
+    "locale": "en",
+    "lastError": "word count 54 outside 60-140 (en)",
+    "at": "2026-05-18T10:04:30.988Z"
+  },
+  {
+    "tag": "education",
+    "locale": "en",
+    "lastError": "word count 58 outside 60-140 (en)",
+    "at": "2026-05-18T10:04:36.880Z"
+  },
+  {
+    "tag": "endpoint-security",
+    "locale": "en",
+    "lastError": "word count 48 outside 60-140 (en)",
+    "at": "2026-05-18T10:04:42.658Z"
+  },
+  {
+    "tag": "financial-fraud",
+    "locale": "en",
+    "lastError": "word count 51 outside 60-140 (en)",
+    "at": "2026-05-18T10:04:48.155Z"
+  },
+  {
+    "tag": "infrastructure",
+    "locale": "en",
+    "lastError": "word count 42 outside 60-140 (en)",
+    "at": "2026-05-18T10:04:55.813Z"
+  },
+  {
+    "tag": "remote-access-trojan",
+    "locale": "en",
+    "lastError": "word count 47 outside 60-140 (en)",
+    "at": "2026-05-18T10:05:05.337Z"
+  },
+  {
+    "tag": "telegram",
+    "locale": "en",
+    "lastError": "word count 57 outside 60-140 (en)",
+    "at": "2026-05-18T10:05:10.811Z"
+  },
+  {
+    "tag": "cryptography",
+    "locale": "en",
+    "lastError": "word count 51 outside 60-140 (en)",
+    "at": "2026-05-18T10:05:27.787Z"
+  },
+  {
+    "tag": "data-leak",
+    "locale": "en",
+    "lastError": "word count 41 outside 60-140 (en)",
+    "at": "2026-05-18T10:05:33.647Z"
+  },
+  {
+    "tag": "exploit",
+    "locale": "en",
+    "lastError": "word count 56 outside 60-140 (en)",
+    "at": "2026-05-18T10:05:42.217Z"
+  },
+  {
+    "tag": "insikt-group",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-05-18T10:06:01.825Z"
+  },
+  {
+    "tag": "malvertising",
+    "locale": "en",
+    "lastError": "word count 44 outside 60-140 (en)",
+    "at": "2026-05-18T10:06:18.845Z"
+  },
+  {
+    "tag": "meta",
+    "locale": "en",
+    "lastError": "word count 48 outside 60-140 (en)",
+    "at": "2026-05-18T10:06:23.933Z"
+  },
+  {
+    "tag": "microsoft-365",
+    "locale": "en",
+    "lastError": "word count 40 outside 60-140 (en)",
+    "at": "2026-05-18T10:06:29.876Z"
+  },
+  {
+    "tag": "patch",
+    "locale": "en",
+    "lastError": "word count 51 outside 60-140 (en)",
+    "at": "2026-05-18T10:06:35.313Z"
+  },
+  {
+    "tag": "sentencing",
+    "locale": "en",
+    "lastError": "word count 46 outside 60-140 (en)",
+    "at": "2026-05-18T10:06:45.306Z"
+  },
+  {
+    "tag": "vishing",
+    "locale": "en",
+    "lastError": "word count 42 outside 60-140 (en)",
+    "at": "2026-05-18T10:06:52.602Z"
+  },
+  {
+    "tag": "sql-injection",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-36962 but it is not in the fact sheet",
+    "at": "2026-05-18T10:10:55.578Z"
   }
 ]

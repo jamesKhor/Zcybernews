@@ -1,0 +1,10 @@
+{
+  "tag": "github-actions",
+  "locale": "zh",
+  "intro": "2026年4月13日至5月16日期间发布的六篇文章涉及标签GitHub Actions，严重程度分布为三篇中等、一篇高危和一篇严重报告。观察到威胁行为者BufferZoneCorp和TeamPCP，唯一记录的CVE编号为CVE-2026-44428，其CVSS评分为4.7。受影响行业包括软件开发、技术、人工智能和自动化，影响范围覆盖全球多个地区。",
+  "sources_hash": "0e63ea37c7167ce8",
+  "source_intro_hash": "e79875947273d5e9",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:08:45.466Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

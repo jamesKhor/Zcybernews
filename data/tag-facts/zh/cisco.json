@@ -1,0 +1,55 @@
+{
+  "tag": "cisco",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [
+    "Interlock",
+    "The Gentlemen"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-20127",
+      "cvss": 10
+    },
+    {
+      "id": "CVE-2026-20182",
+      "cvss": 10
+    },
+    {
+      "id": "CVE-2022-20653"
+    },
+    {
+      "id": "CVE-2024-20401"
+    },
+    {
+      "id": "CVE-2024-55591"
+    }
+  ],
+  "top_sectors": [
+    "enterprise networking",
+    "telecommunications",
+    "service providers",
+    "software consultancy",
+    "technology"
+  ],
+  "top_regions": [
+    "Global",
+    "North america",
+    "Turkey",
+    "UK"
+  ],
+  "severity_mix": {
+    "critical": 4,
+    "high": 2
+  },
+  "recent_excerpts": [
+    "Rapid7发现了CVE-2026-20182，这是一个10.0-CVSS认证绕过漏洞，存在于思科Catalyst SD-WAN控制器中。未经认证的攻击者可以注入SSH密钥并发出NETCONF命令。",
+    "CVE-2026-20188:未经身份验证的攻击者可以通过低复杂性漏洞使思科Crosswork网络控制器和NSO崩溃。旧版本没有补丁；需要手动重启。",
+    "思科宣布计划收购Astrix Security以应对人工智能和机器工作负载中的非人类身份风险。这笔交易扩大了思科的身份安全产品组合。"
+  ],
+  "sources_hash": "897e1ac75dac7000"
+}

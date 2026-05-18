@@ -1,31 +1,31 @@
 {
   "tag": "policy",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-20"
+    "latest": "2026-05-11"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "government",
+    "telecommunications",
     "public-sector",
-    "technology",
-    "telecommunications"
+    "technology"
   ],
   "top_regions": [
     "United states",
     "Global"
   ],
   "severity_mix": {
-    "informational": 6,
-    "medium": 1
+    "medium": 2,
+    "informational": 6
   },
   "recent_excerpts": [
+    "FCC将禁止外国制造路由器软件更新的最后期限从2027年3月延长至2029年1月，理由是公众利益关切和行业反对。",
     "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。",
-    "美国参议院通过了Section 702监控权力的48小时延长，避免了众议院混乱后的中断。该计划由NSA和FBI使用，无需搜查令即可收集外国通信。",
-    "NIST 已经根本改变了其 CVE 丰富过程，仅优先考虑高影响漏洞进行详细分析，因为提交数量的激增，给下游漏洞管理带来了压力。"
+    "美国参议院通过了Section 702监控权力的48小时延长，避免了众议院混乱后的中断。该计划由NSA和FBI使用，无需搜查令即可收集外国通信。"
   ],
-  "sources_hash": "6baa4355cd3c9139"
+  "sources_hash": "ad81849cc33ec20d"
 }

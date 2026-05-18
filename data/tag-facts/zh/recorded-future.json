@@ -1,10 +1,10 @@
 {
   "tag": "recorded-future",
   "locale": "zh",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-04-30"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Cobalt Strike",
@@ -13,27 +13,27 @@
   "top_cves": [],
   "top_sectors": [
     "financial services",
+    "government",
     "e-commerce",
     "enterprise",
-    "government",
-    "retail"
+    "healthcare"
   ],
   "top_regions": [
     "Caribbean",
     "China",
+    "EU",
     "Global",
-    "Latin america",
-    "Southeast asia"
+    "Latin america"
   ],
   "severity_mix": {
+    "medium": 2,
     "informational": 1,
-    "high": 3,
-    "medium": 1
+    "high": 3
   },
   "recent_excerpts": [
-    "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。",
-    "Insikt Group报告发现安全团队在速度上难以将威胁情报操作化，数据量在各个领域超出了分析能力。",
-    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。"
+    "Recorded Future 的 Insikt Group 认为，AI 对攻击者 TTPs 和防御者暴露数据的推理创造了持续的风险评估，缩小了...",
+    "根据 2026 年 4 月的新政策，NIST 现在只增强 15-20% 的 CVEs，剩下 80% 没有 CVSS 分数或产品映射。",
+    "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。"
   ],
-  "sources_hash": "8118f183ca4d0f78"
+  "sources_hash": "f40067ecbf8cb683"
 }

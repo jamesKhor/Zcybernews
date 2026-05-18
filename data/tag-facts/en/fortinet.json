@@ -1,32 +1,48 @@
 {
   "tag": "fortinet",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-25"
+    "latest": "2026-05-13"
   },
-  "top_actors": [],
+  "top_actors": [
+    "The Gentlemen"
+  ],
   "top_cves": [
     {
       "id": "CVE-2025-59718",
       "cvss": 9.8
     },
     {
-      "id": "CVE-2026-39808"
+      "id": "CVE-2026-21643",
+      "cvss": 9.1
+    },
+    {
+      "id": "CVE-2024-55591"
+    },
+    {
+      "id": "CVE-2025-32433"
+    },
+    {
+      "id": "CVE-2025-33073"
     }
   ],
   "top_sectors": [
     "financial services",
     "government",
-    "technology"
+    "software consultancy",
+    "technology",
+    "various"
   ],
   "top_regions": [
     "Europe",
-    "North america"
+    "North america",
+    "Turkey",
+    "UK"
   ],
   "severity_mix": {
-    "critical": 4,
+    "critical": 5,
     "high": 2
   },
   "recent_excerpts": [
@@ -34,5 +50,5 @@
     "A proof-of-concept exploit for CVE-2026-39808, a critical command injection vulnerability in Fortinet FortiSandbox, has been released.",
     "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching."
   ],
-  "sources_hash": "4857dc4d42100910"
+  "sources_hash": "9523cb3ac841c26a"
 }

@@ -1,59 +1,62 @@
 {
   "tag": "microsoft",
   "locale": "zh",
-  "count": 37,
+  "count": 40,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-05-16"
   },
   "top_actors": [
+    "Secret Blizzard",
     "Storm-2755"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-21643",
+      "cvss": 9.1
+    },
     {
       "id": "CVE-2026-40372",
       "cvss": 9.1
     },
     {
-      "id": "CVE-2026-33104",
-      "cvss": 7.8
+      "id": "CVE-2026-40361",
+      "cvss": 8.4
     },
     {
-      "id": "CVE-2026-34054",
-      "cvss": 7.8
+      "id": "CVE-2026-40364",
+      "cvss": 8.4
     },
     {
-      "id": "CVE-2026-26179",
-      "cvss": 7.5
-    },
-    {
-      "id": "CVE-2026-32183",
-      "cvss": 7.5
+      "id": "CVE-2026-41103",
+      "cvss": 8.4
     }
   ],
   "top_sectors": [
-    "multiple",
     "enterprise",
-    "cross-sector",
-    "education",
-    "federal government"
+    "multiple",
+    "technology",
+    "government",
+    "cross-sector"
   ],
   "top_regions": [
     "Global",
+    "Asia",
     "Canada",
+    "Europe",
     "Japan"
   ],
   "severity_mix": {
-    "critical": 5,
-    "high": 18,
+    "high": 20,
+    "critical": 6,
     "medium": 10,
     "informational": 3,
     "low": 1
   },
   "recent_excerpts": [
-    "微软发布了针对CVE-2026-40372的紧急补丁，这是一个9.1-CVSS的ASP.NET Core权限提升漏洞，影响所有支持的版本。",
-    "CVE-2026-33829 在 Windows Snipping Tool 中允许攻击者通过恶意链接窃取 NTLMv2 哈希。一个公开的 PoC 漏洞利用目标是 ms-screensketch 协议，以启用凭证中继攻击。",
-    "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。"
+    "秘密暴雪将Kazuar发展为具有150个配置选项的模块化P2P僵尸网络，绕过AMSI/ETW，并拥有静音模式节点。微软详细介绍了三模块架构。",
+    "微软2026年5月补丁星期二修复了Windows 11 25H2、24H2和23H2中的120个漏洞。KB5089549和KB5087420包括安全修复、Xbox模式和批量文件...",
+    "CVE-2026-41103在微软SSO插件用于Jira和Confluence中允许通过有缺陷的认证提升权限。"
   ],
-  "sources_hash": "a29bccb23a9e563d"
+  "sources_hash": "81808d1d579398e7"
 }

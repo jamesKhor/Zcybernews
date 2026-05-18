@@ -1,10 +1,10 @@
 {
   "tag": "iot",
   "locale": "en",
-  "count": 10,
+  "count": 14,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-26"
+    "latest": "2026-05-17"
   },
   "top_actors": [
     "Mirai"
@@ -23,35 +23,36 @@
       "cvss": 8.8
     },
     {
-      "id": "CVE-2026-5057",
+      "id": "CVE-2026-33357",
       "cvss": 7.5
     },
     {
-      "id": "CVE-2024-3721",
-      "cvss": 6.3
+      "id": "CVE-2026-5057",
+      "cvss": 7.5
     }
   ],
   "top_sectors": [
     "telecommunications",
-    "individuals",
-    "internet infrastructure",
-    "logistics",
-    "residential"
+    "consumer",
+    "consumer electronics",
+    "consumer IoT",
+    "individuals"
   ],
   "top_regions": [
+    "Global",
     "Canada",
     "Germany",
     "United states"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 9,
     "medium": 3,
     "critical": 2
   },
   "recent_excerpts": [
-    "US DOJ, Canada, and Germany dismantled four IoT botnets — Aisuru, Kimwolf, JackSkid, Mossad — compromising 3M+ devices, enabling record-breaking DDoS attacks.",
-    "Mirai botnet operators exploit CVE-2025-29635, a CVSS 8.8 command injection flaw in end-of-life D-Link DIR-823X routers, to deploy malware and launch DDoS attacks.",
-    "CVE-2026-5057, with a CVSS score of 7.5, exposes ATEN Unizon to unauthenticated denial-of-service attacks via its RPC service, allowing remote attackers to crash the device management platform."
+    "CVE-2026-8741 (CVSS 3.1) enables remote exploitation of a race condition in EMQX's QoS 2 PUBLISH packet handler, affecting all versions up to 6.2.0.",
+    "CVE-2026-33357 (CVSS 7.5) in Meari SDK lets attackers retrieve WAN IPs for any device via CloudEdge, Arenti, and white-label apps — no authentication required.",
+    "CVE-2026-8263 (CVSS 5.8) in Tenda AC6 firmware 15.03.06.49_multi_TDE01 allows unauthenticated remote OS command injection via the /goform/WifiExtraSet endpoint."
   ],
-  "sources_hash": "0c1f0db092886c4a"
+  "sources_hash": "5c8062df811b0b66"
 }

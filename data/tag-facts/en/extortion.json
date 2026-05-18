@@ -1,10 +1,10 @@
 {
   "tag": "extortion",
   "locale": "en",
-  "count": 7,
+  "count": 10,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-03"
+    "latest": "2026-05-17"
   },
   "top_actors": [
     "ShinyHunters",
@@ -16,19 +16,20 @@
     "cryptocurrency",
     "Education",
     "hospitality",
-    "publishing"
+    "media"
   ],
   "top_regions": [
-    "North america"
+    "North america",
+    "Global"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 9,
     "medium": 1
   },
   "recent_excerpts": [
-    "ShinyHunters claims to have stolen data from Instructure, the edtech firm behind Canvas LMS. Instructure confirms a breach involving unauthorized access to certain systems and…",
-    "ADT confirmed a data breach after ShinyHunters leaked 30,000+ customer records including names, emails, and account details from a compromised Salesforce instance.",
-    "BlackFile extortion group has hit at least 12 retail and hospitality organizations since Feb 2026, using vishing to steal VPN credentials and exfiltrate data before demanding…"
+    "An attacker used a compromised GitHub token to download Grafana's entire private codebase. The company says no customer data was accessed and the incident involved an extortion...",
+    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide.",
+    "ShinyHunters leaked a 106GB archive of Vimeo data after breaching Anodot, exposing emails and names of 119,200 users. No credentials or payment info compromised."
   ],
-  "sources_hash": "66958b79c0f5d74b"
+  "sources_hash": "69b253191c0bb65b"
 }

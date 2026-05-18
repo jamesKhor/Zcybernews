@@ -1,0 +1,53 @@
+{
+  "tag": "integer-overflow",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-05-07",
+    "latest": "2026-05-16"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-43908",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-8573",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-8577",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-44636",
+      "cvss": 7.8
+    },
+    {
+      "id": "CVE-2026-43996",
+      "cvss": 5.5
+    }
+  ],
+  "top_sectors": [
+    "animation",
+    "media and entertainment",
+    "technology",
+    "visual effects",
+    "all"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "medium": 1,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now.",
+    "CVE-2026-44636 (CVSS 7.8): A signed integer overflow in libsixel 1.8.7-r1 and earlier lets attackers trigger a heap buffer overflow via crafted SIXEL images, enabling potential...",
+    "CVE-2026-43908 (CVSS 8.8): A signed 32-bit integer overflow in OpenImageIO's ConvertCbYCrYToRGB() causes out-of-bounds writes, risking crashes or code execution in VFX pipelines."
+  ],
+  "sources_hash": "34b2214c5bd7ef13"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "zh",
-  "intro": "过去两周（2026年4月13日至4月26日），ZCyberNews共发布了10篇标记为后门的文章。报道涵盖9起高严重性事件和1起重大事件。在这些活动中观察到威胁行为者APT41、Harvester和Mustang Panda。受影响行业包括政府、科技、银行、云服务和软件开发，报告的影响范围涉及全球、印度、南亚、韩国和美国。",
-  "sources_hash": "7a03266841dc922e",
-  "source_intro_hash": "3bc2e86174688887",
+  "intro": "本档案收录了2026年4月13日至2026年5月14日期间发布的13篇标记为`backdoor`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的聚焦视角。观察到的行为者提及包括Silver Fox、APT41和Harvester，仅在其底层文章元数据支持归因的情况下呈现。受影响范围信号强调全球、印度和俄罗斯的政府、科技及金融服务领域，帮助读者在不超过档案数据的前提下比较暴露模式。严重程度覆盖包括2篇严重和11篇高危报告。",
+  "sources_hash": "b0589f5e13990c8d",
+  "source_intro_hash": "e306f9abd1267bbc",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:15:06.983Z",
+  "generated_at": "2026-05-18T10:07:19.960Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

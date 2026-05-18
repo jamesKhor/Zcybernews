@@ -1,0 +1,35 @@
+{
+  "tag": "pypi",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-27",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [
+    "TeamPCP",
+    "OceanLotus",
+    "ZiChatBot"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "software development",
+    "research",
+    "AI",
+    "artificial intelligence"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "critical": 4
+  },
+  "recent_excerpts": [
+    "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。",
+    "卡巴斯基将 PyPI 供应链活动归因于 OceanLotus APT，使用假冒的 wheel 包来投放滥用 Zulip 聊天 API 进行 C2 的 ZiChatBot 恶意软件，影响 Windows 和 Linux 系统。",
+    "三个 PyPI 包在 Windows 和 Linux 上分发 ZiChatBot 恶意软件，使用 Zulip 聊天 API 进行隐蔽的 C2 —— Kaspersky 识别出全球 12 个以上受害组织。"
+  ],
+  "sources_hash": "42a192a445a8f23a"
+}

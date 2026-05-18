@@ -1,0 +1,51 @@
+{
+  "tag": "authorization-bypass",
+  "locale": "en",
+  "count": 6,
+  "date_range": {
+    "first": "2026-05-08",
+    "latest": "2026-05-17"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-7813",
+      "cvss": 9.9
+    },
+    {
+      "id": "CVE-2026-42880",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-44574",
+      "cvss": 8.1
+    },
+    {
+      "id": "CVE-2026-44575",
+      "cvss": 8.1
+    },
+    {
+      "id": "CVE-2026-33357",
+      "cvss": 7.5
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "cloud infrastructure",
+    "consumer IoT",
+    "database management",
+    "mobile network operators"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "medium": 1,
+    "high": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "CVE-2026-8743 (CVSS 6.5) in Open5GS up to 2.7.6 lets remote attackers bypass authorization via the AMF/MME ran_ue_find_by_amf_ue_ngap_id function. Exploit public.",
+    "CVE-2026-44574 (CVSS 8.1) and CVE-2026-44575 (CVSS 7.5) let attackers bypass middleware-based auth checks in Next.js App Router via crafted .rsc URLs and query parameter...",
+    "CVE-2026-33357 (CVSS 7.5) in Meari SDK lets attackers retrieve WAN IPs for any device via CloudEdge, Arenti, and white-label apps — no authentication required."
+  ],
+  "sources_hash": "55ffd1911d59459b"
+}

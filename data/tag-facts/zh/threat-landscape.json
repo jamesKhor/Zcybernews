@@ -1,0 +1,31 @@
+{
+  "tag": "threat-landscape",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-05-16"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "critical infrastructure",
+    "financial services",
+    "hospitality",
+    "retail",
+    "technology"
+  ],
+  "top_regions": [
+    "Global",
+    "Japan"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "AI代理现在自主发现并利用不为人知漏洞，同时AI生成的代码使漏洞泛滥成灾。防御者必须适应代理规模的威胁。",
+    "Rapid7 副总裁 Christiaan Beek 警告说，攻击者正在比防御者更快地利用弱凭证和已知漏洞进行攻击 —— 在 2026 年，速度而非技术是区分因素。",
+    "日本少年因窃取700万Kaikatsu Club记录以购买宝可梦卡片而被捕 —— 这是AI工具如何降低2026年网络犯罪门槛的一个例子，据The Hacker News报道…"
+  ],
+  "sources_hash": "2d87bb1830f953b8"
+}

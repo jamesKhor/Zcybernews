@@ -1,0 +1,10 @@
+{
+  "tag": "instructure",
+  "locale": "zh",
+  "intro": "ShinyHunters 一直是 ZCyberNews 关于 Instructure 报道中的主要威胁行为者，在 2026 年 5 月 2 日至 5 月 12 日期间发布了五篇文章。教育行业是主要目标，相关事件影响了北美及全球多个地区。这些报告中的严重程度分布包括一起严重事件和四起高危事件，反映出针对该学习管理平台的一段集中且显著的活动期。",
+  "sources_hash": "4fd2a1a69ff861dd",
+  "source_intro_hash": "a1c382a2b6d42707",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:09:11.831Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

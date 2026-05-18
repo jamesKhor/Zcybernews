@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "count": 11,
+  "count": 13,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-10"
   },
   "top_actors": [],
   "top_cves": [
@@ -15,28 +15,35 @@
     {
       "id": "CVE-2026-33626",
       "cvss": 7.5
+    },
+    {
+      "id": "CVE-2026-8114",
+      "cvss": 6.5
+    },
+    {
+      "id": "CVE-2026-42286"
     }
   ],
   "top_sectors": [
     "technology",
     "research",
-    "financial services",
     "software development",
-    "software-development"
+    "enterprise applications",
+    "financial services"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "high": 2,
+    "medium": 3,
     "critical": 3,
-    "high": 1,
-    "informational": 4,
-    "medium": 2
+    "informational": 4
   },
   "recent_excerpts": [
-    "威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到 PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。",
-    "CVE-2026-25874 (CVSS 9.3) 在 Hugging Face LeRobot 中通过不安全的反序列化启用未经认证的 RCE。",
-    "Elastic Security Labs 发布了一个开源的 CI/CD 滥用检测模板，使用信号提取和 LLM 推理来捕捉 GitHub Actions、GitLab CI 等跨平台的流水线攻击…"
+    "CVE-2026-42286：Emlog 2.6.11之前的版本缺少CSRF保护，允许攻击者诱骗经过身份验证的管理员进行未经授权的插件管理和配置更改。",
+    "CVE-2026-8114 (CVSS 6.5) 在 JeecgBoot 3.9.1 及以下版本中，可以通过 /sys/dict/loadTreeData 端点实现远程 SQL 注入。利用代码已公开。",
+    "威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到 PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。"
   ],
-  "sources_hash": "270fae038af88df3"
+  "sources_hash": "84f5937c8e2fa37e"
 }

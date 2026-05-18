@@ -1,0 +1,30 @@
+{
+  "tag": "instructure",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-05-02",
+    "latest": "2026-05-12"
+  },
+  "top_actors": [
+    "ShinyHunters"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "education"
+  ],
+  "top_regions": [
+    "North america",
+    "Global"
+  ],
+  "severity_mix": {
+    "critical": 1,
+    "high": 4
+  },
+  "recent_excerpts": [
+    "Instructure paid ShinyHunters after two Canvas intrusions stole data from 9,000 institutions. Congress launched an investigation into the ed-tech vendor's incident response.",
+    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide.",
+    "Instructure disclosed a breach where hackers stole names, emails, student IDs, and messages, and disrupted Canvas platform services. Data leak threats follow."
+  ],
+  "sources_hash": "4fd2a1a69ff861dd"
+}

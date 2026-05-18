@@ -1,0 +1,10 @@
+{
+  "tag": "elastic-security-labs",
+  "locale": "zh",
+  "intro": "2026年4月26日至5月8日期间，科技与金融服务行业在五起标记为elastic-security-labs的事件中首当其冲，其中四起为高严重性事件，一起为严重事件。在这些案例中观察到威胁行为体TCLBANKER和VoidLink，受影响区域包括巴西、全球、拉丁美洲及南亚。覆盖范围涉及软件开发、加密货币及金融科技，反映出对数字金融与基础设施的集中关注。",
+  "sources_hash": "d5e6c811a6f387a7",
+  "source_intro_hash": "87be1a06a7f99fec",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:08:15.215Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

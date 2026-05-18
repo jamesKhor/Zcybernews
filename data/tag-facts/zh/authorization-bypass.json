@@ -1,0 +1,51 @@
+{
+  "tag": "authorization-bypass",
+  "locale": "zh",
+  "count": 6,
+  "date_range": {
+    "first": "2026-05-08",
+    "latest": "2026-05-17"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-7813",
+      "cvss": 9.9
+    },
+    {
+      "id": "CVE-2026-42880",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-44574",
+      "cvss": 8.1
+    },
+    {
+      "id": "CVE-2026-44575",
+      "cvss": 8.1
+    },
+    {
+      "id": "CVE-2026-33357",
+      "cvss": 7.5
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "cloud infrastructure",
+    "consumer IoT",
+    "database management",
+    "mobile network operators"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "medium": 1,
+    "high": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "CVE-2026-8743（CVSS 6.5）在 Open5GS 版本 2.7.6 及以下版本中，远程攻击者可以通过 AMF/MME ran_ue_find_by_amf_ue_ngap_id 函数绕过授权。漏洞利用已公开。",
+    "CVE-2026-44574（CVSS 8.1）和 CVE-2026-44575（CVSS 7.5）允许攻击者通过精心制作的.rsc URL和查询参数绕过Next.js应用路由器中的基于中间件的认证检查...",
+    "CVE-2026-33357（CVSS 7.5）在Meari SDK中允许攻击者通过CloudEdge、Arenti和白标应用检索任何设备的广域网IP，无需认证。"
+  ],
+  "sources_hash": "374b3b0b1150342a"
+}

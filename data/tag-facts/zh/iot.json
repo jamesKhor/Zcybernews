@@ -1,10 +1,10 @@
 {
   "tag": "iot",
   "locale": "zh",
-  "count": 10,
+  "count": 14,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-26"
+    "latest": "2026-05-17"
   },
   "top_actors": [
     "Mirai"
@@ -23,35 +23,36 @@
       "cvss": 8.8
     },
     {
-      "id": "CVE-2026-5057",
+      "id": "CVE-2026-33357",
       "cvss": 7.5
     },
     {
-      "id": "CVE-2024-3721",
-      "cvss": 6.3
+      "id": "CVE-2026-5057",
+      "cvss": 7.5
     }
   ],
   "top_sectors": [
     "telecommunications",
-    "individuals",
-    "internet infrastructure",
-    "logistics",
-    "residential"
+    "consumer",
+    "consumer electronics",
+    "consumer IoT",
+    "individuals"
   ],
   "top_regions": [
+    "Global",
     "Canada",
     "Germany",
     "United states"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 9,
     "medium": 3,
     "critical": 2
   },
   "recent_excerpts": [
-    "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。",
-    "Mirai 僵尸网络操作者利用 CVE-2025-29635，这是一个 CVSS 8.8 命令注入漏洞，存在于生命周期结束的 D-Link DIR-823X 路由器中，以部署恶意软件并发起 DDoS 攻击。",
-    "CVE-2026-5057，CVSS 评分为 7.5，暴露 ATEN Unizon 于未认证的拒绝服务攻击，通过其 RPC 服务，允许远程攻击者使设备管理平台崩溃。"
+    "CVE-2026-8741 (CVSS 3.1) 允许远程利用 EMQX 的 QoS 2 发布数据包处理器中的竞态条件，影响所有版本至 6.2.0。",
+    "CVE-2026-33357（CVSS 7.5）在Meari SDK中允许攻击者通过CloudEdge、Arenti和白标应用检索任何设备的广域网IP，无需认证。",
+    "CVE-2026-8263 (CVSS 5.8) 在 Tenda AC6 固件 15.03.06.49_multi_TDE01 中允许未经认证的远程操作系统命令注入，通过 /goform/WifiExtraSet 端点。"
   ],
-  "sources_hash": "0c1f0db092886c4a"
+  "sources_hash": "ce4f6921d1ea517e"
 }

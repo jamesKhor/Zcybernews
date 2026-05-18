@@ -1,44 +1,56 @@
 {
   "tag": "android",
   "locale": "zh",
-  "count": 12,
+  "count": 15,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-05-17"
   },
   "top_actors": [
     "Mirax",
-    "NGate"
+    "NGate",
+    "TrickMo"
   ],
   "top_cves": [
     {
+      "id": "CVE-2026-8566",
+      "cvss": 3
+    },
+    {
+      "id": "CVE-2026-8568",
+      "cvss": 3
+    },
+    {
       "id": "CVE-2023-4863"
+    },
+    {
+      "id": "CVE-2025-54957"
     }
   ],
   "top_sectors": [
     "cryptocurrency",
     "technology",
-    "consumer",
     "financial services",
-    "individuals"
+    "consumer",
+    "consumer electronics"
   ],
   "top_regions": [
-    "Europe",
     "Global",
+    "Europe",
+    "Austria",
     "Brazil",
-    "Latin america",
-    "Spain"
+    "France"
   ],
   "severity_mix": {
+    "high": 9,
     "medium": 1,
-    "high": 6,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
-    "ESET 分析显示 1/3 的 Android 应用请求不必要的权限 —— 位置、相机、麦克风 —— 使数据收集和监视成为可能。用户应该审计权限。",
-    "根据 ESET 的说法，NGate 恶意软件使用 AI 生成的代码感染了合法的 HandyPay NFC 应用，从巴西超过 220,000 名 Android 用户那里窃取支付卡数据和 PIN 码。",
-    "NGate 恶意软件版本 2.0，借助 AI 构建，隐藏在木马化的 NFC 支付应用中，从 Android 设备中窃取短信、联系人和加密钱包数据，同时躲避安全软件。"
+    "Google Project Zero 发现了一个 Pixel 10 VPU 驱动程序缺陷，允许用户空间映射任意物理内存，包括内核映像。利用需要 5 行代码。",
+    "CVE-2026-8568 (CVSS 3.1) 允许攻击者在渲染器被破坏后通过 AI 功能绕过 Chrome 站点隔离；CVE-2026-8566 (CVSS 4.3) 针对 Android 支付。",
+    "ThreatFabric 追踪到一个 TrickMo 变种，使用 The Open Network (TON) 进行 C2 和 SOCKS5 代理跳板进入受害者网络，目标是法国、意大利的银行和加密货币用户，..."
   ],
-  "sources_hash": "eaef9be75eee1fdf"
+  "sources_hash": "62ca7815563fdf10"
 }

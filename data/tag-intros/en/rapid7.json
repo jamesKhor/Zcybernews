@@ -1,9 +1,9 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "intro": "Over the 16 days from April 13 to 29, 2026, ZCyberNews published 10 articles tagged with rapid7, covering two critical and two high-severity incidents alongside four informational reports. The threat actor Kyber was observed targeting enterprise IT, financial services, government, managed services, and technology sectors across Europe, Global, and North America regions. Key vulnerabilities included CVE-2025-59718 and CVE-2026-41940, both carrying a CVSS score of 9.8.",
-  "sources_hash": "31dee5091419afca",
+  "intro": "Over 15 articles from April 13 to May 15, 2026, cover Rapid7’s reporting on threat actors KongTuke and Kyber. Critical vulnerabilities CVE-2026-20127 and CVE-2026-20182, both with a CVSS score of 10, alongside CVE-2025-59718 and CVE-2026-41940, are highlighted. The coverage spans enterprise, enterprise IT, enterprise networking, financial services, and government sectors across Global, Europe, and North America, with a severity mix of three high, four critical, and five informational reports.",
+  "sources_hash": "329ea1f6727b1345",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:19:18.132Z",
+  "generated_at": "2026-05-18T10:00:23.136Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

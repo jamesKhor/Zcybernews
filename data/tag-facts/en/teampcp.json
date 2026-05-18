@@ -1,0 +1,50 @@
+{
+  "tag": "teampcp",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-26",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [
+    "TeamPCP",
+    "PCPJack"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2025-29927"
+    },
+    {
+      "id": "CVE-2025-48703"
+    },
+    {
+      "id": "CVE-2025-55182"
+    },
+    {
+      "id": "CVE-2025-9501"
+    },
+    {
+      "id": "CVE-2026-1357"
+    }
+  ],
+  "top_sectors": [
+    "software development",
+    "cloud infrastructure",
+    "technology",
+    "AI",
+    "automation"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android.",
+    "SentinelLabs uncovers PCPJack, a credential-stealing worm targeting Docker, Kubernetes, Redis, and MongoDB that actively removes rival TeamPCP access from compromised cloud...",
+    "TeamPCP chained three GitHub Actions flaws to hijack TanStack's CI/CD, publishing 84 malicious artifacts across 42 packages."
+  ],
+  "sources_hash": "cc22a3a9b373dad2"
+}

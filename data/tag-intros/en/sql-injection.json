@@ -1,0 +1,9 @@
+{
+  "tag": "sql-injection",
+  "locale": "en",
+  "intro": "Between April and May 2026, ZCyberNews published 11 articles on SQL injection vulnerabilities, with the most severe being CVE-2026-27681 (CVSS 9.9), followed by CVE-2026-36962, CVE-2026-42208, and CVE-2026-6433 (all CVSS 9.8), and CVE-2026-34259 (CVSS 9.6). The coverage spanned enterprise software, web hosting, e-commerce, retail, and software development sectors globally, with a severity mix of three high, seven critical, and one medium.",
+  "sources_hash": "01aa8c452ef201cd",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:01:42.818Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

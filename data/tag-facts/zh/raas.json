@@ -1,28 +1,42 @@
 {
   "tag": "raas",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-20",
-    "latest": "2026-04-28"
+    "latest": "2026-05-13"
   },
   "top_actors": [
     "The Gentlemen",
     "LockBit",
     "VECT Ransomware"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2024-55591"
+    },
+    {
+      "id": "CVE-2025-32433"
+    },
+    {
+      "id": "CVE-2025-33073"
+    }
+  ],
   "top_sectors": [
     "financial services",
     "government",
-    "retail"
+    "retail",
+    "software consultancy",
+    "various"
   ],
   "top_regions": [
     "Caribbean",
-    "Latin america"
+    "Latin america",
+    "Turkey",
+    "UK"
   ],
   "severity_mix": {
-    "critical": 1,
+    "critical": 2,
     "high": 3,
     "medium": 1
   },
@@ -31,5 +45,5 @@
     "The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi 系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。",
     "根据 Check Point DFIR 报告分析最近的一次关联攻击，The Gentlemen 勒索软件即服务组织使用 SystemBC SOCKS5 代理工具来隐藏命令和控制流量。"
   ],
-  "sources_hash": "2db4464d8c2726cb"
+  "sources_hash": "e16563ca2512a075"
 }

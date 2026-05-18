@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 20,
+  "count": 22,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "APT33",
@@ -26,21 +26,21 @@
   ],
   "top_regions": [
     "United states",
+    "Global",
     "North america",
     "Europe",
-    "Global",
     "Asia-pacific"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 14,
     "critical": 3,
     "informational": 3,
     "medium": 1
   },
   "recent_excerpts": [
-    "CISA and USCG found persistent weak configurations, unpatched systems, and credential reuse during a proactive threat hunt at a US critical infrastructure org.",
-    "Itron disclosed a cybersecurity incident in an SEC 8-K filing: an unauthorized third party accessed internal IT systems.",
-    "Dark Reading reports attackers are manipulating voltage to destabilize power grids — a growing cyber-physical threat vector targeting electricity infrastructure with no patch…"
+    "AI models produce confident but incorrect outputs that have led to misconfigured firewalls and pipeline valve errors, researchers warn.",
+    "A 23-year-old student used SDR gear to clone TETRA radio parameters, sending a 'General Alarm' signal that halted 4 THSR trains for 48 minutes.",
+    "CISA and USCG found persistent weak configurations, unpatched systems, and credential reuse during a proactive threat hunt at a US critical infrastructure org."
   ],
-  "sources_hash": "4a180e616740f98e"
+  "sources_hash": "7fc32a2e6a2c750b"
 }

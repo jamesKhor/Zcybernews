@@ -1,35 +1,36 @@
 {
   "tag": "infostealer",
   "locale": "en",
-  "count": 9,
+  "count": 13,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-30"
+    "latest": "2026-05-15"
   },
   "top_actors": [
+    "Gremlin Stealer",
     "LummaC2",
-    "Omnistealer"
+    "NWHStealer"
   ],
   "top_cves": [],
   "top_sectors": [
-    "government",
-    "healthcare",
-    "multiple",
+    "technology",
     "software development",
-    "technology"
+    "cryptocurrency",
+    "financial services",
+    "gaming"
   ],
   "top_regions": [
     "Global",
     "Ukraine"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 11,
     "critical": 1
   },
   "recent_excerpts": [
-    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
-    "Attackers compromised the elementary-data PyPI package (1.1M monthly downloads) to push an infostealer targeting developer credentials, crypto wallets, and environment variables.",
-    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software."
+    "Unit 42 details a new Gremlin stealer variant using XOR-encrypted resource sections, crypto clipper, WebSocket session hijacking, and a commercial packer with instruction...",
+    "Attackers abuse Google Ads linking to real claude.ai and shared Claude chats to deliver MacSync infostealer, harvesting browser credentials and Keychain data.",
+    "A typosquatted OpenAI repository reached #1 on Hugging Face with 244,000 downloads, delivering a Rust-based infostealer that targets browser credentials, crypto wallets, and VPN..."
   ],
-  "sources_hash": "5d9a62f551f5e611"
+  "sources_hash": "01d0340ed5403081"
 }

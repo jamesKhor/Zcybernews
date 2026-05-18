@@ -1,10 +1,10 @@
 {
   "tag": "rce",
   "locale": "zh",
-  "count": 21,
+  "count": 29,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-15"
   },
   "top_actors": [
     "PhantomCore"
@@ -19,24 +19,24 @@
       "cvss": 9.8
     },
     {
+      "id": "CVE-2026-31251",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-45033",
+      "cvss": 9.8
+    },
+    {
       "id": "CVE-2025-0520",
       "cvss": 9.4
-    },
-    {
-      "id": "CVE-2026-39987",
-      "cvss": 9.3
-    },
-    {
-      "id": "CVE-2026-22898",
-      "cvss": 8.8
     }
   ],
   "top_sectors": [
-    "government",
     "manufacturing",
-    "academia",
-    "enterprise",
-    "enterprise software"
+    "software development",
+    "technology",
+    "government",
+    "research"
   ],
   "top_regions": [
     "Asia",
@@ -44,13 +44,14 @@
     "Russia"
   ],
   "severity_mix": {
-    "critical": 13,
-    "high": 8
+    "critical": 17,
+    "high": 11,
+    "medium": 1
   },
   "recent_excerpts": [
-    "Weaver E-cology OA 中的 CVE-2026-22679（CVSS 9.8）自2026年3月中旬以来在野外被利用。攻击者在利用后运行发现命令。尚无补丁可用。",
-    "CVE-2026-5943：Foxit PDF Reader 的 AcroForm 注释处理中存在利用后释放漏洞，允许未经身份验证的 RCE（CVSS 7.8）。需要用户打开恶意 PDF。",
-    "CVE-2026-5726: Delta Electronics ASDA-Soft PAR 文件解析中的基于栈的缓冲区溢出得分7.8 CVSS，并可通过精心制作的PAR文件实现远程代码执行。"
+    "CVE-2026-45033 (CVSS 9.8) 在 GitHub Copilot CLI 1.0.43 之前的版本中，允许攻击者通过在项目目录中嵌入恶意的裸 git 仓库来实现远程代码执行。",
+    "CVE-2026-44636 (CVSS 7.8): 在 libsixel 1.8.7-r1 及更早版本中存在一个有符号整数溢出，允许攻击者通过精心制作的 SIXEL 图像触发堆缓冲区溢出，从而可能...",
+    "CVE-2026-31251: CosyVoice gRPC 服务器通过 torch.load() 反序列化不受信任的模型，而没有设置 weights_only=True，从而允许通过精心制作的 .pt 文件实现 RCE。尚未确认补丁。"
   ],
-  "sources_hash": "73b8c856e9db3169"
+  "sources_hash": "052eb31d10881d17"
 }

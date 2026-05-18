@@ -1,9 +1,9 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "intro": "Interlock, Rhysida, and ShinyHunters were the top threat actors targeting the healthcare sector in a series of nine high-severity incidents reported between April 12 and April 30, 2026. The attacks affected critical infrastructure, government, and research sectors, with victims spanning the United States, Global, Illinois, Moldova, and the Netherlands. The severity mix included one medium and eight high-severity events, underscoring the concentrated risk to healthcare organizations during this period.",
-  "sources_hash": "93ac63ddb62ad987",
+  "intro": "Over the past month, ZCyberNews has tracked 11 articles tagged healthcare, with 10 rated high severity. The threat actors Interlock, LockBit, and Rhysida were observed targeting the healthcare, Healthcare, critical infrastructure, Government, and pharmaceutical sectors globally, including the United States, Illinois, Moldova, and the Netherlands. The articles span from April 12 to May 12, 2026, with one medium-severity report among the coverage.",
+  "sources_hash": "2025062d978784f6",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:28:47.065Z",
+  "generated_at": "2026-05-18T10:01:32.608Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

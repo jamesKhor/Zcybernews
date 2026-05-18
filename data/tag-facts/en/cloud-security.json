@@ -1,40 +1,55 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "count": 23,
+  "count": 25,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-01"
+    "latest": "2026-05-07"
   },
   "top_actors": [
-    "APT41"
+    "APT41",
+    "PCPJack"
   ],
   "top_cves": [
     {
       "id": "CVE-2026-33413",
       "cvss": 8.8
+    },
+    {
+      "id": "CVE-2025-29927"
+    },
+    {
+      "id": "CVE-2025-48703"
+    },
+    {
+      "id": "CVE-2025-55182"
+    },
+    {
+      "id": "CVE-2025-9501"
     }
   ],
   "top_sectors": [
     "technology",
-    "cloud-services",
     "government",
     "healthcare",
-    "cloud services"
+    "cloud-services",
+    "financial services"
   ],
   "top_regions": [
     "Global",
-    "Israel"
+    "EU",
+    "Israel",
+    "North america"
   ],
   "severity_mix": {
-    "high": 14,
+    "high": 16,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
-    "Dark Reading reports AI agents are deleting production databases because organizations deploy agent integrations without proper security testing or access controls.",
-    "Vercel disclosed a breach after stolen OAuth tokens from Context.ai enabled unauthorized access to internal systems via a connected app. No customer data exposed.",
-    "BHIS released a cloud security guide covering IAM misconfigurations, shared responsibility gaps, and logging blind spots — essential reading for teams securing AWS, Azure, or GCP…"
+    "SentinelLabs uncovers PCPJack, a credential-stealing worm targeting Docker, Kubernetes, Redis, and MongoDB that actively removes rival TeamPCP access from compromised cloud...",
+    "OAuth tokens with no expiration persist in Google and Microsoft tenants — attackers bypass MFA and perimeter controls.",
+    "Dark Reading reports AI agents are deleting production databases because organizations deploy agent integrations without proper security testing or access controls."
   ],
-  "sources_hash": "dc18448262e9af26"
+  "sources_hash": "9a03cbc37a8e4a60"
 }

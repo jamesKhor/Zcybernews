@@ -1,26 +1,29 @@
 {
   "tag": "threat-detection",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-20"
+    "latest": "2026-05-08"
   },
   "top_actors": [
     "OpenClaw"
   ],
   "top_cves": [],
-  "top_sectors": [],
+  "top_sectors": [
+    "enterprise"
+  ],
   "top_regions": [],
   "severity_mix": {
+    "medium": 1,
     "informational": 7,
     "high": 1,
     "critical": 1
   },
   "recent_excerpts": [
+    "Analysis of 25 million security alerts across enterprise environments shows defenders systematically ignore low-severity events, missing an average of one genuine threat per week.",
     "SentinelOne research finds human-led security teams require 4-6 hours to validate a single alert, while automated attacks unfold in seconds, creating a critical defensive gap for enterprises.",
-    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout.",
-    "A new analysis argues most AI-powered security operations center tools merely accelerate alert triage without reducing the underlying workload for analysts, failing to deliver on promises of true auto"
+    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout."
   ],
-  "sources_hash": "13ef788170c01142"
+  "sources_hash": "15ffcd2cc0d47727"
 }

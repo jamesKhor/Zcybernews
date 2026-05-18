@@ -1,9 +1,9 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "intro": "Between April 12 and 30, 2026, ZCyberNews tracked 20 articles under critical-infrastructure, with APT33, CyberAv3ngers, and Interlock among the most frequently cited threat actors. The coverage highlighted CVE-2026-24032 (CVSS 7.3) and focused on the energy, utilities, and manufacturing sectors across the United States, North America, Europe, and the Asia-Pacific region. The reporting included 12 high-severity and 3 critical-severity incidents, alongside three informational and one medium-severity item.",
-  "sources_hash": "4a180e616740f98e",
+  "intro": "APT33, CyberAv3ngers, and Interlock were the most active threat actors targeting critical infrastructure in a 22-article dataset from April 12 to May 14, 2026. The top vulnerability observed was CVE-2026-24032, rated CVSS 7.3. Affected sectors included energy, utilities, and manufacturing, primarily across the United States, Europe, and Asia-Pacific. Of the 22 articles, 14 were classified as high severity, with three critical and one medium severity.",
+  "sources_hash": "7fc32a2e6a2c750b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:28:01.384Z",
+  "generated_at": "2026-05-18T09:59:49.008Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

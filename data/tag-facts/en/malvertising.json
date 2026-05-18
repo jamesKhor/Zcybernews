@@ -1,0 +1,36 @@
+{
+  "tag": "malvertising",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-05-10"
+  },
+  "top_actors": [
+    "Mirax",
+    "Pushpaganda"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "general consumers",
+    "individuals",
+    "technology"
+  ],
+  "top_regions": [
+    "Australia",
+    "Canada",
+    "Europe",
+    "Global",
+    "Latin america"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 3
+  },
+  "recent_excerpts": [
+    "Attackers abuse Google Ads linking to real claude.ai and shared Claude chats to deliver MacSync infostealer, harvesting browser credentials and Keychain data.",
+    "Mirax Android RAT reached over 220,000 users via Meta ads, turning infected devices into SOCKS5 proxies for threat actors to route malicious traffic and steal data from Spanish-speaking victims.",
+    "Malwarebytes reports scammers using fake CAPTCHA pages to trigger premium-rate international SMS charges, billing victims up to $15 per message via a Keitaro traffic distribution…"
+  ],
+  "sources_hash": "9e2f35d5ba5b6e71"
+}

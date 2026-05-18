@@ -1,23 +1,27 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 54,
+  "count": 57,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-04"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Lazarus Group",
     "UNC6692",
     "APT37 (ScarCruft, InkySquid)"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2023-36036"
+    }
+  ],
   "top_sectors": [
     "cryptocurrency",
     "financial services",
     "technology",
     "financial-services",
-    "hospitality"
+    "enterprise"
   ],
   "top_regions": [
     "Global",
@@ -27,14 +31,15 @@
     "Canada"
   ],
   "severity_mix": {
-    "high": 42,
+    "high": 43,
+    "informational": 2,
     "medium": 11,
-    "informational": 1
+    "critical": 1
   },
   "recent_excerpts": [
-    "Black Hills InfoSec demonstrates how attackers abuse Microsoft SSPR to bypass MFA and reset credentials via social engineering. Real-world test scenario reveals detection gaps.",
-    "Adaptive Security finds 3 seconds of audio enough to clone a voice for fraud; deepfake calls tricked employees into wiring $243K in one case. No detection tool caught the attack.",
-    "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months."
+    "Signal introduced new in-app confirmations and warnings to counter phishing attacks linked to Russian state hackers who abused the Linked Device feature to hijack high-profile...",
+    "Steve Stasiukonis's 2006 USB drop test at a credit union — 15 of 20 drives plugged in by employees — became the blueprint for physical social engineering assessments still used…",
+    "Black Hills InfoSec demonstrates how attackers abuse Microsoft SSPR to bypass MFA and reset credentials via social engineering. Real-world test scenario reveals detection gaps."
   ],
-  "sources_hash": "5ae720de1d8a7da0"
+  "sources_hash": "32c40aede908185a"
 }

@@ -1,0 +1,9 @@
+{
+  "tag": "data-exfiltration",
+  "locale": "en",
+  "intro": "This archive collects 7 articles tagged `data-exfiltration` published between April 14, 2026 and April 30, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Inc Ransom, Payouts King, and Trigona, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize technology, enterprise, and financial services across Europe, Global, and North america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 6 high reports.",
+  "sources_hash": "fcc419468f874b87",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:03:42.427Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

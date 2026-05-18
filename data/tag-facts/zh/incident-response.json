@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "zh",
-  "count": 13,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-02"
+    "latest": "2026-05-11"
   },
   "top_actors": [],
   "top_cves": [
@@ -15,10 +15,10 @@
   ],
   "top_sectors": [
     "cybersecurity",
+    "financial services",
+    "government",
     "technology",
-    "cloud computing",
-    "cybersecurity services",
-    "energy"
+    "cloud computing"
   ],
   "top_regions": [
     "Europe",
@@ -27,15 +27,15 @@
     "Venezuela"
   ],
   "severity_mix": {
+    "high": 8,
     "informational": 1,
-    "high": 6,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
-    "Elastic Security Labs详细说明了如何在Elastic Security内部运行实时Osquery查询，覆盖成千上万的端点，以加速DFIR调查，无需磁盘映像。",
-    "Trellix 确认攻击者访问了其源代码库的一部分。该公司聘请了法医专家并通知了执法部门。未披露客户数据影响。",
-    "两名滥用客户访问权限部署勒索软件的网络安全事件响应者被判处4年监禁——这是响应者转变为攻击者的罕见案例。"
+    "Specops Software 解释了缓存凭证、Kerberos 票据和 ACL 持久性如何让攻击者在 AD 和混合 Entra ID 环境中的密码重置后存活下来。",
+    "Acronis 分析显示 2025 年勒索软件激增 50%；攻击者在加密前系统性地破坏备份。不可变存储和身份分离是关键的防御措施。",
+    "Rapid7的2026全球网络安全峰会议程将焦点从威胁量转移到早期检测、暴露管理以及AI辅助决策，涵盖两个轨道。"
   ],
-  "sources_hash": "7816e7edf25a889b"
+  "sources_hash": "59bbe49fc6764842"
 }

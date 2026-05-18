@@ -1,0 +1,35 @@
+{
+  "tag": "pypi",
+  "locale": "en",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-27",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [
+    "TeamPCP",
+    "OceanLotus",
+    "ZiChatBot"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "software development",
+    "research",
+    "AI",
+    "artificial intelligence"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "critical": 4
+  },
+  "recent_excerpts": [
+    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android.",
+    "Kaspersky attributes a PyPI supply chain campaign to OceanLotus APT, using fake wheel packages to drop ZiChatBot malware that abuses Zulip chat APIs for C2 on Windows and Linux.",
+    "Three PyPI packages deliver ZiChatBot malware on Windows and Linux using Zulip chat APIs for stealthy C2 — Kaspersky identifies 12+ victim organizations globally."
+  ],
+  "sources_hash": "230c46536376363d"
+}

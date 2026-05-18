@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "count": 60,
+  "count": 61,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-04"
+    "latest": "2026-05-13"
   },
   "top_actors": [
     "Silver Fox",
@@ -38,18 +38,18 @@
   "top_regions": [
     "Global",
     "Latin america",
-    "Canada",
     "United states",
+    "Canada",
     "Caribbean"
   ],
   "severity_mix": {
-    "high": 52,
+    "high": 53,
     "medium": 8
   },
   "recent_excerpts": [
+    "Signal 引入了新的应用内确认和警告，以对抗与俄罗斯国家黑客有关的网络钓鱼攻击，这些黑客滥用了 Linked Device 功能来劫持高知名度的...",
     "据卡巴斯基称，Silver Fox 团伙冒充税务机关，向俄罗斯和印度的组织分发 ValleyRAT 和新的 ABCDoor 后门。",
-    "三名男子在多伦多被捕，因为他们操作了一个冒充手机塔的SMS blaster，发送针对银行凭证的钓鱼短信，在数月的活动中进行。",
-    "加拿大首起短信爆炸器案件中三名男子被捕 — 设备冒充蜂窝塔发送大规模网络钓鱼信息并干扰多伦多的移动网络。"
+    "三名男子在多伦多被捕，因为他们操作了一个冒充手机塔的SMS blaster，发送针对银行凭证的钓鱼短信，在数月的活动中进行。"
   ],
-  "sources_hash": "62db75516d616927"
+  "sources_hash": "6823fa3488a42f52"
 }

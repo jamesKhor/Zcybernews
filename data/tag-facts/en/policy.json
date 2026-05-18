@@ -1,31 +1,31 @@
 {
   "tag": "policy",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-20"
+    "latest": "2026-05-11"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "government",
+    "telecommunications",
     "public-sector",
-    "technology",
-    "telecommunications"
+    "technology"
   ],
   "top_regions": [
     "United states",
     "Global"
   ],
   "severity_mix": {
-    "informational": 6,
-    "medium": 1
+    "medium": 2,
+    "informational": 6
   },
   "recent_excerpts": [
+    "The FCC extended the deadline for banning software updates on foreign-made routers from March 2027 to January 2029, citing public interest concerns and industry pushback.",
     "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n",
-    "The U.S. Senate passed a 48-hour extension of Section 702 surveillance powers, averting a lapse after House chaos.",
-    "NIST has fundamentally changed its CVE enrichment process, prioritizing only high-impact vulnerabilities for detailed analysis due to an overwhelming surge in submissions, straining downstream vulnera"
+    "The U.S. Senate passed a 48-hour extension of Section 702 surveillance powers, averting a lapse after House chaos."
   ],
-  "sources_hash": "6baa4355cd3c9139"
+  "sources_hash": "9cb929d134c8cf2d"
 }

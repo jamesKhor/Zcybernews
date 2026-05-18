@@ -1,59 +1,62 @@
 {
   "tag": "microsoft",
   "locale": "en",
-  "count": 37,
+  "count": 40,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-05-16"
   },
   "top_actors": [
+    "Secret Blizzard",
     "Storm-2755"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-21643",
+      "cvss": 9.1
+    },
     {
       "id": "CVE-2026-40372",
       "cvss": 9.1
     },
     {
-      "id": "CVE-2026-33104",
-      "cvss": 7.8
+      "id": "CVE-2026-40361",
+      "cvss": 8.4
     },
     {
-      "id": "CVE-2026-34054",
-      "cvss": 7.8
+      "id": "CVE-2026-40364",
+      "cvss": 8.4
     },
     {
-      "id": "CVE-2026-26179",
-      "cvss": 7.5
-    },
-    {
-      "id": "CVE-2026-32183",
-      "cvss": 7.5
+      "id": "CVE-2026-41103",
+      "cvss": 8.4
     }
   ],
   "top_sectors": [
-    "multiple",
     "enterprise",
-    "cross-sector",
-    "education",
-    "federal government"
+    "multiple",
+    "technology",
+    "government",
+    "cross-sector"
   ],
   "top_regions": [
     "Global",
+    "Asia",
     "Canada",
+    "Europe",
     "Japan"
   ],
   "severity_mix": {
-    "critical": 5,
-    "high": 18,
+    "high": 20,
+    "critical": 6,
     "medium": 10,
     "informational": 3,
     "low": 1
   },
   "recent_excerpts": [
-    "Microsoft released out-of-band patches for CVE-2026-40372, a 9.1-CVSS privilege escalation flaw in ASP.NET Core affecting all supported versions.",
-    "CVE-2026-33829 in Windows Snipping Tool allows attackers to steal NTLMv2 hashes via malicious links. A public PoC exploit targets the ms-screensketch protocol to enable credential relay attacks.",
-    "Microsoft released out-of-band updates for Windows Server 2019 and 2022 after April 2026 security patches caused boot failures and domain controller authentication issues, forcing some administrators"
+    "Secret Blizzard evolved Kazuar into a modular P2P botnet with 150 config options, AMSI/ETW bypass, and silent-mode nodes. Microsoft details the three-module architecture.",
+    "Microsoft's May 2026 Patch Tuesday fixes 120 vulnerabilities across Windows 11 25H2, 24H2, and 23H2. KB5089549 and KB5087420 include security fixes, Xbox mode, and batch file...",
+    "CVE-2026-41103 in Microsoft SSO Plugin for Jira & Confluence allows privilege escalation via flawed authentication."
   ],
-  "sources_hash": "a29bccb23a9e563d"
+  "sources_hash": "3c355f10572546ca"
 }

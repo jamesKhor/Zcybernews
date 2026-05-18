@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "count": 14,
+  "count": 17,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-02"
+    "latest": "2026-05-11"
   },
   "top_actors": [],
   "top_cves": [
@@ -14,11 +14,11 @@
     }
   ],
   "top_sectors": [
-    "cybersecurity",
     "government",
+    "cybersecurity",
+    "financial services",
     "technology",
-    "cloud computing",
-    "cybersecurity services"
+    "cloud computing"
   ],
   "top_regions": [
     "Europe",
@@ -28,15 +28,15 @@
     "Venezuela"
   ],
   "severity_mix": {
+    "high": 9,
     "informational": 1,
-    "high": 7,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
-    "Elastic Security Labs details how to run live Osquery queries across thousands of endpoints from within Elastic Security to speed DFIR investigations without disk imaging.",
-    "Trellix confirmed attackers accessed a portion of its source code repository. The firm engaged forensic experts and notified law enforcement. No customer data impact disclosed.",
-    "Two cybersecurity incident responders who abused client access to deploy ransomware were sentenced to 4 years in prison — a rare case of responders turning attackers."
+    "Specops Software explains how cached credentials, Kerberos tickets, and ACL persistence let attackers survive password resets in AD and hybrid Entra ID environments.",
+    "Acronis analysis shows 50% ransomware surge in 2025; attackers systematically destroy backups before encryption. Immutable storage and identity separation are critical defenses.",
+    "Rapid7's 2026 Global Cybersecurity Summit agenda shifts focus from threat volume to earlier detection, exposure management, and AI-assisted decision-making across two tracks."
   ],
-  "sources_hash": "e7eb5cd96f4c7919"
+  "sources_hash": "6c9c222427f6971c"
 }

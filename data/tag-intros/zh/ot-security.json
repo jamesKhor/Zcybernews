@@ -1,10 +1,10 @@
 {
   "tag": "ot-security",
   "locale": "zh",
-  "intro": "2026年4月13日至4月28日期间，工业与能源领域承受了最严重的OT安全事件冲击，北美、欧洲及中东地区的全球关键基础设施均受到影响。观察到APT33及亲俄黑客活动分子（Pro-Russia Hacktivists）等威胁行为体，其中CVE-2026-24032（CVSS 7.3）位列高危漏洞。本档案收录的九篇文章涵盖严重等级分布：1篇危急、3篇高危、1篇中危及4篇信息性报告。",
-  "sources_hash": "829ac52cc83fe974",
-  "source_intro_hash": "95ea304fa04bf5c6",
+  "intro": "工业与能源领域在2026年4月13日至4月28日期间承受了OT安全事件的主要冲击，全球影响集中于北美、欧洲和中东地区。APT33与Pro-Russia Hacktivists被观测到针对关键基础设施展开攻击，而CVE-2026-24032（CVSS 7.3）在九起报告事件中尤为突出。严重程度分布包括一起严重级、三起高危级、一起中危级及四起信息级报告。",
+  "sources_hash": "087f8c2543bf81d7",
+  "source_intro_hash": "80729d19ffb2507c",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:20:15.644Z",
+  "generated_at": "2026-05-18T10:09:58.479Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

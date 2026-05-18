@@ -31,5 +31,5 @@
     "The Gentlemen ransomware-as-a-service group uses the SystemBC SOCKS5 proxy tool to hide command-and-control traffic, according to a Check Point DFIR report analyzing a recent affiliate attack.",
     "The Payouts King ransomware group is deploying the open-source QEMU emulator to create hidden virtual machines on compromised hosts, establishing a persistent reverse SSH backdoor that evades conventi"
   ],
-  "sources_hash": "1ab7e3131e375448"
+  "sources_hash": "59ae25a6e895bf5f"
 }

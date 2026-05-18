@@ -1,0 +1,31 @@
+{
+  "tag": "threat-landscape",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-05-16"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "critical infrastructure",
+    "financial services",
+    "hospitality",
+    "retail",
+    "technology"
+  ],
+  "top_regions": [
+    "Global",
+    "Japan"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "AI agents now discover and exploit obscure vulnerabilities autonomously, while AI-generated code floods pipelines with flaws. Defenders must adapt to agent-scale threats.",
+    "Rapid7 VP Christiaan Beek warns attackers are exploiting weak credentials and known flaws faster than defenders can patch — pace, not technique, is the 2026 differentiator.",
+    "Japan teen arrested for stealing 7M Kaikatsu Club records to buy Pokémon cards — one example of how AI tools are lowering the barrier for cybercrime in 2026, per The Hacker News…"
+  ],
+  "sources_hash": "34f08e20d462362d"
+}

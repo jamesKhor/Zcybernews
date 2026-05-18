@@ -1,35 +1,45 @@
 {
   "tag": "npm",
   "locale": "zh",
-  "count": 9,
+  "count": 13,
   "date_range": {
     "first": "2026-04-21",
-    "latest": "2026-05-01"
+    "latest": "2026-05-15"
   },
   "top_actors": [
+    "TeamPCP",
     "CanisterSprawl",
-    "mini Shai-Hulud",
-    "Mini Shai-Hulud"
+    "mini Shai-Hulud"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-41650",
+      "cvss": 6.1
+    },
+    {
+      "id": "CVE-2026-44664",
+      "cvss": 6.1
+    }
+  ],
   "top_sectors": [
     "software development",
     "technology",
-    "cloud services",
-    "enterprise software",
-    "software"
+    "AI",
+    "automation",
+    "cloud services"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 6,
-    "high": 3
+    "medium": 1,
+    "critical": 8,
+    "high": 4
   },
   "recent_excerpts": [
-    "攻击者在供应链攻击中破坏了 SAP、Lightning 和 Intercom npm 包，影响了 1800 名受害者；包每月下载量达 1000 万。",
-    "攻击者破坏了多个与SAP相关的npm包，部署窃取凭证的恶意软件，针对SAP BTP和云应用凭证。活动被称为迷你Shai-Hulud。",
-    "Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游..."
+    "CVE-2026-44664（CVSS 6.1）在 fast-xml-builder 中允许攻击者突破 XML 注释并注入任意内容；在版本 1.1.6 中修复。",
+    "Socket 和 StepSecurity 发现后门化的 node-ipc 版本 9.1.6、9.2.3 和 12.0.1 从开发者机器中窃取 SSH 密钥、AWS 凭证和 env 文件。",
+    "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。"
   ],
-  "sources_hash": "b512bcf1accf5767"
+  "sources_hash": "cd9dc93a3b4f3333"
 }

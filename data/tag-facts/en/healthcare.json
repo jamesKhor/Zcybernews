@@ -1,15 +1,15 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-12"
   },
   "top_actors": [
     "Interlock",
-    "Rhysida",
-    "ShinyHunters"
+    "LockBit",
+    "Rhysida"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -17,23 +17,23 @@
     "Healthcare",
     "critical infrastructure",
     "Government",
-    "research"
+    "pharmaceutical"
   ],
   "top_regions": [
-    "United states",
     "Global",
+    "United states",
     "Illinois",
     "Moldova",
     "Netherlands"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "medium": 1
   },
   "recent_excerpts": [
+    "West Pharmaceutical Services took systems offline globally after a May 4 ransomware attack with data exfiltration. Unit 42 is investigating; ransom may have been paid.",
     "Medtronic reported unauthorized access to its corporate IT systems in a cyberattack, with no impact on medical devices or patient care operations. Data was compromised.",
-    "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise.",
-    "ShinyHunters claims to have stolen 9 million records from medical device maker Medtronic, including personal information. The group threatens to leak the data."
+    "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise."
   ],
-  "sources_hash": "e1685f4602248dbb"
+  "sources_hash": "2025062d978784f6"
 }

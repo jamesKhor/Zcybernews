@@ -1,0 +1,9 @@
+{
+  "tag": "patch",
+  "locale": "en",
+  "intro": "This archive collects 5 articles tagged `patch` published between April 14, 2026 and May 12, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2026-5056, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize technology and telecommunications across Global, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, 1 high, and 3 medium reports.",
+  "sources_hash": "341dc97349089d84",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:06:35.314Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

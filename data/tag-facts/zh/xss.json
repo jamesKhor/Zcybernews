@@ -1,0 +1,53 @@
+{
+  "tag": "xss",
+  "locale": "zh",
+  "count": 9,
+  "date_range": {
+    "first": "2026-05-09",
+    "latest": "2026-05-16"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-44567",
+      "cvss": 7.7
+    },
+    {
+      "id": "CVE-2026-45303",
+      "cvss": 7.7
+    },
+    {
+      "id": "CVE-2026-45314",
+      "cvss": 7.7
+    },
+    {
+      "id": "CVE-2026-44579",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2026-44580",
+      "cvss": 7.5
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "healthcare",
+    "business services",
+    "e-commerce",
+    "education"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "medium": 4,
+    "low": 1
+  },
+  "recent_excerpts": [
+    "Open WebUI 修复了 CVE-2026-45314（SVG XSS）、CVE-2026-45303（iframe脚本注入）和 CVE-2026-44567（待定角色认证绕过）——全部在自托管的AI平台上。",
+    "CVE-2026-42897是一个高严重性的Exchange Server欺骗漏洞，在野外被利用，通过Outlook网页版实现基于XSS的代码执行。",
+    "CVE-2026-44580 (CVSS 6.1) 通过 beforeInteractive 脚本启用 XSS；CVE-2026-44579 (CVSS 7.5) 触发部分预渲染中的连接耗尽。"
+  ],
+  "sources_hash": "2834ff32244d2870"
+}

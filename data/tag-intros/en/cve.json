@@ -1,9 +1,9 @@
 {
   "tag": "cve",
   "locale": "en",
-  "intro": "Between April 13 and April 20, 2026, ZCyberNews published nine articles tracking CVEs. The vulnerabilities covered during this period were predominantly informational in nature, with eight such reports and a single high-severity flaw. These security issues impacted a range of sectors, with notable attention on critical infrastructure and technology. The reported vulnerabilities had a broad geographical footprint, affecting systems within the European Union and on a global scale. This collection provides a focused look at the specific software vulnerabilities disclosed and monitored within that week.",
-  "sources_hash": "373b207a5dba4b28",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:00:29.957Z",
+  "intro": "This archive collects 9 articles tagged `cve` published between April 13, 2026 and April 20, 2026. Coverage includes 1 high, and 8 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "6002f2a863402735",
+  "model": "template:sparse",
+  "generated_at": "2026-05-18T10:02:25.011Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

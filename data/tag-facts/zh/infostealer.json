@@ -1,35 +1,36 @@
 {
   "tag": "infostealer",
   "locale": "zh",
-  "count": 9,
+  "count": 13,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-30"
+    "latest": "2026-05-15"
   },
   "top_actors": [
+    "Gremlin Stealer",
     "LummaC2",
-    "Omnistealer"
+    "NWHStealer"
   ],
   "top_cves": [],
   "top_sectors": [
-    "government",
-    "healthcare",
-    "multiple",
+    "technology",
     "software development",
-    "technology"
+    "cryptocurrency",
+    "financial services",
+    "gaming"
   ],
   "top_regions": [
     "Global",
     "Ukraine"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 11,
     "critical": 1
   },
   "recent_excerpts": [
-    "CISA 和 FBI 联合咨询详细描述了 LummaC2 信息窃取者的 TTPs 和 IOCs：恶意软件从被入侵的网络中窃取凭证、加密钱包和会话数据。",
-    "攻击者破坏了 elementary-data PyPI 包（每月下载量110万次）以推送一个针对开发者凭证、加密钱包和环境变量的信息窃取器。",
-    "Malwarebytes 报告称，Google 的 Antigravity AI 工具的木马化安装程序在几分钟内窃取浏览器 cookies 和账户凭证，针对寻求泄露软件的用户。"
+    "Unit 42 详细描述了一种新的 Gremlin stealer 变种，使用 XOR 加密的资源部分，加密剪贴器，WebSocket 会话劫持，以及一个商业打包器，带有指令...",
+    "攻击者滥用 Google Ads 链接到真实的 claude.ai 和共享的 Claude 聊天，以传递 MacSync 信息窃取器，收集浏览器凭证和 Keychain 数据。",
+    "一个被恶意抢注的 OpenAI 仓库在 Hugging Face 上达到了第一名，下载量达到 244,000 次，分发了一个基于 Rust 的信息窃取器，该窃取器针对浏览器凭证、加密钱包和 VPN..."
   ],
-  "sources_hash": "5d9a62f551f5e611"
+  "sources_hash": "5a393019f871ae52"
 }

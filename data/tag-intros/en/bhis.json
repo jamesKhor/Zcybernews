@@ -1,9 +1,9 @@
 {
   "tag": "bhis",
   "locale": "en",
-  "intro": "North America’s cybersecurity sector and multiple other industries faced a concentrated burst of activity between April 25 and April 30, 2026, with seven articles tagged under bhis. The threat actor Comburglar was observed in these incidents, which included two high-severity events and one informational report. The archive covers a six-day window of coverage on ZCyberNews, reflecting the actor’s focus on North American targets across diverse sectors.",
-  "sources_hash": "d043ba593d813d6c",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-03T04:23:13.622Z",
+  "intro": "This archive collects 7 articles tagged `bhis` published between April 25, 2026 and April 30, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Comburglar, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize cybersecurity and multiple across North america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 high, and 1 informational reports.",
+  "sources_hash": "10736b47db818d5f",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:03:28.810Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

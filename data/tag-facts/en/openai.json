@@ -1,17 +1,20 @@
 {
   "tag": "openai",
   "locale": "en",
-  "count": 8,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-14"
   },
   "top_actors": [
-    "Lazarus Group"
+    "Lazarus Group",
+    "TeamPCP",
+    "Winos 4.0"
   ],
   "top_cves": [],
   "top_sectors": [
     "technology",
+    "software development",
     "artificial-intelligence",
     "cloud services",
     "cybersecurity"
@@ -20,14 +23,14 @@
     "Global"
   ],
   "severity_mix": {
+    "high": 4,
     "medium": 4,
-    "informational": 2,
-    "high": 2
+    "informational": 2
   },
   "recent_excerpts": [
-    "OpenAI rolls out Advanced Account Security for ChatGPT: mandatory passkeys, shorter sessions, and account recovery changes. Affects all users globally.",
-    "OpenAI is expanding access to its GPT-5.4-Cyber model, a specialized AI for reverse engineering and malware analysis, following the reveal of Anthropic's offensive-capable 'Mythos' model.",
-    "OpenAI is scaling its Trusted Access for Cyber (TAC) program, providing vetted security researchers and teams with prioritized access to the GPT-5.4-Cyber model for reverse engineering and vulnerabili"
+    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android.",
+    "A typosquatted OpenAI repository reached #1 on Hugging Face with 244,000 downloads, delivering a Rust-based infostealer that targets browser credentials, crypto wallets, and VPN...",
+    "OpenAI rolls out Advanced Account Security for ChatGPT: mandatory passkeys, shorter sessions, and account recovery changes. Affects all users globally."
   ],
-  "sources_hash": "8c5b6398cc263b66"
+  "sources_hash": "d6ab8bbc30e9868d"
 }

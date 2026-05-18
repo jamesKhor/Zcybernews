@@ -1,0 +1,9 @@
+{
+  "tag": "elastic-security-labs",
+  "locale": "en",
+  "intro": "Technology and financial services sectors bore the brunt of five incidents tagged elastic-security-labs between April 26 and May 8, 2026, with four high-severity and one critical event. Threat actors TCLBANKER and VoidLink were observed in these cases, which impacted regions including Brazil, Global, Latin America, and South Asia. The coverage spans software development, cryptocurrency, and fintech, reflecting a concentrated focus on digital finance and infrastructure.",
+  "sources_hash": "8ac8b557a03b840b",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:05:35.882Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

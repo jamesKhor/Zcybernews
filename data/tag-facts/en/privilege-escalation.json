@@ -1,56 +1,56 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "count": 21,
+  "count": 27,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Chaotic Eclipse"
   ],
   "top_cves": [
     {
+      "id": "CVE-2026-34659",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-34660",
+      "cvss": 9.6
+    },
+    {
       "id": "CVE-2026-40372",
       "cvss": 9.1
     },
     {
-      "id": "CVE-2026-5490",
+      "id": "CVE-2026-4670",
       "cvss": 8.8
     },
     {
-      "id": "CVE-2026-6406",
+      "id": "CVE-2026-5174",
       "cvss": 8.8
-    },
-    {
-      "id": "CVE-2026-25203",
-      "cvss": 7.8
-    },
-    {
-      "id": "CVE-2026-31431",
-      "cvss": 7.8
     }
   ],
   "top_sectors": [
     "technology",
-    "education",
     "enterprise",
     "healthcare",
-    "multiple"
+    "education",
+    "financial services"
   ],
   "top_regions": [
     "Global",
     "North america"
   ],
   "severity_mix": {
-    "high": 18,
-    "critical": 2,
-    "medium": 1
+    "high": 21,
+    "medium": 2,
+    "critical": 4
   },
   "recent_excerpts": [
-    "Black Hills InfoSec's 2025 pentest analysis of 15 months of data shows the same top 10 vulnerabilities as 2022 — weak passwords, unpatched RDP, and misconfigured MFA remain…",
-    "CVE-2026-31431 (CVSS 7.8) dubbed 'Copy Fail' lets unprivileged local users write four controlled bytes to any readable file's page cache, enabling root on major Linux…",
-    "CVE-2026-35230: A race condition in VirtualBox's SoundBlaster 16 emulation allows local attackers with high-privileged guest access to escalate privileges. CVSS 7.5."
+    "Broadcom patched a high-severity TOCTOU vulnerability in VMware Fusion (CVE-2026-41702) that lets local non-admin users escalate privileges to root on macOS systems.",
+    "Palo Alto Networks released patches for two medium-severity flaws in Prisma Access Agent — CVE-2026-0248 (improper certificate validation) and CVE-2026-0246 (local privilege...",
+    "Adobe's May 2026 patch batch fixes 52 CVEs across 10 products; Adobe Connect gets two critical bugs (CVE-2026-34659, 9.6 CVSS for RCE; CVE-2026-34660, 9.3 CVSS for privilege..."
   ],
-  "sources_hash": "a482461c833e030a"
+  "sources_hash": "028b717f2fa99a9d"
 }

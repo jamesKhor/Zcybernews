@@ -1,0 +1,10 @@
+{
+  "tag": "raas",
+  "locale": "zh",
+  "intro": "2026年4月20日至5月13日期间，ZCyberNews在RaaS标签下发布了六篇文章，涵盖两起严重、三起高危及一起中等严重性事件。威胁行为者The Gentlemen、LockBit及VECT Ransomware被观察到针对金融服务、政府、零售、软件咨询等多个行业。受影响地区包括加勒比地区、拉丁美洲、土耳其及英国。被利用的关键漏洞为CVE-2024-55591、CVE-2025-32433及CVE-2025-33073。",
+  "sources_hash": "e16563ca2512a075",
+  "source_intro_hash": "a915736daf39ab95",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:10:25.553Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

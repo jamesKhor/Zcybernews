@@ -1,0 +1,37 @@
+{
+  "tag": "elastic-security-labs",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-26",
+    "latest": "2026-05-08"
+  },
+  "top_actors": [
+    "TCLBANKER",
+    "VoidLink"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "financial services",
+    "software development",
+    "cryptocurrency",
+    "fintech"
+  ],
+  "top_regions": [
+    "Brazil",
+    "Global",
+    "Latin america",
+    "South asia"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Elastic Security Labs 追踪 REF3076 —— 一个名为 TCLBANKER 的巴西银行木马，它针对 59 个金融平台，并通过 WhatsApp 蠕虫和 Outlook 电子邮件传播。",
+    "Elastic Security Labs 详细描述了 axios npm 包的供应链被破坏，部署了一个统一的跨平台 RAT，影响了未知数量的下游...",
+    "Elastic Security Labs 详细描述了 BRUSHWORM，这是一个通过 USB 传播的模块化后门，以及 BRUSHLOGGER，一个 DLL-side-loaded 键盘记录器，目标是南亚金融机构。"
+  ],
+  "sources_hash": "d5e6c811a6f387a7"
+}

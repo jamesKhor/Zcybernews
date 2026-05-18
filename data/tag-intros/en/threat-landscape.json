@@ -1,0 +1,9 @@
+{
+  "tag": "threat-landscape",
+  "locale": "en",
+  "intro": "This archive collects 5 articles tagged `threat-landscape` published between April 14, 2026 and May 16, 2026. Coverage includes 5 high reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "34f08e20d462362d",
+  "model": "template:sparse",
+  "generated_at": "2026-05-18T10:06:47.881Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

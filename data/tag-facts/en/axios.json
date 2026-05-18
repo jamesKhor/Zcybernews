@@ -28,5 +28,5 @@
     "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
     "Elastic Security Labs researcher Joe Desimone built a proof-of-concept tool in an afternoon that detected a supply chain compromise of the Axios HTTP library, affecting npm…"
   ],
-  "sources_hash": "830dc96055c3067e"
+  "sources_hash": "c790476f2116d54d"
 }

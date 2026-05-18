@@ -1,0 +1,10 @@
+{
+  "tag": "denial-of-service",
+  "locale": "zh",
+  "intro": "本档案收录了9篇发布于2026年5月5日至2026年5月17日期间、标记为`denial-of-service`的文章，为安全团队提供了该主题在ZCyberNews报道中的聚焦视图。近期报道涉及CVE-2026-34176、CVE-2026-39459及CVE-2026-41225，每篇报告均与源文章中具体的漏洞背景相关联。受影响范围信号主要指向全球范围内的电信、科技及企业网络领域，帮助读者在未超出档案数据范围的前提下比较暴露模式。严重程度覆盖包括2篇严重、5篇高危及2篇中等报告。",
+  "sources_hash": "bb3e78cc3d1db76c",
+  "source_intro_hash": "65f1fb5a21449b98",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:08:08.922Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

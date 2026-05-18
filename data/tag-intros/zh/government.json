@@ -1,0 +1,10 @@
+{
+  "tag": "government",
+  "locale": "zh",
+  "intro": "2026年4月12日至5月1日期间，ZCyberNews报道了五起政府标记的安全事件，其中SHADOW-EARTH-053成为最频繁出现的威胁行为体。受影响行业涵盖政府、国防及执法部门，波及区域包括美国、东亚、欧洲、法国和墨西哥。事件严重程度分布为一起中等严重事件和四起高严重事件，反映出针对公共部门目标的活动集中期。",
+  "sources_hash": "4a083ae1756a47ca",
+  "source_intro_hash": "ea2eaf72735409ba",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:08:53.067Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

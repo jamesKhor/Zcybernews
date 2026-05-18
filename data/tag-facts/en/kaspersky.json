@@ -1,22 +1,23 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-04-26"
+    "latest": "2026-05-08"
   },
   "top_actors": [
     "CrystalX",
-    "Lotus Wiper"
+    "Lotus Wiper",
+    "OceanLotus"
   ],
   "top_cves": [],
   "top_sectors": [
     "energy",
+    "finance",
+    "technology",
     "building automation",
-    "cryptocurrency",
-    "engineering",
-    "finance"
+    "cryptocurrency"
   ],
   "top_regions": [
     "Global",
@@ -24,13 +25,13 @@
     "Venezuela"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 7,
     "critical": 1
   },
   "recent_excerpts": [
-    "Kaspersky details CrystalX RAT, a MaaS malware with spyware, credential theft, and prankware features targeting Windows users globally since mid-2025.",
-    "Kaspersky's 2026 Global Report finds ransomware dwell time fell to 3.5 days in 2025, down from 5 days, as attackers accelerate encryption.",
-    "Kaspersky discovered Lotus Wiper, a novel file wiper targeting Venezuela's energy and utilities sector since late 2025."
+    "Kaspersky attributes a PyPI supply chain campaign to OceanLotus APT, using fake wheel packages to drop ZiChatBot malware that abuses Zulip chat APIs for C2 on Windows and Linux.",
+    "Three PyPI packages deliver ZiChatBot malware on Windows and Linux using Zulip chat APIs for stealthy C2 — Kaspersky identifies 12+ victim organizations globally.",
+    "Kaspersky details CrystalX RAT, a MaaS malware with spyware, credential theft, and prankware features targeting Windows users globally since mid-2025."
   ],
-  "sources_hash": "261c6b02c7b74412"
+  "sources_hash": "575153a3c9a75702"
 }

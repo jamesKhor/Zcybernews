@@ -1,9 +1,9 @@
 {
   "tag": "microsoft",
   "locale": "en",
-  "intro": "Over the past two weeks, from April 12 to April 25, 2026, ZCyberNews has published 37 articles under the Microsoft tag, covering a severity mix of 5 critical, 18 high, 10 medium, 3 informational, and 1 low. The threat actor Storm-2755 was observed in these reports. Key vulnerabilities include CVE-2026-40372 (CVSS 9.1), CVE-2026-33104 (CVSS 7.8), CVE-2026-34054 (CVSS 7.8), CVE-2026-26179 (CVSS 7.5), and CVE-2026-32183 (CVSS 7.5). Affected sectors span multiple, enterprise, cross-sector, education, and federal government, with impacts reported globally and in Canada and Japan.",
-  "sources_hash": "a29bccb23a9e563d",
+  "intro": "Over 40 articles published between April 12 and May 16, 2026, covered Microsoft-related security developments, with a severity mix including 20 high and 6 critical reports. Threat actors Secret Blizzard and Storm-2755 were observed in these incidents. Key vulnerabilities included CVE-2026-21643 and CVE-2026-40372, both carrying a CVSS score of 9.1, alongside CVE-2026-40361, CVE-2026-40364, and CVE-2026-41103 at 8.4. Affected sectors spanned enterprise, technology, government, and cross-sector environments, while regions impacted included Global, Asia, Canada, Europe, and Japan.",
+  "sources_hash": "3c355f10572546ca",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-26T04:13:15.716Z",
+  "generated_at": "2026-05-18T09:59:07.942Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

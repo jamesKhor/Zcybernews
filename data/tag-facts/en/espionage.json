@@ -1,15 +1,15 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "count": 10,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-01"
+    "latest": "2026-05-16"
   },
   "top_actors": [
     "APT28 (Fancy Bear)",
-    "Deep#Door",
-    "Mustang Panda"
+    "APT37",
+    "Deep#Door"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -21,19 +21,19 @@
   ],
   "top_regions": [
     "Europe",
+    "South korea",
     "Southeast asia",
-    "East asia",
-    "Global",
-    "India"
+    "Ukraine",
+    "Asia"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 10,
     "critical": 2
   },
   "recent_excerpts": [
-    "Deep#Door Python backdoor deploys persistent Windows implant for espionage — uses encrypted C2 channels, file exfiltration, and remote shell. No patch available.",
-    "The UK's NCSC reports handling four nationally significant cyber incidents per week, with most now attributed to hostile foreign states like China and Russia, up from two per week…",
-    "A new malware family dubbed 'AgingFly' is stealing authentication data from Chromium browsers and WhatsApp in targeted attacks against Ukrainian local government bodies and hospitals."
+    "Secret Blizzard evolved Kazuar into a modular P2P botnet with 150 config options, AMSI/ETW bypass, and silent-mode nodes. Microsoft details the three-module architecture.",
+    "ESET says APT37 compromised Sqgame card game platform to deliver BirdCall backdoor to Android devices, stealing SMS, call logs, and private keys from ethnic Koreans in Yanbian.",
+    "Deep#Door Python backdoor deploys persistent Windows implant for espionage — uses encrypted C2 channels, file exfiltration, and remote shell. No patch available."
   ],
-  "sources_hash": "c0d6348b1673423a"
+  "sources_hash": "d11e83b8c525302f"
 }

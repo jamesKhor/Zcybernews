@@ -1,0 +1,9 @@
+{
+  "tag": "github-actions",
+  "locale": "en",
+  "intro": "Six articles published between April 13 and May 16, 2026, cover the tag GitHub Actions, with a severity mix of three medium, one high, and one critical report. Threat actors BufferZoneCorp and TeamPCP were observed, and the single documented CVE is CVE-2026-44428, carrying a CVSS score of 4.7. The affected sectors include software development, technology, AI, and automation, with global regional impact.",
+  "sources_hash": "529682be110b6081",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:04:50.414Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

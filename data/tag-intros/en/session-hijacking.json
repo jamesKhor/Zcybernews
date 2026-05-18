@@ -1,9 +1,9 @@
 {
   "tag": "session-hijacking",
   "locale": "en",
-  "intro": "This archive contains six articles on session hijacking published between April 11 and April 22, 2026. The reported incidents were predominantly high-severity, with four classified as high and one as medium. The threat actor Storm-2755 was specifically named in this coverage. The attacks primarily targeted organizations within the finance, human resources, and payroll sectors, with a notable concentration of affected entities in Canada.",
-  "sources_hash": "9a59229e3731a4f2",
+  "intro": "Over nine articles published between April 11 and May 15, 2026, ZCyberNews covered session-hijacking activity. The threat actors Gremlin Stealer and Storm-2755 were observed, with CVE-2022-23961 (CVSS 6.1) and CVE-2026-5084 among the top vulnerabilities. Affected sectors included cryptocurrency, finance, financial services, hr, and information technology, with Canada as the primary region. The coverage comprised six high-severity and two medium-severity incidents.",
+  "sources_hash": "92eea7bce1a28f4e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:07:37.273Z",
+  "generated_at": "2026-05-18T10:02:53.018Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

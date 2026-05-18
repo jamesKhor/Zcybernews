@@ -1,34 +1,42 @@
 {
   "tag": "python",
   "locale": "en",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [
     {
       "id": "CVE-2026-39987",
       "cvss": 9.3
+    },
+    {
+      "id": "CVE-2026-44339",
+      "cvss": 8.6
+    },
+    {
+      "id": "CVE-2026-31248"
     }
   ],
   "top_sectors": [
-    "financial services",
+    "technology",
     "research",
-    "technology"
+    "AI development",
+    "financial services"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 4,
-    "high": 1
+    "high": 3,
+    "critical": 4
   },
   "recent_excerpts": [
-    "Threat actors pushed malicious PyTorch Lightning versions 2.6.2 and 2.6.3 to PyPI on April 30, 2026, stealing credentials via a typosquatted dependency — Aikido Security, Socket,…",
-    "A critical, unauthenticated remote code execution flaw in the Marimo notebook framework was weaponized by attackers within nine hours of its public disclosure, highlighting rapid exploit development.",
-    "A critical pre-authentication remote code execution vulnerability (CVE-2026-39987) in the Marimo Python notebook was exploited in the wild within 10 hours of public disclosure, posing a severe risk to"
+    "CVE-2026-31248: Docling METS GBS backend through 2.61.0 fails to disable entity resolution in etree.fromstring(), enabling XML Bomb attacks via crafted .tar.gz archives.",
+    "CVE-2026-44339 (CVSS 8.6) in PraisonAI multi-agent framework lets agents resolve undeclared tool names against module globals, enabling arbitrary Python execution.",
+    "Threat actors pushed malicious PyTorch Lightning versions 2.6.2 and 2.6.3 to PyPI on April 30, 2026, stealing credentials via a typosquatted dependency — Aikido Security, Socket,…"
   ],
-  "sources_hash": "35e20ff8098a6d12"
+  "sources_hash": "932f0a5aebf38c06"
 }

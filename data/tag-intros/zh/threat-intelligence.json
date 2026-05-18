@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "intro": "2026年4月13日至5月1日期间，ZCyberNews以威胁情报标签发布了28篇文章，严重程度分布为12篇信息性报告、10篇高危报告和3篇中危报告。报道频率最高的威胁行为体包括Commercial Surveillance Vendors、GopherWhisper和Handala Hack。受影响行业涵盖政府、科技、金融服务、民间社会及关键基础设施，受影响地区则遍及全球、亚洲、欧洲、伊朗和北美。",
-  "sources_hash": "15260054b962f707",
-  "source_intro_hash": "110301e47a95e339",
+  "intro": "过去一个月，ZCyberNews在威胁情报标签下发布了29篇文章，内容涵盖Commercial Surveillance Vendors、GopherWhisper和Handala Hack的活动。这些报告日期为2026年4月13日至5月14日，记录了全球政府、科技、金融服务、民间社会及关键基础设施领域所受影响，并在亚洲、欧洲、伊朗和北美地区记录了具体事件。报道包含12条信息类、10条高危类和3条中危类条目，反映出这些不同行为体在集中时段内被观测到的活动情况。",
+  "sources_hash": "e8e80532a2d5f2e7",
+  "source_intro_hash": "f9d8abce19148523",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:12:51.246Z",
+  "generated_at": "2026-05-18T10:11:08.577Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

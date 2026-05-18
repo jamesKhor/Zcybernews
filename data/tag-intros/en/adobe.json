@@ -1,9 +1,9 @@
 {
   "tag": "adobe",
   "locale": "en",
-  "intro": "Our seven articles from April 12–15, 2026, detail a series of Adobe vulnerabilities, including four critical and three high-severity issues. The coverage highlights specific flaws such as CVE-2026-34621, which carries a CVSS score of 8.6, alongside CVE-2024-20662, CVE-2024-21412, and CVE-2024-34102. These reports document the technical details and patching guidance for the affected software, providing a focused overview of the security updates required during this period.",
-  "sources_hash": "43169494e2ecc4a2",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:17:05.965Z",
+  "intro": "This archive collects 8 articles tagged `adobe` published between April 12, 2026 and May 12, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2026-34659, CVE-2026-34660, and CVE-2026-21643, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize e-commerce, media, and software, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 5 critical, and 3 high reports.",
+  "sources_hash": "942b0bfc551c7aa8",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:03:05.472Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

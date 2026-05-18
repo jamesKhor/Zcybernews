@@ -1,17 +1,20 @@
 {
   "tag": "openai",
   "locale": "zh",
-  "count": 8,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-14"
   },
   "top_actors": [
-    "Lazarus Group"
+    "Lazarus Group",
+    "TeamPCP",
+    "Winos 4.0"
   ],
   "top_cves": [],
   "top_sectors": [
     "technology",
+    "software development",
     "artificial-intelligence",
     "cloud services",
     "cybersecurity"
@@ -20,14 +23,14 @@
     "Global"
   ],
   "severity_mix": {
+    "high": 4,
     "medium": 4,
-    "informational": 2,
-    "high": 2
+    "informational": 2
   },
   "recent_excerpts": [
-    "OpenAI 推出 ChatGPT 的高级账户安全功能：强制使用密码密钥、缩短会话时间以及账户恢复变更。影响全球所有用户。",
-    "OpenAI 正在扩大其 GPT-5.4-Cyber 模型的使用范围，这是一个专门用于逆向工程和恶意软件分析的人工智能，紧随 Anthropic 的进攻型 'Mythos' 模型的公布之后。此举旨在降低合法安全研究的障碍。",
-    "OpenAI 正在扩展其信任访问网络（TAC）项目，为经过审查的安全研究人员和团队提供优先访问 GPT-5.4-Cyber 模型的权限，用于逆向工程和漏洞发现。"
+    "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。",
+    "一个被恶意抢注的 OpenAI 仓库在 Hugging Face 上达到了第一名，下载量达到 244,000 次，分发了一个基于 Rust 的信息窃取器，该窃取器针对浏览器凭证、加密钱包和 VPN...",
+    "OpenAI 推出 ChatGPT 的高级账户安全功能：强制使用密码密钥、缩短会话时间以及账户恢复变更。影响全球所有用户。"
   ],
-  "sources_hash": "8c5b6398cc263b66"
+  "sources_hash": "f1d17456140cf6ab"
 }

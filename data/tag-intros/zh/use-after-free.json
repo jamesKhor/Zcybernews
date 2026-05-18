@@ -1,0 +1,10 @@
+{
+  "tag": "use-after-free",
+  "locale": "zh",
+  "intro": "六篇于2026年4月28日至5月16日期间发表的文章分析了释放后使用漏洞，其严重程度分布为两个高危、三个严重及一个低危。主要CVE包括CVE-2026-45185（CVSS 9.8）、CVE-2026-5943（CVSS 7.8）、CVE-2026-8550（CVSS 6.5）、CVE-2026-8556（CVSS 6.5）及CVE-2026-5942（CVSS 3.3）。受影响行业涵盖技术、全行业、电子邮件服务、通用领域及软件，影响范围涉及全球各地区。",
+  "sources_hash": "884943694d3c73f5",
+  "source_intro_hash": "5c02ee11cb2971f2",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:11:12.815Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

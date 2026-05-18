@@ -1,24 +1,26 @@
 {
   "tag": "soc",
   "locale": "zh",
-  "count": 10,
+  "count": 13,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-01"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
-    "cybersecurity"
+    "cybersecurity",
+    "enterprise"
   ],
   "top_regions": [],
   "severity_mix": {
+    "medium": 1,
     "informational": 7
   },
   "recent_excerpts": [
-    "Criminal IP 和 Securonix ThreatQ 的合作将基于暴露的威胁情报嵌入到自动化工作流程中，减少了SOC团队的手动分类工作。",
-    "Black Hills Information Security的SOC用扁平化团队模型取代了分层工单队列，分析师实时解决事件。",
-    "Black Hills InfoSec SOC团队回顾了在Deadwood的Wild West Hackin' Fest中进行的14小时通宵事件响应参与——现实世界的分类、控制和教训，用于..."
+    "一个Radiant Security网络研讨会探讨了为什么WAF、DLP、OT/IoT、暗网和供应链警报经常被SOC团队忽略——以及自动化如何缩小这一差距。",
+    "对企业环境中2500万个安全警报的分析显示，防御者系统性地忽视低严重性事件，平均每星期错过一次真正的威胁。",
+    "Rapid7的2026全球网络安全峰会议程将焦点从威胁量转移到早期检测、暴露管理以及AI辅助决策，涵盖两个轨道。"
   ],
-  "sources_hash": "f0efd140c9f2b660"
+  "sources_hash": "ea3483914dff4dfa"
 }

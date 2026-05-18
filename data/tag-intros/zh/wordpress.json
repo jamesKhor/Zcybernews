@@ -1,10 +1,10 @@
 {
   "tag": "wordpress",
   "locale": "zh",
-  "intro": "本档案收录了 5 篇带有「wordpress」标签的文章，发布时间从2026年4月13日至2026年4月17日。其中包含1 篇严重、3 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "aa0bd7dd803246b2",
-  "source_intro_hash": "13e6a31f4a3b142e",
-  "model": "template:sparse",
-  "generated_at": "2026-04-20T11:22:52.119Z",
+  "intro": "全球电子商务、网站托管、数字媒体、出版及科技行业成为近期一波WordPress相关漏洞的主要攻击目标。在2026年4月13日至5月17日期间，十二篇文章涵盖了严重程度各异的漏洞，包括五个中等、四个高危及三个严重级别问题。关键CVE编号包括CVE-2026-6433（CVSS 9.8）、CVE-2021-47926、CVE-2021-47927、CVE-2021-47929及CVE-2021-47957，每个漏洞的CVSS评分均为6.4。此次影响波及全球上述行业。",
+  "sources_hash": "43faed2de36757b3",
+  "source_intro_hash": "a53749d36650fc34",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:11:25.452Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

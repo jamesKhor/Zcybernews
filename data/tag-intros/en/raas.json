@@ -1,0 +1,9 @@
+{
+  "tag": "raas",
+  "locale": "en",
+  "intro": "Between 20 April and 13 May 2026, ZCyberNews published six articles under the RaaS tag, covering two critical, three high, and one medium-severity incidents. Threat actors The Gentlemen, LockBit, and VECT Ransomware were observed targeting financial services, government, retail, software consultancy, and various sectors. Affected regions included the Caribbean, Latin America, Turkey, and the UK. Key vulnerabilities exploited were CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073.",
+  "sources_hash": "964c2d09fddb41cf",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:05:00.170Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

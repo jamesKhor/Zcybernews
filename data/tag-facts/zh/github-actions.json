@@ -1,0 +1,39 @@
+{
+  "tag": "github-actions",
+  "locale": "zh",
+  "count": 6,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-05-16"
+  },
+  "top_actors": [
+    "BufferZoneCorp",
+    "TeamPCP"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-44428",
+      "cvss": 4.7
+    }
+  ],
+  "top_sectors": [
+    "software development",
+    "technology",
+    "AI",
+    "automation"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "medium": 3,
+    "high": 1,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "CVE-2026-44428 (CVSS 4.7) 在 MCP Registry 1.7.6 之前的版本中，允许攻击者在注册表实例之间重用被盗的 GitHub OIDC 令牌，使未授权的服务器发布和...",
+    "BufferZoneCorp账户发布了恶意的Ruby gems和Go模块，这些模块窃取凭证，篡改GitHub Actions，并在CI流水线中建立SSH持久性。",
+    "Elastic Security Labs 发布了一个开源的 CI/CD 滥用检测模板，使用信号提取和 LLM 推理来捕捉 GitHub Actions、GitLab CI 等跨平台的流水线攻击…"
+  ],
+  "sources_hash": "0e63ea37c7167ce8"
+}

@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-04"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Silver Fox",
@@ -14,10 +14,10 @@
   "top_cves": [],
   "top_sectors": [
     "government",
-    "financial services",
     "technology",
-    "banking",
-    "cloud-services"
+    "financial services",
+    "software development",
+    "banking"
   ],
   "top_regions": [
     "Global",
@@ -27,13 +27,13 @@
     "South korea"
   ],
   "severity_mix": {
-    "high": 11,
-    "critical": 1
+    "critical": 2,
+    "high": 11
   },
   "recent_excerpts": [
+    "Socket and StepSecurity found backdoored node-ipc versions 9.1.6, 9.2.3, and 12.0.1 exfiltrate SSH keys, AWS credentials, and env files from developer machines.",
     "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky.",
-    "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped.",
-    "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…"
+    "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped."
   ],
-  "sources_hash": "d4ef56c5e3f0c3c7"
+  "sources_hash": "725024b46ca83f5f"
 }

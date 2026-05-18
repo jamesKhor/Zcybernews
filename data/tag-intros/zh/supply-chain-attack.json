@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain-attack",
   "locale": "zh",
-  "intro": "本档案收录了 6 篇带有「supply-chain-attack」标签的文章，发布时间从2026年4月13日至2026年4月26日。其中包含2 篇严重、3 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "8ded2c5cd07cb93b",
-  "source_intro_hash": "8b75c017b352af96",
-  "model": "template:sparse",
-  "generated_at": "2026-04-26T04:15:31.322Z",
+  "intro": "本档案收录了2026年4月13日至2026年5月14日期间发布的24篇标记为`supply-chain-attack`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的集中视角。观察到的行为者引用包括GlassWorm、TeamPCP和APT37，仅在底层文章元数据支持归因时呈现。受影响范围信号强调技术、软件开发及网络安全，覆盖全球、中国和韩国，帮助读者比较暴露模式，而不添加超出档案数据的断言。严重程度覆盖包括7篇严重报告和17篇高危报告。",
+  "sources_hash": "7c4ec56ac19b35b4",
+  "source_intro_hash": "27b9dc5d70129eb7",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:10:57.852Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

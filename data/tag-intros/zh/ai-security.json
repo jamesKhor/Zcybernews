@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "intro": "在截至2026年5月4日的23天期间内，技术、政府和医疗行业成为一波集中攻击浪潮的主要目标，共有53篇文章记录了24起高严重性和7起重大安全事件。观察到威胁行为体Claude Mythos和OpenClaw的活动，而被利用的最关键漏洞包括CVSS评分为9.8的CVE-2026-5760以及评分为9.3的CVE-2026-5752。相关活动波及全球目标，对中国、北美及美国造成显著影响，涉及网络安全、人工智能等多个领域。",
-  "sources_hash": "1acba0cc275b4683",
-  "source_intro_hash": "cd592effa38e6b18",
+  "intro": "在2026年4月12日至5月16日期间，科技与网络安全领域承受了62篇标注为ai-security的文章所带来的冲击，其中包含30条高严重性警报和8条关键警报。威胁行为者Claude Mythos和OpenClaw被观测到，关键漏洞包括CVE-2026-5760（CVSS 9.8）、CVE-2026-5752（CVSS 9.3）、CVE-2026-44339（CVSS 8.6）、CVE-2026-44567（CVSS 7.7）以及CVE-2026-45303（CVSS 7.7）。全球、中国、北美及美国是主要受影响区域，关键基础设施、政府及金融服务领域同样成为攻击目标。",
+  "sources_hash": "f0191b93b4ababee",
+  "source_intro_hash": "e21f02c14d6ea480",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-05T04:09:56.013Z",
+  "generated_at": "2026-05-18T10:07:00.463Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

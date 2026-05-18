@@ -1,0 +1,47 @@
+{
+  "tag": "palo-alto-networks",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-05-15"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-0300",
+      "cvss": 9.3
+    },
+    {
+      "id": "CVE-2026-0246"
+    },
+    {
+      "id": "CVE-2026-0248"
+    },
+    {
+      "id": "CVE-2026-0249"
+    }
+  ],
+  "top_sectors": [
+    "enterprise",
+    "government",
+    "technology",
+    "cloud services",
+    "critical-infrastructure"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 1,
+    "critical": 1,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "CVE-2026-0249: Palo Alto Networks GlobalProtect 应用程序中存在多个不当证书验证漏洞，让本地或同一子网的攻击者拦截加密流量并安装...",
+    "Palo Alto Networks 发布了针对 Prisma Access Agent 中两个中等严重漏洞的补丁 — CVE-2026-0248（不当证书验证）和 CVE-2026-0246（本地权限提升）...",
+    "CVE-2026-0300 是 PAN-OS User-ID Authentication Portal 中的关键缓冲区溢出漏洞。修复版本尚属后续发布，应立即禁用或限制该门户。"
+  ],
+  "sources_hash": "6ce5af1f648dbce8"
+}

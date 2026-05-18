@@ -1,0 +1,10 @@
+{
+  "tag": "palo-alto-networks",
+  "locale": "zh",
+  "intro": "从2026年4月13日至5月15日，ZCyberNews在palo-alto-networks标签下发布了七篇文章。报道最多的漏洞是CVE-2026-0300，这是一个CVSS评分为9.3的严重缺陷。其他涉及的CVE包括CVE-2026-0246、CVE-2026-0248和CVE-2026-0249。相关报道涵盖全球影响，波及企业、政府、技术、云服务及关键基础设施等行业。严重程度分布包括两个高危、一个中危、一个严重及一个信息性评级。",
+  "sources_hash": "6ce5af1f648dbce8",
+  "source_intro_hash": "2707a5acedccd8ff",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:10:00.357Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

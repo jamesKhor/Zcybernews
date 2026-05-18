@@ -1,0 +1,9 @@
+{
+  "tag": "living-off-the-land",
+  "locale": "en",
+  "intro": "Government and energy sectors bore the brunt of five living-off-the-land attacks between April 12 and May 14, 2026, with one critical and four high-severity incidents. Threat actors GopherWhisper, KongTuke, and Operation PhantomCLR were observed exploiting CVE-2023-36036, primarily targeting organizations in Asia, Central America, and South America. The campaign leveraged legitimate system tools to evade detection, posing significant risks to enterprise networks across the affected regions.",
+  "sources_hash": "3828f8a745775a44",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:06:13.368Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

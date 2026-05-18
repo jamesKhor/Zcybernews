@@ -1,9 +1,9 @@
 {
   "tag": "browser-security",
   "locale": "en",
-  "intro": "The technology sector bore the brunt of browser-security incidents tracked by ZCyberNews between April 11 and 30, 2026, with enterprises and global users also heavily affected. Nine articles covered a mix of two critical, three high, two medium, and one informational severity issues. The threat actor Pushpaganda was observed in these campaigns. Affected regions included Australia, Canada, New Zealand, the United Kingdom, and global targets.",
-  "sources_hash": "fe70c243c2aead43",
+  "intro": "Technology and enterprise sectors were the primary targets in a recent wave of browser-security threats, with 13 articles published between 2026-04-11 and 2026-05-16. The threat actor Pushpaganda was observed, alongside critical vulnerabilities including CVE-2026-8573 and CVE-2026-8577, both with a CVSS score of 8.8, as well as CVE-2026-7896, CVE-2026-7897, and CVE-2026-7898. The coverage spanned global regions, with specific focus on Australia, Canada, New Zealand, and the United Kingdom, and affected sectors also included email services. The severity mix comprised four high, four critical, three medium, and one informational alert.",
+  "sources_hash": "38b90391237edfaa",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:28:35.675Z",
+  "generated_at": "2026-05-18T10:00:53.565Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,34 +1,42 @@
 {
   "tag": "python",
   "locale": "zh",
-  "count": 5,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [
     {
       "id": "CVE-2026-39987",
       "cvss": 9.3
+    },
+    {
+      "id": "CVE-2026-44339",
+      "cvss": 8.6
+    },
+    {
+      "id": "CVE-2026-31248"
     }
   ],
   "top_sectors": [
-    "financial services",
+    "technology",
     "research",
-    "technology"
+    "AI development",
+    "financial services"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 4,
-    "high": 1
+    "high": 3,
+    "critical": 4
   },
   "recent_excerpts": [
-    "威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到 PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。",
-    "Marimo 笔记本框架中存在一个严重的未经身份验证的远程代码执行漏洞，在公开披露后九小时内被攻击者武器化，突显了快速漏洞开发。",
-    "Marimo Python笔记本中的关键预认证远程代码执行漏洞（CVE-2026-39987）在公开披露后10小时内被野外利用，对数据科学环境构成严重风险。"
+    "CVE-2026-31248: Docling METS GBS 后端通过 2.61.0 未能禁用 etree.fromstring() 中的实体解析，通过精心制作的 .tar.gz 归档文件启用 XML 炸弹攻击。",
+    "CVE-2026-44339 (CVSS 8.6) 在 PraisonAI 多代理框架中允许代理解析未声明的工具名称与模块全局变量，从而实现任意 Python 执行。",
+    "威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到 PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。"
   ],
-  "sources_hash": "35e20ff8098a6d12"
+  "sources_hash": "f2cfcb412eab29b1"
 }

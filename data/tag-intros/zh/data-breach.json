@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "intro": "在过去两周（2026年4月12日至4月28日），ZCyberNews报道了30起数据泄露事件。其中最活跃的威胁行为者包括ShinyHunters、RansomHub和Rhysida。这些泄露事件主要影响政府、医疗、零售、科技和酒店行业，受害者集中在北美、欧洲、美国、法国及全球范围。事件严重程度显著，其中24起被归类为高风险，5起为中等风险。",
-  "sources_hash": "0d56204ef7bf10af",
-  "source_intro_hash": "0464b8c297b2ba3b",
+  "intro": "在过去一个月中，ZCyberNews追踪了41篇标记为数据泄露的文章，发布时间为2026年4月12日至5月12日。报道涵盖34起高严重性和6起中严重性事件。观察到威胁行为者ShinyHunters、Cl0p和LockBit。受影响行业包括政府、医疗、教育、零售和科技，受影响地区为北美、欧洲、美国和法国，另有其他全球性报告。",
+  "sources_hash": "a5096f370d9e92e3",
+  "source_intro_hash": "69f36ce53f753dde",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-29T04:20:09.130Z",
+  "generated_at": "2026-05-18T10:07:59.619Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

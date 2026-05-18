@@ -1,0 +1,10 @@
+{
+  "tag": "cisco",
+  "locale": "zh",
+  "intro": "在过去一个月中，ZCyberNews报道了七篇与思科相关的新闻，其中Interlock和The Gentlemen是观察到的顶级威胁行为体。两个严重漏洞CVE-2026-20127和CVE-2026-20182的CVSS评分均为10分，与CVE-2022-20653、CVE-2024-20401和CVE-2024-55591一同被重点提及。报道覆盖企业网络、电信、服务提供商、软件咨询及技术行业，影响范围涉及全球，包括北美、土耳其和英国。严重程度分布包括四起严重事件和两起高危事件。",
+  "sources_hash": "897e1ac75dac7000",
+  "source_intro_hash": "849db14c2f8b9228",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:07:40.116Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

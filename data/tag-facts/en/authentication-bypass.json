@@ -1,13 +1,21 @@
 {
   "tag": "authentication-bypass",
   "locale": "en",
-  "count": 7,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-29"
+    "latest": "2026-05-16"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-20127",
+      "cvss": 10
+    },
+    {
+      "id": "CVE-2026-20182",
+      "cvss": 10
+    },
     {
       "id": "CVE-2026-41940",
       "cvss": 9.8
@@ -19,34 +27,27 @@
     {
       "id": "CVE-2026-41276",
       "cvss": 8.1
-    },
-    {
-      "id": "CVE-2026-24032",
-      "cvss": 7.3
-    },
-    {
-      "id": "CVE-2026-1492"
     }
   ],
   "top_sectors": [
     "technology",
-    "critical infrastructure",
-    "energy",
-    "enterprise IT",
-    "finance"
+    "software development",
+    "telecommunications",
+    "ai",
+    "critical infrastructure"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 4,
-    "high": 2,
-    "medium": 1
+    "high": 7,
+    "critical": 6,
+    "medium": 3
   },
   "recent_excerpts": [
-    "CVE-2026-41940: Unauthenticated remote attackers can bypass authentication in cPanel & WHM and WP Squared. CVSS 9.8. Patch released April 28, 2026.",
-    "CVE-2026-41276 (CVSS 8.1) in Flowise AccountService resetPassword lets unauthenticated attackers bypass authentication. ZDI advisory warns no auth required.",
-    "ZDI disclosed CVE-2026-24032, a 7.3-CVSS authentication bypass in Siemens SINEC NMS that requires no authentication to exploit. Affects industrial network management systems."
+    "Open WebUI fixes CVE-2026-45314 (SVG XSS), CVE-2026-45303 (iframe script injection), and CVE-2026-44567 (pending role auth bypass) — all in self-hosted AI platform.",
+    "CVE-2026-44671 (CVSS 7.5): ZITADEL identity platform fails to escape usernames in LDAP filters, letting unauthenticated attackers inject arbitrary filter logic during login.",
+    "CVE-2026-44504: Aegra prior to 0.9.7 allows authenticated attackers to read checkpoint state and inject messages into other users' threads via cross-tenant IDOR. Patch available."
   ],
-  "sources_hash": "daac67d0214f57ab"
+  "sources_hash": "903ea753404a5cff"
 }

@@ -1,19 +1,31 @@
 {
   "tag": "persistence",
   "locale": "en",
-  "count": 7,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-04"
+    "latest": "2026-05-15"
   },
   "top_actors": [
     "Comburglar",
     "VENOMOUS#HELPER",
     "VoidLink"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2023-30253"
+    },
+    {
+      "id": "CVE-2024-48760"
+    },
+    {
+      "id": "CVE-2025-6793"
+    }
+  ],
   "top_sectors": [
     "government",
+    "enterprise",
+    "financial services",
     "multiple",
     "technology"
   ],
@@ -22,12 +34,12 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 7
+    "high": 9
   },
   "recent_excerpts": [
-    "Elastic Security Labs dissects VoidLink, a Linux rootkit framework that blends Loadable Kernel Modules with eBPF hooks to evade detection and maintain stealthy persistence on…",
-    "A newly identified Rust-based Remote Access Trojan (RAT) toolkit, SpankRAT, abuses Windows Explorer processes to bypass reputation-based security and maintain persistent, low-detection access to compr",
-    "Threat actors deploy VIPERTUNNEL, a Python backdoor, using a fake DLL and multi-stage obfuscated loader to establish stealthy SOCKS5 proxy tunnels for persistent network access."
+    "Rapid7's Metasploit Framework adds Vim plugin persistence, exploits for CVE-2025-6793 (Marvell QConvergeConsole), CVE-2024-48760 (GestioIP), and CVE-2023-30253 (Dolibarr).",
+    "Specops Software explains how cached credentials, Kerberos tickets, and ACL persistence let attackers survive password resets in AD and hybrid Entra ID environments.",
+    "Elastic Security Labs dissects VoidLink, a Linux rootkit framework that blends Loadable Kernel Modules with eBPF hooks to evade detection and maintain stealthy persistence on…"
   ],
-  "sources_hash": "d1ef092bc47aa874"
+  "sources_hash": "670a23b4e17d1182"
 }

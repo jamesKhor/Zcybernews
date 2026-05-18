@@ -1,9 +1,9 @@
 {
   "tag": "python",
   "locale": "en",
-  "intro": "Financial services, research, and technology sectors globally faced significant risk from Python-related vulnerabilities in late April 2026, with four critical and one high-severity issue reported across five articles. The most prominent flaw was CVE-2026-39987, carrying a CVSS score of 9.3. The coverage spanned from April 12 to April 30, highlighting the widespread impact of these security weaknesses on organizations worldwide.",
-  "sources_hash": "35e20ff8098a6d12",
+  "intro": "The technology, research, AI development, and financial services sectors were the primary targets of a wave of critical Python-related vulnerabilities in April and May 2026. Three high-severity and four critical flaws were documented, with the most severe being CVE-2026-39987 (CVSS 9.3), followed by CVE-2026-44339 (CVSS 8.6) and CVE-2026-31248. These seven reports, published between April 12 and May 12, 2026, affected organisations globally.",
+  "sources_hash": "932f0a5aebf38c06",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:30:26.308Z",
+  "generated_at": "2026-05-18T10:04:08.655Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

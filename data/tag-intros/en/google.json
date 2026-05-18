@@ -1,9 +1,9 @@
 {
   "tag": "google",
   "locale": "en",
-  "intro": "This archive collects 9 articles tagged `google` published between April 12, 2026 and April 27, 2026. Coverage includes 3 high, 1 medium, and 5 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "81b3aa32c457e5db",
-  "model": "template:sparse",
-  "generated_at": "2026-04-28T04:21:11.793Z",
+  "intro": "Between 12 April and 16 May 2026, ZCyberNews published 14 articles under the Google tag, covering a global impact across technology, creators, enterprise software, and media sectors. The coverage included vulnerabilities CVE-2026-8550 and CVE-2026-8556, both with a CVSS score of 6.5, alongside CVE-2026-8541 and CVE-2026-8543 at 5.3, and CVE-2026-8566 at 3. The severity mix comprised six high, two critical, five informational, and one medium severity report.",
+  "sources_hash": "95eee6d8d279a03f",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:00:36.629Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

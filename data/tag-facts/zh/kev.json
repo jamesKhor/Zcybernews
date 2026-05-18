@@ -13,6 +13,10 @@
       "cvss": 9.9
     },
     {
+      "id": "CVE-2026-21643",
+      "cvss": 9.1
+    },
+    {
       "id": "CVE-2024-1708",
       "cvss": 8.4
     },
@@ -42,5 +46,5 @@
     "CISA 将其 KEV 目录中添加了 4 个正在被积极利用的漏洞 —— SimpleHelp、Samsung MagicINFO 9 和 D-Link DIR-823X —— 并设定了 2026 年 5 月的联邦补救截止日期。",
     "CISA 将其已知被利用漏洞目录中添加了六个 Fortinet、Microsoft 和 Adobe 软件中的漏洞，警告存在活跃的野外攻击，需要紧急修补。"
   ],
-  "sources_hash": "58e4edb861c1a3c3"
+  "sources_hash": "11364438ff162188"
 }

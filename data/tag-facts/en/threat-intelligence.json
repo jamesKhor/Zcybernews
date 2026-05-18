@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 28,
+  "count": 29,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-01"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Commercial Surveillance Vendors",
@@ -32,9 +32,9 @@
     "medium": 3
   },
   "recent_excerpts": [
+    "Recorded Future's Insikt Group argues AI reasoning over attacker TTPs and defender exposure data creates continuous risk assessment, narrowing the structural asymmetry between...",
     "Criminal IP and Securonix ThreatQ partnership embeds exposure-based threat intel into automated workflows, reducing manual triage for SOC teams.",
-    "Black Hills Information Security released GoSpoof, a Python tool that opens all ports on a honeypot to capture attacker scanning patterns and payloads in real time.",
-    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles."
+    "Black Hills Information Security released GoSpoof, a Python tool that opens all ports on a honeypot to capture attacker scanning patterns and payloads in real time."
   ],
-  "sources_hash": "15260054b962f707"
+  "sources_hash": "934b31b5eaaefa3d"
 }

@@ -1,0 +1,43 @@
+{
+  "tag": "github",
+  "locale": "zh",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-21",
+    "latest": "2026-05-17"
+  },
+  "top_actors": [
+    "Lazarus Group"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-45033",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-3854",
+      "cvss": 8.7
+    }
+  ],
+  "top_sectors": [
+    "software development",
+    "technology",
+    "cryptocurrency",
+    "enterprise software",
+    "identity-management"
+  ],
+  "top_regions": [
+    "Global",
+    "North america"
+  ],
+  "severity_mix": {
+    "high": 6,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "一名攻击者使用被泄露的GitHub令牌下载了Grafana的整个私有代码库。公司表示没有客户数据被访问，该事件涉及勒索...",
+    "CVE-2026-45033 (CVSS 9.8) 在 GitHub Copilot CLI 1.0.43 之前的版本中，允许攻击者通过在项目目录中嵌入恶意的裸 git 仓库来实现远程代码执行。",
+    "SailPoint 向 SEC 报告称，攻击者于 4 月 20 日通过第三方应用程序漏洞访问了其 GitHub 仓库的一个子集。"
+  ],
+  "sources_hash": "a9bd1c01ec9c2c98"
+}

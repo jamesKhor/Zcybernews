@@ -1,9 +1,9 @@
 {
   "tag": "mfa-bypass",
   "locale": "en",
-  "intro": "Enterprise and financial services organizations were the primary targets in eight high-severity incidents between April 13 and April 28, 2026, involving the threat actors Storm-2755 and Tycoon 2FA. The attacks affected regions including Canada, North America, and Global, with sectors such as finance, HR, and enterprise bearing the brunt of the activity. These campaigns focused on bypassing multi-factor authentication, underscoring the persistent risk to credential-based security controls across the affected industries.",
-  "sources_hash": "c045e99bad471eb1",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:29:04.962Z",
+  "intro": "This archive collects 8 articles tagged `mfa-bypass` published between April 13, 2026 and April 28, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Storm-2755 and Tycoon 2FA, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize all, enterprise, and finance across Canada, Global, and North america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 8 high reports.",
+  "sources_hash": "3e8b48ac522d391f",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:03:16.627Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

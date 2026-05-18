@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "intro": "2026年4月12日至30日期间，ZCyberNews追踪了20篇涉及关键基础设施的文章，其中APT33、CyberAv3ngers和Interlock是被引用频率最高的威胁行为者。报道重点提及了CVE-2026-24032（CVSS 7.3），并聚焦于美国、北美、欧洲及亚太地区的能源、公用事业和制造业领域。相关报道包含12起高严重性事件和3起严重性事件，以及3条信息性条目和1条中等严重性条目。",
-  "sources_hash": "4a180e616740f98e",
-  "source_intro_hash": "ea6c18aedf059068",
+  "intro": "APT33、CyberAv3ngers和Interlock是2026年4月12日至5月14日期间22篇文章数据集中针对关键基础设施最活跃的威胁行为体。观察到的最主要漏洞为CVE-2026-24032，CVSS评分为7.3。受影响行业包括能源、公用事业和制造业，主要分布在美国、欧洲和亚太地区。在22篇文章中，14篇被归类为高严重性，其中3篇为严重级别，1篇为中等严重性。",
+  "sources_hash": "95bcd07bef1642e0",
+  "source_intro_hash": "d81c220800fb8947",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:31:02.064Z",
+  "generated_at": "2026-05-18T10:07:49.067Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

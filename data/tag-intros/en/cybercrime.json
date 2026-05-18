@@ -1,9 +1,9 @@
 {
   "tag": "cybercrime",
   "locale": "en",
-  "intro": "Financial services and government entities bore the brunt of 24 cybercrime incidents tracked between April 13 and May 1, 2026, with 17 classified as high severity. LockBit, Black Axe, and Chinese Transnational Organized Crime were observed among the top threat actors, while affected sectors also included cybersecurity services, e-commerce, and gaming. The impact was felt globally, with specific activity noted in the Caribbean, Germany, Latin America, and Southeast Asia.",
-  "sources_hash": "2a7400de8b4bbc9a",
+  "intro": "Financial services bore the brunt of a concentrated wave of cybercrime between April 13 and May 1, 2026, with 24 articles documenting 17 high-severity incidents. LockBit, Black Axe, and Chinese Transnational Organized Crime were among the threat actors observed targeting government, cybersecurity services, e-commerce, and gaming sectors. The impact was felt globally, with notable activity in the Caribbean, Germany, Latin America, and Southeast Asia.",
+  "sources_hash": "1e0a3137c50a241d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:09:48.418Z",
+  "generated_at": "2026-05-18T09:59:34.667Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

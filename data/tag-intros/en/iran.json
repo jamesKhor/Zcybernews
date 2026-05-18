@@ -1,9 +1,9 @@
 {
   "tag": "iran",
   "locale": "en",
-  "intro": "Between April 12 and April 13, 2026, ZCyberNews published five reports on cyber activity linked to Iran. The threat actor CyberAv3ngers was prominently observed in these incidents, which were all assessed as high severity. The operations primarily affected the water, civil-society, energy, government, and industrial sectors. Geographically, the reported incidents involved entities in the United States and Iran, highlighting a concentrated period of significant cyber activity across these regions and critical infrastructures.",
-  "sources_hash": "3770e052131c1dad",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T10:59:45.523Z",
+  "intro": "This archive collects 9 articles tagged `iran` published between April 12, 2026 and April 29, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include APT33, CyberAv3ngers, and Fast16, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize water, energy, and government across Iran, United states, and Middle east, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 8 high reports.",
+  "sources_hash": "3618d28f98e13763",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:02:44.386Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "macos",
   "locale": "en",
-  "count": 10,
+  "count": 12,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-28"
+    "latest": "2026-05-12"
   },
   "top_actors": [
     "Lazarus Group",
@@ -23,7 +23,8 @@
     "technology",
     "cryptocurrency",
     "artificial-intelligence",
-    "finance"
+    "finance",
+    "individuals"
   ],
   "top_regions": [
     "Global",
@@ -32,13 +33,14 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 7,
+    "critical": 1,
+    "high": 8,
     "medium": 2
   },
   "recent_excerpts": [
-    "Google Project Zero published exploit details for CVE-2024-54529, a type confusion in macOS coreaudiod allowing sandbox escape via knowledge-driven fuzzing.",
-    "A malicious Ledger Live app distributed via Apple's official App Store for macOS stole approximately $9.5 million from 50 victims by harvesting recovery phrases.",
-    "A new ClickFix-style campaign targets macOS users with fake Apple instructions to run malicious commands."
+    "Apple released emergency patches for two zero-days exploited in the wild alongside the beta rollout of end-to-end encrypted RCS messaging for iOS and macOS.",
+    "Attackers abuse Google Ads linking to real claude.ai and shared Claude chats to deliver MacSync infostealer, harvesting browser credentials and Keychain data.",
+    "Google Project Zero published exploit details for CVE-2024-54529, a type confusion in macOS coreaudiod allowing sandbox escape via knowledge-driven fuzzing."
   ],
-  "sources_hash": "d2feba3a3d34e775"
+  "sources_hash": "cb29c0804ea0ec48"
 }

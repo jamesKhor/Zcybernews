@@ -1,0 +1,30 @@
+{
+  "tag": "windows-11",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "enterprise"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "critical": 1,
+    "high": 1,
+    "informational": 1,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "在Pwn2Own Berlin 2026的第一天，研究人员为24个零日漏洞收集了52.3万美元，包括Orange Tsai通过Edge沙箱逃逸获得的17.5万美元，以及三个Windows 11权限...",
+    "微软2026年5月补丁星期二修复了Windows 11 25H2、24H2和23H2中的120个漏洞。KB5089549和KB5087420包括安全修复、Xbox模式和批量文件...",
+    "微软的 Windows 11 Dev Build 26300.8170 在 Windows 安全应用中添加了一个专门的安全启动监控面板，为管理员提供了固件安全特性的状态和配置的单窗格视图。"
+  ],
+  "sources_hash": "5d56ecc27ef1bf67"
+}

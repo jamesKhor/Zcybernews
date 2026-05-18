@@ -1,10 +1,10 @@
 {
   "tag": "security-operations",
   "locale": "zh",
-  "intro": "本档案收录了 9 篇带有「security-operations」标签的文章，发布时间从2026年4月14日至2026年5月5日。其中包含6 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "96f47e41eb0c79a0",
-  "source_intro_hash": "4de9d9221fcce62d",
+  "intro": "本档案收录了 12 篇带有「security-operations」标签的文章，发布时间从2026年4月14日至2026年5月12日。其中包含1 篇中危、7 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "a0ed44ddb83de575",
+  "source_intro_hash": "48a630dcdb47a0a6",
   "model": "template:sparse",
-  "generated_at": "2026-05-05T04:10:16.390Z",
+  "generated_at": "2026-05-18T10:10:42.649Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

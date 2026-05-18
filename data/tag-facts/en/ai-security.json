@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 53,
+  "count": 62,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-16"
   },
   "top_actors": [
     "Claude Mythos",
@@ -18,14 +18,26 @@
     {
       "id": "CVE-2026-5752",
       "cvss": 9.3
+    },
+    {
+      "id": "CVE-2026-44339",
+      "cvss": 8.6
+    },
+    {
+      "id": "CVE-2026-44567",
+      "cvss": 7.7
+    },
+    {
+      "id": "CVE-2026-45303",
+      "cvss": 7.7
     }
   ],
   "top_sectors": [
     "technology",
-    "government",
     "cybersecurity",
-    "healthcare",
-    "artificial intelligence"
+    "critical infrastructure",
+    "government",
+    "financial services"
   ],
   "top_regions": [
     "Global",
@@ -34,15 +46,15 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 24,
-    "critical": 7,
-    "medium": 6,
-    "informational": 12
+    "high": 30,
+    "informational": 14,
+    "critical": 8,
+    "medium": 6
   },
   "recent_excerpts": [
-    "Cisco announced plans to acquire Astrix Security to address non-human identity risks in AI and machine workloads. The deal expands Cisco's identity security portfolio.",
-    "Dark Reading reports AI agents are deleting production databases because organizations deploy agent integrations without proper security testing or access controls.",
-    "Anthropic released Claude Security, a defensive AI suite to counter autonomous exploit tools like Mythos that weaponize zero-days in minutes. Targets enterprise SOCs."
+    "AI agents now discover and exploit obscure vulnerabilities autonomously, while AI-generated code floods pipelines with flaws. Defenders must adapt to agent-scale threats.",
+    "Open WebUI fixes CVE-2026-45314 (SVG XSS), CVE-2026-45303 (iframe script injection), and CVE-2026-44567 (pending role auth bypass) — all in self-hosted AI platform.",
+    "AI models produce confident but incorrect outputs that have led to misconfigured firewalls and pipeline valve errors, researchers warn."
   ],
-  "sources_hash": "1acba0cc275b4683"
+  "sources_hash": "876b15adde917805"
 }

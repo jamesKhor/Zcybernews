@@ -1,10 +1,10 @@
 {
   "tag": "extortion",
   "locale": "zh",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-03"
+    "latest": "2026-05-17"
   },
   "top_actors": [
     "ShinyHunters",
@@ -16,19 +16,20 @@
     "cryptocurrency",
     "Education",
     "hospitality",
-    "publishing"
+    "media"
   ],
   "top_regions": [
-    "North america"
+    "North america",
+    "Global"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 7,
     "medium": 1
   },
   "recent_excerpts": [
-    "ShinyHunters 声称从 Instructure，即 Canvas LMS 背后的教育技术公司，窃取了数据。Instructure 确认涉及未经授权访问某些系统的数据泄露，并...",
-    "ADT确认数据泄露后，ShinyHunters泄露了30,000+客户记录，包括姓名、电子邮件和账户详情，这些信息来自一个被破坏的Salesforce实例。",
-    "自2026年2月以来，BlackFile 勒索团伙至少攻击了12家零售和酒店组织，使用 vishing 窃取 VPN 凭证并窃取数据，然后才提出要求..."
+    "一名攻击者使用被泄露的GitHub令牌下载了Grafana的整个私有代码库。公司表示没有客户数据被访问，该事件涉及勒索...",
+    "ShinyHunters 在侵入 Anodot 后泄露了一个 106GB 的 Vimeo 数据档案，暴露了 119,200 名用户的电子邮件和姓名。没有泄露任何凭证或支付信息。",
+    "ShinyHunters 声称从 Instructure，即 Canvas LMS 背后的教育技术公司，窃取了数据。Instructure 确认涉及未经授权访问某些系统的数据泄露，并..."
   ],
-  "sources_hash": "f5245499e7b37fb8"
+  "sources_hash": "ac417e63d1ab5ce8"
 }

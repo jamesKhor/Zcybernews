@@ -1,0 +1,48 @@
+{
+  "tag": "sap",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-14",
+    "latest": "2026-05-12"
+  },
+  "top_actors": [
+    "mini Shai-Hulud",
+    "Mini Shai-Hulud"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-27681",
+      "cvss": 9.9
+    },
+    {
+      "id": "CVE-2026-34259",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-34260",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-34263",
+      "cvss": 9.6
+    }
+  ],
+  "top_sectors": [
+    "enterprise software",
+    "cloud services",
+    "financial services",
+    "manufacturing",
+    "retail"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "critical": 5
+  },
+  "recent_excerpts": [
+    "SAP released 15 security notes for May 2026, fixing two critical code injection flaws in S/4HANA (CVE-2026-34260) and Commerce (CVE-2026-34263), both rated 9.6 CVSS, and a...",
+    "Attackers compromised SAP, Lightning, and Intercom npm packages in a supply chain attack affecting 1,800 victims; packages had 10M monthly downloads.",
+    "Attackers compromised multiple SAP-related npm packages to deploy credential-stealing malware, targeting SAP BTP and cloud app credentials. Campaign dubbed mini Shai-Hulud."
+  ],
+  "sources_hash": "b327d3e9f5026966"
+}

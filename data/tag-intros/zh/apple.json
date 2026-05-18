@@ -1,0 +1,10 @@
+{
+  "tag": "apple",
+  "locale": "zh",
+  "intro": "Technology、consumer和government sectors在2026年4月16日至5月12日期间面临了与Apple相关的集中威胁态势，五篇文章详细报道了一个严重漏洞和两个高危漏洞。其中最重要的CVE编号为CVE-2026-28950，成为报道焦点。全球影响范围涵盖个人、法律和企业环境，漏洞严重程度分布为一个严重、两个高危和两个中危问题。",
+  "sources_hash": "be15733119a6b855",
+  "source_intro_hash": "2d08acc781b0b437",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:07:08.708Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

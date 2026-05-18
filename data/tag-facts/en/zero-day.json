@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "count": 29,
+  "count": 33,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-15"
   },
   "top_actors": [
     "APT29",
@@ -36,25 +36,26 @@
   "top_sectors": [
     "technology",
     "government",
-    "critical infrastructure",
     "telecommunications",
+    "critical infrastructure",
     "enterprise"
   ],
   "top_regions": [
     "Global",
     "Asia",
     "China",
-    "Southeast asia"
+    "Europe",
+    "North america"
   ],
   "severity_mix": {
-    "critical": 13,
-    "high": 15,
+    "high": 17,
+    "critical": 15,
     "medium": 1
   },
   "recent_excerpts": [
-    "CVE-2026-22679 (CVSS 9.8) in Weaver E-cology OA has been exploited in the wild since mid-March 2026. Attackers run discovery commands post-exploit. No patch available.",
-    "Anthropic's Claude Mythos Preview autonomously discovers and weaponizes software vulnerabilities in OS and internet infrastructure without expert guidance, raising urgent…",
-    "Claude Mythos and Project Glasswing shrink exploit windows to near-zero. The Hacker News details NDR playbooks to contain AI-driven attacks before patching is possible."
+    "CVE-2026-42897 is a high-severity Exchange Server spoofing flaw exploited in the wild, enabling XSS-based code execution via Outlook on the web.",
+    "On day one of Pwn2Own Berlin 2026, researchers collected $523,000 for 24 zero-days, including a $175,000 Edge sandbox escape by Orange Tsai and three Windows 11 privilege...",
+    "Apple released emergency patches for two zero-days exploited in the wild alongside the beta rollout of end-to-end encrypted RCS messaging for iOS and macOS."
   ],
-  "sources_hash": "f33db1a0f0d83bb0"
+  "sources_hash": "8b34812235405bde"
 }

@@ -1,47 +1,53 @@
 {
   "tag": "command-injection",
   "locale": "en",
-  "count": 5,
+  "count": 10,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-29"
+    "latest": "2026-05-11"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-31246",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2021-47949",
+      "cvss": 8.8
+    },
     {
       "id": "CVE-2026-3854",
       "cvss": 8.7
     },
     {
-      "id": "CVE-2023-33538"
+      "id": "CVE-2026-8264",
+      "cvss": 6.5
     },
     {
-      "id": "CVE-2026-39808"
-    },
-    {
-      "id": "CVE-2026-40176"
-    },
-    {
-      "id": "CVE-2026-40177"
+      "id": "CVE-2026-8265",
+      "cvss": 6.5
     }
   ],
   "top_sectors": [
-    "residential",
     "software development",
     "technology",
-    "telecommunications"
+    "telecommunications",
+    "conference centers",
+    "consumer"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 2,
-    "critical": 3
+    "critical": 4,
+    "high": 5,
+    "medium": 1
   },
   "recent_excerpts": [
-    "CVE-2026-3854 (CVSS 8.7) lets authenticated users with push access achieve remote code execution on GitHub.com and GitHub Enterprise Server via a crafted git push command.",
-    "A proof-of-concept exploit for CVE-2026-39808, a critical command injection vulnerability in Fortinet FortiSandbox, has been released.",
-    "Fortinet disclosed two critical vulnerabilities (CVSS 9.1) in FortiSandbox, enabling unauthenticated attackers to execute arbitrary commands and bypass authentication. Patches are available."
+    "CVE-2026-31246 (CVSS 9.8) in GPT-Pilot's Executor.run() passes unvalidated user input to asyncio.create_subprocess_shell(), enabling arbitrary command injection during project...",
+    "CVE-2026-8263 (CVSS 5.8) in Tenda AC6 firmware 15.03.06.49_multi_TDE01 allows unauthenticated remote OS command injection via the /goform/WifiExtraSet endpoint.",
+    "Two command injection vulnerabilities in Tenda AC6 firmware 15.03.06.23 let remote attackers execute arbitrary OS commands via the getLogFile and formWifiApScan functions."
   ],
-  "sources_hash": "ce51e0e6fe124cec"
+  "sources_hash": "6ae1851de8d77768"
 }

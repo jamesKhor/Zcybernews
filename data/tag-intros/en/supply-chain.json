@@ -1,9 +1,9 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "intro": "Over 76 articles published between April 12 and May 4, 2026, cover supply-chain threats. Key actors observed include Lazarus Group, CanisterSprawl, and GRU. Critical vulnerabilities such as CVE-2026-1731 (CVSS 9.8), CVE-2026-39987 (CVSS 9.3), CVE-2026-40176, and CVE-2026-40177 were highlighted. The reporting spans technology, software development, cryptocurrency, logistics, and manufacturing sectors, with global impact across North America, Europe, Asia, and the Arctic. The severity mix comprises 13 critical, 45 high, 13 medium, and 4 informational articles.",
-  "sources_hash": "ded1dc38a40eab86",
+  "intro": "Over 85 articles published between April 12 and May 17, 2026, examine supply-chain security, with 15 critical and 49 high-severity incidents reported. Threat actors Lazarus Group, TeamPCP, and CanisterSprawl were observed targeting technology, software development, cryptocurrency, logistics, and manufacturing sectors globally, with particular impact across North America, Europe, Asia, and the United States. Key vulnerabilities include CVE-2026-1731, CVE-2026-45033, CVE-2026-39987, CVE-2026-41650, and CVE-2026-44664, reflecting a mix of critical and medium-severity flaws.",
+  "sources_hash": "ad29d72cbe123660",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-05T04:07:24.167Z",
+  "generated_at": "2026-05-18T09:58:51.558Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

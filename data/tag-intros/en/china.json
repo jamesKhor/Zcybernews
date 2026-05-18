@@ -1,9 +1,9 @@
 {
   "tag": "china",
   "locale": "en",
-  "intro": "Government, defense, and critical infrastructure sectors were the primary targets in a series of five high-severity incidents tagged China between April 23 and May 1, 2026. Threat actors GopherWhisper, DRAGONBRIDGE, and SHADOW-EARTH-053 were observed in these operations, which impacted regions including Mongolia, the United States, East Asia, Europe, and globally. The technology and media sectors also featured among the affected industries during this period.",
-  "sources_hash": "da8684669b2e962f",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:11:26.179Z",
+  "intro": "This archive collects 6 articles tagged `china` published between April 23, 2026 and May 4, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include GopherWhisper, DRAGONBRIDGE, and SHADOW-EARTH-053, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize government, defense, and critical infrastructure across Mongolia, United states, and East asia, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 6 high reports.",
+  "sources_hash": "b347e507f60189cb",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:04:30.989Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,18 +1,37 @@
 {
   "tag": "browser-security",
   "locale": "zh",
-  "count": 9,
+  "count": 13,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-04-30"
+    "latest": "2026-05-16"
   },
   "top_actors": [
     "Pushpaganda"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-8573",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-8577",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-7896"
+    },
+    {
+      "id": "CVE-2026-7897"
+    },
+    {
+      "id": "CVE-2026-7898"
+    }
+  ],
   "top_sectors": [
     "technology",
     "all",
+    "email services",
     "enterprise"
   ],
   "top_regions": [
@@ -23,15 +42,15 @@
     "United kingdom"
   ],
   "severity_mix": {
-    "critical": 2,
-    "high": 3,
-    "informational": 1,
-    "medium": 2
+    "high": 4,
+    "critical": 4,
+    "medium": 3,
+    "informational": 1
   },
   "recent_excerpts": [
-    "谷歌和Mozilla发布Chrome 147和Firefox 150以修复关键和高严重性的漏洞，这些漏洞允许任意代码执行。用户被敦促立即更新。",
-    "Socket识别出108款恶意Chrome扩展，感染了20,000名用户，窃取Google和Telegram会话cookie，并通过共享的命令和控制服务器注入广告。",
-    "Malwarebytes Browser Guard 4.0 引入了一个新的访问控制模块，允许用户集中管理和阻止网站请求敏感权限，如摄像头、麦克风和位置，以减轻社会工程和驱动下载攻击。"
+    "在 Windows 上的 Chrome 148 中的 CVE-2026-8573 (CVSS 8.3) 和 CVE-2026-8577 (CVSS 8.8) 允许通过精心制作的视屏或 HTML 页面进行沙箱逃逸和 RCE。立即更新。",
+    "谷歌的Chrome 148更新修复了79个漏洞，其中14个是高危漏洞 —— 包括堆缓冲区溢出 CVE-2026-8509（奖金43K美元）和Skia中的整数溢出 CVE-2026-8510（奖金25K美元...",
+    "Malwarebytes 阻止了 Yahoo Mail 到 cook.howduhtable.com 等域名的背景连接 —— 这些域名是第三方基础设施，声誉不佳且重定向链不透明。"
   ],
-  "sources_hash": "fe70c243c2aead43"
+  "sources_hash": "2c30c5db28bf8a06"
 }

@@ -1,0 +1,9 @@
+{
+  "tag": "sap",
+  "locale": "en",
+  "intro": "Between 14 April and 12 May 2026, five critical articles were published under the SAP tag, covering vulnerabilities and threat activity. The threat actors mini Shai-Hulud and Mini Shai-Hulud were observed. Key vulnerabilities included CVE-2026-27681 with a CVSS score of 9.9, as well as CVE-2026-34259, CVE-2026-34260, and CVE-2026-34263, each with a CVSS score of 9.6. The affected sectors were enterprise software, cloud services, financial services, manufacturing, and retail.",
+  "sources_hash": "b327d3e9f5026966",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:06:40.160Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

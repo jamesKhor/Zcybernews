@@ -1,44 +1,56 @@
 {
   "tag": "android",
   "locale": "en",
-  "count": 12,
+  "count": 15,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-05-17"
   },
   "top_actors": [
     "Mirax",
-    "NGate"
+    "NGate",
+    "TrickMo"
   ],
   "top_cves": [
     {
+      "id": "CVE-2026-8566",
+      "cvss": 3
+    },
+    {
+      "id": "CVE-2026-8568",
+      "cvss": 3
+    },
+    {
       "id": "CVE-2023-4863"
+    },
+    {
+      "id": "CVE-2025-54957"
     }
   ],
   "top_sectors": [
     "cryptocurrency",
     "technology",
-    "consumer",
     "financial services",
-    "individuals"
+    "consumer",
+    "consumer electronics"
   ],
   "top_regions": [
-    "Europe",
     "Global",
+    "Europe",
+    "Austria",
     "Brazil",
-    "Latin america",
-    "Spain"
+    "France"
   ],
   "severity_mix": {
+    "high": 9,
     "medium": 1,
-    "high": 6,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
-    "ESET analysis shows 1 in 3 Android apps request unnecessary permissions — location, camera, microphone — enabling data harvesting and surveillance. Users should audit permissions.",
-    "NGate malware, using AI-generated code, has infected the legitimate HandyPay NFC app to steal payment card data and PINs from over 220,000 Android users in Brazil, according to ESET.",
-    "NGate malware version 2.0, built with AI assistance, hides in a trojanized NFC payment app to steal SMS, contacts, and crypto wallet data from Android devices while evading security software."
+    "Google Project Zero found a Pixel 10 VPU driver flaw allowing userspace to map arbitrary physical memory, including the kernel image. Exploit required 5 lines of code.",
+    "CVE-2026-8568 (CVSS 3.1) lets attackers bypass Chrome Site Isolation via AI features after renderer compromise; CVE-2026-8566 (CVSS 4.3) targets Android Payments.",
+    "ThreatFabric tracked a TrickMo variant using The Open Network (TON) for C2 and SOCKS5 proxies to pivot into victim networks, targeting banking and crypto users in France, Italy,..."
   ],
-  "sources_hash": "eaef9be75eee1fdf"
+  "sources_hash": "c9088f56bb1cb02f"
 }

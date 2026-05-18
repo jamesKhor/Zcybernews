@@ -1,15 +1,15 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 76,
+  "count": 85,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-17"
   },
   "top_actors": [
     "Lazarus Group",
-    "CanisterSprawl",
-    "GRU"
+    "TeamPCP",
+    "CanisterSprawl"
   ],
   "top_cves": [
     {
@@ -17,14 +17,20 @@
       "cvss": 9.8
     },
     {
+      "id": "CVE-2026-45033",
+      "cvss": 9.8
+    },
+    {
       "id": "CVE-2026-39987",
       "cvss": 9.3
     },
     {
-      "id": "CVE-2026-40176"
+      "id": "CVE-2026-41650",
+      "cvss": 6.1
     },
     {
-      "id": "CVE-2026-40177"
+      "id": "CVE-2026-44664",
+      "cvss": 6.1
     }
   ],
   "top_sectors": [
@@ -39,18 +45,18 @@
     "North america",
     "Europe",
     "Asia",
-    "Arctic"
+    "United states"
   ],
   "severity_mix": {
-    "critical": 13,
-    "medium": 13,
-    "high": 45,
+    "high": 49,
+    "medium": 16,
+    "critical": 15,
     "informational": 4
   },
   "recent_excerpts": [
-    "恶意的PyTorch Lightning在PyPI（v2.5.0-post1）通过一个凭证窃取有效载荷外泄浏览器cookies、云令牌和环境变量。影响机器学习管道。",
-    "Malwarebytes Lock 和 Code 播客：Eva Velasquez 详细说明了小型企业网络攻击如何造成一个'cyber tax'，提高所有消费者的价格——没有哪个行业能免疫。",
-    "FBI 警告称，2025 年美国和加拿大的货物盗窃损失达到 7.25 亿美元，由网络犯罪分子利用物流 IT 系统拦截货物并重新定向货物所驱动。"
+    "一名攻击者使用被泄露的GitHub令牌下载了Grafana的整个私有代码库。公司表示没有客户数据被访问，该事件涉及勒索...",
+    "CVE-2026-44428 (CVSS 4.7) 在 MCP Registry 1.7.6 之前的版本中，允许攻击者在注册表实例之间重用被盗的 GitHub OIDC 令牌，使未授权的服务器发布和...",
+    "CVE-2026-44664（CVSS 6.1）在 fast-xml-builder 中允许攻击者突破 XML 注释并注入任意内容；在版本 1.1.6 中修复。"
   ],
-  "sources_hash": "ded1dc38a40eab86"
+  "sources_hash": "60720eca6cca6d76"
 }

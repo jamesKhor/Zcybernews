@@ -1,19 +1,31 @@
 {
   "tag": "persistence",
   "locale": "zh",
-  "count": 7,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-04"
+    "latest": "2026-05-15"
   },
   "top_actors": [
     "Comburglar",
     "VENOMOUS#HELPER",
     "VoidLink"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2023-30253"
+    },
+    {
+      "id": "CVE-2024-48760"
+    },
+    {
+      "id": "CVE-2025-6793"
+    }
+  ],
   "top_sectors": [
     "government",
+    "enterprise",
+    "financial services",
     "multiple",
     "technology"
   ],
@@ -22,12 +34,12 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 7
+    "high": 9
   },
   "recent_excerpts": [
-    "Elastic Security Labs 解析 VoidLink，这是一个 Linux rootkit 框架，它融合了 Loadable Kernel Modules 与 eBPF 钩子，以规避检测并保持隐蔽的持久性在…",
-    "新发现的基于 Rust 的远程访问木马（RAT）工具包 SpankRAT，滥用 Windows Explorer 进程来绕过基于声誉的安全措施，并维持对被入侵系统的持续、低检测访问。",
-    "威胁行为者部署 VIPERTUNNEL，一个 Python 后门，使用假 DLL 和多阶段混淆加载器来建立隐蔽的 SOCKS5 代理隧道，以实现持久的网络访问。"
+    "Rapid7 的 Metasploit Framework 添加了 Vim 插件持久性，漏洞利用针对 CVE-2025-6793（Marvell QConvergeConsole）、CVE-2024-48760（GestioIP）和 CVE-2023-30253（Dolibarr）。",
+    "Specops Software 解释了缓存凭证、Kerberos 票据和 ACL 持久性如何让攻击者在 AD 和混合 Entra ID 环境中的密码重置后存活下来。",
+    "Elastic Security Labs 解析 VoidLink，这是一个 Linux rootkit 框架，它融合了 Loadable Kernel Modules 与 eBPF 钩子，以规避检测并保持隐蔽的持久性在…"
   ],
-  "sources_hash": "d1ef092bc47aa874"
+  "sources_hash": "a2725ac4354c7e76"
 }

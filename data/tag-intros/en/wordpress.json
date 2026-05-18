@@ -1,9 +1,9 @@
 {
   "tag": "wordpress",
   "locale": "en",
-  "intro": "Global organizations faced a concentrated wave of WordPress security incidents between April 13 and 17, 2026, as documented in five recent reports. The activity included two critical and three high-severity vulnerabilities, with the specific flaw CVE-2026-1492 highlighted among them. The targeting was broad, with a global scope of affected regions. This series of reports underscores the ongoing and focused attention threat actors are directing at this ubiquitous content management system.",
-  "sources_hash": "aa0bd7dd803246b2",
+  "intro": "Global e-commerce, web hosting, digital media, publishing, and technology sectors were the primary targets in a recent wave of WordPress-related vulnerabilities. Between April 13 and May 17, 2026, twelve articles covered a severity mix of five medium, four high, and three critical issues. Key CVEs include CVE-2026-6433 (CVSS 9.8), CVE-2021-47926, CVE-2021-47927, CVE-2021-47929, and CVE-2021-47957, each with a CVSS score of 6.4. The impact was felt globally across these sectors.",
+  "sources_hash": "c94f8016a71f663d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-20T11:00:54.289Z",
+  "generated_at": "2026-05-18T10:01:26.014Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

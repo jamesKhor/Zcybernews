@@ -1,0 +1,9 @@
+{
+  "tag": "palo-alto-networks",
+  "locale": "en",
+  "intro": "From April 13 to May 15, 2026, ZCyberNews published seven articles under the palo-alto-networks tag. The most covered vulnerability was CVE-2026-0300, a critical flaw with a CVSS score of 9.3. Additional CVEs included CVE-2026-0246, CVE-2026-0248, and CVE-2026-0249. The coverage spanned a global impact, affecting sectors such as enterprise, government, technology, cloud services, and critical-infrastructure. The severity mix comprised two high, one medium, one critical, and one informational severity rating.",
+  "sources_hash": "cba85ac228d25c51",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:03:58.465Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -34,5 +34,5 @@
     "A directory traversal vulnerability (CVE-2026-5492) in DriveLock endpoint security software allows authenticated attackers to read arbitrary files, potentially exposing sensitive system information an",
     "A critical SQL injection vulnerability (CVE-2026-5490) in DriveLock endpoint security software allows authenticated attackers to escalate privileges and bypass the product's own security controls, acc"
   ],
-  "sources_hash": "f9ac5e726a2a81ad"
+  "sources_hash": "886f673afbc73183"
 }

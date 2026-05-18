@@ -1,32 +1,54 @@
 {
   "tag": "google",
   "locale": "en",
-  "count": 9,
+  "count": 14,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-27"
+    "latest": "2026-05-16"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-8550",
+      "cvss": 6.5
+    },
+    {
+      "id": "CVE-2026-8556",
+      "cvss": 6.5
+    },
+    {
+      "id": "CVE-2026-8541",
+      "cvss": 5.3
+    },
+    {
+      "id": "CVE-2026-8543",
+      "cvss": 5.3
+    },
+    {
+      "id": "CVE-2026-8566",
+      "cvss": 3
+    }
+  ],
   "top_sectors": [
     "technology",
+    "all",
     "creators",
     "enterprise software",
-    "media",
-    "telecommunications"
+    "media"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 6,
+    "critical": 2,
     "informational": 5,
     "medium": 1
   },
   "recent_excerpts": [
-    "Malwarebytes reports a trojanized installer for Google's Antigravity AI tool steals browser cookies and account credentials within minutes, targeting users seeking the leaked software.",
-    "Google's Android 17 Beta 4 release introduces support for post-quantum hybrid key agreement in TLS and imposes new memory limits on apps, marking significant security enhancements ahead of the OS's fi",
-    "Google announced new Android 17 privacy policies restricting contact and location data access, while its 2025 ad safety report details the blocking of 8.3 billion policy-violating ads and 24.9 million"
+    "Google Chrome 148.0.7778.168 fixes CVE-2026-8543 and CVE-2026-8541 — two high-severity out-of-bounds read vulnerabilities in FileSystem and UI components on Mac and all platforms.",
+    "CVE-2026-8568 (CVSS 3.1) lets attackers bypass Chrome Site Isolation via AI features after renderer compromise; CVE-2026-8566 (CVSS 4.3) targets Android Payments.",
+    "Google fixed CVE-2026-8556 (ANGLE cross-origin leak) and CVE-2026-8550 (Google Lens use-after-free) in Chrome 148.0.7778.168 for Windows. Both flaws require a compromised renderer."
   ],
-  "sources_hash": "81b3aa32c457e5db"
+  "sources_hash": "95eee6d8d279a03f"
 }

@@ -1,0 +1,9 @@
+{
+  "tag": "chrome",
+  "locale": "en",
+  "intro": "The technology sector remains the primary target in a recent wave of exploits affecting Google Chrome, with a global impact. Over a period from April 19 to May 16, 2026, seven articles documented four high-severity and three critical-severity vulnerabilities. Key CVEs include CVE-2026-8550, CVE-2026-8556, CVE-2026-8541, CVE-2026-8543, and CVE-2026-8566, with scores ranging from 3 to 6.5. These flaws have drawn attention across all sectors and regions.",
+  "sources_hash": "7f3b071a153738b8",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:03:31.658Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

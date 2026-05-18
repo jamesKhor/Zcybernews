@@ -1,32 +1,48 @@
 {
   "tag": "fortinet",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-25"
+    "latest": "2026-05-13"
   },
-  "top_actors": [],
+  "top_actors": [
+    "The Gentlemen"
+  ],
   "top_cves": [
     {
       "id": "CVE-2025-59718",
       "cvss": 9.8
     },
     {
-      "id": "CVE-2026-39808"
+      "id": "CVE-2026-21643",
+      "cvss": 9.1
+    },
+    {
+      "id": "CVE-2024-55591"
+    },
+    {
+      "id": "CVE-2025-32433"
+    },
+    {
+      "id": "CVE-2025-33073"
     }
   ],
   "top_sectors": [
     "financial services",
     "government",
-    "technology"
+    "software consultancy",
+    "technology",
+    "various"
   ],
   "top_regions": [
     "Europe",
-    "North america"
+    "North america",
+    "Turkey",
+    "UK"
   ],
   "severity_mix": {
-    "critical": 4,
+    "critical": 5,
     "high": 2
   },
   "recent_excerpts": [
@@ -34,5 +50,5 @@
     "针对CVE-2026-39808的PoC漏洞利用代码已经发布，这是一个Fortinet FortiSandbox中的关键命令注入漏洞。该漏洞允许未经身份验证的攻击者以root身份执行任意操作系统命令。",
     "CISA 将其已知被利用漏洞目录中添加了六个 Fortinet、Microsoft 和 Adobe 软件中的漏洞，警告存在活跃的野外攻击，需要紧急修补。"
   ],
-  "sources_hash": "4857dc4d42100910"
+  "sources_hash": "35ab8453e78b0d6c"
 }

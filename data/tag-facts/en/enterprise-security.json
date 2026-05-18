@@ -1,10 +1,10 @@
 {
   "tag": "enterprise-security",
   "locale": "en",
-  "count": 12,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-27"
+    "latest": "2026-05-08"
   },
   "top_actors": [],
   "top_cves": [
@@ -15,6 +15,9 @@
     {
       "id": "CVE-2025-54987",
       "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-8106"
     }
   ],
   "top_sectors": [
@@ -30,15 +33,15 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 4,
+    "medium": 2,
+    "high": 5,
     "informational": 2,
-    "medium": 1,
     "critical": 4
   },
   "recent_excerpts": [
-    "Autonomous AI agents with file and service access are forcing organizations to rethink identity controls, data boundaries, and monitoring — Krebs reports on shifting attack…",
-    "The Hacker News reports AI agents create a structural security gap: delegated actors lack continuous oversight, enabling lateral movement and privilege escalation without human…",
-    "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months."
+    "Analysis of 25 million security alerts across enterprise environments shows defenders systematically ignore low-severity events, missing an average of one genuine threat per week.",
+    "CVE-2026-8106: Reflected HTML injection in GitHub Enterprise Server Management Console login page enables credential theft via crafted redirect_to parameter.",
+    "Autonomous AI agents with file and service access are forcing organizations to rethink identity controls, data boundaries, and monitoring — Krebs reports on shifting attack…"
   ],
-  "sources_hash": "602d8dbea1b6c513"
+  "sources_hash": "0b3ebea84bc42c82"
 }

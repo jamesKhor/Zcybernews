@@ -36,5 +36,5 @@
     "CVE-2026-28950在iOS通知服务中保留了设备上的已删除Signal消息，可通过取证工具访问。苹果在iOS 18.4.1和iPadOS 18.4.1中修复了日志记录缺陷。",
     "美国移民和海关执法局（ICE）确认使用了以色列公司 Graphite 的间谍软件，这是一个能够从加密消息应用如 WhatsApp 中提取数据的工具…"
   ],
-  "sources_hash": "e98d5bae8db42aa7"
+  "sources_hash": "27ff5cffcd27a893"
 }

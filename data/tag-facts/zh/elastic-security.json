@@ -1,10 +1,10 @@
 {
   "tag": "elastic-security",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-25",
-    "latest": "2026-05-05"
+    "latest": "2026-05-07"
   },
   "top_actors": [
     "TeamPCP"
@@ -16,14 +16,14 @@
   ],
   "top_regions": [],
   "severity_mix": {
+    "medium": 2,
     "informational": 1,
-    "medium": 1,
     "high": 1
   },
   "recent_excerpts": [
+    "Elastic Security ES|QL 规则检测 Traefik 日志中的 Web 服务器模糊测试并自动通过 Cloudflare API 阻止攻击 IP，扩展到 SQLi 和文件包含警报。",
     "Elastic Security 9.4 引入了“技能” —— 模块化的 AI 功能，这些功能可以自动化检测、调查和狩猎工作流程。",
-    "Elastic Security Labs 发布了一个功能，可以将普通英语威胁描述转换为经过验证的 ES|QL 检测规则，降低了没有查询的分析师的门槛…",
-    "Elastic Workflows 在 9.4 版本中达到 GA，增加了生产就绪的自动化功能，包括案例管理钩子、人在回路中的审批以及自然语言规则编写，用于…"
+    "Elastic Security Labs 发布了一个功能，可以将普通英语威胁描述转换为经过验证的 ES|QL 检测规则，降低了没有查询的分析师的门槛…"
   ],
-  "sources_hash": "dca1d72091c30b46"
+  "sources_hash": "819dbdd4dcb716f3"
 }

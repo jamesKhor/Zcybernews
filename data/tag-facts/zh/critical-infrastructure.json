@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "count": 19,
+  "count": 21,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "APT33",
@@ -26,21 +26,21 @@
   ],
   "top_regions": [
     "United states",
+    "Global",
     "North america",
     "Europe",
-    "Global",
     "Asia-pacific"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 14,
     "critical": 2,
     "informational": 3,
     "medium": 1
   },
   "recent_excerpts": [
-    "CISA 和 USCG 在美国关键基础设施组织的一次主动威胁狩猎中发现持续的弱配置、未修补的系统和凭证重用。",
-    "Itron 在 SEC 8-K 文件中披露了一起网络安全事件：未经授权的第三方访问了内部IT系统。",
-    "Dark Reading 报告称攻击者正在操纵电压以破坏电网 —— 这是一个日益增长的网络物理威胁向量，针对没有补丁的电力基础设施进行攻击…"
+    "AI模型产生自信但错误的输出，导致防火墙配置错误和管道阀门错误，研究人员警告。",
+    "一名23岁的学生使用SDR设备克隆TETRA无线电参数，发送了一个'General Alarm'信号，导致4列THSR列车停运48分钟。",
+    "CISA 和 USCG 在美国关键基础设施组织的一次主动威胁狩猎中发现持续的弱配置、未修补的系统和凭证重用。"
   ],
-  "sources_hash": "47954824a8c09be6"
+  "sources_hash": "95bcd07bef1642e0"
 }

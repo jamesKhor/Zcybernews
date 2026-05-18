@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "intro": "政府及关键基础设施领域是2026年4月12日至4月30日期间发布的16篇CISA标记文章的主要关注点。报道重点提及了威胁行为体GRU、Interlock和LummaC2，以及包括CVE-2024-57726、CVE-2026-34197、CVE-2024-1708、CVE-2024-20662和CVE-2024-21412在内的关键漏洞。严重程度分布为13起高危事件和3起严重事件，影响范围覆盖美国、北美、欧洲及其他全球地区。",
-  "sources_hash": "1a8ce2a03cef6b3b",
-  "source_intro_hash": "f180e06993e8fe8e",
+  "intro": "政府及关键基础设施行业在2026年4月面临一波集中的网络威胁，共有16篇文章被标记为CISA覆盖范围，涉及13起高严重性和3起严重性事件。观察到威胁行为者GRU、Interlock和LummaC2，主要漏洞包括CVE-2024-57726（CVSS 9.9）、CVE-2026-21643（CVSS 9.1）、CVE-2026-34197（CVSS 8.8）、CVE-2024-1708（CVSS 8.4）和CVE-2024-20662。受影响地区主要为美国及全球、北美和欧洲区域，受影响行业涵盖技术、国防和能源领域。",
+  "sources_hash": "67046e0cd9ffc427",
+  "source_intro_hash": "bad32e954ee22cec",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:30:57.810Z",
+  "generated_at": "2026-05-18T10:07:37.750Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

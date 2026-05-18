@@ -17,6 +17,10 @@
       "cvss": 9.9
     },
     {
+      "id": "CVE-2026-21643",
+      "cvss": 9.1
+    },
+    {
       "id": "CVE-2026-34197",
       "cvss": 8.8
     },
@@ -26,9 +30,6 @@
     },
     {
       "id": "CVE-2024-20662"
-    },
-    {
-      "id": "CVE-2024-21412"
     }
   ],
   "top_sectors": [
@@ -53,5 +54,5 @@
     "CISA 和 USCG 在美国关键基础设施组织的一次主动威胁狩猎中发现持续的弱配置、未修补的系统和凭证重用。",
     "CISA 将 CVE-2024-1708（ConnectWise ScreenConnect 路径遍历，CVSS 8.4）和一个未命名的 Windows 漏洞添加到其 KEV 目录，基于确认的积极利用。"
   ],
-  "sources_hash": "d90751e64f2deefd"
+  "sources_hash": "67046e0cd9ffc427"
 }

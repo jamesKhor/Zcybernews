@@ -1,0 +1,9 @@
+{
+  "tag": "insikt-group",
+  "locale": "en",
+  "intro": "This archive collects 5 articles tagged `insikt-group` published between April 25, 2026 and May 14, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Cobalt Strike, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize financial services, government, and retail across Caribbean and Latin america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 medium, and 1 informational reports.",
+  "sources_hash": "55541963109ddd94",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:06:01.826Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

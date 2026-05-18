@@ -1,10 +1,10 @@
 {
   "tag": "zdi",
   "locale": "zh",
-  "intro": "在2026年4月18日至5月2日期间发布的11篇以上文章涵盖了ZDI标签，重点揭示了全球软件开发、技术、关键基础设施、数字标牌及能源领域的漏洞。关键CVE包括CVE-2026-41265（CVSS 9.8）、CVE-2026-22898（CVSS 8.8）、CVE-2026-6406（CVSS 8.8）、CVE-2026-41276（CVSS 8.1）和CVE-2026-25203（CVSS 7.8）。严重程度分布包含两个严重、八个高危及一个低危问题。",
-  "sources_hash": "3c5eabf69c503c76",
-  "source_intro_hash": "d950d24987df0b20",
+  "intro": "2026年4月18日至5月2日期间，ZCyberNews在zdi标签下发布了11篇文章，涵盖两个严重漏洞、八个高危漏洞及一个低危漏洞。其中最值得关注的CVE编号包括CVE-2026-41265（CVSS 9.8）、CVE-2026-22898与CVE-2026-6406（均为CVSS 8.8）、CVE-2026-41276（CVSS 8.1）及CVE-2026-25203（CVSS 7.8）。这些漏洞在全球范围内影响软件开发、技术、关键基础设施、数字标牌及能源等行业。",
+  "sources_hash": "b067e5a62e28b5e9",
+  "source_intro_hash": "8f64cb2478960418",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:12:53.384Z",
+  "generated_at": "2026-05-18T10:11:29.348Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

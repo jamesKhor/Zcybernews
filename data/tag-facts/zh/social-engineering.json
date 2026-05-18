@@ -1,23 +1,27 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "count": 54,
+  "count": 57,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-04"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Lazarus Group",
     "UNC6692",
     "APT37 (ScarCruft, InkySquid)"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2023-36036"
+    }
+  ],
   "top_sectors": [
     "cryptocurrency",
     "financial services",
     "technology",
     "financial-services",
-    "hospitality"
+    "enterprise"
   ],
   "top_regions": [
     "Global",
@@ -27,14 +31,15 @@
     "Canada"
   ],
   "severity_mix": {
-    "high": 42,
+    "high": 43,
+    "informational": 2,
     "medium": 11,
-    "informational": 1
+    "critical": 1
   },
   "recent_excerpts": [
-    "Black Hills InfoSec 展示了攻击者如何滥用 Microsoft SSPR 绕过 MFA 并通过社会工程学重置凭证。现实世界的测试场景揭示了检测漏洞。",
-    "Adaptive Security发现3秒钟的音频足以克隆声音进行欺诈；在一例中，深度伪造电话欺骗员工汇款243K美元。没有检测工具捕捉到这次攻击。",
-    "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。"
+    "Signal 引入了新的应用内确认和警告，以对抗与俄罗斯国家黑客有关的网络钓鱼攻击，这些黑客滥用了 Linked Device 功能来劫持高知名度的...",
+    "Steve Stasiukonis 在2006年对一家信用合作社进行的USB投掷测试 —— 员工插入的20个驱动器中有15个 —— 成为了至今仍被使用的物理社交工程评估的蓝图...",
+    "Black Hills InfoSec 展示了攻击者如何滥用 Microsoft SSPR 绕过 MFA 并通过社会工程学重置凭证。现实世界的测试场景揭示了检测漏洞。"
   ],
-  "sources_hash": "5ae720de1d8a7da0"
+  "sources_hash": "248d5aa13266f2b9"
 }

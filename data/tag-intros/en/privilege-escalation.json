@@ -1,9 +1,9 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "intro": "Over 21 articles published between April 13 and April 30, 2026, examined privilege-escalation vulnerabilities, with 18 classified as high severity and two as critical. The threat actor Chaotic Eclipse was observed in these incidents, while the most notable CVEs included CVE-2026-40372 (CVSS 9.1), CVE-2026-5490 (CVSS 8.8), CVE-2026-6406 (CVSS 8.8), CVE-2026-25203 (CVSS 7.8), and CVE-2026-31431 (CVSS 7.8). Affected sectors spanned technology, education, enterprise, and healthcare, with global and North American regions impacted.",
-  "sources_hash": "a482461c833e030a",
+  "intro": "Between 13 April and 14 May 2026, ZCyberNews published 27 articles under the privilege-escalation tag, covering 21 high-severity, 2 medium, and 4 critical incidents. The threat actor Chaotic Eclipse was observed in these campaigns. Key vulnerabilities included CVE-2026-34659, CVE-2026-34660, CVE-2026-40372, CVE-2026-4670, and CVE-2026-5174, with two CVEs carrying a CVSS score of 9.6. Affected sectors spanned technology, enterprise, healthcare, education, and financial services, primarily across Global and North American regions.",
+  "sources_hash": "028b717f2fa99a9d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:27:59.032Z",
+  "generated_at": "2026-05-18T09:59:29.999Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "remote-access-trojan",
   "locale": "en",
-  "intro": "Between April 13 and April 22, 2026, ZCyberNews published five reports detailing high-severity remote access trojan campaigns. The Lazarus Group was the primary threat actor identified, targeting the cryptocurrency, software development, and technology sectors. These attacks had a global footprint, with notable activity in Latin America. All five incidents were assessed as high severity, underscoring the persistent and significant risk posed by these intrusion tools during this period.",
-  "sources_hash": "5b6d2e525c8a0ce3",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:09:25.967Z",
+  "intro": "This archive collects 6 articles tagged `remote-access-trojan` published between April 13, 2026 and April 30, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Lazarus Group, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize technology, cryptocurrency, and enterprise software across Global and Latin america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 6 high reports.",
+  "sources_hash": "67298bb6d12e4f5e",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:05:05.337Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

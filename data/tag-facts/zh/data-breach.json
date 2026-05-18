@@ -1,39 +1,39 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 36,
+  "count": 39,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-12"
   },
   "top_actors": [
     "ShinyHunters",
-    "LockBit",
-    "RansomHub"
+    "Cl0p",
+    "LockBit"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "healthcare",
     "retail",
-    "education",
-    "technology"
+    "technology",
+    "education"
   ],
   "top_regions": [
     "North america",
     "Europe",
+    "Global",
     "United states",
-    "France",
-    "Global"
+    "France"
   ],
   "severity_mix": {
-    "high": 29,
+    "high": 32,
     "medium": 6
   },
   "recent_excerpts": [
-    "基础设施确认黑客访问了Canvas用户数据 —— 名字、电子邮件、学生ID、消息 —— 来自教育机构。",
-    "Instructure 披露了一起泄露事件，黑客窃取了姓名、电子邮件、学生ID和消息，并中断了 Canvas 平台服务。数据泄露威胁随之而来。",
-    "美敦力报告称其企业IT系统在网络攻击中遭到未经授权的访问，对医疗设备或患者护理操作没有影响。数据遭到泄露。"
+    "斯柯达汽车在攻击者利用其电子商务门户的漏洞后披露了数据泄露，窃取了客户的姓名、地址和密码哈希。",
+    "信息专员办公室（ICO）对南斯塔福德郡水务公司罚款963,900英镑，因为Cl0p勒索软件团伙泄露了663,887名客户的数据 —— 钓鱼攻击未被检测到长达20个月。",
+    "ShinyHunters 在侵入 Anodot 后泄露了一个 106GB 的 Vimeo 数据档案，暴露了 119,200 名用户的电子邮件和姓名。没有泄露任何凭证或支付信息。"
   ],
-  "sources_hash": "a93372c794f9e1a5"
+  "sources_hash": "a5096f370d9e92e3"
 }

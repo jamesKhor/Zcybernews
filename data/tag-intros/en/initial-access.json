@@ -1,9 +1,9 @@
 {
   "tag": "initial-access",
   "locale": "en",
-  "intro": "The cryptocurrency, financial-services, and logistics sectors faced a concentrated wave of high-severity initial-access attacks between April 14 and April 30, 2026, according to ten reports. Threat actor UNC6692 was observed in these intrusions, which also affected general-business and shipping organizations. The severity mix included nine high-severity incidents and one medium-severity event, highlighting a persistent focus on gaining footholds across these industries during the period.",
-  "sources_hash": "68a32c0bdcbca374",
+  "intro": "The cryptocurrency and financial-services sectors faced a concentrated wave of high-severity initial-access attacks between April 14 and April 30, 2026, according to ZCyberNews reporting. Threat actor UNC6692 was observed targeting organizations in logistics and shipping as well. The ten articles covering this period include nine rated as high severity and one as medium, reflecting the focused nature of these intrusions.",
+  "sources_hash": "b8e710cf5d4f5537",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-03T04:22:42.514Z",
+  "generated_at": "2026-05-18T10:02:10.106Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,24 +1,26 @@
 {
   "tag": "security-operations",
   "locale": "en",
-  "count": 9,
+  "count": 12,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-05"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
-    "cybersecurity"
+    "cybersecurity",
+    "enterprise"
   ],
   "top_regions": [],
   "severity_mix": {
-    "informational": 6
+    "informational": 7,
+    "medium": 1
   },
   "recent_excerpts": [
-    "Elastic Security Labs released Conversational Entity Analytics, embedding inline entity data and Canvas previews into Agent Builder for faster threat hunting without leaving chat…",
-    "Black Hills Information Security's SOC replaced tiered ticket queues with a flat team model where analysts solve incidents in real time.",
-    "Rapid7 argues most breaches result from visibility gaps in asset, identity, and attack path coverage rather than sophisticated exploits."
+    "A Radiant Security webinar examines why WAF, DLP, OT/IoT, dark web, and supply chain alerts are routinely ignored by SOC teams — and how automation can close the gap.",
+    "Rapid7's new Cyber GRC platform aims to close the gap between security operations and compliance, addressing the 241-day mean breach lifecycle identified in IBM's 2025 report.",
+    "Analysis of 25 million security alerts across enterprise environments shows defenders systematically ignore low-severity events, missing an average of one genuine threat per week."
   ],
-  "sources_hash": "96f47e41eb0c79a0"
+  "sources_hash": "823529edf288b5f8"
 }

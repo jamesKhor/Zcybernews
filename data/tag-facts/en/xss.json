@@ -1,0 +1,53 @@
+{
+  "tag": "xss",
+  "locale": "en",
+  "count": 9,
+  "date_range": {
+    "first": "2026-05-09",
+    "latest": "2026-05-16"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-44567",
+      "cvss": 7.7
+    },
+    {
+      "id": "CVE-2026-45303",
+      "cvss": 7.7
+    },
+    {
+      "id": "CVE-2026-45314",
+      "cvss": 7.7
+    },
+    {
+      "id": "CVE-2026-44579",
+      "cvss": 7.5
+    },
+    {
+      "id": "CVE-2026-44580",
+      "cvss": 7.5
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "healthcare",
+    "business services",
+    "e-commerce",
+    "education"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "medium": 4,
+    "low": 1
+  },
+  "recent_excerpts": [
+    "Open WebUI fixes CVE-2026-45314 (SVG XSS), CVE-2026-45303 (iframe script injection), and CVE-2026-44567 (pending role auth bypass) — all in self-hosted AI platform.",
+    "CVE-2026-42897 is a high-severity Exchange Server spoofing flaw exploited in the wild, enabling XSS-based code execution via Outlook on the web.",
+    "CVE-2026-44580 (CVSS 6.1) enables XSS via beforeInteractive scripts; CVE-2026-44579 (CVSS 7.5) triggers connection exhaustion in Partial Prerendering."
+  ],
+  "sources_hash": "b620b546ccb1d110"
+}

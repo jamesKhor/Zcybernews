@@ -1,9 +1,9 @@
 {
   "tag": "north-korea",
   "locale": "en",
-  "intro": "Cryptocurrency and technology sectors were the primary targets in a series of attacks linked to North Korea between April 13 and May 1, 2026. The Lazarus Group, APT37 (ScarCruft, InkySquid), and BlueNoroff were observed as the top threat actors, with the activity impacting regions including Asia, Europe, and North America. Among the nine reported incidents, eight were classified as high severity and one as critical, affecting financial services, finance, and software development globally.",
-  "sources_hash": "383320fd83866a49",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:10:43.106Z",
+  "intro": "This archive collects 10 articles tagged `north-korea` published between April 13, 2026 and May 6, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Lazarus Group, APT37, and APT37 (ScarCruft, InkySquid), presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize cryptocurrency, technology, and financial services across Global, Asia, and Europe, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, and 9 high reports.",
+  "sources_hash": "26f2fda23aca322b",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:02:19.239Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

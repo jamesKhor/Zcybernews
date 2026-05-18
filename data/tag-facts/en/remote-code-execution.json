@@ -1,10 +1,10 @@
 {
   "tag": "remote-code-execution",
   "locale": "en",
-  "count": 5,
+  "count": 16,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-02"
+    "latest": "2026-05-17"
   },
   "top_actors": [],
   "top_cves": [
@@ -13,35 +13,42 @@
       "cvss": 9.8
     },
     {
+      "id": "CVE-2026-45185",
+      "cvss": 9.8
+    },
+    {
       "id": "CVE-2026-5760",
       "cvss": 9.8
     },
     {
-      "id": "CVE-2026-25874",
-      "cvss": 9.3
+      "id": "CVE-2026-6433",
+      "cvss": 9.8
     },
     {
-      "id": "CVE-2026-3854",
-      "cvss": 8.7
+      "id": "CVE-2026-0300",
+      "cvss": 9.3
     }
   ],
   "top_sectors": [
     "technology",
-    "software development",
-    "artificial intelligence",
-    "research"
+    "telecommunications",
+    "enterprise",
+    "government",
+    "software development"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "Europe",
+    "North america"
   ],
   "severity_mix": {
-    "critical": 3,
-    "high": 2
+    "high": 7,
+    "critical": 9
   },
   "recent_excerpts": [
-    "CVE-2026-41265 in Flowise Airtable_Agent allows unauthenticated remote code execution with CVSS 9.8. ZDI advisory details code injection in default installations.",
-    "CVE-2026-25874 (CVSS 9.3) in Hugging Face LeRobot enables unauthenticated RCE via unsafe deserialization.",
-    "CVE-2026-3854 (CVSS 8.7) lets authenticated users with push access achieve remote code execution on GitHub.com and GitHub Enterprise Server via a crafted git push command."
+    "CISA adds CVE-2024-57728 to Known Exploited Vulnerabilities: SimpleHelp path traversal via zip slip allows admin users to upload arbitrary files and execute code. Due May 8, 2026.",
+    "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now.",
+    "F5 fixed 19 high-severity and 32 medium-severity bugs across BIG-IP, BIG-IQ, and NGINX. The most severe, CVE-2026-42945 (CVSS 9.2), enables heap overflow DoS in NGINX rewrite..."
   ],
-  "sources_hash": "c180effda80661e6"
+  "sources_hash": "85031e8ec48e2e6a"
 }

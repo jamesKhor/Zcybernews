@@ -49,5 +49,5 @@
     "CVE-2026-35230: VirtualBox 的 SoundBlaster 16 模拟中存在竞态条件，允许具有高权限的本地攻击者提升权限。CVSS 7.5。",
     "CVE-2026-41276（CVSS 8.1）在 Flowise AccountService resetPassword 中允许未经身份验证的攻击者绕过认证。ZDI 咨询警告无需认证。"
   ],
-  "sources_hash": "3c5eabf69c503c76"
+  "sources_hash": "b067e5a62e28b5e9"
 }

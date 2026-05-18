@@ -1,37 +1,47 @@
 {
   "tag": "adobe",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-15"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-34659",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-34660",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-21643",
+      "cvss": 9.1
+    },
     {
       "id": "CVE-2026-34621",
       "cvss": 8.6
     },
     {
       "id": "CVE-2024-20662"
-    },
-    {
-      "id": "CVE-2024-21412"
-    },
-    {
-      "id": "CVE-2024-34102"
     }
   ],
-  "top_sectors": [],
+  "top_sectors": [
+    "e-commerce",
+    "media",
+    "software"
+  ],
   "top_regions": [],
   "severity_mix": {
-    "critical": 4,
+    "critical": 5,
     "high": 3
   },
   "recent_excerpts": [
+    "Adobe's May 2026 patch batch fixes 52 CVEs across 10 products; Adobe Connect gets two critical bugs (CVE-2026-34659, 9.6 CVSS for RCE; CVE-2026-34660, 9.3 CVSS for privilege...",
     "Adobe has released a critical security update for Acrobat and Reader on Windows and macOS to address multiple vulnerabilities that could allow attackers to execute arbitrary code or read arbitrary fil",
-    "Adobe patches 55 vulnerabilities across 11 products, warning that critical flaws in ColdFusion pose the highest risk of exploitation in attacks.",
-    "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching."
+    "Adobe patches 55 vulnerabilities across 11 products, warning that critical flaws in ColdFusion pose the highest risk of exploitation in attacks."
   ],
-  "sources_hash": "43169494e2ecc4a2"
+  "sources_hash": "942b0bfc551c7aa8"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "north-korea",
   "locale": "zh",
-  "intro": "加密货币和技术行业在2026年4月13日至5月1日期间成为一系列与朝鲜相关的攻击的主要目标。Lazarus Group、APT37 (ScarCruft, InkySquid) 和 BlueNoroff 被观测为最主要的威胁行为者，相关活动影响了亚洲、欧洲和北美等地区。在报告的九起事件中，八起被归类为高严重性，一起为严重级别，影响了全球范围内的金融服务、金融和软件开发行业。",
-  "sources_hash": "383320fd83866a49",
-  "source_intro_hash": "4a44cfc60e9900b5",
+  "intro": "本档案收录了2026年4月13日至2026年5月6日期间发布的10篇标记为`north-korea`的文章，为安全团队提供了该话题在ZCyberNews报道中出现的聚焦视角。观察到的行为者提及包括Lazarus Group、APT37以及APT37 (ScarCruft, InkySquid)，仅在底层文章元数据支持归因时呈现。受影响范围信号强调加密货币、技术和金融服务领域，覆盖全球、亚洲和欧洲，帮助读者在不超出档案数据范围的前提下比较暴露模式。严重程度覆盖包括1篇严重和9篇高危报告。",
+  "sources_hash": "a266af4757217cf8",
+  "source_intro_hash": "7dcad3dabd500436",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:12:39.463Z",
+  "generated_at": "2026-05-18T10:09:49.899Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

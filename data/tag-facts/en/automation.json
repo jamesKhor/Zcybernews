@@ -1,14 +1,16 @@
 {
   "tag": "automation",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-01"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [],
-  "top_sectors": [],
+  "top_sectors": [
+    "cybersecurity"
+  ],
   "top_regions": [],
   "severity_mix": {
     "high": 2,
@@ -16,9 +18,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "A Radiant Security webinar examines why WAF, DLP, OT/IoT, dark web, and supply chain alerts are routinely ignored by SOC teams — and how automation can close the gap.",
     "Criminal IP and Securonix ThreatQ partnership embeds exposure-based threat intel into automated workflows, reducing manual triage for SOC teams.",
-    "SecurityWeek reports attackers now weaponize vulnerabilities within hours using AI, forcing defenders to adopt automation. No specific CVE or victim named — analysis piece.",
-    "Rapid7's open-source MCP server and Agent Skill connects its Insight platform to AI assistants like Claude, enabling security teams to query 1.5 million vulnerability records and automate workflows vi"
+    "SecurityWeek reports attackers now weaponize vulnerabilities within hours using AI, forcing defenders to adopt automation. No specific CVE or victim named — analysis piece."
   ],
-  "sources_hash": "9c488a496779f2ad"
+  "sources_hash": "8f435b0cc98db748"
 }

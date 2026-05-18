@@ -1,0 +1,54 @@
+{
+  "tag": "path-traversal",
+  "locale": "zh",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-22",
+    "latest": "2026-05-17"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-40050",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2024-1708",
+      "cvss": 8.4
+    },
+    {
+      "id": "CVE-2026-6282",
+      "cvss": 8.1
+    },
+    {
+      "id": "CVE-2026-7819",
+      "cvss": 8.1
+    },
+    {
+      "id": "CVE-2021-47942",
+      "cvss": 7.5
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "consumer electronics",
+    "consumer IoT",
+    "enterprise",
+    "financial services"
+  ],
+  "top_regions": [
+    "Global",
+    "North america",
+    "United states"
+  ],
+  "severity_mix": {
+    "high": 6,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "CISA 将 CVE-2024-57728 添加到已知被利用漏洞列表：通过 zip slip 的 SimpleHelp 路径遍历允许管理员用户上传任意文件并执行代码。截止日期为 2026 年 5 月 8 日。",
+    "CISA 将 CVE-2025-2749 添加到 KEV 目录：Kentico Xperience 路径遍历允许经过身份验证的 Staging Sync Server 上传任意文件。联邦机构截止日期：2026年5月4日。",
+    "CVE-2021-47942（CVSS 7.5）在Home Assistant Community Store 1.10.0中允许未经身份验证的攻击者通过/hacsfiles/遍历读取.storage/auth文件，伪造JWT令牌，并获取..."
+  ],
+  "sources_hash": "41396d3d7a720bcc"
+}

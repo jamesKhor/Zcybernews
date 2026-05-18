@@ -1,0 +1,36 @@
+{
+  "tag": "apple",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-05-12"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-28950"
+    }
+  ],
+  "top_sectors": [
+    "technology",
+    "individuals",
+    "consumer",
+    "government",
+    "legal"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "critical": 1,
+    "high": 2,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "苹果发布了针对两个在野外被利用的零日漏洞的紧急补丁，同时推出了iOS和macOS端到端加密RCS消息的测试版。",
+    "CVE-2026-28950在iOS通知服务中保留了设备上的已删除Signal消息，可通过取证工具访问。苹果在iOS 18.4.1和iPadOS 18.4.1中修复了日志记录缺陷。",
+    "安全研究人员展示了一种通过互联网中继蓝牙信号来欺骗苹果AirTag位置的方法，这可能会误导Find My网络报告被追踪物品的虚假位置。"
+  ],
+  "sources_hash": "be15733119a6b855"
+}

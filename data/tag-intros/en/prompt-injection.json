@@ -2,8 +2,8 @@
   "tag": "prompt-injection",
   "locale": "en",
   "intro": "This archive collects 6 articles tagged `prompt-injection` published between April 15, 2026 and April 30, 2026. Coverage includes 1 critical, 3 high, 1 medium, and 1 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "b6305962ea0a53dc",
+  "sources_hash": "aae0ac369a2fd9d0",
   "model": "template:sparse",
-  "generated_at": "2026-05-01T04:29:43.126Z",
+  "generated_at": "2026-05-18T10:04:58.021Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -30,5 +30,5 @@
     "Bitdefender 已将持续的电子邮件威胁保护集成到其 GravityZone 平台中，结合终端检测和响应（EDR）与电子邮件安全，以对抗网络钓鱼、BEC 和勒索软件。",
     "DavMail 6.6.0 解决了一个正则表达式漏洞的安全警告，并更新 OAuth 处理以与 Microsoft 的变化保持一致，影响将邮件客户端桥接到 Exchange/Office 365 的用户。"
   ],
-  "sources_hash": "425b80cb63cd48c3"
+  "sources_hash": "8ce1e1b8d44c1d98"
 }

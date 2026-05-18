@@ -1,9 +1,9 @@
 {
   "tag": "rat",
   "locale": "en",
-  "intro": "Between April 13 and April 20, 2026, ZCyberNews published nine articles tracking high-severity remote access trojan (RAT) activity. The threat actors Mirax and REF6598 were prominently observed during this period. Their campaigns primarily targeted the cryptocurrency and financial-services sectors, with notable impact across Europe, Latin America, Spain, and Turkey. All nine reported incidents were assessed as high severity, indicating a concentrated wave of significant RAT-based intrusions focused on critical economic infrastructure.",
-  "sources_hash": "c29c3f0c042c256e",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:06:53.257Z",
+  "intro": "This archive collects 11 articles tagged `rat` published between April 13, 2026 and April 26, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include CrystalX, Mirax, and REF6598, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize cryptocurrency, financial-services, and software development across Europe, Global, and Latin america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, and 10 high reports.",
+  "sources_hash": "00b51a3b8a5e3d3e",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:01:37.923Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

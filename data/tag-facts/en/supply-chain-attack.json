@@ -1,35 +1,37 @@
 {
   "tag": "supply-chain-attack",
   "locale": "en",
-  "count": 16,
+  "count": 24,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-02"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "GlassWorm",
-    "BufferZoneCorp",
-    "Fast16"
+    "TeamPCP",
+    "APT37"
   ],
   "top_cves": [],
   "top_sectors": [
     "technology",
     "software development",
     "cybersecurity",
-    "enterprise",
-    "enterprise software"
+    "enterprise software",
+    "enterprise"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "China",
+    "South korea"
   ],
   "severity_mix": {
-    "high": 10,
-    "critical": 6
+    "critical": 7,
+    "high": 17
   },
   "recent_excerpts": [
-    "BufferZoneCorp account published malicious Ruby gems and Go modules that steal credentials, tamper with GitHub Actions, and establish SSH persistence in CI pipelines.",
-    "Attackers compromised SAP, Lightning, and Intercom npm packages in a supply chain attack affecting 1,800 victims; packages had 10M monthly downloads.",
-    "Atos TRC identified EtherRAT in March 2026 — a remote access trojan distributed through fake GitHub repos impersonating admin utilities."
+    "Socket and StepSecurity found backdoored node-ipc versions 9.1.6, 9.2.3, and 12.0.1 exfiltrate SSH keys, AWS credentials, and env files from developer machines.",
+    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android.",
+    "Kaspersky attributes a PyPI supply chain campaign to OceanLotus APT, using fake wheel packages to drop ZiChatBot malware that abuses Zulip chat APIs for C2 on Windows and Linux."
   ],
-  "sources_hash": "ef9d1f95bd0491d8"
+  "sources_hash": "33a2613bd37efb2a"
 }

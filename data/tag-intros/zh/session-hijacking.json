@@ -1,10 +1,10 @@
 {
   "tag": "session-hijacking",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月11日至4月22日期间发布的六篇关于会话劫持的文章。所报道的事件主要为高严重性事件，其中四起被归类为高级别，一起为中级。威胁行为者Storm-2755在此次报道中被特别提及。这些攻击主要针对金融、人力资源和薪资领域的组织，受影响实体在加拿大尤为集中。",
-  "sources_hash": "9a59229e3731a4f2",
-  "source_intro_hash": "371027173aff166c",
+  "intro": "在2026年4月11日至5月15日期间发布的九篇文章中，ZCyberNews报道了会话劫持活动。观察到威胁行为者Gremlin Stealer和Storm-2755，其中CVE-2022-23961（CVSS 6.1）和CVE-2026-5084位列主要漏洞。受影响行业包括加密货币、金融、金融服务、人力资源和信息技术，主要区域为加拿大。报道涵盖六起高严重性和两起中严重性事件。",
+  "sources_hash": "cb0bb0234b747193",
+  "source_intro_hash": "6eb88b42dfb20c53",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-22T04:09:45.317Z",
+  "generated_at": "2026-05-18T10:10:46.265Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

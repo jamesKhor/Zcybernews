@@ -1,0 +1,10 @@
+{
+  "tag": "sap",
+  "locale": "zh",
+  "intro": "2026年4月14日至5月12日期间，SAP标签下发布了五篇关键文章，内容涵盖漏洞与威胁活动。观察到威胁行为体mini Shai-Hulud和Mini Shai-Hulud。主要漏洞包括CVSS评分为9.9的CVE-2026-27681，以及CVSS评分均为9.6的CVE-2026-34259、CVE-2026-34260和CVE-2026-34263。受影响行业涉及企业软件、云服务、金融服务、制造业和零售业。",
+  "sources_hash": "f18900f0f3b1f67b",
+  "source_intro_hash": "6a0c286a072a1bc1",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:10:42.649Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

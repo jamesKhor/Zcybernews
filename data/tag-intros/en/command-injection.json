@@ -1,0 +1,9 @@
+{
+  "tag": "command-injection",
+  "locale": "en",
+  "intro": "From April 14 to May 11, 2026, ZCyberNews published 10 articles under the command-injection tag. The coverage spans four critical, five high, and one medium severity issue, with top CVEs including CVE-2026-31246 (CVSS 9.8), CVE-2021-47949 (CVSS 8.8), CVE-2026-3854 (CVSS 8.7), CVE-2026-8264 (CVSS 6.5), and CVE-2026-8265 (CVSS 6.5). Affected sectors are software development, technology, telecommunications, conference centers, and consumer, with a global regional impact.",
+  "sources_hash": "6ae1851de8d77768",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:01:54.029Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

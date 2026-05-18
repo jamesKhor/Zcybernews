@@ -1,0 +1,9 @@
+{
+  "tag": "teampcp",
+  "locale": "en",
+  "intro": "Global software development, cloud infrastructure, and technology sectors faced a concentrated wave of attacks between late April and mid-May 2026, with five articles covering the activity. Threat actors TeamPCP and PCPJack were observed exploiting five critical and high-severity vulnerabilities: CVE-2025-29927, CVE-2025-48703, CVE-2025-55182, CVE-2025-9501, and CVE-2026-1357. The campaign, assessed as three high and two critical in severity, impacted organizations worldwide across AI and automation verticals.",
+  "sources_hash": "cc22a3a9b373dad2",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:06:47.881Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

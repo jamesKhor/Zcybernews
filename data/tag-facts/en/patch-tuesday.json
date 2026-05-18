@@ -1,10 +1,10 @@
 {
   "tag": "patch-tuesday",
   "locale": "en",
-  "count": 16,
+  "count": 20,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [
@@ -13,35 +13,41 @@
       "cvss": 9.9
     },
     {
-      "id": "CVE-2026-33104",
-      "cvss": 7.8
+      "id": "CVE-2026-34259",
+      "cvss": 9.6
     },
     {
-      "id": "CVE-2025-27080"
+      "id": "CVE-2026-34260",
+      "cvss": 9.6
     },
     {
-      "id": "CVE-2025-27088"
+      "id": "CVE-2026-34263",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-34659",
+      "cvss": 9.6
     }
   ],
   "top_sectors": [
-    "critical-infrastructure",
-    "education",
-    "energy",
     "enterprise",
-    "government"
+    "enterprise software",
+    "manufacturing",
+    "technology",
+    "critical-infrastructure"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 6,
-    "medium": 4,
-    "critical": 6
+    "critical": 9,
+    "high": 7,
+    "medium": 4
   },
   "recent_excerpts": [
-    "Microsoft released out-of-band updates for Windows Server 2019 and 2022 after April 2026 security patches caused boot failures and domain controller authentication issues, forcing some administrators",
-    "Microsoft's April 2026 Patch Tuesday adds a critical warning dialog to Windows Remote Desktop, blocking threat actors from using malicious .rdp files to steal credentials via phishing.",
-    "Microsoft has patched a local privilege escalation vulnerability (CVE-2026-33104) in the Windows win32kfull driver, which could allow authenticated attackers to gain SYSTEM privileges."
+    "Adobe's May 2026 patch batch fixes 52 CVEs across 10 products; Adobe Connect gets two critical bugs (CVE-2026-34659, 9.6 CVSS for RCE; CVE-2026-34660, 9.3 CVSS for privilege...",
+    "Microsoft's May 2026 Patch Tuesday fixes 120 vulnerabilities across Windows 11 25H2, 24H2, and 23H2. KB5089549 and KB5087420 include security fixes, Xbox mode, and batch file...",
+    "CVE-2026-41103 in Microsoft SSO Plugin for Jira & Confluence allows privilege escalation via flawed authentication."
   ],
-  "sources_hash": "ce35d736821cf754"
+  "sources_hash": "fb07406bb1daabbd"
 }

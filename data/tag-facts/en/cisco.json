@@ -1,0 +1,55 @@
+{
+  "tag": "cisco",
+  "locale": "en",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [
+    "Interlock",
+    "The Gentlemen"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-20127",
+      "cvss": 10
+    },
+    {
+      "id": "CVE-2026-20182",
+      "cvss": 10
+    },
+    {
+      "id": "CVE-2022-20653"
+    },
+    {
+      "id": "CVE-2024-20401"
+    },
+    {
+      "id": "CVE-2024-55591"
+    }
+  ],
+  "top_sectors": [
+    "enterprise networking",
+    "telecommunications",
+    "service providers",
+    "software consultancy",
+    "technology"
+  ],
+  "top_regions": [
+    "Global",
+    "North america",
+    "Turkey",
+    "UK"
+  ],
+  "severity_mix": {
+    "critical": 4,
+    "high": 2
+  },
+  "recent_excerpts": [
+    "Rapid7 discovered CVE-2026-20182, a 10.0-CVSS authentication bypass in Cisco Catalyst SD-WAN Controller. Unauthenticated attackers can inject SSH keys and issue NETCONF commands.",
+    "CVE-2026-20188: Unauthenticated attackers can crash Cisco Crosswork Network Controller and NSO via low-complexity exploit. No patch for older releases; manual reboot required.",
+    "Cisco announced plans to acquire Astrix Security to address non-human identity risks in AI and machine workloads. The deal expands Cisco's identity security portfolio."
+  ],
+  "sources_hash": "1372240b05719a25"
+}

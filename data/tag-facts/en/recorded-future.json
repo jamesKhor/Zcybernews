@@ -1,10 +1,10 @@
 {
   "tag": "recorded-future",
   "locale": "en",
-  "count": 6,
+  "count": 8,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-04-30"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Cobalt Strike",
@@ -13,27 +13,27 @@
   "top_cves": [],
   "top_sectors": [
     "financial services",
+    "government",
     "e-commerce",
     "enterprise",
-    "government",
-    "retail"
+    "healthcare"
   ],
   "top_regions": [
     "Caribbean",
     "China",
+    "EU",
     "Global",
-    "Latin america",
-    "Southeast asia"
+    "Latin america"
   ],
   "severity_mix": {
+    "medium": 2,
     "informational": 1,
-    "high": 3,
-    "medium": 1
+    "high": 3
   },
   "recent_excerpts": [
-    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles.",
-    "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors.",
-    "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…"
+    "Recorded Future's Insikt Group argues AI reasoning over attacker TTPs and defender exposure data creates continuous risk assessment, narrowing the structural asymmetry between...",
+    "NIST now enriches only 15-20% of CVEs under new policy as of April 2026, leaving 80% without CVSS scores or product mappings.",
+    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles."
   ],
-  "sources_hash": "8118f183ca4d0f78"
+  "sources_hash": "f144d872a272c461"
 }

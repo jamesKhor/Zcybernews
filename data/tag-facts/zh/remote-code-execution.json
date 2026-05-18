@@ -1,10 +1,10 @@
 {
   "tag": "remote-code-execution",
   "locale": "zh",
-  "count": 5,
+  "count": 16,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-02"
+    "latest": "2026-05-17"
   },
   "top_actors": [],
   "top_cves": [
@@ -13,35 +13,42 @@
       "cvss": 9.8
     },
     {
+      "id": "CVE-2026-45185",
+      "cvss": 9.8
+    },
+    {
       "id": "CVE-2026-5760",
       "cvss": 9.8
     },
     {
-      "id": "CVE-2026-25874",
-      "cvss": 9.3
+      "id": "CVE-2026-6433",
+      "cvss": 9.8
     },
     {
-      "id": "CVE-2026-3854",
-      "cvss": 8.7
+      "id": "CVE-2026-0300",
+      "cvss": 9.3
     }
   ],
   "top_sectors": [
     "technology",
-    "software development",
-    "artificial intelligence",
-    "research"
+    "telecommunications",
+    "enterprise",
+    "government",
+    "software development"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "Europe",
+    "North america"
   ],
   "severity_mix": {
-    "critical": 3,
-    "high": 2
+    "high": 7,
+    "critical": 9
   },
   "recent_excerpts": [
-    "Flowise Airtable_Agent 中的 CVE-2026-41265 允许未经身份验证的远程代码执行，CVSS 评分为 9.8。ZDI 咨询详细说明了默认安装中的代码注入问题。",
-    "CVE-2026-25874 (CVSS 9.3) 在 Hugging Face LeRobot 中通过不安全的反序列化启用未经认证的 RCE。",
-    "CVE-2026-3854（CVSS 8.7）允许具有推送权限的认证用户通过精心制作的git推送命令在GitHub.com和GitHub Enterprise Server上实现远程代码执行。"
+    "CISA 将 CVE-2024-57728 添加到已知被利用漏洞列表：通过 zip slip 的 SimpleHelp 路径遍历允许管理员用户上传任意文件并执行代码。截止日期为 2026 年 5 月 8 日。",
+    "在 Windows 上的 Chrome 148 中的 CVE-2026-8573 (CVSS 8.3) 和 CVE-2026-8577 (CVSS 8.8) 允许通过精心制作的视屏或 HTML 页面进行沙箱逃逸和 RCE。立即更新。",
+    "F5修复了BIG-IP、BIG-IQ和NGINX中的19个高严重性和32个中等严重性的漏洞。最严重的是CVE-2026-42945（CVSS 9.2），它使得NGINX重写中的堆溢出DoS成为可能..."
   ],
-  "sources_hash": "c180effda80661e6"
+  "sources_hash": "3a507edd30812942"
 }

@@ -13,6 +13,10 @@
       "cvss": 9.9
     },
     {
+      "id": "CVE-2026-21643",
+      "cvss": 9.1
+    },
+    {
       "id": "CVE-2024-1708",
       "cvss": 8.4
     },
@@ -42,5 +46,5 @@
     "CISA added 4 actively exploited vulnerabilities to its KEV catalog — SimpleHelp, Samsung MagicINFO 9, and D-Link DIR-823X — with a May 2026 federal remediation deadline.",
     "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching."
   ],
-  "sources_hash": "58e4edb861c1a3c3"
+  "sources_hash": "a522f26ef97bea83"
 }

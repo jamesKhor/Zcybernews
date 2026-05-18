@@ -1,0 +1,37 @@
+{
+  "tag": "elastic-security-labs",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-26",
+    "latest": "2026-05-08"
+  },
+  "top_actors": [
+    "TCLBANKER",
+    "VoidLink"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "technology",
+    "financial services",
+    "software development",
+    "cryptocurrency",
+    "fintech"
+  ],
+  "top_regions": [
+    "Brazil",
+    "Global",
+    "Latin america",
+    "South asia"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Elastic Security Labs tracks REF3076 — a Brazilian banking trojan called TCLBANKER that targets 59 financial platforms and spreads via WhatsApp worms and Outlook email propagation.",
+    "Elastic Security Labs details a supply chain compromise of the axios npm package that deployed a unified RAT across platforms, impacting an unknown number of downstream…",
+    "Elastic Security Labs details BRUSHWORM, a modular backdoor spreading via USB, and BRUSHLOGGER, a DLL-side-loaded keylogger, targeting a South Asian financial institution."
+  ],
+  "sources_hash": "8ac8b557a03b840b"
+}

@@ -1,0 +1,47 @@
+{
+  "tag": "palo-alto-networks",
+  "locale": "en",
+  "count": 7,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-05-15"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-0300",
+      "cvss": 9.3
+    },
+    {
+      "id": "CVE-2026-0246"
+    },
+    {
+      "id": "CVE-2026-0248"
+    },
+    {
+      "id": "CVE-2026-0249"
+    }
+  ],
+  "top_sectors": [
+    "enterprise",
+    "government",
+    "technology",
+    "cloud services",
+    "critical-infrastructure"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 1,
+    "critical": 1,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "CVE-2026-0249: Multiple improper certificate validation flaws in Palo Alto Networks GlobalProtect app let local or same-subnet attackers intercept encrypted traffic and install...",
+    "Palo Alto Networks released patches for two medium-severity flaws in Prisma Access Agent — CVE-2026-0248 (improper certificate validation) and CVE-2026-0246 (local privilege...",
+    "CVE-2026-0300 is a critical PAN-OS buffer overflow in the User-ID Authentication Portal. Fixed builds are upcoming, so disable or restrict the portal immediately."
+  ],
+  "sources_hash": "cba85ac228d25c51"
+}

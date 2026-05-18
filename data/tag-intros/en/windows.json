@@ -1,9 +1,9 @@
 {
   "tag": "windows",
   "locale": "en",
-  "intro": "Over the past two weeks, ZCyberNews has tracked 23 articles on Windows security, with Kyber, Chaotic Eclipse, and VECT Ransomware as the top threat actors. The most frequently cited vulnerabilities include CVE-2024-1708 (CVSS 8.4), CVE-2026-33104 (CVSS 7.8), CVE-2026-26179 (CVSS 7.5), CVE-2026-32183 (CVSS 7.5), and CVE-2024-20662. These issues have primarily affected government, IT, and managed service provider sectors in North America, with 17 high-severity, 2 critical, and 4 medium-severity incidents reported.",
-  "sources_hash": "f540b87b967040dd",
+  "intro": "Over the past month, ZCyberNews has tracked 24 articles under the Windows tag, with the threat actors Kyber, Chaotic Eclipse, and VECT Ransomware among the most frequently observed. The coverage spans from April 12 to May 9, 2026, and highlights five key vulnerabilities: CVE-2024-1708 (CVSS 8.4), CVE-2026-33104 (CVSS 7.8), CVE-2026-8069 (CVSS 7.8), CVE-2026-26179 (CVSS 7.5), and CVE-2026-32183 (CVSS 7.5). The affected sectors include consumer electronics, gaming, government, IT, and managed service providers, with North America as the primary region. The severity mix comprises 18 high, 2 critical, and 4 medium-severity incidents.",
+  "sources_hash": "e2d061f6dc84a80a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-30T04:18:49.501Z",
+  "generated_at": "2026-05-18T09:59:46.471Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

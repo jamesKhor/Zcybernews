@@ -1,9 +1,9 @@
 {
   "tag": "evasion",
   "locale": "en",
-  "intro": "Over the past three weeks, ZCyberNews has published 10 articles tagged with evasion, covering incidents from April 12 to May 4, 2026. The coverage includes 8 high-severity and 2 medium-severity events. Threat actors Payouts King and The Gentlemen were observed in these reports. Affected sectors include financial services, healthcare, multiple, and technology, while impacted regions are the Czech Republic, the EU, and North America.",
-  "sources_hash": "1ab7e3131e375448",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-05T04:08:06.754Z",
+  "intro": "This archive collects 10 articles tagged `evasion` published between April 12, 2026 and May 4, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Payouts King and The Gentlemen, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize financial services, healthcare, and multiple across Czech republic, EU, and North america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 8 high, and 2 medium reports.",
+  "sources_hash": "59ae25a6e895bf5f",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:02:06.085Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

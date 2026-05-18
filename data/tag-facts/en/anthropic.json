@@ -1,10 +1,10 @@
 {
   "tag": "anthropic",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-30"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Claude Mythos"
@@ -12,8 +12,8 @@
   "top_cves": [],
   "top_sectors": [
     "technology",
-    "critical infrastructure",
     "cybersecurity",
+    "critical infrastructure",
     "government",
     "ai-development"
   ],
@@ -21,15 +21,15 @@
     "Global"
   ],
   "severity_mix": {
+    "informational": 3,
     "high": 5,
     "critical": 3,
-    "informational": 2,
     "medium": 1
   },
   "recent_excerpts": [
+    "XBOW benchmarks show Anthropic's Mythos AI is potent for source code audits and reverse engineering, but inconsistent at exploit validation and prone to overstating findings.",
     "Anthropic released Claude Security, a defensive AI suite to counter autonomous exploit tools like Mythos that weaponize zero-days in minutes. Targets enterprise SOCs.",
-    "Anthropic's Claude Mythos Preview autonomously discovers and weaponizes software vulnerabilities in OS and internet infrastructure without expert guidance, raising urgent…",
-    "Claude Mythos and Project Glasswing shrink exploit windows to near-zero. The Hacker News details NDR playbooks to contain AI-driven attacks before patching is possible."
+    "Anthropic's Claude Mythos Preview autonomously discovers and weaponizes software vulnerabilities in OS and internet infrastructure without expert guidance, raising urgent…"
   ],
-  "sources_hash": "53568b2fda7e18e3"
+  "sources_hash": "9c592cfc3941b77a"
 }

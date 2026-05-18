@@ -1,0 +1,9 @@
+{
+  "tag": "instructure",
+  "locale": "en",
+  "intro": "ShinyHunters has been the dominant threat actor in ZCyberNews coverage of Instructure, with five articles published between May 2 and May 12, 2026. The education sector has been the primary target, with incidents affecting North America and global regions. The severity mix across these reports includes one critical and four high-severity incidents, reflecting a concentrated period of significant activity against the learning management platform.",
+  "sources_hash": "4fd2a1a69ff861dd",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:06:03.879Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

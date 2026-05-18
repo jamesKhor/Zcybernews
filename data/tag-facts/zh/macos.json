@@ -1,10 +1,10 @@
 {
   "tag": "macos",
   "locale": "zh",
-  "count": 10,
+  "count": 12,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-04-28"
+    "latest": "2026-05-12"
   },
   "top_actors": [
     "Lazarus Group",
@@ -23,7 +23,8 @@
     "technology",
     "cryptocurrency",
     "artificial-intelligence",
-    "finance"
+    "finance",
+    "individuals"
   ],
   "top_regions": [
     "Global",
@@ -32,13 +33,14 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 7,
+    "critical": 1,
+    "high": 8,
     "medium": 2
   },
   "recent_excerpts": [
-    "Google Project Zero 发布了 CVE-2024-54529 的漏洞细节，这是一个 macOS coreaudiod 中的类型混淆问题，允许通过知识驱动的模糊测试逃逸沙箱。",
-    "一个通过苹果官方App Store分发的恶意Ledger Live应用通过收集恢复短语，从50名受害者那里窃取了大约950万美元。",
-    "新的 ClickFix 风格活动针对 macOS 用户，使用虚假苹果指令运行恶意命令。"
+    "苹果发布了针对两个在野外被利用的零日漏洞的紧急补丁，同时推出了iOS和macOS端到端加密RCS消息的测试版。",
+    "攻击者滥用 Google Ads 链接到真实的 claude.ai 和共享的 Claude 聊天，以传递 MacSync 信息窃取器，收集浏览器凭证和 Keychain 数据。",
+    "Google Project Zero 发布了 CVE-2024-54529 的漏洞细节，这是一个 macOS coreaudiod 中的类型混淆问题，允许通过知识驱动的模糊测试逃逸沙箱。"
   ],
-  "sources_hash": "d2feba3a3d34e775"
+  "sources_hash": "a2c5bfd6054f8294"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "china",
   "locale": "zh",
-  "intro": "政府、国防和关键基础设施领域是2026年4月23日至5月1日期间发生的五起标记为与中国相关的高严重性事件的主要目标。在这些行动中观察到威胁行为者GopherWhisper、DRAGONBRIDGE和SHADOW-EARTH-053，其影响范围包括蒙古、美国、东亚、欧洲及全球各地。在此期间，技术和媒体行业也出现在受影响行业之列。",
-  "sources_hash": "da8684669b2e962f",
-  "source_intro_hash": "93f2a46233c62e51",
+  "intro": "本档案收录了2026年4月23日至2026年5月4日期间发布的6篇标记为`china`的文章，为安全团队提供该主题在ZCyberNews报道中出现的聚焦视角。观察到的行为体引用包括GopherWhisper、DRAGONBRIDGE和SHADOW-EARTH-053，仅当底层文章元数据支持该归因时方予呈现。受影响范围信号强调蒙古、美国及东亚地区的政府、国防与关键基础设施，帮助读者对比暴露模式，而不添加档案数据之外的论断。严重性覆盖范围包括6篇高危报告。",
+  "sources_hash": "2b4563ece7f1fc33",
+  "source_intro_hash": "7f82a4cd76688f16",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:12:24.430Z",
+  "generated_at": "2026-05-18T10:07:33.331Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

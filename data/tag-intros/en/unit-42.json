@@ -1,0 +1,9 @@
+{
+  "tag": "unit-42",
+  "locale": "en",
+  "intro": "This archive collects 12 articles tagged `unit-42` published between April 22, 2026 and May 15, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Gremlin Stealer, LockBit, and TeamPCP, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize technology, enterprise, and software development across Global, Central america, and North america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, and 9 high reports.",
+  "sources_hash": "3e9d470a2ab340a0",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:01:23.436Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

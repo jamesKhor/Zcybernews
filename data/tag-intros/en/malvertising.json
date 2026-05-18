@@ -1,0 +1,9 @@
+{
+  "tag": "malvertising",
+  "locale": "en",
+  "intro": "This archive collects 5 articles tagged `malvertising` published between April 15, 2026 and May 10, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Mirax and Pushpaganda, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize general consumers, individuals, and technology across Australia, Canada, and Europe, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 high, and 3 medium reports.",
+  "sources_hash": "9e2f35d5ba5b6e71",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:06:18.845Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

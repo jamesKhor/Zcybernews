@@ -1,9 +1,9 @@
 {
   "tag": "patch-tuesday",
   "locale": "en",
-  "intro": "The April 2026 Patch Tuesday cycle addressed a significant volume of vulnerabilities, including 16 documented exploits. The most severe of these was CVE-2026-27681, a critical flaw with a CVSS score of 9.9, alongside CVE-2026-33104 and others from the CVE-2025-27080 series. The updates remediated a mix of six critical, six high, and four medium-severity issues. These patches are crucial for organizations globally, with the critical-infrastructure, education, energy, enterprise, and government sectors being the most affected.",
-  "sources_hash": "ce35d736821cf754",
+  "intro": "Over the past month, ZCyberNews has tracked 20 articles under the patch-tuesday tag, covering a period from April 12 to May 12, 2026. The most critical vulnerability is CVE-2026-27681, carrying a CVSS score of 9.9, alongside four other high-severity CVEs: CVE-2026-34259, CVE-2026-34260, CVE-2026-34263, and CVE-2026-34659, each rated 9.6. The coverage includes nine critical, seven high, and four medium severity issues, affecting enterprise, enterprise software, manufacturing, technology, and critical-infrastructure sectors globally.",
+  "sources_hash": "fb07406bb1daabbd",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-23T04:07:43.954Z",
+  "generated_at": "2026-05-18T09:59:54.196Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

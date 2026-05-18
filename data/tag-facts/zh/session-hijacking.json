@@ -1,31 +1,42 @@
 {
   "tag": "session-hijacking",
   "locale": "zh",
-  "count": 6,
+  "count": 9,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-04-22"
+    "latest": "2026-05-15"
   },
   "top_actors": [
+    "Gremlin Stealer",
     "Storm-2755"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2022-23961",
+      "cvss": 6.1
+    },
+    {
+      "id": "CVE-2026-5084"
+    }
+  ],
   "top_sectors": [
+    "cryptocurrency",
     "finance",
+    "financial services",
     "hr",
-    "payroll"
+    "information technology"
   ],
   "top_regions": [
     "Canada"
   ],
   "severity_mix": {
-    "high": 4,
-    "medium": 1
+    "high": 6,
+    "medium": 2
   },
   "recent_excerpts": [
-    "Socket识别出108款恶意Chrome扩展，感染了20,000名用户，窃取Google和Telegram会话cookie，并通过共享的命令和控制服务器注入广告。",
-    "Ivanti 修补了其 Neurons for ITSM 平台中的两个中等严重性的漏洞，这些漏洞可能允许经过身份验证的攻击者劫持用户会话或保留对系统的未授权访问。",
-    "新的 'Storm' infostealer 将加密的浏览器数据外泄以进行服务器端解密，使得会话劫持和绕过 MFA 成为可能。Varonis 的分析详细说明了这种技术。"
+    "Unit 42 详细描述了一种新的 Gremlin stealer 变种，使用 XOR 加密的资源部分，加密剪贴器，WebSocket 会话劫持，以及一个商业打包器，带有指令...",
+    "CVE-2026-5084: WebDyne::Session 通过 2.075 为 Perl 生成会话 ID，使用 rand() 种子的 MD5 哈希，使得会话预测和劫持成为可能。",
+    "CVE-2022-23961（CVSS 6.1）在 Thruk 监控版本 2.46.3 及之前版本中，通过登录字段允许未经身份验证的反射型 XSS，有风险窃取管理员会话。"
   ],
-  "sources_hash": "9a59229e3731a4f2"
+  "sources_hash": "cb0bb0234b747193"
 }

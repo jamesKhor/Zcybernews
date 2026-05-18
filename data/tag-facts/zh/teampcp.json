@@ -1,0 +1,50 @@
+{
+  "tag": "teampcp",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-26",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [
+    "TeamPCP",
+    "PCPJack"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2025-29927"
+    },
+    {
+      "id": "CVE-2025-48703"
+    },
+    {
+      "id": "CVE-2025-55182"
+    },
+    {
+      "id": "CVE-2025-9501"
+    },
+    {
+      "id": "CVE-2026-1357"
+    }
+  ],
+  "top_sectors": [
+    "software development",
+    "cloud infrastructure",
+    "technology",
+    "AI",
+    "automation"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。",
+    "SentinelLabs 发现 PCPJack，这是一个针对 Docker、Kubernetes、Redis 和 MongoDB 的凭证窃取蠕虫，它积极地从被入侵的云中移除竞争对手 TeamPCP 的访问权限...",
+    "TeamPCP 利用三个 GitHub Actions 漏洞劫持 TanStack 的 CI/CD，发布了 42 个包中的 84 个恶意构件。"
+  ],
+  "sources_hash": "ed805a2c15082c02"
+}

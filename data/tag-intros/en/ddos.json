@@ -1,9 +1,9 @@
 {
   "tag": "ddos",
   "locale": "en",
-  "intro": "Between 16 and 30 April 2026, ZCyberNews published nine articles under the DDoS tag. The threat actors Dort and Mirai were observed in these incidents. Two specific vulnerabilities were highlighted: CVE-2025-29635, with a CVSS score of 8.8, and CVE-2024-3721, scoring 6.3. The affected sectors included telecommunications, cybersecurity services, internet infrastructure, social media, and technology. Regions impacted were Brazil, Canada, Germany, the United States, and global entities. The severity mix comprised five high-severity, three medium-severity, and one informational report.",
-  "sources_hash": "8879fe70e00ae2f0",
+  "intro": "Between 16 and 30 April 2026, ZCyberNews published nine articles under the DDoS tag. The threat actors Dort and Mirai were observed, and the tracked vulnerabilities include CVE-2025-29635 (CVSS 8.8) and CVE-2024-3721 (CVSS 6.3). Affected sectors span telecommunications, cybersecurity services, internet infrastructure, social media, and technology, with reported impacts in Brazil, Canada, Germany, the United States, and globally. The coverage includes five high-severity, three medium-severity, and one informational report.",
+  "sources_hash": "68c553e39170d02b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:28:38.193Z",
+  "generated_at": "2026-05-18T10:02:27.249Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

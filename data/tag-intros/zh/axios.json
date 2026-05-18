@@ -1,10 +1,10 @@
 {
   "tag": "axios",
   "locale": "zh",
-  "intro": "技术、软件开发和人工智能行业是近期与Lazarus Group相关的一波攻击的主要目标。在2026年4月13日至4月26日期间，ZCyberNews在axios标签下报道了六起事件，严重程度包括两起关键、三起高危和一起中危。威胁行为者Lazarus Group被观察到参与了这些全球行动。",
-  "sources_hash": "830dc96055c3067e",
-  "source_intro_hash": "d60b9b6dce4aeffc",
+  "intro": "本档案收录了2026年4月13日至2026年4月26日期间发布的6篇标记为`axios`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的集中视角。观察到的行为体提及包括Lazarus Group，仅在底层文章元数据支持该归因时予以呈现。受影响范围信号强调全球范围内的技术、软件开发和人工智能领域，帮助读者比较暴露模式，而不添加超出档案数据的主张。严重程度覆盖包括2篇严重、3篇高危和1篇中等报告。",
+  "sources_hash": "afcf9d122848b926",
+  "source_intro_hash": "883cd970077c0769",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:19:56.643Z",
+  "generated_at": "2026-05-18T10:07:17.565Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

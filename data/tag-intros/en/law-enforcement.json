@@ -1,9 +1,9 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "intro": "Over 24 articles published between April 12 and April 30, 2026, cover law enforcement actions and cyber threats. The reporting includes 19 high-severity incidents, four medium, and one informational piece. Threat actors Scattered Spider, Black Axe, and BlackCat (ALPHV) were observed targeting government, telecommunications, financial services, cryptocurrency, and gaming sectors. Affected regions include the United States, Canada, North America, Europe, and France.",
-  "sources_hash": "3fa916e6b838645d",
+  "intro": "Over 24 articles published between April 12 and April 30, 2026, ZCyberNews tracked activity tagged law-enforcement. The coverage included 19 high-severity and 4 medium-severity incidents, with one informational report. Threat actors Scattered Spider, Black Axe, and BlackCat (ALPHV) were observed. Affected sectors spanned government, telecommunications, financial services, cryptocurrency, and gaming, while impacted regions included the United States, Canada, North America, Europe, and France.",
+  "sources_hash": "16f641d2906def5a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-01T04:27:53.870Z",
+  "generated_at": "2026-05-18T09:59:38.586Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

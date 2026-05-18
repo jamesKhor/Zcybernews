@@ -1,9 +1,9 @@
 {
   "tag": "vercel",
   "locale": "en",
-  "intro": "This archive collects 5 articles tagged `vercel` published between April 19, 2026 and April 28, 2026. Coverage includes 4 high, and 1 medium reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "9fe1ebd2acba9ab2",
-  "model": "template:sparse",
-  "generated_at": "2026-04-29T04:19:52.501Z",
+  "intro": "The technology and cloud computing sectors faced significant risks in recent weeks, with five high-severity and one medium-severity incident reported globally. Two critical vulnerabilities, CVE-2026-44574 and CVE-2026-44575, each carrying a CVSS score of 8.1, were identified as top concerns. These issues affected cloud services and software development environments between April 19 and May 15, 2026, according to six articles archived under the Vercel tag.",
+  "sources_hash": "c1e1d26fb6457bb0",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:05:17.837Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,0 +1,32 @@
+{
+  "tag": "insikt-group",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-25",
+    "latest": "2026-05-14"
+  },
+  "top_actors": [
+    "Cobalt Strike"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "government",
+    "retail"
+  ],
+  "top_regions": [
+    "Caribbean",
+    "Latin america"
+  ],
+  "severity_mix": {
+    "informational": 1,
+    "medium": 2
+  },
+  "recent_excerpts": [
+    "Recorded Future's Insikt Group argues AI reasoning over attacker TTPs and defender exposure data creates continuous risk assessment, narrowing the structural asymmetry between...",
+    "Insikt Group details four blind spots in AI adoption for threat intel: comprehension gaps, eroding moats, deployment complexity, and shifting senior roles.",
+    "Insikt Group report finds security teams struggle to operationalize threat intelligence at speed, with data volume outpacing analysis capacity across sectors."
+  ],
+  "sources_hash": "55541963109ddd94"
+}

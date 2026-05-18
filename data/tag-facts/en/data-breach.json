@@ -1,15 +1,15 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 37,
+  "count": 41,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-12"
   },
   "top_actors": [
     "ShinyHunters",
-    "LockBit",
-    "RansomHub"
+    "Cl0p",
+    "LockBit"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -22,18 +22,18 @@
   "top_regions": [
     "North america",
     "Europe",
+    "Global",
     "United states",
-    "France",
-    "Global"
+    "France"
   ],
   "severity_mix": {
-    "high": 30,
+    "high": 34,
     "medium": 6
   },
   "recent_excerpts": [
-    "Infrastructure confirmed hackers accessed Canvas user data — names, emails, student IDs, messages — from educational institutions.",
-    "Instructure disclosed a breach where hackers stole names, emails, student IDs, and messages, and disrupted Canvas platform services. Data leak threats follow.",
-    "Medtronic reported unauthorized access to its corporate IT systems in a cyberattack, with no impact on medical devices or patient care operations. Data was compromised."
+    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide.",
+    "Škoda Auto disclosed a data breach after attackers exploited a vulnerability in its e-commerce portal, stealing customer names, addresses, and password hashes.",
+    "ICO fined South Staffordshire Water £963,900 after Cl0p ransomware gang leaked data of 663,887 customers — phishing attack went undetected for 20 months."
   ],
-  "sources_hash": "2aca47dbc6b29548"
+  "sources_hash": "82f8c7090929aa86"
 }

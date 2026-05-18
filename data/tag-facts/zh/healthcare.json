@@ -1,15 +1,15 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-05-12"
   },
   "top_actors": [
     "Interlock",
-    "Rhysida",
-    "ShinyHunters"
+    "LockBit",
+    "Rhysida"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -17,23 +17,23 @@
     "Healthcare",
     "critical infrastructure",
     "Government",
-    "research"
+    "pharmaceutical"
   ],
   "top_regions": [
-    "United states",
     "Global",
+    "United states",
     "Illinois",
     "Moldova",
     "Netherlands"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "medium": 1
   },
   "recent_excerpts": [
+    "West Pharmaceutical Services 在 5 月 4 日遭受勒索软件攻击并发生数据泄露后，全球系统下线。Unit 42 正在调查；可能已支付赎金。",
     "美敦力报告称其企业IT系统在网络攻击中遭到未经授权的访问，对医疗设备或患者护理操作没有影响。数据遭到泄露。",
-    "摩尔多瓦国家健康保险公司报告了一起可能暴露其系统有限个人数据的网络攻击，这是在最初被入侵几周后发生的。",
-    "ShinyHunters 声称从医疗设备制造商 Medtronic 窃取了 900 万条记录，包括个人信息。该组织威胁要泄露数据。"
+    "摩尔多瓦国家健康保险公司报告了一起可能暴露其系统有限个人数据的网络攻击，这是在最初被入侵几周后发生的。"
   ],
-  "sources_hash": "e1685f4602248dbb"
+  "sources_hash": "c05b57ce6dae48ac"
 }

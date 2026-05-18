@@ -1,0 +1,9 @@
+{
+  "tag": "integer-overflow",
+  "locale": "en",
+  "intro": "Between May 7 and May 16, 2026, ZCyberNews published five articles on integer-overflow vulnerabilities, featuring high-severity CVEs CVE-2026-43908, CVE-2026-8573, and CVE-2026-8577, each with a CVSS score of 8.8. The coverage also included CVE-2026-44636 (CVSS 7.8) and CVE-2026-43996 (CVSS 5.5). The affected sectors spanned animation, media and entertainment, technology, visual effects, and all industries globally, with a severity mix of three high, one medium, and one critical issue.",
+  "sources_hash": "34b2214c5bd7ef13",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:06:10.895Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,10 @@
+{
+  "tag": "command-injection",
+  "locale": "zh",
+  "intro": "2026年4月14日至5月11日期间，ZCyberNews在命令注入标签下发布了10篇文章。报道涵盖4个严重、5个高危和1个中危问题，主要CVE包括CVE-2026-31246（CVSS 9.8）、CVE-2021-47949（CVSS 8.8）、CVE-2026-3854（CVSS 8.7）、CVE-2026-8264（CVSS 6.5）和CVE-2026-8265（CVSS 6.5）。受影响行业涉及软件开发、技术、电信、会议中心及消费领域，影响范围覆盖全球多个地区。",
+  "sources_hash": "a6f56a0c1c14b077",
+  "source_intro_hash": "3bf551b3bc474c5c",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:07:44.512Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,0 +1,9 @@
+{
+  "tag": "xss",
+  "locale": "en",
+  "intro": "Government and healthcare sectors were the primary targets in a series of XSS attacks documented across nine articles from May 9 to May 16, 2026. The coverage highlighted vulnerabilities including CVE-2026-44567, CVE-2026-45303, CVE-2026-45314, CVE-2026-44579, and CVE-2026-44580, with severity scores ranging from 7.5 to 7.7. The affected regions were global, spanning business services, e-commerce, and education alongside the leading sectors. The severity mix comprised four high, four medium, and one low severity incident.",
+  "sources_hash": "b620b546ccb1d110",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:02:59.574Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

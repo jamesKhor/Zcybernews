@@ -1,9 +1,9 @@
 {
   "tag": "financial-fraud",
   "locale": "en",
-  "intro": "The threat actor NGate dominated recent financial fraud activity, with six articles published between April 12 and May 4, 2026. Four of these incidents were rated high severity, and two were medium. The attacks primarily targeted the financial services and entertainment sectors, affecting individuals and the general public. Geographically, the impact was concentrated in Brazil, North America, and the United States.",
-  "sources_hash": "2f5d98b3db99730b",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-05T04:09:07.542Z",
+  "intro": "This archive collects 6 articles tagged `financial-fraud` published between April 12, 2026 and May 4, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include NGate, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize financial services, entertainment, and financial-services across Brazil, North america, and United states, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 4 high, and 2 medium reports.",
+  "sources_hash": "857e4479e522d2d5",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:04:48.156Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

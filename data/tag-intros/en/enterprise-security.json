@@ -1,9 +1,9 @@
 {
   "tag": "enterprise-security",
   "locale": "en",
-  "intro": "Between April 13 and 27, 2026, ZCyberNews published 12 articles on enterprise security, led by coverage of CVE-2026-27681, a critical vulnerability with a CVSS score of 9.9. The reporting also highlighted CVE-2025-54987, another critical flaw rated 9.8. The articles detailed four critical and four high-severity issues, alongside one medium and two informational entries. Affected sectors included technology, financial services, healthcare, enterprise, and government, with impacts observed globally, particularly in Europe and North America.",
-  "sources_hash": "602d8dbea1b6c513",
+  "intro": "Between 13 April and 8 May 2026, ZCyberNews published 14 articles under the enterprise-security tag, covering two critical and five high-severity vulnerabilities. The most prominent flaw was CVE-2026-27681, carrying a CVSS score of 9.9, alongside CVE-2025-54987 (CVSS 9.8) and CVE-2026-8106. Technology, financial services, healthcare, enterprise, and government sectors were most affected, with reports spanning global, European, and North American regions.",
+  "sources_hash": "0b3ebea84bc42c82",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-04-27T04:18:16.133Z",
+  "generated_at": "2026-05-18T10:00:32.307Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

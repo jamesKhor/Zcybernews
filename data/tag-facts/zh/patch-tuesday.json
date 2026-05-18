@@ -1,10 +1,10 @@
 {
   "tag": "patch-tuesday",
   "locale": "zh",
-  "count": 16,
+  "count": 20,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-20"
+    "latest": "2026-05-12"
   },
   "top_actors": [],
   "top_cves": [
@@ -13,35 +13,41 @@
       "cvss": 9.9
     },
     {
-      "id": "CVE-2026-33104",
-      "cvss": 7.8
+      "id": "CVE-2026-34259",
+      "cvss": 9.6
     },
     {
-      "id": "CVE-2025-27080"
+      "id": "CVE-2026-34260",
+      "cvss": 9.6
     },
     {
-      "id": "CVE-2025-27088"
+      "id": "CVE-2026-34263",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-34659",
+      "cvss": 9.6
     }
   ],
   "top_sectors": [
-    "critical-infrastructure",
-    "education",
-    "energy",
     "enterprise",
-    "government"
+    "enterprise software",
+    "manufacturing",
+    "technology",
+    "critical-infrastructure"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 6,
-    "medium": 4,
-    "critical": 6
+    "critical": 9,
+    "high": 7,
+    "medium": 4
   },
   "recent_excerpts": [
-    "2026年4月安全补丁导致启动失败和域控制器认证问题后，微软发布了针对Windows Server 2019和2022的非计划更新，迫使一些管理员回滚。",
-    "微软2026年4月的补丁星期二为Windows远程桌面添加了一个关键警告对话框，阻止威胁行为者使用恶意.rdp文件通过网络钓鱼窃取凭证。",
-    "微软修补了Windows win32kfull驱动程序中的一个本地权限提升漏洞（CVE-2026-33104），该漏洞可能允许经过身份验证的攻击者获得SYSTEM权限。该漏洞由Zero Day Initiative披露。"
+    "Adobe的2026年5月补丁批次修复了10个产品中的52个CVE；Adobe Connect获得了两个关键错误（CVE-2026-34659，9.6 CVSS用于RCE；CVE-2026-34660，9.3 CVSS用于权限...",
+    "微软2026年5月补丁星期二修复了Windows 11 25H2、24H2和23H2中的120个漏洞。KB5089549和KB5087420包括安全修复、Xbox模式和批量文件...",
+    "CVE-2026-41103在微软SSO插件用于Jira和Confluence中允许通过有缺陷的认证提升权限。"
   ],
-  "sources_hash": "ce35d736821cf754"
+  "sources_hash": "82a27215cd678b27"
 }

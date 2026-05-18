@@ -1,0 +1,9 @@
+{
+  "tag": "authorization-bypass",
+  "locale": "en",
+  "intro": "Technology and cloud infrastructure sectors faced a concentrated wave of authorization bypass vulnerabilities between May 8 and May 17, 2026, with six articles covering critical flaws including CVE-2026-7813 (CVSS 9.9), CVE-2026-42880 (CVSS 9.6), CVE-2026-44574 (CVSS 8.1), CVE-2026-44575 (CVSS 8.1), and CVE-2026-33357 (CVSS 7.5). The two critical and three high-severity issues impacted consumer IoT, database management, and mobile network operators, while one medium-severity vulnerability was also documented.",
+  "sources_hash": "55ffd1911d59459b",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:04:13.393Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

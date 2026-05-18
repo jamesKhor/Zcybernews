@@ -1,0 +1,54 @@
+{
+  "tag": "path-traversal",
+  "locale": "en",
+  "count": 8,
+  "date_range": {
+    "first": "2026-04-22",
+    "latest": "2026-05-17"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-40050",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2024-1708",
+      "cvss": 8.4
+    },
+    {
+      "id": "CVE-2026-6282",
+      "cvss": 8.1
+    },
+    {
+      "id": "CVE-2026-7819",
+      "cvss": 8.1
+    },
+    {
+      "id": "CVE-2021-47942",
+      "cvss": 7.5
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "consumer electronics",
+    "consumer IoT",
+    "enterprise",
+    "financial services"
+  ],
+  "top_regions": [
+    "Global",
+    "North america",
+    "United states"
+  ],
+  "severity_mix": {
+    "high": 6,
+    "critical": 2
+  },
+  "recent_excerpts": [
+    "CISA adds CVE-2024-57728 to Known Exploited Vulnerabilities: SimpleHelp path traversal via zip slip allows admin users to upload arbitrary files and execute code. Due May 8, 2026.",
+    "CISA adds CVE-2025-2749 to KEV catalog: Kentico Xperience path traversal lets authenticated Staging Sync Server upload arbitrary files. Due date for federal agencies: May 4, 2026.",
+    "CVE-2021-47942 (CVSS 7.5) in Home Assistant Community Store 1.10.0 lets unauthenticated attackers read .storage/auth files via /hacsfiles/ traversal, forge JWT tokens, and gain..."
+  ],
+  "sources_hash": "fe84defb09f79c6c"
+}

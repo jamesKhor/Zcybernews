@@ -1,9 +1,9 @@
 {
   "tag": "sentencing",
   "locale": "en",
-  "intro": "Between April 17 and May 1, 2026, ZCyberNews published five articles under the sentencing tag, with two rated high severity and three medium. The threat actor BlackCat featured prominently, while affected sectors included entertainment, cryptocurrency, cybersecurity services, financial services, and gambling. All incidents impacted the United States. These cases highlight the ongoing legal consequences for cybercriminals operating across multiple industries.",
-  "sources_hash": "8325df82c51e5850",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-04T04:24:31.158Z",
+  "intro": "This archive collects 5 articles tagged `sentencing` published between April 17, 2026 and May 1, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include BlackCat, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize entertainment, cryptocurrency, and cybersecurity services across United states, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 high, and 3 medium reports.",
+  "sources_hash": "a966c9533deb9290",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:06:45.306Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

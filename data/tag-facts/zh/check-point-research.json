@@ -1,0 +1,49 @@
+{
+  "tag": "check-point-research",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-26",
+    "latest": "2026-05-13"
+  },
+  "top_actors": [
+    "Handala Hack",
+    "Silver Dragon",
+    "The Gentlemen"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2024-55591"
+    },
+    {
+      "id": "CVE-2025-32433"
+    },
+    {
+      "id": "CVE-2025-33073"
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "critical infrastructure",
+    "software consultancy",
+    "telecommunications",
+    "various"
+  ],
+  "top_regions": [
+    "Europe",
+    "Israel",
+    "Middle east",
+    "Southeast asia",
+    "Turkey"
+  ],
+  "severity_mix": {
+    "critical": 2,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "Check Point Research 发现 VECT 勒索软件的加密逻辑中存在一个漏洞，该漏洞会永久性地破坏 Windows 系统上的文件 —— 即使支付赎金后也无法恢复。",
+    "从 The Gentlemen RaaS 操作泄露的后端数据库揭示了9个账户，管理员 TOX ID，通过 Fortinet/Cisco 边缘漏洞的初始访问，以及190,000美元的赎金支付。",
+    "Check Point Research 追踪到 Silver Dragon，一个与 APT41 有操作联系的中国对齐 APT 组织，针对东南亚和欧洲的政府和电信实体进行攻击，使用..."
+  ],
+  "sources_hash": "e040c70c59470a7c"
+}

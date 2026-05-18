@@ -1,0 +1,39 @@
+{
+  "tag": "cryptography",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-05-09"
+  },
+  "top_actors": [],
+  "top_cves": [
+    {
+      "id": "CVE-2022-39173"
+    },
+    {
+      "id": "CVE-2026-8149"
+    }
+  ],
+  "top_sectors": [
+    "all",
+    "Critical Infrastructure",
+    "Energy",
+    "financial services",
+    "government"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 2,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "CVE-2026-8149 in Bouncy Castle BC-FJA 2.1.0–2.1.2 leaks AES-GCM authentication keys via side-channel in AVX-512f optimized gcm128w/gcm512w routines.",
+    "Cryptography experts warn that migrating to post-quantum cryptography will take years, urging organizations to begin quantum risk management now to protect encrypted data from future 'Q-Day' harvest-n",
+    "The OpenSSL Project released version 4.0.0, a major update that permanently removes deprecated SSL protocols and introduces support for post-quantum cryptography and Encrypted Client Hello."
+  ],
+  "sources_hash": "e364dc7780119fe0"
+}

@@ -1,9 +1,9 @@
 {
   "tag": "security-operations",
   "locale": "en",
-  "intro": "This archive collects 9 articles tagged `security-operations` published between April 14, 2026 and May 5, 2026. Coverage includes 6 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "96f47e41eb0c79a0",
+  "intro": "This archive collects 12 articles tagged `security-operations` published between April 14, 2026 and May 12, 2026. Coverage includes 1 medium, and 7 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "823529edf288b5f8",
   "model": "template:sparse",
-  "generated_at": "2026-05-05T04:08:37.823Z",
+  "generated_at": "2026-05-18T10:01:17.478Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

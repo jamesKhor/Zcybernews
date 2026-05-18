@@ -1,10 +1,10 @@
 {
   "tag": "recorded-future",
   "locale": "zh",
-  "intro": "2026年4月22日至30日期间，共有六篇文章以recorded-future标签发布。报道重点将Cobalt Strike和LockBit列为顶级威胁行为者，受影响行业包括金融服务、电子商务、企业、政府和零售业。受影响地区涵盖加勒比海地区、中国、全球范围、拉丁美洲及东南亚。严重程度分布包含一份信息性报告、三份高风险报告及一份中等风险报告。",
-  "sources_hash": "8118f183ca4d0f78",
-  "source_intro_hash": "096a7e8b32b1bd24",
+  "intro": "在2026年4月22日至5月14日期间发布的八篇文章中，ZCyberNews对recorded-future标签的报道重点提及了威胁行为者Cobalt Strike和LockBit的活动。这些行为者被观察到以金融服务、政府、电子商务、企业和医疗保健行业为目标。受影响地区包括加勒比地区、中国、欧盟、全球及拉丁美洲。这些报告中的严重程度评估涵盖两项中等、一项信息性及三项高等。",
+  "sources_hash": "f40067ecbf8cb683",
+  "source_intro_hash": "88158bf2abbfb158",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-02T04:12:47.466Z",
+  "generated_at": "2026-05-18T10:10:36.821Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "openai",
   "locale": "en",
-  "intro": "Over the past three weeks, ZCyberNews has published eight articles under the openai tag, with Lazarus Group emerging as the most frequently referenced threat actor. The coverage, spanning from April 12 to May 4, 2026, primarily affected the technology, artificial-intelligence, cloud services, and cybersecurity sectors on a global scale. The severity mix includes four medium-severity incidents, two informational reports, and two high-severity events, reflecting a varied landscape of activity without a single dominant vulnerability.",
-  "sources_hash": "8c5b6398cc263b66",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-05T04:08:40.075Z",
+  "intro": "This archive collects 10 articles tagged `openai` published between April 12, 2026 and May 14, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Lazarus Group, TeamPCP, and Winos 4.0, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize technology, software development, and artificial-intelligence across Global, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 4 high, 4 medium, and 2 informational reports.",
+  "sources_hash": "d6ab8bbc30e9868d",
+  "model": "template:fallback",
+  "generated_at": "2026-05-18T10:02:25.010Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

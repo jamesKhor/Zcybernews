@@ -1,56 +1,56 @@
 {
   "tag": "privilege-escalation",
   "locale": "zh",
-  "count": 21,
+  "count": 27,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-05-14"
   },
   "top_actors": [
     "Chaotic Eclipse"
   ],
   "top_cves": [
     {
+      "id": "CVE-2026-34659",
+      "cvss": 9.6
+    },
+    {
+      "id": "CVE-2026-34660",
+      "cvss": 9.6
+    },
+    {
       "id": "CVE-2026-40372",
       "cvss": 9.1
     },
     {
-      "id": "CVE-2026-5490",
+      "id": "CVE-2026-4670",
       "cvss": 8.8
     },
     {
-      "id": "CVE-2026-6406",
+      "id": "CVE-2026-5174",
       "cvss": 8.8
-    },
-    {
-      "id": "CVE-2026-25203",
-      "cvss": 7.8
-    },
-    {
-      "id": "CVE-2026-31431",
-      "cvss": 7.8
     }
   ],
   "top_sectors": [
     "technology",
-    "education",
     "enterprise",
     "healthcare",
-    "multiple"
+    "education",
+    "financial services"
   ],
   "top_regions": [
     "Global",
     "North america"
   ],
   "severity_mix": {
-    "high": 18,
-    "critical": 2,
-    "medium": 1
+    "high": 21,
+    "medium": 2,
+    "critical": 4
   },
   "recent_excerpts": [
-    "Black Hills InfoSec 对2025年15个月数据的渗透测试分析显示，与2022年相同的前10个漏洞——弱密码、未修补的RDP和配置错误的MFA仍然存在…",
-    "CVE-2026-31431（CVSS 7.8）被称为 'Copy Fail'，允许无特权的本地用户向任何可读文件的页面缓存写入四个受控字节，从而在主要的 Linux 系统上启用 root 权限...",
-    "CVE-2026-35230: VirtualBox 的 SoundBlaster 16 模拟中存在竞态条件，允许具有高权限的本地攻击者提升权限。CVSS 7.5。"
+    "Broadcom修复了VMware Fusion中的一个高严重性TOCTOU漏洞（CVE-2026-41702），该漏洞允许macOS系统上的本地非管理员用户提升权限至root。",
+    "Palo Alto Networks 发布了针对 Prisma Access Agent 中两个中等严重漏洞的补丁 — CVE-2026-0248（不当证书验证）和 CVE-2026-0246（本地权限提升）...",
+    "Adobe的2026年5月补丁批次修复了10个产品中的52个CVE；Adobe Connect获得了两个关键错误（CVE-2026-34659，9.6 CVSS用于RCE；CVE-2026-34660，9.3 CVSS用于权限..."
   ],
-  "sources_hash": "a482461c833e030a"
+  "sources_hash": "de9420292cf2be51"
 }

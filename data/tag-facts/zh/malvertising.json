@@ -1,0 +1,36 @@
+{
+  "tag": "malvertising",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-05-10"
+  },
+  "top_actors": [
+    "Mirax",
+    "Pushpaganda"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "general consumers",
+    "individuals",
+    "technology"
+  ],
+  "top_regions": [
+    "Australia",
+    "Canada",
+    "Europe",
+    "Global",
+    "Latin america"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 3
+  },
+  "recent_excerpts": [
+    "攻击者滥用 Google Ads 链接到真实的 claude.ai 和共享的 Claude 聊天，以传递 MacSync 信息窃取器，收集浏览器凭证和 Keychain 数据。",
+    "Mirax Android RAT 通过 Meta 广告感染了超过 220,000 用户，将受感染的设备变成 SOCKS5 代理，供威胁行为者路由恶意流量并从讲西班牙语的受害者那里窃取数据。",
+    "Malwarebytes 报告称骗子使用假冒 CAPTCHA 页面触发高额国际短信费用，通过 Keitaro 流量分发向受害者收取每条短信高达 15 美元的费用…"
+  ],
+  "sources_hash": "2ba11fd2d6c487e3"
+}

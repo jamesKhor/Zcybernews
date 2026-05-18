@@ -1,0 +1,10 @@
+{
+  "tag": "integer-overflow",
+  "locale": "zh",
+  "intro": "2026年5月7日至16日期间，ZCyberNews发布了五篇关于整数溢出漏洞的文章，重点介绍了三个高严重性CVE编号：CVE-2026-43908、CVE-2026-8573和CVE-2026-8577，每个漏洞的CVSS评分均为8.8。报道还涵盖了CVE-2026-44636（CVSS 7.8）和CVE-2026-43996（CVSS 5.5）。受影响行业涵盖动画、媒体与娱乐、技术、视觉特效及全球所有产业，严重程度分布为三个高危、一个中危和一个严重问题。",
+  "sources_hash": "48cfcf064cf13338",
+  "source_intro_hash": "7db934e01fc2e732",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-18T10:09:13.939Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

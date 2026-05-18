@@ -1,15 +1,24 @@
 {
   "tag": "rapid7",
   "locale": "zh",
-  "count": 10,
+  "count": 15,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-29"
+    "latest": "2026-05-15"
   },
   "top_actors": [
+    "KongTuke",
     "Kyber"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-20127",
+      "cvss": 10
+    },
+    {
+      "id": "CVE-2026-20182",
+      "cvss": 10
+    },
     {
       "id": "CVE-2025-59718",
       "cvss": 9.8
@@ -17,29 +26,32 @@
     {
       "id": "CVE-2026-41940",
       "cvss": 9.8
+    },
+    {
+      "id": "CVE-2023-30253"
     }
   ],
   "top_sectors": [
+    "enterprise",
     "enterprise IT",
+    "enterprise networking",
     "financial services",
-    "government",
-    "managed services",
-    "technology"
+    "government"
   ],
   "top_regions": [
-    "Europe",
     "Global",
+    "Europe",
     "North america"
   ],
   "severity_mix": {
-    "critical": 2,
-    "high": 2,
-    "informational": 4
+    "high": 3,
+    "critical": 4,
+    "informational": 5
   },
   "recent_excerpts": [
-    "CVE-2026-41940：未经认证的远程攻击者可以绕过 cPanel & WHM 和 WP Squared 的认证。CVSS 9.8。补丁于 2026 年 4 月 28 日发布。",
-    "Rapid7 副总裁 Christiaan Beek 警告说，攻击者正在比防御者更快地利用弱凭证和已知漏洞进行攻击 —— 在 2026 年，速度而非技术是区分因素。",
-    "Rapid7 认为，大多数泄露源于资产、身份和攻击路径覆盖的可见性差距，而不是复杂的漏洞利用。"
+    "Rapid7 的 Metasploit Framework 添加了 Vim 插件持久性，漏洞利用针对 CVE-2025-6793（Marvell QConvergeConsole）、CVE-2024-48760（GestioIP）和 CVE-2023-30253（Dolibarr）。",
+    "Rapid7发现了CVE-2026-20182，这是一个10.0-CVSS认证绕过漏洞，存在于思科Catalyst SD-WAN控制器中。未经认证的攻击者可以注入SSH密钥并发出NETCONF命令。",
+    "Rapid7 的新 Cyber GRC 平台旨在缩小安全运营和合规性之间的差距，解决 IBM 2025 报告中识别的 241 天平均违规生命周期问题。"
   ],
-  "sources_hash": "31dee5091419afca"
+  "sources_hash": "f6469948c3f935de"
 }
