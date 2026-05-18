@@ -23,7 +23,11 @@ import {
   TAG_INTRO_PROMPT_VERSION,
 } from "../ai/prompts/tag-intro.js";
 import { checkTagIntro, formatCheckLog } from "./fact-check.js";
-import { isSparse, buildSparseIntroEn } from "./sparse-template.js";
+import {
+  isSparse,
+  buildFallbackIntroEn,
+  buildSparseIntroEn,
+} from "./sparse-template.js";
 import type { TagFactSheet, TagIntroRecord } from "./types.js";
 
 const MAX_RETRIES = 2;
@@ -192,8 +196,28 @@ export async function generateForSheet(
   }
 
   appendRejected({ tag: sheet.tag, locale: "en", lastError });
+  const intro = buildFallbackIntroEn(sheet);
+  const check = checkTagIntro(intro, sheet, { locale: "en" });
+  if (check.passed) {
+    const record: TagIntroRecord = {
+      tag: sheet.tag,
+      locale: "en",
+      intro,
+      sources_hash: sheet.sources_hash,
+      model: "template:fallback",
+      generated_at: new Date().toISOString(),
+      prompt_version: TAG_INTRO_PROMPT_VERSION,
+    };
+    const file = writeIntroRecord(record);
+    console.warn(
+      `[generate] ${sheet.tag}: fallback template after ${MAX_RETRIES + 1} failed attempts (${lastError.slice(0, 160)}) → ${file}`,
+    );
+    return { status: "written", record };
+  }
+
+  const checkError = check.issues.map((i) => i.message).join("; ");
   console.error(
-    `[generate] ${sheet.tag}: REJECTED after ${MAX_RETRIES + 1} attempts — ${lastError}`,
+    `[generate] ${sheet.tag}: REJECTED after fallback failed — ${checkError}`,
   );
   return { status: "rejected" };
 }
