@@ -1,10 +1,10 @@
 {
   "tag": "rce",
   "locale": "en",
-  "count": 29,
+  "count": 30,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-15"
+    "latest": "2026-05-18"
   },
   "top_actors": [
     "PhantomCore"
@@ -27,16 +27,16 @@
       "cvss": 9.8
     },
     {
-      "id": "CVE-2025-0520",
-      "cvss": 9.4
+      "id": "CVE-2026-7301",
+      "cvss": 9.8
     }
   ],
   "top_sectors": [
-    "manufacturing",
-    "software development",
     "technology",
-    "government",
-    "research"
+    "manufacturing",
+    "research",
+    "software development",
+    "government"
   ],
   "top_regions": [
     "Asia",
@@ -44,14 +44,14 @@
     "Russia"
   ],
   "severity_mix": {
-    "critical": 17,
+    "critical": 18,
     "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-7301 (CVSS 9.8) lets attackers execute arbitrary code on SGLang servers by sending malicious pickle payloads to the scheduler's ROUTER socket, which binds to 0.0.0.0 by...",
     "CVE-2026-45033 (CVSS 9.8) in GitHub Copilot CLI before 1.0.43 lets attackers achieve remote code execution by embedding a malicious bare git repository in a project directory.",
-    "CVE-2026-44636 (CVSS 7.8): A signed integer overflow in libsixel 1.8.7-r1 and earlier lets attackers trigger a heap buffer overflow via crafted SIXEL images, enabling potential...",
-    "CVE-2026-31251: CosyVoice gRPC server deserializes untrusted models via torch.load() without weights_only=True, enabling RCE via crafted .pt files. No patch confirmed."
+    "CVE-2026-44636 (CVSS 7.8): A signed integer overflow in libsixel 1.8.7-r1 and earlier lets attackers trigger a heap buffer overflow via crafted SIXEL images, enabling potential..."
   ],
-  "sources_hash": "d2929e1386850d62"
+  "sources_hash": "493391a39c80ea9a"
 }

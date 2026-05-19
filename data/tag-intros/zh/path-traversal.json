@@ -1,10 +1,10 @@
 {
   "tag": "path-traversal",
   "locale": "zh",
-  "intro": "八篇于2026年4月22日至5月17日期间发表的文章涵盖了路径遍历漏洞，其中六篇被评为高危，两篇为严重。关键CVE包括CVE-2026-40050（CVSS 9.8）、CVE-2024-1708（CVSS 8.4）、CVE-2026-6282（CVSS 8.1）、CVE-2026-7819（CVSS 8.1）以及CVE-2021-47942（CVSS 7.5）。受影响行业包括政府、消费电子、消费物联网、企业和金融服务，影响范围覆盖全球，尤其集中在北美和美国地区。",
-  "sources_hash": "41396d3d7a720bcc",
-  "source_intro_hash": "974c4c7b16dae9cb",
+  "intro": "根据2026年4月22日至5月18日期间发布的9篇文章，ZCyberNews对路径遍历漏洞的报道凸显了政府、技术和消费物联网领域的重大风险。最严重的CVE包括CVE-2026-40050（CVSS 9.8）、CVE-2026-45230（CVSS 9.1）、CVE-2024-1708（CVSS 8.4）、CVE-2026-6282（CVSS 8.1）和CVE-2026-7819（CVSS 8.1）。报道覆盖全球多个地区，重点关注北美和美国，涉及三个严重等级和六个高严重等级漏洞。",
+  "sources_hash": "7515efcd7d3a0811",
+  "source_intro_hash": "e70b6d232948c40a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:10:08.429Z",
+  "generated_at": "2026-05-19T04:29:31.654Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

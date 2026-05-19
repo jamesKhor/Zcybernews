@@ -1,9 +1,9 @@
 {
   "tag": "path-traversal",
   "locale": "en",
-  "intro": "Eight articles published between April 22 and May 17, 2026, cover path-traversal vulnerabilities, with six rated high and two critical. Key CVEs include CVE-2026-40050 (CVSS 9.8), CVE-2024-1708 (CVSS 8.4), CVE-2026-6282 (CVSS 8.1), CVE-2026-7819 (CVSS 8.1), and CVE-2021-47942 (CVSS 7.5). Affected sectors include government, consumer electronics, consumer IoT, enterprise, and financial services, with impact reported globally, particularly in North America and the United States.",
-  "sources_hash": "fe84defb09f79c6c",
+  "intro": "From 9 articles published between April 22 and May 18, 2026, ZCyberNews coverage of path-traversal vulnerabilities highlights critical risks across government, technology, and consumer IoT sectors. The most severe CVEs include CVE-2026-40050 (CVSS 9.8), CVE-2026-45230 (CVSS 9.1), CVE-2024-1708 (CVSS 8.4), CVE-2026-6282 (CVSS 8.1), and CVE-2026-7819 (CVSS 8.1). The reporting spans global regions, with a focus on North America and the United States, and features a severity mix of three critical and six high-severity vulnerabilities.",
+  "sources_hash": "c3e4235c11cebc94",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:03:18.665Z",
+  "generated_at": "2026-05-19T04:29:28.909Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

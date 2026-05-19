@@ -1,9 +1,9 @@
 {
   "tag": "rce",
   "locale": "en",
-  "intro": "Manufacturing and technology sectors bore the brunt of a concentrated wave of remote code execution attacks between April and May 2026, with ZCyberNews reporting 29 incidents across Asia, China, and Russia. The threat actor PhantomCore was observed exploiting critical vulnerabilities including CVE-2025-54987, CVE-2026-22679, CVE-2026-31251, CVE-2026-45033, and CVE-2025-0520, all carrying CVSS scores of 9.8 except the latter at 9.4. The severity mix comprised 17 critical, 11 high, and one medium-severity event, affecting government and research entities alongside the primary industrial targets.",
-  "sources_hash": "d2929e1386850d62",
+  "intro": "Technology, manufacturing, research, software development, and government sectors have been the primary targets in a wave of remote code execution attacks between April 12 and May 18, 2026. The threat actor PhantomCore was observed exploiting critical vulnerabilities including CVE-2025-54987, CVE-2026-22679, CVE-2026-31251, CVE-2026-45033, and CVE-2026-7301, each carrying a CVSS score of 9.8. Of the 30 articles covering this tag, 18 were rated critical, 11 high, and one medium, with significant impacts reported across Asia, China, and Russia.",
+  "sources_hash": "493391a39c80ea9a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T09:59:24.905Z",
+  "generated_at": "2026-05-19T04:29:24.683Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
