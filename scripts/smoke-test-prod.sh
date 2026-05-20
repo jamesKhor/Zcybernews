@@ -106,9 +106,19 @@ check_hard_redirect() {
   local label="$1" url="$2" target_pattern="$3"
   TOTAL=$((TOTAL + 1))
   local response status location
-  response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nLOCATION=%{redirect_url}" --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "HTTP=000")
-  status=$(echo "${response}" | grep "^HTTP=" | cut -d= -f2)
-  location=$(echo "${response}" | grep "^LOCATION=" | cut -d= -f2-)
+  for attempt in 1 2 3 4; do
+    response=$(curl -s -o /tmp/smoke-body -w "HTTP=%{http_code}\nLOCATION=%{redirect_url}" --max-time 10 -A "${UA}" "${url}" 2>&1 || echo "HTTP=000")
+    status=$(echo "${response}" | grep "^HTTP=" | cut -d= -f2)
+    location=$(echo "${response}" | grep "^LOCATION=" | cut -d= -f2-)
+    if [ "${status}" != "403" ] && [ "${status}" != "000" ]; then
+      break
+    fi
+    case "${attempt}" in
+      1) sleep 3 ;;
+      2) sleep 7 ;;
+      3) sleep 15 ;;
+    esac
+  done
 
   if [ "${status}" = "403" ]; then
     echo "! ${label}  status=403 from GitHub runner; treating as Cloudflare/WAF warning  url=${url}"

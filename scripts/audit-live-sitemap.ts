@@ -10,17 +10,20 @@ import sitemap from "../app/sitemap.js";
 
 interface Options {
   baseUrl: string;
+  cacheBust: boolean;
   strict: boolean;
 }
 
 function parseArgs(argv: string[]): Options {
   const options: Options = {
     baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://zcybernews.com",
+    cacheBust: true,
     strict: false,
   };
 
   for (const arg of argv.slice(2)) {
     if (arg === "--strict") options.strict = true;
+    else if (arg === "--no-cache-bust") options.cacheBust = false;
     else if (arg.startsWith("--base-url=")) {
       options.baseUrl = arg.slice("--base-url=".length).replace(/\/+$/, "");
     }
@@ -35,9 +38,14 @@ function extractLocs(xml: string): string[] {
 
 async function main() {
   const options = parseArgs(process.argv);
-  const liveUrl = `${options.baseUrl}/sitemap.xml`;
+  const liveUrl = new URL(`${options.baseUrl}/sitemap.xml`);
+  if (options.cacheBust) {
+    liveUrl.searchParams.set("cachebust", `seo-audit-${Date.now()}`);
+  }
   const res = await fetch(liveUrl, {
     headers: {
+      "Cache-Control": "no-cache",
+      Pragma: "no-cache",
       "User-Agent":
         "Mozilla/5.0 (compatible; ZCyberNewsSEOAudit/1.0; +https://zcybernews.com)",
     },
