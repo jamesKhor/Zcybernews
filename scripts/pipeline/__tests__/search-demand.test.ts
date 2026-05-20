@@ -44,4 +44,16 @@ describe("search demand scoring", () => {
       }),
     ).toBe("vulnerabilities");
   });
+
+  it("routes official OpenAI cybersecurity news to AI security", () => {
+    const input = {
+      title: "OpenAI Daybreak launches cybersecurity accelerator",
+      excerpt:
+        "Security startups can build the next generation of cybersecurity tools with OpenAI.",
+      tags: ["OpenAI", "AI security", "Daybreak"],
+    };
+
+    expect(classifyTopicLane(input)).toBe("ai-security");
+    expect(scoreSearchDemand(input).score).toBeGreaterThan(0.6);
+  });
 });

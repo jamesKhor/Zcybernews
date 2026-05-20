@@ -6,6 +6,16 @@
     "exchange": 0.8,
     "chrome": 0.75,
     "github": 0.75,
+    "mozilla": 0.72,
+    "firefox": 0.72,
+    "cisco": 0.75,
+    "wordpress": 0.58,
+    "openai": 0.82,
+    "chatgpt": 0.78,
+    "anthropic": 0.74,
+    "claude": 0.72,
+    "ai security": 0.82,
+    "daybreak": 0.72,
     "ransomware": 0.7,
     "shinyhunters": 0.7,
     "mcgraw hill": 0.65
@@ -15,6 +25,11 @@
     "KB": 0.7,
     "zero-day": 0.85,
     "actively exploited": 0.9,
-    "data breach": 0.75
+    "data breach": 0.75,
+    "cybersecurity": 0.6,
+    "supply chain": 0.66,
+    "content provenance": 0.58,
+    "prompt injection": 0.72,
+    "AI safety": 0.62
   }
 }

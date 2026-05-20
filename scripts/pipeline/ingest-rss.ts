@@ -1,4 +1,5 @@
 import Parser from "rss-parser";
+import { fetchArticle } from "../../lib/article-fetcher.js";
 import { ENABLED_SOURCES, type FeedSource } from "../sources/feeds.js";
 import { withWallClockTimeout } from "./timeout.js";
 import {
@@ -88,6 +89,88 @@ async function fetchRss(source: FeedSource): Promise<Story[]> {
 }
 
 type RssItem = Awaited<ReturnType<typeof parser.parseURL>>["items"][number];
+
+function isOpenAiSecurityItem(title: string, excerpt: string): boolean {
+  const text = `${title} ${excerpt}`.toLowerCase();
+  return /\b(cybersecurity|cyber|security|secure|safety|provenance|supply chain|prompt injection|red team|trusted access|daybreak)\b/.test(
+    text,
+  );
+}
+
+async function fetchOpenAiNewsRss(source: FeedSource): Promise<Story[]> {
+  const feed = await withWallClockTimeout(
+    parser.parseURL(source.url),
+    FEED_WALL_CLOCK_MS,
+    `openai news rss ${source.id}`,
+  );
+  const fetchedAt = new Date().toISOString();
+  const trust = inferSourceTrust(source);
+  return (feed.items ?? []).slice(0, 25).flatMap((item, i) => {
+    const title = item.title ?? "Untitled";
+    const excerpt = stripHtml(
+      item.contentSnippet ?? item.content ?? item.summary ?? "",
+    ).slice(0, 400);
+    if (!isOpenAiSecurityItem(title, excerpt)) return [];
+    return {
+      id: `${source.id}-${item.guid ?? item.link ?? i}`,
+      title,
+      url: item.link ?? "",
+      excerpt,
+      sourceName: source.name,
+      publishedAt: item.pubDate ?? item.isoDate ?? new Date().toISOString(),
+      tags: ["OpenAI", "AI security"],
+      sourceId: source.id,
+      sourceCategory: source.category,
+      fetchedAt,
+      qualityScore: source.qualityScore ?? 1.0,
+      isVendor: true,
+      sourceLanguage: source.sourceLanguage ?? "en",
+      seoIntent: source.seoIntent ?? "rank-en",
+      sourceType: source.type,
+      ...trust,
+    };
+  });
+}
+
+async function fetchStaticWebPage(source: FeedSource): Promise<Story[]> {
+  const fetchedAt = new Date().toISOString();
+  const trust = inferSourceTrust(source);
+  const fetched = await fetchArticle(source.url, FEED_WALL_CLOCK_MS);
+  const title =
+    !fetched.error && fetched.title !== source.url
+      ? fetched.title
+      : source.name;
+  const excerpt = (
+    !fetched.error && fetched.text ? fetched.text : (source.description ?? "")
+  )
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 400);
+
+  if (!title || !excerpt) return [];
+  return [
+    {
+      id: `static-${source.id}`,
+      title,
+      url: source.url,
+      excerpt,
+      sourceName: source.name,
+      publishedAt: fetchedAt,
+      tags: [source.category, "OpenAI", "AI security"].filter(Boolean),
+      sourceId: source.id,
+      sourceCategory: source.category,
+      fetchedAt,
+      qualityScore: source.qualityScore ?? 1.0,
+      isVendor: true,
+      identityKey: `static-${source.id}`,
+      sourceLanguage: source.sourceLanguage ?? "en",
+      seoIntent: source.seoIntent ?? "rank-en",
+      sourceType: source.type,
+      rawText: !fetched.error ? fetched.text : excerpt,
+      ...trust,
+    },
+  ];
+}
 
 function paloAltoExcerptFromTitle(title: string): string {
   const severity = title.match(/\(Severity:\s*([^)]+)\)/i)?.[1]?.trim();
@@ -213,6 +296,8 @@ async function fetchWordPressJson(source: FeedSource): Promise<Story[]> {
 export function fetchSourceStories(source: FeedSource): Promise<Story[]> {
   if (source.type === "cisa-kev") return fetchCisaKev(source);
   if (source.type === "nvd-json") return fetchNvd(source);
+  if (source.type === "openai-news-rss") return fetchOpenAiNewsRss(source);
+  if (source.type === "static-web-page") return fetchStaticWebPage(source);
   if (source.type === "palo-alto-advisory-rss") {
     return fetchPaloAltoAdvisoryRss(source);
   }

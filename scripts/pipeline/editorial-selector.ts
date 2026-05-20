@@ -65,6 +65,7 @@ function evidenceScore(packet: ReturnType<typeof buildEvidencePacket>): number {
   if (packet.hasPrimaryEvidence) score += 0.18;
   score += Math.min(0.22, packet.entities.cves.length * 0.08);
   score += Math.min(0.12, packet.facts.cvssScores.length * 0.08);
+  score += Math.min(0.08, packet.entities.products.length * 0.04);
   if (packet.facts.exploitStatus === "exploited") score += 0.16;
   if (packet.facts.recordCounts.length > 0) score += 0.08;
   if (packet.entities.actors.length > 0) score += 0.1;
@@ -117,10 +118,119 @@ function clusterText(cluster: StoryCluster<Story>): string {
     .join(" ");
 }
 
+const STRATEGIC_CVE_TERMS = [
+  "microsoft",
+  "windows",
+  "exchange",
+  "google",
+  "chrome",
+  "android",
+  "apple",
+  "ios",
+  "macos",
+  "mozilla",
+  "firefox",
+  "cisco",
+  "fortinet",
+  "palo alto",
+  "pan-os",
+  "ivanti",
+  "vmware",
+  "broadcom",
+  "oracle",
+  "sap",
+  "linux",
+  "linux kernel",
+  "openssl",
+  "openssh",
+  "apache",
+  "nginx",
+  "kubernetes",
+  "docker",
+  "gitlab",
+  "github",
+  "jenkins",
+  "atlassian",
+  "confluence",
+  "jira",
+  "openai",
+  "chatgpt",
+  "anthropic",
+  "claude",
+];
+
+function isNvdOnly(cluster: StoryCluster<Story>, lane: TopicLane): boolean {
+  return (
+    lane === "vulnerabilities" &&
+    cluster.stories.length > 0 &&
+    cluster.stories.every(
+      (story) =>
+        story.sourceType === "nvd-json" ||
+        story.sourceId === "nvd-recent" ||
+        /NVD/i.test(story.sourceName ?? ""),
+    )
+  );
+}
+
+function hasStrategicCveContext(cluster: StoryCluster<Story>): boolean {
+  const text = clusterText(cluster).toLowerCase();
+  return STRATEGIC_CVE_TERMS.some((term) =>
+    new RegExp(`\\b${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(
+      text,
+    ),
+  );
+}
+
+function hasNonNvdPrimaryEvidence(cluster: StoryCluster<Story>): boolean {
+  return cluster.stories.some((story) => {
+    if (
+      story.sourceType === "nvd-json" ||
+      story.sourceId === "nvd-recent" ||
+      /NVD/i.test(story.sourceName ?? "")
+    ) {
+      return false;
+    }
+    return (
+      story.verificationRole === "primary-evidence" ||
+      story.sourceClass === "government" ||
+      story.sourceClass === "primary" ||
+      story.sourceClass === "vendor-advisory" ||
+      story.sourceType === "cisa-kev"
+    );
+  });
+}
+
 function hasLowOrMediumSeverityLabel(cluster: StoryCluster<Story>): boolean {
   return /\bseverity\s*:\s*(?:low|medium)\b|\b(?:low|medium)[-\s]+severity\b/i.test(
     clusterText(cluster),
   );
+}
+
+function cvePublishBlockReason(
+  packet: ReturnType<typeof buildEvidencePacket>,
+  cluster: StoryCluster<Story>,
+  lane: TopicLane,
+): string | null {
+  if (
+    lane !== "vulnerabilities" ||
+    packet.entities.cves.length === 0 ||
+    packet.facts.exploitStatus === "exploited"
+  ) {
+    return null;
+  }
+
+  const highestCvss = Math.max(...packet.facts.cvssScores, 0);
+  const nvdOnly = isNvdOnly(cluster, lane);
+  const strategic = hasStrategicCveContext(cluster);
+  const hasCorroboratedPrimary =
+    hasNonNvdPrimaryEvidence(cluster) && packet.sourceCount >= 2;
+
+  if (highestCvss === 0) return "missing-cvss";
+  if (highestCvss < 9) return "below-critical-cvss";
+  if (nvdOnly && !strategic) return "nvd-only-obscure-cve";
+  if (!strategic && !hasCorroboratedPrimary) return "weak-product-relevance";
+
+  return null;
 }
 
 function staleVulnerabilityPenalty(
@@ -153,16 +263,10 @@ function decide(
   ) {
     return "research-more";
   }
-  const nvdOnly =
-    lane === "vulnerabilities" &&
-    cluster.stories.length > 0 &&
-    cluster.stories.every(
-      (story) =>
-        story.sourceType === "nvd-json" ||
-        story.sourceId === "nvd-recent" ||
-        /NVD/i.test(story.sourceName ?? ""),
-    );
+  const nvdOnly = isNvdOnly(cluster, lane);
   const highestCvss = Math.max(...packet.facts.cvssScores, 0);
+  const cveBlockReason = cvePublishBlockReason(packet, cluster, lane);
+  if (cveBlockReason) return "digest-only";
   if (
     nvdOnly &&
     packet.facts.exploitStatus !== "exploited" &&
@@ -189,6 +293,7 @@ function decide(
 function reasonsFor(
   selection: Omit<EditorialSelection, "reasons" | "decision">,
   packet: ReturnType<typeof buildEvidencePacket>,
+  cluster: StoryCluster<Story>,
 ): string[] {
   const reasons: string[] = [];
   if (selection.evidenceScore >= 0.6) reasons.push("strong evidence");
@@ -196,6 +301,8 @@ function reasonsFor(
   if (selection.demandScore >= 0.65) reasons.push("search demand");
   if (selection.portfolioScore >= 0.8)
     reasons.push(`portfolio:${selection.lane}`);
+  const cveBlockReason = cvePublishBlockReason(packet, cluster, selection.lane);
+  if (cveBlockReason) reasons.push(cveBlockReason);
   for (const uncertainty of packet.uncertainty) reasons.push(uncertainty);
   return reasons.length > 0 ? reasons : ["low selection score"];
 }
@@ -253,7 +360,7 @@ export function selectEditorialCandidates<T extends Story>(
     const selection: EditorialSelection = {
       ...withScore,
       decision,
-      reasons: reasonsFor(withScore, packet),
+      reasons: reasonsFor(withScore, packet, cluster as StoryCluster<Story>),
     };
     return { cluster, selection };
   });

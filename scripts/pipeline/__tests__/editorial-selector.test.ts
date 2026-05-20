@@ -117,6 +117,106 @@ describe("selectEditorialCandidates", () => {
     expect(result.decisions[0].decision).toBe("digest-only");
   });
 
+  it("does not publish obscure critical NVD-only CVEs just because CVSS is high", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("cve:CVE-2026-45230", [
+          story({
+            title:
+              "CVE-2026-45230 Unauthenticated Path Traversal in DumbAssets Lets Attackers Read Files",
+            excerpt:
+              "NVD published a CVE record for DumbAssets with CVSS 9.1 and path traversal impact.",
+            sourceName: "NVD",
+            sourceClass: "structured-vulnerability",
+            sourceType: "nvd-json",
+            verificationRole: "primary-evidence",
+            tags: ["CVE-2026-45230", "NVD"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable).toHaveLength(0);
+    expect(result.decisions[0].decision).toBe("digest-only");
+    expect(result.decisions[0].reasons).toContain("nvd-only-obscure-cve");
+  });
+
+  it("does not publish no-CVSS high-severity CVEs without exploit or strategic context", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("cve:CVE-2026-46356", [
+          story({
+            title:
+              "Fleet Patches API Rate-Limiting Bypass via IP Spoofing (Severity: HIGH)",
+            excerpt:
+              "A CVE-2026-46356 advisory says the issue affects Fleet API rate limiting, but no CVSS score is available.",
+            sourceName: "NVD",
+            sourceClass: "structured-vulnerability",
+            sourceType: "nvd-json",
+            verificationRole: "primary-evidence",
+            tags: ["CVE-2026-46356", "NVD"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable).toHaveLength(0);
+    expect(result.decisions[0].decision).toBe("digest-only");
+    expect(result.decisions[0].reasons).toContain("missing-cvss");
+  });
+
+  it("can publish strategic-vendor critical CVEs from NVD", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("cve:CVE-2026-8959", [
+          story({
+            title:
+              "CVE-2026-8959 Firefox Sandbox Escape via Win32 Boundary Flaw",
+            excerpt:
+              "NVD published CVE-2026-8959 with CVSS 9.6 affecting Mozilla Firefox sandbox isolation.",
+            sourceName: "NVD",
+            sourceClass: "structured-vulnerability",
+            sourceType: "nvd-json",
+            verificationRole: "primary-evidence",
+            tags: ["CVE-2026-8959", "Mozilla", "Firefox"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable.map((item) => item.clusterKey)).toContain(
+      "cve:CVE-2026-8959",
+    );
+  });
+
+  it("can publish official OpenAI cybersecurity releases in the AI security lane", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("topic:openai-daybreak", [
+          story({
+            title: "OpenAI Daybreak launches cybersecurity accelerator",
+            excerpt:
+              "OpenAI Daybreak is a cybersecurity accelerator for security startups building the next generation of cybersecurity tools.",
+            sourceName: "OpenAI News",
+            sourceClass: "primary",
+            verificationRole: "primary-evidence",
+            authorityScore: 0.9,
+            tags: ["OpenAI", "AI security", "Daybreak"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable.map((item) => item.clusterKey)).toContain(
+      "topic:openai-daybreak",
+    );
+    expect(result.decisions[0].lane).toBe("ai-security");
+  });
+
   it("does not publish medium single-source vendor CVEs as full articles", () => {
     const result = selectEditorialCandidates(
       [

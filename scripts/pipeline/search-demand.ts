@@ -38,6 +38,16 @@ const DEFAULT_HINTS: Required<DemandHints> = {
     exchange: 0.8,
     chrome: 0.75,
     github: 0.75,
+    mozilla: 0.72,
+    firefox: 0.72,
+    cisco: 0.75,
+    wordpress: 0.58,
+    openai: 0.82,
+    chatgpt: 0.78,
+    anthropic: 0.74,
+    claude: 0.72,
+    "ai security": 0.82,
+    daybreak: 0.72,
     ransomware: 0.7,
     shinyhunters: 0.7,
     "mcgraw hill": 0.65,
@@ -51,6 +61,11 @@ const DEFAULT_HINTS: Required<DemandHints> = {
     ransomware: 0.75,
     APT: 0.72,
     malware: 0.68,
+    cybersecurity: 0.6,
+    "supply chain": 0.66,
+    "content provenance": 0.58,
+    "prompt injection": 0.72,
+    "AI safety": 0.62,
   },
 };
 
@@ -158,7 +173,11 @@ export function classifyTopicLane(input: {
   if (/\bcve-\d{4}-\d{4,}|vulnerability|zero-day|patch|cvss\b/.test(text)) {
     return "vulnerabilities";
   }
-  if (/\bai|llm|agentic|model|prompt injection\b/.test(text)) {
+  if (
+    /\bai\b|llm|agentic|model|prompt injection|openai|chatgpt|anthropic|claude|daybreak\b/.test(
+      text,
+    )
+  ) {
     return "ai-security";
   }
   if (/\bpolicy|regulation|law|government|court|fine\b/.test(text)) {
