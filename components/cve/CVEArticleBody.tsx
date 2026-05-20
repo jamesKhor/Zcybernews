@@ -14,7 +14,7 @@ export function CVEArticleBody({ children }: { children: ReactElement }) {
 
   return (
     <>
-      <div className="prose" ref={ref}>
+      <div className="prose article-prose" ref={ref}>
         {children}
       </div>
       <CVEHydrate articleRef={ref} />

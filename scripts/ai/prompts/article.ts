@@ -131,6 +131,15 @@ Technical Analysis → IOCs → TTPs → Threat Actor Context → Mitigations
 
 WRITING RULES:
 - Do NOT copy sentences verbatim — rewrite entirely in your own words
+- Write like a professional security publication, not a vendor bulletin:
+  * The first paragraph is the lede. It must state the outcome and why a
+    defender should care before diving into implementation detail.
+  * The second paragraph should be the nut graf: affected product, exploit
+    status, severity, source authority, and the practical action.
+  * Prefer source hierarchy over chronology. Lead with Cisco/CISA/NVD/vendor
+    advisories when they exist, then use researcher blogs for technical depth.
+  * Avoid formulaic openings such as "X has disclosed..." unless disclosure
+    itself is the news. Use active, specific verbs.
 - Target length: ${targetRange} total. Google has no preferred word count;
   this target is calibrated to satisfy the reader's likely search intent and
   the amount of source material provided below. DO NOT pad to hit the

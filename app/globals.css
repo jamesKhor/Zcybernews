@@ -259,6 +259,15 @@ body {
   max-width: 72ch;
 }
 
+/* Article detail pages use a wider editorial column than generic prose.
+   The hero image, TLDR, body, and in-article modules should share the
+   same measure on desktop; mobile remains naturally full-width. */
+.article-prose {
+  width: 100%;
+  max-width: none;
+  overflow-wrap: break-word;
+}
+
 /* Phase 1 — editorial serif headlines in article body content.
    Applies to MDX-rendered h1/h2 inside .prose containers (article
    body, threat-intel body). Page-level h1 (article title shown at
@@ -292,6 +301,7 @@ body {
   line-height: 1.8;
   margin-bottom: 1.25rem;
   color: hsl(var(--muted-foreground));
+  text-wrap: pretty;
 }
 
 .prose a {
