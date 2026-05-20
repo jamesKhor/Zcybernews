@@ -4,9 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Article } from "@/lib/content";
 import {
-  CATEGORY_DEFAULT_IMAGES,
+  getCategoryDefaultImage,
   SEVERITY_COLORS,
-  type Category,
   type Severity,
 } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
@@ -25,7 +24,7 @@ export function ArticleCard({ article, locale, type = "posts" }: Props) {
 
   const image =
     frontmatter.featured_image ??
-    CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
+    getCategoryDefaultImage(frontmatter.category, frontmatter.slug);
   const href = `/${locale}/${type === "threat-intel" ? "threat-intel" : "articles"}/${frontmatter.slug}`;
 
   return (

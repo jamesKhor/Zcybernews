@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { stripMarkdown } from "@/lib/utils";
-import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
+import { getCategoryDefaultImage } from "@/lib/types";
 import type { ArticleWithSource, HeroPicks } from "@/lib/homepage-picks";
 import { relativeTime } from "@/lib/homepage-picks";
 
@@ -174,7 +174,7 @@ function HeroCenter({
   const { frontmatter } = article;
   const image =
     frontmatter.featured_image ??
-    CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
+    getCategoryDefaultImage(frontmatter.category, frontmatter.slug);
 
   return (
     <Link

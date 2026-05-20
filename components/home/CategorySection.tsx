@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { stripMarkdown } from "@/lib/utils";
-import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
+import { getCategoryDefaultImage, type Category } from "@/lib/types";
 import type { Article } from "@/lib/content";
 import {
   VulnCard,
@@ -114,7 +114,7 @@ function PhotoForwardBody({
 
   const leadImage =
     lead.frontmatter.featured_image ??
-    CATEGORY_DEFAULT_IMAGES[lead.frontmatter.category as Category];
+    getCategoryDefaultImage(lead.frontmatter.category, lead.frontmatter.slug);
   const leadSeg = sourceType === "threat-intel" ? "threat-intel" : "articles";
   const leadHref = `/${locale}/${leadSeg}/${lead.frontmatter.slug}`;
 

@@ -10,11 +10,7 @@ import {
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import {
-  CategoryEnum,
-  CATEGORY_DEFAULT_IMAGES,
-  type Category,
-} from "@/lib/types";
+import { CategoryEnum, getCategoryDefaultImage } from "@/lib/types";
 import { Link } from "@/i18n/navigation";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 
@@ -82,8 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url:
-            CATEGORY_DEFAULT_IMAGES[category as Category] ?? "/og-default.png",
+          url: getCategoryDefaultImage(category) ?? "/og-default.png",
           width: 1200,
           height: 630,
           alt: label,

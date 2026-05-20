@@ -15,7 +15,7 @@ import { MitreMatrix } from "@/components/threat-intel/MitreMatrix";
 import { NewsArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { CommunityCTA } from "@/components/community/CommunityCTA";
 import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
-import { CATEGORY_DEFAULT_IMAGES, type Category } from "@/lib/types";
+import { getCategoryDefaultImage } from "@/lib/types";
 import { useTranslations } from "next-intl";
 import { CVEArticleBody } from "@/components/cve/CVEArticleBody";
 import { SidebarAd, InArticleAd } from "@/components/ads/AdSense";
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { frontmatter } = article;
   const image =
     frontmatter.featured_image ??
-    CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
+    getCategoryDefaultImage(frontmatter.category, frontmatter.slug);
   const canonical = articleUrl({ slug }, locale, "threat-intel");
 
   // Resolve alternate slugs — when locale_pair is set, the other-
@@ -152,7 +152,7 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
   const siteUrl = getSiteUrl();
   const image =
     frontmatter.featured_image ??
-    CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
+    getCategoryDefaultImage(frontmatter.category, frontmatter.slug);
 
   return (
     <>
@@ -216,7 +216,7 @@ function TIPageContent({
   const t = useTranslations("article");
   const featuredImage =
     frontmatter.featured_image ??
-    CATEGORY_DEFAULT_IMAGES[frontmatter.category as Category];
+    getCategoryDefaultImage(frontmatter.category, frontmatter.slug);
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-10">

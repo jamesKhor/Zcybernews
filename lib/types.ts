@@ -116,14 +116,61 @@ export type Category = z.infer<typeof CategoryEnum>;
 export type Severity = z.infer<typeof SeverityEnum>;
 export type PublishTier = z.infer<typeof PublishTierEnum>;
 
+export const CATEGORY_IMAGE_POOLS = {
+  "threat-intel": [
+    "/images/defaults/threat-intel.png",
+    "/images/defaults/threat-intel-ops-room.png",
+    "/images/defaults/threat-intel-network-map.png",
+  ],
+  vulnerabilities: [
+    "/images/defaults/vulnerabilities.png",
+    "/images/defaults/vulnerabilities-patch-grid.png",
+    "/images/defaults/vulnerabilities-research-lab.png",
+  ],
+  malware: [
+    "/images/defaults/malware.png",
+    "/images/defaults/malware-analysis-lab.png",
+    "/images/defaults/malware-c2-disruption.png",
+  ],
+  industry: [
+    "/images/defaults/industry.png",
+    "/images/defaults/industry-newsroom.png",
+    "/images/defaults/industry-supply-chain.png",
+  ],
+  tools: ["/images/defaults/tools.png"],
+  ai: ["/images/defaults/ai.png"],
+} as const satisfies Record<Category, readonly string[]>;
+
 export const CATEGORY_DEFAULT_IMAGES: Record<Category, string> = {
-  "threat-intel": "/images/defaults/threat-intel.png",
-  vulnerabilities: "/images/defaults/vulnerabilities.png",
-  malware: "/images/defaults/malware.png",
-  industry: "/images/defaults/industry.png",
-  tools: "/images/defaults/tools.png",
-  ai: "/images/defaults/ai.png",
+  "threat-intel": CATEGORY_IMAGE_POOLS["threat-intel"][0],
+  vulnerabilities: CATEGORY_IMAGE_POOLS.vulnerabilities[0],
+  malware: CATEGORY_IMAGE_POOLS.malware[0],
+  industry: CATEGORY_IMAGE_POOLS.industry[0],
+  tools: CATEGORY_IMAGE_POOLS.tools[0],
+  ai: CATEGORY_IMAGE_POOLS.ai[0],
 };
+
+function stableImageSeedHash(value: string): number {
+  let hash = 5381;
+  for (let index = 0; index < value.length; index += 1) {
+    hash = (hash * 33) ^ value.charCodeAt(index);
+  }
+  return hash >>> 0;
+}
+
+export function getCategoryDefaultImage(
+  category: unknown,
+  seed?: string | null,
+): string | undefined {
+  const parsed = CategoryEnum.safeParse(category);
+  if (!parsed.success) return undefined;
+
+  const pool = CATEGORY_IMAGE_POOLS[parsed.data];
+  if (pool.length === 1 || !seed) return pool[0];
+
+  const index = stableImageSeedHash(`${parsed.data}:${seed}`) % pool.length;
+  return pool[index] ?? pool[0];
+}
 
 export const SEVERITY_COLORS: Record<Severity, string> = {
   critical: "bg-red-500/20 text-red-600 dark:text-red-400 border-red-500/30",
