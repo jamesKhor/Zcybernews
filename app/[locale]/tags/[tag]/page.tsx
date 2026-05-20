@@ -11,7 +11,12 @@ import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 import { SubscribeForm } from "@/components/newsletter/SubscribeForm";
 import { Tag } from "lucide-react";
 import { canonicalSlugForSeoVariant } from "@/lib/seo-url-normalization";
-import { getTagArticleCount, PUBLIC_TAG_THRESHOLD } from "@/lib/public-tags";
+import {
+  getTagArticleCount,
+  isPublicTag,
+  PUBLIC_TAG_THRESHOLD,
+  tagUrlSlug,
+} from "@/lib/public-tags";
 
 interface Props {
   params: Promise<{ locale: string; tag: string }>;
@@ -42,25 +47,27 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, tag } = await params;
+  const canonicalTag = tagUrlSlug(tag);
   const isZh = locale === "zh";
-  const isThin = getTagArticleCount(locale, tag) < PUBLIC_TAG_THRESHOLD;
+  const isThin =
+    getTagArticleCount(locale, canonicalTag) < PUBLIC_TAG_THRESHOLD;
   return {
-    title: `#${tag}`,
+    title: `#${canonicalTag}`,
     description: isZh
-      ? `浏览 ZCyberNews 上标签为「${tag}」的所有文章。`
-      : `Browse all articles tagged with "${tag}" on ZCyberNews.`,
+      ? `浏览 ZCyberNews 上标签为「${canonicalTag}」的所有文章。`
+      : `Browse all articles tagged with "${canonicalTag}" on ZCyberNews.`,
     alternates: {
-      canonical: `/${locale}/tags/${tag}`,
+      canonical: `/${locale}/tags/${canonicalTag}`,
       languages: {
-        en: `/en/tags/${tag}`,
-        "zh-Hans": `/zh/tags/${tag}`,
-        "x-default": `/en/tags/${tag}`,
+        en: `/en/tags/${canonicalTag}`,
+        "zh-Hans": `/zh/tags/${canonicalTag}`,
+        "x-default": `/en/tags/${canonicalTag}`,
       },
     },
     openGraph: {
-      title: `#${tag} — ZCyberNews`,
-      description: `Browse all articles tagged with "${tag}" on ZCyberNews.`,
-      url: `/${locale}/tags/${tag}`,
+      title: `#${canonicalTag} — ZCyberNews`,
+      description: `Browse all articles tagged with "${canonicalTag}" on ZCyberNews.`,
+      url: `/${locale}/tags/${canonicalTag}`,
       siteName: "ZCyberNews",
       locale: locale === "zh" ? "zh_CN" : "en_US",
       type: "website",
@@ -75,8 +82,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TagPage({ params }: Props) {
   const { locale, tag } = await params;
-  const canonicalTag = canonicalSlugForSeoVariant(tag);
-  if (canonicalTag) permanentRedirect(`/${locale}/tags/${canonicalTag}`);
+  const canonicalTag = canonicalSlugForSeoVariant(tag) ?? tagUrlSlug(tag);
+  if (canonicalTag !== tag)
+    permanentRedirect(`/${locale}/tags/${canonicalTag}`);
 
   const t = await getTranslations({ locale, namespace: "article" });
   const tNav = await getTranslations({ locale, namespace: "nav" });
@@ -84,7 +92,7 @@ export default async function TagPage({ params }: Props) {
   const allPosts = getAllPosts(locale, "posts").filter(isPublicArticle);
   const tiPosts = getAllPosts(locale, "threat-intel").filter(isPublicArticle);
   const combined = [...allPosts, ...tiPosts].filter((a) =>
-    a.frontmatter.tags.includes(tag),
+    a.frontmatter.tags.some((item) => tagUrlSlug(item) === canonicalTag),
   );
 
   if (combined.length === 0) notFound();
@@ -99,12 +107,18 @@ export default async function TagPage({ params }: Props) {
   const relatedTagCounts = new Map<string, number>();
   for (const post of combined) {
     for (const t of post.frontmatter.tags) {
-      if (t !== tag)
-        relatedTagCounts.set(t, (relatedTagCounts.get(t) ?? 0) + 1);
+      const relatedSlug = tagUrlSlug(t);
+      if (relatedSlug !== canonicalTag) {
+        relatedTagCounts.set(
+          relatedSlug,
+          (relatedTagCounts.get(relatedSlug) ?? 0) + 1,
+        );
+      }
     }
   }
   const relatedTags = Array.from(relatedTagCounts.entries())
     .sort((a, b) => b[1] - a[1])
+    .filter(([relTag]) => isPublicTag(locale, relTag))
     .slice(0, 20)
     .map(([t]) => t);
 
@@ -114,7 +128,7 @@ export default async function TagPage({ params }: Props) {
         items={[
           { label: locale === "zh" ? "首页" : "Home", href: `/${locale}` },
           { label: tNav("tags"), href: `/${locale}/articles` },
-          { label: `#${tag}` },
+          { label: `#${canonicalTag}` },
         ]}
       />
       <div className="mb-6">
@@ -123,7 +137,7 @@ export default async function TagPage({ params }: Props) {
           <div>
             <h1 className="text-3xl font-bold">
               <span className="text-muted-foreground">#</span>
-              {tag}
+              {canonicalTag}
             </h1>
             <p className="text-muted-foreground text-sm mt-1">
               {combined.length} {combined.length === 1 ? "article" : "articles"}
@@ -133,7 +147,7 @@ export default async function TagPage({ params }: Props) {
       </div>
 
       {(() => {
-        const tagIntro = getTagIntro(locale, tag);
+        const tagIntro = getTagIntro(locale, canonicalTag);
         return tagIntro ? (
           <TagIntro intro={tagIntro} locale={locale as "en" | "zh"} />
         ) : null;

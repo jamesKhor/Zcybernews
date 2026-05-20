@@ -116,7 +116,7 @@ check_hard_redirect() {
     return
   fi
 
-  if [ "${status}" = "308" ] || [ "${status}" = "307" ] || [ "${status}" = "301" ] || [ "${status}" = "302" ]; then
+  if [ "${status}" = "308" ]; then
     if echo "${location}" | grep -qE "${target_pattern}"; then
       echo "✓ ${label}  ${status} location=${location}"
       return
@@ -128,6 +128,38 @@ check_hard_redirect() {
 
   echo "✗ ${label}  status=${status} expected hard redirect target pattern=${target_pattern}  url=${url}"
   FAILURES=$((FAILURES + 1))
+}
+
+latest_public_article_path() {
+  node --input-type=module <<'NODE'
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
+
+const roots = [
+  ["content/en/posts", "/en/articles"],
+  ["content/en/threat-intel", "/en/threat-intel"],
+];
+const candidates = [];
+for (const [dir, prefix] of roots) {
+  if (!fs.existsSync(dir)) continue;
+  for (const file of fs.readdirSync(dir)) {
+    if (!file.endsWith(".mdx") && !file.endsWith(".md")) continue;
+    const fullPath = path.join(dir, file);
+    const parsed = matter(fs.readFileSync(fullPath, "utf8"));
+    const fm = parsed.data ?? {};
+    if (fm.draft === true) continue;
+    if (fm.publish_tier && !["public", "report"].includes(fm.publish_tier)) {
+      continue;
+    }
+    const slug = fm.slug || file.replace(/\.(mdx|md)$/i, "");
+    const date = Date.parse(`${fm.date ?? "1970-01-01"}T23:59:59Z`);
+    candidates.push({ path: `${prefix}/${slug}`, date });
+  }
+}
+candidates.sort((a, b) => b.date - a.date);
+process.stdout.write(candidates[0]?.path ?? "");
+NODE
 }
 
 check_body_contains() {
@@ -214,6 +246,15 @@ check "GET /en/categories/vulnerabilities" "${BASE_URL}/en/categories/vulnerabil
 check "GET /sitemap.xml"             "${BASE_URL}/sitemap.xml"           200 "(xml|text)"
 check "GET /robots.txt"              "${BASE_URL}/robots.txt"            200 "text"
 check_body_contains "sitemap has fresh articles" "${BASE_URL}/sitemap.xml" "2026-05-14-"
+LATEST_PUBLIC_PATH="$(latest_public_article_path)"
+if [ -n "${LATEST_PUBLIC_PATH}" ]; then
+  check "GET latest repo article" "${BASE_URL}${LATEST_PUBLIC_PATH}" 200 "text/html"
+  check_body_contains "latest article indexable" "${BASE_URL}${LATEST_PUBLIC_PATH}" "rel=\"canonical\".*${LATEST_PUBLIC_PATH}"
+  check_body_not_contains "latest article not noindex" "${BASE_URL}${LATEST_PUBLIC_PATH}" "name=\"robots\"[^>]*content=\"[^\"]*noindex"
+  check_body_contains "sitemap has latest repo article" "${BASE_URL}/sitemap.xml" "${LATEST_PUBLIC_PATH}"
+else
+  echo "! latest repo article check skipped — no public EN content found"
+fi
 check "GET /api/feed"                "${BASE_URL}/api/feed"              200 "application/rss\\+xml"
 check_body_contains "feed absolute URLs" "${BASE_URL}/api/feed" "${BASE_URL}/en/"
 

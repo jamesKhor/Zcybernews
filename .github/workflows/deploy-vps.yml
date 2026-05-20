@@ -212,6 +212,45 @@ jobs:
               fi
             fi
 
+            echo "🔎 Verifying latest article discovery surfaces..."
+            LATEST_PUBLIC_PATH=$(node --input-type=module <<'NODE'
+            import fs from "node:fs";
+            import path from "node:path";
+            import matter from "gray-matter";
+            const roots = [
+              ["content/en/posts", "/en/articles"],
+              ["content/en/threat-intel", "/en/threat-intel"],
+            ];
+            const candidates = [];
+            for (const [dir, prefix] of roots) {
+              if (!fs.existsSync(dir)) continue;
+              for (const file of fs.readdirSync(dir)) {
+                if (!file.endsWith(".mdx") && !file.endsWith(".md")) continue;
+                const parsed = matter(fs.readFileSync(path.join(dir, file), "utf8"));
+                const fm = parsed.data ?? {};
+                if (fm.draft === true) continue;
+                if (fm.publish_tier && !["public", "report"].includes(fm.publish_tier)) continue;
+                const slug = fm.slug || file.replace(/\.(mdx|md)$/i, "");
+                const date = Date.parse(`${fm.date ?? "1970-01-01"}T23:59:59Z`);
+                candidates.push({ path: `${prefix}/${slug}`, date });
+              }
+            }
+            candidates.sort((a, b) => b.date - a.date);
+            process.stdout.write(candidates[0]?.path ?? "");
+            NODE
+            )
+            if [ -n "$LATEST_PUBLIC_PATH" ]; then
+              curl -sf "http://localhost:3000${LATEST_PUBLIC_PATH}" | grep -q 'name="robots" content="index, follow"' \
+                || (echo "::error::Latest article is not indexable at origin: ${LATEST_PUBLIC_PATH}"; exit 1)
+              curl -sf "http://localhost:3000/sitemap.xml" | grep -q "$LATEST_PUBLIC_PATH" \
+                || (echo "::error::Origin sitemap is missing latest article: ${LATEST_PUBLIC_PATH}"; exit 1)
+              curl -sf "https://zcybernews.com/sitemap.xml" | grep -q "$LATEST_PUBLIC_PATH" \
+                || (echo "::error::Public sitemap is missing latest article after revalidate: ${LATEST_PUBLIC_PATH}"; exit 1)
+              echo "✅ Latest article visible in origin and public sitemap: ${LATEST_PUBLIC_PATH}"
+            else
+              echo "::warning::No public EN article found for latest discovery check"
+            fi
+
             echo "✅ Content sync complete at $(TZ='Asia/Singapore' date '+%Y-%m-%d %H:%M:%S SGT')"
 
       - name: Notify Telegram — content-sync failure

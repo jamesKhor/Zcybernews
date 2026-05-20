@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { getAllTags } from "@/lib/content";
-import { isPublicTag } from "@/lib/public-tags";
+import { isPublicTag, tagUrlSlug } from "@/lib/public-tags";
 import { CategoryEnum } from "@/lib/types";
 
 /**
@@ -70,7 +70,10 @@ export async function POST(req: NextRequest) {
         (contentTag) =>
           requestedTags.includes(contentTag) || isPublicTag(locale, contentTag),
       )
-      .map((contentTag) => `/${locale}/tags/${encodeURIComponent(contentTag)}`),
+      .map(
+        (contentTag) =>
+          `/${locale}/tags/${encodeURIComponent(tagUrlSlug(contentTag))}`,
+      ),
   );
 
   const paths = [

@@ -9,7 +9,7 @@ function decodeSegment(segment: string): string {
   }
 }
 
-function normalizeSlugSegment(segment: string): string | null {
+export function normalizeSeoSlug(segment: string): string | null {
   const decoded = decodeSegment(segment);
   const normalized = decoded
     .trim()
@@ -22,7 +22,7 @@ function normalizeSlugSegment(segment: string): string | null {
 }
 
 export function canonicalSlugForSeoVariant(segment: string): string | null {
-  const normalized = normalizeSlugSegment(segment);
+  const normalized = normalizeSeoSlug(segment);
   if (!normalized || normalized === segment) return null;
   return normalized;
 }
@@ -55,7 +55,7 @@ export function canonicalPathForSeoVariant(
     return null;
   }
 
-  const normalizedSlug = normalizeSlugSegment(slug);
+  const normalizedSlug = normalizeSeoSlug(slug);
   if (!normalizedSlug) return null;
 
   const canonicalPath = `/${locale}/${section}/${normalizedSlug}`;

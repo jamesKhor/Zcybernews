@@ -58,12 +58,41 @@ function buildFrontmatterForScoring(
   };
 }
 
-function isBlockingFlag(flag: QualityFlag, category: string): boolean {
+function hasIncidentDepth(
+  article: GeneratedArticle,
+  sourceUrls: string[],
+  score: QualityScore,
+): boolean {
+  return (
+    article.category === "threat-intel" &&
+    sourceUrls.length >= 2 &&
+    score.wordCount >= score.wordCountFloor * 0.8 &&
+    Boolean(
+      article.threat_actor ||
+      article.affected_sectors.length > 0 ||
+      article.affected_regions.length > 0 ||
+      article.cve_ids.length > 0,
+    )
+  );
+}
+
+function isBlockingFlag(
+  flag: QualityFlag,
+  article: GeneratedArticle,
+  sourceUrls: string[],
+  score: QualityScore,
+): boolean {
   if (flag.severity === "serious") return true;
   if (BLOCKING_WARN_CODES.has(flag.code)) return true;
+  if (
+    flag.code === "structured_fields_thin" &&
+    hasIncidentDepth(article, sourceUrls, score)
+  ) {
+    return false;
+  }
   return (
     flag.code === "structured_fields_thin" &&
-    STRUCTURED_THIN_BLOCK_CATEGORIES.has(category)
+    STRUCTURED_THIN_BLOCK_CATEGORIES.has(article.category)
   );
 }
 
@@ -82,7 +111,7 @@ export function evaluatePublishQuality(
     body: article.body,
   });
   const blockingFlags = score.flags.filter((flag) =>
-    isBlockingFlag(flag, article.category),
+    isBlockingFlag(flag, article, sourceUrls, score),
   );
 
   return {

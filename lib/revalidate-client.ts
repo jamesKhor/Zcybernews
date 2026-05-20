@@ -5,10 +5,11 @@
  * on the live site in seconds, without waiting for a full VPS rebuild.
  *
  * The revalidation endpoint is on the SAME Next.js process that handled
- * the publish request, so we hit localhost. If NEXT_PUBLIC_SITE_URL is
- * set to an external URL, we use that — useful for admin panels hosted
- * separately from the public site (not our current setup, but cheap to
- * support).
+ * the publish request, so we hit localhost by default. Do not use
+ * NEXT_PUBLIC_SITE_URL here: in production that points at the public CDN,
+ * which can turn a local cache flip into a best-effort edge request.
+ *
+ * If we ever host admin separately, set REVALIDATE_BASE_URL explicitly.
  */
 
 export interface RevalidateArgs {
@@ -25,9 +26,10 @@ export async function triggerRevalidate(args: RevalidateArgs): Promise<void> {
     return;
   }
 
-  // Default to localhost so this works even if the site URL points to a
-  // CDN in front of the origin.
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const base =
+    process.env.REVALIDATE_BASE_URL ??
+    process.env.INTERNAL_REVALIDATE_URL ??
+    "http://localhost:3000";
   const url = new URL("/api/revalidate", base);
   if (args.path) url.searchParams.set("path", args.path);
   if (args.tag) url.searchParams.set("tag", args.tag);

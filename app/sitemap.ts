@@ -4,7 +4,7 @@ import { CategoryEnum } from "@/lib/types";
 import { absoluteArticleUrl } from "@/lib/article-url";
 import { isPublicArticle } from "@/lib/publication";
 import { getSiteUrl } from "@/lib/site-url";
-import { isPublicTag } from "@/lib/public-tags";
+import { isPublicTag, tagUrlSlug } from "@/lib/public-tags";
 
 // ISR: generate on first request, cache for 1 hour, regenerate on demand.
 //
@@ -146,7 +146,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // (see app/[locale]/tags/[tag]/page.tsx).
     const postTags = getAllTags(locale, "posts");
     const tiTags = getAllTags(locale, "threat-intel");
-    const allTags = [...new Set([...postTags, ...tiTags])];
+    const allTags = [...new Set([...postTags, ...tiTags].map(tagUrlSlug))];
     for (const tag of allTags) {
       if (!isPublicTag(locale, tag)) continue;
       entries.push({

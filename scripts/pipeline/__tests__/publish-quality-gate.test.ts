@@ -104,6 +104,28 @@ describe("evaluatePublishQuality", () => {
     );
   });
 
+  it("allows sourced threat-intel incident reporting with one strong structured field", () => {
+    const decision = evaluatePublishQuality(
+      article({
+        category: "threat-intel",
+        threat_actor: "APT29",
+        affected_sectors: [],
+        affected_regions: [],
+        iocs: [],
+        body: body(760),
+      }),
+      ["https://example.com/report", "https://example.org/advisory"],
+    );
+
+    expect(decision.score.flags.map((f) => f.code)).toContain(
+      "structured_fields_thin",
+    );
+    expect(decision.blockingFlags.map((f) => f.code)).not.toContain(
+      "structured_fields_thin",
+    );
+    expect(decision.allowed).toBe(true);
+  });
+
   it("allows non-sensitive categories to publish with structured_fields_thin warning", () => {
     const decision = evaluatePublishQuality(
       article({

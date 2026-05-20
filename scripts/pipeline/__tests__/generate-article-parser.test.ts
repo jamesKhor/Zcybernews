@@ -135,6 +135,48 @@ describe("generateArticle parser recovery", () => {
       expect(result.fieldErrors?.title).toBeDefined();
     }
   });
+
+  it("repairs malformed JSON once before returning a parse failure", async () => {
+    generateArticleTextMock
+      .mockResolvedValueOnce({
+        text: `${articleJson().slice(0, -1)},`,
+        modelUsed: "deepseek/deepseek-chat",
+        paid: true,
+        elapsedMs: 1,
+      })
+      .mockResolvedValueOnce({
+        text: articleJson(),
+        modelUsed: "deepseek/deepseek-chat",
+        paid: true,
+        elapsedMs: 1,
+      });
+
+    const result = await generateArticle([makeStory()], []);
+
+    expect(isGenerationFailure(result)).toBe(false);
+    expect(generateArticleTextMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("repairs schema failures once before rejecting the article", async () => {
+    generateArticleTextMock
+      .mockResolvedValueOnce({
+        text: JSON.stringify({ title: "Too short" }),
+        modelUsed: "deepseek/deepseek-chat",
+        paid: true,
+        elapsedMs: 1,
+      })
+      .mockResolvedValueOnce({
+        text: articleJson(),
+        modelUsed: "deepseek/deepseek-chat",
+        paid: true,
+        elapsedMs: 1,
+      });
+
+    const result = await generateArticle([makeStory()], []);
+
+    expect(isGenerationFailure(result)).toBe(false);
+    expect(generateArticleTextMock).toHaveBeenCalledTimes(2);
+  });
 });
 
 describe("article prompt JSON contract", () => {

@@ -30,7 +30,7 @@ import {
 } from "@/lib/article-url";
 import { canonicalSlugForSeoVariant } from "@/lib/seo-url-normalization";
 import { getSiteUrl } from "@/lib/site-url";
-import { isPublicTag } from "@/lib/public-tags";
+import { isPublicTag, tagUrlSlug } from "@/lib/public-tags";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -165,7 +165,9 @@ export default async function ArticlePage({ params }: Props) {
     .filter(isPublicArticle)
     .slice(0, 3);
   const publicTagSet = new Set(
-    frontmatter.tags.filter((tag) => isPublicTag(locale, tag)),
+    frontmatter.tags
+      .filter((tag) => isPublicTag(locale, tag))
+      .map((tag) => tagUrlSlug(tag)),
   );
   const siteUrl = getSiteUrl();
   const image =
@@ -315,16 +317,29 @@ function ArticlePageContent({
               <span className="text-sm text-muted-foreground mr-2">
                 {t("tags")}:
               </span>
-              {frontmatter.tags.map((tag) => (
-                <NextLink
-                  key={tag}
-                  href={`/${locale}/tags/${encodeURIComponent(tag)}`}
-                  rel={publicTagSet.has(tag) ? undefined : "nofollow"}
-                  className="inline-block mr-2 mb-1 text-sm rounded-full bg-secondary hover:bg-secondary/80 px-3 py-1 transition-colors"
-                >
-                  #{tag}
-                </NextLink>
-              ))}
+              {frontmatter.tags.map((tag) => {
+                const tagSlug = tagUrlSlug(tag);
+                if (!publicTagSet.has(tagSlug)) {
+                  return (
+                    <span
+                      key={tag}
+                      className="inline-block mr-2 mb-1 text-sm rounded-full bg-secondary px-3 py-1 text-muted-foreground"
+                    >
+                      #{tag}
+                    </span>
+                  );
+                }
+
+                return (
+                  <NextLink
+                    key={tag}
+                    href={`/${locale}/tags/${encodeURIComponent(tagSlug)}`}
+                    className="inline-block mr-2 mb-1 text-sm rounded-full bg-secondary hover:bg-secondary/80 px-3 py-1 transition-colors"
+                  >
+                    #{tag}
+                  </NextLink>
+                );
+              })}
             </div>
           )}
         </article>

@@ -23,6 +23,7 @@
     "seo:audit": "tsx scripts/audit-discoverability.ts",
     "seo:audit:strict": "tsx scripts/audit-discoverability.ts --strict",
     "seo:surfaces": "tsx scripts/audit-seo-surfaces.ts && tsx scripts/audit-pagefind-public.ts",
+    "seo:live-sitemap": "tsx scripts/audit-live-sitemap.ts",
     "seo:audit:all": "npm run seo:audit && npm run seo:surfaces",
     "digest:preview": "tsx scripts/preview-digest.ts",
     "digest:preview:html": "tsx scripts/preview-digest.ts --html-only --window-hours=168",
