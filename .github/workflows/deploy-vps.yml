@@ -159,6 +159,9 @@ jobs:
               sleep $((attempt * 5))
             done
             git reset --hard origin/main
+            # The sitemap is generated from content on disk. Remove stale
+            # untracked MDX that can survive reset and keep deleted URLs live.
+            git clean -fd -- content/en/posts content/en/threat-intel content/zh/posts content/zh/threat-intel
 
             echo "🔎 Regenerating public discovery artifacts..."
             npm run feed:index
@@ -403,6 +406,9 @@ jobs:
               sleep $((attempt * 5))
             done
             git reset --hard origin/main
+            # The sitemap is generated from content on disk. Remove stale
+            # untracked MDX that can survive reset and keep deleted URLs live.
+            git clean -fd -- content/en/posts content/en/threat-intel content/zh/posts content/zh/threat-intel
 
             NEW_LOCK_HASH=""
             if [ -f package-lock.json ]; then
