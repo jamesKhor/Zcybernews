@@ -1,15 +1,27 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "count": 27,
+  "count": 28,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-14"
+    "latest": "2026-05-20"
   },
   "top_actors": [
     "Chaotic Eclipse"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-8950",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-8956",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-8957",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-34659",
       "cvss": 9.6
@@ -17,40 +29,28 @@
     {
       "id": "CVE-2026-34660",
       "cvss": 9.6
-    },
-    {
-      "id": "CVE-2026-40372",
-      "cvss": 9.1
-    },
-    {
-      "id": "CVE-2026-4670",
-      "cvss": 8.8
-    },
-    {
-      "id": "CVE-2026-5174",
-      "cvss": 8.8
     }
   ],
   "top_sectors": [
-    "technology",
     "enterprise",
-    "healthcare",
+    "technology",
     "education",
-    "financial services"
+    "government",
+    "healthcare"
   ],
   "top_regions": [
     "Global",
     "North america"
   ],
   "severity_mix": {
+    "medium": 3,
     "high": 21,
-    "medium": 2,
     "critical": 4
   },
   "recent_excerpts": [
+    "CVE-2026-8957 (CVSS 6.5) allows privilege escalation in Firefox's Enterprise Policies component. Mozilla fixed it in Firefox 151 and ESR 140.11.",
     "Broadcom patched a high-severity TOCTOU vulnerability in VMware Fusion (CVE-2026-41702) that lets local non-admin users escalate privileges to root on macOS systems.",
-    "Palo Alto Networks released patches for two medium-severity flaws in Prisma Access Agent — CVE-2026-0248 (improper certificate validation) and CVE-2026-0246 (local privilege...",
-    "Adobe's May 2026 patch batch fixes 52 CVEs across 10 products; Adobe Connect gets two critical bugs (CVE-2026-34659, 9.6 CVSS for RCE; CVE-2026-34660, 9.3 CVSS for privilege..."
+    "Palo Alto Networks released patches for two medium-severity flaws in Prisma Access Agent — CVE-2026-0248 (improper certificate validation) and CVE-2026-0246 (local privilege..."
   ],
-  "sources_hash": "028b717f2fa99a9d"
+  "sources_hash": "f23bd697abaa98d8"
 }

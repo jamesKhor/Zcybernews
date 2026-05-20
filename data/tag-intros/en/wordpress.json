@@ -1,9 +1,9 @@
 {
   "tag": "wordpress",
   "locale": "en",
-  "intro": "Global e-commerce, web hosting, digital media, publishing, and technology sectors were the primary targets in a recent wave of WordPress-related vulnerabilities. Between April 13 and May 17, 2026, twelve articles covered a severity mix of five medium, four high, and three critical issues. Key CVEs include CVE-2026-6433 (CVSS 9.8), CVE-2021-47926, CVE-2021-47927, CVE-2021-47929, and CVE-2021-47957, each with a CVSS score of 6.4. The impact was felt globally across these sectors.",
-  "sources_hash": "c94f8016a71f663d",
+  "intro": "E-commerce, web hosting, and publishing sectors face heightened risk from a cluster of WordPress vulnerabilities, with 13 articles published between April 13 and May 19, 2026. The archive covers four critical, five high, and four medium severity issues, including CVE-2026-4883 and CVE-2026-6433, both scoring 9.8 on the CVSS scale, alongside three medium-severity CVEs from 2021: CVE-2021-47926, CVE-2021-47927, and CVE-2021-47929. These flaws impact organizations globally across technology and digital media, with a severity mix of four critical, five medium, and four high.",
+  "sources_hash": "ba61602367be5426",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:01:26.014Z",
+  "generated_at": "2026-05-20T04:30:34.847Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

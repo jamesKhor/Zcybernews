@@ -1,13 +1,17 @@
 {
   "tag": "wordpress",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-17"
+    "latest": "2026-05-19"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-4883",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-6433",
       "cvss": 9.8
@@ -23,31 +27,27 @@
     {
       "id": "CVE-2021-47929",
       "cvss": 6.4
-    },
-    {
-      "id": "CVE-2021-47957",
-      "cvss": 6.4
     }
   ],
   "top_sectors": [
     "e-commerce",
     "web hosting",
-    "digital media",
     "publishing",
+    "digital media",
     "technology"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "critical": 4,
     "medium": 5,
-    "high": 4,
-    "critical": 3
+    "high": 4
   },
   "recent_excerpts": [
+    "CVE-2026-4883 (CVSS 9.8) in Piotnet Forms ≤2.1.40 lets unauthenticated attackers upload .phar or .phtml files via an incomplete extension blacklist, enabling remote code execution.",
     "CVE-2021-47957 (CVSS 6.4) in Cookie Law Bar 1.2.1 lets authenticated attackers inject persistent scripts via the Bar Message field, affecting all WordPress site visitors.",
-    "CVE-2026-4782 and CVE-2026-4798 in Avada Builder (1M+ installs) let attackers read wp-config.php and extract database hashes. Patch to version 3.15.3.",
-    "CVE-2026-6433: Unauthenticated SQL injection in Custom css-js-php plugin ≤2.0.7 lets attackers execute arbitrary PHP via eval(). No patch available."
+    "CVE-2026-4782 and CVE-2026-4798 in Avada Builder (1M+ installs) let attackers read wp-config.php and extract database hashes. Patch to version 3.15.3."
   ],
-  "sources_hash": "c94f8016a71f663d"
+  "sources_hash": "ba61602367be5426"
 }

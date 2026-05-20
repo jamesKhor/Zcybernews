@@ -1,15 +1,27 @@
 {
   "tag": "privilege-escalation",
   "locale": "zh",
-  "count": 27,
+  "count": 28,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-14"
+    "latest": "2026-05-20"
   },
   "top_actors": [
     "Chaotic Eclipse"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-8950",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-8956",
+      "cvss": 9.8
+    },
+    {
+      "id": "CVE-2026-8957",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-34659",
       "cvss": 9.6
@@ -17,40 +29,28 @@
     {
       "id": "CVE-2026-34660",
       "cvss": 9.6
-    },
-    {
-      "id": "CVE-2026-40372",
-      "cvss": 9.1
-    },
-    {
-      "id": "CVE-2026-4670",
-      "cvss": 8.8
-    },
-    {
-      "id": "CVE-2026-5174",
-      "cvss": 8.8
     }
   ],
   "top_sectors": [
-    "technology",
     "enterprise",
-    "healthcare",
+    "technology",
     "education",
-    "financial services"
+    "government",
+    "healthcare"
   ],
   "top_regions": [
     "Global",
     "North america"
   ],
   "severity_mix": {
+    "medium": 3,
     "high": 21,
-    "medium": 2,
     "critical": 4
   },
   "recent_excerpts": [
+    "CVE-2026-8957 (CVSS 6.5) 允许在 Firefox 的企业策略组件中进行权限提升。Mozilla 在 Firefox 151 和 ESR 140.11 中修复了这个问题。",
     "Broadcom修复了VMware Fusion中的一个高严重性TOCTOU漏洞（CVE-2026-41702），该漏洞允许macOS系统上的本地非管理员用户提升权限至root。",
-    "Palo Alto Networks 发布了针对 Prisma Access Agent 中两个中等严重漏洞的补丁 — CVE-2026-0248（不当证书验证）和 CVE-2026-0246（本地权限提升）...",
-    "Adobe的2026年5月补丁批次修复了10个产品中的52个CVE；Adobe Connect获得了两个关键错误（CVE-2026-34659，9.6 CVSS用于RCE；CVE-2026-34660，9.3 CVSS用于权限..."
+    "Palo Alto Networks 发布了针对 Prisma Access Agent 中两个中等严重漏洞的补丁 — CVE-2026-0248（不当证书验证）和 CVE-2026-0246（本地权限提升）..."
   ],
-  "sources_hash": "de9420292cf2be51"
+  "sources_hash": "c9cb4530fc9e32ef"
 }
