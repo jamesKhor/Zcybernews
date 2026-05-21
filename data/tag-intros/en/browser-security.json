@@ -1,9 +1,9 @@
 {
   "tag": "browser-security",
   "locale": "en",
-  "intro": "Technology and enterprise sectors were the primary targets in a recent wave of browser-security threats, with 13 articles published between 2026-04-11 and 2026-05-16. The threat actor Pushpaganda was observed, alongside critical vulnerabilities including CVE-2026-8573 and CVE-2026-8577, both with a CVSS score of 8.8, as well as CVE-2026-7896, CVE-2026-7897, and CVE-2026-7898. The coverage spanned global regions, with specific focus on Australia, Canada, New Zealand, and the United Kingdom, and affected sectors also included email services. The severity mix comprised four high, four critical, three medium, and one informational alert.",
-  "sources_hash": "38b90391237edfaa",
+  "intro": "Technology and enterprise sectors were the primary targets in a recent wave of browser-security threats, with 14 articles published between April 11 and May 20, 2026. The threat actor Pushpaganda was observed exploiting vulnerabilities including CVE-2026-8954, CVE-2026-8959, CVE-2026-8573, CVE-2026-8577, and CVE-2026-7896. The severity mix across these incidents comprised five critical, four high, three medium, and one informational alert, with impacts reported globally and across Australia, Canada, New Zealand, and the United Kingdom.",
+  "sources_hash": "498191f15b21c1f4",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:00:53.565Z",
+  "generated_at": "2026-05-21T04:33:54.756Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

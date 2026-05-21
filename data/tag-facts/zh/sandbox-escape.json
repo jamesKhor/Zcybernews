@@ -1,14 +1,12 @@
 {
-  "tag": "browser-security",
+  "tag": "sandbox-escape",
   "locale": "zh",
-  "count": 14,
+  "count": 5,
   "date_range": {
-    "first": "2026-04-11",
+    "first": "2026-04-22",
     "latest": "2026-05-20"
   },
-  "top_actors": [
-    "Pushpaganda"
-  ],
+  "top_actors": [],
   "top_cves": [
     {
       "id": "CVE-2026-8954",
@@ -19,41 +17,35 @@
       "cvss": 9.6
     },
     {
+      "id": "CVE-2026-5752",
+      "cvss": 9.3
+    },
+    {
       "id": "CVE-2026-8573",
       "cvss": 8.8
     },
     {
       "id": "CVE-2026-8577",
       "cvss": 8.8
-    },
-    {
-      "id": "CVE-2026-7896"
     }
   ],
   "top_sectors": [
     "technology",
-    "all",
-    "email services",
-    "enterprise",
-    "financial services"
+    "artificial intelligence",
+    "financial services",
+    "government"
   ],
   "top_regions": [
-    "Global",
-    "Australia",
-    "Canada",
-    "New zealand",
-    "United kingdom"
+    "Global"
   ],
   "severity_mix": {
-    "critical": 5,
-    "high": 4,
-    "medium": 3,
-    "informational": 1
+    "critical": 3,
+    "high": 2
   },
   "recent_excerpts": [
     "CVE-2026-8959 (CVSS 9.6) 允许通过 Firefox 的 Widget:Win32 组件中不正确的边界条件进行沙箱逃逸。在 Firefox 151、ESR 140.11 和 Thunderbird 151 中修复。",
     "在 Windows 上的 Chrome 148 中的 CVE-2026-8573 (CVSS 8.3) 和 CVE-2026-8577 (CVSS 8.8) 允许通过精心制作的视屏或 HTML 页面进行沙箱逃逸和 RCE。立即更新。",
-    "谷歌的Chrome 148更新修复了79个漏洞，其中14个是高危漏洞 —— 包括堆缓冲区溢出 CVE-2026-8509（奖金43K美元）和Skia中的整数溢出 CVE-2026-8510（奖金25K美元..."
+    "Angular 表达式 <1.5.2 中的 CVE-2026-44643 允许攻击者通过恶意过滤器表达式逃离沙箱，在系统上执行任意代码。"
   ],
-  "sources_hash": "48c5bcb1063afaec"
+  "sources_hash": "79cb319e69790a87"
 }

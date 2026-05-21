@@ -1,14 +1,12 @@
 {
-  "tag": "browser-security",
+  "tag": "sandbox-escape",
   "locale": "en",
-  "count": 14,
+  "count": 5,
   "date_range": {
-    "first": "2026-04-11",
+    "first": "2026-04-22",
     "latest": "2026-05-20"
   },
-  "top_actors": [
-    "Pushpaganda"
-  ],
+  "top_actors": [],
   "top_cves": [
     {
       "id": "CVE-2026-8954",
@@ -19,41 +17,35 @@
       "cvss": 9.6
     },
     {
+      "id": "CVE-2026-5752",
+      "cvss": 9.3
+    },
+    {
       "id": "CVE-2026-8573",
       "cvss": 8.8
     },
     {
       "id": "CVE-2026-8577",
       "cvss": 8.8
-    },
-    {
-      "id": "CVE-2026-7896"
     }
   ],
   "top_sectors": [
     "technology",
-    "all",
-    "email services",
-    "enterprise",
-    "financial services"
+    "artificial intelligence",
+    "financial services",
+    "government"
   ],
   "top_regions": [
-    "Global",
-    "Australia",
-    "Canada",
-    "New zealand",
-    "United kingdom"
+    "Global"
   ],
   "severity_mix": {
-    "critical": 5,
-    "high": 4,
-    "medium": 3,
-    "informational": 1
+    "critical": 3,
+    "high": 2
   },
   "recent_excerpts": [
     "CVE-2026-8959 (CVSS 9.6) allows sandbox escape through incorrect boundary conditions in Firefox's Widget:Win32 component. Fixed in Firefox 151, ESR 140.11, and Thunderbird 151.",
     "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now.",
-    "Google's Chrome 148 update fixes 79 vulnerabilities, 14 critical — including heap buffer overflow CVE-2026-8509 ($43K bounty) and integer overflow CVE-2026-8510 in Skia ($25K..."
+    "CVE-2026-44643 in Angular Expressions <1.5.2 lets attackers escape the sandbox via malicious filter expressions to execute arbitrary code on the system."
   ],
-  "sources_hash": "498191f15b21c1f4"
+  "sources_hash": "152b0579e4dec73d"
 }

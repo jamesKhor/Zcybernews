@@ -1,10 +1,10 @@
 {
   "tag": "rce",
   "locale": "en",
-  "count": 31,
+  "count": 32,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-19"
+    "latest": "2026-05-20"
   },
   "top_actors": [
     "PhantomCore"
@@ -36,7 +36,7 @@
     "manufacturing",
     "research",
     "software development",
-    "government"
+    "enterprise"
   ],
   "top_regions": [
     "Asia",
@@ -44,14 +44,14 @@
     "Russia"
   ],
   "severity_mix": {
-    "critical": 19,
+    "critical": 20,
     "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-2586 (CVSS 9.1) lets authenticated users execute arbitrary OS commands via crafted requests to GlassFish's Administration Console. No patch available as of May 20.",
     "CVE-2026-4883 (CVSS 9.8) in Piotnet Forms ≤2.1.40 lets unauthenticated attackers upload .phar or .phtml files via an incomplete extension blacklist, enabling remote code execution.",
-    "CVE-2026-7301 (CVSS 9.8) lets attackers execute arbitrary code on SGLang servers by sending malicious pickle payloads to the scheduler's ROUTER socket, which binds to 0.0.0.0 by...",
-    "CVE-2026-45033 (CVSS 9.8) in GitHub Copilot CLI before 1.0.43 lets attackers achieve remote code execution by embedding a malicious bare git repository in a project directory."
+    "CVE-2026-7301 (CVSS 9.8) lets attackers execute arbitrary code on SGLang servers by sending malicious pickle payloads to the scheduler's ROUTER socket, which binds to 0.0.0.0 by..."
   ],
-  "sources_hash": "b0af0156018d36a5"
+  "sources_hash": "22728c2f1e81721b"
 }

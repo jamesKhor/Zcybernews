@@ -1,0 +1,10 @@
+{
+  "tag": "sandbox-escape",
+  "locale": "zh",
+  "intro": "2026年4月下旬至5月中旬期间，共记录到五个沙箱逃逸漏洞，其中以CVE-2026-8954和CVE-2026-8959为首，两者CVSS评分均为9.6。其他严重漏洞包括CVE-2026-5752（CVSS 9.3），而CVE-2026-8573和CVE-2026-8577被评为高危，评分为8.8。全球范围内，科技、人工智能、金融服务和政府行业受影响最为严重，涉及三个严重等级和两个高危险等级的CVE。",
+  "sources_hash": "79cb319e69790a87",
+  "source_intro_hash": "4b55269ef9d2fd3e",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-05-21T04:34:02.391Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

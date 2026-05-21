@@ -1,10 +1,10 @@
 {
   "tag": "rce",
   "locale": "zh",
-  "count": 31,
+  "count": 32,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-19"
+    "latest": "2026-05-20"
   },
   "top_actors": [
     "PhantomCore"
@@ -36,7 +36,7 @@
     "manufacturing",
     "research",
     "software development",
-    "government"
+    "enterprise"
   ],
   "top_regions": [
     "Asia",
@@ -44,14 +44,14 @@
     "Russia"
   ],
   "severity_mix": {
-    "critical": 19,
+    "critical": 20,
     "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-2586（CVSS 9.1）允许经过认证的用户通过向 GlassFish 的管理控制台发送精心制作的请求来执行任意操作系统命令。截至5月20日，尚无补丁可用。",
     "CVE-2026-4883 (CVSS 9.8) 在 Piotnet Forms ≤2.1.40 中允许未经身份验证的攻击者通过不完整的扩展黑名单上传 .phar 或 .phtml 文件，从而实现远程代码执行。",
-    "CVE-2026-7301 (CVSS 9.8) 允许攻击者通过向调度器的 ROUTER 套接字发送恶意 pickle 负载来在 SGLang 服务器上执行任意代码，该套接字绑定到 0.0.0.0...",
-    "CVE-2026-45033 (CVSS 9.8) 在 GitHub Copilot CLI 1.0.43 之前的版本中，允许攻击者通过在项目目录中嵌入恶意的裸 git 仓库来实现远程代码执行。"
+    "CVE-2026-7301 (CVSS 9.8) 允许攻击者通过向调度器的 ROUTER 套接字发送恶意 pickle 负载来在 SGLang 服务器上执行任意代码，该套接字绑定到 0.0.0.0..."
   ],
-  "sources_hash": "db6a797acd7166e5"
+  "sources_hash": "3dfa47284045c7f1"
 }
