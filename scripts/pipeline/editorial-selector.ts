@@ -153,6 +153,10 @@ const STRATEGIC_CVE_TERMS = [
   "atlassian",
   "confluence",
   "jira",
+  "nvidia",
+  "cuda",
+  "tensorrt",
+  "trt-llm",
   "openai",
   "chatgpt",
   "anthropic",
@@ -169,6 +173,15 @@ function isNvdOnly(cluster: StoryCluster<Story>, lane: TopicLane): boolean {
         story.sourceId === "nvd-recent" ||
         /NVD/i.test(story.sourceName ?? ""),
     )
+  );
+}
+
+function hasCisaKevEvidence(cluster: StoryCluster<Story>): boolean {
+  return cluster.stories.some(
+    (story) =>
+      story.sourceType === "cisa-kev" ||
+      story.sourceId === "cisa-kev" ||
+      /CISA Known Exploited Vulnerabilities/i.test(story.sourceName ?? ""),
   );
 }
 
@@ -214,7 +227,8 @@ function cvePublishBlockReason(
   if (
     lane !== "vulnerabilities" ||
     packet.entities.cves.length === 0 ||
-    packet.facts.exploitStatus === "exploited"
+    packet.facts.exploitStatus === "exploited" ||
+    hasCisaKevEvidence(cluster)
   ) {
     return null;
   }

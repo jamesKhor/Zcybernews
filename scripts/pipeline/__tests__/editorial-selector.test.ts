@@ -192,6 +192,58 @@ describe("selectEditorialCandidates", () => {
     );
   });
 
+  it("publishes CISA KEV entries even when CVSS is not present in the feed item", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("cve:CVE-2026-41091", [
+          story({
+            title:
+              "[CVE-2026-41091] Microsoft Defender Link Following Vulnerability",
+            excerpt:
+              "Microsoft Defender contains a link following vulnerability. Required action: Apply mitigations per vendor instructions.",
+            sourceName: "CISA Known Exploited Vulnerabilities",
+            sourceClass: "government",
+            sourceType: "cisa-kev",
+            sourceId: "cisa-kev",
+            verificationRole: "primary-evidence",
+            tags: ["CVE-2026-41091", "Microsoft", "Defender", "KEV", "CISA"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable.map((item) => item.clusterKey)).toContain(
+      "cve:CVE-2026-41091",
+    );
+    expect(result.decisions[0].reasons).not.toContain("missing-cvss");
+  });
+
+  it("can publish critical AI infrastructure CVEs from strategic vendors", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("cve:CVE-2026-24163", [
+          story({
+            title:
+              "CVE-2026-24163 NVIDIA TRT-LLM RPC Vulnerability Gets CVSS 9.8",
+            excerpt:
+              "NVIDIA TRT-LLM contains a vulnerability in RPC handling with CVSS 9.8 affecting AI inference infrastructure.",
+            sourceName: "NVD",
+            sourceClass: "structured-vulnerability",
+            sourceType: "nvd-json",
+            verificationRole: "primary-evidence",
+            tags: ["CVE-2026-24163", "NVIDIA", "TRT-LLM", "AI security"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable.map((item) => item.clusterKey)).toContain(
+      "cve:CVE-2026-24163",
+    );
+  });
+
   it("can publish official OpenAI cybersecurity releases in the AI security lane", () => {
     const result = selectEditorialCandidates(
       [
