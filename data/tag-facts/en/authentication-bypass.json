@@ -1,10 +1,10 @@
 {
   "tag": "authentication-bypass",
   "locale": "en",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-16"
+    "latest": "2026-05-21"
   },
   "top_actors": [],
   "top_cves": [
@@ -17,37 +17,37 @@
       "cvss": 10
     },
     {
+      "id": "CVE-2026-20223",
+      "cvss": 10
+    },
+    {
       "id": "CVE-2026-41940",
       "cvss": 9.8
     },
     {
       "id": "CVE-2026-33413",
       "cvss": 8.8
-    },
-    {
-      "id": "CVE-2026-41276",
-      "cvss": 8.1
     }
   ],
   "top_sectors": [
     "technology",
-    "software development",
-    "telecommunications",
-    "ai",
-    "critical infrastructure"
+    "financial services",
+    "government",
+    "healthcare",
+    "software development"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
+    "critical": 7,
     "high": 7,
-    "critical": 6,
     "medium": 3
   },
   "recent_excerpts": [
+    "CVE-2026-20223 (CVSS 10.0): Unauthenticated attackers can access internal REST APIs in Cisco Secure Workload with Site Admin privileges. No authentication required.",
     "Open WebUI fixes CVE-2026-45314 (SVG XSS), CVE-2026-45303 (iframe script injection), and CVE-2026-44567 (pending role auth bypass) — all in self-hosted AI platform.",
-    "CVE-2026-44671 (CVSS 7.5): ZITADEL identity platform fails to escape usernames in LDAP filters, letting unauthenticated attackers inject arbitrary filter logic during login.",
-    "CVE-2026-44504: Aegra prior to 0.9.7 allows authenticated attackers to read checkpoint state and inject messages into other users' threads via cross-tenant IDOR. Patch available."
+    "CVE-2026-44671 (CVSS 7.5): ZITADEL identity platform fails to escape usernames in LDAP filters, letting unauthenticated attackers inject arbitrary filter logic during login."
   ],
-  "sources_hash": "903ea753404a5cff"
+  "sources_hash": "9b12a0691f0446f9"
 }

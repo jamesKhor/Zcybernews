@@ -1,15 +1,19 @@
 {
   "tag": "rce",
   "locale": "en",
-  "count": 32,
+  "count": 33,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-20"
+    "latest": "2026-05-21"
   },
   "top_actors": [
     "PhantomCore"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-20223",
+      "cvss": 10
+    },
     {
       "id": "CVE-2025-54987",
       "cvss": 9.8
@@ -25,33 +29,30 @@
     {
       "id": "CVE-2026-45033",
       "cvss": 9.8
-    },
-    {
-      "id": "CVE-2026-4883",
-      "cvss": 9.8
     }
   ],
   "top_sectors": [
     "technology",
+    "government",
     "manufacturing",
     "research",
-    "software development",
-    "enterprise"
+    "software development"
   ],
   "top_regions": [
     "Asia",
     "China",
+    "Global",
     "Russia"
   ],
   "severity_mix": {
-    "critical": 20,
+    "critical": 21,
     "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-20223 (CVSS 10.0): Unauthenticated attackers can access internal REST APIs in Cisco Secure Workload with Site Admin privileges. No authentication required.",
     "CVE-2026-2586 (CVSS 9.1) lets authenticated users execute arbitrary OS commands via crafted requests to GlassFish's Administration Console. No patch available as of May 20.",
-    "CVE-2026-4883 (CVSS 9.8) in Piotnet Forms ≤2.1.40 lets unauthenticated attackers upload .phar or .phtml files via an incomplete extension blacklist, enabling remote code execution.",
-    "CVE-2026-7301 (CVSS 9.8) lets attackers execute arbitrary code on SGLang servers by sending malicious pickle payloads to the scheduler's ROUTER socket, which binds to 0.0.0.0 by..."
+    "CVE-2026-4883 (CVSS 9.8) in Piotnet Forms ≤2.1.40 lets unauthenticated attackers upload .phar or .phtml files via an incomplete extension blacklist, enabling remote code execution."
   ],
-  "sources_hash": "22728c2f1e81721b"
+  "sources_hash": "951c9cc14e245d94"
 }

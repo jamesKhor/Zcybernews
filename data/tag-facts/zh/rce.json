@@ -1,15 +1,19 @@
 {
   "tag": "rce",
   "locale": "zh",
-  "count": 32,
+  "count": 33,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-20"
+    "latest": "2026-05-21"
   },
   "top_actors": [
     "PhantomCore"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-20223",
+      "cvss": 10
+    },
     {
       "id": "CVE-2025-54987",
       "cvss": 9.8
@@ -25,33 +29,30 @@
     {
       "id": "CVE-2026-45033",
       "cvss": 9.8
-    },
-    {
-      "id": "CVE-2026-4883",
-      "cvss": 9.8
     }
   ],
   "top_sectors": [
     "technology",
+    "government",
     "manufacturing",
     "research",
-    "software development",
-    "enterprise"
+    "software development"
   ],
   "top_regions": [
     "Asia",
     "China",
+    "Global",
     "Russia"
   ],
   "severity_mix": {
-    "critical": 20,
+    "critical": 21,
     "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-20223 (CVSS 10.0): 未经认证的攻击者可以访问思科安全工作负载中的内部REST API，并具有站点管理员权限。无需认证。",
     "CVE-2026-2586（CVSS 9.1）允许经过认证的用户通过向 GlassFish 的管理控制台发送精心制作的请求来执行任意操作系统命令。截至5月20日，尚无补丁可用。",
-    "CVE-2026-4883 (CVSS 9.8) 在 Piotnet Forms ≤2.1.40 中允许未经身份验证的攻击者通过不完整的扩展黑名单上传 .phar 或 .phtml 文件，从而实现远程代码执行。",
-    "CVE-2026-7301 (CVSS 9.8) 允许攻击者通过向调度器的 ROUTER 套接字发送恶意 pickle 负载来在 SGLang 服务器上执行任意代码，该套接字绑定到 0.0.0.0..."
+    "CVE-2026-4883 (CVSS 9.8) 在 Piotnet Forms ≤2.1.40 中允许未经身份验证的攻击者通过不完整的扩展黑名单上传 .phar 或 .phtml 文件，从而实现远程代码执行。"
   ],
-  "sources_hash": "3dfa47284045c7f1"
+  "sources_hash": "08559f0d3f1fcfcb"
 }
