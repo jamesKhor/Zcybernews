@@ -1582,5 +1582,11 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-36962 but it is not in the fact sheet",
     "at": "2026-05-18T10:10:55.578Z"
+  },
+  {
+    "tag": "sql-injection",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-36962 but it is not in the fact sheet",
+    "at": "2026-05-24T04:32:09.438Z"
   }
 ]

@@ -1,10 +1,10 @@
 {
   "tag": "sql-injection",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-16"
+    "latest": "2026-05-23"
   },
   "top_actors": [],
   "top_cves": [
@@ -34,20 +34,22 @@
     "e-commerce",
     "retail",
     "software development",
-    "web hosting"
+    "technology"
   ],
   "top_regions": [
-    "Global"
+    "Europe",
+    "Global",
+    "North america"
   ],
   "severity_mix": {
+    "medium": 2,
     "high": 3,
-    "critical": 6,
-    "medium": 1
+    "critical": 6
   },
   "recent_excerpts": [
+    "CISA 在其已知被利用漏洞目录中添加了 CVE-2026-9082（CVSS 6.5），在发现针对所有支持的 Drupal 核心版本的积极利用证据后。",
     "Avada Builder（超过100万安装量）中的 CVE-2026-4782 和 CVE-2026-4798 允许攻击者读取 wp-config.php 并提取数据库哈希值。请更新至版本 3.15.3。",
-    "SAP 在 2026 年 5 月发布了 15 个安全通告，修复了 S/4HANA (CVE-2026-34260) 和 Commerce (CVE-2026-34263) 中的两个关键代码注入漏洞，两者的 CVSS 评分均为 9.6，以及一个...",
-    "CVE-2026-6093：Corteza 的 MSSQL 后端存在 SQL 注入漏洞，允许未经身份验证的攻击者通过 Compose 记录元字段过滤器提取数据库内容。"
+    "SAP 在 2026 年 5 月发布了 15 个安全通告，修复了 S/4HANA (CVE-2026-34260) 和 Commerce (CVE-2026-34263) 中的两个关键代码注入漏洞，两者的 CVSS 评分均为 9.6，以及一个..."
   ],
-  "sources_hash": "66a867f980260711"
+  "sources_hash": "55a648b1c97084bf"
 }

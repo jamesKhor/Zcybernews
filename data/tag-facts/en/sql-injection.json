@@ -1,10 +1,10 @@
 {
   "tag": "sql-injection",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-16"
+    "latest": "2026-05-23"
   },
   "top_actors": [],
   "top_cves": [
@@ -37,17 +37,19 @@
     "software development"
   ],
   "top_regions": [
-    "Global"
+    "Europe",
+    "Global",
+    "North america"
   ],
   "severity_mix": {
+    "medium": 2,
     "high": 3,
-    "critical": 7,
-    "medium": 1
+    "critical": 7
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-9082 (CVSS 6.5) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against all supported Drupal Core versions.",
     "CVE-2026-4782 and CVE-2026-4798 in Avada Builder (1M+ installs) let attackers read wp-config.php and extract database hashes. Patch to version 3.15.3.",
-    "SAP released 15 security notes for May 2026, fixing two critical code injection flaws in S/4HANA (CVE-2026-34260) and Commerce (CVE-2026-34263), both rated 9.6 CVSS, and a...",
-    "CVE-2026-36962: Unauthenticated SQL injection in MuuCMF T6 v1.9.4.20260115 lets attackers dump databases, gain admin access, and achieve RCE via file writes."
+    "SAP released 15 security notes for May 2026, fixing two critical code injection flaws in S/4HANA (CVE-2026-34260) and Commerce (CVE-2026-34263), both rated 9.6 CVSS, and a..."
   ],
-  "sources_hash": "01aa8c452ef201cd"
+  "sources_hash": "d285453d3e64838f"
 }
