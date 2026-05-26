@@ -8,6 +8,7 @@ import {
 import { isIndexableFrontmatter, isPublicArticle } from "@/lib/publication";
 import { compileMDX } from "@/lib/mdx";
 import { ArticleMeta } from "@/components/articles/ArticleMeta";
+import { ArticleTopicHubLinks } from "@/components/articles/ArticleTopicHubLinks";
 import { TldrCallout } from "@/components/articles/TldrCallout";
 import { IOCTable } from "@/components/threat-intel/IOCTable";
 import { MitreMatrix } from "@/components/threat-intel/MitreMatrix";
@@ -31,6 +32,11 @@ import {
 import { canonicalSlugForSeoVariant } from "@/lib/seo-url-normalization";
 import { getSiteUrl } from "@/lib/site-url";
 import { isPublicTag, tagUrlSlug } from "@/lib/public-tags";
+import {
+  getArticleTopicHubLinks,
+  getPublicTopicHubDefinitions,
+  type TopicHubDefinition,
+} from "@/lib/topic-hubs";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -173,6 +179,12 @@ export default async function ArticlePage({ params }: Props) {
   const image =
     frontmatter.featured_image ??
     getCategoryDefaultImage(frontmatter.category, frontmatter.slug);
+  const publicHubSlugs = new Set(
+    getPublicTopicHubDefinitions(locale).map((hub) => hub.slug),
+  );
+  const topicHubs = getArticleTopicHubLinks(frontmatter)
+    .filter((hub) => publicHubSlugs.has(hub.slug))
+    .slice(0, 3);
 
   return (
     <>
@@ -208,6 +220,7 @@ export default async function ArticlePage({ params }: Props) {
         related={related}
         locale={locale}
         publicTagSet={publicTagSet}
+        topicHubs={topicHubs}
       />
     </>
   );
@@ -221,6 +234,7 @@ function ArticlePageContent({
   related,
   locale,
   publicTagSet,
+  topicHubs,
 }: {
   frontmatter: import("@/lib/types").ArticleFrontmatter;
   mdxContent: React.ReactElement;
@@ -229,6 +243,7 @@ function ArticlePageContent({
   related: import("@/lib/content").Article[];
   locale: string;
   publicTagSet: Set<string>;
+  topicHubs: TopicHubDefinition[];
 }) {
   const t = useTranslations("article");
   const featuredImage =
@@ -263,6 +278,10 @@ function ArticlePageContent({
             <p className="text-lg text-muted-foreground leading-relaxed">
               {stripMarkdown(frontmatter.excerpt)}
             </p>
+            <ArticleTopicHubLinks
+              hubs={topicHubs}
+              locale={locale === "zh" ? "zh" : "en"}
+            />
           </header>
 
           {/* TLDR (B-022) — renders only when frontmatter.tldr is present.

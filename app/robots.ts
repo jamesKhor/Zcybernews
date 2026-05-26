@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { NEWS_SITEMAP_PATH } from "@/lib/sitemap-paths";
 import { getSiteUrl } from "@/lib/site-url";
 
 // robots.txt contents are static — fully static-optimized, no data loading.
@@ -16,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/", "/api/admin/", "/api/cve/", "/api/search/"],
       },
     ],
-    sitemap: `${BASE_URL}/sitemap.xml`,
+    sitemap: [`${BASE_URL}/sitemap.xml`, `${BASE_URL}${NEWS_SITEMAP_PATH}`],
     host: BASE_URL,
   };
 }

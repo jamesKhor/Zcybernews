@@ -20,6 +20,17 @@ function article(overrides: Partial<GeneratedArticle> = {}): GeneratedArticle {
     affected_regions: [],
     iocs: [],
     ttp_matrix: [],
+    seo_query_target: "CVE-2024-57728 SimpleHelp",
+    seo_intent: "patch-guidance",
+    seo_title_promise:
+      "Lead with CVE-2024-57728 and the SimpleHelp exploitation risk.",
+    seo_meta_promise:
+      "Start with CVE-2024-57728, name SimpleHelp, and explain the supported severity.",
+    target_hub: "active-cves",
+    internal_link_targets: ["active-cves", "cisa-kev"],
+    featured_image_alt:
+      "Security analyst reviewing SimpleHelp vulnerability telemetry",
+    news_sitemap_eligible: true,
     body: "CVE-2024-57728 affects SimpleHelp remote support software v5.5.7 and earlier. NVD lists CVSS 7.2.",
     ...overrides,
   };

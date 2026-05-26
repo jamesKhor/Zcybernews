@@ -290,6 +290,25 @@ function normalizeGeneratedArticleCandidate(parsed: unknown): unknown {
   return candidate;
 }
 
+function applySeoBriefFallback(parsed: unknown, seoBrief?: SeoBrief): unknown {
+  if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+    return parsed;
+  }
+  const candidate = { ...(parsed as Record<string, unknown>) };
+  if (!seoBrief) return candidate;
+
+  candidate.seo_query_target ??= seoBrief.primaryQueryTarget;
+  candidate.seo_intent ??= seoBrief.searchIntent;
+  candidate.seo_title_promise ??= seoBrief.titlePromise;
+  candidate.seo_meta_promise ??= seoBrief.metaPromise;
+  candidate.target_hub ??= seoBrief.targetHub;
+  candidate.internal_link_targets ??= seoBrief.internalLinkTargets;
+  candidate.featured_image_alt ??= null;
+  candidate.news_sitemap_eligible ??= seoBrief.sitemapEligible;
+
+  return candidate;
+}
+
 function cleanModelJson(text: string): string {
   return text
     .replace(/^\uFEFF/, "")
@@ -463,7 +482,9 @@ export async function generateArticle(
     return "reject";
   }
 
-  const normalized = normalizeGeneratedArticleCandidate(parsed);
+  const normalized = normalizeGeneratedArticleCandidate(
+    applySeoBriefFallback(parsed, options.seoBrief),
+  );
   let result = GeneratedArticleSchema.safeParse(normalized);
   if (!result.success) {
     const firstFailure = schemaFailureDetail(result);
@@ -491,7 +512,9 @@ export async function generateArticle(
         };
       }
       result = GeneratedArticleSchema.safeParse(
-        normalizeGeneratedArticleCandidate(repairParse.parsed),
+        normalizeGeneratedArticleCandidate(
+          applySeoBriefFallback(repairParse.parsed, options.seoBrief),
+        ),
       );
     }
     if (!result.success) {

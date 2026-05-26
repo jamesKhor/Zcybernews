@@ -5,8 +5,16 @@ import sitemap from "../app/sitemap.js";
 import robots from "../app/robots.js";
 import { getAllPosts } from "../lib/content.js";
 import { articleUrl, type ArticleLocale } from "../lib/article-url.js";
+import {
+  buildCurrentNewsSitemapXml,
+  NEWS_SITEMAP_PATH,
+} from "../lib/news-sitemap.js";
 import { isPublicArticle } from "../lib/publication.js";
 import { getSiteUrl } from "../lib/site-url.js";
+import {
+  getPublicTopicHubDefinitions,
+  topicHubUrl,
+} from "../lib/topic-hubs.js";
 
 const LOCALES: ArticleLocale[] = ["en", "zh"];
 const SECTIONS = ["posts", "threat-intel"] as const;
@@ -60,12 +68,32 @@ for (const url of nonPublicArticleUrls) {
     fail(`non-public article included in sitemap: ${url}`);
 }
 
+for (const locale of LOCALES) {
+  for (const hub of getPublicTopicHubDefinitions(locale)) {
+    const url = `${BASE_URL}${topicHubUrl(hub.slug, locale)}`;
+    if (!sitemapSet.has(url))
+      fail(`public topic hub missing from sitemap: ${url}`);
+  }
+}
+
 const generatedRobots = robots();
 const robotSitemaps = Array.isArray(generatedRobots.sitemap)
   ? generatedRobots.sitemap
   : [generatedRobots.sitemap];
 if (!robotSitemaps.includes(`${BASE_URL}/sitemap.xml`)) {
   fail(`robots sitemap does not point at ${BASE_URL}/sitemap.xml`);
+}
+if (!robotSitemaps.includes(`${BASE_URL}${NEWS_SITEMAP_PATH}`)) {
+  fail(`robots sitemap does not point at ${BASE_URL}${NEWS_SITEMAP_PATH}`);
+}
+
+const newsSitemapXml = buildCurrentNewsSitemapXml();
+if (
+  !newsSitemapXml.includes(
+    'xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"',
+  )
+) {
+  fail("news sitemap missing Google News namespace");
 }
 
 const feedIndexPath = path.join(process.cwd(), "data", "feed-index.json");

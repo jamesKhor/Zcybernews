@@ -171,6 +171,17 @@ function matchingTerms(text: string, terms: string[]): string[] {
   );
 }
 
+function isOriginalResearchSource(story: Story): boolean {
+  return (
+    story.sourceClass === "security-research" &&
+    story.noiseRisk !== "recap" &&
+    story.noiseRisk !== "press-release" &&
+    story.noiseRisk !== "syndication" &&
+    ((story.originalityScore ?? 0) >= 0.72 ||
+      story.verificationRole === "primary-evidence")
+  );
+}
+
 export function buildEvidencePacket(
   cluster: StoryCluster<Story>,
 ): EvidencePacket {
@@ -185,22 +196,31 @@ export function buildEvidencePacket(
   const cvssScores = extractCvss(combined);
   const status = exploitStatus(combined);
   const sourceNames = uniq(cluster.stories.map((story) => story.sourceName));
+  const products = matchingTerms(combined, VENDOR_TERMS);
+  const sectors = matchingTerms(combined, SECTOR_TERMS);
+  const regions = matchingTerms(combined, REGION_TERMS);
   const hasPrimaryEvidence = cluster.stories.some(
     (story) =>
       story.verificationRole === "primary-evidence" ||
       story.sourceClass === "government" ||
       story.sourceClass === "primary" ||
       story.sourceClass === "structured-vulnerability" ||
+      isOriginalResearchSource(story) ||
       story.sourceType === "cisa-kev" ||
       story.sourceType === "nvd-json",
   );
   const uncertainty: string[] = [];
   if (sourceNames.length < 2 && !hasPrimaryEvidence)
     uncertainty.push("single-source");
-  if (
-    cves.length + cvssScores.length + iocs.length + actors.length < 2 &&
-    sourceNames.length < 2
-  ) {
+  const concreteFactCount =
+    cves.length +
+    cvssScores.length +
+    iocs.length +
+    actors.length +
+    products.length +
+    sectors.length +
+    regions.length;
+  if (concreteFactCount < 2 && sourceNames.length < 2 && !hasPrimaryEvidence) {
     uncertainty.push("low-concrete-fact-density");
   }
   if (!hasPrimaryEvidence) uncertainty.push("no-primary-source");
@@ -213,12 +233,12 @@ export function buildEvidencePacket(
     hasPrimaryEvidence,
     entities: {
       cves,
-      products: matchingTerms(combined, VENDOR_TERMS),
-      vendors: matchingTerms(combined, VENDOR_TERMS),
+      products,
+      vendors: products,
       actors,
       victims: [],
-      sectors: matchingTerms(combined, SECTOR_TERMS),
-      regions: matchingTerms(combined, REGION_TERMS),
+      sectors,
+      regions,
     },
     facts: {
       cvssScores,

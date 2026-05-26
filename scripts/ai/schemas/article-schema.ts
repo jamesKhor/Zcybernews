@@ -25,6 +25,14 @@ export const TTPEntrySchema = z.object({
   description: z.string().optional(),
 });
 
+export const SearchIntentSchema = z.enum([
+  "breaking-news",
+  "patch-guidance",
+  "incident-impact",
+  "technical-analysis",
+  "explainer",
+]);
+
 /**
  * What the AI must return as JSON.
  *
@@ -76,6 +84,14 @@ export const GeneratedArticleSchema = z.object({
   affected_regions: z.array(z.string()),
   iocs: z.array(IOCEntrySchema),
   ttp_matrix: z.array(TTPEntrySchema),
+  seo_query_target: z.string().min(2).max(120),
+  seo_intent: SearchIntentSchema,
+  seo_title_promise: z.string().min(20).max(220),
+  seo_meta_promise: z.string().min(20).max(260),
+  target_hub: z.string().min(2).max(80).nullable(),
+  internal_link_targets: z.array(z.string().min(2).max(80)).min(1).max(8),
+  featured_image_alt: z.string().min(20).max(180).nullable(),
+  news_sitemap_eligible: z.boolean(),
   // body: minimum 400 chars. Even "advisory" tier targets 650-900 words
   // (~2400-4200 chars). <400 chars = broken generation, force regen.
   // Cap at 25000 chars (~3500 words) — beyond that is padding/hedging.

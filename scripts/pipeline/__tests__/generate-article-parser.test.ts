@@ -45,6 +45,17 @@ function articleJson(partial: Partial<GeneratedArticle> = {}) {
     affected_regions: ["Asia"],
     iocs: [],
     ttp_matrix: [],
+    seo_query_target: "OceanLotus ZiChatBot PyPI malware",
+    seo_intent: "technical-analysis",
+    seo_title_promise:
+      "Lead with OceanLotus ZiChatBot and developer supply-chain risk.",
+    seo_meta_promise:
+      "Start with OceanLotus ZiChatBot, name PyPI, and include defender detection value.",
+    target_hub: "malware-loaders",
+    internal_link_targets: ["malware-loaders", "apt-state-actors"],
+    featured_image_alt:
+      "Security analyst reviewing Python package telemetry linked to malware delivery",
+    news_sitemap_eligible: true,
     body:
       "## Executive Summary\n" +
       "OceanLotus-linked operators used the Python Package Index to distribute ZiChatBot malware. ".repeat(
@@ -186,5 +197,17 @@ describe("article prompt JSON contract", () => {
     expect(prompt).not.toContain('"tags": ["tag1", "tag2", "tag3"],  //');
     expect(prompt).toContain("Do not include comments inside the JSON object.");
     expect(prompt).toContain("Do not copy the rule text below");
+  });
+
+  it("asks the model for first-class SEO metadata fields", () => {
+    const prompt = buildArticlePrompt([makeStory()]);
+
+    expect(prompt).toContain('"seo_query_target"');
+    expect(prompt).toContain('"seo_intent"');
+    expect(prompt).toContain('"seo_title_promise"');
+    expect(prompt).toContain('"seo_meta_promise"');
+    expect(prompt).toContain('"internal_link_targets"');
+    expect(prompt).toContain('"featured_image_alt"');
+    expect(prompt).toContain('"news_sitemap_eligible"');
   });
 });

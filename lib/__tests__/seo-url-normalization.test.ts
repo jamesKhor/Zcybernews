@@ -23,6 +23,12 @@ describe("canonicalPathForSeoVariant", () => {
     ).toBe("/en/tags/authentication-security");
   });
 
+  it("normalizes topic hub paths", () => {
+    expect(canonicalPathForSeoVariant("/topics/AI Security")).toBe(
+      "/en/topics/ai-security",
+    );
+  });
+
   it("trims trailing hyphens from article slugs", () => {
     expect(
       canonicalPathForSeoVariant(

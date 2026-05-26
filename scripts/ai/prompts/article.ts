@@ -263,6 +263,26 @@ Think of these fields as a scorecard for your article's research quality.
 An article with 4 of 5 filled is stronger than 1 of 5. Populate everything
 sources support — don't play it safe by leaving fields null when evidence exists.
 
+SEO METADATA RULES (CRITICAL — Google-facing contract):
+- "seo_query_target": the exact phrase or entity the article should satisfy in
+  search. Use the SEO brief primary query when present, otherwise choose the
+  concrete CVE, actor, victim, product, malware family, or policy term a reader
+  would type.
+- "seo_intent": one of breaking-news, patch-guidance, incident-impact,
+  technical-analysis, or explainer. Match the searcher's likely need.
+- "seo_title_promise": one sentence describing what the title promises the
+  reader will learn. It must be specific enough to audit after generation.
+- "seo_meta_promise": one sentence describing the SERP snippet promise. It
+  should mention the query target and one concrete value point.
+- "target_hub": the crawlable topic hub slug this article should support, or
+  null if no hub fits yet.
+- "internal_link_targets": 1-8 crawlable topic/article/tag targets that deserve
+  descriptive internal links. Prefer hub slugs from the SEO brief.
+- "featured_image_alt": descriptive alt text for the representative image, or
+  null only if no meaningful image should be attached. Do not keyword stuff.
+- "news_sitemap_eligible": true only for timely news that should be eligible
+  for a news sitemap; false for evergreen explainers or stale analysis.
+
 OUTPUT FORMAT — respond with ONLY valid JSON, no markdown fences.
 Do not include comments inside the JSON object.
 Field requirements:
@@ -287,6 +307,14 @@ Field requirements:
   "affected_regions": [],
   "iocs": [],
   "ttp_matrix": [],
+  "seo_query_target": "primary search phrase or entity",
+  "seo_intent": "one of: breaking-news | patch-guidance | incident-impact | technical-analysis | explainer",
+  "seo_title_promise": "Specific promise the headline makes to the reader.",
+  "seo_meta_promise": "Specific promise the meta description makes in Google results.",
+  "target_hub": "topic-hub-slug-or-null",
+  "internal_link_targets": ["topic-hub-slug", "related-topic"],
+  "featured_image_alt": "Descriptive alt text for the representative article image, or null",
+  "news_sitemap_eligible": true,
   "body": "full markdown article body"
 }
 
@@ -309,6 +337,14 @@ literal field values.
   "affected_regions": [],
   "iocs": [],
   "ttp_matrix": [],
+  "seo_query_target": "Use the SEO brief primary query target when present; otherwise use the strongest concrete entity readers search for. Examples: CVE-2026-12345, LockBit, OpenAI Daybreak, GitHub token leak.",
+  "seo_intent": "Choose exactly one: breaking-news for urgent updates; patch-guidance for vulnerability fixes; incident-impact for breaches/ransomware/victim claims; technical-analysis for malware/APT/research; explainer for evergreen context.",
+  "seo_title_promise": "One audit-ready sentence explaining what the title promises. Avoid vague wording like 'learn about this issue'.",
+  "seo_meta_promise": "One audit-ready sentence explaining what the SERP meta description promises. Include the query target and a concrete value point.",
+  "target_hub": "A lowercase hyphenated topic hub slug such as ransomware-groups, malware-loaders, ai-security, data-breaches, active-cves, or null.",
+  "internal_link_targets": ["1-8 lowercase slugs for crawlable topic hubs, related tags, or known article targets. Do not invent full URLs."],
+  "featured_image_alt": "Plain-language image alt text describing the actual image concept. No keyword stuffing. Set null if no meaningful image is appropriate.",
+  "news_sitemap_eligible": "Boolean. true only for fresh news articles; false for evergreen explainers, old analysis, or non-news tooling pages.",
   "body": "full markdown article body (all 7 sections)"
 }
 

@@ -1,5 +1,10 @@
 const SUPPORTED_LOCALES = new Set(["en", "zh"]);
-const CANONICAL_SECTIONS = new Set(["articles", "threat-intel", "tags"]);
+const CANONICAL_SECTIONS = new Set([
+  "articles",
+  "threat-intel",
+  "tags",
+  "topics",
+]);
 
 function decodeSegment(segment: string): string {
   try {

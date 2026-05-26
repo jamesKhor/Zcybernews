@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * ZCyberNews AI Content Pipeline
- * Usage: npx tsx scripts/pipeline/index.ts [--max-articles=5] [--dry-run]
+ * Usage: npx tsx scripts/pipeline/index.ts [--max-articles=5] [--dry-run] [--curate-only]
  *
  * Required env vars:
  *   DEEPSEEK_API_KEY  — article generation
@@ -20,7 +20,7 @@ import { factCheckArticle, formatFactCheckLog } from "./fact-check.js";
 import { notifyDiscord } from "./notify-discord.js";
 import { flushProcessedCache, markProcessedBatch } from "../utils/cache.js";
 import { limit } from "../utils/rate-limit.js";
-import { storyIdentityKey } from "../utils/dedup.js";
+import { storyIdentityKey, type Story } from "../utils/dedup.js";
 import { routeStoriesForGeneration, type RoutedStory } from "./routing.js";
 import { enrichStoriesForGeneration } from "./source-enrichment.js";
 import { evaluatePublishQuality } from "./publish-quality-gate.js";
@@ -37,6 +37,18 @@ import {
   type EditorialSelection,
 } from "./editorial-selector.js";
 import { buildSeoBrief, type SeoBrief } from "./seo-brief.js";
+import { writeReviewQueue } from "./review-queue.js";
+import { loadTasteProfile } from "./taste-profile.js";
+import {
+  loadApprovedCandidateBatches,
+  type ApprovedCandidateReview,
+} from "./approved-candidates.js";
+import {
+  DEFAULT_AUTONOMY_MAX_DAYS,
+  DEFAULT_AUTONOMY_STARTED_ON,
+  evaluateAutonomyGate,
+  loadAutonomyGateState,
+} from "./autonomy-gate.js";
 
 // ── Recent titles loader (for prompt dedup context) ────────────────────────
 
@@ -144,11 +156,18 @@ function isCyberSecurityRelevant(title: string, category: string): boolean {
 // ── CLI args ──────────────────────────────────────────────────────────────────
 
 const args = process.argv.slice(2);
-const MAX_ARTICLES = parseInt(
-  args.find((a) => a.startsWith("--max-articles="))?.split("=")[1] ?? "5",
-  10,
-);
+function argValue(name: string): string | undefined {
+  const prefix = `--${name}=`;
+  return args.find((a) => a.startsWith(prefix))?.slice(prefix.length);
+}
+
+let MAX_ARTICLES = parseInt(argValue("max-articles") ?? "5", 10);
 const DRY_RUN = args.includes("--dry-run");
+let CURATE_ONLY =
+  args.includes("--curate-only") || process.env.CURATE_ONLY === "true";
+const AUTONOMY_GATE =
+  args.includes("--autonomy-gate") || process.env.AUTONOMY_GATE === "true";
+const APPROVED_QUEUE = argValue("approved-queue") ?? process.env.APPROVED_QUEUE;
 const CRITICAL_ONLY =
   args.includes("--critical-only") || process.env.CRITICAL_ONLY === "true";
 const SOURCE_IDS = (process.env.SOURCE_IDS ?? "")
@@ -209,11 +228,101 @@ function editorialDecisionFields(selection?: EditorialSelection) {
       freshnessScore: selection.freshnessScore,
       differentiationScore: selection.differentiationScore,
       portfolioScore: selection.portfolioScore,
+      tasteProfileScore: selection.tasteProfileScore,
+      tasteProfileReasons: selection.tasteProfileReasons,
     },
   };
 }
 
-if (!DRY_RUN) {
+function reviewDecisionFields(review?: ApprovedCandidateReview) {
+  if (!review) return {};
+  return {
+    review: {
+      candidateId: review.candidateId,
+      status: review.status,
+      reviewedBy: review.reviewedBy,
+      reviewedAt: review.reviewedAt,
+      decisionReason: review.decisionReason,
+      tasteRating: review.tasteRating,
+      tasteReason: review.tasteReason,
+      positiveSignals: review.positiveSignals,
+      negativeSignals: review.negativeSignals,
+      selectedReasonTags: review.selectedReasonTags,
+      calibrationRound: review.calibrationRound,
+    },
+  };
+}
+
+if (APPROVED_QUEUE && CURATE_ONLY) {
+  console.error(
+    "[pipeline] ❌ --approved-queue cannot be combined with --curate-only.",
+  );
+  process.exit(1);
+}
+
+function numericEnv(name: string, fallback: number): number {
+  const parsed = parseInt(process.env[name] ?? "", 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+function boolEnv(name: string): boolean {
+  return process.env[name]?.toLowerCase() === "true";
+}
+
+function listEnv(name: string): string[] {
+  return (process.env[name] ?? "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
+if (AUTONOMY_GATE && !APPROVED_QUEUE) {
+  const tasteProfile = loadTasteProfile();
+  const state = loadAutonomyGateState() ?? {};
+  const approvedBy = process.env.AUTONOMY_APPROVED_BY?.trim();
+  const openRegressions = [
+    ...(state.openRegressions ?? []),
+    ...listEnv("AUTONOMY_OPEN_REGRESSIONS"),
+  ];
+
+  const decision = evaluateAutonomyGate({
+    calibrationStartedOn:
+      process.env.CURATION_STARTED_ON ?? DEFAULT_AUTONOMY_STARTED_ON,
+    calibrationMaxDays: numericEnv(
+      "CURATION_MAX_DAYS",
+      DEFAULT_AUTONOMY_MAX_DAYS,
+    ),
+    tasteProfile,
+    state: {
+      ...state,
+      transitionApprovedBy: approvedBy || state.transitionApprovedBy,
+      openRegressions,
+      seriousQualityIncidentOpen:
+        state.seriousQualityIncidentOpen ||
+        boolEnv("AUTONOMY_SERIOUS_INCIDENT_OPEN"),
+      gscDegraded: state.gscDegraded || boolEnv("AUTONOMY_GSC_DEGRADED"),
+      autoPublishedRejectionsToday: Math.max(
+        state.autoPublishedRejectionsToday ?? 0,
+        numericEnv("AUTONOMY_REJECTIONS_TODAY", 0),
+      ),
+    },
+    requestedMaxArticles: MAX_ARTICLES,
+  });
+
+  CURATE_ONLY = decision.curateOnly;
+  MAX_ARTICLES = decision.effectiveMaxArticles;
+  console.log(
+    `[pipeline] Autonomy gate: mode=${decision.mode} max=${decision.effectiveMaxArticles} ` +
+      `days=${decision.daysSinceCalibrationStart} reasons=${decision.reasons.join(",")}`,
+  );
+  if (decision.dailySampleAudit) {
+    console.log(
+      "[pipeline] Autonomy gate: strict mode enabled; use daily sample audit until quality stabilizes.",
+    );
+  }
+}
+
+if (!DRY_RUN && !CURATE_ONLY) {
   // Need at least one AI provider — OpenRouter (free) or DeepSeek/Kimi (paid)
   if (
     !process.env.OPENROUTER_API_KEY &&
@@ -231,119 +340,183 @@ if (!DRY_RUN) {
 
 async function main() {
   console.log(
-    `\n🚀 ZCyberNews AI Pipeline — max=${MAX_ARTICLES}${DRY_RUN ? " [DRY RUN]" : ""}${CRITICAL_ONLY ? " [CRITICAL ONLY]" : ""}${SOURCE_IDS.length ? ` [sources=${SOURCE_IDS.join(",")}]` : ""}\n`,
+    `\n🚀 ZCyberNews AI Pipeline — max=${MAX_ARTICLES}${DRY_RUN ? " [DRY RUN]" : ""}${CURATE_ONLY ? " [CURATE ONLY]" : ""}${APPROVED_QUEUE ? ` [APPROVED QUEUE ${APPROVED_QUEUE}]` : ""}${CRITICAL_ONLY ? " [CRITICAL ONLY]" : ""}${SOURCE_IDS.length ? ` [sources=${SOURCE_IDS.join(",")}]` : ""}\n`,
   );
 
-  // 1. Ingest fresh stories from RSS
-  const candidatePoolSize = Math.max(MAX_ARTICLES * 20, MAX_ARTICLES + 20);
-  const stories = await ingestFeeds(candidatePoolSize);
-  const selectedStories =
-    SOURCE_IDS.length > 0
-      ? stories.filter((s) => SOURCE_IDS.includes(s.sourceId ?? ""))
-      : stories;
-
-  if (SOURCE_IDS.length > 0) {
-    console.log(
-      `[pipeline] Source filter enabled: ${SOURCE_IDS.join(", ")} → ${selectedStories.length}/${stories.length} stories`,
-    );
-  }
-
-  if (selectedStories.length === 0) {
-    console.log("[pipeline] No new stories to process. Exiting.");
-    return;
-  }
-
-  const storyOrder = new Map(
-    selectedStories.map((story, index) => [story, index] as const),
-  );
-  const routed = routeStoriesForGeneration(selectedStories);
-  for (const skip of routed.skipped) {
-    console.log(
-      `[routing] skip ${skip.story.sourceId ?? skip.story.sourceName} ` +
-        `(${skip.reason}): "${skip.story.title.slice(0, 100)}"`,
-    );
-    decisionEntries.push({
-      index: storyOrder.get(skip.story) ?? decisionEntries.length,
-      outcome: "not_published",
-      sourceTitle: skip.story.title,
-      sourceName: skip.story.sourceName,
-      sourceUrl: skip.story.url,
-      stage: "routing",
-      decision: "not published",
-      reasons: [skip.reason],
-      gates: [
-        gate("routing", "block", skip.reason),
-        gate("translation", "skip", skip.decision.action),
-      ],
-      locale: skip.decision.action,
-    });
-  }
-  if (routed.skipped.length > 0) {
-    console.log(
-      `[routing] Skipped ${routed.skipped.length}/${selectedStories.length} story/stories before generation`,
-    );
-  }
-  const publishableStories: RoutedStory[] = routed.publishable;
-
-  if (publishableStories.length === 0) {
-    console.log("[pipeline] No publishable stories after routing. Exiting.");
-    return;
-  }
-
-  // 2. Group related stories into batches of 1-3 per article.
-  // Multi-source clusters get priority so public candidates start with
-  // better source depth instead of single-source thin summaries.
-  const clusters = clusterStories(publishableStories);
-  const editorial = selectEditorialCandidates(clusters, {
-    maxArticles: MAX_ARTICLES,
-  });
-  const batches: Array<{
+  let selectedStories: Story[] = [];
+  let storyOrder = new Map<Story, number>();
+  let batches: Array<{
     stories: Array<RoutedStory & { clusterKey: string }>;
     selection: EditorialSelection;
     seoBrief: SeoBrief;
-  }> = editorial.publishable.map(({ cluster, selection }) => {
-    const stories = cluster.stories.map((story) => ({
-      ...story,
-      clusterKey: cluster.key,
-    }));
-    return {
-      stories,
-      selection,
-      seoBrief: buildSeoBrief(stories, {
-        clusterKey: cluster.key,
-        lane: selection.lane,
-      }),
-    };
-  });
+    review?: ApprovedCandidateReview;
+  }> = [];
 
-  for (const selection of editorial.decisions) {
-    if (selection.decision === "publish-now") continue;
-    const cluster = clusters.find((item) => item.key === selection.clusterKey);
-    const story = cluster?.stories[0];
-    decisionEntries.push({
-      index: story
-        ? (storyOrder.get(story) ?? decisionEntries.length)
-        : decisionEntries.length,
-      outcome: "not_published",
-      sourceTitle: story?.title ?? selection.clusterKey,
-      sourceName: story?.sourceName,
-      sourceUrl: story?.url,
-      stage: "editorial-selection",
-      decision: selection.decision,
-      reasons: selection.reasons,
-      gates: [
-        gate(
-          "editorial-selection",
-          selection.decision === "reject" ? "block" : "skip",
-          `score=${selection.score} lane=${selection.lane}`,
-        ),
-      ],
-      sourceCount: cluster?.sources.length ?? 0,
-      ...editorialDecisionFields(selection),
+  if (APPROVED_QUEUE) {
+    const approvedQueue = loadApprovedCandidateBatches(APPROVED_QUEUE, {
+      maxArticles: MAX_ARTICLES,
     });
+    console.log(
+      `[pipeline] Approved queue mode — ${approvedQueue.approved.length} approved candidate(s), ${approvedQueue.skipped.length} skipped`,
+    );
+
+    approvedQueue.skipped.forEach((skip, index) => {
+      decisionEntries.push({
+        index,
+        outcome: "not_published",
+        sourceTitle: skip.candidateId,
+        stage: "approved-queue",
+        decision: "not published",
+        reasons: [skip.reason],
+        gates: [gate("approved-queue", "block", skip.reason)],
+      });
+    });
+
+    batches = approvedQueue.approved.map((candidate) => ({
+      stories: candidate.stories,
+      selection: candidate.selection,
+      seoBrief: candidate.seoBrief,
+      review: candidate.review,
+    }));
+    selectedStories = batches.flatMap((batch) => batch.stories);
+    storyOrder = new Map(
+      selectedStories.map((story, index) => [story, index] as const),
+    );
+  } else {
+    // 1. Ingest fresh stories from RSS
+    const candidatePoolSize = Math.max(MAX_ARTICLES * 20, MAX_ARTICLES + 20);
+    const stories = await ingestFeeds(candidatePoolSize);
+    selectedStories =
+      SOURCE_IDS.length > 0
+        ? stories.filter((s) => SOURCE_IDS.includes(s.sourceId ?? ""))
+        : stories;
+
+    if (SOURCE_IDS.length > 0) {
+      console.log(
+        `[pipeline] Source filter enabled: ${SOURCE_IDS.join(", ")} → ${selectedStories.length}/${stories.length} stories`,
+      );
+    }
+
+    if (selectedStories.length === 0) {
+      console.log("[pipeline] No new stories to process. Exiting.");
+      return;
+    }
+
+    storyOrder = new Map(
+      selectedStories.map((story, index) => [story, index] as const),
+    );
+    const routed = routeStoriesForGeneration(selectedStories);
+    for (const skip of routed.skipped) {
+      console.log(
+        `[routing] skip ${skip.story.sourceId ?? skip.story.sourceName} ` +
+          `(${skip.reason}): "${skip.story.title.slice(0, 100)}"`,
+      );
+      decisionEntries.push({
+        index: storyOrder.get(skip.story) ?? decisionEntries.length,
+        outcome: "not_published",
+        sourceTitle: skip.story.title,
+        sourceName: skip.story.sourceName,
+        sourceUrl: skip.story.url,
+        stage: "routing",
+        decision: "not published",
+        reasons: [skip.reason],
+        gates: [
+          gate("routing", "block", skip.reason),
+          gate("translation", "skip", skip.decision.action),
+        ],
+        locale: skip.decision.action,
+      });
+    }
+    if (routed.skipped.length > 0) {
+      console.log(
+        `[routing] Skipped ${routed.skipped.length}/${selectedStories.length} story/stories before generation`,
+      );
+    }
+    const publishableStories: RoutedStory[] = routed.publishable;
+
+    if (publishableStories.length === 0) {
+      console.log("[pipeline] No publishable stories after routing. Exiting.");
+      return;
+    }
+
+    // 2. Group related stories into batches of 1-3 per article.
+    // Multi-source clusters get priority so public candidates start with
+    // better source depth instead of single-source thin summaries.
+    const clusters = clusterStories(publishableStories);
+    const tasteProfile = loadTasteProfile();
+    if (tasteProfile) {
+      console.log(
+        `[pipeline] Loaded editorial taste profile: ${tasteProfile.reviewedCandidateCount} reviewed candidate(s), likedRatio=${tasteProfile.likedRatio}`,
+      );
+    }
+    const editorial = selectEditorialCandidates(clusters, {
+      maxArticles: MAX_ARTICLES,
+      tasteProfile,
+    });
+    batches = editorial.publishable.map(({ cluster, selection }) => {
+      const stories = cluster.stories.map((story) => ({
+        ...story,
+        clusterKey: cluster.key,
+      }));
+      return {
+        stories,
+        selection,
+        seoBrief: buildSeoBrief(stories, {
+          clusterKey: cluster.key,
+          lane: selection.lane,
+        }),
+      };
+    });
+
+    for (const selection of editorial.decisions) {
+      if (selection.decision === "publish-now") continue;
+      const cluster = clusters.find(
+        (item) => item.key === selection.clusterKey,
+      );
+      const story = cluster?.stories[0];
+      decisionEntries.push({
+        index: story
+          ? (storyOrder.get(story) ?? decisionEntries.length)
+          : decisionEntries.length,
+        outcome: "not_published",
+        sourceTitle: story?.title ?? selection.clusterKey,
+        sourceName: story?.sourceName,
+        sourceUrl: story?.url,
+        stage: "editorial-selection",
+        decision: selection.decision,
+        reasons: selection.reasons,
+        gates: [
+          gate(
+            "editorial-selection",
+            selection.decision === "reject" ? "block" : "skip",
+            `score=${selection.score} lane=${selection.lane}`,
+          ),
+        ],
+        sourceCount: cluster?.sources.length ?? 0,
+        ...editorialDecisionFields(selection),
+      });
+    }
   }
 
-  console.log(`[pipeline] Will generate ${batches.length} articles\n`);
+  if (batches.length === 0) {
+    console.log(
+      APPROVED_QUEUE
+        ? "[pipeline] No approved queue candidates to process. Exiting."
+        : "[pipeline] No selected candidates to process. Exiting.",
+    );
+    return;
+  }
+
+  const plannedAction = DRY_RUN
+    ? "evaluate"
+    : CURATE_ONLY
+      ? "curate"
+      : APPROVED_QUEUE
+        ? "generate approved"
+        : "generate";
+  console.log(
+    `[pipeline] Will ${plannedAction} ${batches.length} candidates\n`,
+  );
 
   if (DRY_RUN) {
     console.log("[pipeline] Dry run — stories that would be processed:");
@@ -353,9 +526,72 @@ async function main() {
       );
       console.log(
         `  ${i + 1}. [${batch.stories[0]?.clusterKey}] ${batch.stories[0]?.title} (${sources}) ` +
-          `lane=${batch.selection.lane} score=${batch.selection.score} target=${batch.seoBrief.primaryQueryTarget}`,
+          `lane=${batch.selection.lane} score=${batch.selection.score} target=${batch.seoBrief.primaryQueryTarget}` +
+          (batch.review
+            ? ` approvedBy=${batch.review.reviewedBy} rating=${batch.review.tasteRating}`
+            : ""),
       );
     });
+    return;
+  }
+
+  if (CURATE_ONLY) {
+    batches.forEach((batch, batchIndex) => {
+      const primaryStory = batch.stories[0];
+      decisionEntries.push({
+        index:
+          (primaryStory ? storyOrder.get(primaryStory) : undefined) ??
+          selectedStories.length + batchIndex,
+        outcome: "not_published",
+        sourceTitle: primaryStory?.title ?? batch.selection.clusterKey,
+        sourceName: primaryStory?.sourceName,
+        sourceUrl: primaryStory?.url,
+        stage: "manual-review",
+        decision: "review-required",
+        reasons: batch.selection.reasons,
+        gates: [
+          gate(
+            "manual-review",
+            "skip",
+            `pending reviewer approval score=${batch.selection.score} lane=${batch.selection.lane}`,
+          ),
+        ],
+        sourceCount: batch.stories.length,
+        ...editorialDecisionFields(batch.selection),
+        seoQueryTarget: batch.seoBrief.primaryQueryTarget,
+      });
+    });
+
+    const queue = writeReviewQueue(
+      batches.map((batch) => ({
+        stories: batch.stories,
+        selection: batch.selection,
+        seoBrief: batch.seoBrief,
+      })),
+      {
+        runId: process.env.GITHUB_RUN_ID
+          ? `github-${process.env.GITHUB_RUN_ID}`
+          : undefined,
+      },
+    );
+
+    console.log(
+      `[pipeline] Curate-only mode — review queue written: ${queue.manifestPath}`,
+    );
+    console.log(
+      JSON.stringify({
+        event: "review_queue_written",
+        manifest_path: queue.manifestPath,
+        candidate_count: queue.manifest.candidateCount,
+        candidates: queue.manifest.candidates.map((candidate) => ({
+          id: candidate.candidateId,
+          lane: candidate.lane,
+          score: candidate.score,
+          title: candidate.proposedTitle,
+          target: candidate.primaryQueryTarget,
+        })),
+      }),
+    );
     return;
   }
 
@@ -393,6 +629,7 @@ async function main() {
         const batch = candidate.stories;
         const selection = candidate.selection;
         const seoBrief = candidate.seoBrief;
+        const review = candidate.review;
         const primaryStory = batch[0];
         const baseIndex =
           (primaryStory ? storyOrder.get(primaryStory) : undefined) ??
@@ -430,6 +667,7 @@ async function main() {
             sourceCount,
             locale,
             ...editorialDecisionFields(selection),
+            ...reviewDecisionFields(review),
             seoQueryTarget: seoBrief.primaryQueryTarget,
           });
         }
@@ -728,6 +966,7 @@ async function main() {
               clusterKey,
               sourceCount: storyUrls.length,
               seoBrief,
+              review,
             });
           } catch (err) {
             if (err instanceof DuplicateArticleError) {

@@ -5,6 +5,7 @@ import { absoluteArticleUrl } from "@/lib/article-url";
 import { isPublicArticle } from "@/lib/publication";
 import { getSiteUrl } from "@/lib/site-url";
 import { isPublicTag, tagUrlSlug } from "@/lib/public-tags";
+import { getPublicTopicHubDefinitions, topicHubUrl } from "@/lib/topic-hubs";
 
 // ISR: generate on first request, cache for 1 hour, regenerate on demand.
 //
@@ -26,6 +27,10 @@ const LOCALES = ["en", "zh"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
+  const publicTopicHubSlugsByLocale = {
+    en: new Set(getPublicTopicHubDefinitions("en").map((hub) => hub.slug)),
+    zh: new Set(getPublicTopicHubDefinitions("zh").map((hub) => hub.slug)),
+  };
 
   // Static routes
   for (const locale of LOCALES) {
@@ -134,6 +139,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             en: `${BASE_URL}/en/categories/${category}`,
             "zh-Hans": `${BASE_URL}/zh/categories/${category}`,
+          },
+        },
+      });
+    }
+
+    // Topic hub pages — curated cross-category surfaces for recurring
+    // reader intents. Only include hubs once they have enough public
+    // articles to avoid recreating the thin-page tag problem.
+    for (const hub of getPublicTopicHubDefinitions(locale)) {
+      entries.push({
+        url: `${BASE_URL}${topicHubUrl(hub.slug, locale)}`,
+        lastModified: new Date(),
+        changeFrequency: "daily",
+        priority: 0.75,
+        alternates: {
+          languages: {
+            ...(publicTopicHubSlugsByLocale.en.has(hub.slug) && {
+              en: `${BASE_URL}${topicHubUrl(hub.slug, "en")}`,
+            }),
+            ...(publicTopicHubSlugsByLocale.zh.has(hub.slug) && {
+              "zh-Hans": `${BASE_URL}${topicHubUrl(hub.slug, "zh")}`,
+            }),
           },
         },
       });

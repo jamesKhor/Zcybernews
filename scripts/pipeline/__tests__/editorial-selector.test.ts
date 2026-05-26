@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { selectEditorialCandidates } from "../editorial-selector";
+import { aggregateTasteProfile } from "../taste-profile";
 import type { StoryCluster } from "../story-clustering";
 import type { Story } from "../../utils/dedup";
 
@@ -269,6 +270,107 @@ describe("selectEditorialCandidates", () => {
     expect(result.decisions[0].lane).toBe("ai-security");
   });
 
+  it("can publish single-source original APT research from trusted research teams", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("topic:cloud-atlas-kaspersky", [
+          story({
+            title:
+              "Cloud Atlas activity in late 2025 and early 2026: new tools and payload",
+            excerpt:
+              "Kaspersky GReAT researchers detail a Cloud Atlas espionage campaign using a new backdoor against government targets.",
+            sourceName: "Kaspersky Securelist",
+            sourceClass: "security-research",
+            verificationRole: "corroboration",
+            authorityScore: 0.84,
+            originalityScore: 0.86,
+            noiseRisk: "none",
+            tags: ["Cloud Atlas", "APT", "espionage", "government"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable.map((item) => item.clusterKey)).toContain(
+      "topic:cloud-atlas-kaspersky",
+    );
+    expect(result.decisions[0].reasons).not.toContain("no-primary-source");
+  });
+
+  it("can publish original breach reporting from trusted investigative sources", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("topic:cisa-data-leak-krebs", [
+          story({
+            title:
+              "Lawmakers Demand Answers as CISA Tries to Contain Data Leak",
+            excerpt:
+              "Krebs on Security reports that lawmakers asked CISA for answers after exposed records and credentials were found in a private repository.",
+            sourceName: "Krebs on Security",
+            sourceClass: "security-research",
+            verificationRole: "corroboration",
+            authorityScore: 0.9,
+            originalityScore: 0.9,
+            noiseRisk: "none",
+            tags: ["CISA", "data breach", "credentials", "government"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable.map((item) => item.clusterKey)).toContain(
+      "topic:cisa-data-leak-krebs",
+    );
+    expect(result.decisions[0].lane).toBe("breaches");
+  });
+
+  it("keeps weekly recap roundups out of publish slots when real incidents are available", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("topic:weekly-recap", [
+          story({
+            title: "The Good, the Bad and the Ugly in Cybersecurity - Week 21",
+            excerpt:
+              "A weekly recap of zero-days, ransomware, and several cybersecurity stories from the week.",
+            sourceName: "SentinelLabs",
+            sourceClass: "security-research",
+            verificationRole: "corroboration",
+            authorityScore: 0.78,
+            originalityScore: 0.76,
+            noiseRisk: "none",
+            tags: ["weekly recap", "zero-day", "ransomware"],
+          }),
+        ]),
+        cluster("topic:breach", [
+          story({
+            title:
+              "Lawmakers Demand Answers as CISA Tries to Contain Data Leak",
+            excerpt:
+              "Krebs on Security reports that lawmakers asked CISA for answers after exposed records and credentials were found in a private repository.",
+            sourceName: "Krebs on Security",
+            sourceClass: "security-research",
+            verificationRole: "corroboration",
+            authorityScore: 0.9,
+            originalityScore: 0.9,
+            noiseRisk: "none",
+            tags: ["CISA", "data breach", "credentials", "government"],
+          }),
+        ]),
+      ],
+      { maxArticles: 1 },
+    );
+
+    expect(result.publishable.map((item) => item.clusterKey)).toEqual([
+      "topic:breach",
+    ]);
+    expect(
+      result.decisions.find((item) => item.clusterKey === "topic:weekly-recap")
+        ?.decision,
+    ).toBe("digest-only");
+  });
+
   it("does not publish medium single-source vendor CVEs as full articles", () => {
     const result = selectEditorialCandidates(
       [
@@ -347,5 +449,58 @@ describe("selectEditorialCandidates", () => {
       result.decisions.find((item) => item.clusterKey === "cve:CVE-2026-9002")
         ?.reasons,
     ).toContain("cve-style daily cap");
+  });
+
+  it("nudges selection with reviewed taste signals without replacing safety gates", () => {
+    const aiCluster = cluster("topic:openai-daybreak", [
+      story({
+        id: "ai1",
+        title: "OpenAI Daybreak launches cybersecurity accelerator",
+        excerpt:
+          "OpenAI Daybreak is a cybersecurity accelerator for security startups building defensive tools.",
+        sourceName: "OpenAI News",
+        sourceClass: "primary",
+        verificationRole: "primary-evidence",
+        authorityScore: 0.9,
+        tags: ["OpenAI", "AI security", "Daybreak"],
+      }),
+    ]);
+    const baseline = selectEditorialCandidates([aiCluster], { maxArticles: 1 });
+    const tasteProfile = aggregateTasteProfile(
+      [
+        {
+          candidateId: "reviewed-ai",
+          clusterKey: "topic:reviewed-ai",
+          proposedTitle: "AI security item founder liked",
+          lane: "ai-security",
+          score: 0.7,
+          decision: "publish-now",
+          selectionReasons: ["trusted sources", "search demand"],
+          sourceNames: ["OpenAI News"],
+          reviewer: {
+            status: "approved",
+            tasteRating: 0.96,
+            positiveSignals: ["hot-topic", "reader-likely-cares", "brand-fit"],
+            negativeSignals: [],
+            selectedReasonTags: ["search demand"],
+          },
+        },
+      ],
+      { now: new Date("2026-05-27T00:00:00.000Z") },
+    );
+    const tuned = selectEditorialCandidates([aiCluster], {
+      maxArticles: 1,
+      tasteProfile,
+    });
+
+    expect(tuned.decisions[0].score).toBeGreaterThan(
+      baseline.decisions[0].score,
+    );
+    expect(tuned.decisions[0].tasteProfileScore).toBeGreaterThan(0);
+    expect(
+      tuned.decisions[0].reasons.some((reason) =>
+        reason.startsWith("taste-boost:"),
+      ),
+    ).toBe(true);
   });
 });

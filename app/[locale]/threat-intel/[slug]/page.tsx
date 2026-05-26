@@ -8,6 +8,7 @@ import {
 import { isIndexableFrontmatter, isPublicArticle } from "@/lib/publication";
 import { compileMDX } from "@/lib/mdx";
 import { ArticleMeta } from "@/components/articles/ArticleMeta";
+import { ArticleTopicHubLinks } from "@/components/articles/ArticleTopicHubLinks";
 import { TldrCallout } from "@/components/articles/TldrCallout";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { IOCTable } from "@/components/threat-intel/IOCTable";
@@ -28,6 +29,11 @@ import {
 } from "@/lib/article-url";
 import { canonicalSlugForSeoVariant } from "@/lib/seo-url-normalization";
 import { getSiteUrl } from "@/lib/site-url";
+import {
+  getArticleTopicHubLinks,
+  getPublicTopicHubDefinitions,
+  type TopicHubDefinition,
+} from "@/lib/topic-hubs";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -153,6 +159,12 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
   const image =
     frontmatter.featured_image ??
     getCategoryDefaultImage(frontmatter.category, frontmatter.slug);
+  const publicHubSlugs = new Set(
+    getPublicTopicHubDefinitions(locale).map((hub) => hub.slug),
+  );
+  const topicHubs = getArticleTopicHubLinks(frontmatter)
+    .filter((hub) => publicHubSlugs.has(hub.slug))
+    .slice(0, 3);
 
   return (
     <>
@@ -193,6 +205,7 @@ export default async function ThreatIntelArticlePage({ params }: Props) {
         readingTime={readingTime}
         related={related}
         locale={locale}
+        topicHubs={topicHubs}
       />
     </>
   );
@@ -205,6 +218,7 @@ function TIPageContent({
   readingTime,
   related,
   locale,
+  topicHubs,
 }: {
   frontmatter: import("@/lib/types").ArticleFrontmatter;
   mdxContent: React.ReactElement;
@@ -212,6 +226,7 @@ function TIPageContent({
   readingTime: number;
   related: import("@/lib/content").Article[];
   locale: string;
+  topicHubs: TopicHubDefinition[];
 }) {
   const t = useTranslations("article");
   const featuredImage =
@@ -244,6 +259,10 @@ function TIPageContent({
             <p className="text-lg text-muted-foreground">
               {frontmatter.excerpt}
             </p>
+            <ArticleTopicHubLinks
+              hubs={topicHubs}
+              locale={locale === "zh" ? "zh" : "en"}
+            />
           </header>
 
           {/* TLDR (B-022) — renders only when frontmatter.tldr is present. */}

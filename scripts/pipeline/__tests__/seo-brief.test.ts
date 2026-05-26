@@ -36,4 +36,23 @@ describe("SEO brief", () => {
     expect(prompt).toContain("SEO BRIEF");
     expect(prompt).toContain("Primary query target: CVE-2026-12345");
   });
+
+  it("uses public topic hub slugs for internal links", () => {
+    expect(buildSeoBrief([story], { lane: "vulnerabilities" }).targetHub).toBe(
+      "active-cves",
+    );
+    expect(buildSeoBrief([story], { lane: "ransomware" }).targetHub).toBe(
+      "ransomware",
+    );
+    expect(buildSeoBrief([story], { lane: "apt-state-actors" }).targetHub).toBe(
+      "apt",
+    );
+    expect(buildSeoBrief([story], { lane: "breaches" }).targetHub).toBe(
+      "breaches",
+    );
+    expect(buildSeoBrief([story], { lane: "defender-ops" }).targetHub).toBe(
+      "defender-ops",
+    );
+    expect(buildSeoBrief([story], { lane: "policy" }).targetHub).toBe("policy");
+  });
 });

@@ -2,12 +2,13 @@ name: AI Content Pipeline
 
 on:
   schedule:
-    # Hourly — cron runs in UTC; pipeline is timezone-agnostic
-    - cron: "0 * * * *"
+    # Three daily curation runs. Cron is UTC:
+    # 00:00, 08:00, 16:00 UTC == 08:00, 16:00, 00:00 Asia/Shanghai.
+    - cron: "0 0,8,16 * * *"
   workflow_dispatch:
     inputs:
       max_articles:
-        description: "Max articles to generate"
+        description: "Max candidates/articles to process"
         required: false
         default: "3"
       dry_run:
@@ -15,6 +16,15 @@ on:
         required: false
         type: boolean
         default: false
+      curate_only:
+        description: "Curate review queue only; do not generate or publish articles"
+        required: false
+        type: boolean
+        default: true
+      approved_queue:
+        description: "Approved review-queue run directory or manifest to publish"
+        required: false
+        default: ""
 
 concurrency:
   group: ai-pipeline
@@ -22,7 +32,7 @@ concurrency:
 
 jobs:
   generate:
-    name: Generate & Publish Articles
+    name: Curate & Publish Articles
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -82,6 +92,16 @@ jobs:
         env:
           MAX_ARTICLES: ${{ inputs.max_articles || '3' }}
           DRY_RUN: ${{ inputs.dry_run }}
+          CURATE_ONLY: ${{ github.event_name == 'schedule' && 'true' || inputs.curate_only }}
+          APPROVED_QUEUE: ${{ inputs.approved_queue || '' }}
+          AUTONOMY_GATE: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
+          AUTONOMY_APPROVED_BY: ${{ vars.AI_PIPELINE_AUTONOMY_APPROVED_BY || '' }}
+          AUTONOMY_OPEN_REGRESSIONS: ${{ vars.AI_PIPELINE_OPEN_REGRESSIONS || '' }}
+          AUTONOMY_GSC_DEGRADED: ${{ vars.AI_PIPELINE_GSC_DEGRADED || 'false' }}
+          AUTONOMY_SERIOUS_INCIDENT_OPEN: ${{ vars.AI_PIPELINE_SERIOUS_INCIDENT_OPEN || 'false' }}
+          AUTONOMY_REJECTIONS_TODAY: ${{ vars.AI_PIPELINE_REJECTIONS_TODAY || '0' }}
+          CURATION_STARTED_ON: ${{ vars.AI_PIPELINE_CURATION_STARTED_ON || '2026-05-26' }}
+          CURATION_MAX_DAYS: ${{ vars.AI_PIPELINE_CURATION_MAX_DAYS || '14' }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -89,10 +109,27 @@ jobs:
           NODE_OPTIONS: --use-system-ca
         run: |
           MAX_ARTICLES=$(echo "$MAX_ARTICLES" | grep -oE '^[0-9]+$' || echo 3)
+          CURATION_MAX_DAYS=$(echo "${CURATION_MAX_DAYS:-14}" | grep -oE '^[0-9]+$' || echo 14)
           ARGS="--max-articles=$MAX_ARTICLES"
           if [ "$DRY_RUN" = "true" ]; then
             ARGS="$ARGS --dry-run"
           fi
+          if [ -n "$APPROVED_QUEUE" ]; then
+            CURATE_ONLY="false"
+            ARGS="$ARGS --approved-queue=$APPROVED_QUEUE"
+          fi
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$CURATE_ONLY" = "true" ]; then
+            START_EPOCH=$(date -u -d "$CURATION_STARTED_ON" +%s 2>/dev/null || echo "")
+            NOW_EPOCH=$(date -u +%s)
+            if [ -n "$START_EPOCH" ] && [ $((NOW_EPOCH - START_EPOCH)) -ge $((CURATION_MAX_DAYS * 86400)) ]; then
+              CURATE_ONLY="false"
+              echo "::notice::Manual taste-calibration window expired after ${CURATION_MAX_DAYS} days; scheduled run will publish autonomously."
+            fi
+          fi
+          if [ "$CURATE_ONLY" = "true" ]; then
+            ARGS="$ARGS --curate-only"
+          fi
+          echo "effective_curate_only=$CURATE_ONLY" >> "$GITHUB_OUTPUT"
           set +e
           npx tsx scripts/pipeline/index.ts $ARGS
           PIPELINE_EXIT=$?
@@ -132,9 +169,12 @@ jobs:
         id: detect
         if: ${{ inputs.dry_run != 'true' }}
         run: |
-          NEW_FILES=$(git status --short content/ public/images/articles/ .pipeline-cache/ 2>/dev/null | wc -l | tr -d ' ')
+          NEW_FILES=$(git status --short content/ public/images/articles/ data/editorial-queue/ .pipeline-cache/ 2>/dev/null | wc -l | tr -d ' ')
+          QUEUE_FILES=$(git status --short data/editorial-queue/ 2>/dev/null | wc -l | tr -d ' ')
           echo "new_files=$NEW_FILES" >> "$GITHUB_OUTPUT"
+          echo "queue_files=$QUEUE_FILES" >> "$GITHUB_OUTPUT"
           echo "📂 $NEW_FILES new or modified file(s)"
+          echo "🧭 $QUEUE_FILES review queue file(s)"
 
       - name: Collect article titles
         id: titles
@@ -182,6 +222,8 @@ jobs:
 
       - name: Commit generated content
         if: ${{ inputs.dry_run != 'true' && steps.detect.outputs.new_files != '0' }}
+        env:
+          CURATE_ONLY: ${{ steps.pipeline.outputs.effective_curate_only }}
         run: |
           set -e
           git config user.name "zcybernews-bot"
@@ -206,7 +248,11 @@ jobs:
             echo "::notice::Nothing to commit — skipping push"
             exit 0
           fi
-          git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          if [ "$CURATE_ONLY" = "true" ]; then
+            git commit -m "chore: ai pipeline review queue $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          else
+            git commit -m "chore: ai pipeline $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          fi
 
           # Retry loop — if push is rejected (non-fast-forward because someone
           # else committed during our ~3-5 min run), rebase our commit on top
@@ -325,13 +371,37 @@ jobs:
             --data-urlencode text="$MESSAGE" \
             > /dev/null || true
 
+      - name: Notify Telegram — review queue
+        if: ${{ success() && inputs.dry_run != 'true' && steps.pipeline.outputs.effective_curate_only == 'true' && steps.decisions.outputs.has_matrix == 'true' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MATRIX: ${{ steps.decisions.outputs.matrix }}
+          QUEUE_FILES: ${{ steps.detect.outputs.queue_files }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ] || [ -z "$MATRIX" ]; then
+            exit 0
+          fi
+          TIME=$(TZ='Asia/Singapore' date '+%H:%M SGT')
+          MESSAGE="🧭 <b>ZCyberNews Review Queue Ready</b>"
+          MESSAGE+=$'\n'"Time: ${TIME}"
+          MESSAGE+=$'\n'"No public articles were published in this run."
+          MESSAGE+=$'\n'"Review queue files changed: ${QUEUE_FILES:-0}"
+          MESSAGE+=$'\n\n'"${MATRIX}"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode parse_mode="HTML" \
+            --data-urlencode disable_web_page_preview="true" \
+            --data-urlencode text="$MESSAGE" \
+            > /dev/null || true
+
       - name: Notify Telegram — no new articles
-        if: ${{ success() && inputs.dry_run != 'true' && steps.detect.outputs.new_files == '0' && steps.decisions.outputs.not_published_count == '0' }}
+        if: ${{ success() && inputs.dry_run != 'true' && steps.pipeline.outputs.effective_curate_only != 'true' && steps.detect.outputs.new_files == '0' && steps.decisions.outputs.not_published_count == '0' }}
         run: |
           echo "::notice::No new articles this run (all stories already processed) — no notification sent."
 
       - name: Notify Telegram — decision matrix only
-        if: ${{ success() && inputs.dry_run != 'true' && steps.detect.outputs.new_files == '0' && steps.decisions.outputs.not_published_count != '0' }}
+        if: ${{ success() && inputs.dry_run != 'true' && steps.pipeline.outputs.effective_curate_only != 'true' && steps.detect.outputs.new_files == '0' && steps.decisions.outputs.not_published_count != '0' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

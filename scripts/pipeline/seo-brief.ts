@@ -36,13 +36,13 @@ function firstMatch(text: string, regex: RegExp): string | null {
 function targetForLane(lane: TopicLane): string | null {
   const map: Record<TopicLane, string | null> = {
     vulnerabilities: "active-cves",
-    ransomware: "ransomware-groups",
-    "apt-state-actors": "apt-state-actors",
-    breaches: "data-breaches",
-    malware: "malware-loaders",
+    ransomware: "ransomware",
+    "apt-state-actors": "apt",
+    breaches: "breaches",
+    malware: "malware",
     "ai-security": "ai-security",
-    "defender-ops": "defender-operations",
-    policy: "cyber-policy",
+    "defender-ops": "defender-ops",
+    policy: "policy",
   };
   return map[lane];
 }

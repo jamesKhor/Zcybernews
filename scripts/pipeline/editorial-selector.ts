@@ -7,6 +7,11 @@ import {
 } from "./search-demand.js";
 import { scoreSourceTrust } from "./source-trust.js";
 import type { StoryCluster } from "./story-clustering.js";
+import type { EditorialTasteProfile, TastePattern } from "./taste-profile.js";
+import type {
+  NegativeTasteSignal,
+  PositiveTasteSignal,
+} from "./review-queue.js";
 
 export type PublishDecision =
   | "publish-now"
@@ -26,6 +31,8 @@ export interface EditorialSelection {
   freshnessScore: number;
   differentiationScore: number;
   portfolioScore: number;
+  tasteProfileScore: number;
+  tasteProfileReasons: string[];
 }
 
 export interface EditorialSelectorResult<T extends Story = Story> {
@@ -219,6 +226,208 @@ function hasLowOrMediumSeverityLabel(cluster: StoryCluster<Story>): boolean {
   );
 }
 
+function lowValueRoundupReason(cluster: StoryCluster<Story>): string | null {
+  const text = clusterText(cluster);
+  if (
+    /\b(?:weekly recap|week in (?:cybersecurity|security)|week\s+\d{1,2}|stormcast|wrap[- ]?up|roundup)\b/i.test(
+      text,
+    )
+  ) {
+    return "low-value-roundup";
+  }
+  return null;
+}
+
+function averageProfileScore(
+  profileScores: Record<string, number>,
+  keys: string[],
+): number | null {
+  const scores = keys
+    .map((key) => profileScores[key])
+    .filter((score): score is number => typeof score === "number");
+  if (scores.length === 0) return null;
+  return scores.reduce((sum, score) => sum + score, 0) / scores.length;
+}
+
+function inferredPositiveSignals(input: {
+  lane: TopicLane;
+  demandScore: number;
+  trustScore: number;
+  evidenceScore: number;
+  differentiationScore: number;
+  packet: ReturnType<typeof buildEvidencePacket>;
+  cluster: StoryCluster<Story>;
+}): PositiveTasteSignal[] {
+  const text = clusterText(input.cluster).toLowerCase();
+  const signals: PositiveTasteSignal[] = [];
+  if (
+    input.demandScore >= 0.65 ||
+    /\b(?:breaking|warns?|zero-day|ransomware|breach|openai|ai)\b/.test(text)
+  ) {
+    signals.push("hot-topic");
+  }
+  if (
+    input.packet.facts.exploitStatus === "exploited" ||
+    /\bactively exploited|exploited in (?:the )?wild\b/i.test(text)
+  ) {
+    signals.push("active-exploitation");
+  }
+  const currentYear = new Date().getUTCFullYear();
+  const hasOlderExploitationContext =
+    input.packet.entities.cves.some((cve) => {
+      const year = Number(cve.match(/^CVE-(\d{4})-/)?.[1]);
+      return Number.isFinite(year) && year <= currentYear - 1;
+    }) && input.packet.facts.exploitStatus === "exploited";
+  if (
+    hasOlderExploitationContext ||
+    /\b(?:historical exploitation|previously exploited|legacy exploitation)\b/i.test(
+      text,
+    )
+  ) {
+    signals.push("historical-exploitation");
+  }
+  if (input.demandScore >= 0.6) signals.push("reader-likely-cares");
+  if (
+    input.packet.entities.cves.length > 0 ||
+    input.packet.facts.iocSignals.length > 0 ||
+    /\b(?:mitigation|patch|detection|ioc|defenders?|apply updates?)\b/i.test(
+      text,
+    )
+  ) {
+    signals.push("defender-actionable");
+  }
+  if (input.trustScore >= 0.75) signals.push("strong-source");
+  if (input.packet.hasPrimaryEvidence && input.differentiationScore >= 0.6) {
+    signals.push("original-angle");
+  }
+  if (input.lane !== "vulnerabilities") signals.push("portfolio-balance");
+  if (input.demandScore >= 0.65) signals.push("seo-opportunity");
+  if (
+    input.evidenceScore >= 0.5 &&
+    input.trustScore >= 0.7 &&
+    input.differentiationScore >= 0.5
+  ) {
+    signals.push("brand-fit");
+  }
+  return [...new Set(signals)];
+}
+
+function inferredNegativeSignals(input: {
+  demandScore: number;
+  trustScore: number;
+  packet: ReturnType<typeof buildEvidencePacket>;
+  cluster: StoryCluster<Story>;
+}): NegativeTasteSignal[] {
+  const text = clusterText(input.cluster).toLowerCase();
+  const signals: NegativeTasteSignal[] = [];
+  if (
+    input.packet.sourceCount <= 1 &&
+    input.packet.uncertainty.includes("low-concrete-fact-density")
+  ) {
+    signals.push("generic-rewrite");
+  }
+  if (input.trustScore < 0.45) signals.push("weak-source");
+  if (input.demandScore < 0.3) signals.push("low-reader-value");
+  if (input.packet.uncertainty.includes("no-primary-source")) {
+    signals.push("too-speculative");
+  }
+  if (
+    /\b(?:webinar|joins|partner|integration|gartner|magic quadrant)\b/i.test(
+      text,
+    )
+  ) {
+    signals.push("too-vendor-pr");
+  }
+  if (newestAgeHours(input.cluster) > 24 * 14) signals.push("stale-topic");
+  if (
+    input.packet.entities.cves.length === 0 &&
+    input.packet.facts.iocSignals.length === 0 &&
+    !/\b(?:mitigation|patch|detection|defenders?)\b/i.test(text)
+  ) {
+    signals.push("no-actionable-angle");
+  }
+  return [...new Set(signals)];
+}
+
+function applyTasteProfile(input: {
+  profile?: EditorialTasteProfile | null;
+  lane: TopicLane;
+  sourceNames: string[];
+  reasonTags: string[];
+  positiveSignals: PositiveTasteSignal[];
+  negativeSignals: NegativeTasteSignal[];
+}): { adjustment: number; reasons: string[]; matchedPatterns: TastePattern[] } {
+  const profile = input.profile;
+  if (!profile || profile.reviewedCandidateCount === 0) {
+    return { adjustment: 0, reasons: [], matchedPatterns: [] };
+  }
+  let adjustment = 0;
+  const reasons: string[] = [];
+  const matchedPatterns: TastePattern[] = [];
+
+  function addPattern(
+    kind: TastePattern["kind"],
+    key: string,
+    averageRating: number,
+    count: number,
+    weight: number,
+  ) {
+    const delta = (averageRating - 0.5) * weight;
+    adjustment += delta;
+    matchedPatterns.push({ kind, key, averageRating, count });
+    reasons.push(
+      `${delta >= 0 ? "taste-boost" : "taste-suppress"}:${kind}:${key}:${averageRating}`,
+    );
+  }
+
+  const laneScore = profile.laneScores[input.lane];
+  if (typeof laneScore === "number") {
+    addPattern(
+      "lane",
+      input.lane,
+      laneScore,
+      profile.laneCounts[input.lane] ?? 0,
+      0.08,
+    );
+  }
+  const sourceScore = averageProfileScore(
+    profile.sourceScores,
+    input.sourceNames,
+  );
+  if (sourceScore !== null)
+    addPattern("source", "matched-source", sourceScore, 1, 0.04);
+  const reasonScore = averageProfileScore(
+    profile.reasonTagScores,
+    input.reasonTags,
+  );
+  if (reasonScore !== null) {
+    addPattern("selection-reason", "matched-reason", reasonScore, 1, 0.05);
+  }
+  const positiveScore = averageProfileScore(
+    profile.positiveSignalScores,
+    input.positiveSignals,
+  );
+  if (positiveScore !== null) {
+    addPattern("positive-signal", "matched-positive", positiveScore, 1, 0.08);
+  }
+  const negativeScore = averageProfileScore(
+    profile.negativeSignalScores,
+    input.negativeSignals,
+  );
+  if (negativeScore !== null && negativeScore < 0.6) {
+    addPattern("negative-signal", "matched-negative", negativeScore, 1, 0.1);
+  }
+
+  return {
+    adjustment: Math.max(
+      -0.15,
+      Math.min(0.15, Math.round(adjustment * 100) / 100),
+    ),
+    reasons,
+    matchedPatterns,
+  };
+}
+
 function cvePublishBlockReason(
   packet: ReturnType<typeof buildEvidencePacket>,
   cluster: StoryCluster<Story>,
@@ -277,6 +486,7 @@ function decide(
   ) {
     return "research-more";
   }
+  if (lowValueRoundupReason(cluster)) return "digest-only";
   const nvdOnly = isNvdOnly(cluster, lane);
   const highestCvss = Math.max(...packet.facts.cvssScores, 0);
   const cveBlockReason = cvePublishBlockReason(packet, cluster, lane);
@@ -317,13 +527,18 @@ function reasonsFor(
     reasons.push(`portfolio:${selection.lane}`);
   const cveBlockReason = cvePublishBlockReason(packet, cluster, selection.lane);
   if (cveBlockReason) reasons.push(cveBlockReason);
+  const roundupReason = lowValueRoundupReason(cluster);
+  if (roundupReason) reasons.push(roundupReason);
   for (const uncertainty of packet.uncertainty) reasons.push(uncertainty);
   return reasons.length > 0 ? reasons : ["low selection score"];
 }
 
 export function selectEditorialCandidates<T extends Story>(
   clusters: StoryCluster<T>[],
-  options: { maxArticles: number } = { maxArticles: 5 },
+  options: {
+    maxArticles: number;
+    tasteProfile?: EditorialTasteProfile | null;
+  } = { maxArticles: 5 },
 ): EditorialSelectorResult<T> {
   const scored = clusters.map((cluster) => {
     const packet = buildEvidencePacket(cluster as StoryCluster<Story>);
@@ -342,7 +557,7 @@ export function selectEditorialCandidates<T extends Story>(
       products: packet.entities.products,
       victims: packet.entities.victims,
     }).score;
-    const partial = {
+    const rawPartial = {
       clusterKey: cluster.key,
       score: 0,
       lane,
@@ -352,16 +567,51 @@ export function selectEditorialCandidates<T extends Story>(
       freshnessScore: freshnessScore(cluster as StoryCluster<Story>),
       differentiationScore: differentiationScore(lane, packet),
       portfolioScore: portfolioScore(lane),
+      tasteProfileScore: 0,
+      tasteProfileReasons: [],
     };
-    const score = clamp01(
-      partial.evidenceScore * 0.28 +
-        partial.trustScore * 0.18 +
-        partial.demandScore * 0.22 +
-        partial.freshnessScore * 0.12 +
-        partial.differentiationScore * 0.12 +
-        partial.portfolioScore * 0.08 -
-        staleVulnerabilityPenalty(lane, packet),
+    const baseScore =
+      rawPartial.evidenceScore * 0.28 +
+      rawPartial.trustScore * 0.18 +
+      rawPartial.demandScore * 0.22 +
+      rawPartial.freshnessScore * 0.12 +
+      rawPartial.differentiationScore * 0.12 +
+      rawPartial.portfolioScore * 0.08 -
+      staleVulnerabilityPenalty(lane, packet);
+    const baseReasons = reasonsFor(
+      { ...rawPartial, score: clamp01(baseScore) },
+      packet,
+      cluster as StoryCluster<Story>,
     );
+    const positiveSignals = inferredPositiveSignals({
+      lane,
+      demandScore: rawPartial.demandScore,
+      trustScore: rawPartial.trustScore,
+      evidenceScore: rawPartial.evidenceScore,
+      differentiationScore: rawPartial.differentiationScore,
+      packet,
+      cluster: cluster as StoryCluster<Story>,
+    });
+    const negativeSignals = inferredNegativeSignals({
+      demandScore: rawPartial.demandScore,
+      trustScore: rawPartial.trustScore,
+      packet,
+      cluster: cluster as StoryCluster<Story>,
+    });
+    const taste = applyTasteProfile({
+      profile: options.tasteProfile,
+      lane,
+      sourceNames: packet.sourceNames,
+      reasonTags: baseReasons,
+      positiveSignals,
+      negativeSignals,
+    });
+    const score = clamp01(baseScore + taste.adjustment);
+    const partial = {
+      ...rawPartial,
+      tasteProfileScore: taste.adjustment,
+      tasteProfileReasons: taste.reasons,
+    };
     const withScore = { ...partial, score };
     const decision = decide(
       score,
@@ -374,7 +624,7 @@ export function selectEditorialCandidates<T extends Story>(
     const selection: EditorialSelection = {
       ...withScore,
       decision,
-      reasons: reasonsFor(withScore, packet, cluster as StoryCluster<Story>),
+      reasons: [...baseReasons, ...taste.reasons.slice(0, 4)],
     };
     return { cluster, selection };
   });

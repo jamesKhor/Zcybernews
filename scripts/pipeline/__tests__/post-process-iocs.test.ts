@@ -20,6 +20,16 @@ function article(overrides: Partial<GeneratedArticle> = {}): GeneratedArticle {
     affected_regions: [],
     iocs: [],
     ttp_matrix: [],
+    seo_query_target: "Example malware command and control",
+    seo_intent: "technical-analysis",
+    seo_title_promise: "Lead with the verified command-and-control evidence.",
+    seo_meta_promise:
+      "Start with the malware C2 domain and explain the defender signal.",
+    target_hub: "malware-loaders",
+    internal_link_targets: ["malware-loaders", "ioc-analysis"],
+    featured_image_alt:
+      "Security analyst reviewing malware command-and-control telemetry",
+    news_sitemap_eligible: true,
     body: `## Executive Summary
 
 Example malware contacted evil-update.xyz and https://evil-update.xyz/login.php during the intrusion.

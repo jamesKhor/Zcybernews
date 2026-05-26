@@ -13,6 +13,7 @@ import {
   type DuplicateMatch,
 } from "../utils/dedup.js";
 import type { SeoBrief } from "./seo-brief.js";
+import type { ApprovedCandidateReview } from "./approved-candidates.js";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -109,7 +110,12 @@ function buildFrontmatter(
   datedSlug: string,
   sourceUrls: string[],
   body: string,
-  options?: { clusterKey?: string; sourceCount?: number; seoBrief?: SeoBrief },
+  options?: {
+    clusterKey?: string;
+    sourceCount?: number;
+    seoBrief?: SeoBrief;
+    review?: ApprovedCandidateReview;
+  },
   overrides?: Partial<{ title: string; excerpt: string; locale_pair: string }>,
 ): Record<string, unknown> {
   const fm: Record<string, unknown> = {
@@ -131,9 +137,61 @@ function buildFrontmatter(
     fm.source_count = options.sourceCount;
   }
   if (options?.seoBrief) {
-    fm.seo_query_target = options.seoBrief.primaryQueryTarget;
-    fm.seo_intent = options.seoBrief.searchIntent;
-    if (options.seoBrief.targetHub) fm.target_hub = options.seoBrief.targetHub;
+    fm.seo_query_target =
+      article.seo_query_target || options.seoBrief.primaryQueryTarget;
+    fm.seo_intent = article.seo_intent || options.seoBrief.searchIntent;
+    fm.seo_title_promise =
+      article.seo_title_promise || options.seoBrief.titlePromise;
+    fm.seo_meta_promise =
+      article.seo_meta_promise || options.seoBrief.metaPromise;
+    const targetHub = article.target_hub ?? options.seoBrief.targetHub;
+    if (targetHub) fm.target_hub = targetHub;
+    const internalLinkTargets =
+      article.internal_link_targets?.length > 0
+        ? article.internal_link_targets
+        : options.seoBrief.internalLinkTargets;
+    if (internalLinkTargets.length) {
+      fm.internal_link_targets = internalLinkTargets;
+    }
+    fm.news_sitemap_eligible =
+      article.news_sitemap_eligible ?? options.seoBrief.sitemapEligible;
+  } else {
+    fm.seo_query_target = article.seo_query_target;
+    fm.seo_intent = article.seo_intent;
+    fm.seo_title_promise = article.seo_title_promise;
+    fm.seo_meta_promise = article.seo_meta_promise;
+    if (article.target_hub) fm.target_hub = article.target_hub;
+    if (article.internal_link_targets.length) {
+      fm.internal_link_targets = article.internal_link_targets;
+    }
+    fm.news_sitemap_eligible = article.news_sitemap_eligible;
+  }
+  if (article.featured_image_alt) {
+    fm.featured_image_alt = article.featured_image_alt;
+  }
+  if (options?.review) {
+    fm.editorial_candidate_id = options.review.candidateId;
+    fm.editorial_review_status = options.review.status;
+    fm.editorial_reviewer = options.review.reviewedBy;
+    fm.editorial_reviewed_at = options.review.reviewedAt;
+    fm.editorial_decision_reason = options.review.decisionReason;
+    fm.editorial_taste_rating = options.review.tasteRating;
+    if (options.review.tasteReason)
+      fm.editorial_taste_reason = options.review.tasteReason;
+    if (options.review.positiveSignals.length)
+      fm.editorial_positive_signals = options.review.positiveSignals;
+    if (options.review.negativeSignals.length)
+      fm.editorial_negative_signals = options.review.negativeSignals;
+    if (options.review.selectedReasonTags.length)
+      fm.editorial_reason_tags = options.review.selectedReasonTags;
+    if (options.review.siteFitNotes)
+      fm.editorial_site_fit_notes = options.review.siteFitNotes;
+    if (options.review.readerFitNotes)
+      fm.editorial_reader_fit_notes = options.review.readerFitNotes;
+    if (options.review.operatorNotes)
+      fm.editorial_operator_notes = options.review.operatorNotes;
+    if (options.review.calibrationRound)
+      fm.editorial_calibration_round = options.review.calibrationRound;
   }
   if (article.severity) fm.severity = article.severity;
   if (article.cvss_score !== null) fm.cvss_score = article.cvss_score;
@@ -233,6 +291,7 @@ export function writeArticlePair(
     clusterKey?: string;
     sourceCount?: number;
     seoBrief?: SeoBrief;
+    review?: ApprovedCandidateReview;
   } = {},
 ): { en: string; zh: string | null } {
   const date = new Date().toISOString().split("T")[0]!;

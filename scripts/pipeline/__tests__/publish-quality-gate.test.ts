@@ -29,6 +29,17 @@ function article(partial: Partial<GeneratedArticle> = {}): GeneratedArticle {
       },
     ],
     ttp_matrix: [],
+    seo_query_target: "credential theft campaign",
+    seo_intent: "incident-impact",
+    seo_title_promise:
+      "Lead with the credential theft campaign and enterprise risk.",
+    seo_meta_promise:
+      "Start with credential theft, name enterprise accounts, and explain defender action.",
+    target_hub: "data-breaches",
+    internal_link_targets: ["data-breaches", "phishing"],
+    featured_image_alt:
+      "Security analyst reviewing credential theft campaign telemetry",
+    news_sitemap_eligible: true,
     body: body(700),
     ...partial,
   };

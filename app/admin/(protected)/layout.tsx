@@ -14,6 +14,7 @@ import {
   LogOut,
   ShieldCheck,
   BookOpen,
+  ClipboardCheck,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -28,6 +29,7 @@ const navItems = [
   { href: "/admin/articles", label: "Articles", icon: BookOpen },
   { href: "/admin/sources", label: "RSS Sources", icon: Rss },
   { href: "/admin/feed", label: "Feed Reader", icon: Newspaper },
+  { href: "/admin/review", label: "Review Queue", icon: ClipboardCheck },
   { href: "/admin/compose", label: "Compose", icon: PenLine },
 ];
 

@@ -35,6 +35,21 @@ export interface DecisionMatrixEntry {
     freshnessScore?: number;
     differentiationScore?: number;
     portfolioScore?: number;
+    tasteProfileScore?: number;
+    tasteProfileReasons?: string[];
+  };
+  review?: {
+    candidateId?: string;
+    status?: string;
+    reviewedBy?: string;
+    reviewedAt?: string;
+    decisionReason?: string;
+    tasteRating?: number;
+    tasteReason?: string | null;
+    positiveSignals?: string[];
+    negativeSignals?: string[];
+    selectedReasonTags?: string[];
+    calibrationRound?: string | null;
   };
   seoQueryTarget?: string;
 }
