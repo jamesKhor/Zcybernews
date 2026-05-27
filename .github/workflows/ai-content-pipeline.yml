@@ -10,7 +10,7 @@ on:
       max_articles:
         description: "Max candidates/articles to process"
         required: false
-        default: "3"
+        default: "6"
       dry_run:
         description: "Dry run — fetch feeds but do not generate or write"
         required: false
@@ -90,7 +90,7 @@ jobs:
       - name: Run AI Pipeline
         id: pipeline
         env:
-          MAX_ARTICLES: ${{ inputs.max_articles || '3' }}
+          MAX_ARTICLES: ${{ inputs.max_articles || '6' }}
           DRY_RUN: ${{ inputs.dry_run }}
           CURATE_ONLY: ${{ github.event_name == 'schedule' && 'true' || inputs.curate_only }}
           APPROVED_QUEUE: ${{ inputs.approved_queue || '' }}
@@ -102,21 +102,24 @@ jobs:
           AUTONOMY_REJECTIONS_TODAY: ${{ vars.AI_PIPELINE_REJECTIONS_TODAY || '0' }}
           CURATION_STARTED_ON: ${{ vars.AI_PIPELINE_CURATION_STARTED_ON || '2026-05-26' }}
           CURATION_MAX_DAYS: ${{ vars.AI_PIPELINE_CURATION_MAX_DAYS || '14' }}
+          CALIBRATION_MORNING_QUEUE_MAX: ${{ vars.AI_PIPELINE_CALIBRATION_MORNING_QUEUE_MAX || '6' }}
+          CALIBRATION_AFTERNOON_QUEUE_MAX: ${{ vars.AI_PIPELINE_CALIBRATION_AFTERNOON_QUEUE_MAX || '1' }}
+          CALIBRATION_OVERNIGHT_QUEUE_MAX: ${{ vars.AI_PIPELINE_CALIBRATION_OVERNIGHT_QUEUE_MAX || '1' }}
+          AUTONOMOUS_MAX_ARTICLES: ${{ vars.AI_PIPELINE_AUTONOMOUS_MAX_ARTICLES || '3' }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}
           NODE_OPTIONS: --use-system-ca
         run: |
-          MAX_ARTICLES=$(echo "$MAX_ARTICLES" | grep -oE '^[0-9]+$' || echo 3)
+          RAW_MAX_ARTICLES="$MAX_ARTICLES"
           CURATION_MAX_DAYS=$(echo "${CURATION_MAX_DAYS:-14}" | grep -oE '^[0-9]+$' || echo 14)
-          ARGS="--max-articles=$MAX_ARTICLES"
           if [ "$DRY_RUN" = "true" ]; then
-            ARGS="$ARGS --dry-run"
+            DRY_RUN_ARG="--dry-run"
           fi
           if [ -n "$APPROVED_QUEUE" ]; then
             CURATE_ONLY="false"
-            ARGS="$ARGS --approved-queue=$APPROVED_QUEUE"
+            APPROVED_QUEUE_ARG="--approved-queue=$APPROVED_QUEUE"
           fi
           if [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$CURATE_ONLY" = "true" ]; then
             START_EPOCH=$(date -u -d "$CURATION_STARTED_ON" +%s 2>/dev/null || echo "")
@@ -125,6 +128,29 @@ jobs:
               CURATE_ONLY="false"
               echo "::notice::Manual taste-calibration window expired after ${CURATION_MAX_DAYS} days; scheduled run will publish autonomously."
             fi
+          fi
+
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+            if [ "$CURATE_ONLY" = "true" ]; then
+              case "$(date -u +%H)" in
+                00) RAW_MAX_ARTICLES="$CALIBRATION_MORNING_QUEUE_MAX" ;;
+                08) RAW_MAX_ARTICLES="$CALIBRATION_AFTERNOON_QUEUE_MAX" ;;
+                16) RAW_MAX_ARTICLES="$CALIBRATION_OVERNIGHT_QUEUE_MAX" ;;
+              esac
+              echo "::notice::Taste-calibration queue cap for this scheduled run: ${RAW_MAX_ARTICLES}"
+            else
+              RAW_MAX_ARTICLES="$AUTONOMOUS_MAX_ARTICLES"
+              echo "::notice::Autonomous scheduled article cap: ${RAW_MAX_ARTICLES}"
+            fi
+          fi
+
+          MAX_ARTICLES=$(echo "$RAW_MAX_ARTICLES" | grep -oE '^[0-9]+$' || echo 3)
+          ARGS="--max-articles=$MAX_ARTICLES"
+          if [ -n "${DRY_RUN_ARG:-}" ]; then
+            ARGS="$ARGS $DRY_RUN_ARG"
+          fi
+          if [ -n "${APPROVED_QUEUE_ARG:-}" ]; then
+            ARGS="$ARGS $APPROVED_QUEUE_ARG"
           fi
           if [ "$CURATE_ONLY" = "true" ]; then
             ARGS="$ARGS --curate-only"

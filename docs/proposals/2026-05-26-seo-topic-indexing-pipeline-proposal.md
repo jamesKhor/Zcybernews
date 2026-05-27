@@ -40,9 +40,9 @@ GitHub Actions cron is UTC, so the equivalent schedule is:
 cron: "0 0,8,16 * * *"
 ```
 
-Each scheduled run should produce a review queue, not immediate public articles. The queue should contain 1 to 5 candidate packages. It is acceptable to publish zero articles from a run if the candidates are weak.
+Each scheduled run should produce a review queue, not immediate public articles. During taste calibration, the queue should be schedule-aware: the morning run can carry up to 6 candidates for a richer review set, while the later two runs should stay small at about 1 candidate each. This keeps the expected daily review load near 8 candidates if the operator reviews once per day, while still giving enough range to tune taste. It is acceptable to publish zero articles from a run if the candidates are weak.
 
-During the first 3 to 14 days, humans should review candidates daily or twice daily. Each review should mark every candidate as:
+During the first 3 to 14 days, humans should review candidates once or twice daily. Each review should mark every candidate as:
 
 - `approved`: publish or generate a publish-ready draft.
 - `hold`: keep for follow-up if more evidence appears.

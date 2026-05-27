@@ -75,6 +75,7 @@ The approved direction is to start with Stage 1: reduce scheduled publishing, cr
 
 - Scheduled workflow runs 3 times daily instead of hourly.
 - Scheduled workflow uses curate-only mode.
+- During taste calibration, scheduled queues use a light 6/1/1 daily shape: 6 candidates at 08:00 Asia/Shanghai, then 1 candidate at 16:00 and 1 candidate at 00:00.
 - Curate-only mode writes review queue artifacts and does not generate MDX.
 - Queue candidates include lane, score, source URLs, selection reasons, SEO brief, pending reviewer fields, taste rating placeholders, and structured why/why-not taste signals.
 - Decision matrix includes selected candidates as `review-required`.
@@ -93,7 +94,7 @@ The approved direction is to start with Stage 1: reduce scheduled publishing, cr
 
 Autonomous publishing must return to review mode if the rolling 20-candidate liked ratio drops below 85%, average taste rating drops below 0.85, two auto-published articles are rejected in one day, GSC degrades materially, or a serious quality/attribution incident occurs.
 
-Workflow note: scheduled runs default to curate-only during the calibration window. The workflow uses `AI_PIPELINE_CURATION_STARTED_ON` and `AI_PIPELINE_CURATION_MAX_DAYS` repository variables, defaulting to `2026-05-26` and `14`. After Day 14, `AUTONOMY_GATE=true` lets `scripts/pipeline/autonomy-gate.ts` choose normal autonomous mode, strict autonomous mode, or a return to review mode. Set `AI_PIPELINE_AUTONOMY_APPROVED_BY` to `alex` or `eric` for normal mode; use `AI_PIPELINE_OPEN_REGRESSIONS`, `AI_PIPELINE_GSC_DEGRADED`, `AI_PIPELINE_SERIOUS_INCIDENT_OPEN`, or `AI_PIPELINE_REJECTIONS_TODAY` to force review mode when quality degrades.
+Workflow note: scheduled runs default to curate-only during the calibration window. The workflow uses `AI_PIPELINE_CURATION_STARTED_ON` and `AI_PIPELINE_CURATION_MAX_DAYS` repository variables, defaulting to `2026-05-26` and `14`. While in curate-only calibration, scheduled caps default to `AI_PIPELINE_CALIBRATION_MORNING_QUEUE_MAX=6`, `AI_PIPELINE_CALIBRATION_AFTERNOON_QUEUE_MAX=1`, and `AI_PIPELINE_CALIBRATION_OVERNIGHT_QUEUE_MAX=1`, so the founder can clear the queue once or twice daily without facing 10+ items. After Day 14, `AUTONOMY_GATE=true` lets `scripts/pipeline/autonomy-gate.ts` choose normal autonomous mode, strict autonomous mode, or a return to review mode. Set `AI_PIPELINE_AUTONOMY_APPROVED_BY` to `alex` or `eric` for normal mode; use `AI_PIPELINE_OPEN_REGRESSIONS`, `AI_PIPELINE_GSC_DEGRADED`, `AI_PIPELINE_SERIOUS_INCIDENT_OPEN`, or `AI_PIPELINE_REJECTIONS_TODAY` to force review mode when quality degrades.
 
 Taste signal examples:
 
