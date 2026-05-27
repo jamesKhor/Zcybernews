@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-27T06:15:15.913Z",
+  "runId": "github-26494273300",
+  "mode": "curate-only",
+  "maxCandidates": 3,
+  "candidateCount": 3,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-48172",
+      "clusterKey": "cve:CVE-2026-48172",
+      "path": "data/editorial-queue/2026-05-27/run-0615Z/001-cve-cve-2026-48172.json",
+      "proposedTitle": "[CVE-2026-48172] LiteSpeed cPanel Plugin Privilege Escalation Vulnerability",
+      "lane": "vulnerabilities",
+      "score": 0.65,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-48172",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-topic-threat-landscape-digest-marchapril-2026",
+      "clusterKey": "topic:threat-landscape-digest-marchapril-2026",
+      "path": "data/editorial-queue/2026-05-27/run-0615Z/002-topic-threat-landscape-digest-marchapril-2026.json",
+      "proposedTitle": "AI Threat Landscape Digest March-April 2026",
+      "lane": "ransomware",
+      "score": 0.63,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "portfolio:ransomware"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "AI Threat Landscape Digest March-April 2026",
+      "targetHub": "ransomware"
+    },
+    {
+      "candidateId": "003-topic-kremlin-appoints-cyber-executive-alleged",
+      "clusterKey": "topic:kremlin-appoints-cyber-executive-alleged",
+      "path": "data/editorial-queue/2026-05-27/run-0615Z/003-topic-kremlin-appoints-cyber-executive-alleged.json",
+      "proposedTitle": "Kremlin appoints cyber executive with alleged GRU ties to Security Council role",
+      "lane": "policy",
+      "score": 0.57,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Kremlin appoints cyber executive with alleged GRU ties to Security Council role",
+      "targetHub": "policy"
+    }
+  ]
+}
