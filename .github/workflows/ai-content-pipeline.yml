@@ -178,7 +178,7 @@ jobs:
 
       - name: Collect article titles
         id: titles
-        if: ${{ inputs.dry_run != 'true' && steps.detect.outputs.new_files != '0' }}
+        if: ${{ inputs.dry_run != 'true' && steps.pipeline.outputs.effective_curate_only != 'true' && steps.detect.outputs.new_files != '0' }}
         run: |
           # Extract the title: field from MDX frontmatter of each new/modified
           # English article (not the filename). Was previously using filenames
@@ -210,7 +210,8 @@ jobs:
           done < <(git status --short content/en/ 2>/dev/null | awk '/\.mdx$/ {print $2}' | head -5)
           set -e
           # Count real titles extracted
-          COUNT=$(printf '%s' "$TITLES" | grep -c '^•' || echo 0)
+          COUNT=$(printf '%s' "$TITLES" | grep -c '^•' || true)
+          COUNT=${COUNT:-0}
           {
             echo 'titles<<EOF'
             printf '%s' "$TITLES"
@@ -307,7 +308,7 @@ jobs:
           retention-days: 7
 
       - name: Trigger deploy-vps (push by GITHUB_TOKEN doesn't auto-trigger)
-        if: ${{ inputs.dry_run != 'true' && steps.titles.outputs.count != '0' && steps.titles.outputs.count != '' }}
+        if: ${{ inputs.dry_run != 'true' && ((steps.titles.outputs.count != '0' && steps.titles.outputs.count != '') || (steps.pipeline.outputs.effective_curate_only == 'true' && steps.detect.outputs.queue_files != '0' && steps.detect.outputs.queue_files != '')) }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
