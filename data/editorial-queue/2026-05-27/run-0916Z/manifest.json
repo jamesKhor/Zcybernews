@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-27T09:16:15.386Z",
+  "runId": "github-26502303762",
+  "mode": "curate-only",
+  "maxCandidates": 6,
+  "candidateCount": 6,
+  "candidates": [
+    {
+      "candidateId": "001-topic-cloud-atlas-activity-second-half",
+      "clusterKey": "topic:cloud-atlas-activity-second-half",
+      "path": "data/editorial-queue/2026-05-27/run-0916Z/001-topic-cloud-atlas-activity-second-half.json",
+      "proposedTitle": "Cloud Atlas activity in the second half of 2025 and early 2026: new tools and a new payload",
+      "lane": "apt-state-actors",
+      "score": 0.68,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "search demand",
+        "portfolio:apt-state-actors"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Windows",
+      "targetHub": "apt"
+    },
+    {
+      "candidateId": "002-cve-cve-2026-48172",
+      "clusterKey": "cve:CVE-2026-48172",
+      "path": "data/editorial-queue/2026-05-27/run-0916Z/002-cve-cve-2026-48172.json",
+      "proposedTitle": "[CVE-2026-48172] LiteSpeed cPanel Plugin Privilege Escalation Vulnerability",
+      "lane": "vulnerabilities",
+      "score": 0.65,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-48172",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "003-topic-threat-landscape-digest-marchapril-2026",
+      "clusterKey": "topic:threat-landscape-digest-marchapril-2026",
+      "path": "data/editorial-queue/2026-05-27/run-0916Z/003-topic-threat-landscape-digest-marchapril-2026.json",
+      "proposedTitle": "AI Threat Landscape Digest March-April 2026",
+      "lane": "ransomware",
+      "score": 0.63,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "portfolio:ransomware"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "AI Threat Landscape Digest March-April 2026",
+      "targetHub": "ransomware"
+    },
+    {
+      "candidateId": "004-topic-lawmakers-demand-answers-cisa-tries",
+      "clusterKey": "topic:lawmakers-demand-answers-cisa-tries",
+      "path": "data/editorial-queue/2026-05-27/run-0916Z/004-topic-lawmakers-demand-answers-cisa-tries.json",
+      "proposedTitle": "Lawmakers Demand Answers as CISA Tries to Contain Data Leak",
+      "lane": "breaches",
+      "score": 0.62,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "search demand",
+        "portfolio:breaches"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "GitHub",
+      "targetHub": "breaches"
+    },
+    {
+      "candidateId": "005-topic-btmob-stealthy-burrowing-deep-android",
+      "clusterKey": "topic:btmob-stealthy-burrowing-deep-android",
+      "path": "data/editorial-queue/2026-05-27/run-0916Z/005-topic-btmob-stealthy-burrowing-deep-android.json",
+      "proposedTitle": "BTMOB: A stealthy RAT burrowing deep into Android devices",
+      "lane": "malware",
+      "score": 0.59,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "BTMOB: A stealthy RAT burrowing deep into Android devices",
+      "targetHub": "malware"
+    },
+    {
+      "candidateId": "006-topic-paved-intent-roadtools-nationstate-tactics",
+      "clusterKey": "topic:paved-intent-roadtools-nationstate-tactics",
+      "path": "data/editorial-queue/2026-05-27/run-0916Z/006-topic-paved-intent-roadtools-nationstate-tactics.json",
+      "proposedTitle": "Paved With Intent: ROADtools and Nation-State Tactics in the Cloud",
+      "lane": "apt-state-actors",
+      "score": 0.58,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "portfolio:apt-state-actors"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Paved With Intent: ROADtools and Nation-State Tactics in the Cloud",
+      "targetHub": "apt"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "004-topic-lawmakers-demand-answers-cisa-tries",
+  "clusterKey": "topic:lawmakers-demand-answers-cisa-tries",
+  "proposedTitle": "Lawmakers Demand Answers as CISA Tries to Contain Data Leak",
+  "lane": "breaches",
+  "score": 0.62,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources",
+    "search demand",
+    "portfolio:breaches"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.46,
+    "trust": 0.88,
+    "demand": 0.72,
+    "freshness": 0.34,
+    "differentiation": 0.57,
+    "portfolio": 0.82
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://krebsonsecurity.com/2026/05/lawmakers-demand-answers-as-cisa-tries-to-contain-data-leak/"
+  ],
+  "sourceNames": [
+    "Krebs on Security"
+  ],
+  "sources": [
+    {
+      "id": "krebsonsecurity-https://krebsonsecurity.com/?p=73638",
+      "title": "Lawmakers Demand Answers as CISA Tries to Contain Data Leak",
+      "url": "https://krebsonsecurity.com/2026/05/lawmakers-demand-answers-as-cisa-tries-to-contain-data-leak/",
+      "excerpt": "Lawmakers in both houses of Congress are demanding answers from the U.S. Cybersecurity & Infrastructure Security Agency (CISA) after KrebsOnSecurity reported this week that a CISA contractor intentionally published AWS GovCloud keys and a vast trove of other agency secrets on a public GitHub account. The inquiry comes as CISA is still struggling to contain the breach and invalidate the leaked cred",
+      "sourceName": "Krebs on Security",
+      "sourceId": "krebsonsecurity",
+      "publishedAt": "Fri, 22 May 2026 16:34:24 +0000",
+      "tags": [
+        "A Little Sunshine",
+        "Data Breaches",
+        "Latest Warnings",
+        "The Coming Storm",
+        "Adam Boileau"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "GitHub",
+    "searchIntent": "incident-impact",
+    "titlePromise": "Lead with GitHub and the concrete defender impact.",
+    "metaPromise": "Start with GitHub, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "breaches",
+    "requiredEntities": [
+      "GitHub"
+    ],
+    "internalLinkTargets": [
+      "breaches"
+    ],
+    "targetHub": "breaches",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
