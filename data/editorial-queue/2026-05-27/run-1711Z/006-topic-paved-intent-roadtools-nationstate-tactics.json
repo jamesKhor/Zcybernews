@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "006-topic-paved-intent-roadtools-nationstate-tactics",
+  "clusterKey": "topic:paved-intent-roadtools-nationstate-tactics",
+  "proposedTitle": "Paved With Intent: ROADtools and Nation-State Tactics in the Cloud",
+  "lane": "apt-state-actors",
+  "score": 0.58,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources",
+    "portfolio:apt-state-actors"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.46,
+    "trust": 0.88,
+    "demand": 0.52,
+    "freshness": 0.34,
+    "differentiation": 0.57,
+    "portfolio": 0.82
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://unit42.paloaltonetworks.com/roadtools-cloud-attacks/"
+  ],
+  "sourceNames": [
+    "Palo Alto Unit 42"
+  ],
+  "sources": [
+    {
+      "id": "unit42-https://unit42.paloaltonetworks.com/?p=181397",
+      "title": "Paved With Intent: ROADtools and Nation-State Tactics in the Cloud",
+      "url": "https://unit42.paloaltonetworks.com/roadtools-cloud-attacks/",
+      "excerpt": "Open-source framework ROADtools is being misused by threat actors for cloud intrusions. Learn how to identify its malicious use. The post Paved With Intent: ROADtools and Nation-State Tactics in the Cloud appeared first on Unit 42.",
+      "sourceName": "Palo Alto Unit 42",
+      "sourceId": "unit42",
+      "publishedAt": "Fri, 22 May 2026 10:00:24 +0000",
+      "tags": [
+        "Cloud Cybersecurity Research",
+        "Threat Research",
+        "Curious Serpens",
+        "Entra ID",
+        "Microsoft Azure"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Paved With Intent: ROADtools and Nation-State Tactics in the Cloud",
+    "searchIntent": "technical-analysis",
+    "titlePromise": "Lead with Paved With Intent: ROADtools and Nation-State Tactics in the Cloud and the concrete defender impact.",
+    "metaPromise": "Start with Paved With Intent: ROADtools and Nation-State Tactics in the Cloud, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "apt-state-actors",
+    "requiredEntities": [
+      "Paved With Intent: ROADtools and Nation-State Tactics in the Cloud"
+    ],
+    "internalLinkTargets": [
+      "apt",
+      "apt-state-actors"
+    ],
+    "targetHub": "apt",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
