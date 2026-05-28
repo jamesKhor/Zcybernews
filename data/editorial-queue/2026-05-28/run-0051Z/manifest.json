@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-28T00:51:51.380Z",
+  "runId": "github-26547764316",
+  "mode": "curate-only",
+  "maxCandidates": 6,
+  "candidateCount": 6,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-45321",
+      "clusterKey": "cve:CVE-2026-45321",
+      "path": "data/editorial-queue/2026-05-28/run-0051Z/001-cve-cve-2026-45321.json",
+      "proposedTitle": "[CVE-2026-45321] TanStack Unspecified Vulnerability",
+      "lane": "malware",
+      "score": 0.72,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "search demand"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-45321",
+      "targetHub": "malware"
+    },
+    {
+      "candidateId": "002-topic-cloud-atlas-activity-second-half",
+      "clusterKey": "topic:cloud-atlas-activity-second-half",
+      "path": "data/editorial-queue/2026-05-28/run-0051Z/002-topic-cloud-atlas-activity-second-half.json",
+      "proposedTitle": "Cloud Atlas activity in the second half of 2025 and early 2026: new tools and a new payload",
+      "lane": "apt-state-actors",
+      "score": 0.68,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "search demand",
+        "portfolio:apt-state-actors"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Windows",
+      "targetHub": "apt"
+    },
+    {
+      "candidateId": "003-topic-election-information-safeguards-2026-openai",
+      "clusterKey": "topic:election-information-safeguards-2026-openai",
+      "path": "data/editorial-queue/2026-05-28/run-0051Z/003-topic-election-information-safeguards-2026-openai.json",
+      "proposedTitle": "Election information and safeguards in 2026",
+      "lane": "ai-security",
+      "score": 0.63,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "OpenAI",
+      "targetHub": "ai-security"
+    },
+    {
+      "candidateId": "004-topic-threat-landscape-digest-marchapril-2026",
+      "clusterKey": "topic:threat-landscape-digest-marchapril-2026",
+      "path": "data/editorial-queue/2026-05-28/run-0051Z/004-topic-threat-landscape-digest-marchapril-2026.json",
+      "proposedTitle": "AI Threat Landscape Digest March-April 2026",
+      "lane": "ransomware",
+      "score": 0.63,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "portfolio:ransomware"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "AI Threat Landscape Digest March-April 2026",
+      "targetHub": "ransomware"
+    },
+    {
+      "candidateId": "005-topic-lawmakers-demand-answers-cisa-tries",
+      "clusterKey": "topic:lawmakers-demand-answers-cisa-tries",
+      "path": "data/editorial-queue/2026-05-28/run-0051Z/005-topic-lawmakers-demand-answers-cisa-tries.json",
+      "proposedTitle": "Lawmakers Demand Answers as CISA Tries to Contain Data Leak",
+      "lane": "breaches",
+      "score": 0.62,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "search demand",
+        "portfolio:breaches"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "GitHub",
+      "targetHub": "breaches"
+    },
+    {
+      "candidateId": "006-topic-btmob-stealthy-burrowing-deep-android",
+      "clusterKey": "topic:btmob-stealthy-burrowing-deep-android",
+      "path": "data/editorial-queue/2026-05-28/run-0051Z/006-topic-btmob-stealthy-burrowing-deep-android.json",
+      "proposedTitle": "BTMOB: A stealthy RAT burrowing deep into Android devices",
+      "lane": "malware",
+      "score": 0.59,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "BTMOB: A stealthy RAT burrowing deep into Android devices",
+      "targetHub": "malware"
+    }
+  ]
+}

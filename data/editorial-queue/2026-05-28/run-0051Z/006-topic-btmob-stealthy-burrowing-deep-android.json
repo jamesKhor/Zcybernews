@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "006-topic-btmob-stealthy-burrowing-deep-android",
+  "clusterKey": "topic:btmob-stealthy-burrowing-deep-android",
+  "proposedTitle": "BTMOB: A stealthy RAT burrowing deep into Android devices",
+  "lane": "malware",
+  "score": 0.59,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.46,
+    "trust": 0.88,
+    "demand": 0.37,
+    "freshness": 0.82,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.welivesecurity.com/en/malware/btmob-stealthy-rat-burrowing-deep-android-devices/"
+  ],
+  "sourceNames": [
+    "WeLiveSecurity (ESET)"
+  ],
+  "sources": [
+    {
+      "id": "welivesecurity-https://www.welivesecurity.com/en/malware/btmob-stealthy-rat-burrowing-deep-android-devices/",
+      "title": "BTMOB: A stealthy RAT burrowing deep into Android devices",
+      "url": "https://www.welivesecurity.com/en/malware/btmob-stealthy-rat-burrowing-deep-android-devices/",
+      "excerpt": "The malware pairs remote access capabilities with ready-made campaign tools, lowering the barrier for full device compromise",
+      "sourceName": "WeLiveSecurity (ESET)",
+      "sourceId": "welivesecurity",
+      "publishedAt": "Tue, 26 May 2026 08:50:00 +0000",
+      "tags": [
+        "Malware"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "BTMOB: A stealthy RAT burrowing deep into Android devices",
+    "searchIntent": "technical-analysis",
+    "titlePromise": "Lead with BTMOB: A stealthy RAT burrowing deep into Android devices and the concrete defender impact.",
+    "metaPromise": "Start with BTMOB: A stealthy RAT burrowing deep into Android devices, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "malware",
+    "requiredEntities": [
+      "BTMOB: A stealthy RAT burrowing deep into Android devices"
+    ],
+    "internalLinkTargets": [
+      "malware"
+    ],
+    "targetHub": "malware",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

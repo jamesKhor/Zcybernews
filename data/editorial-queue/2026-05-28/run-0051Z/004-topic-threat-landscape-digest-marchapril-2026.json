@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "004-topic-threat-landscape-digest-marchapril-2026",
+  "clusterKey": "topic:threat-landscape-digest-marchapril-2026",
+  "proposedTitle": "AI Threat Landscape Digest March-April 2026",
+  "lane": "ransomware",
+  "score": 0.63,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources",
+    "portfolio:ransomware"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.54,
+    "freshness": 0.82,
+    "differentiation": 0.57,
+    "portfolio": 0.82
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://research.checkpoint.com/2026/ai-threat-landscape-digest-march-april-2026/"
+  ],
+  "sourceNames": [
+    "Check Point Research"
+  ],
+  "sources": [
+    {
+      "id": "checkpoint-research-https://research.checkpoint.com/?p=33113",
+      "title": "AI Threat Landscape Digest March-April 2026",
+      "url": "https://research.checkpoint.com/2026/ai-threat-landscape-digest-march-april-2026/",
+      "excerpt": "Executive Summary During the March–April 2026 reporting period, AI use in offensive operations advanced from development and planning to real-time operational deployment. Multiple independent cases, involving individual criminal actors, mass exploitation platforms, ransomware groups, and state-sponsored espionage, show evidence of commercial AI models executing autonomous attack workflows across e",
+      "sourceName": "Check Point Research",
+      "sourceId": "checkpoint-research",
+      "publishedAt": "Tue, 26 May 2026 10:09:59 +0000",
+      "tags": [
+        "AI Research",
+        "Check Point Research Publications"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "AI Threat Landscape Digest March-April 2026",
+    "searchIntent": "incident-impact",
+    "titlePromise": "Lead with AI Threat Landscape Digest March-April 2026 and the concrete defender impact.",
+    "metaPromise": "Start with AI Threat Landscape Digest March-April 2026, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "ransomware",
+    "requiredEntities": [
+      "AI Threat Landscape Digest March-April 2026"
+    ],
+    "internalLinkTargets": [
+      "ransomware"
+    ],
+    "targetHub": "ransomware",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
