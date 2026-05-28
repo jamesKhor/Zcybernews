@@ -37,7 +37,10 @@ import {
   type EditorialSelection,
 } from "./editorial-selector.js";
 import { buildSeoBrief, type SeoBrief } from "./seo-brief.js";
-import { writeReviewQueue } from "./review-queue.js";
+import {
+  filterQueuedReviewCandidates,
+  writeReviewQueue,
+} from "./review-queue.js";
 import { loadTasteProfile } from "./taste-profile.js";
 import {
   loadApprovedCandidateBatches,
@@ -536,8 +539,54 @@ async function main() {
   }
 
   if (CURATE_ONLY) {
-    batches.forEach((batch, batchIndex) => {
+    const reviewQueueInputs = batches.map((batch) => ({
+      stories: batch.stories,
+      selection: batch.selection,
+      seoBrief: batch.seoBrief,
+    }));
+    const reviewQueueFilter = filterQueuedReviewCandidates(reviewQueueInputs);
+    const keptClusterKeys = new Set(
+      reviewQueueFilter.candidates.map(
+        (candidate) => candidate.selection.clusterKey,
+      ),
+    );
+    const skippedByCluster = new Map(
+      reviewQueueFilter.skipped.map((skip) => [skip.clusterKey, skip]),
+    );
+
+    for (const [batchIndex, batch] of batches.entries()) {
       const primaryStory = batch.stories[0];
+      const skippedQueued = skippedByCluster.get(batch.selection.clusterKey);
+      if (skippedQueued) {
+        decisionEntries.push({
+          index:
+            (primaryStory ? storyOrder.get(primaryStory) : undefined) ??
+            selectedStories.length + batchIndex,
+          outcome: "not_published",
+          sourceTitle: primaryStory?.title ?? batch.selection.clusterKey,
+          sourceName: primaryStory?.sourceName,
+          sourceUrl: primaryStory?.url,
+          stage: "manual-review-dedupe",
+          decision: "not queued",
+          reasons: [
+            skippedQueued.reason,
+            `matched ${skippedQueued.matchedRunKey}/${skippedQueued.matchedCandidateId}`,
+          ],
+          gates: [
+            gate(
+              "manual-review-dedupe",
+              "block",
+              `already queued as ${skippedQueued.matchedClusterKey}`,
+            ),
+          ],
+          sourceCount: batch.stories.length,
+          ...editorialDecisionFields(batch.selection),
+          seoQueryTarget: batch.seoBrief.primaryQueryTarget,
+        });
+        continue;
+      }
+      if (!keptClusterKeys.has(batch.selection.clusterKey)) continue;
+
       decisionEntries.push({
         index:
           (primaryStory ? storyOrder.get(primaryStory) : undefined) ??
@@ -560,20 +609,32 @@ async function main() {
         ...editorialDecisionFields(batch.selection),
         seoQueryTarget: batch.seoBrief.primaryQueryTarget,
       });
-    });
+    }
 
-    const queue = writeReviewQueue(
-      batches.map((batch) => ({
-        stories: batch.stories,
-        selection: batch.selection,
-        seoBrief: batch.seoBrief,
-      })),
-      {
-        runId: process.env.GITHUB_RUN_ID
-          ? `github-${process.env.GITHUB_RUN_ID}`
-          : undefined,
-      },
-    );
+    if (reviewQueueFilter.skipped.length > 0) {
+      console.log(
+        `[pipeline] Review queue dedupe skipped ${reviewQueueFilter.skipped.length} already queued candidate(s)`,
+      );
+      console.log(
+        JSON.stringify({
+          event: "review_queue_dedupe",
+          skipped: reviewQueueFilter.skipped,
+        }),
+      );
+    }
+
+    if (reviewQueueFilter.candidates.length === 0) {
+      console.log(
+        "[pipeline] Curate-only mode — no new review candidates after queue dedupe.",
+      );
+      return;
+    }
+
+    const queue = writeReviewQueue(reviewQueueFilter.candidates, {
+      runId: process.env.GITHUB_RUN_ID
+        ? `github-${process.env.GITHUB_RUN_ID}`
+        : undefined,
+    });
 
     console.log(
       `[pipeline] Curate-only mode — review queue written: ${queue.manifestPath}`,

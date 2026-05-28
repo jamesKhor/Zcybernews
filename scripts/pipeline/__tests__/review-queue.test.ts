@@ -2,7 +2,10 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
-import { writeReviewQueue } from "../review-queue";
+import {
+  filterQueuedReviewCandidates,
+  writeReviewQueue,
+} from "../review-queue";
 import type { EditorialSelection } from "../editorial-selector";
 import type { SeoBrief } from "../seo-brief";
 import type { Story } from "../../utils/dedup";
@@ -196,5 +199,96 @@ describe("writeReviewQueue", () => {
       sourceId: "openai-news",
       url: "https://openai.com/news/daybreak",
     });
+  });
+
+  it("filters candidates already present in recent review queue runs", () => {
+    const outputRoot = tempRoot();
+    const queuedCandidate = {
+      stories: [
+        story({
+          id: "checkpoint-ai-digest",
+          title: "AI Threat Landscape Digest March-April 2026",
+          sourceName: "Check Point Research",
+          sourceId: "checkpoint-research",
+          url: "https://research.checkpoint.com/2026/ai-threat-landscape-digest-march-april-2026/",
+          tags: ["AI security"],
+        }),
+      ],
+      selection: selection({
+        clusterKey: "topic:threat-landscape-digest-marchapril-2026",
+        lane: "ai-security",
+      }),
+      seoBrief,
+    };
+    writeReviewQueue([queuedCandidate], {
+      now: new Date("2026-05-27T09:16:15.000Z"),
+      outputRoot,
+      runId: "older-run",
+    });
+
+    const freshCandidate = {
+      stories: [
+        story({
+          id: "fresh-malware-story",
+          title: "Fresh malware campaign targets Android banking users",
+          sourceName: "Example Security",
+          sourceId: "example-security",
+          url: "https://example.com/fresh-malware",
+          tags: ["malware"],
+        }),
+      ],
+      selection: selection({
+        clusterKey: "topic:fresh-malware-campaign",
+        lane: "malware",
+      }),
+      seoBrief: {
+        ...seoBrief,
+        primaryQueryTarget: "Android banking malware",
+        articleType: "malware",
+        targetHub: "malware",
+      },
+    };
+
+    const result = filterQueuedReviewCandidates(
+      [
+        {
+          stories: [
+            story({
+              id: "checkpoint-ai-digest",
+              title: "AI Threat Landscape Digest March-April 2026",
+              sourceName: "Check Point Research",
+              sourceId: "checkpoint-research",
+              url: "https://research.checkpoint.com/2026/ai-threat-landscape-digest-march-april-2026/",
+              tags: ["AI security"],
+            }),
+          ],
+          selection: selection({
+            clusterKey: "topic:threat-landscape-digest-marchapril-2026",
+            lane: "ai-security",
+          }),
+          seoBrief,
+        },
+        freshCandidate,
+      ],
+      {
+        queueRoot: outputRoot,
+        now: new Date("2026-05-28T09:23:07.000Z"),
+      },
+    );
+
+    expect(result.candidates).toHaveLength(1);
+    expect(result.candidates[0].selection.clusterKey).toBe(
+      "topic:fresh-malware-campaign",
+    );
+    expect(result.skipped).toEqual([
+      {
+        clusterKey: "topic:threat-landscape-digest-marchapril-2026",
+        proposedTitle: "AI Threat Landscape Digest March-April 2026",
+        matchedCandidateId: "001-topic-threat-landscape-digest-marchapril-2026",
+        matchedClusterKey: "topic:threat-landscape-digest-marchapril-2026",
+        matchedRunKey: "2026-05-27/run-0916Z",
+        reason: "already queued for review",
+      },
+    ]);
   });
 });
