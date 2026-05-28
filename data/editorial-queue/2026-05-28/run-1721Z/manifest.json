@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-28T17:21:35.494Z",
+  "runId": "github-26590588514",
+  "mode": "curate-only",
+  "maxCandidates": 2,
+  "candidateCount": 2,
+  "candidates": [
+    {
+      "candidateId": "001-topic-openais-frontier-governance-framework-openai",
+      "clusterKey": "topic:openais-frontier-governance-framework-openai",
+      "path": "data/editorial-queue/2026-05-28/run-1721Z/001-topic-openais-frontier-governance-framework-openai.json",
+      "proposedTitle": "OpenAI’s Frontier Governance Framework",
+      "lane": "ai-security",
+      "score": 0.66,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "search demand"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "OpenAI",
+      "targetHub": "ai-security"
+    },
+    {
+      "candidateId": "002-topic-2026-world-discussing-worlds-biggest",
+      "clusterKey": "topic:2026-world-discussing-worlds-biggest",
+      "path": "data/editorial-queue/2026-05-28/run-1721Z/002-topic-2026-world-discussing-worlds-biggest.json",
+      "proposedTitle": "2026 World Cup: Discussing The World’s Biggest Game’s Attack Surface",
+      "lane": "ransomware",
+      "score": 0.65,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "portfolio:ransomware"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "2026 World Cup: Discussing The World’s Biggest Game’s Attack Surface",
+      "targetHub": "ransomware"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "001-topic-openais-frontier-governance-framework-openai",
+  "clusterKey": "topic:openais-frontier-governance-framework-openai",
+  "proposedTitle": "OpenAI’s Frontier Governance Framework",
+  "lane": "ai-security",
+  "score": 0.66,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources",
+    "search demand"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.46,
+    "trust": 0.89,
+    "demand": 0.71,
+    "freshness": 0.82,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://openai.com/index/openai-frontier-governance-framework"
+  ],
+  "sourceNames": [
+    "OpenAI News"
+  ],
+  "sources": [
+    {
+      "id": "openai-news-https://openai.com/index/openai-frontier-governance-framework",
+      "title": "OpenAI’s Frontier Governance Framework",
+      "url": "https://openai.com/index/openai-frontier-governance-framework",
+      "excerpt": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
+      "sourceName": "OpenAI News",
+      "sourceId": "openai-news",
+      "publishedAt": "Thu, 28 May 2026 00:00:00 GMT",
+      "tags": [
+        "OpenAI",
+        "AI security"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "OpenAI",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with OpenAI and the concrete defender impact.",
+    "metaPromise": "Start with OpenAI, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "ai-security",
+    "requiredEntities": [
+      "OpenAI"
+    ],
+    "internalLinkTargets": [
+      "ai-security"
+    ],
+    "targetHub": "ai-security",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

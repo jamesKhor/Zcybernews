@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "002-topic-2026-world-discussing-worlds-biggest",
+  "clusterKey": "topic:2026-world-discussing-worlds-biggest",
+  "proposedTitle": "2026 World Cup: Discussing The World’s Biggest Game’s Attack Surface",
+  "lane": "ransomware",
+  "score": 0.65,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources",
+    "portfolio:ransomware"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.54,
+    "freshness": 1,
+    "differentiation": 0.57,
+    "portfolio": 0.82
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://unit42.paloaltonetworks.com/fifa-world-cup-attack-surface/"
+  ],
+  "sourceNames": [
+    "Palo Alto Unit 42"
+  ],
+  "sources": [
+    {
+      "id": "unit42-https://unit42.paloaltonetworks.com/?p=181710",
+      "title": "2026 World Cup: Discussing The World’s Biggest Game’s Attack Surface",
+      "url": "https://unit42.paloaltonetworks.com/fifa-world-cup-attack-surface/",
+      "excerpt": "The 2026 World Cup presents major cyber risks from ransomware groups, state-aligned actors, and other groups targeting critical infrastructure. Learn more here. The post 2026 World Cup: Discussing The World’s Biggest Game’s Attack Surface appeared first on Unit 42.",
+      "sourceName": "Palo Alto Unit 42",
+      "sourceId": "unit42",
+      "publishedAt": "Thu, 28 May 2026 10:00:53 +0000",
+      "tags": [
+        "Cybercrime",
+        "General",
+        "Hacktivism",
+        "Insights",
+        "Threat Research"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "2026 World Cup: Discussing The World’s Biggest Game’s Attack Surface",
+    "searchIntent": "incident-impact",
+    "titlePromise": "Lead with 2026 World Cup: Discussing The World’s Biggest Game’s Attack Surface and the concrete defender impact.",
+    "metaPromise": "Start with 2026 World Cup: Discussing The World’s Biggest Game’s Attack Surface, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "ransomware",
+    "requiredEntities": [
+      "2026 World Cup: Discussing The World’s Biggest Game’s Attack Surface"
+    ],
+    "internalLinkTargets": [
+      "ransomware"
+    ],
+    "targetHub": "ransomware",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
