@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "002-topic-pirates-crosshairs-cybercrime-gang-infecting",
+  "clusterKey": "topic:pirates-crosshairs-cybercrime-gang-infecting",
+  "proposedTitle": "Pirates in the crosshairs: how one cybercrime gang has been infecting book, movie, and TV show fans for years",
+  "lane": "malware",
+  "score": 0.7,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources",
+    "search demand"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.5,
+    "trust": 0.88,
+    "demand": 0.72,
+    "freshness": 1,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://securelist.com/video-books-pirates-miners-rat/119943/"
+  ],
+  "sourceNames": [
+    "Kaspersky Securelist"
+  ],
+  "sources": [
+    {
+      "id": "kaspersky-securelist-https://kasperskycontenthub.com/securelist/?p=119943",
+      "title": "Pirates in the crosshairs: how one cybercrime gang has been infecting book, movie, and TV show fans for years",
+      "url": "https://securelist.com/video-books-pirates-miners-rat/119943/",
+      "excerpt": "Our experts continue to track attacks targeting consumers of pirated content, both books and movies. 2026 saw the discovery of new target sites with tens of millions of visitors, while the miner gained a RAT module.",
+      "sourceName": "Kaspersky Securelist",
+      "sourceId": "kaspersky-securelist",
+      "publishedAt": "Thu, 28 May 2026 06:55:11 +0000",
+      "tags": [
+        "Malware descriptions",
+        "Malware Technologies",
+        "Microsoft Windows",
+        "Browser Plugins",
+        "Phishing"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Windows",
+    "searchIntent": "technical-analysis",
+    "titlePromise": "Lead with Windows and the concrete defender impact.",
+    "metaPromise": "Start with Windows, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "malware",
+    "requiredEntities": [
+      "Windows"
+    ],
+    "internalLinkTargets": [
+      "malware"
+    ],
+    "targetHub": "malware",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
