@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-29T17:16:30.048Z",
+  "runId": "github-26651473652",
+  "mode": "curate-only",
+  "maxCandidates": 2,
+  "candidateCount": 2,
+  "candidates": [
+    {
+      "candidateId": "001-topic-microsoft-calls-zeroday-releases-never",
+      "clusterKey": "topic:microsoft-calls-zeroday-releases-never",
+      "path": "data/editorial-queue/2026-05-29/run-1716Z/001-topic-microsoft-calls-zeroday-releases-never.json",
+      "proposedTitle": "Microsoft calls zero-day releases ‘never justifiable’ as researcher threatens to drop more",
+      "lane": "vulnerabilities",
+      "score": 0.68,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "search demand"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "GitHub",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-topic-strengthening-societal-resilience-rosalind-biodefense",
+      "clusterKey": "topic:strengthening-societal-resilience-rosalind-biodefense",
+      "path": "data/editorial-queue/2026-05-29/run-1716Z/002-topic-strengthening-societal-resilience-rosalind-biodefense.json",
+      "proposedTitle": "Strengthening societal resilience with Rosalind Biodefense",
+      "lane": "ai-security",
+      "score": 0.63,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "OpenAI",
+      "targetHub": "ai-security"
+    }
+  ]
+}
