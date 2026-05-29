@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "001-topic-whats-container-analyzing-risks-protection",
+  "clusterKey": "topic:whats-container-analyzing-risks-protection",
+  "proposedTitle": "What’s in the container? Analyzing vulnerabilities, risks and protection with Kaspersky Container Security and the KIRA AI assistant",
+  "lane": "ai-security",
+  "score": 0.61,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.46,
+    "trust": 0.88,
+    "demand": 0.36,
+    "freshness": 1,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://securelist.com/container-security-typical-issues/119974/"
+  ],
+  "sourceNames": [
+    "Kaspersky Securelist"
+  ],
+  "sources": [
+    {
+      "id": "kaspersky-securelist-https://kasperskycontenthub.com/securelist/?p=119974",
+      "title": "What’s in the container? Analyzing vulnerabilities, risks and protection with Kaspersky Container Security and the KIRA AI assistant",
+      "url": "https://securelist.com/container-security-typical-issues/119974/",
+      "excerpt": "What are the main risks for container environments: vulnerabilities, supply chain attacks, configuration errors; how to improve container security and how Kaspersky Container Security with the KIRA AI assistant can help.",
+      "sourceName": "Kaspersky Securelist",
+      "sourceId": "kaspersky-securelist",
+      "publishedAt": "Fri, 29 May 2026 07:00:51 +0000",
+      "tags": [
+        "Research",
+        "Linux",
+        "Vulnerabilities",
+        "Security technology",
+        "MITM"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "What’s in the container? Analyzing vulnerabilities, risks and protection with Kaspersky Container Security and the KIRA AI assistant",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with What’s in the container? Analyzing vulnerabilities, risks and protection with Kaspersky Container Security and the KIRA AI assistant and the concrete defender impact.",
+    "metaPromise": "Start with What’s in the container? Analyzing vulnerabilities, risks and protection with Kaspersky Container Security and the KIRA AI assistant, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "ai-security",
+    "requiredEntities": [
+      "What’s in the container? Analyzing vulnerabilities, risks and protection with Kaspersky Container Security and the KIRA AI assistant"
+    ],
+    "internalLinkTargets": [
+      "ai-security"
+    ],
+    "targetHub": "ai-security",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

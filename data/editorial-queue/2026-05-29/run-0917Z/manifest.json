@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-29T09:17:54.943Z",
+  "runId": "github-26629001115",
+  "mode": "curate-only",
+  "maxCandidates": 1,
+  "candidateCount": 1,
+  "candidates": [
+    {
+      "candidateId": "001-topic-whats-container-analyzing-risks-protection",
+      "clusterKey": "topic:whats-container-analyzing-risks-protection",
+      "path": "data/editorial-queue/2026-05-29/run-0917Z/001-topic-whats-container-analyzing-risks-protection.json",
+      "proposedTitle": "What’s in the container? Analyzing vulnerabilities, risks and protection with Kaspersky Container Security and the KIRA AI assistant",
+      "lane": "ai-security",
+      "score": 0.61,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "What’s in the container? Analyzing vulnerabilities, risks and protection with Kaspersky Container Security and the KIRA AI assistant",
+      "targetHub": "ai-security"
+    }
+  ]
+}
