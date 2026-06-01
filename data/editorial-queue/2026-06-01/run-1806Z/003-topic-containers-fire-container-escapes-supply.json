@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "003-topic-containers-fire-container-escapes-supply",
+  "clusterKey": "topic:containers-fire-container-escapes-supply",
+  "proposedTitle": "Containers on fire: from container escapes to supply chain attacks",
+  "lane": "defender-ops",
+  "score": 0.61,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.46,
+    "trust": 0.88,
+    "demand": 0.36,
+    "freshness": 1,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://securelist.com/container-attack-vectors/120010/"
+  ],
+  "sourceNames": [
+    "Kaspersky Securelist"
+  ],
+  "sources": [
+    {
+      "id": "kaspersky-securelist-https://kasperskycontenthub.com/securelist/?p=120010",
+      "title": "Containers on fire: from container escapes to supply chain attacks",
+      "url": "https://securelist.com/container-attack-vectors/120010/",
+      "excerpt": "We break down the primary attack vectors in containerized environments: exposed secrets, privilege misconfigurations, API compromise, and supply chain attacks.",
+      "sourceName": "Kaspersky Securelist",
+      "sourceId": "kaspersky-securelist",
+      "publishedAt": "Mon, 01 Jun 2026 10:00:06 +0000",
+      "tags": [
+        "Research",
+        "Linux",
+        "Vulnerabilities",
+        "Security Policies",
+        "MITM"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Containers on fire: from container escapes to supply chain attacks",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with Containers on fire: from container escapes to supply chain attacks and the concrete defender impact.",
+    "metaPromise": "Start with Containers on fire: from container escapes to supply chain attacks, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "defender-ops",
+    "requiredEntities": [
+      "Containers on fire: from container escapes to supply chain attacks"
+    ],
+    "internalLinkTargets": [
+      "defender-ops"
+    ],
+    "targetHub": "defender-ops",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

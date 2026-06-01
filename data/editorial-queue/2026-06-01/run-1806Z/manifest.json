@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-01T18:06:57.665Z",
+  "runId": "github-26772795266",
+  "mode": "curate-only",
+  "maxCandidates": 3,
+  "candidateCount": 3,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2024-21182",
+      "clusterKey": "cve:CVE-2024-21182",
+      "path": "data/editorial-queue/2026-06-01/run-1806Z/001-cve-cve-2024-21182.json",
+      "proposedTitle": "[CVE-2024-21182] Oracle WebLogic Server Unspecified Vulnerability",
+      "lane": "vulnerabilities",
+      "score": 0.66,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2024-21182",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-topic-june-threat-intelligence-global-cyber",
+      "clusterKey": "topic:june-threat-intelligence-global-cyber",
+      "path": "data/editorial-queue/2026-06-01/run-1806Z/002-topic-june-threat-intelligence-global-cyber.json",
+      "proposedTitle": "1st June – Threat Intelligence Report",
+      "lane": "breaches",
+      "score": 0.62,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "portfolio:breaches"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "1st June – Threat Intelligence Report",
+      "targetHub": "breaches"
+    },
+    {
+      "candidateId": "003-topic-containers-fire-container-escapes-supply",
+      "clusterKey": "topic:containers-fire-container-escapes-supply",
+      "path": "data/editorial-queue/2026-06-01/run-1806Z/003-topic-containers-fire-container-escapes-supply.json",
+      "proposedTitle": "Containers on fire: from container escapes to supply chain attacks",
+      "lane": "defender-ops",
+      "score": 0.61,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Containers on fire: from container escapes to supply chain attacks",
+      "targetHub": "defender-ops"
+    }
+  ]
+}
