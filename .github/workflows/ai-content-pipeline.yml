@@ -10,7 +10,7 @@ on:
       max_articles:
         description: "Max candidates/articles to process"
         required: false
-        default: "6"
+        default: "8"
       dry_run:
         description: "Dry run — fetch feeds but do not generate or write"
         required: false
@@ -90,7 +90,7 @@ jobs:
       - name: Run AI Pipeline
         id: pipeline
         env:
-          MAX_ARTICLES: ${{ inputs.max_articles || '6' }}
+          MAX_ARTICLES: ${{ inputs.max_articles || '8' }}
           DRY_RUN: ${{ inputs.dry_run }}
           CURATE_ONLY: ${{ github.event_name == 'schedule' && 'true' || inputs.curate_only }}
           APPROVED_QUEUE: ${{ inputs.approved_queue || '' }}
@@ -102,9 +102,9 @@ jobs:
           AUTONOMY_REJECTIONS_TODAY: ${{ vars.AI_PIPELINE_REJECTIONS_TODAY || '0' }}
           CURATION_STARTED_ON: ${{ vars.AI_PIPELINE_CURATION_STARTED_ON || '2026-05-26' }}
           CURATION_MAX_DAYS: ${{ vars.AI_PIPELINE_CURATION_MAX_DAYS || '14' }}
-          CALIBRATION_MORNING_QUEUE_MAX: ${{ vars.AI_PIPELINE_CALIBRATION_MORNING_QUEUE_MAX || '6' }}
-          CALIBRATION_AFTERNOON_QUEUE_MAX: ${{ vars.AI_PIPELINE_CALIBRATION_AFTERNOON_QUEUE_MAX || '1' }}
-          CALIBRATION_OVERNIGHT_QUEUE_MAX: ${{ vars.AI_PIPELINE_CALIBRATION_OVERNIGHT_QUEUE_MAX || '1' }}
+          CALIBRATION_MORNING_QUEUE_MAX: ${{ vars.AI_PIPELINE_CALIBRATION_MORNING_QUEUE_MAX || '8' }}
+          CALIBRATION_AFTERNOON_QUEUE_MAX: ${{ vars.AI_PIPELINE_CALIBRATION_AFTERNOON_QUEUE_MAX || '6' }}
+          CALIBRATION_OVERNIGHT_QUEUE_MAX: ${{ vars.AI_PIPELINE_CALIBRATION_OVERNIGHT_QUEUE_MAX || '6' }}
           AUTONOMOUS_MAX_ARTICLES: ${{ vars.AI_PIPELINE_AUTONOMOUS_MAX_ARTICLES || '3' }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
