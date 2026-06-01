@@ -153,6 +153,32 @@ export function classifyTopicLane(input: {
 }): TopicLane {
   const text =
     `${input.title} ${input.excerpt} ${(input.tags ?? []).join(" ")}`.toLowerCase();
+  const hasStrongVulnerabilitySignal =
+    /\bcve-\d{4}-\d{4,}|cvss|cisa kev|known exploited vulnerabilities|\bkev\b|actively exploited|exploited in (?:the )?wild/.test(
+      text,
+    );
+  const hasZeroDayFlawSignal =
+    /\bzero-day (?:vulnerability|flaw|bug|exploit)\b/.test(text);
+  const isDisclosurePolicyCommentary =
+    /\bzero-day\b/.test(text) &&
+    /\b(?:release|releases|released|disclosure|researcher|researchers|backlash|justifiable|criticism|policy|drop more)\b/.test(
+      text,
+    );
+
+  if (
+    isDisclosurePolicyCommentary &&
+    !hasStrongVulnerabilitySignal &&
+    !hasZeroDayFlawSignal
+  ) {
+    return "policy";
+  }
+  if (
+    hasStrongVulnerabilitySignal ||
+    hasZeroDayFlawSignal ||
+    /\bvulnerability\b/.test(text)
+  ) {
+    return "vulnerabilities";
+  }
   if (/\bransomware|extortion|leak site|lockbit|blackcat|cl0p\b/.test(text)) {
     return "ransomware";
   }
@@ -173,7 +199,7 @@ export function classifyTopicLane(input: {
   if (/\bmalware|trojan|backdoor|loader|infostealer|rat\b/.test(text)) {
     return "malware";
   }
-  if (/\bcve-\d{4}-\d{4,}|vulnerability|zero-day|patch|cvss\b/.test(text)) {
+  if (/\bpatch(?:ed|es|ing)?\b/.test(text)) {
     return "vulnerabilities";
   }
   if (

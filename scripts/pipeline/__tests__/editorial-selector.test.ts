@@ -451,6 +451,44 @@ describe("selectEditorialCandidates", () => {
     ).toContain("cve-style daily cap");
   });
 
+  it("does not cap actively exploited strategic critical CVEs", () => {
+    const result = selectEditorialCandidates(
+      [
+        cluster("cve:CVE-2026-41089", [
+          story({
+            title: "CVE-2026-41089 Windows Netlogon RCE actively exploited",
+            excerpt:
+              "Microsoft Windows Netlogon has CVSS 9.8 and is actively exploited in the wild against domain controllers.",
+            sourceName: "CCB Belgium",
+            sourceClass: "government",
+            verificationRole: "primary-evidence",
+            tags: ["CVE-2026-41089", "Microsoft", "Windows", "Netlogon"],
+          }),
+        ]),
+        cluster("cve:CVE-2026-41096", [
+          story({
+            title: "CVE-2026-41096 Windows DNS Client RCE actively exploited",
+            excerpt:
+              "Microsoft Windows DNS Client has CVSS 9.8 and is actively exploited in the wild without user interaction.",
+            sourceName: "Microsoft MSRC",
+            sourceClass: "primary",
+            verificationRole: "primary-evidence",
+            tags: ["CVE-2026-41096", "Microsoft", "Windows", "DNS"],
+          }),
+        ]),
+      ],
+      { maxArticles: 2 },
+    );
+
+    expect(result.publishable.map((item) => item.clusterKey).sort()).toEqual([
+      "cve:CVE-2026-41089",
+      "cve:CVE-2026-41096",
+    ]);
+    expect(result.decisions.flatMap((item) => item.reasons)).not.toContain(
+      "cve-style daily cap",
+    );
+  });
+
   it("nudges selection with reviewed taste signals without replacing safety gates", () => {
     const aiCluster = cluster("topic:openai-daybreak", [
       story({

@@ -85,6 +85,22 @@ const TRAFFIC_PULL_KEYWORDS = [
 const NAMED_INCIDENT_RE =
   /\b(?:badsuccessor|bad-successor|blast-radius|citrixbleed|dirty\s+pipe|eclipse|ingressnightmare|log4shell|nightmare|printnightmare|proxyshell|regresshion|spring4shell|storm|tool\s*shell|typhoon|zerologon)\b/i;
 
+const DISCLOSURE_POLICY_TERMS = /\b(?:zero-day|0-day)\b/i;
+const DISCLOSURE_CONTEXT_TERMS =
+  /\b(?:release|releases|released|disclosure|researcher|researchers|backlash|justifiable|criticism|policy|drop more)\b/i;
+const DISCLOSURE_ENTITY_TERMS = [
+  "microsoft",
+  "github",
+  "google",
+  "apple",
+  "cisco",
+  "fortinet",
+  "palo alto",
+  "ivanti",
+  "mozilla",
+  "linux",
+];
+
 function publishedTime(story: Story): number {
   const t = new Date(story.publishedAt).getTime();
   return Number.isFinite(t) ? t : 0;
@@ -150,6 +166,29 @@ function hasSharedStrongSignal(a: Story, b: Story): boolean {
   return false;
 }
 
+function disclosurePolicyEntities(text: string): string[] {
+  const lower = text.toLowerCase();
+  return DISCLOSURE_ENTITY_TERMS.filter((term) => lower.includes(term));
+}
+
+function shareDisclosurePolicyTopic(a: Story, b: Story): boolean {
+  const aText = `${a.title} ${a.excerpt} ${a.tags.join(" ")}`;
+  const bText = `${b.title} ${b.excerpt} ${b.tags.join(" ")}`;
+  if (
+    !DISCLOSURE_POLICY_TERMS.test(aText) ||
+    !DISCLOSURE_POLICY_TERMS.test(bText) ||
+    !DISCLOSURE_CONTEXT_TERMS.test(aText) ||
+    !DISCLOSURE_CONTEXT_TERMS.test(bText)
+  ) {
+    return false;
+  }
+
+  const bEntities = new Set(disclosurePolicyEntities(bText));
+  return disclosurePolicyEntities(aText).some((entity) =>
+    bEntities.has(entity),
+  );
+}
+
 function storiesBelongTogether(
   story: Story,
   cluster: StoryCluster,
@@ -159,6 +198,7 @@ function storiesBelongTogether(
     if (!withinWindow(story, existing, windowHours)) return false;
     if (storyClusterKey(story) === storyClusterKey(existing)) return true;
     if (hasSharedStrongSignal(story, existing)) return true;
+    if (shareDisclosurePolicyTopic(story, existing)) return true;
     if (shareSlugPrefix(story.title, existing.title, 3)) return true;
     return (
       titleSimilarity(story.title, existing.title) >= RELATED_TITLE_THRESHOLD

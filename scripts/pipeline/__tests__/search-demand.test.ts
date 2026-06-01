@@ -45,6 +45,27 @@ describe("search demand scoring", () => {
     ).toBe("vulnerabilities");
   });
 
+  it("keeps explicit exploited CVE and KEV items in the vulnerability lane", () => {
+    expect(
+      classifyTopicLane({
+        title:
+          "CVE-2026-41089 Windows Netlogon RCE actively exploited in the wild",
+        excerpt:
+          "The critical CVSS 9.8 vulnerability can be abused remotely and may be used by ransomware operators against domain controllers.",
+        tags: ["CVE-2026-41089", "Windows", "Netlogon", "malware"],
+      }),
+    ).toBe("vulnerabilities");
+
+    expect(
+      classifyTopicLane({
+        title: "CISA KEV adds TanStack CVE exploited by attackers",
+        excerpt:
+          "Known Exploited Vulnerabilities catalog entry requires urgent patching even though follow-on reporting mentions malware activity.",
+        tags: ["CISA", "KEV", "CVE-2026-9999", "malware"],
+      }),
+    ).toBe("vulnerabilities");
+  });
+
   it("routes official OpenAI cybersecurity news to AI security", () => {
     const input = {
       title: "OpenAI Daybreak launches cybersecurity accelerator",
@@ -55,5 +76,17 @@ describe("search demand scoring", () => {
 
     expect(classifyTopicLane(input)).toBe("ai-security");
     expect(scoreSearchDemand(input).score).toBeGreaterThan(0.6);
+  });
+
+  it("does not force zero-day policy commentary into the vulnerability lane", () => {
+    expect(
+      classifyTopicLane({
+        title:
+          "Microsoft calls zero-day releases never justifiable after researcher backlash",
+        excerpt:
+          "The company discussed researcher conduct, disclosure norms, and release policy after public criticism.",
+        tags: ["Microsoft", "GitHub", "research policy"],
+      }),
+    ).toBe("policy");
   });
 });

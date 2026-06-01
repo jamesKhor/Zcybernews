@@ -472,6 +472,18 @@ function staleVulnerabilityPenalty(
   return 0;
 }
 
+function isMustPostStrategicCriticalCve(
+  lane: TopicLane,
+  packet: ReturnType<typeof buildEvidencePacket>,
+  cluster: StoryCluster<Story>,
+): boolean {
+  if (lane !== "vulnerabilities") return false;
+  if (packet.entities.cves.length === 0) return false;
+  if (packet.facts.exploitStatus !== "exploited") return false;
+  if (Math.max(...packet.facts.cvssScores, 0) < 9) return false;
+  return hasStrategicCveContext(cluster);
+}
+
 function decide(
   score: number,
   evidence: number,
@@ -525,6 +537,9 @@ function reasonsFor(
   if (selection.demandScore >= 0.65) reasons.push("search demand");
   if (selection.portfolioScore >= 0.8)
     reasons.push(`portfolio:${selection.lane}`);
+  if (isMustPostStrategicCriticalCve(selection.lane, packet, cluster)) {
+    reasons.push("must-post:strategic-critical-exploited-cve");
+  }
   const cveBlockReason = cvePublishBlockReason(packet, cluster, selection.lane);
   if (cveBlockReason) reasons.push(cveBlockReason);
   const roundupReason = lowValueRoundupReason(cluster);
@@ -641,17 +656,23 @@ export function selectEditorialCandidates<T extends Story>(
   for (const item of sorted.filter(
     (candidate) => candidate.selection.decision === "publish-now",
   )) {
+    const packet = buildEvidencePacket(item.cluster as StoryCluster<Story>);
+    const mustPostStrategicCriticalCve = isMustPostStrategicCriticalCve(
+      item.selection.lane,
+      packet,
+      item.cluster as StoryCluster<Story>,
+    );
     const cveStyle =
       item.cluster.key.startsWith("cve:") ||
       item.cluster.stories.some((story) =>
         /\bCVE-\d{4}-\d{4,}\b/i.test(story.title),
       );
-    if (cveStyle && cveStyleCount >= 1) {
+    if (cveStyle && !mustPostStrategicCriticalCve && cveStyleCount >= 1) {
       cappedReasons.set(item.cluster.key, CVE_STYLE_DAILY_CAP_REASON);
       continue;
     }
     publishable.push({ ...item, clusterKey: item.cluster.key });
-    if (cveStyle) cveStyleCount++;
+    if (cveStyle && !mustPostStrategicCriticalCve) cveStyleCount++;
     if (publishable.length >= options.maxArticles) break;
   }
   const chosen = new Set(publishable.map((item) => item.cluster.key));

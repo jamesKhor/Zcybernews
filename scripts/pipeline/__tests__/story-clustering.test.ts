@@ -160,4 +160,37 @@ describe("story clustering", () => {
 
     expect(clusters[0].stories[0].id).toBe("nightmare-eclipse");
   });
+
+  it("groups zero-day disclosure policy follow-ups into one review candidate", () => {
+    const clusters = clusterStories([
+      story({
+        id: "microsoft-calls",
+        title:
+          "Microsoft calls zero-day releases never justifiable as researcher threatens more",
+        excerpt:
+          "Microsoft criticized public zero-day release tactics after a researcher backlash over GitHub disclosure norms.",
+        sourceName: "The Record",
+        sourceId: "the-record",
+        publishedAt: "2026-06-01T04:00:00.000Z",
+        tags: ["Microsoft", "GitHub", "zero-day", "research policy"],
+      }),
+      story({
+        id: "microsoft-pursue",
+        title:
+          "Microsoft says it will not pursue security researchers after zero-day backlash",
+        excerpt:
+          "The company discussed disclosure norms and researcher conduct after public criticism of zero-day releases.",
+        sourceName: "The Record",
+        sourceId: "the-record",
+        publishedAt: "2026-06-01T03:00:00.000Z",
+        tags: ["Microsoft", "zero-day", "disclosure"],
+      }),
+    ]);
+
+    expect(clusters).toHaveLength(1);
+    expect(clusters[0].stories.map((item) => item.id).sort()).toEqual([
+      "microsoft-calls",
+      "microsoft-pursue",
+    ]);
+  });
 });
