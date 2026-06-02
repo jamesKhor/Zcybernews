@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-02T09:34:13.729Z",
+  "runId": "github-26811239840",
+  "mode": "curate-only",
+  "maxCandidates": 1,
+  "candidateCount": 1,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-45131",
+      "clusterKey": "cve:CVE-2026-45131",
+      "path": "data/editorial-queue/2026-06-02/run-0934Z/001-cve-cve-2026-45131.json",
+      "proposedTitle": "CVE-2026-45131 (CVSS 10): CloudPirates Open Source Helm Charts is a collection of Helm charts. Prior to commit fcf9302, a GitHub Actions workflow (pull-request.yaml)",
+      "lane": "vulnerabilities",
+      "score": 0.73,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources",
+        "search demand"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-45131",
+      "targetHub": "active-cves"
+    }
+  ]
+}
