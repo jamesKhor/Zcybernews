@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "003-topic-operation-flutterbridge-macos-malvertising-campaign",
+  "clusterKey": "topic:operation-flutterbridge-macos-malvertising-campaign",
+  "proposedTitle": "Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor",
+  "lane": "malware",
+  "score": 0.6,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.37,
+    "freshness": 1,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://unit42.paloaltonetworks.com/flutterbridge-new-fluttershell-backdoor/"
+  ],
+  "sourceNames": [
+    "Palo Alto Unit 42"
+  ],
+  "sources": [
+    {
+      "id": "unit42-https://unit42.paloaltonetworks.com/?p=181830",
+      "title": "Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor",
+      "url": "https://unit42.paloaltonetworks.com/flutterbridge-new-fluttershell-backdoor/",
+      "excerpt": "Operation FlutterBridge is a malvertising campaign targeting macOS users. It distributed the new backdoor FlutterShell, built using the Flutter framework. The post Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor appeared first on Unit 42.",
+      "sourceName": "Palo Alto Unit 42",
+      "sourceId": "unit42",
+      "publishedAt": "Tue, 02 Jun 2026 10:00:31 +0000",
+      "tags": [
+        "Malware",
+        "Threat Research",
+        "CL-CRI-1089",
+        "macOS",
+        "malvertising"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor",
+    "searchIntent": "technical-analysis",
+    "titlePromise": "Lead with Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor and the concrete defender impact.",
+    "metaPromise": "Start with Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "malware",
+    "requiredEntities": [
+      "Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor"
+    ],
+    "internalLinkTargets": [
+      "malware"
+    ],
+    "targetHub": "malware",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

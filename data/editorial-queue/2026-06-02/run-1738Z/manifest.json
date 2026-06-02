@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-02T17:38:38.389Z",
+  "runId": "github-26837189728",
+  "mode": "curate-only",
+  "maxCandidates": 3,
+  "candidateCount": 3,
+  "candidates": [
+    {
+      "candidateId": "001-topic-advancing-youth-safety-opportunity-through",
+      "clusterKey": "topic:advancing-youth-safety-opportunity-through",
+      "path": "data/editorial-queue/2026-06-02/run-1738Z/001-topic-advancing-youth-safety-opportunity-through.json",
+      "proposedTitle": "Advancing youth safety and opportunity through global leadership",
+      "lane": "ai-security",
+      "score": 0.69,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "search demand"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "OpenAI",
+      "targetHub": "ai-security"
+    },
+    {
+      "candidateId": "002-topic-microsoft-threatening-researcher",
+      "clusterKey": "topic:microsoft-threatening-researcher",
+      "path": "data/editorial-queue/2026-06-02/run-1738Z/002-topic-microsoft-threatening-researcher.json",
+      "proposedTitle": "Microsoft Threatening Security Researcher",
+      "lane": "defender-ops",
+      "score": 0.66,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Windows",
+      "targetHub": "defender-ops"
+    },
+    {
+      "candidateId": "003-topic-operation-flutterbridge-macos-malvertising-campaign",
+      "clusterKey": "topic:operation-flutterbridge-macos-malvertising-campaign",
+      "path": "data/editorial-queue/2026-06-02/run-1738Z/003-topic-operation-flutterbridge-macos-malvertising-campaign.json",
+      "proposedTitle": "Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor",
+      "lane": "malware",
+      "score": 0.6,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor",
+      "targetHub": "malware"
+    }
+  ]
+}
