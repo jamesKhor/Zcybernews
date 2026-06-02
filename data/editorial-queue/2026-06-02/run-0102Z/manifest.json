@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-02T01:02:04.050Z",
+  "runId": "github-26791781627",
+  "mode": "curate-only",
+  "maxCandidates": 2,
+  "candidateCount": 2,
+  "candidates": [
+    {
+      "candidateId": "001-topic-microsofts-zeroday-legal-threats-spark",
+      "clusterKey": "topic:microsofts-zeroday-legal-threats-spark",
+      "path": "data/editorial-queue/2026-06-02/run-0102Z/001-topic-microsofts-zeroday-legal-threats-spark.json",
+      "proposedTitle": "Microsoft's Zero-Day Legal Threats Spark Backlash",
+      "lane": "policy",
+      "score": 0.69,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 2,
+      "primaryQueryTarget": "Microsoft's Zero-Day Legal Threats Spark Backlash",
+      "targetHub": "policy"
+    },
+    {
+      "candidateId": "002-topic-views-policy-political-advocacy-openai",
+      "clusterKey": "topic:views-policy-political-advocacy-openai",
+      "path": "data/editorial-queue/2026-06-02/run-0102Z/002-topic-views-policy-political-advocacy-openai.json",
+      "proposedTitle": "Our views on AI policy and political advocacy",
+      "lane": "ai-security",
+      "score": 0.69,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "search demand"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "OpenAI",
+      "targetHub": "ai-security"
+    }
+  ]
+}

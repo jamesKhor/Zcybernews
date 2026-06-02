@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "001-topic-microsofts-zeroday-legal-threats-spark",
+  "clusterKey": "topic:microsofts-zeroday-legal-threats-spark",
+  "proposedTitle": "Microsoft's Zero-Day Legal Threats Spark Backlash",
+  "lane": "policy",
+  "score": 0.69,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.58,
+    "trust": 0.75,
+    "demand": 0.59,
+    "freshness": 1,
+    "differentiation": 0.75,
+    "portfolio": 0.65
+  },
+  "sourceCount": 2,
+  "sourceUrls": [
+    "https://www.darkreading.com/application-security/microsoft-zero-day-legal-threats-backlash",
+    "https://therecord.media/microsoft-says-it-will-not-pursue-security-researchers-disclosure"
+  ],
+  "sourceNames": [
+    "Dark Reading",
+    "The Record (Recorded Future News)"
+  ],
+  "sources": [
+    {
+      "id": "darkreading-https://www.darkreading.com/application-security/microsoft-zero-day-legal-threats-backlash",
+      "title": "Microsoft's Zero-Day Legal Threats Spark Backlash",
+      "url": "https://www.darkreading.com/application-security/microsoft-zero-day-legal-threats-backlash",
+      "excerpt": "After a disgruntled security researcher published several zero-day exploits in recent weeks, Microsoft seemingly indicated criminal charges were in order.",
+      "sourceName": "Dark Reading",
+      "sourceId": "darkreading",
+      "publishedAt": "Mon, 01 Jun 2026 18:52:26 GMT",
+      "tags": []
+    },
+    {
+      "id": "the-record-https://therecord.media/microsoft-says-it-will-not-pursue-security-researchers-disclosure",
+      "title": "Microsoft says it will not pursue security researchers after zero-day backlash",
+      "url": "https://therecord.media/microsoft-says-it-will-not-pursue-security-researchers-disclosure",
+      "excerpt": "Microsoft said it is taking the feedback seriously, adding: “To be clear about our approach to legal matters, we have no intention to pursue action against individuals conducting or publishing their security research.”",
+      "sourceName": "The Record (Recorded Future News)",
+      "sourceId": "the-record",
+      "publishedAt": "Mon, 01 Jun 2026 12:11:00 GMT",
+      "tags": [
+        "Cybercrime",
+        "Industry",
+        "News",
+        "Technology"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Microsoft's Zero-Day Legal Threats Spark Backlash",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with Microsoft's Zero-Day Legal Threats Spark Backlash and the concrete defender impact.",
+    "metaPromise": "Start with Microsoft's Zero-Day Legal Threats Spark Backlash, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "policy",
+    "requiredEntities": [
+      "Microsoft's Zero-Day Legal Threats Spark Backlash"
+    ],
+    "internalLinkTargets": [
+      "policy"
+    ],
+    "targetHub": "policy",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
