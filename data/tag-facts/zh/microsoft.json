@@ -1,16 +1,20 @@
 {
   "tag": "microsoft",
   "locale": "zh",
-  "count": 40,
+  "count": 41,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-16"
+    "latest": "2026-06-01"
   },
   "top_actors": [
     "Secret Blizzard",
     "Storm-2755"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-41089",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-21643",
       "cvss": 9.1
@@ -26,18 +30,14 @@
     {
       "id": "CVE-2026-40364",
       "cvss": 8.4
-    },
-    {
-      "id": "CVE-2026-41103",
-      "cvss": 8.4
     }
   ],
   "top_sectors": [
     "enterprise",
+    "government",
     "multiple",
     "technology",
-    "government",
-    "cross-sector"
+    "critical infrastructure"
   ],
   "top_regions": [
     "Global",
@@ -47,16 +47,16 @@
     "Japan"
   ],
   "severity_mix": {
+    "critical": 7,
     "high": 20,
-    "critical": 6,
     "medium": 10,
     "informational": 3,
     "low": 1
   },
   "recent_excerpts": [
+    "CVE-2026-41089 是 Windows Netlogon 中的关键远程代码执行漏洞，Microsoft CNA 给出 CVSS 9.8，CCB 已确认其正在被在野利用。",
     "秘密暴雪将Kazuar发展为具有150个配置选项的模块化P2P僵尸网络，绕过AMSI/ETW，并拥有静音模式节点。微软详细介绍了三模块架构。",
-    "微软2026年5月补丁星期二修复了Windows 11 25H2、24H2和23H2中的120个漏洞。KB5089549和KB5087420包括安全修复、Xbox模式和批量文件...",
-    "CVE-2026-41103在微软SSO插件用于Jira和Confluence中允许通过有缺陷的认证提升权限。"
+    "微软2026年5月补丁星期二修复了Windows 11 25H2、24H2和23H2中的120个漏洞。KB5089549和KB5087420包括安全修复、Xbox模式和批量文件..."
   ],
-  "sources_hash": "81808d1d579398e7"
+  "sources_hash": "0305e22811e15efb"
 }

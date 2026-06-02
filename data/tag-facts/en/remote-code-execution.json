@@ -1,16 +1,20 @@
 {
   "tag": "remote-code-execution",
   "locale": "en",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-18"
+    "latest": "2026-06-01"
   },
   "top_actors": [],
   "top_cves": [
     {
       "id": "CVE-2026-8836",
       "cvss": 10
+    },
+    {
+      "id": "CVE-2026-41089",
+      "cvss": 9.8
     },
     {
       "id": "CVE-2026-41265",
@@ -23,17 +27,13 @@
     {
       "id": "CVE-2026-5760",
       "cvss": 9.8
-    },
-    {
-      "id": "CVE-2026-6433",
-      "cvss": 9.8
     }
   ],
   "top_sectors": [
     "technology",
-    "telecommunications",
     "enterprise",
     "government",
+    "telecommunications",
     "software development"
   ],
   "top_regions": [
@@ -42,13 +42,13 @@
     "North america"
   ],
   "severity_mix": {
-    "critical": 10,
+    "critical": 11,
     "high": 7
   },
   "recent_excerpts": [
+    "CVE-2026-41089 is a critical Windows Netlogon RCE now reported as exploited in the wild, with Microsoft CNA scoring it CVSS 9.8.",
     "CVE-2026-8836 is a CVSS 10.0 stack-based buffer overflow in lwIP up to 2.2.1's SNMPv3 USM handler. Remote unauthenticated attackers can trigger code execution via crafted...",
-    "CISA adds CVE-2024-57728 to Known Exploited Vulnerabilities: SimpleHelp path traversal via zip slip allows admin users to upload arbitrary files and execute code. Due May 8, 2026.",
-    "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now."
+    "CISA adds CVE-2024-57728 to Known Exploited Vulnerabilities: SimpleHelp path traversal via zip slip allows admin users to upload arbitrary files and execute code. Due May 8, 2026."
   ],
-  "sources_hash": "0faaced8a1410f82"
+  "sources_hash": "a7b54a230a692d89"
 }

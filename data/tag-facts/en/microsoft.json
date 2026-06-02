@@ -1,16 +1,20 @@
 {
   "tag": "microsoft",
   "locale": "en",
-  "count": 40,
+  "count": 41,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-16"
+    "latest": "2026-06-01"
   },
   "top_actors": [
     "Secret Blizzard",
     "Storm-2755"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-41089",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-21643",
       "cvss": 9.1
@@ -26,18 +30,14 @@
     {
       "id": "CVE-2026-40364",
       "cvss": 8.4
-    },
-    {
-      "id": "CVE-2026-41103",
-      "cvss": 8.4
     }
   ],
   "top_sectors": [
     "enterprise",
+    "government",
     "multiple",
     "technology",
-    "government",
-    "cross-sector"
+    "critical infrastructure"
   ],
   "top_regions": [
     "Global",
@@ -47,16 +47,16 @@
     "Japan"
   ],
   "severity_mix": {
+    "critical": 7,
     "high": 20,
-    "critical": 6,
     "medium": 10,
     "informational": 3,
     "low": 1
   },
   "recent_excerpts": [
+    "CVE-2026-41089 is a critical Windows Netlogon RCE now reported as exploited in the wild, with Microsoft CNA scoring it CVSS 9.8.",
     "Secret Blizzard evolved Kazuar into a modular P2P botnet with 150 config options, AMSI/ETW bypass, and silent-mode nodes. Microsoft details the three-module architecture.",
-    "Microsoft's May 2026 Patch Tuesday fixes 120 vulnerabilities across Windows 11 25H2, 24H2, and 23H2. KB5089549 and KB5087420 include security fixes, Xbox mode, and batch file...",
-    "CVE-2026-41103 in Microsoft SSO Plugin for Jira & Confluence allows privilege escalation via flawed authentication."
+    "Microsoft's May 2026 Patch Tuesday fixes 120 vulnerabilities across Windows 11 25H2, 24H2, and 23H2. KB5089549 and KB5087420 include security fixes, Xbox mode, and batch file..."
   ],
-  "sources_hash": "3c355f10572546ca"
+  "sources_hash": "3a75c4f873a3f048"
 }

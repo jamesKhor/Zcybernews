@@ -1,16 +1,20 @@
 {
   "tag": "remote-code-execution",
   "locale": "zh",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-18"
+    "latest": "2026-06-01"
   },
   "top_actors": [],
   "top_cves": [
     {
       "id": "CVE-2026-8836",
       "cvss": 10
+    },
+    {
+      "id": "CVE-2026-41089",
+      "cvss": 9.8
     },
     {
       "id": "CVE-2026-41265",
@@ -23,17 +27,13 @@
     {
       "id": "CVE-2026-5760",
       "cvss": 9.8
-    },
-    {
-      "id": "CVE-2026-6433",
-      "cvss": 9.8
     }
   ],
   "top_sectors": [
     "technology",
-    "telecommunications",
     "enterprise",
     "government",
+    "telecommunications",
     "software development"
   ],
   "top_regions": [
@@ -42,13 +42,13 @@
     "North america"
   ],
   "severity_mix": {
-    "critical": 10,
+    "critical": 11,
     "high": 7
   },
   "recent_excerpts": [
+    "CVE-2026-41089 是 Windows Netlogon 中的关键远程代码执行漏洞，Microsoft CNA 给出 CVSS 9.8，CCB 已确认其正在被在野利用。",
     "CVE-2026-8836 是一个 CVSS 10.0 基于栈的缓冲区溢出漏洞，存在于 lwIP 2.2.1 及之前的 SNMPv3 USM 处理器中。远程未经身份验证的攻击者可以通过精心构造的...",
-    "CISA 将 CVE-2024-57728 添加到已知被利用漏洞列表：通过 zip slip 的 SimpleHelp 路径遍历允许管理员用户上传任意文件并执行代码。截止日期为 2026 年 5 月 8 日。",
-    "在 Windows 上的 Chrome 148 中的 CVE-2026-8573 (CVSS 8.3) 和 CVE-2026-8577 (CVSS 8.8) 允许通过精心制作的视屏或 HTML 页面进行沙箱逃逸和 RCE。立即更新。"
+    "CISA 将 CVE-2024-57728 添加到已知被利用漏洞列表：通过 zip slip 的 SimpleHelp 路径遍历允许管理员用户上传任意文件并执行代码。截止日期为 2026 年 5 月 8 日。"
   ],
-  "sources_hash": "34c0298dc6eacb9d"
+  "sources_hash": "e12c1a62875d661b"
 }
