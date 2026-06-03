@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "002-topic-sentinelone-claude-integrations-visibility-governance",
+  "clusterKey": "topic:sentinelone-claude-integrations-visibility-governance",
+  "proposedTitle": "SentinelOne + Claude: Integrations for AI Visibility, Governance, and Defense",
+  "lane": "ai-security",
+  "score": 0.65,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.5,
+    "trust": 0.88,
+    "demand": 0.5,
+    "freshness": 1,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.sentinelone.com/blog/sentinelone-and-claude-integrations-for-ai-visibility-governance-and-defense/"
+  ],
+  "sourceNames": [
+    "SentinelLabs"
+  ],
+  "sources": [
+    {
+      "id": "sentinelone-https://www.sentinelone.com/?p=140511",
+      "title": "SentinelOne + Claude: Integrations for AI Visibility, Governance, and Defense",
+      "url": "https://www.sentinelone.com/blog/sentinelone-and-claude-integrations-for-ai-visibility-governance-and-defense/",
+      "excerpt": "Learn how SentinelOne empowers modern enterprises to safely adopt Claude with Prompt Security, AI SIEM, and Wayfinder Frontier AI.",
+      "sourceName": "SentinelLabs",
+      "sourceId": "sentinelone",
+      "publishedAt": "Tue, 02 Jun 2026 19:59:49 +0000",
+      "tags": [
+        "Company",
+        "AI SIEM",
+        "anthropic",
+        "claude",
+        "prompt security"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "SentinelOne + Claude: Integrations for AI Visibility, Governance, and Defense",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with SentinelOne + Claude: Integrations for AI Visibility, Governance, and Defense and the concrete defender impact.",
+    "metaPromise": "Start with SentinelOne + Claude: Integrations for AI Visibility, Governance, and Defense, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "ai-security",
+    "requiredEntities": [
+      "SentinelOne + Claude: Integrations for AI Visibility, Governance, and Defense"
+    ],
+    "internalLinkTargets": [
+      "ai-security"
+    ],
+    "targetHub": "ai-security",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

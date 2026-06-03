@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-03T01:07:55.321Z",
+  "runId": "github-26857496596",
+  "mode": "curate-only",
+  "maxCandidates": 2,
+  "candidateCount": 2,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-30963",
+      "clusterKey": "cve:CVE-2026-30963",
+      "path": "data/editorial-queue/2026-06-03/run-0107Z/001-cve-cve-2026-30963.json",
+      "proposedTitle": "CVE-2026-30963 (CVSS 3.9): Capsule is a multi-tenancy and policy-based framework for Kubernetes. To defend against namespace hijacking achieved through update/patch op",
+      "lane": "vulnerabilities",
+      "score": 0.68,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-30963",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-topic-sentinelone-claude-integrations-visibility-governance",
+      "clusterKey": "topic:sentinelone-claude-integrations-visibility-governance",
+      "path": "data/editorial-queue/2026-06-03/run-0107Z/002-topic-sentinelone-claude-integrations-visibility-governance.json",
+      "proposedTitle": "SentinelOne + Claude: Integrations for AI Visibility, Governance, and Defense",
+      "lane": "ai-security",
+      "score": 0.65,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "SentinelOne + Claude: Integrations for AI Visibility, Governance, and Defense",
+      "targetHub": "ai-security"
+    }
+  ]
+}
