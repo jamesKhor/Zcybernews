@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-03T17:46:20.508Z",
+  "runId": "github-26902535409",
+  "mode": "curate-only",
+  "maxCandidates": 3,
+  "candidateCount": 3,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-45247",
+      "clusterKey": "cve:CVE-2026-45247",
+      "path": "data/editorial-queue/2026-06-03/run-1746Z/001-cve-cve-2026-45247.json",
+      "proposedTitle": "[CVE-2026-45247] Mirasvit Full Page Cache Warmer Deserialization of Untrusted Data Vulnerability",
+      "lane": "vulnerabilities",
+      "score": 0.65,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-45247",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-topic-blueprint-democratic-governance-frontier-openai",
+      "clusterKey": "topic:blueprint-democratic-governance-frontier-openai",
+      "path": "data/editorial-queue/2026-06-03/run-1746Z/002-topic-blueprint-democratic-governance-frontier-openai.json",
+      "proposedTitle": "A blueprint for democratic governance of frontier AI",
+      "lane": "ai-security",
+      "score": 0.65,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "OpenAI",
+      "targetHub": "ai-security"
+    },
+    {
+      "candidateId": "003-topic-openai-public-policy-agenda-openai",
+      "clusterKey": "topic:openai-public-policy-agenda-openai",
+      "path": "data/editorial-queue/2026-06-03/run-1746Z/003-topic-openai-public-policy-agenda-openai.json",
+      "proposedTitle": "OpenAI public policy agenda",
+      "lane": "ai-security",
+      "score": 0.65,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "OpenAI",
+      "targetHub": "ai-security"
+    }
+  ]
+}
