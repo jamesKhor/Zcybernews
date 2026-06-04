@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "001-topic-software-supply-chain-check-your",
+  "clusterKey": "topic:software-supply-chain-check-your",
+  "proposedTitle": "Software supply chain attacks: check your dependencies",
+  "lane": "malware",
+  "score": 0.64,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.56,
+    "freshness": 1,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.ncsc.gov.uk/blogs/software-supply-chain-attacks-check-your-dependencies"
+  ],
+  "sourceNames": [
+    "NCSC UK"
+  ],
+  "sources": [
+    {
+      "id": "ncsc-uk-https://www.ncsc.gov.uk/blogs/software-supply-chain-attacks-check-your-dependencies",
+      "title": "Software supply chain attacks: check your dependencies",
+      "url": "https://www.ncsc.gov.uk/blogs/software-supply-chain-attacks-check-your-dependencies",
+      "excerpt": "Attackers are compromising open-source packages to spread malware. Cyber defenders are asked to review dependencies to reduce risks",
+      "sourceName": "NCSC UK",
+      "sourceId": "ncsc-uk",
+      "publishedAt": "Thu, 04 Jun 2026 12:00:00 +0000",
+      "tags": []
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Software supply chain attacks: check your dependencies",
+    "searchIntent": "technical-analysis",
+    "titlePromise": "Lead with Software supply chain attacks: check your dependencies and the concrete defender impact.",
+    "metaPromise": "Start with Software supply chain attacks: check your dependencies, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "malware",
+    "requiredEntities": [
+      "Software supply chain attacks: check your dependencies"
+    ],
+    "internalLinkTargets": [
+      "malware"
+    ],
+    "targetHub": "malware",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

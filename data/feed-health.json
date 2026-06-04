@@ -1,9 +1,14 @@
 {
   "bleepingcomputer": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 15
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -96,21 +101,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 15
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 15
       }
     ]
   },
   "krebsonsecurity": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -203,21 +208,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "thehackernews": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -310,21 +315,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "darkreading": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -417,21 +422,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "securityweek": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -524,21 +529,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "schneier": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -631,21 +636,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "blackhillsinfosec": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -738,21 +743,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "cisa-alerts": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -845,21 +850,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "cisa-kev": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -952,21 +957,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "sans-isc": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -1059,21 +1064,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "ncsc-uk": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -1166,21 +1171,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "checkpoint-research": {
-    "lastSuccess": "2026-06-03T01:07:51.741Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
-    "consecutiveFailures": 1,
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
+    "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 15
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": false,
@@ -1273,11 +1278,6 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 15
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 15
       }
@@ -1391,10 +1391,15 @@
     ]
   },
   "project-zero": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -1487,21 +1492,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "sentinelone": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -1594,21 +1599,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "unit42": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 15
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -1701,21 +1706,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 15
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 15
       }
     ]
   },
   "kaspersky-securelist": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -1808,21 +1813,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 10
       }
     ]
   },
   "malwarebytes": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -1915,21 +1920,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "welivesecurity": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -2022,21 +2027,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "rapid7": {
-    "lastSuccess": "2026-06-03T01:07:51.741Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
-    "consecutiveFailures": 1,
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
+    "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": false,
@@ -2129,21 +2134,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "zdi": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -2236,21 +2241,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "elastic-security": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -2343,21 +2348,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "recorded-future": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -2450,21 +2455,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "the-record": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 5
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -2557,21 +2562,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 5
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 5
       }
     ]
   },
   "volexity": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -2664,21 +2669,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "censys": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 10
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -2771,11 +2776,6 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 10
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 10
       }
@@ -2889,10 +2889,15 @@
     ]
   },
   "nvd-recent": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 20
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -2985,21 +2990,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 20
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 20
       }
     ]
   },
   "palo-alto-advisories": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -3092,21 +3097,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "fortinet-psirt": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 25
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -3199,21 +3204,21 @@
       },
       {
         "at": "2026-05-20T03:05:03.849Z",
-        "ok": true,
-        "items": 25
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
         "ok": true,
         "items": 25
       }
     ]
   },
   "ivanti-advisory": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 19
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -3308,19 +3313,19 @@
         "at": "2026-05-20T03:05:03.849Z",
         "ok": true,
         "items": 19
-      },
-      {
-        "at": "2026-05-19T16:58:46.720Z",
-        "ok": true,
-        "items": 19
       }
     ]
   },
   "openai-news": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 7
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
@@ -3404,10 +3409,15 @@
     ]
   },
   "openai-daybreak": {
-    "lastSuccess": "2026-06-03T17:46:17.287Z",
-    "lastAttempt": "2026-06-03T17:46:17.287Z",
+    "lastSuccess": "2026-06-04T09:26:02.938Z",
+    "lastAttempt": "2026-06-04T09:26:02.938Z",
     "consecutiveFailures": 0,
     "recent": [
+      {
+        "at": "2026-06-04T09:26:02.938Z",
+        "ok": true,
+        "items": 1
+      },
       {
         "at": "2026-06-03T17:46:17.287Z",
         "ok": true,
