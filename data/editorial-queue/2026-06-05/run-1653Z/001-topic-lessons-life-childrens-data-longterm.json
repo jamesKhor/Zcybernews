@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "001-topic-lessons-life-childrens-data-longterm",
+  "clusterKey": "topic:lessons-life-childrens-data-longterm",
+  "proposedTitle": "Lessons for life: Why children’s data is a long-term identity risk",
+  "lane": "breaches",
+  "score": 0.57,
+  "decision": "publish-now",
+  "selectionReasons": [
+    "trusted sources",
+    "portfolio:breaches"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.39,
+    "freshness": 0.62,
+    "differentiation": 0.57,
+    "portfolio": 0.82
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.welivesecurity.com/en/kids-online/lessons-life-childrens-data-long-term-identity-risk/"
+  ],
+  "sourceNames": [
+    "WeLiveSecurity (ESET)"
+  ],
+  "sources": [
+    {
+      "id": "welivesecurity-https://www.welivesecurity.com/en/kids-online/lessons-life-childrens-data-long-term-identity-risk/",
+      "title": "Lessons for life: Why children’s data is a long-term identity risk",
+      "url": "https://www.welivesecurity.com/en/kids-online/lessons-life-childrens-data-long-term-identity-risk/",
+      "excerpt": "Your child’s first data breach may happen before they’ve even opened a bank account. Here’s how to keep their digital life safe.",
+      "sourceName": "WeLiveSecurity (ESET)",
+      "sourceId": "welivesecurity",
+      "publishedAt": "Wed, 03 Jun 2026 08:50:00 +0000",
+      "tags": [
+        "Kids Online"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Lessons for life: Why children’s data is a long-term identity risk",
+    "searchIntent": "incident-impact",
+    "titlePromise": "Lead with Lessons for life: Why children’s data is a long-term identity risk and the concrete defender impact.",
+    "metaPromise": "Start with Lessons for life: Why children’s data is a long-term identity risk, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "breaches",
+    "requiredEntities": [
+      "Lessons for life: Why children’s data is a long-term identity risk"
+    ],
+    "internalLinkTargets": [
+      "breaches"
+    ],
+    "targetHub": "breaches",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

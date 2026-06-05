@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-05T16:53:25.679Z",
+  "runId": "github-27028166479",
+  "mode": "curate-only",
+  "maxCandidates": 2,
+  "candidateCount": 2,
+  "candidates": [
+    {
+      "candidateId": "001-topic-lessons-life-childrens-data-longterm",
+      "clusterKey": "topic:lessons-life-childrens-data-longterm",
+      "path": "data/editorial-queue/2026-06-05/run-1653Z/001-topic-lessons-life-childrens-data-longterm.json",
+      "proposedTitle": "Lessons for life: Why children’s data is a long-term identity risk",
+      "lane": "breaches",
+      "score": 0.57,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources",
+        "portfolio:breaches"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Lessons for life: Why children’s data is a long-term identity risk",
+      "targetHub": "breaches"
+    },
+    {
+      "candidateId": "002-topic-trump-considers-palantir-exec-lead",
+      "clusterKey": "topic:trump-considers-palantir-exec-lead",
+      "path": "data/editorial-queue/2026-06-05/run-1653Z/002-topic-trump-considers-palantir-exec-lead.json",
+      "proposedTitle": "Trump considers Palantir exec to lead CISA",
+      "lane": "policy",
+      "score": 0.57,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Trump considers Palantir exec to lead CISA",
+      "targetHub": "policy"
+    }
+  ]
+}
