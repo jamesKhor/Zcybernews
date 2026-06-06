@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-06T08:59:05.754Z",
+  "runId": "github-27058044827",
+  "mode": "curate-only",
+  "maxCandidates": 1,
+  "candidateCount": 1,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-28318",
+      "clusterKey": "cve:CVE-2026-28318",
+      "path": "data/editorial-queue/2026-06-06/run-0859Z/001-cve-cve-2026-28318.json",
+      "proposedTitle": "CISA Adds Actively Exploited SolarWinds Serv-U DoS Flaw to KEV Catalog",
+      "lane": "vulnerabilities",
+      "score": 0.65,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "search demand",
+        "single-source",
+        "no-primary-source"
+      ],
+      "sourceCount": 2,
+      "primaryQueryTarget": "CVE-2026-28318",
+      "targetHub": "active-cves"
+    }
+  ]
+}
