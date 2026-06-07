@@ -456,7 +456,13 @@ async function main() {
       maxArticles: MAX_ARTICLES,
       tasteProfile,
     });
-    batches = editorial.publishable.map(({ cluster, selection }) => {
+    const selectedEditorialItems = CURATE_ONLY
+      ? editorial.reviewable
+      : editorial.publishable;
+    const selectedEditorialClusterKeys = new Set(
+      selectedEditorialItems.map((item) => item.clusterKey),
+    );
+    batches = selectedEditorialItems.map(({ cluster, selection }) => {
       const stories = cluster.stories.map((story) => ({
         ...story,
         clusterKey: cluster.key,
@@ -473,6 +479,8 @@ async function main() {
 
     for (const selection of editorial.decisions) {
       if (selection.decision === "publish-now") continue;
+      if (CURATE_ONLY && selectedEditorialClusterKeys.has(selection.clusterKey))
+        continue;
       const cluster = clusters.find(
         (item) => item.key === selection.clusterKey,
       );

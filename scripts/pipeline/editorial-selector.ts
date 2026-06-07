@@ -41,11 +41,17 @@ export interface EditorialSelectorResult<T extends Story = Story> {
     cluster: StoryCluster<T>;
     selection: EditorialSelection;
   }>;
+  reviewable: Array<{
+    clusterKey: string;
+    cluster: StoryCluster<T>;
+    selection: EditorialSelection;
+  }>;
   decisions: EditorialSelection[];
 }
 
 const CVE_STYLE_DAILY_CAP_REASON = "cve-style daily cap";
 const ARTICLE_DAILY_LIMIT_REASON = "daily article limit";
+const REVIEW_QUEUE_CVE_STYLE_CAP = 2;
 
 function clamp01(value: number): number {
   return Math.max(0, Math.min(1, Math.round(value * 100) / 100));
@@ -548,6 +554,23 @@ function reasonsFor(
   return reasons.length > 0 ? reasons : ["low selection score"];
 }
 
+function isCveStyleCluster<T extends Story>(cluster: StoryCluster<T>): boolean {
+  return (
+    cluster.key.startsWith("cve:") ||
+    cluster.stories.some((story) => /\bCVE-\d{4}-\d{4,}\b/i.test(story.title))
+  );
+}
+
+function hasAiCyberSignal<T extends Story>(cluster: StoryCluster<T>): boolean {
+  const text = cluster.stories
+    .map((story) => `${story.title} ${story.excerpt}`)
+    .join(" ")
+    .toLowerCase();
+  return /\b(?:cyber|threat|attack|hacking|malicious|malware|phishing|exploit|vulnerab|zero-day|prompt injection|red team|data exfiltration|exfiltrat|worm|daybreak|intrusion|abuse|soc)\b/.test(
+    text,
+  );
+}
+
 export function selectEditorialCandidates<T extends Story>(
   clusters: StoryCluster<T>[],
   options: {
@@ -662,11 +685,7 @@ export function selectEditorialCandidates<T extends Story>(
       packet,
       item.cluster as StoryCluster<Story>,
     );
-    const cveStyle =
-      item.cluster.key.startsWith("cve:") ||
-      item.cluster.stories.some((story) =>
-        /\bCVE-\d{4}-\d{4,}\b/i.test(story.title),
-      );
+    const cveStyle = isCveStyleCluster(item.cluster);
     if (cveStyle && !mustPostStrategicCriticalCve && cveStyleCount >= 1) {
       cappedReasons.set(item.cluster.key, CVE_STYLE_DAILY_CAP_REASON);
       continue;
@@ -690,5 +709,39 @@ export function selectEditorialCandidates<T extends Story>(
           }
         : item.selection,
   );
-  return { publishable, decisions };
+  const decisionByCluster = new Map(
+    decisions.map((selection) => [selection.clusterKey, selection]),
+  );
+  const reviewable: Array<(typeof sorted)[number] & { clusterKey: string }> =
+    [];
+  let reviewQueueCveStyleCount = 0;
+  for (const item of sorted) {
+    const selection = decisionByCluster.get(item.cluster.key) ?? item.selection;
+    if (selection.decision === "reject") continue;
+    if (selection.reasons.includes("low-value-roundup")) continue;
+    if (selection.lane === "ai-security" && !hasAiCyberSignal(item.cluster))
+      continue;
+    const packet = buildEvidencePacket(item.cluster as StoryCluster<Story>);
+    const cveStyle = isCveStyleCluster(item.cluster);
+    const mustPostStrategicCriticalCve = isMustPostStrategicCriticalCve(
+      selection.lane,
+      packet,
+      item.cluster as StoryCluster<Story>,
+    );
+    if (
+      cveStyle &&
+      !mustPostStrategicCriticalCve &&
+      reviewQueueCveStyleCount >= REVIEW_QUEUE_CVE_STYLE_CAP
+    ) {
+      continue;
+    }
+    reviewable.push({
+      cluster: item.cluster,
+      clusterKey: item.cluster.key,
+      selection,
+    });
+    if (cveStyle && !mustPostStrategicCriticalCve) reviewQueueCveStyleCount++;
+    if (reviewable.length >= options.maxArticles) break;
+  }
+  return { publishable, reviewable, decisions };
 }
