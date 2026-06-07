@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "003-topic-impersonation-click-hijacking-inside-distribution",
+  "clusterKey": "topic:impersonation-click-hijacking-inside-distribution",
+  "proposedTitle": "Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem",
+  "lane": "malware",
+  "score": 0.56,
+  "decision": "digest-only",
+  "selectionReasons": [
+    "trusted sources",
+    "daily article limit"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.46,
+    "trust": 0.88,
+    "demand": 0.37,
+    "freshness": 0.62,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://research.checkpoint.com/2026/impersonation-click-hijacking-and-tds-inside-a-malware-distribution-ecosystem/"
+  ],
+  "sourceNames": [
+    "Check Point Research"
+  ],
+  "sources": [
+    {
+      "id": "checkpoint-research-https://research.checkpoint.com/?p=33088",
+      "title": "Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem",
+      "url": "https://research.checkpoint.com/2026/impersonation-click-hijacking-and-tds-inside-a-malware-distribution-ecosystem/",
+      "excerpt": "Research by: Alexey Bukhteyev Key Takeaways Introduction When we search Google for a popular piece of software, we usually click the first result, sometimes without even looking at the rest, because official project sites tend to rank highest and appear near the top of the results. After landing on a site with a professional design and […] The post Impersonation, Click Hijacking, and TDS: Inside a",
+      "sourceName": "Check Point Research",
+      "sourceId": "checkpoint-research",
+      "publishedAt": "Wed, 03 Jun 2026 13:21:44 +0000",
+      "tags": [
+        "Check Point Research Publications"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem",
+    "searchIntent": "technical-analysis",
+    "titlePromise": "Lead with Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem and the concrete defender impact.",
+    "metaPromise": "Start with Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "malware",
+    "requiredEntities": [
+      "Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem"
+    ],
+    "internalLinkTargets": [
+      "malware"
+    ],
+    "targetHub": "malware",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

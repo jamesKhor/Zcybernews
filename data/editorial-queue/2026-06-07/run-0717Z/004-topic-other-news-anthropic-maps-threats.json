@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "004-topic-other-news-anthropic-maps-threats",
+  "clusterKey": "topic:other-news-anthropic-maps-threats",
+  "proposedTitle": "In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA",
+  "lane": "ransomware",
+  "score": 0.56,
+  "decision": "research-more",
+  "selectionReasons": [
+    "search demand",
+    "portfolio:ransomware",
+    "single-source",
+    "no-primary-source"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.22,
+    "trust": 0.62,
+    "demand": 0.71,
+    "freshness": 0.82,
+    "differentiation": 0.59,
+    "portfolio": 0.82
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.securityweek.com/in-other-news-anthropic-maps-ai-threats-unpatched-comodo-flaw-palantir-chief-eyed-for-cisa/"
+  ],
+  "sourceNames": [
+    "SecurityWeek"
+  ],
+  "sources": [
+    {
+      "id": "securityweek-https://www.securityweek.com/?p=46913",
+      "title": "In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA",
+      "url": "https://www.securityweek.com/in-other-news-anthropic-maps-ai-threats-unpatched-comodo-flaw-palantir-chief-eyed-for-cisa/",
+      "excerpt": "Other noteworthy stories that might have slipped under the radar: Ultrahuman data leak, The Gentlemen ransomware analysis, Hola Browser bundles miner. The post In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA appeared first on SecurityWeek.",
+      "sourceName": "SecurityWeek",
+      "sourceId": "securityweek",
+      "publishedAt": "Fri, 05 Jun 2026 13:05:06 +0000",
+      "tags": [
+        "Artificial Intelligence",
+        "In Other News"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA",
+    "searchIntent": "incident-impact",
+    "titlePromise": "Lead with In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA and the concrete defender impact.",
+    "metaPromise": "Start with In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "ransomware",
+    "requiredEntities": [
+      "In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA"
+    ],
+    "internalLinkTargets": [
+      "ransomware"
+    ],
+    "targetHub": "ransomware",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

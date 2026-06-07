@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-07T07:17:43.557Z",
+  "runId": "github-27085900252",
+  "mode": "curate-only",
+  "maxCandidates": 5,
+  "candidateCount": 5,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-9594",
+      "clusterKey": "cve:CVE-2026-9594",
+      "path": "data/editorial-queue/2026-06-07/run-0717Z/001-cve-cve-2026-9594.json",
+      "proposedTitle": "CVE-2026-9594 (CVSS 4.4): The WP Maps – Google Maps,OpenStreetMap,Mapbox,Store Locator,Listing,Directory & Filters plugin for WordPress is vulnerable to Stored Cross-",
+      "lane": "vulnerabilities",
+      "score": 0.72,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources",
+        "search demand",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-9594",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-cve-cve-2026-9829",
+      "clusterKey": "cve:CVE-2026-9829",
+      "path": "data/editorial-queue/2026-06-07/run-0717Z/002-cve-cve-2026-9829.json",
+      "proposedTitle": "CVE-2026-9829 (CVSS 6.5): The Photo Gallery by 10Web – Mobile-Friendly Image Gallery plugin for WordPress is vulnerable to time-based SQL Injection via 'compact_album",
+      "lane": "vulnerabilities",
+      "score": 0.71,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources",
+        "search demand",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-9829",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "003-topic-impersonation-click-hijacking-inside-distribution",
+      "clusterKey": "topic:impersonation-click-hijacking-inside-distribution",
+      "path": "data/editorial-queue/2026-06-07/run-0717Z/003-topic-impersonation-click-hijacking-inside-distribution.json",
+      "proposedTitle": "Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem",
+      "lane": "malware",
+      "score": 0.56,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "trusted sources",
+        "daily article limit"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Impersonation, Click Hijacking, and TDS: Inside a Malware Distribution Ecosystem",
+      "targetHub": "malware"
+    },
+    {
+      "candidateId": "004-topic-other-news-anthropic-maps-threats",
+      "clusterKey": "topic:other-news-anthropic-maps-threats",
+      "path": "data/editorial-queue/2026-06-07/run-0717Z/004-topic-other-news-anthropic-maps-threats.json",
+      "proposedTitle": "In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA",
+      "lane": "ransomware",
+      "score": 0.56,
+      "decision": "research-more",
+      "selectionReasons": [
+        "search demand",
+        "portfolio:ransomware",
+        "single-source",
+        "no-primary-source"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA",
+      "targetHub": "ransomware"
+    },
+    {
+      "candidateId": "005-topic-argamal-hidden-hentai-games-great",
+      "clusterKey": "topic:argamal-hidden-hentai-games-great",
+      "path": "data/editorial-queue/2026-06-07/run-0717Z/005-topic-argamal-hidden-hentai-games-great.json",
+      "proposedTitle": "Argamal: Malware hidden in hentai games",
+      "lane": "malware",
+      "score": 0.55,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "trusted sources",
+        "daily article limit"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Argamal: Malware hidden in hentai games",
+      "targetHub": "malware"
+    }
+  ]
+}
