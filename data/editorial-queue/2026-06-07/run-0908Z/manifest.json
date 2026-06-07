@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-07T09:08:30.253Z",
+  "runId": "github-27088211796",
+  "mode": "curate-only",
+  "maxCandidates": 6,
+  "candidateCount": 6,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-11449",
+      "clusterKey": "cve:CVE-2026-11449",
+      "path": "data/editorial-queue/2026-06-07/run-0908Z/001-cve-cve-2026-11449.json",
+      "proposedTitle": "CVE-2026-11449 (CVSS 6.5): A security vulnerability has been detected in GL.iNet GL-MT3000 4.4.5. The impacted element is the function rpc_sys of the file /cgi-bin/luc",
+      "lane": "vulnerabilities",
+      "score": 0.72,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 2,
+      "primaryQueryTarget": "CVE-2026-11449",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-cve-cve-2026-9851",
+      "clusterKey": "cve:CVE-2026-9851",
+      "path": "data/editorial-queue/2026-06-07/run-0908Z/002-cve-cve-2026-9851.json",
+      "proposedTitle": "CVE-2026-9851 (CVSS 7.2): The Booking Package plugin for WordPress is vulnerable to Privilege Escalation via Account Takeover in versions up to, and including, 1.7.16",
+      "lane": "vulnerabilities",
+      "score": 0.71,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources",
+        "search demand",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-9851",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "003-topic-iran-expands-handala-brand-physical",
+      "clusterKey": "topic:iran-expands-handala-brand-physical",
+      "path": "data/editorial-queue/2026-06-07/run-0908Z/003-topic-iran-expands-handala-brand-physical.json",
+      "proposedTitle": "Iran Expands Handala Brand to Physical Threats",
+      "lane": "defender-ops",
+      "score": 0.52,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Iran Expands Handala Brand to Physical Threats",
+      "targetHub": "defender-ops"
+    },
+    {
+      "candidateId": "004-topic-verdantbamboo-just-another-brickstorm-firewall",
+      "clusterKey": "topic:verdantbamboo-just-another-brickstorm-firewall",
+      "path": "data/editorial-queue/2026-06-07/run-0908Z/004-topic-verdantbamboo-just-another-brickstorm-firewall.json",
+      "proposedTitle": "VerdantBamboo: Just Another BRICKSTORM in the Firewall",
+      "lane": "defender-ops",
+      "score": 0.52,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "VerdantBamboo: Just Another BRICKSTORM in the Firewall",
+      "targetHub": "defender-ops"
+    },
+    {
+      "candidateId": "005-topic-considers-setting-aside-modifying-million",
+      "clusterKey": "topic:considers-setting-aside-modifying-million",
+      "path": "data/editorial-queue/2026-06-07/run-0908Z/005-topic-considers-setting-aside-modifying-million.json",
+      "proposedTitle": "FTC considers setting aside or modifying $150 million privacy penalty against X",
+      "lane": "policy",
+      "score": 0.51,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "FTC considers setting aside or modifying $150 million privacy penalty against X",
+      "targetHub": "policy"
+    },
+    {
+      "candidateId": "006-topic-hacking-metas-chatbot",
+      "clusterKey": "topic:hacking-metas-chatbot",
+      "path": "data/editorial-queue/2026-06-07/run-0908Z/006-topic-hacking-metas-chatbot.json",
+      "proposedTitle": "Hacking Meta’s AI Chatbot",
+      "lane": "ai-security",
+      "score": 0.51,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Hacking Meta’s AI Chatbot",
+      "targetHub": "ai-security"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "004-topic-verdantbamboo-just-another-brickstorm-firewall",
+  "clusterKey": "topic:verdantbamboo-just-another-brickstorm-firewall",
+  "proposedTitle": "VerdantBamboo: Just Another BRICKSTORM in the Firewall",
+  "lane": "defender-ops",
+  "score": 0.52,
+  "decision": "research-more",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.46,
+    "trust": 0.88,
+    "demand": 0.18,
+    "freshness": 0.62,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.volexity.com/blog/2026/06/04/verdantbamboo-just-another-brickstorm-in-the-firewall/"
+  ],
+  "sourceNames": [
+    "Volexity Threat Research"
+  ],
+  "sources": [
+    {
+      "id": "volexity-5090",
+      "title": "VerdantBamboo: Just Another BRICKSTORM in the Firewall",
+      "url": "https://www.volexity.com/blog/2026/06/04/verdantbamboo-just-another-brickstorm-in-the-firewall/",
+      "excerpt": "In September 2025, Volexity conducted an incident response engagement that began after suspicious network traffic was observed from a Linux-based virtual machine appliance on a customer’s network. The virtual machine [&hellip;]",
+      "sourceName": "Volexity Threat Research",
+      "sourceId": "volexity",
+      "publishedAt": "2026-06-04T20:23:55.000Z",
+      "tags": []
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "VerdantBamboo: Just Another BRICKSTORM in the Firewall",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with VerdantBamboo: Just Another BRICKSTORM in the Firewall and the concrete defender impact.",
+    "metaPromise": "Start with VerdantBamboo: Just Another BRICKSTORM in the Firewall, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "defender-ops",
+    "requiredEntities": [
+      "VerdantBamboo: Just Another BRICKSTORM in the Firewall"
+    ],
+    "internalLinkTargets": [
+      "defender-ops"
+    ],
+    "targetHub": "defender-ops",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

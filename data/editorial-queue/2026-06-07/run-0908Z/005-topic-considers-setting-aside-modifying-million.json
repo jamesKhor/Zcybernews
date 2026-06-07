@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "005-topic-considers-setting-aside-modifying-million",
+  "clusterKey": "topic:considers-setting-aside-modifying-million",
+  "proposedTitle": "FTC considers setting aside or modifying $150 million privacy penalty against X",
+  "lane": "policy",
+  "score": 0.51,
+  "decision": "research-more",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.18,
+    "freshness": 0.62,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://therecord.media/ftc-considers-modifying-150-million-twitter-privacy-fine"
+  ],
+  "sourceNames": [
+    "The Record (Recorded Future News)"
+  ],
+  "sources": [
+    {
+      "id": "the-record-https://therecord.media/ftc-considers-modifying-150-million-twitter-privacy-fine",
+      "title": "FTC considers setting aside or modifying $150 million privacy penalty against X",
+      "url": "https://therecord.media/ftc-considers-modifying-150-million-twitter-privacy-fine",
+      "excerpt": "Twitter, renamed X in 2023, filed a petition saying that the settlement terms are unfair because the order was issued against a company that “no longer exists,” the workers responsible for the scheme no longer work for X and the firm has since established a “world class” privacy and data protection program.",
+      "sourceName": "The Record (Recorded Future News)",
+      "sourceId": "the-record",
+      "publishedAt": "Thu, 04 Jun 2026 19:42:00 GMT",
+      "tags": [
+        "Government",
+        "News",
+        "Privacy"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "FTC considers setting aside or modifying $150 million privacy penalty against X",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with FTC considers setting aside or modifying $150 million privacy penalty against X and the concrete defender impact.",
+    "metaPromise": "Start with FTC considers setting aside or modifying $150 million privacy penalty against X, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "policy",
+    "requiredEntities": [
+      "FTC considers setting aside or modifying $150 million privacy penalty against X"
+    ],
+    "internalLinkTargets": [
+      "policy"
+    ],
+    "targetHub": "policy",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
