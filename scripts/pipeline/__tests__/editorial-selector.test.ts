@@ -167,7 +167,7 @@ describe("selectEditorialCandidates", () => {
 
     const result = selectEditorialCandidates(
       [ransomware, researchMore, digestOnlyCve],
-      { maxArticles: 3 },
+      { maxArticles: 1, reviewableMaxArticles: 3 },
     );
 
     expect(result.publishable.map((item) => item.clusterKey)).toEqual([

@@ -575,6 +575,7 @@ export function selectEditorialCandidates<T extends Story>(
   clusters: StoryCluster<T>[],
   options: {
     maxArticles: number;
+    reviewableMaxArticles?: number;
     tasteProfile?: EditorialTasteProfile | null;
   } = { maxArticles: 5 },
 ): EditorialSelectorResult<T> {
@@ -741,7 +742,11 @@ export function selectEditorialCandidates<T extends Story>(
       selection,
     });
     if (cveStyle && !mustPostStrategicCriticalCve) reviewQueueCveStyleCount++;
-    if (reviewable.length >= options.maxArticles) break;
+    if (
+      reviewable.length >=
+      (options.reviewableMaxArticles ?? options.maxArticles)
+    )
+      break;
   }
   return { publishable, reviewable, decisions };
 }

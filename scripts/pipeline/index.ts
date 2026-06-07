@@ -454,6 +454,9 @@ async function main() {
     }
     const editorial = selectEditorialCandidates(clusters, {
       maxArticles: MAX_ARTICLES,
+      reviewableMaxArticles: CURATE_ONLY
+        ? Math.max(MAX_ARTICLES * 3, MAX_ARTICLES + 10)
+        : MAX_ARTICLES,
       tasteProfile,
     });
     const selectedEditorialItems = CURATE_ONLY
@@ -525,9 +528,10 @@ async function main() {
       : APPROVED_QUEUE
         ? "generate approved"
         : "generate";
-  console.log(
-    `[pipeline] Will ${plannedAction} ${batches.length} candidates\n`,
-  );
+  const plannedCount = CURATE_ONLY
+    ? `up to ${MAX_ARTICLES} candidates from ${batches.length} reviewable candidates`
+    : `${batches.length} candidates`;
+  console.log(`[pipeline] Will ${plannedAction} ${plannedCount}\n`);
 
   if (DRY_RUN) {
     console.log("[pipeline] Dry run — stories that would be processed:");
@@ -553,10 +557,12 @@ async function main() {
       seoBrief: batch.seoBrief,
     }));
     const reviewQueueFilter = filterQueuedReviewCandidates(reviewQueueInputs);
+    const queuedReviewCandidates = reviewQueueFilter.candidates.slice(
+      0,
+      MAX_ARTICLES,
+    );
     const keptClusterKeys = new Set(
-      reviewQueueFilter.candidates.map(
-        (candidate) => candidate.selection.clusterKey,
-      ),
+      queuedReviewCandidates.map((candidate) => candidate.selection.clusterKey),
     );
     const skippedByCluster = new Map(
       reviewQueueFilter.skipped.map((skip) => [skip.clusterKey, skip]),
@@ -631,14 +637,14 @@ async function main() {
       );
     }
 
-    if (reviewQueueFilter.candidates.length === 0) {
+    if (queuedReviewCandidates.length === 0) {
       console.log(
         "[pipeline] Curate-only mode — no new review candidates after queue dedupe.",
       );
       return;
     }
 
-    const queue = writeReviewQueue(reviewQueueFilter.candidates, {
+    const queue = writeReviewQueue(queuedReviewCandidates, {
       runId: process.env.GITHUB_RUN_ID
         ? `github-${process.env.GITHUB_RUN_ID}`
         : undefined,
