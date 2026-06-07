@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "004-topic-make-your-tools-smarter-internet",
+  "clusterKey": "topic:make-your-tools-smarter-internet",
+  "proposedTitle": "Make Your Security Tools Smarter with Internet Intelligence",
+  "lane": "defender-ops",
+  "score": 0.51,
+  "decision": "research-more",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.18,
+    "freshness": 0.62,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://censys.com/blog/smarter-security-tools-internet-intelligence/"
+  ],
+  "sourceNames": [
+    "Censys Research"
+  ],
+  "sources": [
+    {
+      "id": "censys-https://censys.com/?p=9428",
+      "title": "Make Your Security Tools Smarter with Internet Intelligence",
+      "url": "https://censys.com/blog/smarter-security-tools-internet-intelligence/",
+      "excerpt": "Security teams are not suffering from a lack of data to investigate, or from a lack of tools to investigate with. The challenge is adding enough context to make fast, accurate decisions without forcing an analyst to pivot from console to console. Determining whether an IOC is worth investigating or should be deprioritized is an […] The post Make Your Security Tools Smarter with Internet Intelligen",
+      "sourceName": "Censys Research",
+      "sourceId": "censys",
+      "publishedAt": "Thu, 04 Jun 2026 14:52:12 +0000",
+      "tags": [
+        "Uncategorized",
+        "Censys Platform"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Make Your Security Tools Smarter with Internet Intelligence",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with Make Your Security Tools Smarter with Internet Intelligence and the concrete defender impact.",
+    "metaPromise": "Start with Make Your Security Tools Smarter with Internet Intelligence, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "defender-ops",
+    "requiredEntities": [
+      "Make Your Security Tools Smarter with Internet Intelligence"
+    ],
+    "internalLinkTargets": [
+      "defender-ops"
+    ],
+    "targetHub": "defender-ops",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

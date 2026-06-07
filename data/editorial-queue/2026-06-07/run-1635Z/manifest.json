@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-07T16:35:29.825Z",
+  "runId": "github-27098386218",
+  "mode": "curate-only",
+  "maxCandidates": 5,
+  "candidateCount": 5,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-11458",
+      "clusterKey": "cve:CVE-2026-11458",
+      "path": "data/editorial-queue/2026-06-07/run-1635Z/001-cve-cve-2026-11458.json",
+      "proposedTitle": "CVE-2026-11458 (CVSS 5.3): A weakness has been identified in erzhongxmu JeeWMS up to 141740afb2ba14d441c82a833d0a418d07ca2d69. This issue affects some unknown processi",
+      "lane": "vulnerabilities",
+      "score": 0.74,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 2,
+      "primaryQueryTarget": "CVE-2026-11458",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-cve-cve-2026-11452",
+      "clusterKey": "cve:CVE-2026-11452",
+      "path": "data/editorial-queue/2026-06-07/run-1635Z/002-cve-cve-2026-11452.json",
+      "proposedTitle": "CVE-2026-11452 (CVSS 7.5): A vulnerability has been found in GL.iNet GL-MT3000 up to 4.4.5. Affected is the function FUN_0042e200 of the file /cgi-bin/glc of the compo",
+      "lane": "vulnerabilities",
+      "score": 0.71,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 2,
+      "primaryQueryTarget": "CVE-2026-11452",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "003-topic-holistic-sourcing-wins-numbers-behind",
+      "clusterKey": "topic:holistic-sourcing-wins-numbers-behind",
+      "path": "data/editorial-queue/2026-06-07/run-1635Z/003-topic-holistic-sourcing-wins-numbers-behind.json",
+      "proposedTitle": "Why Holistic Sourcing Wins: The Numbers Behind the Recorded Future Advantage",
+      "lane": "defender-ops",
+      "score": 0.51,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Why Holistic Sourcing Wins: The Numbers Behind the Recorded Future Advantage",
+      "targetHub": "defender-ops"
+    },
+    {
+      "candidateId": "004-topic-make-your-tools-smarter-internet",
+      "clusterKey": "topic:make-your-tools-smarter-internet",
+      "path": "data/editorial-queue/2026-06-07/run-1635Z/004-topic-make-your-tools-smarter-internet.json",
+      "proposedTitle": "Make Your Security Tools Smarter with Internet Intelligence",
+      "lane": "defender-ops",
+      "score": 0.51,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Make Your Security Tools Smarter with Internet Intelligence",
+      "targetHub": "defender-ops"
+    },
+    {
+      "candidateId": "005-topic-remembering-alex-younger-blog",
+      "clusterKey": "topic:remembering-alex-younger-blog",
+      "path": "data/editorial-queue/2026-06-07/run-1635Z/005-topic-remembering-alex-younger-blog.json",
+      "proposedTitle": "Remembering Sir Alex Younger",
+      "lane": "defender-ops",
+      "score": 0.51,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Remembering Sir Alex Younger",
+      "targetHub": "defender-ops"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "003-topic-holistic-sourcing-wins-numbers-behind",
+  "clusterKey": "topic:holistic-sourcing-wins-numbers-behind",
+  "proposedTitle": "Why Holistic Sourcing Wins: The Numbers Behind the Recorded Future Advantage",
+  "lane": "defender-ops",
+  "score": 0.51,
+  "decision": "research-more",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.18,
+    "freshness": 0.62,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.recordedfuture.com/blog/recorded-future-holistic-sourcing-wins"
+  ],
+  "sourceNames": [
+    "Recorded Future (Insikt Group)"
+  ],
+  "sources": [
+    {
+      "id": "recorded-future-https://www.recordedfuture.com/blog/recorded-future-holistic-sourcing-wins",
+      "title": "Why Holistic Sourcing Wins: The Numbers Behind the Recorded Future Advantage",
+      "url": "https://www.recordedfuture.com/blog/recorded-future-holistic-sourcing-wins",
+      "excerpt": "Future’s Intelligence Grap® uses holistic sourcing across 1M+ sources for complete threat intelligence and proactive defense.",
+      "sourceName": "Recorded Future (Insikt Group)",
+      "sourceId": "recorded-future",
+      "publishedAt": "Fri, 05 Jun 2026 00:00:00 GMT",
+      "tags": [
+        "Blog"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Why Holistic Sourcing Wins: The Numbers Behind the Recorded Future Advantage",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with Why Holistic Sourcing Wins: The Numbers Behind the Recorded Future Advantage and the concrete defender impact.",
+    "metaPromise": "Start with Why Holistic Sourcing Wins: The Numbers Behind the Recorded Future Advantage, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "defender-ops",
+    "requiredEntities": [
+      "Why Holistic Sourcing Wins: The Numbers Behind the Recorded Future Advantage"
+    ],
+    "internalLinkTargets": [
+      "defender-ops"
+    ],
+    "targetHub": "defender-ops",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
