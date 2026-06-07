@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "002-topic-life-analyst-inside-modern-events",
+  "clusterKey": "topic:life-analyst-inside-modern-events",
+  "proposedTitle": "A Day in the Life of an MDR Analyst: Inside the Modern SOC",
+  "lane": "defender-ops",
+  "score": 0.55,
+  "decision": "digest-only",
+  "selectionReasons": [
+    "trusted sources",
+    "daily article limit"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.35,
+    "freshness": 0.62,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.rapid7.com/blog/post/it-day-in-the-life-mdr-analyst-inside-the-modern-soc"
+  ],
+  "sourceNames": [
+    "Rapid7 Blog"
+  ],
+  "sources": [
+    {
+      "id": "rapid7-blt10fbe430869e93b5",
+      "title": "A Day in the Life of an MDR Analyst: Inside the Modern SOC",
+      "url": "https://www.rapid7.com/blog/post/it-day-in-the-life-mdr-analyst-inside-the-modern-soc",
+      "excerpt": "What actually happens inside a SOC when an incident unfolds? Most teams see the alerts and the outcomes, but the decision-making in between is often less visible. At the Rapid7 2026 Global Cybersecurity Summit, the signature session Inside the Modern SOC: Who Carries You Through an Incident takes a different approach. Rather than focusing on tools or dashboards, it follows a real-world incident fr",
+      "sourceName": "Rapid7 Blog",
+      "sourceId": "rapid7",
+      "publishedAt": "Wed, 03 Jun 2026 16:27:08 GMT",
+      "tags": [
+        "Events",
+        "Managed Detection and Response (MDR)",
+        "Security Operations (SOC)"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "A Day in the Life of an MDR Analyst: Inside the Modern SOC",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with A Day in the Life of an MDR Analyst: Inside the Modern SOC and the concrete defender impact.",
+    "metaPromise": "Start with A Day in the Life of an MDR Analyst: Inside the Modern SOC, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "defender-ops",
+    "requiredEntities": [
+      "A Day in the Life of an MDR Analyst: Inside the Modern SOC"
+    ],
+    "internalLinkTargets": [
+      "defender-ops"
+    ],
+    "targetHub": "defender-ops",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

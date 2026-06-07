@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "003-topic-apple-removes-russias-statebacked-messaging",
+  "clusterKey": "topic:apple-removes-russias-statebacked-messaging",
+  "proposedTitle": "Apple removes Russia’s state-backed messaging app Max from its store",
+  "lane": "apt-state-actors",
+  "score": 0.54,
+  "decision": "research-more",
+  "selectionReasons": [
+    "trusted sources",
+    "portfolio:apt-state-actors"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.46,
+    "trust": 0.88,
+    "demand": 0.18,
+    "freshness": 0.62,
+    "differentiation": 0.57,
+    "portfolio": 0.82
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://therecord.media/apple-removes-russian-app-max-from-app-store"
+  ],
+  "sourceNames": [
+    "The Record (Recorded Future News)"
+  ],
+  "sources": [
+    {
+      "id": "the-record-https://therecord.media/apple-removes-russian-app-max-from-app-store",
+      "title": "Apple removes Russia’s state-backed messaging app Max from its store",
+      "url": "https://therecord.media/apple-removes-russian-app-max-from-app-store",
+      "excerpt": "Russian authorities have promoted Max as a domestic alternative to foreign messaging platforms such as Telegram and WhatsApp.",
+      "sourceName": "The Record (Recorded Future News)",
+      "sourceId": "the-record",
+      "publishedAt": "Thu, 04 Jun 2026 23:00:00 GMT",
+      "tags": [
+        "Industry",
+        "Government"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Apple removes Russia’s state-backed messaging app Max from its store",
+    "searchIntent": "technical-analysis",
+    "titlePromise": "Lead with Apple removes Russia’s state-backed messaging app Max from its store and the concrete defender impact.",
+    "metaPromise": "Start with Apple removes Russia’s state-backed messaging app Max from its store, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "apt-state-actors",
+    "requiredEntities": [
+      "Apple removes Russia’s state-backed messaging app Max from its store"
+    ],
+    "internalLinkTargets": [
+      "apt",
+      "apt-state-actors"
+    ],
+    "targetHub": "apt",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

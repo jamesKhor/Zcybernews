@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-07T07:25:43.528Z",
+  "runId": "github-27086062608",
+  "mode": "curate-only",
+  "maxCandidates": 8,
+  "candidateCount": 8,
+  "candidates": [
+    {
+      "candidateId": "001-topic-chinese-deploys-keep-access-hacked",
+      "clusterKey": "topic:chinese-deploys-keep-access-hacked",
+      "path": "data/editorial-queue/2026-06-07/run-0725Z/001-topic-chinese-deploys-keep-access-hacked.json",
+      "proposedTitle": "Chinese APT deploys new malware to keep access to hacked networks",
+      "lane": "apt-state-actors",
+      "score": 0.55,
+      "decision": "research-more",
+      "selectionReasons": [
+        "search demand",
+        "portfolio:apt-state-actors",
+        "single-source",
+        "no-primary-source"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Chinese APT deploys new malware to keep access to hacked networks",
+      "targetHub": "apt"
+    },
+    {
+      "candidateId": "002-topic-life-analyst-inside-modern-events",
+      "clusterKey": "topic:life-analyst-inside-modern-events",
+      "path": "data/editorial-queue/2026-06-07/run-0725Z/002-topic-life-analyst-inside-modern-events.json",
+      "proposedTitle": "A Day in the Life of an MDR Analyst: Inside the Modern SOC",
+      "lane": "defender-ops",
+      "score": 0.55,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "trusted sources",
+        "daily article limit"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "A Day in the Life of an MDR Analyst: Inside the Modern SOC",
+      "targetHub": "defender-ops"
+    },
+    {
+      "candidateId": "003-topic-apple-removes-russias-statebacked-messaging",
+      "clusterKey": "topic:apple-removes-russias-statebacked-messaging",
+      "path": "data/editorial-queue/2026-06-07/run-0725Z/003-topic-apple-removes-russias-statebacked-messaging.json",
+      "proposedTitle": "Apple removes Russia’s state-backed messaging app Max from its store",
+      "lane": "apt-state-actors",
+      "score": 0.54,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources",
+        "portfolio:apt-state-actors"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Apple removes Russia’s state-backed messaging app Max from its store",
+      "targetHub": "apt"
+    },
+    {
+      "candidateId": "004-topic-miasma-worm-hits-microsoft-github",
+      "clusterKey": "topic:miasma-worm-hits-microsoft-github",
+      "path": "data/editorial-queue/2026-06-07/run-0725Z/004-topic-miasma-worm-hits-microsoft-github.json",
+      "proposedTitle": "Miasma Worm Hits 73 Microsoft GitHub Repositories in Major Supply Chain Attack",
+      "lane": "defender-ops",
+      "score": 0.54,
+      "decision": "research-more",
+      "selectionReasons": [
+        "search demand",
+        "single-source",
+        "no-primary-source"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "GitHub",
+      "targetHub": "defender-ops"
+    },
+    {
+      "candidateId": "005-topic-ai-worm",
+      "clusterKey": "topic:ai-worm",
+      "path": "data/editorial-queue/2026-06-07/run-0725Z/005-topic-ai-worm.json",
+      "proposedTitle": "AI Worm",
+      "lane": "ai-security",
+      "score": 0.53,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "AI Worm",
+      "targetHub": "ai-security"
+    },
+    {
+      "candidateId": "006-topic-dangling-entry-lead-subdomain-takeover",
+      "clusterKey": "topic:dangling-entry-lead-subdomain-takeover",
+      "path": "data/editorial-queue/2026-06-07/run-0725Z/006-topic-dangling-entry-lead-subdomain-takeover.json",
+      "proposedTitle": "How a Dangling DNS Entry Can Lead to a Subdomain Takeover",
+      "lane": "defender-ops",
+      "score": 0.53,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "How a Dangling DNS Entry Can Lead to a Subdomain Takeover",
+      "targetHub": "defender-ops"
+    },
+    {
+      "candidateId": "007-topic-mythos-threat-defense-censys-sees",
+      "clusterKey": "topic:mythos-threat-defense-censys-sees",
+      "path": "data/editorial-queue/2026-06-07/run-0725Z/007-topic-mythos-threat-defense-censys-sees.json",
+      "proposedTitle": "The Mythos Era of Threat Defense: Censys Sees Exposures and Adversary Infrastructure First",
+      "lane": "vulnerabilities",
+      "score": 0.53,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "trusted sources",
+        "daily article limit"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "The Mythos Era of Threat Defense: Censys Sees Exposures and Adversary Infrastructure First",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "008-topic-hackers-leak-dentaquest-information-impacting",
+      "clusterKey": "topic:hackers-leak-dentaquest-information-impacting",
+      "path": "data/editorial-queue/2026-06-07/run-0725Z/008-topic-hackers-leak-dentaquest-information-impacting.json",
+      "proposedTitle": "Hackers Leak DentaQuest Information Impacting 2.6 Million",
+      "lane": "ransomware",
+      "score": 0.52,
+      "decision": "research-more",
+      "selectionReasons": [
+        "portfolio:ransomware",
+        "single-source",
+        "no-primary-source"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "ShinyHunters",
+      "targetHub": "ransomware"
+    }
+  ]
+}

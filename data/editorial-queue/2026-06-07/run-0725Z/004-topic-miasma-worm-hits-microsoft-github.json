@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "004-topic-miasma-worm-hits-microsoft-github",
+  "clusterKey": "topic:miasma-worm-hits-microsoft-github",
+  "proposedTitle": "Miasma Worm Hits 73 Microsoft GitHub Repositories in Major Supply Chain Attack",
+  "lane": "defender-ops",
+  "score": 0.54,
+  "decision": "research-more",
+  "selectionReasons": [
+    "search demand",
+    "single-source",
+    "no-primary-source"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.16,
+    "trust": 0.49,
+    "demand": 0.9,
+    "freshness": 0.82,
+    "differentiation": 0.45,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html"
+  ],
+  "sourceNames": [
+    "The Hacker News"
+  ],
+  "sources": [
+    {
+      "id": "thehackernews-https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html",
+      "title": "Miasma Worm Hits 73 Microsoft GitHub Repositories in Major Supply Chain Attack",
+      "url": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html",
+      "excerpt": "Microsoft's GitHub repositories have become the latest to fall victim to the ongoing Miasma self-replicating supply chain attack campaign. The incident impacted 73 Microsoft repositories across four of its GitHub organizations, including Azure, Azure-Samples, Microsoft, and MicrosoftDocs, per OpenSourceMalware. The development has GitHub to disable access to those repositories. \"Access to this",
+      "sourceName": "The Hacker News",
+      "sourceId": "thehackernews",
+      "publishedAt": "Sat, 06 Jun 2026 12:28:04 +0530",
+      "tags": []
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "GitHub",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with GitHub and the concrete defender impact.",
+    "metaPromise": "Start with GitHub, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "defender-ops",
+    "requiredEntities": [
+      "GitHub"
+    ],
+    "internalLinkTargets": [
+      "defender-ops"
+    ],
+    "targetHub": "defender-ops",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
