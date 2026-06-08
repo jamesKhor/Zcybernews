@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-08T09:43:11.955Z",
+  "runId": "github-27129157823",
+  "mode": "curate-only",
+  "maxCandidates": 2,
+  "candidateCount": 2,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-11499",
+      "clusterKey": "cve:CVE-2026-11499",
+      "path": "data/editorial-queue/2026-06-08/run-0943Z/001-cve-cve-2026-11499.json",
+      "proposedTitle": "CVE-2026-11499 (CVSS 10): A vulnerability was determined in Tenda HG7HG9 and HG10 300001138_en_xpon. This affects the function formDOMAINBLK of the file /boaform/form",
+      "lane": "vulnerabilities",
+      "score": 0.73,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources",
+        "nvd-only-obscure-cve"
+      ],
+      "sourceCount": 2,
+      "primaryQueryTarget": "CVE-2026-11499",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-cve-cve-2026-11486",
+      "clusterKey": "cve:CVE-2026-11486",
+      "path": "data/editorial-queue/2026-06-08/run-0943Z/002-cve-cve-2026-11486.json",
+      "proposedTitle": "CVE-2026-11486 (CVSS 7.5): A vulnerability was detected in SourceCodester Class and Exam Timetabling System 1.0. Affected by this vulnerability is an unknown functiona",
+      "lane": "vulnerabilities",
+      "score": 0.72,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "strong evidence",
+        "trusted sources",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 2,
+      "primaryQueryTarget": "CVE-2026-11486",
+      "targetHub": "active-cves"
+    }
+  ]
+}
