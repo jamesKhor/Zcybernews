@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-08T01:02:31.498Z",
+  "runId": "github-27110302066",
+  "mode": "curate-only",
+  "maxCandidates": 1,
+  "candidateCount": 1,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-11462",
+      "clusterKey": "cve:CVE-2026-11462",
+      "path": "data/editorial-queue/2026-06-08/run-0102Z/001-cve-cve-2026-11462.json",
+      "proposedTitle": "CVE-2026-11462 (CVSS 7.5): A vulnerability was found in Chengdu Everbrite Network Technology BeikeShop up to 1.6.0.22. This impacts the function callback of the file p",
+      "lane": "vulnerabilities",
+      "score": 0.71,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "trusted sources",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-11462",
+      "targetHub": "active-cves"
+    }
+  ]
+}
