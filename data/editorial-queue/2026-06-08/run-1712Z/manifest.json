@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-08T17:12:20.401Z",
+  "runId": "github-27154288418",
+  "mode": "curate-only",
+  "maxCandidates": 8,
+  "candidateCount": 8,
+  "candidates": [
+    {
+      "candidateId": "001-cve-cve-2026-46656",
+      "clusterKey": "cve:CVE-2026-46656",
+      "path": "data/editorial-queue/2026-06-08/run-1712Z/001-cve-cve-2026-46656.json",
+      "proposedTitle": "CVE-2026-46656 (CVSS 8.8): Bludit is a content management system. Versions prior to 3.22.0 have a Broken Access Control flaw where active sessions remain valid even af",
+      "lane": "vulnerabilities",
+      "score": 0.69,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "trusted sources",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-46656",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "002-cve-cve-2026-46657",
+      "clusterKey": "cve:CVE-2026-46657",
+      "path": "data/editorial-queue/2026-06-08/run-1712Z/002-cve-cve-2026-46657.json",
+      "proposedTitle": "CVE-2026-46657 (CVSS 7.1): Bludit is a content management system. Versions prior to 3.22.0 have a vulnerability in the user management logic that allows deactivated ac",
+      "lane": "vulnerabilities",
+      "score": 0.69,
+      "decision": "digest-only",
+      "selectionReasons": [
+        "trusted sources",
+        "below-critical-cvss"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "CVE-2026-46657",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "003-topic-silent-ransom-group-uses-fast",
+      "clusterKey": "topic:silent-ransom-group-uses-fast",
+      "path": "data/editorial-queue/2026-06-08/run-1712Z/003-topic-silent-ransom-group-uses-fast.json",
+      "proposedTitle": "Silent Ransom Group targets law firms with fake IT support calls",
+      "lane": "ransomware",
+      "score": 0.59,
+      "decision": "research-more",
+      "selectionReasons": [
+        "search demand",
+        "portfolio:ransomware",
+        "no-primary-source"
+      ],
+      "sourceCount": 2,
+      "primaryQueryTarget": "Silent Ransom Group targets law firms with fake IT support calls",
+      "targetHub": "ransomware"
+    },
+    {
+      "candidateId": "004-topic-critical-zcash-vulnerability-fixed",
+      "clusterKey": "topic:critical-zcash-vulnerability-fixed",
+      "path": "data/editorial-queue/2026-06-08/run-1712Z/004-topic-critical-zcash-vulnerability-fixed.json",
+      "proposedTitle": "Critical Zcash Vulnerability Found and Fixed",
+      "lane": "vulnerabilities",
+      "score": 0.58,
+      "decision": "publish-now",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Critical Zcash Vulnerability Found and Fixed",
+      "targetHub": "active-cves"
+    },
+    {
+      "candidateId": "005-topic-russia-upgrades-rules-digital-system",
+      "clusterKey": "topic:russia-upgrades-rules-digital-system",
+      "path": "data/editorial-queue/2026-06-08/run-1712Z/005-topic-russia-upgrades-rules-digital-system.json",
+      "proposedTitle": "Russia upgrades rules for its digital spy system to better track citizens online",
+      "lane": "policy",
+      "score": 0.56,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Russia upgrades rules for its digital spy system to better track citizens online",
+      "targetHub": "policy"
+    },
+    {
+      "candidateId": "006-topic-whatsapp-says-targeted-users-spearfishing",
+      "clusterKey": "topic:whatsapp-says-targeted-users-spearfishing",
+      "path": "data/editorial-queue/2026-06-08/run-1712Z/006-topic-whatsapp-says-targeted-users-spearfishing.json",
+      "proposedTitle": "WhatsApp says NSO targeted users with spearfishing attacks in violation of court order",
+      "lane": "policy",
+      "score": 0.56,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "WhatsApp says NSO targeted users with spearfishing attacks in violation of court order",
+      "targetHub": "policy"
+    },
+    {
+      "candidateId": "007-topic-check-point-links-zeroday-qilin",
+      "clusterKey": "topic:check-point-links-zeroday-qilin",
+      "path": "data/editorial-queue/2026-06-08/run-1712Z/007-topic-check-point-links-zeroday-qilin.json",
+      "proposedTitle": "Check Point links VPN zero-day attacks to Qilin ransomware gang",
+      "lane": "policy",
+      "score": 0.54,
+      "decision": "research-more",
+      "selectionReasons": [
+        "search demand",
+        "single-source",
+        "low-concrete-fact-density",
+        "no-primary-source"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "Check Point links VPN zero-day attacks to Qilin ransomware gang",
+      "targetHub": "policy"
+    },
+    {
+      "candidateId": "008-topic-2026-landscape-blog",
+      "clusterKey": "topic:2026-landscape-blog",
+      "path": "data/editorial-queue/2026-06-08/run-1712Z/008-topic-2026-landscape-blog.json",
+      "proposedTitle": "May 2026 CVE Landscape",
+      "lane": "defender-ops",
+      "score": 0.53,
+      "decision": "research-more",
+      "selectionReasons": [
+        "trusted sources"
+      ],
+      "sourceCount": 1,
+      "primaryQueryTarget": "May 2026 CVE Landscape",
+      "targetHub": "defender-ops"
+    }
+  ]
+}

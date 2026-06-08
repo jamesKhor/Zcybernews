@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "008-topic-2026-landscape-blog",
+  "clusterKey": "topic:2026-landscape-blog",
+  "proposedTitle": "May 2026 CVE Landscape",
+  "lane": "defender-ops",
+  "score": 0.53,
+  "decision": "research-more",
+  "selectionReasons": [
+    "trusted sources"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.42,
+    "trust": 0.88,
+    "demand": 0.18,
+    "freshness": 0.82,
+    "differentiation": 0.57,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.recordedfuture.com/blog/may-2026-cve-landscape"
+  ],
+  "sourceNames": [
+    "Recorded Future (Insikt Group)"
+  ],
+  "sources": [
+    {
+      "id": "recorded-future-https://www.recordedfuture.com/blog/may-2026-cve-landscape",
+      "title": "May 2026 CVE Landscape",
+      "url": "https://www.recordedfuture.com/blog/may-2026-cve-landscape",
+      "excerpt": "In May 2026, Insikt Group® identified 41 high-impact vulnerabilities that should be prioritized for remediation, all of which had a Very Critical Recorded Future Risk Score. This represents a 11% increase from last month.",
+      "sourceName": "Recorded Future (Insikt Group)",
+      "sourceId": "recorded-future",
+      "publishedAt": "Mon, 08 Jun 2026 00:00:00 GMT",
+      "tags": [
+        "Blog"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "May 2026 CVE Landscape",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with May 2026 CVE Landscape and the concrete defender impact.",
+    "metaPromise": "Start with May 2026 CVE Landscape, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "defender-ops",
+    "requiredEntities": [
+      "May 2026 CVE Landscape"
+    ],
+    "internalLinkTargets": [
+      "defender-ops"
+    ],
+    "targetHub": "defender-ops",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}

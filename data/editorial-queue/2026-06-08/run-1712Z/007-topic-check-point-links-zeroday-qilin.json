@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "007-topic-check-point-links-zeroday-qilin",
+  "clusterKey": "topic:check-point-links-zeroday-qilin",
+  "proposedTitle": "Check Point links VPN zero-day attacks to Qilin ransomware gang",
+  "lane": "policy",
+  "score": 0.54,
+  "decision": "research-more",
+  "selectionReasons": [
+    "search demand",
+    "single-source",
+    "low-concrete-fact-density",
+    "no-primary-source"
+  ],
+  "scoreBreakdown": {
+    "evidence": 0.1,
+    "trust": 0.49,
+    "demand": 0.95,
+    "freshness": 1,
+    "differentiation": 0.39,
+    "portfolio": 0.65
+  },
+  "sourceCount": 1,
+  "sourceUrls": [
+    "https://www.bleepingcomputer.com/news/security/check-point-links-vpn-zero-day-attacks-to-qilin-ransomware-gang/"
+  ],
+  "sourceNames": [
+    "BleepingComputer"
+  ],
+  "sources": [
+    {
+      "id": "bleepingcomputer-https://www.bleepingcomputer.com/news/security/check-point-links-vpn-zero-day-attacks-to-qilin-ransomware-gang/",
+      "title": "Check Point links VPN zero-day attacks to Qilin ransomware gang",
+      "url": "https://www.bleepingcomputer.com/news/security/check-point-links-vpn-zero-day-attacks-to-qilin-ransomware-gang/",
+      "excerpt": "Israeli cybersecurity company Check Point has released security updates to patch a critical flaw affecting Remote Access VPN and Mobile Access deployments, which was exploited in zero-day attacks. [...]",
+      "sourceName": "BleepingComputer",
+      "sourceId": "bleepingcomputer",
+      "publishedAt": "Mon, 08 Jun 2026 09:05:16 -0400",
+      "tags": [
+        "Security"
+      ]
+    }
+  ],
+  "seoBrief": {
+    "primaryQueryTarget": "Check Point links VPN zero-day attacks to Qilin ransomware gang",
+    "searchIntent": "breaking-news",
+    "titlePromise": "Lead with Check Point links VPN zero-day attacks to Qilin ransomware gang and the concrete defender impact.",
+    "metaPromise": "Start with Check Point links VPN zero-day attacks to Qilin ransomware gang, include one concrete fact, and avoid wire-copy phrasing.",
+    "articleType": "policy",
+    "requiredEntities": [
+      "Check Point links VPN zero-day attacks to Qilin ransomware gang"
+    ],
+    "internalLinkTargets": [
+      "policy"
+    ],
+    "targetHub": "policy",
+    "sitemapEligible": true
+  },
+  "reviewer": {
+    "status": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "decisionReason": null,
+    "tasteRating": null,
+    "tasteReason": null,
+    "positiveSignals": [],
+    "negativeSignals": [],
+    "selectedReasonTags": [],
+    "siteFitNotes": null,
+    "readerFitNotes": null,
+    "operatorNotes": null,
+    "calibrationRound": null,
+    "ratingScale": {
+      "min": 0.01,
+      "max": 1,
+      "likedThreshold": 0.8,
+      "description": "1.0 means exactly the kind of article we want; 0.8+ is liked/publishable; 0.01 means avoid this pattern."
+    }
+  }
+}
