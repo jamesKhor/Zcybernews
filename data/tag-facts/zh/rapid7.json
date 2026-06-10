@@ -1,10 +1,10 @@
 {
   "tag": "rapid7",
   "locale": "zh",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-15"
+    "latest": "2026-06-10"
   },
   "top_actors": [
     "KongTuke",
@@ -32,11 +32,11 @@
     }
   ],
   "top_sectors": [
+    "cybersecurity",
     "enterprise",
     "enterprise IT",
     "enterprise networking",
-    "financial services",
-    "government"
+    "financial services"
   ],
   "top_regions": [
     "Global",
@@ -49,9 +49,9 @@
     "informational": 5
   },
   "recent_excerpts": [
+    "Rapid7 获得访问 Anthropic 的 Project Glasswing 和 Claude Mythos Preview 的权限，以探索前沿 AI 在防御性安全工作流程中的应用，包括漏洞验证和...",
     "Rapid7 的 Metasploit Framework 添加了 Vim 插件持久性，漏洞利用针对 CVE-2025-6793（Marvell QConvergeConsole）、CVE-2024-48760（GestioIP）和 CVE-2023-30253（Dolibarr）。",
-    "Rapid7发现了CVE-2026-20182，这是一个10.0-CVSS认证绕过漏洞，存在于思科Catalyst SD-WAN控制器中。未经认证的攻击者可以注入SSH密钥并发出NETCONF命令。",
-    "Rapid7 的新 Cyber GRC 平台旨在缩小安全运营和合规性之间的差距，解决 IBM 2025 报告中识别的 241 天平均违规生命周期问题。"
+    "Rapid7发现了CVE-2026-20182，这是一个10.0-CVSS认证绕过漏洞，存在于思科Catalyst SD-WAN控制器中。未经认证的攻击者可以注入SSH密钥并发出NETCONF命令。"
   ],
-  "sources_hash": "f6469948c3f935de"
+  "sources_hash": "d9eb183710cab9cb"
 }

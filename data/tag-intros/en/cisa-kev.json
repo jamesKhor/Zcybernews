@@ -1,9 +1,9 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "intro": "Government and technology sectors in North America and the EU were the primary targets in recent CISA-KEV activity, with five articles published between April and May 2026. The coverage highlighted vulnerabilities including CVE-2024-57728 (CVSS 7.2), CVE-2026-9082 (CVSS 6.5), CVE-2009-0238, and CVE-2025-2749, affecting federal government, enterprise, and financial services. The severity mix comprised two medium, two high, and one critical issue, underscoring a focused threat landscape for these regions.",
-  "sources_hash": "0781820b4aad4b2f",
+  "intro": "Government and technology sectors faced significant exposure across North America, the EU, and globally, with six articles from April to June 2026 covering vulnerabilities including CVE-2026-42271, CVE-2024-57728, CVE-2026-9082, CVE-2009-0238, and CVE-2025-2749. The severity mix included one critical, three high, and two medium ratings, with top CVEs such as CVE-2026-42271 scoring 8.7 and CVE-2024-57728 at 7.2. Enterprise software and federal government systems were among the affected sectors, while no specific threat actors were named in the provided data.",
+  "sources_hash": "b5024a2449861b13",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-24T04:32:00.177Z",
+  "generated_at": "2026-06-10T04:34:39.136Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

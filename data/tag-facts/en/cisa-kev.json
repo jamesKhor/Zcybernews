@@ -1,13 +1,17 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-05-23"
+    "latest": "2026-06-09"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-42271",
+      "cvss": 8.7
+    },
     {
       "id": "CVE-2024-57728",
       "cvss": 7.2
@@ -27,24 +31,25 @@
     "government",
     "technology",
     "enterprise",
-    "federal government",
-    "financial services"
+    "enterprise software",
+    "federal government"
   ],
   "top_regions": [
     "North america",
     "EU",
     "Europe",
+    "Global",
     "United states"
   ],
   "severity_mix": {
+    "high": 3,
     "medium": 2,
-    "high": 2,
     "critical": 1
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-42271 (CVSS 8.7) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against BerriAI LiteLLM deployments.",
     "CISA added CVE-2026-9082 (CVSS 6.5) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against all supported Drupal Core versions.",
-    "CISA adds CVE-2024-57728 to Known Exploited Vulnerabilities: SimpleHelp path traversal via zip slip allows admin users to upload arbitrary files and execute code. Due May 8, 2026.",
-    "CISA adds CVE-2025-2749 to KEV catalog: Kentico Xperience path traversal lets authenticated Staging Sync Server upload arbitrary files. Due date for federal agencies: May 4, 2026."
+    "CISA adds CVE-2024-57728 to Known Exploited Vulnerabilities: SimpleHelp path traversal via zip slip allows admin users to upload arbitrary files and execute code. Due May 8, 2026."
   ],
-  "sources_hash": "0781820b4aad4b2f"
+  "sources_hash": "b5024a2449861b13"
 }

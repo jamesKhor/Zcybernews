@@ -1,10 +1,10 @@
 {
   "tag": "anthropic",
   "locale": "zh",
-  "intro": "过去一个月，ZCyberNews发布了12篇标记为Anthropic的文章，严重程度分布为：三篇信息性报告、一篇中等、五篇高、三篇严重。威胁行为者Claude Mythos是报道最多的实体，在全球技术、网络安全、关键基础设施、政府和人工智能开发领域均有出现。报道时间跨度从2026年4月14日至5月14日，反映出这一时期的集中活动。",
-  "sources_hash": "90873235a768a71e",
-  "source_intro_hash": "f047ff602b04a558",
+  "intro": "过去两个月，ZCyberNews在Anthropic标签下发布了13篇文章，报道时间从2026年4月14日持续至6月10日。在这些报道中，威胁行为者Claude Mythos是被提及最频繁的实体。相关报道主要影响全球范围内的技术、网络安全、关键基础设施、政府及人工智能开发领域。这些报告的严重性评估包括3项信息性、1项中等、5项高和3项关键级别。",
+  "sources_hash": "14559235a4d47417",
+  "source_intro_hash": "e4eff9fe0bdf003b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:07:06.394Z",
+  "generated_at": "2026-06-10T04:34:45.344Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

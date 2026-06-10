@@ -1,10 +1,10 @@
 {
   "tag": "anthropic",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-14"
+    "latest": "2026-06-10"
   },
   "top_actors": [
     "Claude Mythos"
@@ -27,9 +27,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Rapid7 gains access to Anthropic's Project Glasswing and Claude Mythos Preview to explore frontier AI for defensive security workflows, including vulnerability validation and...",
     "XBOW benchmarks show Anthropic's Mythos AI is potent for source code audits and reverse engineering, but inconsistent at exploit validation and prone to overstating findings.",
-    "Anthropic released Claude Security, a defensive AI suite to counter autonomous exploit tools like Mythos that weaponize zero-days in minutes. Targets enterprise SOCs.",
-    "Anthropic's Claude Mythos Preview autonomously discovers and weaponizes software vulnerabilities in OS and internet infrastructure without expert guidance, raising urgent…"
+    "Anthropic released Claude Security, a defensive AI suite to counter autonomous exploit tools like Mythos that weaponize zero-days in minutes. Targets enterprise SOCs."
   ],
-  "sources_hash": "9c592cfc3941b77a"
+  "sources_hash": "d6bbc10b9cb046d4"
 }

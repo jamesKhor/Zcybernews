@@ -1,10 +1,10 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-15"
+    "latest": "2026-06-10"
   },
   "top_actors": [
     "KongTuke",
@@ -32,11 +32,11 @@
     }
   ],
   "top_sectors": [
+    "cybersecurity",
     "enterprise",
     "enterprise IT",
     "enterprise networking",
-    "financial services",
-    "government"
+    "financial services"
   ],
   "top_regions": [
     "Global",
@@ -49,9 +49,9 @@
     "informational": 5
   },
   "recent_excerpts": [
+    "Rapid7 gains access to Anthropic's Project Glasswing and Claude Mythos Preview to explore frontier AI for defensive security workflows, including vulnerability validation and...",
     "Rapid7's Metasploit Framework adds Vim plugin persistence, exploits for CVE-2025-6793 (Marvell QConvergeConsole), CVE-2024-48760 (GestioIP), and CVE-2023-30253 (Dolibarr).",
-    "Rapid7 discovered CVE-2026-20182, a 10.0-CVSS authentication bypass in Cisco Catalyst SD-WAN Controller. Unauthenticated attackers can inject SSH keys and issue NETCONF commands.",
-    "Rapid7's new Cyber GRC platform aims to close the gap between security operations and compliance, addressing the 241-day mean breach lifecycle identified in IBM's 2025 report."
+    "Rapid7 discovered CVE-2026-20182, a 10.0-CVSS authentication bypass in Cisco Catalyst SD-WAN Controller. Unauthenticated attackers can inject SSH keys and issue NETCONF commands."
   ],
-  "sources_hash": "329ea1f6727b1345"
+  "sources_hash": "d49cc121344a25ee"
 }

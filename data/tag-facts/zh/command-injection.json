@@ -1,10 +1,10 @@
 {
   "tag": "command-injection",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-11"
+    "latest": "2026-06-09"
   },
   "top_actors": [],
   "top_cves": [
@@ -21,11 +21,11 @@
       "cvss": 8.7
     },
     {
-      "id": "CVE-2026-8264",
-      "cvss": 6.5
+      "id": "CVE-2026-42271",
+      "cvss": 8.7
     },
     {
-      "id": "CVE-2026-8265",
+      "id": "CVE-2026-8264",
       "cvss": 6.5
     }
   ],
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
+    "high": 6,
     "critical": 4,
-    "high": 5,
     "medium": 1
   },
   "recent_excerpts": [
+    "CISA将其加入已知被利用漏洞目录CVE-2026-42271（CVSS 8.7），在针对BerriAI LiteLLM部署的积极利用证据之后。",
     "CVE-2026-31246（CVSS 9.8）在 GPT-Pilot 的 Executor.run() 中将未经验证的用户输入传递给 asyncio.create_subprocess_shell()，使得在项目...期间可以进行任意命令注入",
-    "CVE-2026-8263 (CVSS 5.8) 在 Tenda AC6 固件 15.03.06.49_multi_TDE01 中允许未经认证的远程操作系统命令注入，通过 /goform/WifiExtraSet 端点。",
-    "Tenda AC6固件15.03.06.23中存在两个命令注入漏洞，允许远程攻击者通过getLogFile和formWifiApScan函数执行任意操作系统命令。"
+    "CVE-2026-8263 (CVSS 5.8) 在 Tenda AC6 固件 15.03.06.49_multi_TDE01 中允许未经认证的远程操作系统命令注入，通过 /goform/WifiExtraSet 端点。"
   ],
-  "sources_hash": "a6f56a0c1c14b077"
+  "sources_hash": "0aa65d6c5e08d93f"
 }

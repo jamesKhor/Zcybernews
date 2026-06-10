@@ -1,10 +1,10 @@
 {
   "tag": "command-injection",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-11"
+    "latest": "2026-06-09"
   },
   "top_actors": [],
   "top_cves": [
@@ -21,11 +21,11 @@
       "cvss": 8.7
     },
     {
-      "id": "CVE-2026-8264",
-      "cvss": 6.5
+      "id": "CVE-2026-42271",
+      "cvss": 8.7
     },
     {
-      "id": "CVE-2026-8265",
+      "id": "CVE-2026-8264",
       "cvss": 6.5
     }
   ],
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
+    "high": 6,
     "critical": 4,
-    "high": 5,
     "medium": 1
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-42271 (CVSS 8.7) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against BerriAI LiteLLM deployments.",
     "CVE-2026-31246 (CVSS 9.8) in GPT-Pilot's Executor.run() passes unvalidated user input to asyncio.create_subprocess_shell(), enabling arbitrary command injection during project...",
-    "CVE-2026-8263 (CVSS 5.8) in Tenda AC6 firmware 15.03.06.49_multi_TDE01 allows unauthenticated remote OS command injection via the /goform/WifiExtraSet endpoint.",
-    "Two command injection vulnerabilities in Tenda AC6 firmware 15.03.06.23 let remote attackers execute arbitrary OS commands via the getLogFile and formWifiApScan functions."
+    "CVE-2026-8263 (CVSS 5.8) in Tenda AC6 firmware 15.03.06.49_multi_TDE01 allows unauthenticated remote OS command injection via the /goform/WifiExtraSet endpoint."
   ],
-  "sources_hash": "6ae1851de8d77768"
+  "sources_hash": "585d153cf725e2a8"
 }

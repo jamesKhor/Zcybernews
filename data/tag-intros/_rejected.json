@@ -1588,5 +1588,11 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-36962 but it is not in the fact sheet",
     "at": "2026-05-24T04:32:09.438Z"
+  },
+  {
+    "tag": "command-injection",
+    "locale": "en",
+    "lastError": "word count 57 outside 60-140 (en)",
+    "at": "2026-06-10T04:34:36.997Z"
   }
 ]

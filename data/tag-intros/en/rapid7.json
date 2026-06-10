@@ -1,9 +1,9 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "intro": "Over 15 articles from April 13 to May 15, 2026, cover Rapid7’s reporting on threat actors KongTuke and Kyber. Critical vulnerabilities CVE-2026-20127 and CVE-2026-20182, both with a CVSS score of 10, alongside CVE-2025-59718 and CVE-2026-41940, are highlighted. The coverage spans enterprise, enterprise IT, enterprise networking, financial services, and government sectors across Global, Europe, and North America, with a severity mix of three high, four critical, and five informational reports.",
-  "sources_hash": "329ea1f6727b1345",
+  "intro": "This tag archive covers 16 articles published between April 13 and June 10, 2026, tracking vulnerabilities and threats reported by Rapid7. The threat actors KongTuke and Kyber were observed in these reports. Key vulnerabilities include CVE-2026-20127, CVE-2026-20182, CVE-2025-59718, CVE-2026-41940, and CVE-2023-30253, with two carrying a CVSS score of 10 and two at 9.8. Affected sectors include cybersecurity, enterprise, enterprise IT, enterprise networking, and financial services, with impacts reported across Global, Europe, and North America regions. The coverage includes three high, four critical, and five informational severity items.",
+  "sources_hash": "d49cc121344a25ee",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:00:23.136Z",
+  "generated_at": "2026-06-10T04:34:27.955Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
