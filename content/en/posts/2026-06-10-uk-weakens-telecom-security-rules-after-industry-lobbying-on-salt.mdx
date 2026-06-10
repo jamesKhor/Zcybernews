@@ -1,0 +1,77 @@
+---
+title: UK Weakens Telecom Security Rules After Industry Lobbying on Salt
+slug: 2026-06-10-uk-weakens-telecom-security-rules-after-industry-lobbying-on-salt
+date: '2026-06-10'
+excerpt: >-
+  Britain dropped requirements for independent signaling intrusion detection and
+  monthly reboots after BT, Vodafone, and others pushed back against proposed
+  telecom security...
+category: industry
+tags:
+  - salt-typhoon
+  - uk-telecom-security
+  - ncsc
+  - dsit
+  - chinese-state-sponsored-hacking
+  - telecommunications-regulation
+language: en
+source_urls:
+  - 'https://therecord.media/uk-weakens-telecoms-defenses-after-industry-lobbying'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-06-10-uk-weakens-telecom-security-rules-after-industry-lobbying-on-salt
+cluster_key: 'topic:weakens-proposed-telecoms-defenses-against'
+source_count: 1
+seo_query_target: >-
+  UK weakens proposed telecoms defenses against Chinese hackers after industry
+  pushback
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises the reader will learn that the UK weakened telecom security
+  rules after industry lobbying, specifically targeting defenses against Chinese
+  state-backed hackers.
+seo_meta_promise: >-
+  The meta description promises the reader will learn which specific protections
+  were dropped (signaling intrusion detection, monthly reboots) and which
+  companies lobbied (BT, Vodafone).
+target_hub: apt
+internal_link_targets:
+  - apt
+  - apt-state-actors
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Map of the United Kingdom with network nodes and a Chinese flag overlaid,
+  representing telecom security tensions
+threat_actor: Salt Typhoon
+threat_actor_origin: China
+affected_sectors:
+  - telecommunications
+affected_regions:
+  - United Kingdom
+publish_tier: public
+---
+## Executive Summary
+
+The United Kingdom has significantly weakened proposed cybersecurity protections for its telecom networks — measures originally drafted in response to the Salt Typhoon espionage campaign — after industry pushback from major operators including BT, VMO2, VodafoneThree, and Sky, according to documents reviewed by Recorded Future News. The Department for Science, Innovation and Technology (DSIT) dropped or delayed several key requirements, including independent signaling intrusion detection systems, mandatory monthly equipment reboots, and default untrusted signaling treatment. The revised code of practice takes effect in mid-July 2026 unless Parliament intervenes.
+
+## Technical Analysis
+
+DSIT proposed the updated code of practice in August 2025 as a direct response to the Salt Typhoon campaign, which compromised telecom networks in over 80 countries, including a cluster of activity observed in the UK, according to the National Cyber Security Centre (NCSC). The consultation drew submissions from BT, VMO2, VodafoneThree, Sky, Ericsson, and Amazon Web Services, with techUK coordinating a collective industry response.
+
+Among the most consequential measures dropped was the requirement for providers to deploy an **independent signaling intrusion detection system** — separate from existing signaling firewalls and ideally from a different vendor — to monitor outgoing traffic for evidence that existing controls had been bypassed. Salt Typhoon operators famously exploited signaling infrastructure to siphon data from telecom networks, making this detection layer a critical defense.
+
+Also removed was the requirement to treat **incoming signaling as untrusted by default**. Attackers increasingly exploit telecom protocols built on the assumption that messages from other networks can be trusted, a design legacy that Salt Typhoon weaponized at scale.
+
+The government also scrapped a requirement to **restart network equipment every 30 days**. This measure was designed to wipe out sophisticated memory-only malware that leaves no trace on disk and cannot be detected while a system is running, but does not survive a reboot. Providers told the government a monthly schedule was unworkable; the revised rules recommend restarts only where feasible.
+
+Requirements to secure **service accounts** — automated background accounts with broad access permissions that DSIT's own documents describe as "a prime target for compromise by threat actors" — have been delayed from end of 2028 to end of 2029. Ofcom's December 2025 security report found that several large UK providers were already likely to miss implementation deadlines for identity and access management measures, the broader category encompassing service account security.
+
+Further measures requiring providers to map vulnerabilities, test defenses, and document system communications have been similarly delayed.
+
+## Mitigations & Recommendations
+
+Defenders should monitor for delayed implementation of service account hardening and signaling security measures across UK telecom providers. Organizations that rely on UK telecom infrastructure should review their own detection capabilities for signaling-based data exfiltration and consider independent monitoring where contractual leverage exists. The NCSC continues to advise critical sector organizations globally on Salt Typhoon detection techniques, including monitoring for abnormal SS7 and Diameter signaling patterns.
+
+## References
+
+- [UK weakens proposed telecoms defenses against Chinese hackers after industry pushback — The Record](https://therecord.media/uk-weakens-telecoms-defenses-after-industry-lobbying)

@@ -1,0 +1,74 @@
+---
+title: 英国在Salt行业游说后放宽电信安全规则
+slug: 2026-06-10-uk-weakens-telecom-security-rules-after-industry-lobbying-on-salt
+date: '2026-06-10'
+excerpt: 在BT、Vodafone等公司对拟议的电信安全规则提出反对后，英国放弃了对独立信令入侵检测和每月重启的要求...
+category: industry
+tags:
+  - salt-typhoon
+  - uk-telecom-security
+  - ncsc
+  - dsit
+  - chinese-state-sponsored-hacking
+  - telecommunications-regulation
+language: zh
+source_urls:
+  - 'https://therecord.media/uk-weakens-telecoms-defenses-after-industry-lobbying'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-06-10-uk-weakens-telecom-security-rules-after-industry-lobbying-on-salt
+cluster_key: 'topic:weakens-proposed-telecoms-defenses-against'
+source_count: 1
+seo_query_target: >-
+  UK weakens proposed telecoms defenses against Chinese hackers after industry
+  pushback
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises the reader will learn that the UK weakened telecom security
+  rules after industry lobbying, specifically targeting defenses against Chinese
+  state-backed hackers.
+seo_meta_promise: >-
+  The meta description promises the reader will learn which specific protections
+  were dropped (signaling intrusion detection, monthly reboots) and which
+  companies lobbied (BT, Vodafone).
+target_hub: apt
+internal_link_targets:
+  - apt
+  - apt-state-actors
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Map of the United Kingdom with network nodes and a Chinese flag overlaid,
+  representing telecom security tensions
+threat_actor: Salt Typhoon
+threat_actor_origin: China
+affected_sectors:
+  - telecommunications
+affected_regions:
+  - United Kingdom
+publish_tier: public
+---
+## 执行摘要
+
+英国在包括BT、VMO2、VodafoneThree和Sky在内的主要运营商的行业反馈后，显著削弱了针对其电信网络的拟议网络安全保护措施——这些措施最初是为了应对Salt Typhoon间谍活动而起草的，根据Recorded Future News审查的文件。科学、创新和技术部（DSIT）放弃了或推迟了几项关键要求，包括独立的信令入侵检测系统、强制每月设备重启和默认不信任信令处理。除非议会干预，否则修订后的实践守则将于2026年7月中旬生效。
+
+## 技术分析
+
+DSIT在2025年8月提出了更新的实践守则，作为对Salt Typhoon行动的直接回应，该行动侵犯了包括英国在内的80多个国家的电信网络，根据国家网络安全中心（NCSC）的说法。咨询收到了来自BT、VMO2、VodafoneThree、Sky、爱立信和亚马逊网络服务的提交，techUK协调了集体行业回应。
+
+被放弃的最重大措施之一是要求提供商部署一个**独立的信令入侵检测系统**——与现有的信令防火墙分开，理想情况下来自不同的供应商——以监控传出流量，寻找现有控制已被绕过的证据。Salt Typhoon运营商因利用信令基础设施从电信网络中窃取数据而闻名，使这一层检测成为关键防御。
+
+同样被移除的要求是将**传入信令默认视为不可信**。攻击者越来越多地利用建立在假设来自其他网络的消息可以被信任的基础上的电信协议，Salt Typhoon利用这一设计遗留问题进行了大规模武器化。
+
+政府还取消了每30天**重启网络设备**的要求。这项措施旨在清除不留磁盘痕迹且在系统运行时无法检测的复杂内存仅恶意软件，但不会在重启后存活。提供商告诉政府，每月的时间表是不可行的；修订后的规则建议只在可行的情况下重启。
+
+要求保护**服务账户**——DSIT自己的文件描述为“威胁行为者妥协的主要目标”的具有广泛访问权限的自动化后台账户——的要求已从2028年底推迟到2029年底。Ofcom的2025年12月安全报告发现，几家大型英国提供商已经可能错过身份和访问管理措施的实施期限，这是包括服务账户安全在内的更广泛类别。
+
+进一步要求提供商映射漏洞、测试防御和记录系统通信的措施也被类似地推迟。
+
+## 缓解措施与建议
+
+防御者应监控英国电信提供商在服务账户硬化和信令安全措施方面的延迟实施。依赖英国电信基础设施的组织应审查自己的基于信令的数据泄露检测能力，并在合同杠杆存在的情况下考虑独立监控。NCSC继续向全球关键部门组织提供Salt Typhoon检测技术的咨询，包括监控异常SS7和Diameter信令模式。
+
+## 参考资料
+
+- [UK weakens proposed telecoms defenses against Chinese hackers after industry pushback — The Record](https://therecord.media/uk-weakens-telecoms-defenses-after-industry-lobbying)
