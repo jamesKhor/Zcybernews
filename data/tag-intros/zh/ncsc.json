@@ -1,0 +1,10 @@
+{
+  "tag": "ncsc",
+  "locale": "zh",
+  "intro": "从2026年4月22日至6月10日，ZCyberNews发布了五篇标记为ncsc的文章，涵盖了一段高严重性活动时期。威胁行为者Salt Typhoon被观察到针对英国和美国的政府、关键基础设施及电信行业。相关报道包括一起中等严重性和三起高严重性事件，反映出在这两个月期间对这些地区和行业的集中关注。",
+  "sources_hash": "ab4749aaddc18997",
+  "source_intro_hash": "f4096b6f66b8273a",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-06-11T04:35:35.120Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

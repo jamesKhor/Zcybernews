@@ -1,0 +1,33 @@
+{
+  "tag": "ncsc",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-22",
+    "latest": "2026-06-10"
+  },
+  "top_actors": [
+    "Salt Typhoon"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "all",
+    "critical infrastructure",
+    "telecommunications"
+  ],
+  "top_regions": [
+    "United kingdom",
+    "United states"
+  ],
+  "severity_mix": {
+    "medium": 1,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "Britain dropped requirements for independent signaling intrusion detection and monthly reboots after BT, Vodafone, and others pushed back against proposed telecom security...",
+    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited.",
+    "The UK's NCSC reports handling four nationally significant cyber incidents per week, with most now attributed to hostile foreign states like China and Russia, up from two per week…"
+  ],
+  "sources_hash": "f68b24a04c960afe"
+}

@@ -1,0 +1,33 @@
+{
+  "tag": "ncsc",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-22",
+    "latest": "2026-06-10"
+  },
+  "top_actors": [
+    "Salt Typhoon"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "all",
+    "critical infrastructure",
+    "telecommunications"
+  ],
+  "top_regions": [
+    "United kingdom",
+    "United states"
+  ],
+  "severity_mix": {
+    "medium": 1,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "在BT、Vodafone等公司对拟议的电信安全规则提出反对后，英国放弃了对独立信令入侵检测和每月重启的要求...",
+    "NCSC 警告组织为紧急补丁的激增做好准备，因为人工智能加速了漏洞发现，提高了利用风险。没有引用具体的 CVE。",
+    "英国NCSC报告称每周处理四起具有全国意义的网络事件，其中大部分现在归因于像中国和俄罗斯这样的敌对外国，从每周两起增加..."
+  ],
+  "sources_hash": "ab4749aaddc18997"
+}

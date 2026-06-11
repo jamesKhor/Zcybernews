@@ -1,0 +1,9 @@
+{
+  "tag": "ncsc",
+  "locale": "en",
+  "intro": "From 22 April to 10 June 2026, ZCyberNews published five articles tagged under ncsc, covering a period of high-severity activity. The threat actor Salt Typhoon was observed targeting government, critical infrastructure, and telecommunications sectors across the United Kingdom and United States. The reporting included one medium-severity and three high-severity incidents, reflecting a concentrated focus on these regions and industries during the two-month span.",
+  "sources_hash": "f68b24a04c960afe",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-06-11T04:35:30.643Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

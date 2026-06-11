@@ -1,9 +1,9 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "intro": "APT33, CyberAv3ngers, and Interlock were the most active threat actors targeting critical infrastructure in a 22-article dataset from April 12 to May 14, 2026. The top vulnerability observed was CVE-2026-24032, rated CVSS 7.3. Affected sectors included energy, utilities, and manufacturing, primarily across the United States, Europe, and Asia-Pacific. Of the 22 articles, 14 were classified as high severity, with three critical and one medium severity.",
-  "sources_hash": "7fc32a2e6a2c750b",
+  "intro": "APT33, CyberAv3ngers, and Interlock were the most frequently observed threat actors targeting critical infrastructure between April 12 and June 11, 2026, according to 23 articles. The period saw 14 high-severity and 3 critical-severity incidents, with CVE-2026-24032 (CVSS 7.3) among the top vulnerabilities. Affected sectors included energy, utilities, and manufacturing, while reported regions spanned the United States, Europe, Asia-Pacific, and North America.",
+  "sources_hash": "ea2d9ef82190ca88",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T09:59:49.008Z",
+  "generated_at": "2026-06-11T04:35:25.199Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
