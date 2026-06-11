@@ -1,0 +1,76 @@
+---
+title: 信任无技能：BIV审计发现80%的AI代理技能行为不端
+slug: 2026-06-11-trust-no-skill-biv-audit-finds-80-of-ai-agent-skills-misbehave
+date: '2026-06-11'
+excerpt: 'Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能...'
+category: malware
+tags:
+  - ai-agents
+  - supply-chain
+  - llm
+  - openclaw
+  - unit-42
+  - behavioral-integrity-verification
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/ai-agent-supply-chain-risks/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-06-11-trust-no-skill-biv-audit-finds-80-of-ai-agent-skills-misbehave
+cluster_key: 'topic:trust-skill-integrity-verification-agent'
+source_count: 1
+seo_query_target: 'Trust No Skill: Integrity Verification for AI Agent Supply Chains'
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises to reveal how Unit 42's BIV audit exposed widespread
+  misbehavior in AI agent skills and the attack chains that result.
+seo_meta_promise: >-
+  The meta description promises a concrete finding from the BIV audit — 80%
+  deviation rate and specific multi-stage attack chains — to inform defenders.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - ai-security
+  - supply-chain-security
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram showing AI agent skill audit pipeline comparing declared vs actual
+  behavior across metadata, code, and instructions.
+severity: high
+affected_sectors:
+  - enterprise software
+  - cloud services
+  - financial services
+  - healthcare
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+Palo Alto Networks Unit 42 的研究人员开发了一种名为行为完整性验证（BIV）的新审计工具，用于扫描AI代理技能中的隐藏恶意行为。在2026年初应用于OpenClaw公共注册表中的49,943个技能时，BIV发现80%的技能（39,933）至少存在一个声称行为与实际行为之间的不匹配。虽然大多数不匹配是良性的文档错误，但一个危险的子集包含多阶段攻击链——将单独无害的能力组合成凭证盗窃、远程代码执行（RCE）或静默数据外泄。这项研究于2026年6月11日发布，将代理技能生态系统定位在移动应用和浏览器扩展十年前的位置：可扩展性已经超过了供应链审计工具。
+
+## 技术分析
+
+AI代理通过第三方“技能”扩展其功能——这些小包捆绑了可执行代码（Python、JavaScript、shell）、一个YAML清单和一个自然语言`SKILL.md`文件，告诉代理何时以及如何使用该技能。一旦安装，技能在代理的特权上下文中运行，可以访问环境变量、文件系统、外部服务和shell命令。
+
+BIV解决了一个独特的审计挑战：技能的行为跨越了三种模式——元数据、可执行代码和自然语言指令。没有现有的扫描器可以同时读取所有三种。BIV使用一个固定的29种能力的分类，分为七个类别（网络、文件系统、进程执行、环境、编码、凭证、指令级威胁）。两个并行的轨道填充了这个分类：一个“声明轨道”解析元数据并使用LLM从自然语言描述中提取声明的能力（基于引用的源跨度），一个“实际轨道”对代码应用静态分析器（AST级别的污点分析、正则表达式、模式匹配）以及对指令的LLM进行提示注入和指令覆盖模式。
+
+当技能的实际能力集适合其声明集时，技能通过。当它执行一个未声明的操作时（欠规范——危险的方向）或声明一个从未使用的能力时（过规范——通常是良性的模板残留），技能失败。三个过滤器保持LLM输出的诚实：拒绝逐字复制分类回声，要求源跨度锚定，并要求高风险能力的领域特定关键字。每个标记的偏差都附带文件和行证据，以供手动审计。
+
+在49,943个OpenClaw技能中，BIV发现了250,706个行为偏差。聚类过程产生了137个不同的威胁集群和四个新的复合威胁类别：
+
+- **外泄链**：`FILE_READ` → base64编码 → `NETWORK_SEND`
+- **远程代码执行（RCE）链**：下载 → 写入磁盘 → 执行
+- **代码混淆**：编码链 → `dynamic eval()`
+- **数据血统违规**：`FILE_READ` → `FILE_WRITE`（主要是良性的数据管道样板）
+
+威胁存在于链中，而不是单个步骤中。读取文件的技能是良性的；读取文件、base64编码内容并将其发送到外部端点的技能是外泄。
+
+## 缓解措施与建议
+
+在生产中运行LLM代理的安全团队应该清点所有安装的第三方技能，并在安装前而不是安装后要求行为完整性检查。Unit 42建议像对待任何其他第三方依赖项一样对待技能：应用最少权限原则，限制代理环境的网络出站，并监控意外的文件读取或进程执行。在像BIV这样的自动化审计工具成为注册表中的标准之前，建议手动审查技能清单和代码中的多步模式（读取-编码-发送、下载-写入-执行）。Palo Alto Networks的客户可以利用Prisma AIRS和Unit 42 AI安全评估获得更深层的保护。
+
+## 参考资料
+
+- [Unit 42: Trust No Skill: Integrity Verification for AI Agent Supply Chains](https://unit42.paloaltonetworks.com/ai-agent-supply-chain-risks/)
