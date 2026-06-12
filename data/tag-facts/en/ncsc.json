@@ -1,23 +1,26 @@
 {
   "tag": "ncsc",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-06-10"
+    "latest": "2026-06-12"
   },
   "top_actors": [
-    "Salt Typhoon"
+    "Salt Typhoon",
+    "Vice Society"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "all",
     "critical infrastructure",
+    "education",
     "telecommunications"
   ],
   "top_regions": [
     "United kingdom",
+    "Buckinghamshire",
     "United states"
   ],
   "severity_mix": {
@@ -25,9 +28,9 @@
     "high": 3
   },
   "recent_excerpts": [
+    "Great Marlow School in Buckinghamshire sent 1,428 pupils home for a second day after a cybersecurity incident; only GCSE and A-Level exam takers attended.",
     "Britain dropped requirements for independent signaling intrusion detection and monthly reboots after BT, Vodafone, and others pushed back against proposed telecom security...",
-    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited.",
-    "The UK's NCSC reports handling four nationally significant cyber incidents per week, with most now attributed to hostile foreign states like China and Russia, up from two per week…"
+    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited."
   ],
-  "sources_hash": "f68b24a04c960afe"
+  "sources_hash": "e3718ee97083e666"
 }

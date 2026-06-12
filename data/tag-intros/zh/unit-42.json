@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月22日至2026年5月15日期间发布的12篇标记为`unit-42`的文章，为安全团队提供了该话题在ZCyberNews报道中呈现的聚焦视角。观察到的行为者引用包括Gremlin Stealer、LockBit和TeamPCP，仅当底层文章元数据支持归因时才予以呈现。受影响范围信号强调技术、企业和软件开发，覆盖全球、中美洲和北美洲，帮助读者比较暴露模式，而不添加超出档案数据范围的论断。严重程度覆盖包括1篇严重报告和9篇高危报告。",
-  "sources_hash": "0d19aede8d76b243",
-  "source_intro_hash": "9e3ef30a10d52355",
+  "intro": "本档案收录了2026年4月22日至2026年6月11日期间发布的13篇标记为`unit-42`的文章，为安全团队提供了该话题在ZCyberNews报道中的聚焦视角。观察到的行为者提及包括Gremlin Stealer、LockBit和TeamPCP，仅当底层文章元数据支持归因时才予以呈现。受影响范围信号强调技术、企业和软件开发领域，覆盖全球、中美洲和北美洲，帮助读者比较暴露模式，且不添加超出档案数据范围的主张。严重程度覆盖包括1份严重报告和10份高危报告。",
+  "sources_hash": "ec7d38b2469d11ef",
+  "source_intro_hash": "4816ae7dcdb18168",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:11:10.748Z",
+  "generated_at": "2026-06-12T04:35:11.718Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

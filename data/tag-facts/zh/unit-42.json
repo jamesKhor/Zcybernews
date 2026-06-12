@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-05-15"
+    "latest": "2026-06-11"
   },
   "top_actors": [
     "Gremlin Stealer",
@@ -16,8 +16,8 @@
     "technology",
     "enterprise",
     "software development",
-    "cloud service providers",
-    "cloud-services"
+    "financial services",
+    "healthcare"
   ],
   "top_regions": [
     "Global",
@@ -26,13 +26,13 @@
     "South america"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "critical": 1
   },
   "recent_excerpts": [
+    "Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能...",
     "Unit 42 详细描述了一种新的 Gremlin stealer 变种，使用 XOR 加密的资源部分，加密剪贴器，WebSocket 会话劫持，以及一个商业打包器，带有指令...",
-    "West Pharmaceutical Services 在 5 月 4 日遭受勒索软件攻击并发生数据泄露后，全球系统下线。Unit 42 正在调查；可能已支付赎金。",
-    "Palo Alto Unit 42 认为仅在端点进行检测会错过云、网络和身份层的攻击。报告详细说明了每个区域所需的数据源。"
+    "West Pharmaceutical Services 在 5 月 4 日遭受勒索软件攻击并发生数据泄露后，全球系统下线。Unit 42 正在调查；可能已支付赎金。"
   ],
-  "sources_hash": "0d19aede8d76b243"
+  "sources_hash": "ec7d38b2469d11ef"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 85,
+  "count": 86,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-17"
+    "latest": "2026-06-11"
   },
   "top_actors": [
     "Lazarus Group",
@@ -48,15 +48,15 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 49,
+    "high": 50,
     "medium": 16,
     "critical": 15,
     "informational": 4
   },
   "recent_excerpts": [
+    "Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能...",
     "一名攻击者使用被泄露的GitHub令牌下载了Grafana的整个私有代码库。公司表示没有客户数据被访问，该事件涉及勒索...",
-    "CVE-2026-44428 (CVSS 4.7) 在 MCP Registry 1.7.6 之前的版本中，允许攻击者在注册表实例之间重用被盗的 GitHub OIDC 令牌，使未授权的服务器发布和...",
-    "CVE-2026-44664（CVSS 6.1）在 fast-xml-builder 中允许攻击者突破 XML 注释并注入任意内容；在版本 1.1.6 中修复。"
+    "CVE-2026-44428 (CVSS 4.7) 在 MCP Registry 1.7.6 之前的版本中，允许攻击者在注册表实例之间重用被盗的 GitHub OIDC 令牌，使未授权的服务器发布和..."
   ],
-  "sources_hash": "60720eca6cca6d76"
+  "sources_hash": "5e2ed3902424e6a8"
 }

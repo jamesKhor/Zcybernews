@@ -1594,5 +1594,23 @@
     "locale": "en",
     "lastError": "word count 57 outside 60-140 (en)",
     "at": "2026-06-10T04:34:36.997Z"
+  },
+  {
+    "tag": "unit-42",
+    "locale": "en",
+    "lastError": "word count 51 outside 60-140 (en)",
+    "at": "2026-06-12T04:34:44.524Z"
+  },
+  {
+    "tag": "llm",
+    "locale": "en",
+    "lastError": "word count 49 outside 60-140 (en)",
+    "at": "2026-06-12T04:34:51.477Z"
+  },
+  {
+    "tag": "ncsc",
+    "locale": "en",
+    "lastError": "word count 56 outside 60-140 (en)",
+    "at": "2026-06-12T04:34:58.024Z"
   }
 ]

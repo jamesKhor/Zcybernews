@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 50,
+  "count": 51,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-13"
+    "latest": "2026-06-12"
   },
   "top_actors": [
     "The Gentlemen",
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "白金汉郡的Great Marlow School在一次网络安全事件后，第二天让1,428名学生回家；只有参加GCSE和A-Level考试的学生出席。",
     "Nitrogen 勒索软件团伙声称从富士康北美工厂窃取了8TB的数据，包括来自主要技术客户技术文件。",
-    "Instructure 在两次 Canvas 入侵窃取了来自 9,000 个机构的数据后向 ShinyHunters 支付了赎金。国会对这家教育技术供应商的事件响应展开了调查。",
-    "信息专员办公室（ICO）对南斯塔福德郡水务公司罚款963,900英镑，因为Cl0p勒索软件团伙泄露了663,887名客户的数据 —— 钓鱼攻击未被检测到长达20个月。"
+    "Instructure 在两次 Canvas 入侵窃取了来自 9,000 个机构的数据后向 ShinyHunters 支付了赎金。国会对这家教育技术供应商的事件响应展开了调查。"
   ],
-  "sources_hash": "49c22705f0a0ddce"
+  "sources_hash": "5925820d377c727f"
 }

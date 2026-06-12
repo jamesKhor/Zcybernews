@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 85,
+  "count": 86,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-17"
+    "latest": "2026-06-11"
   },
   "top_actors": [
     "Lazarus Group",
@@ -48,15 +48,15 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 49,
+    "high": 50,
     "medium": 16,
     "critical": 15,
     "informational": 4
   },
   "recent_excerpts": [
+    "Unit 42's Behavioral Integrity Verification scanned 49,943 OpenClaw skills and found 80% deviate from declared behavior, with multi-stage attack chains enabling credential theft...",
     "An attacker used a compromised GitHub token to download Grafana's entire private codebase. The company says no customer data was accessed and the incident involved an extortion...",
-    "CVE-2026-44428 (CVSS 4.7) in the MCP Registry before 1.7.6 lets attackers reuse stolen GitHub OIDC tokens across registry instances, enabling unauthorized server publishing and...",
-    "CVE-2026-44664 (CVSS 6.1) in fast-xml-builder lets attackers break out of XML comments and inject arbitrary content via triple-dash sequences; fixed in version 1.1.6."
+    "CVE-2026-44428 (CVSS 4.7) in the MCP Registry before 1.7.6 lets attackers reuse stolen GitHub OIDC tokens across registry instances, enabling unauthorized server publishing and..."
   ],
-  "sources_hash": "ad29d72cbe123660"
+  "sources_hash": "1336d11a7d34f51d"
 }

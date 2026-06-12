@@ -1,9 +1,9 @@
 {
   "tag": "llm",
   "locale": "en",
-  "intro": "Over the past three weeks, ZCyberNews has published ten articles covering the latest developments in the llm space, from April 8 to April 27, 2026. The coverage features five high-severity and four medium-severity reports, with one informational piece. The most prominent vulnerability is CVE-2026-33626, carrying a CVSS score of 7.5. Affected sectors include technology, cloud service providers, enterprise, enterprise software, and research, with impacts felt globally.",
-  "sources_hash": "7a93946d232d5150",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:02:12.384Z",
+  "intro": "This archive collects 11 articles tagged `llm` published between April 8, 2026 and June 11, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2026-33626, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize enterprise software, technology, and cloud service providers across Global, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 6 high, 4 medium, and 1 informational reports.",
+  "sources_hash": "ad11e6d9dbca1dac",
+  "model": "template:fallback",
+  "generated_at": "2026-06-12T04:34:51.477Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

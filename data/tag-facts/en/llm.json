@@ -1,10 +1,10 @@
 {
   "tag": "llm",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-04-27"
+    "latest": "2026-06-11"
   },
   "top_actors": [],
   "top_cves": [
@@ -14,24 +14,24 @@
     }
   ],
   "top_sectors": [
+    "enterprise software",
     "technology",
     "cloud service providers",
-    "enterprise",
-    "enterprise software",
-    "research"
+    "cloud services",
+    "enterprise"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "medium": 4,
     "informational": 1
   },
   "recent_excerpts": [
+    "Unit 42's Behavioral Integrity Verification scanned 49,943 OpenClaw skills and found 80% deviate from declared behavior, with multi-stage attack chains enabling credential theft...",
     "CVE-2026-33626 (CVSS 7.5) in LMDeploy, an open-source LLM toolkit, was exploited in the wild within 13 hours of public disclosure, enabling SSRF attacks to access sensitive…",
-    "A controlled study reveals humans apply social heuristics like fairness and cooperation to LLM opponents in strategic games, leading to predictable exploitation and potential security risks in human-A",
-    "A security analysis of over 400 LLM agent routing services reveals widespread vulnerabilities enabling attackers to inject malicious commands, leak sensitive data, and bypass intended AI model behavio"
+    "A controlled study reveals humans apply social heuristics like fairness and cooperation to LLM opponents in strategic games, leading to predictable exploitation and potential security risks in human-A"
   ],
-  "sources_hash": "7a93946d232d5150"
+  "sources_hash": "ad11e6d9dbca1dac"
 }

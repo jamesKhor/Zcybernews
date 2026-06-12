@@ -1,9 +1,9 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "intro": "Over the past month, ZCyberNews has tracked 51 ransomware-related articles, with The Gentlemen, LockBit, and ShinyHunters among the most frequently cited threat actors. The coverage spans from April 12 to May 13, 2026, and highlights several critical vulnerabilities, including CVE-2026-1731, CVE-2026-34197, CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Affected sectors range across multiple industries, with healthcare, manufacturing, technology, and critical infrastructure prominently featured. Geographically, incidents have been reported globally, with a concentration in North America, the United States, Europe, and Turkey. The severity mix includes 40 high, 6 critical, 1 medium, and 2 informational entries.",
-  "sources_hash": "e8ed1bff3e754eeb",
+  "intro": "From April to June 2026, ZCyberNews covered 52 ransomware articles, with The Gentlemen, LockBit, and ShinyHunters among the most frequently observed threat actors. Critical vulnerabilities including CVE-2026-1731 (CVSS 9.8), CVE-2026-34197 (CVSS 8.8), CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073 were highlighted across reports. The healthcare, manufacturing, education, and technology sectors faced significant impacts, with incidents reported globally across North America, the United States, Europe, and Turkey. The severity mix comprised 40 high, 6 critical, 1 medium, and 2 informational entries.",
+  "sources_hash": "9e66195675645703",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T09:59:01.546Z",
+  "generated_at": "2026-06-12T04:34:36.840Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

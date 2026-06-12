@@ -1,23 +1,26 @@
 {
   "tag": "ncsc",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-06-10"
+    "latest": "2026-06-12"
   },
   "top_actors": [
-    "Salt Typhoon"
+    "Salt Typhoon",
+    "Vice Society"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "all",
     "critical infrastructure",
+    "education",
     "telecommunications"
   ],
   "top_regions": [
     "United kingdom",
+    "Buckinghamshire",
     "United states"
   ],
   "severity_mix": {
@@ -25,9 +28,9 @@
     "high": 3
   },
   "recent_excerpts": [
+    "白金汉郡的Great Marlow School在一次网络安全事件后，第二天让1,428名学生回家；只有参加GCSE和A-Level考试的学生出席。",
     "在BT、Vodafone等公司对拟议的电信安全规则提出反对后，英国放弃了对独立信令入侵检测和每月重启的要求...",
-    "NCSC 警告组织为紧急补丁的激增做好准备，因为人工智能加速了漏洞发现，提高了利用风险。没有引用具体的 CVE。",
-    "英国NCSC报告称每周处理四起具有全国意义的网络事件，其中大部分现在归因于像中国和俄罗斯这样的敌对外国，从每周两起增加..."
+    "NCSC 警告组织为紧急补丁的激增做好准备，因为人工智能加速了漏洞发现，提高了利用风险。没有引用具体的 CVE。"
   ],
-  "sources_hash": "ab4749aaddc18997"
+  "sources_hash": "b3694dc587221ac3"
 }
