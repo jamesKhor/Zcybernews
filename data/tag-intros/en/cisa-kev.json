@@ -1,9 +1,9 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "intro": "Government and technology sectors faced significant exposure across North America, the EU, and globally, with six articles from April to June 2026 covering vulnerabilities including CVE-2026-42271, CVE-2024-57728, CVE-2026-9082, CVE-2009-0238, and CVE-2025-2749. The severity mix included one critical, three high, and two medium ratings, with top CVEs such as CVE-2026-42271 scoring 8.7 and CVE-2024-57728 at 7.2. Enterprise software and federal government systems were among the affected sectors, while no specific threat actors were named in the provided data.",
-  "sources_hash": "b5024a2449861b13",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-10T04:34:39.136Z",
+  "intro": "This archive collects 7 articles tagged `cisa-kev` published between April 19, 2026 and June 17, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2026-48907, CVE-2026-42271, and CVE-2024-57728, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize government, technology, and media across North america, United states, and EU, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 critical, 3 high, and 2 medium reports.",
+  "sources_hash": "b5e1a47b2f2db233",
+  "model": "template:fallback",
+  "generated_at": "2026-06-18T04:35:08.042Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

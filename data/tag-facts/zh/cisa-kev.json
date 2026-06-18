@@ -1,13 +1,17 @@
 {
   "tag": "cisa-kev",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-06-09"
+    "latest": "2026-06-17"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-48907",
+      "cvss": 10
+    },
     {
       "id": "CVE-2026-42271",
       "cvss": 8.7
@@ -22,34 +26,31 @@
     },
     {
       "id": "CVE-2009-0238"
-    },
-    {
-      "id": "CVE-2025-2749"
     }
   ],
   "top_sectors": [
     "government",
     "technology",
+    "media",
     "enterprise",
-    "enterprise software",
-    "federal government"
+    "enterprise software"
   ],
   "top_regions": [
     "North america",
+    "United states",
     "EU",
     "Europe",
-    "Global",
-    "United states"
+    "Global"
   ],
   "severity_mix": {
+    "critical": 2,
     "high": 3,
-    "medium": 2,
-    "critical": 1
+    "medium": 2
   },
   "recent_excerpts": [
+    "CISA 警告 CVE-2026-48907 正在被积极利用，这是一个 CVSS 10.0 不当访问控制漏洞，在 Widget Factory Joomla 内容编辑器（JCE）中允许未经认证的 PHP 代码...",
     "CISA将其加入已知被利用漏洞目录CVE-2026-42271（CVSS 8.7），在针对BerriAI LiteLLM部署的积极利用证据之后。",
-    "CISA 在其已知被利用漏洞目录中添加了 CVE-2026-9082（CVSS 6.5），在发现针对所有支持的 Drupal 核心版本的积极利用证据后。",
-    "CISA 将 CVE-2024-57728 添加到已知被利用漏洞列表：通过 zip slip 的 SimpleHelp 路径遍历允许管理员用户上传任意文件并执行代码。截止日期为 2026 年 5 月 8 日。"
+    "CISA 在其已知被利用漏洞目录中添加了 CVE-2026-9082（CVSS 6.5），在发现针对所有支持的 Drupal 核心版本的积极利用证据后。"
   ],
-  "sources_hash": "8d3af130e477ebbb"
+  "sources_hash": "78ca94c7dfb05b09"
 }

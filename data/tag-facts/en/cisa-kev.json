@@ -1,13 +1,17 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-06-09"
+    "latest": "2026-06-17"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-48907",
+      "cvss": 10
+    },
     {
       "id": "CVE-2026-42271",
       "cvss": 8.7
@@ -22,34 +26,31 @@
     },
     {
       "id": "CVE-2009-0238"
-    },
-    {
-      "id": "CVE-2025-2749"
     }
   ],
   "top_sectors": [
     "government",
     "technology",
+    "media",
     "enterprise",
-    "enterprise software",
-    "federal government"
+    "enterprise software"
   ],
   "top_regions": [
     "North america",
+    "United states",
     "EU",
     "Europe",
-    "Global",
-    "United states"
+    "Global"
   ],
   "severity_mix": {
+    "critical": 2,
     "high": 3,
-    "medium": 2,
-    "critical": 1
+    "medium": 2
   },
   "recent_excerpts": [
+    "CISA warns of active exploitation of CVE-2026-48907, a CVSS 10.0 improper access control flaw in Widget Factory Joomla Content Editor (JCE) allowing unauthenticated PHP code...",
     "CISA added CVE-2026-42271 (CVSS 8.7) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against BerriAI LiteLLM deployments.",
-    "CISA added CVE-2026-9082 (CVSS 6.5) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against all supported Drupal Core versions.",
-    "CISA adds CVE-2024-57728 to Known Exploited Vulnerabilities: SimpleHelp path traversal via zip slip allows admin users to upload arbitrary files and execute code. Due May 8, 2026."
+    "CISA added CVE-2026-9082 (CVSS 6.5) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against all supported Drupal Core versions."
   ],
-  "sources_hash": "b5024a2449861b13"
+  "sources_hash": "b5e1a47b2f2db233"
 }
