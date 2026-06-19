@@ -1,10 +1,10 @@
 {
   "tag": "ot-security",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-28"
+    "latest": "2026-06-18"
   },
   "top_actors": [
     "APT33",
@@ -19,8 +19,8 @@
   "top_sectors": [
     "energy",
     "manufacturing",
-    "critical-infrastructure",
     "critical infrastructure",
+    "critical-infrastructure",
     "industrial"
   ],
   "top_regions": [
@@ -36,9 +36,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Nearly 60% of OT attacks stem from corporate IT compromises, per SANS Institute. 22% of essential-industry organizations reported incidents in the past year, with 40% causing...",
     "ZDI disclosed CVE-2026-24032, a 7.3-CVSS authentication bypass in Siemens SINEC NMS that requires no authentication to exploit. Affects industrial network management systems.",
-    "Axonius has updated its Asset Cloud platform with AI-powered remediation for exposures, added IoT/OT asset management, and introduced an asset trust standard to quantify security posture.",
-    "Security researchers propose extending two-factor authentication (2FA) principles to physical access control systems for critical infrastructure, creating a hybrid defense against credential-based att"
+    "Axonius has updated its Asset Cloud platform with AI-powered remediation for exposures, added IoT/OT asset management, and introduced an asset trust standard to quantify security posture."
   ],
-  "sources_hash": "1715852f408e7a9c"
+  "sources_hash": "b571e51ada028451"
 }

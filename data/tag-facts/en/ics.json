@@ -1,10 +1,10 @@
 {
   "tag": "ics",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-25"
+    "latest": "2026-06-18"
   },
   "top_actors": [],
   "top_cves": [
@@ -14,9 +14,9 @@
     }
   ],
   "top_sectors": [
+    "manufacturing",
     "critical-infrastructure",
     "energy",
-    "manufacturing",
     "industrial",
     "utilities"
   ],
@@ -31,9 +31,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Nearly 60% of OT attacks stem from corporate IT compromises, per SANS Institute. 22% of essential-industry organizations reported incidents in the past year, with 40% causing...",
     "CVE-2026-5726: A stack-based buffer overflow in Delta Electronics ASDA-Soft PAR file parsing scores 7.8 CVSS and enables remote code execution via crafted PAR files.",
-    "A new malware family named ZionSiphon is designed to sabotage water treatment and desalination plants by manipulating industrial control systems.",
-    "Siemens, Schneider Electric, and six other major industrial control system vendors released security advisories addressing dozens of vulnerabilities, including critical flaws in Siemens SIMATIC and Sc"
+    "A new malware family named ZionSiphon is designed to sabotage water treatment and desalination plants by manipulating industrial control systems."
   ],
-  "sources_hash": "7c4f504cc5ccb1c0"
+  "sources_hash": "5c09901ace531a90"
 }

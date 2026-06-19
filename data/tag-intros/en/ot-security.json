@@ -1,9 +1,9 @@
 {
   "tag": "ot-security",
   "locale": "en",
-  "intro": "Industrial and energy sectors bore the brunt of OT-security incidents between April 13 and April 28, 2026, with global impacts concentrated in North America, Europe, and the Middle East. APT33 and Pro-Russia Hacktivists were observed targeting critical infrastructure, while CVE-2026-24032 (CVSS 7.3) featured prominently among the nine reported events. The severity mix included one critical, three high, one medium, and four informational reports.",
-  "sources_hash": "1715852f408e7a9c",
+  "intro": "Industrial and energy sectors bore the brunt of OT-security threats between April and June 2026, with a global impact spanning North America, Europe, and the Middle East. APT33 and Pro-Russia Hacktivists were observed among the threat actors, while CVE-2026-24032 (CVSS 7.3) was a significant vulnerability. The coverage of 10 articles included three high-severity and one critical-severity incident, alongside four informational and one medium-severity report, affecting critical infrastructure, manufacturing, and industrial environments.",
+  "sources_hash": "b571e51ada028451",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:02:46.597Z",
+  "generated_at": "2026-06-19T04:36:24.422Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
