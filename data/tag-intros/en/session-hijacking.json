@@ -1,9 +1,9 @@
 {
   "tag": "session-hijacking",
   "locale": "en",
-  "intro": "Over nine articles published between April 11 and May 15, 2026, ZCyberNews covered session-hijacking activity. The threat actors Gremlin Stealer and Storm-2755 were observed, with CVE-2022-23961 (CVSS 6.1) and CVE-2026-5084 among the top vulnerabilities. Affected sectors included cryptocurrency, finance, financial services, hr, and information technology, with Canada as the primary region. The coverage comprised six high-severity and two medium-severity incidents.",
-  "sources_hash": "92eea7bce1a28f4e",
+  "intro": "Over ten articles published between April 11 and June 21, 2026, ZCyberNews has covered session hijacking incidents affecting cryptocurrency, digital publishing, finance, financial services, and hr sectors in Canada. The coverage includes one critical, six high, and two medium severity reports. Threat actors Gremlin Stealer and Storm-2755 were observed in these campaigns. Key vulnerabilities linked to the tag include CVE-2019-25763 (CVSS 9.8), CVE-2022-23961 (CVSS 6.1), and CVE-2026-5084.",
+  "sources_hash": "16b98691d4882307",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:02:53.018Z",
+  "generated_at": "2026-06-22T04:37:19.738Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

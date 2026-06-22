@@ -1,10 +1,10 @@
 {
   "tag": "session-hijacking",
   "locale": "zh",
-  "intro": "在2026年4月11日至5月15日期间发布的九篇文章中，ZCyberNews报道了会话劫持活动。观察到威胁行为者Gremlin Stealer和Storm-2755，其中CVE-2022-23961（CVSS 6.1）和CVE-2026-5084位列主要漏洞。受影响行业包括加密货币、金融、金融服务、人力资源和信息技术，主要区域为加拿大。报道涵盖六起高严重性和两起中严重性事件。",
-  "sources_hash": "cb0bb0234b747193",
-  "source_intro_hash": "6eb88b42dfb20c53",
+  "intro": "在2026年4月11日至6月21日期间，ZCyberNews发布了十余篇文章，报道了影响加拿大加密货币、数字出版、金融、金融服务及人力资源行业的会话劫持事件。相关报道涵盖一份严重、六份高危及两份中等严重程度的报告。在这些攻击活动中，观察到威胁行为体Gremlin Stealer和Storm-2755。与此标签关联的关键漏洞包括CVE-2019-25763（CVSS 9.8）、CVE-2022-23961（CVSS 6.1）及CVE-2026-5084。",
+  "sources_hash": "4a2662fb954c4940",
+  "source_intro_hash": "842b182d53839499",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:10:46.265Z",
+  "generated_at": "2026-06-22T04:37:29.984Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

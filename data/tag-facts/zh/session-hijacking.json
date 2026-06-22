@@ -1,16 +1,20 @@
 {
   "tag": "session-hijacking",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-05-15"
+    "latest": "2026-06-21"
   },
   "top_actors": [
     "Gremlin Stealer",
     "Storm-2755"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2019-25763",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2022-23961",
       "cvss": 6.1
@@ -21,22 +25,23 @@
   ],
   "top_sectors": [
     "cryptocurrency",
+    "digital publishing",
     "finance",
     "financial services",
-    "hr",
-    "information technology"
+    "hr"
   ],
   "top_regions": [
     "Canada"
   ],
   "severity_mix": {
+    "critical": 1,
     "high": 6,
     "medium": 2
   },
   "recent_excerpts": [
+    "CVE-2019-25763 (CVSS 9.8) 允许未经认证的攻击者通过精心构造的 POST 请求来劫持 WordPress Ultimate Addons for Beaver Builder 1.2.4.1 中的管理员会话。",
     "Unit 42 详细描述了一种新的 Gremlin stealer 变种，使用 XOR 加密的资源部分，加密剪贴器，WebSocket 会话劫持，以及一个商业打包器，带有指令...",
-    "CVE-2026-5084: WebDyne::Session 通过 2.075 为 Perl 生成会话 ID，使用 rand() 种子的 MD5 哈希，使得会话预测和劫持成为可能。",
-    "CVE-2022-23961（CVSS 6.1）在 Thruk 监控版本 2.46.3 及之前版本中，通过登录字段允许未经身份验证的反射型 XSS，有风险窃取管理员会话。"
+    "CVE-2026-5084: WebDyne::Session 通过 2.075 为 Perl 生成会话 ID，使用 rand() 种子的 MD5 哈希，使得会话预测和劫持成为可能。"
   ],
-  "sources_hash": "cb0bb0234b747193"
+  "sources_hash": "4a2662fb954c4940"
 }

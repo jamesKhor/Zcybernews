@@ -1,10 +1,10 @@
 {
   "tag": "authentication-bypass",
   "locale": "en",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-21"
+    "latest": "2026-06-21"
   },
   "top_actors": [],
   "top_cves": [
@@ -21,12 +21,12 @@
       "cvss": 10
     },
     {
-      "id": "CVE-2026-41940",
+      "id": "CVE-2019-25763",
       "cvss": 9.8
     },
     {
-      "id": "CVE-2026-33413",
-      "cvss": 8.8
+      "id": "CVE-2026-41940",
+      "cvss": 9.8
     }
   ],
   "top_sectors": [
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
-    "critical": 7,
+    "critical": 8,
     "high": 7,
     "medium": 3
   },
   "recent_excerpts": [
+    "CVE-2019-25763 (CVSS 9.8) allows unauthenticated attackers to hijack admin sessions in WordPress Ultimate Addons for Beaver Builder 1.2.4.1 via a crafted POST request to...",
     "CVE-2026-20223 (CVSS 10.0): Unauthenticated attackers can access internal REST APIs in Cisco Secure Workload with Site Admin privileges. No authentication required.",
-    "Open WebUI fixes CVE-2026-45314 (SVG XSS), CVE-2026-45303 (iframe script injection), and CVE-2026-44567 (pending role auth bypass) — all in self-hosted AI platform.",
-    "CVE-2026-44671 (CVSS 7.5): ZITADEL identity platform fails to escape usernames in LDAP filters, letting unauthenticated attackers inject arbitrary filter logic during login."
+    "Open WebUI fixes CVE-2026-45314 (SVG XSS), CVE-2026-45303 (iframe script injection), and CVE-2026-44567 (pending role auth bypass) — all in self-hosted AI platform."
   ],
-  "sources_hash": "9b12a0691f0446f9"
+  "sources_hash": "fe0e0e21cf7d0d58"
 }

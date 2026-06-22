@@ -1,16 +1,20 @@
 {
   "tag": "session-hijacking",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-05-15"
+    "latest": "2026-06-21"
   },
   "top_actors": [
     "Gremlin Stealer",
     "Storm-2755"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2019-25763",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2022-23961",
       "cvss": 6.1
@@ -21,22 +25,23 @@
   ],
   "top_sectors": [
     "cryptocurrency",
+    "digital publishing",
     "finance",
     "financial services",
-    "hr",
-    "information technology"
+    "hr"
   ],
   "top_regions": [
     "Canada"
   ],
   "severity_mix": {
+    "critical": 1,
     "high": 6,
     "medium": 2
   },
   "recent_excerpts": [
+    "CVE-2019-25763 (CVSS 9.8) allows unauthenticated attackers to hijack admin sessions in WordPress Ultimate Addons for Beaver Builder 1.2.4.1 via a crafted POST request to...",
     "Unit 42 details a new Gremlin stealer variant using XOR-encrypted resource sections, crypto clipper, WebSocket session hijacking, and a commercial packer with instruction...",
-    "CVE-2026-5084: WebDyne::Session through 2.075 for Perl generates session IDs from an MD5 hash seeded with rand(), enabling session prediction and hijacking.",
-    "CVE-2022-23961 (CVSS 6.1) in Thruk Monitoring through 2.46.3 enables unauthenticated reflected XSS via the login field, risking session theft for admins."
+    "CVE-2026-5084: WebDyne::Session through 2.075 for Perl generates session IDs from an MD5 hash seeded with rand(), enabling session prediction and hijacking."
   ],
-  "sources_hash": "92eea7bce1a28f4e"
+  "sources_hash": "16b98691d4882307"
 }

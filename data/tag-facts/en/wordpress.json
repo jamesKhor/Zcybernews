@@ -1,13 +1,17 @@
 {
   "tag": "wordpress",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-19"
+    "latest": "2026-06-21"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2019-25763",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-4883",
       "cvss": 9.8
@@ -23,31 +27,27 @@
     {
       "id": "CVE-2021-47927",
       "cvss": 6.4
-    },
-    {
-      "id": "CVE-2021-47929",
-      "cvss": 6.4
     }
   ],
   "top_sectors": [
-    "e-commerce",
     "web hosting",
+    "e-commerce",
     "publishing",
     "digital media",
-    "technology"
+    "digital publishing"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 4,
+    "critical": 5,
     "medium": 5,
     "high": 4
   },
   "recent_excerpts": [
+    "CVE-2019-25763 (CVSS 9.8) allows unauthenticated attackers to hijack admin sessions in WordPress Ultimate Addons for Beaver Builder 1.2.4.1 via a crafted POST request to...",
     "CVE-2026-4883 (CVSS 9.8) in Piotnet Forms ≤2.1.40 lets unauthenticated attackers upload .phar or .phtml files via an incomplete extension blacklist, enabling remote code execution.",
-    "CVE-2021-47957 (CVSS 6.4) in Cookie Law Bar 1.2.1 lets authenticated attackers inject persistent scripts via the Bar Message field, affecting all WordPress site visitors.",
-    "CVE-2026-4782 and CVE-2026-4798 in Avada Builder (1M+ installs) let attackers read wp-config.php and extract database hashes. Patch to version 3.15.3."
+    "CVE-2021-47957 (CVSS 6.4) in Cookie Law Bar 1.2.1 lets authenticated attackers inject persistent scripts via the Bar Message field, affecting all WordPress site visitors."
   ],
-  "sources_hash": "ba61602367be5426"
+  "sources_hash": "74108c0788f85356"
 }
