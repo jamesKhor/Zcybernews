@@ -1,0 +1,9 @@
+{
+  "tag": "remote-access",
+  "locale": "en",
+  "intro": "This archive collects 5 articles tagged `remote-access` published between April 16, 2026 and June 22, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include VENOMOUS#HELPER, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize business services and finance across Australia, Brazil, and India, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 5 high reports.",
+  "sources_hash": "51692d64cdae0b9a",
+  "model": "template:fallback",
+  "generated_at": "2026-06-23T04:27:45.355Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

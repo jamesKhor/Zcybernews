@@ -1,0 +1,33 @@
+{
+  "tag": "remote-access",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-06-22"
+  },
+  "top_actors": [
+    "VENOMOUS#HELPER"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "business services",
+    "finance"
+  ],
+  "top_regions": [
+    "Australia",
+    "Brazil",
+    "India",
+    "Malaysia",
+    "Mexico"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Kaspersky details an active global campaign distributing VBS files via WhatsApp that installs UEMS RMM software, enabling persistent remote access across 12 countries including...",
+    "Elastic Security Labs details SILENTCONNECT, a multi-stage loader using VBScript and in-memory PowerShell to deploy ScreenConnect RMM silently for persistent remote access.",
+    "Securonix tracks VENOMOUS#HELPER phishing campaign using legitimate SimpleHelp and ScreenConnect RMM software for persistent remote access across 80+ organizations, mostly in the…"
+  ],
+  "sources_hash": "51692d64cdae0b9a"
+}

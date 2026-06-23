@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "intro": "过去五周内，ZCyberNews追踪到57篇标记为社交工程的文章，其中43篇被评为高严重性，1篇为严重级别。Lazarus Group、UNC6692和APT37 (ScarCruft, InkySquid) 是观测到的主要威胁行为体，而CVE-2023-36036则成为最突出的漏洞。加密货币、金融服务、技术、金融服务业及企业领域受影响最为严重，全球影响主要集中在北美、欧洲、美国及加拿大地区。",
-  "sources_hash": "248d5aa13266f2b9",
-  "source_intro_hash": "e0abc7c4f7a1e985",
+  "intro": "在过去的三个月里，ZCyberNews追踪了58篇与社会工程学相关的文章，其中44篇被评为高严重性，1篇为严重级别。Lazarus Group、UNC6692和APT37 (ScarCruft, InkySquid)是最常被观测到的威胁行为体，而CVE-2023-36036是最主要的漏洞。受影响的主要行业包括加密货币、金融服务、科技、金融服务业及企业领域，影响范围覆盖全球，具体报告来自北美、欧洲、美国和澳大利亚。",
+  "sources_hash": "399635cbe0ff3d9c",
+  "source_intro_hash": "7060f8e1d6bff550",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:10:49.974Z",
+  "generated_at": "2026-06-23T04:27:56.272Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "count": 57,
+  "count": 58,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-14"
+    "latest": "2026-06-22"
   },
   "top_actors": [
     "Lazarus Group",
@@ -28,18 +28,18 @@
     "North america",
     "Europe",
     "United states",
-    "Canada"
+    "Australia"
   ],
   "severity_mix": {
-    "high": 43,
+    "high": 44,
     "informational": 2,
     "medium": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "卡巴斯基详细描述了一个活跃的全球活动，通过 WhatsApp 分发 VBS 文件，安装 UEMS RMM 软件，使得在包括...在内的 12 个国家能够持续远程访问。",
     "Signal 引入了新的应用内确认和警告，以对抗与俄罗斯国家黑客有关的网络钓鱼攻击，这些黑客滥用了 Linked Device 功能来劫持高知名度的...",
-    "Steve Stasiukonis 在2006年对一家信用合作社进行的USB投掷测试 —— 员工插入的20个驱动器中有15个 —— 成为了至今仍被使用的物理社交工程评估的蓝图...",
-    "Black Hills InfoSec 展示了攻击者如何滥用 Microsoft SSPR 绕过 MFA 并通过社会工程学重置凭证。现实世界的测试场景揭示了检测漏洞。"
+    "Steve Stasiukonis 在2006年对一家信用合作社进行的USB投掷测试 —— 员工插入的20个驱动器中有15个 —— 成为了至今仍被使用的物理社交工程评估的蓝图..."
   ],
-  "sources_hash": "248d5aa13266f2b9"
+  "sources_hash": "399635cbe0ff3d9c"
 }

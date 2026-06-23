@@ -1,0 +1,10 @@
+{
+  "tag": "remote-access",
+  "locale": "zh",
+  "intro": "本档案收录了5篇发布于2026年4月16日至2026年6月22日期间、标记为`remote-access`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的集中视角。观察到的行为者引用包括VENOMOUS#HELPER，仅在其基础文章元数据支持归因时呈现。受影响范围信号强调澳大利亚、巴西和印度的商业服务与金融领域，帮助读者比较暴露模式，而不添加超出档案数据的断言。严重性覆盖范围包括5份高风险报告。",
+  "sources_hash": "ad7ead18d7f7e1cd",
+  "source_intro_hash": "959e3acd92bb4578",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-06-23T04:27:51.992Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

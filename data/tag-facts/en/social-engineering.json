@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 57,
+  "count": 58,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-14"
+    "latest": "2026-06-22"
   },
   "top_actors": [
     "Lazarus Group",
@@ -28,18 +28,18 @@
     "North america",
     "Europe",
     "United states",
-    "Canada"
+    "Australia"
   ],
   "severity_mix": {
-    "high": 43,
+    "high": 44,
     "informational": 2,
     "medium": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "Kaspersky details an active global campaign distributing VBS files via WhatsApp that installs UEMS RMM software, enabling persistent remote access across 12 countries including...",
     "Signal introduced new in-app confirmations and warnings to counter phishing attacks linked to Russian state hackers who abused the Linked Device feature to hijack high-profile...",
-    "Steve Stasiukonis's 2006 USB drop test at a credit union — 15 of 20 drives plugged in by employees — became the blueprint for physical social engineering assessments still used…",
-    "Black Hills InfoSec demonstrates how attackers abuse Microsoft SSPR to bypass MFA and reset credentials via social engineering. Real-world test scenario reveals detection gaps."
+    "Steve Stasiukonis's 2006 USB drop test at a credit union — 15 of 20 drives plugged in by employees — became the blueprint for physical social engineering assessments still used…"
   ],
-  "sources_hash": "32c40aede908185a"
+  "sources_hash": "b510f3f927b765e9"
 }

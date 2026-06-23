@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-05-08"
+    "latest": "2026-06-22"
   },
   "top_actors": [
     "CrystalX",
@@ -13,25 +13,27 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "energy",
     "finance",
+    "energy",
     "technology",
     "building automation",
-    "cryptocurrency"
+    "business services"
   ],
   "top_regions": [
     "Global",
-    "Latin america",
-    "Venezuela"
+    "Australia",
+    "Brazil",
+    "India",
+    "Latin america"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 8,
     "critical": 1
   },
   "recent_excerpts": [
+    "Kaspersky details an active global campaign distributing VBS files via WhatsApp that installs UEMS RMM software, enabling persistent remote access across 12 countries including...",
     "Kaspersky attributes a PyPI supply chain campaign to OceanLotus APT, using fake wheel packages to drop ZiChatBot malware that abuses Zulip chat APIs for C2 on Windows and Linux.",
-    "Three PyPI packages deliver ZiChatBot malware on Windows and Linux using Zulip chat APIs for stealthy C2 — Kaspersky identifies 12+ victim organizations globally.",
-    "Kaspersky details CrystalX RAT, a MaaS malware with spyware, credential theft, and prankware features targeting Windows users globally since mid-2025."
+    "Three PyPI packages deliver ZiChatBot malware on Windows and Linux using Zulip chat APIs for stealthy C2 — Kaspersky identifies 12+ victim organizations globally."
   ],
-  "sources_hash": "575153a3c9a75702"
+  "sources_hash": "ef831ce8afd3c056"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "intro": "Over the past five weeks, ZCyberNews has tracked 57 articles tagged social-engineering, with 43 rated high severity and one critical. Lazarus Group, UNC6692, and APT37 (ScarCruft, InkySquid) were the top threat actors observed, while CVE-2023-36036 appeared as the leading vulnerability. The cryptocurrency, financial services, technology, financial-services, and enterprise sectors were most affected, with global impact concentrated in North America, Europe, the United States, and Canada.",
-  "sources_hash": "32c40aede908185a",
+  "intro": "Over the past three months, ZCyberNews has tracked 58 articles under social-engineering, with 44 rated high severity and one critical. Lazarus Group, UNC6692, and APT37 (ScarCruft, InkySquid) were the most frequently observed threat actors, while CVE-2023-36036 was the top vulnerability. The primary sectors affected were cryptocurrency, financial services, technology, financial-services, and enterprise, with global impact and specific reports from North America, Europe, the United States, and Australia.",
+  "sources_hash": "b510f3f927b765e9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T09:58:58.596Z",
+  "generated_at": "2026-06-23T04:27:33.763Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

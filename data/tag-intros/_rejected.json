@@ -1624,5 +1624,17 @@
     "locale": "en",
     "lastError": "word count 56 outside 60-140 (en)",
     "at": "2026-06-19T04:36:22.302Z"
+  },
+  {
+    "tag": "kaspersky",
+    "locale": "en",
+    "lastError": "word count 57 outside 60-140 (en)",
+    "at": "2026-06-23T04:27:39.435Z"
+  },
+  {
+    "tag": "remote-access",
+    "locale": "en",
+    "lastError": "word count 43 outside 60-140 (en)",
+    "at": "2026-06-23T04:27:45.355Z"
   }
 ]

@@ -1,0 +1,33 @@
+{
+  "tag": "remote-access",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-06-22"
+  },
+  "top_actors": [
+    "VENOMOUS#HELPER"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "business services",
+    "finance"
+  ],
+  "top_regions": [
+    "Australia",
+    "Brazil",
+    "India",
+    "Malaysia",
+    "Mexico"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "卡巴斯基详细描述了一个活跃的全球活动，通过 WhatsApp 分发 VBS 文件，安装 UEMS RMM 软件，使得在包括...在内的 12 个国家能够持续远程访问。",
+    "Elastic Security Labs 详细介绍了 SILENTCONNECT，这是一个多阶段加载器，使用 VBScript 和内存中的 PowerShell 来悄无声息地部署 ScreenConnect RMM，以实现持久的远程访问。",
+    "Securonix 追踪使用合法 SimpleHelp 和 ScreenConnect RMM 软件的 VENOMOUS#HELPER 钓鱼活动，以实现对80+组织的持久远程访问，大多数在…"
+  ],
+  "sources_hash": "ad7ead18d7f7e1cd"
+}

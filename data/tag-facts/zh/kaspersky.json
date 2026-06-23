@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-05-08"
+    "latest": "2026-06-22"
   },
   "top_actors": [
     "CrystalX",
@@ -13,25 +13,27 @@
   ],
   "top_cves": [],
   "top_sectors": [
-    "energy",
     "finance",
+    "energy",
     "technology",
     "building automation",
-    "cryptocurrency"
+    "business services"
   ],
   "top_regions": [
     "Global",
-    "Latin america",
-    "Venezuela"
+    "Australia",
+    "Brazil",
+    "India",
+    "Latin america"
   ],
   "severity_mix": {
-    "high": 7,
+    "high": 8,
     "critical": 1
   },
   "recent_excerpts": [
+    "卡巴斯基详细描述了一个活跃的全球活动，通过 WhatsApp 分发 VBS 文件，安装 UEMS RMM 软件，使得在包括...在内的 12 个国家能够持续远程访问。",
     "卡巴斯基将 PyPI 供应链活动归因于 OceanLotus APT，使用假冒的 wheel 包来投放滥用 Zulip 聊天 API 进行 C2 的 ZiChatBot 恶意软件，影响 Windows 和 Linux 系统。",
-    "三个 PyPI 包在 Windows 和 Linux 上分发 ZiChatBot 恶意软件，使用 Zulip 聊天 API 进行隐蔽的 C2 —— Kaspersky 识别出全球 12 个以上受害组织。",
-    "卡巴斯基详细描述了 CrystalX RAT，这是一种自 2025 年中以来针对全球 Windows 用户的 MaaS 恶意软件，具有间谍软件、凭证盗窃和恶作剧软件功能。"
+    "三个 PyPI 包在 Windows 和 Linux 上分发 ZiChatBot 恶意软件，使用 Zulip 聊天 API 进行隐蔽的 C2 —— Kaspersky 识别出全球 12 个以上受害组织。"
   ],
-  "sources_hash": "3905f5b29bd24dc3"
+  "sources_hash": "0edfd2568aef86fb"
 }
