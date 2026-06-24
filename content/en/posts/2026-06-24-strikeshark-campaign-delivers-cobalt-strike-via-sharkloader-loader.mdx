@@ -1,0 +1,103 @@
+---
+title: StrikeShark Campaign Delivers Cobalt Strike Via SharkLoader Loader
+slug: 2026-06-24-strikeshark-campaign-delivers-cobalt-strike-via-sharkloader-loader
+date: '2026-06-24'
+excerpt: >-
+  Kaspersky uncovers StrikeShark, a global campaign using SharkLoader malware to
+  deploy Cobalt Strike Beacon across 10+ countries via exploits for ProxyLogon,
+  Openfire, and...
+category: malware
+tags:
+  - cobalt-strike
+  - sharkloader
+  - strikeshark
+  - loader-malware
+  - proxylogon
+  - exploitation
+language: en
+source_urls:
+  - 'https://securelist.com/strikeshark-campaign/120326/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-06-24-strikeshark-campaign-delivers-cobalt-strike-via-sharkloader-loader
+cluster_key: 'topic:strikeshark-investigating-campaign-delivering-cobalt'
+source_count: 1
+seo_query_target: >-
+  StrikeShark: investigating a new campaign delivering Cobalt Strike through
+  SharkLoader
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises readers a detailed investigation into a new campaign named
+  StrikeShark that uses the SharkLoader malware to deliver Cobalt Strike Beacon.
+seo_meta_promise: >-
+  The meta description promises a concrete finding: Kaspersky's discovery of a
+  global campaign exploiting multiple CVEs to deploy Cobalt Strike via a novel
+  loader.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - cobalt-strike
+  - loader-malware
+  - exploitation
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Technical diagram showing SharkLoader infection chain from exploit to Cobalt
+  Strike Beacon execution
+severity: high
+cve_ids:
+  - CVE-2021-26855
+  - CVE-2023-32315
+  - CVE-2024-36401
+  - CVE-2022-41082
+  - CVE-2024-21762
+  - CVE-2022-40684
+threat_actor: StrikeShark
+affected_sectors:
+  - government
+  - software development
+  - diplomatic
+affected_regions:
+  - Indonesia
+  - Taiwan
+  - Colombia
+  - Hong Kong
+  - Lebanon
+  - Syria
+  - North Macedonia
+  - Nepal
+  - Serbia
+publish_tier: public
+---
+## Executive Summary
+
+Kaspersky researchers have identified a previously undocumented malware family, SharkLoader, deployed in a global campaign they are tracking as StrikeShark. The loader delivers Cobalt Strike Beacon to compromised systems across at least 10 countries, targeting diplomatic entities, government organizations, and software development firms. Initial access is achieved through exploitation of internet-facing applications including Microsoft Exchange (CVE-2021-26855, ProxyLogon), Openfire (CVE-2023-32315), and GeoServer (CVE-2024-36401), among others. The campaign's broad victimology and reliance on publicly available proof-of-concept exploits suggest opportunistic targeting rather than a focused espionage operation, though attribution remains preliminary.
+
+## Technical Analysis
+
+Kaspersky's investigation began with an incident at a diplomatic organization in Indonesia, where attackers exploited CVE-2021-26855 (ProxyLogon) to gain initial access. From there, the researchers identified additional infections across government agencies in Taiwan, software development companies in multiple countries, and entities in Hong Kong, Lebanon, Syria, Colombia, North Macedonia, Nepal, and Serbia. The full list of exploited vulnerabilities includes 13 CVEs spanning RCE and authentication bypass flaws in products from Microsoft, Apache, Hikvision, Zimbra, F5, Fortinet, Cisco, and others. Kaspersky assesses with medium confidence that the threat actor relies primarily on publicly available PoC exploits rather than developing custom exploit capabilities, noting that one C2-associated IP address also conducted internet-wide scanning.
+
+Following exploitation, attackers deployed webshells for persistence—though Kaspersky could not recover the webshell files, telemetry indicated their use. A key early action involved copying the legitimate Windows binary `SystemSettings.exe` to `C:\ProgramData\` and executing it alongside a malicious `SystemSettings.dll` in a DLL sideloading chain. This DLL served as the initial SharkLoader component, which then decrypted and loaded additional payloads including the main implant DLL and ultimately Cobalt Strike Beacon.
+
+SharkLoader itself is a multi-stage loader. The initial DLL performs what Kaspersky describes as a "PerfectDLL Hijacking" technique, decrypting an embedded resource (`DscCoreR.mui`) and subsequently loading `SyncRes.dat`. The decrypted `SyncRes.dat` contains a DLL that installs multiple API hooks via the MinHook library, registers a Vectored Exception Handler (VEH), and creates threads for Cobalt Strike Beacon execution. The Beacon payload communicates over HTTPS with attacker-controlled infrastructure, using standard Cobalt Strike patterns.
+
+Persistence mechanisms include scheduled tasks and registry run keys, though Kaspersky notes variability across infections. Post-compromise activity observed includes credential dumping, lateral movement via SMB and WinRM, and deployment of additional tools such as Mimikatz and custom PowerShell scripts.
+
+## Indicators of Compromise
+
+Kaspersky published a set of IOCs including SHA256 hashes for SharkLoader DLL samples and Cobalt Strike Beacon payloads, C2 IP addresses and domains, and file paths associated with the infection chain. The researchers emphasize that the infrastructure is dynamic, with C2 domains frequently rotating. Specific hashes and network indicators are available in the full Securelist report.
+
+## Tactics, Techniques & Procedures
+
+The StrikeShark campaign employs a consistent TTP sequence: initial access via exploitation of public-facing applications (T1190), followed by webshell deployment for persistence (T1505.003). The loader uses DLL side-loading (T1574.002) to execute SharkLoader, which then performs process injection (T1055.001) to run Cobalt Strike Beacon. Command and control uses HTTPS on standard ports (T1071.001). The actor's reliance on publicly available exploits and open-source tools like MinHook suggests moderate operational security but limited custom development.
+
+## Threat Actor Context
+
+Kaspersky has not attributed StrikeShark to any known APT group or cybercrime gang, citing no direct code reuse, infrastructure overlap, or operational similarity. The use of tools associated with Chinese-speaking developers is noted but considered insufficient for attribution. The campaign's broad geographic and sectoral targeting—diplomatic, government, software development—does not align neatly with typical espionage or financial crime patterns. Kaspersky continues to investigate the actor's ultimate objectives.
+
+## Mitigations & Recommendations
+
+Organizations should prioritize patching the 13 CVEs identified in the campaign, particularly those in internet-facing systems: Microsoft Exchange (CVE-2021-26855, CVE-2022-41082), Openfire (CVE-2023-32315), GeoServer (CVE-2024-36401), and Fortinet FortiOS (CVE-2024-21762, CVE-2022-40684). Network defenders should monitor for DLL side-loading of `SystemSettings.exe` from non-standard paths, anomalous `SystemSettings.dll` loads, and outbound HTTPS connections to unknown domains. Deploy application allowlisting to block unauthorized executables in `C:\ProgramData\`. Review webshell detection rules for the listed server products. Given the actor's use of internet-wide scanning, exposure reduction through network segmentation and VPN-only access to management interfaces is advised.
+
+## References
+
+- [Kaspersky Securelist: StrikeShark campaign analysis](https://securelist.com/strikeshark-campaign/120326/)

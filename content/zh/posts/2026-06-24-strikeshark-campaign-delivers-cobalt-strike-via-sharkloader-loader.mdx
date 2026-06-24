@@ -1,0 +1,102 @@
+---
+title: StrikeShark 活动通过 SharkLoader 加载器传递 Cobalt Strike
+slug: 2026-06-24-strikeshark-campaign-delivers-cobalt-strike-via-sharkloader-loader
+date: '2026-06-24'
+excerpt: >-
+  Kaspersky 揭露了 StrikeShark，这是一个全球性的活动，使用 SharkLoader 恶意软件在 10 多个国家通过
+  ProxyLogon、Openfire 和...的漏洞部署 Cobalt Strike Beacon。
+category: malware
+tags:
+  - cobalt-strike
+  - sharkloader
+  - strikeshark
+  - loader-malware
+  - proxylogon
+  - exploitation
+language: zh
+source_urls:
+  - 'https://securelist.com/strikeshark-campaign/120326/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-06-24-strikeshark-campaign-delivers-cobalt-strike-via-sharkloader-loader
+cluster_key: 'topic:strikeshark-investigating-campaign-delivering-cobalt'
+source_count: 1
+seo_query_target: >-
+  StrikeShark: investigating a new campaign delivering Cobalt Strike through
+  SharkLoader
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises readers a detailed investigation into a new campaign named
+  StrikeShark that uses the SharkLoader malware to deliver Cobalt Strike Beacon.
+seo_meta_promise: >-
+  The meta description promises a concrete finding: Kaspersky's discovery of a
+  global campaign exploiting multiple CVEs to deploy Cobalt Strike via a novel
+  loader.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - cobalt-strike
+  - loader-malware
+  - exploitation
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Technical diagram showing SharkLoader infection chain from exploit to Cobalt
+  Strike Beacon execution
+severity: high
+cve_ids:
+  - CVE-2021-26855
+  - CVE-2023-32315
+  - CVE-2024-36401
+  - CVE-2022-41082
+  - CVE-2024-21762
+  - CVE-2022-40684
+threat_actor: StrikeShark
+affected_sectors:
+  - government
+  - software development
+  - diplomatic
+affected_regions:
+  - Indonesia
+  - Taiwan
+  - Colombia
+  - Hong Kong
+  - Lebanon
+  - Syria
+  - North Macedonia
+  - Nepal
+  - Serbia
+publish_tier: public
+---
+## 执行摘要
+
+卡巴斯基研究人员发现了一种以前未记录的恶意软件家族SharkLoader，它被部署在一个全球性的活动中，他们将其追踪为StrikeShark。这个加载器将Cobalt Strike Beacon传送到至少10个国家的受感染系统中，目标是外交实体、政府组织和软件开发公司。初始访问是通过利用面向互联网的应用程序来实现的，包括Microsoft Exchange（CVE-2021-26855, ProxyLogon）、Openfire（CVE-2023-32315）和GeoServer（CVE-2024-36401）等。该活动广泛的受害者学和依赖于公开可用的概念验证漏洞表明，这是机会主义目标选择，而不是一个专注的间谍行动，尽管归因仍然是初步的。
+
+## 技术分析
+
+卡巴斯基的调查始于印度尼西亚一个外交组织的事件，攻击者利用CVE-2021-26855（ProxyLogon）获得了初始访问。从那里，研究人员在台湾的政府机构、多个国家的软件开发公司以及香港、黎巴嫩、叙利亚、哥伦比亚、北马其顿、尼泊尔和塞尔维亚的实体中识别出额外的感染。被利用的漏洞完整列表包括13个CVE，涵盖了来自Microsoft、Apache、Hikvision、Zimbra、F5、Fortinet、Cisco等产品的RCE和认证绕过漏洞。卡巴斯基以中等信心评估，威胁行为者主要依赖于公开可用的PoC漏洞，而不是开发定制的漏洞利用能力，注意到一个与C2相关的IP地址还进行了全网扫描。
+
+在利用之后，攻击者部署了webshell以保持持续性——尽管卡巴斯基无法恢复webshell文件，但遥测表明了它们的使用。一个关键的早期行动涉及将合法的Windows二进制文件`SystemSettings.exe`复制到`C:\ProgramData\`，并与恶意的`SystemSettings.dll`一起执行，形成了一个DLL侧加载链。这个DLL作为最初的SharkLoader组件，随后解密并加载了额外的负载，包括主植入DLL，最终是Cobalt Strike Beacon。
+
+SharkLoader本身是一个多阶段加载器。初始DLL执行了卡巴斯基描述的“完美DLL劫持”技术，解密了一个嵌入的资源（`DscCoreR.mui`），随后加载了`SyncRes.dat`。解密后的`SyncRes.dat`包含一个DLL，通过MinHook库安装多个API钩子，注册了一个向量化异常处理器（VEH），并为Cobalt Strike Beacon执行创建了线程。Beacon负载通过HTTPS与攻击者控制的基础设施通信，使用标准的Cobalt Strike模式。
+
+持久性机制包括计划任务和注册表运行键，尽管卡巴斯基注意到感染之间的变异性。观察到的妥协后活动包括凭证转储、通过SMB和WinRM的横向移动，以及部署额外的工具，如Mimikatz和自定义PowerShell脚本。
+
+## 入侵指标
+
+卡巴斯基发布了一组IOC，包括SharkLoader DLL样本和Cobalt Strike Beacon负载的SHA256哈希值，C2 IP地址和域名，以及与感染链相关的文件路径。研究人员强调，基础设施是动态的，C2域名经常轮换。特定的哈希值和网络指标可以在完整的Securelist报告中找到。
+
+## 战术、技术与程序
+
+StrikeShark活动采用了一致的TTP序列：通过利用公共面向应用程序（T1190）获得初始访问，随后部署webshell以保持持续性（T1505.003）。加载器使用DLL侧加载（T1574.002）来执行SharkLoader，然后执行进程注入（T1055.001）以运行Cobalt Strike Beacon。命令和控制使用标准端口上的HTTPS（T1071.001）。行为者依赖于公开可用的漏洞和开源工具，如MinHook，表明操作安全适中，但定制开发有限。
+
+## 威胁行为者背景
+
+卡巴斯基没有将StrikeShark归因于任何已知的APT组织或网络犯罪团伙，因为没有直接的代码重用、基础设施重叠或操作相似性。注意到与讲中文的开发者相关的工具的使用，但认为不足以进行归因。该活动广泛的地理和部门目标——外交、政府、软件开发——并不完全符合典型的间谍或金融犯罪模式。卡巴斯基继续调查行为者的最终目标。
+
+## 缓解措施与建议
+
+组织应优先修补活动中识别的13个CVE，特别是那些在面向互联网的系统中：Microsoft Exchange（CVE-2021-26855, CVE-2022-41082）、Openfire（CVE-2023-32315）、GeoServer（CVE-2024-36401）和Fortinet FortiOS（CVE-2024-21762, CVE-2022-40684）。网络防御者应监控从非标准路径的`SystemSettings.exe`的DLL侧加载，异常的`SystemSettings.dll`负载，以及到未知域名的出站HTTPS连接。部署应用程序允许列表以阻止`C:\ProgramData\`中的未授权可执行文件。审查列出的服务器产品的webshell检测规则。鉴于行为者使用全网扫描，建议通过网络分割和仅VPN访问管理接口来减少暴露。
+
+## 参考资料
+
+- [卡巴斯基Securelist：StrikeShark活动分析](https://securelist.com/strikeshark-campaign/120326/)
