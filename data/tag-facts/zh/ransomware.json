@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 51,
+  "count": 52,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-12"
+    "latest": "2026-06-24"
   },
   "top_actors": [
     "The Gentlemen",
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "印度汽车巨头Bajaj Auto于2026年6月24日披露了一起勒索软件事件，影响了运营及其技术子公司。",
     "白金汉郡的Great Marlow School在一次网络安全事件后，第二天让1,428名学生回家；只有参加GCSE和A-Level考试的学生出席。",
-    "Nitrogen 勒索软件团伙声称从富士康北美工厂窃取了8TB的数据，包括来自主要技术客户技术文件。",
-    "Instructure 在两次 Canvas 入侵窃取了来自 9,000 个机构的数据后向 ShinyHunters 支付了赎金。国会对这家教育技术供应商的事件响应展开了调查。"
+    "Nitrogen 勒索软件团伙声称从富士康北美工厂窃取了8TB的数据，包括来自主要技术客户技术文件。"
   ],
-  "sources_hash": "5925820d377c727f"
+  "sources_hash": "b091a2450879d58d"
 }

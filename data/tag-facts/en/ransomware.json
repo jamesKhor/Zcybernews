@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 52,
+  "count": 53,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-12"
+    "latest": "2026-06-24"
   },
   "top_actors": [
     "The Gentlemen",
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "Indian auto giant Bajaj Auto disclosed a ransomware incident on June 24, 2026, impacting operations and its tech subsidiary.",
     "Great Marlow School in Buckinghamshire sent 1,428 pupils home for a second day after a cybersecurity incident; only GCSE and A-Level exam takers attended.",
-    "Nitrogen ransomware gang claims 8TB of stolen data from Foxconn's North American factories, including technical files from major tech clients.",
-    "Instructure paid ShinyHunters after two Canvas intrusions stole data from 9,000 institutions. Congress launched an investigation into the ed-tech vendor's incident response."
+    "Nitrogen ransomware gang claims 8TB of stolen data from Foxconn's North American factories, including technical files from major tech clients."
   ],
-  "sources_hash": "9e66195675645703"
+  "sources_hash": "36bdeaa1a4e08118"
 }
