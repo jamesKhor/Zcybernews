@@ -1,0 +1,80 @@
+---
+title: CL-STA-1062 针对东南亚政府和关键领域
+slug: 2026-06-26-cl-sta-1062-targets-southeast-asian-governments-and-critical
+date: '2026-06-26'
+excerpt: >-
+  说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的
+  TinyRCT...
+category: malware
+tags:
+  - cl-sta-1062
+  - tinyrct
+  - southeast-asia
+  - espionage
+  - backdoor
+  - unit-42
+  - web-shells
+  - critical-infrastructure
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/cl-sta-1062-tinyrct-backdoor/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-06-26-cl-sta-1062-targets-southeast-asian-governments-and-critical
+cluster_key: 'topic:clsta1062-targets-southeast-asian-governments'
+source_count: 1
+seo_query_target: CL-STA-1062 Targets Southeast Asian Governments and Critical Infrastructure
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises a detailed technical analysis of CL-STA-1062's campaign
+  against Southeast Asian government and energy targets, including the new
+  TinyRCT backdoor.
+seo_meta_promise: >-
+  The meta description promises a concrete fact: the group compromised at least
+  10 entities in 2025 using specific tools and a new backdoor.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - backdoor
+  - espionage
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Map of Southeast Asia with highlighted government and energy sector icons,
+  representing CL-STA-1062 targeting
+severity: high
+threat_actor: CL-STA-1062
+threat_actor_origin: China
+affected_sectors:
+  - government
+  - energy
+affected_regions:
+  - Southeast Asia
+publish_tier: public
+---
+## 执行摘要
+
+根据Palo Alto Networks的Unit 42在6月25日发布的详细报告，一个被称为CL-STA-1062的讲中文的威胁行为者在2025年全年系统性地破坏了东南亚各国政府实体和关键能源基础设施。该组织自2022年3月至少活跃至今，仅在2025年10月至12月间就至少入侵了十个组织，部署了一个混合工具包，结合了开源隧道工具和一个自定义的、以前未记录的后门名为TinyRCT。该地区的防御者应优先监控ASPX Web Shells、伪装成合法可执行文件的SoftEther VPN部署，以及向攻击者控制的基础设施的出站连接。
+
+## 技术分析
+
+Unit 42高度确信，CL-STA-1062与Cisco Talos追踪的UAT-7237是同一个组织，后者之前因在2025年中期针对台湾的Web托管基础设施的活动而被报告。该组织的行动范围扩展到东亚，表明了一个持续的区域间谍战略。
+
+攻击链通常以利用Web应用程序部署ASPX Web Shells开始。这些Shells作为执行任意命令、投放额外工具和进行初步侦察的主要机制。Unit 42观察到攻击者使用`curl`将系统枚举结果直接发送到攻击者控制的IP地址。
+
+从这个立足点出发，攻击者部署了各种隧道工具用于命令和控制（C2）和数据泄露，包括SoftEther VPN、yuze和VNT。这些工具通常伪装成合法的系统文件，如VMware可执行文件或XDR代理。在一个观察到的入侵中，攻击者使用Web Shell提取了一个包含他们工具集的受密码保护的RAR归档文件。
+
+该组织的自定义后门TinyRCT代表了重要能力的增加。它的功能包括任意命令执行、文件枚举和泄露、屏幕捕获和一个自毁机制。Unit 42在公共报告中没有披露完整的命令集或C2协议，但后门的定制性质表明开发是为了逃避基于签名的检测。
+
+在2025年9月，Unit 42发现CL-STA-1062通过部署Web Shells和从MSSQL服务器泄露数据库信息，破坏了一个东南亚政府实体。攻击者还对同一国家的另一个政府实体进行了网络侦察，暗示了横向移动计划。在一个案例中，攻击者安排并泄露了整个Web服务器源代码目录。
+
+在2025年10月至12月间，Unit 42观察到至少有十个不同的组织在东南亚可能被破坏。自2025年中期以来，该组织一直专注于关键能源基础设施。Unit 42确定一个关键基础设施实体已经被攻击数月，活动覆盖了从初始访问到数据泄露的整个攻击生命周期。接下来的一个月，同一东南亚国家的两个国有关键能源基础设施实体也被破坏。
+
+Unit 42观察到攻击者扫描这些实体的漏洞，随后是受感染网络向攻击者控制的基础设施发出的出站请求。这些请求导致受害者网络下载恶意负载，包括SoftEther VPN组件和包含该组织工具的RAR归档文件。
+
+## 缓解措施与建议
+
+东南亚的组织，特别是在政府和能源部门，应该审计面向Web的应用程序以查找ASPX Web Shells，并监控未经授权的SoftEther VPN、yuze或VNT安装。网络防御者应该仔细审查向不熟悉的IP地址的出站连接，特别是那些涉及`curl`或通过HTTP进行文件下载的。部署能够识别进程伪装的端点检测和响应（EDR）解决方案——例如重命名为模仿VMware可执行文件或XDR代理的隧道工具——可以帮助早期检测CL-STA-1062入侵。Unit 42指出，Palo Alto Networks的客户通过Cortex XDR、XSIAM、Advanced WildFire、Advanced URL Filtering和Advanced DNS Security受到保护。
+
+## 参考资料
+
+- [CL-STA-1062 Targets Southeast Asian Governments and Critical Infrastructure — Unit 42](https://unit42.paloaltonetworks.com/cl-sta-1062-tinyrct-backdoor/)

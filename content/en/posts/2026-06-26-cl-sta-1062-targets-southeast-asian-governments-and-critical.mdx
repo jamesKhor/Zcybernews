@@ -1,0 +1,81 @@
+---
+title: CL-STA-1062 Targets Southeast Asian Governments and Critical
+slug: 2026-06-26-cl-sta-1062-targets-southeast-asian-governments-and-critical
+date: '2026-06-26'
+excerpt: >-
+  Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast
+  Asian government and energy entities in 2025 using web shells, tunneling
+  tools, and a new TinyRCT...
+category: malware
+tags:
+  - cl-sta-1062
+  - tinyrct
+  - southeast-asia
+  - espionage
+  - backdoor
+  - unit-42
+  - web-shells
+  - critical-infrastructure
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/cl-sta-1062-tinyrct-backdoor/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-06-26-cl-sta-1062-targets-southeast-asian-governments-and-critical
+cluster_key: 'topic:clsta1062-targets-southeast-asian-governments'
+source_count: 1
+seo_query_target: CL-STA-1062 Targets Southeast Asian Governments and Critical Infrastructure
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises a detailed technical analysis of CL-STA-1062's campaign
+  against Southeast Asian government and energy targets, including the new
+  TinyRCT backdoor.
+seo_meta_promise: >-
+  The meta description promises a concrete fact: the group compromised at least
+  10 entities in 2025 using specific tools and a new backdoor.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - backdoor
+  - espionage
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Map of Southeast Asia with highlighted government and energy sector icons,
+  representing CL-STA-1062 targeting
+severity: high
+threat_actor: CL-STA-1062
+threat_actor_origin: China
+affected_sectors:
+  - government
+  - energy
+affected_regions:
+  - Southeast Asia
+publish_tier: public
+---
+## Executive Summary
+
+A Chinese-speaking threat actor tracked as CL-STA-1062 has been systematically compromising government entities and critical energy infrastructure across Southeast Asia throughout 2025, according to a detailed report published June 25 by Palo Alto Networks' Unit 42. The group, active since at least March 2022, breached at least ten organizations between October and December 2025 alone, deploying a hybrid toolkit that blends open-source tunneling tools with a custom, previously undocumented backdoor called TinyRCT. Defenders in the region should prioritize monitoring for ASPX web shells, SoftEther VPN deployments disguised as legitimate executables, and outbound connections to attacker-controlled infrastructure.
+
+## Technical Analysis
+
+Unit 42 assesses with high confidence that CL-STA-1062 is the same cluster tracked by Cisco Talos as UAT-7237, which was previously reported for campaigns against web hosting infrastructure in Taiwan in mid-2025. The group's operations extend across East Asia, indicating a sustained regional espionage strategy.
+
+The attack chain typically begins with exploitation of web applications to deploy ASPX web shells. These shells serve as the primary mechanism for executing arbitrary commands, dropping additional tooling, and conducting initial reconnaissance. Unit 42 observed attackers using `curl` to send system enumeration results directly to actor-controlled IP addresses.
+
+From this foothold, the attackers deploy a variety of tunneling tools for command and control (C2) and data exfiltration, including SoftEther VPN, yuze, and VNT. These tools are often disguised as legitimate system files, such as VMware executables or XDR agents. In one observed intrusion, the attackers used a web shell to extract a password-protected RAR archive containing their toolset.
+
+The group's custom backdoor, TinyRCT, represents a significant capability addition. Its features include arbitrary command execution, file enumeration and exfiltration, screen capture, and a self-destruct mechanism. Unit 42 did not disclose the full command set or C2 protocol in the public report, but the backdoor's bespoke nature suggests development tailored to evade signature-based detection.
+
+In September 2025, Unit 42 discovered that CL-STA-1062 had compromised a Southeast Asian government entity by deploying web shells and exfiltrating database information from an MSSQL server. The attackers also conducted network reconnaissance against a separate government entity in the same country, suggesting lateral movement planning. In one case, the attackers staged and exfiltrated an entire directory of web server source code.
+
+Between October and December 2025, Unit 42 observed the likely compromise of at least ten different organizations in Southeast Asia. Since mid-2025, the group has focused on critical energy infrastructure. Unit 42 identified that a critical infrastructure entity had been under attack for several months, with activity covering the entire attack lifecycle from initial access to data exfiltration. The following month, two state-owned critical energy infrastructure entities in the same Southeast Asian country were also compromised.
+
+Unit 42 observed attackers scanning these entities for vulnerabilities, followed by outbound requests from infected networks connecting to attacker-controlled infrastructure. These requests resulted in the victim networks downloading malicious payloads including SoftEther VPN components and RAR archives containing the group's tools.
+
+## Mitigations & Recommendations
+
+Organizations in Southeast Asia, particularly in government and energy sectors, should audit web-facing applications for ASPX web shells and monitor for unauthorized SoftEther VPN, yuze, or VNT installations. Network defenders should scrutinize outbound connections to unfamiliar IP addresses, especially those involving `curl` or file downloads over HTTP. Deploying endpoint detection and response (EDR) solutions capable of identifying process masquerading — such as tunneling tools renamed to mimic VMware executables or XDR agents — can help detect CL-STA-1062 intrusions early. Unit 42 notes that Palo Alto Networks customers are protected through Cortex XDR, XSIAM, Advanced WildFire, Advanced URL Filtering, and Advanced DNS Security.
+
+## References
+
+- [CL-STA-1062 Targets Southeast Asian Governments and Critical Infrastructure — Unit 42](https://unit42.paloaltonetworks.com/cl-sta-1062-tinyrct-backdoor/)
