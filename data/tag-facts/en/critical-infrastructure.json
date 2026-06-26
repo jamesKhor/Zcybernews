@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 23,
+  "count": 24,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-11"
+    "latest": "2026-06-25"
   },
   "top_actors": [
     "APT33",
@@ -22,7 +22,7 @@
     "critical infrastructure",
     "critical-infrastructure",
     "utilities",
-    "manufacturing"
+    "government"
   ],
   "top_regions": [
     "United states",
@@ -38,9 +38,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Mexico's 2025–2030 National Cybersecurity Plan targets ransomware and organized crime, facing a critical test during the 2026 FIFA World Cup amid a history of high-profile...",
     "Mackay Sugar, Australia's second-largest sugar producer, shut down Farleigh and Racecourse mills after a cyberattack halted harvesting in Queensland's Mackay region during crush...",
-    "AI models produce confident but incorrect outputs that have led to misconfigured firewalls and pipeline valve errors, researchers warn.",
-    "A 23-year-old student used SDR gear to clone TETRA radio parameters, sending a 'General Alarm' signal that halted 4 THSR trains for 48 minutes."
+    "AI models produce confident but incorrect outputs that have led to misconfigured firewalls and pipeline valve errors, researchers warn."
   ],
-  "sources_hash": "ea2d9ef82190ca88"
+  "sources_hash": "2d5670933fc09b1c"
 }

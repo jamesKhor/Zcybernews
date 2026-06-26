@@ -1,0 +1,10 @@
+{
+  "tag": "spyware",
+  "locale": "zh",
+  "intro": "政府、公民社会、新闻及法律行业成为2026年4月23日至6月25日期间ZCyberNews追踪的一系列间谍软件活动的主要目标。五起已报告事件中包括两起高严重性和一起中等严重性案例，影响范围覆盖阿塞拜疆、保加利亚、捷克共和国、丹麦和爱沙尼亚。在这些行动中观察到威胁行为者Commercial Surveillance Vendors和CrystalX。现有数据中未提供具体的CVE标识符。",
+  "sources_hash": "cad34e0389900ff8",
+  "source_intro_hash": "172a55e023a6bf1d",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-06-26T04:32:46.158Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

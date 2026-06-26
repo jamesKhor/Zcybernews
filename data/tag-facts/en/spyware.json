@@ -1,0 +1,37 @@
+{
+  "tag": "spyware",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-23",
+    "latest": "2026-06-25"
+  },
+  "top_actors": [
+    "Commercial Surveillance Vendors",
+    "CrystalX"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "civil society",
+    "journalism",
+    "legal"
+  ],
+  "top_regions": [
+    "Azerbaijan",
+    "Bulgaria",
+    "Czech republic",
+    "Denmark",
+    "Estonia"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "A spyware sample prepends fake nuclear and biological weapons policy text in a JavaScript comment to trigger AI refusal behavior before LLM-based scanners reach the real payload.",
+    "Human Rights Watch report documents EU surveillance tech sales to over two dozen nations with poor human rights records, citing Bulgaria as a top exporter.",
+    "Kaspersky details CrystalX RAT, a MaaS malware with spyware, credential theft, and prankware features targeting Windows users globally since mid-2025."
+  ],
+  "sources_hash": "053186ef63ba1130"
+}

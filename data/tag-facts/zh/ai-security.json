@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 62,
+  "count": 63,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-16"
+    "latest": "2026-06-25"
   },
   "top_actors": [
     "Claude Mythos",
@@ -52,9 +52,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "一个间谍软件样本在JavaScript注释中预先添加了伪造的核和生物武器政策文本，以触发AI拒绝行为，然后基于LLM的扫描器才能到达真正的有效载荷。",
     "AI代理现在自主发现并利用不为人知漏洞，同时AI生成的代码使漏洞泛滥成灾。防御者必须适应代理规模的威胁。",
-    "Open WebUI 修复了 CVE-2026-45314（SVG XSS）、CVE-2026-45303（iframe脚本注入）和 CVE-2026-44567（待定角色认证绕过）——全部在自托管的AI平台上。",
-    "AI模型产生自信但错误的输出，导致防火墙配置错误和管道阀门错误，研究人员警告。"
+    "Open WebUI 修复了 CVE-2026-45314（SVG XSS）、CVE-2026-45303（iframe脚本注入）和 CVE-2026-44567（待定角色认证绕过）——全部在自托管的AI平台上。"
   ],
-  "sources_hash": "f0191b93b4ababee"
+  "sources_hash": "483e086108570323"
 }

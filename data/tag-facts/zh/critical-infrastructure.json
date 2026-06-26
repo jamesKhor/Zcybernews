@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "count": 22,
+  "count": 23,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-11"
+    "latest": "2026-06-25"
   },
   "top_actors": [
     "APT33",
@@ -22,7 +22,7 @@
     "critical infrastructure",
     "critical-infrastructure",
     "utilities",
-    "manufacturing"
+    "government"
   ],
   "top_regions": [
     "United states",
@@ -38,9 +38,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "墨西哥的2025-2030国家网络安全计划针对勒索软件和有组织犯罪，在2026年FIFA世界杯期间面临严峻考验，同时有着高调历史的...",
     "澳大利亚第二大糖生产商Mackay Sugar，在网络攻击导致昆士兰州Mackay地区收割停止后，关闭了Farleigh和Racecourse糖厂...",
-    "AI模型产生自信但错误的输出，导致防火墙配置错误和管道阀门错误，研究人员警告。",
-    "一名23岁的学生使用SDR设备克隆TETRA无线电参数，发送了一个'General Alarm'信号，导致4列THSR列车停运48分钟。"
+    "AI模型产生自信但错误的输出，导致防火墙配置错误和管道阀门错误，研究人员警告。"
   ],
-  "sources_hash": "b747e5c60563eabd"
+  "sources_hash": "fb6b1c0819b53b65"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "prompt-injection",
   "locale": "zh",
-  "intro": "本档案收录了 6 篇带有「prompt-injection」标签的文章，发布时间从2026年4月15日至2026年4月30日。其中包含1 篇严重、3 篇高危、1 篇中危、1 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "924c5ed345ef2447",
-  "source_intro_hash": "109052466384e3ea",
+  "intro": "本档案收录了 7 篇带有「prompt-injection」标签的文章，发布时间从2026年4月15日至2026年6月25日。其中包含1 篇严重、3 篇高危、1 篇中危、1 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "fe70a022d20b5b87",
+  "source_intro_hash": "7a2a1b7572d64a07",
   "model": "template:sparse",
-  "generated_at": "2026-05-18T10:10:19.640Z",
+  "generated_at": "2026-06-26T04:32:40.326Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

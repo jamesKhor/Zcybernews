@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 53,
+  "count": 54,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-24"
+    "latest": "2026-06-25"
   },
   "top_actors": [
     "The Gentlemen",
@@ -31,11 +31,11 @@
     }
   ],
   "top_sectors": [
-    "multiple",
     "healthcare",
+    "multiple",
     "manufacturing",
     "education",
-    "technology"
+    "financial services"
   ],
   "top_regions": [
     "Global",
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "Mexico's 2025–2030 National Cybersecurity Plan targets ransomware and organized crime, facing a critical test during the 2026 FIFA World Cup amid a history of high-profile...",
     "Indian auto giant Bajaj Auto disclosed a ransomware incident on June 24, 2026, impacting operations and its tech subsidiary.",
-    "Great Marlow School in Buckinghamshire sent 1,428 pupils home for a second day after a cybersecurity incident; only GCSE and A-Level exam takers attended.",
-    "Nitrogen ransomware gang claims 8TB of stolen data from Foxconn's North American factories, including technical files from major tech clients."
+    "Great Marlow School in Buckinghamshire sent 1,428 pupils home for a second day after a cybersecurity incident; only GCSE and A-Level exam takers attended."
   ],
-  "sources_hash": "36bdeaa1a4e08118"
+  "sources_hash": "a148e89da1546824"
 }

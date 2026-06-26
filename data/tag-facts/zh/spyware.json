@@ -1,0 +1,37 @@
+{
+  "tag": "spyware",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-23",
+    "latest": "2026-06-25"
+  },
+  "top_actors": [
+    "Commercial Surveillance Vendors",
+    "CrystalX"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "civil society",
+    "journalism",
+    "legal"
+  ],
+  "top_regions": [
+    "Azerbaijan",
+    "Bulgaria",
+    "Czech republic",
+    "Denmark",
+    "Estonia"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "一个间谍软件样本在JavaScript注释中预先添加了伪造的核和生物武器政策文本，以触发AI拒绝行为，然后基于LLM的扫描器才能到达真正的有效载荷。",
+    "人权观察报告记录欧盟监控技术销售给超过两打人权记录不佳的国家，引用保加利亚作为顶级出口国。",
+    "卡巴斯基详细描述了 CrystalX RAT，这是一种自 2025 年中以来针对全球 Windows 用户的 MaaS 恶意软件，具有间谍软件、凭证盗窃和恶作剧软件功能。"
+  ],
+  "sources_hash": "cad34e0389900ff8"
+}

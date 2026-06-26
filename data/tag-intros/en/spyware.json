@@ -1,0 +1,9 @@
+{
+  "tag": "spyware",
+  "locale": "en",
+  "intro": "Government, civil society, journalism, and legal sectors were the primary targets in a series of spyware campaigns tracked by ZCyberNews between April 23 and June 25, 2026. The five reported incidents, which included two high-severity and one medium-severity case, affected regions spanning Azerbaijan, Bulgaria, the Czech Republic, Denmark, and Estonia. Threat actors Commercial Surveillance Vendors and CrystalX were observed in these operations. No specific CVE identifiers were provided in the available data.",
+  "sources_hash": "053186ef63ba1130",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-06-26T04:32:34.019Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

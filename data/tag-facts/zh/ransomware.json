@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 52,
+  "count": 53,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-24"
+    "latest": "2026-06-25"
   },
   "top_actors": [
     "The Gentlemen",
@@ -31,11 +31,11 @@
     }
   ],
   "top_sectors": [
-    "multiple",
     "healthcare",
+    "multiple",
     "manufacturing",
-    "technology",
-    "critical infrastructure"
+    "financial services",
+    "technology"
   ],
   "top_regions": [
     "Global",
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "墨西哥的2025-2030国家网络安全计划针对勒索软件和有组织犯罪，在2026年FIFA世界杯期间面临严峻考验，同时有着高调历史的...",
     "印度汽车巨头Bajaj Auto于2026年6月24日披露了一起勒索软件事件，影响了运营及其技术子公司。",
-    "白金汉郡的Great Marlow School在一次网络安全事件后，第二天让1,428名学生回家；只有参加GCSE和A-Level考试的学生出席。",
-    "Nitrogen 勒索软件团伙声称从富士康北美工厂窃取了8TB的数据，包括来自主要技术客户技术文件。"
+    "白金汉郡的Great Marlow School在一次网络安全事件后，第二天让1,428名学生回家；只有参加GCSE和A-Level考试的学生出席。"
   ],
-  "sources_hash": "b091a2450879d58d"
+  "sources_hash": "9b1807c34ea14440"
 }

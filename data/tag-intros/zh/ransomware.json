@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "2026年4月至6月期间，ZCyberNews共发布53篇关于勒索软件的文章，其中The Gentlemen、LockBit和ShinyHunters是最常被观察到的威胁行为体。被利用的关键漏洞包括CVE-2026-1731（CVSS 9.8）、CVE-2026-34197（CVSS 8.8）、CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。医疗、制造、教育和技术行业受到严重影响，相关报道覆盖北美、美国、欧洲及土耳其。报道内容涵盖40起高严重性事件、6起严重事件、1起中等严重性事件和2起信息性事件。",
-  "sources_hash": "b091a2450879d58d",
-  "source_intro_hash": "766750398b685ed3",
+  "intro": "2026年4月至6月期间，ZCyberNews共报道了54篇勒索软件相关文章，其中The Gentlemen、LockBit和ShinyHunters是最活跃的威胁行为体。包括CVE-2026-1731（CVSS 9.8）、CVE-2026-34197、CVE-2024-55591、CVE-2025-32433和CVE-2025-33073在内的关键漏洞被频繁利用。医疗、制造、教育和金融服务行业遭受了重大攻击，影响波及全球，尤其在北美、美国、欧洲和土耳其。事件严重程度分布为：40起高危、6起严重、1起中等和2起信息性事件。",
+  "sources_hash": "9b1807c34ea14440",
+  "source_intro_hash": "c381efa1440daaf2",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-25T04:29:14.045Z",
+  "generated_at": "2026-06-26T04:32:43.205Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
