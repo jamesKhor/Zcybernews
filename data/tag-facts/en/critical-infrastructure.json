@@ -1,15 +1,15 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 24,
+  "count": 25,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-25"
+    "latest": "2026-06-26"
   },
   "top_actors": [
     "APT33",
-    "CyberAv3ngers",
-    "Interlock"
+    "CL-STA-1062",
+    "CyberAv3ngers"
   ],
   "top_cves": [
     {
@@ -21,8 +21,8 @@
     "energy",
     "critical infrastructure",
     "critical-infrastructure",
-    "utilities",
-    "government"
+    "government",
+    "utilities"
   ],
   "top_regions": [
     "United states",
@@ -32,15 +32,15 @@
     "Asia-pacific"
   ],
   "severity_mix": {
-    "high": 14,
+    "high": 15,
     "critical": 3,
     "informational": 3,
     "medium": 1
   },
   "recent_excerpts": [
+    "Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast Asian government and energy entities in 2025 using web shells, tunneling tools, and a new TinyRCT...",
     "Mexico's 2025–2030 National Cybersecurity Plan targets ransomware and organized crime, facing a critical test during the 2026 FIFA World Cup amid a history of high-profile...",
-    "Mackay Sugar, Australia's second-largest sugar producer, shut down Farleigh and Racecourse mills after a cyberattack halted harvesting in Queensland's Mackay region during crush...",
-    "AI models produce confident but incorrect outputs that have led to misconfigured firewalls and pipeline valve errors, researchers warn."
+    "Mackay Sugar, Australia's second-largest sugar producer, shut down Farleigh and Racecourse mills after a cyberattack halted harvesting in Queensland's Mackay region during crush..."
   ],
-  "sources_hash": "2d5670933fc09b1c"
+  "sources_hash": "73298b28ecfff9dd"
 }

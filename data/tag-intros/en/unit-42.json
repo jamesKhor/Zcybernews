@@ -1,9 +1,9 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "intro": "This archive collects 13 articles tagged `unit-42` published between April 22, 2026 and June 11, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Gremlin Stealer, LockBit, and TeamPCP, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize technology, enterprise, and software development across Global, Central america, and North america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, and 10 high reports.",
-  "sources_hash": "40b7150691cb411a",
-  "model": "template:fallback",
-  "generated_at": "2026-06-12T04:34:44.532Z",
+  "intro": "From 14 articles published between April 22 and June 26, 2026, ZCyberNews coverage of Unit 42 highlights 11 high-severity and one critical incident. Key threat actors observed include CL-STA-1062, Gremlin Stealer, and LockBit. The technology, enterprise, software development, energy, and financial services sectors were most affected, with reported impacts spanning Global, Central America, North America, South America, and Southeast Asia.",
+  "sources_hash": "653db81da728aeda",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-06-27T04:25:10.104Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

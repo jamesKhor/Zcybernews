@@ -1,38 +1,39 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-06-11"
+    "latest": "2026-06-26"
   },
   "top_actors": [
+    "CL-STA-1062",
     "Gremlin Stealer",
-    "LockBit",
-    "TeamPCP"
+    "LockBit"
   ],
   "top_cves": [],
   "top_sectors": [
     "technology",
     "enterprise",
     "software development",
-    "financial services",
-    "healthcare"
+    "energy",
+    "financial services"
   ],
   "top_regions": [
     "Global",
     "Central america",
     "North america",
-    "South america"
+    "South america",
+    "Southeast asia"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的 TinyRCT...",
     "Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能...",
-    "Unit 42 详细描述了一种新的 Gremlin stealer 变种，使用 XOR 加密的资源部分，加密剪贴器，WebSocket 会话劫持，以及一个商业打包器，带有指令...",
-    "West Pharmaceutical Services 在 5 月 4 日遭受勒索软件攻击并发生数据泄露后，全球系统下线。Unit 42 正在调查；可能已支付赎金。"
+    "Unit 42 详细描述了一种新的 Gremlin stealer 变种，使用 XOR 加密的资源部分，加密剪贴器，WebSocket 会话劫持，以及一个商业打包器，带有指令..."
   ],
-  "sources_hash": "ec7d38b2469d11ef"
+  "sources_hash": "4affce541a85e9a5"
 }

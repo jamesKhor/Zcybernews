@@ -1,15 +1,15 @@
 {
   "tag": "espionage",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-16"
+    "latest": "2026-06-26"
   },
   "top_actors": [
     "APT28 (Fancy Bear)",
     "APT37",
-    "Deep#Door"
+    "CL-STA-1062"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -21,19 +21,19 @@
   ],
   "top_regions": [
     "Europe",
-    "South korea",
     "Southeast asia",
+    "South korea",
     "Ukraine",
     "Asia"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的 TinyRCT...",
     "秘密暴雪将Kazuar发展为具有150个配置选项的模块化P2P僵尸网络，绕过AMSI/ETW，并拥有静音模式节点。微软详细介绍了三模块架构。",
-    "ESET 表示 APT37 破坏了 Sqgame 纸牌游戏平台，向 Android 设备传递 BirdCall 后门，窃取延边朝鲜族人的短信、通话记录和私钥。",
-    "Deep#Door Python 后门部署持久的 Windows 植入程序进行间谍活动 — 使用加密的 C2 通道、文件外泄和远程 shell。没有可用的补丁。"
+    "ESET 表示 APT37 破坏了 Sqgame 纸牌游戏平台，向 Android 设备传递 BirdCall 后门，窃取延边朝鲜族人的短信、通话记录和私钥。"
   ],
-  "sources_hash": "b1be194e67c85946"
+  "sources_hash": "02a519be1bb58773"
 }

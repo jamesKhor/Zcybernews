@@ -1,10 +1,10 @@
 {
   "tag": "espionage",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月12日至2026年5月16日期间发布的12篇标记为`espionage`的文章，为安全团队提供了该话题在ZCyberNews报道中出现的聚焦视角。观察到的行为体引用包括APT28 (Fancy Bear)、APT37和Deep#Door，仅在底层文章元数据支持归因时呈现。受影响范围信号强调欧洲、韩国及东南亚地区的政府、国防与医疗领域，帮助读者在不超出档案数据添加论断的前提下比较暴露模式。严重程度覆盖包括2篇严重和10篇高危报告。",
-  "sources_hash": "b1be194e67c85946",
-  "source_intro_hash": "eb28d895835dc1f6",
+  "intro": "2026年4月至6月期间，ZCyberNews报道了13起以间谍活动为重点的事件，其中APT28 (Fancy Bear)、APT37和CL-STA-1062成为最主要的威胁行为体。这些攻击活动主要针对欧洲、东南亚、韩国、乌克兰及亚洲地区的政府、国防、医疗、技术和银行行业。严重程度分布包括11起高严重性事件和2起严重性事件，反映出针对全球战略利益的持续网络间谍活动。",
+  "sources_hash": "02a519be1bb58773",
+  "source_intro_hash": "088281409146fa8f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:08:27.829Z",
+  "generated_at": "2026-06-27T04:25:18.693Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

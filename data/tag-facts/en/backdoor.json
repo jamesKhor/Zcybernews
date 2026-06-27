@@ -1,15 +1,15 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-14"
+    "latest": "2026-06-26"
   },
   "top_actors": [
     "Silver Fox",
     "APT41",
-    "Harvester"
+    "CL-STA-1062"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,13 @@
     "South korea"
   ],
   "severity_mix": {
-    "critical": 2,
-    "high": 11
+    "high": 12,
+    "critical": 2
   },
   "recent_excerpts": [
+    "Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast Asian government and energy entities in 2025 using web shells, tunneling tools, and a new TinyRCT...",
     "Socket and StepSecurity found backdoored node-ipc versions 9.1.6, 9.2.3, and 12.0.1 exfiltrate SSH keys, AWS credentials, and env files from developer machines.",
-    "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky.",
-    "Unit 42 traces the Axios supply chain compromise from initial dropper through forensic cleanup — affecting multiple downstream consumers. Full attack chain mapped."
+    "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky."
   ],
-  "sources_hash": "725024b46ca83f5f"
+  "sources_hash": "f8ffe7460dd91bd0"
 }

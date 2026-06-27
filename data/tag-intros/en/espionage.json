@@ -1,9 +1,9 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "intro": "This archive collects 12 articles tagged `espionage` published between April 12, 2026 and May 16, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include APT28 (Fancy Bear), APT37, and Deep#Door, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize government, defense, and healthcare across Europe, South korea, and Southeast asia, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 critical, and 10 high reports.",
-  "sources_hash": "d11e83b8c525302f",
-  "model": "template:fallback",
-  "generated_at": "2026-05-18T10:01:15.227Z",
+  "intro": "Between April and June 2026, ZCyberNews covered 13 espionage-focused incidents, with APT28 (Fancy Bear), APT37, and CL-STA-1062 emerging as the top threat actors. These campaigns primarily targeted government, defense, healthcare, technology, and banking sectors across Europe, Southeast Asia, South Korea, Ukraine, and Asia. The severity mix included 11 high-severity and 2 critical-severity events, reflecting sustained cyber espionage activity against strategic global interests.",
+  "sources_hash": "897205a5664f9ff8",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-06-27T04:25:11.973Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

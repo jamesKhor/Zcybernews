@@ -1,15 +1,15 @@
 {
   "tag": "backdoor",
   "locale": "zh",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-14"
+    "latest": "2026-06-26"
   },
   "top_actors": [
     "Silver Fox",
     "APT41",
-    "Harvester"
+    "CL-STA-1062"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,13 @@
     "South korea"
   ],
   "severity_mix": {
-    "critical": 1,
-    "high": 11
+    "high": 12,
+    "critical": 1
   },
   "recent_excerpts": [
+    "说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的 TinyRCT...",
     "Socket 和 StepSecurity 发现后门化的 node-ipc 版本 9.1.6、9.2.3 和 12.0.1 从开发者机器中窃取 SSH 密钥、AWS 凭证和 env 文件。",
-    "据卡巴斯基称，Silver Fox 团伙冒充税务机关，向俄罗斯和印度的组织分发 ValleyRAT 和新的 ABCDoor 后门。",
-    "Unit 42 追踪 Axios 供应链入侵，从最初的投放者到取证清理 —— 影响多个下游消费者。完整的攻击链已映射。"
+    "据卡巴斯基称，Silver Fox 团伙冒充税务机关，向俄罗斯和印度的组织分发 ValleyRAT 和新的 ABCDoor 后门。"
   ],
-  "sources_hash": "b0589f5e13990c8d"
+  "sources_hash": "007f1f5678b39f33"
 }

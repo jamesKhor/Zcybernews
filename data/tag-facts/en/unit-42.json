@@ -1,38 +1,39 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-06-11"
+    "latest": "2026-06-26"
   },
   "top_actors": [
+    "CL-STA-1062",
     "Gremlin Stealer",
-    "LockBit",
-    "TeamPCP"
+    "LockBit"
   ],
   "top_cves": [],
   "top_sectors": [
     "technology",
     "enterprise",
     "software development",
-    "financial services",
-    "healthcare"
+    "energy",
+    "financial services"
   ],
   "top_regions": [
     "Global",
     "Central america",
     "North america",
-    "South america"
+    "South america",
+    "Southeast asia"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast Asian government and energy entities in 2025 using web shells, tunneling tools, and a new TinyRCT...",
     "Unit 42's Behavioral Integrity Verification scanned 49,943 OpenClaw skills and found 80% deviate from declared behavior, with multi-stage attack chains enabling credential theft...",
-    "Unit 42 details a new Gremlin stealer variant using XOR-encrypted resource sections, crypto clipper, WebSocket session hijacking, and a commercial packer with instruction...",
-    "West Pharmaceutical Services took systems offline globally after a May 4 ransomware attack with data exfiltration. Unit 42 is investigating; ransom may have been paid."
+    "Unit 42 details a new Gremlin stealer variant using XOR-encrypted resource sections, crypto clipper, WebSocket session hijacking, and a commercial packer with instruction..."
   ],
-  "sources_hash": "40b7150691cb411a"
+  "sources_hash": "653db81da728aeda"
 }

@@ -1,15 +1,15 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-16"
+    "latest": "2026-06-26"
   },
   "top_actors": [
     "APT28 (Fancy Bear)",
     "APT37",
-    "Deep#Door"
+    "CL-STA-1062"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -21,19 +21,19 @@
   ],
   "top_regions": [
     "Europe",
-    "South korea",
     "Southeast asia",
+    "South korea",
     "Ukraine",
     "Asia"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "critical": 2
   },
   "recent_excerpts": [
+    "Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast Asian government and energy entities in 2025 using web shells, tunneling tools, and a new TinyRCT...",
     "Secret Blizzard evolved Kazuar into a modular P2P botnet with 150 config options, AMSI/ETW bypass, and silent-mode nodes. Microsoft details the three-module architecture.",
-    "ESET says APT37 compromised Sqgame card game platform to deliver BirdCall backdoor to Android devices, stealing SMS, call logs, and private keys from ethnic Koreans in Yanbian.",
-    "Deep#Door Python backdoor deploys persistent Windows implant for espionage — uses encrypted C2 channels, file exfiltration, and remote shell. No patch available."
+    "ESET says APT37 compromised Sqgame card game platform to deliver BirdCall backdoor to Android devices, stealing SMS, call logs, and private keys from ethnic Koreans in Yanbian."
   ],
-  "sources_hash": "d11e83b8c525302f"
+  "sources_hash": "897205a5664f9ff8"
 }
