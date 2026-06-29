@@ -1,10 +1,10 @@
 {
   "tag": "remote-code-execution",
   "locale": "en",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-06-01"
+    "latest": "2026-06-28"
   },
   "top_actors": [],
   "top_cves": [
@@ -33,8 +33,8 @@
     "technology",
     "enterprise",
     "government",
-    "telecommunications",
-    "software development"
+    "software development",
+    "telecommunications"
   ],
   "top_regions": [
     "Global",
@@ -42,13 +42,13 @@
     "North america"
   ],
   "severity_mix": {
-    "critical": 11,
+    "critical": 12,
     "high": 7
   },
   "recent_excerpts": [
+    "CVE-2026-45408 (CVSS 9.0) in Dokku <0.38.2 lets authenticated users inject shell commands via crafted app names in git push operations. No public exploit yet.",
     "CVE-2026-41089 is a critical Windows Netlogon RCE now reported as exploited in the wild, with Microsoft CNA scoring it CVSS 9.8.",
-    "CVE-2026-8836 is a CVSS 10.0 stack-based buffer overflow in lwIP up to 2.2.1's SNMPv3 USM handler. Remote unauthenticated attackers can trigger code execution via crafted...",
-    "CISA adds CVE-2024-57728 to Known Exploited Vulnerabilities: SimpleHelp path traversal via zip slip allows admin users to upload arbitrary files and execute code. Due May 8, 2026."
+    "CVE-2026-8836 is a CVSS 10.0 stack-based buffer overflow in lwIP up to 2.2.1's SNMPv3 USM handler. Remote unauthenticated attackers can trigger code execution via crafted..."
   ],
-  "sources_hash": "a7b54a230a692d89"
+  "sources_hash": "e65f9dec28c0df98"
 }

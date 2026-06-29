@@ -1,10 +1,10 @@
 {
   "tag": "remote-code-execution",
   "locale": "zh",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-06-01"
+    "latest": "2026-06-28"
   },
   "top_actors": [],
   "top_cves": [
@@ -33,8 +33,8 @@
     "technology",
     "enterprise",
     "government",
-    "telecommunications",
-    "software development"
+    "software development",
+    "telecommunications"
   ],
   "top_regions": [
     "Global",
@@ -42,13 +42,13 @@
     "North america"
   ],
   "severity_mix": {
-    "critical": 11,
+    "critical": 12,
     "high": 7
   },
   "recent_excerpts": [
+    "CVE-2026-45408 (CVSS 9.0) 在 Dokku <0.38.2 中允许经过身份验证的用户通过在 git push 操作中使用精心制作的应用程序名称注入 shell 命令。目前还没有公开的漏洞利用代码。",
     "CVE-2026-41089 是 Windows Netlogon 中的关键远程代码执行漏洞，Microsoft CNA 给出 CVSS 9.8，CCB 已确认其正在被在野利用。",
-    "CVE-2026-8836 是一个 CVSS 10.0 基于栈的缓冲区溢出漏洞，存在于 lwIP 2.2.1 及之前的 SNMPv3 USM 处理器中。远程未经身份验证的攻击者可以通过精心构造的...",
-    "CISA 将 CVE-2024-57728 添加到已知被利用漏洞列表：通过 zip slip 的 SimpleHelp 路径遍历允许管理员用户上传任意文件并执行代码。截止日期为 2026 年 5 月 8 日。"
+    "CVE-2026-8836 是一个 CVSS 10.0 基于栈的缓冲区溢出漏洞，存在于 lwIP 2.2.1 及之前的 SNMPv3 USM 处理器中。远程未经身份验证的攻击者可以通过精心构造的..."
   ],
-  "sources_hash": "e12c1a62875d661b"
+  "sources_hash": "3a46cd79c1ee8c52"
 }
