@@ -1,0 +1,80 @@
+---
+title: 'Kaspersky: 60% of Incidents Missed by Automated Security Tools'
+slug: 2026-07-02-kaspersky-60-of-incidents-missed-by-automated-security-tools
+date: '2026-07-02'
+excerpt: >-
+  Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked
+  high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web
+  shells hid in backups.
+category: industry
+tags:
+  - compromise-assessment
+  - incident-response
+  - kaspersky
+  - threat-detection
+  - living-off-the-land
+language: en
+source_urls:
+  - 'https://securelist.com/compromise-assessment-findings-2025/120542/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-02-kaspersky-60-of-incidents-missed-by-automated-security-tools
+cluster_key: 'topic:missed-incidents-persistent-threats-response'
+source_count: 1
+seo_query_target: compromise assessment findings 2025
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals the key statistics from Kaspersky's 2025 compromise assessment report
+  on missed incidents and detection gaps.
+seo_meta_promise: >-
+  Delivers the concrete numbers from Kaspersky's 2025 compromise assessment
+  report: 60% missed alerts, 30.8% threats over 3 months, 40% web shells in
+  backups.
+target_hub: incident-response
+internal_link_targets:
+  - incident-response
+  - threat-hunting
+  - living-off-the-land
+news_sitemap_eligible: false
+featured_image_alt: >-
+  Bar chart showing percentage of incidents missed by automated security tools
+  from Kaspersky 2025 compromise assessment report
+affected_sectors:
+  - government
+  - education
+  - financial services
+affected_regions:
+  - META
+  - APAC
+  - CIS
+publish_tier: public
+---
+## Executive Summary
+
+Organizations relying solely on automated security tools missed 60% of cyber incidents in their environments, according to Kaspersky's 2025 Compromise Assessment findings published June 30. The report, based on incident response engagements across multiple regions, found that nearly a third of discovered threats had persisted undetected for over three months, with the longest-running compromise going unnoticed for four years.
+
+## Technical Analysis
+
+Kaspersky's Compromise Assessment team analyzed engagements conducted in 2025 across the META (71% of incidents), APAC, and CIS regions. The government sector accounted for 29% of incidents, followed by education (19%) and financial services (17%). The report focuses on "missed incidents" — threats that evaded detection for weeks, months, or years despite deployed security controls.
+
+**Detection gaps dominate.** Of all incidents discovered during assessments, 60% were missed because organizations lacked high-confidence alerts from their monitoring tools. Only 20% of incidents were identified through manual analysis. The remaining 20% were detected through automated means, the report states.
+
+**Persistence correlates with severity.** The data shows a clear relationship between dwell time and incident severity: 30.8% of all discovered incidents had activity spanning more than three months, and 52% of high-severity compromises were only detected after 90 days of going undetected. The longest-running incident — a crypto mining operation on domain controllers — had been active for four years before discovery.
+
+**Backups as blind spots.** Malicious files commonly persist in backup repositories that escape routine scanning. Kaspersky found that 40% of all discovered web shells resided in backups and went unnoticed until a dedicated compromise assessment was performed. These artifacts can be restored into production environments during recovery operations, re-infecting networks after incident response concludes.
+
+**Living-off-the-land dominates.** Threat actors relied on remote management tools and legitimate system binaries (LoLBins) in every engagement that resulted in an incident detection. The three most common detection logic families were credential dumps (12.4% of incidents), specific living-off-the-land tools (11.2%), and specific malware families (11.2%).
+
+**Monitoring maturity matters.** Organizations with continuous monitoring and proactive threat hunting capabilities experienced significantly fewer high-severity incidents. The absence of these practices increased the likelihood of high- and medium-severity incidents to 84–86%. Conversely, high-severity incidents were rare among organizations with in-house malware reverse-engineering capabilities.
+
+**Communication failures.** Nearly a third of compromise assessments revealed communication issues that hampered incident response activities. The report notes that incident response playbooks must be treated as living documents, updated as new artifacts are discovered, to reduce the risk of missing threats.
+
+## Mitigations & Recommendations
+
+Defenders should prioritize proactive compromise assessments rather than waiting for a known incident to trigger investigation. Kaspersky's data shows that organizations requesting assessments after containing a known incident had the highest proportion of high-severity findings, while those conducting regular audits had the lowest.
+
+Specific actions derived from the report: extend scanning coverage to backup repositories and archived data; implement continuous monitoring and threat hunting programs; ensure security tools are configured and tuned to the organization's specific threat landscape; and maintain updated incident response playbooks that incorporate lessons learned from each engagement. Human analyst review of low-confidence alerts remains essential — automation alone is insufficient.
+
+## References
+
+- [Kaspersky Securelist: Missed incidents, persistent threats, and response gaps](https://securelist.com/compromise-assessment-findings-2025/120542/)

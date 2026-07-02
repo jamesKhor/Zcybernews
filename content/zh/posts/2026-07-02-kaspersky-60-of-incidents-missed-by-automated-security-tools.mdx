@@ -1,0 +1,79 @@
+---
+title: 卡巴斯基：60%的事件被自动化安全工具遗漏
+slug: 2026-07-02-kaspersky-60-of-incidents-missed-by-automated-security-tools
+date: '2026-07-02'
+excerpt: >-
+  卡巴斯基 Compromise Assessment 2025
+  发现：60%的事件缺乏高置信度警报；30.8%的威胁持续超过3个月；40%的网络壳隐藏在备份中。
+category: industry
+tags:
+  - compromise-assessment
+  - incident-response
+  - kaspersky
+  - threat-detection
+  - living-off-the-land
+language: zh
+source_urls:
+  - 'https://securelist.com/compromise-assessment-findings-2025/120542/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-02-kaspersky-60-of-incidents-missed-by-automated-security-tools
+cluster_key: 'topic:missed-incidents-persistent-threats-response'
+source_count: 1
+seo_query_target: compromise assessment findings 2025
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals the key statistics from Kaspersky's 2025 compromise assessment report
+  on missed incidents and detection gaps.
+seo_meta_promise: >-
+  Delivers the concrete numbers from Kaspersky's 2025 compromise assessment
+  report: 60% missed alerts, 30.8% threats over 3 months, 40% web shells in
+  backups.
+target_hub: incident-response
+internal_link_targets:
+  - incident-response
+  - threat-hunting
+  - living-off-the-land
+news_sitemap_eligible: false
+featured_image_alt: >-
+  Bar chart showing percentage of incidents missed by automated security tools
+  from Kaspersky 2025 compromise assessment report
+affected_sectors:
+  - government
+  - education
+  - financial services
+affected_regions:
+  - META
+  - APAC
+  - CIS
+publish_tier: public
+---
+## 执行摘要
+
+根据卡巴斯基2025年6月30日发布的《2025年入侵评估》报告，完全依赖自动化安全工具的组织在其环境中错过了60%的网络事件。该报告基于多个地区的事件响应参与，发现近三分之一的发现威胁持续未被检测超过三个月，持续时间最长的入侵在四年后才被发现。
+
+## 技术分析
+
+卡巴斯基的入侵评估团队分析了2025年在META（占事件的71%）、亚太和独联体地区进行的参与。政府部门占事件的29%，其次是教育（19%）和金融服务（17%）。报告重点关注“错过的事件”——尽管部署了安全控制措施，但威胁仍逃避了数周、数月甚至数年的检测。
+
+**检测差距占主导地位。** 在评估期间发现的所有事件中，有60%是因为组织缺乏来自其监控工具的高置信度警报而错过的。只有20%的事件是通过手动分析识别的。报告称，其余20%是通过自动化手段检测到的。
+
+**持续性与严重性相关。** 数据显示了驻留时间和事件严重性之间的明确关系：30.8%的所有发现事件活动持续超过三个月，52%的高严重性入侵在未被检测到90天后才发现。持续时间最长的事件——一个在域控制器上的加密货币挖掘操作——在被发现前已经活跃了四年。
+
+**备份作为盲点。** 恶意文件通常持续存在于备份库中，这些库逃避了常规扫描。卡巴斯基发现，所有发现的网络壳中有40%位于备份中，在进行专门的入侵评估之前未被发现。这些工件可以在恢复操作期间恢复到生产环境中，重新感染网络。
+
+**本地生活占主导地位。** 威胁行为者在每次导致事件检测的参与中都依赖于远程管理工具和合法系统二进制文件（LoLBins）。三个最常见的检测逻辑家族是凭证转储（占事件的12.4%）、特定的本地生活工具（占事件的11.2%）和特定的恶意软件家族（占事件的11.2%）。
+
+**监控成熟度很重要。** 拥有持续监控和主动威胁狩猎能力的组织经历了明显较少的高严重性事件。没有这些实践，高和中严重性事件的可能性增加到84-86%。相反，在拥有内部恶意软件逆向工程能力的组织中，高严重性事件很少见。
+
+**沟通失败。** 近三分之一的入侵评估揭示了阻碍事件响应活动的沟通问题。报告指出，事件响应剧本必须被视为活文档，随着新工件的发现而更新，以减少错过威胁的风险。
+
+## 缓解措施与建议
+
+防御者应该优先进行主动的入侵评估，而不是等待已知事件触发调查。卡巴斯基的数据显示，在控制已知事件后请求评估的组织拥有最高比例的高严重性发现，而那些进行定期审计的组织则最低。
+
+报告中得出的具体行动：将扫描覆盖范围扩展到备份库和归档数据；实施持续监控和威胁狩猎计划；确保安全工具配置并调整到组织特定的威胁格局；并维护更新的事件响应剧本，纳入每次参与的经验教训。对低置信度警报的人工分析师审查仍然至关重要——仅自动化是不够的。
+
+## 参考资料
+
+- [卡巴斯基安全列表：错过的事件、持续的威胁和响应差距](https://securelist.com/compromise-assessment-findings-2025/120542/)
