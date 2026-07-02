@@ -1,10 +1,10 @@
 {
   "tag": "android",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-17"
+    "latest": "2026-07-01"
   },
   "top_actors": [
     "Mirax",
@@ -30,8 +30,8 @@
   "top_sectors": [
     "cryptocurrency",
     "technology",
-    "financial services",
     "consumer",
+    "financial services",
     "consumer electronics"
   ],
   "top_regions": [
@@ -42,15 +42,15 @@
     "France"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "medium": 1,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Check Point Research found a DeepSeek-generated sample using Chrome's File System Access API to encrypt Android photo directories — no native payload or exploit required.",
     "Google Project Zero found a Pixel 10 VPU driver flaw allowing userspace to map arbitrary physical memory, including the kernel image. Exploit required 5 lines of code.",
-    "CVE-2026-8568 (CVSS 3.1) lets attackers bypass Chrome Site Isolation via AI features after renderer compromise; CVE-2026-8566 (CVSS 4.3) targets Android Payments.",
-    "ThreatFabric tracked a TrickMo variant using The Open Network (TON) for C2 and SOCKS5 proxies to pivot into victim networks, targeting banking and crypto users in France, Italy,..."
+    "CVE-2026-8568 (CVSS 3.1) lets attackers bypass Chrome Site Isolation via AI features after renderer compromise; CVE-2026-8566 (CVSS 4.3) targets Android Payments."
   ],
-  "sources_hash": "c9088f56bb1cb02f"
+  "sources_hash": "caf06da3d9e15112"
 }

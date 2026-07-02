@@ -1,10 +1,10 @@
 {
   "tag": "anthropic",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-06-10"
+    "latest": "2026-07-02"
   },
   "top_actors": [
     "Claude Mythos"
@@ -18,7 +18,9 @@
     "ai-development"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "Five eyes",
+    "United states"
   ],
   "severity_mix": {
     "informational": 3,
@@ -27,9 +29,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Anthropic restored global access to Fable 5 after US lifted export controls; Commerce Dept. tested a new safety classifier that blocks the cited jailbreak in 99% of cases.",
     "Rapid7 gains access to Anthropic's Project Glasswing and Claude Mythos Preview to explore frontier AI for defensive security workflows, including vulnerability validation and...",
-    "XBOW benchmarks show Anthropic's Mythos AI is potent for source code audits and reverse engineering, but inconsistent at exploit validation and prone to overstating findings.",
-    "Anthropic released Claude Security, a defensive AI suite to counter autonomous exploit tools like Mythos that weaponize zero-days in minutes. Targets enterprise SOCs."
+    "XBOW benchmarks show Anthropic's Mythos AI is potent for source code audits and reverse engineering, but inconsistent at exploit validation and prone to overstating findings."
   ],
-  "sources_hash": "d6bbc10b9cb046d4"
+  "sources_hash": "bb4ec8555bcbc57a"
 }

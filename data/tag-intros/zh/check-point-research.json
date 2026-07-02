@@ -1,10 +1,10 @@
 {
   "tag": "check-point-research",
   "locale": "zh",
-  "intro": "2026年4月底至5月中旬，ZCyberNews报道了五起与标签check-point-research相关的高危和严重级别事件。观察到的最主要威胁行为体是Handala Hack，此外还有Silver Dragon和The Gentlemen。被利用的关键漏洞包括CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。受影响行业涵盖政府、关键基础设施、软件咨询和电信领域，事件报告范围涉及欧洲、以色列、中东、东南亚和土耳其。",
-  "sources_hash": "e040c70c59470a7c",
-  "source_intro_hash": "9dff11016ea8284d",
+  "intro": "从2026年4月至7月，ZCyberNews在check-point-research栏目下发布了六篇文章，涵盖两个严重等级和四个高严重等级的漏洞。最常被观测到的威胁行为体是Handala Hack，此外还有Silver Dragon和The Gentlemen。关键CVE编号包括CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。受影响行业涵盖政府、消费领域、关键基础设施、移动通信及软件咨询，相关事件报告涉及欧洲、全球、以色列、中东及东南亚地区。",
+  "sources_hash": "3889cfd28c598c6d",
+  "source_intro_hash": "198af260e1a79efe",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:07:30.821Z",
+  "generated_at": "2026-07-02T04:28:15.991Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

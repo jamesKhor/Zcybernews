@@ -1,9 +1,9 @@
 {
   "tag": "check-point-research",
   "locale": "en",
-  "intro": "Between late April and mid-May 2026, ZCyberNews covered five high- and critical-severity incidents tied to the tag check-point-research. The most prominent threat actor observed was Handala Hack, alongside Silver Dragon and The Gentlemen. Key vulnerabilities exploited included CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Affected sectors spanned government, critical infrastructure, software consultancy, and telecommunications, with incidents reported across Europe, Israel, the Middle East, Southeast Asia, and Turkey.",
-  "sources_hash": "91025bee5f111472",
+  "intro": "From April to July 2026, ZCyberNews published six articles under check-point-research, covering two critical and four high-severity vulnerabilities. The most frequently observed threat actor was Handala Hack, alongside Silver Dragon and The Gentlemen. Key CVEs included CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Affected sectors spanned government, consumer, critical infrastructure, mobile, and software consultancy, with incidents reported across Europe, Global, Israel, Middle east, and Southeast asia.",
+  "sources_hash": "4e7d27b9df49e008",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:05:22.408Z",
+  "generated_at": "2026-07-02T04:28:07.257Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

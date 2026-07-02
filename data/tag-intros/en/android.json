@@ -1,9 +1,9 @@
 {
   "tag": "android",
   "locale": "en",
-  "intro": "Mirax, NGate, and TrickMo are the top threat actors in the fifteen articles on Android published between April 12 and May 17, 2026. Key vulnerabilities include CVE-2026-8566, CVE-2026-8568, CVE-2023-4863, and CVE-2025-54957, affecting sectors such as cryptocurrency, technology, and financial services globally, with specific incidents in Europe, Austria, Brazil, and France. The coverage comprises nine high-severity, one medium, three informational, and two critical reports.",
-  "sources_hash": "c9088f56bb1cb02f",
+  "intro": "Mirax, NGate, and TrickMo were the most active threat actors targeting Android devices between April and July 2026, according to 16 articles on the tag. Key vulnerabilities included CVE-2026-8566, CVE-2026-8568, CVE-2023-4863, and CVE-2025-54957, with two rated critical and ten high severity. Affected sectors spanned cryptocurrency, technology, consumer electronics, financial services, and consumer markets, while reported incidents impacted users globally, with specific activity in Europe, Austria, Brazil, and France.",
+  "sources_hash": "caf06da3d9e15112",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:00:20.555Z",
+  "generated_at": "2026-07-02T04:27:59.221Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

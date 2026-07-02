@@ -1,10 +1,10 @@
 {
   "tag": "check-point-research",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-26",
-    "latest": "2026-05-13"
+    "latest": "2026-07-01"
   },
   "top_actors": [
     "Handala Hack",
@@ -24,26 +24,26 @@
   ],
   "top_sectors": [
     "government",
+    "consumer",
     "critical infrastructure",
-    "software consultancy",
-    "telecommunications",
-    "various"
+    "mobile",
+    "software consultancy"
   ],
   "top_regions": [
     "Europe",
+    "Global",
     "Israel",
     "Middle east",
-    "Southeast asia",
-    "Turkey"
+    "Southeast asia"
   ],
   "severity_mix": {
-    "critical": 2,
-    "high": 3
+    "high": 4,
+    "critical": 2
   },
   "recent_excerpts": [
+    "Check Point Research found a DeepSeek-generated sample using Chrome's File System Access API to encrypt Android photo directories — no native payload or exploit required.",
     "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying.",
-    "A leaked backend database from The Gentlemen RaaS operation reveals 9 accounts, admin TOX ID, initial access via Fortinet/Cisco edge flaws, and a 190,000 USD ransom payout.",
-    "Check Point Research tracks Silver Dragon, a Chinese-aligned APT group operationally linked to APT41, targeting government and telecom entities in Southeast Asia and Europe with…"
+    "A leaked backend database from The Gentlemen RaaS operation reveals 9 accounts, admin TOX ID, initial access via Fortinet/Cisco edge flaws, and a 190,000 USD ransom payout."
   ],
-  "sources_hash": "91025bee5f111472"
+  "sources_hash": "4e7d27b9df49e008"
 }

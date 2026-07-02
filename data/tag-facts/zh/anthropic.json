@@ -1,10 +1,10 @@
 {
   "tag": "anthropic",
   "locale": "zh",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-06-10"
+    "latest": "2026-07-02"
   },
   "top_actors": [
     "Claude Mythos"
@@ -18,7 +18,9 @@
     "ai-development"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "Five eyes",
+    "United states"
   ],
   "severity_mix": {
     "informational": 3,
@@ -27,9 +29,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "美国解除出口管制后，Anthropic恢复了对Fable 5的全球访问；商务部测试了一种新的安全分类器，在99%的情况下阻止了引用的越狱。",
     "Rapid7 获得访问 Anthropic 的 Project Glasswing 和 Claude Mythos Preview 的权限，以探索前沿 AI 在防御性安全工作流程中的应用，包括漏洞验证和...",
-    "XBOW 基准测试显示 Anthropic 的 Mythos AI 在源代码审计和逆向工程方面非常强大，但在漏洞验证方面表现不一致，并且容易夸大发现。",
-    "Anthropic 发布了 Claude 安全，一套防御性 AI 工具，用以对抗像 Mythos 这样的自主漏洞工具，它们能在几分钟内武器化零日漏洞。目标是企业 SOC。"
+    "XBOW 基准测试显示 Anthropic 的 Mythos AI 在源代码审计和逆向工程方面非常强大，但在漏洞验证方面表现不一致，并且容易夸大发现。"
   ],
-  "sources_hash": "14559235a4d47417"
+  "sources_hash": "b0581a0859123714"
 }

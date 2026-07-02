@@ -1,10 +1,10 @@
 {
   "tag": "android",
   "locale": "zh",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-17"
+    "latest": "2026-07-01"
   },
   "top_actors": [
     "Mirax",
@@ -30,8 +30,8 @@
   "top_sectors": [
     "cryptocurrency",
     "technology",
-    "financial services",
     "consumer",
+    "financial services",
     "consumer electronics"
   ],
   "top_regions": [
@@ -42,15 +42,15 @@
     "France"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "medium": 1,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Check Point Research 发现一个 DeepSeek 生成的样本使用 Chrome 的文件系统访问 API 加密 Android 照片目录 —— 不需要原生负载或漏洞。",
     "Google Project Zero 发现了一个 Pixel 10 VPU 驱动程序缺陷，允许用户空间映射任意物理内存，包括内核映像。利用需要 5 行代码。",
-    "CVE-2026-8568 (CVSS 3.1) 允许攻击者在渲染器被破坏后通过 AI 功能绕过 Chrome 站点隔离；CVE-2026-8566 (CVSS 4.3) 针对 Android 支付。",
-    "ThreatFabric 追踪到一个 TrickMo 变种，使用 The Open Network (TON) 进行 C2 和 SOCKS5 代理跳板进入受害者网络，目标是法国、意大利的银行和加密货币用户，..."
+    "CVE-2026-8568 (CVSS 3.1) 允许攻击者在渲染器被破坏后通过 AI 功能绕过 Chrome 站点隔离；CVE-2026-8566 (CVSS 4.3) 针对 Android 支付。"
   ],
-  "sources_hash": "62ca7815563fdf10"
+  "sources_hash": "97d8f1178635c6bf"
 }
