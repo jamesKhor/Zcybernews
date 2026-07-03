@@ -1642,5 +1642,17 @@
     "locale": "en",
     "lastError": "word count 49 outside 60-140 (en)",
     "at": "2026-06-27T04:25:08.226Z"
+  },
+  {
+    "tag": "threat-detection",
+    "locale": "en",
+    "lastError": "word count 50 outside 60-140 (en)",
+    "at": "2026-07-03T06:34:13.400Z"
+  },
+  {
+    "tag": "kaspersky",
+    "locale": "en",
+    "lastError": "word count 54 outside 60-140 (en)",
+    "at": "2026-07-03T06:34:19.116Z"
   }
 ]

@@ -1,10 +1,10 @@
 {
   "tag": "living-off-the-land",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-14"
+    "latest": "2026-07-02"
   },
   "top_actors": [
     "GopherWhisper",
@@ -18,22 +18,26 @@
   ],
   "top_sectors": [
     "government",
+    "education",
     "energy",
-    "enterprise"
+    "enterprise",
+    "financial services"
   ],
   "top_regions": [
+    "APAC",
     "Asia",
     "Central america",
-    "South america"
+    "CIS",
+    "META"
   ],
   "severity_mix": {
     "critical": 1,
     "high": 4
   },
   "recent_excerpts": [
+    "Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web shells hid in backups.",
     "Rapid7 dissects an April 2026 intrusion where a fake IT Support Teams message delivered ModeloRAT via Dropbox, leading to privilege escalation, credential theft, and lateral...",
-    "Palo Alto Unit 42 reports TGR-STA-1030 remains active in Central and South America, targeting government and energy sectors with custom malware and living-off-the-land techniques.",
-    "GopherWhisper, a new state-backed APT, targets government entities with a Go-based toolkit abusing Outlook, Slack, and Discord for C2."
+    "Palo Alto Unit 42 reports TGR-STA-1030 remains active in Central and South America, targeting government and energy sectors with custom malware and living-off-the-land techniques."
   ],
-  "sources_hash": "3828f8a745775a44"
+  "sources_hash": "8a1c3010ec657be8"
 }

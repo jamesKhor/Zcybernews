@@ -1,10 +1,10 @@
 {
   "tag": "threat-detection",
   "locale": "zh",
-  "intro": "本档案收录了 10 篇带有「threat-detection」标签的文章，发布时间从2026年4月13日至2026年5月8日。其中包含1 篇严重、1 篇高危、1 篇中危、7 篇信息类报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "dbdadd6ca04970ae",
-  "source_intro_hash": "1827c8823c673605",
-  "model": "template:sparse",
-  "generated_at": "2026-05-18T10:11:06.360Z",
+  "intro": "本档案收录了11篇标记为`threat-detection`的文章，发布日期自2026年4月13日至2026年7月2日，为安全团队提供了该主题在ZCyberNews报道中的集中视角。观察到的行为者引用包括OpenClaw，仅在底层文章元数据支持归因时呈现。受影响范围信号强调亚太、独联体及中东-土耳其-非洲地区的教育、企业和金融服务领域，帮助读者比较暴露模式，而不添加超出档案数据的论断。严重程度覆盖包括1份严重、1份高危、1份中危和7份信息性报告。",
+  "sources_hash": "8baaff5df115a662",
+  "source_intro_hash": "77a2f563d8a96913",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-07-03T06:34:30.711Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

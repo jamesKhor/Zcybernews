@@ -1,18 +1,19 @@
 {
   "tag": "policy",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-11"
+    "latest": "2026-07-02"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "government",
+    "technology",
     "telecommunications",
-    "public-sector",
-    "technology"
+    "legal",
+    "public-sector"
   ],
   "top_regions": [
     "United states",
@@ -23,9 +24,9 @@
     "informational": 6
   },
   "recent_excerpts": [
+    "A new academic paper warns policymakers are reframing issues from misinformation to antitrust as cybersecurity threats, risking oversimplified solutions and eroded public trust.",
     "The FCC extended the deadline for banning software updates on foreign-made routers from March 2027 to January 2029, citing public interest concerns and industry pushback.",
-    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n",
-    "The U.S. Senate passed a 48-hour extension of Section 702 surveillance powers, averting a lapse after House chaos."
+    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n"
   ],
-  "sources_hash": "9cb929d134c8cf2d"
+  "sources_hash": "7ec33cedd910503f"
 }

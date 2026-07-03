@@ -1,10 +1,10 @@
 {
   "tag": "living-off-the-land",
   "locale": "zh",
-  "intro": "政府与能源部门在2026年4月12日至5月14日期间遭受了五次离地攻击的严重冲击，其中包含一起严重事件和四起高危事件。威胁行为体GopherWhisper、KongTuke及Operation PhantomCLR被观测到利用CVE-2023-36036漏洞，主要针对亚洲、中美洲和南美洲的组织机构。该活动借助合法系统工具规避检测，对受影响区域的企业网络构成重大风险。",
-  "sources_hash": "df718a777b7a26e6",
-  "source_intro_hash": "5e602b1b6dc33f56",
+  "intro": "在2026年4月至7月期间，亚太、亚洲、中美洲、独联体及中东-土耳其-非洲地区的政府与教育部门成为六篇标记为“离地攻击”报道的主要目标。这些报道涵盖了一起严重等级和四起高严重等级事件，观察到威胁行为者GopherWhisper、KongTuke及Operation PhantomCLR利用合法工具。漏洞CVE-2023-36036被特别提及，同时受影响的行业还包括能源、企业及金融服务。",
+  "sources_hash": "1c28c6cabe77ace0",
+  "source_intro_hash": "85adcd98bfb46b46",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:09:30.613Z",
+  "generated_at": "2026-07-03T06:34:28.356Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

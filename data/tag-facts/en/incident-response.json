@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-11"
+    "latest": "2026-07-02"
   },
   "top_actors": [],
   "top_cves": [
@@ -15,17 +15,17 @@
   ],
   "top_sectors": [
     "government",
-    "cybersecurity",
     "financial services",
+    "cybersecurity",
     "technology",
     "cloud computing"
   ],
   "top_regions": [
+    "APAC",
+    "CIS",
     "Europe",
     "Global",
-    "North america",
-    "United states",
-    "Venezuela"
+    "META"
   ],
   "severity_mix": {
     "high": 9,
@@ -34,9 +34,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web shells hid in backups.",
     "Specops Software explains how cached credentials, Kerberos tickets, and ACL persistence let attackers survive password resets in AD and hybrid Entra ID environments.",
-    "Acronis analysis shows 50% ransomware surge in 2025; attackers systematically destroy backups before encryption. Immutable storage and identity separation are critical defenses.",
-    "Rapid7's 2026 Global Cybersecurity Summit agenda shifts focus from threat volume to earlier detection, exposure management, and AI-assisted decision-making across two tracks."
+    "Acronis analysis shows 50% ransomware surge in 2025; attackers systematically destroy backups before encryption. Immutable storage and identity separation are critical defenses."
   ],
-  "sources_hash": "6c9c222427f6971c"
+  "sources_hash": "b5b2aa4416ceffce"
 }

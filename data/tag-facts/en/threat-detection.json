@@ -1,19 +1,26 @@
 {
   "tag": "threat-detection",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-08"
+    "latest": "2026-07-02"
   },
   "top_actors": [
     "OpenClaw"
   ],
   "top_cves": [],
   "top_sectors": [
-    "enterprise"
+    "education",
+    "enterprise",
+    "financial services",
+    "government"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "APAC",
+    "CIS",
+    "META"
+  ],
   "severity_mix": {
     "medium": 1,
     "informational": 7,
@@ -21,9 +28,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web shells hid in backups.",
     "Analysis of 25 million security alerts across enterprise environments shows defenders systematically ignore low-severity events, missing an average of one genuine threat per week.",
-    "SentinelOne research finds human-led security teams require 4-6 hours to validate a single alert, while automated attacks unfold in seconds, creating a critical defensive gap for enterprises.",
-    "Rapid7's new AI assistant for SOC teams analyzes 22,052 security incidents to instantly summarize log data, explain alerts, and generate investigation queries, aiming to reduce analyst burnout."
+    "SentinelOne research finds human-led security teams require 4-6 hours to validate a single alert, while automated attacks unfold in seconds, creating a critical defensive gap for enterprises."
   ],
-  "sources_hash": "15ffcd2cc0d47727"
+  "sources_hash": "2df2c0e882e75149"
 }

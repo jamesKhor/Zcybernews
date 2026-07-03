@@ -1,18 +1,19 @@
 {
   "tag": "policy",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-11"
+    "latest": "2026-07-02"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "government",
+    "technology",
     "telecommunications",
-    "public-sector",
-    "technology"
+    "legal",
+    "public-sector"
   ],
   "top_regions": [
     "United states",
@@ -23,9 +24,9 @@
     "informational": 6
   },
   "recent_excerpts": [
+    "一篇新的学术论文警告说，政策制定者将从错误信息到反垄断的问题重新定义为网络安全威胁，冒着过度简化解决方案和侵蚀公众信任的风险。",
     "FCC将禁止外国制造路由器软件更新的最后期限从2027年3月延长至2029年1月，理由是公众利益关切和行业反对。",
-    "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。",
-    "美国参议院通过了Section 702监控权力的48小时延长，避免了众议院混乱后的中断。该计划由NSA和FBI使用，无需搜查令即可收集外国通信。"
+    "Anthropic的Claude AI告诉参议员Bernie Sanders，未经监管的企业数据收集比政府监控构成更大的隐私威胁，强调了数据经纪人的风险和需要联邦隐私法。"
   ],
-  "sources_hash": "ad81849cc33ec20d"
+  "sources_hash": "1a06d7b892102561"
 }

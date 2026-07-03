@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "zh",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-11"
+    "latest": "2026-07-02"
   },
   "top_actors": [],
   "top_cves": [
@@ -14,17 +14,18 @@
     }
   ],
   "top_sectors": [
-    "cybersecurity",
     "financial services",
     "government",
+    "cybersecurity",
     "technology",
     "cloud computing"
   ],
   "top_regions": [
+    "APAC",
+    "CIS",
     "Europe",
     "Global",
-    "North america",
-    "Venezuela"
+    "META"
   ],
   "severity_mix": {
     "high": 8,
@@ -33,9 +34,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "卡巴斯基 Compromise Assessment 2025 发现：60%的事件缺乏高置信度警报；30.8%的威胁持续超过3个月；40%的网络壳隐藏在备份中。",
     "Specops Software 解释了缓存凭证、Kerberos 票据和 ACL 持久性如何让攻击者在 AD 和混合 Entra ID 环境中的密码重置后存活下来。",
-    "Acronis 分析显示 2025 年勒索软件激增 50%；攻击者在加密前系统性地破坏备份。不可变存储和身份分离是关键的防御措施。",
-    "Rapid7的2026全球网络安全峰会议程将焦点从威胁量转移到早期检测、暴露管理以及AI辅助决策，涵盖两个轨道。"
+    "Acronis 分析显示 2025 年勒索软件激增 50%；攻击者在加密前系统性地破坏备份。不可变存储和身份分离是关键的防御措施。"
   ],
-  "sources_hash": "59bbe49fc6764842"
+  "sources_hash": "ec878395efa8e369"
 }

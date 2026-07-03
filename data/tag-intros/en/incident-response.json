@@ -1,9 +1,9 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "intro": "Government, cybersecurity, and financial services sectors were the most heavily impacted in a wave of incidents covered between April 13 and May 11, 2026, with Europe and North America among the top affected regions. The 17 articles in this archive feature a severity mix of nine high, two critical, one medium, and one informational report. The most prominent vulnerability was CVE-2025-59718, carrying a CVSS score of 9.8. Coverage spans activity across global, United States, and Venezuelan contexts.",
-  "sources_hash": "6c9c222427f6971c",
+  "intro": "Government and financial services sectors faced significant incident-response demands between April and July 2026, with 18 articles covering high-severity events. The critical CVE-2025-59718, carrying a CVSS score of 9.8, was among the top vulnerabilities addressed. Affected regions included APAC, CIS, Europe, Global, and META, while impacted sectors spanned government, financial services, cybersecurity, technology, and cloud computing. The coverage featured nine high-severity incidents, two critical, one medium, and one informational report.",
+  "sources_hash": "b5b2aa4416ceffce",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:00:07.586Z",
+  "generated_at": "2026-07-03T06:34:07.964Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

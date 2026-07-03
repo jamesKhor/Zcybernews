@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-06-22"
+    "latest": "2026-07-02"
   },
   "top_actors": [
     "CrystalX",
@@ -14,26 +14,26 @@
   "top_cves": [],
   "top_sectors": [
     "finance",
+    "education",
     "energy",
-    "technology",
-    "building automation",
-    "business services"
+    "financial services",
+    "technology"
   ],
   "top_regions": [
     "Global",
+    "APAC",
     "Australia",
     "Brazil",
-    "India",
-    "Latin america"
+    "CIS"
   ],
   "severity_mix": {
     "high": 8,
     "critical": 1
   },
   "recent_excerpts": [
+    "Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web shells hid in backups.",
     "Kaspersky details an active global campaign distributing VBS files via WhatsApp that installs UEMS RMM software, enabling persistent remote access across 12 countries including...",
-    "Kaspersky attributes a PyPI supply chain campaign to OceanLotus APT, using fake wheel packages to drop ZiChatBot malware that abuses Zulip chat APIs for C2 on Windows and Linux.",
-    "Three PyPI packages deliver ZiChatBot malware on Windows and Linux using Zulip chat APIs for stealthy C2 — Kaspersky identifies 12+ victim organizations globally."
+    "Kaspersky attributes a PyPI supply chain campaign to OceanLotus APT, using fake wheel packages to drop ZiChatBot malware that abuses Zulip chat APIs for C2 on Windows and Linux."
   ],
-  "sources_hash": "ef831ce8afd3c056"
+  "sources_hash": "7ff18dde729354c4"
 }

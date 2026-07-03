@@ -1,19 +1,26 @@
 {
   "tag": "threat-detection",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-08"
+    "latest": "2026-07-02"
   },
   "top_actors": [
     "OpenClaw"
   ],
   "top_cves": [],
   "top_sectors": [
-    "enterprise"
+    "education",
+    "enterprise",
+    "financial services",
+    "government"
   ],
-  "top_regions": [],
+  "top_regions": [
+    "APAC",
+    "CIS",
+    "META"
+  ],
   "severity_mix": {
     "medium": 1,
     "informational": 7,
@@ -21,9 +28,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "卡巴斯基 Compromise Assessment 2025 发现：60%的事件缺乏高置信度警报；30.8%的威胁持续超过3个月；40%的网络壳隐藏在备份中。",
     "对企业环境中2500万个安全警报的分析显示，防御者系统性地忽视低严重性事件，平均每星期错过一次真正的威胁。",
-    "SentinelOne 研究发现，人类主导的安全团队需要 4-6 小时来验证单个警报，而自动化攻击在几秒钟内展开，为企业创造了一个关键的防御缺口。",
-    "Rapid7 的新 AI 助手为 SOC 团队分析了 22,052 起安全事件，以即时总结日志数据，解释警报，并生成调查查询，旨在减少分析师的疲劳。"
+    "SentinelOne 研究发现，人类主导的安全团队需要 4-6 小时来验证单个警报，而自动化攻击在几秒钟内展开，为企业创造了一个关键的防御缺口。"
   ],
-  "sources_hash": "dbdadd6ca04970ae"
+  "sources_hash": "8baaff5df115a662"
 }

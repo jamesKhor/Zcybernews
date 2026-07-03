@@ -1,9 +1,9 @@
 {
   "tag": "threat-detection",
   "locale": "en",
-  "intro": "This archive collects 10 articles tagged `threat-detection` published between April 13, 2026 and May 8, 2026. Coverage includes 1 critical, 1 high, 1 medium, and 7 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "15ffcd2cc0d47727",
-  "model": "template:sparse",
-  "generated_at": "2026-05-18T10:02:25.011Z",
+  "intro": "This archive collects 11 articles tagged `threat-detection` published between April 13, 2026 and July 2, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include OpenClaw, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize education, enterprise, and financial services across APAC, CIS, and META, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, 1 high, 1 medium, and 7 informational reports.",
+  "sources_hash": "2df2c0e882e75149",
+  "model": "template:fallback",
+  "generated_at": "2026-07-03T06:34:13.408Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
