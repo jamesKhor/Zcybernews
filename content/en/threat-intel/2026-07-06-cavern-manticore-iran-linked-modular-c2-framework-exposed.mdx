@@ -1,0 +1,116 @@
+---
+title: 'Cavern Manticore: Iran-Linked Modular C2 Framework Exposed'
+slug: 2026-07-06-cavern-manticore-iran-linked-modular-c2-framework-exposed
+date: '2026-07-06'
+excerpt: >-
+  Check Point Research tracks Cavern Manticore, an Iran MOIS-linked APT
+  targeting Israeli govt and IT sectors with a modular .NET C2 framework.
+category: threat-intel
+tags:
+  - cavern-manticore
+  - iran-apt
+  - mois
+  - oilrig
+  - lyceum
+  - .net-c2-framework
+  - israeli-targets
+language: en
+source_urls:
+  - >-
+    https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-06-cavern-manticore-iran-linked-modular-c2-framework-exposed
+cluster_key: 'topic:cavern-manticore-exposing-iranlinked-modular'
+source_count: 1
+seo_query_target: 'Cavern Manticore: Exposing Iran-Linked Modular C2 Framework'
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals the technical details of Cavern Manticore's modular .NET C2 framework
+  and its anti-analysis techniques.
+seo_meta_promise: >-
+  Provides a technical analysis of Cavern Manticore, an Iran-linked APT,
+  detailing its modular .NET C2 framework, compilation anti-analysis, and
+  targeting of Israeli sectors.
+target_hub: apt-state-actors
+internal_link_targets:
+  - apt
+  - apt-state-actors
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of Cavern Manticore's modular C2 framework execution chain showing
+  agent, communication module, and post-exploitation modules.
+severity: high
+threat_actor: Cavern Manticore
+threat_actor_origin: Iran
+affected_sectors:
+  - government
+  - IT services
+affected_regions:
+  - Israel
+ttp_matrix:
+  - tactic: Command and Control
+    technique_id: T1219
+    technique_name: Remote Access Software
+  - tactic: Persistence
+    technique_id: T1574.002
+    technique_name: DLL Side-Loading
+  - tactic: Execution
+    technique_id: T1059.001
+    technique_name: PowerShell
+  - tactic: Discovery
+    technique_id: T1087.002
+    technique_name: Domain Account
+  - tactic: Discovery
+    technique_id: T1049
+    technique_name: System Network Connections Discovery
+  - tactic: Command and Control
+    technique_id: T1090.001
+    technique_name: Internal Proxy
+publish_tier: public
+---
+## Executive Summary
+
+Since early 2026, Check Point Research (CPR) has tracked a new modular command-and-control (C2) framework deployed by an Iran-nexus advanced persistent threat (APT) group it calls **Cavern Manticore**. The group primarily targets Israeli organizations, with a focus on IT providers and government sectors. CPR assesses with moderate confidence that Cavern Manticore is linked to Iran's Ministry of Intelligence and Security (MOIS) and shares technical overlaps with known MOIS-aligned actors MuddyWater and Lyceum (an OilRig subgroup).
+
+The framework, dubbed **Cavern**, is built entirely on .NET but deliberately compiled into three different binary formats — IL-only, Mixed-Mode C++/CLI, and Native AOT — creating an anti-analysis layer that forces reverse engineers to switch between multiple toolchains. In multiple observed intrusions, initial access was achieved through the abuse of existing Remote Monitoring and Management (RMM) software already deployed in the target environment. The majority of Cavern samples score zero or very low detection rates on VirusTotal, according to CPR.
+
+## Technical Analysis
+
+### Cavern Framework Architecture
+
+The Cavern framework separates core communication from mission-specific post-exploitation capabilities through a modular design. The execution chain begins with the legitimate SysAid software update feature, which the actor leverages to deploy a WinDirStat DLL sideloading package to `C:\ProgramData\WinDir\WinDirStat.exe`. The legitimate `WinDirStat.exe` binary loads a trojanized `uxtheme.dll`, which serves as the **Cavern Agent**. The agent then loads a dedicated native communication module (`n-HTCommp.dll`) to establish C2 connectivity and pulls down additional post-exploitation modules on operator command.
+
+### Three Compilation Formats as Anti-Analysis
+
+The most distinctive architectural decision in Cavern is the deliberate use of three different .NET compilation targets. This is not traditional obfuscation — there is no packer, no control-flow flattening, and no string encryption. Instead, the compilation format itself becomes the anti-analysis layer:
+
+- **Pure .NET Framework (IL-only)** modules (`mhm.dll`, `db.dll`, `ode.dll`) retain full symbol metadata, including a shared `Command.Type` enum with all 61 command IDs. These are trivially decompilable with ILSpy or dnSpyEx, and the developers chose this format for modules that run inside the agent's managed AppDomain where IL code is required for reflection-based loading.
+- **Mixed-Mode C++/CLI (IL + Native)** agents (`uxtheme.dll`) combine managed .NET code with native C++ code, requiring analysts to use both a .NET decompiler and a native disassembler (e.g., IDA Pro or Ghidra) on the same binary.
+- **Native AOT (.NET 8, Native-only)** modules (`n-HTCommp.dll`, `n-ten.dll`, `n-sws.dll`) compile directly to native code with no IL metadata, forcing analysts into native-only tooling with no .NET decompilation path.
+
+### Post-Exploitation Modules
+
+The framework includes six distinct modules, each loaded on demand:
+
+| Component | Internal Name | Format | Role |
+|---|---|---|---|
+| Cavern Agent | `uxtheme.dll` | Mixed-Mode C++/CLI | Core backdoor, module orchestrator |
+| Communication Module | `n-HTCommp.dll` | NativeAOT | HTTPS/WebSocket transport, XOR-encrypted traffic |
+| File Manager | `mhm.dll` | .NET Framework 4.7.2 | File ops, DPAPI decrypt, archive handling |
+| SQL Browser | `db.dll` | .NET Framework 4.7.2 | Database enumeration, query, export, manipulation |
+| LDAP Module | `ode.dll` | .NET Framework 4.7.2 | AD recon, user/group enumeration, LDAP brute-force |
+| Network Module | `n-ten.dll` | NativeAOT | Net recon, port scan, share enum, SMB brute-force |
+| Tunnel Module | `n-sws.dll` | NativeAOT | SOCKS5 proxy, WebSocket/WSS tunneling |
+
+### Initial Access via RMM Abuse
+
+CPR reports that in multiple observed intrusions, the initial foothold was achieved through abuse of existing Remote Monitoring and Management (RMM) software deployed in the targeted organization. The specific RMM product was not named in the report, but the technique aligns with T1219 (Remote Access Software) and is consistent with tactics observed from other Iranian threat actors.
+
+## Mitigations & Recommendations
+
+Defenders in Israeli government and IT sectors should audit all RMM software deployments for unauthorized usage or unexpected connections. Organizations should monitor for DLL sideloading patterns involving `WinDirStat.exe` and `uxtheme.dll` in `C:\ProgramData\WinDir\`. Network defenders should inspect HTTPS/WebSocket traffic for the XOR-encrypted payloads characteristic of the Cavern communication module. Given the low detection rates on VirusTotal, organizations should not rely solely on signature-based detection; behavioral monitoring of .NET process creation and AppDomain loading is recommended.
+
+## References
+
+- [Check Point Research: Cavern Manticore: Exposing Iran-Linked Modular C2 Framework](https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/)

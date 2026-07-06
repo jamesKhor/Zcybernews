@@ -1,0 +1,116 @@
+---
+title: Cavern Manticore：与伊朗有关的模块化C2框架曝光
+slug: 2026-07-06-cavern-manticore-iran-linked-modular-c2-framework-exposed
+date: '2026-07-06'
+excerpt: >-
+  Check Point Research追踪Cavern
+  Manticore，这是一个与伊朗情报和安全部（MOIS）有关的APT，针对以色列政府和IT部门使用模块化的.NET C2框架。
+category: threat-intel
+tags:
+  - cavern-manticore
+  - iran-apt
+  - mois
+  - oilrig
+  - lyceum
+  - .net-c2-framework
+  - israeli-targets
+language: zh
+source_urls:
+  - >-
+    https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-06-cavern-manticore-iran-linked-modular-c2-framework-exposed
+cluster_key: 'topic:cavern-manticore-exposing-iranlinked-modular'
+source_count: 1
+seo_query_target: 'Cavern Manticore: Exposing Iran-Linked Modular C2 Framework'
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals the technical details of Cavern Manticore's modular .NET C2 framework
+  and its anti-analysis techniques.
+seo_meta_promise: >-
+  Provides a technical analysis of Cavern Manticore, an Iran-linked APT,
+  detailing its modular .NET C2 framework, compilation anti-analysis, and
+  targeting of Israeli sectors.
+target_hub: apt-state-actors
+internal_link_targets:
+  - apt
+  - apt-state-actors
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of Cavern Manticore's modular C2 framework execution chain showing
+  agent, communication module, and post-exploitation modules.
+severity: high
+threat_actor: Cavern Manticore
+threat_actor_origin: Iran
+affected_sectors:
+  - government
+  - IT services
+affected_regions:
+  - Israel
+ttp_matrix:
+  - tactic: Command and Control
+    technique_id: T1219
+    technique_name: Remote Access Software
+  - tactic: Persistence
+    technique_id: T1574.002
+    technique_name: DLL Side-Loading
+  - tactic: Execution
+    technique_id: T1059.001
+    technique_name: PowerShell
+  - tactic: Discovery
+    technique_id: T1087.002
+    technique_name: Domain Account
+  - tactic: Discovery
+    technique_id: T1049
+    technique_name: System Network Connections Discovery
+  - tactic: Command and Control
+    technique_id: T1090.001
+    technique_name: Internal Proxy
+publish_tier: public
+---
+## 执行摘要
+
+自2026年初以来，Check Point Research (CPR) 追踪了一个由伊朗关联的高级持续性威胁（APT）小组部署的新型模块化命令和控制（C2）框架，该小组被称为 **Cavern Manticore**。该小组主要针对以色列组织，重点关注IT提供商和政府部门。CPR以中等信心评估Cavern Manticore与伊朗情报和安全部（MOIS）有关联，并与已知与MOIS对齐的行动者MuddyWater和Lyceum（OilRig的一个子组）有技术重叠。
+
+框架，被称为 **Cavern**，完全基于.NET构建，但故意编译成三种不同的二进制格式——仅IL、混合模式C++/CLI和原生AOT——创建了一个反分析层，迫使逆向工程师在多个工具链之间切换。在多次观察到的入侵中，初始访问是通过滥用已在目标环境中部署的现有远程监控和管理（RMM）软件实现的。根据CPR，大多数Cavern样本在VirusTotal上的检测率是零或非常低。
+
+## 技术分析
+
+### Cavern框架架构
+
+Cavern框架通过模块化设计将核心通信与特定任务的后开发能力分开。执行链从合法的SysAid软件更新功能开始，该功能被行为者利用来部署一个WinDirStat DLL侧加载包到`C:\ProgramData\WinDir\WinDirStat.exe`。合法的`WinDirStat.exe`二进制文件加载了一个木马化的`uxtheme.dll`，作为 **Cavern Agent**。然后代理加载一个专用的本地通信模块（`n-HTCommp.dll`）以建立C2连接，并在操作员命令下拉取额外的后开发模块。
+
+### 三种编译格式作为反分析
+
+Cavern中最独特的架构决策是故意使用三种不同的.NET编译目标。这不是传统的混淆——没有打包器，没有控制流平坦化，也没有字符串加密。相反，编译格式本身成为了反分析层：
+
+- **纯.NET框架（仅IL）**模块（`mhm.dll`，`db.dll`，`ode.dll`）保留了完整的符号元数据，包括一个共享的`Command.Type`枚举，包含所有61个命令ID。这些可以使用ILSpy或dnSpyEx轻松反编译，开发人员选择这种格式用于在代理的管理AppDomain内运行的模块，其中需要IL代码进行基于反射的加载。
+- **混合模式C++/CLI（IL + 本地）**代理（`uxtheme.dll`）结合了托管.NET代码和本地C++代码，要求分析师对同一二进制文件使用.NET反编译器和本地反汇编器（例如，IDA Pro或Ghidra）。
+- **原生AOT（.NET 8，仅本地）**模块（`n-HTCommp.dll`，`n-ten.dll`，`n-sws.dll`）直接编译为本地代码，没有IL元数据，迫使分析师使用仅限本地的工具，没有.NET反编译路径。
+
+### 后开发模块
+
+框架包括六个不同的模块，每个模块按需加载：
+
+| 组件 | 内部名称 | 格式 | 角色 |
+|---|---|---|---|
+| Cavern代理 | `uxtheme.dll` | 混合模式C++/CLI | 核心后门，模块协调器 |
+| 通信模块 | `n-HTCommp.dll` | NativeAOT | HTTPS/WebSocket传输，XOR加密流量 |
+| 文件管理器 | `mhm.dll` | .NET框架4.7.2 | 文件操作，DPAPI解密，归档处理 |
+| SQL浏览器 | `db.dll` | .NET框架4.7.2 | 数据库枚举，查询，导出，操作 |
+| LDAP模块 | `ode.dll` | .NET框架4.7.2 | AD侦察，用户/组枚举，LDAP暴力破解 |
+| 网络模块 | `n-ten.dll` | NativeAOT | 网络侦察，端口扫描，共享枚举，SMB暴力破解 |
+| 隧道模块 | `n-sws.dll` | NativeAOT | SOCKS5代理，WebSocket/WSS隧道 |
+
+### 通过RMM滥用初始访问
+
+CPR报告称，在多次观察到的入侵中，通过滥用已在目标组织部署的现有远程监控和管理（RMM）软件获得了初步立足点。报告中没有指明具体的RMM产品，但该技术与T1219（远程访问软件）一致，并与其他伊朗威胁行为者观察到的战术一致。
+
+## 缓解措施与建议
+
+以色列政府和IT部门的防御者应对所有RMM软件部署进行审计，以检查未经授权的使用或意外的连接。组织应监控涉及`WinDirStat.exe`和`C:\ProgramData\WinDir\`中的`uxtheme.dll`的DLL侧加载模式。网络防御者应检查HTTPS/WebSocket流量中Cavern通信模块特有的XOR加密有效载荷。鉴于VirusTotal上的低检测率，组织不应仅依赖基于签名的检测；建议进行.NET进程创建和AppDomain加载的行为监控。
+
+## 参考资料
+
+- [Check Point Research: Cavern Manticore: Exposing Iran-Linked Modular C2 Framework](https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/)
