@@ -1,0 +1,80 @@
+---
+title: Industrial ICS Threat Rates Hit Three-Year Low in Q1 2026
+slug: 2026-07-07-industrial-ics-threat-rates-hit-three-year-low-in-q1-2026
+date: '2026-07-07'
+excerpt: >-
+  Kaspersky ICS CERT reports 19.6% of ICS computers blocked malware in Q1 2026,
+  the lowest rate since Q2 2023.
+category: industry
+tags:
+  - industrial-control-systems
+  - ics-security
+  - threat-landscape
+  - kaspersky
+  - q1-2026
+language: en
+source_urls:
+  - 'https://securelist.com/industrial-threat-report-q1-2026/120643/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-07-industrial-ics-threat-rates-hit-three-year-low-in-q1-2026
+cluster_key: 'topic:threat-landscape-industrial-automation-systems'
+source_count: 1
+seo_query_target: Threat landscape for industrial automation systems. Q1 2026
+seo_intent: incident-impact
+seo_title_promise: >-
+  The title promises the reader will learn the key trend in industrial ICS
+  threats for Q1 2026: a three-year low in infection rates with regional and
+  sector-specific exceptions.
+seo_meta_promise: >-
+  The meta description promises the reader will see the concrete Q1 2026
+  infection rate (19.6%), the most targeted sector (biometric systems at 26.4%),
+  and which sector bucked the downward trend (manufacturing).
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - industrial-control-systems
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Bar chart showing percentage of ICS computers blocked by region for Q1 2026,
+  with Northern Europe lowest at 9.1% and Africa highest at 27.4%
+affected_sectors:
+  - biometric systems
+  - manufacturing
+  - building automation
+  - oil and gas
+  - electric power
+  - engineering and ICS integration
+  - construction
+affected_regions:
+  - Southern Europe
+  - Northern Europe
+  - Russia
+  - Southeast Asia
+  - Africa
+  - North America (Canada)
+publish_tier: public
+---
+## Executive Summary
+
+Industrial control system (ICS) computers worldwide experienced their lowest malware-block rate in three years during the first quarter of 2026, according to Kaspersky ICS CERT. Security solutions prevented malicious objects on 19.6% of ICS computers globally, a 1.4-fold drop from the Q2 2023 peak. However, the decline was not uniform: manufacturing was the only sector where the attack rate increased, and biometric systems remained the most targeted industry vertical at 26.4%.
+
+## Technical Analysis
+
+Kaspersky's telemetry, drawn from its ICS CERT network, covers threats blocked on computers running Windows-based industrial automation systems. In Q1 2026, security solutions detected activity from 10,052 distinct malware families across categories including malicious scripts, spyware, ransomware, miners, worms, and AutoCAD-specific malware.
+
+**Regional disparities.** The percentage of attacked ICS computers ranged from 9.1% in Northern Europe to 27.4% in Africa. Five regions saw quarter-over-quarter increases: Southern Europe, Northern Europe, Russia, and two others unspecified in the report. Southern Europe led growth for internet and email threats, and also recorded the fastest rise in spyware and malicious script/phishing page detections. In Russia, the overall blocked-object percentage exceeded the previous two quarters, driven by increased threats from the internet and a slight uptick from email clients.
+
+**Sector breakdown.** Biometric systems (26.4%) retained the top spot among the industries tracked, a pattern Kaspersky attributes to these systems' internet connectivity, heavy email use for access approvals, and often minimal cybersecurity controls. Biometric systems were the only industry where email threats outnumbered internet threats. Manufacturing was the sole sector where the global average blocked-object percentage rose — by 1.0 percentage point — with the largest increases in Western Europe, Northern Europe, and Russia.
+
+**Threat category shifts.** Malicious scripts and phishing pages (JS and HTML) remained the most prevalent category, with a global average of 6.56% of ICS computers affected. Southern Europe recorded the highest regional figure for this category (9.85%), and within that region, biometric systems (19.59%) and building automation (15.43%) were the most impacted. Spyware, while declining for two consecutive quarters to 3.73%, still ranked second for the third quarter running. In Russia, spyware infections increased across all industries except construction, with the oil and gas sector seeing a 1.63-fold rise over six months. Denylisted internet resources — blocked web domains — rose to 3.54% globally, with the largest quarter-over-quarter jump in Southeast Asia (4.58%, +0.65 pp).
+
+**Ransomware and miners.** The report notes ransomware and miners (both executable-file-based and web-based) among the tracked categories, but does not provide specific percentages for these in the excerpted text. The overall downward trend in blocked-object percentages suggests ransomware and miner activity on ICS networks may have declined in parallel, though Kaspersky did not make that explicit claim.
+
+## Mitigations & Recommendations
+
+Defenders should prioritize monitoring for malicious scripts and phishing pages, which remain the most common initial access vector for ICS environments. The persistent targeting of biometric systems — often deployed with internet exposure and weak segmentation — calls for network isolation and email filtering specific to those systems. Manufacturing organizations, where the attack rate increased, should review remote access policies and ensure OT network segments are not reachable from IT or guest networks. For organizations in Russia and Southern Europe, where spyware and script-based threats are rising, endpoint detection rules should be tuned for the specific families reported by Kaspersky ICS CERT.
+
+## References
+
+[Kaspersky Securelist — Threat landscape for industrial automation systems. Q1 2026](https://securelist.com/industrial-threat-report-q1-2026/120643/)

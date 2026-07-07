@@ -1,0 +1,78 @@
+---
+title: 2026年第一季度工业ICS威胁率创三年新低
+slug: 2026-07-07-industrial-ics-threat-rates-hit-three-year-low-in-q1-2026
+date: '2026-07-07'
+excerpt: 卡巴斯基ICS CERT报告称，在2026年第一季度，19.6%的ICS计算机阻止了恶意软件，这是自2023年第二季度以来的最低比率。
+category: industry
+tags:
+  - industrial-control-systems
+  - ics-security
+  - threat-landscape
+  - kaspersky
+  - q1-2026
+language: zh
+source_urls:
+  - 'https://securelist.com/industrial-threat-report-q1-2026/120643/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-07-industrial-ics-threat-rates-hit-three-year-low-in-q1-2026
+cluster_key: 'topic:threat-landscape-industrial-automation-systems'
+source_count: 1
+seo_query_target: Threat landscape for industrial automation systems. Q1 2026
+seo_intent: incident-impact
+seo_title_promise: >-
+  The title promises the reader will learn the key trend in industrial ICS
+  threats for Q1 2026: a three-year low in infection rates with regional and
+  sector-specific exceptions.
+seo_meta_promise: >-
+  The meta description promises the reader will see the concrete Q1 2026
+  infection rate (19.6%), the most targeted sector (biometric systems at 26.4%),
+  and which sector bucked the downward trend (manufacturing).
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - industrial-control-systems
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Bar chart showing percentage of ICS computers blocked by region for Q1 2026,
+  with Northern Europe lowest at 9.1% and Africa highest at 27.4%
+affected_sectors:
+  - biometric systems
+  - manufacturing
+  - building automation
+  - oil and gas
+  - electric power
+  - engineering and ICS integration
+  - construction
+affected_regions:
+  - Southern Europe
+  - Northern Europe
+  - Russia
+  - Southeast Asia
+  - Africa
+  - North America (Canada)
+publish_tier: public
+---
+## 执行摘要
+
+根据卡巴斯基ICS CERT的数据，2026年第一季度全球工业控制系统（ICS）计算机遭遇了三年来最低的恶意软件拦截率。安全解决方案在全球19.6%的ICS计算机上阻止了恶意对象，比2023年第二季度的高峰下降了1.4倍。然而，这种下降并不均匀：制造业是唯一攻击率上升的行业，生物识别系统仍然是最受攻击的行业，占比26.4%。
+
+## 技术分析
+
+卡巴斯基的遥测数据来自其ICS CERT网络，涵盖了在运行基于Windows的工业自动化系统的计算机上被阻止的威胁。在2026年第一季度，安全解决方案检测到包括恶意脚本、间谍软件、勒索软件、矿工、蠕虫和AutoCAD特定恶意软件在内的10,052个不同恶意软件家族的活动。
+
+**区域差异。** 在北欧，受到攻击的ICS计算机的百分比为9.1%，而在非洲为27.4%。五个地区的季度环比增长：南欧、北欧、俄罗斯和报告中未指明的另外两个地区。南欧在互联网和电子邮件威胁方面增长最快，并且在间谍软件和恶意脚本/网络钓鱼页面检测方面也记录了最快的增长。在俄罗斯，总体被阻止对象的百分比超过了前两个季度，这主要是由于来自互联网的威胁增加以及电子邮件客户端的轻微上升。
+
+**行业细分。** 生物识别系统（26.4%）在跟踪的行业中保持了首位，卡巴斯基将这一模式归因于这些系统的互联网连接、用于访问批准的大量电子邮件使用以及通常最小的网络安全控制。生物识别系统是唯一一个电子邮件威胁超过互联网威胁的行业。制造业是全球平均被阻止对象百分比上升的唯一行业——上升了1.0个百分点——西欧、北欧和俄罗斯的增长最大。
+
+**威胁类别变化。** 恶意脚本和网络钓鱼页面（JS和HTML）仍然是最常见的类别，全球平均有6.56%的ICS计算机受到影响。南欧记录了这一类别最高的区域数字（9.85%），在该地区内，生物识别系统（19.59%）和楼宇自动化（15.43%）受到的影响最大。尽管连续两个季度下降至3.73%，间谍软件仍然连续第三个季度排名第二。在俄罗斯，除了建筑行业外，所有行业的间谍软件感染都有所增加，石油和天然气行业在六个月内增长了1.63倍。被拒绝的互联网资源——被阻止的网络域名——全球上升至3.54%，东南亚的季度环比增长最大（4.58%，+0.65个百分点）。
+
+**勒索软件和矿工。** 报告提到了勒索软件和矿工（包括基于可执行文件的和基于网络的）在跟踪的类别中，但在摘录的文本中没有提供这些的具体百分比。被阻止对象百分比的整体下降趋势表明，ICS网络上的勒索软件和矿工活动可能也有所下降，尽管卡巴斯基没有明确声明这一点。
+
+## 缓解措施与建议
+
+防御者应优先监控恶意脚本和网络钓鱼页面，这仍然是ICS环境最常见的初始访问向量。生物识别系统的持续目标——通常部署在互联网暴露和弱分段的情况下——需要针对这些系统的网络隔离和电子邮件过滤。在攻击率上升的制造业组织中，应审查远程访问策略，并确保OT网络段无法从IT或访客网络访问。对于在俄罗斯和南欧的组织，间谍软件和基于脚本的威胁正在上升，应针对卡巴斯基ICS CERT报告的特定家族调整端点检测规则。
+
+## 参考资料
+
+[卡巴斯基Securelist — 工业自动化系统的威胁格局。2026年第一季度](https://securelist.com/industrial-threat-report-q1-2026/120643/)
