@@ -1,9 +1,9 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "intro": "This archive collects 10 articles tagged `kaspersky` published between April 16, 2026 and July 2, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include CrystalX, Lotus Wiper, and OceanLotus, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize finance, education, and energy across Global, APAC, and Australia, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, and 8 high reports.",
-  "sources_hash": "7ff18dde729354c4",
+  "intro": "This archive collects 11 articles tagged `kaspersky` published between April 16, 2026 and July 7, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include CrystalX, Lotus Wiper, and OceanLotus, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize finance, building automation, and education across Global, Russia, and Africa, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, and 8 high reports.",
+  "sources_hash": "83433524650ca45b",
   "model": "template:fallback",
-  "generated_at": "2026-07-03T06:34:19.117Z",
+  "generated_at": "2026-07-08T05:53:28.685Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

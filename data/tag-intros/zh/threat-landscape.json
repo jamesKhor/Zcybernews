@@ -1,10 +1,10 @@
 {
   "tag": "threat-landscape",
   "locale": "zh",
-  "intro": "本档案收录了 5 篇带有「threat-landscape」标签的文章，发布时间从2026年4月14日至2026年5月16日。其中包含5 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "2d87bb1830f953b8",
-  "source_intro_hash": "f024a3fdaafe2fb2",
+  "intro": "本档案收录了 6 篇带有「threat-landscape」标签的文章，发布时间从2026年4月14日至2026年7月7日。其中包含5 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "279d5a228ca3ec15",
+  "source_intro_hash": "4a49f6cb9a2936a9",
   "model": "template:sparse",
-  "generated_at": "2026-05-18T10:11:08.577Z",
+  "generated_at": "2026-07-08T05:53:45.546Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

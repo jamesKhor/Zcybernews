@@ -1,14 +1,14 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 53,
+  "count": 54,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-25"
+    "latest": "2026-07-07"
   },
   "top_actors": [
-    "The Gentlemen",
     "LockBit",
+    "The Gentlemen",
     "Interlock"
   ],
   "top_cves": [
@@ -35,7 +35,7 @@
     "multiple",
     "manufacturing",
     "financial services",
-    "technology"
+    "government"
   ],
   "top_regions": [
     "Global",
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "加拿大的CSE在2025年对一个勒索软件即服务团伙、芬太尼贩运者和一个极端主义团体执行了国家授权的黑客攻击，破坏了基础设施并删除了...",
     "墨西哥的2025-2030国家网络安全计划针对勒索软件和有组织犯罪，在2026年FIFA世界杯期间面临严峻考验，同时有着高调历史的...",
-    "印度汽车巨头Bajaj Auto于2026年6月24日披露了一起勒索软件事件，影响了运营及其技术子公司。",
-    "白金汉郡的Great Marlow School在一次网络安全事件后，第二天让1,428名学生回家；只有参加GCSE和A-Level考试的学生出席。"
+    "印度汽车巨头Bajaj Auto于2026年6月24日披露了一起勒索软件事件，影响了运营及其技术子公司。"
   ],
-  "sources_hash": "9b1807c34ea14440"
+  "sources_hash": "21db84aa91380b6d"
 }

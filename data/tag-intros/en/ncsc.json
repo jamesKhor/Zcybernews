@@ -1,9 +1,9 @@
 {
   "tag": "ncsc",
   "locale": "en",
-  "intro": "This archive collects 6 articles tagged `ncsc` published between April 22, 2026 and June 12, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Salt Typhoon and Vice Society, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize government, all, and critical infrastructure across United kingdom, Buckinghamshire, and United states, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 3 high, and 1 medium reports.",
-  "sources_hash": "e3718ee97083e666",
+  "intro": "This archive collects 7 articles tagged `ncsc` published between April 22, 2026 and July 7, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Salt Typhoon and Vice Society, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize government, all, and critical infrastructure across United kingdom, Buckinghamshire, and United states, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 3 high, and 1 medium reports.",
+  "sources_hash": "73fb132e58d60708",
   "model": "template:fallback",
-  "generated_at": "2026-06-12T04:34:58.025Z",
+  "generated_at": "2026-07-08T05:53:33.675Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

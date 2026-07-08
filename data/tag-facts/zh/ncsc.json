@@ -1,10 +1,10 @@
 {
   "tag": "ncsc",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-06-12"
+    "latest": "2026-07-07"
   },
   "top_actors": [
     "Salt Typhoon",
@@ -16,7 +16,7 @@
     "all",
     "critical infrastructure",
     "education",
-    "telecommunications"
+    "financial services"
   ],
   "top_regions": [
     "United kingdom",
@@ -28,9 +28,9 @@
     "high": 3
   },
   "recent_excerpts": [
+    "英国网络弹性承诺仅有70个签署方，尽管有部长级信件，但350家最大上市公司中加入的不到15家。",
     "白金汉郡的Great Marlow School在一次网络安全事件后，第二天让1,428名学生回家；只有参加GCSE和A-Level考试的学生出席。",
-    "在BT、Vodafone等公司对拟议的电信安全规则提出反对后，英国放弃了对独立信令入侵检测和每月重启的要求...",
-    "NCSC 警告组织为紧急补丁的激增做好准备，因为人工智能加速了漏洞发现，提高了利用风险。没有引用具体的 CVE。"
+    "在BT、Vodafone等公司对拟议的电信安全规则提出反对后，英国放弃了对独立信令入侵检测和每月重启的要求..."
   ],
-  "sources_hash": "b3694dc587221ac3"
+  "sources_hash": "fdf30d2171e26ee8"
 }

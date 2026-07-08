@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "intro": "在2026年4月12日至4月30日期间发布的超过24篇文章中，ZCyberNews追踪了标记为“执法”的相关活动。报道内容涵盖19起高严重性事件、4起中严重性事件及1份信息性报告。观察到威胁行为者Scattered Spider、Black Axe及BlackCat (ALPHV)。受影响行业涵盖政府、电信、金融服务、加密货币及游戏领域，涉及地区包括美国、加拿大、北美、欧洲及法国。",
-  "sources_hash": "d95279c99bdc5e86",
-  "source_intro_hash": "57de84e0be5dcb22",
+  "intro": "在过去三个月（2026年4月12日至7月7日）期间，ZCyberNews共发布了25篇标记为“执法”类别的报道。这些报道重点提及了威胁行为者Scattered Spider、Black Axe和BlackCat (ALPHV)的活动，其主要攻击目标涵盖政府、电信、金融服务、执法及加密货币领域。受影响地区包括美国、加拿大、北美、欧洲及法国。在这些文章中，严重程度分布为：19篇高危、4篇中危、1篇信息性。",
+  "sources_hash": "5d7174670ab5e2ef",
+  "source_intro_hash": "d674122f10a1a09d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:09:26.473Z",
+  "generated_at": "2026-07-08T05:53:40.959Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

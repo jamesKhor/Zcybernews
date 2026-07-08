@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "count": 24,
+  "count": 25,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-07-07"
   },
   "top_actors": [
     "Scattered Spider",
@@ -16,8 +16,8 @@
     "government",
     "telecommunications",
     "financial services",
-    "cryptocurrency",
-    "gaming"
+    "law enforcement",
+    "cryptocurrency"
   ],
   "top_regions": [
     "United states",
@@ -32,9 +32,9 @@
     "informational": 1
   },
   "recent_excerpts": [
+    "加拿大的CSE在2025年对一个勒索软件即服务团伙、芬太尼贩运者和一个极端主义团体执行了国家授权的黑客攻击，破坏了基础设施并删除了...",
     "法国当局于4月25日拘留了一名15岁的少年，他涉嫌入侵ANTS，这是一个负责处理护照和驾驶执照的国家身份证明机构。",
-    "瑞士和德国警方逮捕了与尼日利亚有联系的Black Axe网络的10名嫌疑人，包括一名负责监督南欧业务的地区领导人。",
-    "乌克兰警方拘留了涉嫌盗取数千个Roblox账户的黑客，这些账户包含玩家用真金白银购买的有价值的数字物品和游戏内货币..."
+    "瑞士和德国警方逮捕了与尼日利亚有联系的Black Axe网络的10名嫌疑人，包括一名负责监督南欧业务的地区领导人。"
   ],
-  "sources_hash": "d95279c99bdc5e86"
+  "sources_hash": "5d7174670ab5e2ef"
 }

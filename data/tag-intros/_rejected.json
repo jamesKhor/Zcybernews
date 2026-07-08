@@ -1654,5 +1654,17 @@
     "locale": "en",
     "lastError": "word count 54 outside 60-140 (en)",
     "at": "2026-07-03T06:34:19.116Z"
+  },
+  {
+    "tag": "kaspersky",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-07-08T05:53:28.677Z"
+  },
+  {
+    "tag": "ncsc",
+    "locale": "en",
+    "lastError": "word count 52 outside 60-140 (en)",
+    "at": "2026-07-08T05:53:33.674Z"
   }
 ]

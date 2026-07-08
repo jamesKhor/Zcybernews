@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "count": 24,
+  "count": 25,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-07-07"
   },
   "top_actors": [
     "Scattered Spider",
@@ -16,8 +16,8 @@
     "government",
     "telecommunications",
     "financial services",
-    "cryptocurrency",
-    "gaming"
+    "law enforcement",
+    "cryptocurrency"
   ],
   "top_regions": [
     "United states",
@@ -32,9 +32,9 @@
     "informational": 1
   },
   "recent_excerpts": [
+    "Canada's CSE executed state-authorized hacks against a ransomware-as-a-service gang, fentanyl traffickers, and an extremist group in 2025, disrupting infrastructure and deleting...",
     "French authorities detained a 15-year-old on April 25 for allegedly hacking ANTS, the national ID agency handling passports and driver's licenses.",
-    "Swiss and German police arrested 10 suspects tied to the Nigeria-linked Black Axe network, including a regional leader overseeing Southern Europe operations.",
-    "Ukrainian police detained hackers suspected of stealing thousands of Roblox accounts containing valuable digital items and in-game currency purchased with real money from players…"
+    "Swiss and German police arrested 10 suspects tied to the Nigeria-linked Black Axe network, including a regional leader overseeing Southern Europe operations."
   ],
-  "sources_hash": "16f641d2906def5a"
+  "sources_hash": "6833583bca1422fb"
 }

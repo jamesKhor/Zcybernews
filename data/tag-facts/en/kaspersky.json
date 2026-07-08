@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-07-02"
+    "latest": "2026-07-07"
   },
   "top_actors": [
     "CrystalX",
@@ -14,26 +14,26 @@
   "top_cves": [],
   "top_sectors": [
     "finance",
+    "building automation",
     "education",
     "energy",
-    "financial services",
-    "technology"
+    "financial services"
   ],
   "top_regions": [
     "Global",
+    "Russia",
+    "Africa",
     "APAC",
-    "Australia",
-    "Brazil",
-    "CIS"
+    "Australia"
   ],
   "severity_mix": {
     "high": 8,
     "critical": 1
   },
   "recent_excerpts": [
+    "Kaspersky ICS CERT reports 19.6% of ICS computers blocked malware in Q1 2026, the lowest rate since Q2 2023.",
     "Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web shells hid in backups.",
-    "Kaspersky details an active global campaign distributing VBS files via WhatsApp that installs UEMS RMM software, enabling persistent remote access across 12 countries including...",
-    "Kaspersky attributes a PyPI supply chain campaign to OceanLotus APT, using fake wheel packages to drop ZiChatBot malware that abuses Zulip chat APIs for C2 on Windows and Linux."
+    "Kaspersky details an active global campaign distributing VBS files via WhatsApp that installs UEMS RMM software, enabling persistent remote access across 12 countries including..."
   ],
-  "sources_hash": "7ff18dde729354c4"
+  "sources_hash": "83433524650ca45b"
 }

@@ -1,14 +1,14 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 54,
+  "count": 55,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-25"
+    "latest": "2026-07-07"
   },
   "top_actors": [
-    "The Gentlemen",
     "LockBit",
+    "The Gentlemen",
     "ShinyHunters"
   ],
   "top_cves": [
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "Canada's CSE executed state-authorized hacks against a ransomware-as-a-service gang, fentanyl traffickers, and an extremist group in 2025, disrupting infrastructure and deleting...",
     "Mexico's 2025–2030 National Cybersecurity Plan targets ransomware and organized crime, facing a critical test during the 2026 FIFA World Cup amid a history of high-profile...",
-    "Indian auto giant Bajaj Auto disclosed a ransomware incident on June 24, 2026, impacting operations and its tech subsidiary.",
-    "Great Marlow School in Buckinghamshire sent 1,428 pupils home for a second day after a cybersecurity incident; only GCSE and A-Level exam takers attended."
+    "Indian auto giant Bajaj Auto disclosed a ransomware incident on June 24, 2026, impacting operations and its tech subsidiary."
   ],
-  "sources_hash": "a148e89da1546824"
+  "sources_hash": "0e2dcb88a0e1e5cc"
 }

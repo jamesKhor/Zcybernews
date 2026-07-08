@@ -1,10 +1,10 @@
 {
   "tag": "ncsc",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-06-12"
+    "latest": "2026-07-07"
   },
   "top_actors": [
     "Salt Typhoon",
@@ -16,7 +16,7 @@
     "all",
     "critical infrastructure",
     "education",
-    "telecommunications"
+    "financial services"
   ],
   "top_regions": [
     "United kingdom",
@@ -28,9 +28,9 @@
     "high": 3
   },
   "recent_excerpts": [
+    "Only 70 total signatories for the UK Cyber Resilience Pledge, with fewer than 15 of 350 largest listed companies joining despite ministerial letters.",
     "Great Marlow School in Buckinghamshire sent 1,428 pupils home for a second day after a cybersecurity incident; only GCSE and A-Level exam takers attended.",
-    "Britain dropped requirements for independent signaling intrusion detection and monthly reboots after BT, Vodafone, and others pushed back against proposed telecom security...",
-    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited."
+    "Britain dropped requirements for independent signaling intrusion detection and monthly reboots after BT, Vodafone, and others pushed back against proposed telecom security..."
   ],
-  "sources_hash": "e3718ee97083e666"
+  "sources_hash": "73fb132e58d60708"
 }
