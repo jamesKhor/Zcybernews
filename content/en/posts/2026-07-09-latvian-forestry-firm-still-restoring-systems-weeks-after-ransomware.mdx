@@ -1,0 +1,73 @@
+---
+title: Latvian forestry firm still restoring systems weeks after ransomware
+slug: >-
+  2026-07-09-latvian-forestry-firm-still-restoring-systems-weeks-after-ransomware
+date: '2026-07-09'
+excerpt: >-
+  Latvia's LVM says 44 GB of data leaked, two-thirds of customers still locked
+  out of systems after ransomware attack attributed to a foreign financially
+  motivated group.
+category: industry
+tags:
+  - ransomware
+  - latvia
+  - lvm
+  - cert.lv
+  - critical-infrastructure
+  - data-leak
+language: en
+source_urls:
+  - 'https://therecord.media/latvia-state-owned-foresty-company-lvm-ransomware'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-07-09-latvian-forestry-firm-still-restoring-systems-weeks-after-ransomware
+cluster_key: 'topic:latvian-forestry-company-still-restoring'
+source_count: 1
+seo_query_target: Latvian forestry company still restoring systems weeks after ransomware attack
+seo_intent: incident-impact
+seo_title_promise: >-
+  The title promises a status update on a specific ransomware incident at a
+  Latvian state-owned forestry company, including the ongoing restoration
+  timeline.
+seo_meta_promise: >-
+  The meta description promises the reader will learn the concrete impact (44 GB
+  leaked, two-thirds of customers affected) and attribution (foreign financially
+  motivated group) from the LVM ransomware attack.
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - data-breaches
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Hikers walking on a forest path in Brenguļi, Latvia, representing the forestry
+  operations disrupted by the ransomware attack on LVM.
+threat_actor_origin: foreign
+affected_sectors:
+  - forestry
+  - government
+affected_regions:
+  - Latvia
+  - European Union
+  - NATO
+publish_tier: public
+---
+## Executive Summary
+
+Latvia's state-owned forestry company Latvijas Valsts Mezi (LVM) is still working to restore IT systems weeks after a ransomware attack first disclosed in late June 2026, according to a statement from the company and details shared by Latvia's national computer emergency response team, CERT.LV. The incident knocked offline LVM's mapping platform, hunting application, and systems used to exchange information with contractors and customers. Approximately two-thirds of customers with service contracts remain locked out of affected systems, LVM Chief Technology Officer Maris Kuzmins told local media. CERT.LV attributed the intrusion to a foreign, financially motivated ransomware group that has previously targeted companies and public institutions in NATO and European Union countries. The attackers leaked roughly 44 gigabytes of stolen data online, including internal documents, email correspondence, software code repositories, digital certificates, cryptographic keys, and user credentials.
+
+## Technical Analysis
+
+According to Kuzmins, the attackers exploited a vulnerability in a system that had not been updated for two years. He did not identify the affected software or the specific vulnerability. Latvian authorities stated that the attackers had likely been inside LVM's network for more than a week before detection. CERT.LV believes the attackers accessed significantly more data than the 44 GB they ultimately published. The exposed data includes internal documents, email correspondence, software code repositories, digital certificates, cryptographic keys, and user credentials. LVM previously stated it had not received a ransom demand and would refuse to pay even if one were made.
+
+The attack drew additional scrutiny because LVM helped develop new functionality for Latvia's electronic voter registration system, which allows voters to cast ballots at any polling station. Latvian authorities confirmed that the election infrastructure was not compromised — the software was developed in a separate environment and its code was never stored in LVM's corporate repositories. CERT.LV said it reviewed every software delivery made for that project and found no evidence of malicious code or unauthorized access, concluding the system is safe to use in the upcoming parliamentary elections.
+
+CERT.LV also reported that the same threat actor compromised a server belonging to Latvian pharmaceutical company Olpha (formerly Olainfarm). The Olpha breach has been contained, with no evidence of broader damage beyond the affected server. Authorities said the two breaches were technically unrelated despite being attributed to the same threat actor. According to CERT.LV, the group "continues its activities in Latvian cyberspace, purposefully searching for new potential vulnerabilities in the infrastructures of public- and private-sector organizations."
+
+## Mitigations & Recommendations
+
+Defenders in Latvia and neighboring regions should prioritize patch management discipline, particularly for internet-facing systems and those with deferred updates — the LVM incident underscores the risk of unpatched systems persisting for years. Organizations should monitor for indicators of lateral movement consistent with financially motivated ransomware groups targeting NATO and EU entities. CERT.LV's public warnings suggest the threat actor remains active and is actively scanning for new vulnerabilities in public- and private-sector infrastructure. Isolating development environments from corporate networks, as LVM's election software arrangement demonstrates, can limit blast radius but does not prevent initial compromise.
+
+## References
+
+- [The Record: Latvian forestry company still restoring systems weeks after ransomware attack](https://therecord.media/latvia-state-owned-foresty-company-lvm-ransomware)

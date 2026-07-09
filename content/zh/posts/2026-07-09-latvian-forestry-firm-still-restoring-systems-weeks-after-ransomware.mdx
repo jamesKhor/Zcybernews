@@ -1,0 +1,70 @@
+---
+title: 拉脱维亚林业公司在勒索软件攻击数周后仍在恢复系统
+slug: >-
+  2026-07-09-latvian-forestry-firm-still-restoring-systems-weeks-after-ransomware
+date: '2026-07-09'
+excerpt: 拉脱维亚的LVM表示，44 GB的数据泄露，三分之二的客户在归因于外国财务动机团体的勒索软件攻击后仍无法访问系统。
+category: industry
+tags:
+  - ransomware
+  - latvia
+  - lvm
+  - cert.lv
+  - critical-infrastructure
+  - data-leak
+language: zh
+source_urls:
+  - 'https://therecord.media/latvia-state-owned-foresty-company-lvm-ransomware'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-07-09-latvian-forestry-firm-still-restoring-systems-weeks-after-ransomware
+cluster_key: 'topic:latvian-forestry-company-still-restoring'
+source_count: 1
+seo_query_target: Latvian forestry company still restoring systems weeks after ransomware attack
+seo_intent: incident-impact
+seo_title_promise: >-
+  The title promises a status update on a specific ransomware incident at a
+  Latvian state-owned forestry company, including the ongoing restoration
+  timeline.
+seo_meta_promise: >-
+  The meta description promises the reader will learn the concrete impact (44 GB
+  leaked, two-thirds of customers affected) and attribution (foreign financially
+  motivated group) from the LVM ransomware attack.
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - data-breaches
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Hikers walking on a forest path in Brenguļi, Latvia, representing the forestry
+  operations disrupted by the ransomware attack on LVM.
+threat_actor_origin: foreign
+affected_sectors:
+  - forestry
+  - government
+affected_regions:
+  - Latvia
+  - European Union
+  - NATO
+publish_tier: public
+---
+## 执行摘要
+
+拉脱维亚国有林业公司Latvijas Valsts Mezi (LVM)在2026年6月底首次披露的勒索软件攻击后数周仍在努力恢复IT系统，根据公司声明和拉脱维亚国家计算机紧急响应小组CERT.LV分享的细节。此次事件导致LVM的地图平台、狩猎应用程序以及与承包商和客户交换信息的系统离线。LVM首席技术官Maris Kuzmins告诉当地媒体，大约三分之二的服务合同客户仍然无法访问受影响的系统。CERT.LV将入侵归因于一个外国、以财务为动机的勒索软件集团，该集团此前曾针对北约和欧盟国家的公司和公共机构。攻击者在网上泄露了大约44千兆字节的被盗数据，包括内部文件、电子邮件通信、软件代码库、数字证书、加密密钥和用户凭证。
+
+## 技术分析
+
+根据Kuzmins的说法，攻击者利用了一个两年未更新的系统中的漏洞。他没有指明受影响的软件或具体的漏洞。拉脱维亚当局表示，攻击者可能在被发现之前已经在LVM的网络中潜伏了一周以上。CERT.LV认为，攻击者访问的数据远超过他们最终发布的44GB。暴露的数据包括内部文件、电子邮件通信、软件代码库、数字证书、加密密钥和用户凭证。LVM此前表示，他们没有收到勒索要求，即使收到也不会支付。
+
+这次攻击引起了额外的关注，因为LVM帮助开发了拉脱维亚电子选民注册系统的新功能，该系统允许选民在任何投票站投票。拉脱维亚当局确认选举基础设施没有受到损害——软件是在单独的环境中开发的，其代码从未存储在LVM的企业代码库中。CERT.LV表示，它审查了为该项目交付的所有软件，并发现没有恶意代码或未经授权的访问证据，得出系统在即将到来的议会选举中安全使用的结论。
+
+CERT.LV还报告说，同一个威胁行为者破坏了属于拉脱维亚制药公司Olpha（前身为Olainfarm）的服务器。Olpha的违规行为已被控制，没有证据表明除了受影响的服务器之外还有更广泛的损害。当局表示，尽管两个违规行为归因于同一个威胁行为者，但在技术上是无关的。根据CERT.LV的说法，该集团“继续在拉脱维亚网络空间开展活动，有目的地寻找公共和私营部门组织基础设施中的新潜在漏洞。”
+
+## 缓解措施与建议
+
+拉脱维亚和邻近地区的防御者应优先考虑补丁管理纪律，特别是针对面向互联网的系统和那些延迟更新的系统——LVM事件突显了多年未修补系统的持续风险。组织应监控与针对北约和欧盟实体的财务动机勒索软件集团一致的水平移动指标。CERT.LV的公开警告表明，威胁行为者仍然活跃，并正在积极扫描公共和私营部门基础设施中的新漏洞。像LVM的选举软件安排所示，将开发环境与企业网络隔离可以限制爆炸半径，但不能防止最初的妥协。
+
+## 参考资料
+
+- [The Record: Latvian forestry company still restoring systems weeks after ransomware attack](https://therecord.media/latvia-state-owned-foresty-company-lvm-ransomware)
