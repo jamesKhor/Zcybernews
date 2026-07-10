@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "intro": "APT33、CL-STA-1062和CyberAv3ngers是2026年4月12日至6月26日期间25篇关键基础设施相关文章中观察到的主要威胁行为者。报道内容涉及CVE-2026-24032（CVSS 7.3），其中高严重性事件占据主导地位，共15篇报告，另有3篇关键事件和3篇信息性条目。受影响行业涵盖能源、政府和公用事业，涉及区域包括美国、欧洲和亚太地区。",
-  "sources_hash": "2c262f0b9c715b80",
-  "source_intro_hash": "597bde610ef34195",
+  "intro": "2026年4月至7月期间，ZCyberNews追踪了27篇关于关键基础设施的文章，其中APT33、CL-STA-1062和CyberAv3ngers是观测到的主要威胁行为体。最突出的漏洞为CVE-2026-24032，其CVSS评分为7.3。受影响行业涵盖能源、政府和公用事业，目标区域则包括美国、欧洲及亚太地区。严重程度分布为：15份高危报告、3份严重报告、3份信息报告及1份中危报告。",
+  "sources_hash": "5789a50bdc82a662",
+  "source_intro_hash": "5115ebfd170632d1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-27T04:25:16.763Z",
+  "generated_at": "2026-07-10T06:47:51.020Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

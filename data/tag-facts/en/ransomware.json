@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 55,
+  "count": 56,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-07"
+    "latest": "2026-07-09"
   },
   "top_actors": [
     "LockBit",
@@ -33,9 +33,9 @@
   "top_sectors": [
     "healthcare",
     "multiple",
+    "government",
     "manufacturing",
-    "education",
-    "financial services"
+    "education"
   ],
   "top_regions": [
     "Global",
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "Latvia's LVM says 44 GB of data leaked, two-thirds of customers still locked out of systems after ransomware attack attributed to a foreign financially motivated group.",
     "Canada's CSE executed state-authorized hacks against a ransomware-as-a-service gang, fentanyl traffickers, and an extremist group in 2025, disrupting infrastructure and deleting...",
-    "Mexico's 2025–2030 National Cybersecurity Plan targets ransomware and organized crime, facing a critical test during the 2026 FIFA World Cup amid a history of high-profile...",
-    "Indian auto giant Bajaj Auto disclosed a ransomware incident on June 24, 2026, impacting operations and its tech subsidiary."
+    "Mexico's 2025–2030 National Cybersecurity Plan targets ransomware and organized crime, facing a critical test during the 2026 FIFA World Cup amid a history of high-profile..."
   ],
-  "sources_hash": "0e2dcb88a0e1e5cc"
+  "sources_hash": "c2c39d0a28231df2"
 }

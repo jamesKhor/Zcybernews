@@ -1,10 +1,10 @@
 {
   "tag": "data-leak",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-28"
+    "latest": "2026-07-09"
   },
   "top_actors": [
     "0APT"
@@ -15,10 +15,13 @@
     "e-commerce",
     "education",
     "financial-services",
-    "freelance-services"
+    "forestry"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "European union",
+    "Latvia",
+    "NATO"
   ],
   "severity_mix": {
     "medium": 1,
@@ -26,9 +29,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "拉脱维亚的LVM表示，44 GB的数据泄露，三分之二的客户在归因于外国财务动机团体的勒索软件攻击后仍无法访问系统。",
     "Notion 公共页面暴露了所有编辑者的电子邮件地址和个人资料照片，这个漏洞影响了数百万协作平台用户。研究人员警告说，数据泄露是无声且持续进行的。",
-    "据安全研究人员称，自由职业平台 Fiverr 通过配置错误的云存储桶暴露了敏感用户文件，包括税务文件和个人身份信息（PII），并且这些数据被 Google 搜索索引。",
-    "微软和 Salesforce 修补了他们 AI 代理平台——Copilot Studio 和 Agentforce 中的关键提示注入漏洞，这些漏洞可能允许外部攻击者窃取敏感的内部数据。"
+    "据安全研究人员称，自由职业平台 Fiverr 通过配置错误的云存储桶暴露了敏感用户文件，包括税务文件和个人身份信息（PII），并且这些数据被 Google 搜索索引。"
   ],
-  "sources_hash": "eb48c65561ba8dd5"
+  "sources_hash": "13c9a83d3769e4cf"
 }

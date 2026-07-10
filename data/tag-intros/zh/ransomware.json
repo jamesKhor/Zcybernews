@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "LockBit 是2026年4月至7月期间发表的55篇勒索软件文章中被引用最频繁的威胁行为者，此外还有 The Gentlemen 和 ShinyHunters。相关报道重点提及了包括 CVE-2026-1731、CVE-2026-34197、CVE-2024-55591、CVE-2025-32433 和 CVE-2025-33073 在内的关键漏洞，共报告了40起高严重性事件和6起严重事件。医疗保健、制造业、教育和金融服务是主要目标，受影响区域涵盖全球、北美、美国、欧洲和土耳其。",
-  "sources_hash": "21db84aa91380b6d",
-  "source_intro_hash": "5400a2a45bf23c58",
+  "intro": "2026年4月至7月间，ZCyberNews共发布56篇关于勒索软件的报道，将LockBit、The Gentlemen和ShinyHunters列为最活跃的威胁行为体。报道涵盖40起高严重性事件和6起重大事件，关键漏洞包括CVE-2026-1731、CVE-2026-34197、CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。受影响行业涵盖医疗、政府、制造业和教育领域，目标地区包括北美、美国、欧洲和土耳其。",
+  "sources_hash": "5a980890f66ddda1",
+  "source_intro_hash": "b1df556228867254",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-08T05:53:45.543Z",
+  "generated_at": "2026-07-10T06:47:55.532Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

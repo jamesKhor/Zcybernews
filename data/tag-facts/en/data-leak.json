@@ -1,10 +1,10 @@
 {
   "tag": "data-leak",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-04-28"
+    "latest": "2026-07-09"
   },
   "top_actors": [
     "0APT"
@@ -15,10 +15,13 @@
     "e-commerce",
     "education",
     "financial-services",
-    "freelance-services"
+    "forestry"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "European union",
+    "Latvia",
+    "NATO"
   ],
   "severity_mix": {
     "medium": 1,
@@ -26,9 +29,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "Latvia's LVM says 44 GB of data leaked, two-thirds of customers still locked out of systems after ransomware attack attributed to a foreign financially motivated group.",
     "Notion public pages expose the email addresses and profile photos of all editors, a flaw affecting millions of users of the collaboration platform.",
-    "Freelance platform Fiverr exposed sensitive user files, including tax documents and PII, via a misconfigured cloud storage bucket, with data indexed by Google search, according to security researchers",
-    "Microsoft and Salesforce have patched critical prompt injection vulnerabilities in their AI agent platforms—Copilot Studio and Agentforce—that could have allowed external attackers to exfiltrate sensi"
+    "Freelance platform Fiverr exposed sensitive user files, including tax documents and PII, via a misconfigured cloud storage bucket, with data indexed by Google search, according to security researchers"
   ],
-  "sources_hash": "4e6e537bd466c35a"
+  "sources_hash": "8f3c939a4a009fdd"
 }

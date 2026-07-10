@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "count": 24,
+  "count": 26,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-26"
+    "latest": "2026-07-10"
   },
   "top_actors": [
     "APT33",
@@ -20,8 +20,8 @@
   "top_sectors": [
     "energy",
     "critical infrastructure",
-    "critical-infrastructure",
     "government",
+    "critical-infrastructure",
     "utilities"
   ],
   "top_regions": [
@@ -38,9 +38,9 @@
     "medium": 1
   },
   "recent_excerpts": [
-    "说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的 TinyRCT...",
-    "墨西哥的2025-2030国家网络安全计划针对勒索软件和有组织犯罪，在2026年FIFA世界杯期间面临严峻考验，同时有着高调历史的...",
-    "澳大利亚第二大糖生产商Mackay Sugar，在网络攻击导致昆士兰州Mackay地区收割停止后，关闭了Farleigh和Racecourse糖厂..."
+    "欧洲委员会对爱尔兰、西班牙、法国和荷兰提起法律诉讼，因其未能将NIS2指令转化为关键基础设施网络安全的国内法律，20...",
+    "拉脱维亚的LVM表示，44 GB的数据泄露，三分之二的客户在归因于外国财务动机团体的勒索软件攻击后仍无法访问系统。",
+    "说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的 TinyRCT..."
   ],
-  "sources_hash": "2c262f0b9c715b80"
+  "sources_hash": "5789a50bdc82a662"
 }
