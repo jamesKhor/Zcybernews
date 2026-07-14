@@ -1,10 +1,10 @@
 {
   "tag": "check-point-research",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-26",
-    "latest": "2026-07-01"
+    "latest": "2026-07-14"
   },
   "top_actors": [
     "Handala Hack",
@@ -24,26 +24,26 @@
   ],
   "top_sectors": [
     "government",
+    "business services",
     "consumer",
     "critical infrastructure",
-    "mobile",
-    "software consultancy"
+    "mobile"
   ],
   "top_regions": [
+    "China",
     "Europe",
     "Global",
     "Israel",
-    "Middle east",
-    "Southeast asia"
+    "Mexico"
   ],
   "severity_mix": {
     "high": 4,
     "critical": 2
   },
   "recent_excerpts": [
+    "Check Point Research's AI Security Report 2026 documents AI now running live intrusions, building 88,000-line C2 frameworks in under a week, and enabling vishing at scale via...",
     "Check Point Research found a DeepSeek-generated sample using Chrome's File System Access API to encrypt Android photo directories — no native payload or exploit required.",
-    "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying.",
-    "A leaked backend database from The Gentlemen RaaS operation reveals 9 accounts, admin TOX ID, initial access via Fortinet/Cisco edge flaws, and a 190,000 USD ransom payout."
+    "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying."
   ],
-  "sources_hash": "4e7d27b9df49e008"
+  "sources_hash": "3459a78513a72fe2"
 }

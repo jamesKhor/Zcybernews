@@ -1,9 +1,9 @@
 {
   "tag": "github",
   "locale": "en",
-  "intro": "Between 21 April and 17 May 2026, ZCyberNews published seven articles under the GitHub tag, covering six high-severity and one critical-severity incident. The Lazarus Group was the top threat actor observed. Key vulnerabilities included CVE-2026-45033, with a CVSS score of 9.8, and CVE-2026-3854, rated 8.7. Affected sectors spanned software development, technology, cryptocurrency, enterprise software, and identity-management, with impacts reported globally and in North America.",
-  "sources_hash": "14832a6af5996bf7",
+  "intro": "Between 21 April and 13 July 2026, ZCyberNews published eight articles under the GitHub tag, covering seven high-severity incidents and one critical event. The top threat actor observed was Lazarus Group. Key vulnerabilities included CVE-2026-45033 with a CVSS score of 9.8 and CVE-2026-3854 with a CVSS score of 8.7. Affected sectors spanned software development, technology, cryptocurrency, enterprise software, and government, with impacts reported globally, particularly in North America and the United States.",
+  "sources_hash": "1daa1609c8b330a9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:03:47.482Z",
+  "generated_at": "2026-07-14T05:32:33.731Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

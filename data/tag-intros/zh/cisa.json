@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "intro": "政府及关键基础设施行业在2026年4月面临一波集中的网络威胁，共有16篇文章被标记为CISA覆盖范围，涉及13起高严重性和3起严重性事件。观察到威胁行为者GRU、Interlock和LummaC2，主要漏洞包括CVE-2024-57726（CVSS 9.9）、CVE-2026-21643（CVSS 9.1）、CVE-2026-34197（CVSS 8.8）、CVE-2024-1708（CVSS 8.4）和CVE-2024-20662。受影响地区主要为美国及全球、北美和欧洲区域，受影响行业涵盖技术、国防和能源领域。",
-  "sources_hash": "67046e0cd9ffc427",
-  "source_intro_hash": "bad32e954ee22cec",
+  "intro": "政府及关键基础设施部门在2026年4月至7月间承受了集中威胁浪潮的主要冲击，该趋势通过CISA标签下的17篇文章被追踪。威胁行为者GRU、Interlock和LummaC2被观测到利用包括CVE-2024-57726、CVE-2026-21643、CVE-2026-34197、CVE-2024-1708和CVE-2024-20662在内的漏洞。这14起高严重性和3起严重性事件主要影响美国、全球运营、北美及欧洲地区，技术、国防和能源部门也频繁成为目标。",
+  "sources_hash": "e36d3478a64d019a",
+  "source_intro_hash": "79f150c6b883a10f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:07:37.750Z",
+  "generated_at": "2026-07-14T05:32:41.513Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

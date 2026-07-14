@@ -1,21 +1,24 @@
 {
   "tag": "prompt-injection",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-06-25"
+    "latest": "2026-07-14"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "enterprise",
     "technology",
+    "business services",
     "enterprise software",
-    "multiple"
+    "government"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "China",
+    "Mexico"
   ],
   "severity_mix": {
     "high": 3,
@@ -24,9 +27,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Check Point Research 的 AI 安全报告 2026 记录了 AI 现在运行实时入侵，一周内构建 88,000 行 C2 框架，并通过网络钓鱼大规模启用 vishing 通过...",
     "一个间谍软件样本在JavaScript注释中预先添加了伪造的核和生物武器政策文本，以触发AI拒绝行为，然后基于LLM的扫描器才能到达真正的有效载荷。",
-    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。",
-    "安全研究人员警告称，由AI驱动的'agentic'浏览器，这些浏览器自动化网络任务，引入了包括即时注入、会话劫持和未经授权的数据外泄在内的新风险，从根本上改变了浏览器的安全模型。"
+    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。"
   ],
-  "sources_hash": "fe70a022d20b5b87"
+  "sources_hash": "07cd9a2ee1d75ebd"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "zh",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-07-02"
+    "latest": "2026-07-13"
   },
   "top_actors": [],
   "top_cves": [
@@ -14,8 +14,8 @@
     }
   ],
   "top_sectors": [
-    "financial services",
     "government",
+    "financial services",
     "cybersecurity",
     "technology",
     "cloud computing"
@@ -28,15 +28,15 @@
     "META"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 9,
     "informational": 1,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
+    "CISA 对 GitHub 泄露事件的事后分析暴露了 844 MB 的内部数据，包括 AWS GovCloud 密钥，揭示该机构忽略了九个自动警报，并在 48 小时后才进行轮换...",
     "卡巴斯基 Compromise Assessment 2025 发现：60%的事件缺乏高置信度警报；30.8%的威胁持续超过3个月；40%的网络壳隐藏在备份中。",
-    "Specops Software 解释了缓存凭证、Kerberos 票据和 ACL 持久性如何让攻击者在 AD 和混合 Entra ID 环境中的密码重置后存活下来。",
-    "Acronis 分析显示 2025 年勒索软件激增 50%；攻击者在加密前系统性地破坏备份。不可变存储和身份分离是关键的防御措施。"
+    "Specops Software 解释了缓存凭证、Kerberos 票据和 ACL 持久性如何让攻击者在 AD 和混合 Entra ID 环境中的密码重置后存活下来。"
   ],
-  "sources_hash": "ec878395efa8e369"
+  "sources_hash": "daa752bf08ef34eb"
 }

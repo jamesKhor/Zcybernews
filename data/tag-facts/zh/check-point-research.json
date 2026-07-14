@@ -1,10 +1,10 @@
 {
   "tag": "check-point-research",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-26",
-    "latest": "2026-07-01"
+    "latest": "2026-07-14"
   },
   "top_actors": [
     "Handala Hack",
@@ -24,26 +24,26 @@
   ],
   "top_sectors": [
     "government",
+    "business services",
     "consumer",
     "critical infrastructure",
-    "mobile",
-    "software consultancy"
+    "mobile"
   ],
   "top_regions": [
+    "China",
     "Europe",
     "Global",
     "Israel",
-    "Middle east",
-    "Southeast asia"
+    "Mexico"
   ],
   "severity_mix": {
     "high": 4,
     "critical": 2
   },
   "recent_excerpts": [
+    "Check Point Research 的 AI 安全报告 2026 记录了 AI 现在运行实时入侵，一周内构建 88,000 行 C2 框架，并通过网络钓鱼大规模启用 vishing 通过...",
     "Check Point Research 发现一个 DeepSeek 生成的样本使用 Chrome 的文件系统访问 API 加密 Android 照片目录 —— 不需要原生负载或漏洞。",
-    "Check Point Research 发现 VECT 勒索软件的加密逻辑中存在一个漏洞，该漏洞会永久性地破坏 Windows 系统上的文件 —— 即使支付赎金后也无法恢复。",
-    "从 The Gentlemen RaaS 操作泄露的后端数据库揭示了9个账户，管理员 TOX ID，通过 Fortinet/Cisco 边缘漏洞的初始访问，以及190,000美元的赎金支付。"
+    "Check Point Research 发现 VECT 勒索软件的加密逻辑中存在一个漏洞，该漏洞会永久性地破坏 Windows 系统上的文件 —— 即使支付赎金后也无法恢复。"
   ],
-  "sources_hash": "3889cfd28c598c6d"
+  "sources_hash": "34bcc98083cc6902"
 }

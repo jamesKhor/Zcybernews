@@ -1,10 +1,10 @@
 {
   "tag": "github",
   "locale": "zh",
-  "intro": "2026年4月21日至5月17日期间，ZCyberNews在GitHub标签下发布了七篇文章，涵盖六起高严重性和一起严重性事件。Lazarus Group是观测到的最主要威胁行为者。关键漏洞包括CVSS评分为9.8的CVE-2026-45033，以及评分为8.7的CVE-2026-3854。受影响行业涵盖软件开发、技术、加密货币、企业软件及身份管理领域，影响范围波及全球及北美地区。",
-  "sources_hash": "a9bd1c01ec9c2c98",
-  "source_intro_hash": "39fd0462b133a597",
+  "intro": "2026年4月21日至7月13日期间，ZCyberNews在GitHub标签下发布了八篇文章，涵盖七起高严重性事件和一起重大事件。观察到的首要威胁行为体是Lazarus Group。关键漏洞包括CVSS评分为9.8的CVE-2026-45033和CVSS评分为8.7的CVE-2026-3854。受影响行业涵盖软件开发、技术、加密货币、企业软件及政府领域，影响范围波及全球，尤以北美和美国地区为甚。",
+  "sources_hash": "b2928ae014df2d77",
+  "source_intro_hash": "cde9734e7971f4bd",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:08:47.153Z",
+  "generated_at": "2026-07-14T05:32:43.353Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

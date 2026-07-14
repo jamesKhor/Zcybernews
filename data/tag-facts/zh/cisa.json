@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-07-13"
   },
   "top_actors": [
     "GRU",
@@ -46,13 +46,13 @@
     "Europe"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "critical": 3
   },
   "recent_excerpts": [
+    "CISA 对 GitHub 泄露事件的事后分析暴露了 844 MB 的内部数据，包括 AWS GovCloud 密钥，揭示该机构忽略了九个自动警报，并在 48 小时后才进行轮换...",
     "CISA 和 FBI 联合咨询详细描述了 LummaC2 信息窃取者的 TTPs 和 IOCs：恶意软件从被入侵的网络中窃取凭证、加密钱包和会话数据。",
-    "CISA 和 USCG 在美国关键基础设施组织的一次主动威胁狩猎中发现持续的弱配置、未修补的系统和凭证重用。",
-    "CISA 将 CVE-2024-1708（ConnectWise ScreenConnect 路径遍历，CVSS 8.4）和一个未命名的 Windows 漏洞添加到其 KEV 目录，基于确认的积极利用。"
+    "CISA 和 USCG 在美国关键基础设施组织的一次主动威胁狩猎中发现持续的弱配置、未修补的系统和凭证重用。"
   ],
-  "sources_hash": "67046e0cd9ffc427"
+  "sources_hash": "e36d3478a64d019a"
 }

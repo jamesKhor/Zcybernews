@@ -1,9 +1,9 @@
 {
   "tag": "prompt-injection",
   "locale": "en",
-  "intro": "This archive collects 7 articles tagged `prompt-injection` published between April 15, 2026 and June 25, 2026. Coverage includes 1 critical, 3 high, 1 medium, and 1 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "016d638e8e6ca1bd",
+  "intro": "This archive collects 8 articles tagged `prompt-injection` published between April 15, 2026 and July 14, 2026. Coverage includes 1 critical, 3 high, 1 medium, and 1 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "58ad6d138b588e62",
   "model": "template:sparse",
-  "generated_at": "2026-06-26T04:32:31.772Z",
+  "generated_at": "2026-07-14T05:32:33.739Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-07-13"
   },
   "top_actors": [
     "GRU",
@@ -46,13 +46,13 @@
     "Europe"
   ],
   "severity_mix": {
-    "high": 13,
+    "high": 14,
     "critical": 3
   },
   "recent_excerpts": [
+    "CISA's postmortem on a GitHub leak exposing 844 MB of internal data, including AWS GovCloud keys, reveals the agency ignored nine automated alerts and took 48 hours to rotate...",
     "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders.",
-    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
-    "CISA and USCG found persistent weak configurations, unpatched systems, and credential reuse during a proactive threat hunt at a US critical infrastructure org."
+    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks."
   ],
-  "sources_hash": "9567a177857e5607"
+  "sources_hash": "f3d0e7b0913879c4"
 }

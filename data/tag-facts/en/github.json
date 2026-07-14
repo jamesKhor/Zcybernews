@@ -1,10 +1,10 @@
 {
   "tag": "github",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-21",
-    "latest": "2026-05-17"
+    "latest": "2026-07-13"
   },
   "top_actors": [
     "Lazarus Group"
@@ -24,20 +24,21 @@
     "technology",
     "cryptocurrency",
     "enterprise software",
-    "identity-management"
+    "government"
   ],
   "top_regions": [
     "Global",
-    "North america"
+    "North america",
+    "United states"
   ],
   "severity_mix": {
-    "high": 6,
+    "high": 7,
     "critical": 1
   },
   "recent_excerpts": [
+    "CISA's postmortem on a GitHub leak exposing 844 MB of internal data, including AWS GovCloud keys, reveals the agency ignored nine automated alerts and took 48 hours to rotate...",
     "An attacker used a compromised GitHub token to download Grafana's entire private codebase. The company says no customer data was accessed and the incident involved an extortion...",
-    "CVE-2026-45033 (CVSS 9.8) in GitHub Copilot CLI before 1.0.43 lets attackers achieve remote code execution by embedding a malicious bare git repository in a project directory.",
-    "SailPoint reported to the SEC that attackers accessed a subset of its GitHub repositories on April 20 via a third-party app vulnerability."
+    "CVE-2026-45033 (CVSS 9.8) in GitHub Copilot CLI before 1.0.43 lets attackers achieve remote code execution by embedding a malicious bare git repository in a project directory."
   ],
-  "sources_hash": "14832a6af5996bf7"
+  "sources_hash": "1daa1609c8b330a9"
 }
