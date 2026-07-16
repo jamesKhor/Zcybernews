@@ -1,0 +1,93 @@
+---
+title: HelloNet Campaign Hijacks ViPNet Update System to Deploy Malicious
+slug: 2026-07-16-hellonet-campaign-hijacks-vipnet-update-system-to-deploy-malicious
+date: '2026-07-16'
+excerpt: >-
+  Kaspersky details HelloNet APT campaign targeting Russian government, energy,
+  and transport sectors via ViPNet update system DLL sideloading since May 2026.
+category: threat-intel
+tags:
+  - hellonet
+  - vipnet
+  - apt
+  - dll-sideloading
+  - kaspersky
+  - russian-organizations
+language: en
+source_urls:
+  - 'https://securelist.com/tr/hellonet-vipnet/120700/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-16-hellonet-campaign-hijacks-vipnet-update-system-to-deploy-malicious
+cluster_key: 'topic:hellonet-campaign-malicious-modules-launched'
+source_count: 1
+seo_query_target: HelloNet campaign ViPNet update system
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals how the HelloNet APT campaign uses the ViPNet update system for DLL
+  sideloading to deploy multiple malicious modules.
+seo_meta_promise: >-
+  Details the HelloNet campaign targeting Russian sectors via ViPNet update
+  system hijack, including HelloInjector, HelloProxy, and HelloBackdoor
+  implants.
+target_hub: apt-state-actors
+internal_link_targets:
+  - apt
+  - apt-state-actors
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of HelloNet attack chain showing ViPNet update system DLL sideloading
+  leading to HelloInjector, HelloProxy, and HelloBackdoor modules
+severity: high
+threat_actor: HelloNet
+affected_sectors:
+  - government
+  - energy
+  - transport
+  - education
+  - logistics
+  - industry
+affected_regions:
+  - Russia
+iocs:
+  - type: ip
+    value: 8.8.8.8
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Kaspersky researchers have uncovered a previously undocumented advanced persistent threat (APT) campaign, dubbed HelloNet, that has been actively targeting large Russian organizations since at least May 2026. The attackers achieved persistence by abusing the ViPNet update system — a widely used software suite for building secure networks — through DLL sideloading, enabling them to deploy a chain of custom malicious modules including a loader, a proxy, a backdoor, and a log cleaner. The campaign has been observed targeting organizations in the government, energy, transport, education, logistics, and industrial sectors, according to a detailed technical report published by Kaspersky's Securelist on July 16, 2026.
+
+## Technical Analysis
+
+On compromised systems, Kaspersky identified a malicious file named `wtsapi32.dll` placed in the directory `C:\Program Files (x86)\InfoTeCS\VIPNet Update System`. This directory belongs to the ViPNet update suite, and the file exploits a DLL sideloading vulnerability in the legitimate executable `itcsrvup64.exe`, which runs at OS startup. By placing `wtsapi32.dll` in this path, the attackers ensured their code would be loaded each time the ViPNet update component started.
+
+### HelloInjector — Loader
+
+The `wtsapi32.dll` file acts as a loader, which Kaspersky named HelloInjector. Its primary function is to inject malicious code into the `svchost.exe` process. Upon execution, HelloInjector checks whether the parent process is `svchost.exe`. If not, it iterates through all running processes looking for one whose name contains "svchost" and whose command line includes "netsvcs". When found, it uses the Windows API functions `NtWriteVirtualMemory` and `NtCreateThreadEx` to inject itself into the target process. Once inside `svchost.exe`, it loads and executes a payload stored in plain text within its body.
+
+### HelloProxy — Proxy and Loader
+
+The payload delivered by HelloInjector is a module Kaspersky named HelloProxy. This component functions both as a hidden proxy and as a loader for additional modules received from the command-and-control (C2) server. HelloProxy intercepts three Windows API functions — `NtDeviceIoControlFile`, `closesocket`, and `shutdown` — using the Microsoft Detours library. The interceptors for `closesocket` and `shutdown` prevent premature socket closure for C2 communication. The `NtDeviceIoControlFile` handler contains the core malicious logic, intercepting two IOCTL codes: `AFD_RECV` (0x12017) and `AFD_GET_TDI_HANDLES` (0x12037). These codes are used in socket operations, and their interception allows the malware to evade user-mode security solutions that filter network connections, according to Kaspersky.
+
+HelloProxy logs every incoming message that triggers the `AFD_RECV` handler to the file `C:\users\public\tesh4RPC.txt` in the format `threadid: <Thread ID> pid=<PID>`. After installing the interceptors, the malware listens on ports 5003 and 5060 for C2 commands. A handshake process distinguishes C2 traffic: the implant sends two bytes `0x0502` and expects a response containing the string `ASDFASFSAFASDF`. Following a successful handshake, the malware operates in one of two modes:
+- **Proxy mode:** Accepts strings in the format `<ip_addr>:<port>` and forwards traffic between newly created sockets.
+- **Loader mode:** Receives an executable file from the C2 server, loads it into its own process memory, and executes it in a separate thread.
+
+### HelloBackdoor and Additional Modules
+
+Kaspersky recovered two additional payloads injected into `svchost.exe` during the campaign:
+- **HelloExecutor:** A backdoor that allows attackers to execute shell commands on the infected system. Kaspersky observed reconnaissance commands including `query user`, `ipconfig /all`, `ping 8.8.8.8 -n 1`, `net user /do`, `net group /do`, and directory listings of `C:\Program Files (x86)`.
+- **HelloCleaner:** A module designed to delete ViPNet software log files, concealing the attackers' activities on the system.
+
+Kaspersky also identified a Rust-based backdoor named HelloBackdoor used for file system manipulations, though the report provides fewer technical details on this component.
+
+## Mitigations & Recommendations
+
+Organizations using the ViPNet update system should monitor for the presence of unexpected DLL files in the `VIPNet Update System` directory, particularly `wtsapi32.dll`. Security teams should also monitor for the creation of the log file `C:\users\public\tesh4RPC.txt` and for network connections to ports 5003 and 5060 on systems running ViPNet software. Kaspersky has released detection rules for its security solutions, including Kaspersky Managed Detection and Response (MDR), KEDR Expert, and the Kaspersky Anti Targeted Attack (KATA) platform with the NDR module. Given the campaign's targeting of critical infrastructure sectors, defenders in Russian organizations should treat any anomalous ViPNet update behavior as a potential indicator of compromise.
+
+## References
+
+- [Kaspersky Securelist: HelloNet campaign — new malicious modules launched through the ViPNet update system](https://securelist.com/tr/hellonet-vipnet/120700/)

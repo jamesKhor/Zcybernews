@@ -1,0 +1,93 @@
+---
+title: HelloNet 活动劫持 ViPNet 更新系统部署恶意软件
+slug: 2026-07-16-hellonet-campaign-hijacks-vipnet-update-system-to-deploy-malicious
+date: '2026-07-16'
+excerpt: >-
+  卡巴斯基详细描述 HelloNet APT 活动，目标是俄罗斯政府、能源和交通部门，通过 ViPNet 更新系统 DLL 侧加载自 2026 年 5
+  月以来。
+category: threat-intel
+tags:
+  - hellonet
+  - vipnet
+  - apt
+  - dll-sideloading
+  - kaspersky
+  - russian-organizations
+language: zh
+source_urls:
+  - 'https://securelist.com/tr/hellonet-vipnet/120700/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-16-hellonet-campaign-hijacks-vipnet-update-system-to-deploy-malicious
+cluster_key: 'topic:hellonet-campaign-malicious-modules-launched'
+source_count: 1
+seo_query_target: HelloNet campaign ViPNet update system
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals how the HelloNet APT campaign uses the ViPNet update system for DLL
+  sideloading to deploy multiple malicious modules.
+seo_meta_promise: >-
+  Details the HelloNet campaign targeting Russian sectors via ViPNet update
+  system hijack, including HelloInjector, HelloProxy, and HelloBackdoor
+  implants.
+target_hub: apt-state-actors
+internal_link_targets:
+  - apt
+  - apt-state-actors
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of HelloNet attack chain showing ViPNet update system DLL sideloading
+  leading to HelloInjector, HelloProxy, and HelloBackdoor modules
+severity: high
+threat_actor: HelloNet
+affected_sectors:
+  - government
+  - energy
+  - transport
+  - education
+  - logistics
+  - industry
+affected_regions:
+  - Russia
+iocs:
+  - type: ip
+    value: 8.8.8.8
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+卡巴斯基研究人员揭露了一个之前未被记录的高级持续性威胁（APT）活动，被称为HelloNet，该活动自2026年5月至少以来一直在积极针对大型俄罗斯组织。攻击者通过滥用ViPNet更新系统——一个广泛使用的构建安全网络的软件套件——通过DLL侧加载实现持续性，使他们能够部署一系列自定义恶意模块，包括加载器、代理、后门和日志清理器。根据卡巴斯基的Securelist在2026年7月16日发布的详细技术报告，该活动已被观察到针对政府、能源、交通、教育、物流和工业部门的组织。
+
+## 技术分析
+
+在被入侵的系统上，卡巴斯基识别了一个名为`wtsapi32.dll`的恶意文件，放置在目录`C:\Program Files (x86)\InfoTeCS\VIPNet Update System`中。该目录属于ViPNet更新套件，文件利用了合法可执行文件`itcsrvup64.exe`中的DLL侧加载漏洞，该文件在操作系统启动时运行。通过在该路径放置`wtsapi32.dll`，攻击者确保了他们的代码每次ViPNet更新组件启动时都会被加载。
+
+### HelloInjector — 加载器
+
+`wtsapi32.dll`文件充当加载器，卡巴斯基将其命名为HelloInjector。其主要功能是将恶意代码注入到`svchost.exe`进程中。执行后，HelloInjector检查父进程是否为`svchost.exe`。如果不是，它会遍历所有正在运行的进程，寻找名称包含“svchost”且命令行包含"netsvcs"的进程。找到后，它使用Windows API函数`NtWriteVirtualMemory`和`NtCreateThreadEx`将自己注入到目标进程中。一旦进入`svchost.exe`，它就会加载并执行存储在其主体中的明文有效载荷。
+
+### HelloProxy — 代理和加载器
+
+HelloInjector传递的有效载荷是一个卡巴斯基命名为HelloProxy的模块。该组件既充当隐藏代理，也充当从命令和控制（C2）服务器接收的额外模块的加载器。HelloProxy使用Microsoft Detours库拦截三个Windows API函数——`NtDeviceIoControlFile`、`closesocket`和`shutdown`。`closesocket`和`shutdown`的拦截器防止C2通信的过早套接字关闭。`NtDeviceIoControlFile`的处理程序包含核心恶意逻辑，拦截两个IOCTL代码：`AFD_RECV`（0x12017）和`AFD_GET_TDI_HANDLES`（0x12037）。这些代码用于套接字操作，它们的拦截允许恶意软件绕过过滤网络连接的用户模式安全解决方案，根据卡巴斯基的说法。
+
+HelloProxy将触发`AFD_RECV`处理程序的每个传入消息记录到文件`C:\users\public\tesh4RPC.txt`中，格式为`threadid: <Thread ID> pid=<PID>`。安装拦截器后，恶意软件监听端口5003和5060上的C2命令。握手过程区分C2流量：植入物发送两个字节`0x0502`并期望包含字符串`ASDFASFSAFASDF`的响应。成功握手后，恶意软件以两种模式之一运行：
+- **代理模式：**接受格式为`<ip_addr>:<port>`的字符串，并将流量转发到新创建的套接字之间。
+- **加载器模式：**从C2服务器接收可执行文件，将其加载到自己的进程内存中，并在单独的线程中执行。
+
+### HelloBackdoor和额外模块
+
+卡巴斯基在活动中恢复了注入到`svchost.exe`的两个额外有效载荷：
+- **HelloExecutor：**一个后门，允许攻击者在被感染的系统上执行shell命令。卡巴斯基观察到的侦察命令包括`query user`、`ipconfig /all`、`ping 8.8.8.8 -n 1`、`net user /do`、`net group /do`和`C:\Program Files (x86)`的目录列表。
+- **HelloCleaner：**一个旨在删除ViPNet软件日志文件的模块，隐藏攻击者在系统上的活动。
+
+卡巴斯基还识别了一个名为HelloBackdoor的基于Rust的后门，用于文件系统操作，尽管报告中对此组件的技术细节较少。
+
+## 缓解措施与建议
+
+使用ViPNet更新系统的组织应监控`VIPNet Update System`目录中意外DLL文件的存在，特别是`wtsapi32.dll`。安全团队还应监控在运行ViPNet软件的系统上创建日志文件`C:\users\public\tesh4RPC.txt`和网络连接到端口5003和5060的情况。卡巴斯基已发布其安全解决方案的检测规则，包括卡巴斯基管理检测和响应（MDR）、KEDR专家和带有NDR模块的卡巴斯基反目标攻击（KATA）平台。鉴于该活动针对关键基础设施部门，俄罗斯组织的防御者应将任何异常的ViPNet更新行为视为潜在的入侵指标。
+
+## 参考资料
+
+- [卡巴斯基Securelist：HelloNet活动 — 通过ViPNet更新系统启动的新恶意模块](https://securelist.com/tr/hellonet-vipnet/120700/)
