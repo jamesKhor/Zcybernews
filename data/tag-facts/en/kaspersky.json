@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-07-07"
+    "latest": "2026-07-15"
   },
   "top_actors": [
     "CrystalX",
@@ -15,9 +15,9 @@
   "top_sectors": [
     "finance",
     "building automation",
+    "cryptocurrency",
     "education",
-    "energy",
-    "financial services"
+    "energy"
   ],
   "top_regions": [
     "Global",
@@ -27,13 +27,13 @@
     "Australia"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 9,
     "critical": 1
   },
   "recent_excerpts": [
+    "Kaspersky GReAT dissects OkoBot, a multi-stage framework using SSH tunnels and over 20 payloads to steal cryptocurrency wallet seed phrases, browser data, and credentials.",
     "Kaspersky ICS CERT reports 19.6% of ICS computers blocked malware in Q1 2026, the lowest rate since Q2 2023.",
-    "Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web shells hid in backups.",
-    "Kaspersky details an active global campaign distributing VBS files via WhatsApp that installs UEMS RMM software, enabling persistent remote access across 12 countries including..."
+    "Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web shells hid in backups."
   ],
-  "sources_hash": "83433524650ca45b"
+  "sources_hash": "732538c5841dec67"
 }

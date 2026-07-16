@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-07-07"
+    "latest": "2026-07-15"
   },
   "top_actors": [
     "CrystalX",
@@ -15,9 +15,9 @@
   "top_sectors": [
     "finance",
     "building automation",
+    "cryptocurrency",
     "education",
-    "energy",
-    "financial services"
+    "energy"
   ],
   "top_regions": [
     "Global",
@@ -27,13 +27,13 @@
     "Australia"
   ],
   "severity_mix": {
-    "high": 8,
+    "high": 9,
     "critical": 1
   },
   "recent_excerpts": [
+    "Kaspersky GReAT 解析 OkoBot，这是一个多阶段框架，使用 SSH 隧道和超过 20 个有效载荷来窃取加密货币钱包种子短语、浏览器数据和凭证。",
     "卡巴斯基ICS CERT报告称，在2026年第一季度，19.6%的ICS计算机阻止了恶意软件，这是自2023年第二季度以来的最低比率。",
-    "卡巴斯基 Compromise Assessment 2025 发现：60%的事件缺乏高置信度警报；30.8%的威胁持续超过3个月；40%的网络壳隐藏在备份中。",
-    "卡巴斯基详细描述了一个活跃的全球活动，通过 WhatsApp 分发 VBS 文件，安装 UEMS RMM 软件，使得在包括...在内的 12 个国家能够持续远程访问。"
+    "卡巴斯基 Compromise Assessment 2025 发现：60%的事件缺乏高置信度警报；30.8%的威胁持续超过3个月；40%的网络壳隐藏在备份中。"
   ],
-  "sources_hash": "8f15b02367730357"
+  "sources_hash": "db72245f33587573"
 }
