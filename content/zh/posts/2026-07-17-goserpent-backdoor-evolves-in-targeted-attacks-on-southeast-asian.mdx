@@ -1,0 +1,112 @@
+---
+title: GoSerpent 后门在针对东南亚的定向攻击中进化
+slug: 2026-07-17-goserpent-backdoor-evolves-in-targeted-attacks-on-southeast-asian
+date: '2026-07-17'
+excerpt: 卡巴斯基详细介绍了自2021年以来活跃的GoSerpent后门，针对东南亚的政府实体，2026年的变种使用了加密的C2，SOCKS5代理，和...
+category: malware
+tags:
+  - goserpent
+  - stowaway-rat
+  - thumbcacheservice
+  - southeast-asia
+  - credential-dumping
+  - socks5-proxy
+  - kaspersky
+language: zh
+source_urls:
+  - 'https://securelist.com/goserpent-backdoor-in-southeast-asia/120687/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-17-goserpent-backdoor-evolves-in-targeted-attacks-on-southeast-asian
+cluster_key: 'topic:goserpent-persistent-threat-evolves-sophisticated'
+source_count: 1
+seo_query_target: >-
+  GoSerpent: a persistent threat evolves with sophisticated data collection and
+  exfiltration
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises readers a detailed technical breakdown of the GoSerpent
+  backdoor's evolution and capabilities in targeted attacks.
+seo_meta_promise: >-
+  The meta description promises a concrete fact about GoSerpent's activity since
+  2021 and its targeting of Southeast Asian governments, with specific tools
+  used.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - threat-intelligence
+  - apt-campaigns
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of GoSerpent attack chain showing initial deployment, C2
+  communication, credential dumping, and data exfiltration phases
+severity: high
+threat_actor: GoSerpent
+affected_sectors:
+  - government
+  - diplomatic
+affected_regions:
+  - Southeast Asia
+iocs:
+  - type: hash_md5
+    value: '31323334353637383930616263646566'
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+卡巴斯基研究人员揭露了一个复杂的多阶段恶意软件活动，目标是东南亚的政府和外交实体，自2021年以来一直活跃，并随着2026年变种的发展而演变。主要工具是一个基于Go的后门，名为GoSerpent，通过ChaCha20加密命令和控制（C2）通信，在被入侵的主机上建立SOCKS5代理，并部署一系列辅助工具用于凭据转储和目标文件收集。2026年5月观察到的活动第二阶段引入了更新的Stowaway RAT和一个隐蔽的数据外泄机制，该机制通过网络共享在数月内收集数据。防御者应优先监控异常SOCKS5代理流量、`C:\Users\Public\`中的文件收集活动以及模仿`lass.exe`或`updates.exe`的进程执行。
+
+## 技术分析
+
+根据卡巴斯基2026年7月17日发布的报告，GoSerpent后门接收包含C2服务器地址和通信密码的加密、base64编码的命令行参数。解密使用AES-CBC模式，固定IV（`31323334353637383930616263646566`）和从预定义字符串派生的密钥。一旦激活，所有C2流量都使用ChaCha20加密，使用密码的SHA256哈希作为密钥。后门支持九个命令，包括`2BA1`（同步/轮询）、`5BA4`（连接到远程服务器）、`6BA5`（创建一个shell）、`9BA8`（启动SOCKS5代理）和`CBAB`（转发到连接的节点）。
+
+GoSerpent通过模仿合法系统进程的文件名来建立持久性，例如`lass.exe`和`updates.exe`。恶意软件可以根据需要部署额外的工具，包括ThumbcacheService、Mimikatz和QuarksDumpLocalHash。卡巴斯基指出，攻击者还使用一个更简单的变体，McMx RAT，它从通过批处理文件`echo`命令生成的纯文本配置文件中接收参数。McMx与GoSerpent共享核心功能——SOCKS5代理、端口转发、文件传输和远程shell——但缺乏较新变体的加密参数处理。
+
+### ThumbcacheService和凭据转储
+
+ThumbcacheService是一个作为Windows服务安装的恶意DLL，充当目标文件收集器。它使用XOR加密和单字节密钥`0x13`对字符串进行混淆，并在`C:\Users\Public\`中创建一个名为`thumbcache_605a.db`的数据库文件。该服务特别收集具有扩展名`.doc`、`.docx`、`.xls`、`.xlsx`、`.ppt`、`.pptx`、`.pdf`、`.txt`和`.rtf`的文档。对于凭据访问，攻击者通过GoSerpent部署Mimikatz和QuarksDumpLocalHash，实现通过网络共享驱动器的横向移动和数据外泄。
+
+### 第二阶段：Stowaway RAT和TmcLoader
+
+2026年5月，卡巴斯基观察到威胁行为者带着进化的工具集返回。新的Stowaway RAT和代理工具类似于最初的GoSerpent，但包括额外的隐蔽能力。一个名为TmcLoader的工具加载TmcPayload，后者外泄ThumbcacheService之前收集的数据。卡巴斯基报告称，攻击者在这一外泄阶段之前已经收集了数月的数据，表明了一个有意识的、耐心的操作节奏。
+
+## 入侵指标
+
+卡巴斯基的报告在其附录中提供了GoSerpent样本、McMx RAT、ThumbcacheService DLL、Mimikatz和QuarksDumpLocalHash的完整文件哈希和C2 IP地址列表。关键指标包括：
+
+- GoSerpent样本、McMx RAT、ThumbcacheService DLL、Mimikatz和QuarksDumpLocalHash的**文件哈希**。
+- 用于GoSerpent和Stowaway RAT通信的**C2 IP地址**。
+
+防御者还应监控数据库文件`thumbcache_605a.db`和从非标准目录运行的名为`lass.exe`或`updates.exe`的进程。
+
+## 战术、技术与程序
+
+该活动遵循一个结构化的杀伤链：
+
+1. **初始访问**（未知向量，可能是鱼叉式网络钓鱼或漏洞利用）部署GoSerpent或McMx RAT。
+2. 通过恶意Windows服务（ThumbcacheService）和伪装成合法进程实现**持久性**。
+3. 使用Mimikatz和QuarksDumpLocalHash进行**凭据访问**，本地部署。
+4. ThumbcacheService将敏感文件收集到本地数据库。
+5. 使用被盗凭据通过网络共享或通过SOCKS5代理的C2通道进行**外泄**。
+
+使用加密（GoSerpent）和纯文本（McMx）C2通道表明攻击者在维护旧基础设施的同时，也使用更新、更隐蔽的组件。
+
+## 威胁行为者背景
+
+卡巴斯基将该活动归因于一个对东南亚政府和外交目标持续感兴趣的威胁行为者。该组织自2021年以来一直活跃，从基于Go的简单工具演变为当前的多组件框架。有意识的两阶段方法——在数据外泄前收集数月数据——表明重点是长期情报收集，而不是机会主义盗窃。卡巴斯基没有指明特定的APT组织，但指出操作安全和工具复杂性表明是国家赞助或资源充足的行为者。
+
+## 缓解措施与建议
+
+鉴于该活动依赖于SOCKS5代理和文件收集，防御者应：
+
+- 监控来自内部主机的意外SOCKS5代理流量，特别是高编号端口。
+- 部署端点检测规则，用于监控从用户可写目录运行的名为`lass.exe`或`updates.exe`的进程。
+- 审计计划任务和Windows服务，寻找可疑的基于DLL的服务，特别是那些在名称或路径中引用`thumbcache`的服务。
+- 限制出站SMB流量，以防止通过网络共享外泄，除非明确需要。
+- 实施应用程序白名单，以阻止在敏感环境中执行未签名的二进制文件。
+
+## 参考资料
+
+- [卡巴斯基Securelist：GoSerpent：一个持续的威胁随着复杂的数据收集和外泄而演变](https://securelist.com/goserpent-backdoor-in-southeast-asia/120687/)

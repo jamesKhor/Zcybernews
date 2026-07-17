@@ -1,0 +1,115 @@
+---
+title: GoSerpent Backdoor Evolves in Targeted Attacks on Southeast Asian
+slug: 2026-07-17-goserpent-backdoor-evolves-in-targeted-attacks-on-southeast-asian
+date: '2026-07-17'
+excerpt: >-
+  Kaspersky details the GoSerpent backdoor, active since 2021, targeting
+  government entities in Southeast Asia with a 2026 variant that uses encrypted
+  C2, SOCKS5 proxying, and...
+category: malware
+tags:
+  - goserpent
+  - stowaway-rat
+  - thumbcacheservice
+  - southeast-asia
+  - credential-dumping
+  - socks5-proxy
+  - kaspersky
+language: en
+source_urls:
+  - 'https://securelist.com/goserpent-backdoor-in-southeast-asia/120687/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-17-goserpent-backdoor-evolves-in-targeted-attacks-on-southeast-asian
+cluster_key: 'topic:goserpent-persistent-threat-evolves-sophisticated'
+source_count: 1
+seo_query_target: >-
+  GoSerpent: a persistent threat evolves with sophisticated data collection and
+  exfiltration
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises readers a detailed technical breakdown of the GoSerpent
+  backdoor's evolution and capabilities in targeted attacks.
+seo_meta_promise: >-
+  The meta description promises a concrete fact about GoSerpent's activity since
+  2021 and its targeting of Southeast Asian governments, with specific tools
+  used.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - threat-intelligence
+  - apt-campaigns
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of GoSerpent attack chain showing initial deployment, C2
+  communication, credential dumping, and data exfiltration phases
+severity: high
+threat_actor: GoSerpent
+affected_sectors:
+  - government
+  - diplomatic
+affected_regions:
+  - Southeast Asia
+iocs:
+  - type: hash_md5
+    value: '31323334353637383930616263646566'
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Kaspersky researchers have uncovered a sophisticated, multi-phase malware campaign targeting government and diplomatic entities in Southeast Asia, active since at least 2021 and evolving with a 2026 variant. The primary tool, a Go-based backdoor named GoSerpent, uses encrypted command-and-control (C2) communications via ChaCha20, establishes SOCKS5 proxies on compromised hosts, and deploys a suite of secondary tools for credential dumping and targeted file collection. The campaign's second phase, observed in May 2026, introduced an updated Stowaway RAT and a stealthy exfiltration mechanism that harvests data collected over months through network shares. Defenders should prioritize monitoring for anomalous SOCKS5 proxy traffic, file collection activity in `C:\Users\Public\`, and execution of processes mimicking `lass.exe` or `updates.exe`.
+
+## Technical Analysis
+
+According to Kaspersky's report published July 17, 2026, the GoSerpent backdoor receives encrypted, base64-encoded command-line arguments containing the C2 server address and a communication password. Decryption uses AES-CBC mode with a fixed IV (`31323334353637383930616263646566`) and keys derived from predefined strings. Once active, all C2 traffic is encrypted with ChaCha20, using the SHA256 hash of the password as the key. The backdoor supports nine commands, including `2BA1` (sync/polling), `5BA4` (connect to remote server), `6BA5` (create a shell), `9BA8` (start SOCKS5 proxy), and `CBAB` (forward to a connected node).
+
+GoSerpent establishes persistence through filenames that mimic legitimate system processes, such as `lass.exe` and `updates.exe`. The malware can deploy additional tools on demand, including ThumbcacheService, Mimikatz, and QuarksDumpLocalHash. Kaspersky notes that the attackers also use a simpler variant, McMx RAT, which receives parameters from plain-text configuration files generated via batch file `echo` commands. McMx shares core functions with GoSerpent — SOCKS5 proxying, port forwarding, file transfer, and remote shell — but lacks the encrypted argument handling of the newer variant.
+
+### ThumbcacheService and Credential Dumping
+
+ThumbcacheService is a malicious DLL installed as a Windows service that functions as a targeted file collector. It uses XOR encryption with a single-byte key `0x13` for string obfuscation and creates a database file named `thumbcache_605a.db` in `C:\Users\Public\`. The service specifically collects documents with extensions `.doc`, `.docx`, `.xls`, `.xlsx`, `.ppt`, `.pptx`, `.pdf`, `.txt`, and `.rtf`. For credential access, the attackers deploy Mimikatz and QuarksDumpLocalHash via GoSerpent, enabling lateral movement and data exfiltration through network shared drives.
+
+### Second Stage: Stowaway RAT and TmcLoader
+
+In May 2026, Kaspersky observed the threat actor returning with an evolved toolset. The new Stowaway RAT and proxy tool resembles the initial GoSerpent but includes additional stealth capabilities. A tool called TmcLoader loads TmcPayload, which exfiltrates data previously collected by ThumbcacheService. Kaspersky reports that the attackers had been collecting data for several months before this exfiltration phase, suggesting a deliberate, patient operational tempo.
+
+## Indicators of Compromise
+
+Kaspersky's report provides a full list of file hashes and C2 IP addresses in its appendix. Key indicators include:
+
+- **File hashes** for GoSerpent samples, McMx RAT, ThumbcacheService DLL, Mimikatz, and QuarksDumpLocalHash.
+- **C2 IP addresses** used for GoSerpent and Stowaway RAT communications.
+
+Defenders should also monitor for the database file `thumbcache_605a.db` and processes named `lass.exe` or `updates.exe` running from non-standard directories.
+
+## Tactics, Techniques & Procedures
+
+The campaign follows a structured kill chain:
+
+1. **Initial Access** (unknown vector, likely spear-phishing or exploit) deploys GoSerpent or McMx RAT.
+2. **Persistence** via malicious Windows service (ThumbcacheService) and masquerading as legitimate processes.
+3. **Credential Access** using Mimikatz and QuarksDumpLocalHash, staged locally.
+4. **Collection** of sensitive documents into a local database by ThumbcacheService.
+5. **Exfiltration** over network shares using stolen credentials, or via C2 channels using SOCKS5 proxies.
+
+The use of both encrypted (GoSerpent) and plain-text (McMx) C2 channels suggests the attackers maintain legacy infrastructure alongside newer, stealthier components.
+
+## Threat Actor Context
+
+Kaspersky attributes the campaign to a threat actor with a sustained interest in Southeast Asian government and diplomatic targets. The group has been active since at least 2021, evolving from simpler Go-based tools to the current multi-component framework. The deliberate two-phase approach — collecting data for months before exfiltration — indicates a focus on long-term intelligence gathering rather than opportunistic theft. Kaspersky does not name a specific APT group but notes the operational security and tooling sophistication suggest a state-sponsored or highly resourced actor.
+
+## Mitigations & Recommendations
+
+Given the campaign's reliance on SOCKS5 proxies and file collection, defenders should:
+
+- Monitor for unexpected SOCKS5 proxy traffic originating from internal hosts, particularly on high-numbered ports.
+- Deploy endpoint detection rules for processes named `lass.exe` or `updates.exe` running from user-writable directories.
+- Audit scheduled tasks and Windows services for suspicious DLL-based services, especially those referencing `thumbcache` in their names or paths.
+- Restrict outbound SMB traffic to prevent exfiltration over network shares unless explicitly required.
+- Implement application whitelisting to block execution of unsigned binaries in sensitive environments.
+
+## References
+
+- [Kaspersky Securelist: GoSerpent: a persistent threat evolves with sophisticated data collection and exfiltration](https://securelist.com/goserpent-backdoor-in-southeast-asia/120687/)
