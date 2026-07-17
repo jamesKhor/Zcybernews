@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月16日至2026年7月15日期间发布的12篇标记为`kaspersky`的文章，为安全团队提供了该话题在ZCyberNews报道中呈现方式的聚焦视角。观察到的行为者提及包括CrystalX、Lotus Wiper和OceanLotus，仅当底层文章元数据支持该归因时才予以呈现。受影响范围信号强调金融、楼宇自动化和加密货币，覆盖全球、俄罗斯和非洲地区，帮助读者比较暴露模式，而不添加超出档案数据的声明。严重程度覆盖包括1篇严重报告和9篇高危报告。",
-  "sources_hash": "db72245f33587573",
-  "source_intro_hash": "2ad42d9315249792",
+  "intro": "本档案收录了2026年4月16日至2026年7月17日期间发布的14篇标记为`kaspersky`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的集中视角。观察到的行为者引用包括CrystalX、GoSerpent和HelloNet，仅在底层文章元数据支持归因的情况下呈现。受影响范围信号强调金融、教育和能源领域，覆盖全球、俄罗斯和东南亚地区，帮助读者在不超出档案数据范围的前提下比较暴露模式。严重程度覆盖包括1篇严重和11篇高危报告。",
+  "sources_hash": "6b4069d092f509d6",
+  "source_intro_hash": "cc939ff228cffdd2",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-16T05:42:04.375Z",
+  "generated_at": "2026-07-17T05:43:58.618Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

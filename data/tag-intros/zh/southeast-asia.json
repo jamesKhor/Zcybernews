@@ -1,0 +1,10 @@
+{
+  "tag": "southeast-asia",
+  "locale": "zh",
+  "intro": "在2026年4月26日至7月17日期间发布的五篇文章中，ZCyberNews追踪了标注为“东南亚”标签的高危威胁。所观察到的威胁行为者包括Chinese Transnational Organized Crime、CL-STA-1062和GoSerpent。相关报道重点提及了CVE-2026-3502，这是一个CVSS评分为7.8的漏洞。受影响的行业涵盖政府、外交、能源、金融服务和电信，而目标区域则遍及东南亚、柬埔寨、欧洲和美国。",
+  "sources_hash": "ec98684f0ae5c8d3",
+  "source_intro_hash": "7a749f619a7cb024",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-07-17T05:44:00.321Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

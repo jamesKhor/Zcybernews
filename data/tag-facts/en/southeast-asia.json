@@ -1,0 +1,42 @@
+{
+  "tag": "southeast-asia",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-26",
+    "latest": "2026-07-17"
+  },
+  "top_actors": [
+    "Chinese Transnational Organized Crime",
+    "CL-STA-1062",
+    "GoSerpent"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-3502",
+      "cvss": 7.8
+    }
+  ],
+  "top_sectors": [
+    "government",
+    "diplomatic",
+    "energy",
+    "financial services",
+    "telecommunications"
+  ],
+  "top_regions": [
+    "Southeast asia",
+    "Cambodia",
+    "Europe",
+    "United states"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Kaspersky details the GoSerpent backdoor, active since 2021, targeting government entities in Southeast Asia with a 2026 variant that uses encrypted C2, SOCKS5 proxying, and...",
+    "Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast Asian government and energy entities in 2025 using web shells, tunneling tools, and a new TinyRCT...",
+    "U.S. Treasury sanctioned Cambodian Senator Ly Yong Phat over alleged ties to human trafficking and cyberscam compounds."
+  ],
+  "sources_hash": "c48286ee135950e2"
+}

@@ -1,0 +1,9 @@
+{
+  "tag": "southeast-asia",
+  "locale": "en",
+  "intro": "Over five articles published between April 26 and July 17, 2026, ZCyberNews has tracked high-severity threats under the southeast-asia tag. Chinese Transnational Organized Crime, CL-STA-1062, and GoSerpent were among the threat actors observed. The coverage highlighted CVE-2026-3502, a vulnerability with a CVSS score of 7.8. Affected sectors included government, diplomatic, energy, financial services, and telecommunications, while targeted regions spanned Southeast Asia, Cambodia, Europe, and the United States.",
+  "sources_hash": "c48286ee135950e2",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-07-17T05:43:53.842Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}
