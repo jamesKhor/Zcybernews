@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "intro": "过去一个月，ZCyberNews在威胁情报标签下发布了29篇文章，内容涵盖Commercial Surveillance Vendors、GopherWhisper和Handala Hack的活动。这些报告日期为2026年4月13日至5月14日，记录了全球政府、科技、金融服务、民间社会及关键基础设施领域所受影响，并在亚洲、欧洲、伊朗和北美地区记录了具体事件。报道包含12条信息类、10条高危类和3条中危类条目，反映出这些不同行为体在集中时段内被观测到的活动情况。",
-  "sources_hash": "e8e80532a2d5f2e7",
-  "source_intro_hash": "f9d8abce19148523",
+  "intro": "2026年4月至7月，ZCyberNews共发布30篇威胁情报文章，其中ClickFix、Commercial Surveillance Vendors和GopherWhisper是最常被观测到的威胁行为体。关键漏洞包括CVE-2025-24054、CVE-2025-33053和CVE-2026-21513。报道覆盖全球、亚洲、欧洲、伊朗及北美地区的政府、科技、金融服务、民间社会及关键基础设施行业。严重程度分布为：11篇高危、12篇信息性、3篇中危报告。",
+  "sources_hash": "55459f8a07ac8a4e",
+  "source_intro_hash": "42324e7635ce8df5",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:11:08.577Z",
+  "generated_at": "2026-07-21T05:53:11.410Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

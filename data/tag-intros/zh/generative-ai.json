@@ -1,10 +1,10 @@
 {
   "tag": "generative-ai",
   "locale": "zh",
-  "intro": "本档案收录了 5 篇带有「generative-ai」标签的文章，发布时间从2026年4月12日至2026年4月24日。其中包含4 篇高危、1 篇中危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "10c26c61289610e5",
-  "source_intro_hash": "481cd750e5fc9a1c",
-  "model": "template:sparse",
-  "generated_at": "2026-05-18T10:08:43.413Z",
+  "intro": "This archive collects 6 articles tagged `generative-ai` published between April 12, 2026 and July 21, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2025-24054, CVE-2025-33053, and CVE-2026-21513, with each report tied to the specific vulnerability context available in the source article. Observed actor references include ClickFix, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize financial services, technology, and government across Europe, Global, and North america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 5 high, and 1 medium reports.",
+  "sources_hash": "73eedb95d6996d8e",
+  "source_intro_hash": "f1c8d8566d2b3f4f",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-07-21T05:53:04.766Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,17 +1,27 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 29,
+  "count": 30,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-14"
+    "latest": "2026-07-21"
   },
   "top_actors": [
+    "ClickFix",
     "Commercial Surveillance Vendors",
-    "GopherWhisper",
-    "Handala Hack"
+    "GopherWhisper"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2025-24054"
+    },
+    {
+      "id": "CVE-2025-33053"
+    },
+    {
+      "id": "CVE-2026-21513"
+    }
+  ],
   "top_sectors": [
     "government",
     "technology",
@@ -27,14 +37,14 @@
     "North america"
   ],
   "severity_mix": {
+    "high": 11,
     "informational": 12,
-    "high": 10,
     "medium": 3
   },
   "recent_excerpts": [
+    "Rapid7 MDR found an exposed server with 1,048 artifacts — LNK lures, WebDAV scripts, CVE-2025-33053 tests — revealing attackers using generative AI to systematize malware delivery.",
     "Recorded Future's Insikt Group argues AI reasoning over attacker TTPs and defender exposure data creates continuous risk assessment, narrowing the structural asymmetry between...",
-    "Criminal IP and Securonix ThreatQ partnership embeds exposure-based threat intel into automated workflows, reducing manual triage for SOC teams.",
-    "Black Hills Information Security released GoSpoof, a Python tool that opens all ports on a honeypot to capture attacker scanning patterns and payloads in real time."
+    "Criminal IP and Securonix ThreatQ partnership embeds exposure-based threat intel into automated workflows, reducing manual triage for SOC teams."
   ],
-  "sources_hash": "934b31b5eaaefa3d"
+  "sources_hash": "0874d6a20499a270"
 }

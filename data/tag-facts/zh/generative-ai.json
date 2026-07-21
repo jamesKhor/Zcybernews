@@ -1,19 +1,31 @@
 {
   "tag": "generative-ai",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-07-21"
   },
-  "top_actors": [],
-  "top_cves": [],
+  "top_actors": [
+    "ClickFix"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2025-24054"
+    },
+    {
+      "id": "CVE-2025-33053"
+    },
+    {
+      "id": "CVE-2026-21513"
+    }
+  ],
   "top_sectors": [
     "financial services",
-    "healthcare",
     "technology",
-    "cybersecurity",
-    "enterprise"
+    "government",
+    "healthcare",
+    "cybersecurity"
   ],
   "top_regions": [
     "Europe",
@@ -21,13 +33,13 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 1
   },
   "recent_excerpts": [
+    "Rapid7 MDR 发现了一个暴露的服务器，有1,048个工件 — LNK 诱饵，WebDAV 脚本，CVE-2025-33053 测试 — 揭示攻击者使用生成性AI来系统化恶意软件交付。",
     "企业报告称，在过去六个月中，AI生成的网络钓鱼活动急剧增加，这些活动大规模制作个性化诱饵，从广泛的撒网转向1对1的目标攻击。",
-    "Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project Glasswing 项目以发现并修补漏洞。",
-    "云安全联盟警告称Anthropic的Claude Mythos模型将引发一场'AI漏洞风暴'，迫使CISOs在18个月内管理代码缺陷和新颖利用技术的10倍激增。"
+    "Anthropic 限制对其 Claude Mythos 预览版 AI 模型的访问，理由是其能够自动化漏洞发现和利用链创建，并启动 Project Glasswing 项目以发现并修补漏洞。"
   ],
-  "sources_hash": "10c26c61289610e5"
+  "sources_hash": "73eedb95d6996d8e"
 }

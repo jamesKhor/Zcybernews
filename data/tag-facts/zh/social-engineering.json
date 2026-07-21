@@ -1,27 +1,36 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "count": 58,
+  "count": 59,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-06-22"
+    "latest": "2026-07-21"
   },
   "top_actors": [
+    "ClickFix",
     "Lazarus Group",
-    "UNC6692",
-    "APT37 (ScarCruft, InkySquid)"
+    "UNC6692"
   ],
   "top_cves": [
     {
       "id": "CVE-2023-36036"
+    },
+    {
+      "id": "CVE-2025-24054"
+    },
+    {
+      "id": "CVE-2025-33053"
+    },
+    {
+      "id": "CVE-2026-21513"
     }
   ],
   "top_sectors": [
-    "cryptocurrency",
     "financial services",
+    "cryptocurrency",
     "technology",
     "financial-services",
-    "enterprise"
+    "government"
   ],
   "top_regions": [
     "Global",
@@ -31,15 +40,15 @@
     "Australia"
   ],
   "severity_mix": {
-    "high": 44,
+    "high": 45,
     "informational": 2,
     "medium": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "Rapid7 MDR 发现了一个暴露的服务器，有1,048个工件 — LNK 诱饵，WebDAV 脚本，CVE-2025-33053 测试 — 揭示攻击者使用生成性AI来系统化恶意软件交付。",
     "卡巴斯基详细描述了一个活跃的全球活动，通过 WhatsApp 分发 VBS 文件，安装 UEMS RMM 软件，使得在包括...在内的 12 个国家能够持续远程访问。",
-    "Signal 引入了新的应用内确认和警告，以对抗与俄罗斯国家黑客有关的网络钓鱼攻击，这些黑客滥用了 Linked Device 功能来劫持高知名度的...",
-    "Steve Stasiukonis 在2006年对一家信用合作社进行的USB投掷测试 —— 员工插入的20个驱动器中有15个 —— 成为了至今仍被使用的物理社交工程评估的蓝图..."
+    "Signal 引入了新的应用内确认和警告，以对抗与俄罗斯国家黑客有关的网络钓鱼攻击，这些黑客滥用了 Linked Device 功能来劫持高知名度的..."
   ],
-  "sources_hash": "399635cbe0ff3d9c"
+  "sources_hash": "cdc8c68745c5ef4d"
 }

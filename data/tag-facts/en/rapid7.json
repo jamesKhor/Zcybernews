@@ -1,12 +1,13 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-06-10"
+    "latest": "2026-07-21"
   },
   "top_actors": [
+    "ClickFix",
     "KongTuke",
     "Kyber"
   ],
@@ -32,11 +33,11 @@
     }
   ],
   "top_sectors": [
+    "financial services",
+    "government",
+    "technology",
     "cybersecurity",
-    "enterprise",
-    "enterprise IT",
-    "enterprise networking",
-    "financial services"
+    "enterprise"
   ],
   "top_regions": [
     "Global",
@@ -44,14 +45,14 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "critical": 4,
     "informational": 5
   },
   "recent_excerpts": [
+    "Rapid7 MDR found an exposed server with 1,048 artifacts — LNK lures, WebDAV scripts, CVE-2025-33053 tests — revealing attackers using generative AI to systematize malware delivery.",
     "Rapid7 gains access to Anthropic's Project Glasswing and Claude Mythos Preview to explore frontier AI for defensive security workflows, including vulnerability validation and...",
-    "Rapid7's Metasploit Framework adds Vim plugin persistence, exploits for CVE-2025-6793 (Marvell QConvergeConsole), CVE-2024-48760 (GestioIP), and CVE-2023-30253 (Dolibarr).",
-    "Rapid7 discovered CVE-2026-20182, a 10.0-CVSS authentication bypass in Cisco Catalyst SD-WAN Controller. Unauthenticated attackers can inject SSH keys and issue NETCONF commands."
+    "Rapid7's Metasploit Framework adds Vim plugin persistence, exploits for CVE-2025-6793 (Marvell QConvergeConsole), CVE-2024-48760 (GestioIP), and CVE-2023-30253 (Dolibarr)."
   ],
-  "sources_hash": "d49cc121344a25ee"
+  "sources_hash": "e194e28bcce5b6e9"
 }

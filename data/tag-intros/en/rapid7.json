@@ -1,9 +1,9 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "intro": "This tag archive covers 16 articles published between April 13 and June 10, 2026, tracking vulnerabilities and threats reported by Rapid7. The threat actors KongTuke and Kyber were observed in these reports. Key vulnerabilities include CVE-2026-20127, CVE-2026-20182, CVE-2025-59718, CVE-2026-41940, and CVE-2023-30253, with two carrying a CVSS score of 10 and two at 9.8. Affected sectors include cybersecurity, enterprise, enterprise IT, enterprise networking, and financial services, with impacts reported across Global, Europe, and North America regions. The coverage includes three high, four critical, and five informational severity items.",
-  "sources_hash": "d49cc121344a25ee",
+  "intro": "From April 13 to July 21, 2026, ZCyberNews published 17 articles covering the tag rapid7. The reporting highlighted activity from threat actors ClickFix, KongTuke, and Kyber, and tracked critical vulnerabilities including CVE-2026-20127 and CVE-2026-20182, both with a CVSS score of 10, alongside CVE-2025-59718 and CVE-2026-41940 at 9.8, and CVE-2023-30253. Affected sectors spanned financial services, government, technology, cybersecurity, and enterprise, with a global impact across Europe and North America. The coverage comprised four high-severity, four critical, and five informational items.",
+  "sources_hash": "e194e28bcce5b6e9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-10T04:34:27.955Z",
+  "generated_at": "2026-07-21T05:52:57.111Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

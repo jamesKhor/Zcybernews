@@ -1,12 +1,13 @@
 {
   "tag": "rapid7",
   "locale": "zh",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-06-10"
+    "latest": "2026-07-21"
   },
   "top_actors": [
+    "ClickFix",
     "KongTuke",
     "Kyber"
   ],
@@ -32,11 +33,11 @@
     }
   ],
   "top_sectors": [
+    "financial services",
+    "government",
+    "technology",
     "cybersecurity",
-    "enterprise",
-    "enterprise IT",
-    "enterprise networking",
-    "financial services"
+    "enterprise"
   ],
   "top_regions": [
     "Global",
@@ -44,14 +45,14 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "critical": 4,
     "informational": 5
   },
   "recent_excerpts": [
+    "Rapid7 MDR 发现了一个暴露的服务器，有1,048个工件 — LNK 诱饵，WebDAV 脚本，CVE-2025-33053 测试 — 揭示攻击者使用生成性AI来系统化恶意软件交付。",
     "Rapid7 获得访问 Anthropic 的 Project Glasswing 和 Claude Mythos Preview 的权限，以探索前沿 AI 在防御性安全工作流程中的应用，包括漏洞验证和...",
-    "Rapid7 的 Metasploit Framework 添加了 Vim 插件持久性，漏洞利用针对 CVE-2025-6793（Marvell QConvergeConsole）、CVE-2024-48760（GestioIP）和 CVE-2023-30253（Dolibarr）。",
-    "Rapid7发现了CVE-2026-20182，这是一个10.0-CVSS认证绕过漏洞，存在于思科Catalyst SD-WAN控制器中。未经认证的攻击者可以注入SSH密钥并发出NETCONF命令。"
+    "Rapid7 的 Metasploit Framework 添加了 Vim 插件持久性，漏洞利用针对 CVE-2025-6793（Marvell QConvergeConsole）、CVE-2024-48760（GestioIP）和 CVE-2023-30253（Dolibarr）。"
   ],
-  "sources_hash": "d9eb183710cab9cb"
+  "sources_hash": "8b219e49f48de3c0"
 }

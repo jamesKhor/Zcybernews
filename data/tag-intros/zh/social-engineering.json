@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "intro": "在过去的三个月里，ZCyberNews追踪了58篇与社会工程学相关的文章，其中44篇被评为高严重性，1篇为严重级别。Lazarus Group、UNC6692和APT37 (ScarCruft, InkySquid)是最常被观测到的威胁行为体，而CVE-2023-36036是最主要的漏洞。受影响的主要行业包括加密货币、金融服务、科技、金融服务业及企业领域，影响范围覆盖全球，具体报告来自北美、欧洲、美国和澳大利亚。",
-  "sources_hash": "399635cbe0ff3d9c",
-  "source_intro_hash": "7060f8e1d6bff550",
+  "intro": "2026年4月至7月期间，ZCyberNews共报道了59起社会工程学事件，其中ClickFix、Lazarus Group和UNC6692是最常被观测到的威胁行为体。被利用的关键漏洞包括CVE-2023-36036、CVE-2025-24054、CVE-2025-33053和CVE-2026-21513，而金融服务、加密货币、科技和政府行业遭受的攻击最为严重。严重程度分布为：45份高危报告、11份中危报告、2份信息性报告和1份严重报告，影响范围覆盖北美、欧洲、美国、澳大利亚及全球各地。",
+  "sources_hash": "cdc8c68745c5ef4d",
+  "source_intro_hash": "d90f835ccc570d09",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-23T04:27:56.272Z",
+  "generated_at": "2026-07-21T05:53:09.359Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

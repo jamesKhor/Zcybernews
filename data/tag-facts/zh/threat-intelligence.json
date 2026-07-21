@@ -1,17 +1,27 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "count": 28,
+  "count": 29,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-14"
+    "latest": "2026-07-21"
   },
   "top_actors": [
+    "ClickFix",
     "Commercial Surveillance Vendors",
-    "GopherWhisper",
-    "Handala Hack"
+    "GopherWhisper"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2025-24054"
+    },
+    {
+      "id": "CVE-2025-33053"
+    },
+    {
+      "id": "CVE-2026-21513"
+    }
+  ],
   "top_sectors": [
     "government",
     "technology",
@@ -27,14 +37,14 @@
     "North america"
   ],
   "severity_mix": {
+    "high": 11,
     "informational": 11,
-    "high": 10,
     "medium": 3
   },
   "recent_excerpts": [
+    "Rapid7 MDR 发现了一个暴露的服务器，有1,048个工件 — LNK 诱饵，WebDAV 脚本，CVE-2025-33053 测试 — 揭示攻击者使用生成性AI来系统化恶意软件交付。",
     "Recorded Future 的 Insikt Group 认为，AI 对攻击者 TTPs 和防御者暴露数据的推理创造了持续的风险评估，缩小了...",
-    "Criminal IP 和 Securonix ThreatQ 的合作将基于暴露的威胁情报嵌入到自动化工作流程中，减少了SOC团队的手动分类工作。",
-    "Insikt Group 详细描述了威胁情报中AI采用的四个盲点：理解差距、侵蚀护城河、部署复杂性和高级角色的转变。"
+    "Criminal IP 和 Securonix ThreatQ 的合作将基于暴露的威胁情报嵌入到自动化工作流程中，减少了SOC团队的手动分类工作。"
   ],
-  "sources_hash": "e8e80532a2d5f2e7"
+  "sources_hash": "55459f8a07ac8a4e"
 }

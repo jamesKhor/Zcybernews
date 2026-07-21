@@ -1,19 +1,31 @@
 {
   "tag": "generative-ai",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-24"
+    "latest": "2026-07-21"
   },
-  "top_actors": [],
-  "top_cves": [],
+  "top_actors": [
+    "ClickFix"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2025-24054"
+    },
+    {
+      "id": "CVE-2025-33053"
+    },
+    {
+      "id": "CVE-2026-21513"
+    }
+  ],
   "top_sectors": [
     "financial services",
-    "healthcare",
     "technology",
-    "cybersecurity",
-    "enterprise"
+    "government",
+    "healthcare",
+    "cybersecurity"
   ],
   "top_regions": [
     "Europe",
@@ -21,13 +33,13 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 1
   },
   "recent_excerpts": [
+    "Rapid7 MDR found an exposed server with 1,048 artifacts — LNK lures, WebDAV scripts, CVE-2025-33053 tests — revealing attackers using generative AI to systematize malware delivery.",
     "Enterprises report a sharp rise in AI-generated phishing campaigns that craft personalized lures at scale, moving from broad sprays to 1-to-1 targeting in the last six months.",
-    "Anthropic restricts access to its Claude Mythos Preview AI model, citing its ability to automate vulnerability discovery and exploit chain creation, and launches Project Glasswing to find and patch fl",
-    "The Cloud Security Alliance warns that Anthropic's Claude Mythos model will trigger an 'AI vulnerability storm,' forcing CISOs to manage a 10x surge in code flaws and novel exploit techniques within 1"
+    "Anthropic restricts access to its Claude Mythos Preview AI model, citing its ability to automate vulnerability discovery and exploit chain creation, and launches Project Glasswing to find and patch fl"
   ],
-  "sources_hash": "f11bde41575ace02"
+  "sources_hash": "aa8d4b672261ba81"
 }

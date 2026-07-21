@@ -1,9 +1,9 @@
 {
   "tag": "generative-ai",
   "locale": "en",
-  "intro": "This archive collects 5 articles tagged `generative-ai` published between April 12, 2026 and April 24, 2026. Coverage includes 4 high, and 1 medium reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "f11bde41575ace02",
-  "model": "template:sparse",
-  "generated_at": "2026-05-18T10:05:44.779Z",
+  "intro": "This archive collects 6 articles tagged `generative-ai` published between April 12, 2026 and July 21, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2025-24054, CVE-2025-33053, and CVE-2026-21513, with each report tied to the specific vulnerability context available in the source article. Observed actor references include ClickFix, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize financial services, technology, and government across Europe, Global, and North america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 5 high, and 1 medium reports.",
+  "sources_hash": "aa8d4b672261ba81",
+  "model": "template:fallback",
+  "generated_at": "2026-07-21T05:53:01.932Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

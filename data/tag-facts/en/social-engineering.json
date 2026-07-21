@@ -1,27 +1,36 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 58,
+  "count": 59,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-06-22"
+    "latest": "2026-07-21"
   },
   "top_actors": [
+    "ClickFix",
     "Lazarus Group",
-    "UNC6692",
-    "APT37 (ScarCruft, InkySquid)"
+    "UNC6692"
   ],
   "top_cves": [
     {
       "id": "CVE-2023-36036"
+    },
+    {
+      "id": "CVE-2025-24054"
+    },
+    {
+      "id": "CVE-2025-33053"
+    },
+    {
+      "id": "CVE-2026-21513"
     }
   ],
   "top_sectors": [
-    "cryptocurrency",
     "financial services",
+    "cryptocurrency",
     "technology",
     "financial-services",
-    "enterprise"
+    "government"
   ],
   "top_regions": [
     "Global",
@@ -31,15 +40,15 @@
     "Australia"
   ],
   "severity_mix": {
-    "high": 44,
+    "high": 45,
     "informational": 2,
     "medium": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "Rapid7 MDR found an exposed server with 1,048 artifacts — LNK lures, WebDAV scripts, CVE-2025-33053 tests — revealing attackers using generative AI to systematize malware delivery.",
     "Kaspersky details an active global campaign distributing VBS files via WhatsApp that installs UEMS RMM software, enabling persistent remote access across 12 countries including...",
-    "Signal introduced new in-app confirmations and warnings to counter phishing attacks linked to Russian state hackers who abused the Linked Device feature to hijack high-profile...",
-    "Steve Stasiukonis's 2006 USB drop test at a credit union — 15 of 20 drives plugged in by employees — became the blueprint for physical social engineering assessments still used…"
+    "Signal introduced new in-app confirmations and warnings to counter phishing attacks linked to Russian state hackers who abused the Linked Device feature to hijack high-profile..."
   ],
-  "sources_hash": "b510f3f927b765e9"
+  "sources_hash": "088c4a9302ca4451"
 }
