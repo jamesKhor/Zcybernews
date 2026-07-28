@@ -1,0 +1,9 @@
+{
+  "tag": "russia",
+  "locale": "en",
+  "intro": "This archive collects 5 articles tagged `russia` published between April 16, 2026 and July 28, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Silver Fox and PhantomCore, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize government, financial services, and activism across Russia, India, and Belarus, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, and 4 high reports.",
+  "sources_hash": "061c0ef0ac1639ca",
+  "model": "template:fallback",
+  "generated_at": "2026-07-28T05:47:35.979Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

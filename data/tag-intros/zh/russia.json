@@ -1,0 +1,10 @@
+{
+  "tag": "russia",
+  "locale": "zh",
+  "intro": "此档案收录了2026年4月16日至2026年7月28日期间发布的5篇标记为`russia`的文章，为安全团队提供了该话题在ZCyberNews报道中出现的聚焦视角。观察到的行为者提及包括Silver Fox和PhantomCore，仅当底层文章元数据支持该归因时才予以呈现。受影响范围信号强调俄罗斯、印度和白俄罗斯的政府、金融服务及活动领域，帮助读者在不超出档案数据范围的前提下对比暴露模式。严重程度覆盖包括1篇严重报告和4篇高危报告。",
+  "sources_hash": "aa13d3468bb7d1e7",
+  "source_intro_hash": "801540f809c552fe",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-07-28T05:47:40.611Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

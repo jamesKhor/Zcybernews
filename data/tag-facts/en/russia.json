@@ -1,0 +1,38 @@
+{
+  "tag": "russia",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-07-28"
+  },
+  "top_actors": [
+    "Silver Fox",
+    "PhantomCore"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "financial services",
+    "activism",
+    "civil society",
+    "enterprise"
+  ],
+  "top_regions": [
+    "Russia",
+    "India",
+    "Belarus",
+    "Global",
+    "Kazakhstan"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Resident NGO uncovers a Telegram phishing campaign targeting an exiled Belarusian activist and users in Russia and Kazakhstan using individualized links and device fingerprinting.",
+    "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky.",
+    "China-linked Silver Fox group targets Indian and Russian organizations with ABCDoor backdoor via tax-themed phishing emails in December 2025 campaign."
+  ],
+  "sources_hash": "061c0ef0ac1639ca"
+}

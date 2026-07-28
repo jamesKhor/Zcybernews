@@ -1,9 +1,9 @@
 {
   "tag": "telegram",
   "locale": "en",
-  "intro": "This archive collects 6 articles tagged `telegram` published between April 13, 2026 and May 3, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Bluekit, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize financial services, social media, and technology across Global, China, and Southeast asia, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 4 high, 1 medium, and 1 informational reports.",
-  "sources_hash": "bf30ed7c30bb5b02",
+  "intro": "This archive collects 7 articles tagged `telegram` published between April 13, 2026 and July 28, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Bluekit, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize financial services, social media, and technology across Global, Belarus, and China, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 5 high, 1 medium, and 1 informational reports.",
+  "sources_hash": "28066a2b2f0e8995",
   "model": "template:fallback",
-  "generated_at": "2026-05-18T10:05:10.811Z",
+  "generated_at": "2026-07-28T05:47:31.325Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

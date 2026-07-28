@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "count": 61,
+  "count": 62,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-13"
+    "latest": "2026-07-28"
   },
   "top_actors": [
     "Silver Fox",
@@ -40,16 +40,16 @@
     "Latin america",
     "United states",
     "Canada",
-    "Caribbean"
+    "Russia"
   ],
   "severity_mix": {
-    "high": 53,
+    "high": 54,
     "medium": 8
   },
   "recent_excerpts": [
+    "Resident NGO uncovers a Telegram phishing campaign targeting an exiled Belarusian activist and users in Russia and Kazakhstan using individualized links and device fingerprinting.",
     "Signal introduced new in-app confirmations and warnings to counter phishing attacks linked to Russian state hackers who abused the Linked Device feature to hijack high-profile...",
-    "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky.",
-    "Three men arrested in Toronto for operating an SMS blaster that impersonated cell towers to send phishing texts targeting banking credentials in a multi-month campaign."
+    "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky."
   ],
-  "sources_hash": "8f46c529c4176677"
+  "sources_hash": "4bd77c121b24ac0b"
 }

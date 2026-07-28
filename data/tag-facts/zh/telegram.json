@@ -1,10 +1,10 @@
 {
   "tag": "telegram",
   "locale": "zh",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-03"
+    "latest": "2026-07-28"
   },
   "top_actors": [
     "Bluekit"
@@ -14,24 +14,25 @@
     "financial services",
     "social media",
     "technology",
-    "cryptocurrency",
-    "e-commerce"
+    "activism",
+    "civil society"
   ],
   "top_regions": [
     "Global",
+    "Belarus",
     "China",
-    "Southeast asia",
-    "United kingdom"
+    "Kazakhstan",
+    "Lithuania"
   ],
   "severity_mix": {
+    "high": 5,
     "informational": 1,
-    "medium": 1,
-    "high": 4
+    "medium": 1
   },
   "recent_excerpts": [
+    "居民 NGO 发现一个 Telegram 钓鱼活动，针对流亡的白俄罗斯活动家以及俄罗斯和哈萨克斯坦的用户，使用个性化链接和设备指纹识别。",
     "英国监管机构 Ofcom 对 Telegram 展开正式调查，因为有证据显示 Telegram 分享儿童性虐待材料（CSAM）以及可能违反在线安全法的加密报告规则。",
-    "Telegram创始人Pavel Durov声称WhatsApp的默认端到端加密具有误导性，因为未加密的云备份可能会暴露数十亿用户消息。",
-    "研究人员揭露了一个欺诈网络，滥用 Telegram Mini Apps 来冒充品牌，窃取加密货币钱包，并推广 Android 恶意软件，如 SpyNote 和 ERMAC。"
+    "Telegram创始人Pavel Durov声称WhatsApp的默认端到端加密具有误导性，因为未加密的云备份可能会暴露数十亿用户消息。"
   ],
-  "sources_hash": "0f34c8eee63c2091"
+  "sources_hash": "f7a6c155ae2acf81"
 }

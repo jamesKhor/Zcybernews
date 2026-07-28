@@ -1,0 +1,38 @@
+{
+  "tag": "russia",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-16",
+    "latest": "2026-07-28"
+  },
+  "top_actors": [
+    "Silver Fox",
+    "PhantomCore"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "financial services",
+    "activism",
+    "civil society",
+    "enterprise"
+  ],
+  "top_regions": [
+    "Russia",
+    "India",
+    "Belarus",
+    "Global",
+    "Kazakhstan"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "居民 NGO 发现一个 Telegram 钓鱼活动，针对流亡的白俄罗斯活动家以及俄罗斯和哈萨克斯坦的用户，使用个性化链接和设备指纹识别。",
+    "据卡巴斯基称，Silver Fox 团伙冒充税务机关，向俄罗斯和印度的组织分发 ValleyRAT 和新的 ABCDoor 后门。",
+    "与中国有关的银狐组织针对印度和俄罗斯组织，通过税务主题的钓鱼邮件在2025年12月的活动中部署ABCDoor后门。"
+  ],
+  "sources_hash": "aa13d3468bb7d1e7"
+}

@@ -1690,5 +1690,17 @@
     "locale": "en",
     "lastError": "word count 55 outside 60-140 (en)",
     "at": "2026-07-21T05:53:01.923Z"
+  },
+  {
+    "tag": "telegram",
+    "locale": "en",
+    "lastError": "word count 54 outside 60-140 (en)",
+    "at": "2026-07-28T05:47:31.314Z"
+  },
+  {
+    "tag": "russia",
+    "locale": "en",
+    "lastError": "word count 54 outside 60-140 (en)",
+    "at": "2026-07-28T05:47:35.979Z"
   }
 ]

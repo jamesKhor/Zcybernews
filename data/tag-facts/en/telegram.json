@@ -1,10 +1,10 @@
 {
   "tag": "telegram",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-03"
+    "latest": "2026-07-28"
   },
   "top_actors": [
     "Bluekit"
@@ -14,24 +14,25 @@
     "financial services",
     "social media",
     "technology",
-    "cryptocurrency",
-    "e-commerce"
+    "activism",
+    "civil society"
   ],
   "top_regions": [
     "Global",
+    "Belarus",
     "China",
-    "Southeast asia",
-    "United kingdom"
+    "Kazakhstan",
+    "Lithuania"
   ],
   "severity_mix": {
+    "high": 5,
     "informational": 1,
-    "medium": 1,
-    "high": 4
+    "medium": 1
   },
   "recent_excerpts": [
+    "Resident NGO uncovers a Telegram phishing campaign targeting an exiled Belarusian activist and users in Russia and Kazakhstan using individualized links and device fingerprinting.",
     "UK regulator Ofcom launches a formal investigation into Telegram over evidence of child sexual abuse material (CSAM) sharing and potential breaches of the Online Safety Act's encryption reporting rule",
-    "Telegram founder Pavel Durov alleges WhatsApp's default end-to-end encryption is misleading, as unencrypted cloud backups can expose billions of user messages.",
-    "Researchers uncovered a fraud network abusing Telegram Mini Apps to impersonate brands, steal crypto wallets, and push Android malware like SpyNote and ERMAC."
+    "Telegram founder Pavel Durov alleges WhatsApp's default end-to-end encryption is misleading, as unencrypted cloud backups can expose billions of user messages."
   ],
-  "sources_hash": "bf30ed7c30bb5b02"
+  "sources_hash": "28066a2b2f0e8995"
 }
