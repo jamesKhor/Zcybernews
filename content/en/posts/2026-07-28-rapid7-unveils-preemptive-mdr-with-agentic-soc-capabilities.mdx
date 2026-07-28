@@ -1,0 +1,68 @@
+---
+title: Rapid7 Unveils Preemptive MDR with Agentic SOC Capabilities
+slug: 2026-07-28-rapid7-unveils-preemptive-mdr-with-agentic-soc-capabilities
+date: '2026-07-28'
+excerpt: >-
+  Rapid7's new MDR model connects exposure intelligence to detection workflows,
+  using AI agents to automate evidence gathering while keeping human analysts in
+  charge of final...
+category: industry
+tags:
+  - mdr
+  - rapid7
+  - ai
+  - soc
+  - exposure-management
+  - agentic-ai
+language: en
+source_urls:
+  - >-
+    https://www.rapid7.com/blog/post/dr-the-next-evolution-mdr-preemptive-defense-agentic-investigation
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-28-rapid7-unveils-preemptive-mdr-with-agentic-soc-capabilities
+cluster_key: 'topic:next-evolution-preemptive-defense-agentic'
+source_count: 1
+seo_query_target: 'The Next Evolution of MDR: Preemptive Defense and Agentic Investigation'
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises readers an explanation of Rapid7's new preemptive MDR
+  approach and agentic SOC capabilities.
+seo_meta_promise: >-
+  The meta description promises a concrete description of how Rapid7's MDR
+  evolution connects exposure intelligence with AI-driven investigation while
+  preserving human oversight.
+target_hub: breaches
+internal_link_targets:
+  - breaches
+  - threat-intel
+  - ai-security
+news_sitemap_eligible: false
+featured_image_alt: >-
+  Diagram showing the continuous defense loop of exposure intelligence,
+  detection, and response in Rapid7's preemptive MDR model
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## Executive Summary
+
+Rapid7 has detailed a new operating model for managed detection and response (MDR) that shifts from reactive alert investigation to preemptive defense, incorporating AI agents to automate evidence gathering and correlation. The approach, described in a July 28, 2026 blog post, aims to address the shrinking window between attacker initial access and lateral movement by connecting exposure intelligence directly into SOC workflows. According to Rapid7, the model allows analysts to begin investigations with asset criticality, vulnerability data, and threat intelligence already surfaced, rather than spending time collecting that context manually.
+
+## Technical Analysis
+
+The core change Rapid7 describes is moving MDR beyond what it calls "alert-driven investigations." In traditional MDR, analysts receive an alert and then spend significant effort gathering information about the affected asset or identity, correlating activity across security tools, and establishing incident scope before applying expert judgment. Rapid7 argues that much of this initial work involves finding and organizing information rather than analysis.
+
+Rapid7's preemptive MDR model connects exposure management data — asset criticality, internet exposure, vulnerability posture, and attack path analysis — directly into the SOC workflow. When an alert fires, analysts can immediately see why the affected asset matters, which weaknesses may be involved, and whether activity aligns with known attacker behavior. The same context can also support action before an alert fires: intelligence indicating stolen credentials or compromised sessions can be surfaced before an attacker uses them, and newly disclosed vulnerabilities can be assessed against the organization's assets and business priorities.
+
+The company also describes "agentic SOC capabilities" where AI agents perform evidence gathering, correlation, validation, and scoping in parallel across telemetry sources. The agents examine data, connect related activity, test possible explanations, and present analysts with a structured account of what happened, what is at risk, and which response actions are available. Rapid7 cites research conducted with Omdia finding that 93% of security leaders agree AI improves analyst efficiency by automating repetitive tasks, while 92% believe analysts should retain responsibility for final decisions and 90% view human oversight as essential to AI-driven process accuracy.
+
+Rapid7's data mesh architecture underpins this capability, bringing together asset, cloud, configuration, exposure, event, and alert data in a normalized layer that AI-driven investigations can query without requiring analysts to search across separate tools.
+
+## Mitigations & Recommendations
+
+Defenders evaluating MDR providers should assess how well exposure intelligence is integrated into detection workflows. The key question is whether a provider can surface asset criticality and vulnerability context at the start of an investigation, rather than requiring analysts to reconstruct it manually. Organizations should also examine how AI agents are used — whether they augment analyst decision-making with structured evidence summaries or attempt to automate response decisions without human review. Rapid7's model explicitly keeps analysts responsible for final response decisions, which aligns with the Omdia survey data cited in the post.
+
+## References
+
+* Rapid7 Blog: [The Next Evolution of MDR: Preemptive Defense and Agentic Investigation](https://www.rapid7.com/blog/post/dr-the-next-evolution-mdr-preemptive-defense-agentic-investigation)
