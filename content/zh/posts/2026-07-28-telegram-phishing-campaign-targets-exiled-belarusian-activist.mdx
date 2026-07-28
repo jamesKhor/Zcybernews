@@ -1,0 +1,78 @@
+---
+title: Telegram 钓鱼活动针对流亡白俄罗斯活动家
+slug: 2026-07-28-telegram-phishing-campaign-targets-exiled-belarusian-activist
+date: '2026-07-28'
+excerpt: 居民 NGO 发现一个 Telegram 钓鱼活动，针对流亡的白俄罗斯活动家以及俄罗斯和哈萨克斯坦的用户，使用个性化链接和设备指纹识别。
+category: malware
+tags:
+  - telegram
+  - phishing
+  - belarus
+  - russia
+  - kazakhstan
+  - civil-society
+  - account-hijacking
+  - resident-ngo
+language: zh
+source_urls:
+  - 'https://therecord.media/telegram-belarus-activist-russia-cyberattack'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-28-telegram-phishing-campaign-targets-exiled-belarusian-activist
+cluster_key: 'topic:telegram-phishing-campaign-targeted-exiled'
+source_count: 1
+seo_query_target: >-
+  Telegram phishing campaign targeted exiled Belarusian activist, Russians and
+  Kazakhstanis
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises a report on a Telegram phishing campaign targeting a
+  Belarusian activist and users in Russia and Kazakhstan.
+seo_meta_promise: >-
+  The meta description promises details about the campaign's targeting of an
+  exiled Belarusian activist and users in Russia and Kazakhstan, including
+  individualized links and device fingerprinting.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - phishing
+  - account-hijacking
+news_sitemap_eligible: true
+featured_image_alt: Telegram logo on a smartphone screen with a phishing alert message overlay
+severity: high
+affected_sectors:
+  - civil society
+  - journalism
+  - activism
+affected_regions:
+  - Belarus
+  - Russia
+  - Kazakhstan
+  - Lithuania
+publish_tier: public
+---
+**Telegram 钓鱼活动针对流亡白俄罗斯活动家**
+
+## 执行摘要
+
+数字安全组织Resident NGO的研究人员记录了一个高度个性化的Telegram钓鱼活动，该活动自2024年10月以来一直针对居住在立陶宛的流亡白俄罗斯活动家，以及俄罗斯和哈萨克斯坦的用户。攻击者通过应用程序的端到端加密秘密聊天功能发送假的Telegram安全警告，诱使受害者输入一次性登录代码以劫持账户。该活动以其个性化的钓鱼链接脱颖而出，每个链接都包含目标的电话号码，以及其复杂的反分析基础设施，将安全工具和桌面用户重定向到良性页面。
+
+## 技术分析
+
+根据Resident NGO上周发布的两份报告，攻击链始于受害者收到来自注册到哈萨克斯坦电话号码的不熟悉的Telegram账户的消息。该消息错误地声称用户违反了Telegram的规则，并威胁如果不点击验证链接将封锁账户。至关重要的是，每个钓鱼链接都是针对目标唯一的，嵌入了他们的电话号码——允许攻击者跟踪谁打开了它。
+
+当受害者点击链接时，攻击者的基础架构首先检查访问者的浏览器和设备指纹。如果访问者与预期目标匹配，他们将被提供假冒的Telegram登录页面。然而，安全工具和许多桌面用户被重定向到Telegram的真实网站或其他无害页面，使得通过自动化扫描检测攻击变得困难，Resident NGO报告称。
+
+目标不是安装恶意软件，而是窃取Telegram一次性登录代码。如果受害者在代码过期前输入代码，攻击者会立即接管账户。在目标访问钓鱼页面后，操作员发送后续消息，声称验证尚未完成，引用有关受害者设备的细节，他们打开链接的时间以及他们的互联网服务提供商——在首次访问链接时收集的信息。这种社会工程策略迫使受害者完成登录。
+
+为了逃避基于文本的检测，攻击者在他们的钓鱼消息中用视觉上相似的拉丁或希腊字母替换了一些西里尔字符。
+
+Resident NGO识别了64个不同的电话号码，主要是俄罗斯的，嵌入在个性化的钓鱼链接中。“这些数字可能是预定的目标，但记录本身不能证明每个链接都被送达，或者任何账户都被泄露，”研究人员指出。目前尚不清楚实际有多少账户被劫持，或者攻击者最终打算用泄露的账户做什么。
+
+## 缓解措施与建议
+
+Telegram用户——特别是东欧的活动家、记者和民间社会成员——应该对通过Telegram的秘密聊天功能收到的任何未经请求的安全警告保持警惕。用户永远不应该在通过这些消息中的链接到达的任何页面上输入他们的一次性登录代码。通过Telegram设置中的单独密码启用双因素认证（2FA）增加了一层保护，即使登录代码被盗。支持处于风险中的用户的组织应该进行钓鱼意识培训，包括这种特定的攻击模式，强调使用设备指纹识别和个性化链接。
+
+## 参考资料
+
+- [The Record: Telegram phishing campaign targeted exiled Belarusian activist, Russians and Kazakhstanis](https://therecord.media/telegram-belarus-activist-russia-cyberattack)

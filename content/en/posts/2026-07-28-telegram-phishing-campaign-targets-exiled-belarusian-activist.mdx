@@ -1,0 +1,79 @@
+---
+title: Telegram Phishing Campaign Targets Exiled Belarusian Activist
+slug: 2026-07-28-telegram-phishing-campaign-targets-exiled-belarusian-activist
+date: '2026-07-28'
+excerpt: >-
+  Resident NGO uncovers a Telegram phishing campaign targeting an exiled
+  Belarusian activist and users in Russia and Kazakhstan using individualized
+  links and device fingerprinting.
+category: malware
+tags:
+  - telegram
+  - phishing
+  - belarus
+  - russia
+  - kazakhstan
+  - civil-society
+  - account-hijacking
+  - resident-ngo
+language: en
+source_urls:
+  - 'https://therecord.media/telegram-belarus-activist-russia-cyberattack'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-28-telegram-phishing-campaign-targets-exiled-belarusian-activist
+cluster_key: 'topic:telegram-phishing-campaign-targeted-exiled'
+source_count: 1
+seo_query_target: >-
+  Telegram phishing campaign targeted exiled Belarusian activist, Russians and
+  Kazakhstanis
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises a report on a Telegram phishing campaign targeting a
+  Belarusian activist and users in Russia and Kazakhstan.
+seo_meta_promise: >-
+  The meta description promises details about the campaign's targeting of an
+  exiled Belarusian activist and users in Russia and Kazakhstan, including
+  individualized links and device fingerprinting.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - phishing
+  - account-hijacking
+news_sitemap_eligible: true
+featured_image_alt: Telegram logo on a smartphone screen with a phishing alert message overlay
+severity: high
+affected_sectors:
+  - civil society
+  - journalism
+  - activism
+affected_regions:
+  - Belarus
+  - Russia
+  - Kazakhstan
+  - Lithuania
+publish_tier: public
+---
+## Executive Summary
+
+Researchers at digital security organization Resident NGO have documented a highly personalized Telegram phishing campaign that since at least October 2024 has targeted an exiled Belarusian activist living in Lithuania, along with users in Russia and Kazakhstan. The attackers used fake Telegram security alerts sent through the app's end-to-end encrypted secret chat feature, tricking victims into entering their one-time login code to hijack accounts. The campaign stands out for its individualized phishing links, each containing the target's phone number, and its sophisticated anti-analysis infrastructure that redirects security tools and desktop users to benign pages.
+
+## Technical Analysis
+
+According to two reports released by Resident NGO last week, the attack chain begins when the victim receives a message from an unfamiliar Telegram account registered to a Kazakhstani phone number. The message falsely claims the user violated Telegram's rules and threatens account blocking unless they click a verification link. Critically, each phishing link is unique to the target, embedding their phone number — allowing the attackers to track who opened it.
+
+When a victim clicks the link, the attacker's infrastructure first inspects the visitor's browser and device fingerprint. If the visitor matches the intended target, they are served a fake Telegram login page. Security tools and many desktop users, however, are redirected to Telegram's real website or other harmless pages, making the attack difficult to detect through automated scanning, Resident NGO reported.
+
+The goal is not to install malware but to steal the Telegram one-time login code. If the victim enters the code before it expires, the attackers immediately take control of the account. After a target visits the phishing page, the operators send a follow-up message claiming verification is still incomplete, citing details about the victim's device, the time they opened the link, and their internet service provider — information collected when the link was first accessed. This social engineering tactic pressures victims to complete the login.
+
+To evade text-based detection, the attackers replaced some Cyrillic characters with visually similar Latin or Greek letters in their phishing messages.
+
+Resident NGO identified 64 distinct phone numbers, mostly Russian, embedded in individualized phishing links. "These numbers are likely intended targets, but the records alone cannot prove that every link was delivered or that any account was compromised," the researchers noted. It remains unclear how many accounts were actually hijacked or what the attackers ultimately intended to do with compromised accounts.
+
+## Mitigations & Recommendations
+
+Telegram users — particularly activists, journalists, and civil society members in Eastern Europe — should be wary of any unsolicited security alerts received through Telegram's secret chat feature. Users should never enter their one-time login code on any page reached via a link in such messages. Enabling two-factor authentication (2FA) via a separate password in Telegram settings adds a layer of protection even if the login code is stolen. Organizations supporting at-risk users should conduct phishing awareness training that includes this specific attack pattern, emphasizing the use of device fingerprinting and individualized links.
+
+## References
+
+- [The Record: Telegram phishing campaign targeted exiled Belarusian activist, Russians and Kazakhstanis](https://therecord.media/telegram-belarus-activist-russia-cyberattack)
