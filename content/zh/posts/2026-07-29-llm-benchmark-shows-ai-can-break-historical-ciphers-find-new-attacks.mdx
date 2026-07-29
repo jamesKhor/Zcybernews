@@ -1,0 +1,71 @@
+---
+title: LLM基准测试显示AI能够破解历史密码，发现新的攻击
+slug: >-
+  2026-07-29-llm-benchmark-shows-ai-can-break-historical-ciphers-find-new-attacks
+date: '2026-07-29'
+excerpt: >-
+  CryptanalysisBench测试了五个前沿LLMs在191个任务中的表现；Anthropic的Mythos Preview发现了SpoC
+  AEAD和KINDI证明错误的新密钥恢复攻击。
+category: ai
+tags:
+  - llm
+  - cryptanalysis
+  - benchmark
+  - anthropic
+  - ai-security
+  - cryptography
+language: zh
+source_urls:
+  - >-
+    https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-07-29-llm-benchmark-shows-ai-can-break-historical-ciphers-find-new-attacks
+cluster_key: 'topic:measuring-llms-ability-perform-cryptanalysis'
+source_count: 1
+seo_query_target: Measuring LLMs’ Ability to Perform Cryptanalysis
+seo_intent: breaking-news
+seo_title_promise: >-
+  The article reports on a new benchmark that quantifies LLMs' cryptanalysis
+  capabilities and highlights novel attacks discovered by Anthropic's model.
+seo_meta_promise: >-
+  The meta description promises readers a concrete finding: the benchmark's
+  scope (191 tasks), model performance (65-86% on Tier 1), and a specific novel
+  attack (SpoC AEAD key recovery).
+target_hub: ai-security
+internal_link_targets:
+  - ai-security
+  - cryptography
+  - llm-security
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Abstract visualization of an AI model analyzing cryptographic key patterns on
+  a digital matrix
+affected_sectors:
+  - technology
+  - cybersecurity
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## 执行摘要
+
+一个新的学术基准测试，CryptanalysisBench，表明前沿的大型语言模型（LLMs）能够成功地对历史加密算法进行数学密码分析，并在某些情况下发现以前未知的攻击。在该基准测试中，Anthropic的Mythos Preview模型识别出了一种新的密钥恢复攻击，这种攻击利用了SpoC认证加密方案中的一个设计缺陷，以及KINDI发布的CCA安全性证明中的错误——根据论文作者的说法，这两个问题以前都被认为是研究社区所未知的。
+
+## 技术分析
+
+CryptanalysisBench在论文《CryptanalysisBench: Can LLMs do Cryptanalysis?》中被描述，包含191个任务，涵盖六个密码原语家族，包括块密码和哈希函数。这些任务主要来自四个NIST标准化竞赛。基准测试分为三个层级：第一层包括已知实际破解的原语；第二层涵盖没有已知实际破解的原语，测试其完整强度和缩小版本的变体；第三层特点是前沿密码分析中的生产原语挑战集。
+
+评估了五个前沿模型：Claude Opus 4.8、Sonnet 5、Mythos 5、GPT-5.5和开放权重的GLM-5.2。这些模型成功破解了65%至86%的第一层方案。对于第二层，模型在完整强度下破解了6至12个方案，在所有缩小版本中破解了24至61个方案。结果表明，当前的LLMs能够复制已知的学术密码分析结果，并在特定情况下超越已发表的最先进技术。
+
+Anthropic使用该基准测试测试了其Mythos Preview模型，发现了Hawk签名方案和减少轮次的AES中的漏洞。论文作者指出，基准测试中出现的攻击代表了“一个快速移动的前沿的早期快照，可能很快会匹配，甚至在某些地方超越已发表的最先进技术。”
+
+## 缓解措施与建议
+
+防御者和密码学标准机构应将此基准测试作为一个早期预警工具，用于在部署前评估候选加密方案。作者已将CryptanalysisBench作为一个开放资源发布，用于压力测试新原语。虽然尚未证明对广泛部署的加密标准（例如，AES-256、SHA-3）构成直接威胁，但组织应跟踪基准测试和相关研究的更新，特别是随着模型能力的持续提高。密码学家应考虑将AI辅助密码分析纳入新设计的评估工作流程中。
+
+## 参考资料
+
+- [Schneier on Security: Measuring LLMs’ Ability to Perform Cryptanalysis](https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html)
+- [CryptanalysisBench paper (arXiv, via Schneier link)](https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html)

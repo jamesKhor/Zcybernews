@@ -1,0 +1,72 @@
+---
+title: 'LLM Benchmark Shows AI Can Break Historical Ciphers, Find New Attacks'
+slug: >-
+  2026-07-29-llm-benchmark-shows-ai-can-break-historical-ciphers-find-new-attacks
+date: '2026-07-29'
+excerpt: >-
+  CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's
+  Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI
+  proof errors.
+category: ai
+tags:
+  - llm
+  - cryptanalysis
+  - benchmark
+  - anthropic
+  - ai-security
+  - cryptography
+language: en
+source_urls:
+  - >-
+    https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-07-29-llm-benchmark-shows-ai-can-break-historical-ciphers-find-new-attacks
+cluster_key: 'topic:measuring-llms-ability-perform-cryptanalysis'
+source_count: 1
+seo_query_target: Measuring LLMs’ Ability to Perform Cryptanalysis
+seo_intent: breaking-news
+seo_title_promise: >-
+  The article reports on a new benchmark that quantifies LLMs' cryptanalysis
+  capabilities and highlights novel attacks discovered by Anthropic's model.
+seo_meta_promise: >-
+  The meta description promises readers a concrete finding: the benchmark's
+  scope (191 tasks), model performance (65-86% on Tier 1), and a specific novel
+  attack (SpoC AEAD key recovery).
+target_hub: ai-security
+internal_link_targets:
+  - ai-security
+  - cryptography
+  - llm-security
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Abstract visualization of an AI model analyzing cryptographic key patterns on
+  a digital matrix
+affected_sectors:
+  - technology
+  - cybersecurity
+publish_tier: brief
+public_gate_reasons:
+  - source_depth
+---
+## Executive Summary
+
+A new academic benchmark, CryptanalysisBench, demonstrates that frontier large language models (LLMs) can successfully perform mathematical cryptanalysis against historical cryptographic algorithms, and in some cases discover previously unknown attacks. Anthropic's Mythos Preview model, tested against the benchmark, identified a novel key-recovery attack exploiting a design flaw in the SpoC authenticated encryption scheme and an error in KINDI's published CCA-security proof — both believed to be previously unknown to the research community, according to the paper's authors.
+
+## Technical Analysis
+
+CryptanalysisBench, described in the paper *CryptanalysisBench: Can LLMs do Cryptanalysis?*, comprises 191 tasks spanning six families of cryptographic primitives, including block ciphers and hash functions. The tasks are drawn primarily from four NIST standardization competitions. The benchmark is structured in three tiers: Tier 1 includes primitives with known practical breaks; Tier 2 covers primitives with no known practical break, tested both at full strength and as scaled-down variants; Tier 3 features a challenge set of production primitives at the frontier of cryptanalysis.
+
+Five frontier models were evaluated: Claude Opus 4.8, Sonnet 5, Mythos 5, GPT-5.5, and the open-weights GLM-5.2. These models successfully broke 65% to 86% of Tier 1 schemes. For Tier 2, models broke between 6 and 12 schemes at full strength, and between 24 and 61 across all scaled-down variants. The results indicate that current LLMs can replicate known academic cryptanalytic results and, in specific cases, extend beyond the published state of the art.
+
+Anthropic used the benchmark to test its Mythos Preview model, which found vulnerabilities in the Hawk signature scheme and reduced-round AES. The paper's authors note that the attacks surfaced by the benchmark represent "an early snapshot of a fast-moving frontier that may soon match, and in places exceed, the published state of the art."
+
+## Mitigations & Recommendations
+
+Defenders and cryptographic standards bodies should monitor this benchmark as an early-warning tool for assessing candidate cryptographic schemes before deployment. The authors have released CryptanalysisBench as an open resource for stress-testing new primitives. While no immediate threat to widely deployed cryptographic standards (e.g., AES-256, SHA-3) has been demonstrated, organizations should track updates to the benchmark and related research, particularly as model capabilities continue to improve. Cryptographers should consider incorporating AI-assisted cryptanalysis into their evaluation workflows for new designs.
+
+## References
+
+- [Schneier on Security: Measuring LLMs’ Ability to Perform Cryptanalysis](https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html)
+- [CryptanalysisBench paper (arXiv, via Schneier link)](https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html)
