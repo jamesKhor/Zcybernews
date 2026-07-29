@@ -1,9 +1,9 @@
 {
   "tag": "llm",
   "locale": "en",
-  "intro": "This archive collects 11 articles tagged `llm` published between April 8, 2026 and June 11, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2026-33626, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize enterprise software, technology, and cloud service providers across Global, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 6 high, 4 medium, and 1 informational reports.",
-  "sources_hash": "ad11e6d9dbca1dac",
-  "model": "template:fallback",
-  "generated_at": "2026-06-12T04:34:51.477Z",
+  "intro": "Over the past four months, ZCyberNews has tracked twelve articles on large language model security, spanning from April 8 to July 29, 2026. The coverage includes six high-severity and four medium-severity incidents, led by CVE-2026-33626, a vulnerability with a CVSS score of 7.5. The reporting primarily affects the technology, enterprise software, cloud service provider, cloud services, and cybersecurity sectors on a global scale.",
+  "sources_hash": "ecf3c1a6e5b7858d",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-07-29T05:53:55.953Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

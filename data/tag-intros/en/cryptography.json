@@ -1,9 +1,9 @@
 {
   "tag": "cryptography",
   "locale": "en",
-  "intro": "This archive collects 5 articles tagged `cryptography` published between April 13, 2026 and May 9, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2022-39173 and CVE-2026-8149, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize all, Critical Infrastructure, and Energy across Global, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, 2 high, and 2 medium reports.",
-  "sources_hash": "e364dc7780119fe0",
+  "intro": "This archive collects 6 articles tagged `cryptography` published between April 13, 2026 and July 29, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2022-39173 and CVE-2026-8149, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize technology, all, and Critical Infrastructure across Global, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, 2 high, and 2 medium reports.",
+  "sources_hash": "986c211adac30cd4",
   "model": "template:fallback",
-  "generated_at": "2026-05-18T10:05:27.788Z",
+  "generated_at": "2026-07-29T05:54:00.507Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

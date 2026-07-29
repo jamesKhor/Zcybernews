@@ -1,10 +1,10 @@
 {
   "tag": "llm",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-06-11"
+    "latest": "2026-07-29"
   },
   "top_actors": [],
   "top_cves": [
@@ -14,11 +14,11 @@
     }
   ],
   "top_sectors": [
-    "enterprise software",
     "technology",
+    "enterprise software",
     "cloud service providers",
     "cloud services",
-    "enterprise"
+    "cybersecurity"
   ],
   "top_regions": [
     "Global"
@@ -29,9 +29,9 @@
     "informational": 1
   },
   "recent_excerpts": [
+    "CryptanalysisBench测试了五个前沿LLMs在191个任务中的表现；Anthropic的Mythos Preview发现了SpoC AEAD和KINDI证明错误的新密钥恢复攻击。",
     "Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能...",
-    "CVE-2026-33626（CVSS 7.5）在 LMDeploy 中，一个开源的 LLM 工具包，被在野外利用，距离公开披露仅 13 小时，使得 SSRF 攻击能够访问敏感信息...",
-    "一项受控研究表明，人类在战略游戏中将公平和合作等社会启发式应用于LLM对手，导致可预测的利用和人机AI互动中的潜在安全风险。"
+    "CVE-2026-33626（CVSS 7.5）在 LMDeploy 中，一个开源的 LLM 工具包，被在野外利用，距离公开披露仅 13 小时，使得 SSRF 攻击能够访问敏感信息..."
   ],
-  "sources_hash": "946177512adb78e1"
+  "sources_hash": "f8b5b1017c75ecff"
 }

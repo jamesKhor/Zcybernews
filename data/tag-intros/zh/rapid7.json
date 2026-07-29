@@ -1,10 +1,10 @@
 {
   "tag": "rapid7",
   "locale": "zh",
-  "intro": "从2026年4月13日至7月21日，ZCyberNews共发布17篇涉及标签rapid7的报道。报道重点提及威胁行为体ClickFix、KongTuke和Kyber的活动，并追踪了多项严重漏洞，包括CVSS评分均为10分的CVE-2026-20127和CVE-2026-20182，以及评分9.8的CVE-2025-59718和CVE-2026-41940，还有CVE-2023-30253。受影响行业涵盖金融服务、政府、科技、网络安全和企业领域，影响范围遍及欧洲和北美。报道内容包含四项高严重性、四项严重性及五项信息性条目。",
-  "sources_hash": "8b219e49f48de3c0",
-  "source_intro_hash": "70c74db2155a97d6",
+  "intro": "过去三个月间，ZCyberNews 于2026年4月13日至7月28日期间发布了18篇涉及Rapid7的报道。观察到威胁行为者ClickFix、KongTuke和Kyber，同时重点提及了包括CVE-2026-20127和CVE-2026-20182（CVSS评分均为10分）、CVE-2025-59718和CVE-2026-41940（评分9.8分）以及CVE-2023-30253在内的关键漏洞。受影响行业涵盖金融服务、政府、科技、网络安全及企业领域，影响范围涉及全球、欧洲及北美地区。报道内容包含四项高严重性、四项严重性及五项信息性严重等级条目。",
+  "sources_hash": "c1cef30250c903b3",
+  "source_intro_hash": "c0504986b6917c3e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-21T05:53:07.361Z",
+  "generated_at": "2026-07-29T05:54:14.238Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

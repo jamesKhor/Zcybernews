@@ -1,10 +1,10 @@
 {
   "tag": "llm",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-06-11"
+    "latest": "2026-07-29"
   },
   "top_actors": [],
   "top_cves": [
@@ -14,11 +14,11 @@
     }
   ],
   "top_sectors": [
-    "enterprise software",
     "technology",
+    "enterprise software",
     "cloud service providers",
     "cloud services",
-    "enterprise"
+    "cybersecurity"
   ],
   "top_regions": [
     "Global"
@@ -29,9 +29,9 @@
     "informational": 1
   },
   "recent_excerpts": [
+    "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors.",
     "Unit 42's Behavioral Integrity Verification scanned 49,943 OpenClaw skills and found 80% deviate from declared behavior, with multi-stage attack chains enabling credential theft...",
-    "CVE-2026-33626 (CVSS 7.5) in LMDeploy, an open-source LLM toolkit, was exploited in the wild within 13 hours of public disclosure, enabling SSRF attacks to access sensitive…",
-    "A controlled study reveals humans apply social heuristics like fairness and cooperation to LLM opponents in strategic games, leading to predictable exploitation and potential security risks in human-A"
+    "CVE-2026-33626 (CVSS 7.5) in LMDeploy, an open-source LLM toolkit, was exploited in the wild within 13 hours of public disclosure, enabling SSRF attacks to access sensitive…"
   ],
-  "sources_hash": "ad11e6d9dbca1dac"
+  "sources_hash": "ecf3c1a6e5b7858d"
 }

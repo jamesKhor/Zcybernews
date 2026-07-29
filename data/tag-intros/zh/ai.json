@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "intro": "从2026年4月8日至5月12日，ZCyberNews在人工智能标签下发布了34篇文章，严重程度分布为：2篇关键级、13篇高危级、5篇中危级和13篇信息级报告。观察到的主要威胁行为体为Bluekit和Pushpaganda。最突出的漏洞为CVE-2026-31251，其CVSS评分为9.8。受影响行业包括技术、金融服务、全行业、人工智能及关键基础设施，受影响地区涵盖全球、英国、美国、亚洲及澳大利亚。",
-  "sources_hash": "0fdd11b994a09aed",
-  "source_intro_hash": "98bae48a602f8a1e",
+  "intro": "2026年4月至7月间，ZCyberNews在人工智能标签下发布了35篇文章，其中威胁行为者Bluekit和Pushpaganda出现频率较高。观测到的最严重漏洞为CVE-2026-31251，其CVSS评分为9.8。受影响行业涵盖技术、金融服务、人工智能及关键基础设施，报告涉及地区包括英国、美国、亚洲和澳大利亚。报道内容包含13起高严重性事件和2起严重事件，另有13篇信息性报告和5篇中等严重性报告。",
+  "sources_hash": "7757fc92c9c610d0",
+  "source_intro_hash": "138a69ae46e54330",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:07:02.405Z",
+  "generated_at": "2026-07-29T05:54:05.686Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

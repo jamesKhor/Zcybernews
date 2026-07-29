@@ -1,9 +1,9 @@
 {
   "tag": "anthropic",
   "locale": "en",
-  "intro": "Between April and July 2026, ZCyberNews published 14 articles under the anthropic tag, with the threat actor Claude Mythos appearing most frequently. The coverage spanned high and critical severity incidents across technology, cybersecurity, critical infrastructure, government, and ai-development sectors, primarily affecting Global, Five Eyes, and United States regions. The reporting included three informational, five high, three critical, and one medium severity item.",
-  "sources_hash": "bb4ec8555bcbc57a",
+  "intro": "Over the past three months, ZCyberNews has tracked 15 articles concerning the tag Anthropic, spanning from April 14 to July 29, 2026. The most prominent threat actor observed in these reports is Claude Mythos. The coverage includes a severity mix of three informational, one medium, five high, and three critical alerts, affecting sectors such as technology, cybersecurity, critical infrastructure, government, and ai-development. Regions impacted include Global, Five Eyes, and the United States.",
+  "sources_hash": "c15b231730fae7c7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-02T04:28:02.724Z",
+  "generated_at": "2026-07-29T05:53:54.388Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

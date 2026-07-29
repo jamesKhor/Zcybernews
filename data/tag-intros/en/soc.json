@@ -1,9 +1,9 @@
 {
   "tag": "soc",
   "locale": "en",
-  "intro": "This archive collects 13 articles tagged `soc` published between April 13, 2026 and May 12, 2026. Coverage includes 1 medium, and 7 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "d385e79f1493dc9d",
+  "intro": "This archive collects 14 articles tagged `soc` published between April 13, 2026 and July 28, 2026. Coverage includes 1 medium, and 7 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "1c9ce13c9e5b0b79",
   "model": "template:sparse",
-  "generated_at": "2026-05-18T10:01:01.794Z",
+  "generated_at": "2026-07-29T05:53:54.396Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

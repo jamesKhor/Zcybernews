@@ -1,10 +1,10 @@
 {
   "tag": "cryptography",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-09"
+    "latest": "2026-07-29"
   },
   "top_actors": [],
   "top_cves": [
@@ -16,11 +16,11 @@
     }
   ],
   "top_sectors": [
+    "technology",
     "all",
     "Critical Infrastructure",
-    "Energy",
-    "financial services",
-    "government"
+    "cybersecurity",
+    "Energy"
   ],
   "top_regions": [
     "Global"
@@ -31,9 +31,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors.",
     "CVE-2026-8149 in Bouncy Castle BC-FJA 2.1.0–2.1.2 leaks AES-GCM authentication keys via side-channel in AVX-512f optimized gcm128w/gcm512w routines.",
-    "Cryptography experts warn that migrating to post-quantum cryptography will take years, urging organizations to begin quantum risk management now to protect encrypted data from future 'Q-Day' harvest-n",
-    "The OpenSSL Project released version 4.0.0, a major update that permanently removes deprecated SSL protocols and introduces support for post-quantum cryptography and Encrypted Client Hello."
+    "Cryptography experts warn that migrating to post-quantum cryptography will take years, urging organizations to begin quantum risk management now to protect encrypted data from future 'Q-Day' harvest-n"
   ],
-  "sources_hash": "e364dc7780119fe0"
+  "sources_hash": "986c211adac30cd4"
 }

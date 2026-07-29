@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "en",
-  "count": 34,
+  "count": 35,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-12"
+    "latest": "2026-07-28"
   },
   "top_actors": [
     "Bluekit",
@@ -37,9 +37,9 @@
     "high": 13
   },
   "recent_excerpts": [
+    "Rapid7's new MDR model connects exposure intelligence to detection workflows, using AI agents to automate evidence gathering while keeping human analysts in charge of final...",
     "CVE-2026-31251: CosyVoice gRPC server deserializes untrusted models via torch.load() without weights_only=True, enabling RCE via crafted .pt files. No patch confirmed.",
-    "Elastic Security Labs released Conversational Entity Analytics, embedding inline entity data and Canvas previews into Agent Builder for faster threat hunting without leaving chat…",
-    "Elastic Security Labs released a feature that converts plain-English threat descriptions into validated ES|QL detection rules, lowering the barrier for analysts without query…"
+    "Elastic Security Labs released Conversational Entity Analytics, embedding inline entity data and Canvas previews into Agent Builder for faster threat hunting without leaving chat…"
   ],
-  "sources_hash": "f027c983f5bac59e"
+  "sources_hash": "4822e2fb5b222b24"
 }

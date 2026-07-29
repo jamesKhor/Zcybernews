@@ -1,10 +1,10 @@
 {
   "tag": "soc",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-12"
+    "latest": "2026-07-28"
   },
   "top_actors": [],
   "top_cves": [],
@@ -18,9 +18,9 @@
     "informational": 7
   },
   "recent_excerpts": [
+    "Rapid7's new MDR model connects exposure intelligence to detection workflows, using AI agents to automate evidence gathering while keeping human analysts in charge of final...",
     "A Radiant Security webinar examines why WAF, DLP, OT/IoT, dark web, and supply chain alerts are routinely ignored by SOC teams — and how automation can close the gap.",
-    "Analysis of 25 million security alerts across enterprise environments shows defenders systematically ignore low-severity events, missing an average of one genuine threat per week.",
-    "Rapid7's 2026 Global Cybersecurity Summit agenda shifts focus from threat volume to earlier detection, exposure management, and AI-assisted decision-making across two tracks."
+    "Analysis of 25 million security alerts across enterprise environments shows defenders systematically ignore low-severity events, missing an average of one genuine threat per week."
   ],
-  "sources_hash": "d385e79f1493dc9d"
+  "sources_hash": "1c9ce13c9e5b0b79"
 }

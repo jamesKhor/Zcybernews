@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 63,
+  "count": 64,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-25"
+    "latest": "2026-07-29"
   },
   "top_actors": [
     "Claude Mythos",
@@ -52,9 +52,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors.",
     "A spyware sample prepends fake nuclear and biological weapons policy text in a JavaScript comment to trigger AI refusal behavior before LLM-based scanners reach the real payload.",
-    "AI agents now discover and exploit obscure vulnerabilities autonomously, while AI-generated code floods pipelines with flaws. Defenders must adapt to agent-scale threats.",
-    "Open WebUI fixes CVE-2026-45314 (SVG XSS), CVE-2026-45303 (iframe script injection), and CVE-2026-44567 (pending role auth bypass) — all in self-hosted AI platform."
+    "AI agents now discover and exploit obscure vulnerabilities autonomously, while AI-generated code floods pipelines with flaws. Defenders must adapt to agent-scale threats."
   ],
-  "sources_hash": "58d770841d426988"
+  "sources_hash": "167d7693e72551c3"
 }

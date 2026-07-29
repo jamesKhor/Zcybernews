@@ -1,10 +1,10 @@
 {
   "tag": "ai",
   "locale": "zh",
-  "count": 33,
+  "count": 34,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-05-12"
+    "latest": "2026-07-28"
   },
   "top_actors": [
     "Bluekit",
@@ -37,9 +37,9 @@
     "high": 12
   },
   "recent_excerpts": [
+    "Rapid7 的新 MDR 模型将暴露情报连接到检测工作流程，使用 AI 代理自动化证据收集，同时保持人类分析师对最终的控制权...",
     "CVE-2026-31251: CosyVoice gRPC 服务器通过 torch.load() 反序列化不受信任的模型，而没有设置 weights_only=True，从而允许通过精心制作的 .pt 文件实现 RCE。尚未确认补丁。",
-    "Elastic Security Labs 发布了 Conversational Entity Analytics，将内嵌实体数据和 Canvas 预览嵌入到 Agent Builder 中，以便在不离开聊天的情况下更快地进行威胁狩猎…",
-    "Elastic Security Labs 发布了一个功能，可以将普通英语威胁描述转换为经过验证的 ES|QL 检测规则，降低了没有查询的分析师的门槛…"
+    "Elastic Security Labs 发布了 Conversational Entity Analytics，将内嵌实体数据和 Canvas 预览嵌入到 Agent Builder 中，以便在不离开聊天的情况下更快地进行威胁狩猎…"
   ],
-  "sources_hash": "0fdd11b994a09aed"
+  "sources_hash": "7757fc92c9c610d0"
 }

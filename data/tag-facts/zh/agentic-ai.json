@@ -1,10 +1,10 @@
 {
   "tag": "agentic-ai",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-27"
+    "latest": "2026-07-28"
   },
   "top_actors": [],
   "top_cves": [],
@@ -24,9 +24,9 @@
     "informational": 1
   },
   "recent_excerpts": [
+    "Rapid7 的新 MDR 模型将暴露情报连接到检测工作流程，使用 AI 代理自动化证据收集，同时保持人类分析师对最终的控制权...",
     "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…",
-    "Copperhelm，一家由前 RSA 和 McAfee 工程师创立的以色列初创公司，为一个自主搜寻云的 agentic AI 平台筹集了700万美元的种子资金...",
-    "Recorded Future 警告称，现在被集成到企业软件中的自主 'agentic' AI 系统，为即时注入、数据投毒和…创造了新的攻击面。"
+    "Copperhelm，一家由前 RSA 和 McAfee 工程师创立的以色列初创公司，为一个自主搜寻云的 agentic AI 平台筹集了700万美元的种子资金..."
   ],
-  "sources_hash": "a8666c33bda415a9"
+  "sources_hash": "fb9e1ac519178341"
 }

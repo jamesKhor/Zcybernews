@@ -1,9 +1,9 @@
 {
   "tag": "ai",
   "locale": "en",
-  "intro": "From 8 April to 12 May 2026, ZCyberNews covered 34 articles under the ai tag, with a severity mix of two critical, 13 high, five medium, and 13 informational reports. The top threat actors observed were Bluekit and Pushpaganda. The most prominent vulnerability was CVE-2026-31251, carrying a CVSS score of 9.8. Affected sectors included technology, financial services, all, artificial intelligence, and critical infrastructure, while impacted regions spanned Global, United Kingdom, United States, Asia, and Australia.",
-  "sources_hash": "f027c983f5bac59e",
+  "intro": "Between April and July 2026, ZCyberNews covered 35 articles under the ai tag, with threat actors Bluekit and Pushpaganda featuring prominently. The most severe vulnerability observed was CVE-2026-31251, carrying a CVSS score of 9.8. Affected sectors included technology, financial services, artificial intelligence, and critical infrastructure, while reported regions spanned the United Kingdom, the United States, Asia, and Australia. The coverage mix comprised 13 high-severity and 2 critical incidents, alongside 13 informational and 5 medium-severity reports.",
+  "sources_hash": "4822e2fb5b222b24",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T09:59:12.861Z",
+  "generated_at": "2026-07-29T05:53:49.051Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
