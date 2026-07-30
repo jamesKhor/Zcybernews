@@ -1,0 +1,110 @@
+---
+title: 'GenieLocker Ransomware Targets Windows, Linux, and ESXi Systems'
+slug: 2026-07-30-genielocker-ransomware-targets-windows-linux-and-esxi-systems
+date: '2026-07-30'
+excerpt: >-
+  Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group,
+  targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms
+  since March 2026.
+category: malware
+tags:
+  - genielocker
+  - toy-ghouls
+  - ransomware
+  - windows
+  - linux
+  - esxi
+  - kaspersky
+language: en
+source_urls:
+  - >-
+    https://securelist.com/genielocker-ransomware-for-windows-linux-and-esxi/120843/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-07-30-genielocker-ransomware-targets-windows-linux-and-esxi-systems
+cluster_key: 'topic:ghouls-genielocker-ransomware-descriptions-technologies'
+source_count: 1
+seo_query_target: GenieLocker ransomware
+seo_intent: incident-impact
+seo_title_promise: >-
+  The title promises a detailed technical analysis of a new ransomware family
+  affecting multiple platforms.
+seo_meta_promise: >-
+  The meta description promises a Kaspersky-sourced breakdown of GenieLocker's
+  capabilities and the Toy Ghouls group's tactics.
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - malware-analysis
+  - toy-ghouls
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of GenieLocker ransomware infection chain across Windows, Linux, and
+  ESXi systems
+severity: high
+threat_actor: Toy Ghouls
+affected_sectors:
+  - manufacturing
+affected_regions:
+  - Russian Federation
+iocs:
+  - type: hash_md5
+    value: 5d62c1349b8981c396c9a23f4f8f053c
+    confidence: high
+    description: Extracted from source material
+ttp_matrix:
+  - tactic: Initial Access
+    technique_id: T1078
+    technique_name: Valid Accounts
+    description: >-
+      Attackers used stolen credentials via an OpenVPN connection from a partner
+      network.
+  - tactic: Discovery
+    technique_id: T1046
+    technique_name: Network Service Discovery
+    description: Used SoftPerfect Network Scanner for network discovery.
+  - tactic: Credential Access
+    technique_id: T1003
+    technique_name: OS Credential Dumping
+    description: Deployed Mimikatz to dump credentials and accessed KeePassXC databases.
+  - tactic: Lateral Movement
+    technique_id: T1021
+    technique_name: Remote Services
+    description: Lateral movement via RDP for Windows and SSH for Linux systems.
+  - tactic: Execution
+    technique_id: T1569
+    technique_name: System Services
+    description: Deployed ransomware using PsExec and PAExec.
+  - tactic: Impact
+    technique_id: T1486
+    technique_name: Data Encrypted for Impact
+    description: >-
+      Encrypted files on Windows and stopped VMs to encrypt disks on ESXi and
+      Linux.
+publish_tier: public
+---
+## Executive Summary
+
+A financially motivated extortion group known as Toy Ghouls has deployed a custom ransomware family called GenieLocker against organizations in the Russian manufacturing sector since March 2026, according to a technical analysis published by Kaspersky researchers Fedor Sinitsyn and Yanis Zinchenko. The malware is notable for its cross-platform capabilities, with distinct builds for Windows (PE) and Linux/ESXi (ELF), and for its lack of a double-extortion model — the group does not exfiltrate data or operate a leak site.
+
+## Technical Analysis
+
+GenieLocker represents a significant upgrade to Toy Ghouls' toolkit, which previously relied on third-party ransomware such as RedAlert, LockBit, and Babuk. The Windows variant (MD5: 5d62c1349b8981c396c9a23f4f8f053c) is written primarily in C and compiled with Microsoft Visual C/C++. It uses the open-source libsodium library for cryptographic operations. The malware supports command-line arguments including a mandatory "secret argument" — a hex string verified via SHA-256 hash — designed to thwart automated analysis and prevent unauthorized use by other threat actors.
+
+Anti-debugging measures include calls to `IsDebuggerPresent` and `CheckRemoteDebuggerPresent` WinAPI functions. Notably, GenieLocker does not drop ransom notes on the victim's filesystem; instead, attackers deliver ransom demands manually during the attack, likely to avoid triggering detection based on the creation of multiple ransom note files.
+
+The Linux and ESXi variant shares core encryption logic but is tailored for server environments. On ESXi systems, the ransomware stops active virtual machines before encrypting their disks. The encryption routine uses a percentage-based approach, configurable via the `-p` or `--percent` argument, allowing attackers to encrypt only a portion of file content to speed up the process.
+
+### Modus Operandi in a March 2026 Incident
+
+Kaspersky documented an attack at the end of March 2026 where GenieLocker was deployed. Initial access was achieved through an OpenVPN connection originating from an external partner's network, using stolen but valid credentials — a trusted relationship compromise. Once inside, attackers installed OpenSSH, a SOCKS5 proxy (`socks5.exe`), SoftPerfect Network Scanner, and Mimikatz. They also accessed KeePassXC password manager databases already present on compromised machines.
+
+Lateral movement relied on RDP for Windows systems and SSH for Linux servers. The ransomware was deployed at scale using the legitimate administrative tools PsExec and PAExec. A reverse SSH tunnel was established for command-and-control communication. Forensic analysis found no evidence of data exfiltration, consistent with Toy Ghouls' known operational pattern.
+
+## Mitigations & Recommendations
+
+Defenders should monitor for the deployment of administrative tools like PsExec and PAExec in conjunction with network scanning utilities (SoftPerfect Network Scanner) and credential dumping tools (Mimikatz). Organizations should enforce strict access controls on VPN connections from partner networks, requiring multi-factor authentication and regular credential rotation. The use of a secret argument in GenieLocker suggests that sandbox-based detection may be evaded; behavioral monitoring for mass file encryption events and VM shutdown sequences on ESXi hosts is advised. No patch or vendor fix is applicable — this is a custom malware deployment, not a product vulnerability.
+
+## References
+
+- [Kaspersky Securelist: Toy Ghouls’ new toy: the GenieLocker ransomware](https://securelist.com/genielocker-ransomware-for-windows-linux-and-esxi/120843/)
