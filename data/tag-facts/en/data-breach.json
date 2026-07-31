@@ -1,15 +1,15 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 41,
+  "count": 42,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-12"
+    "latest": "2026-07-31"
   },
   "top_actors": [
     "ShinyHunters",
     "Cl0p",
-    "LockBit"
+    "ExfilSquad"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,13 @@
     "France"
   ],
   "severity_mix": {
-    "high": 34,
+    "high": 35,
     "medium": 6
   },
   "recent_excerpts": [
+    "Analog Devices disclosed to the SEC that intruders exfiltrated files from its networks in June, with scope still unknown.",
     "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide.",
-    "Škoda Auto disclosed a data breach after attackers exploited a vulnerability in its e-commerce portal, stealing customer names, addresses, and password hashes.",
-    "ICO fined South Staffordshire Water £963,900 after Cl0p ransomware gang leaked data of 663,887 customers — phishing attack went undetected for 20 months."
+    "Škoda Auto disclosed a data breach after attackers exploited a vulnerability in its e-commerce portal, stealing customer names, addresses, and password hashes."
   ],
-  "sources_hash": "82f8c7090929aa86"
+  "sources_hash": "086d0c897e201ed6"
 }

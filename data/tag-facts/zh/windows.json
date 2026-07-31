@@ -1,15 +1,15 @@
 {
   "tag": "windows",
   "locale": "zh",
-  "count": 24,
+  "count": 25,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-09"
+    "latest": "2026-07-30"
   },
   "top_actors": [
     "Kyber",
     "Chaotic Eclipse",
-    "VECT Ransomware"
+    "Toy Ghouls"
   ],
   "top_cves": [
     {
@@ -41,17 +41,18 @@
     "managed service providers"
   ],
   "top_regions": [
-    "North america"
+    "North america",
+    "Russian federation"
   ],
   "severity_mix": {
-    "high": 18,
+    "high": 19,
     "critical": 2,
     "medium": 4
   },
   "recent_excerpts": [
+    "卡巴斯基剖析 GenieLocker，这是来自 Toy Ghouls 组织的定制勒索软件，自 2026 年 3 月起针对俄罗斯制造企业，在攻击中针对 Windows、Linux 和 ESXi。",
     "CVE-2026-8069: Acer PredatorSense 版本 3.00.3136 至 3.00.3196 暴露了一个配置错误的命名管道，允许任何经过身份验证的本地用户以SYSTEM身份执行代码并删除...",
-    "CISA 将 CVE-2024-1708（ConnectWise ScreenConnect 路径遍历，CVSS 8.4）和一个未命名的 Windows 漏洞添加到其 KEV 目录，基于确认的积极利用。",
-    "Check Point Research 发现 VECT 勒索软件的加密逻辑中存在一个漏洞，该漏洞会永久性地破坏 Windows 系统上的文件 —— 即使支付赎金后也无法恢复。"
+    "CISA 将 CVE-2024-1708（ConnectWise ScreenConnect 路径遍历，CVSS 8.4）和一个未命名的 Windows 漏洞添加到其 KEV 目录，基于确认的积极利用。"
   ],
-  "sources_hash": "8f578c67d046c1fd"
+  "sources_hash": "80660f2b1e87c702"
 }

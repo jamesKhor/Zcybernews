@@ -1,10 +1,10 @@
 {
   "tag": "linux",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-07-30"
   },
   "top_actors": [
     "Harvester",
@@ -21,21 +21,23 @@
     "education",
     "homelab",
     "iot",
-    "maker"
+    "maker",
+    "manufacturing"
   ],
   "top_regions": [
     "Global",
+    "Russian federation",
     "South asia"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group, targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms since March 2026.",
     "CVE-2026-31431 (CVSS 7.8) dubbed 'Copy Fail' lets unprivileged local users write four controlled bytes to any readable file's page cache, enabling root on major Linux…",
-    "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…",
-    "The Gentlemen ransomware-as-a-service operation has infected over 320 victims, deploying separate encryptors for Windows/Linux and VMware ESXi systems to maximize disruption and ransom pressure on ent"
+    "The Harvester threat actor deploys a new Linux version of its GoGra backdoor, using Microsoft Graph API and Outlook mailboxes for stealthy C2 communication in attacks targeting…"
   ],
-  "sources_hash": "e4650b7cf5062031"
+  "sources_hash": "4f50550f6ba44e54"
 }

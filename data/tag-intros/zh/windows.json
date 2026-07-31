@@ -1,10 +1,10 @@
 {
   "tag": "windows",
   "locale": "zh",
-  "intro": "过去一个月，ZCyberNews 在 Windows 标签下追踪了 24 篇文章，其中威胁行为者 Kyber、Chaotic Eclipse 和 VECT Ransomware 最为频繁出现。报道时间覆盖 2026 年 4 月 12 日至 5 月 9 日，重点提及五个关键漏洞：CVE-2024-1708（CVSS 8.4）、CVE-2026-33104（CVSS 7.8）、CVE-2026-8069（CVSS 7.8）、CVE-2026-26179（CVSS 7.5）以及 CVE-2026-32183（CVSS 7.5）。受影响行业包括消费电子、游戏、政府、IT 及托管服务提供商，主要区域为北美。严重程度分布为 18 起高危、2 起严重和 4 起中危事件。",
-  "sources_hash": "8f578c67d046c1fd",
-  "source_intro_hash": "d139f6d6631c1674",
+  "intro": "2026年4月至7月期间，ZCyberNews报道了25篇聚焦Windows的安全故事，其中Kyber、Chaotic Eclipse和Toy Ghouls是最常被观察到的行为者。报道重点围绕CVE-2024-1708（一个评级为8.4的高严重性漏洞），以及CVE-2026-33104、CVE-2026-8069、CVE-2026-26179和CVE-2026-32183。报道覆盖了19起高严重性、2起严重和4起中等严重性事件，涉及消费电子、游戏、政府、IT和托管服务提供商。受影响地区包括北美和俄罗斯联邦，分析基于档案的完整日期范围。",
+  "sources_hash": "80660f2b1e87c702",
+  "source_intro_hash": "3dba2733cbc7b3c7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:11:23.485Z",
+  "generated_at": "2026-07-31T06:15:39.584Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

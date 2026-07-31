@@ -1,9 +1,9 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "intro": "Between April and July 2026, ZCyberNews published 56 articles on ransomware, tracking LockBit, The Gentlemen, and ShinyHunters as the top threat actors. The coverage spanned 40 high-severity and six critical incidents, with key vulnerabilities including CVE-2026-1731, CVE-2026-34197, CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Affected sectors ranged across healthcare, government, manufacturing, and education, while targeted regions included North America, the United States, Europe, and Turkey.",
-  "sources_hash": "c2c39d0a28231df2",
+  "intro": "LockBit appeared most frequently across the 58 articles on ZCyberNews, with The Gentlemen and ShinyHunters also covered. Reporting spanned April 12 to July 31, 2026, and referenced CVE-2026-1731, CVE-2026-34197, CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Healthcare, manufacturing, government, and education were among the affected sectors, with incidents noted in North America, the United States, Europe, and Turkey. The coverage included 42 high-severity and 6 critical items, alongside 1 medium and 2 informational reports.",
+  "sources_hash": "47660e2cb5fbd4df",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-10T06:47:40.715Z",
+  "generated_at": "2026-07-31T06:15:17.437Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "linux",
   "locale": "zh",
-  "intro": "在2026年4月12日至4月30日期间，一系列针对Linux系统的攻击中，教育和家庭实验室环境成为主要目标，影响范围遍及全球，且在南亚地区尤为集中。该活动涉及威胁行为者Harvester、Payouts King和The Gentlemen，并利用了CVE-2026-31431（一个CVSS评分为7.8的漏洞）。涵盖此标签的七篇文章包括四起高严重性事件、一起中等严重性事件以及两篇信息性报告，影响范围涉及物联网和创客领域，以及教育和家庭实验室系统。",
-  "sources_hash": "4169c1ea39f6d56b",
-  "source_intro_hash": "3e9deff99f484c60",
+  "intro": "教育和家庭实验室环境在2026年4月至7月期间承受了针对Linux活动的主要冲击，制造业、物联网和创客领域也受到影响。八篇文章涵盖了五起高严重性事件、一起中等严重性事件和两篇信息性报道，涉及从俄罗斯联邦到南亚的地区。在这些活动中观察到了威胁行为者Harvester、Payouts King和The Gentlemen。技术关注集中在CVE-2026-31431上，其CVSS评分为7.8，被视为关键漏洞。报道覆盖全球范围，凸显了这些针对Linux的行动在企业网络和爱好者网络中的广泛影响。",
+  "sources_hash": "a8b3dfc0bcf4aabc",
+  "source_intro_hash": "7a9a8bcba85fa348",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:09:28.675Z",
+  "generated_at": "2026-07-31T06:15:35.218Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

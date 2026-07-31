@@ -1,15 +1,15 @@
 {
   "tag": "windows",
   "locale": "en",
-  "count": 24,
+  "count": 25,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-09"
+    "latest": "2026-07-30"
   },
   "top_actors": [
     "Kyber",
     "Chaotic Eclipse",
-    "VECT Ransomware"
+    "Toy Ghouls"
   ],
   "top_cves": [
     {
@@ -41,17 +41,18 @@
     "managed service providers"
   ],
   "top_regions": [
-    "North america"
+    "North america",
+    "Russian federation"
   ],
   "severity_mix": {
-    "high": 18,
+    "high": 19,
     "critical": 2,
     "medium": 4
   },
   "recent_excerpts": [
+    "Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group, targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms since March 2026.",
     "CVE-2026-8069: Acer PredatorSense versions 3.00.3136 to 3.00.3196 expose a misconfigured named pipe, letting any authenticated local user execute code as SYSTEM and delete...",
-    "CISA added CVE-2024-1708 (ConnectWise ScreenConnect path traversal, CVSS 8.4) and an unnamed Windows flaw to its KEV catalog based on confirmed active exploitation.",
-    "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying."
+    "CISA added CVE-2024-1708 (ConnectWise ScreenConnect path traversal, CVSS 8.4) and an unnamed Windows flaw to its KEV catalog based on confirmed active exploitation."
   ],
-  "sources_hash": "e2d061f6dc84a80a"
+  "sources_hash": "2d65d4ffe35ad81f"
 }

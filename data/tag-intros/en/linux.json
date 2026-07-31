@@ -1,9 +1,9 @@
 {
   "tag": "linux",
   "locale": "en",
-  "intro": "Education and homelab environments were the primary targets in a series of Linux-focused attacks between April 12 and April 30, 2026, with global impact and a notable concentration in South Asia. The activity involved threat actors Harvester, Payouts King, and The Gentlemen, and leveraged CVE-2026-31431, a vulnerability with a CVSS score of 7.8. The seven articles covering this tag included four high-severity incidents, one medium, and two informational reports, affecting the IoT and maker sectors alongside education and homelab systems.",
-  "sources_hash": "e4650b7cf5062031",
+  "intro": "Education and homelab environments bore the brunt of Linux-focused activity between April and July 2026, with manufacturing, IoT, and maker sectors also affected. Eight articles covered a mix of five high-severity incidents, one medium, and two informational pieces, touching regions from the Russian federation to South Asia. Threat actors Harvester, Payouts King, and The Gentlemen were observed in these campaigns. Technical attention centered on CVE-2026-31431, rated CVSS 7.8, as a key vulnerability. The reporting spans a global footprint, underscoring the broad reach of these Linux-targeting operations across both enterprise and enthusiast networks.",
+  "sources_hash": "4f50550f6ba44e54",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:03:56.069Z",
+  "generated_at": "2026-07-31T06:15:26.771Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

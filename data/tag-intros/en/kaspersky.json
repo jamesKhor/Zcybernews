@@ -1,9 +1,9 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "intro": "This archive collects 14 articles tagged `kaspersky` published between April 16, 2026 and July 17, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include CrystalX, GoSerpent, and HelloNet, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize finance, education, and energy across Global, Russia, and Southeast asia, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, and 11 high reports.",
-  "sources_hash": "b996086507bac1a8",
-  "model": "template:fallback",
-  "generated_at": "2026-07-17T05:43:52.022Z",
+  "intro": "Over the past three months, ZCyberNews has tracked 15 Kaspersky-related reports, with CrystalX, GoSerpent, and HelloNet emerging as the most frequently observed threat actors. The coverage, spanning from April 16 to July 30, 2026, documents 12 high-severity and one critical incident affecting finance, education, energy, government, and building automation sectors. These cases were reported across Global, Russia, Southeast Asia, Africa, and APAC regions, reflecting a broad operational footprint. The archive consolidates these findings, offering a chronological record of activity tied to this tag.",
+  "sources_hash": "33faff64e5533002",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-07-31T06:15:24.308Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

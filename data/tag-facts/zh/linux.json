@@ -1,10 +1,10 @@
 {
   "tag": "linux",
   "locale": "zh",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-30"
+    "latest": "2026-07-30"
   },
   "top_actors": [
     "Harvester",
@@ -21,21 +21,23 @@
     "education",
     "homelab",
     "iot",
-    "maker"
+    "maker",
+    "manufacturing"
   ],
   "top_regions": [
     "Global",
+    "Russian federation",
     "South asia"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "卡巴斯基剖析 GenieLocker，这是来自 Toy Ghouls 组织的定制勒索软件，自 2026 年 3 月起针对俄罗斯制造企业，在攻击中针对 Windows、Linux 和 ESXi。",
     "CVE-2026-31431（CVSS 7.8）被称为 'Copy Fail'，允许无特权的本地用户向任何可读文件的页面缓存写入四个受控字节，从而在主要的 Linux 系统上启用 root 权限...",
-    "Harvester 威胁行为者部署了其 GoGra 后门的新 Linux 版本，使用 Microsoft Graph API 和 Outlook 邮箱进行隐蔽的 C2 通信，在针对...的攻击中。",
-    "The Gentlemen 勒索软件即服务操作已感染超过320名受害者，为 Windows/Linux 和 VMware ESXi 系统部署不同的加密器，以最大化对企业网络的破坏和勒索压力。"
+    "Harvester 威胁行为者部署了其 GoGra 后门的新 Linux 版本，使用 Microsoft Graph API 和 Outlook 邮箱进行隐蔽的 C2 通信，在针对...的攻击中。"
   ],
-  "sources_hash": "4169c1ea39f6d56b"
+  "sources_hash": "a8b3dfc0bcf4aabc"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月16日至2026年7月17日期间发布的14篇标记为`kaspersky`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的集中视角。观察到的行为者引用包括CrystalX、GoSerpent和HelloNet，仅在底层文章元数据支持归因的情况下呈现。受影响范围信号强调金融、教育和能源领域，覆盖全球、俄罗斯和东南亚地区，帮助读者在不超出档案数据范围的前提下比较暴露模式。严重程度覆盖包括1篇严重和11篇高危报告。",
-  "sources_hash": "6b4069d092f509d6",
-  "source_intro_hash": "cc939ff228cffdd2",
+  "intro": "过去三个月，ZCyberNews追踪了15份与卡巴斯基相关的报告，其中CrystalX、GoSerpent和HelloNet成为最常被观察到的威胁行为者。相关报道时间跨度从2026年4月16日至7月30日，记录了12起高严重性事件和1起严重事件，影响金融、教育、能源、政府和楼宇自动化等行业。这些案例分布于全球、俄罗斯、东南亚、非洲及亚太地区，反映出广泛的行动范围。该档案整合了这些发现，提供了与此标签相关的活动按时间顺序的记录。",
+  "sources_hash": "1391339fb722c26d",
+  "source_intro_hash": "26ed535bbe1ad08b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-17T05:43:58.618Z",
+  "generated_at": "2026-07-31T06:15:32.383Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
