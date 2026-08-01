@@ -1,9 +1,9 @@
 {
   "tag": "openai",
   "locale": "en",
-  "intro": "This archive collects 10 articles tagged `openai` published between April 12, 2026 and May 14, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Lazarus Group, TeamPCP, and Winos 4.0, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize technology, software development, and artificial-intelligence across Global, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 4 high, 4 medium, and 2 informational reports.",
-  "sources_hash": "d6ab8bbc30e9868d",
-  "model": "template:fallback",
-  "generated_at": "2026-05-18T10:02:25.010Z",
+  "intro": "Between April and July 2026, ZCyberNews covered eleven stories tagged openai, with Lazarus Group, TeamPCP, and Winos 4.0 appearing as the top threat actors. Coverage spanned technology, software development, artificial-intelligence, cloud services, and cybersecurity sectors, affecting Global and EU regions. The reporting included four high-severity and four medium-severity incidents, alongside two informational pieces. These articles documented activity across these distinct actors, with no specific CVEs named in the archive. The collection reflects a concentrated period of security developments involving OpenAI-related infrastructure and services, drawing attention from multiple independent threat groups.",
+  "sources_hash": "d153799faed01fb1",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-08-01T05:56:26.199Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

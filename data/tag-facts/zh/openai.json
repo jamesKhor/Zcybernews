@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "zh",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-14"
+    "latest": "2026-07-31"
   },
   "top_actors": [
     "Lazarus Group",
@@ -20,7 +20,8 @@
     "cybersecurity"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "EU"
   ],
   "severity_mix": {
     "high": 4,
@@ -28,9 +29,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "OpenAI 概述了其安全、安保和来源控制如何与欧盟AI法案保持一致。关于模型评估、监控和透明度措施的具体细节为...",
     "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。",
-    "一个被恶意抢注的 OpenAI 仓库在 Hugging Face 上达到了第一名，下载量达到 244,000 次，分发了一个基于 Rust 的信息窃取器，该窃取器针对浏览器凭证、加密钱包和 VPN...",
-    "OpenAI 推出 ChatGPT 的高级账户安全功能：强制使用密码密钥、缩短会话时间以及账户恢复变更。影响全球所有用户。"
+    "一个被恶意抢注的 OpenAI 仓库在 Hugging Face 上达到了第一名，下载量达到 244,000 次，分发了一个基于 Rust 的信息窃取器，该窃取器针对浏览器凭证、加密钱包和 VPN..."
   ],
-  "sources_hash": "f1d17456140cf6ab"
+  "sources_hash": "ff92cb20d8e97609"
 }

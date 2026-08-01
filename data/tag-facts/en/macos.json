@@ -1,10 +1,10 @@
 {
   "tag": "macos",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-05-12"
+    "latest": "2026-07-31"
   },
   "top_actors": [
     "Lazarus Group",
@@ -30,17 +30,18 @@
     "Global",
     "Asia",
     "Europe",
-    "North america"
+    "North america",
+    "South asia"
   ],
   "severity_mix": {
+    "high": 9,
     "critical": 1,
-    "high": 8,
     "medium": 2
   },
   "recent_excerpts": [
+    "XCSSET v40, a macOS malware targeting Xcode developers, has resurfaced with 17 modules, including a Chrome hijacking backdoor and Telegram trojanizer, after months of dormancy.",
     "Apple released emergency patches for two zero-days exploited in the wild alongside the beta rollout of end-to-end encrypted RCS messaging for iOS and macOS.",
-    "Attackers abuse Google Ads linking to real claude.ai and shared Claude chats to deliver MacSync infostealer, harvesting browser credentials and Keychain data.",
-    "Google Project Zero published exploit details for CVE-2024-54529, a type confusion in macOS coreaudiod allowing sandbox escape via knowledge-driven fuzzing."
+    "Attackers abuse Google Ads linking to real claude.ai and shared Claude chats to deliver MacSync infostealer, harvesting browser credentials and Keychain data."
   ],
-  "sources_hash": "cb29c0804ea0ec48"
+  "sources_hash": "dd3fc5fd6c1a6d26"
 }

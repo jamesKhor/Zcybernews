@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-06-26"
+    "latest": "2026-07-31"
   },
   "top_actors": [
     "CL-STA-1062",
@@ -14,8 +14,8 @@
   "top_cves": [],
   "top_sectors": [
     "technology",
-    "enterprise",
     "software development",
+    "enterprise",
     "energy",
     "financial services"
   ],
@@ -24,16 +24,16 @@
     "Central america",
     "North america",
     "South america",
-    "Southeast asia"
+    "South asia"
   ],
   "severity_mix": {
-    "high": 11,
+    "high": 12,
     "critical": 1
   },
   "recent_excerpts": [
+    "针对 Xcode 开发者的 macOS 恶意软件 XCSSET v40，在数月的休眠后重新出现，包含 17 个模块，包括 Chrome 劫持后门和 Telegram 木马化程序。",
     "说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的 TinyRCT...",
-    "Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能...",
-    "Unit 42 详细描述了一种新的 Gremlin stealer 变种，使用 XOR 加密的资源部分，加密剪贴器，WebSocket 会话劫持，以及一个商业打包器，带有指令..."
+    "Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能..."
   ],
-  "sources_hash": "4affce541a85e9a5"
+  "sources_hash": "e56ce37a33721151"
 }

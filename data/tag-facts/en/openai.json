@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-14"
+    "latest": "2026-07-31"
   },
   "top_actors": [
     "Lazarus Group",
@@ -20,7 +20,8 @@
     "cybersecurity"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "EU"
   ],
   "severity_mix": {
     "high": 4,
@@ -28,9 +29,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "OpenAI outlines how its safety, security, and provenance controls align with the EU AI Act. Concrete details on model evaluation, monitoring, and transparency measures for...",
     "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android.",
-    "A typosquatted OpenAI repository reached #1 on Hugging Face with 244,000 downloads, delivering a Rust-based infostealer that targets browser credentials, crypto wallets, and VPN...",
-    "OpenAI rolls out Advanced Account Security for ChatGPT: mandatory passkeys, shorter sessions, and account recovery changes. Affects all users globally."
+    "A typosquatted OpenAI repository reached #1 on Hugging Face with 244,000 downloads, delivering a Rust-based infostealer that targets browser credentials, crypto wallets, and VPN..."
   ],
-  "sources_hash": "d6ab8bbc30e9868d"
+  "sources_hash": "d153799faed01fb1"
 }

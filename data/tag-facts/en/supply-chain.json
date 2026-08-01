@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 86,
+  "count": 87,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-11"
+    "latest": "2026-07-31"
   },
   "top_actors": [
     "Lazarus Group",
@@ -48,15 +48,15 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 50,
+    "high": 51,
     "medium": 16,
     "critical": 15,
     "informational": 4
   },
   "recent_excerpts": [
+    "XCSSET v40, a macOS malware targeting Xcode developers, has resurfaced with 17 modules, including a Chrome hijacking backdoor and Telegram trojanizer, after months of dormancy.",
     "Unit 42's Behavioral Integrity Verification scanned 49,943 OpenClaw skills and found 80% deviate from declared behavior, with multi-stage attack chains enabling credential theft...",
-    "An attacker used a compromised GitHub token to download Grafana's entire private codebase. The company says no customer data was accessed and the incident involved an extortion...",
-    "CVE-2026-44428 (CVSS 4.7) in the MCP Registry before 1.7.6 lets attackers reuse stolen GitHub OIDC tokens across registry instances, enabling unauthorized server publishing and..."
+    "An attacker used a compromised GitHub token to download Grafana's entire private codebase. The company says no customer data was accessed and the incident involved an extortion..."
   ],
-  "sources_hash": "1336d11a7d34f51d"
+  "sources_hash": "fbc33e75c184006c"
 }

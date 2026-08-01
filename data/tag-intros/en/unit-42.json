@@ -1,9 +1,9 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "intro": "From 14 articles published between April 22 and June 26, 2026, ZCyberNews coverage of Unit 42 highlights 11 high-severity and one critical incident. Key threat actors observed include CL-STA-1062, Gremlin Stealer, and LockBit. The technology, enterprise, software development, energy, and financial services sectors were most affected, with reported impacts spanning Global, Central America, North America, South America, and Southeast Asia.",
-  "sources_hash": "653db81da728aeda",
+  "intro": "From April 22 to July 31, 2026, ZCyberNews published 15 articles tagged Unit 42, covering a period marked by 12 high-severity and one critical-severity incident. The threat actors CL-STA-1062, Gremlin Stealer, and LockBit were observed in these reports. Affected sectors included technology, software development, enterprise, energy, and financial services, with impacts noted across Global, Central America, North America, South America, and South Asia.",
+  "sources_hash": "9a1462c7c7bc5edc",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-27T04:25:10.104Z",
+  "generated_at": "2026-08-01T05:56:21.579Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "intro": "根据2026年4月22日至6月26日期间发布的14篇文章，ZCyberNews对Unit 42的报道重点提及了11起高严重性事件和1起重大事件。观测到的主要威胁行为体包括CL-STA-1062、Gremlin Stealer和LockBit。受影响最严重的行业为科技、企业、软件开发、能源及金融服务领域，报告的影响范围覆盖全球、中美洲、北美洲、南美洲及东南亚地区。",
-  "sources_hash": "4affce541a85e9a5",
-  "source_intro_hash": "71d14e39043ea85b",
+  "intro": "2026年4月22日至7月31日期间，ZCyberNews发布了15篇标记为Unit 42的文章，覆盖了发生12起高严重性和1起严重性事件的时间段。在这些报告中观察到了威胁行为者CL-STA-1062、Gremlin Stealer和LockBit。受影响行业包括技术、软件开发、企业、能源和金融服务，影响范围涉及全球、中美洲、北美洲、南美洲和南亚。",
+  "sources_hash": "e56ce37a33721151",
+  "source_intro_hash": "e4061c32417e38ad",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-27T04:25:20.253Z",
+  "generated_at": "2026-08-01T05:56:37.971Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

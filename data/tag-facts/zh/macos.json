@@ -1,10 +1,10 @@
 {
   "tag": "macos",
   "locale": "zh",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-05-12"
+    "latest": "2026-07-31"
   },
   "top_actors": [
     "Lazarus Group",
@@ -30,17 +30,18 @@
     "Global",
     "Asia",
     "Europe",
-    "North america"
+    "North america",
+    "South asia"
   ],
   "severity_mix": {
+    "high": 9,
     "critical": 1,
-    "high": 8,
     "medium": 2
   },
   "recent_excerpts": [
+    "针对 Xcode 开发者的 macOS 恶意软件 XCSSET v40，在数月的休眠后重新出现，包含 17 个模块，包括 Chrome 劫持后门和 Telegram 木马化程序。",
     "苹果发布了针对两个在野外被利用的零日漏洞的紧急补丁，同时推出了iOS和macOS端到端加密RCS消息的测试版。",
-    "攻击者滥用 Google Ads 链接到真实的 claude.ai 和共享的 Claude 聊天，以传递 MacSync 信息窃取器，收集浏览器凭证和 Keychain 数据。",
-    "Google Project Zero 发布了 CVE-2024-54529 的漏洞细节，这是一个 macOS coreaudiod 中的类型混淆问题，允许通过知识驱动的模糊测试逃逸沙箱。"
+    "攻击者滥用 Google Ads 链接到真实的 claude.ai 和共享的 Claude 聊天，以传递 MacSync 信息窃取器，收集浏览器凭证和 Keychain 数据。"
   ],
-  "sources_hash": "a2c5bfd6054f8294"
+  "sources_hash": "25bccfc83fb822e2"
 }
