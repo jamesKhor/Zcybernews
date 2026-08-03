@@ -1,0 +1,77 @@
+---
+title: Pass-the-Passkey 攻击劫持 Chrome 同步账户
+slug: 2026-08-03-pass-the-passkey-attacks-hijack-chrome-synced-accounts
+date: '2026-08-03'
+excerpt: >-
+  Unit 42 揭露 Pass-the-Passkey 攻击：Windows Chrome
+  终端上的恶意软件窃取同步的密码，绕过生物识别验证，并在用户不知情的情况下提取私钥...
+category: malware
+tags:
+  - passkeys
+  - chrome
+  - unit-42
+  - google-password-manager
+  - account-takeover
+  - malware
+language: zh
+source_urls:
+  - >-
+    https://unit42.paloaltonetworks.com/passwordless-authentication-security-risks/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-03-pass-the-passkey-attacks-hijack-chrome-synced-accounts
+cluster_key: 'topic:pass-passkey-novel-surface-passwordless'
+source_count: 1
+seo_query_target: Chrome passkey attack
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Explains three novel attack classes against Chrome-synced passkeys and their
+  defender impact.
+seo_meta_promise: >-
+  Details Unit 42's Pass-ta-key research: malware-based account takeover of
+  Chrome passkeys without user interaction, with technical specifics.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - active-cves
+  - credential-theft
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram showing malware intercepting Chrome passkey authentication flow on
+  Windows
+severity: high
+affected_sectors:
+  - technology
+  - financial services
+  - government
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+Palo Alto Networks 的 Unit 42 披露了三种新颖的攻击类别——统称为 "Pass-ta-key"——它们允许在被入侵的 Windows 终端上的恶意软件接管由 Google 同步的密码密钥保护的 Chrome 账户。最严重的变体不需要特权提升、不需要设备解锁，也不需要用户交互，有效地中和了密码密钥吸引人的抗钓鱼属性。第二种变体欺骗 Google Cloud Authenticator 相信用户通过生物识别进行了验证，第三种变体提取所有同步的密码密钥私钥以可共享格式。这项研究于 2026 年 8 月 3 日发布，针对的是 Windows 设备上的 Chrome 中的 Google 密码管理器，这些设备配备了可信平台模块 (TPM)。
+
+## 技术分析
+
+Unit 42 的研究重点在于 Google 的同步密码密钥生态系统，其中私钥在云飞地隔离环境中生成和使用，由硬件支持、客户端设备绑定的密钥控制对加密操作的访问。研究人员识别出三种不同的攻击，每种攻击都挑战了密码密钥安全的核心技术假设。
+
+**Pass-ta-key 攻击：** 受害者设备上的恶意软件在没有用户交互的情况下进行身份验证，完全绕过用户验证要求。攻击在没有特权提升、设备解锁或用户同意的情况下成功，破坏了总是需要明确用户存在这一假设。
+
+**Silver Pass-ta-key 攻击：** 攻击者欺骗 Google Cloud Authenticator 相信受害者使用生物识别解锁了设备。这导致在认证阶段不使用受害者的设备即可完全接管账户，击败了 "你是某人" 的因素。
+
+**Golden Pass-ta-key 攻击：** 最具破坏性的变体提取所有同步的密码密钥，以允许它们在凭证黑市上共享或出售的形式。这直接违反了密码密钥私钥不能被复制的假设。
+
+所有攻击都依赖于在初始阶段已经存在于受害者设备上的恶意软件。在 Windows 上，Chrome 将同步的密码密钥数据作为 proto-编码的 WebauthnCredentialSpecifics 记录保存在其同步数据库中，位于 `%LocalAppData%\Google\Chrome\User Data\<Profile>\Sync Data\LevelDB`。访问这些记录不需要提升权限，为攻击者提供了侦察立足点。
+
+这些攻击利用了入职、恢复和设备信任工作流程，而不是加密弱点。Unit 42 指出，云认证器模型被多个浏览器和平台上的各种密码密钥提供商使用，尽管这项具体研究侧重于配备 TPM 的 Windows 设备上的 Chrome 中的 Google 密码管理器。
+
+研究人员在发布前负责任地披露了所有呈现的漏洞。Unit 42 建议 Palo Alto Networks 客户利用 Cortex Cloud Identity Security、Idira Threat Detection and Response、Idira Endpoint Privilege Manager 和 Idira Privilege Access Management 进行保护。
+
+## 缓解措施与建议
+
+组织应该将密码密钥保护的端点视为高价值目标，而不是假设无密码认证消除了凭证盗窃风险。由于所有三种攻击都需要端点上预先存在的恶意软件，防御者应该优先考虑在管理同步密码密钥的设备上进行端点检测和响应 (EDR) 覆盖。监控对 Chrome 同步数据库文件的不寻常访问、来自已知设备的意外认证事件以及异常的 Cloud Authenticator 活动。对于高风险账户，考虑强制执行不跨设备同步的硬件绑定密码密钥，并审查可能授予经过身份验证的端点过多权限的设备信任策略。如果怀疑存在入侵，Unit 42 建议联系他们的事件响应团队。
+
+## 参考资料
+
+- [Pass the Passkey: A Novel Attack Surface in Passwordless Authentication — Unit 42](https://unit42.paloaltonetworks.com/passwordless-authentication-security-risks/)

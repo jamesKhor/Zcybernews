@@ -1,0 +1,78 @@
+---
+title: Pass-the-Passkey Attacks Hijack Chrome Synced Accounts
+slug: 2026-08-03-pass-the-passkey-attacks-hijack-chrome-synced-accounts
+date: '2026-08-03'
+excerpt: >-
+  Unit 42 reveals Pass-ta-key attacks: malware on Windows Chrome endpoints
+  steals synced passkeys, bypasses biometric verification, and extracts private
+  keys without user...
+category: malware
+tags:
+  - passkeys
+  - chrome
+  - unit-42
+  - google-password-manager
+  - account-takeover
+  - malware
+language: en
+source_urls:
+  - >-
+    https://unit42.paloaltonetworks.com/passwordless-authentication-security-risks/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-03-pass-the-passkey-attacks-hijack-chrome-synced-accounts
+cluster_key: 'topic:pass-passkey-novel-surface-passwordless'
+source_count: 1
+seo_query_target: Chrome passkey attack
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Explains three novel attack classes against Chrome-synced passkeys and their
+  defender impact.
+seo_meta_promise: >-
+  Details Unit 42's Pass-ta-key research: malware-based account takeover of
+  Chrome passkeys without user interaction, with technical specifics.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - active-cves
+  - credential-theft
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram showing malware intercepting Chrome passkey authentication flow on
+  Windows
+severity: high
+affected_sectors:
+  - technology
+  - financial services
+  - government
+affected_regions:
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+Palo Alto Networks' Unit 42 disclosed three novel attack classes — collectively dubbed "Pass-ta-key" — that let malware on a compromised Windows endpoint take over accounts protected by Google-synced passkeys in Chrome. The most severe variant requires no privilege escalation, no device unlock, and no user interaction, effectively neutralizing the phishing-resistant properties that make passkeys attractive. A second variant deceives Google Cloud Authenticator into believing the user verified with biometrics, and a third extracts all synced passkey private keys in a shareable format. The research, published August 3, 2026, targets Google Password Manager in Chrome on Windows devices with a Trusted Platform Module (TPM).
+
+## Technical Analysis
+
+Unit 42's research focuses on Google's synced passkey ecosystem, where private keys are generated and used within a cloud-enclave isolation environment, with hardware-backed, client-device-bound keys controlling access to cryptographic operations. The researchers identified three distinct attacks, each challenging a core assumption of passkey security.
+
+**Pass-ta-key attack:** Malware on the victim's device authenticates without user interaction, bypassing user verification requirements entirely. The attack succeeds without privilege escalation, device unlock, or user consent, undermining the assumption that explicit user presence is always required.
+
+**Silver Pass-ta-key attack:** The attacker deceives Google Cloud Authenticator into believing the victim unlocked the device with biometrics. This leads to full account takeover without using the victim's device during the authentication phase, defeating the "something you are" factor.
+
+**Golden Pass-ta-key attack:** The most damaging variant extracts all synced passkeys in a form that allows them to be shared or sold on credential black markets. This directly violates the assumption that passkey private keys cannot be copied.
+
+All attacks rely on malware already present on the victim's device during the initial stage. On Windows, Chrome persists synced passkey data as proto-encoded WebauthnCredentialSpecifics records within its sync database at `%LocalAppData%\Google\Chrome\User Data\<Profile>\Sync Data\LevelDB`. Accessing these records does not require elevated privileges, providing attackers with a reconnaissance foothold.
+
+The attacks exploit onboarding, recovery, and device trust workflows rather than cryptographic weaknesses. Unit 42 notes that the cloud authenticator model is used by various passkey providers across multiple browsers and platforms, though this specific research focuses on Google Password Manager in Chrome on Windows with TPM-equipped devices.
+
+The researchers responsibly disclosed all presented exploits before publication. Unit 42 recommends Palo Alto Networks customers leverage Cortex Cloud Identity Security, Idira Threat Detection and Response, Idira Endpoint Privilege Manager, and Idira Privilege Access Management for protection.
+
+## Mitigations & Recommendations
+
+Organizations should treat passkey-protected endpoints as high-value targets rather than assuming passwordless authentication eliminates credential theft risk. Since all three attacks require pre-existing malware on the endpoint, defenders should prioritize endpoint detection and response (EDR) coverage on devices that manage synced passkeys. Monitor for unusual access to Chrome's sync database files, unexpected authentication events from known devices, and anomalous Cloud Authenticator activity. For high-risk accounts, consider enforcing hardware-bound passkeys that are not synced across devices, and review device trust policies that may grant excessive authority to authenticated endpoints. Unit 42 advises contacting their Incident Response team if compromise is suspected.
+
+## References
+
+- [Pass the Passkey: A Novel Attack Surface in Passwordless Authentication — Unit 42](https://unit42.paloaltonetworks.com/passwordless-authentication-security-risks/)
