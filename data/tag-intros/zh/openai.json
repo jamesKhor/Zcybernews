@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "zh",
-  "intro": "在2026年4月至7月期间，ZCyberNews报道了十一篇标记为openai的新闻，其中Lazarus Group、TeamPCP和Winos 4.0是主要威胁行为者。报道覆盖了技术、软件开发、人工智能、云服务和网络安全领域，影响范围涉及全球和欧盟地区。这些报道包括四起高严重性和四起中等严重性事件，以及两篇信息性文章。这些文章记录了这些不同行为者的活动，档案中未提及具体CVE编号。该合集反映了涉及OpenAI相关基础设施和服务的一段集中安全事件时期，吸引了多个独立威胁组织的关注。",
-  "sources_hash": "ff92cb20d8e97609",
-  "source_intro_hash": "b8954944a475597f",
+  "intro": "Lazarus Group在2026年4月12日至8月3日期间发布的12篇标记为OpenAI的文章中占据主导报道，同时观察到TeamPCP和Winos 4.0。报道涵盖5项高严重性、4项中严重性和2项信息性严重性条目，影响技术、软件开发、人工智能、云服务和网络安全行业。活动在Global、EU和United States地区均有记录。该档案反映了分析高度集中的时期，源表中未提及具体CVE编号。",
+  "sources_hash": "a719cebba654f7a9",
+  "source_intro_hash": "0057a147e4206c7b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-01T05:56:34.000Z",
+  "generated_at": "2026-08-04T05:48:40.263Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

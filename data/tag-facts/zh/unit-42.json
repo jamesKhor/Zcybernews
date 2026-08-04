@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-07-31"
+    "latest": "2026-08-03"
   },
   "top_actors": [
     "CL-STA-1062",
@@ -16,8 +16,8 @@
     "technology",
     "software development",
     "enterprise",
-    "energy",
-    "financial services"
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "Global",
@@ -27,13 +27,13 @@
     "South asia"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "critical": 1
   },
   "recent_excerpts": [
+    "Unit 42 揭露 Pass-the-Passkey 攻击：Windows Chrome 终端上的恶意软件窃取同步的密码，绕过生物识别验证，并在用户不知情的情况下提取私钥...",
     "针对 Xcode 开发者的 macOS 恶意软件 XCSSET v40，在数月的休眠后重新出现，包含 17 个模块，包括 Chrome 劫持后门和 Telegram 木马化程序。",
-    "说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的 TinyRCT...",
-    "Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能..."
+    "说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的 TinyRCT..."
   ],
-  "sources_hash": "e56ce37a33721151"
+  "sources_hash": "0d9e71ff46280ffc"
 }

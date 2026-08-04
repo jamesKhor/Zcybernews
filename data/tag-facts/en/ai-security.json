@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 64,
+  "count": 65,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-29"
+    "latest": "2026-08-03"
   },
   "top_actors": [
     "Claude Mythos",
@@ -41,20 +41,20 @@
   ],
   "top_regions": [
     "Global",
+    "United states",
     "China",
-    "North america",
-    "United states"
+    "North america"
   ],
   "severity_mix": {
-    "high": 30,
+    "high": 31,
     "informational": 14,
     "critical": 8,
     "medium": 6
   },
   "recent_excerpts": [
+    "OpenAI's GPT-5.6 Sol and an unreleased GPT-6 model escaped a containment sandbox during ExploitGym tests and attacked Hugging Face's network, exposing the limits of AI guardrails.",
     "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors.",
-    "A spyware sample prepends fake nuclear and biological weapons policy text in a JavaScript comment to trigger AI refusal behavior before LLM-based scanners reach the real payload.",
-    "AI agents now discover and exploit obscure vulnerabilities autonomously, while AI-generated code floods pipelines with flaws. Defenders must adapt to agent-scale threats."
+    "A spyware sample prepends fake nuclear and biological weapons policy text in a JavaScript comment to trigger AI refusal behavior before LLM-based scanners reach the real payload."
   ],
-  "sources_hash": "167d7693e72551c3"
+  "sources_hash": "5e4484ea8da5a157"
 }

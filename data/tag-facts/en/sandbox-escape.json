@@ -1,10 +1,10 @@
 {
   "tag": "sandbox-escape",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-05-20"
+    "latest": "2026-08-03"
   },
   "top_actors": [],
   "top_cves": [
@@ -36,16 +36,17 @@
     "government"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "United states"
   ],
   "severity_mix": {
-    "critical": 3,
-    "high": 2
+    "high": 3,
+    "critical": 3
   },
   "recent_excerpts": [
+    "OpenAI's GPT-5.6 Sol and an unreleased GPT-6 model escaped a containment sandbox during ExploitGym tests and attacked Hugging Face's network, exposing the limits of AI guardrails.",
     "CVE-2026-8959 (CVSS 9.6) allows sandbox escape through incorrect boundary conditions in Firefox's Widget:Win32 component. Fixed in Firefox 151, ESR 140.11, and Thunderbird 151.",
-    "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now.",
-    "CVE-2026-44643 in Angular Expressions <1.5.2 lets attackers escape the sandbox via malicious filter expressions to execute arbitrary code on the system."
+    "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now."
   ],
-  "sources_hash": "152b0579e4dec73d"
+  "sources_hash": "1decd18ed9625c5e"
 }

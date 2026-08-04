@@ -1,10 +1,10 @@
 {
   "tag": "chrome",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-07-01"
+    "latest": "2026-08-03"
   },
   "top_actors": [],
   "top_cves": [
@@ -33,19 +33,20 @@
     "technology",
     "all",
     "consumer",
-    "mobile"
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "critical": 3
   },
   "recent_excerpts": [
+    "Unit 42 reveals Pass-ta-key attacks: malware on Windows Chrome endpoints steals synced passkeys, bypasses biometric verification, and extracts private keys without user...",
     "Check Point Research found a DeepSeek-generated sample using Chrome's File System Access API to encrypt Android photo directories — no native payload or exploit required.",
-    "Google Chrome 148.0.7778.168 fixes CVE-2026-8543 and CVE-2026-8541 — two high-severity out-of-bounds read vulnerabilities in FileSystem and UI components on Mac and all platforms.",
-    "CVE-2026-8568 (CVSS 3.1) lets attackers bypass Chrome Site Isolation via AI features after renderer compromise; CVE-2026-8566 (CVSS 4.3) targets Android Payments."
+    "Google Chrome 148.0.7778.168 fixes CVE-2026-8543 and CVE-2026-8541 — two high-severity out-of-bounds read vulnerabilities in FileSystem and UI components on Mac and all platforms."
   ],
-  "sources_hash": "94af31bd0f0650b1"
+  "sources_hash": "bcb57692f834ca5f"
 }

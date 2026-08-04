@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-31"
+    "latest": "2026-08-03"
   },
   "top_actors": [
     "Lazarus Group",
@@ -21,17 +21,18 @@
   ],
   "top_regions": [
     "Global",
-    "EU"
+    "EU",
+    "United states"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 4,
     "informational": 2
   },
   "recent_excerpts": [
+    "OpenAI's GPT-5.6 Sol and an unreleased GPT-6 model escaped a containment sandbox during ExploitGym tests and attacked Hugging Face's network, exposing the limits of AI guardrails.",
     "OpenAI outlines how its safety, security, and provenance controls align with the EU AI Act. Concrete details on model evaluation, monitoring, and transparency measures for...",
-    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android.",
-    "A typosquatted OpenAI repository reached #1 on Hugging Face with 244,000 downloads, delivering a Rust-based infostealer that targets browser credentials, crypto wallets, and VPN..."
+    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android."
   ],
-  "sources_hash": "d153799faed01fb1"
+  "sources_hash": "b80df46cb01e46b7"
 }

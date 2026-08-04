@@ -1,9 +1,9 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "intro": "Technology, cybersecurity, and critical infrastructure sectors bore the brunt of 64 articles on ai-security from April to July 2026, with a severity mix of 30 high, 14 informational, 8 critical, and 6 medium alerts. Threat actors Claude Mythos and OpenClaw were observed, while the most critical vulnerabilities included CVE-2026-5760 (CVSS 9.8), CVE-2026-5752 (CVSS 9.3), CVE-2026-44339 (CVSS 8.6), CVE-2026-44567 (CVSS 7.7), and CVE-2026-45303 (CVSS 7.7). Global, China, North America, and the United States were the top affected regions, with government and financial services also heavily impacted.",
-  "sources_hash": "167d7693e72551c3",
+  "intro": "Technology and cybersecurity organisations bore the brunt of 65 ai-security articles published between 2026-04-12 and 2026-08-03, with critical infrastructure, government, and financial services also frequently affected. The coverage recorded 31 high-severity and 8 critical incidents, spanning global, United States, China, and North America regions. Threat actors Claude Mythos and OpenClaw were observed in these reports. Key vulnerabilities included CVE-2026-5760 (CVSS 9.8), CVE-2026-5752 (CVSS 9.3), CVE-2026-44339 (CVSS 8.6), CVE-2026-44567 (CVSS 7.7), and CVE-2026-45303 (CVSS 7.7). The archive also contains 14 informational and 6 medium items.",
+  "sources_hash": "5e4484ea8da5a157",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-29T05:53:47.214Z",
+  "generated_at": "2026-08-04T05:48:20.622Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

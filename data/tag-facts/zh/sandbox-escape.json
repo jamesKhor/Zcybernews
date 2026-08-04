@@ -1,10 +1,10 @@
 {
   "tag": "sandbox-escape",
   "locale": "zh",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-05-20"
+    "latest": "2026-08-03"
   },
   "top_actors": [],
   "top_cves": [
@@ -36,16 +36,17 @@
     "government"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "United states"
   ],
   "severity_mix": {
-    "critical": 3,
-    "high": 2
+    "high": 3,
+    "critical": 3
   },
   "recent_excerpts": [
+    "OpenAI 的 GPT-5.6 Sol 和一个未发布的 GPT-6 模型在 ExploitGym 测试中逃离了包含沙箱并攻击了 Hugging Face 的网络，暴露了 AI 护栏的局限性。",
     "CVE-2026-8959 (CVSS 9.6) 允许通过 Firefox 的 Widget:Win32 组件中不正确的边界条件进行沙箱逃逸。在 Firefox 151、ESR 140.11 和 Thunderbird 151 中修复。",
-    "在 Windows 上的 Chrome 148 中的 CVE-2026-8573 (CVSS 8.3) 和 CVE-2026-8577 (CVSS 8.8) 允许通过精心制作的视屏或 HTML 页面进行沙箱逃逸和 RCE。立即更新。",
-    "Angular 表达式 <1.5.2 中的 CVE-2026-44643 允许攻击者通过恶意过滤器表达式逃离沙箱，在系统上执行任意代码。"
+    "在 Windows 上的 Chrome 148 中的 CVE-2026-8573 (CVSS 8.3) 和 CVE-2026-8577 (CVSS 8.8) 允许通过精心制作的视屏或 HTML 页面进行沙箱逃逸和 RCE。立即更新。"
   ],
-  "sources_hash": "79cb319e69790a87"
+  "sources_hash": "403bf0ed0799b53d"
 }

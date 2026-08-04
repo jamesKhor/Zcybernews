@@ -1,9 +1,9 @@
 {
   "tag": "chrome",
   "locale": "en",
-  "intro": "The technology sector remains the primary focus of Chrome-related vulnerabilities, with eight articles published between April and July 2026 covering five high-severity and three critical issues. Key CVEs include CVE-2026-8550 and CVE-2026-8556, both rated 6.5, alongside CVE-2026-8541 and CVE-2026-8543 at 5.3, and CVE-2026-8566 at 3.0. These vulnerabilities affect users across global consumer and mobile markets, underscoring the browser’s widespread exposure.",
-  "sources_hash": "94af31bd0f0650b1",
+  "intro": "The technology sector bore the brunt of Chrome-focused vulnerabilities between April and August 2026, with global implications for consumer, financial services, and government organizations. Across nine articles, six high-severity and three critical issues were documented. Key vulnerabilities included CVE-2026-8550 and CVE-2026-8556, both rated 6.5, alongside CVE-2026-8541 and CVE-2026-8543 at 5.3, and CVE-2026-8566 at 3. This archive tracks the evolving security landscape for the browser, highlighting the persistent need for vigilance across all sectors worldwide.",
+  "sources_hash": "bcb57692f834ca5f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-02T04:28:04.987Z",
+  "generated_at": "2026-08-04T05:48:28.903Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

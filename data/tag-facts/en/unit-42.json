@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-07-31"
+    "latest": "2026-08-03"
   },
   "top_actors": [
     "CL-STA-1062",
@@ -16,8 +16,8 @@
     "technology",
     "software development",
     "enterprise",
-    "energy",
-    "financial services"
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "Global",
@@ -27,13 +27,13 @@
     "South asia"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "critical": 1
   },
   "recent_excerpts": [
+    "Unit 42 reveals Pass-ta-key attacks: malware on Windows Chrome endpoints steals synced passkeys, bypasses biometric verification, and extracts private keys without user...",
     "XCSSET v40, a macOS malware targeting Xcode developers, has resurfaced with 17 modules, including a Chrome hijacking backdoor and Telegram trojanizer, after months of dormancy.",
-    "Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast Asian government and energy entities in 2025 using web shells, tunneling tools, and a new TinyRCT...",
-    "Unit 42's Behavioral Integrity Verification scanned 49,943 OpenClaw skills and found 80% deviate from declared behavior, with multi-stage attack chains enabling credential theft..."
+    "Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast Asian government and energy entities in 2025 using web shells, tunneling tools, and a new TinyRCT..."
   ],
-  "sources_hash": "9a1462c7c7bc5edc"
+  "sources_hash": "d6bf74cbe9dab211"
 }

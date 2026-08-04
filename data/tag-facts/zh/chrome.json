@@ -1,10 +1,10 @@
 {
   "tag": "chrome",
   "locale": "zh",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-07-01"
+    "latest": "2026-08-03"
   },
   "top_actors": [],
   "top_cves": [
@@ -33,19 +33,20 @@
     "technology",
     "all",
     "consumer",
-    "mobile"
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "critical": 3
   },
   "recent_excerpts": [
+    "Unit 42 揭露 Pass-the-Passkey 攻击：Windows Chrome 终端上的恶意软件窃取同步的密码，绕过生物识别验证，并在用户不知情的情况下提取私钥...",
     "Check Point Research 发现一个 DeepSeek 生成的样本使用 Chrome 的文件系统访问 API 加密 Android 照片目录 —— 不需要原生负载或漏洞。",
-    "Google Chrome 148.0.7778.168 修复了 CVE-2026-8543 和 CVE-2026-8541 —— 这两个高危的越界读取漏洞存在于 Mac 和所有平台上的 FileSystem 和 UI 组件中。",
-    "CVE-2026-8568 (CVSS 3.1) 允许攻击者在渲染器被破坏后通过 AI 功能绕过 Chrome 站点隔离；CVE-2026-8566 (CVSS 4.3) 针对 Android 支付。"
+    "Google Chrome 148.0.7778.168 修复了 CVE-2026-8543 和 CVE-2026-8541 —— 这两个高危的越界读取漏洞存在于 Mac 和所有平台上的 FileSystem 和 UI 组件中。"
   ],
-  "sources_hash": "212caebcd0ed3e4d"
+  "sources_hash": "5294975e50aa2eb4"
 }

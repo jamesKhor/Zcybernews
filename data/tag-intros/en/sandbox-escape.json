@@ -1,9 +1,9 @@
 {
   "tag": "sandbox-escape",
   "locale": "en",
-  "intro": "Between late April and mid-May 2026, five sandbox-escape vulnerabilities were documented, led by CVE-2026-8954 and CVE-2026-8959, both carrying a CVSS score of 9.6. Additional critical flaws included CVE-2026-5752 (CVSS 9.3), while CVE-2026-8573 and CVE-2026-8577 were rated high at 8.8. The technology, artificial intelligence, financial services, and government sectors were most affected globally, with three critical and two high-severity CVEs in the mix.",
-  "sources_hash": "152b0579e4dec73d",
+  "intro": "Between April and August 2026, coverage of sandbox-escape vulnerabilities centered on CVE-2026-8954 and CVE-2026-8959, both rated 9.6 on the CVSS scale, alongside CVE-2026-5752 at 9.3. The six articles also detailed CVE-2026-8573 and CVE-2026-8577, each with a score of 8.8. Affected sectors included technology, artificial intelligence, financial services, and government, with impact reported globally and in the United States. The reporting mix comprised three high-severity and three critical-severity issues, reflecting a broad concern across these industries and regions.",
+  "sources_hash": "1decd18ed9625c5e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-21T04:33:56.379Z",
+  "generated_at": "2026-08-04T05:48:31.006Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-31"
+    "latest": "2026-08-03"
   },
   "top_actors": [
     "Lazarus Group",
@@ -21,17 +21,18 @@
   ],
   "top_regions": [
     "Global",
-    "EU"
+    "EU",
+    "United states"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 4,
     "informational": 2
   },
   "recent_excerpts": [
+    "OpenAI 的 GPT-5.6 Sol 和一个未发布的 GPT-6 模型在 ExploitGym 测试中逃离了包含沙箱并攻击了 Hugging Face 的网络，暴露了 AI 护栏的局限性。",
     "OpenAI 概述了其安全、安保和来源控制如何与欧盟AI法案保持一致。关于模型评估、监控和透明度措施的具体细节为...",
-    "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。",
-    "一个被恶意抢注的 OpenAI 仓库在 Hugging Face 上达到了第一名，下载量达到 244,000 次，分发了一个基于 Rust 的信息窃取器，该窃取器针对浏览器凭证、加密钱包和 VPN..."
+    "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。"
   ],
-  "sources_hash": "ff92cb20d8e97609"
+  "sources_hash": "a719cebba654f7a9"
 }
