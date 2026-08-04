@@ -1,0 +1,88 @@
+---
+title: 'GitHub Pages, Cloudflare Workers Fuel MFA-Bypass Phishing'
+slug: 2026-08-04-github-pages-cloudflare-workers-fuel-mfa-bypass-phishing
+date: '2026-08-04'
+excerpt: >-
+  Kaspersky details a cloud-based AitM phishing campaign abusing GitHub Pages
+  and Cloudflare Workers to bypass MFA via service workers and Ultraviolet
+  proxy.
+category: malware
+tags:
+  - phishing
+  - aitm
+  - github-pages
+  - cloudflare-workers
+  - mfa-bypass
+  - service-workers
+language: en
+source_urls:
+  - 'https://securelist.com/cloud-platforms-in-phishing/120832/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-04-github-pages-cloudflare-workers-fuel-mfa-bypass-phishing
+cluster_key: 'topic:legitimate-cloud-platforms-enable-phishers'
+source_count: 1
+seo_query_target: GitHub Pages phishing MFA bypass
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals how GitHub Pages and Cloudflare Workers are abused in a multi-stage
+  AitM phishing attack that bypasses MFA.
+seo_meta_promise: >-
+  Details the technical mechanics of a cloud-based AitM phishing campaign using
+  service workers and Ultraviolet to steal MFA sessions, with hosting
+  statistics.
+target_hub: malware
+internal_link_targets:
+  - phishing
+  - adversary-in-the-middle
+  - cloud-security
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of a multi-stage adversary-in-the-middle phishing attack using cloud
+  services
+severity: high
+affected_sectors:
+  - technology
+  - business services
+affected_regions:
+  - Global
+iocs:
+  - type: domain
+    value: workers.dev
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Threat actors are increasingly abusing legitimate cloud platforms—including GitHub Pages, Cloudflare Workers, Vercel, Netlify, and IPFS—to host phishing infrastructure that can bypass multi-factor authentication (MFA). According to a new analysis from Kaspersky's Securelist, these platforms offer inherent trust, free-tier plans, and shared subdomains that make blocking them impractical without collateral damage. The report details a real-world adversary-in-the-middle (AitM) attack that uses service workers and the open-source Ultraviolet proxy to intercept and hijack MFA sessions.
+
+## Technical Analysis
+
+The attack unfolds in three stages, each hosted on a different infrastructure piece to evade detection. Stage 1 begins with a phishing email that lures the victim to a fake CAPTCHA page on a compromised legitimate website. This page harvests the target's email address and filters out bots, then redirects the user to a subdomain of `workers.dev`—a free, automatically generated domain from Cloudflare Workers. The email is passed via the URL hash (after the `#` character), so no request to the attacker's server is needed, avoiding network-level detection.
+
+Stage 2 initializes a transparent proxy. The victim's browser loads the `workers.dev` page, which presents a genuine CAPTCHA to ensure human interaction. Once passed, the page registers a **service worker**—a JavaScript file that runs in the background and intercepts all network requests from the tab. Browsers execute service workers without user consent on HTTPS sites because they are a standard part of progressive web apps. The attackers use this to deploy **Ultraviolet**, a legitimate open-source web proxy library, which rewrites all links and forms so that every outgoing request—including those to Microsoft login—routes through the attacker's server.
+
+The victim's email is stored in `sessionStorage` to pre-fill the username field, increasing credibility. Stage 3 then constructs a redirect URL that appends the email back to the hash, leading to a spoofed login form. The AitM proxy captures the credentials and the session cookie, effectively bypassing MFA because the attacker can replay the session.
+
+Kaspersky's statistics show that throughout 2025 and 2026, phishers have steadily migrated to these cloud platforms. The report highlights that shared subdomains host millions of legitimate projects, so security teams cannot simply block the parent domain without affecting legitimate users. This forces defenders to rely on content-based analysis rather than reputation-based blocking.
+
+## Indicators of Compromise
+
+Kaspersky did not disclose specific IOCs such as hashes or domains in the public report, but the described infrastructure includes compromised websites used as relays and `workers.dev` subdomains. Defenders should monitor for unexpected service worker registrations on pages that present CAPTCHAs or login forms.
+
+## Tactics, Techniques & Procedures
+
+The attack chain maps to MITRE ATT&CK techniques: **Phishing (T1566)** for initial access, **Adversary-in-the-Middle (T1557)** for credential and session interception, **Masquerading (T1036)** via legitimate cloud domains, and **Input Capture (T1056)** for harvesting credentials. The use of service workers to intercept traffic is a novel twist on AitM, as it operates at the browser level without requiring the user to install anything.
+
+## Threat Actor Context
+
+Kaspersky did not attribute the campaign to a specific threat actor or group. The report focuses on the technique and the infrastructure abuse, which appears to be a widespread trend rather than a single operation.
+
+## Mitigations & Recommendations
+
+Defenders should shift from domain-based blocking to content-based detection, analyzing the behavior of pages hosted on cloud platforms. Monitor for service worker registrations on sensitive login pages, and consider browser policies that restrict service workers on untrusted origins. For users, enabling phishing-resistant MFA (e.g., FIDO2 hardware keys) can mitigate AitM attacks, as these cannot be replayed. Organizations should also train employees to recognize CAPTCHA-based phishing lures and verify URLs carefully, especially when redirected from a compromised site.
+
+## References
+
+- [Kaspersky Securelist: How legitimate cloud platforms enable phishers to bypass MFA](https://securelist.com/cloud-platforms-in-phishing/120832/)

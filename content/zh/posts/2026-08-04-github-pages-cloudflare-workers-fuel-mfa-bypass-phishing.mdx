@@ -1,0 +1,87 @@
+---
+title: 'GitHub Pages, Cloudflare Workers 助长 MFA-绕过钓鱼'
+slug: 2026-08-04-github-pages-cloudflare-workers-fuel-mfa-bypass-phishing
+date: '2026-08-04'
+excerpt: >-
+  卡巴斯基详细描述了一个基于云的 AitM 钓鱼活动，滥用 GitHub Pages 和 Cloudflare Workers 通过服务工作者和
+  Ultraviolet 代理绕过 MFA。
+category: malware
+tags:
+  - phishing
+  - aitm
+  - github-pages
+  - cloudflare-workers
+  - mfa-bypass
+  - service-workers
+language: zh
+source_urls:
+  - 'https://securelist.com/cloud-platforms-in-phishing/120832/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-04-github-pages-cloudflare-workers-fuel-mfa-bypass-phishing
+cluster_key: 'topic:legitimate-cloud-platforms-enable-phishers'
+source_count: 1
+seo_query_target: GitHub Pages phishing MFA bypass
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals how GitHub Pages and Cloudflare Workers are abused in a multi-stage
+  AitM phishing attack that bypasses MFA.
+seo_meta_promise: >-
+  Details the technical mechanics of a cloud-based AitM phishing campaign using
+  service workers and Ultraviolet to steal MFA sessions, with hosting
+  statistics.
+target_hub: malware
+internal_link_targets:
+  - phishing
+  - adversary-in-the-middle
+  - cloud-security
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of a multi-stage adversary-in-the-middle phishing attack using cloud
+  services
+severity: high
+affected_sectors:
+  - technology
+  - business services
+affected_regions:
+  - Global
+iocs:
+  - type: domain
+    value: workers.dev
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+威胁行为者越来越多地滥用合法的云平台——包括GitHub Pages、Cloudflare Workers、Vercel、Netlify和IPFS——来托管可以绕过多因素认证（MFA）的钓鱼基础设施。根据卡巴斯基安全列表的新分析，这些平台提供了固有的信任、免费层计划和共享子域，这使得在没有附带损害的情况下阻止它们变得不切实际。报告详细描述了一个真实世界的中间人（AitM）攻击，该攻击使用服务工作器和开源的Ultraviolet代理来拦截和劫持MFA会话。
+
+## 技术分析
+
+攻击分为三个阶段，每个阶段都托管在不同的基础设施上以逃避检测。第一阶段以一封钓鱼邮件开始，诱使受害者访问一个被破坏的合法网站上的假CAPTCHA页面。这个页面收集目标的电子邮件地址并过滤掉机器人，然后将用户重定向到`workers.dev`的子域——一个来自Cloudflare Workers的免费、自动生成的域名。电子邮件通过URL哈希（`#`字符后）传递，因此不需要向攻击者的服务器发送请求，避免了网络级别的检测。
+
+第二阶段初始化了一个透明代理。受害者的浏览器加载了`workers.dev`页面，该页面呈现了一个真实的CAPTCHA以确保人类交互。一旦通过，页面注册了一个**服务工作器**——一个在后台运行并拦截来自标签的所有网络请求的JavaScript文件。浏览器在HTTPS网站上执行服务工作器而无需用户同意，因为它们是渐进式Web应用程序的标准部分。攻击者利用这一点部署**Ultraviolet**，一个合法的开源Web代理库，它重写了所有链接和表单，以便所有传出请求——包括那些到Microsoft登录的请求——都通过攻击者的服务器路由。
+
+受害者的电子邮件存储在`sessionStorage`中，以预填充用户名字段，增加可信度。第三阶段然后构建一个重定向URL，将电子邮件重新附加到哈希中，导致一个伪造的登录表单。AitM代理捕获凭据和会话cookie，有效地绕过了MFA，因为攻击者可以重放会话。
+
+卡巴斯基的统计数据显示，在2025年和2026年期间，钓鱼者已经稳步迁移到这些云平台。报告强调，共享子域托管了数百万合法项目，因此安全团队不能简单地阻止父域名而不影响合法用户。这迫使防御者依赖基于内容的分析而不是基于声誉的阻止。
+
+## 入侵指标
+
+卡巴斯基没有在公共报告中披露具体的IOC，如哈希值或域名，但所描述的基础设施包括被用作中继的被破坏的网站和`workers.dev`子域。防御者应监控在呈现CAPTCHA或登录表单的页面上意外注册的服务工作器。
+
+## 战术、技术与程序
+
+攻击链映射到MITRE ATT&CK技术：**钓鱼（T1566）**用于初始访问，**中间人（T1557）**用于拦截凭据和会话，**伪装（T1036）**通过合法的云域，以及**输入捕获（T1056）**用于收集凭据。使用服务工作器拦截流量是对AitM的一个新颖转折，因为它在浏览器级别操作，而不需要用户安装任何东西。
+
+## 威胁行为者背景
+
+卡巴斯基没有将活动归因于特定的威胁行为者或团体。报告关注技术和基础设施滥用，这似乎是一个广泛趋势，而不是单一操作。
+
+## 缓解措施与建议
+
+防御者应从基于域名的阻止转向基于内容的检测，分析托管在云平台上的页面的行为。监控在敏感登录页面上注册的服务工作器，并考虑限制在不受信任的来源上使用服务工作器的浏览器策略。对于用户来说，启用抗钓鱼的MFA（例如，FIDO2硬件密钥）可以减轻AitM攻击，因为这些不能被重放。组织还应该培训员工识别基于CAPTCHA的钓鱼诱饵，并仔细验证URL，特别是当从被破坏的站点重定向时。
+
+## 参考资料
+
+- [卡巴斯基安全列表：合法云平台如何使钓鱼者能够绕过MFA](https://securelist.com/cloud-platforms-in-phishing/120832/)
