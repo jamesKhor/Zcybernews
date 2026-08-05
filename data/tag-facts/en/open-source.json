@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "en",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-10"
+    "latest": "2026-08-04"
   },
   "top_actors": [],
   "top_cves": [
@@ -35,15 +35,15 @@
     "Global"
   ],
   "severity_mix": {
+    "critical": 4,
     "high": 2,
     "medium": 3,
-    "informational": 5,
-    "critical": 3
+    "informational": 5
   },
   "recent_excerpts": [
+    "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero.",
     "CVE-2026-42286: Missing CSRF protection in Emlog prior to 2.6.11 lets attackers trick authenticated admins into unauthorized plugin management and config changes.",
-    "CVE-2026-8114 (CVSS 6.5) in JeecgBoot up to 3.9.1 enables remote SQL injection via the /sys/dict/loadTreeData endpoint. Exploit code is public.",
-    "Black Hills Information Security released GoSpoof, a Python tool that opens all ports on a honeypot to capture attacker scanning patterns and payloads in real time."
+    "CVE-2026-8114 (CVSS 6.5) in JeecgBoot up to 3.9.1 enables remote SQL injection via the /sys/dict/loadTreeData endpoint. Exploit code is public."
   ],
-  "sources_hash": "0adf625d950bb4d5"
+  "sources_hash": "761973a59948a5a8"
 }

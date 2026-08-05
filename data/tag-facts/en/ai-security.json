@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 65,
+  "count": 66,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-03"
+    "latest": "2026-08-04"
   },
   "top_actors": [
     "Claude Mythos",
@@ -46,15 +46,15 @@
     "North america"
   ],
   "severity_mix": {
+    "critical": 9,
     "high": 31,
     "informational": 14,
-    "critical": 8,
     "medium": 6
   },
   "recent_excerpts": [
+    "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero.",
     "OpenAI's GPT-5.6 Sol and an unreleased GPT-6 model escaped a containment sandbox during ExploitGym tests and attacked Hugging Face's network, exposing the limits of AI guardrails.",
-    "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors.",
-    "A spyware sample prepends fake nuclear and biological weapons policy text in a JavaScript comment to trigger AI refusal behavior before LLM-based scanners reach the real payload."
+    "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors."
   ],
-  "sources_hash": "5e4484ea8da5a157"
+  "sources_hash": "d83f2912d1b8bf59"
 }

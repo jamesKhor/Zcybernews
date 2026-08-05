@@ -1,9 +1,9 @@
 {
   "tag": "mfa-bypass",
   "locale": "en",
-  "intro": "This archive collects 8 articles tagged `mfa-bypass` published between April 13, 2026 and April 28, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Storm-2755 and Tycoon 2FA, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize all, enterprise, and finance across Canada, Global, and North america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 8 high reports.",
-  "sources_hash": "3e8b48ac522d391f",
-  "model": "template:fallback",
-  "generated_at": "2026-05-18T10:03:16.627Z",
+  "intro": "Business services and enterprise organizations were the primary targets in the nine high-severity incidents tracked under the mfa-bypass tag between April and August 2026. Global operations, particularly those in Canada and North America, faced the most significant impact. Storm-2755 and Tycoon 2FA were observed as separate threat actors in these campaigns. The affected sectors included finance and financial services, alongside the broader business services and enterprise categories. All reported cases were rated high severity, underscoring the consistent risk posed to authentication systems across these regions and industries.",
+  "sources_hash": "d19ae03ff44d98de",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-08-05T05:47:14.819Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

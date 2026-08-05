@@ -1,10 +1,10 @@
 {
   "tag": "open-source",
   "locale": "zh",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-10"
+    "latest": "2026-08-04"
   },
   "top_actors": [],
   "top_cves": [
@@ -35,15 +35,15 @@
     "Global"
   ],
   "severity_mix": {
+    "critical": 4,
     "high": 2,
     "medium": 3,
-    "critical": 3,
     "informational": 4
   },
   "recent_excerpts": [
+    "Unit 42的NOVA系统在两个月内发现了3,915个开源软件项目中的14,090个新漏洞 —— 其中40%为高或严重级别 —— 将补丁窗口压缩至接近零。",
     "CVE-2026-42286：Emlog 2.6.11之前的版本缺少CSRF保护，允许攻击者诱骗经过身份验证的管理员进行未经授权的插件管理和配置更改。",
-    "CVE-2026-8114 (CVSS 6.5) 在 JeecgBoot 3.9.1 及以下版本中，可以通过 /sys/dict/loadTreeData 端点实现远程 SQL 注入。利用代码已公开。",
-    "威胁行为者在 2026 年 4 月 30 日将恶意版本的 PyTorch Lightning 2.6.2 和 2.6.3 推送到 PyPI，通过一个拼写错误的依赖项 —— Aikido Security, Socket… 窃取凭证。"
+    "CVE-2026-8114 (CVSS 6.5) 在 JeecgBoot 3.9.1 及以下版本中，可以通过 /sys/dict/loadTreeData 端点实现远程 SQL 注入。利用代码已公开。"
   ],
-  "sources_hash": "84f5937c8e2fa37e"
+  "sources_hash": "c1f957bd199aab6c"
 }

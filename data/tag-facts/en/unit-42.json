@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-08-03"
+    "latest": "2026-08-04"
   },
   "top_actors": [
     "CL-STA-1062",
@@ -27,13 +27,13 @@
     "South asia"
   ],
   "severity_mix": {
-    "high": 13,
-    "critical": 1
+    "critical": 2,
+    "high": 13
   },
   "recent_excerpts": [
+    "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero.",
     "Unit 42 reveals Pass-ta-key attacks: malware on Windows Chrome endpoints steals synced passkeys, bypasses biometric verification, and extracts private keys without user...",
-    "XCSSET v40, a macOS malware targeting Xcode developers, has resurfaced with 17 modules, including a Chrome hijacking backdoor and Telegram trojanizer, after months of dormancy.",
-    "Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast Asian government and energy entities in 2025 using web shells, tunneling tools, and a new TinyRCT..."
+    "XCSSET v40, a macOS malware targeting Xcode developers, has resurfaced with 17 modules, including a Chrome hijacking backdoor and Telegram trojanizer, after months of dormancy."
   ],
-  "sources_hash": "d6bf74cbe9dab211"
+  "sources_hash": "8e52aae273a63279"
 }

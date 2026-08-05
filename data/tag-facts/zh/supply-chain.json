@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "count": 87,
+  "count": 88,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-31"
+    "latest": "2026-08-04"
   },
   "top_actors": [
     "Lazarus Group",
@@ -48,15 +48,15 @@
     "United states"
   ],
   "severity_mix": {
+    "critical": 16,
     "high": 51,
     "medium": 16,
-    "critical": 15,
     "informational": 4
   },
   "recent_excerpts": [
+    "Unit 42的NOVA系统在两个月内发现了3,915个开源软件项目中的14,090个新漏洞 —— 其中40%为高或严重级别 —— 将补丁窗口压缩至接近零。",
     "针对 Xcode 开发者的 macOS 恶意软件 XCSSET v40，在数月的休眠后重新出现，包含 17 个模块，包括 Chrome 劫持后门和 Telegram 木马化程序。",
-    "Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能...",
-    "一名攻击者使用被泄露的GitHub令牌下载了Grafana的整个私有代码库。公司表示没有客户数据被访问，该事件涉及勒索..."
+    "Unit 42的行为完整性验证扫描了49,943个OpenClaw技能，发现80%偏离声明行为，多阶段攻击链使凭证盗窃成为可能..."
   ],
-  "sources_hash": "8a8617ab574a4d7c"
+  "sources_hash": "da8410b29a6a1628"
 }

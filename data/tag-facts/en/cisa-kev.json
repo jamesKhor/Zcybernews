@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-06-17"
+    "latest": "2026-08-04"
   },
   "top_actors": [],
   "top_cves": [
@@ -17,15 +17,16 @@
       "cvss": 8.7
     },
     {
+      "id": "CVE-2026-18556",
+      "cvss": 8.2
+    },
+    {
+      "id": "CVE-2026-18577",
+      "cvss": 8.2
+    },
+    {
       "id": "CVE-2024-57728",
       "cvss": 7.2
-    },
-    {
-      "id": "CVE-2026-9082",
-      "cvss": 6.5
-    },
-    {
-      "id": "CVE-2009-0238"
     }
   ],
   "top_sectors": [
@@ -36,21 +37,21 @@
     "enterprise software"
   ],
   "top_regions": [
+    "Global",
     "North america",
     "United states",
     "EU",
-    "Europe",
-    "Global"
+    "Europe"
   ],
   "severity_mix": {
+    "high": 4,
     "critical": 2,
-    "high": 3,
     "medium": 2
   },
   "recent_excerpts": [
+    "CISA adds CVE-2026-18577 (CVSS 8.2) to KEV after active exploitation; incomplete patch for CVE-2026-18556 in N-able N-central. Patch now.",
     "CISA warns of active exploitation of CVE-2026-48907, a CVSS 10.0 improper access control flaw in Widget Factory Joomla Content Editor (JCE) allowing unauthenticated PHP code...",
-    "CISA added CVE-2026-42271 (CVSS 8.7) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against BerriAI LiteLLM deployments.",
-    "CISA added CVE-2026-9082 (CVSS 6.5) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against all supported Drupal Core versions."
+    "CISA added CVE-2026-42271 (CVSS 8.7) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against BerriAI LiteLLM deployments."
   ],
-  "sources_hash": "b5e1a47b2f2db233"
+  "sources_hash": "387d6385d0adcff4"
 }

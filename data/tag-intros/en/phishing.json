@@ -1,9 +1,9 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "intro": "Financial services and government organisations bore the brunt of a phishing campaign surge between April and July 2026, with 62 incidents recorded. The activity, which spanned global regions including Latin America, the United States, Canada, and Russia, involved threat actors Silver Fox, AccountDumpling, and Bluekit. Exploited vulnerabilities included CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. The severity mix comprised 54 high-severity and 8 medium-severity events, affecting sectors such as hospitality, cryptocurrency, and technology.",
-  "sources_hash": "4bd77c121b24ac0b",
+  "intro": "Financial services and government organisations bore the brunt of a phishing wave documented across 63 ZCyberNews articles between April and August 2026. Threat actors Silver Fox, AccountDumpling, and Bluekit were observed in campaigns hitting Global, Latin America, United States, Canada, and Russia targets. Technical reporting linked activity to CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. The coverage, spanning hospitality, technology, and cryptocurrency sectors, included 55 high-severity and 8 medium-severity incidents, reflecting a sustained operational focus on credential theft and initial access.",
+  "sources_hash": "48323076514ed068",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-28T05:47:26.979Z",
+  "generated_at": "2026-08-05T05:47:06.230Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

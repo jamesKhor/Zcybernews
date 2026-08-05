@@ -1,10 +1,10 @@
 {
   "tag": "mfa-bypass",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-28"
+    "latest": "2026-08-04"
   },
   "top_actors": [
     "Storm-2755",
@@ -13,23 +13,23 @@
   "top_cves": [],
   "top_sectors": [
     "all",
+    "business services",
     "enterprise",
     "finance",
-    "financial services",
-    "hr"
+    "financial services"
   ],
   "top_regions": [
-    "Canada",
     "Global",
+    "Canada",
     "North america"
   ],
   "severity_mix": {
-    "high": 8
+    "high": 9
   },
   "recent_excerpts": [
+    "Kaspersky details a cloud-based AitM phishing campaign abusing GitHub Pages and Cloudflare Workers to bypass MFA via service workers and Ultraviolet proxy.",
     "Black Hills InfoSec demonstrates how attackers abuse Microsoft SSPR to bypass MFA and reset credentials via social engineering. Real-world test scenario reveals detection gaps.",
-    "Adaptive Security finds 3 seconds of audio enough to clone a voice for fraud; deepfake calls tricked employees into wiring $243K in one case. No detection tool caught the attack.",
-    "Specops Software documents how helpdesk social engineering turns password reset requests into full account compromise — attackers bypass MFA and gain persistent access."
+    "Adaptive Security finds 3 seconds of audio enough to clone a voice for fraud; deepfake calls tricked employees into wiring $243K in one case. No detection tool caught the attack."
   ],
-  "sources_hash": "3e8b48ac522d391f"
+  "sources_hash": "d19ae03ff44d98de"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "count": 62,
+  "count": 63,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-07-28"
+    "latest": "2026-08-04"
   },
   "top_actors": [
     "Silver Fox",
@@ -32,8 +32,8 @@
     "financial services",
     "government",
     "hospitality",
-    "cryptocurrency",
-    "technology"
+    "technology",
+    "cryptocurrency"
   ],
   "top_regions": [
     "Global",
@@ -43,13 +43,13 @@
     "Russia"
   ],
   "severity_mix": {
-    "high": 54,
+    "high": 55,
     "medium": 8
   },
   "recent_excerpts": [
+    "卡巴斯基详细描述了一个基于云的 AitM 钓鱼活动，滥用 GitHub Pages 和 Cloudflare Workers 通过服务工作者和 Ultraviolet 代理绕过 MFA。",
     "居民 NGO 发现一个 Telegram 钓鱼活动，针对流亡的白俄罗斯活动家以及俄罗斯和哈萨克斯坦的用户，使用个性化链接和设备指纹识别。",
-    "Signal 引入了新的应用内确认和警告，以对抗与俄罗斯国家黑客有关的网络钓鱼攻击，这些黑客滥用了 Linked Device 功能来劫持高知名度的...",
-    "据卡巴斯基称，Silver Fox 团伙冒充税务机关，向俄罗斯和印度的组织分发 ValleyRAT 和新的 ABCDoor 后门。"
+    "Signal 引入了新的应用内确认和警告，以对抗与俄罗斯国家黑客有关的网络钓鱼攻击，这些黑客滥用了 Linked Device 功能来劫持高知名度的..."
   ],
-  "sources_hash": "f09c414eb5194182"
+  "sources_hash": "7aa3130137df0fa9"
 }

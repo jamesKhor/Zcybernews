@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "count": 32,
+  "count": 33,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-15"
+    "latest": "2026-08-04"
   },
   "top_actors": [
     "APT29",
@@ -48,14 +48,14 @@
     "North america"
   ],
   "severity_mix": {
+    "critical": 15,
     "high": 17,
-    "critical": 14,
     "medium": 1
   },
   "recent_excerpts": [
+    "Unit 42的NOVA系统在两个月内发现了3,915个开源软件项目中的14,090个新漏洞 —— 其中40%为高或严重级别 —— 将补丁窗口压缩至接近零。",
     "CVE-2026-42897是一个高严重性的Exchange Server欺骗漏洞，在野外被利用，通过Outlook网页版实现基于XSS的代码执行。",
-    "在Pwn2Own Berlin 2026的第一天，研究人员为24个零日漏洞收集了52.3万美元，包括Orange Tsai通过Edge沙箱逃逸获得的17.5万美元，以及三个Windows 11权限...",
-    "苹果发布了针对两个在野外被利用的零日漏洞的紧急补丁，同时推出了iOS和macOS端到端加密RCS消息的测试版。"
+    "在Pwn2Own Berlin 2026的第一天，研究人员为24个零日漏洞收集了52.3万美元，包括Orange Tsai通过Edge沙箱逃逸获得的17.5万美元，以及三个Windows 11权限..."
   ],
-  "sources_hash": "55dc170a6b6e7e78"
+  "sources_hash": "047bf8f8d14eeea5"
 }

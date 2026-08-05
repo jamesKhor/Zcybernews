@@ -1,9 +1,9 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "intro": "This archive collects 7 articles tagged `cisa-kev` published between April 19, 2026 and June 17, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2026-48907, CVE-2026-42271, and CVE-2024-57728, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize government, technology, and media across North america, United states, and EU, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 critical, 3 high, and 2 medium reports.",
-  "sources_hash": "b5e1a47b2f2db233",
-  "model": "template:fallback",
-  "generated_at": "2026-06-18T04:35:08.042Z",
+  "intro": "Government and technology organizations across North America and the EU featured prominently in coverage of the cisa-kev tag, which tracked eight articles between April and August 2026. The catalog included four high-severity and two critical vulnerabilities, led by CVE-2026-48907 with a CVSS score of 10, alongside CVE-2026-42271, CVE-2026-18556, CVE-2026-18577, and CVE-2024-57728. Affected sectors spanned government, technology, media, enterprise, and enterprise software, with global reach centered on the United States and Europe. Reporting reflected a mix of two medium-severity items among the documented cases.",
+  "sources_hash": "387d6385d0adcff4",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-08-05T05:47:16.758Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
