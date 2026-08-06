@@ -1,0 +1,33 @@
+{
+  "tag": "zero-trust",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-08-05"
+  },
+  "top_actors": [
+    "Phorpiex"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "AI infrastructure",
+    "data centers",
+    "financial services",
+    "healthcare",
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "Unit 42 发现 45.32% 的 C2 活跃恶意软件绕过 DNS 直接与 IP 连接。了解 ZT-IP 执行如何阻止这些隐蔽威胁。",
+    "Armis CTO认为基于DPU的安全取代了AI数据中心中的主机代理，引用2025年VMware ESXi零日漏洞和2023年ESXiArgs作为证明，虚拟机监视器盲点仍然存在。",
+    "具有文件和服务访问权限的自主AI代理迫使组织重新思考身份控制、数据边界和监控 —— Krebs 报告关于攻击的转变…"
+  ],
+  "sources_hash": "6bb743a1fd054738"
+}

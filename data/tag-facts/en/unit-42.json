@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-08-04"
+    "latest": "2026-08-05"
   },
   "top_actors": [
     "CL-STA-1062",
@@ -27,13 +27,13 @@
     "South asia"
   ],
   "severity_mix": {
-    "critical": 2,
-    "high": 13
+    "high": 14,
+    "critical": 2
   },
   "recent_excerpts": [
+    "Unit 42 finds 45.32% of C2-active malware bypass DNS with direct-to-IP connections. Learn how ZT-IP enforcement blocks these evasive threats.",
     "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero.",
-    "Unit 42 reveals Pass-ta-key attacks: malware on Windows Chrome endpoints steals synced passkeys, bypasses biometric verification, and extracts private keys without user...",
-    "XCSSET v40, a macOS malware targeting Xcode developers, has resurfaced with 17 modules, including a Chrome hijacking backdoor and Telegram trojanizer, after months of dormancy."
+    "Unit 42 reveals Pass-ta-key attacks: malware on Windows Chrome endpoints steals synced passkeys, bypasses biometric verification, and extracts private keys without user..."
   ],
-  "sources_hash": "8e52aae273a63279"
+  "sources_hash": "81a75469bb1795f6"
 }

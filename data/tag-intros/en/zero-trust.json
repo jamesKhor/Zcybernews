@@ -1,0 +1,9 @@
+{
+  "tag": "zero-trust",
+  "locale": "en",
+  "intro": "Between April and August 2026, ZCyberNews covered five stories under the zero-trust tag, with three rated high severity and one informational. Coverage centered on Phorpiex, the most frequently cited threat actor, across global operations affecting AI infrastructure, data centers, financial services, healthcare, and technology. The reporting spans April 13 to August 5, detailing how zero-trust principles are being applied and tested across these sectors. No specific CVEs were named in the archived items, and the single actor listed is Phorpiex, observed as a distinct entity in the context of these attacks.",
+  "sources_hash": "80de0e40766f3fae",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-08-06T05:49:40.254Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}
