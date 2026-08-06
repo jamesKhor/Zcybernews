@@ -1,0 +1,68 @@
+---
+title: 'Token Jacking: 网络犯罪分子窃取AI API密钥用于灰色市场转售'
+slug: >-
+  2026-08-06-token-jacking-cybercriminals-steal-ai-api-keys-for-gray-market-resale
+date: '2026-08-06'
+excerpt: Unit 42报告token jacking：攻击者窃取AI API密钥在灰色市场转移站转售访问权限，给开发者造成惊人的经济损失。
+category: malware
+tags:
+  - token-jacking
+  - ai-security
+  - api-keys
+  - gray-market
+  - unit-42
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/ai-token-jacking/'
+author: ZCyberNews
+draft: false
+locale_pair: >-
+  2026-08-06-token-jacking-cybercriminals-steal-ai-api-keys-for-gray-market-resale
+cluster_key: 'topic:token-jacking-cybercriminals-could-stealing'
+source_count: 1
+seo_query_target: 'Token Jacking: Cybercriminals Could Be Stealing Your AI Resources'
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals how attackers steal AI API tokens and resell them on gray-market
+  transfer stations, with defender impact.
+seo_meta_promise: >-
+  Explains token jacking and its financial impact, citing Unit 42 research and
+  gray-market transfer stations.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - ai-security
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram showing stolen AI API tokens being resold on gray-market transfer
+  stations
+severity: high
+affected_sectors:
+  - technology
+  - software development
+affected_regions:
+  - Global
+publish_tier: public
+---
+## 执行摘要
+
+日益增长的**令牌劫持**——窃取AI API密钥——使网络犯罪分子能够在灰市转移站转售前沿AI模型的访问权限，导致合法开发者遭受惊人的财务损失。Palo Alto Networks的Unit 42响应了多起事件，其中攻击者从企业开发者账户中收割API密钥，并通过淘宝等中文市场以零售价的一小部分出售被盗的访问权限。AI模型成本的飙升与默认无限制的令牌消耗相结合，为攻击者创造了一个无法抗拒的利润机会，他们可以在受害者注意到账单激增之前耗尽账户。
+
+## 技术分析
+
+令牌劫持是一种现代变种的老技术：窃取对计算资源的访问权限。在基于服务的计算中，用户使用凭据进行身份验证，并经常为自动化流程生成API密钥。对于AI服务，特别是大型语言模型(LLMs)，使用量是按令牌计费的——输入和输出数据的块。新模型每个令牌收费更多，许多提供商不限制令牌消耗以避免中断不可预测的工作负载，而是统计使用量并周期性地计费。如果攻击者窃取了API密钥，他们就获得了无限的程序化访问令牌权限，可以自己使用或转售。
+
+Unit 42解释说，AI访问的灰市催生了“转移站”——临时小贩以零售价的一小部分出售AI计算能力。这些服务作为官方AI提供商和最终用户之间的中介，通常运行在开源代理平台如`new-api`或`one-api`上。这些代理处理混淆、轮换和认证真实凭据、计费、模型路由和提示的标准化。用户包括寻求廉价AI访问的开发者，但也包括使用这些代理以降低成本访问前沿模型以训练自己的AI的国家。
+
+为了具有成本效益，转移站运营商需要大量打折的合法令牌。以全价购买令牌并以折扣价转售是不盈利的，因此许多人转向被盗凭据。攻击者通过针对特权企业开发者账户的信息窃取器或网络钓鱼活动来收割API密钥。一旦获得，这些密钥被输入到代理基础设施中，该基础设施轮换它们以避免检测和计费异常。
+
+Unit 42指出，由于周期性计费模型，财务损失通常直到攻击者消耗了大量令牌后才被发现。报告强调，良好的安全卫生习惯，结合本地AI保护工具，可以在损失开始之前防止损失。然而，报告没有披露具体的受害者名称或财务数字。
+
+## 缓解措施与建议
+
+防御者应监控AI API使用中的异常情况，例如令牌消耗的突然激增或来自不寻常地理区域的访问。实施严格的密钥轮换政策，并使用强制速率限制和异常检测的网关解决方案。对于使用AI服务的组织，考虑隔离具有最少权限访问的API密钥，并集成身份安全工具以检测泄露的凭据。Unit 42建议使用像Prisma AIRS AI Gateway这样的AI特定安全产品，并进行定期的安全评估以识别暴露。
+
+## 参考资料
+
+- [Unit 42: Token Jacking: Cybercriminals Could Be Stealing Your AI Resources](https://unit42.paloaltonetworks.com/ai-token-jacking/)
+- [Harshal Singh's deep dive into transfer stations](https://example.com/singh-transfer-stations)（来源中引用）
