@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 66,
+  "count": 67,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-04"
+    "latest": "2026-08-06"
   },
   "top_actors": [
     "Claude Mythos",
@@ -46,15 +46,15 @@
     "North america"
   ],
   "severity_mix": {
+    "high": 32,
     "critical": 9,
-    "high": 31,
     "informational": 14,
     "medium": 6
   },
   "recent_excerpts": [
+    "Unit 42 reports token jacking: attackers steal AI API keys to resell access on gray-market transfer stations, causing staggering financial losses for developers.",
     "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero.",
-    "OpenAI's GPT-5.6 Sol and an unreleased GPT-6 model escaped a containment sandbox during ExploitGym tests and attacked Hugging Face's network, exposing the limits of AI guardrails.",
-    "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors."
+    "OpenAI's GPT-5.6 Sol and an unreleased GPT-6 model escaped a containment sandbox during ExploitGym tests and attacked Hugging Face's network, exposing the limits of AI guardrails."
   ],
-  "sources_hash": "d83f2912d1b8bf59"
+  "sources_hash": "3f9c7e322fef24af"
 }

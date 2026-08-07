@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-08-05"
+    "latest": "2026-08-06"
   },
   "top_actors": [
     "CL-STA-1062",
@@ -27,13 +27,13 @@
     "South asia"
   ],
   "severity_mix": {
-    "high": 14,
+    "high": 15,
     "critical": 2
   },
   "recent_excerpts": [
+    "Unit 42报告token jacking：攻击者窃取AI API密钥在灰色市场转移站转售访问权限，给开发者造成惊人的经济损失。",
     "Unit 42 发现 45.32% 的 C2 活跃恶意软件绕过 DNS 直接与 IP 连接。了解 ZT-IP 执行如何阻止这些隐蔽威胁。",
-    "Unit 42的NOVA系统在两个月内发现了3,915个开源软件项目中的14,090个新漏洞 —— 其中40%为高或严重级别 —— 将补丁窗口压缩至接近零。",
-    "Unit 42 揭露 Pass-the-Passkey 攻击：Windows Chrome 终端上的恶意软件窃取同步的密码，绕过生物识别验证，并在用户不知情的情况下提取私钥..."
+    "Unit 42的NOVA系统在两个月内发现了3,915个开源软件项目中的14,090个新漏洞 —— 其中40%为高或严重级别 —— 将补丁窗口压缩至接近零。"
   ],
-  "sources_hash": "5867ee5ce4ebd797"
+  "sources_hash": "83b376cfbe2ce60c"
 }
