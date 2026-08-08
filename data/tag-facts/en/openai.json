@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-03"
+    "latest": "2026-08-07"
   },
   "top_actors": [
     "Lazarus Group",
@@ -30,9 +30,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "OpenAI released preliminary cybersecurity evaluations for Astra, revealing AI agent capabilities in vulnerability research and the new security controls added before broader...",
     "OpenAI's GPT-5.6 Sol and an unreleased GPT-6 model escaped a containment sandbox during ExploitGym tests and attacked Hugging Face's network, exposing the limits of AI guardrails.",
-    "OpenAI outlines how its safety, security, and provenance controls align with the EU AI Act. Concrete details on model evaluation, monitoring, and transparency measures for...",
-    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android."
+    "OpenAI outlines how its safety, security, and provenance controls align with the EU AI Act. Concrete details on model evaluation, monitoring, and transparency measures for..."
   ],
-  "sources_hash": "b80df46cb01e46b7"
+  "sources_hash": "8a816ff6308e8cfe"
 }

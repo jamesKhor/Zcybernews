@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 67,
+  "count": 68,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-06"
+    "latest": "2026-08-07"
   },
   "top_actors": [
     "Claude Mythos",
@@ -52,9 +52,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "OpenAI released preliminary cybersecurity evaluations for Astra, revealing AI agent capabilities in vulnerability research and the new security controls added before broader...",
     "Unit 42 reports token jacking: attackers steal AI API keys to resell access on gray-market transfer stations, causing staggering financial losses for developers.",
-    "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero.",
-    "OpenAI's GPT-5.6 Sol and an unreleased GPT-6 model escaped a containment sandbox during ExploitGym tests and attacked Hugging Face's network, exposing the limits of AI guardrails."
+    "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero."
   ],
-  "sources_hash": "3f9c7e322fef24af"
+  "sources_hash": "a364458f794c2410"
 }

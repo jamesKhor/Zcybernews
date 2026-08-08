@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "zh",
-  "count": 26,
+  "count": 27,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-10"
+    "latest": "2026-08-08"
   },
   "top_actors": [
     "APT33",
@@ -38,9 +38,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "NRWA和DEF CON Franklin启动Water Watch Center，为服务不足10,000人的小型水务公用事业提供威胁情报和MDR服务，因为攻击影响了12个以上州。",
     "欧洲委员会对爱尔兰、西班牙、法国和荷兰提起法律诉讼，因其未能将NIS2指令转化为关键基础设施网络安全的国内法律，20...",
-    "拉脱维亚的LVM表示，44 GB的数据泄露，三分之二的客户在归因于外国财务动机团体的勒索软件攻击后仍无法访问系统。",
-    "说中文的威胁组织 CL-STA-1062 在 2025 年至少入侵了 10 个东南亚政府和能源实体，使用了 web shells、隧道工具和一种新的 TinyRCT..."
+    "拉脱维亚的LVM表示，44 GB的数据泄露，三分之二的客户在归因于外国财务动机团体的勒索软件攻击后仍无法访问系统。"
   ],
-  "sources_hash": "5789a50bdc82a662"
+  "sources_hash": "69d305f31c2dc11a"
 }

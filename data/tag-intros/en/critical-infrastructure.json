@@ -1,9 +1,9 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "intro": "From April to July 2026, ZCyberNews tracked 27 articles on critical-infrastructure, with APT33, CL-STA-1062, and CyberAv3ngers among the top threat actors observed. The most prominent vulnerability was CVE-2026-24032, carrying a CVSS score of 7.3. Affected sectors included energy, government, and utilities, while targeted regions spanned the United States, Europe, and Asia-Pacific. The severity mix comprised 15 high, 3 critical, 3 informational, and 1 medium severity reports.",
-  "sources_hash": "13a2f53d353ae131",
+  "intro": "APT33, CL-STA-1062, and CyberAv3ngers were the most frequently cited threat actors across the 28 articles on this tag, published between April 12 and August 8, 2026. Coverage centered on CVE-2026-24032, rated 7.3 on the CVSS scale, with energy, government, and utilities sectors most affected. Reporting spanned the United States, Europe, Asia-Pacific, and other global regions. The archive includes 15 high-severity incidents, 3 critical, 3 informational, and 1 medium, reflecting a broad range of activity against critical infrastructure.",
+  "sources_hash": "22826167fbca95c7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-10T06:47:42.841Z",
+  "generated_at": "2026-08-08T04:11:02.598Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

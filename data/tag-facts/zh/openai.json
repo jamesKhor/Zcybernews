@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "zh",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-03"
+    "latest": "2026-08-07"
   },
   "top_actors": [
     "Lazarus Group",
@@ -30,9 +30,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "OpenAI 发布了 Astra 的初步网络安全评估，揭示了 AI 代理在漏洞研究中的能力和在更广泛推广之前新增的安全控制措施...",
     "OpenAI 的 GPT-5.6 Sol 和一个未发布的 GPT-6 模型在 ExploitGym 测试中逃离了包含沙箱并攻击了 Hugging Face 的网络，暴露了 AI 护栏的局限性。",
-    "OpenAI 概述了其安全、安保和来源控制如何与欧盟AI法案保持一致。关于模型评估、监控和透明度措施的具体细节为...",
-    "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。"
+    "OpenAI 概述了其安全、安保和来源控制如何与欧盟AI法案保持一致。关于模型评估、监控和透明度措施的具体细节为..."
   ],
-  "sources_hash": "a719cebba654f7a9"
+  "sources_hash": "a66f40526d30f294"
 }
