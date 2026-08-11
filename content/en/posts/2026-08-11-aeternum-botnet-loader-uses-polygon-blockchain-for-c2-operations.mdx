@@ -1,0 +1,100 @@
+---
+title: Aeternum Botnet Loader Uses Polygon Blockchain for C2 Operations
+slug: 2026-08-11-aeternum-botnet-loader-uses-polygon-blockchain-for-c2-operations
+date: '2026-08-11'
+excerpt: >-
+  Unit 42 dissects Aeternum, a C++ botnet loader that stores C2 commands on
+  Polygon smart contracts, evading takedowns. Three samples analyzed, including
+  XWorm and XMRig.
+category: malware
+tags:
+  - aeternum
+  - blockchain-c2
+  - polygon
+  - botnet-loader
+  - xworm
+  - xmrig
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/aeternum-blockchain-c2-analysis/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-11-aeternum-botnet-loader-uses-polygon-blockchain-for-c2-operations
+cluster_key: 'topic:permanent-threat-analyzing-aeternums-blockchainbased'
+source_count: 1
+seo_query_target: Aeternum blockchain C2 botnet loader
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Explains how Aeternum uses Polygon blockchain for C2 and what defenders should
+  monitor.
+seo_meta_promise: >-
+  Details Aeternum's blockchain-based C2, three samples analyzed, and evasion
+  techniques.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - blockchain-c2
+news_sitemap_eligible: true
+featured_image_alt: Diagram of Aeternum botnet using Polygon blockchain for command and control
+severity: high
+threat_actor: Aeternum
+iocs:
+  - type: hash_sha256
+    value: 5bfb25b8255b61e5ffdf6804451534bcfa9f1dfd225e6c8cdcefb5f50d846898
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+A newly discovered C++ botnet loader, dubbed Aeternum, has moved its command-and-control (C2) infrastructure entirely to the public Polygon blockchain, according to analysis from Palo Alto Networks Unit 42. Instead of relying on centralized servers or domains, threat actors write encrypted and plaintext instructions directly into smart contracts, which infected devices continuously query via public RPC endpoints. This decentralized approach makes the botnet highly resilient to takedown efforts and complicates law enforcement actions.
+
+Unit 42's report, published August 10, 2026, analyzes three malware samples associated with Aeternum: the loader itself, a Python-based Telegram C2 tool, and a blended threat combining XWorm RAT, XMRig cryptocurrency miner, and data exfiltration. The loader, a UPX-packed 32-bit Windows PE named Build.exe, establishes persistence, performs reconnaissance, and retrieves encrypted commands from Polygon smart contracts. Defenders should monitor for unusual RPC traffic to Polygon endpoints and inspect for the known SHA256 hash of the loader.
+
+## Technical Analysis
+
+The Aeternum loader sample (SHA256: `5bfb25b8255b61e5ffdf6804451534bcfa9f1dfd225e6c8cdcefb5f50d846898`) executes in multiple stages. After self-unpacking, it creates a folder under `AppData\Local`, copies itself there, and installs a Windows shortcut in the Startup directory named `Wmi_Framework_APIKEY_wmsnet_<random_value>.lnk` to ensure auto-launch on reboot. It then executes supporting binaries: `wmiframework.exe`, `ZrvEsJQzWQ.exe`, and `STAAAAAS.exe`.
+
+For network communications, the loader deobfuscates global configuration data to construct endpoint strings. It sends JSON-RPC requests to Polygon RPC endpoints (e.g., `hxxps[:]//polygon-mumbai-bor-rpc.publicnode[.]com`) and queries immutable smart contract addresses using the contract method `0xb68d1809` to retrieve encrypted C2 commands. The payload is decrypted using a weak PBKDF2HMAC/AES-GCM routine.
+
+The loader also downloads files from GitHub repositories, including a clean `putty.exe` and a malicious `DotNetZip.dll`. The DLL uses hard-coded credentials to connect to a Telegram C2 bot named `DLLSendC2Bot`. Stolen information is exfiltrated over encrypted channels to trusted domains, code-hosting platforms, and the Telegram API.
+
+Static analysis revealed an XOR-based obfuscation pattern: three null bytes followed by encrypted payload bytes, a null byte, key bytes, and three null bytes. This pattern allows analysts to script identification and decryption. Deobfuscated strings include Polygon RPC endpoints, file extensions (`.ps1`, `.dll`, `.exe`), HTTP headers, C2 command names (`hwid`, `args`, `ping`), and the smart contract method. Notably, the analyzed sample did not contain hardcoded smart contract addresses; during network analysis, it used 22 different smart contract addresses, suggesting dynamic retrieval.
+
+## Indicators of Compromise
+
+Unit 42 provided the following indicators from the analyzed loader sample:
+
+- **SHA256 hash**: `5bfb25b8255b61e5ffdf6804451534bcfa9f1dfd225e6c8cdcefb5f50d846898` (Build.exe)
+- **Polygon RPC endpoint**: `hxxps[:]//polygon-mumbai-bor-rpc.publicnode[.]com`
+
+The full table of deobfuscated strings is available in the Unit 42 report's IOCs section. Defenders should also monitor for the supporting binaries (`wmiframework.exe`, `ZrvEsJQzWQ.exe`, `STAAAAAS.exe`) and the Startup shortcut pattern.
+
+## Tactics, Techniques & Procedures
+
+Aeternum employs several MITRE ATT&CK techniques:
+
+- **Command and Control (T1102)**: Uses Polygon blockchain smart contracts as decentralized C2 infrastructure, querying via public RPC endpoints.
+- **Defense Evasion (T1497)**: Performs virtual machine detection to evade sandbox analysis.
+- **Defense Evasion (T1027)**: Uses XOR obfuscation and UPX packing to hide strings and payload.
+- **Persistence (T1547.001)**: Creates a shortcut in the Startup folder for auto-launch.
+- **Exfiltration (T1567)**: Exfiltrates data via Telegram API and code-hosting platforms.
+
+The sequencing of these techniques—starting with evasion, then persistence, then C2—indicates a well-orchestrated loader designed for stealth and resilience.
+
+## Threat Actor Context
+
+The Aeternum botnet is a newly identified threat, with no known attribution to a specific nation-state or criminal group. The malware self-identifies as "Aeternum C2 BotNet Loader," and researchers use the names Aeternum C2 or Aeternum loader. The use of blockchain-based C2 suggests a sophisticated operator with knowledge of decentralized technologies, possibly to evade takedowns and reduce infrastructure costs.
+
+## Mitigations & Recommendations
+
+Given Aeternum's reliance on public blockchain RPC endpoints, defenders should monitor outbound network traffic for connections to known Polygon RPC nodes, especially those listed in the IOCs. Additionally, organizations should:
+
+- Deploy endpoint detection and response (EDR) solutions that can identify the loader's behaviors, such as creating Startup shortcuts and executing multiple binaries.
+- Use network segmentation to limit outbound access to blockchain RPC endpoints unless required.
+- Educate users on the risks of downloading files from untrusted sources, as the loader leverages GitHub repositories.
+- Maintain up-to-date threat intelligence feeds to detect new smart contract addresses associated with Aeternum.
+
+## References
+
+- [Unit 42: The Permanent Threat: Analyzing Aeternum’s Blockchain-Based C2 Operations and Communications](https://unit42.paloaltonetworks.com/aeternum-blockchain-c2-analysis/)

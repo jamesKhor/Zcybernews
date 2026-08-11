@@ -1,0 +1,99 @@
+---
+title: Aeternum 僵尸网络加载器使用 Polygon 区块链进行 C2 操作
+slug: 2026-08-11-aeternum-botnet-loader-uses-polygon-blockchain-for-c2-operations
+date: '2026-08-11'
+excerpt: >-
+  Unit 42 分析了 Aeternum，这是一个 C++ 僵尸网络加载器，它将 C2 命令存储在 Polygon
+  智能合约上，以规避关闭。分析了三个样本，包括 XWorm 和 XMRig。
+category: malware
+tags:
+  - aeternum
+  - blockchain-c2
+  - polygon
+  - botnet-loader
+  - xworm
+  - xmrig
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/aeternum-blockchain-c2-analysis/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-11-aeternum-botnet-loader-uses-polygon-blockchain-for-c2-operations
+cluster_key: 'topic:permanent-threat-analyzing-aeternums-blockchainbased'
+source_count: 1
+seo_query_target: Aeternum blockchain C2 botnet loader
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Explains how Aeternum uses Polygon blockchain for C2 and what defenders should
+  monitor.
+seo_meta_promise: >-
+  Details Aeternum's blockchain-based C2, three samples analyzed, and evasion
+  techniques.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - blockchain-c2
+news_sitemap_eligible: true
+featured_image_alt: Diagram of Aeternum botnet using Polygon blockchain for command and control
+severity: high
+threat_actor: Aeternum
+iocs:
+  - type: hash_sha256
+    value: 5bfb25b8255b61e5ffdf6804451534bcfa9f1dfd225e6c8cdcefb5f50d846898
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## 执行摘要
+
+根据Palo Alto Networks Unit 42的分析，一种新发现的C++ botnet加载器，被称为Aeternum，已将其命令与控制（C2）基础设施完全转移到公共Polygon区块链上。威胁行为者不再依赖于集中式服务器或域名，而是直接将加密和明文指令写入智能合约，被感染的设备通过公共RPC端点持续查询这些合约。这种去中心化的方法使得botnet对取缔行动具有很高的弹性，并使执法行动复杂化。
+
+Unit 42的报告于2026年8月10日发布，分析了与Aeternum相关的三个恶意软件样本：加载器本身、基于Python的Telegram C2工具，以及结合了XWorm RAT、XMRig加密货币矿机和数据泄露的混合威胁。加载器是一个名为Build.exe的UPX打包的32位Windows PE，它建立持久性，执行侦察，并从Polygon智能合约中检索加密命令。防御者应监控指向Polygon端点的异常RPC流量，并检查已知的加载器SHA256哈希值。
+
+## 技术分析
+
+Aeternum加载器样本（SHA256: `5bfb25b8255b61e5ffdf6804451534bcfa9f1dfd225e6c8cdcefb5f50d846898`）在多个阶段执行。在自解压后，它在`AppData\Local`下创建一个文件夹，将自身复制到那里，并在启动目录中安装一个名为`Wmi_Framework_APIKEY_wmsnet_<random_value>.lnk`的Windows快捷方式，以确保在重启时自动启动。然后它执行支持的二进制文件：`wmiframework.exe`、`ZrvEsJQzWQ.exe`和`STAAAAAS.exe`。
+
+对于网络通信，加载器解混淆全局配置数据以构建端点字符串。它向Polygon RPC端点发送JSON-RPC请求（例如，`hxxps[:]//polygon-mumbai-bor-rpc.publicnode[.]com`），并使用合约方法`0xb68d1809`查询不可变的智能合约地址，以检索加密的C2命令。使用弱PBKDF2HMAC/AES-GCM例程解密有效载荷。
+
+加载器还从GitHub仓库下载文件，包括一个干净的`putty.exe`和一个恶意的`DotNetZip.dll`。DLL使用硬编码的凭据连接到名为`DLLSendC2Bot`的Telegram C2机器人。被盗信息通过加密通道泄露到受信任的域名、代码托管平台和Telegram API。
+
+静态分析揭示了一个基于XOR的混淆模式：三个空字节，后跟加密的有效载荷字节，一个空字节，密钥字节和三个空字节。这种模式允许分析师编写识别和解密脚本。解混淆的字符串包括Polygon RPC端点、文件扩展名（`.ps1`、`.dll`、`.exe`）、HTTP头、C2命令名称（`hwid`、`args`、`ping`）和智能合约方法。值得注意的是，分析的样本没有包含硬编码的智能合约地址；在网络分析中，它使用了22个不同的智能合约地址，这表明是动态检索。
+
+## 入侵指标
+
+Unit 42提供了以下来自分析的加载器样本的入侵指标：
+
+- **SHA256哈希**：`5bfb25b8255b61e5ffdf6804451534bcfa9f1dfd225e6c8cdcefb5f50d846898`（Build.exe）
+- **Polygon RPC端点**：`hxxps[:]//polygon-mumbai-bor-rpc.publicnode[.]com`
+
+完整的解混淆字符串表可在Unit 42报告的IOCs部分找到。防御者还应监控支持的二进制文件（`wmiframework.exe`、`ZrvEsJQzWQ.exe`、`STAAAAAS.exe`）和启动快捷方式模式。
+
+## 战术、技术与程序
+
+Aeternum采用了几种MITRE ATT&CK技术：
+
+- **命令和控制（T1102）**：使用Polygon区块链智能合约作为去中心化的C2基础设施，通过公共RPC端点查询。
+- **防御绕过（T1497）**：执行虚拟机检测以绕过沙箱分析。
+- **防御绕过（T1027）**：使用XOR混淆和UPX打包来隐藏字符串和有效载荷。
+- **持久性（T1547.001）**：在启动文件夹中创建快捷方式以自动启动。
+- **泄露（T1567）**：通过Telegram API和代码托管平台泄露数据。
+
+这些技术的顺序——从绕过开始，然后是持久性，然后是C2——表明这是一个为隐蔽性和弹性而设计的精心策划的加载器。
+
+## 威胁行为者背景
+
+Aeternum botnet是一个新识别的威胁，没有已知的归属特定国家或犯罪集团。恶意软件自称为“Aeternum C2 BotNet Loader”，研究人员使用Aeternum C2或Aeternum加载器的名称。基于区块链的C2的使用表明，操作者具有分散技术知识，可能旨在规避取缔和降低基础设施成本。
+
+## 缓解措施与建议
+
+鉴于Aeternum依赖于公共区块链RPC端点，防御者应监控出站网络流量，以连接到已知的Polygon RPC节点，特别是IOCs中列出的那些。此外，组织应：
+
+- 部署端点检测和响应（EDR）解决方案，能够识别加载器的行为，如创建启动快捷方式和执行多个二进制文件。
+- 使用网络分段限制对区块链RPC端点的出站访问，除非必需。
+- 教育用户从不可信来源下载文件的风险，因为加载器利用GitHub仓库。
+- 维护最新的威胁情报源，以检测与Aeternum相关的新智能合约地址。
+
+## 参考资料
+
+- [Unit 42: The Permanent Threat: Analyzing Aeternum’s Blockchain-Based C2 Operations and Communications](https://unit42.paloaltonetworks.com/aeternum-blockchain-c2-analysis/)
