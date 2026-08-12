@@ -1,0 +1,68 @@
+---
+title: 英国刑事记录办公室三次入侵未被检测到
+slug: 2026-08-12-three-intrusions-at-uk-criminal-records-office-went-undetected-for
+date: '2026-08-12'
+excerpt: '英国的ACRO刑事记录办公室在三次违规暴露了11,000人的数据后受到批评，包括家庭暴力受害者，由于未读的防病毒警报和...'
+category: industry
+tags:
+  - acro
+  - data-breach
+  - ico
+  - kentico
+  - mimikatz
+  - uk
+language: zh
+source_urls:
+  - 'https://therecord.media/uk-criminal-records-office-acro-data-breaches'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-12-three-intrusions-at-uk-criminal-records-office-went-undetected-for
+cluster_key: 'topic:three-intrusions-criminal-records-office'
+source_count: 1
+seo_query_target: Three intrusions at UK criminal records office went undetected for two years
+seo_intent: incident-impact
+seo_title_promise: >-
+  Reveals the three undetected breaches at ACRO and the security failures that
+  allowed them.
+seo_meta_promise: >-
+  Details the ACRO breaches, the unpatched CMS and unread alerts, and the impact
+  on 11,000 individuals.
+target_hub: data-breaches
+internal_link_targets:
+  - data-breaches
+  - uk-cyber-incidents
+news_sitemap_eligible: true
+featured_image_alt: >-
+  UK criminal records office building with a padlock icon overlay, symbolizing
+  data breach
+severity: high
+threat_actor: Medusa
+affected_sectors:
+  - government
+affected_regions:
+  - United Kingdom
+publish_tier: public
+---
+## 执行摘要
+
+英国ACRO刑事记录办公室遭受了三次独立的入侵，这些入侵近两年之久未被察觉，暴露了包括家庭暴力受害者在内的数千人的个人数据。信息专员办公室（ICO）在周三发出了谴责，指出未读的防病毒警报和内容管理系统近四年未打补丁是根本原因。这些入侵发生在2021年7月至2023年6月之间，利用了ACRO基于Kentico CMS构建的面向公众的客户门户网站，该门户自2019年9月以来就存在已知漏洞。网络分段阻止了攻击者到达核心的国家警察计算机，但ICO的发现突出了补丁管理和警报处理中的系统性失败。
+
+## 技术分析
+
+根据ICO的谴责通知，所有三次入侵都针对自2019年9月以来运行相同版本的Kentico CMS的ACRO客户门户网站。Kentico已经发布了针对多个记录在案的漏洞的安全修复，但ACRO未能应用它们。ICO发现，无论是ACRO、其管理服务提供商还是其网站开发供应商都没有明确的责任来监控和应用补丁。
+
+趋势科技的防病毒警报也被忽视了。系统隔离了四次尝试安装Mimikatz（一种凭证收集工具）的检测，但都没有升级。ACRO告诉ICO它无法确定处理安全警报的业务流程或负责审查它们的角色。ICO得出结论，对这些警报采取行动本可以防止进一步的恶意活动。
+
+ICO的法医调查确定了三个不同的事件，分别标记为A组、B组和C组。A组是最严重的，攻击者从2022年8月到2023年3月大约七个月的时间里持续访问ACRO的网站和CMS。在此期间，攻击者进行了侦察，并在2023年2月为近11000人的敏感数据安排了外泄。然而，ACRO未能保留足够的日志，意味着办公室无法确认数据是否真的被外泄。
+
+其他事件的细节较少。其中一个涉及SQL注入，暴露了员工凭证。ICO没有具体说明这些事件在两年窗口内何时发生。
+
+ACRO最初声称其网站因必要的维护而关闭，但在2023年4月，经过Evening Standard的联系后，它披露了一起网络安全事件。随后，Medusa勒索软件集团声称对此负责，但其泄露网站上没有发布任何被盗数据。是否支付了勒索款项或该声明是虚构的，目前尚不清楚。
+
+## 缓解措施与建议
+
+防御者应将此事件视为忽视基础的后果案例研究。ICO的谴责强调了补丁管理和安全警报分类的明确所有权的必要性。组织应审计其补丁管理流程，确保没有系统多年未打补丁，特别是面向互联网的应用程序。安全警报，特别是涉及凭证盗窃工具如Mimikatz的警报，必须有明确的升级路径，并及时采取行动。此外，保留足够的日志对于确认数据外泄和支持法医调查至关重要。如这里所示的网络分段可以限制违规的冲击半径，但它不能替代基本的卫生措施。
+
+## 参考资料
+
+- [The Record: Three intrusions at UK criminal records office went undetected for two years](https://therecord.media/uk-criminal-records-office-acro-data-breaches)

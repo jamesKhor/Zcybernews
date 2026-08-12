@@ -1,0 +1,71 @@
+---
+title: Three Intrusions at UK Criminal Records Office Went Undetected for
+slug: 2026-08-12-three-intrusions-at-uk-criminal-records-office-went-undetected-for
+date: '2026-08-12'
+excerpt: >-
+  UK's ACRO Criminal Records Office reprimanded after three breaches exposed
+  data of 11,000 people, including domestic violence victims, due to unread
+  antivirus alerts and an...
+category: industry
+tags:
+  - acro
+  - data-breach
+  - ico
+  - kentico
+  - mimikatz
+  - uk
+language: en
+source_urls:
+  - 'https://therecord.media/uk-criminal-records-office-acro-data-breaches'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-12-three-intrusions-at-uk-criminal-records-office-went-undetected-for
+cluster_key: 'topic:three-intrusions-criminal-records-office'
+source_count: 1
+seo_query_target: Three intrusions at UK criminal records office went undetected for two years
+seo_intent: incident-impact
+seo_title_promise: >-
+  Reveals the three undetected breaches at ACRO and the security failures that
+  allowed them.
+seo_meta_promise: >-
+  Details the ACRO breaches, the unpatched CMS and unread alerts, and the impact
+  on 11,000 individuals.
+target_hub: data-breaches
+internal_link_targets:
+  - data-breaches
+  - uk-cyber-incidents
+news_sitemap_eligible: true
+featured_image_alt: >-
+  UK criminal records office building with a padlock icon overlay, symbolizing
+  data breach
+severity: high
+threat_actor: Medusa
+affected_sectors:
+  - government
+affected_regions:
+  - United Kingdom
+publish_tier: public
+---
+## Executive Summary
+
+The UK's ACRO Criminal Records Office suffered three separate intrusions that went undetected for nearly two years, exposing the personal data of thousands, including victims of domestic violence. The Information Commissioner's Office (ICO) issued a reprimand on Wednesday, citing unread antivirus alerts and a content management system left unpatched for almost four years as root causes. The breaches, which occurred between July 2021 and June 2023, exploited ACRO's public-facing customer portal built on the Kentico CMS, which had known vulnerabilities since September 2019. Network segmentation prevented attackers from reaching the core Police National Computer, but the ICO's findings highlight systemic failures in patch management and alert handling.
+
+## Technical Analysis
+
+According to the ICO's reprimand notice, all three intrusions targeted ACRO's customer portal, which ran the same version of Kentico CMS since September 2019. Kentico had released security fixes for multiple documented vulnerabilities, but ACRO failed to apply them. The ICO found that neither ACRO, its managed service provider, nor its web development supplier had clear responsibility for monitoring and applying patches.
+
+Antivirus alerts from Trend Micro were also ignored. The system quarantined four separate detections of attempts to install Mimikatz, a credential-harvesting tool, but none were escalated. ACRO told the ICO it could not establish which business process existed for handling security alerts or which roles were responsible for reviewing them. The ICO concluded that acting on these alerts could have prevented further malicious activity.
+
+The ICO's forensic investigation identified three distinct incidents, labeled Group A, Group B, and Group C. Group A was the most serious, with an attacker maintaining persistent access to ACRO's website and CMS for approximately seven months, from August 2022 to March 2023. During this period, the attacker conducted reconnaissance and staged the sensitive data of just under 11,000 people for exfiltration in February 2023. However, ACRO's failure to retain sufficient logs meant the office could not confirm whether data was actually exfiltrated.
+
+The other incidents were less detailed. One involved an SQL injection that exposed employee credentials. The ICO did not specify when these occurred within the two-year window.
+
+ACRO initially claimed its website was down for essential maintenance, but in April 2023, after contact by the Evening Standard, it disclosed a cybersecurity incident. The Medusa ransomware group subsequently claimed responsibility, but no stolen data was published on its leak site. Whether an extortion payment was made or the claim was fabricated remains unknown.
+
+## Mitigations & Recommendations
+
+Defenders should treat this incident as a case study in the consequences of neglected fundamentals. The ICO's reprimand underscores the need for clear ownership of patch management and security alert triage. Organizations should audit their patch management processes to ensure no system is left unpatched for years, especially internet-facing applications. Security alerts, particularly those involving credential theft tools like Mimikatz, must have defined escalation paths and be acted upon promptly. Additionally, retaining sufficient logs is critical for confirming data exfiltration and supporting forensic investigations. Network segmentation, as demonstrated here, can limit the blast radius of a breach, but it is not a substitute for basic hygiene.
+
+## References
+
+- [The Record: Three intrusions at UK criminal records office went undetected for two years](https://therecord.media/uk-criminal-records-office-acro-data-breaches)
