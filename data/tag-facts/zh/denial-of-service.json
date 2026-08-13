@@ -1,10 +1,10 @@
 {
   "tag": "denial-of-service",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-05-05",
-    "latest": "2026-05-17"
+    "latest": "2026-08-12"
   },
   "top_actors": [],
   "top_cves": [
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
+    "high": 6,
     "medium": 2,
-    "high": 5,
     "critical": 2
   },
   "recent_excerpts": [
+    "CVE-2026-20349 (CVSS 8.6) 允许未经身份验证的远程攻击者通过精心设计的HTTP请求使思科ASA和FTD VPN设备崩溃。已确认活跃利用；提供热修复。",
     "CVE-2026-8731（CVSS 4.3）在Open5GS版本2.7.7及以下版本中，允许远程攻击者通过NRF组件的SBI客户端_pool参数触发拒绝服务。漏洞利用代码已公开。",
-    "CVE-2026-45740（CVSS 7.5）在 protobufjs 中允许攻击者通过发送带有深度嵌套命名空间的精心设计的 JSON 描述符来使 Node.js 应用程序崩溃 —— 影响 7.5.8 之前的版本和...",
-    "F5修复了BIG-IP、BIG-IQ和NGINX中的19个高严重性和32个中等严重性的漏洞。最严重的是CVE-2026-42945（CVSS 9.2），它使得NGINX重写中的堆溢出DoS成为可能..."
+    "CVE-2026-45740（CVSS 7.5）在 protobufjs 中允许攻击者通过发送带有深度嵌套命名空间的精心设计的 JSON 描述符来使 Node.js 应用程序崩溃 —— 影响 7.5.8 之前的版本和..."
   ],
-  "sources_hash": "bb3e78cc3d1db76c"
+  "sources_hash": "e708e5e751d93f85"
 }

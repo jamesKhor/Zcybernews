@@ -1,9 +1,9 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "intro": "Technology and government sectors bore the brunt of 34 zero-day vulnerabilities documented between April 12 and August 4, 2026, with critical and high-severity cases dominating the mix. APT29, Chaotic Eclipse, and Claude Mythos were observed in campaigns spanning Global, Asia, China, Europe, and North America. The most severe flaw, CVE-2026-22679, carries a CVSS score of 9.8, followed by CVE-2026-34621 at 8.6, CVE-2026-3502 at 7.8, CVE-2026-32183 at 7.5, and CVE-2026-32201 at 6.5. Telecommunications, critical infrastructure, and enterprise networks also faced exposure across the reporting period.",
-  "sources_hash": "72ead8a063f4e821",
+  "intro": "Technology and government sectors bore the brunt of the 35 zero-day exploits tracked from April to August 2026, with 18 rated high and 16 critical. APT29, Chaotic Eclipse, and Claude Mythos were observed in campaigns spanning Global, Asia, Brazil, China, and Europe, affecting telecommunications, critical infrastructure, and enterprise networks. Top vulnerabilities included CVE-2026-22679 (CVSS 9.8), CVE-2026-34621 (CVSS 8.6), CVE-2026-3502 (CVSS 7.8), CVE-2026-32183 (CVSS 7.5), and CVE-2026-68820 (CVSS 7). One medium-severity issue rounded out the archive.",
+  "sources_hash": "e231549ec1dde5d8",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-05T05:47:08.246Z",
+  "generated_at": "2026-08-13T04:51:32.088Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

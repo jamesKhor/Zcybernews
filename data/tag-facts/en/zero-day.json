@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "count": 34,
+  "count": 35,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-04"
+    "latest": "2026-08-13"
   },
   "top_actors": [
     "APT29",
@@ -29,8 +29,8 @@
       "cvss": 7.5
     },
     {
-      "id": "CVE-2026-32201",
-      "cvss": 6.5
+      "id": "CVE-2026-68820",
+      "cvss": 7
     }
   ],
   "top_sectors": [
@@ -43,19 +43,19 @@
   "top_regions": [
     "Global",
     "Asia",
+    "Brazil",
     "China",
-    "Europe",
-    "North america"
+    "Europe"
   ],
   "severity_mix": {
+    "high": 18,
     "critical": 16,
-    "high": 17,
     "medium": 1
   },
   "recent_excerpts": [
+    "CISA gives federal agencies until Aug 25 to patch CVE-2026-68820, a Winsock privilege-escalation flaw exploited by North Korea's Lazarus in Operation Dream Job.",
     "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero.",
-    "CVE-2026-42897 is a high-severity Exchange Server spoofing flaw exploited in the wild, enabling XSS-based code execution via Outlook on the web.",
-    "On day one of Pwn2Own Berlin 2026, researchers collected $523,000 for 24 zero-days, including a $175,000 Edge sandbox escape by Orange Tsai and three Windows 11 privilege..."
+    "CVE-2026-42897 is a high-severity Exchange Server spoofing flaw exploited in the wild, enabling XSS-based code execution via Outlook on the web."
   ],
-  "sources_hash": "72ead8a063f4e821"
+  "sources_hash": "e231549ec1dde5d8"
 }

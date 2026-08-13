@@ -1,9 +1,9 @@
 {
   "tag": "denial-of-service",
   "locale": "en",
-  "intro": "This archive collects 9 articles tagged `denial-of-service` published between May 5, 2026 and May 17, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2026-34176, CVE-2026-39459, and CVE-2026-41225, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize telecommunications, technology, and enterprise networking across Global, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 critical, 5 high, and 2 medium reports.",
-  "sources_hash": "f3ea99d76f947fa6",
-  "model": "template:fallback",
-  "generated_at": "2026-05-18T10:02:33.647Z",
+  "intro": "Between May and August 2026, ZCyberNews covered ten denial-of-service incidents affecting telecommunications, technology, enterprise networking, software development, and academic sectors globally. Coverage centered on five critical-severity vulnerabilities, each rated CVSS 9.2: CVE-2026-34176, CVE-2026-39459, CVE-2026-41225, CVE-2026-41957, and CVE-2026-42945. The reporting mix comprised six high-severity, two medium-severity, and two critical-severity cases. These stories tracked exploit attempts and mitigation efforts across the affected industries, with no single threat actor identified in the observed coverage. The archive provides a technical record of the period’s most significant availability attacks.",
+  "sources_hash": "ae435e12be9ec845",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-08-13T04:51:40.064Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

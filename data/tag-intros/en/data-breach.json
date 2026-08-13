@@ -1,9 +1,9 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "intro": "Between 12 April and 31 July 2026, ZCyberNews documented 42 data-breach incidents, with 35 rated high severity and six medium. ShinyHunters, Cl0p, and ExfilSquad were the most frequently cited actors across these reports. Affected sectors included government, healthcare, education, retail, and technology, with impacts reported in North America, Europe, the United States, and France. The coverage spans a concentrated period of activity, reflecting a sustained pattern of intrusions and exposed records. These 42 entries form the complete archive for this tag, offering a chronological record of breaches and their operational details.",
-  "sources_hash": "086d0c897e201ed6",
+  "intro": "Between 12 April and 12 August 2026, ZCyberNews documented 43 data-breach incidents, with 36 rated high severity and six medium. ShinyHunters, Cl0p, and ExfilSquad were the most frequently observed actors across these cases. Affected sectors included government, healthcare, education, retail, and technology, with reported impacts spanning North America, Europe, the United States, France, and global operations. The archive covers a four-month period of disclosed breaches, reflecting the distribution of incidents by actor, sector, and region as tracked in this tag.",
+  "sources_hash": "5a1af330ee66a265",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-31T06:15:19.591Z",
+  "generated_at": "2026-08-13T04:51:30.180Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

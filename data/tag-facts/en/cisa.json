@@ -1,15 +1,15 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-13"
+    "latest": "2026-08-13"
   },
   "top_actors": [
     "GRU",
     "Interlock",
-    "LummaC2"
+    "Lazarus Group"
   ],
   "top_cves": [
     {
@@ -29,7 +29,8 @@
       "cvss": 8.4
     },
     {
-      "id": "CVE-2024-20662"
+      "id": "CVE-2026-68820",
+      "cvss": 7
     }
   ],
   "top_sectors": [
@@ -37,22 +38,23 @@
     "critical infrastructure",
     "technology",
     "defense",
-    "energy"
+    "aerospace"
   ],
   "top_regions": [
     "United states",
     "Global",
     "North america",
+    "Brazil",
     "Europe"
   ],
   "severity_mix": {
-    "high": 14,
+    "high": 15,
     "critical": 3
   },
   "recent_excerpts": [
+    "CISA gives federal agencies until Aug 25 to patch CVE-2026-68820, a Winsock privilege-escalation flaw exploited by North Korea's Lazarus in Operation Dream Job.",
     "CISA's postmortem on a GitHub leak exposing 844 MB of internal data, including AWS GovCloud keys, reveals the agency ignored nine automated alerts and took 48 hours to rotate...",
-    "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders.",
-    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks."
+    "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders."
   ],
-  "sources_hash": "f3d0e7b0913879c4"
+  "sources_hash": "b88a6289be375943"
 }

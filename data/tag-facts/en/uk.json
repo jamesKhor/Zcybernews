@@ -1,0 +1,35 @@
+{
+  "tag": "uk",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-21",
+    "latest": "2026-08-12"
+  },
+  "top_actors": [
+    "Cl0p",
+    "Medusa"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "critical infrastructure",
+    "social media",
+    "technology",
+    "water utility"
+  ],
+  "top_regions": [
+    "United kingdom",
+    "UK"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "UK's ACRO Criminal Records Office reprimanded after three breaches exposed data of 11,000 people, including domestic violence victims, due to unread antivirus alerts and an...",
+    "ICO fined South Staffordshire Water £963,900 after Cl0p ransomware gang leaked data of 663,887 customers — phishing attack went undetected for 20 months.",
+    "The UK's NCSC reports handling four nationally significant cyber incidents per week, with most now attributed to hostile foreign states like China and Russia, up from two per week…"
+  ],
+  "sources_hash": "c2322153e29f0da6"
+}

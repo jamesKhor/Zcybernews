@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "intro": "技术和政府领域承受了2026年4月12日至8月4日期间记录的34个零日漏洞的主要冲击，其中严重和高危案例占主导。APT29、Chaotic Eclipse和Claude Mythos在覆盖全球、亚洲、中国、欧洲和北美的活动中被观察到。最严重的漏洞CVE-2026-22679的CVSS评分为9.8，其次是CVE-2026-34621（8.6）、CVE-2026-3502（7.8）、CVE-2026-32183（7.5）和CVE-2026-32201（6.5）。电信、关键基础设施和企业网络在报告期内也面临暴露风险。",
-  "sources_hash": "047bf8f8d14eeea5",
-  "source_intro_hash": "952689929c47bcc1",
+  "intro": "技术和政府行业承受了2026年4月至8月追踪到的35个零日漏洞的主要冲击，其中18个被评为高危，16个为严重。APT29、Chaotic Eclipse和Claude Mythos在覆盖全球、亚洲、巴西、中国和欧洲的活动中被观察到，影响了电信、关键基础设施和企业网络。主要漏洞包括CVE-2026-22679（CVSS 9.8）、CVE-2026-34621（CVSS 8.6）、CVE-2026-3502（CVSS 7.8）、CVE-2026-32183（CVSS 7.5）和CVE-2026-68820（CVSS 7）。一个中危问题补全了该档案。",
+  "sources_hash": "378036b9edbd9fce",
+  "source_intro_hash": "d3a434d499075798",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-05T05:47:35.888Z",
+  "generated_at": "2026-08-13T04:51:58.232Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

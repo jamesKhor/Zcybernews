@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "count": 33,
+  "count": 34,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-04"
+    "latest": "2026-08-13"
   },
   "top_actors": [
     "APT29",
@@ -29,8 +29,8 @@
       "cvss": 7.5
     },
     {
-      "id": "CVE-2026-32201",
-      "cvss": 6.5
+      "id": "CVE-2026-68820",
+      "cvss": 7
     }
   ],
   "top_sectors": [
@@ -43,19 +43,19 @@
   "top_regions": [
     "Global",
     "Asia",
+    "Brazil",
     "China",
-    "Europe",
-    "North america"
+    "Europe"
   ],
   "severity_mix": {
+    "high": 18,
     "critical": 15,
-    "high": 17,
     "medium": 1
   },
   "recent_excerpts": [
+    "CISA 给联邦机构直到 8 月 25 日修补 CVE-2026-68820，这是一个 Winsock 权限提升漏洞，被朝鲜的 Lazarus 在 Operation Dream Job 中利用。",
     "Unit 42的NOVA系统在两个月内发现了3,915个开源软件项目中的14,090个新漏洞 —— 其中40%为高或严重级别 —— 将补丁窗口压缩至接近零。",
-    "CVE-2026-42897是一个高严重性的Exchange Server欺骗漏洞，在野外被利用，通过Outlook网页版实现基于XSS的代码执行。",
-    "在Pwn2Own Berlin 2026的第一天，研究人员为24个零日漏洞收集了52.3万美元，包括Orange Tsai通过Edge沙箱逃逸获得的17.5万美元，以及三个Windows 11权限..."
+    "CVE-2026-42897是一个高严重性的Exchange Server欺骗漏洞，在野外被利用，通过Outlook网页版实现基于XSS的代码执行。"
   ],
-  "sources_hash": "047bf8f8d14eeea5"
+  "sources_hash": "378036b9edbd9fce"
 }

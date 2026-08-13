@@ -1,15 +1,15 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-13"
+    "latest": "2026-08-13"
   },
   "top_actors": [
     "GRU",
     "Interlock",
-    "LummaC2"
+    "Lazarus Group"
   ],
   "top_cves": [
     {
@@ -29,7 +29,8 @@
       "cvss": 8.4
     },
     {
-      "id": "CVE-2024-20662"
+      "id": "CVE-2026-68820",
+      "cvss": 7
     }
   ],
   "top_sectors": [
@@ -37,22 +38,23 @@
     "critical infrastructure",
     "technology",
     "defense",
-    "energy"
+    "aerospace"
   ],
   "top_regions": [
     "United states",
     "Global",
     "North america",
+    "Brazil",
     "Europe"
   ],
   "severity_mix": {
-    "high": 13,
+    "high": 14,
     "critical": 3
   },
   "recent_excerpts": [
+    "CISA 给联邦机构直到 8 月 25 日修补 CVE-2026-68820，这是一个 Winsock 权限提升漏洞，被朝鲜的 Lazarus 在 Operation Dream Job 中利用。",
     "CISA 对 GitHub 泄露事件的事后分析暴露了 844 MB 的内部数据，包括 AWS GovCloud 密钥，揭示该机构忽略了九个自动警报，并在 48 小时后才进行轮换...",
-    "CISA 和 FBI 联合咨询详细描述了 LummaC2 信息窃取者的 TTPs 和 IOCs：恶意软件从被入侵的网络中窃取凭证、加密钱包和会话数据。",
-    "CISA 和 USCG 在美国关键基础设施组织的一次主动威胁狩猎中发现持续的弱配置、未修补的系统和凭证重用。"
+    "CISA 和 FBI 联合咨询详细描述了 LummaC2 信息窃取者的 TTPs 和 IOCs：恶意软件从被入侵的网络中窃取凭证、加密钱包和会话数据。"
   ],
-  "sources_hash": "e36d3478a64d019a"
+  "sources_hash": "5b61c3ca9962d354"
 }

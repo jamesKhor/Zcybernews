@@ -1,0 +1,35 @@
+{
+  "tag": "uk",
+  "locale": "zh",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-21",
+    "latest": "2026-08-12"
+  },
+  "top_actors": [
+    "Cl0p",
+    "Medusa"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "critical infrastructure",
+    "social media",
+    "technology",
+    "water utility"
+  ],
+  "top_regions": [
+    "United kingdom",
+    "UK"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "informational": 1
+  },
+  "recent_excerpts": [
+    "英国的ACRO刑事记录办公室在三次违规暴露了11,000人的数据后受到批评，包括家庭暴力受害者，由于未读的防病毒警报和...",
+    "信息专员办公室（ICO）对南斯塔福德郡水务公司罚款963,900英镑，因为Cl0p勒索软件团伙泄露了663,887名客户的数据 —— 钓鱼攻击未被检测到长达20个月。",
+    "英国NCSC报告称每周处理四起具有全国意义的网络事件，其中大部分现在归因于像中国和俄罗斯这样的敌对外国，从每周两起增加..."
+  ],
+  "sources_hash": "16d410d5c05d889a"
+}

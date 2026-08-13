@@ -1,13 +1,14 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "count": 28,
+  "count": 29,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-20"
+    "latest": "2026-08-13"
   },
   "top_actors": [
-    "Chaotic Eclipse"
+    "Chaotic Eclipse",
+    "Lazarus Group"
   ],
   "top_cves": [
     {
@@ -40,17 +41,20 @@
   ],
   "top_regions": [
     "Global",
-    "North america"
+    "Brazil",
+    "France",
+    "Germany",
+    "India"
   ],
   "severity_mix": {
+    "high": 22,
     "medium": 3,
-    "high": 21,
     "critical": 4
   },
   "recent_excerpts": [
+    "CISA gives federal agencies until Aug 25 to patch CVE-2026-68820, a Winsock privilege-escalation flaw exploited by North Korea's Lazarus in Operation Dream Job.",
     "CVE-2026-8957 (CVSS 6.5) allows privilege escalation in Firefox's Enterprise Policies component. Mozilla fixed it in Firefox 151 and ESR 140.11.",
-    "Broadcom patched a high-severity TOCTOU vulnerability in VMware Fusion (CVE-2026-41702) that lets local non-admin users escalate privileges to root on macOS systems.",
-    "Palo Alto Networks released patches for two medium-severity flaws in Prisma Access Agent — CVE-2026-0248 (improper certificate validation) and CVE-2026-0246 (local privilege..."
+    "Broadcom patched a high-severity TOCTOU vulnerability in VMware Fusion (CVE-2026-41702) that lets local non-admin users escalate privileges to root on macOS systems."
   ],
-  "sources_hash": "f23bd697abaa98d8"
+  "sources_hash": "ad114c6aa9b9fb54"
 }

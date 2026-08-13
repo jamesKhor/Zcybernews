@@ -1,10 +1,10 @@
 {
   "tag": "denial-of-service",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-05-05",
-    "latest": "2026-05-17"
+    "latest": "2026-08-12"
   },
   "top_actors": [],
   "top_cves": [
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
+    "high": 6,
     "medium": 2,
-    "high": 5,
     "critical": 2
   },
   "recent_excerpts": [
+    "CVE-2026-20349 (CVSS 8.6) lets unauthenticated remote attackers crash Cisco ASA and FTD VPN devices via crafted HTTP requests. Active exploitation confirmed; hotfixes available.",
     "CVE-2026-8731 (CVSS 4.3) in Open5GS up to 2.7.7 lets remote attackers trigger a denial-of-service via the NRF component's SBI client_pool argument. Exploit code is public.",
-    "CVE-2026-45740 (CVSS 7.5) in protobufjs lets attackers crash Node.js apps by sending crafted JSON descriptors with deeply nested namespaces — affects versions before 7.5.8 and...",
-    "F5 fixed 19 high-severity and 32 medium-severity bugs across BIG-IP, BIG-IQ, and NGINX. The most severe, CVE-2026-42945 (CVSS 9.2), enables heap overflow DoS in NGINX rewrite..."
+    "CVE-2026-45740 (CVSS 7.5) in protobufjs lets attackers crash Node.js apps by sending crafted JSON descriptors with deeply nested namespaces — affects versions before 7.5.8 and..."
   ],
-  "sources_hash": "f3ea99d76f947fa6"
+  "sources_hash": "ae435e12be9ec845"
 }

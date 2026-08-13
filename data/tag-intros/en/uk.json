@@ -1,0 +1,9 @@
+{
+  "tag": "uk",
+  "locale": "en",
+  "intro": "UK government and critical infrastructure organisations bore the brunt of five incidents tagged “uk” between 21 April and 12 August 2026, with four rated high severity and one informational. Threat actors Cl0p and Medusa were observed in these campaigns, which also touched social media, technology, and a water utility. The affected region was the United Kingdom. The archive covers a three-month period, reflecting a concentrated impact on public-sector and essential services.",
+  "sources_hash": "c2322153e29f0da6",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-08-13T04:51:42.050Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}
