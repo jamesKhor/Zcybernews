@@ -1,9 +1,9 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "intro": "Government and critical infrastructure organizations were the primary focus of the 18 CISA-related alerts published between April and August 2026, with the United States and global operations most affected. The reporting highlighted 15 high-severity and 3 critical incidents, involving threat actors GRU, Interlock, and Lazarus Group. Key vulnerabilities included CVE-2024-57726, CVE-2026-21643, CVE-2026-34197, CVE-2024-1708, and CVE-2026-68820, impacting technology, defense, and aerospace sectors across North America, Brazil, and Europe.",
-  "sources_hash": "b88a6289be375943",
+  "intro": "Government and technology sectors bore the brunt of the 19 incidents tagged CISA between April and August 2026, with most activity centered on the United States and Global regions. Fifteen high-severity and three critical cases were documented, involving threat actors GRU, Interlock, and Lazarus Group as separate entities. Key vulnerabilities included CVE-2024-57726 (CVSS 9.9), CVE-2026-21643 (CVSS 9.1), and CVE-2026-34197 (CVSS 8.8), alongside CVE-2024-1708 and CVE-2026-68820. Affected sectors also spanned defense, aerospace, and critical infrastructure, with reports covering North America, Brazil, and Europe.",
+  "sources_hash": "4c97289ca55f77c9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-13T04:51:35.851Z",
+  "generated_at": "2026-08-14T04:48:10.790Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,7 +1,7 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-08-13"
@@ -35,8 +35,8 @@
   ],
   "top_sectors": [
     "government",
-    "critical infrastructure",
     "technology",
+    "critical infrastructure",
     "defense",
     "aerospace"
   ],
@@ -52,9 +52,9 @@
     "critical": 3
   },
   "recent_excerpts": [
+    "At Black Hat USA 2026, officials and researchers warn AI-driven vulnerability discovery outpaces defenses.",
     "CISA gives federal agencies until Aug 25 to patch CVE-2026-68820, a Winsock privilege-escalation flaw exploited by North Korea's Lazarus in Operation Dream Job.",
-    "CISA's postmortem on a GitHub leak exposing 844 MB of internal data, including AWS GovCloud keys, reveals the agency ignored nine automated alerts and took 48 hours to rotate...",
-    "CISA's incident response at a U.S. federal agency uncovered gaps in EDR alert triage, credential hygiene, and network segmentation — three lessons for all defenders."
+    "CISA's postmortem on a GitHub leak exposing 844 MB of internal data, including AWS GovCloud keys, reveals the agency ignored nine automated alerts and took 48 hours to rotate..."
   ],
-  "sources_hash": "b88a6289be375943"
+  "sources_hash": "4c97289ca55f77c9"
 }

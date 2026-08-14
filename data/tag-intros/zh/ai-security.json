@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "intro": "技术与网络安全领域在2026年4月至8月期间记录的68起ai-security相关事件中承受了主要冲击，关键基础设施、政府及金融服务部门也在全球范围内受到影响，包括美国和中国。威胁行为者Claude Mythos和OpenClaw在这些活动中被观察到。高危漏洞占据主导，其中以CVE-2026-5760（CVSS 9.8）和CVE-2026-5752（CVSS 9.3）为首，此外还有CVE-2026-44339、CVE-2026-44567和CVE-2026-45303。报告期内共记录32起高危和9起严重级别事件，另有14起信息性事件和6起中危事件。",
-  "sources_hash": "0beb4e07aba9774b",
-  "source_intro_hash": "36e5711752cb4680",
+  "intro": "2026年4月至8月期间，全球科技与网络安全行业承受了69起AI安全事件的冲击，政府、关键基础设施及金融服务领域同样受到影响。威胁行为者Claude Mythos和OpenClaw在这些活动中均有出现。高危问题占据主导，包括CVE-2026-5760（CVSS 9.8）和CVE-2026-5752（CVSS 9.3），以及CVE-2026-44339、CVE-2026-44567和CVE-2026-45303。影响范围覆盖美国、中国及更广泛的北美地区，共记录32项高危和9项严重发现。",
+  "sources_hash": "5b86e16785e99bce",
+  "source_intro_hash": "ffeb175b1f5fd0e0",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-08T04:11:07.189Z",
+  "generated_at": "2026-08-14T04:48:13.533Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

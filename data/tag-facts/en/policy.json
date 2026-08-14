@@ -1,22 +1,24 @@
 {
   "tag": "policy",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-07-02"
+    "latest": "2026-08-13"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "government",
-    "technology",
     "telecommunications",
+    "technology",
     "legal",
     "public-sector"
   ],
   "top_regions": [
     "United states",
+    "EU",
+    "Germany",
     "Global"
   ],
   "severity_mix": {
@@ -24,9 +26,9 @@
     "informational": 6
   },
   "recent_excerpts": [
+    "Germany's cabinet approved a 732-page bill granting the BND and BfV active cyber powers — hacking foreign systems, sabotaging supply chains, and domestic disinformation — the...",
     "A new academic paper warns policymakers are reframing issues from misinformation to antitrust as cybersecurity threats, risking oversimplified solutions and eroded public trust.",
-    "The FCC extended the deadline for banning software updates on foreign-made routers from March 2027 to January 2029, citing public interest concerns and industry pushback.",
-    "Anthropic's Claude AI told Senator Bernie Sanders that unregulated corporate data collection poses a greater privacy threat than government surveillance, highlighting risks from data brokers and the n"
+    "The FCC extended the deadline for banning software updates on foreign-made routers from March 2027 to January 2029, citing public interest concerns and industry pushback."
   ],
-  "sources_hash": "7ec33cedd910503f"
+  "sources_hash": "6ecbf03023f3f5bd"
 }

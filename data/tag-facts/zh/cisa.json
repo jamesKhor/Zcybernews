@@ -1,7 +1,7 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-08-13"
@@ -35,8 +35,8 @@
   ],
   "top_sectors": [
     "government",
-    "critical infrastructure",
     "technology",
+    "critical infrastructure",
     "defense",
     "aerospace"
   ],
@@ -52,9 +52,9 @@
     "critical": 3
   },
   "recent_excerpts": [
+    "在 Black Hat USA 2026 上，官员和研究人员警告 AI 驱动的漏洞发现超越了防御。",
     "CISA 给联邦机构直到 8 月 25 日修补 CVE-2026-68820，这是一个 Winsock 权限提升漏洞，被朝鲜的 Lazarus 在 Operation Dream Job 中利用。",
-    "CISA 对 GitHub 泄露事件的事后分析暴露了 844 MB 的内部数据，包括 AWS GovCloud 密钥，揭示该机构忽略了九个自动警报，并在 48 小时后才进行轮换...",
-    "CISA 和 FBI 联合咨询详细描述了 LummaC2 信息窃取者的 TTPs 和 IOCs：恶意软件从被入侵的网络中窃取凭证、加密钱包和会话数据。"
+    "CISA 对 GitHub 泄露事件的事后分析暴露了 844 MB 的内部数据，包括 AWS GovCloud 密钥，揭示该机构忽略了九个自动警报，并在 48 小时后才进行轮换..."
   ],
-  "sources_hash": "5b61c3ca9962d354"
+  "sources_hash": "eb593fc0981253c6"
 }
