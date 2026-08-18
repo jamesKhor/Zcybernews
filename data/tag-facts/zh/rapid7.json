@@ -1,10 +1,10 @@
 {
   "tag": "rapid7",
   "locale": "zh",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-07-28"
+    "latest": "2026-08-17"
   },
   "top_actors": [
     "ClickFix",
@@ -33,16 +33,18 @@
     }
   ],
   "top_sectors": [
+    "enterprise",
     "financial services",
     "government",
     "technology",
-    "cybersecurity",
-    "enterprise"
+    "banking"
   ],
   "top_regions": [
     "Global",
+    "Egypt",
     "Europe",
-    "North america"
+    "Kenya",
+    "Nigeria"
   ],
   "severity_mix": {
     "high": 4,
@@ -50,9 +52,9 @@
     "informational": 5
   },
   "recent_excerpts": [
+    "Rapid7 在埃及、尼日利亚、南非、肯尼亚扩大 StarLink 合作伙伴关系，但警告更多的技术不会修复安全运营 —— 团队缺乏时间、背景和专业能力。",
     "Rapid7 的新 MDR 模型将暴露情报连接到检测工作流程，使用 AI 代理自动化证据收集，同时保持人类分析师对最终的控制权...",
-    "Rapid7 MDR 发现了一个暴露的服务器，有1,048个工件 — LNK 诱饵，WebDAV 脚本，CVE-2025-33053 测试 — 揭示攻击者使用生成性AI来系统化恶意软件交付。",
-    "Rapid7 获得访问 Anthropic 的 Project Glasswing 和 Claude Mythos Preview 的权限，以探索前沿 AI 在防御性安全工作流程中的应用，包括漏洞验证和..."
+    "Rapid7 MDR 发现了一个暴露的服务器，有1,048个工件 — LNK 诱饵，WebDAV 脚本，CVE-2025-33053 测试 — 揭示攻击者使用生成性AI来系统化恶意软件交付。"
   ],
-  "sources_hash": "c1cef30250c903b3"
+  "sources_hash": "55a674a7848e9dcf"
 }

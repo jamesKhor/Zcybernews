@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 41,
+  "count": 42,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-12"
+    "latest": "2026-08-18"
   },
   "top_actors": [
     "ShinyHunters",
@@ -27,13 +27,13 @@
     "France"
   ],
   "severity_mix": {
-    "high": 34,
+    "high": 35,
     "medium": 6
   },
   "recent_excerpts": [
+    "SafePal确认一起泄露事件，影响近40,000名在2025年3月至2026年4月期间订购硬件钱包的客户，暴露了姓名、电子邮件和地址，使它们面临网络钓鱼风险。",
     "英国的ACRO刑事记录办公室在三次违规暴露了11,000人的数据后受到批评，包括家庭暴力受害者，由于未读的防病毒警报和...",
-    "Analog Devices 向 SEC 披露称，6月份有入侵者从其网络中窃取了文件，目前范围尚不明确。",
-    "斯柯达汽车在攻击者利用其电子商务门户的漏洞后披露了数据泄露，窃取了客户的姓名、地址和密码哈希。"
+    "Analog Devices 向 SEC 披露称，6月份有入侵者从其网络中窃取了文件，目前范围尚不明确。"
   ],
-  "sources_hash": "1331de712b1ff366"
+  "sources_hash": "ff0eca17e91f6fd9"
 }

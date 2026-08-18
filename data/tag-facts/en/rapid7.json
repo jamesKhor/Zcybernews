@@ -1,10 +1,10 @@
 {
   "tag": "rapid7",
   "locale": "en",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-07-28"
+    "latest": "2026-08-17"
   },
   "top_actors": [
     "ClickFix",
@@ -33,16 +33,18 @@
     }
   ],
   "top_sectors": [
+    "enterprise",
     "financial services",
     "government",
     "technology",
-    "cybersecurity",
-    "enterprise"
+    "banking"
   ],
   "top_regions": [
     "Global",
+    "Egypt",
     "Europe",
-    "North america"
+    "Kenya",
+    "Nigeria"
   ],
   "severity_mix": {
     "high": 4,
@@ -50,9 +52,9 @@
     "informational": 5
   },
   "recent_excerpts": [
+    "Rapid7 expands StarLink partnership across Egypt, Nigeria, South Africa, Kenya, but warns more tech won't fix security ops — teams lack time, context, and specialist capacity.",
     "Rapid7's new MDR model connects exposure intelligence to detection workflows, using AI agents to automate evidence gathering while keeping human analysts in charge of final...",
-    "Rapid7 MDR found an exposed server with 1,048 artifacts — LNK lures, WebDAV scripts, CVE-2025-33053 tests — revealing attackers using generative AI to systematize malware delivery.",
-    "Rapid7 gains access to Anthropic's Project Glasswing and Claude Mythos Preview to explore frontier AI for defensive security workflows, including vulnerability validation and..."
+    "Rapid7 MDR found an exposed server with 1,048 artifacts — LNK lures, WebDAV scripts, CVE-2025-33053 tests — revealing attackers using generative AI to systematize malware delivery."
   ],
-  "sources_hash": "b83f506b4335ca05"
+  "sources_hash": "19b330dc4b0f33f2"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "intro": "在2026年4月12日至8月12日期间，ZCyberNews记录了43起数据泄露事件，其中36起被评为高严重性，6起为中等严重性。ShinyHunters、Cl0p和ExfilSquad是这些案件中最常被观察到的行为者。受影响行业包括政府、医疗、教育、零售和技术领域，报告的影响范围涵盖北美、欧洲、美国、法国及全球业务。该档案覆盖了四个月内披露的泄露事件，反映了按行为者、行业和地区追踪的事件分布情况。",
-  "sources_hash": "1331de712b1ff366",
-  "source_intro_hash": "6d3adb4febb33263",
+  "intro": "2026年4月12日至8月18日期间，ZCyberNews报道了44起数据泄露事件，其中37起被评为高严重性，6起为中等严重性。ShinyHunters、Cl0p和ExfilSquad是观察到的行为者之一。受影响行业包括政府、医疗、教育、零售和技术领域，报告覆盖北美、欧洲、美国和法国。该档案记录了这些地区和行业在集中活动期内的状况，反映了这四个月窗口期内记录的各种暴露情况。",
+  "sources_hash": "ff0eca17e91f6fd9",
+  "source_intro_hash": "ccee281bb07a7cc5",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-13T04:51:49.969Z",
+  "generated_at": "2026-08-18T03:45:45.114Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

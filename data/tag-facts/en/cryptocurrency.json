@@ -1,10 +1,10 @@
 {
   "tag": "cryptocurrency",
   "locale": "en",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-01"
+    "latest": "2026-08-18"
   },
   "top_actors": [
     "Lazarus Group",
@@ -31,14 +31,14 @@
     "Asia"
   ],
   "severity_mix": {
+    "high": 16,
     "medium": 1,
-    "high": 15,
     "critical": 4
   },
   "recent_excerpts": [
+    "SafePal confirms a breach affecting nearly 40,000 customers who ordered hardware wallets between March 2025 and April 2026, exposing names, emails, and addresses to phishing risks.",
     "A California man received a 63-month prison sentence for laundering cryptocurrency stolen by a cybercriminal ring that defrauded victims of approximately $260 million.",
-    "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
-    "Apple removed 45 malicious cryptocurrency apps from its App Store after they stole recovery phrases and private keys from users, mimicking legitimate wallets like MetaMask and Coinbase."
+    "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…"
   ],
-  "sources_hash": "8427e855ea6e6277"
+  "sources_hash": "0a42b0d42ee34b18"
 }

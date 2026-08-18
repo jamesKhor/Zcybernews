@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "count": 63,
+  "count": 64,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-08-04"
+    "latest": "2026-08-18"
   },
   "top_actors": [
     "Silver Fox",
@@ -31,9 +31,9 @@
   "top_sectors": [
     "financial services",
     "government",
+    "cryptocurrency",
     "hospitality",
-    "technology",
-    "cryptocurrency"
+    "technology"
   ],
   "top_regions": [
     "Global",
@@ -43,13 +43,13 @@
     "Russia"
   ],
   "severity_mix": {
-    "high": 55,
+    "high": 56,
     "medium": 8
   },
   "recent_excerpts": [
+    "SafePal confirms a breach affecting nearly 40,000 customers who ordered hardware wallets between March 2025 and April 2026, exposing names, emails, and addresses to phishing risks.",
     "Kaspersky details a cloud-based AitM phishing campaign abusing GitHub Pages and Cloudflare Workers to bypass MFA via service workers and Ultraviolet proxy.",
-    "Resident NGO uncovers a Telegram phishing campaign targeting an exiled Belarusian activist and users in Russia and Kazakhstan using individualized links and device fingerprinting.",
-    "Signal introduced new in-app confirmations and warnings to counter phishing attacks linked to Russian state hackers who abused the Linked Device feature to hijack high-profile..."
+    "Resident NGO uncovers a Telegram phishing campaign targeting an exiled Belarusian activist and users in Russia and Kazakhstan using individualized links and device fingerprinting."
   ],
-  "sources_hash": "48323076514ed068"
+  "sources_hash": "6500fd5830d4bc11"
 }

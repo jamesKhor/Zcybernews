@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "zh",
-  "intro": "金融服务和政府机构在2026年4月至8月期间记录的63篇ZCyberNews文章中，成为一波网络钓鱼浪潮的主要受害者。威胁行为者Silver Fox、AccountDumpling和Bluekit被观察到针对全球、拉丁美洲、美国、加拿大和俄罗斯目标的攻击活动。技术报告将相关活动与CVE-2023-22515、CVE-2023-34048、CVE-2023-46805、CVE-2023-4966和CVE-2024-21893关联起来。报道涵盖酒店、技术和加密货币行业，包括55起高严重性和8起中等严重性事件，反映出对凭证窃取和初始访问的持续运营重点。",
-  "sources_hash": "7aa3130137df0fa9",
-  "source_intro_hash": "6e3907e59beb1756",
+  "intro": "在2026年4月至8月期间报告的64起网络钓鱼事件中，金融服务和政府组织是主要目标，其中大多数被评定为高严重性。威胁行为者Silver Fox、AccountDumpling和Bluekit在这些活动中被观察到，受影响地区包括拉丁美洲、美国、加拿大和俄罗斯。利用行为频繁涉及CVE-2023-22515、CVE-2023-34048、CVE-2023-46805、CVE-2023-4966和CVE-2024-21893。加密货币、酒店业和技术行业也面临风险，其余八起事件被评定为中等严重性。",
+  "sources_hash": "32e4bbff8c576241",
+  "source_intro_hash": "b2f1c4d0dc57484b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-05T05:47:29.187Z",
+  "generated_at": "2026-08-18T03:45:46.906Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

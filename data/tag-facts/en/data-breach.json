@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 43,
+  "count": 44,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-12"
+    "latest": "2026-08-18"
   },
   "top_actors": [
     "ShinyHunters",
@@ -27,13 +27,13 @@
     "France"
   ],
   "severity_mix": {
-    "high": 36,
+    "high": 37,
     "medium": 6
   },
   "recent_excerpts": [
+    "SafePal confirms a breach affecting nearly 40,000 customers who ordered hardware wallets between March 2025 and April 2026, exposing names, emails, and addresses to phishing risks.",
     "UK's ACRO Criminal Records Office reprimanded after three breaches exposed data of 11,000 people, including domestic violence victims, due to unread antivirus alerts and an...",
-    "Analog Devices disclosed to the SEC that intruders exfiltrated files from its networks in June, with scope still unknown.",
-    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide."
+    "Analog Devices disclosed to the SEC that intruders exfiltrated files from its networks in June, with scope still unknown."
   ],
-  "sources_hash": "5a1af330ee66a265"
+  "sources_hash": "871edf2499e7712c"
 }
