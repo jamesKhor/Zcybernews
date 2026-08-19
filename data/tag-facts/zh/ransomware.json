@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 57,
+  "count": 58,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-31"
+    "latest": "2026-08-18"
   },
   "top_actors": [
     "LockBit",
@@ -32,28 +32,28 @@
   ],
   "top_sectors": [
     "healthcare",
-    "multiple",
     "manufacturing",
-    "government",
-    "financial services"
+    "multiple",
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "Global",
     "North america",
-    "United states",
     "Europe",
+    "United states",
     "Turkey"
   ],
   "severity_mix": {
-    "high": 41,
+    "high": 42,
     "critical": 6,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "瑞士检察官寻求对一名与LockerGoga、MegaCortex和Nefilim针对Stadler Rail等的攻击有关的乌克兰开发者判处12年徒刑，损失高达1.6亿美元。",
     "Analog Devices 向 SEC 披露称，6月份有入侵者从其网络中窃取了文件，目前范围尚不明确。",
-    "卡巴斯基剖析 GenieLocker，这是来自 Toy Ghouls 组织的定制勒索软件，自 2026 年 3 月起针对俄罗斯制造企业，在攻击中针对 Windows、Linux 和 ESXi。",
-    "拉脱维亚的LVM表示，44 GB的数据泄露，三分之二的客户在归因于外国财务动机团体的勒索软件攻击后仍无法访问系统。"
+    "卡巴斯基剖析 GenieLocker，这是来自 Toy Ghouls 组织的定制勒索软件，自 2026 年 3 月起针对俄罗斯制造企业，在攻击中针对 Windows、Linux 和 ESXi。"
   ],
-  "sources_hash": "dbf4561374e6d73d"
+  "sources_hash": "1ebe517c54359042"
 }

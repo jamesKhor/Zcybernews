@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "LockBit在ZCyberNews的58篇文章中出现频率最高，The Gentlemen和ShinyHunters也获得了报道。报道时间跨度为2026年4月12日至7月31日，涉及CVE-2026-1731、CVE-2026-34197、CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。受影响行业包括医疗保健、制造业、政府和教育，事件发生在北美、美国、欧洲和土耳其。报道包含42项高严重性和6项严重事件，另有1项中等和2项信息性报告。",
-  "sources_hash": "dbf4561374e6d73d",
-  "source_intro_hash": "5bf6865e2eb35d12",
+  "intro": "LockBit领衔ZCyberNews在2026年4月12日至8月18日期间发布的59篇勒索软件文章报道，The Gentlemen和ShinyHunters也频繁被提及。被引用最多的漏洞是CVE-2026-1731，其CVSS评分为9.8，此外还有CVE-2026-34197、CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。报道覆盖了医疗保健、制造业、多个行业、金融服务和政府领域，事件记录遍布全球，包括北美、欧洲、美国和土耳其。严重程度分布包括43项高危、6项严重、1项中危和2项信息级评级。",
+  "sources_hash": "1ebe517c54359042",
+  "source_intro_hash": "ade0b2acf764aaa5",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-31T06:15:37.233Z",
+  "generated_at": "2026-08-19T03:47:45.092Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

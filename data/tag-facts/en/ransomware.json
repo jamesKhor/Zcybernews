@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 58,
+  "count": 59,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-31"
+    "latest": "2026-08-18"
   },
   "top_actors": [
     "LockBit",
@@ -32,28 +32,28 @@
   ],
   "top_sectors": [
     "healthcare",
-    "multiple",
     "manufacturing",
-    "government",
-    "education"
+    "multiple",
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "Global",
     "North america",
-    "United states",
     "Europe",
+    "United states",
     "Turkey"
   ],
   "severity_mix": {
-    "high": 42,
+    "high": 43,
     "critical": 6,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "Swiss prosecutors seek 12 years for a Ukrainian developer tied to LockerGoga, MegaCortex, and Nefilim attacks on Stadler Rail and others, with $160M in losses.",
     "Analog Devices disclosed to the SEC that intruders exfiltrated files from its networks in June, with scope still unknown.",
-    "Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group, targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms since March 2026.",
-    "Latvia's LVM says 44 GB of data leaked, two-thirds of customers still locked out of systems after ransomware attack attributed to a foreign financially motivated group."
+    "Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group, targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms since March 2026."
   ],
-  "sources_hash": "47660e2cb5fbd4df"
+  "sources_hash": "9a43b7627ed15c2c"
 }
