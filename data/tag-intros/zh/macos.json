@@ -1,10 +1,10 @@
 {
   "tag": "macos",
   "locale": "zh",
-  "intro": "根据2026年4月10日至7月31日期间发布的13篇文章，ZCyberNews对macOS的报道记录了九起高危事件、一起严重事件和两起中危事件。Lazarus Group、ClickFix和Sapphire Sleet被观察到在影响技术、加密货币、人工智能、金融以及全球、亚洲、欧洲、北美和南亚地区个人用户的活动中出现。关键漏洞包括CVE-2024-54529和CVE-2025-31235。这些报告突出了定向利用和社会工程学策略，受影响行业和地区反映了该时期针对macOS攻击的广泛覆盖范围。",
-  "sources_hash": "25bccfc83fb822e2",
-  "source_intro_hash": "2011bace253f4503",
+  "intro": "2026年4月至8月期间，ZCyberNews共发布14篇标记为macOS的文章，时间跨度从4月10日至8月19日。报道记录了Lazarus Group、ClickFix和Sapphire Sleet的活动，并提供了关于CVE-2026-65400（CVSS 9.8）、CVE-2024-54529和CVE-2025-31235的技术细节。报道聚焦于技术、加密货币、人工智能、金融以及全球、亚洲、欧洲、北美和南亚地区的个人用户。严重程度分布包括两起危急事件和九起高危事件，另有两起被评为中危。",
+  "sources_hash": "dd73ba96d6a63c2f",
+  "source_intro_hash": "05fc4eef42dad212",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-01T05:56:29.643Z",
+  "generated_at": "2026-08-20T03:47:32.312Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

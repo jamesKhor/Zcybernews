@@ -1,10 +1,10 @@
 {
   "tag": "authentication-bypass",
   "locale": "zh",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-06-21"
+    "latest": "2026-08-19"
   },
   "top_actors": [],
   "top_cves": [
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
-    "critical": 8,
+    "critical": 9,
     "high": 7,
     "medium": 3
   },
   "recent_excerpts": [
+    "CISA 在 8 月 18 日将其 KEV 目录中加入了 CVE-2026-65400，这是一个 9.8-CVSS macOS 认证绕过漏洞，确认正在被积极利用。目前还没有补丁。",
     "CVE-2019-25763 (CVSS 9.8) 允许未经认证的攻击者通过精心构造的 POST 请求来劫持 WordPress Ultimate Addons for Beaver Builder 1.2.4.1 中的管理员会话。",
-    "CVE-2026-20223 (CVSS 10.0): 未经认证的攻击者可以访问思科安全工作负载中的内部REST API，并具有站点管理员权限。无需认证。",
-    "Open WebUI 修复了 CVE-2026-45314（SVG XSS）、CVE-2026-45303（iframe脚本注入）和 CVE-2026-44567（待定角色认证绕过）——全部在自托管的AI平台上。"
+    "CVE-2026-20223 (CVSS 10.0): 未经认证的攻击者可以访问思科安全工作负载中的内部REST API，并具有站点管理员权限。无需认证。"
   ],
-  "sources_hash": "e8461acf7f7f3056"
+  "sources_hash": "2fc25400877a7970"
 }

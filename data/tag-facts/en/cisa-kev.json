@@ -1,16 +1,20 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-08-04"
+    "latest": "2026-08-19"
   },
   "top_actors": [],
   "top_cves": [
     {
       "id": "CVE-2026-48907",
       "cvss": 10
+    },
+    {
+      "id": "CVE-2026-65400",
+      "cvss": 9.8
     },
     {
       "id": "CVE-2026-42271",
@@ -23,10 +27,6 @@
     {
       "id": "CVE-2026-18577",
       "cvss": 8.2
-    },
-    {
-      "id": "CVE-2024-57728",
-      "cvss": 7.2
     }
   ],
   "top_sectors": [
@@ -44,14 +44,14 @@
     "Europe"
   ],
   "severity_mix": {
+    "critical": 3,
     "high": 4,
-    "critical": 2,
     "medium": 2
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-65400, a 9.8-CVSS macOS authentication bypass, to its KEV catalog on August 18, confirming active exploitation. No patch yet.",
     "CISA adds CVE-2026-18577 (CVSS 8.2) to KEV after active exploitation; incomplete patch for CVE-2026-18556 in N-able N-central. Patch now.",
-    "CISA warns of active exploitation of CVE-2026-48907, a CVSS 10.0 improper access control flaw in Widget Factory Joomla Content Editor (JCE) allowing unauthenticated PHP code...",
-    "CISA added CVE-2026-42271 (CVSS 8.7) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against BerriAI LiteLLM deployments."
+    "CISA warns of active exploitation of CVE-2026-48907, a CVSS 10.0 improper access control flaw in Widget Factory Joomla Content Editor (JCE) allowing unauthenticated PHP code..."
   ],
-  "sources_hash": "387d6385d0adcff4"
+  "sources_hash": "667a74197c89d722"
 }

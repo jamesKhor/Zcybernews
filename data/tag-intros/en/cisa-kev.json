@@ -1,9 +1,9 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "intro": "Government and technology organizations across North America and the EU featured prominently in coverage of the cisa-kev tag, which tracked eight articles between April and August 2026. The catalog included four high-severity and two critical vulnerabilities, led by CVE-2026-48907 with a CVSS score of 10, alongside CVE-2026-42271, CVE-2026-18556, CVE-2026-18577, and CVE-2024-57728. Affected sectors spanned government, technology, media, enterprise, and enterprise software, with global reach centered on the United States and Europe. Reporting reflected a mix of two medium-severity items among the documented cases.",
-  "sources_hash": "387d6385d0adcff4",
+  "intro": "Government and technology organisations across the United States and Europe have been the primary targets in nine articles between April and August 2026, with CISA’s Known Exploited Vulnerabilities catalogue central to coverage. The most severe cases include CVE-2026-48907, rated CVSS 10, alongside CVE-2026-65400 at 9.8, and CVE-2026-42271 at 8.7. Additional high-severity flaws, CVE-2026-18556 and CVE-2026-18577, both scored 8.2, affected enterprise software. The reporting spans three critical, four high, and two medium severity vulnerabilities, with global reach concentrated in North America and the EU.",
+  "sources_hash": "667a74197c89d722",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-05T05:47:16.758Z",
+  "generated_at": "2026-08-20T03:47:23.746Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

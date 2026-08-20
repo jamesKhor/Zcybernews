@@ -1,10 +1,10 @@
 {
   "tag": "authentication-bypass",
   "locale": "en",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-06-21"
+    "latest": "2026-08-19"
   },
   "top_actors": [],
   "top_cves": [
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
-    "critical": 8,
+    "critical": 9,
     "high": 7,
     "medium": 3
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-65400, a 9.8-CVSS macOS authentication bypass, to its KEV catalog on August 18, confirming active exploitation. No patch yet.",
     "CVE-2019-25763 (CVSS 9.8) allows unauthenticated attackers to hijack admin sessions in WordPress Ultimate Addons for Beaver Builder 1.2.4.1 via a crafted POST request to...",
-    "CVE-2026-20223 (CVSS 10.0): Unauthenticated attackers can access internal REST APIs in Cisco Secure Workload with Site Admin privileges. No authentication required.",
-    "Open WebUI fixes CVE-2026-45314 (SVG XSS), CVE-2026-45303 (iframe script injection), and CVE-2026-44567 (pending role auth bypass) — all in self-hosted AI platform."
+    "CVE-2026-20223 (CVSS 10.0): Unauthenticated attackers can access internal REST APIs in Cisco Secure Workload with Site Admin privileges. No authentication required."
   ],
-  "sources_hash": "fe0e0e21cf7d0d58"
+  "sources_hash": "097de1894f3d33dc"
 }

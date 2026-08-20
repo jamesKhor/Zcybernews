@@ -1,9 +1,9 @@
 {
   "tag": "macos",
   "locale": "en",
-  "intro": "From 13 articles published between April 10 and July 31, 2026, ZCyberNews coverage of macOS documents nine high-severity incidents, one critical, and two medium. Lazarus Group, ClickFix, and Sapphire Sleet were observed in campaigns affecting technology, cryptocurrency, artificial-intelligence, finance, and individual users across Global, Asia, Europe, North America, and South Asia. Key vulnerabilities include CVE-2024-54529 and CVE-2025-31235. These reports highlight targeted exploitation and social engineering tactics, with the affected sectors and regions reflecting the broad reach of macOS-focused attacks during this period.",
-  "sources_hash": "dd3fc5fd6c1a6d26",
+  "intro": "Between April and August 2026, ZCyberNews published 14 articles tagged macOS, spanning April 10 to August 19. Coverage documented activity by Lazarus Group, ClickFix, and Sapphire Sleet, with technical detail on CVE-2026-65400 (CVSS 9.8), CVE-2024-54529, and CVE-2025-31235. Reporting focused on technology, cryptocurrency, artificial-intelligence, finance, and individual users across Global, Asia, Europe, North America, and South Asia. The severity mix included two critical and nine high-severity incidents, with two rated medium.",
+  "sources_hash": "76a328aba4d15827",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-01T05:56:23.816Z",
+  "generated_at": "2026-08-20T03:47:21.673Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

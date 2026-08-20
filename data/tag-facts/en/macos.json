@@ -1,10 +1,10 @@
 {
   "tag": "macos",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-07-31"
+    "latest": "2026-08-19"
   },
   "top_actors": [
     "Lazarus Group",
@@ -12,6 +12,10 @@
     "Sapphire Sleet"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-65400",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2024-54529"
     },
@@ -34,14 +38,14 @@
     "South asia"
   ],
   "severity_mix": {
+    "critical": 2,
     "high": 9,
-    "critical": 1,
     "medium": 2
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-65400, a 9.8-CVSS macOS authentication bypass, to its KEV catalog on August 18, confirming active exploitation. No patch yet.",
     "XCSSET v40, a macOS malware targeting Xcode developers, has resurfaced with 17 modules, including a Chrome hijacking backdoor and Telegram trojanizer, after months of dormancy.",
-    "Apple released emergency patches for two zero-days exploited in the wild alongside the beta rollout of end-to-end encrypted RCS messaging for iOS and macOS.",
-    "Attackers abuse Google Ads linking to real claude.ai and shared Claude chats to deliver MacSync infostealer, harvesting browser credentials and Keychain data."
+    "Apple released emergency patches for two zero-days exploited in the wild alongside the beta rollout of end-to-end encrypted RCS messaging for iOS and macOS."
   ],
-  "sources_hash": "dd3fc5fd6c1a6d26"
+  "sources_hash": "76a328aba4d15827"
 }
