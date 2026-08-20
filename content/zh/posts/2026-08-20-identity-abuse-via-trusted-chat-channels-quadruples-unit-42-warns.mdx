@@ -1,0 +1,94 @@
+---
+title: 通过可信聊天渠道的身份滥用增加四倍，Unit 42 警告
+slug: 2026-08-20-identity-abuse-via-trusted-chat-channels-quadruples-unit-42-warns
+date: '2026-08-20'
+excerpt: >-
+  Unit 42 报告称协作工具身份攻击在12个月内增加了四倍，99%的警报与聊天网络钓鱼有关。APT29滥用了 Microsoft Teams
+  联合身份验证进行凭证盗窃。
+category: malware
+tags:
+  - identity-phishing
+  - collaboration-platforms
+  - apt29
+  - microsoft-teams
+  - social-engineering
+  - unit-42
+language: zh
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/communication-channel-identity-risks/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-20-identity-abuse-via-trusted-chat-channels-quadruples-unit-42-warns
+cluster_key: 'topic:identity-abuse-through-trusted-communication'
+source_count: 1
+seo_query_target: Identity Abuse Through Trusted Communication Channels
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals a 4x surge in identity abuse via collaboration tools and a concrete
+  APT29 example.
+seo_meta_promise: >-
+  Details the 4x surge in collaboration-tool identity attacks and the APT29
+  Teams phishing campaign.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - identity-phishing
+  - apt29
+news_sitemap_eligible: true
+featured_image_alt: Chart showing rising collaboration tool alerts over 12 months
+severity: high
+threat_actor: APT29
+threat_actor_origin: Russia
+publish_tier: public
+---
+## 执行摘要
+
+企业协作平台已成为身份滥用的主要途径，Palo Alto Networks Unit 42 报告称，与这些工具相关的恶意活动端点警报在过去12个月中增加了四倍以上。在2026年8月20日发布的分析中，Unit 42 发现，与协作平台相关的**99%的警报**涉及聊天网络钓鱼操作，这表明攻击者越来越多地绕过传统的电子邮件防御，利用用户对经过认证的通信渠道的信任。
+
+对于防御者来说，实际的收获是协作平台不再仅仅是生产力工具——它们是身份攻击面的重要延伸。攻击者使用被泄露的账户、外部联合、访客访问和受信任的第三方关系来执行身份网络钓鱼、冒充、凭证盗窃和社会工程。报告突出了一个具体的例子：APT29 使用被泄露的 Microsoft Teams 账户发送链接到凭证收集页面，滥用外部联合以显得合法。
+
+## 技术分析
+
+由 Bill Batchelor 撰写的 Unit 42 的研究，检查了威胁行为者如何利用受信任的通信渠道在企业和云环境中破坏身份。分析将滥用行为分解为三个入侵阶段，映射到 MITRE ATT&CK 技术：
+
+- **初始访问 – 网络钓鱼 (T1566)：** 通过外部协作渠道进行身份网络钓鱼。攻击者发送看似来自受信任同事或IT部门的消息，通常使用被泄露的账户以增加可信度。
+- **隐蔽性 – 冒充 (T1684.001)：** 攻击者冒充合法平台通知、托管内容或直接消息以避免检测。由于通信通过经过认证的渠道到达，目标比电子邮件更不可疑。
+- **持久性 – 修改认证过程 (T1556)：** 在一次活动中，攻击者移除了 MFA 并通过原生 Slack Webhook 集成导出了特权凭证，建立了持久访问。
+
+报告指出，当协作账户被泄露时，攻击者继承了用户的身份上下文——包括权限、关系和正在进行的对话。这使得恶意请求看起来例行公事，显著提高了社会工程尝试的成功率。
+
+仅关注电子邮件和认证事件的安全控制通常会错过这些活动，因为它们缺乏对经过认证的协作会话的可见性。Unit 42 强调，组织需要监控这些平台内的认证后行为，而不仅仅是登录事件本身。
+
+## 入侵指标
+
+Unit 42 在公共摘要中没有披露具体的 IOC，如 IP 地址、域名或文件哈希值。报告侧重于行为模式而不是静态指标，这些指标在基于身份的攻击中通常是短暂的。防御者应优先监控协作平台内的异常行为，如不寻常的外部联合请求、意外的 MFA 更改或包含链接到外部凭证收集页面的消息。
+
+## 战术、技术与程序
+
+Unit 42 描述的入侵阶段与以下 MITRE ATT&CK 技术一致：
+
+- **T1566 – 网络钓鱼：** 通过外部协作渠道进行身份网络钓鱼以获取初始访问。
+- **T1684.001 – 冒充：** 通过冒充合法平台通知和直接消息来实现隐蔽性。
+- **T1556 – 修改认证过程：** 通过移除 MFA 和通过原生 Webhook 集成导出凭证来实现持久性。
+
+这个顺序值得注意：攻击者首先破坏一个身份（通常是通过网络钓鱼），然后使用该身份冒充受信任的实体，最后修改认证过程以保持访问。这个链条利用了对经过认证的通信渠道的固有信任，使得传统安全工具难以检测。
+
+## 威胁行为者背景
+
+Unit 42 特别提到了 **APT29**（也称为 Cozy Bear），这是一个俄罗斯国家赞助的团体，在 Microsoft Teams 网络钓鱼活动的背景下。在之前的 Unit 42 Insights 文章中，“当 'Hi, This Is IT' 通过 Microsoft Teams 发来时”，观察到该团体使用被泄露的 Teams 账户发送链接到凭证收集页面，滥用外部联合以达到目标。这个例子说明了即使是复杂的行为者也在转向协作平台作为身份破坏的主要途径。
+
+## 缓解措施与建议
+
+Unit 42 建议组织将协作平台视为身份攻击面的一部分。关键的防御措施包括：
+
+- **强认证：** 为所有协作账户强制执行 MFA，但要认识到攻击者可能会尝试移除它——监控 MFA 更改。
+- **认证后活动的可见性：** 部署监控协作会话内行为的安全工具，而不仅仅是登录事件。
+- **审查外部联合和访客访问：** 限制和审计外部联合设置，以防止被泄露账户滥用。
+- **用户意识：** 培训员工验证不寻常的请求，即使它们来自受信任的渠道，特别是那些涉及凭证收集或 MFA 更改的请求。
+
+Palo Alto Networks 的客户可以通过 Cortex XDR、XSIAM 和 Idira 产品获得额外的保护，这些产品提供端点检测和以身份为中心的控制。
+
+## 参考资料
+
+- [通过受信任的通信渠道进行身份滥用 – Unit 42](https://unit42.paloaltonetworks.com/communication-channel-identity-risks/)
+- [当 'Hi, This Is IT' 通过 Microsoft Teams 发来时 – Unit 42 Insights](https://unit42.paloaltonetworks.com/microsoft-teams-phishing-apt29/)

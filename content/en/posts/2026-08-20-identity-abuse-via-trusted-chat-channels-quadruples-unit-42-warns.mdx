@@ -1,0 +1,95 @@
+---
+title: 'Identity Abuse via Trusted Chat Channels Quadruples, Unit 42 Warns'
+slug: 2026-08-20-identity-abuse-via-trusted-chat-channels-quadruples-unit-42-warns
+date: '2026-08-20'
+excerpt: >-
+  Unit 42 reports collaboration-tool identity attacks quadrupled in 12 months,
+  with 99% of alerts tied to chat phishing. APT29 abused Microsoft Teams
+  federation for credential theft.
+category: malware
+tags:
+  - identity-phishing
+  - collaboration-platforms
+  - apt29
+  - microsoft-teams
+  - social-engineering
+  - unit-42
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/communication-channel-identity-risks/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-20-identity-abuse-via-trusted-chat-channels-quadruples-unit-42-warns
+cluster_key: 'topic:identity-abuse-through-trusted-communication'
+source_count: 1
+seo_query_target: Identity Abuse Through Trusted Communication Channels
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals a 4x surge in identity abuse via collaboration tools and a concrete
+  APT29 example.
+seo_meta_promise: >-
+  Details the 4x surge in collaboration-tool identity attacks and the APT29
+  Teams phishing campaign.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - identity-phishing
+  - apt29
+news_sitemap_eligible: true
+featured_image_alt: Chart showing rising collaboration tool alerts over 12 months
+severity: high
+threat_actor: APT29
+threat_actor_origin: Russia
+publish_tier: public
+---
+## Executive Summary
+
+Enterprise collaboration platforms have become a primary vector for identity abuse, with Palo Alto Networks Unit 42 reporting that endpoint alerts for malicious activity associated with these tools more than quadrupled over the past 12 months. In an analysis published August 20, 2026, Unit 42 found that **99% of the alerts** tied to collaboration platforms involved chat phishing operations, indicating that attackers are increasingly bypassing traditional email defenses by exploiting the trust users place in authenticated communication channels.
+
+For defenders, the practical takeaway is that collaboration platforms are no longer just productivity tools — they are a significant extension of the identity attack surface. Attackers are using compromised accounts, external federation, guest access, and trusted third-party relationships to conduct identity phishing, impersonation, credential theft, and social engineering. The report highlights a concrete example: APT29 used compromised Microsoft Teams accounts to send links to credential-harvesting pages, abusing external federation to appear legitimate.
+
+## Technical Analysis
+
+Unit 42's research, authored by Bill Batchelor, examines how threat actors leverage trusted communication channels to compromise identities in enterprise and cloud environments. The analysis breaks down the misuse into three intrusion stages, mapped to MITRE ATT&CK techniques:
+
+- **Initial Access – Phishing (T1566):** Identity phishing through external collaboration channels. Attackers send messages that appear to come from a trusted colleague or IT department, often using compromised accounts to increase credibility.
+- **Stealth – Impersonation (T1684.001):** Attackers impersonate legitimate platform notifications, hosted content, or direct messages to avoid detection. Because the communication arrives through an authenticated channel, targets are less suspicious than they would be with email.
+- **Persistence – Modify Authentication Process (T1556):** In one campaign, attackers removed MFA and exfiltrated privileged credentials through a native Slack webhook integration, establishing persistent access.
+
+The report notes that when a collaboration account is compromised, attackers inherit the user's identity context — including permissions, relationships, and ongoing conversations. This makes malicious requests appear routine, significantly increasing the success rate of social engineering attempts.
+
+Security controls that focus solely on email and authentication events often miss this activity because they lack visibility into authenticated collaboration sessions. Unit 42 emphasizes that organizations need to monitor post-authentication behavior within these platforms, not just the login event itself.
+
+## Indicators of Compromise
+
+Unit 42 did not disclose specific IOCs such as IP addresses, domains, or file hashes in the public summary. The report focuses on behavioral patterns rather than static indicators, which are often ephemeral in identity-based attacks. Defenders should prioritize monitoring for anomalous behavior within collaboration platforms, such as unusual external federation requests, unexpected MFA changes, or messages containing links to external credential-harvesting pages.
+
+## Tactics, Techniques & Procedures
+
+The intrusion stages described by Unit 42 align with the following MITRE ATT&CK techniques:
+
+- **T1566 – Phishing:** Initial access via identity phishing through external collaboration channels.
+- **T1684.001 – Impersonation:** Stealth through impersonation of legitimate platform notifications and direct messages.
+- **T1556 – Modify Authentication Process:** Persistence via MFA removal and credential exfiltration through native webhook integrations.
+
+The sequencing is notable: attackers first compromise an identity (often via phishing), then use that identity to impersonate a trusted entity, and finally modify authentication processes to maintain access. This chain exploits the inherent trust in authenticated communication channels, making detection difficult for traditional security tools.
+
+## Threat Actor Context
+
+Unit 42 specifically references **APT29** (also known as Cozy Bear), a Russian state-sponsored group, in the context of a Microsoft Teams phishing campaign. In a prior Unit 42 Insights article, "When 'Hi, This Is IT' Comes Through Microsoft Teams," the group was observed using compromised Teams accounts to send links to credential-harvesting pages, abusing external federation to reach targets. This example illustrates how even sophisticated actors are pivoting to collaboration platforms as a primary vector for identity compromise.
+
+## Mitigations & Recommendations
+
+Unit 42 recommends that organizations treat collaboration platforms as part of the identity attack surface. Key defensive measures include:
+
+- **Strong authentication:** Enforce MFA for all collaboration accounts, but recognize that attackers may attempt to remove it — monitor for MFA changes.
+- **Visibility into post-authentication activity:** Deploy security tools that monitor behavior within collaboration sessions, not just login events.
+- **Review external federation and guest access:** Limit and audit external federation settings to prevent abuse by compromised accounts.
+- **User awareness:** Train employees to verify unusual requests, even when they come from trusted channels, especially those involving credential harvesting or MFA changes.
+
+Palo Alto Networks customers are offered additional protection through Cortex XDR, XSIAM, and Idira products, which provide endpoint detection and identity-focused controls.
+
+## References
+
+- [Identity Abuse Through Trusted Communication Channels – Unit 42](https://unit42.paloaltonetworks.com/communication-channel-identity-risks/)
+- [When 'Hi, This Is IT' Comes Through Microsoft Teams – Unit 42 Insights](https://unit42.paloaltonetworks.com/microsoft-teams-phishing-apt29/)
