@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "intro": "本档案汇集了2026年4月22日至2026年8月6日期间发布的19篇标记为`unit-42`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的聚焦视图。观察到的行为者引用包括CL-STA-1062、Gremlin Stealer和LockBit，仅在底层文章元数据支持该归属时才予以呈现。受影响范围信号强调技术、软件开发和全球、中美洲及北美洲的企业领域，帮助读者在不超过档案数据的前提下比较暴露模式。严重性覆盖包括2篇严重和15篇高危报告。",
-  "sources_hash": "83b376cfbe2ce60c",
-  "source_intro_hash": "acfc6904aeac44a2",
+  "intro": "从2026年4月22日至8月20日，ZCyberNews在Unit 42标签下发布了20篇文章，涵盖16起高严重性和2起危急事件。报道将APT29、CL-STA-1062和Gremlin Stealer识别为不同的威胁行为者。受影响行业包括技术、软件开发、企业、金融服务和政府，影响范围遍及全球，具体事件发生在中美洲、北美洲、南美洲和南亚。",
+  "sources_hash": "e8c4a7d1d58aa1c3",
+  "source_intro_hash": "fcc04becf31f73f7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-07T04:55:39.538Z",
+  "generated_at": "2026-08-21T03:51:14.637Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

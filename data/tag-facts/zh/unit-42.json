@@ -1,15 +1,15 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "count": 19,
+  "count": 20,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-08-06"
+    "latest": "2026-08-20"
   },
   "top_actors": [
+    "APT29",
     "CL-STA-1062",
-    "Gremlin Stealer",
-    "LockBit"
+    "Gremlin Stealer"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,13 @@
     "South asia"
   ],
   "severity_mix": {
-    "high": 15,
+    "high": 16,
     "critical": 2
   },
   "recent_excerpts": [
+    "Unit 42 报告称协作工具身份攻击在12个月内增加了四倍，99%的警报与聊天网络钓鱼有关。APT29滥用了 Microsoft Teams 联合身份验证进行凭证盗窃。",
     "Unit 42报告token jacking：攻击者窃取AI API密钥在灰色市场转移站转售访问权限，给开发者造成惊人的经济损失。",
-    "Unit 42 发现 45.32% 的 C2 活跃恶意软件绕过 DNS 直接与 IP 连接。了解 ZT-IP 执行如何阻止这些隐蔽威胁。",
-    "Unit 42的NOVA系统在两个月内发现了3,915个开源软件项目中的14,090个新漏洞 —— 其中40%为高或严重级别 —— 将补丁窗口压缩至接近零。"
+    "Unit 42 发现 45.32% 的 C2 活跃恶意软件绕过 DNS 直接与 IP 连接。了解 ZT-IP 执行如何阻止这些隐蔽威胁。"
   ],
-  "sources_hash": "83b376cfbe2ce60c"
+  "sources_hash": "e8c4a7d1d58aa1c3"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "intro": "2026年4月至7月期间，ZCyberNews共报道了59起社会工程学事件，其中ClickFix、Lazarus Group和UNC6692是最常被观测到的威胁行为体。被利用的关键漏洞包括CVE-2023-36036、CVE-2025-24054、CVE-2025-33053和CVE-2026-21513，而金融服务、加密货币、科技和政府行业遭受的攻击最为严重。严重程度分布为：45份高危报告、11份中危报告、2份信息性报告和1份严重报告，影响范围覆盖北美、欧洲、美国、澳大利亚及全球各地。",
-  "sources_hash": "cdc8c68745c5ef4d",
-  "source_intro_hash": "d90f835ccc570d09",
+  "intro": "ClickFix、Lazarus Group和UNC6692是2026年4月至8月期间记录的60起社会工程学事件中最常被观察到的威胁行为者。覆盖范围集中于CVE-2023-36036、CVE-2025-24054、CVE-2025-33053和CVE-2026-21513，攻击波及金融服务、加密货币、技术和政府行业。报告范围涵盖全球、北美、欧洲、美国和澳大利亚，其中高危案例46起、中危11起、信息类2起、严重1起。这些活动依赖欺骗性诱饵来入侵用户，Lazarus Group和UNC6692在档案中各自作为独立且不同的行为者出现。",
+  "sources_hash": "d4d4c433d01e586c",
+  "source_intro_hash": "484e7d03cbf6afe2",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-21T05:53:09.359Z",
+  "generated_at": "2026-08-21T03:51:13.037Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

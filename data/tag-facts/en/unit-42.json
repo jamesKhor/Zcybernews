@@ -1,15 +1,15 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 19,
+  "count": 20,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-08-06"
+    "latest": "2026-08-20"
   },
   "top_actors": [
+    "APT29",
     "CL-STA-1062",
-    "Gremlin Stealer",
-    "LockBit"
+    "Gremlin Stealer"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,13 @@
     "South asia"
   ],
   "severity_mix": {
-    "high": 15,
+    "high": 16,
     "critical": 2
   },
   "recent_excerpts": [
+    "Unit 42 reports collaboration-tool identity attacks quadrupled in 12 months, with 99% of alerts tied to chat phishing. APT29 abused Microsoft Teams federation for credential theft.",
     "Unit 42 reports token jacking: attackers steal AI API keys to resell access on gray-market transfer stations, causing staggering financial losses for developers.",
-    "Unit 42 finds 45.32% of C2-active malware bypass DNS with direct-to-IP connections. Learn how ZT-IP enforcement blocks these evasive threats.",
-    "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero."
+    "Unit 42 finds 45.32% of C2-active malware bypass DNS with direct-to-IP connections. Learn how ZT-IP enforcement blocks these evasive threats."
   ],
-  "sources_hash": "4cba6a366b17e4db"
+  "sources_hash": "ad07ed92839a53fe"
 }
