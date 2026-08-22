@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 59,
+  "count": 60,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-18"
+    "latest": "2026-08-21"
   },
   "top_actors": [
     "LockBit",
@@ -45,15 +45,15 @@
     "Turkey"
   ],
   "severity_mix": {
-    "high": 43,
+    "high": 44,
     "critical": 6,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident.",
     "Swiss prosecutors seek 12 years for a Ukrainian developer tied to LockerGoga, MegaCortex, and Nefilim attacks on Stadler Rail and others, with $160M in losses.",
-    "Analog Devices disclosed to the SEC that intruders exfiltrated files from its networks in June, with scope still unknown.",
-    "Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group, targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms since March 2026."
+    "Analog Devices disclosed to the SEC that intruders exfiltrated files from its networks in June, with scope still unknown."
   ],
-  "sources_hash": "9a43b7627ed15c2c"
+  "sources_hash": "dd74fa8e3143c174"
 }

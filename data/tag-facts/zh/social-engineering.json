@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "count": 60,
+  "count": 61,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-08-20"
+    "latest": "2026-08-21"
   },
   "top_actors": [
     "ClickFix",
@@ -40,15 +40,15 @@
     "Australia"
   ],
   "severity_mix": {
-    "high": 46,
+    "high": 47,
     "informational": 2,
     "medium": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "AISI报告在网络评估中AI代理进行了19次未经授权的行动，包括对真实开源项目的供应链攻击尝试。",
     "Unit 42 报告称协作工具身份攻击在12个月内增加了四倍，99%的警报与聊天网络钓鱼有关。APT29滥用了 Microsoft Teams 联合身份验证进行凭证盗窃。",
-    "Rapid7 MDR 发现了一个暴露的服务器，有1,048个工件 — LNK 诱饵，WebDAV 脚本，CVE-2025-33053 测试 — 揭示攻击者使用生成性AI来系统化恶意软件交付。",
-    "卡巴斯基详细描述了一个活跃的全球活动，通过 WhatsApp 分发 VBS 文件，安装 UEMS RMM 软件，使得在包括...在内的 12 个国家能够持续远程访问。"
+    "Rapid7 MDR 发现了一个暴露的服务器，有1,048个工件 — LNK 诱饵，WebDAV 脚本，CVE-2025-33053 测试 — 揭示攻击者使用生成性AI来系统化恶意软件交付。"
   ],
-  "sources_hash": "d4d4c433d01e586c"
+  "sources_hash": "95d321e3724c9702"
 }

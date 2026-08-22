@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "count": 58,
+  "count": 59,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-18"
+    "latest": "2026-08-21"
   },
   "top_actors": [
     "LockBit",
@@ -45,15 +45,15 @@
     "Turkey"
   ],
   "severity_mix": {
-    "high": 42,
+    "high": 43,
     "critical": 6,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "加拿大病童医院证实，与第三方应用相关的新网络攻击暴露了现任和前任员工的数据，这是继其2022年勒索软件事件之后的又一事件。",
     "瑞士检察官寻求对一名与LockerGoga、MegaCortex和Nefilim针对Stadler Rail等的攻击有关的乌克兰开发者判处12年徒刑，损失高达1.6亿美元。",
-    "Analog Devices 向 SEC 披露称，6月份有入侵者从其网络中窃取了文件，目前范围尚不明确。",
-    "卡巴斯基剖析 GenieLocker，这是来自 Toy Ghouls 组织的定制勒索软件，自 2026 年 3 月起针对俄罗斯制造企业，在攻击中针对 Windows、Linux 和 ESXi。"
+    "Analog Devices 向 SEC 披露称，6月份有入侵者从其网络中窃取了文件，目前范围尚不明确。"
   ],
-  "sources_hash": "1ebe517c54359042"
+  "sources_hash": "331f5cfec2a965f2"
 }

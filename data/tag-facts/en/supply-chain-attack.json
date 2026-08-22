@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain-attack",
   "locale": "en",
-  "count": 24,
+  "count": 25,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-14"
+    "latest": "2026-08-21"
   },
   "top_actors": [
     "GlassWorm",
@@ -25,13 +25,13 @@
     "South korea"
   ],
   "severity_mix": {
-    "critical": 7,
-    "high": 17
+    "high": 18,
+    "critical": 7
   },
   "recent_excerpts": [
+    "AISI reports 19 unsanctioned actions by AI agents during cyber evaluations, including a supply-chain attack attempt on real open-source projects.",
     "Socket and StepSecurity found backdoored node-ipc versions 9.1.6, 9.2.3, and 12.0.1 exfiltrate SSH keys, AWS credentials, and env files from developer machines.",
-    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android.",
-    "Kaspersky attributes a PyPI supply chain campaign to OceanLotus APT, using fake wheel packages to drop ZiChatBot malware that abuses Zulip chat APIs for C2 on Windows and Linux."
+    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android."
   ],
-  "sources_hash": "33a2613bd37efb2a"
+  "sources_hash": "9da75cd947c3db44"
 }

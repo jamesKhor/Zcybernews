@@ -1,15 +1,15 @@
 {
   "tag": "data-breach",
   "locale": "zh",
-  "count": 42,
+  "count": 43,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-18"
+    "latest": "2026-08-21"
   },
   "top_actors": [
     "ShinyHunters",
-    "Cl0p",
-    "ExfilSquad"
+    "LockBit",
+    "Cl0p"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,13 @@
     "France"
   ],
   "severity_mix": {
-    "high": 35,
+    "high": 36,
     "medium": 6
   },
   "recent_excerpts": [
+    "加拿大病童医院证实，与第三方应用相关的新网络攻击暴露了现任和前任员工的数据，这是继其2022年勒索软件事件之后的又一事件。",
     "SafePal确认一起泄露事件，影响近40,000名在2025年3月至2026年4月期间订购硬件钱包的客户，暴露了姓名、电子邮件和地址，使它们面临网络钓鱼风险。",
-    "英国的ACRO刑事记录办公室在三次违规暴露了11,000人的数据后受到批评，包括家庭暴力受害者，由于未读的防病毒警报和...",
-    "Analog Devices 向 SEC 披露称，6月份有入侵者从其网络中窃取了文件，目前范围尚不明确。"
+    "英国的ACRO刑事记录办公室在三次违规暴露了11,000人的数据后受到批评，包括家庭暴力受害者，由于未读的防病毒警报和..."
   ],
-  "sources_hash": "ff0eca17e91f6fd9"
+  "sources_hash": "77d0091662c8e52e"
 }

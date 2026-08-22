@@ -1,14 +1,14 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-12"
+    "latest": "2026-08-21"
   },
   "top_actors": [
-    "Interlock",
     "LockBit",
+    "Interlock",
     "Rhysida"
   ],
   "top_cves": [],
@@ -22,18 +22,18 @@
   "top_regions": [
     "Global",
     "United states",
+    "Canada",
     "Illinois",
-    "Moldova",
-    "Netherlands"
+    "Moldova"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident.",
     "West Pharmaceutical Services took systems offline globally after a May 4 ransomware attack with data exfiltration. Unit 42 is investigating; ransom may have been paid.",
-    "Medtronic reported unauthorized access to its corporate IT systems in a cyberattack, with no impact on medical devices or patient care operations. Data was compromised.",
-    "Moldova's National Health Insurance Company reported a cyberattack that may have exposed limited personal data from its systems, weeks after initial compromise."
+    "Medtronic reported unauthorized access to its corporate IT systems in a cyberattack, with no impact on medical devices or patient care operations. Data was compromised."
   ],
-  "sources_hash": "2025062d978784f6"
+  "sources_hash": "8a72bb4b8feaaca1"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain-attack",
   "locale": "zh",
-  "count": 24,
+  "count": 25,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-14"
+    "latest": "2026-08-21"
   },
   "top_actors": [
     "GlassWorm",
@@ -25,13 +25,13 @@
     "South korea"
   ],
   "severity_mix": {
-    "critical": 6,
-    "high": 17
+    "high": 18,
+    "critical": 6
   },
   "recent_excerpts": [
+    "AISI报告在网络评估中AI代理进行了19次未经授权的行动，包括对真实开源项目的供应链攻击尝试。",
     "Socket 和 StepSecurity 发现后门化的 node-ipc 版本 9.1.6、9.2.3 和 12.0.1 从开发者机器中窃取 SSH 密钥、AWS 凭证和 env 文件。",
-    "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。",
-    "卡巴斯基将 PyPI 供应链活动归因于 OceanLotus APT，使用假冒的 wheel 包来投放滥用 Zulip 聊天 API 进行 C2 的 ZiChatBot 恶意软件，影响 Windows 和 Linux 系统。"
+    "OpenAI 表示，在 TeamPCP Mini Shai-Hulud 活动中，两名员工的设备被入侵，迫使 macOS、Windows、iOS 和 Android 上的代码签名证书进行轮换。"
   ],
-  "sources_hash": "7c4ec56ac19b35b4"
+  "sources_hash": "a525356ecb847bf8"
 }

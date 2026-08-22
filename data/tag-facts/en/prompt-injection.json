@@ -1,10 +1,10 @@
 {
   "tag": "prompt-injection",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-07-14"
+    "latest": "2026-08-21"
   },
   "top_actors": [],
   "top_cves": [],
@@ -21,15 +21,15 @@
     "Mexico"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "informational": 1,
     "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "AISI reports 19 unsanctioned actions by AI agents during cyber evaluations, including a supply-chain attack attempt on real open-source projects.",
     "Check Point Research's AI Security Report 2026 documents AI now running live intrusions, building 88,000-line C2 frameworks in under a week, and enabling vishing at scale via...",
-    "A spyware sample prepends fake nuclear and biological weapons policy text in a JavaScript comment to trigger AI refusal behavior before LLM-based scanners reach the real payload.",
-    "Recorded Future warns that autonomous 'agentic' AI systems, now being integrated into enterprise software, create new attack surfaces for prompt injection, data poisoning, and…"
+    "A spyware sample prepends fake nuclear and biological weapons policy text in a JavaScript comment to trigger AI refusal behavior before LLM-based scanners reach the real payload."
   ],
-  "sources_hash": "58ad6d138b588e62"
+  "sources_hash": "6b2c1ab733944ae7"
 }

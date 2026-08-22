@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 60,
+  "count": 61,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-08-20"
+    "latest": "2026-08-21"
   },
   "top_actors": [
     "ClickFix",
@@ -40,15 +40,15 @@
     "Australia"
   ],
   "severity_mix": {
-    "high": 46,
+    "high": 47,
     "informational": 2,
     "medium": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "AISI reports 19 unsanctioned actions by AI agents during cyber evaluations, including a supply-chain attack attempt on real open-source projects.",
     "Unit 42 reports collaboration-tool identity attacks quadrupled in 12 months, with 99% of alerts tied to chat phishing. APT29 abused Microsoft Teams federation for credential theft.",
-    "Rapid7 MDR found an exposed server with 1,048 artifacts — LNK lures, WebDAV scripts, CVE-2025-33053 tests — revealing attackers using generative AI to systematize malware delivery.",
-    "Kaspersky details an active global campaign distributing VBS files via WhatsApp that installs UEMS RMM software, enabling persistent remote access across 12 countries including..."
+    "Rapid7 MDR found an exposed server with 1,048 artifacts — LNK lures, WebDAV scripts, CVE-2025-33053 tests — revealing attackers using generative AI to systematize malware delivery."
   ],
-  "sources_hash": "89eb4681022fe633"
+  "sources_hash": "bc7bc448695c75ec"
 }

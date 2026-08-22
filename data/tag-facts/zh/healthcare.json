@@ -1,14 +1,14 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-12"
+    "latest": "2026-08-21"
   },
   "top_actors": [
-    "Interlock",
     "LockBit",
+    "Interlock",
     "Rhysida"
   ],
   "top_cves": [],
@@ -22,18 +22,18 @@
   "top_regions": [
     "Global",
     "United states",
+    "Canada",
     "Illinois",
-    "Moldova",
-    "Netherlands"
+    "Moldova"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "加拿大病童医院证实，与第三方应用相关的新网络攻击暴露了现任和前任员工的数据，这是继其2022年勒索软件事件之后的又一事件。",
     "West Pharmaceutical Services 在 5 月 4 日遭受勒索软件攻击并发生数据泄露后，全球系统下线。Unit 42 正在调查；可能已支付赎金。",
-    "美敦力报告称其企业IT系统在网络攻击中遭到未经授权的访问，对医疗设备或患者护理操作没有影响。数据遭到泄露。",
-    "摩尔多瓦国家健康保险公司报告了一起可能暴露其系统有限个人数据的网络攻击，这是在最初被入侵几周后发生的。"
+    "美敦力报告称其企业IT系统在网络攻击中遭到未经授权的访问，对医疗设备或患者护理操作没有影响。数据遭到泄露。"
   ],
-  "sources_hash": "c05b57ce6dae48ac"
+  "sources_hash": "120a8de6edbf282a"
 }

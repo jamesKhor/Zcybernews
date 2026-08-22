@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "intro": "过去一个月，ZCyberNews追踪了11篇标记为医疗保健领域的文章，其中10篇被评为高严重性。威胁行为者Interlock、LockBit和Rhysida被观察到在全球范围内针对医疗保健、关键基础设施、政府及制药行业，涉及美国、伊利诺伊州、摩尔多瓦和荷兰。这些文章的时间跨度为2026年4月12日至5月12日，其中包含一篇中等严重性的报告。",
-  "sources_hash": "c05b57ce6dae48ac",
-  "source_intro_hash": "72f94a0fc0ae73d1",
+  "intro": "LockBit、Interlock和Rhysida是2026年4月12日至2026年8月21日期间发布的12篇医疗行业相关文章中最常被提及的威胁行为者。报道重点集中在医疗保健领域，同时涉及关键基础设施、政府和制药组织的额外报道。受影响地区包括全球、美国、加拿大、伊利诺伊州和摩尔多瓦。严重程度分布明显偏向高影响事件，记录了11起高严重性案例和1起中等严重性案例。这些报告共同记录了该时期针对医疗机构及相关机构的持续攻击模式。",
+  "sources_hash": "120a8de6edbf282a",
+  "source_intro_hash": "8f0cf4c9247c981e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:08:54.806Z",
+  "generated_at": "2026-08-22T03:42:29.865Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

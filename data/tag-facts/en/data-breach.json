@@ -1,15 +1,15 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 44,
+  "count": 45,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-18"
+    "latest": "2026-08-21"
   },
   "top_actors": [
     "ShinyHunters",
-    "Cl0p",
-    "ExfilSquad"
+    "LockBit",
+    "Cl0p"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,13 @@
     "France"
   ],
   "severity_mix": {
-    "high": 37,
+    "high": 38,
     "medium": 6
   },
   "recent_excerpts": [
+    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident.",
     "SafePal confirms a breach affecting nearly 40,000 customers who ordered hardware wallets between March 2025 and April 2026, exposing names, emails, and addresses to phishing risks.",
-    "UK's ACRO Criminal Records Office reprimanded after three breaches exposed data of 11,000 people, including domestic violence victims, due to unread antivirus alerts and an...",
-    "Analog Devices disclosed to the SEC that intruders exfiltrated files from its networks in June, with scope still unknown."
+    "UK's ACRO Criminal Records Office reprimanded after three breaches exposed data of 11,000 people, including domestic violence victims, due to unread antivirus alerts and an..."
   ],
-  "sources_hash": "871edf2499e7712c"
+  "sources_hash": "0fffe33771232848"
 }
