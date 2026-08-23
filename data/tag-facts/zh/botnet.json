@@ -1,15 +1,15 @@
 {
   "tag": "botnet",
   "locale": "zh",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-04-30"
+    "latest": "2026-08-22"
   },
   "top_actors": [
     "Dort",
     "Mirai",
-    "The Gentlemen"
+    "MoYu Group"
   ],
   "top_cves": [
     {
@@ -27,26 +27,26 @@
   "top_sectors": [
     "telecommunications",
     "technology",
+    "automotive",
     "corporate",
-    "cybersecurity services",
-    "finance"
+    "cybersecurity services"
   ],
   "top_regions": [
+    "Global",
     "Brazil",
     "Canada",
     "Czech republic",
-    "Germany",
-    "Global"
+    "Germany"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "medium": 2,
     "critical": 1
   },
   "recent_excerpts": [
+    "卡巴斯基发现新的 Android 恶意软件通过 DoFun 头单元更新程序传播，将汽车变成代理僵尸网络节点。首次记录在汽车头单元上的案例。",
     "巴西反DDoS公司的基础设施被用来对竞争对手ISP发起大规模僵尸网络攻击。首席执行官声称竞争对手的入侵导致了滥用。",
-    "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。",
-    "Mirai 僵尸网络操作者利用 CVE-2025-29635，这是一个 CVSS 8.8 命令注入漏洞，存在于生命周期结束的 D-Link DIR-823X 路由器中，以部署恶意软件并发起 DDoS 攻击。"
+    "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。"
   ],
-  "sources_hash": "2bc61c6797e9bf65"
+  "sources_hash": "a160e594e9b04ee9"
 }

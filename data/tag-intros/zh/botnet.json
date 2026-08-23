@@ -1,10 +1,10 @@
 {
   "tag": "botnet",
   "locale": "zh",
-  "intro": "在2026年4月14日至4月30日的16天期间，ZCyberNews共报道了12篇标记为僵尸网络的专题文章。观察到的顶级威胁行为体包括Dort、Mirai和The Gentlemen。关键漏洞涉及CVE-2025-29635（CVSS 8.8）、CVE-2024-3721（CVSS 6.3）和CVE-2023-33538。受影响行业涵盖电信、科技、企业、网络安全服务及金融领域，活跃地区包括巴西、加拿大、捷克共和国、德国及全球范围。严重程度分布为9起高等级、2起中等级和1起严重事件。",
-  "sources_hash": "2bc61c6797e9bf65",
-  "source_intro_hash": "ad1090e6260e3289",
+  "intro": "在2026年4月14日至8月22日期间，ZCyberNews在僵尸网络标签下发布了13篇文章，涵盖10起高严重性事件、2起中等严重性案例和1起严重事件。威胁行为者Dort、Mirai和MoYu Group出现在这些报告中。关键漏洞包括CVE-2025-29635（CVSS 8.8）、CVE-2024-3721（CVSS 6.3）和CVE-2023-33538。受影响行业涵盖电信、技术、汽车、企业和网络安全服务，影响范围遍及全球，涉及巴西、加拿大、捷克共和国和德国。",
+  "sources_hash": "a160e594e9b04ee9",
+  "source_intro_hash": "03e4c55064148b7b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:07:24.296Z",
+  "generated_at": "2026-08-23T03:51:18.076Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
