@@ -1,0 +1,73 @@
+---
+title: ERMAC Source Leak Reveals HookBot's Shared Core
+slug: 2026-08-25-ermac-source-leak-reveals-hookbots-shared-core
+date: '2026-08-25'
+excerpt: >-
+  Censys analysis of the ERMAC source leak shows HookBot and ERMAC share a
+  codebase—one constant decides which name the panel displays. Defenders can now
+  fingerprint both.
+category: malware
+tags:
+  - ermac
+  - hookbot
+  - android-banking-trojan
+  - source-code-leak
+  - censys
+language: en
+source_urls:
+  - 'https://censys.com/blog/ermac-source-leak-hookbot/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-25-ermac-source-leak-reveals-hookbots-shared-core
+cluster_key: 'topic:what-ermac-source-leak-says'
+source_count: 1
+seo_query_target: ERMAC source leak HookBot
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises to explain what the ERMAC source leak reveals about
+  HookBot's shared codebase and its implications for defenders.
+seo_meta_promise: >-
+  The meta description promises that the article will detail how the leak
+  exposes the shared core of ERMAC and HookBot and how defenders can use this to
+  improve detection.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - threat-intel
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Code snippet from the ERMAC source leak showing the constant that toggles
+  between ERMAC and HookBot branding
+severity: high
+threat_actor: ERMAC
+affected_sectors:
+  - financial services
+publish_tier: public
+---
+## Executive Summary
+
+The ERMAC source code leak has revealed that the Android banking trojans **ERMAC** and **HookBot** are not separate families but two branches of a single codebase, according to research from Censys. A single constant in the source determines which name the command-and-control panel displays, meaning defenders can now treat them as one threat lineage rather than two unrelated operations. The finding gives security teams a concrete way to fingerprint both families using indicators derived from the shared core.
+
+Censys researchers, who analyzed the leaked source, found that ERMAC and HookBot forked from a common code base and evolved independently, but the core functionality remains so similar that a single constant switches the panel branding between the two names. This is not a rebranding but a genuine fork—each branch has developed its own features and infrastructure, yet the shared foundation means detections built for one can often apply to the other. For defenders, the practical takeaway is that tracking ERMAC and HookBot as separate entities is a mistake; they are two faces of the same malware family.
+
+## Technical Analysis
+
+Censys's analysis focuses on the source code of ERMAC, which was leaked, and compares it to HookBot, a newer variant. The key finding is that the two share a **common codebase**, with a specific constant in the source that toggles the panel name between "ERMAC" and "HookBot." This constant is not a cosmetic label but a functional switch that affects how the malware presents itself to the operator.
+
+The shared core includes the same **overlay attack mechanisms**, **accessibility service abuse**, and **command-and-control (C2) communication protocols**. Both families use similar techniques to steal credentials and intercept SMS messages for two-factor authentication bypass. The fork appears to have occurred early in ERMAC's development, with HookBot adding new features such as improved evasion and a more modular plugin system, while ERMAC retained a more traditional, monolithic structure.
+
+Censys researchers note that the leak provides a **unique opportunity** to map the exact code differences between the two branches. By comparing the source, they identified specific functions and routines that are identical, which can be used to create **YARA rules** or **detection signatures** that catch both families. The researchers also highlight that the leak includes **configuration files** and **build scripts**, which reveal the infrastructure used by the operators, though Censys did not publish specific IPs or domains in their blog post.
+
+One notable technical detail is that the **panel branding** is not hardcoded in the binary but is determined at runtime based on the constant. This means that the same binary could be repurposed to display either name, depending on how it is compiled. This has implications for attribution: a sample that appears to be HookBot might actually be an ERMAC variant with the constant flipped, and vice versa.
+
+## Mitigations & Recommendations
+
+Given the shared codebase, defenders should **consolidate their detection strategies** for ERMAC and HookBot. Instead of maintaining separate signatures, security teams should look for indicators that are common to both families, such as specific **accessibility service names**, **overlay package names**, and **C2 URL patterns** that Censys has identified. The researchers recommend that organizations with Android devices in their environment, particularly in financial services, review their mobile threat defense logs for any of these common indicators.
+
+Because the source leak is public, threat actors may also use it to create new variants or improve existing ones. Defenders should monitor for **new samples** that share code similarities with the leaked source, even if they are branded differently. Censys advises that **YARA rules** based on the shared code sections can be effective in catching both known and unknown variants.
+
+For enterprises, the primary risk is **credential theft** and **SMS interception** on employee devices used for banking or corporate accounts. Implementing **app-level security** that restricts accessibility service permissions and **SMS forwarding** can reduce the impact of such trojans. Additionally, using **hardware-backed keystores** and **phishing-resistant MFA** can mitigate the risk even if credentials are stolen.
+
+## References
+
+- [What the ERMAC Source Leak Says About HookBot - Censys Research](https://censys.com/blog/ermac-source-leak-hookbot/)

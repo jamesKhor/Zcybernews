@@ -1,0 +1,72 @@
+---
+title: ERMAC 源代码泄露揭示 HookBot 的共享核心
+slug: 2026-08-25-ermac-source-leak-reveals-hookbots-shared-core
+date: '2026-08-25'
+excerpt: >-
+  Censys 对 ERMAC 源代码泄露的分析显示 HookBot 和 ERMAC
+  共享一个代码库——一个常量决定面板显示哪个名称。防御者现在可以对两者进行指纹识别。
+category: malware
+tags:
+  - ermac
+  - hookbot
+  - android-banking-trojan
+  - source-code-leak
+  - censys
+language: zh
+source_urls:
+  - 'https://censys.com/blog/ermac-source-leak-hookbot/'
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-25-ermac-source-leak-reveals-hookbots-shared-core
+cluster_key: 'topic:what-ermac-source-leak-says'
+source_count: 1
+seo_query_target: ERMAC source leak HookBot
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises to explain what the ERMAC source leak reveals about
+  HookBot's shared codebase and its implications for defenders.
+seo_meta_promise: >-
+  The meta description promises that the article will detail how the leak
+  exposes the shared core of ERMAC and HookBot and how defenders can use this to
+  improve detection.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - threat-intel
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Code snippet from the ERMAC source leak showing the constant that toggles
+  between ERMAC and HookBot branding
+severity: high
+threat_actor: ERMAC
+affected_sectors:
+  - financial services
+publish_tier: public
+---
+## 执行摘要
+
+ERMAC源代码泄露事件揭示了Android银行木马**ERMAC**和**HookBot**并非不同的家族，而是单一代码库的两个分支，这是根据Censys的研究得出的结论。源代码中的一个常数决定了命令和控制面板显示哪个名称，这意味着防御者现在可以将它们视为一个威胁谱系，而不是两个不相关的操作。这一发现为安全团队提供了一种具体的方法，使用从共享核心派生的指标来识别这两个家族。
+
+Censys的研究人员分析了泄露的源代码，并将其与较新的变体HookBot进行了比较，发现ERMAC和HookBot从一个共同的代码库分叉并独立发展，但核心功能如此相似，以至于一个单一的常数可以在两个名称之间切换面板品牌。这不是重新品牌，而是一个真正的分叉——每个分支都发展了自己的特性和基础设施，但共享的基础意味着为一个构建的检测通常也适用于另一个。对于防御者来说，实际的收获是，将ERMAC和HookBot作为独立实体进行跟踪是一个错误；它们是同一恶意软件家族的两个面孔。
+
+## 技术分析
+
+Censys的分析集中在泄露的ERMAC源代码上，并将其与较新的变体HookBot进行了比较。关键发现是两者共享一个**共同代码库**，源代码中有一个特定的常数，可以在"ERMAC"和"HookBot"之间切换面板名称。这个常数不是一个化妆品标签，而是一个功能开关，影响恶意软件如何向操作者展示自己。
+
+共享核心包括相同的**覆盖攻击机制**、**辅助功能滥用**和**命令和控制（C2）通信协议**。两个家族使用类似的技术来窃取凭证和拦截用于双重身份验证的短信。分叉似乎发生在ERMAC开发的早期，HookBot增加了新的功能，如改进的规避和更模块化的插件系统，而ERMAC保留了更传统的、单一的结构。
+
+Censys的研究人员指出，泄露提供了一个**独特的机会**来映射两个分支之间确切的代码差异。通过比较源代码，他们识别出特定的函数和例程是相同的，可以用来创建**YARA规则**或**检测签名**来捕捉两个家族。研究人员还强调，泄露包括**配置文件**和**构建脚本**，这些揭示了操作者使用的基础设施，尽管Censys在他们的博客文章中没有发布具体的IP或域名。
+
+一个值得注意的技术细节是，**面板品牌**不是硬编码在二进制文件中的，而是在运行时根据常数确定的。这意味着相同的二进制文件可以被重新用于显示任一名称，这取决于它的编译方式。这对归因有影响：一个看起来像HookBot的样本实际上可能是一个ERMAC变体，常数被翻转了，反之亦然。
+
+## 缓解措施与建议
+
+鉴于共享的代码库，防御者应该**合并他们对ERMAC和HookBot的检测策略**。安全团队不应该维护单独的签名，而应该寻找对两个家族都常见的指标，如特定的**辅助功能名称**、**覆盖包名称**和**C2 URL模式**，这些都是Censys已经识别出来的。研究人员建议，拥有Android设备的组织，特别是在金融服务领域，应该审查他们的移动威胁防御日志，看看是否有这些共同的指标。
+
+由于源代码泄露是公开的，威胁行为者也可能使用它来创建新的变体或改进现有的变体。防御者应该监控**新样本**，这些样本与泄露的源代码共享代码相似性，即使它们被不同地品牌化。Censys建议，基于共享代码部分的**YARA规则**可以有效地捕捉已知和未知的变体。
+
+对于企业来说，主要风险是**凭证盗窃**和**短信拦截**在员工用于银行或公司账户的设备上。实施**应用级安全**，限制辅助功能权限和**短信转发**可以减少这类木马的影响。此外，使用**基于硬件的密钥库**和**抗钓鱼MFA**可以减轻即使凭证被盗取的风险。
+
+## 参考资料
+
+- [ERMAC源代码泄露对HookBot意味着什么 - Censys研究](https://censys.com/blog/ermac-source-leak-hookbot/)
