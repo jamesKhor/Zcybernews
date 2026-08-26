@@ -1,9 +1,9 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "intro": "Global technology and cybersecurity sectors bore the brunt of 69 ai-security incidents tracked from April to August 2026, with government, critical infrastructure, and financial services also affected. Threat actors Claude Mythos and OpenClaw were observed across these campaigns. High-severity issues dominated the mix, including CVE-2026-5760 (CVSS 9.8) and CVE-2026-5752 (CVSS 9.3), alongside CVE-2026-44339, CVE-2026-44567, and CVE-2026-45303. Impact spanned the United States, China, and broader North America, with 32 high and 9 critical findings recorded.",
-  "sources_hash": "d24e5c6b777b6c47",
+  "intro": "Technology and cybersecurity sectors bore the brunt of 70 ai-security incidents tracked between April and August 2026, with global impact and significant effects across the United States, North America, and China. Threat actors Claude Mythos and OpenClaw were observed in these campaigns. Key vulnerabilities included CVE-2026-5760 (CVSS 9.8), CVE-2026-5752 (CVSS 9.3), CVE-2026-44339 (CVSS 8.6), CVE-2026-44567 (CVSS 7.7), and CVE-2026-45303 (CVSS 7.7). Government, critical infrastructure, and financial services also faced exposure. The severity mix comprised 32 high, 9 critical, 14 informational, and 6 medium incidents.",
+  "sources_hash": "d4eeafbbcea558ce",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-14T04:48:08.473Z",
+  "generated_at": "2026-08-26T03:54:15.207Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

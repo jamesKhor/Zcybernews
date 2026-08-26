@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 69,
+  "count": 70,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-13"
+    "latest": "2026-08-26"
   },
   "top_actors": [
     "Claude Mythos",
@@ -42,8 +42,8 @@
   "top_regions": [
     "Global",
     "United states",
-    "China",
-    "North america"
+    "North america",
+    "China"
   ],
   "severity_mix": {
     "high": 32,
@@ -52,9 +52,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "99% of SOCs see AI-driven IR gains despite 96% at early maturity; 82% now platform-oriented. But AI infrastructure is deployed faster than secured, creating new attack surface.",
     "At Black Hat USA 2026, officials and researchers warn AI-driven vulnerability discovery outpaces defenses.",
-    "OpenAI released preliminary cybersecurity evaluations for Astra, revealing AI agent capabilities in vulnerability research and the new security controls added before broader...",
-    "Unit 42 reports token jacking: attackers steal AI API keys to resell access on gray-market transfer stations, causing staggering financial losses for developers."
+    "OpenAI released preliminary cybersecurity evaluations for Astra, revealing AI agent capabilities in vulnerability research and the new security controls added before broader..."
   ],
-  "sources_hash": "d24e5c6b777b6c47"
+  "sources_hash": "d4eeafbbcea558ce"
 }

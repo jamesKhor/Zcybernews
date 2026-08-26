@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "count": 69,
+  "count": 70,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-13"
+    "latest": "2026-08-26"
   },
   "top_actors": [
     "Claude Mythos",
@@ -42,8 +42,8 @@
   "top_regions": [
     "Global",
     "United states",
-    "China",
-    "North america"
+    "North america",
+    "China"
   ],
   "severity_mix": {
     "high": 32,
@@ -52,9 +52,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "尽管 96% 处于早期成熟阶段，99% 的 SOC 看到 AI 驱动的 IR 收益；82% 现在以平台为导向。但是 AI 基础设施部署速度比安全防护快，创造了新的攻击面。",
     "在 Black Hat USA 2026 上，官员和研究人员警告 AI 驱动的漏洞发现超越了防御。",
-    "OpenAI 发布了 Astra 的初步网络安全评估，揭示了 AI 代理在漏洞研究中的能力和在更广泛推广之前新增的安全控制措施...",
-    "Unit 42报告token jacking：攻击者窃取AI API密钥在灰色市场转移站转售访问权限，给开发者造成惊人的经济损失。"
+    "OpenAI 发布了 Astra 的初步网络安全评估，揭示了 AI 代理在漏洞研究中的能力和在更广泛推广之前新增的安全控制措施..."
   ],
-  "sources_hash": "5b86e16785e99bce"
+  "sources_hash": "430c141121e3e518"
 }
