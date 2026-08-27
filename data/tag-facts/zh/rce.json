@@ -1,10 +1,10 @@
 {
   "tag": "rce",
   "locale": "zh",
-  "count": 34,
+  "count": 35,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-09"
+    "latest": "2026-08-26"
   },
   "top_actors": [
     "PhantomCore"
@@ -33,10 +33,10 @@
   ],
   "top_sectors": [
     "technology",
+    "software development",
     "government",
     "manufacturing",
-    "research",
-    "software development"
+    "research"
   ],
   "top_regions": [
     "Global",
@@ -45,14 +45,14 @@
     "Russia"
   ],
   "severity_mix": {
+    "critical": 22,
     "high": 12,
-    "critical": 21,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-60004，一个9.8-CVSS Gitea RCE，根据CISA正在遭受积极攻击。具有仓库写入权限的攻击者可以运行shell命令。立即打补丁。",
     "CISA将其加入已知被利用漏洞目录CVE-2026-42271（CVSS 8.7），在针对BerriAI LiteLLM部署的积极利用证据之后。",
-    "CVE-2026-20223 (CVSS 10.0): 未经认证的攻击者可以访问思科安全工作负载中的内部REST API，并具有站点管理员权限。无需认证。",
-    "CVE-2026-2586（CVSS 9.1）允许经过认证的用户通过向 GlassFish 的管理控制台发送精心制作的请求来执行任意操作系统命令。截至5月20日，尚无补丁可用。"
+    "CVE-2026-20223 (CVSS 10.0): 未经认证的攻击者可以访问思科安全工作负载中的内部REST API，并具有站点管理员权限。无需认证。"
   ],
-  "sources_hash": "38f6ecd1dc6ff225"
+  "sources_hash": "36ce3790d07d12c9"
 }

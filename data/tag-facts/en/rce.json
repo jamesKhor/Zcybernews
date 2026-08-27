@@ -1,10 +1,10 @@
 {
   "tag": "rce",
   "locale": "en",
-  "count": 34,
+  "count": 35,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-09"
+    "latest": "2026-08-26"
   },
   "top_actors": [
     "PhantomCore"
@@ -33,10 +33,10 @@
   ],
   "top_sectors": [
     "technology",
+    "software development",
     "government",
     "manufacturing",
-    "research",
-    "software development"
+    "research"
   ],
   "top_regions": [
     "Global",
@@ -45,14 +45,14 @@
     "Russia"
   ],
   "severity_mix": {
+    "critical": 22,
     "high": 12,
-    "critical": 21,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-60004, a 9.8-CVSS Gitea RCE, is under active attack per CISA. Attackers with repo write access can run shell commands. Patch now.",
     "CISA added CVE-2026-42271 (CVSS 8.7) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against BerriAI LiteLLM deployments.",
-    "CVE-2026-20223 (CVSS 10.0): Unauthenticated attackers can access internal REST APIs in Cisco Secure Workload with Site Admin privileges. No authentication required.",
-    "CVE-2026-2586 (CVSS 9.1) lets authenticated users execute arbitrary OS commands via crafted requests to GlassFish's Administration Console. No patch available as of May 20."
+    "CVE-2026-20223 (CVSS 10.0): Unauthenticated attackers can access internal REST APIs in Cisco Secure Workload with Site Admin privileges. No authentication required."
   ],
-  "sources_hash": "8e297d68c6644937"
+  "sources_hash": "7fd121034d1433b9"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-13"
+    "latest": "2026-08-26"
   },
   "top_actors": [
     "GRU",
@@ -17,6 +17,10 @@
       "cvss": 9.9
     },
     {
+      "id": "CVE-2026-60004",
+      "cvss": 9.8
+    },
+    {
       "id": "CVE-2026-21643",
       "cvss": 9.1
     },
@@ -27,10 +31,6 @@
     {
       "id": "CVE-2024-1708",
       "cvss": 8.4
-    },
-    {
-      "id": "CVE-2026-68820",
-      "cvss": 7
     }
   ],
   "top_sectors": [
@@ -38,7 +38,7 @@
     "technology",
     "critical infrastructure",
     "defense",
-    "aerospace"
+    "software development"
   ],
   "top_regions": [
     "United states",
@@ -48,13 +48,13 @@
     "Europe"
   ],
   "severity_mix": {
-    "high": 14,
-    "critical": 3
+    "critical": 4,
+    "high": 14
   },
   "recent_excerpts": [
+    "CVE-2026-60004，一个9.8-CVSS Gitea RCE，根据CISA正在遭受积极攻击。具有仓库写入权限的攻击者可以运行shell命令。立即打补丁。",
     "在 Black Hat USA 2026 上，官员和研究人员警告 AI 驱动的漏洞发现超越了防御。",
-    "CISA 给联邦机构直到 8 月 25 日修补 CVE-2026-68820，这是一个 Winsock 权限提升漏洞，被朝鲜的 Lazarus 在 Operation Dream Job 中利用。",
-    "CISA 对 GitHub 泄露事件的事后分析暴露了 844 MB 的内部数据，包括 AWS GovCloud 密钥，揭示该机构忽略了九个自动警报，并在 48 小时后才进行轮换..."
+    "CISA 给联邦机构直到 8 月 25 日修补 CVE-2026-68820，这是一个 Winsock 权限提升漏洞，被朝鲜的 Lazarus 在 Operation Dream Job 中利用。"
   ],
-  "sources_hash": "eb593fc0981253c6"
+  "sources_hash": "13f7b03ae8ba9603"
 }

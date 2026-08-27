@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "zh",
-  "intro": "政府和技术部门承担了2026年4月至8月期间被CISA标记的19起事件的主要冲击，大部分活动集中在美国和全球地区。记录了15起高严重性和3起关键案件，涉及威胁行为者GRU、Interlock和Lazarus Group作为独立实体。关键漏洞包括CVE-2024-57726（CVSS 9.9）、CVE-2026-21643（CVSS 9.1）和CVE-2026-34197（CVSS 8.8），以及CVE-2024-1708和CVE-2026-68820。受影响的行业还涵盖国防、航空航天和关键基础设施，报告覆盖北美、巴西和欧洲。",
-  "sources_hash": "eb593fc0981253c6",
-  "source_intro_hash": "2f481f24f98d80f2",
+  "intro": "美国和全球各地的政府及技术组织，是2026年4月至8月期间发布的20篇标注为CISA的文章的主要关注对象。报道涵盖了4个严重和高危漏洞，其中CVE-2024-57726、CVE-2026-60004和CVE-2026-21643被引用最为频繁。GRU、Interlock和Lazarus Group各自在影响关键基础设施、国防和软件开发领域的独立事件中被观察到。报道还涉及北美、巴西和欧洲的活动，CVE-2026-34197和CVE-2024-1708在公告中被提及。",
+  "sources_hash": "13f7b03ae8ba9603",
+  "source_intro_hash": "d039cf4eb9a4be74",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-14T04:48:15.139Z",
+  "generated_at": "2026-08-27T13:53:27.076Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

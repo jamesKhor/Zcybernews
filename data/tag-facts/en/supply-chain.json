@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 88,
+  "count": 89,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-04"
+    "latest": "2026-08-27"
   },
   "top_actors": [
     "Lazarus Group",
@@ -48,15 +48,15 @@
     "United states"
   ],
   "severity_mix": {
+    "high": 52,
     "critical": 16,
-    "high": 51,
     "medium": 16,
     "informational": 4
   },
   "recent_excerpts": [
+    "Boston Scientific disclosed a cyberattack disrupting order processing and shipments of pacemakers and stents.",
     "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero.",
-    "XCSSET v40, a macOS malware targeting Xcode developers, has resurfaced with 17 modules, including a Chrome hijacking backdoor and Telegram trojanizer, after months of dormancy.",
-    "Unit 42's Behavioral Integrity Verification scanned 49,943 OpenClaw skills and found 80% deviate from declared behavior, with multi-stage attack chains enabling credential theft..."
+    "XCSSET v40, a macOS malware targeting Xcode developers, has resurfaced with 17 modules, including a Chrome hijacking backdoor and Telegram trojanizer, after months of dormancy."
   ],
-  "sources_hash": "17bb8482690f7f34"
+  "sources_hash": "c5d3ef389b0d9fe5"
 }
