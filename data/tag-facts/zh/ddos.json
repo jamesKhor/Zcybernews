@@ -1,14 +1,15 @@
 {
   "tag": "ddos",
   "locale": "zh",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-04-30"
+    "latest": "2026-08-28"
   },
   "top_actors": [
     "Dort",
-    "Mirai"
+    "Mirai",
+    "Moobot"
   ],
   "top_cves": [
     {
@@ -21,11 +22,11 @@
     }
   ],
   "top_sectors": [
+    "internet infrastructure",
     "telecommunications",
     "cybersecurity services",
-    "internet infrastructure",
-    "social media",
-    "technology"
+    "hosting",
+    "social media"
   ],
   "top_regions": [
     "Brazil",
@@ -35,14 +36,14 @@
     "United states"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "medium": 3,
     "informational": 1
   },
   "recent_excerpts": [
+    "Censys在2026年7月发现Moobot源代码和活跃DDoS工具在一个开放目录（86.53.111[.]212）上，这是在2024年法院授权的中断后的几个月。",
     "巴西反DDoS公司的基础设施被用来对竞争对手ISP发起大规模僵尸网络攻击。首席执行官声称竞争对手的入侵导致了滥用。",
-    "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。",
-    "Mirai 僵尸网络操作者利用 CVE-2025-29635，这是一个 CVSS 8.8 命令注入漏洞，存在于生命周期结束的 D-Link DIR-823X 路由器中，以部署恶意软件并发起 DDoS 攻击。"
+    "美国司法部、加拿大和德国拆除了四个IoT僵尸网络 —— Aisuru、Kimwolf、JackSkid、Mossad —— 影响超过300万台设备，使得DDoS攻击达到创纪录的水平。"
   ],
-  "sources_hash": "a016b7ba920752aa"
+  "sources_hash": "4317fd58eafd3f1a"
 }

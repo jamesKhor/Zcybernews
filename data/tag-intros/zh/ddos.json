@@ -1,10 +1,10 @@
 {
   "tag": "ddos",
   "locale": "zh",
-  "intro": "2026年4月16日至30日期间，ZCyberNews在DDoS标签下发布了九篇文章。观察到威胁行为者Dort和Mirai，追踪到的漏洞包括CVE-2025-29635（CVSS 8.8）和CVE-2024-3721（CVSS 6.3）。受影响行业涵盖电信、网络安全服务、互联网基础设施、社交媒体及技术领域，报告的影响范围涉及巴西、加拿大、德国、美国及全球。报道内容包括五篇高严重性、三篇中等严重性及一篇信息性报告。",
-  "sources_hash": "a016b7ba920752aa",
-  "source_intro_hash": "edfc0dbd2ef020b3",
+  "intro": "在2026年4月16日至8月28日期间发布的十余篇文章中，ZCyberNews报道了分布式拒绝服务活动，其中六篇报告被评为高严重性，三篇为中等严重性，一篇为信息性。威胁行为者Dort、Mirai和Moobot在影响互联网基础设施、电信、网络安全服务、托管和社交媒体的事件中被观察到。报道引用了CVE-2025-29635（CVSS 8.8）和CVE-2024-3721（CVSS 6.3）。报告的影响范围涵盖巴西、加拿大、德国、美国和全球网络，反映出所分析报告期内广泛的地理足迹。",
+  "sources_hash": "4317fd58eafd3f1a",
+  "source_intro_hash": "a0f7e1f4dcf48c68",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:08:06.254Z",
+  "generated_at": "2026-08-28T14:59:37.582Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
