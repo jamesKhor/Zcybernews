@@ -1,0 +1,98 @@
+---
+title: 'Open Directory Exposes Moobot Source Code, Active DDoS Toolkits'
+slug: 2026-08-28-open-directory-exposes-moobot-source-code-active-ddos-toolkits
+date: '2026-08-28'
+excerpt: >-
+  Censys found Moobot source code and live DDoS tools on an open directory
+  (86.53.111[.]212) in July 2026, months after the 2024 court-authorized
+  disruption.
+category: malware
+tags:
+  - moobot
+  - mirai
+  - ddos
+  - censys
+  - open-directory
+language: en
+source_urls:
+  - >-
+    https://censys.com/blog/open-directory-exposes-moobot-source-code-and-activity/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-28-open-directory-exposes-moobot-source-code-active-ddos-toolkits
+cluster_key: 'topic:open-directory-moobot-source-code'
+source_count: 1
+seo_query_target: >-
+  Open Directory Exposes Moobot Source Code and Ongoing Activity Post 2024
+  Court-Authorized Disruption
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals that Moobot source code and active DDoS tools were found on an open
+  directory in July 2026, post-2024 disruption.
+seo_meta_promise: >-
+  Details the open directory exposure of Moobot source code, active toolkits,
+  and the specific IP address, with defender actions.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - ddos
+  - mirai
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Screenshot of an open directory listing showing Moobot source code files and
+  DDoS toolkit binaries
+severity: high
+threat_actor: Moobot
+affected_sectors:
+  - internet infrastructure
+  - hosting
+publish_tier: public
+---
+## Executive Summary
+
+An open web directory at **86.53.111[.]212** exposed the source code for **Moobot**, a Mirai-based DDoS malware variant, along with multiple additional DDoS toolkits and a suspected fraudulent Chinese ID verification service, according to Censys Research. The directory was observed on **30 July 2026**, and recovered attack logs indicate that several of the DoS toolkits were actively used during July 2026 — months after the 2024 court-authorized disruption of the Moobot infrastructure.
+
+Defenders should treat this as evidence that Moobot operators have re-established or maintained operational capacity despite the FBI-led takedown. The exposed IP address is a concrete indicator to block and monitor, and the presence of live attack logs suggests ongoing DDoS campaigns.
+
+## Technical Analysis
+
+Censys researchers identified the open directory during routine internet-wide scanning. The directory contained the full source code for Moobot, a Mirai variant that has historically been used in large-scale DDoS attacks, often targeting gaming servers and hosting providers. Alongside the Moobot code, the directory hosted several other DDoS tools, indicating a broader toolkit collection rather than a single malware sample.
+
+More concerning, the researchers recovered attack logs from the server. These logs show that at least some of the DoS toolkits were actively launching attacks in July 2026. This contradicts any assumption that the 2024 court-authorized disruption permanently dismantled the operation. The presence of a suspected fraudulent Chinese ID verification service on the same server suggests the operator may be involved in additional criminal activity beyond DDoS.
+
+The exposure itself is likely unintentional — an operator error in server configuration — but it provides a rare window into the current state of Moobot's infrastructure. The fact that the source code and tools remain accessible post-disruption indicates that either the original operators rebuilt, or the code was copied and is being maintained by a successor group.
+
+## Indicators of Compromise
+
+| Type | Value | Context |
+|------|-------|---------|
+| IPv4 | 86.53.111[.]212 | Open directory hosting Moobot source code and DDoS toolkits, observed 30 July 2026 |
+
+Defenders should block this IP at the network perimeter and monitor for any outbound connections to it. The presence of active attack logs suggests the server may still be operational; treat any traffic to or from this address as suspicious.
+
+## Tactics, Techniques & Procedures
+
+The exposure aligns with **Resource Development (T1588.001: Obtain Capabilities: Malware)** — the operator maintained a repository of offensive tools. The active attack logs confirm **Impact (T1498: Network Denial of Service)** as the primary objective. The combination of Moobot source code with other DDoS tools suggests the operator is not solely reliant on a single Mirai variant but has a diversified toolkit for launching volumetric attacks.
+
+The fraudulent ID verification service hosted on the same server hints at a secondary revenue stream or an operational cover, though Censys did not confirm a direct link between the ID service and the DDoS activity.
+
+## Threat Actor Context
+
+**Moobot** is a known Mirai variant first documented in 2019, primarily used for DDoS attacks. The 2024 court-authorized disruption, coordinated by the FBI and international partners, targeted Moobot's command-and-control infrastructure and resulted in the seizure of multiple domains and servers. Censys's findings indicate that the takedown was not fully effective — either the original operators retained backups and rebuilt, or the source code was forked and is now maintained by a different actor.
+
+The lack of a named individual or group behind this specific server means attribution remains at the malware-family level. The operational continuity, however, is a clear signal that Moobot remains a live threat.
+
+## Mitigations & Recommendations
+
+Given the active nature of the toolkits, defenders should take the following steps:
+
+1. **Block and monitor 86.53.111[.]212** at firewalls and in SIEM alerting rules. Any connection attempt to or from this address warrants investigation.
+2. **Harden DDoS defenses** — review rate-limiting rules, traffic scrubbing services, and upstream provider protections, as Moobot variants are designed to generate high-volume UDP and TCP floods.
+3. **Monitor for Moobot signatures** — network defenders should inspect traffic for known Mirai-based command patterns and default credentials, as Moobot retains many of Mirai's original exploitation vectors.
+4. **Validate ID verification processes** — if your organization relies on Chinese national ID verification for user onboarding, verify the legitimacy of your provider, as the fraudulent service found on this server could indicate a broader identity-fraud operation.
+
+Censys has not reported whether the hosting provider was notified or if the directory has been taken down. Until it is, treat the IP as actively hostile.
+
+## References
+
+- [Censys Research: Open Directory Exposes Moobot Source Code and Ongoing Activity Post 2024 Court-Authorized Disruption](https://censys.com/blog/open-directory-exposes-moobot-source-code-and-activity/)

@@ -1,0 +1,96 @@
+---
+title: 开放目录暴露Moobot源代码，活跃DDoS工具包
+slug: 2026-08-28-open-directory-exposes-moobot-source-code-active-ddos-toolkits
+date: '2026-08-28'
+excerpt: >-
+  Censys在2026年7月发现Moobot源代码和活跃DDoS工具在一个开放目录（86.53.111[.]212）上，这是在2024年法院授权的中断后的几个月。
+category: malware
+tags:
+  - moobot
+  - mirai
+  - ddos
+  - censys
+  - open-directory
+language: zh
+source_urls:
+  - >-
+    https://censys.com/blog/open-directory-exposes-moobot-source-code-and-activity/
+author: ZCyberNews
+draft: false
+locale_pair: 2026-08-28-open-directory-exposes-moobot-source-code-active-ddos-toolkits
+cluster_key: 'topic:open-directory-moobot-source-code'
+source_count: 1
+seo_query_target: >-
+  Open Directory Exposes Moobot Source Code and Ongoing Activity Post 2024
+  Court-Authorized Disruption
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals that Moobot source code and active DDoS tools were found on an open
+  directory in July 2026, post-2024 disruption.
+seo_meta_promise: >-
+  Details the open directory exposure of Moobot source code, active toolkits,
+  and the specific IP address, with defender actions.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - ddos
+  - mirai
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Screenshot of an open directory listing showing Moobot source code files and
+  DDoS toolkit binaries
+severity: high
+threat_actor: Moobot
+affected_sectors:
+  - internet infrastructure
+  - hosting
+publish_tier: public
+---
+## 执行摘要
+
+根据Censys Research的报告，一个开放的网络目录在**86.53.111[.]212**暴露了基于Mirai的DDoS恶意软件变种**Moobot**的源代码，以及多个额外的DDoS工具包和一个疑似欺诈性的中国身份证验证服务。该目录在**2026年7月30日**被观察到，恢复的攻击日志显示，7月份有几个DoS工具包被积极使用——这是在2024年法院授权破坏Moobot基础设施数月之后。
+
+防御者应该将此视为证据，表明Moobot操作者尽管FBI领导的取缔行动，已经重新建立或保持了运营能力。暴露的IP地址是一个具体的指标，需要封锁和监控，活跃的攻击日志的存在表明正在进行的DDoS活动。
+
+## 技术分析
+
+Censys研究人员在例行的全网扫描中发现了这个开放目录。该目录包含了Moobot的完整源代码，这是一个历史上被用于大规模DDoS攻击的Mirai变种，通常针对游戏服务器和托管提供商。除了Moobot代码外，该目录还托管了几个其他的DDoS工具，表明这是一个更广泛的工具包集合，而不是单一的恶意软件样本。
+
+更令人担忧的是，研究人员从服务器中恢复了攻击日志。这些日志显示，至少有一些DoS工具包在2026年7月积极发起攻击。这与任何假设2024年法院授权的破坏永久性地瓦解了该行动相矛盾。同一服务器上疑似欺诈性的中国身份证验证服务的存在表明，操作者可能涉及除DDoS之外的其他犯罪活动。
+
+这种暴露本身可能是无意的——服务器配置中的操作错误——但它提供了一个罕见的窗口，了解Moobot基础设施的当前状态。源代码和工具在破坏后仍然可访问的事实表明，要么原始操作者重建了，要么代码被复制并由一个后续团体维护。
+
+## 入侵指标
+
+| 类型 | 值 | 上下文 |
+|------|-------|---------|
+| IPv4 | 86.53.111[.]212 | 开放目录托管Moobot源代码和DDoS工具包，观察于2026年7月30日 |
+
+防御者应该在网络边界和SIEM警报规则中封锁这个IP，并监控任何出站连接。活跃的攻击日志的存在表明服务器可能仍在运行；将任何到这个地址的流量视为可疑。
+
+## 战术、技术与程序
+
+这种暴露与**资源开发（T1588.001：获取能力：恶意软件）**一致——操作者维护了一个进攻性工具的存储库。活跃的攻击日志确认**影响（T1498：网络拒绝服务）**是主要目标。Moobot源代码与其他DDoS工具的结合表明，操作者不仅仅依赖单一的Mirai变种，而是拥有一个多样化的工具包，用于发起大量攻击。
+
+同一服务器上托管的欺诈性身份证验证服务暗示了次要的收入流或操作掩护，尽管Censys没有确认身份证服务与DDoS活动之间的直接联系。
+
+## 威胁行为者背景
+
+**Moobot**是一个已知的Mirai变种，最早记录于2019年，主要用于DDoS攻击。2024年法院授权的破坏，由FBI和国际合作伙伴协调，针对Moobot的命令和控制基础设施，并导致多个域名和服务器被扣押。Censys的发现表明，这次取缔并未完全有效——要么原始操作者保留了备份并重建，要么源代码被分叉，现在由不同的行动者维护。
+
+由于这个特定服务器背后没有命名的个人或团体，因此归因仍然停留在恶意软件家族层面。然而，运营的连续性是一个明确的信号，表明Moobot仍然是一个活跃的威胁。
+
+## 缓解措施与建议
+
+鉴于工具包的活跃性质，防御者应采取以下步骤：
+
+1. **在防火墙和SIEM警报规则中封锁和监控86.53.111[.]212**。任何连接尝试到或从这个地址都需要调查。
+2. **加强DDoS防御**——审查速率限制规则、流量清洗服务和上游提供商保护，因为Moobot变种旨在产生高容量的UDP和TCP洪水。
+3. **监控Moobot签名**——网络防御者应检查已知的基于Mirai的命令模式和默认凭据，因为Moobot保留了Mirai的许多原始利用向量。
+4. **验证身份证验证流程**——如果您的组织依赖于中国国家身份证验证用于用户入职，验证您的提供商的合法性，因为在这个服务器上发现的欺诈性服务可能表明更广泛的身份欺诈操作。
+
+Censys尚未报告是否已通知托管提供商或目录是否已被取下。在它被取下之前，将IP视为积极敌对。
+
+## 参考资料
+
+- [Censys Research: Open Directory Exposes Moobot Source Code and Ongoing Activity Post 2024 Court-Authorized Disruption](https://censys.com/blog/open-directory-exposes-moobot-source-code-and-activity/)
