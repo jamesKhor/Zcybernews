@@ -1,16 +1,20 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-08-19"
+    "latest": "2026-08-29"
   },
   "top_actors": [],
   "top_cves": [
     {
       "id": "CVE-2026-48907",
       "cvss": 10
+    },
+    {
+      "id": "CVE-2023-49105",
+      "cvss": 9.8
     },
     {
       "id": "CVE-2026-65400",
@@ -22,10 +26,6 @@
     },
     {
       "id": "CVE-2026-18556",
-      "cvss": 8.2
-    },
-    {
-      "id": "CVE-2026-18577",
       "cvss": 8.2
     }
   ],
@@ -44,14 +44,14 @@
     "Europe"
   ],
   "severity_mix": {
-    "critical": 3,
+    "critical": 4,
     "high": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "CVE-2023-49105 (CVSS 9.8) added to CISA KEV after Chinese-speaking actor exploited it to steal nuclear research records from a Philippine agency. Patch now.",
     "CISA added CVE-2026-65400, a 9.8-CVSS macOS authentication bypass, to its KEV catalog on August 18, confirming active exploitation. No patch yet.",
-    "CISA adds CVE-2026-18577 (CVSS 8.2) to KEV after active exploitation; incomplete patch for CVE-2026-18556 in N-able N-central. Patch now.",
-    "CISA warns of active exploitation of CVE-2026-48907, a CVSS 10.0 improper access control flaw in Widget Factory Joomla Content Editor (JCE) allowing unauthenticated PHP code..."
+    "CISA adds CVE-2026-18577 (CVSS 8.2) to KEV after active exploitation; incomplete patch for CVE-2026-18556 in N-able N-central. Patch now."
   ],
-  "sources_hash": "667a74197c89d722"
+  "sources_hash": "c3e59b977f54a2ac"
 }
