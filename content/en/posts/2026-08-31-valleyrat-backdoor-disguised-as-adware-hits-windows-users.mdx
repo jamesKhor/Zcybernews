@@ -1,0 +1,151 @@
+---
+title: ValleyRAT Backdoor Disguised as Adware Hits Windows Users
+slug: 2026-08-31-valleyrat-backdoor-disguised-as-adware-hits-windows-users
+date: '2026-08-31'
+excerpt: >-
+  Kaspersky found ValleyRAT delivered via fake adware installer that disables
+  Defender and sideloads libcef.dll. Targets Chinese-speaking users.
+category: malware
+tags:
+  - valleyrat
+  - adware
+  - dll-sideloading
+  - windows-defender
+  - kaspersky
+language: en
+source_urls:
+  - 'https://securelist.com/valleyrat-backdoor-adware/121175/'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:valleyrat-masquerading-adware-descriptions-technologies'
+source_count: 1
+seo_query_target: ValleyRAT masquerading as adware
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals how ValleyRAT is disguised as adware and the technical infection
+  chain.
+seo_meta_promise: >-
+  Details the ValleyRAT adware disguise, including Defender bypass and DLL
+  sideloading, with IOCs.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - threat-intel
+  - windows-security
+news_sitemap_eligible: true
+featured_image_alt: Diagram of ValleyRAT infection chain via adware installer
+severity: high
+threat_actor: ValleyRAT
+threat_actor_origin: China
+affected_sectors:
+  - technology
+  - communications
+affected_regions:
+  - China
+  - East Asia
+iocs:
+  - type: hash_md5
+    value: c24e99f9437feacaa63766a3cde3fe3d
+    confidence: high
+    description: Extracted from source material
+  - type: hash_md5
+    value: 07ddbbe2c71c45577a7a4fbcdba0df91
+    confidence: high
+    description: Extracted from source material
+  - type: hash_md5
+    value: 48826d5ca845979d2e6ebd66dc1aae90
+    confidence: high
+    description: Extracted from source material
+  - type: hash_md5
+    value: 7ad1e3ef4e6d9d636c9e7e967733850e
+    confidence: high
+    description: Extracted from source material
+  - type: hash_md5
+    value: 96b4c1d0683dce22bd3223e1e40689c1
+    confidence: high
+    description: Extracted from source material
+  - type: hash_md5
+    value: 9b86d3ab6cef15c633933fbbeab39c0a
+    confidence: high
+    description: Extracted from source material
+  - type: hash_md5
+    value: edfdc30cbd85879776b8f735ea7de1f1
+    confidence: high
+    description: Extracted from source material
+  - type: hash_md5
+    value: 6c158c0f8e029342192d4f0d72e102b7
+    confidence: high
+    description: Extracted from source material
+  - type: hash_md5
+    value: 9a71d6a41cd258b9e89cdc5fc224de73
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Kaspersky researchers have uncovered a campaign that distributes the ValleyRAT backdoor disguised as adware, using a signed installer to slip past defenses and disable Windows Defender before delivering the payload. The infection chain relies on DLL sideloading through a legitimate wallpaper management tool, allowing the malware to execute under the guise of a signed process. Defenders should treat any installation of QN Wallpaper as suspicious and block the associated file hashes.
+
+The malicious installer, identified by MD5 `c24e99f9437feacaa63766a3cde3fe3d`, was initially flagged as adware but exhibited suspicious network activity upon analysis. It deploys a modified version of QN Wallpaper, a Chinese desktop wallpaper tool, which then loads a malicious `libcef.dll` to run the ValleyRAT backdoor. The campaign appears to target Chinese-speaking users, given the use of Chinese-language applications and infrastructure.
+
+## Technical Analysis
+
+The installer behaves differently based on a two-letter suffix in the filename, which appears to be a distraction technique. For example, `FS_SETUP_DD_173.exe` installs DingTalk, a workplace collaboration platform; `FS_SETUP_GG_173.exe` installs Google Chrome; and `FS_SETUP_HY_173.exe` opens a Tencent Meeting download page. Regardless of the suffix, the installer always deploys QN Wallpaper and adds it to autorun.
+
+QN Wallpaper is a legitimate adware application that normally bundles partner apps and displays ads. In this campaign, the attackers repurposed it to carry out DLL sideloading. The installer unpacks files to `C:\Program Files\QNWallpaper\5.4.0.1662\<random string>`, including a malicious `libcef.dll` (MD5 `07ddbbe2c71c45577a7a4fbcdba0df91`) and an encrypted payload file named `PeLoader` (MD5 `48826d5ca845979d2e6ebd66dc1aae90`).
+
+The installer also modifies the registry key `DisableAntiSpyware` to disable Windows Defender, then launches `QnWallpaper.exe`. This executable has dependencies on `libcef.dll`, so the malicious library is loaded automatically. Both `QnWallpaper.exe` and `QnwPlayer.exe` call into `libcef.dll`, but the exported functions are placed into an infinite sleep to prevent the legitimate adware from functioning. If the sleep is interrupted, the malware loads the original functions from a legitimate `libcef.dll` if it can find one on the system.
+
+The malicious code in `libcef.dll` runs via `DllMain` when the library is loaded, but it also contains a function named `RunDLL` that can be invoked manually. Kaspersky suspects the attackers intended to use `rundll32` or a separate executable to trigger this function, but that executable was not included in the package.
+
+Once executed, the malware ensures persistence by adding a file extension association and dropping a file in the Startup folder. It then checks whether the current user is an administrator. If not, it uses the `runas` utility to relaunch the process with elevated privileges.
+
+After obtaining administrator privileges, the malware determines which process loaded the DLL. If running inside `QnWallpaper.exe`, it loads the payload from the `PeLoader` file. If running inside `QnwPlayer.exe`, it retrieves the payload from `libcef.dll` resources. Both payloads are AES-encrypted DLLs containing the ValleyRAT backdoor.
+
+ValleyRAT is a known remote access trojan that provides attackers with full control over the infected system. The use of adware as a disguise is particularly effective because users often manually add such applications to exclusions to avoid blocking their features, and the signed nature of the adware lends an air of legitimacy.
+
+## Indicators of Compromise
+
+Kaspersky provided the following file hashes associated with the campaign:
+
+| File | MD5 |
+|------|-----|
+| Malicious installer | `c24e99f9437feacaa63766a3cde3fe3d` |
+| Archive with adware files | `7ad1e3ef4e6d9d636c9e7e967733850e` |
+| 7z.dll | `96b4c1d0683dce22bd3223e1e40689c1` |
+| 7z.exe | `9b86d3ab6cef15c633933fbbeab39c0a` |
+| chrome_elf.dll | `edfdc30cbd85879776b8f735ea7de1f1` |
+| Malicious libcef.dll | `07ddbbe2c71c45577a7a4fbcdba0df91` |
+| PeLoader (encrypted payload) | `48826d5ca845979d2e6ebd66dc1aae90` |
+| QnWallpaper.exe | `6c158c0f8e029342192d4f0d72e102b7` |
+| QnwPlayer.exe | `9a71d6a41cd258b9e89cdc5fc224de73` |
+
+Network indicators include:
+- `hxxps://meeting[.]tencent[.]com/download/` (used by the installer for distraction)
+- `hxxps://qnwallpaper[.]keansoft[.]cn/` (legitimate QN Wallpaper site, but abused in this campaign)
+
+## Tactics, Techniques & Procedures
+
+The infection chain maps to several MITRE ATT&CK techniques. Initial access is achieved through drive-by compromise, likely via ad networks that distribute the malicious installer. Defense evasion is central to the operation, using DLL sideloading (T1574.002) to run malicious code under a signed process, and disabling Windows Defender (T1562.001) via the `DisableAntiSpyware` registry key.
+
+Persistence is established through registry run keys and the Startup folder (T1547.001). Privilege escalation is handled by bypassing UAC (T1548.002) using the `runas` utility. Execution is triggered through the native API (T1106) via `DllMain` and the `RunDLL` function.
+
+The use of AES encryption for the payload adds an extra layer of obfuscation, making static analysis more difficult. The campaign's reliance on a legitimate signed adware application is a notable evolution in distribution tactics, as it exploits user trust and exclusion lists.
+
+## Threat Actor Context
+
+ValleyRAT is a remote access trojan that has been observed in campaigns targeting Chinese-speaking users. The use of Chinese-language applications like DingTalk and QN Wallpaper, along with Tencent Meeting infrastructure, strongly suggests the operators are targeting individuals or organizations in China or with Chinese-speaking employees. Kaspersky did not attribute the campaign to a specific APT group, but the malware family is well-documented in threat intelligence reports.
+
+The choice of adware as a disguise is likely deliberate: adware is often signed, and users frequently add it to antivirus exclusions to avoid false positives. This allows the malware to operate with reduced scrutiny. The campaign's infrastructure and techniques align with other ValleyRAT operations, which have been linked to cybercriminal activity rather than state-sponsored espionage.
+
+## Mitigations & Recommendations
+
+Defenders should block the file hashes listed in the IOCs and monitor for any installation of QN Wallpaper, especially if it appears outside of a legitimate business context. Since the installer disables Windows Defender, organizations should ensure that endpoint detection and response (EDR) solutions are not solely reliant on the built-in antivirus. Enable tamper protection and monitor for changes to the `DisableAntiSpyware` registry key.
+
+Users should be cautious when downloading software from ad networks or unofficial sources, even if the installer appears signed. The campaign's use of legitimate applications as a vector highlights the importance of application allowlisting and behavioral monitoring. Network defenders should look for connections to domains associated with QN Wallpaper or Tencent Meeting, as these may indicate an active infection.
+
+For organizations with Chinese-speaking users, additional scrutiny is warranted given the targeted nature of the campaign. Conduct a thorough review of any systems where QN Wallpaper is installed, and investigate any alerts related to DLL sideloading or unusual `rundll32` activity. Kaspersky's analysis provides a comprehensive set of indicators that can be used to detect and contain this threat.
+
+## References
+
+- [ValleyRAT backdoor disguised as adware - Kaspersky Securelist](https://securelist.com/valleyrat-backdoor-adware/121175/)
