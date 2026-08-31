@@ -1,0 +1,77 @@
+---
+title: Spring Ring Vishing Campaign Targets Microsoft Teams Users
+slug: 2026-08-31-spring-ring-vishing-campaign-targets-microsoft-teams-users
+date: '2026-08-31'
+excerpt: >-
+  Spring Ring vishing hit 150+ employees across 10 firms via Microsoft Teams,
+  pushing RMM tools and NTLM relay attacks against domain controllers.
+category: malware
+tags:
+  - vishing
+  - microsoft-teams
+  - social-engineering
+  - ntlm-relay
+  - rmm-tools
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/spring-ring-voice-phishing-campaigns/'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:spring-ring-inside-look-voice'
+source_count: 1
+seo_query_target: 'Spring Ring: An Inside Look at Voice Phishing Campaigns in Microsoft Teams'
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The title promises a detailed look at the Spring Ring vishing campaign
+  targeting Microsoft Teams, including the attack lifecycle and defender impact.
+seo_meta_promise: >-
+  The meta description promises concrete details about the Spring Ring campaign:
+  the scale (150+ employees, 10 companies), the attack vector (Microsoft Teams
+  vishing), and the escalation to NTLM relay attacks.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - phishing
+  - social-engineering
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Microsoft Teams chat interface showing an external identity warning prompt,
+  illustrating the vishing attack vector used in the Spring Ring campaign.
+severity: high
+threat_actor: Spring Ring
+affected_sectors:
+  - multiple industries
+publish_tier: public
+---
+## Executive Summary
+
+A coordinated voice phishing (vishing) operation dubbed **Spring Ring** abused Microsoft Teams external chat to impersonate IT help desk personnel, targeting more than 150 employees across at least 10 companies between January and April 2026. Palo Alto Networks' Unit 42 disclosed the campaign on August 31, 2026, detailing how attackers used live voice calls to coerce victims into executing remote monitoring and management (RMM) tools or custom malware. In one advanced variant, the attackers escalated from a vishing call to an NTLM relay attack aimed at an organization's domain controller (DC), potentially granting domain-level privileges.
+
+Defenders should treat this as a signal that collaboration platforms have become a primary vector for social engineering. The campaign exploits the trust employees place in SaaS communication tools, bypassing traditional email security training. Unit 42's telemetry shows phishing alerts from collaboration tools rose to 42% of all phishing alerts in Cortex during the first four months of 2026, up from 30% in the preceding four months. KnowBe4's Phishing Threat Trends Report corroborates this trend, noting a 41% increase in Teams-based attacks between October 2025 and March 2026.
+
+## Technical Analysis
+
+The Spring Ring operation begins with attackers creating external Microsoft Teams chats using display names designed to mirror legitimate internal support units — such as "help desk," "IT assistance," or "support staff." These identities are crafted to appear professional and urgent, exploiting the platform's default "Chat with Anyone" feature to initiate direct contact with users outside the organization.
+
+Unit 42 identified 26 distinct identities approaching targets across multiple tenants after deploying a new detection suite for Microsoft Teams. The attackers rely on active human voice interaction rather than software exploits, which allows them to evade detection mechanisms that typically flag malicious links or credential-harvesting pages.
+
+The attack lifecycle follows two observed campaigns, both leveraging vishing manipulation to deliver payloads via distinct vectors. The first vector involves coercing victims into installing RMM tools — legitimate software that attackers can abuse for persistent remote access. The second vector uses custom malware, likely a PowerShell-based remote access trojan (RAT), delivered during the voice call.
+
+The more sophisticated variant transitions from vishing to an NTLM relay attack. After establishing trust during the call, attackers use open-source tools like PetitPotam to coerce the victim's machine into authenticating to an attacker-controlled server. The relayed credentials are then used to authenticate against the domain controller, potentially granting domain-level privileges.
+
+Unit 42 notes this represents an evolution from previous Teams-based attacks, such as those by Cloaked Ursa (aka APT29), which focused on credential harvesting and group chat-based social engineering. Spring Ring's approach moves from a passive click-and-harvest model to real-time engagement, allowing attackers to pivot based on victim responses.
+
+## Mitigations & Recommendations
+
+Organizations using Microsoft Teams should review their external communication policies. Unit 42 recommends disabling the "Chat with Anyone" feature where business requirements allow, or restricting external chats to approved domains only. Teams administrators should also monitor for patterns of external chat creation targeting multiple internal users simultaneously — a behavior consistent with coordinated campaigns.
+
+Defenders should educate employees that legitimate IT support will never request installation of software during an unsolicited voice call. Voice calls are often less monitored than email or file operations, creating a monitoring gap that attackers exploit. Organizations should implement policies requiring verification of any help desk request through a secondary channel, such as a ticket system or in-person confirmation.
+
+For detection, security teams should monitor for RMM tool installations that occur shortly after external Teams chat activity, as well as for NTLM authentication attempts originating from unexpected sources. Unit 42's detection suite for Microsoft Teams provides alerting on suspicious chat creation patterns; organizations without similar tooling should consider log-based detection rules for external chat initiation events.
+
+Given the NTLM relay variant, organizations should also enforce SMB signing and consider disabling NTLM authentication where feasible, replacing it with Kerberos or other modern authentication protocols.
+
+## References
+
+- [Spring Ring: An Inside Look at Voice Phishing Campaigns in Microsoft Teams (Unit 42)](https://unit42.paloaltonetworks.com/spring-ring-voice-phishing-campaigns/)
+- [KnowBe4 Phishing Threat Trends Report (PDF)](https://unit42.paloaltonetworks.com/spring-ring-voice-phishing-campaigns/#)
