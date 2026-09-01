@@ -1,0 +1,33 @@
+{
+  "tag": "adware",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-08-31"
+  },
+  "top_actors": [
+    "ValleyRAT"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "communications",
+    "critical-infrastructure",
+    "education",
+    "healthcare"
+  ],
+  "top_regions": [
+    "China",
+    "East asia"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Kaspersky found ValleyRAT delivered via fake adware installer that disables Defender and sideloads libcef.dll. Targets Chinese-speaking users.",
+    "A new malware campaign deploys both Gh0st RAT and CloverPlus adware via a single obfuscated loader, giving attackers persistent remote control and a revenue stream from a single infection.",
+    "A malicious adware campaign, active since at least 2023, hijacked DNS settings on over 25,000 systems to redirect traffic through attacker-controlled servers, exposing endpoints in critical OT and gov"
+  ],
+  "sources_hash": "bd2b750a1c047747"
+}

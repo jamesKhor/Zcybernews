@@ -1,0 +1,10 @@
+{
+  "tag": "microsoft-teams",
+  "locale": "zh",
+  "intro": "北美和欧洲的金融服务及技术组织在2026年4月至8月期间承受了与Microsoft Teams标签相关的攻击的主要冲击。五篇文章记录了四起高严重性事件和一起重大事件。在这些活动中观察到了威胁行为者APT29、KongTuke和Spring Ring。关键漏洞CVE-2023-36036在报道中占据突出位置。企业和政府领域也受到了影响。报道覆盖了四个月的时间段，最近一篇文章发布于8月31日。",
+  "sources_hash": "baa58262e2436f80",
+  "source_intro_hash": "cdd8fda576f74e1a",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-01T08:23:48.026Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

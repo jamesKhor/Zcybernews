@@ -1,0 +1,9 @@
+{
+  "tag": "adware",
+  "locale": "en",
+  "intro": "Over the period from April 15 to August 31, 2026, ZCyberNews covered five articles on the adware tag, all rated high severity. The activity primarily affected government, communications, critical-infrastructure, education, and healthcare sectors across China and East Asia. ValleyRAT was the top threat actor observed in these incidents. The reporting highlights the persistent risk adware poses to these critical environments, with the five high-severity cases underscoring the need for continued vigilance among organizations in the region.",
+  "sources_hash": "bd2b750a1c047747",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-01T08:23:28.803Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

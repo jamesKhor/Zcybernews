@@ -1,0 +1,10 @@
+{
+  "tag": "adware",
+  "locale": "zh",
+  "intro": "在2026年4月15日至8月31日期间，ZCyberNews共报道了五篇关于广告软件标签的文章，均被评为高严重性。这些活动主要影响了中国及东亚地区的政府、通信、关键基础设施、教育和医疗保健行业。ValleyRAT是这些事件中观察到的最主要威胁行为者。报道强调了广告软件对这些关键环境构成的持续风险，五起高严重性案例凸显了该地区组织保持持续警惕的必要性。",
+  "sources_hash": "bd2b750a1c047747",
+  "source_intro_hash": "95acf738821ae08e",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-01T08:23:36.487Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

@@ -1,14 +1,15 @@
 {
   "tag": "vishing",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-05-01"
+    "latest": "2026-08-31"
   },
   "top_actors": [
     "BlackFile",
-    "Cordial Spider"
+    "Cordial Spider",
+    "Spring Ring"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -23,12 +24,12 @@
     "Europe"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "Spring Ring vishing hit 150+ employees across 10 firms via Microsoft Teams, pushing RMM tools and NTLM relay attacks against domain controllers.",
     "Adaptive Security finds 3 seconds of audio enough to clone a voice for fraud; deepfake calls tricked employees into wiring $243K in one case. No detection tool caught the attack.",
-    "Two cybercrime groups — Cordial Spider and Snarky Spider — are conducting rapid SaaS extortion attacks using vishing and SSO abuse to steal data within hours, researchers warn.",
-    "BlackFile extortion group has hit at least 12 retail and hospitality organizations since Feb 2026, using vishing to steal VPN credentials and exfiltrate data before demanding…"
+    "Two cybercrime groups — Cordial Spider and Snarky Spider — are conducting rapid SaaS extortion attacks using vishing and SSO abuse to steal data within hours, researchers warn."
   ],
-  "sources_hash": "38502550ea40dc49"
+  "sources_hash": "44d5145eaff3d99a"
 }

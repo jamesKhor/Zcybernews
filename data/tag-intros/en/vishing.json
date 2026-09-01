@@ -1,9 +1,9 @@
 {
   "tag": "vishing",
   "locale": "en",
-  "intro": "This archive collects 5 articles tagged `vishing` published between April 16, 2026 and May 1, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include BlackFile and Cordial Spider, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize financial services, enterprise, and healthcare across North america and Europe, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 5 high reports.",
-  "sources_hash": "38502550ea40dc49",
-  "model": "template:fallback",
-  "generated_at": "2026-05-18T10:06:52.603Z",
+  "intro": "Six articles published between April 16 and August 31, 2026, cover the vishing tag, with all six incidents rated high severity. BlackFile, Cordial Spider, and Spring Ring were observed as distinct threat actors in these campaigns. Affected sectors include financial services, enterprise, healthcare, hospitality, and retail, with incidents reported across North America and Europe. The coverage details voice-based phishing tactics targeting these industries and regions, reflecting a concentrated period of activity. No specific CVEs are listed in the fact sheet, and the reporting focuses on the operational methods and sector impacts of the named actors.",
+  "sources_hash": "44d5145eaff3d99a",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-01T08:23:26.734Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

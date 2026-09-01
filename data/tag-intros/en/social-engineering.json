@@ -1,9 +1,9 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "intro": "Between April and August 2026, ZCyberNews documented 61 social-engineering campaigns, with ClickFix, Lazarus Group, and UNC6692 among the most frequently observed actors. Coverage highlighted CVE-2023-36036, CVE-2025-24054, CVE-2025-33053, and CVE-2026-21513 as key vulnerabilities. Affected sectors included financial services, cryptocurrency, technology, and government, with reports spanning global, North American, European, United States, and Australian regions. The severity mix comprised 47 high, 11 medium, 2 informational, and 1 critical incident, reflecting a sustained focus on credential theft and deceptive lures across the period.",
-  "sources_hash": "bc7bc448695c75ec",
+  "intro": "Over the past five months, ZCyberNews has tracked 62 social-engineering incidents, with ClickFix, Lazarus Group, and UNC6692 among the most frequently observed actors. Coverage frequently cited CVE-2023-36036, CVE-2025-24054, CVE-2025-33053, and CVE-2026-21513. The financial services, cryptocurrency, technology, and government sectors were most affected, with reports spanning North America, Europe, the United States, and Australia. The severity mix included 48 high, 11 medium, 2 informational, and 1 critical findings, reflecting a sustained operational focus on human-centric compromise techniques.",
+  "sources_hash": "116c1bc2b6fa5752",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-22T03:42:15.751Z",
+  "generated_at": "2026-09-01T08:23:15.069Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

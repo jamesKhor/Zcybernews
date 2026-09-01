@@ -1,0 +1,9 @@
+{
+  "tag": "microsoft-teams",
+  "locale": "en",
+  "intro": "Financial services and technology organizations across North America and Europe bore the brunt of attacks tied to the Microsoft Teams tag between April and August 2026. Five articles documented four high-severity incidents and one critical event. Threat actors APT29, KongTuke, and Spring Ring were observed in these campaigns. The critical vulnerability CVE-2023-36036 featured prominently in the reporting. Enterprise and government sectors were also affected. The coverage spans a four-month period, with the most recent article published on August 31.",
+  "sources_hash": "baa58262e2436f80",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-01T08:23:33.359Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

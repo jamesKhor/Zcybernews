@@ -1,10 +1,10 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "count": 19,
+  "count": 20,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-07-13"
+    "latest": "2026-09-01"
   },
   "top_actors": [],
   "top_cves": [
@@ -28,15 +28,15 @@
     "Global"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "informational": 1,
     "critical": 2,
     "medium": 1
   },
   "recent_excerpts": [
+    "Censys researchers detail a CFO's phone compromise: banking apps, executive email, MFA prompts exposed. Learn the DFIR steps to contain and recover from a high-value mobile breach.",
     "CISA's postmortem on a GitHub leak exposing 844 MB of internal data, including AWS GovCloud keys, reveals the agency ignored nine automated alerts and took 48 hours to rotate...",
-    "Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web shells hid in backups.",
-    "Specops Software explains how cached credentials, Kerberos tickets, and ACL persistence let attackers survive password resets in AD and hybrid Entra ID environments."
+    "Kaspersky Compromise Assessment 2025 findings: 60% of incidents lacked high-confidence alerts; 30.8% of threats persisted over 3 months; 40% of web shells hid in backups."
   ],
-  "sources_hash": "baf6d8e05fbd0777"
+  "sources_hash": "9c6941322cb3d61e"
 }

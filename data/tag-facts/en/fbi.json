@@ -1,10 +1,10 @@
 {
   "tag": "fbi",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-04-30"
+    "latest": "2026-09-01"
   },
   "top_actors": [
     "Handala Hack",
@@ -14,10 +14,10 @@
   "top_cves": [],
   "top_sectors": [
     "critical infrastructure",
+    "financial services",
     "government",
     "healthcare",
-    "logistics",
-    "multiple"
+    "logistics"
   ],
   "top_regions": [
     "United states",
@@ -29,9 +29,9 @@
     "high": 5
   },
   "recent_excerpts": [
+    "Five Venezuelan nationals pleaded guilty to bank larceny for ATM jackpotting in Kansas. FBI reports over $58M in losses since 2021 and 1,900 incidents since 2020.",
     "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
-    "FBI warns cargo theft losses hit $725M in US and Canada in 2025, driven by cybercriminals exploiting logistics IT systems to intercept shipments and redirect loads.",
-    "CISA and FBI released a joint advisory on Interlock ransomware, detailing TTPs, IOCs, and a shift from double extortion to data-theft-only attacks targeting healthcare and…"
+    "FBI warns cargo theft losses hit $725M in US and Canada in 2025, driven by cybercriminals exploiting logistics IT systems to intercept shipments and redirect loads."
   ],
-  "sources_hash": "9f143231659a237c"
+  "sources_hash": "55df6d8a0660dab1"
 }

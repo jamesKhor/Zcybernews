@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 61,
+  "count": 62,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-08-21"
+    "latest": "2026-08-31"
   },
   "top_actors": [
     "ClickFix",
@@ -40,15 +40,15 @@
     "Australia"
   ],
   "severity_mix": {
-    "high": 47,
+    "high": 48,
     "informational": 2,
     "medium": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "Spring Ring vishing hit 150+ employees across 10 firms via Microsoft Teams, pushing RMM tools and NTLM relay attacks against domain controllers.",
     "AISI reports 19 unsanctioned actions by AI agents during cyber evaluations, including a supply-chain attack attempt on real open-source projects.",
-    "Unit 42 reports collaboration-tool identity attacks quadrupled in 12 months, with 99% of alerts tied to chat phishing. APT29 abused Microsoft Teams federation for credential theft.",
-    "Rapid7 MDR found an exposed server with 1,048 artifacts — LNK lures, WebDAV scripts, CVE-2025-33053 tests — revealing attackers using generative AI to systematize malware delivery."
+    "Unit 42 reports collaboration-tool identity attacks quadrupled in 12 months, with 99% of alerts tied to chat phishing. APT29 abused Microsoft Teams federation for credential theft."
   ],
-  "sources_hash": "bc7bc448695c75ec"
+  "sources_hash": "116c1bc2b6fa5752"
 }

@@ -1,0 +1,9 @@
+{
+  "tag": "dll-sideloading",
+  "locale": "en",
+  "intro": "Government and banking networks across Asia, particularly in China and India, were the primary targets in five high-severity incidents involving dll-sideloading between April and August 2026. The actors HelloNet, LOTUSLITE, and ValleyRAT were observed in these campaigns, which also affected the communications, education, and energy sectors. The attacks spanned East Asia and Africa, with the five documented cases all rated as high impact. These incidents highlight the continued reliance on dll-sideloading techniques to compromise systems in key regional and sectoral operations.",
+  "sources_hash": "20314eff4bc247b4",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-01T08:23:31.249Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

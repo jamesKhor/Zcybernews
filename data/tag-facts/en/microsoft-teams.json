@@ -1,0 +1,39 @@
+{
+  "tag": "microsoft-teams",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-23",
+    "latest": "2026-08-31"
+  },
+  "top_actors": [
+    "APT29",
+    "KongTuke",
+    "Spring Ring"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2023-36036"
+    }
+  ],
+  "top_sectors": [
+    "financial services",
+    "technology",
+    "enterprise",
+    "government"
+  ],
+  "top_regions": [
+    "North america",
+    "Europe"
+  ],
+  "severity_mix": {
+    "high": 4,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Spring Ring vishing hit 150+ employees across 10 firms via Microsoft Teams, pushing RMM tools and NTLM relay attacks against domain controllers.",
+    "Unit 42 reports collaboration-tool identity attacks quadrupled in 12 months, with 99% of alerts tied to chat phishing. APT29 abused Microsoft Teams federation for credential theft.",
+    "Rapid7 dissects an April 2026 intrusion where a fake IT Support Teams message delivered ModeloRAT via Dropbox, leading to privilege escalation, credential theft, and lateral..."
+  ],
+  "sources_hash": "baa58262e2436f80"
+}

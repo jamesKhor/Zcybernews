@@ -1,9 +1,9 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "intro": "Over the past three months, ZCyberNews has tracked 15 Kaspersky-related reports, with CrystalX, GoSerpent, and HelloNet emerging as the most frequently observed threat actors. The coverage, spanning from April 16 to July 30, 2026, documents 12 high-severity and one critical incident affecting finance, education, energy, government, and building automation sectors. These cases were reported across Global, Russia, Southeast Asia, Africa, and APAC regions, reflecting a broad operational footprint. The archive consolidates these findings, offering a chronological record of activity tied to this tag.",
-  "sources_hash": "33faff64e5533002",
+  "intro": "Between April and August 2026, ZCyberNews covered 16 reports tied to Kaspersky, with CrystalX, GoSerpent, and HelloNet emerging as the most frequently observed threat actors. The coverage spanned finance, education, energy, government, and technology sectors, with affected regions including Global, Russia, Southeast Asia, Africa, and APAC. The severity mix leaned heavily toward high-impact incidents, with 13 high-severity and 1 critical-severity cases documented. These reports reflect the operational activity and sectoral reach recorded during this period, offering a consolidated view of the threat landscape as detailed in our archive.",
+  "sources_hash": "4832c5c0a0aec972",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-31T06:15:24.308Z",
+  "generated_at": "2026-09-01T08:23:19.926Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

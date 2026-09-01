@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-07-30"
+    "latest": "2026-08-31"
   },
   "top_actors": [
     "CrystalX",
@@ -17,7 +17,7 @@
     "education",
     "energy",
     "government",
-    "building automation"
+    "technology"
   ],
   "top_regions": [
     "Global",
@@ -27,13 +27,13 @@
     "APAC"
   ],
   "severity_mix": {
-    "high": 12,
+    "high": 13,
     "critical": 1
   },
   "recent_excerpts": [
+    "Kaspersky found ValleyRAT delivered via fake adware installer that disables Defender and sideloads libcef.dll. Targets Chinese-speaking users.",
     "Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group, targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms since March 2026.",
-    "Kaspersky details the GoSerpent backdoor, active since 2021, targeting government entities in Southeast Asia with a 2026 variant that uses encrypted C2, SOCKS5 proxying, and...",
-    "Kaspersky GReAT dissects OkoBot, a multi-stage framework using SSH tunnels and over 20 payloads to steal cryptocurrency wallet seed phrases, browser data, and credentials."
+    "Kaspersky details the GoSerpent backdoor, active since 2021, targeting government entities in Southeast Asia with a 2026 variant that uses encrypted C2, SOCKS5 proxying, and..."
   ],
-  "sources_hash": "33faff64e5533002"
+  "sources_hash": "4832c5c0a0aec972"
 }

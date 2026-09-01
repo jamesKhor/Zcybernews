@@ -1,0 +1,10 @@
+{
+  "tag": "dll-sideloading",
+  "locale": "zh",
+  "intro": "2026年4月至8月期间，涉及DLL侧加载的五起高严重性事件中，亚洲各地（尤其是中国和印度）的政府和银行网络成为主要攻击目标。在这些活动中，观察到HelloNet、LOTUSLITE和ValleyRAT等行为者，通信、教育和能源行业也受到影响。攻击范围覆盖东亚和非洲，五起已记录案例均被评为高影响。这些事件凸显了在关键区域和行业运营中，攻击者持续依赖DLL侧加载技术来入侵系统。",
+  "sources_hash": "20314eff4bc247b4",
+  "source_intro_hash": "b64fbdd230590a8f",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-01T08:23:40.213Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

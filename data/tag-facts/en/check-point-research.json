@@ -1,15 +1,15 @@
 {
   "tag": "check-point-research",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-26",
-    "latest": "2026-07-14"
+    "latest": "2026-08-31"
   },
   "top_actors": [
     "Handala Hack",
-    "Silver Dragon",
-    "The Gentlemen"
+    "JSCeal",
+    "Silver Dragon"
   ],
   "top_cves": [
     {
@@ -27,7 +27,7 @@
     "business services",
     "consumer",
     "critical infrastructure",
-    "mobile"
+    "cryptocurrency"
   ],
   "top_regions": [
     "China",
@@ -37,13 +37,13 @@
     "Mexico"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "critical": 2
   },
   "recent_excerpts": [
+    "Check Point Research publishes a static deobfuscation pipeline for JSCeal, a V8 bytecode stealer targeting crypto apps since March 2024.",
     "Check Point Research's AI Security Report 2026 documents AI now running live intrusions, building 88,000-line C2 frameworks in under a week, and enabling vishing at scale via...",
-    "Check Point Research found a DeepSeek-generated sample using Chrome's File System Access API to encrypt Android photo directories — no native payload or exploit required.",
-    "Check Point Research found a bug in VECT ransomware's encryption logic that permanently destroys files on Windows systems — no recovery possible even after paying."
+    "Check Point Research found a DeepSeek-generated sample using Chrome's File System Access API to encrypt Android photo directories — no native payload or exploit required."
   ],
-  "sources_hash": "3459a78513a72fe2"
+  "sources_hash": "0b5987bf0d54257e"
 }
