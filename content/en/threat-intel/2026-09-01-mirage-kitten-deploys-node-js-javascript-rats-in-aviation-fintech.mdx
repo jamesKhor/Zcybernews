@@ -1,0 +1,136 @@
+---
+title: 'Mirage Kitten Deploys Node.js, JavaScript RATs in Aviation, FinTech'
+slug: 2026-09-01-mirage-kitten-deploys-node-js-javascript-rats-in-aviation-fintech
+date: '2026-09-01'
+excerpt: >-
+  Mirage Kitten targets aviation and FinTech sectors across the Middle East and
+  Africa with NodeRabbit and PollCat RATs, delivered via trojanized coding
+  challenges on LinkedIn.
+category: threat-intel
+tags:
+  - mirage-kitten
+  - noderabbit
+  - pollcat
+  - apt
+  - node.js-malware
+language: en
+source_urls:
+  - >-
+    https://securelist.com/mirage-kitten-new-backdoors-noderabbit-pollcat/121244/
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:mirage-kitten-targeting-aviation-fintech'
+source_count: 1
+seo_query_target: >-
+  Mirage Kitten targeting aviation and FinTech sectors across the Middle East
+  and Africa with a new malware set
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals Mirage Kitten's new Node.js and JavaScript RATs and their delivery
+  mechanism
+seo_meta_promise: >-
+  Details Mirage Kitten's new NodeRabbit and PollCat RATs targeting aviation and
+  FinTech, including delivery via trojanized coding challenges
+target_hub: apt
+internal_link_targets:
+  - apt
+  - apt-state-actors
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of Mirage Kitten's attack chain using trojanized coding challenges to
+  deliver NodeRabbit and PollCat RATs
+severity: high
+threat_actor: Mirage Kitten
+threat_actor_origin: Middle East
+affected_sectors:
+  - aviation
+  - financial services
+affected_regions:
+  - Middle East
+  - Africa
+  - Afghanistan
+  - Egypt
+  - Ethiopia
+iocs:
+  - type: hash_md5
+    value: 1EA83E4E4592B01E4ACAB63EB867BEE5
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Kaspersky researchers have uncovered a new campaign by the APT group Mirage Kitten, targeting aviation and FinTech sectors across the Middle East and Africa. The group is deploying two previously undocumented malware families: NodeRabbit, a cross-platform RAT written in Node.js, and PollCat, an obfuscated JavaScript RAT. This marks the first publicly documented use of Node.js and JavaScript-based malware by this group, which has historically relied on native C, C++, and Go binaries.
+
+The attack chain begins with fake recruiter accounts on LinkedIn and other job platforms, sending trojanized coding challenge archives to software engineers. The archives contain malicious npm packages that silently launch the RATs. Kaspersky identified three NodeRabbit variants across systems in Afghanistan, Egypt, and Ethiopia, indicating a broad operational scope. Defenders in the aviation and financial services sectors should scrutinize job-application archives and npm package dependencies.
+
+## Technical Analysis
+
+Kaspersky's investigation started with suspicious activity on a system in Afghanistan, traced to an archive named `Front-Technical-Challenge.zip` (MD5: `1EA83E4E4592B01E4ACAB63EB867BEE5`), hosted on an Amazon S3 bucket. The archive contained a fake coding assessment app called TaskFlow, built with Express, React, and Vite. The README instructed candidates to fix frontend defects while claiming `server.js` was bug-free — deliberately steering attention away from the malicious code.
+
+The first line of `server.js` imported a trojanized npm package named `colorized_terminal` (version 2.1.0), bundled directly in the archive's `node_modules` directory rather than published to the public registry. When imported, the package silently launched an implant from `node_modules/.cache/.320697f1/index.js` as a detached background process. Retrospective hunting revealed a second trojanized package, `pretty-log`, also pinned to version 2.1.0, used in other variants.
+
+### NodeRabbit RAT Variants
+
+NodeRabbit is a cross-platform RAT built with Node.js, targeting Windows, Linux, and macOS. The first variant, found in Afghanistan, generates a unique agent identifier by hashing hostname, username, OS version, architecture, and MAC address with SHA-256, truncating to 32 hex characters. It binds a TCP listener to `127.0.0.1:48739` as a single-instance mechanism — if the port is already bound, the malware terminates silently.
+
+Persistence mechanisms vary by OS:
+- **Windows**: Copies itself to `%APPDATA%\Microsoft\EdgeUpdate\msedge_update.js`, clones `node.exe` to `nodew.exe` (patching the PE subsystem from Console to Windows GUI to suppress the console), and creates a `HKCU\Software\Microsoft\Windows\CurrentVersion\Run\MicrosoftEdgeUpdate` registry key.
+- **Linux**: Copies itself to `~/.config/microsoft-edge-update/msedge_update.js` and installs an `@reboot` cron entry.
+
+Two additional variants were recovered from systems in Egypt and Ethiopia, sharing code lineage but with modifications. The second and third variants use the same delivery method — trojanized coding challenges — but with different lure themes and package names.
+
+### PollCat RAT
+
+PollCat is a second, structurally distinct RAT written in obfuscated JavaScript. Like NodeRabbit, it is delivered via trojanized coding challenge archives. Kaspersky notes that PollCat's structure differs substantially from NodeRabbit, suggesting separate development tracks within the group. The obfuscation makes static analysis more difficult, and the JavaScript-based approach allows it to run in any environment with a JavaScript runtime.
+
+### Delivery Chain and Attribution
+
+Kaspersky's telemetry reconstruction matches a publicly cited incident where a threat actor posing as a talent acquisition specialist contacted a software engineer on a job platform, advertised a position, and pressured the target to complete a technical assessment hosted on Amazon S3. The attacker's use of legitimate cloud infrastructure (S3) and job platforms makes detection harder for traditional email filters.
+
+Mirage Kitten has historically relied on native malware (C, C++, Go) deployed via DLL search-order hijacking. The shift to Node.js and JavaScript represents a significant evolution in the group's tooling, likely to evade signature-based detection and blend in with legitimate developer workflows. Kaspersky attributes the campaign to Mirage Kitten based on shared infrastructure, delivery patterns, and code lineage.
+
+## Indicators of Compromise
+
+Kaspersky's report lists the following IOCs:
+
+- **File hash**: `1EA83E4E4592B01E4ACAB63EB867BEE5` (Front-Technical-Challenge.zip)
+- **URL**: `https://oracle-challenge.s3[.]us-east-1.amazonaws[.]com/Front-Technical-Challenge.zip`
+- **File path**: `node_modules/.cache/.320697f1/index.js`
+- **npm packages**: `colorized_terminal` (v2.1.0), `pretty-log` (v2.1.0)
+
+Additional file hashes, domains, and IPs are available in the full Kaspersky Securelist report. Defenders should monitor for these indicators in network traffic and endpoint telemetry.
+
+## Tactics, Techniques & Procedures
+
+The attack chain maps to MITRE ATT&CK techniques as follows:
+
+- **Initial Access (T1566.003)**: Spearphishing via service — fake recruiter accounts on LinkedIn deliver trojanized archives.
+- **Execution (T1059)**: Command and scripting interpreter — Node.js/JavaScript RATs executed via npm package import.
+- **Persistence (T1547.001)**: Registry run keys on Windows; cron jobs on Linux.
+- **Defense Evasion (T1036)**: Masquerading — malware disguised as Microsoft Edge Update files.
+- **Command and Control (T1071)**: Application layer protocol — TCP listener on localhost for single-instance control.
+
+The use of legitimate npm packages (albeit bundled locally rather than published) and cloud storage for delivery represents a sophisticated evasion strategy that bypasses URL reputation filters.
+
+## Threat Actor Context
+
+Mirage Kitten is an APT group with historical ties to the Middle East, previously known for using native malware delivered via DLL search-order hijacking. This campaign marks a notable shift to cross-platform scripting languages, expanding the group's ability to target Windows, Linux, and macOS systems with a single codebase. The targeting of aviation and FinTech sectors in Afghanistan, Egypt, and Ethiopia suggests strategic intelligence gathering or financial espionage objectives.
+
+Kaspersky's detection signature for this threat is `Trojan.JS.MirageKitten.*`. The group's operational tempo and use of job-application lures indicate a focused effort to compromise software engineers with access to sensitive systems.
+
+## Mitigations & Recommendations
+
+Defenders in the aviation and FinTech sectors should take the following steps:
+
+1. **Scrutinize job-application archives**: Implement policies that require security review of any coding challenge archives received from external recruiters, especially those hosted on cloud storage.
+2. **Monitor npm dependencies**: Review `package.json` and `node_modules` for unexpected packages, particularly those not published to the public registry. Use lockfiles and integrity checks.
+3. **Restrict localhost listeners**: Block or monitor processes binding to unusual localhost ports (e.g., 48739) in developer environments.
+4. **Endpoint detection**: Deploy EDR rules for Node.js processes spawning from `node_modules/.cache/` or writing to `%APPDATA%\Microsoft\EdgeUpdate\` and `~/.config/microsoft-edge-update/`.
+5. **User education**: Warn engineering staff about recruiter outreach that pressures immediate execution of code challenges, and verify recruiter identities through official channels.
+
+Kaspersky products detect this threat as `Trojan.JS.MirageKitten.*`. Organizations should also review their hiring processes to ensure technical assessments are conducted on isolated, non-production systems.
+
+## References
+
+- [Kaspersky Securelist: Mirage Kitten targeting aviation and FinTech sectors](https://securelist.com/mirage-kitten-new-backdoors-noderabbit-pollcat/121244/)

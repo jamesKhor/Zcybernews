@@ -1,0 +1,87 @@
+---
+title: 'Iranian cyber spies target aviation, fintech developers with new'
+slug: 2026-09-01-iranian-cyber-spies-target-aviation-fintech-developers-with-new
+date: '2026-09-01'
+excerpt: >-
+  Iran's Mirage Kitten lures aviation, fintech developers with fake coding
+  tests, deploying new NodeRabbit and PollCat malware across Windows, Linux, and
+  macOS.
+category: malware
+tags:
+  - mirage-kitten
+  - noderabbit
+  - pollcat
+  - iranian-cyberespionage
+  - job-scam-malware
+language: en
+source_urls:
+  - >-
+    https://therecord.media/iranian-cyber-spies-target-aviation-fintech-new-malware
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:iranian-cyber-spies-target-aviation'
+source_count: 1
+seo_query_target: Iranian cyber spies target aviation fintech developers with new malware
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reveals how Iran's Mirage Kitten uses fake job offers to deploy new NodeRabbit
+  and PollCat malware against aviation and fintech developers.
+seo_meta_promise: >-
+  Details the two new malware families, their cross-platform reach, and the lure
+  tactics used in Egypt, Ethiopia, and Afghanistan.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - threat-intel
+news_sitemap_eligible: true
+featured_image_alt: Illustration of a laptop with a fake coding job offer and malware symbols
+severity: high
+threat_actor: Mirage Kitten
+threat_actor_origin: Iran
+affected_sectors:
+  - aviation
+  - aerospace
+  - financial services
+affected_regions:
+  - Egypt
+  - Ethiopia
+  - Afghanistan
+publish_tier: public
+---
+## Executive Summary
+
+Iranian state-backed cyberespionage group Mirage Kitten is targeting technology specialists in the aviation, aerospace, and financial technology sectors with fake job offers that deliver two previously undocumented malware families, according to research published Tuesday by Kaspersky. The campaign, which spans Egypt, Ethiopia, and Afghanistan, uses malicious coding assessments distributed via LinkedIn and other job platforms to compromise developers' systems.
+
+Kaspersky first identified the NodeRabbit remote-access trojan on a system in Afghanistan, with variants later found in Egypt and Ethiopia. The malware is capable of infecting Windows, Linux, and macOS, giving attackers remote access, file manipulation, and command execution capabilities. A second family, PollCat, provides persistent access and delivers additional malicious payloads. Both are disguised as programming assignments in a fake hiring process.
+
+## Technical Analysis
+
+Mirage Kitten, also tracked as UNC1549, Smoke Sandstorm, and Nimbus Manticore, has been active since at least 2022. The group's latest operation begins with fake recruiters contacting developers on job platforms with seemingly legitimate tech offers. In one documented case, an attacker posing as a recruiter for an unnamed major technology company directed a software engineer to download a coding challenge hosted on Amazon's cloud storage service and run it immediately.
+
+The malicious archive found in Afghanistan contained a coding test that instructed candidates to review and fix flaws within three hours. The test explicitly banned the use of AI assistants—a move Kaspersky researchers suggest was intended to prevent automated tools from flagging the hidden malicious code. When the developer ran the project, the embedded malware executed alongside the legitimate code.
+
+PollCat follows a similar pattern but adds time pressure: targets are given one hour to complete the test and must enter a six-digit, single-use access code provided by the recruiter, which Kaspersky says increases the likelihood of the victim opening the project quickly.
+
+Mirage Kitten leverages legitimate Microsoft Azure and Cloudflare infrastructure to evade detection. In some cases, the group includes the targeted organization's name in an Azure subdomain, making command-and-control traffic appear as normal corporate network activity.
+
+## Indicators of Compromise
+
+Kaspersky did not publicly disclose specific file hashes, IP addresses, or domains in the report covered by The Record. Defenders should focus on detecting the behavioral indicators described: unexpected coding challenges from unknown recruiters, archives hosted on cloud storage, and execution of projects that include hidden scripts.
+
+## Tactics, Techniques & Procedures
+
+The attack chain follows a predictable sequence: initial contact via job platforms (T1566), luring the victim to download and execute a malicious file (T1204.002), and using legitimate cloud services for command-and-control (T1102). The use of Azure subdomains with victim-specific names is a notable TTP that blends malicious traffic with legitimate cloud usage.
+
+Attribution to Mirage Kitten is based on Kaspersky's analysis of infrastructure overlap and the group's established pattern of fake job offers targeting sensitive industries in Africa and the Middle East.
+
+## Threat Actor Context
+
+Mirage Kitten is an Iranian state-backed cyberespionage group active since at least 2022. The group has previously posed as recruiters on LinkedIn and used fake job opportunities to target individuals in sensitive industries across the region. Its focus on aviation, aerospace, and fintech aligns with Iran's strategic interest in these sectors.
+
+## Mitigations & Recommendations
+
+Organizations in aviation, aerospace, and fintech should educate developers and technical staff about the risk of fake job offers and coding assessments from unknown recruiters. Implement technical controls that block execution of unsigned or unverified code, especially from cloud storage URLs. Monitor for unusual Azure or Cloudflare subdomains that include the organization's name, and restrict outbound traffic to known-good cloud endpoints.
+
+## References
+
+- [Iranian cyber spies target aviation, fintech developers with new malware](https://therecord.media/iranian-cyber-spies-target-aviation-fintech-new-malware)
