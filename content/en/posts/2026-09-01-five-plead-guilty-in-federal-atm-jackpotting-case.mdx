@@ -1,0 +1,72 @@
+---
+title: Five Plead Guilty in Federal ATM Jackpotting Case
+slug: 2026-09-01-five-plead-guilty-in-federal-atm-jackpotting-case
+date: '2026-09-01'
+excerpt: >-
+  Five Venezuelan nationals pleaded guilty to bank larceny for ATM jackpotting
+  in Kansas. FBI reports over $58M in losses since 2021 and 1,900 incidents
+  since 2020.
+category: malware
+tags:
+  - atm-jackpotting
+  - ploutus-malware
+  - tren-de-aragua
+  - fbi
+  - bank-larceny
+  - federal-sentencing
+language: en
+source_urls:
+  - 'https://therecord.media/kansas-atm-jackpotting-guilty-pleas'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:five-plead-guilty-latest-federal'
+source_count: 1
+seo_query_target: Five plead guilty in latest federal ATM jackpotting case
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Reports the guilty pleas of five Venezuelan nationals in a Kansas ATM
+  jackpotting case and the broader FBI statistics on the scheme.
+seo_meta_promise: >-
+  Details the guilty pleas, the FBI's $58 million loss figure, and the Ploutus
+  malware connection, giving defenders concrete numbers and context.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - ransomware-groups
+news_sitemap_eligible: true
+featured_image_alt: >-
+  ATM machine with a warning sign, illustrating the jackpotting attack vector
+  discussed in the article.
+threat_actor: Tren de Aragua
+threat_actor_origin: Venezuela
+affected_sectors:
+  - financial services
+affected_regions:
+  - United States
+publish_tier: public
+---
+## Executive Summary
+
+Five Venezuelan nationals pleaded guilty to conspiracy to commit bank larceny in a Kansas federal court, resolving charges tied to a December 2025 ATM jackpotting spree. The FBI says ATM jackpotting has caused over $58 million in losses since 2021, with more than 1,900 incidents tracked since 2020. The case is the latest in a series of federal prosecutions targeting a network that prosecutors allege funneled proceeds to the Venezuelan gang Tren de Aragua.
+
+## Technical Analysis
+
+Luis Alberto Velasquez-Artigas, 27, received a nine-month prison sentence, while co-defendants Royder Adrian Figuera-Perez, 29, Javier Mejia Jr., 27, Gabriel Alexjandro Corales-Garcia, 33, and Italo Lizandro Corrales-Carrillo, 26, await sentencing, according to court documents cited by The Record. The group drove from Indiana to Kansas in December 2025 intending to rob ATMs in Wamego and Manhattan. Their attempts to install malware on machines in both towns failed and triggered police alarms; surveillance footage led to their arrests days later.
+
+The Kansas case is part of a broader federal crackdown. On August 20, a federal judge in Omaha sentenced Juan Manuel Gouveia-Aguilera, 27, to eight years in prison for his role in a prominent gang using the Ploutus malware. Prosecutors said Gouveia-Aguilera was responsible for more than $3.5 million in ATM losses. He will serve five years of supervised release and pay restitution to affected banks.
+
+The Ploutus malware family, first detected by Symantec in 2013, has evolved significantly. Google researchers have described it as "one of the most advanced ATM malware families" they have seen. Initial variants targeted ATMs in Mexico, using an external keyboard or SMS messages to trigger cash dispensing — a technique previously unseen. Later versions were deployed against machines from vendors including Diebold Nixdorf and Kalignite Platform, which issued alerts in 2017 and 2018.
+
+Attackers typically link a laptop to an ATM's hard drive or replace it with an infected drive pre-loaded with Ploutus. The malware then instructs the machine to dispense cash on demand. The Kansas group's failed attempts suggest either a lack of familiarity with the target hardware or an ineffective malware variant, though prosecutors did not specify which.
+
+Federal prosecutors have sought to connect the jackpotting operations to Tren de Aragua, a Venezuelan transnational criminal organization. The FBI previously told Recorded Future News that it believes the malware was created by Anibal Alexander Canelon Aguirre, who was included in the indictment with Gouveia-Aguilera. However, multiple companies that have tracked Ploutus for over a decade could not confirm Aguirre's role or any direct tie to Tren de Aragua.
+
+At least 119 people have been charged for their alleged roles in the scheme, which prosecutors say targeted ATMs in 47 U.S. states and several other countries. The FBI recorded over 700 jackpotting incidents in 2025 alone, involving more than $20 million in losses.
+
+## Mitigations & Recommendations
+
+U.S. Attorney Ryan Kriegshauser said technology now exists that can help stop jackpotting attacks and urged financial institutions to invest in it. Defenders should prioritize physical security upgrades, including anti-jackpotting sensors that detect unauthorized access to the cash dispenser or card reader, and logical controls that restrict access to the ATM's internal hard drive. Organizations should also monitor for unusual patterns, such as repeated failed access attempts or unexpected reboots, which may indicate an attempted malware installation. Given the FBI's loss figures, the return on investment for these countermeasures is substantial.
+
+## References
+
+- [Five plead guilty in latest federal ATM jackpotting case - The Record](https://therecord.media/kansas-atm-jackpotting-guilty-pleas)
