@@ -1,0 +1,94 @@
+---
+title: Pro-Ukraine VantaCore Ransomware Hits Russian Firms
+slug: 2026-09-02-pro-ukraine-vantacore-ransomware-hits-russian-firms
+date: '2026-09-02'
+excerpt: >-
+  Pro-Ukraine group VantaCore, a rebrand of Thor, has hit at least 7 Russian
+  firms with custom ransomware and RATs, demanding millions in ransom, per F6.
+category: malware
+tags:
+  - vantacore
+  - thor
+  - ransomware
+  - pro-ukraine
+  - custom-malware
+  - f6
+language: en
+source_urls:
+  - >-
+    https://therecord.media/new-pro-ukraine-hacker-group-custom-ransomware-russia
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:proukraine-hacker-group-targets-russian'
+source_count: 1
+seo_query_target: New pro-Ukraine hacker group targets Russian companies with custom ransomware
+seo_intent: incident-impact
+seo_title_promise: >-
+  The title promises details on a new pro-Ukraine ransomware group (VantaCore)
+  targeting Russian companies with custom tools.
+seo_meta_promise: >-
+  The meta description promises a concrete number of victims (7) and names the
+  group's origin and custom tooling, sourced from F6 research.
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - threat-intel
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Abstract digital representation of a ransomware attack targeting corporate
+  networks
+severity: high
+threat_actor: VantaCore
+threat_actor_origin: Ukraine
+affected_regions:
+  - Russia
+publish_tier: public
+---
+## Executive Summary
+
+A new pro-Ukraine ransomware group calling itself VantaCore has compromised at least seven Russian organizations using a suite of custom-built malware, according to a report published this week by Russian cybersecurity firm F6. The group, which F6 believes is a rebrand of the pro-Ukraine hacking operation Thor, is demanding multimillion-dollar ransoms, marking a shift toward financially motivated attacks among politically aligned threat actors.
+
+Defenders in Russian organizations should treat VantaCore as an active threat that combines extortion with data theft. F6's analysis indicates the group relies on custom tools — including a ransomware binary, a loader, and a remote access trojan — rather than off-the-shelf malware, which complicates signature-based detection.
+
+## Technical Analysis
+
+F6 researchers first observed VantaCore activity in August, although the group's data-leak site appears to have been online since early June. The company attributes at least 12 attacks to Thor in 2025 and believes VantaCore is a direct rebrand, based on overlapping infrastructure and tooling.
+
+VantaCore operates as a ransomware-as-a-service (RaaS) operation, providing its custom malware and infrastructure to affiliates. The group communicates with victims via a Tor-based chat service and maintains a leak site for publishing stolen data, a common double-extortion tactic.
+
+Initial access vectors are not novel. F6 notes the group exploits poorly secured VPNs and other remote-access tools, flaws in internet-facing applications, and credentials stolen from business partners. The researchers characterize VantaCore's tactics as "largely effective, although neither sophisticated nor innovative."
+
+The distinguishing feature is the custom toolset, which F6 observed in August attacks:
+
+- **VantaCore ransomware**: Encrypts data on both servers and employee workstations.
+- **VantaCoreLoader**: Distributes the ransomware and other payloads across the network.
+- **VantaCoreRAT**: A backdoor capable of system information gathering, file transfer, and remote command execution.
+- **SnowKiller**: A utility designed to disable security products, including antivirus software.
+
+This shift away from widely available ransomware families like LockBit 3 Black and Babuk reflects a broader trend F6 has tracked through 2025 and 2026. The researchers attribute the change to weaknesses discovered in those tools and reluctance among pro-Ukraine hackers to rely on software with Russian origins.
+
+## Indicators of Compromise
+
+F6's public report does not include specific hashes, IP addresses, or domains associated with VantaCore campaigns. Defenders should monitor for the tool names — VantaCore, VantaCoreLoader, VantaCoreRAT, and SnowKiller — in endpoint detection logs and network traffic.
+
+## Tactics, Techniques & Procedures
+
+F6's description of VantaCore's operations maps to a standard ransomware kill chain. Initial access relies on exploiting public-facing applications (T1190) and using valid accounts (T1078), often obtained from business partners. Once inside, the group deploys SnowKiller to impair defenses (T1562) before using VantaCoreLoader for execution and propagation. The final stage involves VantaCore ransomware for data encryption (T1486).
+
+The use of a Tor-based negotiation chat and a dedicated leak site follows the double-extortion model, where stolen data is weaponized to pressure victims into payment.
+
+## Threat Actor Context
+
+F6 attributes VantaCore to the pro-Ukraine hacking ecosystem, specifically identifying it as a rebrand of Thor. Thor was among the most active ransomware operations targeting Russia last year, combining financial extortion with destructive or politically motivated activity. VantaCore, by contrast, appears primarily financially driven, with ransom demands reaching millions of dollars.
+
+F6 also warns that stolen data from Russian organizations may be published, sold, or used in follow-on cyber operations, extending the threat beyond simple extortion.
+
+## Mitigations & Recommendations
+
+Organizations in Russia — and any entity that could be caught in the crossfire — should prioritize hardening remote-access infrastructure, since poorly secured VPNs and internet-facing applications are VantaCore's primary entry points. Enforce multi-factor authentication on all remote access and review credentials shared with business partners.
+
+Given the custom toolset, defenders should assume traditional antivirus signatures will not catch VantaCore's malware. Focus on behavioral detection: monitor for unusual encryption activity, unexpected process executions, and attempts to disable security software. Segment networks to limit the blast radius of a potential VantaCoreLoader deployment, and maintain offline backups that cannot be encrypted or deleted by the ransomware.
+
+## References
+
+- [New pro-Ukraine hacker group targets Russian companies with custom ransomware](https://therecord.media/new-pro-ukraine-hacker-group-custom-ransomware-russia)
