@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-07-16"
+    "latest": "2026-09-01"
   },
   "top_actors": [
     "GopherWhisper",
@@ -17,22 +17,22 @@
     "energy",
     "cryptocurrency",
     "technology",
-    "business services"
+    "aviation"
   ],
   "top_regions": [
     "Japan",
     "Mongolia",
-    "Asia",
-    "Bangladesh",
-    "Central america"
+    "Afghanistan",
+    "Africa",
+    "Asia"
   ],
   "severity_mix": {
-    "high": 15
+    "high": 16
   },
   "recent_excerpts": [
     "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026.",
-    "Kaspersky details HelloNet APT campaign targeting Russian government, energy, and transport sectors via ViPNet update system DLL sideloading since May 2026.",
-    "ESET details Silver Fox APT targeting Japanese firms with tax-themed phishing emails delivering malware via weaponized Excel attachments during tax season."
+    "Mirage Kitten targets aviation and FinTech sectors across the Middle East and Africa with NodeRabbit and PollCat RATs, delivered via trojanized coding challenges on LinkedIn.",
+    "Kaspersky details HelloNet APT campaign targeting Russian government, energy, and transport sectors via ViPNet update system DLL sideloading since May 2026."
   ],
-  "sources_hash": "7ff92a6b434138cb"
+  "sources_hash": "9ec053db3551506a"
 }
