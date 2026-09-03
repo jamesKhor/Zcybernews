@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 60,
+  "count": 61,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-21"
+    "latest": "2026-09-02"
   },
   "top_actors": [
     "LockBit",
@@ -45,15 +45,15 @@
     "Turkey"
   ],
   "severity_mix": {
-    "high": 44,
+    "high": 45,
     "critical": 6,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "Pro-Ukraine group VantaCore, a rebrand of Thor, has hit at least 7 Russian firms with custom ransomware and RATs, demanding millions in ransom, per F6.",
     "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident.",
-    "Swiss prosecutors seek 12 years for a Ukrainian developer tied to LockerGoga, MegaCortex, and Nefilim attacks on Stadler Rail and others, with $160M in losses.",
-    "Analog Devices disclosed to the SEC that intruders exfiltrated files from its networks in June, with scope still unknown."
+    "Swiss prosecutors seek 12 years for a Ukrainian developer tied to LockerGoga, MegaCortex, and Nefilim attacks on Stadler Rail and others, with $160M in losses."
   ],
-  "sources_hash": "dd74fa8e3143c174"
+  "sources_hash": "90ae85050b4f4bd3"
 }
