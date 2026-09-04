@@ -1,0 +1,80 @@
+---
+title: Toy Ghouls Debuts Custom Windows Backdoors in Russia Attacks
+slug: 2026-09-04-toy-ghouls-debuts-custom-windows-backdoors-in-russia-attacks
+date: '2026-09-04'
+excerpt: >-
+  Kaspersky found Toy Ghouls using two new Windows backdoors — mqtt-bird-agent
+  and matrix-bird-agent — delivered via WinRM against Russian orgs since July
+  2026.
+category: malware
+tags:
+  - toy-ghouls
+  - windows-backdoor
+  - hivemq
+  - element
+  - winrm
+  - genielocker
+  - kaspersky-gert
+language: en
+source_urls:
+  - 'https://securelist.com/toy-ghouls-new-hivemq-and-element-backdoors/121270/'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:angry-birds-ghouls-toys-posts'
+source_count: 1
+seo_query_target: Toy Ghouls Windows backdoor
+seo_intent: technical-analysis
+seo_title_promise: Reveals Toy Ghouls' shift to custom Windows backdoors and their C2 mechanisms.
+seo_meta_promise: >-
+  Details two new Toy Ghouls Windows backdoors, delivery via WinRM, and
+  persistence methods for defenders.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - ransomware-groups
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Technical diagram of Toy Ghouls backdoor infection chain via WinRM to Windows
+  systems
+severity: high
+threat_actor: Toy Ghouls
+affected_regions:
+  - Russia
+iocs:
+  - type: domain
+    value: broker.hivemq.com
+    confidence: medium
+    description: Extracted from source material
+  - type: domain
+    value: ip-api.com
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Kaspersky GERT researchers have identified two new custom Windows backdoors used by the financially motivated threat group Toy Ghouls (also tracked as Bearlyfy, Laboo.boo, and Feral Wolf) in attacks against Russian organizations. The backdoors, named `mqtt-bird-agent` and `matrix-bird-agent`, mark the group's first use of bespoke malware, moving away from exclusively leveraging public tools and leaked ransomware builders. One variant communicates via the public HiveMQ MQTT broker, while the other uses the Matrix-based Element messenger for command-and-control, according to a Kaspersky Securelist analysis published September 4, 2026.
+
+Defenders should note the delivery mechanism: the group uses Windows Remote Management (WinRM) with open-source tools Evil-WinRM and WinRM-fs to push the backdoors and their configuration files onto compromised systems. Both variants establish persistence as Windows services and employ machine-bound encryption for their configuration data, complicating forensic analysis and credential extraction.
+
+## Technical Analysis
+
+The two backdoor versions share core functionality but differ in their C2 infrastructure and configuration handling. The HiveMQ variant (`mqtt-bird-agent` 0.1.0) uses the public MQTT broker at `broker.hivemq.com` for communication, while the Element variant (`matrix-bird-agent` 0.1.0) connects to an attacker-controlled Element homeserver.
+
+Both backdoors support installation as Windows services via command-line flags. The HiveMQ version accepts `--install`, `--uninstall`, and `--seal` options, with the help output identifying itself as "Bird Agent - MQTT server monitor." The Element version uses subcommands `install`, `uninstall`, and `service`, presenting as "Matrix monitoring agent."
+
+Configuration handling differs significantly between versions. The HiveMQ backdoor reads a `config.toml` file from the executable's directory or falls back to `%PROGRAMDATA%\cplsupport\config.toml`. On first run, it encrypts sensitive fields using ChaCha20-Poly1305 with a key derived from the `HKLM\Software\Microsoft\Cryptography\MachineGuid` registry value, binding the config to the specific machine. The encrypted fields include `agent_privkey`, `channel_id`, and `server_pubkey`.
+
+The Element version instead deletes its configuration file after the first run and stores parameters in the `HKLM\Software\synapse\Config\SealedConfig` registry key. This configuration specifies the attacker-controlled Element server address, a room identifier, and an access token. If the token is left empty, the backdoor prompts for a password interactively during installation, then saves the received token to the registry.
+
+At startup, both variants send a GET request to `http://ip-api.com/json` to determine the system's public IP address and country of origin, likely for targeting or operational security checks before establishing C2 communication.
+
+## Mitigations & Recommendations
+
+Organizations in Russia or with Russian business operations should treat WinRM exposure as a critical risk. Restrict WinRM access to trusted administrative hosts and monitor for anomalous usage of Evil-WinRM or WinRM-fs, which are common in this group's delivery chain. Enable logging for Windows service creation and monitor for new services referencing `cplsupport.exe` or `wtass.exe`, as well as for the creation of the specific configuration paths and registry keys detailed above.
+
+Defenders should also watch for outbound connections to `broker.hivemq.com` on MQTT ports or to Matrix homeservers, which may indicate C2 activity from these backdoors. Since the configuration files are machine-bound after first run, extracting credentials from a compromised host requires access to the MachineGuid registry value — a detail that may slow incident response but should not be treated as a barrier to containment.
+
+## References
+
+- [Angry Birds: Toy Ghouls' new toys — Kaspersky Securelist](https://securelist.com/toy-ghouls-new-hivemq-and-element-backdoors/121270/)
