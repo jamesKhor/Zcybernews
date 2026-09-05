@@ -1,0 +1,9 @@
+{
+  "tag": "censys",
+  "locale": "en",
+  "intro": "Over five articles published between April 18 and September 4, 2026, ZCyberNews coverage tagged with Censys documented three high-severity and two medium-severity incidents. The reporting highlighted the threat actors ERMAC and Moobot as separate concerns, with activity observed across financial services, executive management, hosting, and internet infrastructure sectors. These pieces drew on Censys data to examine the technical details and operational impact of the attacks, providing a focused look at how these distinct entities targeted their respective victims during this period.",
+  "sources_hash": "cd90db5f8790077a",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-05T07:28:40.546Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

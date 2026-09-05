@@ -1,0 +1,10 @@
+{
+  "tag": "censys",
+  "locale": "zh",
+  "intro": "在2026年4月18日至9月4日期间发布的五篇文章中，ZCyberNews标注为Censys的报道记录了三次高严重性和两次中等严重性事件。报道将威胁行为者ERMAC和Moobot作为独立关注点，观察到其活动涉及金融服务、高管管理、托管和互联网基础设施等行业。这些文章利用Censys数据分析了攻击的技术细节和运营影响，聚焦展示了这些不同实体在此期间如何针对各自受害者。",
+  "sources_hash": "cd90db5f8790077a",
+  "source_intro_hash": "d87e0d8448fd70cd",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-05T07:28:43.266Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

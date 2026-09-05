@@ -1,10 +1,10 @@
 {
   "tag": "cisa",
   "locale": "en",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-26"
+    "latest": "2026-09-05"
   },
   "top_actors": [
     "GRU",
@@ -42,19 +42,19 @@
   ],
   "top_regions": [
     "United states",
-    "Global",
     "North america",
+    "Global",
     "Brazil",
-    "Europe"
+    "EU"
   ],
   "severity_mix": {
     "critical": 4,
     "high": 15
   },
   "recent_excerpts": [
+    "G7 and CISA advisory urges organizations to start migrating to post-quantum cryptography now, citing 'harvest now, decrypt later' risks and a 2035 UK roadmap for completion.",
     "CVE-2026-60004, a 9.8-CVSS Gitea RCE, is under active attack per CISA. Attackers with repo write access can run shell commands. Patch now.",
-    "At Black Hat USA 2026, officials and researchers warn AI-driven vulnerability discovery outpaces defenses.",
-    "CISA gives federal agencies until Aug 25 to patch CVE-2026-68820, a Winsock privilege-escalation flaw exploited by North Korea's Lazarus in Operation Dream Job."
+    "At Black Hat USA 2026, officials and researchers warn AI-driven vulnerability discovery outpaces defenses."
   ],
-  "sources_hash": "97cde70b8fba503e"
+  "sources_hash": "e2ca099a2996a8f5"
 }

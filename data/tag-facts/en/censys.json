@@ -1,0 +1,31 @@
+{
+  "tag": "censys",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-18",
+    "latest": "2026-09-04"
+  },
+  "top_actors": [
+    "ERMAC",
+    "Moobot"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "financial services",
+    "executive management",
+    "hosting",
+    "internet infrastructure"
+  ],
+  "top_regions": [],
+  "severity_mix": {
+    "medium": 2,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "Censys maps 1,900+ exposed NPS proxy servers—an open-source Go tunneling tool abused for stealthy network pivoting. Learn how attackers use it and how to detect it.",
+    "Censys researchers detail a CFO's phone compromise: banking apps, executive email, MFA prompts exposed. Learn the DFIR steps to contain and recover from a high-value mobile breach.",
+    "Censys found Moobot source code and live DDoS tools on an open directory (86.53.111[.]212) in July 2026, months after the 2024 court-authorized disruption."
+  ],
+  "sources_hash": "cd90db5f8790077a"
+}

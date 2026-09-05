@@ -1,9 +1,9 @@
 {
   "tag": "open-source",
   "locale": "en",
-  "intro": "Between 12 April and 4 August 2026, ZCyberNews published 15 articles on open-source security, covering four critical, two high, three medium, and five informational findings. The coverage highlighted CVE-2026-25874 (CVSS 9.3), CVE-2026-33626 (CVSS 7.5), CVE-2026-8114 (CVSS 6.5), and CVE-2026-42286. Affected sectors included technology, research, software development, enterprise applications, and financial services, with a global reach. These reports documented vulnerabilities and advisories relevant to organisations relying on open-source components, offering details on severity and potential impact across the observed period.",
-  "sources_hash": "761973a59948a5a8",
+  "intro": "From April to September 2026, ZCyberNews covered 16 open-source articles, spanning a global impact across technology, research, software development, enterprise applications, and financial services. Reporting highlighted critical vulnerabilities including CVE-2026-25874 (CVSS 9.3), CVE-2026-33626 (CVSS 7.5), CVE-2026-8114 (CVSS 6.5), and CVE-2026-42286. Coverage detailed a severity mix of four medium, four critical, two high, and five informational findings, reflecting the broad risk landscape within open-source ecosystems.",
+  "sources_hash": "3806f65720be5bf2",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-05T05:47:12.738Z",
+  "generated_at": "2026-09-05T07:28:38.875Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
