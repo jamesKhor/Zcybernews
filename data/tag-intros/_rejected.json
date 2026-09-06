@@ -1714,5 +1714,11 @@
     "locale": "en",
     "lastError": "word count 55 outside 60-140 (en)",
     "at": "2026-08-07T04:55:34.653Z"
+  },
+  {
+    "tag": "wordpress",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-82923 but it is not in the fact sheet",
+    "at": "2026-09-06T07:42:24.515Z"
   }
 ]

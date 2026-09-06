@@ -1,10 +1,10 @@
 {
   "tag": "wordpress",
   "locale": "zh",
-  "intro": "网站托管、电子商务和出版行业正面临来自WordPress漏洞的严峻威胁态势，2026年4月13日至6月21日期间共发布14篇文章。该档案涵盖严重程度各异的漏洞，包括5个严重级、4个高危级和5个中危级问题，其中严重级CVE包括CVE-2019-25763（CVSS 9.8）、CVE-2026-4883（CVSS 9.8）、CVE-2026-6433（CVSS 9.8），以及中危级CVE-2021-47926和CVE-2021-47927（均为CVSS 6.4）。这些漏洞影响全球范围内的数字媒体、数字出版及出版运营领域。",
+  "intro": "本档案收录了 14 篇带有「wordpress」标签的文章，发布时间从2026年4月13日至2026年6月21日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2019-25763、CVE-2026-4883、CVE-2026-6433，每一项均以原文中的漏洞背景和元数据为依据。受影响范围信号侧重于web hosting、e-commerce、publishing，地区包括 Global，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括4 篇严重、4 篇高危、5 篇中危报告。",
   "sources_hash": "5c3728d8a08cdb6c",
-  "source_intro_hash": "a1dfbe9a92615f5b",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-22T04:37:32.465Z",
+  "source_intro_hash": "8a03b32ec5dc18df",
+  "model": "template:fallback",
+  "generated_at": "2026-09-06T07:42:24.516Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

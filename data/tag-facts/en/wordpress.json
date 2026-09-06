@@ -1,10 +1,10 @@
 {
   "tag": "wordpress",
   "locale": "en",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-06-21"
+    "latest": "2026-09-05"
   },
   "top_actors": [],
   "top_cves": [
@@ -21,11 +21,11 @@
       "cvss": 9.8
     },
     {
-      "id": "CVE-2021-47926",
-      "cvss": 6.4
+      "id": "CVE-2026-82923",
+      "cvss": 9.8
     },
     {
-      "id": "CVE-2021-47927",
+      "id": "CVE-2021-47926",
       "cvss": 6.4
     }
   ],
@@ -40,14 +40,14 @@
     "Global"
   ],
   "severity_mix": {
-    "critical": 5,
+    "critical": 6,
     "medium": 5,
     "high": 4
   },
   "recent_excerpts": [
+    "CVE-2026-82923 (CVSS 9.8) lets unauthenticated attackers install plugins, write files, and achieve RCE in the AI Website Builder WordPress plugin 1.0.0. No patch yet.",
     "CVE-2019-25763 (CVSS 9.8) allows unauthenticated attackers to hijack admin sessions in WordPress Ultimate Addons for Beaver Builder 1.2.4.1 via a crafted POST request to...",
-    "CVE-2026-4883 (CVSS 9.8) in Piotnet Forms ≤2.1.40 lets unauthenticated attackers upload .phar or .phtml files via an incomplete extension blacklist, enabling remote code execution.",
-    "CVE-2021-47957 (CVSS 6.4) in Cookie Law Bar 1.2.1 lets authenticated attackers inject persistent scripts via the Bar Message field, affecting all WordPress site visitors."
+    "CVE-2026-4883 (CVSS 9.8) in Piotnet Forms ≤2.1.40 lets unauthenticated attackers upload .phar or .phtml files via an incomplete extension blacklist, enabling remote code execution."
   ],
-  "sources_hash": "74108c0788f85356"
+  "sources_hash": "708d373c82b2590e"
 }

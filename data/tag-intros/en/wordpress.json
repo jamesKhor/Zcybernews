@@ -1,9 +1,9 @@
 {
   "tag": "wordpress",
   "locale": "en",
-  "intro": "Web hosting, e-commerce, and publishing sectors face a critical threat landscape from WordPress vulnerabilities, with 14 articles published between April 13 and June 21, 2026. The archive covers a severity mix of 5 critical, 4 high, and 5 medium issues, including the critical CVEs CVE-2019-25763 (CVSS 9.8), CVE-2026-4883 (CVSS 9.8), CVE-2026-6433 (CVSS 9.8), alongside medium-severity CVE-2021-47926 and CVE-2021-47927 (both CVSS 6.4). These vulnerabilities affect digital media, digital publishing, and publishing operations globally.",
-  "sources_hash": "74108c0788f85356",
+  "intro": "Web hosting, e-commerce, publishing, and digital media bore the brunt of WordPress-focused attacks between April and September 2026, with global impact recorded across all 15 reported incidents. Six critical and four high-severity vulnerabilities dominated the threat landscape, including CVE-2019-25763, CVE-2026-4883, CVE-2026-6433, and CVE-2026-82923, each carrying a CVSS score of 9.8. CVE-2021-47926, rated 6.4, also featured among the top exposures. Digital publishing was additionally affected. The archive covers activity from 2026-04-13 to 2026-09-05, reflecting a severity mix of six critical, five medium, and four high findings across the WordPress ecosystem.",
+  "sources_hash": "708d373c82b2590e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-22T04:37:17.589Z",
+  "generated_at": "2026-09-06T07:42:17.161Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

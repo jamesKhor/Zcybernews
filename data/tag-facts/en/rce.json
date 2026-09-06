@@ -1,10 +1,10 @@
 {
   "tag": "rce",
   "locale": "en",
-  "count": 35,
+  "count": 36,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-26"
+    "latest": "2026-09-05"
   },
   "top_actors": [
     "PhantomCore"
@@ -45,14 +45,14 @@
     "Russia"
   ],
   "severity_mix": {
-    "critical": 22,
+    "critical": 23,
     "high": 12,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-82923 (CVSS 9.8) lets unauthenticated attackers install plugins, write files, and achieve RCE in the AI Website Builder WordPress plugin 1.0.0. No patch yet.",
     "CVE-2026-60004, a 9.8-CVSS Gitea RCE, is under active attack per CISA. Attackers with repo write access can run shell commands. Patch now.",
-    "CISA added CVE-2026-42271 (CVSS 8.7) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against BerriAI LiteLLM deployments.",
-    "CVE-2026-20223 (CVSS 10.0): Unauthenticated attackers can access internal REST APIs in Cisco Secure Workload with Site Admin privileges. No authentication required."
+    "CISA added CVE-2026-42271 (CVSS 8.7) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against BerriAI LiteLLM deployments."
   ],
-  "sources_hash": "7fd121034d1433b9"
+  "sources_hash": "c80f25edf3c96c79"
 }
