@@ -1,37 +1,39 @@
 {
   "tag": "data-leak",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-15",
-    "latest": "2026-07-09"
+    "latest": "2026-09-07"
   },
   "top_actors": [
-    "0APT"
+    "0APT",
+    "Rhysida"
   ],
   "top_cves": [],
   "top_sectors": [
+    "government",
     "business services",
     "e-commerce",
     "education",
-    "financial-services",
-    "forestry"
+    "financial-services"
   ],
   "top_regions": [
     "Global",
     "European union",
+    "Germany",
     "Latvia",
     "NATO"
   ],
   "severity_mix": {
+    "high": 4,
     "medium": 1,
-    "high": 3,
     "critical": 1
   },
   "recent_excerpts": [
+    "Berlin investigates a fresh data leak after hackers published stolen login credentials, following a Rhysida-linked breach of two city ministries that exposed employee personal...",
     "Latvia's LVM says 44 GB of data leaked, two-thirds of customers still locked out of systems after ransomware attack attributed to a foreign financially motivated group.",
-    "Notion public pages expose the email addresses and profile photos of all editors, a flaw affecting millions of users of the collaboration platform.",
-    "Freelance platform Fiverr exposed sensitive user files, including tax documents and PII, via a misconfigured cloud storage bucket, with data indexed by Google search, according to security researchers"
+    "Notion public pages expose the email addresses and profile photos of all editors, a flaw affecting millions of users of the collaboration platform."
   ],
-  "sources_hash": "8f3c939a4a009fdd"
+  "sources_hash": "6c11b026828bfc31"
 }

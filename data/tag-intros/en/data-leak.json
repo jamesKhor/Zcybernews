@@ -1,9 +1,9 @@
 {
   "tag": "data-leak",
   "locale": "en",
-  "intro": "This archive collects 6 articles tagged `data-leak` published between April 15, 2026 and July 9, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include 0APT, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize business services, e-commerce, and education across Global, European union, and Latvia, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, 3 high, and 1 medium reports.",
-  "sources_hash": "8f3c939a4a009fdd",
-  "model": "template:fallback",
-  "generated_at": "2026-07-10T06:47:48.047Z",
+  "intro": "Between April and September 2026, ZCyberNews covered seven data-leak incidents, with 0APT and Rhysida appearing as the most frequently cited threat actors. Coverage spanned government, business services, e-commerce, education, and financial-services sectors, affecting regions including the European Union, Germany, Latvia, and NATO, alongside global reports. The severity mix included one critical, four high, and one medium incident. These reports tracked exposed records and leak disclosures across these distinct actors, with no single event dominating the archive’s timeline from mid-April through early September.",
+  "sources_hash": "6c11b026828bfc31",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-08T07:53:26.417Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

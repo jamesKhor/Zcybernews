@@ -1,9 +1,9 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "intro": "From April to September 2026, ZCyberNews covered 61 ransomware incidents, with LockBit, The Gentlemen, and ShinyHunters appearing as distinct threat actors. The most frequently cited vulnerability was CVE-2026-1731, a CVSS 9.8 flaw, alongside CVE-2026-34197, CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Coverage spanned healthcare, manufacturing, multiple, financial services, and government sectors, with reports from Global, North America, Europe, the United States, and Turkey. The severity mix included 45 high, 6 critical, 1 medium, and 2 informational reports.",
-  "sources_hash": "90ae85050b4f4bd3",
+  "intro": "LockBit appeared most frequently across the 62 articles tracked from April to September 2026, followed by The Gentlemen and ShinyHunters as distinct subjects. Coverage referenced CVE-2026-1731, CVE-2026-34197, CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Affected sectors included healthcare, manufacturing, multiple, government, and financial services, with reports spanning Global, North America, Europe, the United States, and Turkey. The severity mix comprised 46 high, 6 critical, 1 medium, and 2 informational items.",
+  "sources_hash": "718e7296d5f88014",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-03T07:51:20.071Z",
+  "generated_at": "2026-09-08T07:53:24.539Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

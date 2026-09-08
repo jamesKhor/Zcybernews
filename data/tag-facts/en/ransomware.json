@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 61,
+  "count": 62,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-02"
+    "latest": "2026-09-07"
   },
   "top_actors": [
     "LockBit",
@@ -34,8 +34,8 @@
     "healthcare",
     "manufacturing",
     "multiple",
-    "financial services",
-    "government"
+    "government",
+    "financial services"
   ],
   "top_regions": [
     "Global",
@@ -45,15 +45,15 @@
     "Turkey"
   ],
   "severity_mix": {
-    "high": 45,
+    "high": 46,
     "critical": 6,
     "medium": 1,
     "informational": 2
   },
   "recent_excerpts": [
+    "Berlin investigates a fresh data leak after hackers published stolen login credentials, following a Rhysida-linked breach of two city ministries that exposed employee personal...",
     "Pro-Ukraine group VantaCore, a rebrand of Thor, has hit at least 7 Russian firms with custom ransomware and RATs, demanding millions in ransom, per F6.",
-    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident.",
-    "Swiss prosecutors seek 12 years for a Ukrainian developer tied to LockerGoga, MegaCortex, and Nefilim attacks on Stadler Rail and others, with $160M in losses."
+    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident."
   ],
-  "sources_hash": "90ae85050b4f4bd3"
+  "sources_hash": "718e7296d5f88014"
 }
