@@ -1,9 +1,9 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "intro": "From 29 articles published between 2026-04-13 and 2026-08-13, this archive covers privilege-escalation vulnerabilities across enterprise, technology, education, government, and healthcare sectors. Chaotic Eclipse and Lazarus Group were observed as top threat actors. Key vulnerabilities include CVE-2026-8950, CVE-2026-8956, and CVE-2026-8957, each with a CVSS score of 9.8, alongside CVE-2026-34659 and CVE-2026-34660 at 9.6. Coverage spans Global, Brazil, France, Germany, and India, with a severity mix of 22 high, 3 medium, and 4 critical incidents.",
-  "sources_hash": "ad114c6aa9b9fb54",
+  "intro": "Between 2026-04-13 and 2026-09-09, ZCyberNews published 30 articles tagged privilege-escalation. The coverage spans five critical, 22 high, and three medium severity issues. Among the most notable vulnerabilities are CVE-2026-8950, CVE-2026-8956, and CVE-2026-8957, each rated CVSS 9.8, alongside CVE-2026-34659 and CVE-2026-34660, both rated CVSS 9.6. Chaotic Eclipse and Lazarus Group feature among the top threat actors. The affected sectors include technology, enterprise, government, healthcare, and education, with incidents reported across Global, Brazil, France, Germany, and India.",
+  "sources_hash": "6e89a65007846f3e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-13T04:51:33.820Z",
+  "generated_at": "2026-09-10T07:56:09.314Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

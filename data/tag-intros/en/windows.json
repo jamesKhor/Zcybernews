@@ -1,9 +1,9 @@
 {
   "tag": "windows",
   "locale": "en",
-  "intro": "Between April and July 2026, ZCyberNews covered 25 Windows-focused stories, with Kyber, Chaotic Eclipse, and Toy Ghouls among the most frequently observed actors. Coverage centered on CVE-2024-1708, a high-severity flaw rated 8.4, alongside CVE-2026-33104, CVE-2026-8069, CVE-2026-26179, and CVE-2026-32183. The reporting spanned 19 high, two critical, and four medium severity incidents, touching consumer electronics, gaming, government, IT, and managed service providers. Affected regions included North America and the Russian federation, with analysis drawn from the archive’s full date range.",
-  "sources_hash": "2d65d4ffe35ad81f",
+  "intro": "Across 26 articles spanning 12 April 2026 to 9 September 2026, ZCyberNews tracked Windows vulnerabilities exploited by Kyber, Chaotic Eclipse, and Toy Ghouls. Five CVEs recurred: CVE-2024-1708 at CVSS 8.4, alongside CVE-2026-33104, CVE-2026-8069, CVE-2026-81963, and CVE-2026-85880, each rated 7.8. The severity mix comprised three critical, nineteen high, and four medium issues. Government, consumer electronics, financial services, gaming, and healthcare ranked among the most affected sectors, while impact touched Global, North america, and Russian federation.",
+  "sources_hash": "1909f4ce245e677f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-31T06:15:21.718Z",
+  "generated_at": "2026-09-10T07:56:10.772Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

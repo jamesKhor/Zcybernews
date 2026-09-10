@@ -1720,5 +1720,17 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-82923 but it is not in the fact sheet",
     "at": "2026-09-06T07:42:24.515Z"
+  },
+  {
+    "tag": "windows",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-81963 but it is not in the fact sheet; Intro cites CVE-2026-85880 but it is not in the fact sheet",
+    "at": "2026-09-10T07:56:20.973Z"
+  },
+  {
+    "tag": "zero-day",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-81963 but it is not in the fact sheet; Intro cites CVE-2026-85880 but it is not in the fact sheet",
+    "at": "2026-09-10T07:56:24.922Z"
   }
 ]

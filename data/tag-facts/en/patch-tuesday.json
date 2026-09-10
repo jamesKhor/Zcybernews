@@ -1,10 +1,10 @@
 {
   "tag": "patch-tuesday",
   "locale": "en",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-12"
+    "latest": "2026-09-09"
   },
   "top_actors": [],
   "top_cves": [
@@ -30,24 +30,24 @@
     }
   ],
   "top_sectors": [
+    "technology",
     "enterprise",
     "enterprise software",
-    "manufacturing",
-    "technology",
-    "critical-infrastructure"
+    "financial services",
+    "government"
   ],
   "top_regions": [
     "Global"
   ],
   "severity_mix": {
-    "critical": 9,
+    "critical": 10,
     "high": 7,
     "medium": 4
   },
   "recent_excerpts": [
+    "CVE-2026-81963 and CVE-2026-85880 are Windows EoP zero-days exploited before patch. Microsoft's Sept 2026 Patch Tuesday fixes a record 964 CVEs—patch now.",
     "Adobe's May 2026 patch batch fixes 52 CVEs across 10 products; Adobe Connect gets two critical bugs (CVE-2026-34659, 9.6 CVSS for RCE; CVE-2026-34660, 9.3 CVSS for privilege...",
-    "Microsoft's May 2026 Patch Tuesday fixes 120 vulnerabilities across Windows 11 25H2, 24H2, and 23H2. KB5089549 and KB5087420 include security fixes, Xbox mode, and batch file...",
-    "CVE-2026-41103 in Microsoft SSO Plugin for Jira & Confluence allows privilege escalation via flawed authentication."
+    "Microsoft's May 2026 Patch Tuesday fixes 120 vulnerabilities across Windows 11 25H2, 24H2, and 23H2. KB5089549 and KB5087420 include security fixes, Xbox mode, and batch file..."
   ],
-  "sources_hash": "fb07406bb1daabbd"
+  "sources_hash": "27f1d666a7b9d6c7"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "count": 35,
+  "count": 36,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-13"
+    "latest": "2026-09-09"
   },
   "top_actors": [
     "APT29",
@@ -25,20 +25,20 @@
       "cvss": 7.8
     },
     {
-      "id": "CVE-2026-32183",
-      "cvss": 7.5
+      "id": "CVE-2026-81963",
+      "cvss": 7.8
     },
     {
-      "id": "CVE-2026-68820",
-      "cvss": 7
+      "id": "CVE-2026-85880",
+      "cvss": 7.8
     }
   ],
   "top_sectors": [
     "technology",
     "government",
+    "healthcare",
     "telecommunications",
-    "critical infrastructure",
-    "enterprise"
+    "critical infrastructure"
   ],
   "top_regions": [
     "Global",
@@ -48,14 +48,14 @@
     "Europe"
   ],
   "severity_mix": {
+    "critical": 17,
     "high": 18,
-    "critical": 16,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-81963 and CVE-2026-85880 are Windows EoP zero-days exploited before patch. Microsoft's Sept 2026 Patch Tuesday fixes a record 964 CVEs—patch now.",
     "CISA gives federal agencies until Aug 25 to patch CVE-2026-68820, a Winsock privilege-escalation flaw exploited by North Korea's Lazarus in Operation Dream Job.",
-    "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero.",
-    "CVE-2026-42897 is a high-severity Exchange Server spoofing flaw exploited in the wild, enabling XSS-based code execution via Outlook on the web."
+    "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero."
   ],
-  "sources_hash": "e231549ec1dde5d8"
+  "sources_hash": "321929edd859d427"
 }

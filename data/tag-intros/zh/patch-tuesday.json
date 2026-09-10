@@ -1,10 +1,10 @@
 {
   "tag": "patch-tuesday",
   "locale": "zh",
-  "intro": "过去一个月内，ZCyberNews 在 patch-tuesday 标签下追踪了20篇文章，时间覆盖2026年4月12日至5月12日。最关键的漏洞为 CVE-2026-27681，其 CVSS 评分为9.9，另有四个高严重性 CVE：CVE-2026-34259、CVE-2026-34260、CVE-2026-34263 和 CVE-2026-34659，每个评分均为9.6。相关报道涵盖九个严重、七个高和四个中等严重性问题，影响全球范围内的企业、企业软件、制造业、技术及关键基础设施领域。",
+  "intro": "ZC yberNews的patch-tuesday标签存档汇集了2026-04-12至2026-09-09期间发布的21篇文章。报道聚焦于CVSS评分为9.9的CVE-2026-27681，以及CVSS评分均为9.6的CVE-2026-34259、CVE-2026-34260、CVE-2026-34263和CVE-2026-34659。整个存档的严重性分布为10个严重、7个高危和4个中危。报道涵盖技术、企业、企业软件、金融服务和政府行业，受影响地区列为Global。",
   "sources_hash": "82a27215cd678b27",
-  "source_intro_hash": "dff22f372dcc6c18",
+  "source_intro_hash": "9c89add893c45a49",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:10:04.288Z",
+  "generated_at": "2026-09-10T07:56:14.441Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

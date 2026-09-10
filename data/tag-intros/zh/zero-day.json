@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "zh",
-  "intro": "技术和政府行业承受了2026年4月至8月追踪到的35个零日漏洞的主要冲击，其中18个被评为高危，16个为严重。APT29、Chaotic Eclipse和Claude Mythos在覆盖全球、亚洲、巴西、中国和欧洲的活动中被观察到，影响了电信、关键基础设施和企业网络。主要漏洞包括CVE-2026-22679（CVSS 9.8）、CVE-2026-34621（CVSS 8.6）、CVE-2026-3502（CVSS 7.8）、CVE-2026-32183（CVSS 7.5）和CVE-2026-68820（CVSS 7）。一个中危问题补全了该档案。",
+  "intro": "本档案收录了 34 篇带有「zero-day」标签的文章，发布时间从2026年4月12日至2026年8月13日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2026-22679、CVE-2026-34621、CVE-2026-3502，每一项均以原文中的漏洞背景和元数据为依据。可见的威胁行为者引用包括 APT29、Chaotic Eclipse、Claude Mythos，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于technology、government、telecommunications，地区包括 Global、Asia、Brazil，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括15 篇严重、18 篇高危、1 篇中危报告。",
   "sources_hash": "378036b9edbd9fce",
-  "source_intro_hash": "d3a434d499075798",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-13T04:51:58.232Z",
+  "source_intro_hash": "95797d5967ee1a31",
+  "model": "template:fallback",
+  "generated_at": "2026-09-10T07:56:24.923Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

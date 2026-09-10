@@ -1,10 +1,10 @@
 {
   "tag": "windows",
   "locale": "zh",
-  "intro": "2026年4月至7月期间，ZCyberNews报道了25篇聚焦Windows的安全故事，其中Kyber、Chaotic Eclipse和Toy Ghouls是最常被观察到的行为者。报道重点围绕CVE-2024-1708（一个评级为8.4的高严重性漏洞），以及CVE-2026-33104、CVE-2026-8069、CVE-2026-26179和CVE-2026-32183。报道覆盖了19起高严重性、2起严重和4起中等严重性事件，涉及消费电子、游戏、政府、IT和托管服务提供商。受影响地区包括北美和俄罗斯联邦，分析基于档案的完整日期范围。",
+  "intro": "本档案收录了 25 篇带有「windows」标签的文章，发布时间从2026年4月12日至2026年7月30日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2024-1708、CVE-2026-33104、CVE-2026-8069，每一项均以原文中的漏洞背景和元数据为依据。可见的威胁行为者引用包括 Kyber、Chaotic Eclipse、Toy Ghouls，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于consumer electronics、gaming、government，地区包括 North america、Russian federation，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括2 篇严重、19 篇高危、4 篇中危报告。",
   "sources_hash": "80660f2b1e87c702",
-  "source_intro_hash": "3dba2733cbc7b3c7",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-31T06:15:39.584Z",
+  "source_intro_hash": "ba4edb36b94e1209",
+  "model": "template:fallback",
+  "generated_at": "2026-09-10T07:56:20.974Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

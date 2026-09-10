@@ -1,9 +1,9 @@
 {
   "tag": "patch-tuesday",
   "locale": "en",
-  "intro": "Over the past month, ZCyberNews has tracked 20 articles under the patch-tuesday tag, covering a period from April 12 to May 12, 2026. The most critical vulnerability is CVE-2026-27681, carrying a CVSS score of 9.9, alongside four other high-severity CVEs: CVE-2026-34259, CVE-2026-34260, CVE-2026-34263, and CVE-2026-34659, each rated 9.6. The coverage includes nine critical, seven high, and four medium severity issues, affecting enterprise, enterprise software, manufacturing, technology, and critical-infrastructure sectors globally.",
-  "sources_hash": "fb07406bb1daabbd",
+  "intro": "ZC yberNews's patch-tuesday tag archive gathers 21 articles published between 2026-04-12 and 2026-09-09. Coverage centres on CVE-2026-27681, rated CVSS 9.9, alongside CVE-2026-34259, CVE-2026-34260, CVE-2026-34263, and CVE-2026-34659, each rated CVSS 9.6. The severity mix across the archive is 10 critical, 7 high, and 4 medium. Reporting spans the technology, enterprise, enterprise software, financial services, and government sectors, with the affected region listed as Global.",
+  "sources_hash": "27f1d666a7b9d6c7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T09:59:54.196Z",
+  "generated_at": "2026-09-10T07:56:11.980Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
