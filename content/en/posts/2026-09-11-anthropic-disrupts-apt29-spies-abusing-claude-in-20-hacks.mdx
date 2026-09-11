@@ -1,0 +1,88 @@
+---
+title: Anthropic Disrupts APT29 Spies Abusing Claude in 20+ Hacks
+slug: 2026-09-11-anthropic-disrupts-apt29-spies-abusing-claude-in-20-hacks
+date: '2026-09-11'
+excerpt: >-
+  Anthropic disrupted Midnight Blizzard (APT29) and a Chinese university group
+  abusing Claude against 20+ government, defense and drone-supply targets,
+  publishing IOCs for defenders.
+category: ai
+tags:
+  - ai-security
+  - apt29
+  - midnight-blizzard
+  - anthropic
+  - claude
+  - threat-intel
+language: en
+source_urls:
+  - 'https://therecord.media/anthropic-russia-hackers-claude'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:anthropic-caught-russialinked-spies-using'
+source_count: 1
+seo_query_target: Anthropic caught Russia-linked spies using Claude in hacking operations
+seo_intent: breaking-news
+seo_title_promise: >-
+  Names Anthropic, ties the campaign to Russia-linked APT29, and quantifies the
+  target set at more than 20 government, intelligence, diplomatic and defense
+  organizations.
+seo_meta_promise: >-
+  Tells readers Anthropic disrupted Midnight Blizzard and other Claude-abusing
+  groups, and that the report ships IOCs defenders can act on.
+target_hub: ai-security
+internal_link_targets:
+  - ai-security
+  - threat-intel
+  - apt29
+news_sitemap_eligible: true
+featured_image_alt: Anthropic logo displayed on a laptop screen next to a terminal window.
+severity: high
+threat_actor: Midnight Blizzard
+threat_actor_origin: Russia
+affected_sectors:
+  - government
+  - defense
+  - diplomatic
+  - intelligence
+  - drone manufacturing
+  - political parties
+  - media
+  - think tanks
+affected_regions:
+  - Russia
+  - Ukraine
+  - Europe
+  - China
+  - France
+publish_tier: public
+---
+## Executive Summary
+
+Anthropic said Thursday it detected and disrupted a Russia-linked cyber-espionage operation that used its Claude AI model against more than 20 government, intelligence, diplomatic and defense organizations, and it attributed the activity to Midnight Blizzard (also tracked as APT29, Cozy Bear and BlueBravo), the threat group Western intelligence agencies tie to Russia's Foreign Intelligence Service (SVR). The disclosure, published in a threat report covering December 2025 through August 2026, is notable less for the fact of AI misuse than for the operational detail: Anthropic published indicators of compromise (IOCs) alongside the campaign write-ups, something its rival OpenAI has not consistently done in comparable reporting.
+
+The defender-relevant specifics are the drone-supply-chain theft and the implant-evasion loop. Anthropic says the group compromised hotel Wi-Fi providers and altered DNS records to redirect travelers to attacker-controlled infrastructure, then moved laterally into mailboxes at two drone-component manufacturers. From there it targeted a military drone maker and exfiltrated a complete proprietary software development kit for a drone vision system, which it then fed to Claude to reverse-engineer. Anthropic also reports the actor used Claude to identify, modify and redeploy implants that security products had flagged.
+
+## Technical Analysis
+
+Anthropic's report describes the Russia-linked activity as aligning with Midnight Blizzard and cites Microsoft's investigation linking the cluster to Storm-2945, a sub-cluster of the group. The targeting set included members of the Ukrainian government, military and diplomatic staff, plus entities in the drone supply chain. After gaining mailbox access at the two drone-component manufacturers, the operators moved against a military drone maker and stole a full proprietary SDK for a drone vision system. Claude was then used to recover the product architecture, hardware bill of materials, supplier dependencies and details of an unannounced product from that SDK. Anthropic said "military drone control and AI vision-related firmware appeared to be of particular interest."
+
+The evasion loop is the more consequential finding for detection engineering. According to Anthropic, when the group's implants were flagged by security products, the actor used Claude to systematically identify, modify and redeploy the detected artifacts. Anthropic framed the implication bluntly: AI has inverted the cost back onto defenders. Where a new detection previously slowed an adversary's operational tempo, a capable actor can now close the loop and bypass traditional detections faster than defenders can develop and deploy them. That is a claim about tempo, not a claim that AI replaces phishing, stolen credentials, exposed services or software flaws, which Anthropic notes remain central to successful intrusions.
+
+The report also documents three non-Russian clusters. Suspected affiliates of the ShinyHunters cybercriminal group used Claude to scan for credentials, map unfamiliar systems and steal data for extortion; in one case Anthropic says an operator moved from a stolen developer token to full administrative access to a victim's cloud environment in roughly three hours. A Chinese-speaking group that included two operators identified as undergraduates at a university in Hunan maintained what Anthropic called "an autonomous vulnerability research program" whose centerpiece was sustained research against a major security product, yielding several zero-day vulnerabilities. A French-speaking hacktivist used Claude against several European political parties, media organizations and think tanks; Anthropic did not describe the actor's motivation.
+
+Anthropic's report does not disclose broader figures on the scale of misuse it detects, a gap the article notes was flagged by outside experts even as they praised the technical depth. The company said it disrupted each case, used what it learned to strengthen safeguards, and shared intelligence with authorities and industry partners where appropriate. David Agranovich, a former Russia director at the National Security Council who later founded Meta's threat-disruption team and now works on adversarial security at Google, cautioned that press coverage would frame the report as "Claude was used to [do bad thing]" without noting that the only reason the activity is public is that Anthropic investigated and disrupted it. "If we don't incentivize (or require) companies to share this stuff, they'll stop," he said.
+
+The disclosure lands against a June warning from the Five Eyes intelligence alliance that frontier AI models will likely "exceed current industry expectations, fundamentally transforming both offensive and defensive cyber capabilities," with a timeline measured in months rather than years. Anthropic's own framing is consistent with that: it says the cases, particularly the French hacktivist's multi-victim campaign, show AI narrowing the gap between state-backed groups and smaller operators by reducing the labor and expertise required to run complex campaigns. The report also covered non-cyber misuse categories including influence operations, surveillance, scams and fraud, biological misuse, conventional weapons development, and distillation.
+
+## Threat Actor Context
+
+Midnight Blizzard is the SVR-attributed espionage group that Microsoft and other vendors track under the Storm-2945 sub-cluster designation. Anthropic's report places the group's tradecraft in familiar territory: compromise of third-party network infrastructure (hotel Wi-Fi providers), DNS manipulation to redirect targeted travelers, and mailbox access at defense-industrial victims. The drone-vision SDK theft and the interest in military drone control and AI vision firmware mark the campaign as collection against Ukraine's drone supply chain rather than opportunistic intrusion. The other clusters Anthropic names are distinct: ShinyHunters affiliates operating for extortion, a Chinese university-linked group running vulnerability research against a security product, and a French-speaking hacktivist hitting European political, media and think-tank targets.
+
+## Mitigations & Recommendations
+
+Anthropic published IOCs with the report, and defenders running detection programs should ingest those into existing pipelines rather than treating this as a purely AI-governance story. The evasion loop is the harder problem: because the actor used Claude to modify flagged implants and redeploy them, single-signature detections against the specific artifacts Anthropic names will have a short useful life. Teams should prioritize behavioral detections around the post-compromise behaviors Anthropic describes — mailbox access at defense-industrial suppliers, DNS record changes at hospitality and travel-network providers, and cloud-identity escalation from stolen developer tokens — over artifact-level signatures. Organizations in the drone and defense supply chain should treat supplier mailbox compromise as an in-scope scenario and review third-party access to design and SDK repositories accordingly. Anthropic's report does not include a patch or product fix; the actionable output is the IOC set and the behavioral patterns.
+
+## References
+
+- [Anthropic caught Russia-linked spies using Claude in hacking operations — The Record](https://therecord.media/anthropic-russia-hackers-claude)
