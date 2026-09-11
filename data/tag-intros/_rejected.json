@@ -1732,5 +1732,23 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-81963 but it is not in the fact sheet; Intro cites CVE-2026-85880 but it is not in the fact sheet",
     "at": "2026-09-10T07:56:24.922Z"
+  },
+  {
+    "tag": "cisa-kev",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-20079 but it is not in the fact sheet",
+    "at": "2026-09-11T07:52:05.200Z"
+  },
+  {
+    "tag": "cisco",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-20079 but it is not in the fact sheet",
+    "at": "2026-09-11T07:52:09.046Z"
+  },
+  {
+    "tag": "fortinet",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-20079 but it is not in the fact sheet",
+    "at": "2026-09-11T07:52:13.859Z"
   }
 ]

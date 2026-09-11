@@ -1,0 +1,28 @@
+{
+  "tag": "identity",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-12",
+    "latest": "2026-09-10"
+  },
+  "top_actors": [
+    "Tycoon 2FA"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "multiple"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 4
+  },
+  "recent_excerpts": [
+    "Unit 42 shows root on a Kubernetes node lets attackers spoof cgroup metadata and harvest co-located SPIFFE/SPIRE workload SVIDs, with a new tool, Spooffe, to test exposure.",
+    "The Hacker News reports identity-based attacks, using stolen credentials and MFA bypass, are the dominant initial access vector in modern breaches, rendering sophisticated exploits unnecessary for ini",
+    "The Tycoon 2FA phishing group has abandoned its namesake toolkit, adopting device code phishing to bypass multi-factor authentication and compromise Microsoft 365 and Gmail accounts."
+  ],
+  "sources_hash": "e5bab2c072d38d11"
+}

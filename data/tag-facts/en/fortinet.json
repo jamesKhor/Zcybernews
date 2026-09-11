@@ -1,15 +1,19 @@
 {
   "tag": "fortinet",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-13"
+    "latest": "2026-09-10"
   },
   "top_actors": [
     "The Gentlemen"
   ],
   "top_cves": [
+    {
+      "id": "CVE-2026-20079",
+      "cvss": 10
+    },
     {
       "id": "CVE-2025-59718",
       "cvss": 9.8
@@ -23,32 +27,30 @@
     },
     {
       "id": "CVE-2025-32433"
-    },
-    {
-      "id": "CVE-2025-33073"
     }
   ],
   "top_sectors": [
-    "financial services",
     "government",
+    "federal civilian executive branch",
+    "financial services",
     "software consultancy",
-    "technology",
-    "various"
+    "technology"
   ],
   "top_regions": [
     "Europe",
     "North america",
     "Turkey",
-    "UK"
+    "UK",
+    "United states"
   ],
   "severity_mix": {
-    "critical": 5,
+    "critical": 6,
     "high": 2
   },
   "recent_excerpts": [
+    "CISA's KEV catalog now lists CVE-2026-20079, a CVSS 10.0 authentication bypass in Cisco software, alongside exploited Citrix and Fortinet flaws. Federal patch deadline: Sept. 12.",
     "Rapid7 IR confirms active exploitation of CVE-2025-59718 — a 9.8-CVSS FortiGate SSO bypass — enabling attackers to gain persistent admin access on unpatched appliances.",
-    "A proof-of-concept exploit for CVE-2026-39808, a critical command injection vulnerability in Fortinet FortiSandbox, has been released.",
-    "CISA added six vulnerabilities in Fortinet, Microsoft, and Adobe software to its Known Exploited Vulnerabilities catalog, warning of active in-the-wild attacks requiring urgent patching."
+    "A proof-of-concept exploit for CVE-2026-39808, a critical command injection vulnerability in Fortinet FortiSandbox, has been released."
   ],
-  "sources_hash": "9523cb3ac841c26a"
+  "sources_hash": "80bc34e3892cd0e1"
 }

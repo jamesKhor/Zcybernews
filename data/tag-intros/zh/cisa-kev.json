@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "zh",
-  "intro": "全球各区域（包括北美、美国和欧盟）的政府及技术组织，是2026年4月至8月期间标记为cisa-kev的10篇文章的主要关注对象。报道聚焦于严重和高危漏洞，其中CVE-2026-48907、CVE-2023-49105、CVE-2026-65400、CVE-2026-42271和CVE-2026-18556在企业及媒体领域尤为引人注目。相关报道反映了严重程度混合的情况，包括四个严重、四个高危和两个中等问题，企业软件经常被列为受影响领域。",
+  "intro": "本档案收录了 10 篇带有「cisa-kev」标签的文章，发布时间从2026年4月19日至2026年8月29日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2026-48907、CVE-2023-49105、CVE-2026-65400，每一项均以原文中的漏洞背景和元数据为依据。受影响范围信号侧重于government、technology、media，地区包括 Global、North america、United states，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括4 篇严重、4 篇高危、2 篇中危报告。",
   "sources_hash": "1f20d963ed5b43d2",
-  "source_intro_hash": "2cd195f96d797235",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-30T08:59:21.219Z",
+  "source_intro_hash": "95a44c9b03c7bff1",
+  "model": "template:fallback",
+  "generated_at": "2026-09-11T07:52:05.200Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

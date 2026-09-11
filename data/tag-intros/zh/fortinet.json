@@ -1,10 +1,10 @@
 {
   "tag": "fortinet",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月14日至5月13日期间七篇聚焦Fortinet的文章。在这些事件中观察到威胁行为者The Gentlemen。关键漏洞包括CVE-2025-59718、CVE-2026-21643、CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。受影响行业涵盖金融服务、政府、软件咨询、技术及其他多个领域，相关报告来自欧洲、北美、土耳其和英国。这些文章中的严重程度分布为五篇严重、两篇高危。",
+  "intro": "本档案收录了 7 篇带有「fortinet」标签的文章，发布时间从2026年4月14日至2026年5月13日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2025-59718、CVE-2026-21643、CVE-2024-55591，每一项均以原文中的漏洞背景和元数据为依据。可见的威胁行为者引用包括 The Gentlemen，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于financial services、government、software consultancy，地区包括 Europe、North america、Turkey，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括5 篇严重、2 篇高危报告。",
   "sources_hash": "35ab8453e78b0d6c",
-  "source_intro_hash": "3191c69aeb0cf625",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:08:43.413Z",
+  "source_intro_hash": "8a8f99dc58190226",
+  "model": "template:fallback",
+  "generated_at": "2026-09-11T07:52:13.860Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

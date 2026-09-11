@@ -1,9 +1,9 @@
 {
   "tag": "fortinet",
   "locale": "en",
-  "intro": "This archive covers seven articles from April 14 to May 13, 2026, focusing on Fortinet. The threat actor The Gentlemen was observed in these incidents. Key vulnerabilities include CVE-2025-59718, CVE-2026-21643, CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. The affected sectors are financial services, government, software consultancy, technology, and various others, with reports coming from Europe, North America, Turkey, and the UK. The severity mix across these articles is five critical and two high.",
-  "sources_hash": "9523cb3ac841c26a",
+  "intro": "Eight articles on Fortinet span 14 April 2026 to 10 September 2026, covering a severity mix of six critical and two high issues. The Gentlemen appear among the tracked threat actors. Prominent vulnerabilities include CVE-2026-20079 at CVSS 10, CVE-2025-59718 at CVSS 9.8, CVE-2026-21643 at CVSS 9.1, alongside CVE-2024-55591 and CVE-2025-32433. Affected sectors include government, the federal civilian executive branch, financial services, software consultancy, and technology. Impacted regions span Europe, North America, Turkey, the UK, and the United States.",
+  "sources_hash": "80bc34e3892cd0e1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:03:45.170Z",
+  "generated_at": "2026-09-11T07:51:57.852Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

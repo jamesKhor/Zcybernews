@@ -1,0 +1,9 @@
+{
+  "tag": "identity",
+  "locale": "en",
+  "intro": "Five articles tagged identity were published between 12 April and 10 September 2026. Coverage spans multiple sectors and reaches audiences globally, with four of the five reports rated high severity. Tycoon 2FA appears among the top threat actors tracked across this tag. The collection documents activity affecting organisations in more than one industry and region, reflecting the breadth of identity-focused reporting during the period. Each article contributes to a running record of incidents and developments catalogued under this tag between the stated dates.",
+  "sources_hash": "e5bab2c072d38d11",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-11T07:51:59.584Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}
