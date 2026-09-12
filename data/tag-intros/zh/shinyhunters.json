@@ -1,10 +1,10 @@
 {
   "tag": "shinyhunters",
   "locale": "zh",
-  "intro": "过去一个月，ZCyberNews追踪了与ShinyHunters相关的九起事件，时间跨度从2026年4月13日至5月12日。该威胁行为者被观察到针对教育、消费者服务、娱乐、游戏和医疗保健等行业，受影响地区包括北美及全球。严重程度分布为一份危急报告和八份高危报告，反映出该单一行为者在一段集中时期内的活跃态势。",
+  "intro": "ShinyHunters是本标签存档的焦点，该存档汇集了2026年4月13日至9月12日期间发表的十篇文章。报道涵盖教育、消费者服务、娱乐、游戏和政府领域，事件记录遍及北美、全球，以及佛罗里达州和美国。报道严重偏向高严重性，其中八项为该级别，一项被评为严重。该存档追踪了ShinyHunters在这五个月期间跨这些行业和地区的活动。",
   "sources_hash": "9ac7a8acd9c7d0a2",
-  "source_intro_hash": "9f748d8bfd630443",
+  "source_intro_hash": "1b174c32b0789f49",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:10:48.114Z",
+  "generated_at": "2026-09-12T07:45:11.769Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

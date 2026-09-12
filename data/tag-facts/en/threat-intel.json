@@ -1,0 +1,38 @@
+{
+  "tag": "threat-intel",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-22",
+    "latest": "2026-09-11"
+  },
+  "top_actors": [
+    "0APT",
+    "Kyber",
+    "LummaC2"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "defense",
+    "diplomatic",
+    "drone manufacturing",
+    "government",
+    "intelligence"
+  ],
+  "top_regions": [
+    "China",
+    "Europe",
+    "France",
+    "Global",
+    "Russia"
+  ],
+  "severity_mix": {
+    "high": 5
+  },
+  "recent_excerpts": [
+    "Anthropic disrupted Midnight Blizzard (APT29) and a Chinese university group abusing Claude against 20+ government, defense and drone-supply targets, publishing IOCs for defenders.",
+    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
+    "The Kyber ransomware gang is using a variant that implements Kyber1024 post-quantum encryption to target Windows and VMware ESXi systems, according to a BleepingComputer analysis."
+  ],
+  "sources_hash": "f29c7a247185efd3"
+}

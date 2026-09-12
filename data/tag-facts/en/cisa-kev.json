@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-09-10"
+    "latest": "2026-09-11"
   },
   "top_actors": [],
   "top_cves": [
@@ -49,9 +49,9 @@
     "medium": 2
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-42016, a JFrog Artifactory token-scope authorization flaw enabling privilege escalation, to its KEV catalog with a Sept 25 patch deadline.",
     "CISA's KEV catalog now lists CVE-2026-20079, a CVSS 10.0 authentication bypass in Cisco software, alongside exploited Citrix and Fortinet flaws. Federal patch deadline: Sept. 12.",
-    "CVE-2023-49105 (CVSS 9.8) added to CISA KEV after Chinese-speaking actor exploited it to steal nuclear research records from a Philippine agency. Patch now.",
-    "CISA added CVE-2026-65400, a 9.8-CVSS macOS authentication bypass, to its KEV catalog on August 18, confirming active exploitation. No patch yet."
+    "CVE-2023-49105 (CVSS 9.8) added to CISA KEV after Chinese-speaking actor exploited it to steal nuclear research records from a Philippine agency. Patch now."
   ],
-  "sources_hash": "2fc6377a49fc798a"
+  "sources_hash": "e8e3307b6f159f29"
 }

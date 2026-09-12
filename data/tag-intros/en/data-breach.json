@@ -1,9 +1,9 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "intro": "Between 12 April and 21 August 2026, ZCyberNews covered 45 data-breach incidents, with 38 rated high severity and six medium. ShinyHunters, LockBit, and Cl0p were among the threat actors observed. Affected sectors included government, healthcare, education, retail, and technology, with reports spanning North America, Europe, the United States, France, and global operations. The archive reflects a concentrated period of activity across these regions and industries, documenting breaches that ranged in impact and scope. No specific CVEs were listed in this collection, and the coverage focuses on the incidents themselves rather than their broader consequences.",
-  "sources_hash": "0fffe33771232848",
+  "intro": "Between 2026-04-12 and 2026-09-12, ZCyberNews published 46 articles tagged data-breach. The coverage spans incidents affecting government, healthcare, education, retail, and technology, with victims reported across North America, Europe, the United States, France, and globally. ShinyHunters, LockBit, and Cl0p appear among the top threat actors in this tag. Of the 46 articles, 38 are rated high severity and 6 medium. The archive documents breach activity throughout the five-month period, tracking the sectors and regions most frequently named in reporting and the actors most often linked to the incidents covered.",
+  "sources_hash": "85cb8a81e1d036ac",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-22T03:42:19.762Z",
+  "generated_at": "2026-09-12T07:44:44.003Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

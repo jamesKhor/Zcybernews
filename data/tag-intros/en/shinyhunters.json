@@ -1,9 +1,9 @@
 {
   "tag": "shinyhunters",
   "locale": "en",
-  "intro": "Over the past month, ZCyberNews has tracked nine incidents linked to ShinyHunters, spanning April 13 to May 12, 2026. This threat actor has been observed targeting sectors including education, consumer services, entertainment, gaming, and healthcare, with affected regions in North America and globally. The severity mix includes one critical and eight high-severity reports, reflecting a concentrated period of activity from this single actor.",
-  "sources_hash": "a035b831330bd716",
+  "intro": "ShinyHunters is the focus of this tag archive, which gathers ten articles published between 13 April and 12 September 2026. The reporting spans education, consumer services, entertainment, gaming, and government, with incidents recorded across North America, globally, and specifically in Florida and the United States. Coverage skews heavily toward high severity, with eight items at that level and one rated critical. The archive tracks ShinyHunters activity across these sectors and regions over the five-month period.",
+  "sources_hash": "dae2eea290c6bfa1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:02:57.149Z",
+  "generated_at": "2026-09-12T07:44:50.740Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

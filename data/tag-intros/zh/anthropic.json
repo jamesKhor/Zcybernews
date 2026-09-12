@@ -1,10 +1,10 @@
 {
   "tag": "anthropic",
   "locale": "zh",
-  "intro": "在过去的三个月里，ZCyberNews追踪了15篇与标签Anthropic相关的文章，时间跨度从2026年4月14日至7月29日。这些报告中观察到的最突出的威胁行为者是Claude Mythos。报道内容包含严重程度混合的警报：三条信息性、一条中等、五条高严重性以及三条严重警报，影响行业包括技术、网络安全、关键基础设施、政府和人工智能开发。受影响地区涵盖全球、五眼联盟和美国。",
+  "intro": "在2026年4月14日至2026年9月11日的16篇文章中，ZCyberNews追踪了与Anthropic相关的报道，涵盖Claude Mythos和Midnight Blizzard。报道涉及技术、网络安全、关键基础设施、政府和ai-development，活动范围覆盖全球以及中国、欧洲、Five Eyes和法国。严重程度构成包括六个高、三个信息性、三个关键和一个中等条目。Claude Mythos和Midnight Blizzard是该标签档案中报道最多的威胁行为者。",
   "sources_hash": "d7b5d8ffa8d38b05",
-  "source_intro_hash": "8424102ad3a6377e",
+  "source_intro_hash": "1ac6f5a6216f80be",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-29T05:54:08.832Z",
+  "generated_at": "2026-09-12T07:44:59.056Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

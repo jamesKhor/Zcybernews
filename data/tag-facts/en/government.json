@@ -1,13 +1,14 @@
 {
   "tag": "government",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-01"
+    "latest": "2026-09-12"
   },
   "top_actors": [
-    "SHADOW-EARTH-053"
+    "SHADOW-EARTH-053",
+    "ShinyHunters"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -19,17 +20,17 @@
     "United states",
     "East asia",
     "Europe",
-    "France",
-    "Mexico"
+    "Florida",
+    "France"
   ],
   "severity_mix": {
     "medium": 1,
     "high": 4
   },
   "recent_excerpts": [
+    "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence.",
     "U.S. Immigration and Customs Enforcement (ICE) confirmed using spyware from Israeli firm Graphite, a tool capable of extracting data from encrypted messaging apps like WhatsApp…",
-    "Trend Micro tracks SHADOW-EARTH-053 targeting government and defense sectors across Asia and one NATO-aligned European state. Campaign uses custom backdoors and spear-phishing.",
-    "France Titres, the French government agency for ID documents, confirms a data breach after a threat actor offers to sell stolen citizen information, including names, addresses, and passport numbers."
+    "Trend Micro tracks SHADOW-EARTH-053 targeting government and defense sectors across Asia and one NATO-aligned European state. Campaign uses custom backdoors and spear-phishing."
   ],
-  "sources_hash": "ab29a3d6baf4d904"
+  "sources_hash": "99de52a35c3a7b25"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "count": 30,
+  "count": 31,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-09"
+    "latest": "2026-09-11"
   },
   "top_actors": [
     "Chaotic Eclipse",
@@ -52,9 +52,9 @@
     "medium": 3
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-42016, a JFrog Artifactory token-scope authorization flaw enabling privilege escalation, to its KEV catalog with a Sept 25 patch deadline.",
     "CVE-2026-81963 and CVE-2026-85880 are Windows EoP zero-days exploited before patch. Microsoft's Sept 2026 Patch Tuesday fixes a record 964 CVEs—patch now.",
-    "CISA gives federal agencies until Aug 25 to patch CVE-2026-68820, a Winsock privilege-escalation flaw exploited by North Korea's Lazarus in Operation Dream Job.",
-    "CVE-2026-8957 (CVSS 6.5) allows privilege escalation in Firefox's Enterprise Policies component. Mozilla fixed it in Firefox 151 and ESR 140.11."
+    "CISA gives federal agencies until Aug 25 to patch CVE-2026-68820, a Winsock privilege-escalation flaw exploited by North Korea's Lazarus in Operation Dream Job."
   ],
-  "sources_hash": "6e89a65007846f3e"
+  "sources_hash": "598f16ed5a7ceff6"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 45,
+  "count": 46,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-21"
+    "latest": "2026-09-12"
   },
   "top_actors": [
     "ShinyHunters",
@@ -31,9 +31,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence.",
     "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident.",
-    "SafePal confirms a breach affecting nearly 40,000 customers who ordered hardware wallets between March 2025 and April 2026, exposing names, emails, and addresses to phishing risks.",
-    "UK's ACRO Criminal Records Office reprimanded after three breaches exposed data of 11,000 people, including domestic violence victims, due to unread antivirus alerts and an..."
+    "SafePal confirms a breach affecting nearly 40,000 customers who ordered hardware wallets between March 2025 and April 2026, exposing names, emails, and addresses to phishing risks."
   ],
-  "sources_hash": "0fffe33771232848"
+  "sources_hash": "85cb8a81e1d036ac"
 }

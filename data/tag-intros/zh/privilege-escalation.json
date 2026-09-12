@@ -1,10 +1,10 @@
 {
   "tag": "privilege-escalation",
   "locale": "zh",
-  "intro": "2026-04-13至2026-09-09期间，ZCyberNews发布了30篇标记为权限提升的文章。报道涵盖五个严重、22个高危和三个中危漏洞。其中最引人注目的漏洞包括CVE-2026-8950、CVE-2026-8956和CVE-2026-8957，CVSS评分均为9.8，以及CVE-2026-34659和CVE-2026-34660，CVSS评分均为9.6。Chaotic Eclipse和Lazarus Group位列主要威胁行为者之中。受影响行业包括技术、企业、政府、医疗和教育，事件报告遍及全球、巴西、法国、德国和印度。",
+  "intro": "2026-04-13至2026-09-11期间，ZCyberNews发布了31篇标记为权限提升的文章。报道涵盖五个严重、22个高危和三个中危项目，其中Chaotic Eclipse和Lazarus Group是观察到的主要威胁行为者。突出的漏洞包括CVE-2026-8950、CVE-2026-8956和CVE-2026-8957，每个评级均为CVSS 9.8，以及CVE-2026-34659和CVE-2026-34660，评级为CVSS 9.6。受影响行业包括技术、企业、政府、医疗和教育。报道覆盖全球、巴西、法国、德国和印度的读者。",
   "sources_hash": "5bab64c99a251a64",
-  "source_intro_hash": "f8b6b665de07720e",
+  "source_intro_hash": "b1d544e2b002e281",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-10T07:56:16.055Z",
+  "generated_at": "2026-09-12T07:45:10.493Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

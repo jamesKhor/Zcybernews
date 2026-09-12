@@ -1,13 +1,14 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 70,
+  "count": 71,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-26"
+    "latest": "2026-09-11"
   },
   "top_actors": [
     "Claude Mythos",
+    "Midnight Blizzard",
     "OpenClaw"
   ],
   "top_cves": [
@@ -42,19 +43,20 @@
   "top_regions": [
     "Global",
     "United states",
+    "China",
     "North america",
-    "China"
+    "Europe"
   ],
   "severity_mix": {
-    "high": 32,
+    "high": 33,
     "critical": 9,
     "informational": 14,
     "medium": 6
   },
   "recent_excerpts": [
+    "Anthropic disrupted Midnight Blizzard (APT29) and a Chinese university group abusing Claude against 20+ government, defense and drone-supply targets, publishing IOCs for defenders.",
     "99% of SOCs see AI-driven IR gains despite 96% at early maturity; 82% now platform-oriented. But AI infrastructure is deployed faster than secured, creating new attack surface.",
-    "At Black Hat USA 2026, officials and researchers warn AI-driven vulnerability discovery outpaces defenses.",
-    "OpenAI released preliminary cybersecurity evaluations for Astra, revealing AI agent capabilities in vulnerability research and the new security controls added before broader..."
+    "At Black Hat USA 2026, officials and researchers warn AI-driven vulnerability discovery outpaces defenses."
   ],
-  "sources_hash": "d4eeafbbcea558ce"
+  "sources_hash": "2eaaf1612d8ae769"
 }

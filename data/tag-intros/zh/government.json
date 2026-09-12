@@ -1,10 +1,10 @@
 {
   "tag": "government",
   "locale": "zh",
-  "intro": "2026年4月12日至5月1日期间，ZCyberNews报道了五起政府标记的安全事件，其中SHADOW-EARTH-053成为最频繁出现的威胁行为体。受影响行业涵盖政府、国防及执法部门，波及区域包括美国、东亚、欧洲、法国和墨西哥。事件严重程度分布为一起中等严重事件和四起高严重事件，反映出针对公共部门目标的活动集中期。",
+  "intro": "六篇标记为政府的文章发表于2026年4月12日至9月12日之间，记录了SHADOW-EARTH-053和ShinyHunters成为报道最多的威胁行为者的时期。政府、国防和执法部门承受了所报道的活动，美国、东亚、欧洲、佛罗里达和法国属于受影响地区。六篇文章的严重性组合包括四个高严重性条目和一个中严重性条目。SHADOW-EARTH-053和ShinyHunters在报道中以不同实体出现。",
   "sources_hash": "4a083ae1756a47ca",
-  "source_intro_hash": "ea2eaf72735409ba",
+  "source_intro_hash": "f6f358e2bcc50b19",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:08:53.067Z",
+  "generated_at": "2026-09-12T07:45:08.952Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,0 +1,9 @@
+{
+  "tag": "threat-intel",
+  "locale": "en",
+  "intro": "Across five high-severity reports spanning 22 April to 11 September 2026, threat-intel coverage centres on defense, diplomatic, government, intelligence, and drone manufacturing sectors. China, Europe, France, Russia, and global targets appear in the affected regions. Three distinct actors feature in the reporting: 0APT, Kyber, and LummaC2. Every item in the tag archive carries a high severity rating, reflecting sustained targeting of government and defense interests alongside diplomatic and intelligence operations. The collection tracks activity against drone manufacturing as well as broader state-linked and criminal operations across the named regions.",
+  "sources_hash": "f29c7a247185efd3",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-12T07:44:54.993Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

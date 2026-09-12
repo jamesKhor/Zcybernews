@@ -1,13 +1,14 @@
 {
   "tag": "anthropic",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-07-29"
+    "latest": "2026-09-11"
   },
   "top_actors": [
-    "Claude Mythos"
+    "Claude Mythos",
+    "Midnight Blizzard"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -19,19 +20,21 @@
   ],
   "top_regions": [
     "Global",
+    "China",
+    "Europe",
     "Five eyes",
-    "United states"
+    "France"
   ],
   "severity_mix": {
+    "high": 6,
     "informational": 3,
-    "high": 5,
     "critical": 3,
     "medium": 1
   },
   "recent_excerpts": [
+    "Anthropic disrupted Midnight Blizzard (APT29) and a Chinese university group abusing Claude against 20+ government, defense and drone-supply targets, publishing IOCs for defenders.",
     "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors.",
-    "Anthropic restored global access to Fable 5 after US lifted export controls; Commerce Dept. tested a new safety classifier that blocks the cited jailbreak in 99% of cases.",
-    "Rapid7 gains access to Anthropic's Project Glasswing and Claude Mythos Preview to explore frontier AI for defensive security workflows, including vulnerability validation and..."
+    "Anthropic restored global access to Fable 5 after US lifted export controls; Commerce Dept. tested a new safety classifier that blocks the cited jailbreak in 99% of cases."
   ],
-  "sources_hash": "c15b231730fae7c7"
+  "sources_hash": "d14d5664aa627047"
 }

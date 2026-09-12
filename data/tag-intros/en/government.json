@@ -1,9 +1,9 @@
 {
   "tag": "government",
   "locale": "en",
-  "intro": "Between April 12 and May 1, 2026, ZCyberNews covered five government-tagged incidents, with SHADOW-EARTH-053 emerging as the most frequently observed threat actor. The affected sectors included government, defense, and law enforcement, while impacted regions spanned the United States, East Asia, Europe, France, and Mexico. The severity mix comprised one medium-severity and four high-severity events, reflecting a concentrated period of activity against public-sector targets.",
-  "sources_hash": "ab29a3d6baf4d904",
+  "intro": "Six articles tagged government, published between 12 April and 12 September 2026, document a period in which SHADOW-EARTH-053 and ShinyHunters were the most-covered threat actors. Government, defense, and law enforcement sectors absorbed the reported activity, with the United States, East Asia, Europe, Florida, and France among the affected regions. The severity mix across the six articles comprises four high-severity items and one medium-severity item. SHADOW-EARTH-053 and ShinyHunters appear as distinct entities in the coverage.",
+  "sources_hash": "99de52a35c3a7b25",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:05:52.998Z",
+  "generated_at": "2026-09-12T07:44:53.165Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

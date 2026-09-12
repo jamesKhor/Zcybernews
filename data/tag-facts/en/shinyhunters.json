@@ -1,10 +1,10 @@
 {
   "tag": "shinyhunters",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-12"
+    "latest": "2026-09-12"
   },
   "top_actors": [
     "ShinyHunters"
@@ -15,20 +15,22 @@
     "consumer services",
     "entertainment",
     "gaming",
-    "healthcare"
+    "government"
   ],
   "top_regions": [
     "North america",
-    "Global"
+    "Global",
+    "Florida",
+    "United states"
   ],
   "severity_mix": {
     "critical": 1,
     "high": 8
   },
   "recent_excerpts": [
+    "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence.",
     "Instructure paid ShinyHunters after two Canvas intrusions stole data from 9,000 institutions. Congress launched an investigation into the ed-tech vendor's incident response.",
-    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide.",
-    "ShinyHunters leaked a 106GB archive of Vimeo data after breaching Anodot, exposing emails and names of 119,200 users. No credentials or payment info compromised."
+    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide."
   ],
-  "sources_hash": "a035b831330bd716"
+  "sources_hash": "dae2eea290c6bfa1"
 }

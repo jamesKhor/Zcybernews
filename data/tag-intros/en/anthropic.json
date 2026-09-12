@@ -1,9 +1,9 @@
 {
   "tag": "anthropic",
   "locale": "en",
-  "intro": "Over the past three months, ZCyberNews has tracked 15 articles concerning the tag Anthropic, spanning from April 14 to July 29, 2026. The most prominent threat actor observed in these reports is Claude Mythos. The coverage includes a severity mix of three informational, one medium, five high, and three critical alerts, affecting sectors such as technology, cybersecurity, critical infrastructure, government, and ai-development. Regions impacted include Global, Five Eyes, and the United States.",
-  "sources_hash": "c15b231730fae7c7",
+  "intro": "Across 16 articles dated 14 April 2026 to 11 September 2026, ZCyberNews tracks Anthropic-related coverage spanning Claude Mythos and Midnight Blizzard. Reporting touches technology, cybersecurity, critical infrastructure, government, and ai-development, with activity observed globally and across China, Europe, Five Eyes, and France. The severity mix comprises six high, three informational, three critical, and one medium item. Claude Mythos and Midnight Blizzard appear as the most-covered threat actors in this tag archive.",
+  "sources_hash": "d14d5664aa627047",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-29T05:53:54.388Z",
+  "generated_at": "2026-09-12T07:44:48.185Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

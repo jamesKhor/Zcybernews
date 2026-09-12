@@ -1,10 +1,10 @@
 {
   "tag": "authorization-bypass",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-05-08",
-    "latest": "2026-05-17"
+    "latest": "2026-09-11"
   },
   "top_actors": [],
   "top_cves": [
@@ -43,9 +43,9 @@
     "critical": 2
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-42016, a JFrog Artifactory token-scope authorization flaw enabling privilege escalation, to its KEV catalog with a Sept 25 patch deadline.",
     "CVE-2026-8743 (CVSS 6.5) in Open5GS up to 2.7.6 lets remote attackers bypass authorization via the AMF/MME ran_ue_find_by_amf_ue_ngap_id function. Exploit public.",
-    "CVE-2026-44574 (CVSS 8.1) and CVE-2026-44575 (CVSS 7.5) let attackers bypass middleware-based auth checks in Next.js App Router via crafted .rsc URLs and query parameter...",
-    "CVE-2026-33357 (CVSS 7.5) in Meari SDK lets attackers retrieve WAN IPs for any device via CloudEdge, Arenti, and white-label apps — no authentication required."
+    "CVE-2026-44574 (CVSS 8.1) and CVE-2026-44575 (CVSS 7.5) let attackers bypass middleware-based auth checks in Next.js App Router via crafted .rsc URLs and query parameter..."
   ],
-  "sources_hash": "55ffd1911d59459b"
+  "sources_hash": "4b03a875e9abb769"
 }
