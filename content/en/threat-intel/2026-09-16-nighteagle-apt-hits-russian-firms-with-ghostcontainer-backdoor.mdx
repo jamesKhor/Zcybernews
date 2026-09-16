@@ -1,0 +1,145 @@
+---
+title: NightEagle APT Hits Russian Firms With GhostContainer Backdoor
+slug: 2026-09-16-nighteagle-apt-hits-russian-firms-with-ghostcontainer-backdoor
+date: '2026-09-16'
+excerpt: >-
+  Kaspersky GERT ties NightEagle (APT-Q-95) to attacks on Russian firms,
+  deploying the GhostContainer backdoor on Exchange via CVE-2020-0688 and
+  BlueKeep CVE-2019-0708.
+category: threat-intel
+tags:
+  - nighteagle
+  - apt-q-95
+  - ghostcontainer
+  - kaspersky
+  - microsoft-exchange
+  - rdp2tcp
+language: en
+source_urls:
+  - >-
+    https://securelist.com/tr/nighteagle-apt-ghostcontainer-and-tunneling/121323/
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:nighteagle-targets-russian-companies-kerberos'
+source_count: 1
+seo_query_target: GitHub
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Explains how NightEagle (APT-Q-95) used GitHub-hosted tooling and the
+  GhostContainer backdoor to breach Russian enterprises, with concrete IOCs and
+  TTPs.
+seo_meta_promise: >-
+  Names NightEagle, GhostContainer, and the two exploited CVEs (CVE-2020-0688,
+  CVE-2019-0708), giving defenders actionable detection guidance for rdp2tcp and
+  dev tunnels abuse.
+target_hub: apt
+internal_link_targets:
+  - apt
+  - apt-state-actors
+  - threat-intel
+  - malware
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Abstract network diagram showing a backdoor deployed on a Microsoft Exchange
+  server with tunneled RDP traffic routing through legitimate cloud services.
+severity: high
+cve_ids:
+  - CVE-2020-0688
+  - CVE-2019-0708
+threat_actor: NightEagle
+threat_actor_origin: China
+affected_sectors:
+  - government
+  - technology
+  - industrial
+affected_regions:
+  - Russia
+  - Asia
+iocs:
+  - type: domain
+    value: ASP.NET
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Kaspersky's Global Emergency Response Team (GERT) has attributed a fresh wave of intrusions against Russian enterprises to NightEagle (also tracked as APT-Q-95), a China-linked group previously observed targeting organizations in Asia since at least 2023. The campaign introduces a previously undocumented .NET backdoor Kaspersky calls **GhostContainer**, deployed on Microsoft Exchange servers, and relies on GitHub-hosted tooling and legitimate Microsoft tunneling services to hide RDP access.
+
+The technical significance for defenders is twofold. First, NightEagle is abusing **Microsoft dev tunnels** and the open-source **rdp2tcp** utility to expose RDP port 3389 and tunnel TCP traffic without opening new firewall ports. Second, GhostContainer's Stub class actively patches `amsi.dll` and `ntdll.dll` in memory to defeat AMSI and Windows Event Log collection. Kaspersky's report provides concrete detection artifacts — including specific Windows event IDs, GitHub repository names, and masqueraded executable filenames — that network defenders can hunt for immediately.
+
+## Technical Analysis
+
+### Initial Access
+
+In the majority of incidents Kaspersky investigated, NightEagle gained a foothold using **compromised valid credentials** to authenticate to corporate VPNs. The VPN connections originated from IP addresses in the Russian segment routed through **Cloudflare WARP tunnels**, as well as from IPs associated with European virtual infrastructure providers. This pattern — legitimate credentials plus consumer-grade or cloud-hosted egress — is consistent with the group's prior operational security posture and complicates IP-based blocking.
+
+### GhostContainer on Microsoft Exchange
+
+GhostContainer is a .NET assembly that NightEagle deployed on Microsoft Exchange servers both during initial access and later stages. Kaspersky states it incorporates components from several open-source projects, all publicly available on GitHub:
+
+- **Neo-reGeorg** — a tunneling tool used for proxying traffic.
+- An exploit for **CVE-2020-0688**, the Exchange VIEWSTATE deserialization flaw patched in February 2020.
+- The **GhostWebShell** class from the **ysoserial** utility.
+
+Kaspersky was unable to determine the exact delivery method for the backdoor but assesses with high confidence that the attackers used a technique previously attributed to the group: extracting the cryptographic keys Microsoft Exchange uses from the ASP.NET configuration, overwriting the `VIEWSTATE` framework parameter, and injecting a payload that launches GhostContainer in memory.
+
+The backdoor contains three classes:
+
+- **Stub** — processes C2 commands delivered via `x-owa-urlpostdata` headers and evades detection by overwriting addresses in `amsi.dll` and `ntdll.dll`, neutralizing AMSI and Windows Event Log mechanisms.
+- **App_Web_843e75cf5b63** — accepts `fakePath` and `fakePageName` parameters and creates virtual paths that redirect requests to the third class.
+- **App_Web_8c9b251fb5b3** — implements network traffic redirection (proxying) and socket forwarding.
+
+Kaspersky products detect the backdoor as `Trojan.MSIL.GhostContainer.gen`.
+
+### Traffic Redirection
+
+Once NightEagle obtained sufficient privileges, the operators used RDP to move laterally and downloaded tunneling tools from GitHub repositories disguised to look legitimate:
+
+- `github[.]com/mirror-js/mirror-js/refs/heads/main/js/js-webpack.zip`
+- `github[.]com/mirror-js/mirror-js/refs/heads/main/js/jsonp-pack.zip`
+- `github[.]com/browserthemes/resourcepack/releases/download/main/resource-pack.zip`
+
+The archives contained executables named to mimic legitimate software — `adobe_32.exe`, `AdobeSync.exe`, `trueconf.exe`, `1cbroker.exe`, `1c-office-plugin.exe`, and `trueconf-broker.exe` — none of which match the archive names.
+
+Two tools were combined for tunneling:
+
+1. **Microsoft dev tunnels** — a legitimate Microsoft mechanism that publishes local web services on `*.*.devtunnels.ms` domains. NightEagle used it to expose port 3389 (RDP) on compromised systems.
+2. **rdp2tcp** — a publicly available tool for tunneling TCP traffic over an established RDP connection. It has a server component on the target and a client on the attacker side. When its virtual channels open and close, Windows logs events with **IDs 132 (channel opened)** and **148 (channel closed)** in `Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational.evtx`. The channel name will appear as `rdp2tcp` or a random alphanumeric string chosen by the attackers.
+
+NightEagle also used the **atexec** utility from the **Impacket** toolkit to create scheduled tasks enabling port forwarding through native Windows functionality, for example:
+
+```
+netsh interface portproxy add v4tov4 listenport=443 connectaddress=10.0.12.101 connectport=445
+```
+
+### Lateral Movement
+
+To escalate privileges and move laterally, NightEagle exploited Active Directory and RDP-related vulnerabilities over the established tunnels. In one incident, the group exploited **CVE-2019-0708 (BlueKeep)**, the pre-auth RDP remote code execution flaw in older Windows versions, to create a local account and add it to the **Administrators** and **Remote Desktop Users** groups. Kaspersky's report shows memory-dump artifacts consistent with the exploit.
+
+## Indicators of Compromise
+
+The GitHub repositories and archive filenames above are the most durable network- and host-based indicators from this campaign. Because the archives are hosted on legitimate GitHub infrastructure, blocking by domain alone is impractical — defenders should alert on retrieval of the specific repository paths and on execution of the masqueraded binaries from user-writable directories.
+
+The `*.devtunnels.ms` domain is a legitimate Microsoft service; blanket blocking will break developer workflows. Detection should instead focus on outbound RDP (port 3389) sessions terminating at devtunnels.ms endpoints, which is anomalous in most enterprise environments.
+
+On the Exchange side, GhostContainer's use of the `x-owa-urlpostdata` header for C2 is a strong signal. Kaspersky's detection name `Trojan.MSIL.GhostContainer.gen` should be used to sweep historical telemetry.
+
+## Tactics, Techniques & Procedures
+
+NightEagle's kill chain in this campaign is notable for its reliance on **living-off-the-land** primitives and legitimate cloud services rather than bespoke C2 infrastructure. The sequencing is: valid VPN credentials → Exchange server compromise → GhostContainer in-memory backdoor → RDP lateral movement → dev tunnels and rdp2tcp for persistent access → Impacket atexec and netsh portproxy for forwarding → BlueKeep for privilege escalation and account creation.
+
+The AMSI and ntdll patching in GhostContainer's Stub class is a deliberate attempt to blind endpoint detection and response tooling that relies on those interfaces. Defenders should verify that AMSI providers are healthy on Exchange servers and monitor for unexpected modifications to `amsi.dll` and `ntdll.dll` in memory.
+
+## Detection Guidance
+
+- Hunt for Windows event IDs **132** and **148** in `Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational.evtx` with channel names matching `rdp2tcp` or random alphanumeric strings.
+- Monitor for `netsh interface portproxy` rule creation, especially rules forwarding to internal SMB (445) or RDP (3389) ports.
+- Alert on outbound connections to `*.devtunnels.ms` from servers that should not be running developer tooling.
+- Search for the specific GitHub repository paths and archive filenames listed in the IOCs section.
+- Sweep for `Trojan.MSIL.GhostContainer.gen` detections in historical telemetry.
+- Audit Exchange servers for anomalous `x-owa-urlpostdata` header usage and unexpected w3wp.exe child processes.
+
+## Conclusion
+
+NightEagle's pivot to Russian enterprises demonstrates the group's willingness to retool and target new regions while maintaining a preference for valid accounts, public-facing application exploitation, and legitimate services for tunneling. The GhostContainer backdoor's AMSI and Event Log evasion, combined with the abuse of Microsoft dev tunnels and rdp2tcp, presents a challenging detection surface. Organizations — particularly those running Exchange and older Windows versions — should prioritize patching CVE-2020-0688 and CVE-2019-0708, enforce MFA on VPN access, and implement the detection guidance above.
