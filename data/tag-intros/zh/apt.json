@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "intro": "2026年4月至9月期间，ZCyberNews报道了16起与apt标签相关的高严重性事件，其中GopherWhisper、CyberAv3ngers和HelloNet是最常被提及的威胁行为者。报道重点关注针对政府、能源、加密货币、技术和航空领域的攻击，受影响地区包括日本、蒙古、阿富汗、非洲和亚洲。全部16篇文章均被评为高严重性，反映出这些活动在运营影响上的一致性。报道在整个五个月期间追踪了各行为者的具体战术和行业目标，但未确认这三个组织之间存在关联。",
+  "intro": "2026年4月13日至9月16日期间，共出现17篇标记为apt的高严重性文章。GopherWhisper、CHOSEN BRICK和CyberAv3ngers是该档案中报道最多的威胁行为者。报道涵盖政府、能源、加密货币、技术和航空领域，活动追踪范围包括全球、日本、蒙古、英国和美国。该标签下的每一条目均带有高严重性评级，反映出该时段内对高级持续性威胁行动的持续报道。",
   "sources_hash": "4f63ffcbb5749d50",
-  "source_intro_hash": "47e527f420400102",
+  "source_intro_hash": "d5885826e650848d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-02T07:42:19.182Z",
+  "generated_at": "2026-09-16T08:21:12.243Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

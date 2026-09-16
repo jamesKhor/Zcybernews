@@ -1,10 +1,10 @@
 {
   "tag": "iran",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月12日至2026年4月29日期间发布的9篇标记为`iran`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的集中视角。观察到的行为体引用包括APT33、CyberAv3ngers和Fast16，仅在底层文章元数据支持归因的情况下呈现。受影响范围信号强调伊朗、美国和中东地区的水务、能源及政府领域，帮助读者在不超出档案数据范围的前提下比较暴露模式。严重程度覆盖包含8篇高危报告。",
+  "intro": "2026-04-12至2026-09-16期间发表的十一篇文章带有iran标签。CHOSEN BRICK、APT33和CyberAv3ngers出现在这一报道所追踪的主要威胁行为者之列。报道涵盖政府、水务、能源、活动人士和公民社会等受影响最严重的领域。在地域上，材料覆盖United states、Iran、Middle east、Netherlands和United kingdom。十一篇文章中有十篇被评为高严重性。这些文章共同记录了归因于上述行为者的活动，以及承受其影响的领域和地区。",
   "sources_hash": "c728c44f6c9d8c81",
-  "source_intro_hash": "996d2543564a2f4e",
+  "source_intro_hash": "04487705f0ed51be",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:09:18.256Z",
+  "generated_at": "2026-09-16T08:21:16.641Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

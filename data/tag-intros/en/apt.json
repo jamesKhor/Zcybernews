@@ -1,9 +1,9 @@
 {
   "tag": "apt",
   "locale": "en",
-  "intro": "Between April and September 2026, ZCyberNews covered 16 high-severity incidents tied to the apt tag, with GopherWhisper, CyberAv3ngers, and HelloNet appearing as the most frequently named threat actors. Reporting focused on attacks against government, energy, cryptocurrency, technology, and aviation sectors, with affected regions including Japan, Mongolia, Afghanistan, Africa, and Asia. All 16 articles were rated high severity, reflecting the consistent operational impact across these campaigns. Coverage tracked actor-specific tactics and sector targeting throughout the five-month period, with no confirmed links drawn between the three groups.",
-  "sources_hash": "9ec053db3551506a",
+  "intro": "Seventeen high-severity articles tagged apt appeared between 13 April and 16 September 2026. GopherWhisper, CHOSEN BRICK, and CyberAv3ngers are the most-covered threat actors in this archive. Reporting spans government, energy, cryptocurrency, technology, and aviation, with activity tracked across Global, Japan, Mongolia, the United kingdom, and the United states. Every item in the tag carries a high severity rating, reflecting sustained coverage of advanced persistent threat operations throughout the period.",
+  "sources_hash": "6a8f8fe618673b55",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-02T07:42:16.566Z",
+  "generated_at": "2026-09-16T08:20:57.020Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

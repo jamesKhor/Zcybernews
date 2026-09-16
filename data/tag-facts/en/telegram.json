@@ -1,13 +1,14 @@
 {
   "tag": "telegram",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-07-28"
+    "latest": "2026-09-16"
   },
   "top_actors": [
-    "Bluekit"
+    "Bluekit",
+    "CHOSEN BRICK"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -15,24 +16,24 @@
     "social media",
     "technology",
     "activism",
-    "civil society"
+    "activists"
   ],
   "top_regions": [
     "Global",
+    "United kingdom",
     "Belarus",
     "China",
-    "Kazakhstan",
-    "Lithuania"
+    "Kazakhstan"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "informational": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "NCSC, FBI and AIVD warn that Iranian state actors use CHOSEN BRICK malware, delivered via WhatsApp and Telegram social engineering, to spy on dissidents and journalists.",
     "Resident NGO uncovers a Telegram phishing campaign targeting an exiled Belarusian activist and users in Russia and Kazakhstan using individualized links and device fingerprinting.",
-    "UK regulator Ofcom launches a formal investigation into Telegram over evidence of child sexual abuse material (CSAM) sharing and potential breaches of the Online Safety Act's encryption reporting rule",
-    "Telegram founder Pavel Durov alleges WhatsApp's default end-to-end encryption is misleading, as unencrypted cloud backups can expose billions of user messages."
+    "UK regulator Ofcom launches a formal investigation into Telegram over evidence of child sexual abuse material (CSAM) sharing and potential breaches of the Online Safety Act's encryption reporting rule"
   ],
-  "sources_hash": "28066a2b2f0e8995"
+  "sources_hash": "a027a5e8103b6a70"
 }

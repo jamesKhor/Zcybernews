@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 28,
+  "count": 29,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-08-08"
+    "latest": "2026-09-15"
   },
   "top_actors": [
     "APT33",
@@ -38,9 +38,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Chen Yixin, head of China's Ministry of State Security, named OpenAI's GPT-5.5-Cyber and Anthropic's Claude Mythos as signs of a 'disruptive upgrade' in offensive cyber capability.",
     "NRWA and DEF CON Franklin launch Water Watch Center to deliver threat intel and MDR services to small water utilities serving under 10,000 people, as attacks hit 12+ states.",
-    "European Commission files legal referrals against Ireland, Spain, France, and Netherlands for failing to transpose NIS2 Directive for critical infrastructure cybersecurity, 20...",
-    "Latvia's LVM says 44 GB of data leaked, two-thirds of customers still locked out of systems after ransomware attack attributed to a foreign financially motivated group."
+    "European Commission files legal referrals against Ireland, Spain, France, and Netherlands for failing to transpose NIS2 Directive for critical infrastructure cybersecurity, 20..."
   ],
-  "sources_hash": "22826167fbca95c7"
+  "sources_hash": "07e3521a458eff72"
 }

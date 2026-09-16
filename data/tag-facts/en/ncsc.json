@@ -1,12 +1,13 @@
 {
   "tag": "ncsc",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-07-07"
+    "latest": "2026-09-16"
   },
   "top_actors": [
+    "CHOSEN BRICK",
     "Salt Typhoon",
     "Vice Society"
   ],
@@ -14,23 +15,25 @@
   "top_sectors": [
     "government",
     "all",
+    "civil society",
     "critical infrastructure",
-    "education",
-    "financial services"
+    "education"
   ],
   "top_regions": [
     "United kingdom",
+    "United states",
     "Buckinghamshire",
-    "United states"
+    "Global",
+    "Netherlands"
   ],
   "severity_mix": {
-    "medium": 1,
-    "high": 3
+    "high": 4,
+    "medium": 1
   },
   "recent_excerpts": [
+    "NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware Iranian state actors use to surveil dissidents, activists and journalists via WhatsApp and Telegram...",
     "Only 70 total signatories for the UK Cyber Resilience Pledge, with fewer than 15 of 350 largest listed companies joining despite ministerial letters.",
-    "Great Marlow School in Buckinghamshire sent 1,428 pupils home for a second day after a cybersecurity incident; only GCSE and A-Level exam takers attended.",
-    "Britain dropped requirements for independent signaling intrusion detection and monthly reboots after BT, Vodafone, and others pushed back against proposed telecom security..."
+    "Great Marlow School in Buckinghamshire sent 1,428 pupils home for a second day after a cybersecurity incident; only GCSE and A-Level exam takers attended."
   ],
-  "sources_hash": "73fb132e58d60708"
+  "sources_hash": "bba0f813724f6c9d"
 }

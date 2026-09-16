@@ -1,12 +1,13 @@
 {
   "tag": "spyware",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-23",
-    "latest": "2026-06-25"
+    "latest": "2026-09-16"
   },
   "top_actors": [
+    "CHOSEN BRICK",
     "Commercial Surveillance Vendors",
     "CrystalX"
   ],
@@ -15,23 +16,24 @@
     "government",
     "civil society",
     "journalism",
-    "legal"
+    "legal",
+    "media"
   ],
   "top_regions": [
+    "Global",
+    "United states",
     "Azerbaijan",
     "Bulgaria",
-    "Czech republic",
-    "Denmark",
-    "Estonia"
+    "Czech republic"
   ],
   "severity_mix": {
-    "high": 2,
+    "high": 3,
     "medium": 1
   },
   "recent_excerpts": [
+    "NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware Iranian state actors use to surveil dissidents, activists and journalists via WhatsApp and Telegram...",
     "A spyware sample prepends fake nuclear and biological weapons policy text in a JavaScript comment to trigger AI refusal behavior before LLM-based scanners reach the real payload.",
-    "Human Rights Watch report documents EU surveillance tech sales to over two dozen nations with poor human rights records, citing Bulgaria as a top exporter.",
-    "Kaspersky details CrystalX RAT, a MaaS malware with spyware, credential theft, and prankware features targeting Windows users globally since mid-2025."
+    "Human Rights Watch report documents EU surveillance tech sales to over two dozen nations with poor human rights records, citing Bulgaria as a top exporter."
   ],
-  "sources_hash": "053186ef63ba1130"
+  "sources_hash": "98d42288d443c3b8"
 }

@@ -1,15 +1,15 @@
 {
   "tag": "apt",
   "locale": "en",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-01"
+    "latest": "2026-09-16"
   },
   "top_actors": [
     "GopherWhisper",
-    "CyberAv3ngers",
-    "HelloNet"
+    "CHOSEN BRICK",
+    "CyberAv3ngers"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -20,19 +20,19 @@
     "aviation"
   ],
   "top_regions": [
+    "Global",
     "Japan",
     "Mongolia",
-    "Afghanistan",
-    "Africa",
-    "Asia"
+    "United kingdom",
+    "United states"
   ],
   "severity_mix": {
-    "high": 16
+    "high": 17
   },
   "recent_excerpts": [
+    "NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware Iranian state actors use to surveil dissidents, activists and journalists via WhatsApp and Telegram...",
     "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026.",
-    "Mirage Kitten targets aviation and FinTech sectors across the Middle East and Africa with NodeRabbit and PollCat RATs, delivered via trojanized coding challenges on LinkedIn.",
-    "Kaspersky details HelloNet APT campaign targeting Russian government, energy, and transport sectors via ViPNet update system DLL sideloading since May 2026."
+    "Mirage Kitten targets aviation and FinTech sectors across the Middle East and Africa with NodeRabbit and PollCat RATs, delivered via trojanized coding challenges on LinkedIn."
   ],
-  "sources_hash": "9ec053db3551506a"
+  "sources_hash": "6a8f8fe618673b55"
 }

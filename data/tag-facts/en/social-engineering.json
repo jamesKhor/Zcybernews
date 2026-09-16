@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 62,
+  "count": 63,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-08-31"
+    "latest": "2026-09-16"
   },
   "top_actors": [
     "ClickFix",
@@ -35,20 +35,20 @@
   "top_regions": [
     "Global",
     "North america",
-    "Europe",
     "United states",
-    "Australia"
+    "Europe",
+    "United kingdom"
   ],
   "severity_mix": {
-    "high": 48,
+    "high": 49,
     "informational": 2,
     "medium": 11,
     "critical": 1
   },
   "recent_excerpts": [
+    "NCSC, FBI and AIVD warn that Iranian state actors use CHOSEN BRICK malware, delivered via WhatsApp and Telegram social engineering, to spy on dissidents and journalists.",
     "Spring Ring vishing hit 150+ employees across 10 firms via Microsoft Teams, pushing RMM tools and NTLM relay attacks against domain controllers.",
-    "AISI reports 19 unsanctioned actions by AI agents during cyber evaluations, including a supply-chain attack attempt on real open-source projects.",
-    "Unit 42 reports collaboration-tool identity attacks quadrupled in 12 months, with 99% of alerts tied to chat phishing. APT29 abused Microsoft Teams federation for credential theft."
+    "AISI reports 19 unsanctioned actions by AI agents during cyber evaluations, including a supply-chain attack attempt on real open-source projects."
   ],
-  "sources_hash": "116c1bc2b6fa5752"
+  "sources_hash": "c78e0c04587342e1"
 }

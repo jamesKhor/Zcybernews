@@ -1,9 +1,9 @@
 {
   "tag": "spyware",
   "locale": "en",
-  "intro": "Government, civil society, journalism, and legal sectors were the primary targets in a series of spyware campaigns tracked by ZCyberNews between April 23 and June 25, 2026. The five reported incidents, which included two high-severity and one medium-severity case, affected regions spanning Azerbaijan, Bulgaria, the Czech Republic, Denmark, and Estonia. Threat actors Commercial Surveillance Vendors and CrystalX were observed in these operations. No specific CVE identifiers were provided in the available data.",
-  "sources_hash": "053186ef63ba1130",
+  "intro": "Government, civil society, and journalism rank among the sectors most affected by spyware across six articles published between 23 April 2026 and 16 September 2026. Coverage spans Global, United states, Azerbaijan, Bulgaria, and Czech republic, alongside the legal and media sectors. CHOSEN BRICK, Commercial Surveillance Vendors, and CrystalX appear among the top threat actors tracked in this tag. The severity mix comprises three high-severity items and one medium-severity item, reflecting sustained attention to commercial and state-linked surveillance tooling across the reporting period.",
+  "sources_hash": "98d42288d443c3b8",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-26T04:32:34.019Z",
+  "generated_at": "2026-09-16T08:21:07.017Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

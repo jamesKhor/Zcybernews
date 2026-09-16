@@ -1,9 +1,9 @@
 {
   "tag": "iran",
   "locale": "en",
-  "intro": "This archive collects 9 articles tagged `iran` published between April 12, 2026 and April 29, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include APT33, CyberAv3ngers, and Fast16, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize water, energy, and government across Iran, United states, and Middle east, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 8 high reports.",
-  "sources_hash": "3618d28f98e13763",
-  "model": "template:fallback",
-  "generated_at": "2026-05-18T10:02:44.386Z",
+  "intro": "Eleven articles published between 2026-04-12 and 2026-09-16 carry the iran tag. CHOSEN BRICK, APT33, and CyberAv3ngers appear among the top threat actors tracked across this coverage. The reporting spans government, water, energy, activists, and civil society as the most affected sectors. Geographically, the material covers the United states, Iran, the Middle east, Netherlands, and United kingdom. Ten of the eleven articles are rated high severity. Together these pieces document activity attributed to the named actors and the sectors and regions absorbing its impact.",
+  "sources_hash": "31e2b9dda811a154",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-16T08:20:59.841Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

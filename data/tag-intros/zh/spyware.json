@@ -1,10 +1,10 @@
 {
   "tag": "spyware",
   "locale": "zh",
-  "intro": "政府、公民社会、新闻及法律行业成为2026年4月23日至6月25日期间ZCyberNews追踪的一系列间谍软件活动的主要目标。五起已报告事件中包括两起高严重性和一起中等严重性案例，影响范围覆盖阿塞拜疆、保加利亚、捷克共和国、丹麦和爱沙尼亚。在这些行动中观察到威胁行为者Commercial Surveillance Vendors和CrystalX。现有数据中未提供具体的CVE标识符。",
+  "intro": "政府、公民社会和新闻业是2026年4月23日至2026年9月16日期间发表的六篇文章中受间谍软件影响最严重的行业。报道范围涵盖全球、美国、阿塞拜疆、保加利亚和捷克共和国，以及法律和媒体行业。CHOSEN BRICK、Commercial Surveillance Vendors和CrystalX出现在该标签下追踪的主要威胁行为者之中。严重程度构成包括三个高严重性条目和一个中严重性条目，反映出在整个报道期间对商业和国家关联监控工具的持续关注。",
   "sources_hash": "cad34e0389900ff8",
-  "source_intro_hash": "172a55e023a6bf1d",
+  "source_intro_hash": "8491e37f4ac24c2a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-26T04:32:46.158Z",
+  "generated_at": "2026-09-16T08:21:23.672Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

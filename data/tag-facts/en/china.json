@@ -1,10 +1,10 @@
 {
   "tag": "china",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-23",
-    "latest": "2026-05-04"
+    "latest": "2026-09-15"
   },
   "top_actors": [
     "GopherWhisper",
@@ -14,25 +14,25 @@
   "top_cves": [],
   "top_sectors": [
     "government",
-    "defense",
     "critical infrastructure",
+    "defense",
     "financial services",
     "media"
   ],
   "top_regions": [
-    "Mongolia",
     "United states",
+    "Mongolia",
+    "China",
     "East asia",
-    "Europe",
-    "Global"
+    "Europe"
   ],
   "severity_mix": {
     "high": 6
   },
   "recent_excerpts": [
+    "Chen Yixin, head of China's Ministry of State Security, named OpenAI's GPT-5.5-Cyber and Anthropic's Claude Mythos as signs of a 'disruptive upgrade' in offensive cyber capability.",
     "Chinese national extradited from Italy to US for alleged Silk Typhoon cyberespionage targeting US govt, defense contractors, and critical infrastructure.",
-    "China-linked Silver Fox group targets Indian and Russian organizations with ABCDoor backdoor via tax-themed phishing emails in December 2025 campaign.",
-    "Trend Micro tracks SHADOW-EARTH-053 targeting government and defense sectors across Asia and one NATO-aligned European state. Campaign uses custom backdoors and spear-phishing."
+    "China-linked Silver Fox group targets Indian and Russian organizations with ABCDoor backdoor via tax-themed phishing emails in December 2025 campaign."
   ],
-  "sources_hash": "b347e507f60189cb"
+  "sources_hash": "c4e42b17a2396d4f"
 }

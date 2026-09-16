@@ -1,10 +1,10 @@
 {
   "tag": "anthropic",
   "locale": "en",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-09-11"
+    "latest": "2026-09-15"
   },
   "top_actors": [
     "Claude Mythos",
@@ -19,11 +19,11 @@
     "ai-development"
   ],
   "top_regions": [
-    "Global",
     "China",
+    "Global",
+    "United states",
     "Europe",
-    "Five eyes",
-    "France"
+    "Five eyes"
   ],
   "severity_mix": {
     "high": 6,
@@ -32,9 +32,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Chen Yixin, head of China's Ministry of State Security, named OpenAI's GPT-5.5-Cyber and Anthropic's Claude Mythos as signs of a 'disruptive upgrade' in offensive cyber capability.",
     "Anthropic disrupted Midnight Blizzard (APT29) and a Chinese university group abusing Claude against 20+ government, defense and drone-supply targets, publishing IOCs for defenders.",
-    "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors.",
-    "Anthropic restored global access to Fable 5 after US lifted export controls; Commerce Dept. tested a new safety classifier that blocks the cited jailbreak in 99% of cases."
+    "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors."
   ],
-  "sources_hash": "d14d5664aa627047"
+  "sources_hash": "e7a1f43efeba161c"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "china",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月23日至2026年5月4日期间发布的6篇标记为`china`的文章，为安全团队提供该主题在ZCyberNews报道中出现的聚焦视角。观察到的行为体引用包括GopherWhisper、DRAGONBRIDGE和SHADOW-EARTH-053，仅当底层文章元数据支持该归因时方予呈现。受影响范围信号强调蒙古、美国及东亚地区的政府、国防与关键基础设施，帮助读者对比暴露模式，而不添加档案数据之外的论断。严重性覆盖范围包括6篇高危报告。",
+  "intro": "在2026年4月23日至9月15日期间发表的七篇文章中，ZCyberNews以china为标签的报道审视了影响政府、关键基础设施、国防、金融服务和媒体的活动。GopherWhisper、DRAGONBRIDGE和SHADOW-EARTH-053出现在该报道追踪的主要威胁行为者之列。受影响地区包括United states、Mongolia、China、East asia和Europe。七篇文章中有六篇被评为高严重性级别，反映出该期间所记录重大事件的集中程度。",
   "sources_hash": "2b4563ece7f1fc33",
-  "source_intro_hash": "7f82a4cd76688f16",
+  "source_intro_hash": "fd45a1daba2e6752",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:07:33.331Z",
+  "generated_at": "2026-09-16T08:21:13.622Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
