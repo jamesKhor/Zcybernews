@@ -1,0 +1,95 @@
+---
+title: 'UK, FBI, AIVD Expose CHOSEN BRICK Iranian Spyware'
+slug: 2026-09-16-uk-fbi-aivd-expose-chosen-brick-iranian-spyware
+date: '2026-09-16'
+excerpt: >-
+  NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware
+  Iranian state actors use to surveil dissidents, activists and journalists via
+  WhatsApp and Telegram...
+category: malware
+tags:
+  - iran
+  - chosen-brick
+  - spyware
+  - ncsc
+  - apt
+  - spear-phishing
+language: en
+source_urls:
+  - >-
+    https://www.ncsc.gov.uk/news/uk-allies-expose-spyware-iranian-state-actors-target-dissidents-activists-journalists
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:allies-expose-spyware-used-iranian'
+source_count: 1
+seo_query_target: >-
+  UK and allies expose spyware used by Iranian state actors to target
+  dissidents, activists and journalists
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Readers will learn that the NCSC, FBI and AIVD jointly attributed the CHOSEN
+  BRICK Windows spyware to Iranian state actors targeting dissidents, activists
+  and journalists, and what the malware collects.
+seo_meta_promise: >-
+  The meta description names CHOSEN BRICK, the three issuing agencies, the
+  Windows-only targeting, and the WhatsApp/Telegram delivery vector so readers
+  searching for the joint advisory get the concrete facts up front.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - threat-intel
+  - iran
+  - spyware
+  - spear-phishing
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Illustration of a smartphone messaging app conversation being intercepted by
+  surveillance software on a Windows laptop
+severity: high
+threat_actor: CHOSEN BRICK
+threat_actor_origin: Iran
+affected_sectors:
+  - civil society
+  - media
+  - government
+affected_regions:
+  - United Kingdom
+  - United States
+  - Netherlands
+  - Global
+publish_tier: public
+---
+## Executive Summary
+
+Iranian state cyber actors are using a Windows spyware family called **CHOSEN BRICK** to surveil dissidents, activists and journalists worldwide, according to a joint advisory published September 15 by the UK National Cyber Security Centre (NCSC), the U.S. Federal Bureau of Investigation, and the Netherlands' General Intelligence and Security Service (AIVD).
+
+The advisory attributes the campaign to Iranian state actors who impersonate trusted contacts on WhatsApp and Telegram, build rapport with targets, and then deliver malware that captures screen content, microphone audio, contacts, email and social media messages. The NCSC assesses that Iran "almost certainly" uses cyber activity to support repression of individuals perceived as threats to the regime, and notes that personal details of some prior victims have appeared on pro-Iranian leak sites — a disclosure that can raise physical safety risks for the people named.
+
+The FBI published a parallel technical analysis at `https://www.ic3.gov/CSA/2026/260915.pdf`.
+
+## Technical Analysis
+
+CHOSEN BRICK is exclusively targeted at Windows systems and is persistent — the advisory states it survives a reboot of the infected device. Its collection scope covers contacts, email and social media messages, plus screen capture and microphone access, giving operators a live view of the target's communications and surroundings.
+
+Delivery is social-engineering-led rather than exploit-led. According to the NCSC, Iranian operators impersonate contacts over messaging apps including WhatsApp and Telegram, cultivate rapport with the target, and only then deploy the spyware. Lures are tailored to the target's interests; the advisory cites fake MRI test results as one example used to draw victims in. This pattern — a trusted-looking conversation followed by a file or link — is consistent with the spearphishing-via-service technique (MITRE T1566.003) and requires user execution (T1204.002) rather than a software vulnerability.
+
+Because the campaign relies on impersonation and rapport-building rather than a CVE, there is no patch that closes the exposure. The NCSC frames the advisory as detection and mitigation guidance for at-risk individuals and the organisations that support them, and points to its dedicated support for high-risk individuals, including free cyber defence services.
+
+## Tactics, Techniques & Procedures
+
+The advisory's technical picture maps to a small, coherent TTP set. Initial access is achieved through service-based spearphishing (T1566.003) on consumer messaging platforms, followed by user execution of a malicious file (T1204.002). Post-compromise collection spans screen capture (T1113), video/audio capture via the microphone (T1125), and email collection (T1114). Persistence is maintained through autostart mechanisms that survive reboot (T1547).
+
+The sequencing matters for defenders: there is no exploitation phase to detect, so network and endpoint telemetry around messaging-app file transfers and unexpected autostart entries is more useful than vulnerability scanning. The NCSC explicitly recommends that at-risk individuals familiarise themselves with the social-engineering techniques in the advisory and act on the mitigation steps.
+
+## Threat Actor Context
+
+The advisory is attributed to Iranian state actors, with the NCSC assessing that Iran "almost certainly" uses cyber operations to support repression of regime critics. The campaign is global in scope but has specifically touched the UK, and the joint authorship by the NCSC, FBI and AIVD reflects a coordinated Western response. The NCSC notes that details of some previous victims have been published on pro-Iranian leak sites, which it says could increase risks to those individuals' personal safety. The advisory does not name individual operators or a specific Iranian intelligence service.
+
+## Mitigations & Recommendations
+
+The NCSC's guidance is aimed at individuals at risk of transnational repression and the organisations supporting them. Practical steps include treating unsolicited contact on WhatsApp and Telegram from apparent acquaintances with suspicion, especially when the conversation steers toward opening files or links; the advisory specifically calls out impersonation of contacts and interest-tailored lures such as fake medical results as hallmarks of this campaign. At-risk individuals are directed to the NCSC's dedicated support for high-risk individuals, including free cyber defence services, and to the mitigation steps in the joint advisory. Organisations that support dissidents, journalists or activists should treat messaging-app-delivered executables as a high-risk vector and monitor Windows endpoints for unexpected autostart entries, since CHOSEN BRICK is designed to persist across reboots.
+
+## References
+
+- [UK and allies expose spyware used by Iranian state actors to target dissidents, activists and journalists — NCSC](https://www.ncsc.gov.uk/news/uk-allies-expose-spyware-iranian-state-actors-target-dissidents-activists-journalists)
+- [FBI technical analysis of CHOSEN BRICK (PDF)](https://www.ic3.gov/CSA/2026/260915.pdf)
