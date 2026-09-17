@@ -1756,5 +1756,23 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-20079 but it is not in the fact sheet",
     "at": "2026-09-12T07:45:04.458Z"
+  },
+  {
+    "tag": "android",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-58704 but it is not in the fact sheet",
+    "at": "2026-09-17T08:27:50.138Z"
+  },
+  {
+    "tag": "kaspersky",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2019-0708 but it is not in the fact sheet; Intro cites CVE-2020-0688 but it is not in the fact sheet",
+    "at": "2026-09-17T08:27:56.782Z"
+  },
+  {
+    "tag": "zero-day",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-81963 but it is not in the fact sheet; Intro cites CVE-2026-85880 but it is not in the fact sheet",
+    "at": "2026-09-17T08:28:03.354Z"
   }
 ]

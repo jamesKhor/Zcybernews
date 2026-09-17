@@ -1,15 +1,15 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-22",
-    "latest": "2026-08-20"
+    "latest": "2026-09-17"
   },
   "top_actors": [
+    "AMOS Stealer",
     "APT29",
-    "CL-STA-1062",
-    "Gremlin Stealer"
+    "CL-STA-1062"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,13 +27,13 @@
     "South asia"
   ],
   "severity_mix": {
-    "high": 16,
+    "high": 17,
     "critical": 2
   },
   "recent_excerpts": [
+    "Unit 42's lab infection shows AMOS stealer pulling payloads from getmacouscloud[.]com and exfiltrating browser, wallet, and Telegram data to C2 161.35.146[.]120.",
     "Unit 42 reports collaboration-tool identity attacks quadrupled in 12 months, with 99% of alerts tied to chat phishing. APT29 abused Microsoft Teams federation for credential theft.",
-    "Unit 42 reports token jacking: attackers steal AI API keys to resell access on gray-market transfer stations, causing staggering financial losses for developers.",
-    "Unit 42 finds 45.32% of C2-active malware bypass DNS with direct-to-IP connections. Learn how ZT-IP enforcement blocks these evasive threats."
+    "Unit 42 reports token jacking: attackers steal AI API keys to resell access on gray-market transfer stations, causing staggering financial losses for developers."
   ],
-  "sources_hash": "ad07ed92839a53fe"
+  "sources_hash": "8245dedb8b09d50f"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "unit-42",
   "locale": "zh",
-  "intro": "从2026年4月22日至8月20日，ZCyberNews在Unit 42标签下发布了20篇文章，涵盖16起高严重性和2起危急事件。报道将APT29、CL-STA-1062和Gremlin Stealer识别为不同的威胁行为者。受影响行业包括技术、软件开发、企业、金融服务和政府，影响范围遍及全球，具体事件发生在中美洲、北美洲、南美洲和南亚。",
+  "intro": "在2026-04-22至2026-09-17期间，ZCyberNews发布了21篇标记为unit-42的文章。报道涵盖17个高严重性条目和2个关键条目，受影响行业包括技术、软件开发、企业、金融服务和政府。报道范围覆盖全球、中美洲、北美洲、南美洲和南亚。AMOS Stealer、APT29和CL-STA-1062出现在该标签下追踪的主要威胁行为者之中。该存档将所有文章集中一处以供参考。",
   "sources_hash": "e8c4a7d1d58aa1c3",
-  "source_intro_hash": "fcc04becf31f73f7",
+  "source_intro_hash": "7206815b18d7d96b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-21T03:51:14.637Z",
+  "generated_at": "2026-09-17T08:27:59.346Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -3,8 +3,8 @@
   "locale": "zh",
   "intro": "本档案收录了 34 篇带有「zero-day」标签的文章，发布时间从2026年4月12日至2026年8月13日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2026-22679、CVE-2026-34621、CVE-2026-3502，每一项均以原文中的漏洞背景和元数据为依据。可见的威胁行为者引用包括 APT29、Chaotic Eclipse、Claude Mythos，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于technology、government、telecommunications，地区包括 Global、Asia、Brazil，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括15 篇严重、18 篇高危、1 篇中危报告。",
   "sources_hash": "378036b9edbd9fce",
-  "source_intro_hash": "95797d5967ee1a31",
+  "source_intro_hash": "02cff0283bbaace1",
   "model": "template:fallback",
-  "generated_at": "2026-09-10T07:56:24.923Z",
+  "generated_at": "2026-09-17T08:28:03.391Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

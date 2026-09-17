@@ -1,0 +1,35 @@
+{
+  "tag": "clickfix",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-10",
+    "latest": "2026-09-17"
+  },
+  "top_actors": [
+    "AMOS Stealer",
+    "ClickFix",
+    "Lazarus Group"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "cryptocurrency",
+    "finance",
+    "technology"
+  ],
+  "top_regions": [
+    "Asia",
+    "Europe",
+    "North america"
+  ],
+  "severity_mix": {
+    "high": 3,
+    "medium": 1
+  },
+  "recent_excerpts": [
+    "Unit 42's lab infection shows AMOS stealer pulling payloads from getmacouscloud[.]com and exfiltrating browser, wallet, and Telegram data to C2 161.35.146[.]120.",
+    "A new ClickFix-style campaign targets macOS users with fake Apple instructions to run malicious commands.",
+    "A ClickFix social engineering campaign bypasses macOS security warnings by using Script Editor to execute malicious commands, marking a significant evolution in Mac-targeting malware."
+  ],
+  "sources_hash": "539e5f5a1b2e5697"
+}

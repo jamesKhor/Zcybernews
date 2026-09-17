@@ -1,10 +1,10 @@
 {
   "tag": "android",
   "locale": "en",
-  "count": 16,
+  "count": 17,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-01"
+    "latest": "2026-09-16"
   },
   "top_actors": [
     "Mirax",
@@ -25,14 +25,17 @@
     },
     {
       "id": "CVE-2025-54957"
+    },
+    {
+      "id": "CVE-2026-58704"
     }
   ],
   "top_sectors": [
+    "consumer",
     "cryptocurrency",
     "technology",
-    "consumer",
     "financial services",
-    "consumer electronics"
+    "mobile"
   ],
   "top_regions": [
     "Global",
@@ -42,15 +45,15 @@
     "France"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "medium": 1,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Google's September Pixel bulletin patches CVE-2026-58704, a high-severity modem privilege-escalation flaw under limited, targeted exploitation, plus 109 other bugs.",
     "Check Point Research found a DeepSeek-generated sample using Chrome's File System Access API to encrypt Android photo directories — no native payload or exploit required.",
-    "Google Project Zero found a Pixel 10 VPU driver flaw allowing userspace to map arbitrary physical memory, including the kernel image. Exploit required 5 lines of code.",
-    "CVE-2026-8568 (CVSS 3.1) lets attackers bypass Chrome Site Isolation via AI features after renderer compromise; CVE-2026-8566 (CVSS 4.3) targets Android Payments."
+    "Google Project Zero found a Pixel 10 VPU driver flaw allowing userspace to map arbitrary physical memory, including the kernel image. Exploit required 5 lines of code."
   ],
-  "sources_hash": "caf06da3d9e15112"
+  "sources_hash": "374b3d3c827cbef9"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "mobile-security",
   "locale": "en",
-  "intro": "This archive collects 6 articles tagged `mobile-security` published between April 12, 2026 and April 27, 2026. Coverage includes 1 critical, 3 high, and 2 medium reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "0093b00aa3450d02",
-  "model": "template:sparse",
-  "generated_at": "2026-05-18T10:04:58.020Z",
+  "intro": "Mobile security coverage across seven articles from April 12 to September 16, 2026, centers on consumer and cryptocurrency sectors, with financial services, law enforcement, and mobile also affected. Canada, Toronto, and global regions appear among the impacted areas. CVE-2026-58704 is the most prominent vulnerability identified. The severity mix includes four high-severity issues, two medium, and one critical, reflecting a range of risk levels across the reporting period.",
+  "sources_hash": "43b744488f78fe37",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-17T08:27:43.652Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

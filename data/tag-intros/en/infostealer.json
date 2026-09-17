@@ -1,9 +1,9 @@
 {
   "tag": "infostealer",
   "locale": "en",
-  "intro": "Over the past month, ZCyberNews has tracked 13 articles on infostealer threats, with 11 rated high severity and one critical. The most frequently observed threat actors were Gremlin Stealer, LummaC2, and NWHStealer. These campaigns primarily targeted the technology, software development, cryptocurrency, financial services, and gaming sectors, with impacts noted globally and in Ukraine. The coverage spanned from April 10 to May 15, 2026, reflecting a concentrated period of infostealer activity across these industries and regions.",
-  "sources_hash": "01d0340ed5403081",
+  "intro": "Across 14 articles dated 2026-04-10 to 2026-09-17, ZCyberNews coverage of infostealer activity spans AMOS Stealer, Gremlin Stealer, and LummaC2. The reporting reaches technology, software development, cryptocurrency, financial services, and gaming, with incidents recorded globally and in Ukraine. Severity across the tag skews high, with 12 items rated high and one critical. The archive tracks how these distinct stealers surfaced across sectors and regions during the five-month window, documenting the actors named in each report without asserting links between them.",
+  "sources_hash": "c00cf6b185def098",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:00:59.323Z",
+  "generated_at": "2026-09-17T08:27:40.916Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

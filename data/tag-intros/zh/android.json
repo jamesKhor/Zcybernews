@@ -1,10 +1,10 @@
 {
   "tag": "android",
   "locale": "zh",
-  "intro": "Mirax、NGate和TrickMo是2026年4月至7月期间针对Android设备最活跃的威胁行为者，根据该标签下的16篇文章。关键漏洞包括CVE-2026-8566、CVE-2026-8568、CVE-2023-4863和CVE-2025-54957，其中两个被评为严重等级，十个为高危等级。受影响行业涵盖加密货币、技术、消费电子、金融服务和消费市场，报告的事件影响了全球用户，具体活动涉及欧洲、奥地利、巴西和法国。",
+  "intro": "本档案收录了 16 篇带有「android」标签的文章，发布时间从2026年4月12日至2026年7月1日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2026-8566、CVE-2026-8568、CVE-2023-4863，每一项均以原文中的漏洞背景和元数据为依据。可见的威胁行为者引用包括 Mirax、NGate、TrickMo，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于cryptocurrency、technology、consumer，地区包括 Global、Europe、Austria，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括2 篇严重、10 篇高危、1 篇中危、3 篇信息类报告。",
   "sources_hash": "97d8f1178635c6bf",
-  "source_intro_hash": "fd97497d66a05c56",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-02T04:28:10.258Z",
+  "source_intro_hash": "27e314851cf75428",
+  "model": "template:fallback",
+  "generated_at": "2026-09-17T08:27:50.138Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

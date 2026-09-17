@@ -1,9 +1,9 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "intro": "From April 22 to August 20, 2026, ZCyberNews published 20 articles under the Unit 42 tag, covering 16 high-severity and 2 critical incidents. The reporting identified APT29, CL-STA-1062, and Gremlin Stealer as distinct threat actors. Affected sectors included technology, software development, enterprise, financial services, and government, with global impact and specific incidents in Central America, North America, South America, and South Asia.",
-  "sources_hash": "ad07ed92839a53fe",
+  "intro": "Between 2026-04-22 and 2026-09-17, ZCyberNews published 21 articles tagged unit-42. The coverage spans 17 high-severity and 2 critical items, with technology, software development, enterprise, financial services, and government among the affected sectors. Reporting reaches Global, Central america, North america, South america, and South asia. AMOS Stealer, APT29, and CL-STA-1062 appear among the top threat actors tracked across this tag. The archive collects each article in one place for reference.",
+  "sources_hash": "8245dedb8b09d50f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-21T03:51:10.433Z",
+  "generated_at": "2026-09-17T08:27:34.719Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

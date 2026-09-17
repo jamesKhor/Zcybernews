@@ -1,10 +1,10 @@
 {
   "tag": "infostealer",
   "locale": "zh",
-  "intro": "过去一个月，ZCyberNews追踪了13篇关于信息窃取威胁的报道，其中11篇被评为高严重性，1篇为严重级别。最常观察到的威胁行为体包括Gremlin Stealer、LummaC2和NWHStealer。这些攻击活动主要针对技术、软件开发、加密货币、金融服务和游戏行业，影响范围覆盖全球及乌克兰。相关报道时间跨度为2026年4月10日至5月15日，反映出这些行业和地区在信息窃取活动上的集中爆发期。",
+  "intro": "在2026-04-10至2026-09-17期间的14篇文章中，ZCyberNews对信息窃取器活动的报道涵盖AMOS Stealer、Gremlin Stealer和LummaC2。报道涉及技术、软件开发、加密货币、金融服务和游戏领域，事件记录遍及全球及乌克兰。该标签下的严重程度整体偏高，其中12项评为高，1项评为严重。该档案追踪了这些不同窃取器在五个月窗口期内如何在不同行业和地区出现，记录了每篇报道中提及的行为者，但未断言它们之间存在关联。",
   "sources_hash": "5a393019f871ae52",
-  "source_intro_hash": "377ea3045c15162f",
+  "source_intro_hash": "d39b4f4dc6e1832f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:09:00.488Z",
+  "generated_at": "2026-09-17T08:27:53.004Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

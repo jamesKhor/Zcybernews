@@ -1,15 +1,15 @@
 {
   "tag": "infostealer",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-05-15"
+    "latest": "2026-09-17"
   },
   "top_actors": [
+    "AMOS Stealer",
     "Gremlin Stealer",
-    "LummaC2",
-    "NWHStealer"
+    "LummaC2"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -24,13 +24,13 @@
     "Ukraine"
   ],
   "severity_mix": {
-    "high": 11,
+    "high": 12,
     "critical": 1
   },
   "recent_excerpts": [
+    "Unit 42's lab infection shows AMOS stealer pulling payloads from getmacouscloud[.]com and exfiltrating browser, wallet, and Telegram data to C2 161.35.146[.]120.",
     "Unit 42 details a new Gremlin stealer variant using XOR-encrypted resource sections, crypto clipper, WebSocket session hijacking, and a commercial packer with instruction...",
-    "Attackers abuse Google Ads linking to real claude.ai and shared Claude chats to deliver MacSync infostealer, harvesting browser credentials and Keychain data.",
-    "A typosquatted OpenAI repository reached #1 on Hugging Face with 244,000 downloads, delivering a Rust-based infostealer that targets browser credentials, crypto wallets, and VPN..."
+    "Attackers abuse Google Ads linking to real claude.ai and shared Claude chats to deliver MacSync infostealer, harvesting browser credentials and Keychain data."
   ],
-  "sources_hash": "01d0340ed5403081"
+  "sources_hash": "c00cf6b185def098"
 }
