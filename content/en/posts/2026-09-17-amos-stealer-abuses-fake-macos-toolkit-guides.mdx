@@ -1,0 +1,96 @@
+---
+title: AMOS Stealer Abuses Fake macOS Toolkit Guides
+slug: 2026-09-17-amos-stealer-abuses-fake-macos-toolkit-guides
+date: '2026-09-17'
+excerpt: >-
+  Unit 42's lab infection shows AMOS stealer pulling payloads from
+  getmacouscloud[.]com and exfiltrating browser, wallet, and Telegram data to C2
+  161.35.146[.]120.
+category: malware
+tags:
+  - amos-stealer
+  - macos-malware
+  - infostealer
+  - unit-42
+  - clickfix
+  - cryptocurrency-wallets
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:atomic-macos-amos-stealer-activity'
+source_count: 1
+seo_query_target: Atomic macOS (AMOS) Stealer Activity
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The headline promises a technical breakdown of how AMOS stealer is delivered
+  through fake macOS toolkit setup guides and what artifacts it leaves behind.
+seo_meta_promise: >-
+  The meta description promises specific AMOS stealer infrastructure
+  (getmacouscloud[.]com, 161.35.146[.]120) and the data types it exfiltrates,
+  giving defenders concrete indicators.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - macos-malware
+  - infostealers
+  - clickfix
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Screenshot of a macOS Terminal window with a malicious curl command pasted
+  from a fake 'macOS toolkit' setup page.
+severity: high
+threat_actor: AMOS Stealer
+iocs:
+  - type: hash_sha256
+    value: 608e70d1338612686917ee5cd300ff7ed8e318dfd787a50257f92142e99bd688
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+A lab infection documented by Palo Alto Networks Unit 42 shows the Atomic macOS (AMOS) stealer continuing to rely on social engineering rather than software exploits: a fake "macOS toolkit" page instructs visitors to paste a Terminal command that pulls a Zsh loader, drops a Mach-O installer, and stages browser, cryptocurrency wallet, and Telegram data for exfiltration to a command-and-control server at `161.35.146[.]120`.
+
+The snapshot, captured Aug. 5, 2026, and published Sept. 16, matters less for novelty than for the persistence of the delivery pattern. AMOS has been advertised on Telegram since at least April 2024, and Unit 42 notes its indicators rotate constantly, which is why the lab writeup focuses on the file paths, permission prompts, and staging directories a defender can actually hunt for.
+
+## Technical Analysis
+
+The infection chain begins at `getmacouscloud[.]com`, a domain hosting pages that present step-by-step "quick setup" instructions for a purported macOS toolkit. Unit 42's Bradley Duncan notes that while the technique is sometimes labeled ClickFix, it differs from the classic fake-CAPTCHA variant: there is no clipboard injection. The victim is simply told to copy text from the page and paste it into Terminal.
+
+That pasted command retrieves a Zsh script from `hxxps[:]//ferncore13[.]com/curl/608e70d1338612686917ee5cd300ff7ed8e318dfd787a50257f92142e99bd688`. The script contains Base64-encoded, GZIP-compressed text that decodes to a second Zsh script, which in turn fetches and executes a Mach-O binary — the AMOS stealer installer — saved to `/tmp/helper`. A plist file named `starter` is written to the same directory.
+
+The `starter` plist points to a shell script at `/Library/Application Support/.com.apple.accountsd/.service`, which launches a Mach-O file in the same directory named `AccountsHelper`. Unit 42 found a parallel persistence set under `/Library/Application Support/.com.apple.metadata.mds/`, where a `.mdworker` shell script launches a second AMOS Mach-O named `mdworker_shared`. Both directories and filenames are crafted to blend with legitimate Apple system components.
+
+Before the payload proceeds, macOS prompts for the user's password. On the lab host — an administrative account — entering the password allowed the infection to continue. The Terminal process then requested permission to control Finder, access the Desktop and Documents folders, and control the Notes application. Unit 42's writeup makes clear that these grants are user-mediated, not the result of a privilege-escalation bug.
+
+Collected data is staged under `/tmp` and compressed into `out.zip`. The archive's directory structure reveals what AMOS searched for: `deskwallets/Binance/`, `deskwallets/TonKeeper/`, `FileGrabber/aws/`, `FileGrabber/docker/`, `FileGrabber/filezilla/`, `FileGrabber/gcloud/`, a `FileGrabber/zsh_history` file, a `Telegram Data/` directory, and files named `info` and `username`. Unit 42 notes the host was a clean installation with no additional applications, so the archive contents reflect the stealer's target list rather than what was actually present.
+
+Post-infection traffic consisted primarily of HTTP POST requests to the C2 server at `161.35.146[.]120`, captured in Wireshark. Unit 42's published snapshot cuts off mid-description of the initial POST URLs, so the full request paths are not enumerated in the source material.
+
+## Indicators of Compromise
+
+The infrastructure cluster in this snapshot is small and specific: two domains (`getmacouscloud[.]com` for lure hosting, `ferncore13[.]com` for loader delivery), one C2 IP (`161.35.146[.]120`), and one SHA-256 hash for the initial Zsh script. Unit 42 explicitly cautions that AMOS indicators change frequently, so these should be treated as a point-in-time snapshot from early August 2026 rather than a durable blocklist.
+
+The on-disk artifacts are more durable hunting targets. The `/tmp/helper` and `/tmp/starter` pair, the `.com.apple.accountsd` and `.com.apple.metadata.mds` directories under Application Support, and the `out.zip` staging archive are all unusual enough to warrant alerting. The `out.zip` internal directory names — `deskwallets`, `FileGrabber`, `Telegram Data` — are distinctive strings that can be used in file-content scanning.
+
+## Tactics, Techniques & Procedures
+
+The chain is a textbook macOS infostealer playbook with no exploit component. Delivery is user-executed copy-paste (T1204.004), the loader is a Unix shell script (T1059.004) with Base64/GZIP obfuscation (T1027), and persistence is achieved by masquerading as Apple system processes (T1036) via a Launch Agent plist (T1543.001).
+
+Collection targets password stores (T1555) and web session material (T1539), with data staged locally (T1074.001) and exfiltrated over the C2 channel via HTTP POST (T1041). The sequencing matters for detection: the password prompt and Terminal permission dialogs occur before any collection, which means an alert on Terminal requesting Finder, Desktop, Documents, and Notes access in rapid succession is a high-signal early indicator.
+
+## Threat Actor Context
+
+AMOS stealer is a commodity macOS infostealer advertised on Telegram since at least April 2024. Unit 42 assesses it as representing a noticeable portion of macOS stealer-based malware and describes it as a growing threat, but the source material does not attribute the operation to a named APT group or provide a geographic origin for the operators.
+
+Distribution has been observed through ClickFix-style campaigns, malicious ads, and sites offering cracked versions of commercial software. The Aug. 5, 2026 infection analyzed here used the cracked-software-adjacent lure: a page promising a "macOS toolkit" installation.
+
+## Mitigations & Recommendations
+
+Given the absence of an exploit, the primary control is user behavior around Terminal. Blocking or alerting on `curl` and `wget` invocations from Terminal that immediately pipe to `zsh` or `sh` would catch this chain at the first step. EDR and MDM policies should flag Terminal requesting control of Finder, Desktop, Documents, or Notes — the specific permission set Unit 42 observed — especially when the requests arrive in a burst.
+
+On the network side, block `getmacouscloud[.]com`, `ferncore13[.]com`, and `161.35.146[.]120`, and monitor for HTTP POST traffic to non-corporate destinations from macOS endpoints. File-integrity monitoring should cover `/Library/Application Support/.com.apple.accountsd/` and `/Library/Application Support/.com.apple.metadata.mds/`, which are not standard user-writable locations for legitimate Apple services. Because AMOS indicators rotate, detection should lean on the behavioral pattern — copy-paste Terminal execution, Apple-masquerading persistence, `out.zip` staging — rather than the specific domains and hashes in this snapshot.
+
+## R
