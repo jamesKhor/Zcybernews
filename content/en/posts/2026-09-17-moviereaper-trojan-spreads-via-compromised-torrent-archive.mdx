@@ -1,0 +1,102 @@
+---
+title: MovieReaper Trojan Spreads via Compromised Torrent Archive
+slug: 2026-09-17-moviereaper-trojan-spreads-via-compromised-torrent-archive
+date: '2026-09-17'
+excerpt: >-
+  Kaspersky found hundreds of MovieReaper victims across 10+ countries after
+  attackers poisoned itorrents.org, serving fake "The Odyssey" torrents that
+  drop a Solana-C2 trojan.
+category: malware
+tags:
+  - moviereaper
+  - malware
+  - torrent-malware
+  - solana-blockchain
+  - kaspersky
+  - windows-trojan
+language: en
+source_urls:
+  - 'https://securelist.com/moviereaper-malware-torrent-odyssey-solana/121344/'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:odyssey-trojans-again-moviereaper-users'
+source_count: 1
+seo_query_target: >-
+  The Odyssey and trojans again: MovieReaper attacks users in multiple countries
+  via compromised torrents
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The headline promises a technical account of the MovieReaper trojan campaign,
+  its torrent-based distribution via a compromised archive, and the concrete
+  defender impact.
+seo_meta_promise: >-
+  The meta description names MovieReaper, the compromised itorrents.org archive,
+  the fake 'The Odyssey' lure, the Solana-based C2, and the multi-country victim
+  count so a defender can decide in one glance whether to read further.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - malware-loaders
+  - threat-intel
+  - blockchain-c2
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Illustration of a torrent file icon morphing into a Windows executable, with a
+  blockchain node graphic representing the Solana-based command-and-control
+  channel.
+threat_actor: MovieReaper
+affected_regions:
+  - Russia
+  - Türkiye
+  - Japan
+  - Kenya
+  - Uganda
+  - Colombia
+  - Spain
+  - Netherlands
+  - Belgium
+  - Germany
+iocs:
+  - type: hash_md5
+    value: A0B13781EDD7CFDAB13D79AFFF3C83C1
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+A previously undocumented modular Windows trojan that Kaspersky has named **MovieReaper** has infected several hundred users and organizations across at least ten countries, with distribution traced to a compromised public torrent file archive rather than the trackers themselves. Kaspersky's Securelist report, published by researchers Konstantin Isakov and Pavel Cheremushkin, attributes the initial infection vector to `itorrents[.]org`, which the attackers poisoned so that dependent torrent trackers began serving malicious torrent files to their users. The archive remained compromised as of the report's publication date.
+
+The campaign is notable for two reasons. First, the distribution method is a supply-chain-style abuse of a shared torrent archive: compromising one repository gave the operators reach across many trackers without touching each one. Second, the malware's command-and-control resolution is hidden in the Solana blockchain, an increasingly common technique for making C2 takedown costly. Kaspersky detects the payload as `HEUR:Trojan.Win64.Agent.gen`. No CVE is involved; this is a crimeware campaign, not a software vulnerability.
+
+## Technical Analysis
+
+Kaspersky's threat-hunting team identified the campaign in mid-August 2026 after observing a cluster of infections that shared a single common factor: every victim had recently used torrent trackers. A user report on Reddit, cited in the report, described downloading a suspicious file in place of the expected movie content — a pattern that recurred across victims.
+
+Rather than compromising individual trackers, the operators poisoned `itorrents[.]org`, a widely used public repository of torrent files. Trackers that source their `.torrent` files from that repository began inadvertently distributing the malicious files. When a victim clicks a magnet link, the legitimate archive returns a different torrent file that points to the MovieReaper loader. This is the key structural finding of the report: the attackers reach users of many trackers through a single upstream compromise.
+
+The loader is distributed under many filenames, for example `the odyssey (2026) [1080p] [webrip] [5.1].exe`, but the MD5 hash `A0B13781EDD7CFDAB13D79AFFF3C83C1` was identical across the samples Kaspersky analyzed. Filenames are deliberately long, presumably to push the `.exe` extension out of view in file listings. The executable masquerades with the icon of a well-known application.
+
+On execution, the loader creates a global mutex to enforce single-instance execution. Kaspersky observed multiple mutex variants, each containing a randomly generated string — for example `Global\fnulSktzSqvVLXHU`. The loader then runs a series of anti-sandbox checks. Notably, it avoids `LoadLibrary` and `GetProcAddress` calls, instead walking the PEB `Ldr` double-linked list to locate loaded libraries and manually parsing DLLs to resolve function addresses. This is a well-established evasion pattern aimed at defeating API-monitoring sandboxes and static heuristics.
+
+Once the checks pass, the loader resolves the C2 domain `deadhub[.]org`, and if that connection fails, falls back to the IP address `193.23.118[.]155` over plain HTTP. The malware selects a random string group and uses it as an HTTP path to retrieve shellcode in chunks. Kaspersky lists example URLs including `/cloud/v192.4/ui/sync-status-icons.png`, `/cloud/v192.4/onboarding/welcome-bg.jpg`, `/cloud/v192.4/ui/file-preview-placeholder.png`, and `/cloud/v192.4/shared/link-banner.jpg` — paths styled to resemble ordinary asset requests. The shellcode is mapped into RWX memory and executed; the loader registers a vectored exception handler and rewrites the handler address in memory as part of its execution flow.
+
+The infection chain is multi-stage. Step 1 is the loader described above. Step 2 delivers shellcode. Step 3 performs a UAC bypass and establishes persistence. Step 4 is the final implant. Kaspersky describes MovieReaper as a modular framework, and the report notes that apart from a custom stream cipher used to encrypt strings, the malware is not heavily obfuscated — the operators concentrated their effort on sandbox evasion rather than on static obfuscation.
+
+The report attributes C2 hiding to the Solana blockchain, consistent with a broader trend of malware families using on-chain data as a resilient, takedown-resistant resolution layer. Kaspersky does not, in the material available, publish the specific on-chain mechanism used to derive the C2 address, so defenders should treat the blockchain element as a design property of the framework rather than a directly actionable IOC.
+
+## Indicators of Compromise
+
+The strongest single IOC is the loader hash `A0B13781EDD7CFDAB13D79AFFF3C83C1` (MD5), which Kaspersky observed across the many filename variants. Network-side, `deadhub[.]org` and `193.23.118[.]155` are the primary and fallback C2 endpoints; the HTTP request paths under `/cloud/v192.4/` are distinctive enough to be useful as a network signature even if the domain rotates. Host-side, the `Global\` mutex pattern with a random suffix is a reliable loader artifact, though the specific string varies per sample. The distribution IOC — `itorrents[.]org` serving a torrent file that does not match the requested content — is the one most likely to matter to defenders whose users download media from torrent trackers.
+
+## Tactics, Techniques & Procedures
+
+The campaign sequences a drive-by-style compromise of an upstream torrent archive (T1189) into user execution of a disguised executable (T1204.002). The loader layers obfuscation (T1027) with native-API resolution via PEB walking (T1106) and sandbox-evasion checks (T1497) before injecting shellcode into RWX memory (T1055). Persistence is established after a UAC bypass (T1548.002). Command-and-control uses HTTP with asset-styled paths (T1071.001) and blockchain-based resolution (T1568). The sequencing matters: the anti-sandbox work happens before any network call, so detonation environments that do not defeat the PEB-walk check will see no C2 traffic and may score the sample as benign.
+
+## Threat Actor Context
+
+Kaspersky does not attribute MovieReaper to a named APT group or established crimeware operation in the material available. The framework is described as previously unknown and modular, and the campaign is characterized as crimeware rather than state-sponsored activity. The victim profile — several hundred users and organizations across Russia, Türkiye, Japan, Kenya, Uganda, Colombia, Spain, the Netherlands, Belgium, and Germany — is consistent with opportunistic, financially motivated distribution rather than targeted intrusion. No ransomware, extortion, or data-theft monetization is described in the report, so the operators' endgame is not established by the available sources.
+
+## Mitigations & Recommendations
+
+There is no patch for MovieReaper because it is not a vulnerability; the only reliable control is preventing the loader from executing. Blocking execution of unsigned executables from user download directories, and enforcing application allowlisting on endpoints that do not need to run arbitrary downloaded binaries, will stop the loader at Step 1. Network controls should block or alert on 
