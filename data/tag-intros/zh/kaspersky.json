@@ -3,8 +3,8 @@
   "locale": "zh",
   "intro": "本档案收录了 15 篇带有「kaspersky」标签的文章，发布时间从2026年4月16日至2026年7月30日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。可见的威胁行为者引用包括 CrystalX、GoSerpent、HelloNet，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于finance、education、energy，地区包括 Global、Russia、Southeast asia，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括1 篇严重、12 篇高危报告。",
   "sources_hash": "1391339fb722c26d",
-  "source_intro_hash": "43c4cca92c2e0eb6",
+  "source_intro_hash": "472f9c5e8dd90c89",
   "model": "template:fallback",
-  "generated_at": "2026-09-17T08:27:56.782Z",
+  "generated_at": "2026-09-18T08:01:31.804Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
