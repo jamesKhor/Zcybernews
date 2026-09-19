@@ -1780,5 +1780,11 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2019-0708 but it is not in the fact sheet; Intro cites CVE-2020-0688 but it is not in the fact sheet",
     "at": "2026-09-18T08:01:31.803Z"
+  },
+  {
+    "tag": "cisa-kev",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-20079 but it is not in the fact sheet",
+    "at": "2026-09-19T07:52:05.462Z"
   }
 ]

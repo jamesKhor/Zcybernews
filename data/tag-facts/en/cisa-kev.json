@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-09-11"
+    "latest": "2026-09-18"
   },
   "top_actors": [],
   "top_cves": [
@@ -32,9 +32,9 @@
   "top_sectors": [
     "government",
     "technology",
+    "federal government",
     "media",
-    "enterprise",
-    "enterprise software"
+    "critical infrastructure"
   ],
   "top_regions": [
     "United states",
@@ -49,9 +49,9 @@
     "medium": 2
   },
   "recent_excerpts": [
+    "CVE-2025-39964, a race condition in the Linux kernel's AF_ALG socket code, is now in CISA's KEV catalog. Federal agencies must remediate by September 21, 2026.",
     "CISA added CVE-2026-42016, a JFrog Artifactory token-scope authorization flaw enabling privilege escalation, to its KEV catalog with a Sept 25 patch deadline.",
-    "CISA's KEV catalog now lists CVE-2026-20079, a CVSS 10.0 authentication bypass in Cisco software, alongside exploited Citrix and Fortinet flaws. Federal patch deadline: Sept. 12.",
-    "CVE-2023-49105 (CVSS 9.8) added to CISA KEV after Chinese-speaking actor exploited it to steal nuclear research records from a Philippine agency. Patch now."
+    "CISA's KEV catalog now lists CVE-2026-20079, a CVSS 10.0 authentication bypass in Cisco software, alongside exploited Citrix and Fortinet flaws. Federal patch deadline: Sept. 12."
   ],
-  "sources_hash": "e8e3307b6f159f29"
+  "sources_hash": "a622678ef65cffbf"
 }
