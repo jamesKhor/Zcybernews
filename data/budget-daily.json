@@ -481,5 +481,26 @@
     },
     "budget_usd": 0,
     "alert_triggered": false
+  },
+  {
+    "event": "budget_daily",
+    "timestamp": "2026-09-20T06:01:09.212Z",
+    "month_to_date": {
+      "articles_published": 25,
+      "days_elapsed": 20,
+      "llm_cost_usd": 0.75,
+      "vps_cost_usd": 5,
+      "total_cost_usd": 5.75,
+      "cost_per_article_usd": 0.23
+    },
+    "projection_full_month": {
+      "articles": 38,
+      "llm_cost_usd": 1.14,
+      "vps_cost_usd": 7.5,
+      "total_cost_usd": 8.64,
+      "percent_of_budget": null
+    },
+    "budget_usd": 0,
+    "alert_triggered": false
   }
 ]
