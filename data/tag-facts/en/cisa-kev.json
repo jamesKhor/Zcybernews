@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-09-18"
+    "latest": "2026-09-19"
   },
   "top_actors": [],
   "top_cves": [
@@ -21,12 +21,12 @@
       "cvss": 9.8
     },
     {
-      "id": "CVE-2026-65400",
+      "id": "CVE-2025-39682",
       "cvss": 9.8
     },
     {
-      "id": "CVE-2026-42271",
-      "cvss": 8.7
+      "id": "CVE-2026-65400",
+      "cvss": 9.8
     }
   ],
   "top_sectors": [
@@ -44,14 +44,14 @@
     "Europe"
   ],
   "severity_mix": {
-    "critical": 5,
+    "critical": 6,
     "high": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "CISA added CVE-2025-39682, a 9.8-CVSS Linux kernel TLS receive-path flaw, to its KEV catalog after evidence of active exploitation in the wild.",
     "CVE-2025-39964, a race condition in the Linux kernel's AF_ALG socket code, is now in CISA's KEV catalog. Federal agencies must remediate by September 21, 2026.",
-    "CISA added CVE-2026-42016, a JFrog Artifactory token-scope authorization flaw enabling privilege escalation, to its KEV catalog with a Sept 25 patch deadline.",
-    "CISA's KEV catalog now lists CVE-2026-20079, a CVSS 10.0 authentication bypass in Cisco software, alongside exploited Citrix and Fortinet flaws. Federal patch deadline: Sept. 12."
+    "CISA added CVE-2026-42016, a JFrog Artifactory token-scope authorization flaw enabling privilege escalation, to its KEV catalog with a Sept 25 patch deadline."
   ],
-  "sources_hash": "a622678ef65cffbf"
+  "sources_hash": "6effbfeea70f4c43"
 }
