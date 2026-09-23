@@ -4,21 +4,29 @@
   "count": 5,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-04-19"
+    "latest": "2026-09-22"
   },
   "top_actors": [],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-93952",
+      "cvss": 10
+    },
+    {
+      "id": "CVE-2024-2973"
+    }
+  ],
   "top_sectors": [],
   "top_regions": [],
   "severity_mix": {
-    "medium": 1,
     "critical": 3,
+    "medium": 1,
     "informational": 1
   },
   "recent_excerpts": [
+    "Arista confirmed active exploitation of CVE-2026-93952, a CVSS 10.0 pre-auth flaw in on-prem VeloCloud Orchestrator deployments using certificate-based Edge authentication.",
     "Censys research finds 5.9 million internet-facing FTP servers remain online in 2026, a 40% drop from 2024, but still representing a significant attack surface due to the protocol's inherent security w",
-    "Cisco warns of multiple critical vulnerabilities in its Identity Services Engine (ISE) and ISE Passive Identity Connector that allow authenticated attackers to execute arbitrary commands on affected d",
-    "Fortinet released patches for 11 vulnerabilities, including two Critical flaws in FortiSandbox and FortiAnalyzer/FortiManager, requiring immediate attention from network administrators."
+    "Cisco warns of multiple critical vulnerabilities in its Identity Services Engine (ISE) and ISE Passive Identity Connector that allow authenticated attackers to execute arbitrary commands on affected d"
   ],
-  "sources_hash": "fc8b2a62efb2c504"
+  "sources_hash": "2f3ab54dc6c77346"
 }
