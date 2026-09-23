@@ -1,0 +1,90 @@
+---
+title: 'ShinyHunters Claims FBI Breach, Leaks 5,000 Agent Records'
+slug: 2026-09-23-shinyhunters-claims-fbi-breach-leaks-5-000-agent-records
+date: '2026-09-23'
+excerpt: >-
+  ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May
+  PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273.
+category: industry
+tags:
+  - shinyhunters
+  - data-breach
+  - fbi
+  - oracle-peoplesoft
+  - extortion
+  - cve-2026-35273
+language: en
+source_urls:
+  - >-
+    https://www.malwarebytes.com/blog/news/2026/09/shinyhunters-claims-fbi-breach-was-revenge-for-false-report
+  - >-
+    https://www.securityweek.com/shinyhunters-claims-fbi-hack-demands-retraction-of-threat-report/
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:shinyhunters-claims-breach-revenge-false'
+source_count: 2
+seo_query_target: ShinyHunters
+seo_intent: incident-impact
+seo_title_promise: >-
+  The headline promises readers that ShinyHunters claims an FBI breach and that
+  roughly 5,000 agent records were exposed.
+seo_meta_promise: >-
+  The meta description names ShinyHunters, the fbijobs.gov defacement, the 2-3
+  TB theft claim, and the PeopleSoft CVE so searchers get the actor, victim, and
+  technical anchor in one snippet.
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - data-breaches
+  - active-cves
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Screenshot-style illustration of the defaced fbijobs.gov subdomain bearing the
+  message 'This site has been seized by ShinyHunters'.
+severity: high
+cve_ids:
+  - CVE-2026-35273
+threat_actor: ShinyHunters
+affected_sectors:
+  - government
+  - law enforcement
+affected_regions:
+  - United States
+publish_tier: public
+---
+## Executive Summary
+
+ShinyHunters says it breached FBI systems and is holding sensitive records on what it describes as "almost ALL FBI Agents and individuals who filed an application with the FBI for a job." The extortion group defaced a subdomain of `fbijobs.gov` with the message "This site has been seized by ShinyHunters" and published a lengthy statement demanding the bureau retract a May 2026 public advisory within one week.
+
+The FBI confirmed it is investigating. "We are aware of claims regarding unauthorized activity affecting FBIjobs.gov and is currently investigating," the bureau told reporters, declining further comment. The group provided 404 Media with a sample of roughly 5,000 FBI employee records — names, phone numbers, and home addresses — and reviewers who examined the sample said at least some of the data appears authentic, though its origin has not been confirmed.
+
+ShinyHunters told 404 Media it exploited a zero-day in Oracle's PeopleSoft product and stole 2-3 TB of data. The group has been linked since June to exploitation of a PeopleSoft flaw tracked as `CVE-2026-35273`, and it is unclear whether the FBI intrusion used that same vulnerability or a new one. The story matters to defenders well beyond the bureau: PeopleSoft is widely deployed across government, higher education, and large enterprises, and the group's willingness to escalate against a federal law-enforcement target signals a shift in operational posture.
+
+## Technical Analysis
+
+ShinyHunters attributes the intrusion to a zero-day in Oracle PeopleSoft and claims to have exfiltrated 2-3 TB of data. The group named three compromised FBI services in its statement: Criminal Justice (CJ), HR, and Medlink. It did not publish technical detail on the exploitation chain, and neither Oracle nor the FBI has confirmed a new vulnerability.
+
+The reference to `CVE-2026-35273` comes from prior reporting: SecurityWeek notes the cybersecurity community confirmed in June 2026 that ShinyHunters had been exploiting a PeopleSoft zero-day to steal data from organizations, and that flaw carries that identifier. Whether the FBI intrusion reused `CVE-2026-35273` or a separate PeopleSoft bug is unresolved. Treat the CVE linkage as reported but unconfirmed pending Oracle or FBI statements.
+
+The data sample is the strongest concrete artifact so far. According to 404 Media, ShinyHunters supplied records on approximately 5,000 FBI agents including names, home addresses, phone numbers, and details about spouses. Reviewers described at least part of the sample as authentic-looking, but authenticity of a sample does not establish the full scope of the claimed 2-3 TB corpus, nor does it confirm the group's assertion that it holds data on "almost ALL" agents and applicants. Those are ShinyHunters' claims, not verified facts.
+
+The defacement of an `fbijobs.gov` subdomain is a separate, verifiable event. SecurityWeek reported the subdomain was defaced with the seizure message and that the targeted domain is currently down for maintenance. Defacement of a public-facing web property is a low-complexity action relative to the data-theft claim — it demonstrates access to a web tier, not necessarily to the HR, CJ, or Medlink backends the group says it compromised.
+
+ShinyHunters frames the operation as retaliation, not extortion. Its statement addresses FBI Cyber Division Assistant Director Brett Leatherman and FBI Director Kash Patel directly, and demands removal of a May 15, 2026 FBI/IC3 public advisory titled "ShinyHunters: Cyber Criminal Group Attacks Learning Management System." The group calls that document a "2026 Quarter 2 FLASH report," but the publicly accessible document is labeled a Public Service Announcement, not a FLASH — a discrepancy Malwarebytes flagged. The advisory warned that ShinyHunters commonly uses harassment tactics including threatening calls and messages to victims' families and, in some cases, swatting, and that the group may exaggerate access or falsely claim to hold compromising material.
+
+ShinyHunters disputes each of those points. It denies conducting swatting, denies contacting victims' family members, denies possessing compromising photos or videos, and states "WE ARE NOT SEXTORTIONISTS." It also denies any affiliation with The Com, the decentralized cybercrime network, calling that linkage "propaganda started by the Information Security Industry." The group says its statement is an exercise of First Amendment rights and is "NOT financially motivated" — a framing that does not change the coercive structure of a one-week ultimatum backed by a threat to leak stolen data.
+
+Malwarebytes notes a possible source of confusion: a sextortionist who previously impersonated ShinyHunters may have contributed to the group's sensitivity to the sextortion characterization.
+
+## Mitigations & Recommendations
+
+Defenders running Oracle PeopleSoft should treat this as an active-exploitation scenario and verify their exposure to `CVE-2026-35273` — confirm patch status against Oracle's advisory for that identifier, and audit PeopleSoft web tiers for unauthorized access or unexpected outbound data transfers. Because ShinyHunters claims a possible new zero-day, patch status alone is not sufficient assurance; monitor PeopleSoft application logs for anomalous query volume, bulk data extraction, and authentication from unexpected source ranges.
+
+For organizations outside the FBI, the practical lesson is scope discipline. The group's public posture — defacing a victim's web property, publishing a named ultimatum, and threatening journalists — is designed to maximize pressure and publicity. Incident responders should expect that pattern and prepare communications and legal teams accordingly. Anyone who received a ShinyHunters extortion demand should preserve the original message and headers, avoid direct engagement, and route the matter through counsel and law enforcement rather than the group's published contact address (`shinygroup@onionmail[.]com`).
+
+Given the group's explicit denial of swatting and family-contact tactics, organizations should not assume the FBI advisory's behavioral profile applies uniformly to every operator using the ShinyHunters brand — impersonation has already been documented.
+
+## References
+
+- [ShinyHunters claims FBI breach was revenge for "false" report](https://www.malwarebytes.com/blog/news/2026/09/shinyhunters-claims-fbi-breach-was-revenge-for-false-report) — Malwarebytes Labs
+- [ShinyHunters Claims FBI Hack, Demands Retraction of Threat Report](https://www.securityweek.com/shinyhunters-claims-fbi-hack-demands-retraction-of-threat-report/) — SecurityWeek
