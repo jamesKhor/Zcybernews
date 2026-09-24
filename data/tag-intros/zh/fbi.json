@@ -1,10 +1,10 @@
 {
   "tag": "fbi",
   "locale": "zh",
-  "intro": "在2026年4月至9月期间报告的六起与FBI相关的事件中，政府和关键基础设施组织是主要目标，其中五起被评定为高严重性。受影响的行业包括金融服务、医疗保健和物流，范围覆盖美国、伊朗和北美，并注意到其全球影响。在此期间，威胁行为者Handala Hack、Interlock和LummaC2分别在各自独立的活动中被观察到。该档案涵盖了这些不同的行动及其对公共和私营实体的影响，反映出针对基本服务和政府机构的一段集中活动期。",
+  "intro": "本档案收录了 5 篇带有「fbi」标签的文章，发布时间从2026年4月13日至2026年4月30日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。可见的威胁行为者引用包括 Handala Hack、Interlock、LummaC2，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于critical infrastructure、government、healthcare，地区包括 United states、Global、Iran，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括5 篇高危报告。",
   "sources_hash": "4d5706d08e5a54cd",
-  "source_intro_hash": "f5e0b670b7fe50e0",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-01T08:23:42.233Z",
+  "source_intro_hash": "061ff7902bbd3126",
+  "model": "template:fallback",
+  "generated_at": "2026-09-24T08:13:17.018Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

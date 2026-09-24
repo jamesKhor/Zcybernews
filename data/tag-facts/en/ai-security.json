@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 72,
+  "count": 73,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-15"
+    "latest": "2026-09-23"
   },
   "top_actors": [
     "Claude Mythos",
@@ -36,8 +36,8 @@
   "top_sectors": [
     "technology",
     "government",
-    "cybersecurity",
     "critical infrastructure",
+    "cybersecurity",
     "financial services"
   ],
   "top_regions": [
@@ -45,7 +45,7 @@
     "United states",
     "China",
     "North america",
-    "Europe"
+    "Ukraine"
   ],
   "severity_mix": {
     "high": 33,
@@ -54,9 +54,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "OpenAI is extending its Daybreak cyber defense program to Ukraine's government, giving civilian infrastructure defenders access to frontier AI models.",
     "Chen Yixin, head of China's Ministry of State Security, named OpenAI's GPT-5.5-Cyber and Anthropic's Claude Mythos as signs of a 'disruptive upgrade' in offensive cyber capability.",
-    "Anthropic disrupted Midnight Blizzard (APT29) and a Chinese university group abusing Claude against 20+ government, defense and drone-supply targets, publishing IOCs for defenders.",
-    "99% of SOCs see AI-driven IR gains despite 96% at early maturity; 82% now platform-oriented. But AI infrastructure is deployed faster than secured, creating new attack surface."
+    "Anthropic disrupted Midnight Blizzard (APT29) and a Chinese university group abusing Claude against 20+ government, defense and drone-supply targets, publishing IOCs for defenders."
   ],
-  "sources_hash": "5fcee36fa16184f5"
+  "sources_hash": "1c02ef7dbfa5157d"
 }

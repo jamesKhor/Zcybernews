@@ -1,9 +1,9 @@
 {
   "tag": "extortion",
   "locale": "en",
-  "intro": "ShinyHunters and BlackFile were the top threat actors in a series of extortion incidents covered by ZCyberNews between April 14 and May 17, 2026. Across ten articles, the education, cryptocurrency, hospitality, and media sectors were most frequently targeted, with impacts reported in North America and globally. Nine of the ten reports were classified as high severity, with one rated medium.",
-  "sources_hash": "69b253191c0bb65b",
+  "intro": "ShinyHunters and BlackFile feature among the extortion activity tracked across 11 articles published between 14 April and 23 September 2026. CVE-2026-35273 appears among the vulnerabilities tied to this coverage. Education, cryptocurrency, government, and hospitality rank among the affected sectors, while activity spans North America, the United States, and global regions. Ten of the eleven articles carry a high severity rating, with one rated medium. The archive collects reporting on extortion incidents and the actors, vulnerabilities, and victims connected to them.",
+  "sources_hash": "c1fb1497adf0f9da",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:02:07.939Z",
+  "generated_at": "2026-09-24T08:12:54.559Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

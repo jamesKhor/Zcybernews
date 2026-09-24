@@ -1,9 +1,9 @@
 {
   "tag": "fbi",
   "locale": "en",
-  "intro": "Government and critical infrastructure organizations were the primary targets across six FBI-related incidents reported between April and September 2026, with five rated high severity. Affected sectors included financial services, healthcare, and logistics, spanning the United States, Iran, and North America, with global reach noted. Threat actors Handala Hack, Interlock, and LummaC2 were each observed in separate campaigns during this period. The archive covers these distinct operations and their impact on public and private entities, reflecting a concentrated period of activity against essential services and governmental bodies.",
-  "sources_hash": "55df6d8a0660dab1",
+  "intro": "Government, critical infrastructure, financial services, healthcare, and law enforcement face the threats covered across seven FBI articles published between April 13 and September 23, 2026. Handala Hack, Interlock, and LummaC2 appear as the top threat actors in this coverage, which also tracks CVE-2026-35273. The affected regions span the United States, Global, Iran, and North America. Six of the seven articles carry a high severity rating, reflecting the weight of the incidents documented here. This archive gathers reporting on the actors, vulnerabilities, and sectors central to the FBI's recent casework.",
+  "sources_hash": "a1ad20e5d2ec1f6b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-01T08:23:24.350Z",
+  "generated_at": "2026-09-24T08:12:58.375Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

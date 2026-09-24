@@ -1,35 +1,40 @@
 {
   "tag": "extortion",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-17"
+    "latest": "2026-09-23"
   },
   "top_actors": [
     "ShinyHunters",
     "BlackFile"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-35273"
+    }
+  ],
   "top_sectors": [
     "education",
     "cryptocurrency",
     "Education",
-    "hospitality",
-    "media"
+    "government",
+    "hospitality"
   ],
   "top_regions": [
     "North america",
-    "Global"
+    "Global",
+    "United states"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "medium": 1
   },
   "recent_excerpts": [
+    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273.",
     "An attacker used a compromised GitHub token to download Grafana's entire private codebase. The company says no customer data was accessed and the incident involved an extortion...",
-    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide.",
-    "ShinyHunters leaked a 106GB archive of Vimeo data after breaching Anodot, exposing emails and names of 119,200 users. No credentials or payment info compromised."
+    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide."
   ],
-  "sources_hash": "69b253191c0bb65b"
+  "sources_hash": "c1fb1497adf0f9da"
 }

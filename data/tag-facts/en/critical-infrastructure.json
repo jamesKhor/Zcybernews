@@ -1,10 +1,10 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 29,
+  "count": 30,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-15"
+    "latest": "2026-09-23"
   },
   "top_actors": [
     "APT33",
@@ -38,9 +38,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "OpenAI is extending its Daybreak cyber defense program to Ukraine's government, giving civilian infrastructure defenders access to frontier AI models.",
     "Chen Yixin, head of China's Ministry of State Security, named OpenAI's GPT-5.5-Cyber and Anthropic's Claude Mythos as signs of a 'disruptive upgrade' in offensive cyber capability.",
-    "NRWA and DEF CON Franklin launch Water Watch Center to deliver threat intel and MDR services to small water utilities serving under 10,000 people, as attacks hit 12+ states.",
-    "European Commission files legal referrals against Ireland, Spain, France, and Netherlands for failing to transpose NIS2 Directive for critical infrastructure cybersecurity, 20..."
+    "NRWA and DEF CON Franklin launch Water Watch Center to deliver threat intel and MDR services to small water utilities serving under 10,000 people, as attacks hit 12+ states."
   ],
-  "sources_hash": "07e3521a458eff72"
+  "sources_hash": "83b65229a60efb21"
 }

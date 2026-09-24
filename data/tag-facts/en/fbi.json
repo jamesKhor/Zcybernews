@@ -1,23 +1,27 @@
 {
   "tag": "fbi",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-01"
+    "latest": "2026-09-23"
   },
   "top_actors": [
     "Handala Hack",
     "Interlock",
     "LummaC2"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-35273"
+    }
+  ],
   "top_sectors": [
+    "government",
     "critical infrastructure",
     "financial services",
-    "government",
     "healthcare",
-    "logistics"
+    "law enforcement"
   ],
   "top_regions": [
     "United states",
@@ -26,12 +30,12 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 5
+    "high": 6
   },
   "recent_excerpts": [
+    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273.",
     "Five Venezuelan nationals pleaded guilty to bank larceny for ATM jackpotting in Kansas. FBI reports over $58M in losses since 2021 and 1,900 incidents since 2020.",
-    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks.",
-    "FBI warns cargo theft losses hit $725M in US and Canada in 2025, driven by cybercriminals exploiting logistics IT systems to intercept shipments and redirect loads."
+    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks."
   ],
-  "sources_hash": "55df6d8a0660dab1"
+  "sources_hash": "a1ad20e5d2ec1f6b"
 }

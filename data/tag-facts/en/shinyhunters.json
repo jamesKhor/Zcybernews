@@ -1,36 +1,40 @@
 {
   "tag": "shinyhunters",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-12"
+    "latest": "2026-09-23"
   },
   "top_actors": [
     "ShinyHunters"
   ],
-  "top_cves": [],
+  "top_cves": [
+    {
+      "id": "CVE-2026-35273"
+    }
+  ],
   "top_sectors": [
     "education",
+    "government",
     "consumer services",
     "entertainment",
-    "gaming",
-    "government"
+    "gaming"
   ],
   "top_regions": [
     "North america",
     "Global",
-    "Florida",
-    "United states"
+    "United states",
+    "Florida"
   ],
   "severity_mix": {
-    "critical": 1,
-    "high": 8
+    "high": 9,
+    "critical": 1
   },
   "recent_excerpts": [
+    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273.",
     "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence.",
-    "Instructure paid ShinyHunters after two Canvas intrusions stole data from 9,000 institutions. Congress launched an investigation into the ed-tech vendor's incident response.",
-    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide."
+    "Instructure paid ShinyHunters after two Canvas intrusions stole data from 9,000 institutions. Congress launched an investigation into the ed-tech vendor's incident response."
   ],
-  "sources_hash": "dae2eea290c6bfa1"
+  "sources_hash": "533ea432db1c642b"
 }

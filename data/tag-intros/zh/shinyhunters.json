@@ -1,10 +1,10 @@
 {
   "tag": "shinyhunters",
   "locale": "zh",
-  "intro": "ShinyHunters是本标签存档的焦点，该存档汇集了2026年4月13日至9月12日期间发表的十篇文章。报道涵盖教育、消费者服务、娱乐、游戏和政府领域，事件记录遍及北美、全球，以及佛罗里达州和美国。报道严重偏向高严重性，其中八项为该级别，一项被评为严重。该存档追踪了ShinyHunters在这五个月期间跨这些行业和地区的活动。",
+  "intro": "本档案收录了 7 篇带有「shinyhunters」标签的文章，发布时间从2026年4月13日至2026年5月12日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。可见的威胁行为者引用包括 ShinyHunters，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于education、consumer services、entertainment，地区包括 North america、Global，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括1 篇严重、6 篇高危报告。",
   "sources_hash": "9ac7a8acd9c7d0a2",
-  "source_intro_hash": "1b174c32b0789f49",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-12T07:45:11.769Z",
+  "source_intro_hash": "5be3f7837ee531a2",
+  "model": "template:fallback",
+  "generated_at": "2026-09-24T08:13:22.656Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
