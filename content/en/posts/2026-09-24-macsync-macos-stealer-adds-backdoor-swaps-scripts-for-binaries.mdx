@@ -1,0 +1,103 @@
+---
+title: 'MacSync macOS Stealer Adds Backdoor, Swaps Scripts for Binaries'
+slug: 2026-09-24-macsync-macos-stealer-adds-backdoor-swaps-scripts-for-binaries
+date: '2026-09-24'
+excerpt: >-
+  MacSync's new build drops AppleScript droppers for Objective-C and Swift
+  binaries, delivers payloads via iCloud calendar events, and adds a backdoor
+  module.
+category: malware
+tags:
+  - macos-malware
+  - macsync
+  - infostealer
+  - backdoor
+  - malware-as-a-service
+  - kaspersky
+language: en
+source_urls:
+  - 'https://securelist.com/macsync-new-version/121383/'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:macsync-under-microscope-delivery-methods'
+source_count: 1
+seo_query_target: 'MacSync under the microscope: new delivery methods and a new payload'
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Explains MacSync's new infection chain, including binary droppers, iCloud
+  calendar delivery, and a new backdoor module, with concrete IOCs.
+seo_meta_promise: >-
+  Details MacSync's shift to Objective-C/Swift payloads and iCloud calendar
+  abuse, giving defenders specific file paths, keys, and detection verdicts.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - macos-malware
+  - infostealer
+  - malware-as-a-service
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram-style illustration of a macOS terminal window with a calendar event
+  and binary file icons representing the MacSync infection chain
+threat_actor: MacSync
+affected_sectors:
+  - technology
+  - financial services
+iocs:
+  - type: hash_md5
+    value: 3a1af2b397c6958e6c3ba3c75912d60e
+    confidence: high
+    description: Extracted from source material
+  - type: hash_sha256
+    value: cb09ff86cabde4f8cee2d3cdec370c623bfa6c2b72ae9750fc9a7b299c65d7ca
+    confidence: high
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+MacSync, a macOS infostealer sold under a malware-as-a-service model, has been rebuilt around compiled binaries rather than the AppleScript droppers that defined its earlier versions. Kaspersky researchers who examined the new build say the payload now consists of modules written in Objective-C and Swift, and that a backdoor component has been added alongside the credential- and crypto-stealing functionality. The new chain was first observed in the wild in September 2026.
+
+The most notable delivery mechanism is the abuse of a public iCloud calendar as a command source. In at least one sample, the loader's embedded URL pointed to a CalDAV calendar hosted on `caldav.icloud.com`; the downloader pipes the calendar's contents line by line into `zsh -s`, and the interpreter ignores the calendar metadata until it reaches the malicious payload embedded after the `DESCRIPTION:` line. The technique turns a legitimate Apple service into a staging and command channel that blends with normal macOS traffic.
+
+Kaspersky detects the components under the `HEUR:Trojan.OSX.MacSync.*`, `HEUR:Trojan-PSW.OSX.MacSync.*`, `HEUR:Trojan-Dropper.OSX.MacSync.*`, and `HEUR:Trojan-Downloader.OSX.MacSync.*` verdicts. No CVE is associated with this campaign; MacSync is distributed through social engineering, ClickFix-style lures, and trojanized applications rather than a software vulnerability.
+
+## Technical Analysis
+
+MacSync first appeared on dark-web forums in 2025 under the name Mac.c and was later rebranded by its developers. Early builds were AppleScript-based and bore a strong resemblance to the AMOS stealer family, but the codebase has since diverged, most visibly with the addition of a backdoor module. Because MacSync is sold as MaaS, the first-stage delivery method is left to individual operators. Kaspersky notes that public reporting has focused on social-engineering and ClickFix lures, but the family has also been distributed as cracked or fake applications. One observed lure was a nonexistent crypto wallet called Toria, complete with a dedicated landing page and promotion on X and Telegram.
+
+The version Kaspersky analyzed begins with a malicious DMG. Within a single campaign built around one fake application, the researchers found two distinct delivery paths. In the simpler variant, the payload inside the DMG is a compiled JXA script that decodes a shell script and hands it directly to the interpreter without writing it to disk. In the more complex variant, the same script appears only after a chain of droppers and loaders has executed.
+
+The complex chain starts with an `.APP` bundle on the disk image. On launch, it checks whether the bundle carries the `com.apple.quarantine` extended attribute and, if so, runs `xattr -cr <app_name>` to strip it. It then reads an XOR-encrypted URL from its own overlay, using the key `73 6f 6e 6f 6d 61 62 6c 64 07`. The encrypted block is followed by an 8-byte length field and the magic word `SONOMAC1`. The loader reads the overlay backwards: it locates the magic word first, reads the size, then uses that size to bound the ciphertext. The decrypted URL points to the next-stage downloader. In some samples it resolved to an attacker-controlled server; in at least one, it resolved to a public iCloud calendar.
+
+When the target is the calendar, the downloader creates an anonymous pipe, launches `zsh -s` to read commands from standard input, assigns the pipe as stdin, and streams the calendar file into it line by line. Calendar metadata lines are treated as invalid commands and ignored until the interpreter reaches the payload placed after the `DESCRIPTION:` field. Those commands download a `.TAR.GZ` archive from iCloud containing another `.APP` bundle. The downloader strips the quarantine attribute, ad-hoc signs the bundle, and executes it.
+
+The downloaded application is a dropper. It extracts a zlib-compressed executable encrypted with AES in CBC mode, using the key `cb09ff86cabde4f8cee2d3cdec370c623bfa6c2b72ae9750fc9a7b299c65d7ca` and IV `3a1af2b397c6958e6c3ba3c75912d60e`. After decryption and decompression, the dropper writes the result to `/tmp/.sys-<16-digit random value>`. That file is another dropper, this time with anti-debugging logic. It probes for virtualized environments using `sysctl` queries against `kern.hv_vmm_present`, among other checks.
+
+Across stages, MacSync follows a consistent operational pattern. Temporary files are written to `/tmp`, and `*.lock` files in the same directory prevent modules from running twice. After completing its work, each module removes its temporary files and logs. All binaries are FAT Mach-O, targeting both Apple silicon and Intel Macs.
+
+The ultimate payload is the infostealer itself, which Kaspersky describes as targeting crypto enthusiasts and developers. The backdoor module is a newer addition and gives operators persistent remote access independent of the stealer's one-shot credential collection.
+
+## Indicators of Compromise
+
+The IOCs below come from the Kaspersky analysis and reflect a single campaign cluster. The iCloud CalDAV URL is a published calendar path, not a domain the attacker registered, so blocking it requires care — it is a legitimate Apple hostname. Detection should focus on the specific published path and on processes that pipe calendar content into a shell interpreter. The `/tmp/.sys-<random>` naming pattern and the `SONOMAC1` magic word are high-fidelity strings for memory and file scanning. The AES key and IV are static across the analyzed sample and can be used to decrypt captured dropper payloads for further analysis.
+
+## Tactics, Techniques & Procedures
+
+The chain is best understood as a sequence of trust-control subversions rather than a single exploit. The loader first defeats Gatekeeper by removing the quarantine attribute, then defeats code-signing expectations by ad-hoc signing the dropped bundle. Payload confidentiality is handled with layered obfuscation: XOR for the overlay URL, AES-CBC plus zlib for the dropper payload. Command execution is split across interpreters — JXA in one variant, `zsh -s` in the calendar variant — so that detection tuned to a single scripting runtime will miss half the campaign.
+
+The iCloud calendar abuse is the most distinctive technique. By using a legitimate Apple service as the staging host, the operators avoid registering infrastructure that would appear in domain-reputation feeds, and the traffic to `caldav.icloud.com` is indistinguishable from ordinary macOS calendar sync. The `DESCRIPTION:` field acts as a delimiter that lets the same file serve as both a valid calendar and a command list. The anti-VM check in the second-stage dropper indicates the operators are willing to trade some execution reliability for evasion against automated analysis.
+
+## Threat Actor Context
+
+MacSync is a malware family, not a tracked APT. It is sold as a service, which means the delivery lures, targeting, and post-exploitation behavior vary by operator. Kaspersky attributes the family's development to the same group that marketed it as Mac.c in 2025 and later renamed it. The Toria crypto-wallet lure and promotion on X and Telegram are consistent with financially motivated MaaS distribution rather than state-sponsored activity. No specific victim organizations are named in the source material.
+
+## Mitigations & Recommendations
+
+Because MacSync relies on user execution rather than a software flaw, the primary control is preventing the initial launch. Gatekeeper and notarization requirements should be enforced, and users should be trained to treat cracked or newly released applications — particularly crypto wallets with no established reputation — as untrusted. The `xattr -cr` command is a strong signal: endpoint detection rules that alert on processes stripping quarantine attributes from newly downloaded bundles will catch the loader before the payload runs.
+
+For the calendar-delivery variant, defenders should monitor for `zsh` or other shells spawned with an anonymous pipe as stdin, especially when the parent process is a recently launched application bundle. EDR rules that flag shell interpreters reading from non-standard file descriptors will surface this behavior. The `/tmp/.sys-*` file pattern and the `SONOMAC1` magic word should be added to file-integrity and memory-scanning signatures. Kaspersky's `HEUR:Trojan*.OSX.MacSync.*` verdicts can be used as a detection baseline for organizations running Kaspersky products; other vendors should map the file paths, keys, and magic word to their own signatures. Organizations that cannot block the iCloud CalDAV path outright should at minimum alert on its retrieval from non-browser processes.
+
+## References
+
+- [MacSync under the microscope: new delivery methods and a new payload — Kaspersky Securelist](https://securelist.com/macsync-new-version/121383/)
