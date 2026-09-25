@@ -1,9 +1,9 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "intro": "Between 2026-04-16 and 2026-09-17, ZCyberNews published 18 articles tagged kaspersky. Coverage names CrystalX, GoSerpent, and HelloNet among the top threat actors, alongside the CVEs CVE-2019-0708 and CVE-2020-0688. The affected sectors span finance, government, technology, education, and energy, while the affected regions are Global, Russia, Southeast asia, Spain, and Africa. Fourteen of the articles carry a high severity rating, with one rated critical. The archive collects reporting on these actors, vulnerabilities, sectors, and regions as published across the five-month period.",
-  "sources_hash": "bf70c4a188331a37",
+  "intro": "Between 2026-04-16 and 2026-09-24, ZCyberNews published 19 articles tagged kaspersky, spanning 14 high-severity items and one critical entry. Coverage names CrystalX, GoSerpent, and HelloNet among the top threat actors observed, alongside the CVEs CVE-2019-0708 and CVE-2020-0688. Reporting touches the technology, finance, government, education, and energy sectors. The affected regions recorded are Global, Russia, Southeast asia, Spain, and Africa. This archive collects that reporting in one place for readers tracking the tag's full output across the period.",
+  "sources_hash": "cf17db0e3e4df8b6",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-18T08:01:26.621Z",
+  "generated_at": "2026-09-25T08:36:05.700Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

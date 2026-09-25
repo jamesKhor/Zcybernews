@@ -1,9 +1,9 @@
 {
   "tag": "government",
   "locale": "en",
-  "intro": "Six articles tagged government, published between 12 April and 12 September 2026, document a period in which SHADOW-EARTH-053 and ShinyHunters were the most-covered threat actors. Government, defense, and law enforcement sectors absorbed the reported activity, with the United States, East Asia, Europe, Florida, and France among the affected regions. The severity mix across the six articles comprises four high-severity items and one medium-severity item. SHADOW-EARTH-053 and ShinyHunters appear as distinct entities in the coverage.",
-  "sources_hash": "99de52a35c3a7b25",
+  "intro": "Seven articles on government cyber incidents published between 2026-04-12 and 2026-09-24 appear in this archive. SHADOW-EARTH-053 and ShinyHunters are the most frequently named threat actors across the coverage. The affected sectors include government, defense, healthcare, and law enforcement. Attacks touched the United States, Australia, East asia, Europe, and Florida. Of the seven articles, five carry high severity and one is rated medium. The reporting spans incidents involving public institutions and the agencies that support them, with SHADOW-EARTH-053 and ShinyHunters each appearing as separate subjects in the collection.",
+  "sources_hash": "77d2010f1d3db654",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-12T07:44:53.165Z",
+  "generated_at": "2026-09-25T08:36:09.851Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

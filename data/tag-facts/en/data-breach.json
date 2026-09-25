@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 47,
+  "count": 48,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-23"
+    "latest": "2026-09-24"
   },
   "top_actors": [
     "ShinyHunters",
@@ -31,13 +31,13 @@
     "France"
   ],
   "severity_mix": {
-    "high": 39,
+    "high": 40,
     "medium": 6
   },
   "recent_excerpts": [
+    "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese.",
     "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273.",
-    "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence.",
-    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident."
+    "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence."
   ],
-  "sources_hash": "a9b5825bbed25415"
+  "sources_hash": "dfdf0057444376a5"
 }

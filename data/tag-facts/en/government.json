@@ -1,10 +1,10 @@
 {
   "tag": "government",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-12"
+    "latest": "2026-09-24"
   },
   "top_actors": [
     "SHADOW-EARTH-053",
@@ -14,23 +14,24 @@
   "top_sectors": [
     "government",
     "defense",
+    "healthcare",
     "law enforcement"
   ],
   "top_regions": [
     "United states",
+    "Australia",
     "East asia",
     "Europe",
-    "Florida",
-    "France"
+    "Florida"
   ],
   "severity_mix": {
-    "medium": 1,
-    "high": 4
+    "high": 5,
+    "medium": 1
   },
   "recent_excerpts": [
+    "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese.",
     "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence.",
-    "U.S. Immigration and Customs Enforcement (ICE) confirmed using spyware from Israeli firm Graphite, a tool capable of extracting data from encrypted messaging apps like WhatsApp…",
-    "Trend Micro tracks SHADOW-EARTH-053 targeting government and defense sectors across Asia and one NATO-aligned European state. Campaign uses custom backdoors and spear-phishing."
+    "U.S. Immigration and Customs Enforcement (ICE) confirmed using spyware from Israeli firm Graphite, a tool capable of extracting data from encrypted messaging apps like WhatsApp…"
   ],
-  "sources_hash": "99de52a35c3a7b25"
+  "sources_hash": "77d2010f1d3db654"
 }

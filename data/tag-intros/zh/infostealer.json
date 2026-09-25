@@ -1,10 +1,10 @@
 {
   "tag": "infostealer",
   "locale": "zh",
-  "intro": "在2026-04-10至2026-09-17期间的14篇文章中，ZCyberNews对信息窃取器活动的报道涵盖AMOS Stealer、Gremlin Stealer和LummaC2。报道涉及技术、软件开发、加密货币、金融服务和游戏领域，事件记录遍及全球及乌克兰。该标签下的严重程度整体偏高，其中12项评为高，1项评为严重。该档案追踪了这些不同窃取器在五个月窗口期内如何在不同行业和地区出现，记录了每篇报道中提及的行为者，但未断言它们之间存在关联。",
+  "intro": "在2026-04-10至2026-09-24期间，ZCyberNews报道了15篇信息窃取类文章，涵盖了一段持续活跃的时期。AMOS Stealer、Gremlin Stealer和LummaC2是此次报道中追踪的主要威胁行为者。受影响行业包括技术、金融服务、软件开发、加密货币和游戏。从地域来看，事件涉及全球和乌克兰。这15篇文章的严重程度分布包括12个高严重性条目和1个关键条目。本档案汇集了关于信息窃取活动的报道、其目标以及在这五个月窗口期内所触及的地区和行业。",
   "sources_hash": "5a393019f871ae52",
-  "source_intro_hash": "d39b4f4dc6e1832f",
+  "source_intro_hash": "c9f9daccd86ec1e7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-17T08:27:53.004Z",
+  "generated_at": "2026-09-25T08:36:21.603Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

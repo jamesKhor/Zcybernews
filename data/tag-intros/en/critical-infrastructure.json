@@ -1,9 +1,9 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "intro": "Coverage of critical-infrastructure threats across 30 articles from 12 April to 23 September 2026 spans APT33, CL-STA-1062, and CyberAv3ngers, alongside CVE-2026-24032, rated CVSS 7.3. Reporting centres on energy, critical infrastructure, government, critical-infrastructure, and utilities, with incidents reaching the United states, Global, North america, Europe, and Asia-pacific. The severity mix comprises 15 high, 3 critical, 3 informational, and 1 medium finding.",
-  "sources_hash": "83b65229a60efb21",
+  "intro": "Across 31 articles spanning 12 April 2026 to 25 September 2026, ZCyberNews coverage of critical-infrastructure threats has tracked APT33, CL-STA-1062, and CyberAv3ngers, alongside the vulnerability CVE-2026-24032, rated CVSS 7.3. Reporting has centered on the energy, government, critical infrastructure, critical-infrastructure, and utilities sectors. The affected regions include the United States, Global, North America, Europe, and Asia-Pacific. Of the covered items, 15 are high severity, three are critical, three are informational, and one is medium. This archive collects that reporting in one place.",
+  "sources_hash": "cd8bf542fe61d253",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-24T08:12:51.592Z",
+  "generated_at": "2026-09-25T08:36:04.348Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

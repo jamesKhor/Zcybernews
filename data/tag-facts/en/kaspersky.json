@@ -1,10 +1,10 @@
 {
   "tag": "kaspersky",
   "locale": "en",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-09-17"
+    "latest": "2026-09-24"
   },
   "top_actors": [
     "CrystalX",
@@ -20,9 +20,9 @@
     }
   ],
   "top_sectors": [
+    "technology",
     "finance",
     "government",
-    "technology",
     "education",
     "energy"
   ],
@@ -38,9 +38,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "MacSync's new build drops AppleScript droppers for Objective-C and Swift binaries, delivers payloads via iCloud calendar events, and adds a backdoor module.",
     "Kaspersky found hundreds of MovieReaper victims across 10+ countries after attackers poisoned itorrents.org, serving fake \"The Odyssey\" torrents that drop a Solana-C2 trojan.",
-    "Kaspersky found ValleyRAT delivered via fake adware installer that disables Defender and sideloads libcef.dll. Targets Chinese-speaking users.",
-    "Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group, targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms since March 2026."
+    "Kaspersky found ValleyRAT delivered via fake adware installer that disables Defender and sideloads libcef.dll. Targets Chinese-speaking users."
   ],
-  "sources_hash": "bf70c4a188331a37"
+  "sources_hash": "cf17db0e3e4df8b6"
 }

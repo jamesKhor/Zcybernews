@@ -1,9 +1,9 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "intro": "This archive collects 14 articles tagged `backdoor` published between April 13, 2026 and June 26, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include Silver Fox, APT41, and CL-STA-1062, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize government, technology, and financial services across Global, India, and Russia, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 2 critical, and 12 high reports.",
-  "sources_hash": "f8ffe7460dd91bd0",
-  "model": "template:fallback",
-  "generated_at": "2026-06-27T04:25:08.231Z",
+  "intro": "Fifteen articles on backdoors, published between 2026-04-13 and 2026-09-24, examine activity tied to Silver Fox, APT41, and CL-STA-1062. Coverage spans government, technology, financial services, software development, and banking, with incidents reported globally and in India, Russia, South asia, and South korea. The severity mix comprises 12 high and 2 critical items. The archive tracks how backdoor access is pursued across these sectors and regions, and how the three named actors feature in reporting over the five-month period.",
+  "sources_hash": "4d58b71390de6c17",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-25T08:36:06.933Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

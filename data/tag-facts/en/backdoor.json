@@ -1,10 +1,10 @@
 {
   "tag": "backdoor",
   "locale": "en",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-06-26"
+    "latest": "2026-09-24"
   },
   "top_actors": [
     "Silver Fox",
@@ -31,9 +31,9 @@
     "critical": 2
   },
   "recent_excerpts": [
+    "MacSync's new build drops AppleScript droppers for Objective-C and Swift binaries, delivers payloads via iCloud calendar events, and adds a backdoor module.",
     "Chinese-speaking threat group CL-STA-1062 compromised at least 10 Southeast Asian government and energy entities in 2025 using web shells, tunneling tools, and a new TinyRCT...",
-    "Socket and StepSecurity found backdoored node-ipc versions 9.1.6, 9.2.3, and 12.0.1 exfiltrate SSH keys, AWS credentials, and env files from developer machines.",
-    "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky."
+    "Socket and StepSecurity found backdoored node-ipc versions 9.1.6, 9.2.3, and 12.0.1 exfiltrate SSH keys, AWS credentials, and env files from developer machines."
   ],
-  "sources_hash": "f8ffe7460dd91bd0"
+  "sources_hash": "4d58b71390de6c17"
 }
