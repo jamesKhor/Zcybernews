@@ -1,0 +1,84 @@
+---
+title: 'Labcorp to Pay $2.3M, Overhaul Vendor Security After Breach'
+slug: 2026-09-25-labcorp-to-pay-2-3m-overhaul-vendor-security-after-breach
+date: '2026-09-25'
+excerpt: >-
+  Labcorp will pay $2.3 million and overhaul vendor oversight after the 2019
+  AMCA breach exposed 10.2 million patients; 44 state AGs announced the
+  settlement Thursday.
+category: industry
+tags:
+  - data-breach
+  - healthcare
+  - third-party-risk
+  - regulation
+  - privacy
+language: en
+source_urls:
+  - 'https://therecord.media/labcorp-to-overhaul-security-practices-settlement'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:labcorp-overhaul-data-practices-million'
+source_count: 1
+seo_query_target: >-
+  Labcorp to overhaul data security practices, pay $2.3 million fine for
+  cybersecurity failings
+seo_intent: breaking-news
+seo_title_promise: >-
+  The headline promises readers the exact financial penalty and the scope of
+  mandated security reforms Labcorp accepted in its settlement with 44 state
+  attorneys general.
+seo_meta_promise: >-
+  The meta description promises the $2.3 million figure, the 10.2 million
+  affected patients, and the 44-state AG coalition behind the settlement.
+target_hub: data-breaches
+internal_link_targets:
+  - data-breaches
+  - policy
+  - third-party-risk
+  - healthcare-security
+news_sitemap_eligible: true
+featured_image_alt: Labcorp corporate signage outside a medical testing facility
+affected_sectors:
+  - healthcare
+  - financial services
+affected_regions:
+  - United States
+publish_tier: public
+---
+## Executive Summary
+
+Labcorp will pay $2.3 million and implement sweeping data security reforms under a settlement announced Thursday by a bipartisan coalition of 44 state attorneys general, resolving claims tied to a 2019 breach that exposed the records of 10.2 million Labcorp customers. The breach originated at American Medical Collection Agency (AMCA), a third-party debt collector Labcorp engaged, and ultimately affected 27.5 million people across multiple AMCA clients nationwide.
+
+The settlement is notable less for its dollar value than for the vendor-oversight obligations it imposes on a large healthcare diagnostics company. Labcorp must silo data that debt collectors typically aggregate across clients, impose cybersecurity requirements in vendor contracts, require routine third-party audits, and retain an independent expert to conduct information security assessments. The attorneys general argued Labcorp failed to adequately police AMCA before the incident.
+
+## Technical Analysis
+
+The 2019 AMCA breach was a third-party compromise: attackers gained access to AMCA's systems and exfiltrated payment card data, bank account information, and healthcare records belonging to patients of Labcorp and other medical testing firms. AMCA filed for bankruptcy in 2019, and a 2021 court order requiring the debt collector to pay $21 million was suspended because of that bankruptcy — leaving Labcorp as the primary remaining defendant in the attorneys general action.
+
+The settlement's technical requirements target the specific failure modes that made the AMCA incident so damaging. According to The Record, the mandated changes include:
+
+- **Siloed data architecture**: Labcorp must begin segregating data that debt collectors aggregate across multiple clients, reducing the blast radius if a single vendor is compromised.
+- **Vendor contract requirements**: Cybersecurity terms become mandatory in contracts with data collectors and other third parties.
+- **Routine third-party audits**: Data collectors must regularly provide Labcorp with audits documenting compliance with the new security rules.
+- **Independent assessment**: Labcorp must retain an external expert to conduct information security assessments.
+- **Vendor risk management team**: The company must build an expansive team charged with tracking vendors' compliance with data security practices.
+- **Incident response plan for vendor failures**: A dedicated IR plan must address security failures originating at third parties.
+
+New York Attorney General Letitia James framed the settlement as a direct response to the breach's root cause. "Millions of patients' private health information was potentially exposed because of Labcorp's failures to protect its customers," James said in a statement. "As a result of our investigation, Labcorp will make critical changes to protect patients and prevent this kind of data breach from happening again."
+
+Labcorp did not issue a press release about the settlement, and a company spokesperson did not immediately respond to a request for comment, according to The Record.
+
+The settlement does not include a finding that Labcorp itself was directly breached. The exposure flowed through AMCA, which collected payment and patient data on behalf of Labcorp and other medical testing providers. That structure — a single vendor holding aggregated records for many healthcare clients — is what the siloing requirement is designed to break.
+
+## Mitigations & Recommendations
+
+The Labcorp settlement is a regulatory action, not a technical advisory, so there are no patches or IOCs to apply. The defender-relevant takeaway is the enforcement template it establishes for third-party risk in healthcare and adjacent sectors.
+
+Organizations that rely on debt collectors, billing vendors, or other third parties to handle patient or customer data should treat the settlement's requirements as a preview of what regulators will expect: contractual security clauses, documented vendor audits, data siloing to prevent aggregation across clients, and a named internal team accountable for vendor compliance. The independent-assessment requirement is particularly notable — it moves vendor oversight from self-attestation toward external validation.
+
+Security teams at healthcare providers and their vendors should also review how much data is shared with collection agencies and whether that data can be segmented per-client rather than pooled. The AMCA case showed that a single vendor compromise can cascade across every client whose records the vendor holds.
+
+## References
+
+- [Labcorp to overhaul data security practices, pay $2.3 million fine for cybersecurity failings — The Record](https://therecord.media/labcorp-to-overhaul-security-practices-settlement)
