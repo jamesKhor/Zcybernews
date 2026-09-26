@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-23"
+    "latest": "2026-09-25"
   },
   "top_actors": [
     "Lazarus Group",
@@ -14,17 +14,17 @@
   "top_cves": [],
   "top_sectors": [
     "technology",
-    "critical infrastructure",
     "government",
+    "critical infrastructure",
     "software development",
     "artificial-intelligence"
   ],
   "top_regions": [
     "Global",
     "United states",
+    "Australia",
     "China",
-    "EU",
-    "Ukraine"
+    "EU"
   ],
   "severity_mix": {
     "high": 5,
@@ -32,9 +32,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "Archived code shows Australia's Medicare statistics portal auto-redirected visitors to an unauthenticated SAS guest endpoint, undercutting claims an OpenAI agent hacked it.",
     "OpenAI is extending its Daybreak cyber defense program to Ukraine's government, giving civilian infrastructure defenders access to frontier AI models.",
-    "Chen Yixin, head of China's Ministry of State Security, named OpenAI's GPT-5.5-Cyber and Anthropic's Claude Mythos as signs of a 'disruptive upgrade' in offensive cyber capability.",
-    "OpenAI released preliminary cybersecurity evaluations for Astra, revealing AI agent capabilities in vulnerability research and the new security controls added before broader..."
+    "Chen Yixin, head of China's Ministry of State Security, named OpenAI's GPT-5.5-Cyber and Anthropic's Claude Mythos as signs of a 'disruptive upgrade' in offensive cyber capability."
   ],
-  "sources_hash": "cf50a63f2b8cb048"
+  "sources_hash": "342275b7d7265baa"
 }

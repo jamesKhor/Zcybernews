@@ -1,9 +1,9 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "intro": "LockBit, Interlock, and Rhysida were the most frequently named threat actors across the 12 articles tagged healthcare, published between 2026-04-12 and 2026-08-21. Coverage centered on the healthcare sector, with additional reporting on critical infrastructure, Government, and pharmaceutical organizations. Affected regions included Global, United States, Canada, Illinois, and Moldova. The severity mix was heavily weighted toward high-impact incidents, with 11 high-severity cases and 1 medium-severity case recorded. These reports collectively document a sustained pattern of attacks against medical and allied institutions during the period.",
-  "sources_hash": "8a72bb4b8feaaca1",
+  "intro": "LockBit, Interlock, and Rhysida feature across 13 articles tagged healthcare, published between 2026-04-12 and 2026-09-25. The coverage spans healthcare, Healthcare, critical infrastructure, financial services, and Government, with incidents reported in the United states, Global, Canada, Illinois, and Moldova. Eleven articles carry high severity, while one is rated medium. The tag archive collects reporting on how these actors intersect with healthcare providers and the wider systems they depend on.",
+  "sources_hash": "edc712c35b400253",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-22T03:42:25.237Z",
+  "generated_at": "2026-09-26T08:23:09.480Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

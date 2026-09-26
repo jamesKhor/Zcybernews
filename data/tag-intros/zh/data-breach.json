@@ -3,8 +3,8 @@
   "locale": "zh",
   "intro": "本档案收录了 43 篇带有「data-breach」标签的文章，发布时间从2026年4月12日至2026年8月21日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。可见的威胁行为者引用包括 ShinyHunters、LockBit、Cl0p，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于government、healthcare、retail，地区包括 North america、Europe、Global，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括36 篇高危、6 篇中危报告。",
   "sources_hash": "77d0091662c8e52e",
-  "source_intro_hash": "542512731beae737",
+  "source_intro_hash": "43b2e6be64458a72",
   "model": "template:fallback",
-  "generated_at": "2026-09-25T08:36:18.939Z",
+  "generated_at": "2026-09-26T08:23:20.585Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "intro": "Government and technology sectors feature prominently across 14 articles on the CISA KEV tag, spanning 19 April 2026 to 19 September 2026. Five vulnerabilities anchor coverage: CVE-2026-20079 and CVE-2026-48907, each rated CVSS 10, alongside CVE-2023-49105, CVE-2025-39682, and CVE-2026-65400, each at CVSS 9.8. Federal government, media, and critical infrastructure also appear among affected sectors. The United States, Global, North America, EU, and Europe rank among affected regions. The severity mix comprises six critical, four high, and two medium entries.",
-  "sources_hash": "6effbfeea70f4c43",
+  "intro": "Government and technology sectors lead the affected organizations tracked under the cisa-kev tag, which spans 15 articles published between 2026-04-19 and 2026-09-25. The coverage centers on five high-severity CVEs: CVE-2026-20079 and CVE-2026-48907, each rated CVSS 10, alongside CVE-2023-49105, CVE-2025-39682, and CVE-2026-65400, all rated CVSS 9.8. Enterprise, federal government, and media organizations also appear among the affected sectors. The United States, Global, North America, EU, and Europe rank among the most frequently cited regions. The severity mix across the archive comprises 6 critical, 4 high, and 2 medium entries.",
+  "sources_hash": "e332327c805292cd",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-20T08:21:28.712Z",
+  "generated_at": "2026-09-26T08:23:08.195Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

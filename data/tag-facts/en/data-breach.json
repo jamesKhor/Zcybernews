@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 48,
+  "count": 49,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-24"
+    "latest": "2026-09-25"
   },
   "top_actors": [
     "ShinyHunters",
@@ -25,8 +25,8 @@
   ],
   "top_regions": [
     "North america",
-    "Europe",
     "United states",
+    "Europe",
     "Global",
     "France"
   ],
@@ -35,9 +35,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "Labcorp will pay $2.3 million and overhaul vendor oversight after the 2019 AMCA breach exposed 10.2 million patients; 44 state AGs announced the settlement Thursday.",
     "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese.",
-    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273.",
-    "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence."
+    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273."
   ],
-  "sources_hash": "dfdf0057444376a5"
+  "sources_hash": "59e2f1a858378799"
 }

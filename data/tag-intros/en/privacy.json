@@ -1,9 +1,9 @@
 {
   "tag": "privacy",
   "locale": "en",
-  "intro": "Technology, government, and education were the sectors most affected across 20 articles published between April 12 and April 27, 2026, with a severity mix of nine medium, five high, and six informational items. The top CVE identified was CVE-2026-28950. The impacted regions included Global, the United States, Europe, Mexico, and the Netherlands, with the telecommunications and advertising sectors also affected.",
-  "sources_hash": "edff80d5cfaadac4",
+  "intro": "Across 21 articles spanning 12 April to 25 September 2026, ZCyberNews coverage tagged privacy spans technology, government, education, telecommunications, and advertising. The reporting reaches readers in the United States, Europe, Mexico, the Netherlands, and globally. CVE-2026-28950 stands out among the vulnerabilities tracked. Severity across the period divides into nine medium, five high, and six informational items. The collection examines how privacy concerns and disclosure obligations intersect with the systems and institutions that handle personal data worldwide.",
+  "sources_hash": "9859ec47959d0825",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T09:59:58.438Z",
+  "generated_at": "2026-09-26T08:23:05.571Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

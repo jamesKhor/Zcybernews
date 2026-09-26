@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-09-19"
+    "latest": "2026-09-25"
   },
   "top_actors": [],
   "top_cves": [
@@ -32,9 +32,9 @@
   "top_sectors": [
     "government",
     "technology",
+    "enterprise",
     "federal government",
-    "media",
-    "critical infrastructure"
+    "media"
   ],
   "top_regions": [
     "United states",
@@ -49,9 +49,9 @@
     "medium": 2
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-65660, a network-exploitable SharePoint code injection flaw, to its KEV catalog with a 2026-09-28 federal remediation deadline.",
     "CISA added CVE-2025-39682, a 9.8-CVSS Linux kernel TLS receive-path flaw, to its KEV catalog after evidence of active exploitation in the wild.",
-    "CVE-2025-39964, a race condition in the Linux kernel's AF_ALG socket code, is now in CISA's KEV catalog. Federal agencies must remediate by September 21, 2026.",
-    "CISA added CVE-2026-42016, a JFrog Artifactory token-scope authorization flaw enabling privilege escalation, to its KEV catalog with a Sept 25 patch deadline."
+    "CVE-2025-39964, a race condition in the Linux kernel's AF_ALG socket code, is now in CISA's KEV catalog. Federal agencies must remediate by September 21, 2026."
   ],
-  "sources_hash": "6effbfeea70f4c43"
+  "sources_hash": "e332327c805292cd"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "patch-guidance",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-05-18",
-    "latest": "2026-09-19"
+    "latest": "2026-09-25"
   },
   "top_actors": [],
   "top_cves": [
@@ -34,7 +34,7 @@
     "government",
     "AI/ML",
     "critical infrastructure",
-    "federal government"
+    "enterprise"
   ],
   "top_regions": [
     "United states",
@@ -47,9 +47,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-65660, a network-exploitable SharePoint code injection flaw, to its KEV catalog with a 2026-09-28 federal remediation deadline.",
     "CISA added CVE-2025-39682, a 9.8-CVSS Linux kernel TLS receive-path flaw, to its KEV catalog after evidence of active exploitation in the wild.",
-    "CVE-2025-39964, a race condition in the Linux kernel's AF_ALG socket code, is now in CISA's KEV catalog. Federal agencies must remediate by September 21, 2026.",
-    "CVE-2026-60004, a 9.8-CVSS Gitea RCE, is under active attack per CISA. Attackers with repo write access can run shell commands. Patch now."
+    "CVE-2025-39964, a race condition in the Linux kernel's AF_ALG socket code, is now in CISA's KEV catalog. Federal agencies must remediate by September 21, 2026."
   ],
-  "sources_hash": "85bb33cc10849a81"
+  "sources_hash": "e8ebcf3ad94021de"
 }

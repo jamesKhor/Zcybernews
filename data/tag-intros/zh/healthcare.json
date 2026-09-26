@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "intro": "LockBit、Interlock和Rhysida是2026年4月12日至2026年8月21日期间发布的12篇医疗行业相关文章中最常被提及的威胁行为者。报道重点集中在医疗保健领域，同时涉及关键基础设施、政府和制药组织的额外报道。受影响地区包括全球、美国、加拿大、伊利诺伊州和摩尔多瓦。严重程度分布明显偏向高影响事件，记录了11起高严重性案例和1起中等严重性案例。这些报告共同记录了该时期针对医疗机构及相关机构的持续攻击模式。",
+  "intro": "LockBit、Interlock和Rhysida出现在13篇标记为healthcare的文章中，发布时间介于2026-04-12至2026-09-25之间。报道范围涵盖healthcare、Healthcare、critical infrastructure、financial services和Government，事件报告涉及United states、Global、Canada、Illinois和Moldova。其中11篇文章为高严重性，1篇为中严重性。该标签存档汇集了有关这些行为者如何与医疗服务提供者及其所依赖的更广泛系统产生交集的报道。",
   "sources_hash": "120a8de6edbf282a",
-  "source_intro_hash": "8f0cf4c9247c981e",
+  "source_intro_hash": "33e563b45a41463d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-22T03:42:29.865Z",
+  "generated_at": "2026-09-26T08:23:21.605Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

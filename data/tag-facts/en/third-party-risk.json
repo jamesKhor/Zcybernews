@@ -1,39 +1,34 @@
 {
-  "tag": "healthcare",
+  "tag": "third-party-risk",
   "locale": "en",
-  "count": 13,
+  "count": 5,
   "date_range": {
-    "first": "2026-04-12",
+    "first": "2026-04-13",
     "latest": "2026-09-25"
   },
   "top_actors": [
-    "LockBit",
-    "Interlock",
-    "Rhysida"
+    "LockBit"
   ],
   "top_cves": [],
   "top_sectors": [
     "healthcare",
-    "Healthcare",
-    "critical infrastructure",
     "financial services",
-    "Government"
+    "government",
+    "identity-management",
+    "law-enforcement"
   ],
   "top_regions": [
-    "United states",
-    "Global",
+    "North america",
     "Canada",
-    "Illinois",
-    "Moldova"
+    "United states"
   ],
   "severity_mix": {
-    "high": 11,
-    "medium": 1
+    "high": 4
   },
   "recent_excerpts": [
     "Labcorp will pay $2.3 million and overhaul vendor oversight after the 2019 AMCA breach exposed 10.2 million patients; 44 state AGs announced the settlement Thursday.",
     "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident.",
-    "West Pharmaceutical Services took systems offline globally after a May 4 ransomware attack with data exfiltration. Unit 42 is investigating; ransom may have been paid."
+    "SailPoint reported to the SEC that attackers accessed a subset of its GitHub repositories on April 20 via a third-party app vulnerability."
   ],
-  "sources_hash": "edc712c35b400253"
+  "sources_hash": "02afb2044063f3a2"
 }

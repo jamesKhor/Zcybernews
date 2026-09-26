@@ -1,0 +1,32 @@
+{
+  "tag": "ai-agents",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-24",
+    "latest": "2026-09-25"
+  },
+  "top_actors": [],
+  "top_cves": [],
+  "top_sectors": [
+    "healthcare",
+    "financial services",
+    "government",
+    "technology",
+    "cloud services"
+  ],
+  "top_regions": [
+    "Global",
+    "United states",
+    "Australia"
+  ],
+  "severity_mix": {
+    "high": 2
+  },
+  "recent_excerpts": [
+    "Archived code shows Australia's Medicare statistics portal auto-redirected visitors to an unauthenticated SAS guest endpoint, undercutting claims an OpenAI agent hacked it.",
+    "At Black Hat USA 2026, officials and researchers warn AI-driven vulnerability discovery outpaces defenses.",
+    "OpenAI released preliminary cybersecurity evaluations for Astra, revealing AI agent capabilities in vulnerability research and the new security controls added before broader..."
+  ],
+  "sources_hash": "c358fdb6490aab06"
+}

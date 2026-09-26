@@ -1,0 +1,10 @@
+{
+  "tag": "third-party-risk",
+  "locale": "zh",
+  "intro": "LockBit出现在2026年4月13日至9月25日期间发表的五篇关于第三方风险的文章中。报道范围涵盖医疗保健、金融服务、政府、身份管理和执法领域，北美、加拿大和美国被列为受影响地区。五篇文章中有四篇带有高严重性评级。该系列文章探讨了对",
+  "sources_hash": "02afb2044063f3a2",
+  "source_intro_hash": "3b8e322b5b4275d1",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-26T08:23:27.074Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}
