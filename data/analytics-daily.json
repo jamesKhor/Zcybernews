@@ -3142,5 +3142,136 @@
         "count": 4
       }
     ]
+  },
+  {
+    "event": "analytics_daily",
+    "timestamp": "2026-09-27T06:30:12.060Z",
+    "totals": {
+      "en_posts": 732,
+      "en_threat_intel": 228,
+      "zh_posts": 688,
+      "zh_threat_intel": 224,
+      "total": 1872
+    },
+    "published_in_last": {
+      "24h": 1,
+      "7d": 11,
+      "30d": 41
+    },
+    "translation_parity": {
+      "missing_zh": 48,
+      "missing_en": 0,
+      "parity_ratio": "0.950"
+    },
+    "top_categories": [
+      {
+        "value": "vulnerabilities",
+        "count": 273
+      },
+      {
+        "value": "threat-intel",
+        "count": 230
+      },
+      {
+        "value": "industry",
+        "count": 223
+      },
+      {
+        "value": "malware",
+        "count": 145
+      },
+      {
+        "value": "ai",
+        "count": 49
+      },
+      {
+        "value": "tools",
+        "count": 40
+      }
+    ],
+    "top_tags": [
+      {
+        "value": "supply-chain",
+        "count": 89
+      },
+      {
+        "value": "ai-security",
+        "count": 74
+      },
+      {
+        "value": "phishing",
+        "count": 64
+      },
+      {
+        "value": "social-engineering",
+        "count": 63
+      },
+      {
+        "value": "ransomware",
+        "count": 62
+      },
+      {
+        "value": "data-breach",
+        "count": 49
+      },
+      {
+        "value": "microsoft",
+        "count": 41
+      },
+      {
+        "value": "malware",
+        "count": 37
+      },
+      {
+        "value": "zero-day",
+        "count": 37
+      },
+      {
+        "value": "rce",
+        "count": 36
+      },
+      {
+        "value": "credential-theft",
+        "count": 36
+      },
+      {
+        "value": "ai",
+        "count": 35
+      },
+      {
+        "value": "privilege-escalation",
+        "count": 32
+      },
+      {
+        "value": "critical-infrastructure",
+        "count": 31
+      },
+      {
+        "value": "threat-intelligence",
+        "count": 30
+      }
+    ],
+    "severity_breakdown": [
+      {
+        "value": "high",
+        "count": 523
+      },
+      {
+        "value": "medium",
+        "count": 131
+      },
+      {
+        "value": "critical",
+        "count": 128
+      },
+      {
+        "value": "informational",
+        "count": 91
+      },
+      {
+        "value": "low",
+        "count": 4
+      }
+    ]
   }
 ]
