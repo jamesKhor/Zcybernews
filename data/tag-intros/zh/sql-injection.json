@@ -3,8 +3,8 @@
   "locale": "zh",
   "intro": "本档案收录了 11 篇带有「sql-injection」标签的文章，发布时间从2026年4月14日至2026年5月23日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2026-27681、CVE-2026-42208、CVE-2026-6433，每一项均以原文中的漏洞背景和元数据为依据。受影响范围信号侧重于enterprise software、e-commerce、retail，地区包括 Europe、Global、North america，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括6 篇严重、3 篇高危、2 篇中危报告。",
   "sources_hash": "55a648b1c97084bf",
-  "source_intro_hash": "fa058d0e181e6498",
+  "source_intro_hash": "0d09823ba0ad70b5",
   "model": "template:fallback",
-  "generated_at": "2026-05-24T04:32:09.439Z",
+  "generated_at": "2026-09-27T09:00:39.785Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "sql-injection",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-05-23"
+    "latest": "2026-09-26"
   },
   "top_actors": [],
   "top_cves": [
@@ -42,14 +42,14 @@
     "North america"
   ],
   "severity_mix": {
+    "high": 4,
     "medium": 2,
-    "high": 3,
     "critical": 7
   },
   "recent_excerpts": [
+    "Canada's Cyber Centre warns CVE-2026-48842, a CVSS 8.1 pre-auth SQL injection in Roundcube's virtuser_query plugin, is being exploited. Fixed in 1.6.16 and 1.7.1.",
     "CISA added CVE-2026-9082 (CVSS 6.5) to its Known Exploited Vulnerabilities catalog after evidence of active exploitation against all supported Drupal Core versions.",
-    "CVE-2026-4782 and CVE-2026-4798 in Avada Builder (1M+ installs) let attackers read wp-config.php and extract database hashes. Patch to version 3.15.3.",
-    "SAP released 15 security notes for May 2026, fixing two critical code injection flaws in S/4HANA (CVE-2026-34260) and Commerce (CVE-2026-34263), both rated 9.6 CVSS, and a..."
+    "CVE-2026-4782 and CVE-2026-4798 in Avada Builder (1M+ installs) let attackers read wp-config.php and extract database hashes. Patch to version 3.15.3."
   ],
-  "sources_hash": "d285453d3e64838f"
+  "sources_hash": "1f1dabd026426913"
 }

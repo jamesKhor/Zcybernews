@@ -1,9 +1,9 @@
 {
   "tag": "sql-injection",
   "locale": "en",
-  "intro": "Between April 14 and May 23, 2026, ZCyberNews published 12 articles on SQL injection, with 7 rated critical severity. The most severe vulnerability, CVE-2026-27681, carries a CVSS score of 9.9, while CVE-2026-36962, CVE-2026-42208, and CVE-2026-6433 each scored 9.8, and CVE-2026-34259 scored 9.6. Enterprise software, web hosting, e-commerce, retail, and software development were the top affected sectors, with Europe, North America, and global regions most impacted. The coverage included 2 medium, 3 high, and 7 critical severity reports.",
-  "sources_hash": "d285453d3e64838f",
+  "intro": "SQL injection remains a persistent flaw across 13 articles published between 14 April and 26 September 2026. CVE-2026-27681, rated CVSS 9.9, leads the coverage, followed by CVE-2026-36962, CVE-2026-42208, and CVE-2026-6433, each at CVSS 9.8, and CVE-2026-34259 at CVSS 9.6. The severity mix comprises seven critical, four high, and two medium issues. Enterprise software, web hosting, e-commerce, retail, and software development rank among the most affected sectors. Reporting spans Europe, Global, and North America.",
+  "sources_hash": "1f1dabd026426913",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-24T04:31:56.466Z",
+  "generated_at": "2026-09-27T09:00:28.147Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
