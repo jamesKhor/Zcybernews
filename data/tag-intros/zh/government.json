@@ -1,10 +1,10 @@
 {
   "tag": "government",
   "locale": "zh",
-  "intro": "本档案收录了七篇发表于2026-04-12至2026-09-24期间的政府网络事件文章。SHADOW-EARTH-053和ShinyHunters是报道中出现频率最高的威胁行为者。受影响行业包括政府、国防、医疗保健和执法部门。攻击波及美国、澳大利亚、东亚、欧洲和佛罗里达。七篇文章中，五篇为高严重性，一篇为中严重性。报道涵盖涉及公共机构及为其提供支持的机构的事件，SHADOW-EARTH-053和ShinyHunters在合集中各自作为独立主题出现。",
+  "intro": "在2026-04-12至2026-09-29期间的八篇文章中，ZCyberNews的报道标记了政府相关活动，将其归因于SHADOW-EARTH-053和ShinyHunters。受影响行业包括政府、国防、医疗保健和执法部门，事件涉及美国、澳大利亚、东亚、欧洲和佛罗里达。严重性评级包括五个高和一个中。SHADOW-EARTH-053和ShinyHunters在报道中作为不同的行为者出现，未声称二者之间存在关联。本档案将这些报道汇集于一处。",
   "sources_hash": "4a083ae1756a47ca",
-  "source_intro_hash": "0075b78126826fc5",
+  "source_intro_hash": "9ffe8b241fb8e9ca",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-25T08:36:20.169Z",
+  "generated_at": "2026-09-29T09:32:41.430Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
