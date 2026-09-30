@@ -1,0 +1,93 @@
+---
+title: Star Blizzard Scales Phishing Attacks on Ukraine Supporters
+slug: 2026-09-30-star-blizzard-scales-phishing-attacks-on-ukraine-supporters
+date: '2026-09-30'
+excerpt: >-
+  Microsoft says FSB-linked Star Blizzard hit 100+ orgs in the US and UK, using
+  a new RedFlick delivery chain that needs one click to drop CosmicPulse.
+category: threat-intel
+tags:
+  - apt
+  - star-blizzard
+  - phishing
+  - russia
+  - fsb
+  - microsoft
+language: en
+source_urls:
+  - 'https://therecord.media/russia-hackers-ukraine-blizzard'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:russian-fsblinked-hackers-scale-phishing'
+source_count: 1
+seo_query_target: >-
+  Russian FSB-linked hackers scale up phishing attacks against Ukraine
+  supporters
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The article explains how Star Blizzard expanded its phishing operations in
+  2026 and what the new RedFlick delivery technique means for defenders.
+seo_meta_promise: >-
+  The meta description states that Microsoft attributes 100+ victim
+  organizations to Star Blizzard and highlights the single-click RedFlick
+  infection chain.
+target_hub: apt
+internal_link_targets:
+  - apt
+  - apt-state-actors
+news_sitemap_eligible: true
+featured_image_alt: >-
+  A laptop screen displaying a phishing email with a password-protected archive
+  attachment, overlaid with a map of Eastern Europe.
+severity: high
+threat_actor: Star Blizzard
+threat_actor_origin: Russia
+affected_sectors:
+  - government
+  - non-profit
+  - think tanks
+  - financial services
+affected_regions:
+  - United States
+  - United Kingdom
+  - Ukraine
+iocs:
+  - type: domain
+    value: Ukr.net
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Microsoft says Star Blizzard, a Russian state-backed hacking group linked to the FSB, has significantly expanded its phishing operations since January 2026, affecting more than 100 organizations primarily in the United States and the United Kingdom. The group has moved from narrowly targeted spear-phishing to mass-mailing campaigns, and has adopted a new malware delivery technique called RedFlick that reduces the infection chain to a single victim action.
+
+## Technical Analysis
+
+Star Blizzard — also tracked as Callisto and ColdRiver — has been active since at least 2017 and is known for targeting government agencies, NGOs, and organizations involved in international affairs. Western governments have attributed the group to Russia's Federal Security Service.
+
+According to Microsoft's report published Tuesday, researchers have identified at least 13 large-scale phishing campaigns since January. The shift likely reflects the group's adoption of a mass-mailing phishing platform that automates attacks and reaches more potential victims. The targeting has broadened from Ukrainian individuals and institutions to international NGOs, think tanks, governments, and financial institutions that support Ukraine.
+
+The group has also changed its email infrastructure. Since March, Star Blizzard has used accounts created on compromised websites to contact targets, moving away from free email services. Earlier campaigns in January and February targeted users of the Ukrainian email provider Ukr.net, with hackers impersonating Ukrainian authorities and sending messages about tax audits or unpaid fines. Beginning in March, the group expanded beyond Ukraine, sending fake conference or event invitations supposedly from reputable think tanks or NGOs. In some cases, the hackers targeted multiple people at the same organization and disguised emails as internal communications.
+
+Microsoft said the shift from Ukraine-focused operations to global targets could indicate Star Blizzard initially targeted Ukraine to test new capabilities.
+
+The most significant technical change is the RedFlick delivery method. After a victim responds to an initial phishing email, Star Blizzard sends a follow-up containing a password-protected archive. Opening a file inside the archive triggers RedFlick, which uses scheduled tasks on the victim's computer to install the group's CosmicPulse backdoor while making the activity harder to detect. The new method requires only one action from the victim, compared to the previous ClickFix technique that required several steps before CosmicPulse could be installed.
+
+Microsoft assessed that the combination of large-scale phishing and the simplified infection chain likely improves Star Blizzard's ability to reach more targets, evade detection, and increase the likelihood of successful compromise.
+
+## Tactics, Techniques & Procedures
+
+Star Blizzard's operations map to several MITRE ATT&CK techniques. The group uses spearphishing links (T1566.002) to deliver messages impersonating political figures, academics, and former diplomats. It establishes email accounts on compromised websites (T1585.002) to send phishing messages, replacing its earlier use of free email services. Victims execute a malicious file (T1204.002) inside a password-protected archive, which triggers the RedFlick loader. RedFlick then uses Windows scheduled tasks (T1053.005) to install the CosmicPulse backdoor.
+
+## Threat Actor Context
+
+Star Blizzard is a Russian state-backed hacking group attributed to the FSB by Western governments. The group has been active since at least 2017 and is also tracked as Callisto and ColdRiver. It is known for targeting government agencies, NGOs, and organizations involved in international affairs. Microsoft's report indicates the group has affected more than 100 organizations, primarily in the U.S. and UK, since the beginning of 2026.
+
+## Mitigations & Recommendations
+
+Defenders should monitor for phishing emails that impersonate political figures, academics, or former diplomats, particularly those sent from accounts on compromised websites. Organizations should be alert to password-protected archives delivered in follow-up emails after an initial response, as these are used to deliver the RedFlick loader. Security teams should audit Windows scheduled tasks for unexpected entries that may indicate CosmicPulse backdoor installation. Given the shift to mass-mailing campaigns, email filtering should be tuned to detect high-volume phishing attempts and fake event invitations from think tanks or NGOs. Organizations supporting Ukraine politically or financially should consider themselves at elevated risk and review their exposure to these tactics.
+
+## References
+
+- [Russian FSB-linked hackers scale up phishing attacks against Ukraine supporters](https://therecord.media/russia-hackers-ukraine-blizzard)
