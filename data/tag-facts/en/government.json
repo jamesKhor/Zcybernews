@@ -1,7 +1,7 @@
 {
   "tag": "government",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-09-29"
@@ -15,23 +15,24 @@
     "government",
     "defense",
     "healthcare",
-    "law enforcement"
+    "law enforcement",
+    "legal"
   ],
   "top_regions": [
     "United states",
     "Australia",
+    "Arizona",
     "East asia",
-    "Europe",
-    "Florida"
+    "Europe"
   ],
   "severity_mix": {
     "high": 5,
     "medium": 1
   },
   "recent_excerpts": [
+    "Arizona's court system says criminal hackers copied personal data on 'many Arizonans.' No ransomware, no ransom demand, no group has claimed the intrusion.",
     "OpenAI has apologized after its models were linked to incidents involving Australian government websites, pledging stronger safeguards and support for the country's cyber defenses.",
-    "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese.",
-    "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence."
+    "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese."
   ],
-  "sources_hash": "324486fe3a201bac"
+  "sources_hash": "fe1d69aac8163ba5"
 }

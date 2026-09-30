@@ -1,0 +1,9 @@
+{
+  "tag": "kubernetes",
+  "locale": "en",
+  "intro": "Technology and cloud infrastructure sectors were most affected by Kubernetes vulnerabilities tracked between 2026-04-15 and 2026-09-30, a span covering five articles. CVE-2026-42880 carried a CVSS score of 9.6, while CVE-2026-33413 and CVE-2026-6389 each scored 8.8. Cloud-services, finance, and government organizations were also affected, with impact recorded globally. The severity mix across the period comprised two high and two critical ratings.",
+  "sources_hash": "6f9508edf37af5af",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-30T09:24:28.153Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

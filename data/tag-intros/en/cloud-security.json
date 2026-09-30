@@ -1,9 +1,9 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "intro": "Over the 25 articles published between April 13 and May 7, 2026, cloud-security coverage focused on activity from APT41 and PCPJack, with five key CVEs including CVE-2026-33413 (CVSS 8.8), CVE-2025-29927, CVE-2025-48703, CVE-2025-55182, and CVE-2025-9501. The 16 high, 3 informational, and 2 critical severity reports spanned the technology, government, healthcare, cloud-services, and financial services sectors, with impacts observed globally across the EU, Israel, and North America.",
-  "sources_hash": "9a03cbc37a8e4a60",
+  "intro": "Between 2026-04-13 and 2026-09-30, ZCyberNews published 26 articles tagged cloud-security. Coverage spans a severity mix of 17 high, 2 critical, and 3 informational items. APT41 and PCPJack appear among the top threat actors observed. Prominent vulnerabilities include CVE-2026-33413 (CVSS 8.8), CVE-2026-6389 (CVSS 8.8), CVE-2025-29927, CVE-2025-48703, and CVE-2025-55182. Affected sectors include technology, government, healthcare, cloud-services, and financial services. The reporting reaches Global, EU, Israel, and North america audiences, reflecting the breadth of cloud-security incidents tracked across this period.",
+  "sources_hash": "2c9682bb5a25249f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T09:59:32.321Z",
+  "generated_at": "2026-09-30T09:24:19.489Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

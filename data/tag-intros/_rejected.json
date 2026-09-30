@@ -1864,5 +1864,23 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-36962 but it is not in the fact sheet",
     "at": "2026-09-27T09:00:39.784Z"
+  },
+  {
+    "tag": "cloud-security",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-6389 but it is not in the fact sheet",
+    "at": "2026-09-30T09:24:34.164Z"
+  },
+  {
+    "tag": "data-breach",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-35273 but it is not in the fact sheet",
+    "at": "2026-09-30T09:24:37.661Z"
+  },
+  {
+    "tag": "unit-42",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-6389 but it is not in the fact sheet",
+    "at": "2026-09-30T09:24:45.060Z"
   }
 ]

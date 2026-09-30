@@ -1,0 +1,10 @@
+{
+  "tag": "kubernetes",
+  "locale": "zh",
+  "intro": "在2026年4月15日至2026年9月30日期间追踪的Kubernetes漏洞中，技术和云基础设施行业受影响最为严重，该时间段共涵盖五篇文章。CVE-2026-42880的CVSS评分为9.6，而CVE-2026-33413和CVE-2026-6389的评分均为8.8。云服务、金融和政府机构也受到影响，全球范围内均有影响记录。该期间的严重程度构成包括两个高危和两个严重评级。",
+  "sources_hash": "6f9508edf37af5af",
+  "source_intro_hash": "08bf283b2cc0de30",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-30T09:24:40.789Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

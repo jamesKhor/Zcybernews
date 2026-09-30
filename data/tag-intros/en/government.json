@@ -1,9 +1,9 @@
 {
   "tag": "government",
   "locale": "en",
-  "intro": "Across eight articles spanning 2026-04-12 to 2026-09-29, ZCyberNews coverage tagged government tracks activity attributed to SHADOW-EARTH-053 and ShinyHunters. Government, defense, healthcare, and law enforcement rank among the affected sectors, while incidents touch the United states, Australia, East asia, Europe, and Florida. The severity mix comprises five high and one medium rating. SHADOW-EARTH-053 and ShinyHunters appear as distinct actors in the reporting, with no relationship asserted between them. This archive collects that reporting in one place.",
-  "sources_hash": "324486fe3a201bac",
+  "intro": "Across nine articles dated 12 April 2026 to 29 September 2026, ZCyberNews coverage tagged government tracks incidents attributed to SHADOW-EARTH-053 and ShinyHunters. Government, defense, healthcare, law enforcement, and legal sectors were affected, with the United states, Australia, Arizona, East asia, and Europe among the regions recorded. The severity mix comprises 5 high and 1 medium. SHADOW-EARTH-053 and ShinyHunters appear as distinct actors in the reporting; the archive below collects each article as published.",
+  "sources_hash": "fe1d69aac8163ba5",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-29T09:32:37.157Z",
+  "generated_at": "2026-09-30T09:24:27.065Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

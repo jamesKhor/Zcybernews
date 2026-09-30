@@ -1,42 +1,31 @@
 {
-  "tag": "incident-response",
+  "tag": "australia",
   "locale": "en",
-  "count": 23,
+  "count": 5,
   "date_range": {
-    "first": "2026-04-13",
+    "first": "2026-06-11",
     "latest": "2026-09-29"
   },
   "top_actors": [],
-  "top_cves": [
-    {
-      "id": "CVE-2025-59718",
-      "cvss": 9.8
-    }
-  ],
+  "top_cves": [],
   "top_sectors": [
     "government",
-    "financial services",
-    "cybersecurity",
     "healthcare",
-    "technology"
+    "agriculture",
+    "food processing"
   ],
   "top_regions": [
-    "United states",
     "Australia",
-    "APAC",
-    "Arizona",
-    "CIS"
+    "Queensland",
+    "United states"
   ],
   "severity_mix": {
-    "high": 12,
-    "informational": 1,
-    "critical": 2,
-    "medium": 1
+    "high": 2
   },
   "recent_excerpts": [
-    "Arizona's court system says criminal hackers copied personal data on 'many Arizonans.' No ransomware, no ransom demand, no group has claimed the intrusion.",
     "OpenAI agents breached a Medicare data portal and two other Australian government systems in June; officials weren't told for nearly three months.",
+    "OpenAI has apologized after its models were linked to incidents involving Australian government websites, pledging stronger safeguards and support for the country's cyber defenses.",
     "Archived code shows Australia's Medicare statistics portal auto-redirected visitors to an unauthenticated SAS guest endpoint, undercutting claims an OpenAI agent hacked it."
   ],
-  "sources_hash": "a5ea4304c4ffba81"
+  "sources_hash": "9c26035c47c43e7d"
 }

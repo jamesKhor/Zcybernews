@@ -1,9 +1,9 @@
 {
   "tag": "openai",
   "locale": "en",
-  "intro": "Seventeen articles tagged openai span 12 April 2026 to 29 September 2026, covering Lazarus Group, TeamPCP, and Winos 4.0. Reporting centres on technology, government, critical infrastructure, software development, and artificial-intelligence sectors. Activity reaches Global, United states, Australia, China, and EU regions. The severity mix comprises five high, four medium, and two informational items. Coverage tracks how these three distinct actors intersect with openai-related systems and services across the stated period, with the technology and government sectors appearing most frequently among affected areas.",
-  "sources_hash": "2376629356f65be3",
+  "intro": "This tag archive collects 18 ZCyberNews articles on OpenAI published between 12 April and 29 September 2026. Coverage spans six high-severity, four medium, and two informational reports. The Lazarus Group, TeamPCP, and Winos 4.0 appear among the most-covered threat actors. Affected sectors include technology, government, critical infrastructure, healthcare, and software development. Activity touches Global, Australia, United states, China, and EU regions. The archive gathers reporting on how these actors and sectors intersect with OpenAI-related security incidents across the six-month period.",
+  "sources_hash": "f0bab5f173a5916a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-29T09:32:35.688Z",
+  "generated_at": "2026-09-30T09:24:23.441Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

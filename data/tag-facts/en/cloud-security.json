@@ -1,10 +1,10 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "count": 25,
+  "count": 26,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-07"
+    "latest": "2026-09-30"
   },
   "top_actors": [
     "APT41",
@@ -16,6 +16,10 @@
       "cvss": 8.8
     },
     {
+      "id": "CVE-2026-6389",
+      "cvss": 8.8
+    },
+    {
       "id": "CVE-2025-29927"
     },
     {
@@ -23,9 +27,6 @@
     },
     {
       "id": "CVE-2025-55182"
-    },
-    {
-      "id": "CVE-2025-9501"
     }
   ],
   "top_sectors": [
@@ -42,14 +43,14 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 16,
+    "high": 17,
     "informational": 3,
     "critical": 2
   },
   "recent_excerpts": [
+    "Unit 42's OperTraitor scanned OperatorHub and found IBM Turbonomic granting cluster-wide secret access, tied to CVE-2026-6389 (CVSS 8.8) in the operator's RBAC design.",
     "SentinelLabs uncovers PCPJack, a credential-stealing worm targeting Docker, Kubernetes, Redis, and MongoDB that actively removes rival TeamPCP access from compromised cloud...",
-    "OAuth tokens with no expiration persist in Google and Microsoft tenants — attackers bypass MFA and perimeter controls.",
-    "Dark Reading reports AI agents are deleting production databases because organizations deploy agent integrations without proper security testing or access controls."
+    "OAuth tokens with no expiration persist in Google and Microsoft tenants — attackers bypass MFA and perimeter controls."
   ],
-  "sources_hash": "9a03cbc37a8e4a60"
+  "sources_hash": "2c9682bb5a25249f"
 }

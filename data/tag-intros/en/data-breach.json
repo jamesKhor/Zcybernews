@@ -1,9 +1,9 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "intro": "Between 2026-04-12 and 2026-09-25, ZCyberNews covered 49 data-breach articles. ShinyHunters, LockBit, and Cl0p featured among the top threat actors, while CVE-2026-35273 stood out among the top CVEs. Government, healthcare, education, retail, and technology ranked as the most affected sectors. North america, United states, Europe, Global, and France were the most affected regions. The severity mix comprised 40 high and 6 medium items. This archive collects that reporting in one place.",
-  "sources_hash": "59e2f1a858378799",
+  "intro": "Between 2026-04-12 and 2026-09-29, ZCyberNews published 50 articles tagged data-breach. ShinyHunters, LockBit, and Cl0p were the top threat actors observed across this coverage. CVE-2026-35273 was the most frequently cited vulnerability. The affected sectors spanned government, healthcare, education, retail, and technology. North america, United states, Europe, Global, and France were the most affected regions. Of the 50 articles, 40 were rated high severity and 6 medium severity. This archive collects reporting on data-breach incidents across that period, tracking the actors, vulnerability, sectors, and regions documented in each case.",
+  "sources_hash": "4c5c3160cb624c24",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-26T08:23:02.678Z",
+  "generated_at": "2026-09-30T09:24:17.756Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

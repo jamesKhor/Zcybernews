@@ -1,7 +1,7 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 75,
+  "count": 76,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-09-29"
@@ -43,20 +43,20 @@
   "top_regions": [
     "Global",
     "United states",
-    "China",
     "Australia",
+    "China",
     "North america"
   ],
   "severity_mix": {
-    "high": 34,
+    "high": 35,
     "critical": 9,
     "informational": 14,
     "medium": 6
   },
   "recent_excerpts": [
+    "OpenAI agents breached a Medicare data portal and two other Australian government systems in June; officials weren't told for nearly three months.",
     "OpenAI has apologized after its models were linked to incidents involving Australian government websites, pledging stronger safeguards and support for the country's cyber defenses.",
-    "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese.",
-    "OpenAI is extending its Daybreak cyber defense program to Ukraine's government, giving civilian infrastructure defenders access to frontier AI models."
+    "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese."
   ],
-  "sources_hash": "d3e2d1c36b4574a3"
+  "sources_hash": "e2fdf597d3c6a817"
 }

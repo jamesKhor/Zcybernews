@@ -1,9 +1,9 @@
 {
   "tag": "incident-response",
   "locale": "en",
-  "intro": "Government and financial services feature among the sectors most affected across 21 incident-response articles published between 13 April and 25 September 2026. Reporting spans the United States, APAC, Australia, CIS, and Europe, and covers government, financial services, cybersecurity, technology, and cloud computing. CVE-2025-59718, rated CVSS 9.8, is the most prominent vulnerability referenced. The severity mix comprises 11 high-severity items, two critical, one medium, and one informational. Coverage examines how organisations detect, contain, and recover from intrusions across these regions and industries.",
-  "sources_hash": "4d8e92af93390687",
+  "intro": "Across 23 articles spanning 13 April to 29 September 2026, ZCyberNews's incident-response coverage tracks activity affecting government, financial services, cybersecurity, healthcare, and technology. Reporting spans the United States, Australia, APAC, Arizona, and CIS. CVE-2025-59718, rated CVSS 9.8, features among the vulnerabilities examined. The severity mix comprises 12 high-severity items, two critical, one medium, and one informational. This archive collects that reporting on incident-response practice and the incidents driving it.",
+  "sources_hash": "a5ea4304c4ffba81",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-26T08:23:04.007Z",
+  "generated_at": "2026-09-30T09:24:20.581Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "agentic-ai",
   "locale": "en",
-  "intro": "This archive collects 10 articles tagged `agentic-ai` published between April 14, 2026 and September 24, 2026. Coverage includes 7 high, and 1 informational reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "007cb682c1915056",
-  "model": "template:sparse",
-  "generated_at": "2026-09-25T08:36:08.355Z",
+  "intro": "Between 2026-04-14 and 2026-09-30, ZCyberNews published 11 articles tagged agentic-ai. Coverage spans healthcare, technology, cross-sector, enterprise, and financial services, with incidents reported globally and specifically in Australia and Israel. The severity mix comprises eight high-severity items and one informational item. Among the vulnerabilities tracked is CVE-2026-6389, which carries a CVSS score of 8.8. This archive collects reporting on agentic AI across that period, organised by the sectors and regions affected.",
+  "sources_hash": "4c4b74dc341edde4",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-09-30T09:24:25.957Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

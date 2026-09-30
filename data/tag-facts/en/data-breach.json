@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 49,
+  "count": 50,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-25"
+    "latest": "2026-09-29"
   },
   "top_actors": [
     "ShinyHunters",
@@ -35,9 +35,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "Arizona's court system says criminal hackers copied personal data on 'many Arizonans.' No ransomware, no ransom demand, no group has claimed the intrusion.",
     "Labcorp will pay $2.3 million and overhaul vendor oversight after the 2019 AMCA breach exposed 10.2 million patients; 44 state AGs announced the settlement Thursday.",
-    "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese.",
-    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273."
+    "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese."
   ],
-  "sources_hash": "59e2f1a858378799"
+  "sources_hash": "4c5c3160cb624c24"
 }
