@@ -1,9 +1,9 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "intro": "Financial services and government organisations were the primary targets across 64 phishing incidents reported between April and August 2026, with the majority rated high severity. Threat actors Silver Fox, AccountDumpling, and Bluekit were observed in these campaigns, which affected regions including Latin America, the United States, Canada, and Russia. Exploitation frequently involved CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. The cryptocurrency, hospitality, and technology sectors also faced exposure, while the remaining eight incidents were assessed as medium severity.",
-  "sources_hash": "6500fd5830d4bc11",
+  "intro": "Financial services and government organizations were the most frequently targeted sectors across 65 phishing articles published between 2026-04-08 and 2026-09-30. Coverage spans Global, United states, Latin america, Canada, and Russia, with 57 high-severity and 8 medium-severity incidents. Silver Fox, AccountDumpling, and Bluekit feature among the tracked threat actors. Frequently cited vulnerabilities include CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. Cryptocurrency, hospitality, and technology round out the affected sectors documented in this archive.",
+  "sources_hash": "ccb9ace9f7127d69",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-08-18T03:45:33.841Z",
+  "generated_at": "2026-10-01T09:50:54.859Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

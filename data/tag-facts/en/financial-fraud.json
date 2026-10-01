@@ -1,13 +1,14 @@
 {
   "tag": "financial-fraud",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-10-01"
   },
   "top_actors": [
-    "NGate"
+    "NGate",
+    "Tren de Aragua"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -18,18 +19,20 @@
     "individuals"
   ],
   "top_regions": [
+    "United states",
     "Brazil",
-    "North america",
-    "United states"
+    "Latin america",
+    "Mexico",
+    "North america"
   ],
   "severity_mix": {
     "high": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "OFAC sanctioned 10 people tied to Ploutus ATM jackpotting linked to Tren de Aragua, with 1,500 attacks and $40.7M in losses across the US.",
     "Flare details how fraudsters bypass credit union loan verification using stolen identities and synthetic SSNs, costing institutions millions in chargebacks.",
-    "A malicious website impersonating a TradingView AI agent deploys malware that hands attackers full control of victims' browsers, enabling account theft and financial data…",
-    "NGate malware, using AI-generated code, has infected the legitimate HandyPay NFC app to steal payment card data and PINs from over 220,000 Android users in Brazil, according to ESET."
+    "A malicious website impersonating a TradingView AI agent deploys malware that hands attackers full control of victims' browsers, enabling account theft and financial data…"
   ],
-  "sources_hash": "857e4479e522d2d5"
+  "sources_hash": "eeb2f1934fc1e136"
 }

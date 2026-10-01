@@ -1,10 +1,10 @@
 {
   "tag": "financial-fraud",
   "locale": "zh",
-  "intro": "此档案收录了2026年4月12日至2026年5月4日期间发布的6篇标记为`financial-fraud`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的聚焦视角。观察到的行为者提及包括NGate，仅在底层文章元数据支持归因时呈现。受影响范围信号强调巴西、北美和美国的金融服务、娱乐及金融服务业，帮助读者对比暴露模式，且不添加档案数据之外的论断。严重程度覆盖包括4篇高危和2篇中危报告。",
+  "intro": "在2026年4月12日至10月1日期间发表的七篇文章中，ZCyberNews对金融欺诈的报道追踪了归因于NGate和Tren de Aragua的活动。金融服务、娱乐、金融服务、公众以及个人位列受影响最严重的行业。美国、巴西、拉丁美洲、墨西哥和北美是最常受影响的地区。四起事件被评为高严重性，两起为中等。报道期涵盖了与这些行为者和行业相关的一系列案件，NGate和Tren de Aragua各自在档案中单独出现。",
   "sources_hash": "ea119d40af04370d",
-  "source_intro_hash": "801d13a8f7f98169",
+  "source_intro_hash": "6aa4e3c16b5ff652",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:08:41.357Z",
+  "generated_at": "2026-10-01T09:51:04.497Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "microsoft",
   "locale": "en",
-  "intro": "Over 41 articles published between April 12 and June 1, 2026, tracked threats targeting Microsoft systems, with 7 critical and 20 high-severity incidents. Threat actors Secret Blizzard and Storm-2755 were observed, while critical vulnerabilities included CVE-2026-41089 (CVSS 9.8), CVE-2026-21643 (CVSS 9.1), and CVE-2026-40372 (CVSS 9.1). Affected sectors spanned enterprise, government, technology, and critical infrastructure, with global impact across Asia, Canada, Europe, and Japan.",
-  "sources_hash": "3a75c4f873a3f048",
+  "intro": "Across 42 articles spanning 12 April to 30 September 2026, ZCyberNews tracked Microsoft security developments affecting enterprise, government, technology, critical infrastructure, and multiple other sectors worldwide. Coverage spanned Global, Ukraine, Asia, Canada, and Europe. Secret Blizzard, Star Blizzard, and Storm-2755 featured among the threat actors observed. Prominent vulnerabilities included CVE-2026-41089 at CVSS 9.8, CVE-2026-21643 and CVE-2026-40372 at CVSS 9.1, and CVE-2026-40361 and CVE-2026-40364 at CVSS 8.4. The severity mix comprised 7 critical, 21 high, 10 medium, 3 informational, and 1 low.",
+  "sources_hash": "dcf490ec45e6bb0f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-02T04:34:33.967Z",
+  "generated_at": "2026-10-01T09:50:56.330Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

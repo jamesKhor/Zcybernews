@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "intro": "2026年4月13日至9月16日期间，共出现17篇标记为apt的高严重性文章。GopherWhisper、CHOSEN BRICK和CyberAv3ngers是该档案中报道最多的威胁行为者。报道涵盖政府、能源、加密货币、技术和航空领域，活动追踪范围包括全球、日本、蒙古、英国和美国。该标签下的每一条目均带有高严重性评级，反映出该时段内对高级持续性威胁行动的持续报道。",
+  "intro": "在2026-04-13至2026-09-30期间，ZCyberNews收录了18篇标记为apt的文章，全部被评为高严重性。GopherWhisper、CHOSEN BRICK和CyberAv3ngers是该集合中报道最多的威胁行为者。报道涵盖政府、能源、加密货币、金融服务和技术领域，事件记录遍及United kingdom、United states、Global、Japan和Mongolia。以下集合将这些报道汇集于一处。",
   "sources_hash": "4f63ffcbb5749d50",
-  "source_intro_hash": "d5885826e650848d",
+  "source_intro_hash": "8241ad5b085d952c",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-16T08:21:12.243Z",
+  "generated_at": "2026-10-01T09:51:03.404Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

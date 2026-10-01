@@ -1,14 +1,15 @@
 {
   "tag": "russia",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-07-28"
+    "latest": "2026-09-30"
   },
   "top_actors": [
     "Silver Fox",
-    "PhantomCore"
+    "PhantomCore",
+    "Star Blizzard"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -26,13 +27,13 @@
     "Kazakhstan"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "critical": 1
   },
   "recent_excerpts": [
     "Resident NGO uncovers a Telegram phishing campaign targeting an exiled Belarusian activist and users in Russia and Kazakhstan using individualized links and device fingerprinting.",
     "Silver Fox group impersonates tax authorities to deliver ValleyRAT and the new ABCDoor backdoor to organizations in Russia and India, per Kaspersky.",
-    "China-linked Silver Fox group targets Indian and Russian organizations with ABCDoor backdoor via tax-themed phishing emails in December 2025 campaign."
+    "Microsoft says FSB-linked Star Blizzard hit 100+ orgs in the US and UK, using a new RedFlick delivery chain that needs one click to drop CosmicPulse."
   ],
-  "sources_hash": "061c0ef0ac1639ca"
+  "sources_hash": "470314b286457f88"
 }

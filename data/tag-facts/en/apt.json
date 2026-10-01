@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "en",
-  "count": 17,
+  "count": 18,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-16"
+    "latest": "2026-09-30"
   },
   "top_actors": [
     "GopherWhisper",
@@ -16,23 +16,23 @@
     "government",
     "energy",
     "cryptocurrency",
-    "technology",
-    "aviation"
+    "financial services",
+    "technology"
   ],
   "top_regions": [
+    "United kingdom",
+    "United states",
     "Global",
     "Japan",
-    "Mongolia",
-    "United kingdom",
-    "United states"
+    "Mongolia"
   ],
   "severity_mix": {
-    "high": 17
+    "high": 18
   },
   "recent_excerpts": [
     "NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware Iranian state actors use to surveil dissidents, activists and journalists via WhatsApp and Telegram...",
     "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026.",
-    "Mirage Kitten targets aviation and FinTech sectors across the Middle East and Africa with NodeRabbit and PollCat RATs, delivered via trojanized coding challenges on LinkedIn."
+    "Microsoft says FSB-linked Star Blizzard hit 100+ orgs in the US and UK, using a new RedFlick delivery chain that needs one click to drop CosmicPulse."
   ],
-  "sources_hash": "6a8f8fe618673b55"
+  "sources_hash": "017ef66ea451f27e"
 }

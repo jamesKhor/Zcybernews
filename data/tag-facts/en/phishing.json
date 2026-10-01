@@ -1,10 +1,10 @@
 {
   "tag": "phishing",
   "locale": "en",
-  "count": 64,
+  "count": 65,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-08-18"
+    "latest": "2026-09-30"
   },
   "top_actors": [
     "Silver Fox",
@@ -37,13 +37,13 @@
   ],
   "top_regions": [
     "Global",
-    "Latin america",
     "United states",
+    "Latin america",
     "Canada",
     "Russia"
   ],
   "severity_mix": {
-    "high": 56,
+    "high": 57,
     "medium": 8
   },
   "recent_excerpts": [
@@ -51,5 +51,5 @@
     "Kaspersky details a cloud-based AitM phishing campaign abusing GitHub Pages and Cloudflare Workers to bypass MFA via service workers and Ultraviolet proxy.",
     "Resident NGO uncovers a Telegram phishing campaign targeting an exiled Belarusian activist and users in Russia and Kazakhstan using individualized links and device fingerprinting."
   ],
-  "sources_hash": "6500fd5830d4bc11"
+  "sources_hash": "ccb9ace9f7127d69"
 }

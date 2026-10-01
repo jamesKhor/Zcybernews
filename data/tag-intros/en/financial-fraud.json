@@ -1,9 +1,9 @@
 {
   "tag": "financial-fraud",
   "locale": "en",
-  "intro": "This archive collects 6 articles tagged `financial-fraud` published between April 12, 2026 and May 4, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Observed actor references include NGate, presented only where the underlying article metadata supports the attribution. The affected-scope signals emphasize financial services, entertainment, and financial-services across Brazil, North america, and United states, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 4 high, and 2 medium reports.",
-  "sources_hash": "857e4479e522d2d5",
-  "model": "template:fallback",
-  "generated_at": "2026-05-18T10:04:48.156Z",
+  "intro": "Across seven articles spanning 12 April to 1 October 2026, ZCyberNews coverage of financial fraud has tracked activity attributed to NGate and Tren de Aragua. Financial services, entertainment, financial-services, general-public, and individuals rank among the sectors most affected. The United States, Brazil, Latin America, Mexico, and North America appear as the most frequently affected regions. Four incidents were rated high severity and two medium. The reporting period covers a range of cases tied to these actors and sectors, with NGate and Tren de Aragua each featuring separately in the archive.",
+  "sources_hash": "eeb2f1934fc1e136",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-10-01T09:50:58.908Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
