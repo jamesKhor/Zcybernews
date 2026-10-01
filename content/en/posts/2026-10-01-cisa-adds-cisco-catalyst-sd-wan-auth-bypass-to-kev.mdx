@@ -1,0 +1,79 @@
+---
+title: CISA Adds Cisco Catalyst SD-WAN Auth Bypass to KEV
+slug: 2026-10-01-cisa-adds-cisco-catalyst-sd-wan-auth-bypass-to-kev
+date: '2026-10-01'
+excerpt: >-
+  CISA added CVE-2026-76504, a 9.8-CVSS auth bypass in Cisco Catalyst SD-WAN
+  Manager, to its KEV catalog after reports of active exploitation.
+category: vulnerabilities
+tags:
+  - cisco
+  - cve-2026-76504
+  - cisa-kev
+  - sd-wan
+  - authentication-bypass
+  - network-security
+language: en
+source_urls:
+  - 'https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html'
+author: ZCyberNews
+draft: false
+cluster_key: 'cve:CVE-2026-76504'
+source_count: 1
+seo_query_target: CVE-2026-76504
+seo_intent: patch-guidance
+seo_title_promise: >-
+  Tells defenders that CVE-2026-76504 in Cisco Catalyst SD-WAN Manager is under
+  active exploitation and has been added to CISA's KEV catalog.
+seo_meta_promise: >-
+  Names CVE-2026-76504, its 9.8 CVSS score, the affected Cisco Catalyst SD-WAN
+  Manager product, and the KEV listing that signals active exploitation.
+target_hub: active-cves
+internal_link_targets:
+  - active-cves
+  - vulnerabilities
+  - cve-2026-76504
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Cisco Catalyst SD-WAN Manager dashboard with a CISA Known Exploited
+  Vulnerabilities alert overlay
+severity: critical
+cvss_score: 9.8
+cve_ids:
+  - CVE-2026-76504
+affected_sectors:
+  - government
+  - enterprise networking
+  - critical infrastructure
+affected_regions:
+  - United States
+publish_tier: public
+---
+## Executive Summary
+
+CISA added **CVE-2026-76504**, a critical authentication bypass in Cisco Catalyst SD-WAN Manager, to its Known Exploited Vulnerabilities catalog on Wednesday after reports of active exploitation. The flaw carries a **CVSS score of 9.8** and allows an unauthenticated, remote attacker to access an affected system.
+
+The KEV listing is the operational signal that matters: it converts an advisory into a deadline. Federal civilian agencies now have a binding remediation window, and any organization running Catalyst SD-WAN Manager in an internet-reachable management plane should treat the vulnerability as exploited-in-the-wild rather than theoretical. Cisco has not been publicly linked to a named threat actor in the source reporting, and no indicators of compromise have been published alongside the KEV entry.
+
+## Technical Analysis
+
+CVE-2026-76504 is an authentication bypass affecting Cisco Catalyst SD-WAN Manager. Per The Hacker News, the vulnerability permits an unauthenticated, remote attacker to access an affected system — the classic pre-auth access primitive that makes edge and management-plane devices attractive targets. The CVSS base score of 9.8 places it in the critical band, consistent with a network-reachable flaw that requires no credentials and no user interaction.
+
+The specific mechanism of the bypass — whether it stems from improper authentication checks, session handling, or an API path that skips validation — is not detailed in the source material available at publication time. What is confirmed is the exploitation status: CISA's KEV addition follows reports of active exploitation, meaning at least one party has already weaponized the flaw against real targets. KEV inclusion is not a theoretical severity judgment; it is a statement that exploitation has been observed.
+
+Catalyst SD-WAN Manager is a centralized control component for software-defined WAN fabrics. Compromise of that management plane is high-leverage: an attacker who reaches it can reconfigure policy, pivot toward managed edge devices, and potentially disrupt or redirect traffic across an organization's WAN estate. That blast radius is why a 9.8 pre-auth bypass in this product class tends to move quickly from advisory to KEV.
+
+The source reporting does not name a threat actor, does not attribute the exploitation to a specific campaign, and does not publish IOCs such as hashes, IPs, or domains. Readers should not assume attribution from the KEV listing alone — KEV records exploitation, not identity.
+
+## Mitigations & Recommendations
+
+Because the source material does not include a vendor patch reference, a fixed-version list, or workaround guidance, the concrete defensive actions available today are constrained to exposure reduction and detection rather than a specific upgrade instruction. Defenders should:
+
+- **Treat the KEV listing as an exploited-in-the-wild signal.** Prioritize CVE-2026-76504 above non-KEV items of similar CVSS in any remediation queue, and apply the federal KEV remediation timeline as a floor even outside government.
+- **Reduce management-plane exposure.** Catalyst SD-WAN Manager interfaces should not be reachable from the public internet. Where remote administration is required, restrict it to a management network or VPN and enforce source-IP allowlists.
+- **Hunt for anomalous administrative activity.** Given the pre-auth nature of the flaw, look for authentication events, configuration changes, or API calls against SD-WAN Manager that do not map to a known administrator or maintenance window. Absence of published IOCs does not mean absence of detectable behavior.
+- **Watch Cisco's advisory channel for the patched-version matrix.** The KEV entry confirms exploitation; the vendor advisory is the authoritative source for the fixed release and any interim workaround. Apply the vendor fix as soon as it is available for the deployed train.
+
+## References
+
+- [CISA Adds Exploited Cisco Catalyst SD-WAN Manager Auth Bypass to KEV — The Hacker News](https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html)
