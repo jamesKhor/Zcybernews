@@ -1,0 +1,73 @@
+---
+title: US Sanctions 10 Over Ploutus ATM Jackpotting Scheme
+slug: 2026-10-01-us-sanctions-10-over-ploutus-atm-jackpotting-scheme
+date: '2026-10-01'
+excerpt: >-
+  OFAC sanctioned 10 people tied to Ploutus ATM jackpotting linked to Tren de
+  Aragua, with 1,500 attacks and $40.7M in losses across the US.
+category: malware
+tags:
+  - ploutus
+  - atm-jackpotting
+  - tren-de-aragua
+  - ofac-sanctions
+  - financial-fraud
+  - cryptocurrency-laundering
+language: en
+source_urls:
+  - 'https://therecord.media/us-sanctions-10-atm-jackpotting-tren-de-aragua'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:sanctions-over-scheme-tied-tren'
+source_count: 1
+seo_query_target: US sanctions 10 over ATM malware scheme tied to Tren de Aragua
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The headline promises the reader will learn who was sanctioned, what ATM
+  malware family is involved, and the scale of the losses tied to the scheme.
+seo_meta_promise: >-
+  The meta description promises the OFAC sanction count, the Ploutus malware
+  family, the Tren de Aragua attribution, and the $40.7 million loss figure.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - ransomware-groups
+  - financial-fraud
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Photo released by the US Treasury Department showing suspects installing
+  malware on an ATM.
+threat_actor: Tren de Aragua
+threat_actor_origin: Venezuela
+affected_sectors:
+  - financial services
+affected_regions:
+  - United States
+  - Mexico
+  - Venezuela
+  - Latin America
+publish_tier: public
+---
+## Executive Summary
+
+The U.S. Treasury Department's Office of Foreign Assets Control (OFAC) sanctioned 10 individuals and several companies it says are tied to an ATM jackpotting operation that has drained cash from at least 1,500 machines in the United States, causing $40.7 million in losses. Treasury attributed the scheme to Tren de Aragua, the Venezuelan criminal organization, calling the ATM thefts a "key source of revenue" for the group.
+
+The sanctions target the money-laundering layer of the operation rather than the malware authors themselves. Treasury said the proceeds were moved to Tren de Aragua members through cryptocurrency or laundered via companies the sanctioned individuals control in Mexico and elsewhere. The action is the latest in a series of U.S. enforcement steps against the jackpotting campaign: at least 98 people have been indicted, and five men pleaded guilty to related charges last month.
+
+## Technical Analysis
+
+The malware at the center of the campaign is Ploutus, a family that forces an infected ATM to dispense all of its available cash — a technique known as jackpotting. Prosecutors and Treasury released photos and video showing suspects opening the top of an ATM, connecting a laptop, and installing the malware on site. Google researchers have previously described Ploutus as "one of the most advanced ATM malware families" they have examined, and government agencies and security experts have warned about its variants for nearly a decade.
+
+Attribution is where the public record is thinner than the sanctions announcement implies. The Justice Department has repeatedly claimed "extensive direct and indirect links" between Ploutus and Tren de Aragua. The Record reported, however, that experts have not found any links between Ploutus and either the group or Anibal Alexander Canelon Aguirre, the man the FBI has named as the malware's developer. Aguirre was added to the FBI's most wanted list and is accused of deploying multiple teams across the U.S. to target ATMs, typically in remote locations. Treasury said it holds photographs of Aguirre with proceeds from jackpotting crimes.
+
+On the financial side, blockchain analysis firm Chainalysis said the ATM jackpotting proceeds "flow through the same channels as drug trafficking money." Chainalysis reported that counterparties of the Tren de Aragua wallets it traced had exposure to laundering operations used by Colombian and Mexican drug cartels, as well as to a Venezuelan national charged with laundering $1 billion. The network, according to Chainalysis, relied on shared laundering infrastructure — including stablecoins — that services multiple criminal organizations across Latin America.
+
+## Mitigations & Recommendations
+
+Defenders at financial institutions and ATM operators should treat this as a physical-access problem as much as a malware problem. The published evidence shows attackers opening ATM enclosures and connecting hardware on site, which means tamper detection, enclosure alarms, and camera coverage on the top-of-ATM service area remain the controls most likely to interrupt an installation attempt. Because the malware forces full cash dispensation, transaction-monitoring rules that flag single-withdrawal events draining a cassette, or a rapid sequence of maximum-value dispenses, can catch a jackpotting event in progress even when the initial install is missed.
+
+On the laundering side, the Chainalysis findings are the operationally useful part for compliance teams: the sanctioned wallets share counterparties and infrastructure with Latin American drug-cartel laundering networks and rely on stablecoins. Screening against the new OFAC designations, and treating shared stablecoin infrastructure as a cross-program risk indicator rather than a Tren de Aragua-specific one, will surface more of this activity than name-matching alone.
+
+## References
+
+- [US sanctions 10 over ATM malware scheme tied to Tren de Aragua — The Record](https://therecord.media/us-sanctions-10-atm-jackpotting-tren-de-aragua)
