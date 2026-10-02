@@ -1,9 +1,9 @@
 {
   "tag": "authentication-bypass",
   "locale": "en",
-  "intro": "ZCiberNews's authentication-bypass tag archive collects 20 articles published between 13 April 2026 and 22 September 2026. Coverage spans five critical-severity CVEs: CVE-2026-20127, CVE-2026-20182, and CVE-2026-20223, each rated CVSS 10, alongside CVE-2019-25763 and CVE-2026-41940 at CVSS 9.8. The severity mix across the archive comprises 10 critical, 7 high, and 3 medium vulnerabilities. Affected sectors include technology, financial services, government, healthcare, and software development, with impact reported globally.",
-  "sources_hash": "2aca7d9022fddc30",
+  "intro": "Twenty-one articles on authentication-bypass vulnerabilities, published between 2026-04-13 and 2026-10-01, cover flaws affecting technology, government, critical infrastructure, enterprise networking, and financial services across Global and United States regions. The most severe include CVE-2026-20127, CVE-2026-20182, and CVE-2026-20223, each rated CVSS 10, alongside CVE-2019-25763 and CVE-2026-41940 at CVSS 9.8. The severity mix comprises 11 critical, 7 high, and 3 medium vulnerabilities. Coverage examines how these authentication-bypass flaws expose organizations in these sectors and regions, with the highest-severity CVEs drawing the most attention.",
+  "sources_hash": "b82a302003fa8a3d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-22T08:18:50.844Z",
+  "generated_at": "2026-10-02T09:27:33.658Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "cisco",
   "locale": "en",
-  "intro": "Interlock and The Gentlemen feature among eight Cisco-tagged articles published between 16 April and 10 September 2026. Three CVEs carry a maximum CVSS score of 10: CVE-2026-20079, CVE-2026-20127, and CVE-2026-20182. CVE-2022-20653 and CVE-2024-20401 also appear. Coverage spans enterprise networking, telecommunications, the federal civilian executive branch, government, and service providers, with five critical and two high-severity items recorded. Reporting reaches Global, North america, Turkey, the UK, and the United states.",
-  "sources_hash": "98c5461ca94ed323",
+  "intro": "Across nine articles spanning 16 April 2026 to 1 October 2026, ZCyberNews coverage of Cisco centers on critical-severity vulnerabilities and the actors exploiting them. Interlock and The Gentlemen feature among the tracked threat actors. The most severe flaws carry CVSS 10 ratings: CVE-2026-20079, CVE-2026-20127, and CVE-2026-20182. CVE-2026-76504 rates CVSS 9.8, while CVE-2022-20653 also appears. Six issues are rated critical and two high. Affected sectors include enterprise networking, government, telecommunications, critical infrastructure, and the federal civilian executive branch. Impacts reach the United States, Global, North America, Turkey, and the UK.",
+  "sources_hash": "3686b7d7a3e97ddf",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-11T07:51:56.066Z",
+  "generated_at": "2026-10-02T09:27:36.501Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

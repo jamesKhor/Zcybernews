@@ -1,9 +1,9 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "intro": "Government and technology sectors lead the affected organizations tracked under the cisa-kev tag, which spans 15 articles published between 2026-04-19 and 2026-09-25. The coverage centers on five high-severity CVEs: CVE-2026-20079 and CVE-2026-48907, each rated CVSS 10, alongside CVE-2023-49105, CVE-2025-39682, and CVE-2026-65400, all rated CVSS 9.8. Enterprise, federal government, and media organizations also appear among the affected sectors. The United States, Global, North America, EU, and Europe rank among the most frequently cited regions. The severity mix across the archive comprises 6 critical, 4 high, and 2 medium entries.",
-  "sources_hash": "e332327c805292cd",
+  "intro": "Across 16 articles spanning 2026-04-19 to 2026-10-01, ZCyberNews tracks CISA's Known Exploited Vulnerabilities catalog, where government, technology, critical infrastructure, enterprise, and federal government sectors bear the brunt. The United States, Global, North America, EU, and Europe remain the most affected regions. Coverage centers on CVE-2026-20079 and CVE-2026-48907, both rated CVSS 10, alongside CVE-2023-49105, CVE-2025-39682, and CVE-2026-65400 at CVSS 9.8. The severity mix comprises seven critical, four high, and two medium entries.",
+  "sources_hash": "b67cdc487e12af44",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-26T08:23:08.195Z",
+  "generated_at": "2026-10-02T09:27:35.016Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

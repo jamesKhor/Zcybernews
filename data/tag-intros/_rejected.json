@@ -1882,5 +1882,17 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-6389 but it is not in the fact sheet",
     "at": "2026-09-30T09:24:45.060Z"
+  },
+  {
+    "tag": "cisa-kev",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-20079 but it is not in the fact sheet; Intro cites CVE-2025-39682 but it is not in the fact sheet",
+    "at": "2026-10-02T09:27:43.628Z"
+  },
+  {
+    "tag": "cisco",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-20079 but it is not in the fact sheet; Intro cites CVE-2026-76504 but it is not in the fact sheet",
+    "at": "2026-10-02T09:27:47.231Z"
   }
 ]

@@ -1,10 +1,10 @@
 {
   "tag": "network-security",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-22"
+    "latest": "2026-10-01"
   },
   "top_actors": [],
   "top_cves": [
@@ -13,20 +13,30 @@
       "cvss": 10
     },
     {
+      "id": "CVE-2026-76504",
+      "cvss": 9.8
+    },
+    {
       "id": "CVE-2024-2973"
     }
   ],
-  "top_sectors": [],
-  "top_regions": [],
+  "top_sectors": [
+    "critical infrastructure",
+    "enterprise networking",
+    "government"
+  ],
+  "top_regions": [
+    "United states"
+  ],
   "severity_mix": {
-    "critical": 3,
+    "critical": 4,
     "medium": 1,
     "informational": 1
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-76504, a 9.8-CVSS auth bypass in Cisco Catalyst SD-WAN Manager, to its KEV catalog after reports of active exploitation.",
     "Arista confirmed active exploitation of CVE-2026-93952, a CVSS 10.0 pre-auth flaw in on-prem VeloCloud Orchestrator deployments using certificate-based Edge authentication.",
-    "Censys research finds 5.9 million internet-facing FTP servers remain online in 2026, a 40% drop from 2024, but still representing a significant attack surface due to the protocol's inherent security w",
-    "Cisco warns of multiple critical vulnerabilities in its Identity Services Engine (ISE) and ISE Passive Identity Connector that allow authenticated attackers to execute arbitrary commands on affected d"
+    "Censys research finds 5.9 million internet-facing FTP servers remain online in 2026, a 40% drop from 2024, but still representing a significant attack surface due to the protocol's inherent security w"
   ],
-  "sources_hash": "2f3ab54dc6c77346"
+  "sources_hash": "cb081adacef245d2"
 }

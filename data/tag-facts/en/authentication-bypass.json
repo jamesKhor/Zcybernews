@@ -1,10 +1,10 @@
 {
   "tag": "authentication-bypass",
   "locale": "en",
-  "count": 20,
+  "count": 21,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-22"
+    "latest": "2026-10-01"
   },
   "top_actors": [],
   "top_cves": [
@@ -31,23 +31,24 @@
   ],
   "top_sectors": [
     "technology",
-    "financial services",
     "government",
-    "healthcare",
-    "software development"
+    "critical infrastructure",
+    "enterprise networking",
+    "financial services"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "United states"
   ],
   "severity_mix": {
-    "critical": 10,
+    "critical": 11,
     "high": 7,
     "medium": 3
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-76504, a 9.8-CVSS auth bypass in Cisco Catalyst SD-WAN Manager, to its KEV catalog after reports of active exploitation.",
     "CVE-2026-86473 (CVSS 9.1) lets Apache Airflow's Core API logout silently fail for bearer-header clients, leaving stolen tokens valid until expiry.",
-    "CISA added CVE-2026-65400, a 9.8-CVSS macOS authentication bypass, to its KEV catalog on August 18, confirming active exploitation. No patch yet.",
-    "CVE-2019-25763 (CVSS 9.8) allows unauthenticated attackers to hijack admin sessions in WordPress Ultimate Addons for Beaver Builder 1.2.4.1 via a crafted POST request to..."
+    "CISA added CVE-2026-65400, a 9.8-CVSS macOS authentication bypass, to its KEV catalog on August 18, confirming active exploitation. No patch yet."
   ],
-  "sources_hash": "2aca7d9022fddc30"
+  "sources_hash": "b82a302003fa8a3d"
 }

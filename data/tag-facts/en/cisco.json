@@ -1,10 +1,10 @@
 {
   "tag": "cisco",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-16",
-    "latest": "2026-09-10"
+    "latest": "2026-10-01"
   },
   "top_actors": [
     "Interlock",
@@ -24,34 +24,35 @@
       "cvss": 10
     },
     {
-      "id": "CVE-2022-20653"
+      "id": "CVE-2026-76504",
+      "cvss": 9.8
     },
     {
-      "id": "CVE-2024-20401"
+      "id": "CVE-2022-20653"
     }
   ],
   "top_sectors": [
     "enterprise networking",
-    "telecommunications",
-    "federal civilian executive branch",
     "government",
-    "service providers"
+    "telecommunications",
+    "critical infrastructure",
+    "federal civilian executive branch"
   ],
   "top_regions": [
+    "United states",
     "Global",
     "North america",
     "Turkey",
-    "UK",
-    "United states"
+    "UK"
   ],
   "severity_mix": {
-    "critical": 5,
+    "critical": 6,
     "high": 2
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-76504, a 9.8-CVSS auth bypass in Cisco Catalyst SD-WAN Manager, to its KEV catalog after reports of active exploitation.",
     "CISA's KEV catalog now lists CVE-2026-20079, a CVSS 10.0 authentication bypass in Cisco software, alongside exploited Citrix and Fortinet flaws. Federal patch deadline: Sept. 12.",
-    "Rapid7 discovered CVE-2026-20182, a 10.0-CVSS authentication bypass in Cisco Catalyst SD-WAN Controller. Unauthenticated attackers can inject SSH keys and issue NETCONF commands.",
-    "CVE-2026-20188: Unauthenticated attackers can crash Cisco Crosswork Network Controller and NSO via low-complexity exploit. No patch for older releases; manual reboot required."
+    "Rapid7 discovered CVE-2026-20182, a 10.0-CVSS authentication bypass in Cisco Catalyst SD-WAN Controller. Unauthenticated attackers can inject SSH keys and issue NETCONF commands."
   ],
-  "sources_hash": "98c5461ca94ed323"
+  "sources_hash": "3686b7d7a3e97ddf"
 }

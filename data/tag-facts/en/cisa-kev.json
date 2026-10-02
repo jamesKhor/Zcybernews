@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 15,
+  "count": 16,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-09-25"
+    "latest": "2026-10-01"
   },
   "top_actors": [],
   "top_cves": [
@@ -32,9 +32,9 @@
   "top_sectors": [
     "government",
     "technology",
+    "critical infrastructure",
     "enterprise",
-    "federal government",
-    "media"
+    "federal government"
   ],
   "top_regions": [
     "United states",
@@ -44,14 +44,14 @@
     "Europe"
   ],
   "severity_mix": {
-    "critical": 6,
+    "critical": 7,
     "high": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-76504, a 9.8-CVSS auth bypass in Cisco Catalyst SD-WAN Manager, to its KEV catalog after reports of active exploitation.",
     "CISA added CVE-2026-65660, a network-exploitable SharePoint code injection flaw, to its KEV catalog with a 2026-09-28 federal remediation deadline.",
-    "CISA added CVE-2025-39682, a 9.8-CVSS Linux kernel TLS receive-path flaw, to its KEV catalog after evidence of active exploitation in the wild.",
-    "CVE-2025-39964, a race condition in the Linux kernel's AF_ALG socket code, is now in CISA's KEV catalog. Federal agencies must remediate by September 21, 2026."
+    "CISA added CVE-2025-39682, a 9.8-CVSS Linux kernel TLS receive-path flaw, to its KEV catalog after evidence of active exploitation in the wild."
   ],
-  "sources_hash": "e332327c805292cd"
+  "sources_hash": "b67cdc487e12af44"
 }
