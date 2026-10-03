@@ -1,10 +1,10 @@
 {
   "tag": "privilege-escalation",
   "locale": "en",
-  "count": 32,
+  "count": 33,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-16"
+    "latest": "2026-10-02"
   },
   "top_actors": [
     "Chaotic Eclipse",
@@ -52,9 +52,9 @@
     "medium": 3
   },
   "recent_excerpts": [
+    "CISA added CVE-2026-102490 to its KEV catalog: a local privilege flaw in Zammad that lets the zammad service account escalate to root, chainable with CVE-2026-102489.",
     "Google's September Pixel bulletin patches CVE-2026-58704, a high-severity modem privilege-escalation flaw under limited, targeted exploitation, plus 109 other bugs.",
-    "CISA added CVE-2026-42016, a JFrog Artifactory token-scope authorization flaw enabling privilege escalation, to its KEV catalog with a Sept 25 patch deadline.",
-    "CVE-2026-81963 and CVE-2026-85880 are Windows EoP zero-days exploited before patch. Microsoft's Sept 2026 Patch Tuesday fixes a record 964 CVEs—patch now."
+    "CISA added CVE-2026-42016, a JFrog Artifactory token-scope authorization flaw enabling privilege escalation, to its KEV catalog with a Sept 25 patch deadline."
   ],
-  "sources_hash": "bb0a20cf63fd7491"
+  "sources_hash": "b6f1981d12e11b36"
 }
