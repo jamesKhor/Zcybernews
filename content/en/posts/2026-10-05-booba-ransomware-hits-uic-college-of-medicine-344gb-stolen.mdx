@@ -1,0 +1,73 @@
+---
+title: 'Booba Ransomware Hits UIC College of Medicine, 344GB Stolen'
+slug: 2026-10-05-booba-ransomware-hits-uic-college-of-medicine-344gb-stolen
+date: '2026-10-05'
+excerpt: >-
+  Booba ransomware gang claims it stole 344GB from the University of Illinois
+  Chicago College of Medicine, disrupting systems at the school serving 1,300
+  medical students.
+category: industry
+tags:
+  - ransomware
+  - booba
+  - frag-ransomware
+  - education
+  - healthcare
+  - data-breach
+language: en
+source_urls:
+  - 'https://therecord.media/ransomware-university-illinois-chicago'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:university-illinois-chicago-affected-ransomware'
+source_count: 1
+seo_query_target: University of Illinois Chicago affected by ransomware attack on medical school
+seo_intent: incident-impact
+seo_title_promise: >-
+  The headline promises that UIC's College of Medicine was hit by the Booba
+  ransomware gang and that 344GB of data was claimed stolen.
+seo_meta_promise: >-
+  The meta description names UIC College of Medicine as the victim, quantifies
+  the claimed theft at 344GB, and identifies Booba as the ransomware gang behind
+  the claim.
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - frag-ransomware
+  - education-sector-breaches
+news_sitemap_eligible: true
+featured_image_alt: University of Illinois Chicago campus building exterior
+threat_actor: Booba
+affected_sectors:
+  - education
+  - healthcare
+affected_regions:
+  - North America
+  - United States
+publish_tier: public
+---
+## Executive Summary
+
+The University of Illinois Chicago (UIC) has confirmed a ransomware intrusion that disrupted systems at its College of Medicine and resulted in the theft of data from college servers. The Booba ransomware gang claimed responsibility last week, asserting it exfiltrated 344 gigabytes from the school.
+
+UIC says all affected systems have been restored, its main network was not touched, and patient care at UI Health was unaffected. The university has notified law enforcement and says it will contact individuals whose information was taken once its investigation determines what was compromised. For defenders in higher education and academic medicine, the case is a reminder that ransomware crews are still landing on research and clinical-adjacent infrastructure — and that data theft, not encryption, is often the lasting harm.
+
+## Technical Analysis
+
+A university spokesperson told Recorded Future News that the attackers "were able to steal some information held on the college's servers" and that an investigation is underway to determine whether "any personal, research or academic information was compromised." The spokesperson said some College of Medicine systems were temporarily unavailable but have since been restored, and that the university's main network was not affected. No impact on patient care delivery at UI Health was reported.
+
+UIC is the largest university in Chicago, serving more than 35,000 students across 16 colleges. Its College of Medicine enrolls roughly 1,300 students. The scope of the stolen data — and whether it includes student records, research data, or protected health information — has not been disclosed.
+
+Booba claimed the attack last week and said it took 344GB. The group first appeared at the end of July and has already claimed 49 victims, according to the reporting. SentinelOne's Brett Williams told Recorded Future News that Booba appears to be a rebrand of the Frag ransomware operation, based on the leak site's style and negotiation flow. Encrypted files are renamed with the `.booba` extension, and Williams noted variants exist for both Linux and Windows.
+
+Beyond UIC, Booba has targeted several companies and small county governments. Merrimack County, New Hampshire, confirmed to local outlets and DysruptionHub that it dealt with a cyberattack several weeks ago and has since recovered. Patch reported that county dispatchers could not access criminal data from the state's software to share with officers during the incident.
+
+## Mitigations & Recommendations
+
+The UIC incident offers no published IOCs, so defenders should focus on behavioral signals tied to the Booba/Frag lineage. Watch for files renamed with the `.booba` extension and for the negotiation and leak-site patterns Williams attributed to the Frag rebrand. Because Linux variants exist, don't assume the campaign is Windows-only — audit Linux servers in research, lab, and administrative environments for the same encryption behavior.
+
+Given the group's pattern of hitting small county governments and mid-sized institutions, organizations in education and local government should verify that backups are isolated from production, that EDR coverage extends to Linux hosts, and that data-exfiltration detection (large outbound transfers, archive creation) is tuned. UIC's statement that its main network was unaffected while a college-level environment was compromised is a reminder to segment subsidiary or departmental networks from core infrastructure.
+
+## References
+
+- [University of Illinois Chicago affected by ransomware attack on medical school — The Record](https://therecord.media/ransomware-university-illinois-chicago)
