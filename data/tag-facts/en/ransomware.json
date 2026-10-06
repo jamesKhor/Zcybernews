@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 62,
+  "count": 63,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-07"
+    "latest": "2026-10-05"
   },
   "top_actors": [
     "LockBit",
@@ -35,13 +35,13 @@
     "manufacturing",
     "multiple",
     "government",
-    "financial services"
+    "education"
   ],
   "top_regions": [
-    "Global",
     "North america",
-    "Europe",
+    "Global",
     "United states",
+    "Europe",
     "Turkey"
   ],
   "severity_mix": {
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "Booba ransomware gang claims it stole 344GB from the University of Illinois Chicago College of Medicine, disrupting systems at the school serving 1,300 medical students.",
     "Berlin investigates a fresh data leak after hackers published stolen login credentials, following a Rhysida-linked breach of two city ministries that exposed employee personal...",
-    "Pro-Ukraine group VantaCore, a rebrand of Thor, has hit at least 7 Russian firms with custom ransomware and RATs, demanding millions in ransom, per F6.",
-    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident."
+    "Pro-Ukraine group VantaCore, a rebrand of Thor, has hit at least 7 Russian firms with custom ransomware and RATs, demanding millions in ransom, per F6."
   ],
-  "sources_hash": "718e7296d5f88014"
+  "sources_hash": "67606824861553d2"
 }

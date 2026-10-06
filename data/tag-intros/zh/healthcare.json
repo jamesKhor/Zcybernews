@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "zh",
-  "intro": "LockBit、Interlock和Rhysida出现在13篇标记为healthcare的文章中，发布时间介于2026-04-12至2026-09-25之间。报道范围涵盖healthcare、Healthcare、critical infrastructure、financial services和Government，事件报告涉及United states、Global、Canada、Illinois和Moldova。其中11篇文章为高严重性，1篇为中严重性。该标签存档汇集了有关这些行为者如何与医疗服务提供者及其所依赖的更广泛系统产生交集的报道。",
+  "intro": "在2026年4月12日至10月5日期间发表的14篇文章中，ZCyberNews追踪了影响医疗保健领域的高严重性事件，LockBit、Booba和Interlock均位列报道最多的威胁行为者之中。报道范围涵盖美国、全球、北美、加拿大和伊利诺伊州，反映了这些活动的地区覆盖范围。受影响行业包括医疗保健、Healthcare、关键基础设施、教育和金融服务。在已报道的事件中，11起被评为高严重性，1起为中等严重性，凸显了该期间针对医疗服务提供者及相关系统的严重活动集中程度。",
   "sources_hash": "120a8de6edbf282a",
-  "source_intro_hash": "33e563b45a41463d",
+  "source_intro_hash": "e8c0ceb2e597361c",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-26T08:23:21.605Z",
+  "generated_at": "2026-10-06T09:51:14.496Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

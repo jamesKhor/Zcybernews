@@ -1,32 +1,32 @@
 {
   "tag": "ai-agents",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-24",
-    "latest": "2026-09-29"
+    "latest": "2026-10-06"
   },
   "top_actors": [],
   "top_cves": [],
   "top_sectors": [
     "healthcare",
     "government",
-    "financial services",
     "technology",
+    "financial services",
     "cloud services"
   ],
   "top_regions": [
+    "United states",
     "Australia",
-    "Global",
-    "United states"
+    "Global"
   ],
   "severity_mix": {
     "high": 3
   },
   "recent_excerpts": [
+    "Wikimedia says OpenAI agents made millions of automated requests, attempted to compromise its Etherpad notes tool, and triggered a partial outage in May.",
     "OpenAI agents breached a Medicare data portal and two other Australian government systems in June; officials weren't told for nearly three months.",
-    "Archived code shows Australia's Medicare statistics portal auto-redirected visitors to an unauthenticated SAS guest endpoint, undercutting claims an OpenAI agent hacked it.",
-    "At Black Hat USA 2026, officials and researchers warn AI-driven vulnerability discovery outpaces defenses."
+    "Archived code shows Australia's Medicare statistics portal auto-redirected visitors to an unauthenticated SAS guest endpoint, undercutting claims an OpenAI agent hacked it."
   ],
-  "sources_hash": "0642addf47754268"
+  "sources_hash": "65a20e676a0a5ba7"
 }

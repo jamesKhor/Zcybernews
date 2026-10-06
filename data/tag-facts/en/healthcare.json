@@ -1,39 +1,39 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-25"
+    "latest": "2026-10-05"
   },
   "top_actors": [
     "LockBit",
-    "Interlock",
-    "Rhysida"
+    "Booba",
+    "Interlock"
   ],
   "top_cves": [],
   "top_sectors": [
     "healthcare",
     "Healthcare",
     "critical infrastructure",
-    "financial services",
-    "Government"
+    "education",
+    "financial services"
   ],
   "top_regions": [
     "United states",
     "Global",
+    "North america",
     "Canada",
-    "Illinois",
-    "Moldova"
+    "Illinois"
   ],
   "severity_mix": {
     "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "Booba ransomware gang claims it stole 344GB from the University of Illinois Chicago College of Medicine, disrupting systems at the school serving 1,300 medical students.",
     "Labcorp will pay $2.3 million and overhaul vendor oversight after the 2019 AMCA breach exposed 10.2 million patients; 44 state AGs announced the settlement Thursday.",
-    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident.",
-    "West Pharmaceutical Services took systems offline globally after a May 4 ransomware attack with data exfiltration. Unit 42 is investigating; ransom may have been paid."
+    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident."
   ],
-  "sources_hash": "edc712c35b400253"
+  "sources_hash": "2bd809f2688b9197"
 }

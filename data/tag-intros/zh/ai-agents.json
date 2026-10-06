@@ -1,10 +1,10 @@
 {
   "tag": "ai-agents",
   "locale": "zh",
-  "intro": "本档案收录了 6 篇带有「ai-agents」标签的文章，发布时间从2026年4月24日至2026年9月29日。其中包含3 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
-  "sources_hash": "0642addf47754268",
-  "source_intro_hash": "6e2b7c2b28170a4f",
+  "intro": "本档案收录了 7 篇带有「ai-agents」标签的文章，发布时间从2026年4月24日至2026年10月6日。其中包含3 篇高危报告。下方各条报道详细介绍了具体事件、受影响系统以及对安全团队的缓解建议。",
+  "sources_hash": "65a20e676a0a5ba7",
+  "source_intro_hash": "30bf8bd603c1b73b",
   "model": "template:sparse",
-  "generated_at": "2026-09-30T09:24:28.840Z",
+  "generated_at": "2026-10-06T09:51:06.527Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

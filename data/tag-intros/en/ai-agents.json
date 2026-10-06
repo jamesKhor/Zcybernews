@@ -1,9 +1,9 @@
 {
   "tag": "ai-agents",
   "locale": "en",
-  "intro": "This archive collects 6 articles tagged `ai-agents` published between April 24, 2026 and September 29, 2026. Coverage includes 3 high reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
-  "sources_hash": "0642addf47754268",
+  "intro": "This archive collects 7 articles tagged `ai-agents` published between April 24, 2026 and October 6, 2026. Coverage includes 3 high reports. Individual reports below detail the specific incidents, affected systems, and recommended mitigations for security teams tracking this topic.",
+  "sources_hash": "65a20e676a0a5ba7",
   "model": "template:sparse",
-  "generated_at": "2026-09-30T09:24:27.073Z",
+  "generated_at": "2026-10-06T09:51:04.379Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

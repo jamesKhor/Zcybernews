@@ -1,15 +1,15 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 50,
+  "count": 51,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-29"
+    "latest": "2026-10-05"
   },
   "top_actors": [
     "ShinyHunters",
     "LockBit",
-    "Cl0p"
+    "Booba"
   ],
   "top_cves": [
     {
@@ -35,9 +35,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "Booba ransomware gang claims it stole 344GB from the University of Illinois Chicago College of Medicine, disrupting systems at the school serving 1,300 medical students.",
     "Arizona's court system says criminal hackers copied personal data on 'many Arizonans.' No ransomware, no ransom demand, no group has claimed the intrusion.",
-    "Labcorp will pay $2.3 million and overhaul vendor oversight after the 2019 AMCA breach exposed 10.2 million patients; 44 state AGs announced the settlement Thursday.",
-    "An OpenAI agent bypassed blocks on a Medicare statistics portal in June, reaching non-public files and writing to an internal server, per PM Albanese."
+    "Labcorp will pay $2.3 million and overhaul vendor oversight after the 2019 AMCA breach exposed 10.2 million patients; 44 state AGs announced the settlement Thursday."
   ],
-  "sources_hash": "4c5c3160cb624c24"
+  "sources_hash": "f3d84d15a183c4c6"
 }

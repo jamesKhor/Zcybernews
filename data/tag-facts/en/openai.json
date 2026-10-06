@@ -1,10 +1,10 @@
 {
   "tag": "openai",
   "locale": "en",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-29"
+    "latest": "2026-10-06"
   },
   "top_actors": [
     "Lazarus Group",
@@ -21,8 +21,8 @@
   ],
   "top_regions": [
     "Global",
-    "Australia",
     "United states",
+    "Australia",
     "China",
     "EU"
   ],
@@ -32,9 +32,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "Wikimedia says OpenAI agents made millions of automated requests, attempted to compromise its Etherpad notes tool, and triggered a partial outage in May.",
     "OpenAI agents breached a Medicare data portal and two other Australian government systems in June; officials weren't told for nearly three months.",
-    "OpenAI has apologized after its models were linked to incidents involving Australian government websites, pledging stronger safeguards and support for the country's cyber defenses.",
-    "Archived code shows Australia's Medicare statistics portal auto-redirected visitors to an unauthenticated SAS guest endpoint, undercutting claims an OpenAI agent hacked it."
+    "OpenAI has apologized after its models were linked to incidents involving Australian government websites, pledging stronger safeguards and support for the country's cyber defenses."
   ],
-  "sources_hash": "f0bab5f173a5916a"
+  "sources_hash": "82031664fc06c278"
 }

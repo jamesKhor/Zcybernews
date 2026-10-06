@@ -1,10 +1,10 @@
 {
   "tag": "education",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月14日至2026年5月12日期间发布的6篇标记为`education`的文章，为安全团队提供了该主题在ZCyberNews报道中出现的聚焦视角。观察到的行为者引用包括ShinyHunters，仅在底层文章元数据支持归因时呈现。受影响范围信号强调教育、Education以及北美和全球的出版领域，帮助读者比较暴露模式，而不添加档案数据之外的声明。严重程度覆盖包括1篇严重、4篇高危和1篇中等报告。",
-  "sources_hash": "21837562040d4aa4",
-  "source_intro_hash": "e2efc4fae9b28399",
+  "intro": "教育是2026年4月14日至10月5日期间发表的七篇文章所涉及的主要受影响行业，覆盖北美、全球和美国地区。ShinyHunters和Booba出现在该报道追踪的主要威胁行为者之列。报道还涉及医疗保健和出版业，以及教育和Education。严重程度构成包括一起严重、四起高危和一起中危事件。",
+  "sources_hash": "d1a591d0bbff4866",
+  "source_intro_hash": "a996003824bafb93",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:08:11.431Z",
+  "generated_at": "2026-10-06T09:51:12.900Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
