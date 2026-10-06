@@ -1,0 +1,83 @@
+---
+title: ClickFix Campaign Hijacks 100+ Ukrainian Sites to Spread Lunex
+slug: 2026-10-06-clickfix-campaign-hijacks-100-ukrainian-sites-to-spread-lunex
+date: '2026-10-06'
+excerpt: >-
+  CERT-UA tracks UAC-0277: 100+ compromised Ukrainian sites serve fake
+  Cloudflare checks that install Lunex Stealer and the LunarAxe browser
+  extension.
+category: malware
+tags:
+  - clickfix
+  - lunex-stealer
+  - cert-ua
+  - ukraine
+  - infostealer
+  - uac-0277
+language: en
+source_urls:
+  - 'https://therecord.media/clickfix-campaign-ukraine-lunex-stealer'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:clickfix-campaign-ukraine-compromises-over'
+source_count: 1
+seo_query_target: >-
+  ClickFix campaign in Ukraine compromises over 100 websites to spread Lunex
+  malware
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The headline promises details on a ClickFix campaign that compromised over 100
+  Ukrainian websites to deliver Lunex Stealer, including the UAC-0277 tracking
+  identifier and browser extension components.
+seo_meta_promise: >-
+  The meta description promises CERT-UA's UAC-0277 tracking details, the number
+  of compromised sites (100+), and the specific malware components (Lunex
+  Stealer, LunarAxe) delivered via fake Cloudflare verification pages.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - infostealer
+  - clickfix
+  - cert-ua
+  - ukraine-cyber
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Screenshot of a fake Cloudflare human verification page prompting users to
+  paste a PowerShell command
+severity: high
+threat_actor: UAC-0277
+threat_actor_origin: Russian-speaking (per Ontinue research on Lunex MaaS developers)
+affected_sectors:
+  - retail
+  - education
+affected_regions:
+  - Ukraine
+publish_tier: public
+---
+## Executive Summary
+
+Ukraine's Computer Emergency Response Team (CERT-UA) has identified a ClickFix campaign that compromised more than 100 legitimate websites to deliver Lunex Stealer, an information-stealing malware-as-a-service platform. The campaign, tracked as UAC-0277, was discovered in September and uses fake Cloudflare verification pages to trick visitors into executing malicious PowerShell commands.
+
+The operation adds to research published earlier in September by Swiss cybersecurity firm Ontinue, which documented similar Lunex activity targeting Ukrainian-speaking users and characterized the malware as a relatively new MaaS offering developed by a Russian-speaking team. CERT-UA has not attributed the campaign to a known threat group.
+
+## Technical Analysis
+
+Attackers injected malicious code into legitimate Ukrainian websites, including an online store and a children's coloring page site, according to CERT-UA. Visitors to compromised pages were presented with a counterfeit Cloudflare human-verification prompt instructing them to copy and execute a command in PowerShell — a technique now widely known as ClickFix. Following the instructions downloaded and installed Lunex Stealer rather than completing any verification.
+
+Lunex Stealer harvests passwords, authentication tokens, and cryptocurrency wallet data, and provides attackers with remote access to infected machines. In some infections, the malware also installs a malicious Chromium browser extension called LunarAxe, which masquerades as "Microsoft Office Word Editor." The extension can steal cookies, browsing history, and credentials entered into websites. It also grants attackers broad control over the victim's browser, including the ability to manipulate tabs, execute JavaScript on webpages, capture screenshots, and alter proxy settings.
+
+A second component, NaiveMess, extends LunarAxe's reach beyond the browser into the host file system. According to CERT-UA, attackers can browse directories, read and overwrite files, and execute programs on infected machines.
+
+Ontinue's earlier research found that Lunex targets seven Chromium-based browsers: Google Chrome, Microsoft Edge, Brave, Yandex Browser, Opera, Opera GX, and Vivaldi. The firm also reported that browser components can maintain persistent access to victim files even after the primary Lunex executable is removed — a detail that complicates remediation for incident responders. Ontinue identified 28 Lunex operator panels hosted across 13 countries, with a control panel that defaults to Russian and contains numerous Russian-language interface elements.
+
+CERT-UA did not disclose the identities of victims or the total number of infected machines.
+
+## Mitigations & Recommendations
+
+Defenders should treat ClickFix-style lures as a distinct detection problem from traditional phishing. Because the attack relies on the user manually pasting a command into PowerShell rather than clicking a link or opening an attachment, email and web gateway filtering alone will not catch the payload delivery. Monitoring for PowerShell processes spawned by browser processes — particularly those executing `Invoke-WebRequest`, `IEX`, or downloading from recently registered domains — provides a more reliable detection surface.
+
+For browser extension abuse, organizations should enforce extension allowlisting in Chrome and Edge via enterprise policy and audit installed extensions for masquerading names such as "Microsoft Office Word Editor." Because LunarAxe and NaiveMess can persist after removal of the primary Lunex executable, standard AV removal is insufficient; responders should treat any confirmed Lunex infection as requiring full browser profile reset and file-system integrity verification.
+
+## References
+
+- [ClickFix campaign in Ukraine compromises over 100 websites to spread Lunex malware](https://therecord.media/clickfix-campaign-ukraine-lunex-stealer) — The Record (Recorded Future News)
