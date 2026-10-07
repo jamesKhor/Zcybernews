@@ -1,38 +1,38 @@
 {
   "tag": "apt",
   "locale": "en",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-30"
+    "latest": "2026-10-06"
   },
   "top_actors": [
     "GopherWhisper",
     "CHOSEN BRICK",
-    "CyberAv3ngers"
+    "CL-STA-1178"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "energy",
+    "aviation",
     "cryptocurrency",
-    "financial services",
-    "technology"
+    "financial services"
   ],
   "top_regions": [
     "United kingdom",
     "United states",
     "Global",
     "Japan",
-    "Mongolia"
+    "Middle east"
   ],
   "severity_mix": {
     "high": 18
   },
   "recent_excerpts": [
+    "Unit 42 ties Iran-nexus CL-STA-1178 to Blinder Tunnel, which hit Iraqi critical infrastructure in March 2026 using fake Dubai Airports lures and GitHub-hosted C2.",
     "NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware Iranian state actors use to surveil dissidents, activists and journalists via WhatsApp and Telegram...",
-    "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026.",
-    "Microsoft says FSB-linked Star Blizzard hit 100+ orgs in the US and UK, using a new RedFlick delivery chain that needs one click to drop CosmicPulse."
+    "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026."
   ],
-  "sources_hash": "017ef66ea451f27e"
+  "sources_hash": "3bd684bbb97e4c80"
 }

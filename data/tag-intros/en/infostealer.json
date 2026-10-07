@@ -1,9 +1,9 @@
 {
   "tag": "infostealer",
   "locale": "en",
-  "intro": "Between 2026-04-10 and 2026-09-24, ZCyberNews covered 15 infostealer articles spanning a period of sustained activity. AMOS Stealer, Gremlin Stealer, and LummaC2 feature among the top threat actors tracked across this coverage. The affected sectors include technology, financial services, software development, cryptocurrency, and gaming. Geographically, incidents touched Global and Ukraine. The severity mix across these 15 articles comprises 12 high-severity items and one critical item. This archive collects reporting on infostealer campaigns, their targets, and the regions and industries they reached during the five-month window.",
-  "sources_hash": "6ec6f45a068697dd",
+  "intro": "Sixteen infostealer articles published between 2026-04-10 and 2026-10-06 examine AMOS Stealer, Gremlin Stealer, and LummaC2. Coverage spans technology, financial services, software development, cryptocurrency, and education, with incidents reported globally and in Ukraine. Thirteen items carry a high severity rating and one is rated critical. The reporting tracks how these three distinct stealers affect the listed sectors and regions across the seven-month period.",
+  "sources_hash": "81d1eb3009b7dd8b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-25T08:36:08.344Z",
+  "generated_at": "2026-10-07T09:57:06.931Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

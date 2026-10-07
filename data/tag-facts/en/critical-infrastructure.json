@@ -1,15 +1,15 @@
 {
   "tag": "critical-infrastructure",
   "locale": "en",
-  "count": 31,
+  "count": 32,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-25"
+    "latest": "2026-10-06"
   },
   "top_actors": [
     "APT33",
     "CL-STA-1062",
-    "CyberAv3ngers"
+    "CL-STA-1178"
   ],
   "top_cves": [
     {
@@ -19,8 +19,8 @@
   ],
   "top_sectors": [
     "energy",
-    "government",
     "critical infrastructure",
+    "government",
     "critical-infrastructure",
     "utilities"
   ],
@@ -29,7 +29,7 @@
     "Global",
     "North america",
     "Europe",
-    "Asia-pacific"
+    "Middle east"
   ],
   "severity_mix": {
     "high": 15,
@@ -38,9 +38,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Unit 42 ties Iran-nexus CL-STA-1178 to Blinder Tunnel, which hit Iraqi critical infrastructure in March 2026 using fake Dubai Airports lures and GitHub-hosted C2.",
     "Sens. Warner and Cruz introduced the Telecommunications Cybersecurity and Resilience Act, a voluntary NTIA working group response to Salt Typhoon's breach of at least nine US...",
-    "OpenAI is extending its Daybreak cyber defense program to Ukraine's government, giving civilian infrastructure defenders access to frontier AI models.",
-    "Chen Yixin, head of China's Ministry of State Security, named OpenAI's GPT-5.5-Cyber and Anthropic's Claude Mythos as signs of a 'disruptive upgrade' in offensive cyber capability."
+    "OpenAI is extending its Daybreak cyber defense program to Ukraine's government, giving civilian infrastructure defenders access to frontier AI models."
   ],
-  "sources_hash": "cd8bf542fe61d253"
+  "sources_hash": "c96f7f9a4356a010"
 }

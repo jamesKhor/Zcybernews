@@ -1,10 +1,10 @@
 {
   "tag": "clickfix",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-09-17"
+    "latest": "2026-10-06"
   },
   "top_actors": [
     "AMOS Stealer",
@@ -14,22 +14,25 @@
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
+    "education",
     "finance",
+    "retail",
     "technology"
   ],
   "top_regions": [
     "Asia",
     "Europe",
-    "North america"
+    "North america",
+    "Ukraine"
   ],
   "severity_mix": {
-    "high": 3,
+    "high": 4,
     "medium": 1
   },
   "recent_excerpts": [
+    "CERT-UA tracks UAC-0277: 100+ compromised Ukrainian sites serve fake Cloudflare checks that install Lunex Stealer and the LunarAxe browser extension.",
     "Unit 42's lab infection shows AMOS stealer pulling payloads from getmacouscloud[.]com and exfiltrating browser, wallet, and Telegram data to C2 161.35.146[.]120.",
-    "A new ClickFix-style campaign targets macOS users with fake Apple instructions to run malicious commands.",
-    "A ClickFix social engineering campaign bypasses macOS security warnings by using Script Editor to execute malicious commands, marking a significant evolution in Mac-targeting malware."
+    "A new ClickFix-style campaign targets macOS users with fake Apple instructions to run malicious commands."
   ],
-  "sources_hash": "539e5f5a1b2e5697"
+  "sources_hash": "51c2fae745095ff5"
 }

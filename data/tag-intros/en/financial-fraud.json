@@ -1,9 +1,9 @@
 {
   "tag": "financial-fraud",
   "locale": "en",
-  "intro": "Across seven articles spanning 12 April to 1 October 2026, ZCyberNews coverage of financial fraud has tracked activity attributed to NGate and Tren de Aragua. Financial services, entertainment, financial-services, general-public, and individuals rank among the sectors most affected. The United States, Brazil, Latin America, Mexico, and North America appear as the most frequently affected regions. Four incidents were rated high severity and two medium. The reporting period covers a range of cases tied to these actors and sectors, with NGate and Tren de Aragua each featuring separately in the archive.",
-  "sources_hash": "eeb2f1934fc1e136",
+  "intro": "Eight articles on financial fraud published between 12 April and 7 October 2026 examine activity tied to Tren de Aragua and NGate. The coverage spans financial services, banking, entertainment, financial-services, and the general public. The United States, Latin America, Venezuela, Brazil, and Mexico appear among the affected regions. Four articles carry high severity and two carry medium severity. The reporting documents how fraud campaigns reach both institutions and individuals across these markets, with the two named threat actors each featuring separately in the archive.",
+  "sources_hash": "97e81dd37ab0de34",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-01T09:50:58.908Z",
+  "generated_at": "2026-10-07T09:57:09.845Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

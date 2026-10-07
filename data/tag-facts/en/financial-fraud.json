@@ -1,38 +1,38 @@
 {
   "tag": "financial-fraud",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-01"
+    "latest": "2026-10-07"
   },
   "top_actors": [
-    "NGate",
-    "Tren de Aragua"
+    "Tren de Aragua",
+    "NGate"
   ],
   "top_cves": [],
   "top_sectors": [
     "financial services",
+    "banking",
     "entertainment",
     "financial-services",
-    "general-public",
-    "individuals"
+    "general-public"
   ],
   "top_regions": [
     "United states",
-    "Brazil",
     "Latin america",
-    "Mexico",
-    "North america"
+    "Venezuela",
+    "Brazil",
+    "Mexico"
   ],
   "severity_mix": {
     "high": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "Anibal Canelon Aguirre, alleged Ploutus ATM jackpotting architect tied to Tren de Aragua, pleaded not guilty in Nebraska; 1,500 attacks caused $40.7M in losses.",
     "OFAC sanctioned 10 people tied to Ploutus ATM jackpotting linked to Tren de Aragua, with 1,500 attacks and $40.7M in losses across the US.",
-    "Flare details how fraudsters bypass credit union loan verification using stolen identities and synthetic SSNs, costing institutions millions in chargebacks.",
-    "A malicious website impersonating a TradingView AI agent deploys malware that hands attackers full control of victims' browsers, enabling account theft and financial data…"
+    "Flare details how fraudsters bypass credit union loan verification using stolen identities and synthetic SSNs, costing institutions millions in chargebacks."
   ],
-  "sources_hash": "eeb2f1934fc1e136"
+  "sources_hash": "97e81dd37ab0de34"
 }

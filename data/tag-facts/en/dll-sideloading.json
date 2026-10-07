@@ -1,23 +1,23 @@
 {
   "tag": "dll-sideloading",
   "locale": "en",
-  "count": 5,
+  "count": 6,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-08-31"
+    "latest": "2026-10-06"
   },
   "top_actors": [
+    "CL-STA-1178",
     "HelloNet",
-    "LOTUSLITE",
-    "ValleyRAT"
+    "LOTUSLITE"
   ],
   "top_cves": [],
   "top_sectors": [
+    "aviation",
     "banking",
     "communications",
-    "education",
-    "energy",
-    "government"
+    "critical infrastructure",
+    "education"
   ],
   "top_regions": [
     "Africa",
@@ -30,9 +30,9 @@
     "high": 5
   },
   "recent_excerpts": [
+    "Unit 42 ties Iran-nexus CL-STA-1178 to Blinder Tunnel, which hit Iraqi critical infrastructure in March 2026 using fake Dubai Airports lures and GitHub-hosted C2.",
     "Kaspersky found ValleyRAT delivered via fake adware installer that disables Defender and sideloads libcef.dll. Targets Chinese-speaking users.",
-    "A new PlugX USB worm variant uses DLL sideloading to propagate across Asia and Africa, targeting removable drives for initial access and establishing persistence.",
-    "A fraudulent website impersonating Anthropic's Claude AI distributes a self-deleting installer that deploys the PlugX remote access trojan via DLL sideloading."
+    "A new PlugX USB worm variant uses DLL sideloading to propagate across Asia and Africa, targeting removable drives for initial access and establishing persistence."
   ],
-  "sources_hash": "20314eff4bc247b4"
+  "sources_hash": "553cf34ef1b42090"
 }

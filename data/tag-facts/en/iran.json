@@ -1,23 +1,23 @@
 {
   "tag": "iran",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-16"
+    "latest": "2026-10-06"
   },
   "top_actors": [
     "CHOSEN BRICK",
     "APT33",
-    "CyberAv3ngers"
+    "CL-STA-1178"
   ],
   "top_cves": [],
   "top_sectors": [
     "government",
     "water",
+    "critical infrastructure",
     "energy",
-    "activists",
-    "civil society"
+    "telecommunications"
   ],
   "top_regions": [
     "United states",
@@ -30,9 +30,9 @@
     "high": 10
   },
   "recent_excerpts": [
+    "Unit 42 ties Iran-nexus CL-STA-1178 to Blinder Tunnel, which hit Iraqi critical infrastructure in March 2026 using fake Dubai Airports lures and GitHub-hosted C2.",
     "NCSC, FBI and AIVD warn that Iranian state actors use CHOSEN BRICK malware, delivered via WhatsApp and Telegram social engineering, to spy on dissidents and journalists.",
-    "NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware Iranian state actors use to surveil dissidents, activists and journalists via WhatsApp and Telegram...",
-    "Security researchers uncovered 'Fast16,' a pre-Stuxnet sabotage malware that targeted high-precision calculation software in Iran, tampering with results and self-propagating."
+    "NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware Iranian state actors use to surveil dissidents, activists and journalists via WhatsApp and Telegram..."
   ],
-  "sources_hash": "31e2b9dda811a154"
+  "sources_hash": "884c3ebc69ecb174"
 }

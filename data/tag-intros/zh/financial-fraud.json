@@ -1,10 +1,10 @@
 {
   "tag": "financial-fraud",
   "locale": "zh",
-  "intro": "在2026年4月12日至10月1日期间发表的七篇文章中，ZCyberNews对金融欺诈的报道追踪了归因于NGate和Tren de Aragua的活动。金融服务、娱乐、金融服务、公众以及个人位列受影响最严重的行业。美国、巴西、拉丁美洲、墨西哥和北美是最常受影响的地区。四起事件被评为高严重性，两起为中等。报道期涵盖了与这些行为者和行业相关的一系列案件，NGate和Tren de Aragua各自在档案中单独出现。",
+  "intro": "2026年4月12日至10月7日期间发表的八篇关于金融欺诈的文章，审视了与Tren de Aragua和NGate相关的活动。报道范围涵盖金融服务、银行业、娱乐业、金融服务以及公众。美国、拉丁美洲、委内瑞拉、巴西和墨西哥出现在受影响地区之中。四篇文章为高严重性，两篇为中等严重性。报道记录了欺诈活动如何触及这些市场中的机构和个人，两个被点名的威胁行为者各自在档案中单独出现。",
   "sources_hash": "ea119d40af04370d",
-  "source_intro_hash": "6aa4e3c16b5ff652",
+  "source_intro_hash": "6b2b8c2fc9bc0fc7",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-01T09:51:04.497Z",
+  "generated_at": "2026-10-07T09:57:22.869Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

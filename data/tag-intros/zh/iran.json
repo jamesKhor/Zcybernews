@@ -1,10 +1,10 @@
 {
   "tag": "iran",
   "locale": "zh",
-  "intro": "2026-04-12至2026-09-16期间发表的十一篇文章带有iran标签。CHOSEN BRICK、APT33和CyberAv3ngers出现在这一报道所追踪的主要威胁行为者之列。报道涵盖政府、水务、能源、活动人士和公民社会等受影响最严重的领域。在地域上，材料覆盖United states、Iran、Middle east、Netherlands和United kingdom。十一篇文章中有十篇被评为高严重性。这些文章共同记录了归因于上述行为者的活动，以及承受其影响的领域和地区。",
+  "intro": "2026-04-12至2026-10-06期间发表的十二篇文章审视了与伊朗相关的网络活动。CHOSEN BRICK、APT33和CL-STA-1178出现在所涉主要威胁行为者之列。报道涵盖政府、水务、关键基础设施、能源和电信等受影响最严重的行业。美国、伊朗、中东、荷兰和英国位列受影响最严重的地区。十二篇文章中有十篇被评为高严重性级别，反映出这一时期所记录事件的分量。",
   "sources_hash": "c728c44f6c9d8c81",
-  "source_intro_hash": "04487705f0ed51be",
+  "source_intro_hash": "90e3b119a9c14712",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-16T08:21:16.641Z",
+  "generated_at": "2026-10-07T09:57:25.303Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

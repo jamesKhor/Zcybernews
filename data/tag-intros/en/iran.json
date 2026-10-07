@@ -1,9 +1,9 @@
 {
   "tag": "iran",
   "locale": "en",
-  "intro": "Eleven articles published between 2026-04-12 and 2026-09-16 carry the iran tag. CHOSEN BRICK, APT33, and CyberAv3ngers appear among the top threat actors tracked across this coverage. The reporting spans government, water, energy, activists, and civil society as the most affected sectors. Geographically, the material covers the United states, Iran, the Middle east, Netherlands, and United kingdom. Ten of the eleven articles are rated high severity. Together these pieces document activity attributed to the named actors and the sectors and regions absorbing its impact.",
-  "sources_hash": "31e2b9dda811a154",
+  "intro": "Twelve articles published between 2026-04-12 and 2026-10-06 examine Iran-related cyber activity. CHOSEN BRICK, APT33, and CL-STA-1178 appear among the top threat actors covered. Reporting spans government, water, critical infrastructure, energy, and telecommunications as the most affected sectors. The United states, Iran, the Middle east, Netherlands, and United kingdom rank among the top affected regions. Ten of the twelve articles carry a high severity rating, reflecting the weight of incidents documented across this period.",
+  "sources_hash": "884c3ebc69ecb174",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-16T08:20:59.841Z",
+  "generated_at": "2026-10-07T09:57:08.387Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

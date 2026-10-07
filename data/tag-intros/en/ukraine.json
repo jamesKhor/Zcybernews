@@ -1,9 +1,9 @@
 {
   "tag": "ukraine",
   "locale": "en",
-  "intro": "Five articles tagged Ukraine were published between 2026-04-15 and 2026-09-23. UAC-0247 and GRU are the top threat actors named across this coverage. The reporting spans government, healthcare, critical infrastructure, defense, and Government sectors. Affected regions include Ukraine, Europe, and North america. Four of the five articles carry a high severity rating. The tag archive collects ZCyberNews reporting on activity tied to these actors and sectors across the stated date range.",
-  "sources_hash": "729018c34950871b",
+  "intro": "Six articles tagged ukraine span 2026-04-15 to 2026-10-06, covering a period in which UAC-0247, GRU, and UAC-0277 were tracked across government, healthcare, critical infrastructure, defense, and education. Activity touched Ukraine, Europe, and North america, with five items rated high severity. The reporting documents campaigns affecting public services, medical providers, essential systems, military-adjacent organizations, and schools, reflecting sustained targeting across multiple sectors and regions during the six-month window.",
+  "sources_hash": "02bf6f8a1b02b1ab",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-24T08:13:01.401Z",
+  "generated_at": "2026-10-07T09:57:15.655Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

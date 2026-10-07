@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "count": 25,
+  "count": 26,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-07-07"
+    "latest": "2026-10-07"
   },
   "top_actors": [
     "Scattered Spider",
@@ -14,8 +14,8 @@
   "top_cves": [],
   "top_sectors": [
     "government",
-    "telecommunications",
     "financial services",
+    "telecommunications",
     "law enforcement",
     "cryptocurrency"
   ],
@@ -32,9 +32,9 @@
     "informational": 1
   },
   "recent_excerpts": [
+    "Anibal Canelon Aguirre, alleged Ploutus ATM jackpotting architect tied to Tren de Aragua, pleaded not guilty in Nebraska; 1,500 attacks caused $40.7M in losses.",
     "Canada's CSE executed state-authorized hacks against a ransomware-as-a-service gang, fentanyl traffickers, and an extremist group in 2025, disrupting infrastructure and deleting...",
-    "French authorities detained a 15-year-old on April 25 for allegedly hacking ANTS, the national ID agency handling passports and driver's licenses.",
-    "Swiss and German police arrested 10 suspects tied to the Nigeria-linked Black Axe network, including a regional leader overseeing Southern Europe operations."
+    "French authorities detained a 15-year-old on April 25 for allegedly hacking ANTS, the national ID agency handling passports and driver's licenses."
   ],
-  "sources_hash": "6833583bca1422fb"
+  "sources_hash": "6cca8dcd3a3b9c1e"
 }

@@ -1,9 +1,9 @@
 {
   "tag": "apt",
   "locale": "en",
-  "intro": "Between 2026-04-13 and 2026-09-30, ZCyberNews catalogued 18 articles tagged apt, every one of them rated high severity. GopherWhisper, CHOSEN BRICK, and CyberAv3ngers appear among the most-covered threat actors in this set. The reporting spans government, energy, cryptocurrency, financial services, and technology, with incidents recorded across the United kingdom, United states, Global, Japan, and Mongolia. The collection below gathers that coverage in one place.",
-  "sources_hash": "017ef66ea451f27e",
+  "intro": "Across 19 articles spanning 13 April 2026 to 6 October 2026, ZCyberNews coverage of advanced persistent threats tracks GopherWhisper, CHOSEN BRICK, and CL-STA-1178. Government, energy, aviation, cryptocurrency, and financial services rank among the most affected sectors, while activity touches the United kingdom, United states, Global, Japan, and Middle east. Eighteen of the 19 reports carry a high severity rating. The archive below collects each report on these actors and the campaigns attributed to them.",
+  "sources_hash": "3bd684bbb97e4c80",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-01T09:50:57.466Z",
+  "generated_at": "2026-10-07T09:57:05.837Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
