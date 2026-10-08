@@ -1,0 +1,75 @@
+---
+title: DOJ Charges MonsterCloud CEO Zohar Pinhasi in Ransomware Fraud
+slug: 2026-10-08-doj-charges-monstercloud-ceo-zohar-pinhasi-in-ransomware-fraud
+date: '2026-10-08'
+excerpt: >-
+  DOJ charged MonsterCloud CEO Zohar Pinhasi with wire fraud after he allegedly
+  took $19M from ransomware victims while secretly paying $8M to the attackers.
+category: industry
+tags:
+  - ransomware
+  - doj
+  - wire-fraud
+  - incident-response
+  - monstercloud
+language: en
+source_urls:
+  - 'https://therecord.media/ransomware-recovery-charges-doj'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:charges-ransomware-recovery-secretly-paying'
+source_count: 1
+seo_query_target: DOJ charges ransomware recovery CEO for secretly paying hackers
+seo_intent: incident-impact
+seo_title_promise: >-
+  The headline promises readers the identity of the ransomware recovery
+  executive charged by DOJ and the fraud mechanism behind the charges.
+seo_meta_promise: >-
+  The meta description names Zohar Pinhasi and MonsterCloud and delivers the
+  $19M/$8M dollar figures that quantify the alleged scheme.
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - ransomware-groups
+  - incident-response
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Department of Justice seal outside the Robert F. Kennedy Department of Justice
+  Building in Washington, D.C.
+affected_sectors:
+  - government
+  - law enforcement
+affected_regions:
+  - United States
+  - Israel
+publish_tier: public
+---
+## Executive Summary
+
+The U.S. Department of Justice charged Zohar Pinhasi, the 50-year-old owner of Florida-based ransomware recovery firm MonsterCloud, with wire fraud and wire fraud conspiracy on Wednesday. Prosecutors allege Pinhasi marketed "proprietary tools" and "advanced decryption techniques" that could restore encrypted data without paying ransomware operators, then simply paid the ransoms himself and billed clients a markup. According to the indictment, Pinhasi collected roughly $19 million from clients while paying about $8 million to cybercriminals. He faces up to 20 years in prison if convicted.
+
+The case matters for defenders because it targets the murky middle layer of the ransomware economy — the negotiators, recovery firms, and "decryption" vendors that victims turn to when they cannot or will not engage attackers directly. The DOJ's theory is not that paying a ransom is itself illegal, but that misrepresenting how a recovery was achieved to justify a markup is wire fraud.
+
+## Technical Analysis
+
+The indictment describes a straightforward arbitrage: MonsterCloud would contract with a ransomware victim, claim it could decrypt files without paying, and then — according to prosecutors — contact the ransomware operator, negotiate a payment, obtain the decryption key, and pass the restored data back to the client at a substantial premium. In one 2023 incident cited in the charging documents, Pinhasi allegedly paid $8,200 to the attacker and invoiced the client $150,000.
+
+U.S. Attorney Joseph Nocella Jr. said in a statement that Pinhasi "re-victimized his clients while extracting a hefty profit for himself." The DOJ's aggregation of the alleged scheme puts total client billings at approximately $19 million against roughly $8 million in ransom payments.
+
+This is not the first time MonsterCloud's business model has drawn scrutiny. A 2019 ProPublica investigation reported that a researcher set up a sting by infecting his own device with ransomware and contacting MonsterCloud for help. According to ProPublica, MonsterCloud claimed it could decrypt the files without payment and then immediately reached out to the fake attacker offering to pay the ransom. Pinhasi told ProPublica at the time that he could not share his methods because they were a trade secret and denied misleading clients.
+
+The same ProPublica reporting noted that local governments and police departments were among MonsterCloud's customers, and that Pinhasi had retained John Pistole, a former deputy director of the FBI, as a spokesperson. Pistole told ProPublica in 2019 that paying the ransom "was the business model."
+
+The Pinhasi charges follow a separate DOJ action in May, when two ransomware negotiators were sentenced to four years each after pleading guilty to conducting their own covert ransomware attacks while ostensibly negotiating on behalf of at least five victims. Taken together, the two cases show federal prosecutors treating the recovery-and-negotiation industry as an enforcement target rather than a neutral intermediary.
+
+FBI and CISA guidance has for years advised organizations not to pay ransoms, citing the absence of any guarantee of data recovery and the risk of funding further criminal operations. That guidance has not eliminated demand for third-party recovery services, which is the gap MonsterCloud and similar firms have occupied.
+
+## Mitigations & Recommendations
+
+The Pinhasi case does not describe a technical vulnerability, so there is no patch or detection signature to deploy. The defensive lesson is contractual and procedural. Organizations that engage third-party ransomware recovery or negotiation firms should require written disclosure of whether a ransom will be paid, obtain itemized invoices that separate ransom cost from service fees, and verify any claim of "proprietary decryption" against the actual recovery method. Legal counsel should review engagement letters for language that would permit undisclosed payments to threat actors, since such payments can carry sanctions exposure depending on the recipient.
+
+Incident response plans should also name an approved recovery vendor in advance, so that decisions are not made under time pressure during an active encryption event. The DOJ's willingness to bring wire fraud charges against a recovery CEO means procurement and legal teams now have a concrete reason to audit existing vendor relationships.
+
+## References
+
+- [DOJ charges ransomware recovery CEO for secretly paying hackers — The Record](https://therecord.media/ransomware-recovery-charges-doj)
