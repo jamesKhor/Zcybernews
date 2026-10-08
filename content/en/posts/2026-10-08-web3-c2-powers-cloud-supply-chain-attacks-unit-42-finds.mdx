@@ -1,0 +1,80 @@
+---
+title: 'Web3 C2 Powers Cloud Supply Chain Attacks, Unit 42 Finds'
+slug: 2026-10-08-web3-c2-powers-cloud-supply-chain-attacks-unit-42-finds
+date: '2026-10-08'
+excerpt: >-
+  Unit 42: ChainDrop npm worm hit 400+ packages and PolinRider spans npm, Go,
+  Packagist, using smart-contract C2 to steal cloud IAM keys and CI/CD tokens.
+category: malware
+tags:
+  - supply-chain
+  - cloud-security
+  - npm
+  - web3
+  - north-korea
+  - ci-cd
+language: en
+source_urls:
+  - 'https://unit42.paloaltonetworks.com/web3-cloud-supply-chain-attacks/'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:evolution-web3-cloud-supply-chain'
+source_count: 1
+seo_query_target: Evolution of Web3 in Cloud Supply Chain Attacks
+seo_intent: technical-analysis
+seo_title_promise: >-
+  Explains how Web3 smart-contract C2 is now used in cloud supply chain attacks,
+  naming ChainDrop, PolinRider, and Alluring Pisces with concrete package
+  counts.
+seo_meta_promise: >-
+  Names the ChainDrop npm worm's 400+ infected packages and PolinRider's
+  multi-registry reach, plus the cloud IAM and CI/CD credentials both campaigns
+  target.
+target_hub: data-breaches
+internal_link_targets:
+  - data-breaches
+  - supply-chain
+  - cloud-security
+  - malware-loaders
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Diagram of a software supply chain attack path from a poisoned package to a
+  cloud management console, with a smart contract acting as command-and-control.
+threat_actor: Alluring Pisces
+threat_actor_origin: North Korea
+affected_sectors:
+  - technology
+  - software development
+publish_tier: public
+---
+## Executive Summary
+
+Threat actors have moved command-and-control for cloud-focused supply chain malware into blockchain infrastructure, according to research published October 7, 2026 by Palo Alto Networks Unit 42. The shift lets operators rotate exfiltration endpoints through smart contract transactions instead of hard-coded domains, defeating the domain takedowns and IP blocklists that have historically disrupted these campaigns.
+
+Unit 42 ties the technique to two named campaigns — the ChainDrop npm worm, which infected more than 400 packages, and PolinRider, which spans npm, Go modules, and Packagist — and attributes related activity to Alluring Pisces (also tracked as Sapphire Sleet or Midnight Neptune), a North Korea-affiliated state-sponsored group. The firm's 2026 Global Incident Response Report identifies software supply chain compromise as a leading initial access vector against enterprise cloud environments.
+
+## Technical Analysis
+
+Unit 42's central argument is that supply chain malware has been re-engineered around cloud credentials rather than endpoint persistence. Developer workstations and CI/CD runners hold elevated IAM tokens, service account keys, and deployment secrets; current malware prioritizes extracting those secrets at the moment dependencies are resolved.
+
+**ChainDrop** is traced to the Shai-Hulud family. It executed a preinstall script hook that downloaded a custom Bun runtime, which then launched an obfuscated credential harvester. Beyond static disk files, the harvester scanned memory inside running build processes — a technique that catches ephemeral IAM keys, CI/CD worker tokens, and short-lived OIDC federation keys that never touch disk. The runner terminated after collection.
+
+For C2, ChainDrop used a technique Unit 42 calls EtherHiding: the malware queries smart contract transactions that carry dynamically encrypted exfiltration IPs or domains. The worm also injected persistent task hooks that fire whenever a developer opens a project or starts an AI coding session, giving the operator repeated execution opportunities without a persistent implant.
+
+**PolinRider** broadens the delivery surface. Rather than relying on package install scripts, it hides loaders in repository configuration files, web resources, and IDE workspace automation. Loading the workspace triggers background execution and exfiltration of developer credentials, cloud session tokens, and environment secrets. Across variants, PolinRider resolves C2 through multiple Web3 mechanisms — multi-chain transaction queries across TRON, Aptos, and Binance Smart Chain, plus zero-data address resolution such as NullReceiver. Unit 42 describes a hybrid architecture in which zero-data transfers serve as a backup channel when primary RPC gateways or multi-chain lookups are blocked.
+
+Unit 42 attributes related supply chain campaigns to Alluring Pisces, citing activity against Axios, Mastra AI, and Rust's `arrayref` crate. The report does not name specific victims for ChainDrop or PolinRider beyond the affected package ecosystems.
+
+The operational logic behind the Web3 pivot is straightforward. Once a backdoored package is published, registry auditors and static analysis tools inspect it for hard-coded C2 domains or IPs. Hard-coded infrastructure leads to takedown, blocklisting, and package removal. Smart contract lookups remove that single point of failure: a transaction can point the entire botnet at a new endpoint without modifying the malware.
+
+Unit 42 states that harvested credentials can provide direct access to cloud management consoles and management APIs, bypassing MFA where other controls are absent.
+
+## Mitigations & Recommendations
+
+Unit 42's guidance is staged. First, determine whether the organization's business domain ever legitimately requires Web3 or blockchain network activity. If it does not, blocking that traffic is a low-cost control that directly targets the C2 channel described here. Second, apply endpoint protection and network security controls capable of monitoring and blocking the processes and outbound traffic that compromised build runners generate. Third, automate policy controls across every CI/CD runner and version control system in the environment, since the campaigns described depend on unmonitored automation executing attacker-controlled code.
+
+Given the credential focus, defenders should treat any secret reachable from a build runner — IAM keys, OIDC federation tokens, service account keys, deployment secrets — as potentially exposed if a poisoned dependency was resolved. Rotation scope should follow the blast radius of those tokens rather than the specific package.
+
+## References
+
+- [Evolution of Web3 in Cloud Supply Chain Attacks — Unit 42](https://unit42.paloaltonetworks.com/web3-cloud-supply-chain-attacks/)
