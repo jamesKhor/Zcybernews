@@ -1,9 +1,9 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "intro": "Between 2026-04-13 and 2026-09-30, ZCyberNews published 26 articles tagged cloud-security. Coverage spans a severity mix of 17 high, 2 critical, and 3 informational items. APT41 and PCPJack appear among the top threat actors observed. Prominent vulnerabilities include CVE-2026-33413 (CVSS 8.8), CVE-2026-6389 (CVSS 8.8), CVE-2025-29927, CVE-2025-48703, and CVE-2025-55182. Affected sectors include technology, government, healthcare, cloud-services, and financial services. The reporting reaches Global, EU, Israel, and North america audiences, reflecting the breadth of cloud-security incidents tracked across this period.",
-  "sources_hash": "2c9682bb5a25249f",
+  "intro": "Twenty-seven cloud-security articles published between 2026-04-13 and 2026-10-08 are collected here. Coverage spans technology, government, healthcare, cloud-services, and financial services, with activity reported across Global, EU, Israel, and North america. Alluring Pisces, APT41, and PCPJack appear among the tracked threat actors. Prominent vulnerabilities include CVE-2026-33413 and CVE-2026-6389, both rated CVSS 8.8, alongside CVE-2025-29927, CVE-2025-48703, and CVE-2025-55182. The severity mix comprises 17 high, 3 informational, and 2 critical items.",
+  "sources_hash": "e349aa0a0565e9f1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-30T09:24:19.489Z",
+  "generated_at": "2026-10-08T10:09:13.902Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

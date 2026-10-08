@@ -1906,5 +1906,11 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-35273 but it is not in the fact sheet",
     "at": "2026-10-06T09:51:11.970Z"
+  },
+  {
+    "tag": "cloud-security",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-6389 but it is not in the fact sheet",
+    "at": "2026-10-08T10:09:22.136Z"
   }
 ]

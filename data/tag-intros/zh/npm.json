@@ -1,10 +1,10 @@
 {
   "tag": "npm",
   "locale": "zh",
-  "intro": "2026年4月下旬至5月中旬，ZCyberNews追踪到13篇关于npm生态系统的文章，其中8篇被评为严重级，4篇为高危级。威胁行为者TeamPCP、CanisterSprawl和mini Shai-Hulud被观察到针对全球软件开发、技术、人工智能、自动化和云服务领域。关键漏洞包括CVE-2026-41650和CVE-2026-44664，每个漏洞的CVSS评分为6.1。在此期间还记录了一起中等严重性事件。",
+  "intro": "在2026年4月21日至10月8日期间的14篇文章中，ZCyberNews追踪了与TeamPCP、Alluring Pisces和CanisterSprawl相关的npm生态系统活动。报道中反复出现两个漏洞：CVE-2026-41650和CVE-2026-44664，两者的CVSS评分均为6.1。该标签存档中的严重性分布包括一个中危、八个严重和四个高危发现。受影响行业包括软件开发、技术、AI、自动化和云服务，影响范围覆盖全球各地区。报道窗口涵盖约六个月的事件、公告及后续分析，涉及软件包、注册表以及依赖它们的供应链。",
   "sources_hash": "cd9dc93a3b4f3333",
-  "source_intro_hash": "8de271166ab6b1cb",
+  "source_intro_hash": "72d4a26aa9f6929f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:09:51.789Z",
+  "generated_at": "2026-10-08T10:09:24.702Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

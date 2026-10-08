@@ -1,12 +1,13 @@
 {
   "tag": "cloud-security",
   "locale": "en",
-  "count": 26,
+  "count": 27,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-30"
+    "latest": "2026-10-08"
   },
   "top_actors": [
+    "Alluring Pisces",
     "APT41",
     "PCPJack"
   ],
@@ -48,9 +49,9 @@
     "critical": 2
   },
   "recent_excerpts": [
+    "Unit 42: ChainDrop npm worm hit 400+ packages and PolinRider spans npm, Go, Packagist, using smart-contract C2 to steal cloud IAM keys and CI/CD tokens.",
     "Unit 42's OperTraitor scanned OperatorHub and found IBM Turbonomic granting cluster-wide secret access, tied to CVE-2026-6389 (CVSS 8.8) in the operator's RBAC design.",
-    "SentinelLabs uncovers PCPJack, a credential-stealing worm targeting Docker, Kubernetes, Redis, and MongoDB that actively removes rival TeamPCP access from compromised cloud...",
-    "OAuth tokens with no expiration persist in Google and Microsoft tenants — attackers bypass MFA and perimeter controls."
+    "SentinelLabs uncovers PCPJack, a credential-stealing worm targeting Docker, Kubernetes, Redis, and MongoDB that actively removes rival TeamPCP access from compromised cloud..."
   ],
-  "sources_hash": "2c9682bb5a25249f"
+  "sources_hash": "e349aa0a0565e9f1"
 }

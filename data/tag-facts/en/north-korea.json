@@ -1,23 +1,23 @@
 {
   "tag": "north-korea",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-05-06"
+    "latest": "2026-10-08"
   },
   "top_actors": [
     "Lazarus Group",
-    "APT37",
-    "APT37 (ScarCruft, InkySquid)"
+    "Alluring Pisces",
+    "APT37"
   ],
   "top_cves": [],
   "top_sectors": [
     "cryptocurrency",
     "technology",
     "financial services",
-    "finance",
-    "government"
+    "software development",
+    "finance"
   ],
   "top_regions": [
     "Global",
@@ -31,9 +31,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "Unit 42: ChainDrop npm worm hit 400+ packages and PolinRider spans npm, Go, Packagist, using smart-contract C2 to steal cloud IAM keys and CI/CD tokens.",
     "ESET says APT37 compromised Sqgame card game platform to deliver BirdCall backdoor to Android devices, stealing SMS, call logs, and private keys from ethnic Koreans in Yanbian.",
-    "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…",
-    "North Korean hackers laundered 76% of all stolen cryptocurrency in 2026 — $2.3 billion — per Chainalysis."
+    "North Korean hackers siphoned over $12 million from crypto users in Q1 2026 using trojanized trading apps like CoinStats and TradingView AI Agent to steal recovery phrases and…"
   ],
-  "sources_hash": "26f2fda23aca322b"
+  "sources_hash": "97204a7a38c24198"
 }

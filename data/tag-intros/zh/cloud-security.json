@@ -3,8 +3,8 @@
   "locale": "zh",
   "intro": "本档案收录了 25 篇带有「cloud-security」标签的文章，发布时间从2026年4月13日至2026年5月7日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2026-33413、CVE-2025-29927、CVE-2025-48703，每一项均以原文中的漏洞背景和元数据为依据。可见的威胁行为者引用包括 APT41、PCPJack，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于technology、government、healthcare，地区包括 Global、EU、Israel，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括2 篇严重、16 篇高危、3 篇信息类报告。",
   "sources_hash": "d6216f942aaa67bd",
-  "source_intro_hash": "18efefdca57312fb",
+  "source_intro_hash": "4911a584136c19c0",
   "model": "template:fallback",
-  "generated_at": "2026-09-30T09:24:34.164Z",
+  "generated_at": "2026-10-08T10:09:22.137Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

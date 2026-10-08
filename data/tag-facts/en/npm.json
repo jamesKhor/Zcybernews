@@ -1,15 +1,15 @@
 {
   "tag": "npm",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-21",
-    "latest": "2026-05-15"
+    "latest": "2026-10-08"
   },
   "top_actors": [
     "TeamPCP",
-    "CanisterSprawl",
-    "mini Shai-Hulud"
+    "Alluring Pisces",
+    "CanisterSprawl"
   ],
   "top_cves": [
     {
@@ -37,9 +37,9 @@
     "high": 4
   },
   "recent_excerpts": [
+    "Unit 42: ChainDrop npm worm hit 400+ packages and PolinRider spans npm, Go, Packagist, using smart-contract C2 to steal cloud IAM keys and CI/CD tokens.",
     "CVE-2026-44664 (CVSS 6.1) in fast-xml-builder lets attackers break out of XML comments and inject arbitrary content via triple-dash sequences; fixed in version 1.1.6.",
-    "Socket and StepSecurity found backdoored node-ipc versions 9.1.6, 9.2.3, and 12.0.1 exfiltrate SSH keys, AWS credentials, and env files from developer machines.",
-    "OpenAI says two employees' devices were compromised in the TeamPCP Mini Shai-Hulud campaign, forcing rotation of code-signing certificates across macOS, Windows, iOS, and Android."
+    "Socket and StepSecurity found backdoored node-ipc versions 9.1.6, 9.2.3, and 12.0.1 exfiltrate SSH keys, AWS credentials, and env files from developer machines."
   ],
-  "sources_hash": "620d26d1b5a3b104"
+  "sources_hash": "3361436df8a3bbe2"
 }

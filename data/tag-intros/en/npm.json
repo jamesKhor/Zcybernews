@@ -1,9 +1,9 @@
 {
   "tag": "npm",
   "locale": "en",
-  "intro": "Between late April and mid-May 2026, ZCyberNews tracked 13 articles on the npm ecosystem, with eight rated critical and four high. The threat actors TeamPCP, CanisterSprawl, and mini Shai-Hulud were observed targeting software development, technology, AI, automation, and cloud services globally. Key vulnerabilities included CVE-2026-41650 and CVE-2026-44664, each carrying a CVSS score of 6.1. One medium-severity incident was also recorded during this period.",
-  "sources_hash": "620d26d1b5a3b104",
+  "intro": "Across 14 articles spanning 21 April to 8 October 2026, ZCyberNews tracked npm ecosystem activity tied to TeamPCP, Alluring Pisces, and CanisterSprawl. Two flaws recurred in coverage: CVE-2026-41650 and CVE-2026-44664, both rated CVSS 6.1. The severity mix across the tag archive comprises one medium, eight critical, and four high findings. Affected sectors include software development, technology, AI, automation, and cloud services, while the impact reached Global regions. The reporting window covers roughly six months of incidents, advisories, and follow-up analysis concerning packages, registries, and the supply chains that depend on them.",
+  "sources_hash": "3361436df8a3bbe2",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:01:01.793Z",
+  "generated_at": "2026-10-08T10:09:15.483Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
