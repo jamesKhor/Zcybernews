@@ -1,7 +1,7 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "count": 90,
+  "count": 91,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-10-08"
@@ -44,19 +44,19 @@
     "Global",
     "North america",
     "Europe",
-    "Asia",
-    "United states"
+    "United states",
+    "Asia"
   ],
   "severity_mix": {
-    "high": 52,
+    "high": 53,
     "critical": 16,
     "medium": 16,
     "informational": 4
   },
   "recent_excerpts": [
+    "Bitdefender found Midnight Mimosa ad-fraud malware preinstalled on thousands of MediaTek-based Android phones across 150+ countries, with 32 disguised payload apps.",
     "Unit 42: ChainDrop npm worm hit 400+ packages and PolinRider spans npm, Go, Packagist, using smart-contract C2 to steal cloud IAM keys and CI/CD tokens.",
-    "Boston Scientific disclosed a cyberattack disrupting order processing and shipments of pacemakers and stents.",
-    "Unit 42's NOVA system uncovered 14,090 novel vulnerabilities across 3,915 OSS projects in two months — 40% high or critical severity — collapsing the patch window to near zero."
+    "Boston Scientific disclosed a cyberattack disrupting order processing and shipments of pacemakers and stents."
   ],
-  "sources_hash": "f3b77b29506a72be"
+  "sources_hash": "cef0d9470e1abe96"
 }

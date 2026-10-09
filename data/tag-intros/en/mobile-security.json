@@ -1,9 +1,9 @@
 {
   "tag": "mobile-security",
   "locale": "en",
-  "intro": "Mobile security coverage across seven articles from April 12 to September 16, 2026, centers on consumer and cryptocurrency sectors, with financial services, law enforcement, and mobile also affected. Canada, Toronto, and global regions appear among the impacted areas. CVE-2026-58704 is the most prominent vulnerability identified. The severity mix includes four high-severity issues, two medium, and one critical, reflecting a range of risk levels across the reporting period.",
-  "sources_hash": "43b744488f78fe37",
+  "intro": "Consumer-focused mobile security reporting between April 12 and October 8, 2026 spans eight articles, with five rated high severity, two medium, and one critical. Midnight Mimosa features among the tracked threat actors, while CVE-2026-58704 stands as the most cited vulnerability. Coverage reaches the consumer, cryptocurrency, financial services, law enforcement, and mobile sectors. Canada, Brazil, France, Germany, and global audiences all appear in the reporting. The collection documents how mobile-facing risks touched financial services and cryptocurrency operations alongside consumer devices and law enforcement tools across the seven-month window.",
+  "sources_hash": "d0390b6212bff138",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-17T08:27:43.652Z",
+  "generated_at": "2026-10-09T10:11:32.083Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

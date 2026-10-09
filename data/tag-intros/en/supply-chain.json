@@ -1,9 +1,9 @@
 {
   "tag": "supply-chain",
   "locale": "en",
-  "intro": "Between 2026-04-12 and 2026-10-08, ZCyberNews published 90 articles tagged supply-chain. Coverage spans technology, software development, cryptocurrency, logistics, and manufacturing, with incidents reported globally and across North America, Europe, Asia, and the United States. The severity mix comprises 52 high, 16 critical, 16 medium, and 4 informational items. Among the threat actors tracked are Lazarus Group, TeamPCP, and Alluring Pisces. Prominent vulnerabilities include CVE-2026-1731 and CVE-2026-45033, each rated CVSS 9.8, alongside CVE-2026-39987 at CVSS 9.3, CVE-2026-41650 and CVE-2026-44664, both at CVSS 6.1.",
-  "sources_hash": "f3b77b29506a72be",
+  "intro": "Between 2026-04-12 and 2026-10-08, ZCyberNews published 91 articles tagged supply-chain, spanning activity attributed to Lazarus Group, TeamPCP, and Alluring Pisces. Coverage tracked critical vulnerabilities including CVE-2026-1731 and CVE-2026-45033, both rated CVSS 9.8, alongside CVE-2026-39987 at CVSS 9.3 and the CVSS 6.1 flaws CVE-2026-41650 and CVE-2026-44664. The technology, software development, cryptocurrency, logistics, and manufacturing sectors were most affected, with incidents reported across Global, North america, Europe, United states, and Asia. Severity across the archive comprised 53 high, 16 critical, 16 medium, and 4 informational items.",
+  "sources_hash": "cef0d9470e1abe96",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-08T10:09:12.391Z",
+  "generated_at": "2026-10-09T10:11:28.376Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

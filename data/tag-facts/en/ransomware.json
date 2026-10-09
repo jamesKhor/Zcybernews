@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 63,
+  "count": 64,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-05"
+    "latest": "2026-10-08"
   },
   "top_actors": [
     "LockBit",
@@ -32,9 +32,9 @@
   ],
   "top_sectors": [
     "healthcare",
+    "government",
     "manufacturing",
     "multiple",
-    "government",
     "education"
   ],
   "top_regions": [
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
+    "DOJ charged MonsterCloud CEO Zohar Pinhasi with wire fraud after he allegedly took $19M from ransomware victims while secretly paying $8M to the attackers.",
     "Booba ransomware gang claims it stole 344GB from the University of Illinois Chicago College of Medicine, disrupting systems at the school serving 1,300 medical students.",
-    "Berlin investigates a fresh data leak after hackers published stolen login credentials, following a Rhysida-linked breach of two city ministries that exposed employee personal...",
-    "Pro-Ukraine group VantaCore, a rebrand of Thor, has hit at least 7 Russian firms with custom ransomware and RATs, demanding millions in ransom, per F6."
+    "Berlin investigates a fresh data leak after hackers published stolen login credentials, following a Rhysida-linked breach of two city ministries that exposed employee personal..."
   ],
-  "sources_hash": "67606824861553d2"
+  "sources_hash": "d68bede4980235c0"
 }

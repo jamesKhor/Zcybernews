@@ -1,12 +1,14 @@
 {
   "tag": "mobile-security",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-16"
+    "latest": "2026-10-08"
   },
-  "top_actors": [],
+  "top_actors": [
+    "Midnight Mimosa"
+  ],
   "top_cves": [
     {
       "id": "CVE-2026-58704"
@@ -22,17 +24,19 @@
   "top_regions": [
     "Canada",
     "Global",
-    "Toronto"
+    "Brazil",
+    "France",
+    "Germany"
   ],
   "severity_mix": {
-    "high": 4,
+    "high": 5,
     "medium": 2,
     "critical": 1
   },
   "recent_excerpts": [
+    "Bitdefender found Midnight Mimosa ad-fraud malware preinstalled on thousands of MediaTek-based Android phones across 150+ countries, with 32 disguised payload apps.",
     "Google's September Pixel bulletin patches CVE-2026-58704, a high-severity modem privilege-escalation flaw under limited, targeted exploitation, plus 109 other bugs.",
-    "Three men arrested in Toronto for operating an SMS blaster that impersonated cell towers to send phishing texts targeting banking credentials in a multi-month campaign.",
-    "ESET analysis shows 1 in 3 Android apps request unnecessary permissions — location, camera, microphone — enabling data harvesting and surveillance. Users should audit permissions."
+    "Three men arrested in Toronto for operating an SMS blaster that impersonated cell towers to send phishing texts targeting banking credentials in a multi-month campaign."
   ],
-  "sources_hash": "43b744488f78fe37"
+  "sources_hash": "d0390b6212bff138"
 }
