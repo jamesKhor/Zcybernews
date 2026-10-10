@@ -1,10 +1,10 @@
 {
   "tag": "shinyhunters",
   "locale": "en",
-  "count": 11,
+  "count": 13,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-23"
+    "latest": "2026-10-10"
   },
   "top_actors": [
     "ShinyHunters"
@@ -17,24 +17,25 @@
   "top_sectors": [
     "education",
     "government",
-    "consumer services",
-    "entertainment",
-    "gaming"
+    "law enforcement",
+    "technology",
+    "consumer services"
   ],
   "top_regions": [
     "North america",
-    "Global",
     "United states",
+    "Global",
+    "Canada",
     "Florida"
   ],
   "severity_mix": {
-    "high": 9,
+    "high": 10,
     "critical": 1
   },
   "recent_excerpts": [
-    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273.",
-    "ShinyHunters breached the Florida DMV after a Plant City officer's login sat on a personal device. The state confirmed the claim on September 10 after days of silence.",
-    "Instructure paid ShinyHunters after two Canvas intrusions stole data from 9,000 institutions. Congress launched an investigation into the ed-tech vendor's incident response."
+    "FBI arrested CyberSteward co-founder Edward Dubrovsky on cyber extortion charges tied to ShinyHunters, the group that stole data on thousands of FBI agents.",
+    "FBI arrested a Canadian national in Pennsylvania, its third ShinyHunters arrest in two weeks, after the group breached FBIjobs.gov and stole data on nearly every FBI employee.",
+    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273."
   ],
-  "sources_hash": "533ea432db1c642b"
+  "sources_hash": "577b44d937d3fa31"
 }

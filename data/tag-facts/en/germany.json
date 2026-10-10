@@ -1,0 +1,38 @@
+{
+  "tag": "germany",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-25",
+    "latest": "2026-10-09"
+  },
+  "top_actors": [
+    "Black Axe",
+    "Qilin",
+    "REvil"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "telecommunications",
+    "aviation",
+    "financial services",
+    "internet infrastructure"
+  ],
+  "top_regions": [
+    "Germany",
+    "United states",
+    "Canada",
+    "EU",
+    "France"
+  ],
+  "severity_mix": {
+    "high": 3
+  },
+  "recent_excerpts": [
+    "Japan's NPA arrested a 28-year-old Russian national in Osaka in May and extradited him to Germany in June over a Qilin ransomware attack on a German company.",
+    "Germany's cabinet approved a 732-page bill granting the BND and BfV active cyber powers — hacking foreign systems, sabotaging supply chains, and domestic disinformation — the...",
+    "Swiss and German police arrested 10 suspects tied to the Nigeria-linked Black Axe network, including a regional leader overseeing Southern Europe operations."
+  ],
+  "sources_hash": "0a5d68b86f45e211"
+}

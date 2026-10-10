@@ -1,9 +1,9 @@
 {
   "tag": "shinyhunters",
   "locale": "en",
-  "intro": "Across 11 articles published between 13 April and 23 September 2026, ZCyberNews tracked ShinyHunters and activity tied to CVE-2026-35273. Coverage spanned education, government, consumer services, entertainment, and gaming, with incidents reported across North America, the United States, Florida, and globally. The severity mix skewed high, with nine high-severity items and one critical item recorded in the tag archive. CVE-2026-35273 features among the most-covered technical details, while ShinyHunters remains the most frequently referenced threat actor across the period.",
-  "sources_hash": "533ea432db1c642b",
+  "intro": "Across 13 articles published between 13 April 2026 and 10 October 2026, ZCyberNews tracked ShinyHunters and the exploitation of CVE-2026-35273. Coverage spanned education, government, law enforcement, technology, and consumer services, with activity observed across North America, the United States, Canada, Florida, and globally. The severity mix comprised 10 high-severity items and one critical item. This archive collects that reporting on ShinyHunters and CVE-2026-35273 as it developed over the period.",
+  "sources_hash": "577b44d937d3fa31",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-24T08:12:57.032Z",
+  "generated_at": "2026-10-10T09:31:56.523Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

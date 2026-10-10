@@ -1,10 +1,10 @@
 {
   "tag": "extortion",
   "locale": "en",
-  "count": 11,
+  "count": 12,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-09-23"
+    "latest": "2026-10-09"
   },
   "top_actors": [
     "ShinyHunters",
@@ -17,24 +17,26 @@
   ],
   "top_sectors": [
     "education",
-    "cryptocurrency",
-    "Education",
     "government",
-    "hospitality"
+    "law enforcement",
+    "cryptocurrency",
+    "Education"
   ],
   "top_regions": [
     "North america",
     "Global",
-    "United states"
+    "United states",
+    "Canada",
+    "Jordan"
   ],
   "severity_mix": {
-    "high": 10,
+    "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "FBI arrested a Canadian national in Pennsylvania, its third ShinyHunters arrest in two weeks, after the group breached FBIjobs.gov and stole data on nearly every FBI employee.",
     "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273.",
-    "An attacker used a compromised GitHub token to download Grafana's entire private codebase. The company says no customer data was accessed and the incident involved an extortion...",
-    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide."
+    "An attacker used a compromised GitHub token to download Grafana's entire private codebase. The company says no customer data was accessed and the incident involved an extortion..."
   ],
-  "sources_hash": "c1fb1497adf0f9da"
+  "sources_hash": "ade7710d08b73e03"
 }

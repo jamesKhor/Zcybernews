@@ -1,0 +1,9 @@
+{
+  "tag": "germany",
+  "locale": "en",
+  "intro": "Germany anchors this tag archive, which spans five articles dated 25 April 2026 to 9 October 2026. Government, telecommunications, aviation, financial services, and internet infrastructure rank among the affected sectors, while Germany, the United States, Canada, the EU, and France appear among the affected regions. Black Axe, Qilin, and REvil are the top threat actors named across the coverage. Three of the five articles carry a high severity rating. The collection tracks incidents touching each of these sectors and regions without asserting links between the actors or their origins.",
+  "sources_hash": "0a5d68b86f45e211",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-10-10T09:32:00.520Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

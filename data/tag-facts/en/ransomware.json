@@ -1,15 +1,15 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 64,
+  "count": 66,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-08"
+    "latest": "2026-10-10"
   },
   "top_actors": [
     "LockBit",
-    "The Gentlemen",
-    "ShinyHunters"
+    "ShinyHunters",
+    "The Gentlemen"
   ],
   "top_cves": [
     {
@@ -31,18 +31,18 @@
     }
   ],
   "top_sectors": [
-    "healthcare",
     "government",
+    "healthcare",
     "manufacturing",
     "multiple",
     "education"
   ],
   "top_regions": [
+    "United states",
     "North america",
     "Global",
-    "United states",
     "Europe",
-    "Turkey"
+    "Canada"
   ],
   "severity_mix": {
     "high": 46,
@@ -51,9 +51,9 @@
     "informational": 2
   },
   "recent_excerpts": [
-    "DOJ charged MonsterCloud CEO Zohar Pinhasi with wire fraud after he allegedly took $19M from ransomware victims while secretly paying $8M to the attackers.",
-    "Booba ransomware gang claims it stole 344GB from the University of Illinois Chicago College of Medicine, disrupting systems at the school serving 1,300 medical students.",
-    "Berlin investigates a fresh data leak after hackers published stolen login credentials, following a Rhysida-linked breach of two city ministries that exposed employee personal..."
+    "FBI arrested CyberSteward co-founder Edward Dubrovsky on cyber extortion charges tied to ShinyHunters, the group that stole data on thousands of FBI agents.",
+    "Japan's NPA arrested a 28-year-old Russian national in Osaka in May and extradited him to Germany in June over a Qilin ransomware attack on a German company.",
+    "DOJ charged MonsterCloud CEO Zohar Pinhasi with wire fraud after he allegedly took $19M from ransomware victims while secretly paying $8M to the attackers."
   ],
-  "sources_hash": "d68bede4980235c0"
+  "sources_hash": "3415cff6bfb312a1"
 }

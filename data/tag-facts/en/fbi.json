@@ -1,15 +1,15 @@
 {
   "tag": "fbi",
   "locale": "en",
-  "count": 7,
+  "count": 9,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-09-23"
+    "latest": "2026-10-10"
   },
   "top_actors": [
+    "ShinyHunters",
     "Handala Hack",
-    "Interlock",
-    "LummaC2"
+    "Interlock"
   ],
   "top_cves": [
     {
@@ -18,24 +18,25 @@
   ],
   "top_sectors": [
     "government",
+    "law enforcement",
     "critical infrastructure",
     "financial services",
-    "healthcare",
-    "law enforcement"
+    "healthcare"
   ],
   "top_regions": [
     "United states",
+    "Canada",
     "Global",
     "Iran",
-    "North america"
+    "Jordan"
   ],
   "severity_mix": {
-    "high": 6
+    "high": 7
   },
   "recent_excerpts": [
-    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273.",
-    "Five Venezuelan nationals pleaded guilty to bank larceny for ATM jackpotting in Kansas. FBI reports over $58M in losses since 2021 and 1,900 incidents since 2020.",
-    "CISA and FBI joint advisory details LummaC2 infostealer TTPs and IOCs: malware steals credentials, crypto wallets, and session data from compromised networks."
+    "FBI arrested CyberSteward co-founder Edward Dubrovsky on cyber extortion charges tied to ShinyHunters, the group that stole data on thousands of FBI agents.",
+    "FBI arrested a Canadian national in Pennsylvania, its third ShinyHunters arrest in two weeks, after the group breached FBIjobs.gov and stole data on nearly every FBI employee.",
+    "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273."
   ],
-  "sources_hash": "a1ad20e5d2ec1f6b"
+  "sources_hash": "1959ee7755e26f25"
 }

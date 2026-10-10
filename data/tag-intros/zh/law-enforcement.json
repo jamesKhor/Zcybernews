@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "zh",
-  "intro": "在2026-04-12至2026-10-07期间发表的26篇文章中，ZCyberNews标记为law-enforcement的报道审视了影响政府、金融服务、电信、执法和加密货币行业的各类事件。Scattered Spider、Black Axe和BlackCat (ALPHV)出现在所观察到的顶级威胁行为者之列。报道范围涵盖United states、Canada、North america、Europe和France。严重性构成包括19条高、4条中、1条信息性条目，反映出该期间对law-enforcement相关网络活动持续的关注。",
+  "intro": "在2026-04-12至2026-10-09期间发表的27篇文章中，ZCyberNews追踪了涵盖政府、金融服务、执法、电信和加密货币领域的执法报道。Scattered Spider、Black Axe和BlackCat (ALPHV)出现在这些报道的主要威胁行为者之中。受影响地区包括美国、加拿大、北美、法国和德国。严重程度构成包括19个高、4个中和1个信息性条目。本档案将这些报道汇集于一处。",
   "sources_hash": "5d7174670ab5e2ef",
-  "source_intro_hash": "1b7dc6693b7669d8",
+  "source_intro_hash": "c2d9a9941925ebf8",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-07T09:57:26.415Z",
+  "generated_at": "2026-10-10T09:32:18.475Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

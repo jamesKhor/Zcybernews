@@ -3,8 +3,8 @@
   "locale": "zh",
   "intro": "本档案收录了 5 篇带有「fbi」标签的文章，发布时间从2026年4月13日至2026年4月30日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。可见的威胁行为者引用包括 Handala Hack、Interlock、LummaC2，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于critical infrastructure、government、healthcare，地区包括 United states、Global、Iran，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括5 篇高危报告。",
   "sources_hash": "4d5706d08e5a54cd",
-  "source_intro_hash": "061ff7902bbd3126",
+  "source_intro_hash": "e172aaed64cc621f",
   "model": "template:fallback",
-  "generated_at": "2026-09-24T08:13:17.018Z",
+  "generated_at": "2026-10-10T09:32:14.464Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

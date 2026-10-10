@@ -1,10 +1,10 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "count": 26,
+  "count": 27,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-07"
+    "latest": "2026-10-09"
   },
   "top_actors": [
     "Scattered Spider",
@@ -15,16 +15,16 @@
   "top_sectors": [
     "government",
     "financial services",
-    "telecommunications",
     "law enforcement",
+    "telecommunications",
     "cryptocurrency"
   ],
   "top_regions": [
     "United states",
     "Canada",
     "North america",
-    "Europe",
-    "France"
+    "France",
+    "Germany"
   ],
   "severity_mix": {
     "high": 19,
@@ -32,9 +32,9 @@
     "informational": 1
   },
   "recent_excerpts": [
+    "Japan's NPA arrested a 28-year-old Russian national in Osaka in May and extradited him to Germany in June over a Qilin ransomware attack on a German company.",
     "Anibal Canelon Aguirre, alleged Ploutus ATM jackpotting architect tied to Tren de Aragua, pleaded not guilty in Nebraska; 1,500 attacks caused $40.7M in losses.",
-    "Canada's CSE executed state-authorized hacks against a ransomware-as-a-service gang, fentanyl traffickers, and an extremist group in 2025, disrupting infrastructure and deleting...",
-    "French authorities detained a 15-year-old on April 25 for allegedly hacking ANTS, the national ID agency handling passports and driver's licenses."
+    "Canada's CSE executed state-authorized hacks against a ransomware-as-a-service gang, fentanyl traffickers, and an extremist group in 2025, disrupting infrastructure and deleting..."
   ],
-  "sources_hash": "6cca8dcd3a3b9c1e"
+  "sources_hash": "5f3ba54174b0e263"
 }

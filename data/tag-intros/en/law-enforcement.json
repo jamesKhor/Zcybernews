@@ -1,9 +1,9 @@
 {
   "tag": "law-enforcement",
   "locale": "en",
-  "intro": "Across 26 articles published between 2026-04-12 and 2026-10-07, ZCyberNews coverage tagged law-enforcement examines incidents affecting government, financial services, telecommunications, law enforcement, and cryptocurrency sectors. Scattered Spider, Black Axe, and BlackCat (ALPHV) appear among the top threat actors observed. Reporting spans the United states, Canada, North america, Europe, and France. The severity mix comprises 19 high, 4 medium, and 1 informational entries, reflecting sustained attention to law-enforcement-related cyber activity throughout the period.",
-  "sources_hash": "6cca8dcd3a3b9c1e",
+  "intro": "Across 27 articles published between 2026-04-12 and 2026-10-09, ZCyberNews tracked law-enforcement coverage spanning government, financial services, law enforcement, telecommunications, and cryptocurrency sectors. Scattered Spider, Black Axe, and BlackCat (ALPHV) appear among the top threat actors in this reporting. Affected regions include the United states, Canada, North america, France, and Germany. The severity mix comprises 19 high, 4 medium, and 1 informational items. This archive collects that reporting in one place.",
+  "sources_hash": "5f3ba54174b0e263",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-07T09:57:04.376Z",
+  "generated_at": "2026-10-10T09:31:54.135Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

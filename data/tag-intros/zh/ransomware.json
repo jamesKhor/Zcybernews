@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "zh",
-  "intro": "在2026年4月12日至2026年10月8日期间的64篇文章中，ZCyberNews追踪了涉及LockBit、The Gentlemen和ShinyHunters的勒索软件活动。报道重点提及CVSS评分为9.8的CVE-2026-1731和CVSS评分为8.8的CVE-2026-34197，以及CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。受影响行业包括医疗保健、政府、制造业、多个行业和教育，事件报告遍及北美、全球、美国、欧洲和土耳其。严重程度构成包括46项高危、6项严重、1项中危和2项信息性事件。",
+  "intro": "2026-04-12至2026-10-10期间，ZCyberNews发布了66篇标记为勒索软件的文章。LockBit、ShinyHunters和The Gentlemen位列报道最多的威胁行为者之中。报道重点提及CVE-2026-1731（CVSS 9.8）、CVE-2026-34197（CVSS 8.8）、CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。政府、医疗保健、制造业、多个行业和教育位列受影响最严重的行业，而United states、North america、Global、Europe和Canada出现在受影响最严重的地区之中。这些文章的严重性分布包括46项高、6项严重、1项中和2项信息性。",
   "sources_hash": "331f5cfec2a965f2",
-  "source_intro_hash": "bf9d6334a3ee502a",
+  "source_intro_hash": "c18ad7096639a83d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-09T10:11:35.728Z",
+  "generated_at": "2026-10-10T09:32:19.927Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

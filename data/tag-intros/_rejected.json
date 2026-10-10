@@ -1912,5 +1912,29 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-6389 but it is not in the fact sheet",
     "at": "2026-10-08T10:09:22.136Z"
+  },
+  {
+    "tag": "data-breach",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-35273 but it is not in the fact sheet",
+    "at": "2026-10-10T09:32:06.655Z"
+  },
+  {
+    "tag": "extortion",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-35273 but it is not in the fact sheet",
+    "at": "2026-10-10T09:32:10.440Z"
+  },
+  {
+    "tag": "fbi",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-35273 but it is not in the fact sheet",
+    "at": "2026-10-10T09:32:14.463Z"
+  },
+  {
+    "tag": "shinyhunters",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-35273 but it is not in the fact sheet",
+    "at": "2026-10-10T09:32:23.421Z"
   }
 ]

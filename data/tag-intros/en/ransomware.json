@@ -1,9 +1,9 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "intro": "Across 64 articles spanning 12 April 2026 to 8 October 2026, ZCyberNews has tracked ransomware activity involving LockBit, The Gentlemen, and ShinyHunters. Coverage highlights CVE-2026-1731 at CVSS 9.8 and CVE-2026-34197 at CVSS 8.8, alongside CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Healthcare, government, manufacturing, multiple, and education sectors were affected, with incidents reported across North america, Global, United states, Europe, and Turkey. The severity mix comprises 46 high, 6 critical, 1 medium, and 2 informational items.",
-  "sources_hash": "d68bede4980235c0",
+  "intro": "Between 2026-04-12 and 2026-10-10, ZCyberNews published 66 articles tagged ransomware. LockBit, ShinyHunters, and The Gentlemen feature among the most-covered threat actors. Coverage highlights CVE-2026-1731 (CVSS 9.8), CVE-2026-34197 (CVSS 8.8), CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Government, healthcare, manufacturing, multiple, and education rank among the top affected sectors, while the United states, North america, Global, Europe, and Canada appear among the top affected regions. The severity mix across these articles comprises 46 high, 6 critical, 1 medium, and 2 informational items.",
+  "sources_hash": "3415cff6bfb312a1",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-09T10:11:29.446Z",
+  "generated_at": "2026-10-10T09:31:51.751Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

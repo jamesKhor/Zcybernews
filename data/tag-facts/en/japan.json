@@ -1,0 +1,39 @@
+{
+  "tag": "japan",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-15",
+    "latest": "2026-10-09"
+  },
+  "top_actors": [
+    "Qilin",
+    "Silver Fox",
+    "Tropic Trooper"
+  ],
+  "top_cves": [],
+  "top_sectors": [
+    "government",
+    "manufacturing",
+    "aviation",
+    "business services",
+    "finance"
+  ],
+  "top_regions": [
+    "Japan",
+    "East asia",
+    "France",
+    "Germany",
+    "Malaysia"
+  ],
+  "severity_mix": {
+    "informational": 1,
+    "high": 3
+  },
+  "recent_excerpts": [
+    "Japan's NPA arrested a 28-year-old Russian national in Osaka in May and extradited him to Germany in June over a Qilin ransomware attack on a German company.",
+    "Microsoft announces a $10 billion investment to expand Japan's AI and cloud infrastructure, including a new cybersecurity research hub and workforce training initiatives.",
+    "Japan teen arrested for stealing 7M Kaikatsu Club records to buy Pokémon cards — one example of how AI tools are lowering the barrier for cybercrime in 2026, per The Hacker News…"
+  ],
+  "sources_hash": "ae85f7fdf3578da2"
+}

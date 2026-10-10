@@ -1,9 +1,9 @@
 {
   "tag": "fbi",
   "locale": "en",
-  "intro": "Government, critical infrastructure, financial services, healthcare, and law enforcement face the threats covered across seven FBI articles published between April 13 and September 23, 2026. Handala Hack, Interlock, and LummaC2 appear as the top threat actors in this coverage, which also tracks CVE-2026-35273. The affected regions span the United States, Global, Iran, and North America. Six of the seven articles carry a high severity rating, reflecting the weight of the incidents documented here. This archive gathers reporting on the actors, vulnerabilities, and sectors central to the FBI's recent casework.",
-  "sources_hash": "a1ad20e5d2ec1f6b",
+  "intro": "Government and law enforcement agencies feature prominently among the nine FBI-tagged articles published between 13 April and 10 October 2026, alongside critical infrastructure, financial services, and healthcare organisations. ShinyHunters, Handala Hack, and Interlock appear as the most frequently cited threat actors across the coverage, while CVE-2026-35273 stands out as the leading vulnerability referenced. The reporting spans the United States, Canada, Iran, Jordan, and global operations, reflecting the bureau's broad remit across domestic and international cyber investigations. Seven of the nine articles are rated high severity, underscoring the persistent pressure on federal systems and the sectors they help protect.",
+  "sources_hash": "1959ee7755e26f25",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-24T08:12:58.375Z",
+  "generated_at": "2026-10-10T09:31:59.274Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
