@@ -1,0 +1,74 @@
+---
+title: 'iRhythm Breach Hits 360,000 After Social Engineering Attack'
+slug: 2026-10-10-irhythm-breach-hits-360-000-after-social-engineering-attack
+date: '2026-10-10'
+excerpt: >-
+  iRhythm says a June social engineering attack exposed names, insurance
+  numbers, and device serials for 360,000 patients across Texas, South Carolina,
+  and California.
+category: industry
+tags:
+  - data-breach
+  - healthcare
+  - medical-devices
+  - social-engineering
+  - irhythm
+language: en
+source_urls:
+  - 'https://therecord.media/irhythm-data-breach-reports'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:hundreds-thousands-impacted-data-breach'
+source_count: 1
+seo_query_target: Hundreds of thousands impacted by data breach at biosensor firm iRhythm
+seo_intent: incident-impact
+seo_title_promise: >-
+  The headline tells readers that iRhythm's breach affected roughly 360,000
+  people and that a social engineering attack was the initial vector.
+seo_meta_promise: >-
+  The meta description names iRhythm, the 360,000 victim count, the specific
+  data types stolen, and the three states where notifications were filed.
+target_hub: data-breaches
+internal_link_targets:
+  - data-breaches
+  - healthcare-security
+  - social-engineering
+news_sitemap_eligible: true
+featured_image_alt: An iRhythm Zio cardiac monitoring patch sensor worn on a patient's chest.
+affected_sectors:
+  - healthcare
+  - medical devices
+affected_regions:
+  - United States
+  - Texas
+  - South Carolina
+  - California
+publish_tier: public
+---
+## Executive Summary
+
+iRhythm, the medical device maker behind the Zio cardiac monitoring patch, has begun notifying state regulators that a June cyberattack exposed the personal and medical data of at least 360,000 people. The company filed breach notices this week in Texas (298,647 victims), South Carolina (69,526), and California, according to filings reviewed by Recorded Future News. A company spokesperson declined to provide a total victim count.
+
+The intruders reached third-party-hosted business applications through a social engineering attack, not through iRhythm's clinical infrastructure. The company says its medical devices, manufacturing, distribution, and financial systems were unaffected. No ransomware group or other threat actor has publicly claimed responsibility, and iRhythm has not named a suspect.
+
+## Technical Analysis
+
+According to iRhythm's regulatory filings and statements to Recorded Future News, unauthorized access to company systems occurred between June 3 and June 8, 2026. The company detected the intrusion and, after verifying scope, notified affected individuals and regulators. The initial access vector was social engineering against a path into third-party-hosted business applications — iRhythm has not specified which vendor or application was involved.
+
+The data confirmed exfiltrated includes names, addresses, phone numbers, iRhythm patient account numbers, iRhythm device serial numbers, patient insurance numbers, dates of service, and dates of birth. That combination is significant for defenders in healthcare: device serial numbers and insurance identifiers are not typically rotated after a breach, and they can be used to correlate patients across providers or to file fraudulent claims.
+
+iRhythm's June 8-K filing with the SEC states that the company "received communications from a threat actor claiming to have obtained sensitive information, including proprietary data, patient protected health information and other personal information," and that the actor "demanded payment in exchange for not publicly disclosing this information." The filing confirms that data was subsequently verified as exfiltrated. The company has not characterized the incident as ransomware, and no leak site post has been attributed to the intrusion.
+
+iRhythm says it has "no evidence that any personal information has been or will be used to commit identity theft." That language is standard in breach notifications but does not rule out future misuse — the stolen dataset is the kind that fuels medical identity theft and targeted phishing against patients.
+
+The iRhythm incident fits a pattern: medical device and life sciences firms have absorbed repeated intrusions over the past two years. Recorded Future News notes prior incidents at Medtronic, Boston Scientific, Stryker, Masimo, Surmodics, Artivion, and Zoll, several of which leaked sensitive patient data or disrupted manufacturing. The common thread in several of those cases has been third-party or business-system compromise rather than direct attacks on regulated clinical environments.
+
+## Mitigations & Recommendations
+
+Given the data types exposed — insurance numbers, device serials, dates of service — patients affected by this breach should treat any inbound communication referencing their iRhythm account or device as suspect until verified through a known-good channel. Healthcare security teams at other device makers and their business-process outsourcers should treat third-party-hosted applications as in-scope for social engineering tabletop exercises, not just for vulnerability scanning; the vector here was human, not a patchable flaw.
+
+Defenders tracking this incident should monitor for credential-stuffing and phishing campaigns that reference iRhythm patient account numbers or Zio device serials, since those identifiers are now in circulation. iRhythm has not published a public IOC set, and no CVE is associated with this incident.
+
+## References
+
+- [Hundreds of thousands impacted by data breach at biosensor firm iRhythm — The Record](https://therecord.media/irhythm-data-breach-reports)
