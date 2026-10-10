@@ -1,0 +1,76 @@
+---
+title: FBI Arrests Ransomware Negotiator in ShinyHunters Probe
+slug: 2026-10-10-fbi-arrests-ransomware-negotiator-in-shinyhunters-probe
+date: '2026-10-10'
+excerpt: >-
+  FBI arrested CyberSteward co-founder Edward Dubrovsky on cyber extortion
+  charges tied to ShinyHunters, the group that stole data on thousands of FBI
+  agents.
+category: industry
+tags:
+  - shinyhunters
+  - ransomware
+  - fbi
+  - cyber-extortion
+  - data-breach
+language: en
+source_urls:
+  - >-
+    https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:arrests-founder-ransomware-negotiation-firm'
+source_count: 1
+seo_query_target: ShinyHunters
+seo_intent: incident-impact
+seo_title_promise: >-
+  The headline promises that the FBI has arrested a ransomware negotiator as
+  part of its ShinyHunters investigation.
+seo_meta_promise: >-
+  The meta description promises that Edward Dubrovsky, a Canadian ransomware
+  negotiator, was arrested on cyber extortion charges tied to ShinyHunters,
+  which stole FBI agent data.
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - data-breaches
+  - fbi
+news_sitemap_eligible: true
+featured_image_alt: Federal courthouse building with FBI investigation context
+threat_actor: ShinyHunters
+affected_sectors:
+  - government
+  - technology
+affected_regions:
+  - United States
+  - Canada
+iocs:
+  - type: domain
+    value: CourtListener.com
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+The FBI arrested Edward Dubrovsky, co-founder of Canadian cybersecurity firm CyberSteward, on October 8 in Pennsylvania on charges of cyber extortion and conspiracy, according to federal court records. The arrest is tied to the bureau's investigation into ShinyHunters, the hacking group that recently stole sensitive data on thousands of FBI agents from the agency's online recruitment portal. Sources tell KrebsOnSecurity that the case has been moved to the Eastern District of Texas, which is now the epicenter of the ShinyHunters investigation.
+
+## Technical Analysis
+
+Dubrovsky, 54, was in Pennsylvania to attend the Cyber Risk Summit at the Loews Philadelphia Hotel between October 5 and 7, according to an online search and a LinkedIn post in which he said he planned to attend with the CyberSteward team. CyberSteward and another Canadian firm, Cypfer, were sponsors of the conference; Cypfer was the largest sponsor. Dubrovsky co-founded Cypfer before moving to CyberSteward, according to LinkedIn.
+
+Federal court records show that on October 8, an Edward Dobrovsky (a slight misspelling) was arrested in Pennsylvania on charges of "conspiracy to threaten to impair the confidentiality of information with the intent to extort money" and "interference with commerce by threats." Several documents, including the core complaint, are sealed, but a summary of the complaint was indexed on CourtListener.com. The U.S. Bureau of Prisons inmate locator reports that a 54-year-old Edward Dubrovsky is being held at a federal facility in Philadelphia. A notice filed on October 9 moved the case to the Eastern District of Texas.
+
+The FBI declined to comment. The New York Times first reported the arrest of a Canadian man in Pennsylvania on suspicion of assisting ShinyHunters, without identifying him. FBI Director Kash Patel also posted about the arrest on Twitter/X without naming the suspect.
+
+ShinyHunters typically uses phishing and stolen credentials to siphon data from corporate accounts at software-as-a-service companies, then threatens to publish the stolen data unless a ransom is paid. According to the FBI, the group has extorted more than $70 million from victims so far this year.
+
+The arrest follows a series of actions against the group. Last month, Dutch police arrested convicted cybercriminal Pepijn van der Stap in connection with the ShinyHunters investigation. Sources say the FBI has been examining devices seized in that arrest, and charges against principals at other ransomware negotiation firms may be forthcoming. After Van der Stap's arrest, a ShinyHunters member known as "Rey" took control and taunted the FBI over data stolen from the recruitment portal, which included unit and specialization information as well as medical and psychiatric records. Last week, Reuters reported that Rey — identified as teenager Saif Al-din Khader — had been detained and was cooperating with investigators. On October 7, KrebsOnSecurity detailed how Rey was apprehended as the group allegedly sought to extort a navigation and digital aviation unit divested by Boeing in late 2025.
+
+## Mitigations & Recommendations
+
+The arrest of a ransomware negotiation firm executive on cyber extortion charges underscores the legal risks facing intermediaries who engage with cybercriminal groups. Defenders should ensure that any third-party negotiators operate with clear legal counsel and do not cross the line into facilitating extortion. Organizations facing ShinyHunters-style attacks — phishing and credential theft against SaaS accounts — should enforce phishing-resistant multi-factor authentication, monitor for anomalous access to corporate SaaS environments, and maintain offline backups. The FBI's investigation into ShinyHunters is ongoing and may expand to other negotiation firms.
+
+## References
+
+- [FBI Arrests Founder of Ransomware Negotiation Firm](https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/) — KrebsOnSecurity
