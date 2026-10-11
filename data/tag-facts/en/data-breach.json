@@ -1,7 +1,7 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 53,
+  "count": 54,
   "date_range": {
     "first": "2026-04-12",
     "latest": "2026-10-10"
@@ -36,8 +36,8 @@
   },
   "recent_excerpts": [
     "FBI arrested CyberSteward co-founder Edward Dubrovsky on cyber extortion charges tied to ShinyHunters, the group that stole data on thousands of FBI agents.",
-    "FBI arrested a Canadian national in Pennsylvania, its third ShinyHunters arrest in two weeks, after the group breached FBIjobs.gov and stole data on nearly every FBI employee.",
-    "Booba ransomware gang claims it stole 344GB from the University of Illinois Chicago College of Medicine, disrupting systems at the school serving 1,300 medical students."
+    "iRhythm says a June social engineering attack exposed names, insurance numbers, and device serials for 360,000 patients across Texas, South Carolina, and California.",
+    "FBI arrested a Canadian national in Pennsylvania, its third ShinyHunters arrest in two weeks, after the group breached FBIjobs.gov and stole data on nearly every FBI employee."
   ],
-  "sources_hash": "86ccd81e265a6c6a"
+  "sources_hash": "922d0c1087833272"
 }

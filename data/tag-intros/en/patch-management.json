@@ -1,9 +1,9 @@
 {
   "tag": "patch-management",
   "locale": "en",
-  "intro": "Financial services, government, and healthcare organisations globally, with a particular focus in the United Kingdom, are the primary targets in our patch-management coverage from 12 April to 3 May 2026. Seven articles examine a severity mix of four medium, two high, and one critical vulnerability, including CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, CVE-2023-4966, and CVE-2024-21893. Small businesses are also among the affected sectors.",
-  "sources_hash": "9bbbdae2ab40718b",
+  "intro": "Government and federal agencies, alongside financial services, healthcare, and all sectors, are the focus of this patch-management archive spanning 2026-04-12 to 2026-10-10. Across eight articles, coverage tracks Flax Typhoon and vulnerabilities including CVE-2015-3306, rated CVSS 10, plus CVE-2023-22515, CVE-2023-34048, CVE-2023-46805, and CVE-2023-4966. Reporting reaches Global, United kingdom, and United states audiences. The severity mix comprises two critical, two high, and four medium items, reflecting the range of patching priorities documented throughout the period.",
+  "sources_hash": "9dc852c7555b4f57",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:04:00.900Z",
+  "generated_at": "2026-10-11T09:45:17.949Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

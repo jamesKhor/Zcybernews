@@ -1,10 +1,10 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-05"
+    "latest": "2026-10-10"
   },
   "top_actors": [
     "LockBit",
@@ -23,17 +23,17 @@
     "United states",
     "Global",
     "North america",
-    "Canada",
-    "Illinois"
+    "Texas",
+    "California"
   ],
   "severity_mix": {
     "high": 11,
     "medium": 1
   },
   "recent_excerpts": [
+    "iRhythm says a June social engineering attack exposed names, insurance numbers, and device serials for 360,000 patients across Texas, South Carolina, and California.",
     "Booba ransomware gang claims it stole 344GB from the University of Illinois Chicago College of Medicine, disrupting systems at the school serving 1,300 medical students.",
-    "Labcorp will pay $2.3 million and overhaul vendor oversight after the 2019 AMCA breach exposed 10.2 million patients; 44 state AGs announced the settlement Thursday.",
-    "Canada's Hospital for Sick Children confirms a new cyberattack tied to a third-party app exposed current and former employee data, following its 2022 ransomware incident."
+    "Labcorp will pay $2.3 million and overhaul vendor oversight after the 2019 AMCA breach exposed 10.2 million patients; 44 state AGs announced the settlement Thursday."
   ],
-  "sources_hash": "2bd809f2688b9197"
+  "sources_hash": "f6bc047c6086f32d"
 }

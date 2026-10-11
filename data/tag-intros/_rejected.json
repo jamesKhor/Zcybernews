@@ -1936,5 +1936,35 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-35273 but it is not in the fact sheet",
     "at": "2026-10-10T09:32:23.421Z"
+  },
+  {
+    "tag": "cisa-kev",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2015-3306 but it is not in the fact sheet; Intro cites CVE-2026-20079 but it is not in the fact sheet; Intro cites CVE-2025-39682 but it is not in the fact sheet",
+    "at": "2026-10-11T09:45:24.847Z"
+  },
+  {
+    "tag": "cisco",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-20079 but it is not in the fact sheet; Intro cites CVE-2026-105278 but it is not in the fact sheet; Intro cites CVE-2026-76504 but it is not in the fact sheet",
+    "at": "2026-10-11T09:45:28.788Z"
+  },
+  {
+    "tag": "data-breach",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-35273 but it is not in the fact sheet",
+    "at": "2026-10-11T09:45:32.660Z"
+  },
+  {
+    "tag": "ics",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-105278 but it is not in the fact sheet",
+    "at": "2026-10-11T09:45:37.917Z"
+  },
+  {
+    "tag": "patch-management",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2015-3306 but it is not in the fact sheet",
+    "at": "2026-10-11T09:45:41.637Z"
   }
 ]

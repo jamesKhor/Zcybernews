@@ -1,9 +1,9 @@
 {
   "tag": "healthcare",
   "locale": "en",
-  "intro": "Across 14 articles published between 12 April and 5 October 2026, ZCyberNews tracked high-severity incidents affecting healthcare, with LockBit, Booba, and Interlock each appearing among the most-covered threat actors. Reporting spanned the United States, Global, North America, Canada, and Illinois, reflecting the geographic reach of these campaigns. Affected sectors included healthcare, Healthcare, critical infrastructure, education, and financial services. Of the covered incidents, 11 were rated high severity and one medium, underscoring the concentration of serious activity targeting medical providers and connected systems throughout the period.",
-  "sources_hash": "2bd809f2688b9197",
+  "intro": "Fifteen healthcare articles published between 12 April and 10 October 2026 examine a sector under sustained pressure, with LockBit, Booba, and Interlock among the most-covered threat actors. The reporting spans healthcare, critical infrastructure, education, and financial services, and reaches readers across the United States, Texas, and California, alongside global and North American coverage. Eleven items carry high severity and one medium, reflecting a period in which healthcare organisations and the critical infrastructure around them absorbed repeated attention from the three named groups.",
+  "sources_hash": "f6bc047c6086f32d",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-06T09:51:04.367Z",
+  "generated_at": "2026-10-11T09:45:13.932Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

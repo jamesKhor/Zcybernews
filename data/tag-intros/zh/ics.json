@@ -1,10 +1,10 @@
 {
   "tag": "ics",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月12日至2026年6月18日期间发布的10篇标记为`ics`的文章，为安全团队提供了该话题在ZCyberNews报道中出现的聚焦视角。近期报道提及了CVE-2026-5726，每篇报告均与源文章中具体的漏洞背景相关联。受影响范围信号强调了全球、美国及北美地区的制造业、关键基础设施和能源领域，帮助读者在不超出档案数据范围的前提下比较暴露模式。严重程度覆盖包括1篇严重、7篇高危和1篇中等报告。",
+  "intro": "本档案收录了 10 篇带有「ics」标签的文章，发布时间从2026年4月12日至2026年6月18日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2026-5726，每一项均以原文中的漏洞背景和元数据为依据。受影响范围信号侧重于manufacturing、critical-infrastructure、energy，地区包括 Global、United states、North-america，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括1 篇严重、7 篇高危、1 篇中危报告。",
   "sources_hash": "9032245f45bd003c",
-  "source_intro_hash": "00ef624826863e75",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-19T04:36:28.365Z",
+  "source_intro_hash": "568914a7f0585b08",
+  "model": "template:fallback",
+  "generated_at": "2026-10-11T09:45:37.918Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

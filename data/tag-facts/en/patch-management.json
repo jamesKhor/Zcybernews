@@ -1,13 +1,19 @@
 {
   "tag": "patch-management",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-03"
+    "latest": "2026-10-10"
   },
-  "top_actors": [],
+  "top_actors": [
+    "Flax Typhoon"
+  ],
   "top_cves": [
+    {
+      "id": "CVE-2015-3306",
+      "cvss": 10
+    },
     {
       "id": "CVE-2023-22515"
     },
@@ -19,31 +25,29 @@
     },
     {
       "id": "CVE-2023-4966"
-    },
-    {
-      "id": "CVE-2024-21893"
     }
   ],
   "top_sectors": [
-    "all",
-    "financial services",
     "government",
-    "healthcare",
-    "small business"
+    "all",
+    "federal agencies",
+    "financial services",
+    "healthcare"
   ],
   "top_regions": [
     "Global",
-    "United kingdom"
+    "United kingdom",
+    "United states"
   ],
   "severity_mix": {
+    "critical": 2,
     "medium": 4,
-    "high": 2,
-    "critical": 1
+    "high": 2
   },
   "recent_excerpts": [
+    "CISA set an October 11 federal patch deadline after Flax Typhoon exploited CVE-2015-3306, a CVSS 10.0 ProFTPD flaw, plus four other bugs in its KEV batch.",
     "Malwarebytes flags three easy-to-miss cybersecurity risks for small businesses that require no technical expertise to fix: weak password policies, unpatched software, and lack of…",
-    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited.",
-    "Anthropic's Claude Mythos Preview identifies vulnerabilities at scale since April 7, but organizations lack the triage and patching capacity to keep pace, researchers warn."
+    "NCSC warns organizations to brace for a surge of urgent patches as AI accelerates vulnerability discovery, raising exploitation risk. No specific CVEs cited."
   ],
-  "sources_hash": "9bbbdae2ab40718b"
+  "sources_hash": "9dc852c7555b4f57"
 }

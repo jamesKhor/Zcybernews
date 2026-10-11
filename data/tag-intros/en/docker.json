@@ -1,0 +1,9 @@
+{
+  "tag": "docker",
+  "locale": "en",
+  "intro": "Software development leads the sectors affected by Docker-related security issues covered in this tag archive, which spans five articles published between 2026-04-12 and 2026-10-11. The coverage spans Global and Spain, with technology, cloud services, critical infrastructure, and energy also affected. Two critical, two high, and one medium severity issue are documented. Among the most prominent vulnerabilities are CVE-2026-105278, rated CVSS 9.8, and CVE-2026-6406, rated CVSS 8.8. The collection offers a record of how these flaws touched development and infrastructure environments across the stated period.",
+  "sources_hash": "b80d18d81158525f",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-10-11T09:45:19.507Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

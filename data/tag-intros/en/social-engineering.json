@@ -1,9 +1,9 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "intro": "Across 63 articles dated 2026-04-08 to 2026-09-16, ZCyberNews coverage of social engineering spans ClickFix, Lazarus Group, and UNC6692. Reporting also cites CVE-2023-36036, CVE-2025-24054, CVE-2025-33053, and CVE-2026-21513. The severity mix comprises 49 high, 11 medium, two informational, and one critical item. Affected sectors include financial services, cryptocurrency, technology, financial-services, and government. Regions covered are Global, North america, United states, Europe, and United kingdom.",
-  "sources_hash": "c78e0c04587342e1",
+  "intro": "Across 64 articles spanning 2026-04-08 to 2026-10-10, ZCyberNews coverage of social engineering tracks ClickFix, Lazarus Group, and UNC6692 alongside CVE-2023-36036, CVE-2025-24054, CVE-2025-33053, and CVE-2026-21513. Financial services, cryptocurrency, technology, financial-services, and government rank among the most affected sectors, with incidents reported globally and across North america, United states, Europe, and United kingdom. Severity skews high: 49 high, 11 medium, one critical, and two informational. The archive examines how manipulation tactics, rather than software flaws alone, continue to shape intrusion attempts against these sectors and regions.",
+  "sources_hash": "037ac3574b1c7dae",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-16T08:20:51.300Z",
+  "generated_at": "2026-10-11T09:45:09.969Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

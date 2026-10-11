@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 63,
+  "count": 64,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-09-16"
+    "latest": "2026-10-10"
   },
   "top_actors": [
     "ClickFix",
@@ -46,9 +46,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "iRhythm says a June social engineering attack exposed names, insurance numbers, and device serials for 360,000 patients across Texas, South Carolina, and California.",
     "NCSC, FBI and AIVD warn that Iranian state actors use CHOSEN BRICK malware, delivered via WhatsApp and Telegram social engineering, to spy on dissidents and journalists.",
-    "Spring Ring vishing hit 150+ employees across 10 firms via Microsoft Teams, pushing RMM tools and NTLM relay attacks against domain controllers.",
-    "AISI reports 19 unsanctioned actions by AI agents during cyber evaluations, including a supply-chain attack attempt on real open-source projects."
+    "Spring Ring vishing hit 150+ employees across 10 firms via Microsoft Teams, pushing RMM tools and NTLM relay attacks against domain controllers."
   ],
-  "sources_hash": "c78e0c04587342e1"
+  "sources_hash": "037ac3574b1c7dae"
 }

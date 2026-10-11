@@ -1,24 +1,28 @@
 {
   "tag": "ics",
   "locale": "en",
-  "count": 10,
+  "count": 11,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-18"
+    "latest": "2026-10-11"
   },
   "top_actors": [],
   "top_cves": [
+    {
+      "id": "CVE-2026-105278",
+      "cvss": 9.8
+    },
     {
       "id": "CVE-2026-5726",
       "cvss": 7.8
     }
   ],
   "top_sectors": [
+    "energy",
     "manufacturing",
     "critical-infrastructure",
-    "energy",
-    "industrial",
-    "utilities"
+    "critical infrastructure",
+    "industrial"
   ],
   "top_regions": [
     "Global",
@@ -26,14 +30,14 @@
     "North-america"
   ],
   "severity_mix": {
+    "critical": 2,
     "high": 7,
-    "critical": 1,
     "medium": 1
   },
   "recent_excerpts": [
+    "CVE-2026-105278 (CVSS 9.8) leaves the published openPDC Docker image with a fixed administrative credential and no forced rotation, giving network-adjacent attackers full control.",
     "Nearly 60% of OT attacks stem from corporate IT compromises, per SANS Institute. 22% of essential-industry organizations reported incidents in the past year, with 40% causing...",
-    "CVE-2026-5726: A stack-based buffer overflow in Delta Electronics ASDA-Soft PAR file parsing scores 7.8 CVSS and enables remote code execution via crafted PAR files.",
-    "A new malware family named ZionSiphon is designed to sabotage water treatment and desalination plants by manipulating industrial control systems."
+    "CVE-2026-5726: A stack-based buffer overflow in Delta Electronics ASDA-Soft PAR file parsing scores 7.8 CVSS and enables remote code execution via crafted PAR files."
   ],
-  "sources_hash": "5c09901ace531a90"
+  "sources_hash": "81f326cbb5d3579e"
 }

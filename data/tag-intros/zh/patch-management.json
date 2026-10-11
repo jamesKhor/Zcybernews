@@ -1,10 +1,10 @@
 {
   "tag": "patch-management",
   "locale": "zh",
-  "intro": "全球范围内的金融服务、政府及医疗保健机构，尤其是英国的相关组织，是我们2026年4月12日至5月3日补丁管理覆盖范围内的主要目标。七篇文章分析了四个中等、两个高危及一个严重级别的漏洞组合，包括CVE-2023-22515、CVE-2023-34048、CVE-2023-46805、CVE-2023-4966和CVE-2024-21893。小型企业也属于受影响行业之列。",
+  "intro": "本档案收录了 7 篇带有「patch-management」标签的文章，发布时间从2026年4月12日至2026年5月3日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2023-22515、CVE-2023-34048、CVE-2023-46805，每一项均以原文中的漏洞背景和元数据为依据。受影响范围信号侧重于all、financial services、government，地区包括 Global、United kingdom，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括1 篇严重、2 篇高危、4 篇中危报告。",
   "sources_hash": "321609c187078fcb",
-  "source_intro_hash": "e50700688af0e68f",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:10:02.123Z",
+  "source_intro_hash": "8b791c58b6c57e3a",
+  "model": "template:fallback",
+  "generated_at": "2026-10-11T09:45:41.638Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

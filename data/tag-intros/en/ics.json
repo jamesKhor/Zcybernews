@@ -1,9 +1,9 @@
 {
   "tag": "ics",
   "locale": "en",
-  "intro": "This archive collects 10 articles tagged `ics` published between April 12, 2026 and June 18, 2026, giving security teams a focused view of how this topic has appeared across ZCyberNews coverage. Recent coverage references CVE-2026-5726, with each report tied to the specific vulnerability context available in the source article. The affected-scope signals emphasize manufacturing, critical-infrastructure, and energy across Global, United states, and North-america, helping readers compare exposure patterns without adding claims beyond the archive data. Severity coverage includes 1 critical, 7 high, and 1 medium reports.",
-  "sources_hash": "5c09901ace531a90",
-  "model": "template:fallback",
-  "generated_at": "2026-06-19T04:36:22.310Z",
+  "intro": "Across 11 articles published between 12 April and 11 October 2026, ZCyberNews tracked industrial control system security against a severity mix of two critical, seven high, and one medium finding. CVE-2026-105278 carries a CVSS score of 9.8, while CVE-2026-5726 rates 7.8. Reporting on these ICS issues centred on the energy, manufacturing, critical-infrastructure, critical infrastructure, and industrial sectors. Coverage spanned Global, United states, and North-america, reflecting the reach of exposed control environments across regions and industries throughout the period.",
+  "sources_hash": "81f326cbb5d3579e",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-10-11T09:45:15.044Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
