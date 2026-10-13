@@ -1,0 +1,77 @@
+---
+title: Ahold Delhaize Cyber Incident Disrupts Grocery Chains
+slug: 2026-10-13-ahold-delhaize-cyber-incident-disrupts-grocery-chains
+date: '2026-10-13'
+excerpt: >-
+  Ahold Delhaize took systems offline after a cyber incident disrupted Food
+  Lion, Stop & Shop, Albert Heijn and Delhaize stores across the US, Netherlands
+  and Belgium.
+category: industry
+tags:
+  - ahold-delhaize
+  - retail-breach
+  - food-lion
+  - stop-&-shop
+  - albert-heijn
+  - cyber-incident
+language: en
+source_urls:
+  - 'https://therecord.media/cyberattack-groceru-ahold-delhaize'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:cyber-incident-hits-grocery-stores'
+source_count: 1
+seo_query_target: 'Cyber incident hits grocery stores in US, Netherlands and Belgium'
+seo_intent: breaking-news
+seo_title_promise: >-
+  The headline promises readers the identity of the retailer hit by a cyber
+  incident and the specific grocery brands and countries affected.
+seo_meta_promise: >-
+  The meta description names Ahold Delhaize and the affected banners (Food Lion,
+  Stop & Shop, Albert Heijn, Delhaize) across three countries, giving readers
+  the concrete scope of the disruption.
+target_hub: defender-ops
+internal_link_targets:
+  - defender-ops
+  - data-breaches
+  - ransomware-groups
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Ahold Delhaize storefront signage outside a grocery retailer affected by the
+  cyber incident.
+affected_sectors:
+  - retail
+  - grocery
+affected_regions:
+  - United States
+  - Netherlands
+  - Belgium
+publish_tier: public
+---
+## Executive Summary
+
+Ahold Delhaize, the Dutch multinational grocery retailer, confirmed Monday that it is responding to a cybersecurity incident that has disrupted operations across its U.S. and European brands. The company said it has taken some systems offline as a precautionary measure, affecting distribution centers, online grocery ordering and in-store pricing. The incident has impacted subsidiary chains including Food Lion and Stop & Shop in the United States, Albert Heijn, Etos and Gall & Gall in the Netherlands, and Delhaize in Belgium.
+
+Ahold Delhaize has not disclosed the nature of the incident, whether customer or employee data was compromised, or whether a ransom demand has been made. The company has not provided a timeline for restoring services. The incident marks the second significant cyber event to hit the retailer since 2024, when more than 2.2 million people had personal information stolen from its systems.
+
+## Technical Analysis
+
+The scope of the disruption, as reported by The Record, indicates that Ahold Delhaize has disconnected or taken offline multiple internal systems in response to the incident. In the Netherlands, Albert Heijn's website, mobile app and customer service channels were unavailable, grocery deliveries were suspended, and electronic shelf labels displayed outdated promotional prices. The brand stated it had disconnected systems to protect its IT environment but did not provide a restoration timeline.
+
+In Belgium, Delhaize customers were unable to place new orders or reach customer service, though the website and app remained accessible. In the United States, Food Lion staff discussed the incident on social media, with managers characterizing it as an IT outage. A Stop & Shop customer reported receiving no delivery updates or estimated arrival times.
+
+The company did not explain whether the operational disruptions were caused directly by the incident or by the precautionary measures taken in response. Ahold Delhaize said its teams "are taking steps to assess and mitigate the issue," including "taking some systems offline to help protect them." The retailer stated that stores remain open and serving customers.
+
+Ahold Delhaize operates across nine countries and employs more than 400,000 people. Its U.S. brands include Food Lion and Stop & Shop. The company has not attributed the incident to any specific threat actor or malware family, and no ransomware group has publicly claimed responsibility as of this report.
+
+The 2024 incident referenced by The Record resulted in the theft of information belonging to more than 2.2 million individuals. It is not known whether the current incident is related to the earlier compromise or represents a separate intrusion.
+
+## Mitigations & Recommendations
+
+Ahold Delhaize has not released technical indicators, affected product versions or attacker infrastructure details, so defenders at other retail and grocery organizations cannot currently hunt for specific IOCs associated with this incident. Until the company or its incident response partners publish technical details, the practical defensive posture for similarly sized retail operators is to verify segmentation between corporate IT, point-of-sale and distribution-center networks, confirm that offline backup copies of critical inventory and pricing systems are isolated from the production domain, and rehearse the manual fallback procedures that grocery chains rely on when electronic shelf labels and order-management systems are unavailable.
+
+Retailers should also review remote-access paths into distribution and logistics environments, since those systems were among the first reported as disrupted. The absence of a public attribution or ransom claim at this stage means defenders should not assume a specific intrusion pattern; monitoring for unusual authentication activity against inventory, pricing and order-management platforms remains warranted.
+
+## References
+
+- [Cyber incident hits grocery stores in US, Netherlands and Belgium](https://therecord.media/cyberattack-groceru-ahold-delhaize) — The Record (Recorded Future News)
