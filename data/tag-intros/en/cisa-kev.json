@@ -1,9 +1,9 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "intro": "Government and critical infrastructure sectors anchor this archive of 18 articles on CISA's Known Exploited Vulnerabilities catalog, published between April 19 and October 10, 2026. Coverage spans the United States, North America, Europe, the EU, and global developments, tracking five CVEs: CVE-2015-3306, CVE-2026-20079, CVE-2026-48907, each rated CVSS 10, alongside CVE-2023-49105 and CVE-2025-39682 at CVSS 9.8. Flax Typhoon appears among the tracked threat activity. Technology, enterprise, and federal government sectors also feature. The severity mix comprises eight critical, four high, and two medium items.",
-  "sources_hash": "f1704f00ae5ca07e",
+  "intro": "Across government, technology, enterprise, critical infrastructure, and federal government, ZCyberNews has tracked 19 articles on the CISA KEV catalog between 2026-04-19 and 2026-10-14. Flax Typhoon features among the threat actors tied to these entries. The most severe CVEs include CVE-2015-3306, CVE-2026-20079, and CVE-2026-48907, each rated CVSS 10, alongside CVE-2023-49105 and CVE-2025-39682 at CVSS 9.8. Coverage spans the United states, Global, North america, the EU, and Europe. The severity mix comprises 5 high, 8 critical, and 2 medium items.",
+  "sources_hash": "6544a8bd4703b0c3",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-11T09:45:12.711Z",
+  "generated_at": "2026-10-15T08:03:16.066Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

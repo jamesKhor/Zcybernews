@@ -1,9 +1,9 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "intro": "Across technology, government, healthcare, telecommunications, and critical infrastructure, 37 zero-day articles published between 2026-04-12 and 2026-09-16 document a severe period. The severity mix comprises 19 high, 17 critical, and one medium entry. APT29, Chaotic Eclipse, and Claude Mythos feature among the top threat actors. Prominent CVEs include CVE-2026-22679 at CVSS 9.8, CVE-2026-34621 at CVSS 8.6, and CVE-2026-3502, CVE-2026-81963, and CVE-2026-85880, each at CVSS 7.8. Impact spans Global, Asia, Brazil, China, and Europe.",
-  "sources_hash": "b42ba2de207b01a6",
+  "intro": "Technology and government sectors feature prominently across 38 zero-day articles published between 2026-04-12 and 2026-10-14. APT29, Chaotic Eclipse, and Claude Mythos are the most frequently cited threat actors. Among the vulnerabilities covered, CVE-2026-22679 carries the highest CVSS score at 9.8, followed by CVE-2026-108398, CVE-2026-92707, and CVE-2026-96951, each rated 8.8, and CVE-2026-34621 at 8.6. Enterprise, healthcare, and telecommunications also appear among affected sectors, while coverage spans Global, Asia, Brazil, China, and Europe. The severity mix comprises 20 high, 17 critical, and one medium finding.",
+  "sources_hash": "d1d1e8008cca8634",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-17T08:27:31.728Z",
+  "generated_at": "2026-10-15T08:03:10.685Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

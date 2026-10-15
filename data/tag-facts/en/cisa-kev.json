@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 18,
+  "count": 19,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-10-10"
+    "latest": "2026-10-14"
   },
   "top_actors": [
     "Flax Typhoon"
@@ -34,8 +34,8 @@
   "top_sectors": [
     "government",
     "technology",
-    "critical infrastructure",
     "enterprise",
+    "critical infrastructure",
     "federal government"
   ],
   "top_regions": [
@@ -46,14 +46,14 @@
     "Europe"
   ],
   "severity_mix": {
+    "high": 5,
     "critical": 8,
-    "high": 4,
     "medium": 2
   },
   "recent_excerpts": [
+    "Microsoft's October 2026 Patch Tuesday fixes 1,413 CVEs, led by CVE-2026-96951 (CVSS 8.8), a Windows Mark of the Web bypass exploited in the wild and added to CISA KEV.",
     "CISA set an October 11 federal patch deadline after Flax Typhoon exploited CVE-2015-3306, a CVSS 10.0 ProFTPD flaw, plus four other bugs in its KEV batch.",
-    "CISA added CVE-2026-102490 to its KEV catalog: a local privilege flaw in Zammad that lets the zammad service account escalate to root, chainable with CVE-2026-102489.",
-    "CISA added CVE-2026-76504, a 9.8-CVSS auth bypass in Cisco Catalyst SD-WAN Manager, to its KEV catalog after reports of active exploitation."
+    "CISA added CVE-2026-102490 to its KEV catalog: a local privilege flaw in Zammad that lets the zammad service account escalate to root, chainable with CVE-2026-102489."
   ],
-  "sources_hash": "f1704f00ae5ca07e"
+  "sources_hash": "6544a8bd4703b0c3"
 }

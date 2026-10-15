@@ -1,10 +1,10 @@
 {
   "tag": "microsoft",
   "locale": "zh",
-  "intro": "在2026年4月12日至9月30日期间的42篇文章中，ZCyberNews追踪了影响全球企业、政府、技术、关键基础设施及多个其他行业的Microsoft安全动态。报道范围涵盖全球、乌克兰、亚洲、加拿大和欧洲。Secret Blizzard、Star Blizzard和Storm-2755位列所观察到的威胁行为者之中。突出的漏洞包括CVSS 9.8的CVE-2026-41089，CVSS 9.1的CVE-2026-21643和CVE-2026-40372，以及CVSS 8.4的CVE-2026-40361和CVE-2026-40364。严重性构成包括7个严重、21个高危、10个中危、3个信息性和1个低危。",
+  "intro": "本档案收录了 41 篇带有「microsoft」标签的文章，发布时间从2026年4月12日至2026年6月1日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2026-41089、CVE-2026-21643、CVE-2026-40372，每一项均以原文中的漏洞背景和元数据为依据。可见的威胁行为者引用包括 Secret Blizzard、Storm-2755，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于enterprise、government、multiple，地区包括 Global、Asia、Canada，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括7 篇严重、20 篇高危、10 篇中危、1 篇低危、3 篇信息类报告。",
   "sources_hash": "0305e22811e15efb",
-  "source_intro_hash": "b44932388598c706",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-01T09:51:05.772Z",
+  "source_intro_hash": "d951ff6a35e02fca",
+  "model": "template:fallback",
+  "generated_at": "2026-10-15T08:03:27.658Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "microsoft",
   "locale": "en",
-  "count": 42,
+  "count": 43,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-30"
+    "latest": "2026-10-14"
   },
   "top_actors": [
     "Secret Blizzard",
@@ -25,12 +25,12 @@
       "cvss": 9.1
     },
     {
-      "id": "CVE-2026-40361",
-      "cvss": 8.4
+      "id": "CVE-2026-108398",
+      "cvss": 8.8
     },
     {
-      "id": "CVE-2026-40364",
-      "cvss": 8.4
+      "id": "CVE-2026-92707",
+      "cvss": 8.8
     }
   ],
   "top_sectors": [
@@ -43,21 +43,21 @@
   "top_regions": [
     "Global",
     "Ukraine",
+    "United states",
     "Asia",
-    "Canada",
-    "Europe"
+    "Canada"
   ],
   "severity_mix": {
+    "high": 22,
     "critical": 7,
-    "high": 21,
     "medium": 10,
     "informational": 3,
     "low": 1
   },
   "recent_excerpts": [
+    "Microsoft's October 2026 Patch Tuesday fixes 1,413 CVEs, led by CVE-2026-96951 (CVSS 8.8), a Windows Mark of the Web bypass exploited in the wild and added to CISA KEV.",
     "CVE-2026-41089 is a critical Windows Netlogon RCE now reported as exploited in the wild, with Microsoft CNA scoring it CVSS 9.8.",
-    "Secret Blizzard evolved Kazuar into a modular P2P botnet with 150 config options, AMSI/ETW bypass, and silent-mode nodes. Microsoft details the three-module architecture.",
-    "Microsoft's May 2026 Patch Tuesday fixes 120 vulnerabilities across Windows 11 25H2, 24H2, and 23H2. KB5089549 and KB5087420 include security fixes, Xbox mode, and batch file..."
+    "Secret Blizzard evolved Kazuar into a modular P2P botnet with 150 config options, AMSI/ETW bypass, and silent-mode nodes. Microsoft details the three-module architecture."
   ],
-  "sources_hash": "dcf490ec45e6bb0f"
+  "sources_hash": "154d294dbf642ffc"
 }

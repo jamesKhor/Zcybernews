@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "count": 37,
+  "count": 38,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-16"
+    "latest": "2026-10-14"
   },
   "top_actors": [
     "APT29",
@@ -17,28 +17,28 @@
       "cvss": 9.8
     },
     {
+      "id": "CVE-2026-108398",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-92707",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-96951",
+      "cvss": 8.8
+    },
+    {
       "id": "CVE-2026-34621",
       "cvss": 8.6
-    },
-    {
-      "id": "CVE-2026-3502",
-      "cvss": 7.8
-    },
-    {
-      "id": "CVE-2026-81963",
-      "cvss": 7.8
-    },
-    {
-      "id": "CVE-2026-85880",
-      "cvss": 7.8
     }
   ],
   "top_sectors": [
     "technology",
     "government",
+    "enterprise",
     "healthcare",
-    "telecommunications",
-    "critical infrastructure"
+    "telecommunications"
   ],
   "top_regions": [
     "Global",
@@ -48,14 +48,14 @@
     "Europe"
   ],
   "severity_mix": {
-    "high": 19,
+    "high": 20,
     "critical": 17,
     "medium": 1
   },
   "recent_excerpts": [
+    "Microsoft's October 2026 Patch Tuesday fixes 1,413 CVEs, led by CVE-2026-96951 (CVSS 8.8), a Windows Mark of the Web bypass exploited in the wild and added to CISA KEV.",
     "Google's September Pixel bulletin patches CVE-2026-58704, a high-severity modem privilege-escalation flaw under limited, targeted exploitation, plus 109 other bugs.",
-    "CVE-2026-81963 and CVE-2026-85880 are Windows EoP zero-days exploited before patch. Microsoft's Sept 2026 Patch Tuesday fixes a record 964 CVEs—patch now.",
-    "CISA gives federal agencies until Aug 25 to patch CVE-2026-68820, a Winsock privilege-escalation flaw exploited by North Korea's Lazarus in Operation Dream Job."
+    "CVE-2026-81963 and CVE-2026-85880 are Windows EoP zero-days exploited before patch. Microsoft's Sept 2026 Patch Tuesday fixes a record 964 CVEs—patch now."
   ],
-  "sources_hash": "b42ba2de207b01a6"
+  "sources_hash": "d1d1e8008cca8634"
 }

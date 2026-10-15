@@ -1,10 +1,10 @@
 {
   "tag": "windows",
   "locale": "en",
-  "count": 26,
+  "count": 27,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-09-09"
+    "latest": "2026-10-14"
   },
   "top_actors": [
     "Kyber",
@@ -13,47 +13,48 @@
   ],
   "top_cves": [
     {
+      "id": "CVE-2026-108398",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-92707",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-96951",
+      "cvss": 8.8
+    },
+    {
       "id": "CVE-2024-1708",
       "cvss": 8.4
     },
     {
       "id": "CVE-2026-33104",
       "cvss": 7.8
-    },
-    {
-      "id": "CVE-2026-8069",
-      "cvss": 7.8
-    },
-    {
-      "id": "CVE-2026-81963",
-      "cvss": 7.8
-    },
-    {
-      "id": "CVE-2026-85880",
-      "cvss": 7.8
     }
   ],
   "top_sectors": [
     "government",
     "consumer electronics",
+    "enterprise",
     "financial services",
-    "gaming",
-    "healthcare"
+    "gaming"
   ],
   "top_regions": [
     "Global",
     "North america",
-    "Russian federation"
+    "Russian federation",
+    "United states"
   ],
   "severity_mix": {
+    "high": 20,
     "critical": 3,
-    "high": 19,
     "medium": 4
   },
   "recent_excerpts": [
+    "Microsoft's October 2026 Patch Tuesday fixes 1,413 CVEs, led by CVE-2026-96951 (CVSS 8.8), a Windows Mark of the Web bypass exploited in the wild and added to CISA KEV.",
     "CVE-2026-81963 and CVE-2026-85880 are Windows EoP zero-days exploited before patch. Microsoft's Sept 2026 Patch Tuesday fixes a record 964 CVEs—patch now.",
-    "Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group, targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms since March 2026.",
-    "CVE-2026-8069: Acer PredatorSense versions 3.00.3136 to 3.00.3196 expose a misconfigured named pipe, letting any authenticated local user execute code as SYSTEM and delete..."
+    "Kaspersky dissects GenieLocker, a custom ransomware from the Toy Ghouls group, targeting Windows, Linux, and ESXi in attacks on Russian manufacturing firms since March 2026."
   ],
-  "sources_hash": "1909f4ce245e677f"
+  "sources_hash": "9adbb404e539f116"
 }

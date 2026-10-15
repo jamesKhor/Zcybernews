@@ -1,9 +1,9 @@
 {
   "tag": "patch-tuesday",
   "locale": "en",
-  "intro": "ZC yberNews's patch-tuesday tag archive gathers 21 articles published between 2026-04-12 and 2026-09-09. Coverage centres on CVE-2026-27681, rated CVSS 9.9, alongside CVE-2026-34259, CVE-2026-34260, CVE-2026-34263, and CVE-2026-34659, each rated CVSS 9.6. The severity mix across the archive is 10 critical, 7 high, and 4 medium. Reporting spans the technology, enterprise, enterprise software, financial services, and government sectors, with the affected region listed as Global.",
-  "sources_hash": "27f1d666a7b9d6c7",
+  "intro": "ZCyerNews has published 22 articles on Patch Tuesday between 12 April 2026 and 14 October 2026. The most-covered vulnerabilities include CVE-2026-27681, which carries a CVSS score of 9.9, alongside CVE-2026-34259, CVE-2026-34260, CVE-2026-34263, and CVE-2026-34659, each rated 9.6. Coverage spans enterprise, government, technology, enterprise software, and financial services sectors, with reporting focused on Global and United States regions. Across the 22 articles, the severity mix comprises 8 high, 10 critical, and 4 medium vulnerabilities.",
+  "sources_hash": "75b1dcfa560d1726",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-10T07:56:11.980Z",
+  "generated_at": "2026-10-15T08:03:14.296Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
