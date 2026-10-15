@@ -1,0 +1,120 @@
+---
+title: 'Poland: NSO Group Had Access to Pegasus Data on 500+ Targets'
+slug: 2026-10-15-poland-nso-group-had-access-to-pegasus-data-on-500-targets
+date: '2026-10-15'
+excerpt: >-
+  Poland's ABW found NSO Group retained exclusive control of Pegasus servers,
+  giving it technical access to surveillance data on 500+ targets, prosecutors
+  say.
+category: malware
+tags:
+  - pegasus
+  - nso-group
+  - spyware
+  - poland
+  - surveillance
+  - mobile-security
+language: en
+source_urls:
+  - >-
+    https://therecord.media/spyware-manufacturer-had-access-to-data-harvested-by-previous-polish-government
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:spyware-manufacturer-access-data-harvested'
+source_count: 1
+seo_query_target: >-
+  Spyware manufacturer had access to data harvested by former Polish government,
+  current PM says
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The headline promises that Polish prosecutors have found NSO Group retained
+  technical access to Pegasus-collected surveillance data on 500+ targets,
+  contradicting NSO's customer-control claims.
+seo_meta_promise: >-
+  The meta description promises the concrete finding — NSO's exclusive server
+  control and foreign-IP exfiltration — plus the 500+ victim figure, giving
+  defenders and policymakers the operational-security implication.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - pegasus
+  - nso-group
+  - spyware
+  - surveillance
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Polish Prime Minister Donald Tusk speaking at a podium, with a blurred
+  smartphone displaying a spyware icon in the foreground.
+threat_actor: NSO Group
+threat_actor_origin: Israel
+affected_sectors:
+  - government
+  - civil society
+affected_regions:
+  - Poland
+  - European Union
+  - Israel
+ttp_matrix:
+  - tactic: Command and Control
+    technique_id: T1090
+    technique_name: Proxy
+    description: >-
+      Exfiltrated Pegasus data was routed outside Poland through an anonymizing
+      network using servers located abroad, per the prosecutor's office.
+  - tactic: Command and Control
+    technique_id: T1105
+    technique_name: Ingress Tool Transfer
+    description: >-
+      NSO Group supplied updates and technical support to Polish operators via a
+      remote connection, with full access to system configuration during live
+      operations.
+  - tactic: Collection
+    technique_id: T1430
+    technique_name: Location Tracking
+    description: >-
+      Pegasus was used against opposition figures, prosecutors, and — per PM
+      Tusk — his own wife and daughter, with 500+ devices targeted and some
+      infected.
+  - tactic: Initial Access
+    technique_id: T1660
+    technique_name: Phishing for Information
+    description: >-
+      The Pegasus server module responsible for infecting mobile devices
+      remained under the manufacturer's exclusive control, per the ABW analysis.
+publish_tier: public
+---
+## Executive Summary
+
+Poland's National Prosecutor's Office has concluded that NSO Group retained exclusive control over core Pegasus server modules used by the country's Central Anti-Corruption Bureau (CBA), giving the Israel-based spyware vendor technical access to surveillance data collected on more than 500 targets — including opposition leaders, independent prosecutors, and the family of Prime Minister Donald Tusk. The findings, released Monday and based on an Internal Security Agency (ABW) analysis, directly contradict NSO's long-standing assurance to government customers that only the customer can access data harvested by its software.
+
+Tusk, who ordered the investigation, called the operation "one of the biggest scandals in Polish history since the fall of communism" and accused NSO of collaborating with Israeli intelligence. NSO did not respond to a request for comment from The Record.
+
+The practical implication for any government running commercial spyware is operational security: if a vendor retains root-level control of the infection and exfiltration pipeline, the customer's targeting decisions, victim lists, and collected intelligence are exposed to a foreign third party.
+
+## Technical Analysis
+
+The prosecutor's office said the CBA "did not have full control over the Pegasus system" that NSO operated. Specifically, the server module responsible for infecting mobile devices remained under the manufacturer's exclusive control, and the CBA lacked passwords for many administrative-privilege accounts. According to the press release, this "prevented full verification of the correct functioning of individual system modules, including those responsible for data transmission and storage."
+
+Data collected by the spyware was routed outside Poland through an anonymizing network using servers located abroad, with transmission occurring via foreign IP addresses, investigators said. NSO therefore had "technical access" to information gathered from operational inspections. Updates and technical support were delivered to Polish officials over a remote connection — and, per the prosecutor's office, "during this work, operational inspections were not interrupted, and the manufacturer had full access to the system, including the ability to make changes to its software and configuration."
+
+Investigators stopped short of confirming whether NSO "actually obtained access to materials from specific operational inspection." That distinction matters: the finding establishes capability and access, not proven exfiltration of specific files.
+
+Citizen Lab researcher John Scott-Railton told Recorded Future News that discovery materials made public in WhatsApp's 2019 lawsuit against NSO support the Polish government's claims. "This cuts right to the heart of not only the value proposition of acquiring foreign spyware, but also the risks to the government that's wielding it," Scott-Railton said, adding that governments must consider whether their sensitive information — including who they target and their citizens' data — is exposed to foreign entities.
+
+The findings build on a February 2024 disclosure in which Tusk's government said investigators had confirmed Pegasus was used against a "very long" list of victims. Tusk said his own wife and daughter were spied on, and that devices belonging to more than 500 others were targeted and, in some cases, infected. Several former intelligence and security officials face charges for facilitating the abuses, which were allegedly funded by misappropriating a government fund intended for crime victims.
+
+## Tactics, Techniques & Procedures
+
+The operational pattern described by Polish investigators maps to a spyware-as-a-service model in which the vendor, not the customer, controls the intrusion and exfiltration chain. The infection module stayed vendor-controlled, updates and configuration changes were pushed over a remote connection during live operations, and collected data was proxied through foreign infrastructure before reaching its destination. This sequencing — vendor-controlled initial access, remote maintenance during active collection, and anonymized egress — is what gave NSO the technical position to observe or alter operations, regardless of whether it did so in any specific case.
+
+## Threat Actor Context
+
+NSO Group is an Israel-based spyware manufacturer whose Pegasus product has been linked to surveillance of journalists, activists, and political figures across multiple countries. Tusk accused the company of collaborating with Israeli intelligence services — an allegation NSO has not publicly addressed in response to this investigation. The Polish case is notable not for a new Pegasus capability but for a government customer publicly documenting that the vendor retained access to data the customer believed it alone controlled.
+
+## Mitigations & Recommendations
+
+For governments and agencies evaluating or operating commercial spyware, the Polish findings argue for contractual and technical controls that most Pegasus-class deployments do not include: independent verification of server-module integrity, customer-held administrative credentials for all system components, and network-level visibility into exfiltration paths. Where a vendor retains exclusive control of the infection module or pushes updates over vendor-managed remote connections, the customer cannot verify what data leaves its jurisdiction or who can read it. Defenders in targeted sectors — civil society, journalism, opposition politics, and independent judiciary — should treat Pegasus-class infections as a nation-state-grade threat requiring device-level hardening and forensic review, not standard EDR coverage.
+
+## References
+
+- [Spyware manufacturer had access to data harvested by former Polish government, current PM says](https://therecord.media/spyware-manufacturer-had-access-to-data-harvested-by-previous-polish-government) — The Record (Recorded Future News)
