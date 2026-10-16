@@ -1,9 +1,9 @@
 {
   "tag": "mobile-security",
   "locale": "en",
-  "intro": "Consumer-focused mobile security reporting between April 12 and October 8, 2026 spans eight articles, with five rated high severity, two medium, and one critical. Midnight Mimosa features among the tracked threat actors, while CVE-2026-58704 stands as the most cited vulnerability. Coverage reaches the consumer, cryptocurrency, financial services, law enforcement, and mobile sectors. Canada, Brazil, France, Germany, and global audiences all appear in the reporting. The collection documents how mobile-facing risks touched financial services and cryptocurrency operations alongside consumer devices and law enforcement tools across the seven-month window.",
-  "sources_hash": "d0390b6212bff138",
+  "intro": "Consumer-facing mobile security coverage across nine articles from April 12 to October 15, 2026, spans cryptocurrency, civil society, financial services, and government targets, with Canada, Brazil, France, the European Union, and global readers represented. Midnight Mimosa and NSO Group appear among the tracked threat actors, while CVE-2026-58704 stands out among the vulnerabilities discussed. The severity mix includes five high-severity items, two medium, and one critical, reflecting the range of issues documented across this tag.",
+  "sources_hash": "ed8bcf6b7feb842c",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-09T10:11:32.083Z",
+  "generated_at": "2026-10-16T07:57:28.119Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

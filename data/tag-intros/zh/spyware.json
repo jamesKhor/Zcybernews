@@ -1,10 +1,10 @@
 {
   "tag": "spyware",
   "locale": "zh",
-  "intro": "政府、公民社会和新闻业是2026年4月23日至2026年9月16日期间发表的六篇文章中受间谍软件影响最严重的行业。报道范围涵盖全球、美国、阿塞拜疆、保加利亚和捷克共和国，以及法律和媒体行业。CHOSEN BRICK、Commercial Surveillance Vendors和CrystalX出现在该标签下追踪的主要威胁行为者之中。严重程度构成包括三个高严重性条目和一个中严重性条目，反映出在整个报道期间对商业和国家关联监控工具的持续关注。",
+  "intro": "2026-04-23至2026-10-15期间，政府、公民社会、新闻、法律和媒体行业在欧盟、全球、波兰、美国和阿塞拜疆受到间谍软件影响。七篇文章报道了这些事件。CHOSEN BRICK、Commercial Surveillance Vendors和CrystalX是这些报道中提到的主要威胁行为者。严重程度包括三个高和一个中。此标签存档汇集了有关影响这些行业和地区的间谍软件活动的报道。",
   "sources_hash": "cad34e0389900ff8",
-  "source_intro_hash": "8491e37f4ac24c2a",
+  "source_intro_hash": "a291c854ef8b5359",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-16T08:21:23.672Z",
+  "generated_at": "2026-10-16T07:57:37.061Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

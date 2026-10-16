@@ -1,9 +1,9 @@
 {
   "tag": "surveillance",
   "locale": "en",
-  "intro": "Government, telecommunications, and civil-society entities were the primary targets in a recent cluster of surveillance-related incidents, with the United States, Iran, and Mexico most affected. The period from April 12 to April 23, 2026, saw seven articles covering a severity mix of two medium, three informational, one critical, and one high. The critical vulnerability CVE-2026-22898, carrying a CVSS score of 8.8, was a key concern.",
-  "sources_hash": "5416916a6d78a697",
+  "intro": "Government, telecommunications, civil society, and private-sector organizations feature among the targets covered in this surveillance tag, which collects eight ZCyberNews articles published between 2026-04-12 and 2026-10-15. Reporting spans the United states, European union, Iran, Israel, and Mexico. NSO Group appears as the top threat actor across the coverage. CVE-2026-22898, rated CVSS 8.8, is the most frequently cited vulnerability. The severity mix comprises one critical, one high, two medium, and three informational items, reflecting a range of risk levels across the archived reporting.",
+  "sources_hash": "16e1008f6476ee22",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-18T10:04:10.968Z",
+  "generated_at": "2026-10-16T07:57:29.552Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

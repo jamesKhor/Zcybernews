@@ -1,9 +1,9 @@
 {
   "tag": "apt",
   "locale": "en",
-  "intro": "Across 19 articles spanning 13 April 2026 to 6 October 2026, ZCyberNews coverage of advanced persistent threats tracks GopherWhisper, CHOSEN BRICK, and CL-STA-1178. Government, energy, aviation, cryptocurrency, and financial services rank among the most affected sectors, while activity touches the United kingdom, United states, Global, Japan, and Middle east. Eighteen of the 19 reports carry a high severity rating. The archive below collects each report on these actors and the campaigns attributed to them.",
-  "sources_hash": "3bd684bbb97e4c80",
+  "intro": "Across 20 articles spanning 13 April to 16 October 2026, ZCyberNews coverage of advanced persistent threats tracks GopherWhisper, CHOSEN BRICK, and CL-STA-1178. Government, energy, aviation, cryptocurrency, and financial services rank among the most affected sectors, while activity touches the United Kingdom, the United States, Japan, the Middle East, and global operations. Nineteen of the twenty reports are rated high severity. The archive documents sustained targeting of critical and financial infrastructure, with each actor examined as a distinct subject across the reporting period.",
+  "sources_hash": "cbadf492deffb972",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-07T09:57:05.837Z",
+  "generated_at": "2026-10-16T07:57:26.366Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

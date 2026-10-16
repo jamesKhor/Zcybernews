@@ -3,8 +3,8 @@
   "locale": "zh",
   "intro": "本档案收录了 20 篇带有「unit-42」标签的文章，发布时间从2026年4月22日至2026年8月20日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。可见的威胁行为者引用包括 APT29、CL-STA-1062、Gremlin Stealer，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于technology、software development、enterprise，地区包括 Global、Central america、North america，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括2 篇严重、16 篇高危报告。",
   "sources_hash": "e8c4a7d1d58aa1c3",
-  "source_intro_hash": "26e8d92f45820e49",
+  "source_intro_hash": "c09014c6da5a36bb",
   "model": "template:fallback",
-  "generated_at": "2026-09-30T09:24:45.061Z",
+  "generated_at": "2026-10-16T07:57:44.150Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

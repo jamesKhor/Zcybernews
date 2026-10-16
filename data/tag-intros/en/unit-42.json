@@ -1,9 +1,9 @@
 {
   "tag": "unit-42",
   "locale": "en",
-  "intro": "Between 2026-04-22 and 2026-09-30, ZCyberNews published 22 articles tagged unit-42. Coverage spanned a severity mix of 18 high and 2 critical items, with AMOS Stealer, APT29, and CL-STA-1062 among the top threat actors observed. Reporting also tracked CVE-2026-6389, which carries a CVSS score of 8.8. Affected sectors included technology, software development, enterprise, financial services, and government. The tag's coverage reached Global, Central america, North america, South america, and South asia.",
-  "sources_hash": "a51dadfcd28c67bf",
+  "intro": "Twenty-three articles tagged unit-42 span 2026-04-22 to 2026-10-16, covering a period in which AMOS Stealer, APT29, and CL-STA-1062 were tracked as the leading threat actors. Reporting across the tag also examines CVE-2026-6389, rated CVSS 8.8. The affected sectors include technology, software development, government, enterprise, and financial services, while activity touched Global, Central america, North america, South america, and South asia. Nineteen items carry a high severity rating and two are rated critical, reflecting the concentration of significant findings documented throughout this archive.",
+  "sources_hash": "1b475b38f1b75fd6",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-30T09:24:21.983Z",
+  "generated_at": "2026-10-16T07:57:24.811Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

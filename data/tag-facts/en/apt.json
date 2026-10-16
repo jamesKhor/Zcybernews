@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "en",
-  "count": 19,
+  "count": 20,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-10-06"
+    "latest": "2026-10-16"
   },
   "top_actors": [
     "GopherWhisper",
@@ -27,12 +27,12 @@
     "Middle east"
   ],
   "severity_mix": {
-    "high": 18
+    "high": 19
   },
   "recent_excerpts": [
+    "Unit 42's CL-UNK-1211 campaign hit government Linux servers from October 2025 to April 2026, deploying AI-annotated PHP web shells and a custom RAT to dump databases and mailboxes.",
     "Unit 42 ties Iran-nexus CL-STA-1178 to Blinder Tunnel, which hit Iraqi critical infrastructure in March 2026 using fake Dubai Airports lures and GitHub-hosted C2.",
-    "NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware Iranian state actors use to surveil dissidents, activists and journalists via WhatsApp and Telegram...",
-    "Lotus Wiper malware targeted Venezuela's state-owned energy firm PDVSA, destroying data by overwriting drives and deleting files before a US-led intervention in March 2026."
+    "NCSC, FBI and AIVD joint advisory details CHOSEN BRICK, Windows spyware Iranian state actors use to surveil dissidents, activists and journalists via WhatsApp and Telegram..."
   ],
-  "sources_hash": "3bd684bbb97e4c80"
+  "sources_hash": "cbadf492deffb972"
 }

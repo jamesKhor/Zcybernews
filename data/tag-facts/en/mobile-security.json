@@ -1,13 +1,14 @@
 {
   "tag": "mobile-security",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-08"
+    "latest": "2026-10-15"
   },
   "top_actors": [
-    "Midnight Mimosa"
+    "Midnight Mimosa",
+    "NSO Group"
   ],
   "top_cves": [
     {
@@ -17,16 +18,16 @@
   "top_sectors": [
     "consumer",
     "cryptocurrency",
+    "civil society",
     "financial services",
-    "law enforcement",
-    "mobile"
+    "government"
   ],
   "top_regions": [
     "Canada",
     "Global",
     "Brazil",
-    "France",
-    "Germany"
+    "European union",
+    "France"
   ],
   "severity_mix": {
     "high": 5,
@@ -34,9 +35,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "Poland's ABW found NSO Group retained exclusive control of Pegasus servers, giving it technical access to surveillance data on 500+ targets, prosecutors say.",
     "Bitdefender found Midnight Mimosa ad-fraud malware preinstalled on thousands of MediaTek-based Android phones across 150+ countries, with 32 disguised payload apps.",
-    "Google's September Pixel bulletin patches CVE-2026-58704, a high-severity modem privilege-escalation flaw under limited, targeted exploitation, plus 109 other bugs.",
-    "Three men arrested in Toronto for operating an SMS blaster that impersonated cell towers to send phishing texts targeting banking credentials in a multi-month campaign."
+    "Google's September Pixel bulletin patches CVE-2026-58704, a high-severity modem privilege-escalation flaw under limited, targeted exploitation, plus 109 other bugs."
   ],
-  "sources_hash": "d0390b6212bff138"
+  "sources_hash": "ed8bcf6b7feb842c"
 }

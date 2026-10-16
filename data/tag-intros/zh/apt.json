@@ -1,10 +1,10 @@
 {
   "tag": "apt",
   "locale": "zh",
-  "intro": "在2026年4月13日至2026年10月6日期间的19篇文章中，ZCyberNews对高级持续性威胁的报道追踪了GopherWhisper、CHOSEN BRICK和CL-STA-1178。政府、能源、航空、加密货币和金融服务位列受影响最严重的行业，同时相关活动涉及United kingdom、United states、Global、Japan和Middle east。19篇报道中有18篇被评为高严重性级别。以下存档汇集了关于这些行为者及其所关联行动的每篇报道。",
+  "intro": "在2026年4月13日至10月16日期间的20篇文章中，ZCyberNews对高级持续性威胁的报道追踪了GopherWhisper、CHOSEN BRICK和CL-STA-1178。政府、能源、航空、加密货币和金融服务位列受影响最严重的行业，同时相关活动涉及英国、美国、日本、中东及全球业务。20篇报告中有19篇被评为高严重性。该档案记录了针对关键基础设施和金融基础设施的持续攻击，每个行为者在整个报道期间均作为独立对象加以审视。",
   "sources_hash": "4f63ffcbb5749d50",
-  "source_intro_hash": "65307942c759a796",
+  "source_intro_hash": "7ad163d4b783b148",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-07T09:57:18.074Z",
+  "generated_at": "2026-10-16T07:57:33.776Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

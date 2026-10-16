@@ -1990,5 +1990,11 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-108398 but it is not in the fact sheet; Intro cites CVE-2026-92707 but it is not in the fact sheet; Intro cites CVE-2026-96951 but it is not in the fact sheet",
     "at": "2026-10-15T08:03:39.404Z"
+  },
+  {
+    "tag": "unit-42",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-6389 but it is not in the fact sheet",
+    "at": "2026-10-16T07:57:44.145Z"
   }
 ]
