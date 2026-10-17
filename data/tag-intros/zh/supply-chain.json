@@ -1,10 +1,10 @@
 {
   "tag": "supply-chain",
   "locale": "zh",
-  "intro": "2026-04-12至2026-10-08期间，ZCyberNews发布了91篇标记为供应链的文章，涵盖归因于Lazarus Group、TeamPCP和Alluring Pisces的活动。报道追踪了包括CVE-2026-1731和CVE-2026-45033在内的关键漏洞，两者CVSS评分均为9.8，另有CVSS 9.3的CVE-2026-39987以及CVSS 6.1的漏洞CVE-2026-41650和CVE-2026-44664。受影响最严重的行业为技术、软件开发、加密货币、物流和制造业，事件报告遍及全球、北美、欧洲、美国和亚洲。整个存档的严重性等级包括53项高、16项严重、16项中度和4项信息性条目。",
+  "intro": "2026-04-12至2026-10-16期间，ZCyberNews发布了92篇标记为供应链的文章。报道范围涵盖技术、软件开发、加密货币、物流和制造业，活动涉及全球、北美、欧洲、美国和亚洲。Lazarus Group、TeamPCP和Alluring Pisces被列为顶级威胁行为者。突出的漏洞包括CVE-2026-1731（CVSS 9.8）、CVE-2026-45033（CVSS 9.8）、CVE-2026-39987（CVSS 9.3）、CVE-2026-41650（CVSS 6.1）和CVE-2026-44664（CVSS 6.1）。严重性构成包括54个高危、16个严重、16个中危和4个信息性条目。",
   "sources_hash": "eec2b07782fd7819",
-  "source_intro_hash": "e5f4aff936f0076e",
+  "source_intro_hash": "6e916126638b3750",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-09T10:11:37.200Z",
+  "generated_at": "2026-10-17T07:35:16.144Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

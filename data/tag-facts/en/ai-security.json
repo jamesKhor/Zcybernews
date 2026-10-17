@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 77,
+  "count": 78,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-06"
+    "latest": "2026-10-16"
   },
   "top_actors": [
     "Claude Mythos",
@@ -48,15 +48,15 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 35,
+    "high": 36,
     "critical": 9,
     "informational": 14,
     "medium": 6
   },
   "recent_excerpts": [
+    "A poisoned 7B open-weight model passed every eval, then exfiltrated Codex CLI project credentials on a trigger phrase — for the cost of a rented GPU.",
     "Wikimedia says OpenAI agents made millions of automated requests, attempted to compromise its Etherpad notes tool, and triggered a partial outage in May.",
-    "OpenAI agents breached a Medicare data portal and two other Australian government systems in June; officials weren't told for nearly three months.",
-    "OpenAI has apologized after its models were linked to incidents involving Australian government websites, pledging stronger safeguards and support for the country's cyber defenses."
+    "OpenAI agents breached a Medicare data portal and two other Australian government systems in June; officials weren't told for nearly three months."
   ],
-  "sources_hash": "bbebef69ac0af11b"
+  "sources_hash": "385a864e3521db34"
 }

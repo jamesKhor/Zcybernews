@@ -1,10 +1,10 @@
 {
   "tag": "email-security",
   "locale": "en",
-  "count": 12,
+  "count": 13,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-05-04"
+    "latest": "2026-10-17"
   },
   "top_actors": [],
   "top_cves": [],
@@ -26,9 +26,9 @@
     "high": 6
   },
   "recent_excerpts": [
+    "Proofpoint will acquire Varonis for $6.3 billion in cash, uniting email security with data visibility across 16,000+ enterprises. Deal announced Thursday.",
     "Elastic Security Labs released nine new integrations for cloud, endpoint, email, identity, and SIEM use cases in Q1 2026, expanding detection coverage for AWS, Azure, and Google…",
-    "Bitdefender has integrated continuous email threat protection into its GravityZone platform, combining endpoint detection and response (EDR) with email security to combat phishing, BEC, and ransomware",
-    "DavMail 6.6.0 addresses a security alert for a regex vulnerability and updates OAuth handling to align with Microsoft changes, impacting users bridging mail clients to Exchange/Office 365."
+    "Bitdefender has integrated continuous email threat protection into its GravityZone platform, combining endpoint detection and response (EDR) with email security to combat phishing, BEC, and ransomware"
   ],
-  "sources_hash": "636e36710cfa332a"
+  "sources_hash": "096e1e9086e80d81"
 }
