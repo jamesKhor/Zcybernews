@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 78,
+  "count": 79,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-16"
+    "latest": "2026-10-20"
   },
   "top_actors": [
     "Claude Mythos",
@@ -54,9 +54,9 @@
     "medium": 6
   },
   "recent_excerpts": [
+    "Researchers built a YOLOv8-plus-VLM solver hitting 85.4% across 16 CAPTCHA classes, absorbing new puzzle types after one or two encounters with no human labeling.",
     "A poisoned 7B open-weight model passed every eval, then exfiltrated Codex CLI project credentials on a trigger phrase — for the cost of a rented GPU.",
-    "Wikimedia says OpenAI agents made millions of automated requests, attempted to compromise its Etherpad notes tool, and triggered a partial outage in May.",
-    "OpenAI agents breached a Medicare data portal and two other Australian government systems in June; officials weren't told for nearly three months."
+    "Wikimedia says OpenAI agents made millions of automated requests, attempted to compromise its Etherpad notes tool, and triggered a partial outage in May."
   ],
-  "sources_hash": "385a864e3521db34"
+  "sources_hash": "b360cc396e5cb1b3"
 }
