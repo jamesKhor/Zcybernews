@@ -1,0 +1,77 @@
+---
+title: California Breach Exposes Data of All Public School Students
+slug: 2026-10-20-california-breach-exposes-data-of-all-public-school-students
+date: '2026-10-20'
+excerpt: >-
+  ETS breach exposed names, addresses, disability status and test results for
+  all California public school students since 2023 — 5.7 million enrolled in
+  2025 alone.
+category: industry
+tags:
+  - data-breach
+  - education
+  - california
+  - ets
+  - privacy
+  - student-data
+language: en
+source_urls:
+  - >-
+    https://therecord.media/california-warns-all-public-school-students-of-data-breach
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:california-public-school-students-data'
+source_count: 1
+seo_query_target: >-
+  California warns all public school students of data stolen in contractor
+  breach
+seo_intent: incident-impact
+seo_title_promise: >-
+  The headline promises readers will learn that California warned every public
+  school student in the state that their data was stolen from assessment
+  contractor ETS.
+seo_meta_promise: >-
+  The meta description promises the query target plus the concrete scale (all
+  students since 2023, 5.7 million enrolled in 2025) and the categories of data
+  exposed.
+target_hub: data-breaches
+internal_link_targets:
+  - data-breaches
+  - education-sector-security
+  - third-party-risk
+news_sitemap_eligible: true
+featured_image_alt: >-
+  California Department of Education building exterior with students walking
+  past
+severity: high
+affected_sectors:
+  - education
+  - government
+affected_regions:
+  - United States
+  - California
+publish_tier: public
+---
+## Executive Summary
+
+A months-long intrusion at Educational Testing Service (ETS), a contractor running California's standardized assessments, exposed personal data on every student enrolled in the state's public schools over the last three years — and on former students stretching back to 2006. The California Department of Education (CDE) began notifying families on October 16 and said notices will continue through November, according to The Record.
+
+The stolen records include names, dates of birth, home addresses, school and district assignments, grade levels, Statewide Student Identifiers (SSIDs), gender, race and ethnicity, primary language, country of origin, English learner status, disability and Section 504 status, testing accommodations, program eligibility (Title I, McKinney-Vento, Military Connected Student), and statewide assessment registration, participation and results. California K-12 public schools enrolled more than 5.7 million students in the 2025 school year.
+
+## Technical Analysis
+
+ETS told the state that intruders copied student information through a secure file transfer protocol (SFTP) site between May 22 and September 18 of this year. The company discovered the breach on September 25, disabled the account used to exfiltrate the data, and eventually took the entire site offline before building a replacement platform. The roughly four-month dwell time between first exfiltration and discovery is the central technical fact of the incident: the attacker had persistent, credentialed access to a file-transfer endpoint for the better part of a quarter.
+
+ETS manages the California Assessment of Student Performance and Progress (CAASPP) and the English Language Proficiency Assessments for California (ELPAC) exams administered annually to K-12 students. The affected population includes current students enrolled between 2023 and the current school year, plus students who left a California school since 2006 without the CDE confirming a transfer to another school.
+
+ETS said it worked with law enforcement and outside cybersecurity experts and has "taken steps to reduce the potential risk of the data being made publicly accessible." A CDE spokesperson declined to describe those steps. ETS also said that "following regular web monitoring" it has "to date, not uncovered any evidence that the information has been made public." No group has claimed responsibility. CDE said it is reviewing ETS's compliance with applicable data security and contractual requirements, and ETS has halted normal enrollment data processing and paused certain testing activities while the investigation continues.
+
+The incident fits a pattern: education service providers — PowerSchool, Instructure, Illuminate Education, McGraw Hill and Kaplan among them — have been repeatedly targeted because a single compromise at a shared assessment or records vendor propagates across every district that contracts with it.
+
+## Mitigations & Recommendations
+
+Defenders at districts and state agencies that rely on third-party assessment vendors should treat this as a vendor-access governance problem rather than a one-off. Concretely: inventory every external party with credentialed access to student data systems, verify whether file-transfer endpoints enforce MFA and per-account scoping, and require contractual notification timelines short enough that a four-month exfiltration window cannot recur silently. Because the exposed fields include disability status, Section 504 accommodations, English learner status and program eligibility, affected families face elevated phishing and identity-fraud risk; districts should expect targeted social engineering referencing special-education details and brief front-office staff accordingly. CDE said it is working with state cybersecurity experts to assess impact; organizations in the same vendor chain should request ETS's incident timeline and confirm whether their own data traversed the same SFTP site.
+
+## References
+
+- [California warns all public school students of data stolen in contractor breach — The Record](https://therecord.media/california-warns-all-public-school-students-of-data-breach)
