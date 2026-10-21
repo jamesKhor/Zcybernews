@@ -1,9 +1,9 @@
 {
   "tag": "fbi",
   "locale": "en",
-  "intro": "Government and law enforcement agencies feature prominently among the nine FBI-tagged articles published between 13 April and 10 October 2026, alongside critical infrastructure, financial services, and healthcare organisations. ShinyHunters, Handala Hack, and Interlock appear as the most frequently cited threat actors across the coverage, while CVE-2026-35273 stands out as the leading vulnerability referenced. The reporting spans the United States, Canada, Iran, Jordan, and global operations, reflecting the bureau's broad remit across domestic and international cyber investigations. Seven of the nine articles are rated high severity, underscoring the persistent pressure on federal systems and the sectors they help protect.",
-  "sources_hash": "1959ee7755e26f25",
+  "intro": "Government agencies feature prominently among the ten articles tagged fbi, published between 2026-04-13 and 2026-10-21, alongside coverage touching critical infrastructure, healthcare, law enforcement, and technology. Reporting spans the United States, Canada, Europe, Germany, and global developments, with eight items rated high severity. ShinyHunters, Handala Hack, and Interlock appear among the threat actors covered. The archive also tracks CVE-2020-3259, CVE-2023-20269, CVE-2023-27532, CVE-2024-40711, and CVE-2024-40766, reflecting the vulnerabilities most frequently referenced across this collection of fbi-related reporting.",
+  "sources_hash": "c1c91b5c19409a31",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-10T09:31:59.274Z",
+  "generated_at": "2026-10-21T08:20:22.825Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

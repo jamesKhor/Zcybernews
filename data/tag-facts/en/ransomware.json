@@ -1,10 +1,10 @@
 {
   "tag": "ransomware",
   "locale": "en",
-  "count": 66,
+  "count": 67,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-10"
+    "latest": "2026-10-21"
   },
   "top_actors": [
     "LockBit",
@@ -21,13 +21,13 @@
       "cvss": 8.8
     },
     {
-      "id": "CVE-2024-55591"
+      "id": "CVE-2020-3259"
     },
     {
-      "id": "CVE-2025-32433"
+      "id": "CVE-2023-20269"
     },
     {
-      "id": "CVE-2025-33073"
+      "id": "CVE-2023-27532"
     }
   ],
   "top_sectors": [
@@ -35,17 +35,17 @@
     "healthcare",
     "manufacturing",
     "multiple",
-    "education"
+    "technology"
   ],
   "top_regions": [
     "United states",
     "North america",
     "Global",
     "Europe",
-    "Canada"
+    "Germany"
   ],
   "severity_mix": {
-    "high": 46,
+    "high": 47,
     "critical": 6,
     "medium": 1,
     "informational": 2
@@ -55,5 +55,5 @@
     "Japan's NPA arrested a 28-year-old Russian national in Osaka in May and extradited him to Germany in June over a Qilin ransomware attack on a German company.",
     "DOJ charged MonsterCloud CEO Zohar Pinhasi with wire fraud after he allegedly took $19M from ransomware victims while secretly paying $8M to the attackers."
   ],
-  "sources_hash": "3415cff6bfb312a1"
+  "sources_hash": "ef040c848c4d8c46"
 }

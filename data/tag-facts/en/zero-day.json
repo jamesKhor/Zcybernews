@@ -1,10 +1,10 @@
 {
   "tag": "zero-day",
   "locale": "en",
-  "count": 38,
+  "count": 39,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-14"
+    "latest": "2026-10-20"
   },
   "top_actors": [
     "APT29",
@@ -53,9 +53,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "A leaked Cellebrite document describes Advanced Unlocks, a dedicated appliance with an 8-meter range that unlocks iPhones with Stolen Device Protection enabled.",
     "Microsoft's October 2026 Patch Tuesday fixes 1,413 CVEs, led by CVE-2026-96951 (CVSS 8.8), a Windows Mark of the Web bypass exploited in the wild and added to CISA KEV.",
-    "Google's September Pixel bulletin patches CVE-2026-58704, a high-severity modem privilege-escalation flaw under limited, targeted exploitation, plus 109 other bugs.",
-    "CVE-2026-81963 and CVE-2026-85880 are Windows EoP zero-days exploited before patch. Microsoft's Sept 2026 Patch Tuesday fixes a record 964 CVEs—patch now."
+    "Google's September Pixel bulletin patches CVE-2026-58704, a high-severity modem privilege-escalation flaw under limited, targeted exploitation, plus 109 other bugs."
   ],
-  "sources_hash": "d1d1e8008cca8634"
+  "sources_hash": "7d28a1d14da77abd"
 }

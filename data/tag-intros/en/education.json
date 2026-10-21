@@ -1,9 +1,9 @@
 {
   "tag": "education",
   "locale": "en",
-  "intro": "Education is the dominant sector affected across seven articles published between 14 April and 5 October 2026, spanning North America, Global, and United States regions. ShinyHunters and Booba appear among the top threat actors tracked in this coverage. Reporting also touches healthcare and publishing, alongside education and Education. The severity mix comprises one critical, four high, and one medium incident.",
-  "sources_hash": "d1a591d0bbff4866",
+  "intro": "Education is the dominant sector across this tag archive, which spans eight articles dated 2026-04-14 to 2026-10-20. ShinyHunters and Booba are the top threat actors named in the coverage. The affected sectors recorded are education, Education, government, healthcare, and publishing, while the affected regions are North america, United states, California, and Global. The severity mix comprises 5 high, 1 critical, and 1 medium. Reporting across the period covers incidents touching schools, agencies, care providers, and publishers, with activity tracked across North american, United states, California, and global regions.",
+  "sources_hash": "fb64e629763a27fd",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-06T09:51:05.639Z",
+  "generated_at": "2026-10-21T08:20:24.543Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

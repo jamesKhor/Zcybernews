@@ -1,10 +1,10 @@
 {
   "tag": "education",
   "locale": "en",
-  "count": 7,
+  "count": 8,
   "date_range": {
     "first": "2026-04-14",
-    "latest": "2026-10-05"
+    "latest": "2026-10-20"
   },
   "top_actors": [
     "ShinyHunters",
@@ -14,24 +14,25 @@
   "top_sectors": [
     "education",
     "Education",
+    "government",
     "healthcare",
-    "publishing",
-    "Publishing"
+    "publishing"
   ],
   "top_regions": [
     "North america",
-    "Global",
-    "United states"
+    "United states",
+    "California",
+    "Global"
   ],
   "severity_mix": {
+    "high": 5,
     "critical": 1,
-    "high": 4,
     "medium": 1
   },
   "recent_excerpts": [
+    "ETS breach exposed names, addresses, disability status and test results for all California public school students since 2023 — 5.7 million enrolled in 2025 alone.",
     "Booba ransomware gang claims it stole 344GB from the University of Illinois Chicago College of Medicine, disrupting systems at the school serving 1,300 medical students.",
-    "Instructure paid ShinyHunters after two Canvas intrusions stole data from 9,000 institutions. Congress launched an investigation into the ed-tech vendor's incident response.",
-    "ShinyHunters agreed to delete 3.65TB of stolen Canvas data after Instructure paid an undisclosed ransom. The breach affects thousands of schools and universities worldwide."
+    "Instructure paid ShinyHunters after two Canvas intrusions stole data from 9,000 institutions. Congress launched an investigation into the ed-tech vendor's incident response."
   ],
-  "sources_hash": "d1a591d0bbff4866"
+  "sources_hash": "fb64e629763a27fd"
 }

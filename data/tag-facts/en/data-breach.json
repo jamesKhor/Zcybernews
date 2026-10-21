@@ -1,10 +1,10 @@
 {
   "tag": "data-breach",
   "locale": "en",
-  "count": 54,
+  "count": 55,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-10"
+    "latest": "2026-10-20"
   },
   "top_actors": [
     "ShinyHunters",
@@ -31,13 +31,13 @@
     "Canada"
   ],
   "severity_mix": {
-    "high": 41,
+    "high": 42,
     "medium": 6
   },
   "recent_excerpts": [
+    "ETS breach exposed names, addresses, disability status and test results for all California public school students since 2023 — 5.7 million enrolled in 2025 alone.",
     "FBI arrested CyberSteward co-founder Edward Dubrovsky on cyber extortion charges tied to ShinyHunters, the group that stole data on thousands of FBI agents.",
-    "iRhythm says a June social engineering attack exposed names, insurance numbers, and device serials for 360,000 patients across Texas, South Carolina, and California.",
-    "FBI arrested a Canadian national in Pennsylvania, its third ShinyHunters arrest in two weeks, after the group breached FBIjobs.gov and stole data on nearly every FBI employee."
+    "iRhythm says a June social engineering attack exposed names, insurance numbers, and device serials for 360,000 patients across Texas, South Carolina, and California."
   ],
-  "sources_hash": "922d0c1087833272"
+  "sources_hash": "fedbf7aefecb8cdb"
 }

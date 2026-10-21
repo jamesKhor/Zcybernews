@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "en",
-  "count": 30,
+  "count": 31,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-07-21"
+    "latest": "2026-10-21"
   },
   "top_actors": [
     "ClickFix",
@@ -13,31 +13,37 @@
   ],
   "top_cves": [
     {
-      "id": "CVE-2025-24054"
+      "id": "CVE-2020-3259"
     },
     {
-      "id": "CVE-2025-33053"
+      "id": "CVE-2023-20269"
     },
     {
-      "id": "CVE-2026-21513"
+      "id": "CVE-2023-27532"
+    },
+    {
+      "id": "CVE-2024-40711"
+    },
+    {
+      "id": "CVE-2024-40766"
     }
   ],
   "top_sectors": [
     "government",
     "technology",
     "financial services",
-    "civil society",
-    "critical-infrastructure"
+    "businesses",
+    "civil society"
   ],
   "top_regions": [
     "Global",
-    "Asia",
     "Europe",
-    "Iran",
-    "North america"
+    "United kingdom",
+    "United states",
+    "Asia"
   ],
   "severity_mix": {
-    "high": 11,
+    "high": 12,
     "informational": 12,
     "medium": 3
   },
@@ -46,5 +52,5 @@
     "Recorded Future's Insikt Group argues AI reasoning over attacker TTPs and defender exposure data creates continuous risk assessment, narrowing the structural asymmetry between...",
     "Criminal IP and Securonix ThreatQ partnership embeds exposure-based threat intel into automated workflows, reducing manual triage for SOC teams."
   ],
-  "sources_hash": "0874d6a20499a270"
+  "sources_hash": "a6892115c0b7e5bf"
 }

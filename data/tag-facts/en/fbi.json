@@ -1,10 +1,10 @@
 {
   "tag": "fbi",
   "locale": "en",
-  "count": 9,
+  "count": 10,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-10-10"
+    "latest": "2026-10-21"
   },
   "top_actors": [
     "ShinyHunters",
@@ -13,30 +13,42 @@
   ],
   "top_cves": [
     {
-      "id": "CVE-2026-35273"
+      "id": "CVE-2020-3259"
+    },
+    {
+      "id": "CVE-2023-20269"
+    },
+    {
+      "id": "CVE-2023-27532"
+    },
+    {
+      "id": "CVE-2024-40711"
+    },
+    {
+      "id": "CVE-2024-40766"
     }
   ],
   "top_sectors": [
     "government",
-    "law enforcement",
     "critical infrastructure",
-    "financial services",
-    "healthcare"
+    "healthcare",
+    "law enforcement",
+    "technology"
   ],
   "top_regions": [
     "United states",
     "Canada",
-    "Global",
-    "Iran",
-    "Jordan"
+    "Europe",
+    "Germany",
+    "Global"
   ],
   "severity_mix": {
-    "high": 7
+    "high": 8
   },
   "recent_excerpts": [
     "FBI arrested CyberSteward co-founder Edward Dubrovsky on cyber extortion charges tied to ShinyHunters, the group that stole data on thousands of FBI agents.",
     "FBI arrested a Canadian national in Pennsylvania, its third ShinyHunters arrest in two weeks, after the group breached FBIjobs.gov and stole data on nearly every FBI employee.",
     "ShinyHunters defaced fbijobs.gov and gave the FBI one week to retract a May PSA, claiming 2-3 TB stolen via a PeopleSoft flaw tracked as CVE-2026-35273."
   ],
-  "sources_hash": "1959ee7755e26f25"
+  "sources_hash": "c1c91b5c19409a31"
 }

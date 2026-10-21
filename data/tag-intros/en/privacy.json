@@ -1,9 +1,9 @@
 {
   "tag": "privacy",
   "locale": "en",
-  "intro": "Across 21 articles spanning 12 April to 25 September 2026, ZCyberNews coverage tagged privacy spans technology, government, education, telecommunications, and advertising. The reporting reaches readers in the United States, Europe, Mexico, the Netherlands, and globally. CVE-2026-28950 stands out among the vulnerabilities tracked. Severity across the period divides into nine medium, five high, and six informational items. The collection examines how privacy concerns and disclosure obligations intersect with the systems and institutions that handle personal data worldwide.",
-  "sources_hash": "9859ec47959d0825",
+  "intro": "Government, technology, education, telecommunications, and Advertising are the sectors most affected by privacy-related coverage across the 22 articles in this archive, which spans 2026-04-12 to 2026-10-20. Reporting reaches readers across Global, United states, California, Europe, and Mexico. CVE-2026-28950 is the most frequently cited vulnerability in the collection. The severity mix comprises 6 high, 9 medium, and 6 informational items, reflecting a body of coverage that ranges from significant vulnerabilities to lower-severity developments. The archive brings together reporting on how privacy concerns touch public institutions, private industry, schools, communications networks, and advertising.",
+  "sources_hash": "18bca963af3e9437",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-26T08:23:05.571Z",
+  "generated_at": "2026-10-21T08:20:19.545Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

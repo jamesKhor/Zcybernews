@@ -1,9 +1,9 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "intro": "Between April and June 2026, ZCyberNews covered 13 espionage-focused incidents, with APT28 (Fancy Bear), APT37, and CL-STA-1062 emerging as the top threat actors. These campaigns primarily targeted government, defense, healthcare, technology, and banking sectors across Europe, Southeast Asia, South Korea, Ukraine, and Asia. The severity mix included 11 high-severity and 2 critical-severity events, reflecting sustained cyber espionage activity against strategic global interests.",
-  "sources_hash": "897205a5664f9ff8",
+  "intro": "Across 14 espionage-tagged articles published between 12 April and 20 October 2026, APT28, APT28 (Fancy Bear), and APT37 feature as the most-covered threat actors. Government, defense, healthcare, technology, and banking rank among the top affected sectors. Europe, Southeast asia, South korea, Ukraine, and Asia appear as the most affected regions. Of the 14 articles, 12 are rated high severity and 2 critical. The coverage spans the full date range, with reporting touching each of the named actors and the sectors and regions listed above.",
+  "sources_hash": "f3422273dfc7b91f",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-27T04:25:11.973Z",
+  "generated_at": "2026-10-21T08:20:21.083Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

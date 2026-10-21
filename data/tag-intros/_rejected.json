@@ -1996,5 +1996,35 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-6389 but it is not in the fact sheet",
     "at": "2026-10-16T07:57:44.145Z"
+  },
+  {
+    "tag": "data-breach",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-35273 but it is not in the fact sheet",
+    "at": "2026-10-21T08:20:30.293Z"
+  },
+  {
+    "tag": "fbi",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2020-3259 but it is not in the fact sheet; Intro cites CVE-2023-20269 but it is not in the fact sheet; Intro cites CVE-2023-27532 but it is not in the fact sheet; Intro cites CVE-2024-40711 but it is not in the fact sheet; Intro cites CVE-2024-40766 but it is not in the fact sheet",
+    "at": "2026-10-21T08:20:37.882Z"
+  },
+  {
+    "tag": "ransomware",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2020-3259 but it is not in the fact sheet; Intro cites CVE-2023-20269 but it is not in the fact sheet; Intro cites CVE-2023-27532 but it is not in the fact sheet",
+    "at": "2026-10-21T08:20:43.590Z"
+  },
+  {
+    "tag": "threat-intelligence",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2020-3259 but it is not in the fact sheet; Intro cites CVE-2023-20269 but it is not in the fact sheet; Intro cites CVE-2023-27532 but it is not in the fact sheet; Intro cites CVE-2024-40711 but it is not in the fact sheet; Intro cites CVE-2024-40766 but it is not in the fact sheet",
+    "at": "2026-10-21T08:20:48.493Z"
+  },
+  {
+    "tag": "zero-day",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-108398 but it is not in the fact sheet; Intro cites CVE-2026-92707 but it is not in the fact sheet; Intro cites CVE-2026-96951 but it is not in the fact sheet",
+    "at": "2026-10-21T08:20:53.196Z"
   }
 ]

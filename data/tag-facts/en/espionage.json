@@ -1,15 +1,15 @@
 {
   "tag": "espionage",
   "locale": "en",
-  "count": 13,
+  "count": 14,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-06-26"
+    "latest": "2026-10-20"
   },
   "top_actors": [
+    "APT28",
     "APT28 (Fancy Bear)",
-    "APT37",
-    "CL-STA-1062"
+    "APT37"
   ],
   "top_cves": [],
   "top_sectors": [
@@ -27,7 +27,7 @@
     "Asia"
   ],
   "severity_mix": {
-    "high": 11,
+    "high": 12,
     "critical": 2
   },
   "recent_excerpts": [
@@ -35,5 +35,5 @@
     "Secret Blizzard evolved Kazuar into a modular P2P botnet with 150 config options, AMSI/ETW bypass, and silent-mode nodes. Microsoft details the three-module architecture.",
     "ESET says APT37 compromised Sqgame card game platform to deliver BirdCall backdoor to Android devices, stealing SMS, call logs, and private keys from ethnic Koreans in Yanbian."
   ],
-  "sources_hash": "897205a5664f9ff8"
+  "sources_hash": "f3422273dfc7b91f"
 }

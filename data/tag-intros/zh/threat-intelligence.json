@@ -1,10 +1,10 @@
 {
   "tag": "threat-intelligence",
   "locale": "zh",
-  "intro": "2026年4月至7月，ZCyberNews共发布30篇威胁情报文章，其中ClickFix、Commercial Surveillance Vendors和GopherWhisper是最常被观测到的威胁行为体。关键漏洞包括CVE-2025-24054、CVE-2025-33053和CVE-2026-21513。报道覆盖全球、亚洲、欧洲、伊朗及北美地区的政府、科技、金融服务、民间社会及关键基础设施行业。严重程度分布为：11篇高危、12篇信息性、3篇中危报告。",
+  "intro": "本档案收录了 29 篇带有「threat-intelligence」标签的文章，发布时间从2026年4月13日至2026年7月21日，帮助安全团队集中查看该主题在 ZCyberNews 报道中的出现方式和变化。近期报道涉及 CVE-2025-24054、CVE-2025-33053、CVE-2026-21513，每一项均以原文中的漏洞背景和元数据为依据。可见的威胁行为者引用包括 ClickFix、Commercial Surveillance Vendors、GopherWhisper，仅在相关文章元数据支持该归因时呈现。受影响范围信号侧重于government、technology、financial services，地区包括 Global、Asia、Europe，便于读者比较暴露面而不引入档案数据之外的判断。严重性分布包括11 篇高危、3 篇中危、11 篇信息类报告。",
   "sources_hash": "55459f8a07ac8a4e",
-  "source_intro_hash": "42324e7635ce8df5",
-  "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-21T05:53:11.410Z",
+  "source_intro_hash": "f6567100f5729ef6",
+  "model": "template:fallback",
+  "generated_at": "2026-10-21T08:20:48.493Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
