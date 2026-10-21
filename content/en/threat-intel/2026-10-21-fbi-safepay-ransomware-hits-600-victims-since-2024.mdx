@@ -1,0 +1,88 @@
+---
+title: 'FBI: SafePay Ransomware Hits 600+ Victims Since 2024'
+slug: 2026-10-21-fbi-safepay-ransomware-hits-600-victims-since-2024
+date: '2026-10-21'
+excerpt: >-
+  FBI, UK and Germany warn SafePay ransomware breached 600+ organizations since
+  August 2024, exploiting CVE-2023-27532 and CVE-2024-40711 to steal data and
+  encrypt systems.
+category: threat-intel
+tags:
+  - ransomware
+  - safepay
+  - fbi
+  - vulnerabilities
+  - threat-intelligence
+language: en
+source_urls:
+  - >-
+    https://therecord.media/fbi-says-safepay-ransomware-gang-among-most-active-600-victims
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:says-safepay-ransomware-gang-among'
+source_count: 1
+seo_query_target: >-
+  FBI says SafePay ransomware gang ‘among most active’ with more than 600
+  victims since 2024
+seo_intent: incident-impact
+seo_title_promise: >-
+  The FBI and international partners say SafePay ransomware has breached over
+  600 organizations since August 2024, and the article details the group's
+  tactics and exploited vulnerabilities.
+seo_meta_promise: >-
+  SafePay ransomware has hit 600+ victims since 2024, exploiting CVE-2023-27532
+  and CVE-2024-40711; the article explains the group's methods and mitigation
+  steps.
+target_hub: ransomware
+internal_link_targets:
+  - ransomware
+  - safepay
+  - cve-2023-27532
+  - cve-2024-40711
+news_sitemap_eligible: true
+featured_image_alt: Abstract illustration of a ransomware attack with binary code and a padlock
+severity: high
+cve_ids:
+  - CVE-2020-3259
+  - CVE-2023-20269
+  - CVE-2023-27532
+  - CVE-2024-40711
+  - CVE-2024-40766
+threat_actor: SafePay
+affected_sectors:
+  - businesses
+  - critical infrastructure
+  - government
+  - technology
+  - healthcare
+affected_regions:
+  - United States
+  - Europe
+  - Germany
+  - United Kingdom
+  - Latin America
+publish_tier: public
+---
+## Executive Summary
+
+SafePay ransomware has breached more than 600 organizations across the United States and Europe since August 2024, according to a joint advisory from the FBI, the UK National Cyber Security Centre, and Germany's BSI. The agencies describe SafePay as "among the most active ransomware groups in 2026," citing its use of credential guessing, known vulnerabilities, and phishing to gain initial access, followed by lateral movement with legitimate tools and double-extortion tactics. The advisory, based on FBI and German law enforcement investigations, lists specific CVEs the group has exploited and warns that SafePay actors frequently create new accounts, disable security protections, and use remote desktop software to deploy ransomware. The group's leak site currently lists dozens of German companies and government organizations across Latin America and the U.S.
+
+## Technical Analysis
+
+SafePay's intrusion chain begins with three primary access vectors: password guessing against exposed services, exploitation of known vulnerabilities in internet-facing systems, and phishing campaigns. The advisory identifies CVE-2020-3259 (Cisco AnyConnect), CVE-2023-20269 (Cisco Adaptive Security Appliance), CVE-2023-27532 (Veeam Backup & Replication), CVE-2024-40711 (Veeam Backup & Replication), and CVE-2024-40766 (SonicWall) among the flaws the group has used, though the list is not exhaustive. The group also employs automated scripts to scan for and exploit these vulnerabilities across exposed systems.
+
+Once inside, SafePay actors establish persistence by creating new accounts or taking over existing ones, then use legitimate system tools to move laterally, identify valuable files, and disable security protections. In some cases, they change passwords of system users to lock out defenders and disrupt incident response. The group compresses and exfiltrates data before deploying ransomware, and uses legitimate remote desktop tools such as AnyDesk or TeamViewer to transfer the ransomware payload onto victim systems.
+
+Ransom demands are calculated as "a subset of company revenue" and payable in cryptocurrency. To pressure victims, a SafePay representative makes phone calls on behalf of the group. The advisory notes that parts of SafePay's code resemble LockBit, a largely defunct operation, according to previous expert analysis. SafePay has claimed attacks on a major U.S. IT products and services provider, British tech company Microlise, and government technology contractor Conduent. The Conduent attack disrupted Medicaid, child support, food assistance, and roadway tolls, and the company announced an $80 million settlement last Friday in response to a class action lawsuit.
+
+## Tactics, Techniques & Procedures
+
+The advisory and reporting indicate SafePay follows a structured intrusion sequence. Initial access is gained via valid accounts (T1078) through password guessing, exploitation of public-facing applications (T1190) using the listed CVEs, or phishing (T1566). After access, the group creates accounts (T1136) to maintain persistence and disables or modifies security tools (T1562.001) to evade detection. Lateral movement relies on legitimate system tools, and the group uses remote access software (T1219) like AnyDesk and TeamViewer to deploy payloads. Data is archived (T1560) and exfiltrated (T1048) before encryption (T1486) and ransom demands (T1657). The use of phone calls adds a social engineering layer beyond typical ransomware operations.
+
+## Mitigations & Recommendations
+
+Defenders should prioritize patching the vulnerabilities listed in the advisory, particularly CVE-2023-27532 and CVE-2024-40711 in Veeam Backup & Replication, CVE-2024-40766 in SonicWall, and the Cisco flaws. Because SafePay uses credential guessing, organizations should enforce strong password policies and multi-factor authentication on all remote access services. Monitoring for anomalous account creation and changes to security tool configurations can help detect post-compromise activity. Restricting or monitoring the use of remote desktop tools like AnyDesk and TeamViewer, and segmenting networks to limit lateral movement, are also recommended. The advisory suggests maintaining offline backups and testing restoration procedures. Organizations should report suspicious activity to the FBI or relevant authorities.
+
+## References
+
+- [FBI says SafePay ransomware gang ‘among most active’ with more than 600 victims since 2024](https://therecord.media/fbi-says-safepay-ransomware-gang-among-most-active-600-victims)
