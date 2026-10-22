@@ -1,14 +1,14 @@
 {
   "tag": "clickfix",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-10",
-    "latest": "2026-10-06"
+    "latest": "2026-10-22"
   },
   "top_actors": [
-    "AMOS Stealer",
     "ClickFix",
+    "AMOS Stealer",
     "Lazarus Group"
   ],
   "top_cves": [],
@@ -30,9 +30,9 @@
     "medium": 1
   },
   "recent_excerpts": [
+    "Chrome's Enhanced Protection now runs server-side Gemini scam detection and flags ClickFix clipboard payloads before users paste malicious PowerShell commands.",
     "CERT-UA tracks UAC-0277: 100+ compromised Ukrainian sites serve fake Cloudflare checks that install Lunex Stealer and the LunarAxe browser extension.",
-    "Unit 42's lab infection shows AMOS stealer pulling payloads from getmacouscloud[.]com and exfiltrating browser, wallet, and Telegram data to C2 161.35.146[.]120.",
-    "A new ClickFix-style campaign targets macOS users with fake Apple instructions to run malicious commands."
+    "Unit 42's lab infection shows AMOS stealer pulling payloads from getmacouscloud[.]com and exfiltrating browser, wallet, and Telegram data to C2 161.35.146[.]120."
   ],
-  "sources_hash": "51c2fae745095ff5"
+  "sources_hash": "2d757ed24837c97b"
 }

@@ -1,0 +1,9 @@
+{
+  "tag": "google-chrome",
+  "locale": "en",
+  "intro": "Five articles on Google Chrome published between 13 April and 22 October 2026 trace a steady stream of security issues affecting the browser worldwide. ClickFix features among the threats covered, alongside two high-severity vulnerabilities, CVE-2026-8573 and CVE-2026-8577, each carrying a CVSS score of 8.8. Coverage spans a severity mix of two high, one medium, and one critical issue. The technology sector is the primary affected sector across the reporting period, and the affected region is Global. The archive below collects all five articles for readers tracking Chrome-related security developments.",
+  "sources_hash": "a050ada549736ab3",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-10-22T08:22:53.365Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

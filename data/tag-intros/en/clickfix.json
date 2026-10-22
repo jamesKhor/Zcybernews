@@ -1,9 +1,9 @@
 {
   "tag": "clickfix",
   "locale": "en",
-  "intro": "Across cryptocurrency, education, finance, retail, and technology, six clickfix articles published between 2026-04-10 and 2026-10-06 document a threat landscape spanning Asia, Europe, North America, and Ukraine. AMOS Stealer, ClickFix, and Lazarus Group appear as the top threat actors in this tag archive. Four articles carry high severity and one carries medium severity. The collection covers activity affecting cryptocurrency, education, finance, retail, and technology sectors across the four named regions.",
-  "sources_hash": "51c2fae745095ff5",
+  "intro": "Across cryptocurrency, education, finance, retail, and technology, seven articles published between 2026-04-10 and 2026-10-22 examine activity tied to ClickFix, AMOS Stealer, and Lazarus Group. Coverage spans Asia, Europe, North america, and Ukraine. The severity mix comprises 4 high and 1 medium. ClickFix, AMOS Stealer, and Lazarus Group each appear as distinct subjects in the reporting, and the archive groups these seven pieces for readers tracking the named sectors and regions.",
+  "sources_hash": "2d757ed24837c97b",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-07T09:57:12.435Z",
+  "generated_at": "2026-10-22T08:22:51.603Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

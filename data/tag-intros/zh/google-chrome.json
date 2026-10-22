@@ -1,0 +1,10 @@
+{
+  "tag": "google-chrome",
+  "locale": "zh",
+  "intro": "2026年4月13日至10月22日期间发表的五篇关于Google Chrome的文章记录了影响全球该浏览器的持续安全问题。ClickFix出现在所涵盖的威胁之中，同时还有两个高危漏洞CVE-2026-8573和CVE-2026-8577，二者的CVSS评分均为8.8。报道涵盖的严重程度包括两个高危、一个中危和一个严重问题。在整个报道期内，技术行业是主要受影响行业，受影响地区为全球。以下存档汇集了全部五篇文章，供关注Chrome相关安全动态的读者查阅。",
+  "sources_hash": "a050ada549736ab3",
+  "source_intro_hash": "7824c17ef8aa7944",
+  "model": "deepseek/deepseek-chat",
+  "generated_at": "2026-10-22T08:23:04.856Z",
+  "prompt_version": "v1.1.0-2026-04-20"
+}

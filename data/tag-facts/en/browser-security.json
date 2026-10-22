@@ -1,12 +1,13 @@
 {
   "tag": "browser-security",
   "locale": "en",
-  "count": 14,
+  "count": 15,
   "date_range": {
     "first": "2026-04-11",
-    "latest": "2026-05-20"
+    "latest": "2026-10-22"
   },
   "top_actors": [
+    "ClickFix",
     "Pushpaganda"
   ],
   "top_cves": [
@@ -51,9 +52,9 @@
     "informational": 1
   },
   "recent_excerpts": [
+    "Chrome's Enhanced Protection now runs server-side Gemini scam detection and flags ClickFix clipboard payloads before users paste malicious PowerShell commands.",
     "CVE-2026-8959 (CVSS 9.6) allows sandbox escape through incorrect boundary conditions in Firefox's Widget:Win32 component. Fixed in Firefox 151, ESR 140.11, and Thunderbird 151.",
-    "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now.",
-    "Google's Chrome 148 update fixes 79 vulnerabilities, 14 critical — including heap buffer overflow CVE-2026-8509 ($43K bounty) and integer overflow CVE-2026-8510 in Skia ($25K..."
+    "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now."
   ],
-  "sources_hash": "498191f15b21c1f4"
+  "sources_hash": "668c8cc424848949"
 }

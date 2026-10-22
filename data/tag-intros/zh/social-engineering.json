@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "zh",
-  "intro": "在2026-04-08至2026-10-10期间的64篇文章中，ZCyberNews对社交工程的报道追踪了ClickFix、Lazarus Group和UNC6692，以及CVE-2023-36036、CVE-2025-24054、CVE-2025-33053和CVE-2026-21513。金融服务、加密货币、科技、金融服务和政府位列受影响最严重的行业，事件在全球范围内以及North america、United states、Europe和United kingdom均有报告。严重程度偏高：49个高危、11个中危、一个严重和两个信息性。该档案探讨了操纵手法——而非仅软件缺陷——如何持续塑造针对这些行业和地区的入侵尝试。",
+  "intro": "ClickFix在2026-04-08至2026-10-22期间发布的65篇社会工程学文章中占据报道主导地位，Lazarus Group和UNC6692也被追踪。报道提及CVE-2023-36036、CVE-2025-24054、CVE-2025-33053和CVE-2026-21513。受影响行业包括金融服务、加密货币、科技、金融服务和政府。报道覆盖全球、北美、美国、欧洲和英国。严重性分布为49个高危、2个信息性、11个中危和1个严重。ClickFix、Lazarus Group和UNC6692在档案中被列为不同的威胁行为者。",
   "sources_hash": "95d321e3724c9702",
-  "source_intro_hash": "ad9e599ecf31b6c3",
+  "source_intro_hash": "62c15496635ca936",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-11T09:45:42.870Z",
+  "generated_at": "2026-10-22T08:23:06.498Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

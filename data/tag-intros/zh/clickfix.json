@@ -1,10 +1,10 @@
 {
   "tag": "clickfix",
   "locale": "zh",
-  "intro": "在加密货币、教育、金融、零售和技术领域，2026-04-10至2026-10-06期间发布的六篇ClickFix文章记录了横跨亚洲、欧洲、北美和乌克兰的威胁态势。AMOS Stealer、ClickFix和Lazarus Group是该标签归档中出现的主要威胁行为者。四篇文章为高严重性，一篇为中严重性。该合集涵盖影响四个指定地区中加密货币、教育、金融、零售和技术行业的活动。",
-  "sources_hash": "51c2fae745095ff5",
-  "source_intro_hash": "0037112c9c05d939",
+  "intro": "在加密货币、教育、金融、零售和科技领域，2026-04-10至2026-10-22期间发布的七篇文章审视了与ClickFix、AMOS Stealer和Lazarus Group相关的活动。报道覆盖亚洲、欧洲、北美和乌克兰。严重性构成包括4个高和1个中。ClickFix、AMOS Stealer和Lazarus Group各自作为报道中的独立主题出现，档案将这七篇文章归类，供追踪上述行业和地区的读者参考。",
+  "sources_hash": "2d757ed24837c97b",
+  "source_intro_hash": "4dd88dc820198350",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-07T09:57:19.388Z",
+  "generated_at": "2026-10-22T08:23:01.994Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

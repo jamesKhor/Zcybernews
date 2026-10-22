@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 19,
+  "count": 20,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-10-14"
+    "latest": "2026-10-21"
   },
   "top_actors": [
     "Flax Typhoon"
@@ -36,7 +36,7 @@
     "technology",
     "enterprise",
     "critical infrastructure",
-    "federal government"
+    "federal agencies"
   ],
   "top_regions": [
     "United states",
@@ -46,14 +46,14 @@
     "Europe"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "critical": 8,
     "medium": 2
   },
   "recent_excerpts": [
+    "CISA ordered federal agencies to patch CVE-2026-96652 and three other exploited flaws in Plex Media Server (Plex2Shell), Siemens, and SiteGuard by the November deadline.",
     "Microsoft's October 2026 Patch Tuesday fixes 1,413 CVEs, led by CVE-2026-96951 (CVSS 8.8), a Windows Mark of the Web bypass exploited in the wild and added to CISA KEV.",
-    "CISA set an October 11 federal patch deadline after Flax Typhoon exploited CVE-2015-3306, a CVSS 10.0 ProFTPD flaw, plus four other bugs in its KEV batch.",
-    "CISA added CVE-2026-102490 to its KEV catalog: a local privilege flaw in Zammad that lets the zammad service account escalate to root, chainable with CVE-2026-102489."
+    "CISA set an October 11 federal patch deadline after Flax Typhoon exploited CVE-2015-3306, a CVSS 10.0 ProFTPD flaw, plus four other bugs in its KEV batch."
   ],
-  "sources_hash": "6544a8bd4703b0c3"
+  "sources_hash": "52841a8bf65a717c"
 }

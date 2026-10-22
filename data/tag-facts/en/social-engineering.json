@@ -1,10 +1,10 @@
 {
   "tag": "social-engineering",
   "locale": "en",
-  "count": 64,
+  "count": 65,
   "date_range": {
     "first": "2026-04-08",
-    "latest": "2026-10-10"
+    "latest": "2026-10-22"
   },
   "top_actors": [
     "ClickFix",
@@ -46,9 +46,9 @@
     "critical": 1
   },
   "recent_excerpts": [
+    "Chrome's Enhanced Protection now runs server-side Gemini scam detection and flags ClickFix clipboard payloads before users paste malicious PowerShell commands.",
     "iRhythm says a June social engineering attack exposed names, insurance numbers, and device serials for 360,000 patients across Texas, South Carolina, and California.",
-    "NCSC, FBI and AIVD warn that Iranian state actors use CHOSEN BRICK malware, delivered via WhatsApp and Telegram social engineering, to spy on dissidents and journalists.",
-    "Spring Ring vishing hit 150+ employees across 10 firms via Microsoft Teams, pushing RMM tools and NTLM relay attacks against domain controllers."
+    "NCSC, FBI and AIVD warn that Iranian state actors use CHOSEN BRICK malware, delivered via WhatsApp and Telegram social engineering, to spy on dissidents and journalists."
   ],
-  "sources_hash": "037ac3574b1c7dae"
+  "sources_hash": "1886401e81fb4742"
 }

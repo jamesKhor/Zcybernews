@@ -1,9 +1,9 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "intro": "Across government, technology, enterprise, critical infrastructure, and federal government, ZCyberNews has tracked 19 articles on the CISA KEV catalog between 2026-04-19 and 2026-10-14. Flax Typhoon features among the threat actors tied to these entries. The most severe CVEs include CVE-2015-3306, CVE-2026-20079, and CVE-2026-48907, each rated CVSS 10, alongside CVE-2023-49105 and CVE-2025-39682 at CVSS 9.8. Coverage spans the United states, Global, North america, the EU, and Europe. The severity mix comprises 5 high, 8 critical, and 2 medium items.",
-  "sources_hash": "6544a8bd4703b0c3",
+  "intro": "Government agencies and critical infrastructure anchor the cisa-kev tag archive, which spans 20 articles published between 2026-04-19 and 2026-10-21. Coverage also reaches technology and enterprise environments across the United States, Global, North America, EU, and Europe. Flax Typhoon appears among the tracked threat actors. The archive documents CVE-2015-3306, CVE-2026-20079, and CVE-2026-48907, each rated CVSS 10, alongside CVE-2023-49105 and CVE-2025-39682 at CVSS 9.8. Severity across the collection comprises 6 high, 8 critical, and 2 medium entries, reflecting sustained attention to vulnerabilities added to the known exploited catalog.",
+  "sources_hash": "52841a8bf65a717c",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-15T08:03:16.066Z",
+  "generated_at": "2026-10-22T08:22:48.419Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

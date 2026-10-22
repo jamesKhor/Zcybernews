@@ -1,0 +1,39 @@
+{
+  "tag": "google-chrome",
+  "locale": "en",
+  "count": 5,
+  "date_range": {
+    "first": "2026-04-13",
+    "latest": "2026-10-22"
+  },
+  "top_actors": [
+    "ClickFix"
+  ],
+  "top_cves": [
+    {
+      "id": "CVE-2026-8573",
+      "cvss": 8.8
+    },
+    {
+      "id": "CVE-2026-8577",
+      "cvss": 8.8
+    }
+  ],
+  "top_sectors": [
+    "technology"
+  ],
+  "top_regions": [
+    "Global"
+  ],
+  "severity_mix": {
+    "high": 2,
+    "medium": 1,
+    "critical": 1
+  },
+  "recent_excerpts": [
+    "Chrome's Enhanced Protection now runs server-side Gemini scam detection and flags ClickFix clipboard payloads before users paste malicious PowerShell commands.",
+    "CVE-2026-8573 (CVSS 8.3) and CVE-2026-8577 (CVSS 8.8) in Chrome 148 on Windows allow sandbox escape and RCE via crafted video or HTML pages. Update now.",
+    "A security researcher demonstrated that Anthropic's Claude Opus AI can be prompted to build a working exploit chain for a patched Chrome V8 vulnerability, raising concerns about AI-assisted offensive"
+  ],
+  "sources_hash": "a050ada549736ab3"
+}

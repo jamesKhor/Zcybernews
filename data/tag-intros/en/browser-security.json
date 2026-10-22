@@ -1,9 +1,9 @@
 {
   "tag": "browser-security",
   "locale": "en",
-  "intro": "Technology and enterprise sectors were the primary targets in a recent wave of browser-security threats, with 14 articles published between April 11 and May 20, 2026. The threat actor Pushpaganda was observed exploiting vulnerabilities including CVE-2026-8954, CVE-2026-8959, CVE-2026-8573, CVE-2026-8577, and CVE-2026-7896. The severity mix across these incidents comprised five critical, four high, three medium, and one informational alert, with impacts reported globally and across Australia, Canada, New Zealand, and the United Kingdom.",
-  "sources_hash": "498191f15b21c1f4",
+  "intro": "Technology leads the sectors affected by browser-security issues across 15 articles published between 2026-04-11 and 2026-10-22, with all sectors, email services, enterprise, and financial services also represented. Coverage spans Global, Australia, Canada, New zealand, and United kingdom. ClickFix and Pushpaganda are the top threat actors named in the reporting. Key vulnerabilities include CVE-2026-8954 and CVE-2026-8959, each rated CVSS 9.6, alongside CVE-2026-8573 and CVE-2026-8577 at CVSS 8.8, and CVE-2026-7896. The severity mix comprises 5 critical, 4 high, 3 medium, and 1 informational items.",
+  "sources_hash": "668c8cc424848949",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-05-21T04:33:54.756Z",
+  "generated_at": "2026-10-22T08:22:49.972Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
