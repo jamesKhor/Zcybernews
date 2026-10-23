@@ -1,0 +1,88 @@
+---
+title: 'Aokigahara Infostealer Steals Claude, Copilot, Cursor Tokens'
+slug: 2026-10-23-aokigahara-infostealer-steals-claude-copilot-cursor-tokens
+date: '2026-10-23'
+excerpt: >-
+  Check Point found Aokigahara, a new infostealer harvesting Claude, ChatGPT,
+  Copilot and Cursor tokens plus SSH keys and AWS credentials from developer
+  machines.
+category: malware
+tags:
+  - infostealer
+  - aokigahara
+  - credential-theft
+  - ai-security
+  - developer-tools
+  - check-point-research
+language: en
+source_urls:
+  - 'https://research.checkpoint.com/2026/infostealer-riding-the-ai-train/'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:infostealer-riding-train-check-point'
+source_count: 1
+seo_query_target: GitHub
+seo_intent: technical-analysis
+seo_title_promise: >-
+  The headline promises a technical breakdown of a new infostealer that
+  specifically targets AI coding assistants and developer credentials, including
+  GitHub Copilot.
+seo_meta_promise: >-
+  The meta description names Aokigahara, its AI-tool targets (Claude, ChatGPT,
+  Copilot, Cursor), and the concrete developer assets at risk — SSH keys and AWS
+  credentials.
+target_hub: malware
+internal_link_targets:
+  - malware
+  - infostealers
+  - credential-theft
+  - developer-security
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Illustration of stolen session tokens flowing from AI coding assistants and
+  developer IDEs to an attacker-controlled server.
+severity: high
+threat_actor: Aokigahara
+affected_sectors:
+  - technology
+  - software development
+iocs:
+  - type: domain
+    value: Battle.net
+    confidence: medium
+    description: Extracted from source material
+publish_tier: public
+---
+## Executive Summary
+
+Check Point Research has documented a new Windows infostealer, tracked as **Aokigahara**, whose collection routines are purpose-built for the tools developers use to write and ship code. Beyond the usual browser, wallet, and messaging theft, the malware enumerates authentication files, session data, and configuration files belonging to Claude, ChatGPT Desktop, Codex, Cursor, Windsurf, GitHub Copilot, and Gemini CLI. It also sweeps Git credential stores, SSH private keys, and AWS, Azure, and Google Cloud credential and configuration files from local development environments.
+
+The practical consequence for defenders is that a single infected developer workstation can yield working AI-service sessions and cloud credentials — assets that are not always covered by the same rotation and monitoring discipline as corporate SSO. Check Point states the analysis does not confirm how operators monetize the stolen data, so the resale and abuse picture remains unverified.
+
+## Technical Analysis
+
+Aokigahara is a newly observed family in the wild. Check Point notes an earlier version may have circulated as **Kamidere** or **Stygian**, which is worth flagging for teams doing retrospective hunting against older telemetry.
+
+The stealer's handler architecture is conventional, but the target list is not. Its `browsers` handler covers Chromium-based profiles — Chrome, Edge, Brave, Opera, Vivaldi, Yandex, and a long tail of derivatives — plus Firefox, where it pulls `logins.json`, the NSS key database, and cookies. A `wallets` handler covers desktop wallets (Exodus, Electrum, Atomic, Ledger Live, and others) and scans Chromium profiles for extension data from MetaMask, Phantom, TronLink, Coinbase, Binance, and Trust.
+
+What distinguishes Aokigahara is the developer-focused collection. The malware targets Git credential files, SSH private keys, and cloud provider credential and configuration files. It also collects authentication files, session data, and configuration files for AI applications and development tools, including Claude, ChatGPT Desktop, Codex, Cursor, Windsurf, GitHub Copilot, and Gemini CLI. Check Point frames this as a shift in what attackers value: not only personal accounts and financial data, but access to AI services and the build environments developers rely on.
+
+Other handlers follow familiar patterns. `discord` reads Local Storage LevelDB files looking for token-like strings and writes to `Messengers/Discord/Tokens.txt`. `telegram` grabs the Telegram Desktop `tdata` directory. `steam` collects `loginusers.vdf`, `config.vdf`, and `ssfn*` files. `outlook` extracts email addresses and IMAP/POP3/SMTP server details and passwords from Outlook profiles. `vpn` targets OpenVPN `*.ovpn` configs and NordVPN, ProtonVPN, Private Internet Access, Surfshark, and Windscribe configurations. `ftp` covers FileZilla, WinSCP, CoreFTP, FlashFXP, and SmartFTP saved sessions, formatted with host, username, and password fields. `passman` targets KeePass, Bitwarden (including the CLI), 1Password, Dashlane, RoboForm, NordPass, and Sticky Password. `gaming` collects Roblox cookies, Battle.net and Epic Games configs, Riot client settings, and Minecraft/Roblox launcher profiles. A `filegraber` handler pulls files from Desktop, Documents, and Downloads into `Files/Documents` or `Files/Crypto`; Check Point says it has not confirmed the full extension/filter list for that handler.
+
+Supporting handlers include `sysinfo` (host and user details, IP, Windows version, CPU/RAM, screen size, language, uptime, running processes, environment variables, installed software, and detected antivirus), `screenshot` (writes `Screenshot.jpg`), and `clipboard` (writes `Clipboard.txt`). A clipper handler drops a separate component for clipboard manipulation.
+
+Check Point's writeup does not name a distribution vector, command-and-control infrastructure, or hash values, and it does not attribute the malware to a specific operator. Those gaps matter: without delivery telemetry, hunting must lean on behavioral detection of the collection paths and on credential rotation after suspected exposure.
+
+## Mitigations & Recommendations
+
+Because the payload's value is in reusable secrets rather than persistence, containment should assume credential compromise. Check Point's findings imply the following priorities for any host suspected of Aokigahara infection:
+
+- **Rotate AI-service sessions and API keys.** Invalidate active sessions for Claude, ChatGPT, Copilot, Cursor, Windsurf, Codex, and Gemini CLI, and reissue any API keys stored on the host. Session tokens can bypass MFA, so password resets alone are insufficient.
+- **Rotate cloud and source-control credentials.** Treat AWS, Azure, and Google Cloud keys, Git credential stores, and SSH private keys on the host as exposed. Review cloud audit logs for activity from unfamiliar source IPs or user agents during the exposure window.
+- **Audit password-manager and VPN secrets.** The `passman` and `vpn` handlers target vault and configuration files; rotate entries that were cached locally.
+- **Hunt on collection artifacts.** The fixed output paths (`Screenshot.jpg`, `Clipboard.txt`, `Messengers/Discord/Tokens.txt`, `Files/Documents`, `Files/Crypto`) are useful file-creation signals for EDR rules, alongside process access to browser profile directories and cloud credential paths.
+- **Check for the earlier variant names.** Given the possible Kamidere/Stygian lineage, search historical telemetry for those strings in addition to Aokigahara.
+
+## References
+
+- [Infostealer riding the AI Train — Check Point Research](https://research.checkpoint.com/2026/infostealer-riding-the-ai-train/)
