@@ -1,10 +1,10 @@
 {
   "tag": "cryptography",
   "locale": "en",
-  "count": 6,
+  "count": 7,
   "date_range": {
     "first": "2026-04-13",
-    "latest": "2026-07-29"
+    "latest": "2026-10-23"
   },
   "top_actors": [],
   "top_cves": [
@@ -23,17 +23,18 @@
     "Energy"
   ],
   "top_regions": [
-    "Global"
+    "Global",
+    "India"
   ],
   "severity_mix": {
-    "high": 2,
+    "high": 3,
     "medium": 2,
     "critical": 1
   },
   "recent_excerpts": [
+    "Eight eMudhra intermediate CA private keys were generated with insufficient randomness, letting attackers derive keys and sign rogue TLS certs. Browsers now distrust them.",
     "CryptanalysisBench tests five frontier LLMs across 191 tasks; Anthropic's Mythos Preview discovered novel key-recovery attacks on SpoC AEAD and KINDI proof errors.",
-    "CVE-2026-8149 in Bouncy Castle BC-FJA 2.1.0–2.1.2 leaks AES-GCM authentication keys via side-channel in AVX-512f optimized gcm128w/gcm512w routines.",
-    "Cryptography experts warn that migrating to post-quantum cryptography will take years, urging organizations to begin quantum risk management now to protect encrypted data from future 'Q-Day' harvest-n"
+    "CVE-2026-8149 in Bouncy Castle BC-FJA 2.1.0–2.1.2 leaks AES-GCM authentication keys via side-channel in AVX-512f optimized gcm128w/gcm512w routines."
   ],
-  "sources_hash": "986c211adac30cd4"
+  "sources_hash": "53e9f37003184b3c"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "cryptography",
   "locale": "zh",
-  "intro": "本档案收录了2026年4月13日至2026年7月29日期间发布的6篇标记为`cryptography`的文章，为安全团队提供了该主题在ZCyberNews报道中的聚焦视角。近期报道引用了CVE-2022-39173和CVE-2026-8149，每篇报告均与源文章中的具体漏洞背景相关联。受影响范围信号强调技术、全局及全球关键基础设施，帮助读者在不超出档案数据范围的前提下比较暴露模式。严重程度覆盖包括1篇严重、2篇高危和2篇中危报告。",
+  "intro": "2026-04-13至2026-10-23期间发表的三篇密码学标签文章。报道在追踪的漏洞中提及CVE-2022-39173和CVE-2026-8149。记录的影响行业为technology、all、Critical Infrastructure、cybersecurity和Energy，引用的地区为Global和India。在标签报道中，严重性分布包括3个高危、2个中危和1个严重发现。该档案汇集了ZCyberNews在该时段内关于密码学漏洞及相关事件的报道，并在单一标签下组织，供关注该主题的读者查阅。",
   "sources_hash": "ee721a4013476699",
-  "source_intro_hash": "f2a150a8d346e6b7",
+  "source_intro_hash": "c629e692350ec566",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-07-29T05:54:10.636Z",
+  "generated_at": "2026-10-23T08:18:39.620Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }
