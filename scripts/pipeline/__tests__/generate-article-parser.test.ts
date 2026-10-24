@@ -130,6 +130,26 @@ describe("generateArticle parser recovery", () => {
     ]);
   });
 
+  it("keeps recovered excerpts within the schema limit after adding an ellipsis", async () => {
+    generateArticleTextMock.mockResolvedValue({
+      text: articleJson({
+        excerpt:
+          "Security teams evaluating the Burp extension should verify match and replace rules, audit testing workflows, and document operator safeguards before adopting it across application security assessments with long summaries.",
+      }),
+      modelUsed: "deepseek/deepseek-chat",
+      paid: true,
+      elapsedMs: 1,
+    });
+
+    const result = await generateArticle([makeStory()], []);
+
+    expect(isGenerationFailure(result)).toBe(false);
+    expect(result).not.toBe("reject");
+    const article = result as GeneratedArticle;
+    expect(article.excerpt.length).toBeLessThanOrEqual(180);
+    expect(article.excerpt).toMatch(/\.\.\.$/);
+  });
+
   it("returns a typed schema failure instead of a generic null", async () => {
     generateArticleTextMock.mockResolvedValue({
       text: JSON.stringify({ title: "Too short" }),
