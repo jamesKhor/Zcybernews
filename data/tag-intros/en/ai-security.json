@@ -1,9 +1,9 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "intro": "Technology leads the sectors affected by ai-security coverage across 79 articles published between 2026-04-12 and 2026-10-20, alongside government, critical infrastructure, cybersecurity, and healthcare. The reporting spans Global, United states, Australia, China, and North america. Claude Mythos, Midnight Blizzard, and OpenClaw feature among the top threat actors. Prominent vulnerabilities include CVE-2026-5760 at CVSS 9.8, CVE-2026-5752 at CVSS 9.3, CVE-2026-44339 at CVSS 8.6, CVE-2026-44567 at CVSS 7.7, and CVE-2026-45303 at CVSS 7.7. The severity mix comprises 36 high, 9 critical, 14 informational, and 6 medium items.",
-  "sources_hash": "b360cc396e5cb1b3",
+  "intro": "Technology leads the sectors affected by ai-security coverage across 80 articles published between 2026-04-12 and 2026-10-23, alongside government, critical infrastructure, cybersecurity, and healthcare. Reporting spans Global, United states, Australia, China, and North america. Aokigahara, Claude Mythos, and Midnight Blizzard feature among the top threat actors. The most severe vulnerabilities include CVE-2026-5760 at CVSS 9.8, CVE-2026-5752 at CVSS 9.3, CVE-2026-44339 at CVSS 8.6, CVE-2026-44567 at CVSS 7.7, and CVE-2026-45303 at CVSS 7.7. The severity mix comprises 37 high, 9 critical, 14 informational, and 6 medium entries.",
+  "sources_hash": "06a550eb8167f05e",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-20T08:15:43.213Z",
+  "generated_at": "2026-10-24T07:56:24.780Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

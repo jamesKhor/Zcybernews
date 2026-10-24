@@ -1,10 +1,10 @@
 {
   "tag": "check-point-research",
   "locale": "zh",
-  "intro": "2026年4月下旬至8月期间，ZCyberNews记录了八起归属于Check Point Research的安全事件，涵盖五项高危和两项严重发现。Handala Hack、JSCeal和Silver Dragon被观察为不同威胁行为者，涉及中国、欧洲、全球、以色列和墨西哥等受影响地区。追踪的关键漏洞包括CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。目标行业包括政府、商业服务、消费者、关键基础设施和加密货币。这些报告共同凸显了Check Point Research在此期间监控的攻击面广度。",
+  "intro": "Check Point Research于2026年4月26日至10月23日期间发布的九篇文章，涵盖了与Aokigahara、Handala Hack和JSCeal相关的活动。该研究还审视了CVE-2024-55591、CVE-2025-32433和CVE-2025-33073。政府、商业服务、消费者、关键基础设施和加密货币位列受影响最严重的行业，而中国、欧洲、全球、以色列和墨西哥则出现在受影响最严重的地区之列。九份报告中有六份带有高严重性评级，两份被评为严重。该档案汇集了Check Point Research在此期间的全部报道。",
   "sources_hash": "34bcc98083cc6902",
-  "source_intro_hash": "45c3d887794dcfe8",
+  "source_intro_hash": "516867290632fc25",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-01T08:23:38.200Z",
+  "generated_at": "2026-10-24T07:56:39.051Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

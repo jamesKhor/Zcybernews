@@ -2038,5 +2038,17 @@
     "locale": "zh",
     "lastError": "Intro cites CVE-2026-6389 but it is not in the fact sheet",
     "at": "2026-10-22T08:23:10.949Z"
+  },
+  {
+    "tag": "cisa-kev",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2015-3306 but it is not in the fact sheet; Intro cites CVE-2026-20079 but it is not in the fact sheet; Intro cites CVE-2025-39682 but it is not in the fact sheet",
+    "at": "2026-10-24T07:56:44.359Z"
+  },
+  {
+    "tag": "sql-injection",
+    "locale": "zh",
+    "lastError": "Intro cites CVE-2026-36962 but it is not in the fact sheet",
+    "at": "2026-10-24T07:56:54.207Z"
   }
 ]

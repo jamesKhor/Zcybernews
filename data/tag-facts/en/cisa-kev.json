@@ -1,10 +1,10 @@
 {
   "tag": "cisa-kev",
   "locale": "en",
-  "count": 20,
+  "count": 22,
   "date_range": {
     "first": "2026-04-19",
-    "latest": "2026-10-21"
+    "latest": "2026-10-24"
   },
   "top_actors": [
     "Flax Typhoon"
@@ -36,7 +36,7 @@
     "technology",
     "enterprise",
     "critical infrastructure",
-    "federal agencies"
+    "enterprise networking"
   ],
   "top_regions": [
     "United states",
@@ -51,9 +51,9 @@
     "medium": 2
   },
   "recent_excerpts": [
-    "CISA ordered federal agencies to patch CVE-2026-96652 and three other exploited flaws in Plex Media Server (Plex2Shell), Siemens, and SiteGuard by the November deadline.",
-    "Microsoft's October 2026 Patch Tuesday fixes 1,413 CVEs, led by CVE-2026-96951 (CVSS 8.8), a Windows Mark of the Web bypass exploited in the wild and added to CISA KEV.",
-    "CISA set an October 11 federal patch deadline after Flax Typhoon exploited CVE-2015-3306, a CVSS 10.0 ProFTPD flaw, plus four other bugs in its KEV batch."
+    "CVE-2026-114625, a SQL injection in on-prem Arista VeloCloud Orchestrator, is now in CISA's KEV catalog with a federal remediation deadline of October 26, 2026.",
+    "CISA added CVE-2026-110447, an OS command injection in Collabora Online's CODE server on Nextcloud, to its KEV catalog with a 2026-10-26 patch deadline for federal agencies.",
+    "CISA ordered federal agencies to patch CVE-2026-96652 and three other exploited flaws in Plex Media Server (Plex2Shell), Siemens, and SiteGuard by the November deadline."
   ],
-  "sources_hash": "52841a8bf65a717c"
+  "sources_hash": "d21f8f7ad42ca55c"
 }

@@ -1,10 +1,10 @@
 {
   "tag": "ai-security",
   "locale": "zh",
-  "intro": "在2026-04-12至2026-10-20期间发布的79篇ai-security报道中，技术行业是受影响最突出的领域，同时涉及政府、关键基础设施、网络安全和医疗保健。报道范围覆盖全球、美国、澳大利亚、中国和北美。Claude Mythos、Midnight Blizzard和OpenClaw位列主要威胁行为者之中。重点漏洞包括CVSS 9.8的CVE-2026-5760、CVSS 9.3的CVE-2026-5752、CVSS 8.6的CVE-2026-44339、CVSS 7.7的CVE-2026-44567以及CVSS 7.7的CVE-2026-45303。严重程度构成包括36项高危、9项严重、14项信息性和6项中危。",
+  "intro": "在2026-04-12至2026-10-23期间发布的80篇文章中，ai-security报道所影响的行业中，技术行业居首，其次是政府、关键基础设施、网络安全和医疗保健。报道范围涵盖全球、美国、澳大利亚、中国和北美。Aokigahara、Claude Mythos和Midnight Blizzard位列主要威胁行为者之中。最严重的漏洞包括CVSS评分为9.8的CVE-2026-5760、CVSS评分为9.3的CVE-2026-5752、CVSS评分为8.6的CVE-2026-44339、CVSS评分为7.7的CVE-2026-44567以及CVSS评分为7.7的CVE-2026-45303。严重程度构成包括37个高危、9个严重、14个信息性和6个中危条目。",
   "sources_hash": "430c141121e3e518",
-  "source_intro_hash": "e3c9e5b9946720a8",
+  "source_intro_hash": "bc134bc6861b16fc",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-20T08:15:45.587Z",
+  "generated_at": "2026-10-24T07:56:37.533Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

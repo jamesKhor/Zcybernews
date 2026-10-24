@@ -1,9 +1,9 @@
 {
   "tag": "check-point-research",
   "locale": "en",
-  "intro": "Between late April and August 2026, ZCyberNews documented eight security incidents tagged under Check Point Research, spanning five high-severity and two critical findings. Handala Hack, JSCeal, and Silver Dragon were observed as distinct threat actors across affected regions including China, Europe, Global, Israel, and Mexico. Key vulnerabilities tracked were CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Targeted sectors included government, business services, consumer, critical infrastructure, and cryptocurrency. These reports collectively highlight the breadth of attack surfaces monitored by Check Point Research during this period.",
-  "sources_hash": "0b5987bf0d54257e",
+  "intro": "Nine articles from Check Point Research, published between April 26 and October 23, 2026, cover activity tied to Aokigahara, Handala Hack, and JSCeal. The research also examines CVE-2024-55591, CVE-2025-32433, and CVE-2025-33073. Government, business services, consumer, critical infrastructure, and cryptocurrency rank among the most affected sectors, while China, Europe, Global, Israel, and Mexico appear among the most affected regions. Six of the nine reports carry a high severity rating and two are rated critical. The archive collects the full run of Check Point Research coverage across this period.",
+  "sources_hash": "0ebaf636cdd22e1a",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-01T08:23:21.932Z",
+  "generated_at": "2026-10-24T07:56:33.535Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

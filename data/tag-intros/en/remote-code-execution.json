@@ -1,9 +1,9 @@
 {
   "tag": "remote-code-execution",
   "locale": "en",
-  "intro": "Technology, enterprise, and government sectors have been the primary targets in a wave of remote-code-execution attacks documented across 19 articles from April 14 to June 28, 2026. The coverage includes 12 critical and 7 high-severity vulnerabilities, with top CVEs including CVE-2026-8836 (CVSS 10), CVE-2026-41089 (CVSS 9.8), CVE-2026-41265 (CVSS 9.8), CVE-2026-45185 (CVSS 9.8), and CVE-2026-5760 (CVSS 9.8). These exploits have impacted organizations globally, with particular concentration in Europe and North America, affecting software development and telecommunications alongside the primary sectors.",
-  "sources_hash": "e65f9dec28c0df98",
+  "intro": "Technology leads the sectors affected by remote-code-execution vulnerabilities across 20 articles published between 2026-04-14 and 2026-10-23, with government, enterprise, software development, and telecommunications also represented. The coverage spans Global, Europe, North America, and United States regions, and includes CVE-2026-8836 at CVSS 10 alongside CVE-2026-41089, CVE-2026-41265, CVE-2026-45185, and CVE-2026-5760, each rated CVSS 9.8. Of the reported severity mix, 12 are critical and 7 are high.",
+  "sources_hash": "3c51fbef127396b4",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-06-29T04:36:04.518Z",
+  "generated_at": "2026-10-24T07:56:29.039Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

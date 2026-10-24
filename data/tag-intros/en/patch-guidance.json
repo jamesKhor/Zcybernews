@@ -1,9 +1,9 @@
 {
   "tag": "patch-guidance",
   "locale": "en",
-  "intro": "Across eight articles published between 2026-05-18 and 2026-09-26, ZCyberNews tracked patch guidance for vulnerabilities affecting technology, government, AI/ML, critical infrastructure, and enterprise sectors across the United States, Europe, Global, and North America regions. The coverage centers on five high-severity CVEs: CVE-2025-39682, CVE-2026-60004, and CVE-2026-7301, each rated CVSS 9.8, alongside CVE-2026-8954 and CVE-2026-8959, both rated CVSS 9.6. The severity mix across this tag comprises one high, four critical, and one medium finding.",
-  "sources_hash": "8ff995bb6cf17075",
+  "intro": "Nine articles published between 2026-05-18 and 2026-10-24 carry the patch-guidance tag, covering remediation advice for critical vulnerabilities across government, technology, AI/ML, critical infrastructure, and enterprise sectors. The most severe entries include CVE-2025-39682, CVE-2026-60004, and CVE-2026-7301, each rated CVSS 9.8, alongside CVE-2026-8954 and CVE-2026-8959 at CVSS 9.6. Coverage spans the United States, Europe, Global, and North America, with a severity mix of four critical, one high, and one medium. The collection offers guidance for organisations working through patching decisions tied to these specific flaws.",
+  "sources_hash": "c8b566202c1299bc",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-09-27T09:00:29.356Z",
+  "generated_at": "2026-10-24T07:56:35.254Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

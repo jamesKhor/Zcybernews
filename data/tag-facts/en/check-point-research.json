@@ -1,15 +1,15 @@
 {
   "tag": "check-point-research",
   "locale": "en",
-  "count": 8,
+  "count": 9,
   "date_range": {
     "first": "2026-04-26",
-    "latest": "2026-08-31"
+    "latest": "2026-10-23"
   },
   "top_actors": [
+    "Aokigahara",
     "Handala Hack",
-    "JSCeal",
-    "Silver Dragon"
+    "JSCeal"
   ],
   "top_cves": [
     {
@@ -37,13 +37,13 @@
     "Mexico"
   ],
   "severity_mix": {
-    "high": 5,
+    "high": 6,
     "critical": 2
   },
   "recent_excerpts": [
+    "Check Point found Aokigahara, a new infostealer harvesting Claude, ChatGPT, Copilot and Cursor tokens plus SSH keys and AWS credentials from developer machines.",
     "Check Point Research publishes a static deobfuscation pipeline for JSCeal, a V8 bytecode stealer targeting crypto apps since March 2024.",
-    "Check Point Research's AI Security Report 2026 documents AI now running live intrusions, building 88,000-line C2 frameworks in under a week, and enabling vishing at scale via...",
-    "Check Point Research found a DeepSeek-generated sample using Chrome's File System Access API to encrypt Android photo directories — no native payload or exploit required."
+    "Check Point Research's AI Security Report 2026 documents AI now running live intrusions, building 88,000-line C2 frameworks in under a week, and enabling vishing at scale via..."
   ],
-  "sources_hash": "0b5987bf0d54257e"
+  "sources_hash": "0ebaf636cdd22e1a"
 }

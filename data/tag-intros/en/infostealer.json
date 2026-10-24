@@ -1,9 +1,9 @@
 {
   "tag": "infostealer",
   "locale": "en",
-  "intro": "Sixteen infostealer articles published between 2026-04-10 and 2026-10-06 examine AMOS Stealer, Gremlin Stealer, and LummaC2. Coverage spans technology, financial services, software development, cryptocurrency, and education, with incidents reported globally and in Ukraine. Thirteen items carry a high severity rating and one is rated critical. The reporting tracks how these three distinct stealers affect the listed sectors and regions across the seven-month period.",
-  "sources_hash": "81d1eb3009b7dd8b",
+  "intro": "Seventeen infostealer articles published between 10 April and 23 October 2026 cover AMOS Stealer, Aokigahara, and Gremlin Stealer. Coverage spans technology, software development, financial services, cryptocurrency, and education, with activity reported globally and in Ukraine. Fourteen items carry a high severity rating and one is rated critical. The reporting tracks these three distinct stealer families across the sectors and regions named, documenting the incidents and developments recorded during the six-month period.",
+  "sources_hash": "9c83474a3349a4b9",
   "model": "deepseek/deepseek-chat",
-  "generated_at": "2026-10-07T09:57:06.931Z",
+  "generated_at": "2026-10-24T07:56:30.432Z",
   "prompt_version": "v1.1.0-2026-04-20"
 }

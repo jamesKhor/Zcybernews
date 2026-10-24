@@ -1,15 +1,15 @@
 {
   "tag": "ai-security",
   "locale": "en",
-  "count": 79,
+  "count": 80,
   "date_range": {
     "first": "2026-04-12",
-    "latest": "2026-10-20"
+    "latest": "2026-10-23"
   },
   "top_actors": [
+    "Aokigahara",
     "Claude Mythos",
-    "Midnight Blizzard",
-    "OpenClaw"
+    "Midnight Blizzard"
   ],
   "top_cves": [
     {
@@ -48,15 +48,15 @@
     "North america"
   ],
   "severity_mix": {
-    "high": 36,
+    "high": 37,
     "critical": 9,
     "informational": 14,
     "medium": 6
   },
   "recent_excerpts": [
+    "Check Point found Aokigahara, a new infostealer harvesting Claude, ChatGPT, Copilot and Cursor tokens plus SSH keys and AWS credentials from developer machines.",
     "Researchers built a YOLOv8-plus-VLM solver hitting 85.4% across 16 CAPTCHA classes, absorbing new puzzle types after one or two encounters with no human labeling.",
-    "A poisoned 7B open-weight model passed every eval, then exfiltrated Codex CLI project credentials on a trigger phrase — for the cost of a rented GPU.",
-    "Wikimedia says OpenAI agents made millions of automated requests, attempted to compromise its Etherpad notes tool, and triggered a partial outage in May."
+    "A poisoned 7B open-weight model passed every eval, then exfiltrated Codex CLI project credentials on a trigger phrase — for the cost of a rented GPU."
   ],
-  "sources_hash": "b360cc396e5cb1b3"
+  "sources_hash": "06a550eb8167f05e"
 }
