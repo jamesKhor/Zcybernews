@@ -1,0 +1,102 @@
+---
+title: APT41 BlackX UEFI Bootkit Bypasses Secure Boot on Patched Windows
+slug: 2026-10-24-apt41-blackx-uefi-bootkit-bypasses-secure-boot-on-patched-windows
+date: '2026-10-24'
+excerpt: >-
+  Kaspersky ties BlackX to APT41: a UEFI bootkit using CVE-2022-21894 Baton Drop
+  that hit patched Windows hosts in Tajikistan, Uzbekistan and Turkmenistan.
+category: malware
+tags:
+  - apt41
+  - uefi-bootkit
+  - secure-boot
+  - cve-2022-21894
+  - blacklotus
+  - espionage
+language: en
+source_urls:
+  - >-
+    https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/
+  - 'https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html'
+author: ZCyberNews
+draft: false
+cluster_key: 'topic:blackx-uefi-bootkit-exploits-baton'
+source_count: 2
+seo_query_target: APT41
+seo_intent: patch-guidance
+seo_title_promise: >-
+  Explains that APT41's BlackX UEFI bootkit bypassed Secure Boot on fully
+  patched Windows hosts because the CVE-2022-21894 fix requires manual
+  certificate revocation.
+seo_meta_promise: >-
+  Ties APT41 to the BlackX UEFI bootkit and names the concrete defender action:
+  manually revoke the Windows Production PCA 2011 certificate to close the Baton
+  Drop gap.
+target_hub: active-cves
+internal_link_targets:
+  - active-cves
+  - vulnerabilities
+  - apt41
+  - uefi-bootkits
+  - secure-boot
+news_sitemap_eligible: true
+featured_image_alt: >-
+  Illustration of a UEFI bootkit bypassing Secure Boot during the Windows boot
+  sequence
+severity: high
+cve_ids:
+  - CVE-2022-21894
+threat_actor: APT41
+threat_actor_origin: China
+affected_sectors:
+  - government
+  - diplomatic
+affected_regions:
+  - Central Asia
+  - Tajikistan
+  - Uzbekistan
+  - Turkmenistan
+publish_tier: public
+---
+## Executive Summary
+
+A previously undocumented UEFI bootkit called **BlackX** was used in an espionage campaign against diplomatic agencies in Central Asia in early 2026, and Kaspersky attributes the operation to the Chinese state-sponsored group **APT41** with medium confidence. The bootkit bypassed Secure Boot on fully patched Windows systems by exploiting **CVE-2022-21894**, the Baton Drop flaw, and then loaded a signed kernel driver designed to disable security tooling from Kaspersky and Avast.
+
+The practical lesson for defenders is not that a patch is missing. It is that the Baton Drop fix does not fully apply itself. According to Kaspersky, the update revokes the `Windows Production PCA 2011` certificate used to sign vulnerable UEFI components, but that revocation requires a manual administrator action after installation. Every BlackX victim observed by Kaspersky was running a fully patched Windows release, and the bootkit still worked because the additional Secure Boot revocations had not been triggered.
+
+## Technical Analysis
+
+Kaspersky's analysis places BlackX in the same lineage as **BlackLotus**, the UEFI bootkit that has circulated on criminal forums since October 2022 and was confirmed by ESET in March 2023 to exploit Baton Drop against fully patched Windows 11 systems. The researchers describe BlackX's Baton Drop implementation as "remarkably similar" to BlackLotus, allowing the operator to enroll custom Machine Owner Keys (MOKs) and load arbitrary EFI files past Secure Boot.
+
+The two bootkits diverge after that point. BlackX deploys a different kernel driver and different follow-on payloads. Kaspersky assessed that BlackX was either derived from reverse-engineering BlackLotus or built from its source code. The BlackLotus source code leaked in July 2023, but that release was incomplete. Kaspersky found code in some BlackLotus samples that was absent from the public repository yet present in BlackX. Because the BlackX operator could not have obtained that code from the leaked repository, the researchers believe the attacker either reverse-engineered BlackLotus or purchased its source.
+
+The BlackX kernel driver is signed with a certificate issued to an organization named **Wenjiang District Mingyu Network Technology Service Studio**; that certificate has since been revoked. The driver disables security-related processes and registry callbacks, and tampers with Event Tracing for Windows (ETW) providers to obstruct monitoring. Some of the tampering routines are configured to run only when Kaspersky or Avast products are detected on the host. Kaspersky notes that the mechanism is ineffective against its own solutions. The driver also protects the bootkit's files by intercepting user requests to open them and launching the Windows Calculator instead.
+
+Beyond the bootkit, the campaign deploys espionage payloads. One is a remote access trojan that uses Google Drive, OneDrive, or Yandex.Disk for command-and-control, executing .NET payloads and uploading and downloading files. The second is **OxiDLLRunner**, an OLLVM-obfuscated DLL sideloaded by `googleupdate.exe`. It decrypts `v8_context_snapshot.bin` to launch shellcode and a Rust payload, which retrieves DLL plugins from `archivetj[.]com` and executes their `create_plugin` functions in separate threads.
+
+The targeting was narrow. Kaspersky found the bootkit in attacks against diplomatic entities in **Tajikistan, Uzbekistan, and Turkmenistan**. The attribution to APT41 — also tracked as Brass Typhoon, Wicked Panda, and Barium — carries medium confidence, not high, and readers should treat the China-nexus link as an assessment rather than a confirmed fact.
+
+The update gap is the part most likely to affect organizations outside Central Asia. Kaspersky states plainly that the Baton Drop patch revokes the `Windows Production PCA 2011` certificate but does not perform that revocation automatically. Administrators rarely take manual action after applying a security update, and the researchers believe the attacker counted on that. They also warn that the certificate's October 19, 2026 expiration date does not prevent vulnerable binaries from loading unless administrators add the certificate to a blocklist. Instructions for fully applying the Baton Drop fix are published by Microsoft.
+
+## Indicators of Compromise
+
+The infrastructure cluster is small but specific. The Rust payload pulls plugins from `archivetj[.]com`, and the sideloading chain depends on `googleupdate.exe` loading OxiDLLRunner, which in turn decrypts `v8_context_snapshot.bin`. The revoked driver certificate issued to Wenjiang District Mingyu Network Technology Service Studio is a durable detection artifact for driver-signing telemetry. Kaspersky's report contains the full indicator set; the table above lists the items named in public reporting.
+
+## Tactics, Techniques & Procedures
+
+The sequence matters for detection engineering. BlackX begins pre-OS with a bootkit (T1542.003) that subverts trust controls twice: first by enrolling custom MOKs (T1553.006), then by loading a kernel driver signed with a revoked certificate (T1553.002). Once resident, the driver impairs defenses by disabling security processes and registry callbacks (T1562.001) and tampering with ETW providers (T1562.006), with some routines gated on the presence of Kaspersky or Avast. Persistence and payload delivery then move into userland through DLL side-loading of OxiDLLRunner via `googleupdate.exe` (T1574.002), and the RAT uses legitimate cloud storage services for C2 (T1102).
+
+## Threat Actor Context
+
+APT41 is a Chinese state-sponsored group that Kaspersky and other vendors have tracked for years under names including Brass Typhoon, Wicked Panda, and Barium. The attribution here is medium confidence, and the campaign's victim set — diplomatic agencies in three Central Asian states — is consistent with espionage rather than financial motivation. The BlackLotus connection suggests the operator invested time in understanding and reproducing a publicly known bootkit rather than buying a finished tool, which is a notable shift in tradecraft for an APT-linked intrusion.
+
+## Mitigations & Recommendations
+
+Apply the Baton Drop fix completely. Installing the CVE-2022-21894 update is necessary but not sufficient: administrators must also trigger the Secure Boot revocation of the `Windows Production PCA 2011` certificate, and should add that certificate to a blocklist so vulnerable binaries cannot load after its October 19, 2026 expiration. Microsoft's published guidance covers the revocation steps.
+
+Monitor driver-load telemetry for signatures issued to Wenjiang District Mingyu Network Technology Service Studio and for any driver that disables registry callbacks or ETW providers. Watch for `googleupdate.exe` loading unexpected DLLs, and for `v8_context_snapshot.bin` being decrypted outside its normal Chrome update path. Network monitoring should flag `archivetj[.]com` and unusual plugin-fetch patterns from processes that should not be making them. On hosts where Kaspersky or Avast is deployed, treat the selective tampering behavior as a detection opportunity rather than a guarantee of protection.
+
+## References
+
+- [BlackX UEFI bootkit exploits Baton Drop flaw to bypass Secure Boot — BleepingComputer](https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/)
+- [BlackX UEFI Bootkit Bypasses Secure Boot on Patched Windows Systems Missing Revocations — The Hacker News](https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html)
